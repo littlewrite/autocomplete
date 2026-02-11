@@ -1,0 +1,23 @@
+name: autocomplete
+description: Fig-style CLI completion specs and runtime (parse command, load spec, get suggestions). Pure Dart, no Flutter.
+version: 0.1.0
+repository: https://github.com/withfig/autocomplete
+documentation: https://github.com/withfig/autocomplete#readme
+
+environment:
+  sdk: ">=2.17.0 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+# Assets for icons/logos referenced by specs (Flutter bundling; JS/TS may not use this).
+flutter:
+  assets:
+    - assets/icons/
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
