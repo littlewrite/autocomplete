@@ -1,18 +1,28 @@
-// cd: Change the shell working directory. Mirrors src/cd.ts.
+// Auto-generated from TypeScript source: cd.ts
+// Generated at: 2026-02-12
+// WARNING: Manual changes may be overwritten!
 
-import '../src/spec.dart';
+import 'package:autocomplete/src/spec.dart';
 
-/// Completion spec for `cd`. Uses template "folders" (folders only) and static suggestions -, ~.
-const FigSpec cdSpec = FigSpec(
+/// Completion spec for `cd` CLI
+final FigSpec cdSpec = FigSpec(
   name: 'cd',
   description: 'Change the shell working directory',
-  args: FigArg(
-    name: 'directory',
-    filterStrategy: FilterStrategy.fuzzy,
-    template: 'folders',
+  args: [
+    Arg(
+    filterStrategy: 'fuzzy',
     suggestions: [
-      FigSuggestion(name: '-', description: 'Switch to the last used folder', hidden: true),
-      FigSuggestion(name: '~', description: 'Switch to the home directory', hidden: true),
-    ],
-  ),
+      FigSuggestion(
+        name: '-',
+        description: 'Switch to the last used folder',
+        hidden: true
+      ),
+      FigSuggestion(
+        name: '~',
+        description: 'Switch to the home directory',
+        hidden: true
+      )
+    ]
+  )
+  ]
 );

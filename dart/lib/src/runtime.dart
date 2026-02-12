@@ -41,10 +41,9 @@ FigSubcommand? getSubcommand(FigSpec? spec) {
   );
 }
 
-List<FigArg> getArgs(dynamic args) {
+List<FigArg> getArgs(List<FigArg>? args) {
   if (args == null) return [];
-  if (args is List) return List<FigArg>.from(args);
-  return [args as FigArg];
+  return List<FigArg>.from(args);
 }
 
 /// Run templates for an arg and return suggestions.
@@ -87,11 +86,11 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
     suggestions.addAll(filterSubcommandSuggestions(subcommand.subcommands, subcommand.filterStrategy, partial));
     suggestions.addAll(filterOptionSuggestions(allOptions, acceptedTokens.where((t) => t.isOption).map((t) => t.token).toSet(), subcommand.filterStrategy, partial));
   }
-  final argCount = subcommand.args != null ? (subcommand.args is List ? (subcommand.args as List).length : 1) : 0;
-  if (argCount > 0) {
-    final activeArg = subcommand.args is List ? (subcommand.args as List<FigArg>).first : subcommand.args as FigArg;
+  final argList = subcommand.args ?? [];
+  if (argList.isNotEmpty) {
+    final activeArg = argList.first;
     suggestions.addAll(await runTemplateSuggestions(activeArg, cwd));
-    suggestions.addAll(filterSuggestions(activeArg.suggestions ?? [], activeArg.filterStrategy, partial, null));
+    suggestions.addAll(filterSuggestions(activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
   }
   suggestions = removeDuplicates(sortByPriority(removeHidden(removeAccepted(suggestions, acceptedTokens), partialToken)));
   return SuggestionBlob(suggestions: suggestions);
@@ -115,7 +114,7 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   final allOptions = <FigOption>[...persistentOptions, ...(subcommand.options ?? [])];
   var suggestions = <Suggestion>[];
   suggestions.addAll(await runTemplateSuggestions(activeArg, cwd));
-  suggestions.addAll(filterSuggestions(activeArg.suggestions ?? [], activeArg.filterStrategy, partial, null));
+  suggestions.addAll(filterSuggestions(activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
   if (activeArg.isOptional || (activeArg.isVariadic && variadicArgBound)) {
     suggestions.addAll(filterSubcommandSuggestions(subcommand.subcommands, activeArg.filterStrategy, partial));
     suggestions.addAll(filterOptionSuggestions(allOptions, acceptedTokens.where((t) => t.isOption).map((t) => t.token).toSet(), activeArg.filterStrategy, partial));

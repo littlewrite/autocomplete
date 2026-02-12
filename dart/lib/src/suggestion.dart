@@ -37,13 +37,28 @@ String longName(dynamic name) {
   return name as String;
 }
 
+/// Normalize dynamic (e.g. string 'fuzzy' from generated code) to FilterStrategy?.
+FilterStrategy? normalizeFilterStrategy(dynamic s) {
+  if (s == null) return null;
+  if (s is FilterStrategy) return s;
+  if (s is String) {
+    switch (s) {
+      case 'fuzzy': return FilterStrategy.fuzzy;
+      case 'prefix': return FilterStrategy.prefix;
+      case 'default': return FilterStrategy.defaultStrategy;
+    }
+  }
+  return null;
+}
+
 Suggestion? toSuggestion(FigSuggestion s, {SuggestionType? type, String? name}) {
   final n = name ?? longName(s.name);
   if (n.isEmpty) return null;
+  final desc = s.description is List ? (s.description as List).join('\n') : s.description as String?;
   return Suggestion(
     name: n,
     allNames: s.nameList,
-    description: s.description,
+    description: desc,
     icon: s.icon ?? iconForType(type ?? s.type),
     priority: s.priority,
     insertValue: s.insertValue,
@@ -54,15 +69,16 @@ Suggestion? toSuggestion(FigSuggestion s, {SuggestionType? type, String? name}) 
 
 List<Suggestion> filterSuggestions(
   List<FigSuggestion> suggestions,
-  FilterStrategy? strategy,
+  dynamic strategy,
   String? partial,
   SuggestionType? suggestionType,
 ) {
   if (partial == null || partial.isEmpty) {
     return suggestions.map((s) => toSuggestion(s, type: suggestionType)).whereType<Suggestion>().toList();
   }
+  final strat = normalizeFilterStrategy(strategy);
   final lower = partial.toLowerCase();
-  switch (strategy) {
+  switch (strat) {
     case FilterStrategy.fuzzy:
       return suggestions
           .map((s) {
@@ -90,21 +106,23 @@ List<Suggestion> filterSuggestions(
   }
 }
 
-List<Suggestion> filterSubcommandSuggestions(List<FigSubcommand>? subcommands, FilterStrategy? strategy, String? partial) {
+List<Suggestion> filterSubcommandSuggestions(List<FigSubcommand>? subcommands, dynamic strategy, String? partial) {
   if (subcommands == null || subcommands.isEmpty) return [];
+  final strat = normalizeFilterStrategy(strategy);
   final asSuggestions = subcommands.map((s) {
     return FigSuggestion(name: s.nameList, description: s.description, icon: s.icon, priority: 50, type: SuggestionType.subcommand);
   }).toList();
-  return filterSuggestions(asSuggestions, strategy, partial, SuggestionType.subcommand);
+  return filterSuggestions(asSuggestions, strat, partial, SuggestionType.subcommand);
 }
 
 List<Suggestion> filterOptionSuggestions(
   List<FigOption>? options,
   Set<String> usedOptions,
-  FilterStrategy? strategy,
+  dynamic strategy,
   String? partial,
 ) {
   if (options == null) return [];
+  final strat = normalizeFilterStrategy(strategy);
   final valid = options.where((o) {
     if (o.exclusiveOn != null) {
       if (o.exclusiveOn!.any((e) => usedOptions.contains(e))) return false;
@@ -112,15 +130,16 @@ List<Suggestion> filterOptionSuggestions(
     return true;
   });
   final asSuggestions = valid.map((o) {
+    final desc = o.description is List ? (o.description as List).join('\n') : o.description as String?;
     return FigSuggestion(
       name: o.nameList,
-      description: o.description,
+      description: desc,
       priority: o.priority ?? 50,
       insertValue: o.insertValue,
       type: SuggestionType.option,
     );
   }).toList();
-  return filterSuggestions(asSuggestions, strategy, partial, SuggestionType.option);
+  return filterSuggestions(asSuggestions, strat, partial, SuggestionType.option);
 }
 
 List<Suggestion> removeAccepted(List<Suggestion> suggestions, List<CommandToken> acceptedTokens) {
