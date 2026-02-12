@@ -1,0 +1,3861 @@
+{
+  "completed": [
+    "-.ts",
+    "@capgo/cli.ts",
+    "@fig/publish-spec.ts",
+    "@magnolia/cli.ts",
+    "@preset/cli.ts",
+    "@usermn/sdc/0.0.0.ts",
+    "@withfig/autocomplete-tools.ts",
+    "@wordpress/create-block.ts",
+    "act.ts",
+    "adb.ts",
+    "adr.ts",
+    "afplay.ts",
+    "aftman.ts",
+    "ag.ts",
+    "agrippa.ts",
+    "airflow.ts",
+    "aliases.ts",
+    "ampx.ts",
+    "ansible-config.ts",
+    "ansible-galaxy.ts",
+    "ansible-lint.ts",
+    "ansible-playbook.ts",
+    "ansible.ts",
+    "appwrite.ts",
+    "arch.ts",
+    "argo.ts",
+    "asar.ts",
+    "asciinema.ts",
+    "asr.ts",
+    "astro.ts",
+    "atlas.ts",
+    "authchanger.ts",
+    "autocannon.ts",
+    "autojump.ts",
+    "aws/accessanalyzer.ts",
+    "aws/account.ts",
+    "aws/acm-pca.ts",
+    "aws/alexaforbusiness.ts",
+    "aws/amp.ts",
+    "aws/amplifybackend.ts",
+    "aws/amplifyuibuilder.ts",
+    "aws/apigateway.ts",
+    "aws/apigatewaymanagementapi.ts",
+    "aws/apigatewayv2.ts",
+    "aws/appconfig.ts",
+    "aws/appconfigdata.ts",
+    "aws/appfabric.ts",
+    "aws/appflow.ts",
+    "aws/appintegrations.ts",
+    "aws/application-autoscaling.ts",
+    "aws/application-insights.ts",
+    "aws/application-signals.ts",
+    "aws/applicationcostprofiler.ts",
+    "aws/appmesh.ts",
+    "aws/apprunner.ts",
+    "aws/appstream.ts",
+    "aws/appsync.ts",
+    "aws/apptest.ts",
+    "aws/arc-zonal-shift.ts",
+    "aws/artifact.ts",
+    "aws/athena.ts",
+    "aws/auditmanager.ts",
+    "aws/autoscaling-plans.ts",
+    "aws/autoscaling.ts",
+    "aws/b2bi.ts",
+    "aws/backup-gateway.ts",
+    "aws/backup.ts",
+    "aws/backupstorage.ts",
+    "aws/batch.ts",
+    "aws/bcm-data-exports.ts",
+    "aws/bcm-pricing-calculator.ts",
+    "aws/bedrock-agent-runtime.ts",
+    "aws/bedrock-agent.ts",
+    "aws/bedrock-data-automation-runtime.ts",
+    "aws/bedrock-data-automation.ts",
+    "aws/bedrock-runtime.ts",
+    "aws/bedrock.ts",
+    "aws/billing.ts",
+    "aws/billingconductor.ts",
+    "aws/braket.ts",
+    "aws/budgets.ts",
+    "aws/ce.ts",
+    "aws/chatbot.ts",
+    "aws/chime-sdk-identity.ts",
+    "aws/chime-sdk-media-pipelines.ts",
+    "aws/chime-sdk-meetings.ts",
+    "aws/chime-sdk-messaging.ts",
+    "aws/chime-sdk-voice.ts",
+    "aws/chime.ts",
+    "aws/cleanrooms.ts",
+    "aws/cleanroomsml.ts",
+    "aws/cloud9.ts",
+    "aws/cloudcontrol.ts",
+    "aws/clouddirectory.ts",
+    "aws/cloudfront-keyvaluestore.ts",
+    "aws/cloudfront.ts",
+    "aws/cloudhsm.ts",
+    "aws/cloudhsmv2.ts",
+    "aws/cloudsearch.ts",
+    "aws/cloudsearchdomain.ts",
+    "aws/cloudtrail-data.ts",
+    "aws/cloudtrail.ts",
+    "aws/codeartifact.ts",
+    "aws/codebuild.ts",
+    "aws/codecatalyst.ts",
+    "aws/codecommit.ts",
+    "aws/codeconnections.ts",
+    "aws/codeguru-reviewer.ts",
+    "aws/codeguru-security.ts",
+    "aws/codeguruprofiler.ts",
+    "aws/codepipeline.ts",
+    "aws/codestar-connections.ts",
+    "aws/codestar-notifications.ts",
+    "aws/codestar.ts",
+    "aws/cognito-identity.ts",
+    "aws/cognito-idp.ts",
+    "aws/cognito-sync.ts",
+    "aws/comprehend.ts",
+    "aws/comprehendmedical.ts",
+    "aws/compute-optimizer.ts",
+    "aws/configservice.ts",
+    "aws/configure.ts",
+    "aws/connect-contact-lens.ts",
+    "aws/connect.ts",
+    "aws/connectcampaigns.ts",
+    "aws/connectcampaignsv2.ts",
+    "aws/connectcases.ts",
+    "aws/connectparticipant.ts",
+    "aws/controlcatalog.ts",
+    "aws/controltower.ts",
+    "aws/cost-optimization-hub.ts",
+    "aws/cur.ts",
+    "aws/customer-profiles.ts",
+    "aws/databrew.ts",
+    "aws/dataexchange.ts",
+    "aws/datapipeline.ts",
+    "aws/datasync.ts",
+    "aws/datazone.ts",
+    "aws/dax.ts",
+    "aws/deadline.ts",
+    "aws/deploy.ts",
+    "aws/detective.ts",
+    "aws/devicefarm.ts",
+    "aws/devops-guru.ts",
+    "aws/directconnect.ts",
+    "aws/discovery.ts",
+    "aws/dlm.ts",
+    "aws/dms.ts",
+    "aws/docdb-elastic.ts",
+    "aws/docdb.ts",
+    "aws/drs.ts",
+    "aws/ds-data.ts",
+    "aws/ds.ts",
+    "aws/dsql.ts",
+    "aws/dynamodb.ts",
+    "aws/dynamodbstreams.ts",
+    "aws/ebs.ts",
+    "aws/ec2-instance-connect.ts",
+    "aws/ecr-public.ts",
+    "aws/ecr.ts",
+    "aws/efs.ts",
+    "aws/eks-auth.ts",
+    "aws/elastic-inference.ts",
+    "aws/elasticache.ts",
+    "aws/elastictranscoder.ts",
+    "aws/elb.ts",
+    "aws/elbv2.ts",
+    "aws/emr-containers.ts",
+    "aws/emr-serverless.ts",
+    "aws/emr.ts",
+    "aws/entityresolution.ts",
+    "aws/es.ts",
+    "aws/events.ts",
+    "aws/evidently.ts",
+    "aws/finspace-data.ts",
+    "aws/finspace.ts",
+    "aws/firehose.ts",
+    "aws/fis.ts",
+    "aws/fms.ts",
+    "aws/forecast.ts",
+    "aws/forecastquery.ts",
+    "aws/frauddetector.ts",
+    "aws/freetier.ts",
+    "aws/fsx.ts",
+    "aws/gamelift.ts",
+    "aws/geo-maps.ts",
+    "aws/geo-places.ts",
+    "aws/geo-routes.ts",
+    "aws/glacier.ts",
+    "aws/globalaccelerator.ts",
+    "aws/glue.ts",
+    "aws/grafana.ts",
+    "aws/greengrass.ts",
+    "aws/greengrassv2.ts",
+    "aws/groundstation.ts",
+    "aws/guardduty.ts",
+    "aws/health.ts",
+    "aws/healthlake.ts",
+    "aws/history.ts",
+    "aws/honeycode.ts",
+    "aws/identitystore.ts",
+    "aws/imagebuilder.ts",
+    "aws/importexport.ts",
+    "aws/inspector-scan.ts",
+    "aws/inspector.ts",
+    "aws/inspector2.ts",
+    "aws/internetmonitor.ts",
+    "aws/invoicing.ts",
+    "aws/iot-data.ts",
+    "aws/iot-jobs-data.ts",
+    "aws/iot.ts",
+    "aws/iot1click-devices.ts",
+    "aws/iot1click-projects.ts",
+    "aws/iotanalytics.ts",
+    "aws/iotdeviceadvisor.ts",
+    "aws/iotevents-data.ts",
+    "aws/iotevents.ts",
+    "aws/iotfleethub.ts",
+    "aws/iotfleetwise.ts",
+    "aws/iotsecuretunneling.ts",
+    "aws/iotsitewise.ts",
+    "aws/iotthingsgraph.ts",
+    "aws/iottwinmaker.ts",
+    "aws/iotwireless.ts",
+    "aws/ivs-realtime.ts",
+    "aws/ivs.ts",
+    "aws/ivschat.ts",
+    "aws/kafka.ts",
+    "aws/kafkaconnect.ts",
+    "aws/kendra-ranking.ts",
+    "aws/kendra.ts",
+    "aws/keyspaces.ts",
+    "aws/kinesis-video-archived-media.ts",
+    "aws/kinesis-video-media.ts",
+    "aws/kinesis-video-signaling.ts",
+    "aws/kinesis-video-webrtc-storage.ts",
+    "aws/kinesis.ts",
+    "aws/kinesisanalytics.ts",
+    "aws/kinesisanalyticsv2.ts",
+    "aws/kinesisvideo.ts",
+    "aws/kms.ts",
+    "aws/lakeformation.ts",
+    "aws/launch-wizard.ts",
+    "aws/lex-models.ts",
+    "aws/lex-runtime.ts",
+    "aws/lexv2-models.ts",
+    "aws/lexv2-runtime.ts",
+    "aws/license-manager-linux-subscriptions.ts",
+    "aws/license-manager-user-subscriptions.ts",
+    "aws/license-manager.ts",
+    "aws/lightsail.ts",
+    "aws/location.ts",
+    "aws/logs.ts",
+    "aws/lookoutequipment.ts",
+    "aws/lookoutmetrics.ts",
+    "aws/lookoutvision.ts",
+    "aws/m2.ts",
+    "aws/machinelearning.ts",
+    "aws/macie.ts",
+    "aws/macie2.ts",
+    "aws/mailmanager.ts",
+    "aws/managedblockchain-query.ts",
+    "aws/managedblockchain.ts",
+    "aws/marketplace-agreement.ts",
+    "aws/marketplace-catalog.ts",
+    "aws/marketplace-deployment.ts",
+    "aws/marketplace-entitlement.ts",
+    "aws/marketplace-reporting.ts",
+    "aws/marketplacecommerceanalytics.ts",
+    "aws/mediaconnect.ts",
+    "aws/mediaconvert.ts",
+    "aws/medialive.ts",
+    "aws/mediapackage-vod.ts",
+    "aws/mediapackage.ts",
+    "aws/mediapackagev2.ts",
+    "aws/mediastore-data.ts",
+    "aws/mediastore.ts",
+    "aws/mediatailor.ts",
+    "aws/medical-imaging.ts",
+    "aws/memorydb.ts",
+    "aws/meteringmarketplace.ts",
+    "aws/mgh.ts",
+    "aws/mgn.ts",
+    "aws/migration-hub-refactor-spaces.ts",
+    "aws/migrationhub-config.ts",
+    "aws/migrationhuborchestrator.ts",
+    "aws/migrationhubstrategy.ts",
+    "aws/mobile.ts",
+    "aws/mq.ts",
+    "aws/mturk.ts",
+    "aws/mwaa.ts",
+    "aws/neptune-graph.ts",
+    "aws/neptune.ts",
+    "aws/neptunedata.ts",
+    "aws/network-firewall.ts",
+    "aws/networkflowmonitor.ts",
+    "aws/networkmanager.ts",
+    "aws/networkmonitor.ts",
+    "aws/nimble.ts",
+    "aws/notifications.ts",
+    "aws/notificationscontacts.ts",
+    "aws/oam.ts",
+    "aws/observabilityadmin.ts",
+    "aws/omics.ts",
+    "aws/opensearch.ts",
+    "aws/opensearchserverless.ts",
+    "aws/opsworks-cm.ts",
+    "aws/opsworks.ts",
+    "aws/opsworkscm.ts",
+    "aws/organizations.ts",
+    "aws/osis.ts",
+    "aws/outposts.ts",
+    "aws/panorama.ts",
+    "aws/partnercentral-selling.ts",
+    "aws/payment-cryptography-data.ts",
+    "aws/payment-cryptography.ts",
+    "aws/pca-connector-ad.ts",
+    "aws/pca-connector-scep.ts",
+    "aws/pcs.ts",
+    "aws/personalize-events.ts",
+    "aws/personalize-runtime.ts",
+    "aws/personalize.ts",
+    "aws/pi.ts",
+    "aws/pinpoint-email.ts",
+    "aws/pinpoint-sms-voice-v2.ts",
+    "aws/pinpoint-sms-voice.ts",
+    "aws/pinpoint.ts",
+    "aws/pipes.ts",
+    "aws/polly.ts",
+    "aws/pricing.ts",
+    "aws/privatenetworks.ts",
+    "aws/proton.ts",
+    "aws/qapps.ts",
+    "aws/qbusiness.ts",
+    "aws/qconnect.ts",
+    "aws/qldb-session.ts",
+    "aws/qldb.ts",
+    "aws/quicksight.ts",
+    "aws/ram.ts",
+    "aws/rbin.ts",
+    "aws/rds-data.ts",
+    "aws/rds.ts",
+    "aws/redshift-data.ts",
+    "aws/redshift-serverless.ts",
+    "aws/redshift.ts",
+    "aws/regions.ts",
+    "aws/rekognition.ts",
+    "aws/repostspace.ts",
+    "aws/resiliencehub.ts",
+    "aws/resource-explorer-2.ts",
+    "aws/resource-groups.ts",
+    "aws/resourcegroupstaggingapi.ts",
+    "aws/robomaker.ts",
+    "aws/rolesanywhere.ts",
+    "aws/route53-recovery-cluster.ts",
+    "aws/route53-recovery-control-config.ts",
+    "aws/route53-recovery-readiness.ts",
+    "aws/route53.ts",
+    "aws/route53domains.ts",
+    "aws/route53profiles.ts",
+    "aws/route53resolver.ts",
+    "aws/rum.ts",
+    "aws/runtime.sagemaker.ts",
+    "aws/s3control.ts",
+    "aws/s3outposts.ts",
+    "aws/s3tables.ts",
+    "aws/sagemaker-a2i-runtime.ts",
+    "aws/sagemaker-edge.ts",
+    "aws/sagemaker-featurestore-runtime.ts",
+    "aws/sagemaker-geospatial.ts",
+    "aws/sagemaker-metrics.ts",
+    "aws/sagemaker-runtime.ts",
+    "aws/sagemaker.ts",
+    "aws/savingsplans.ts",
+    "aws/scheduler.ts",
+    "aws/schemas.ts",
+    "aws/sdb.ts",
+    "aws/security-ir.ts",
+    "aws/securityhub.ts",
+    "aws/securitylake.ts",
+    "aws/serverlessrepo.ts",
+    "aws/service-quotas.ts",
+    "aws/servicecatalog-appregistry.ts",
+    "aws/servicecatalog.ts",
+    "aws/servicediscovery.ts",
+    "aws/ses.ts",
+    "aws/sesv2.ts",
+    "aws/shield.ts",
+    "aws/signer.ts",
+    "aws/simspaceweaver.ts",
+    "aws/sms-voice.ts",
+    "aws/sms.ts",
+    "aws/snow-device-management.ts",
+    "aws/snowball.ts",
+    "aws/sns.ts",
+    "aws/socialmessaging.ts",
+    "aws/sqs.ts",
+    "aws/ssm-contacts.ts",
+    "aws/ssm-incidents.ts",
+    "aws/ssm-quicksetup.ts",
+    "aws/ssm-sap.ts",
+    "aws/ssm.ts",
+    "aws/sso-admin.ts",
+    "aws/sso-oidc.ts",
+    "aws/sso.ts",
+    "aws/stepfunctions.ts",
+    "aws/storagegateway.ts",
+    "aws/sts.ts",
+    "aws/supplychain.ts",
+    "aws/support-app.ts",
+    "aws/support.ts",
+    "aws/swf.ts",
+    "aws/synthetics.ts",
+    "aws/taxsettings.ts",
+    "aws/textract.ts",
+    "aws/timestream-influxdb.ts",
+    "aws/timestream-query.ts",
+    "aws/timestream-write.ts",
+    "aws/transcribe.ts",
+    "aws/transfer.ts",
+    "aws/translate.ts",
+    "aws/trustedadvisor.ts",
+    "aws/verifiedpermissions.ts",
+    "aws/voice-id.ts",
+    "aws/vpc-lattice.ts",
+    "aws/waf-regional.ts",
+    "aws/waf.ts",
+    "aws/wafv2.ts",
+    "aws/wellarchitected.ts",
+    "aws/wisdom.ts",
+    "aws/workdocs.ts",
+    "aws/worklink.ts",
+    "aws/workmail.ts",
+    "aws/workmailmessageflow.ts",
+    "aws/workspaces-thin-client.ts",
+    "aws/workspaces-web.ts",
+    "aws/workspaces.ts",
+    "aws/xray.ts",
+    "awsume.ts",
+    "az/2.53.0/account.ts",
+    "az/2.53.0/acr.ts",
+    "az/2.53.0/ad.ts",
+    "az/2.53.0/adp.ts",
+    "az/2.53.0/advisor.ts",
+    "az/2.53.0/afd.ts",
+    "az/2.53.0/ai-examples.ts",
+    "az/2.53.0/aks.ts",
+    "az/2.53.0/alerts-management.ts",
+    "az/2.53.0/alias.ts",
+    "az/2.53.0/amlfs.ts",
+    "az/2.53.0/ams.ts",
+    "az/2.53.0/apim.ts",
+    "az/2.53.0/appconfig.ts",
+    "az/2.53.0/appservice.ts",
+    "az/2.53.0/arcappliance.ts",
+    "az/2.53.0/arcdata.ts",
+    "az/2.53.0/aro.ts",
+    "az/2.53.0/artifacts.ts",
+    "az/2.53.0/attestation.ts",
+    "az/2.53.0/automanage.ts",
+    "az/2.53.0/automation.ts",
+    "az/2.53.0/azurestackhci.ts",
+    "az/2.53.0/backup.ts",
+    "az/2.53.0/baremetalinstance.ts",
+    "az/2.53.0/batch.ts",
+    "az/2.53.0/batchai.ts",
+    "az/2.53.0/bicep.ts",
+    "az/2.53.0/billing-benefits.ts",
+    "az/2.53.0/billing.ts",
+    "az/2.53.0/blockchain.ts",
+    "az/2.53.0/blueprint.ts",
+    "az/2.53.0/boards.ts",
+    "az/2.53.0/bot.ts",
+    "az/2.53.0/cache.ts",
+    "az/2.53.0/capacity.ts",
+    "az/2.53.0/cdn.ts",
+    "az/2.53.0/change-analysis.ts",
+    "az/2.53.0/cli-translator.ts",
+    "az/2.53.0/cloud-service.ts",
+    "az/2.53.0/cloud.ts",
+    "az/2.53.0/cognitiveservices.ts",
+    "az/2.53.0/command-change.ts",
+    "az/2.53.0/communication.ts",
+    "az/2.53.0/confcom.ts",
+    "az/2.53.0/confidentialledger.ts",
+    "az/2.53.0/config.ts",
+    "az/2.53.0/configure.ts",
+    "az/2.53.0/confluent.ts",
+    "az/2.53.0/connectedk8s.ts",
+    "az/2.53.0/connectedmachine.ts",
+    "az/2.53.0/connectedvmware.ts",
+    "az/2.53.0/connection.ts",
+    "az/2.53.0/consumption.ts",
+    "az/2.53.0/container.ts",
+    "az/2.53.0/containerapp.ts",
+    "az/2.53.0/cosmosdb.ts",
+    "az/2.53.0/costmanagement.ts",
+    "az/2.53.0/csvmware.ts",
+    "az/2.53.0/custom-providers.ts",
+    "az/2.53.0/customlocation.ts",
+    "az/2.53.0/databox.ts",
+    "az/2.53.0/databoxedge.ts",
+    "az/2.53.0/databricks.ts",
+    "az/2.53.0/datadog.ts",
+    "az/2.53.0/datafactory.ts",
+    "az/2.53.0/datamigration.ts",
+    "az/2.53.0/dataprotection.ts",
+    "az/2.53.0/datashare.ts",
+    "az/2.53.0/dedicated-hsm.ts",
+    "az/2.53.0/demo.ts",
+    "az/2.53.0/deployment-scripts.ts",
+    "az/2.53.0/deployment.ts",
+    "az/2.53.0/desktopvirtualization.ts",
+    "az/2.53.0/devcenter.ts",
+    "az/2.53.0/devops.ts",
+    "az/2.53.0/disk-access.ts",
+    "az/2.53.0/disk-encryption-set.ts",
+    "az/2.53.0/disk-pool.ts",
+    "az/2.53.0/disk.ts",
+    "az/2.53.0/dla.ts",
+    "az/2.53.0/dls.ts",
+    "az/2.53.0/dms.ts",
+    "az/2.53.0/dnc.ts",
+    "az/2.53.0/dns-resolver.ts",
+    "az/2.53.0/dt.ts",
+    "az/2.53.0/dynatrace.ts",
+    "az/2.53.0/edgeorder.ts",
+    "az/2.53.0/elastic-san.ts",
+    "az/2.53.0/elastic.ts",
+    "az/2.53.0/eventgrid.ts",
+    "az/2.53.0/eventhubs.ts",
+    "az/2.53.0/extension.ts",
+    "az/2.53.0/feature.ts",
+    "az/2.53.0/feedback.ts",
+    "az/2.53.0/find.ts",
+    "az/2.53.0/fleet.ts",
+    "az/2.53.0/fluid-relay.ts",
+    "az/2.53.0/footprint.ts",
+    "az/2.53.0/functionapp.ts",
+    "az/2.53.0/fzf.ts",
+    "az/2.53.0/grafana.ts",
+    "az/2.53.0/graph-services.ts",
+    "az/2.53.0/graph.ts",
+    "az/2.53.0/group.ts",
+    "az/2.53.0/guestconfig.ts",
+    "az/2.53.0/hack.ts",
+    "az/2.53.0/hanainstance.ts",
+    "az/2.53.0/hdinsight.ts",
+    "az/2.53.0/healthbot.ts",
+    "az/2.53.0/healthcareapis.ts",
+    "az/2.53.0/hpc-cache.ts",
+    "az/2.53.0/hybridaks.ts",
+    "az/2.53.0/identity.ts",
+    "az/2.53.0/image.ts",
+    "az/2.53.0/import-export.ts",
+    "az/2.53.0/init.ts",
+    "az/2.53.0/interactive.ts",
+    "az/2.53.0/internet-analyzer.ts",
+    "az/2.53.0/iot.ts",
+    "az/2.53.0/k8s-configuration.ts",
+    "az/2.53.0/k8s-extension.ts",
+    "az/2.53.0/k8sconfiguration.ts",
+    "az/2.53.0/keyvault.ts",
+    "az/2.53.0/kusto.ts",
+    "az/2.53.0/lab.ts",
+    "az/2.53.0/load.ts",
+    "az/2.53.0/lock.ts",
+    "az/2.53.0/logic.ts",
+    "az/2.53.0/logicapp.ts",
+    "az/2.53.0/login.ts",
+    "az/2.53.0/logout.ts",
+    "az/2.53.0/logz.ts",
+    "az/2.53.0/maintenance.ts",
+    "az/2.53.0/managed-cassandra.ts",
+    "az/2.53.0/managedapp.ts",
+    "az/2.53.0/managedservices.ts",
+    "az/2.53.0/managementpartner.ts",
+    "az/2.53.0/maps.ts",
+    "az/2.53.0/mariadb.ts",
+    "az/2.53.0/mesh.ts",
+    "az/2.53.0/ml.ts",
+    "az/2.53.0/mobile-network.ts",
+    "az/2.53.0/monitor.ts",
+    "az/2.53.0/mysql.ts",
+    "az/2.53.0/netappfiles.ts",
+    "az/2.53.0/network-function.ts",
+    "az/2.53.0/network.ts",
+    "az/2.53.0/networkcloud.ts",
+    "az/2.53.0/networkfabric.ts",
+    "az/2.53.0/new-relic.ts",
+    "az/2.53.0/next.ts",
+    "az/2.53.0/nginx.ts",
+    "az/2.53.0/notification-hub.ts",
+    "az/2.53.0/offazure.ts",
+    "az/2.53.0/orbital.ts",
+    "az/2.53.0/palo-alto.ts",
+    "az/2.53.0/partnercenter.ts",
+    "az/2.53.0/peering.ts",
+    "az/2.53.0/pipelines.ts",
+    "az/2.53.0/policy.ts",
+    "az/2.53.0/portal.ts",
+    "az/2.53.0/postgres.ts",
+    "az/2.53.0/powerbi.ts",
+    "az/2.53.0/ppg.ts",
+    "az/2.53.0/private-link.ts",
+    "az/2.53.0/provider.ts",
+    "az/2.53.0/providerhub.ts",
+    "az/2.53.0/purview.ts",
+    "az/2.53.0/quantum.ts",
+    "az/2.53.0/qumulo.ts",
+    "az/2.53.0/quota.ts",
+    "az/2.53.0/redis.ts",
+    "az/2.53.0/redisenterprise.ts",
+    "az/2.53.0/relay.ts",
+    "az/2.53.0/remote-rendering-account.ts",
+    "az/2.53.0/repos.ts",
+    "az/2.53.0/reservations.ts",
+    "az/2.53.0/resource-mover.ts",
+    "az/2.53.0/resource.ts",
+    "az/2.53.0/resourcemanagement.ts",
+    "az/2.53.0/rest.ts",
+    "az/2.53.0/restore-point.ts",
+    "az/2.53.0/role.ts",
+    "az/2.53.0/sapmonitor.ts",
+    "az/2.53.0/scenario.ts",
+    "az/2.53.0/scvmm.ts",
+    "az/2.53.0/search.ts",
+    "az/2.53.0/security.ts",
+    "az/2.53.0/self-help.ts",
+    "az/2.53.0/self-test.ts",
+    "az/2.53.0/sentinel.ts",
+    "az/2.53.0/serial-console.ts",
+    "az/2.53.0/servicebus.ts",
+    "az/2.53.0/sf.ts",
+    "az/2.53.0/sig.ts",
+    "az/2.53.0/signalr.ts",
+    "az/2.53.0/site-recovery.ts",
+    "az/2.53.0/snapshot.ts",
+    "az/2.53.0/spatial-anchors-account.ts",
+    "az/2.53.0/sphere.ts",
+    "az/2.53.0/spring-cloud.ts",
+    "az/2.53.0/spring.ts",
+    "az/2.53.0/sql.ts",
+    "az/2.53.0/ssh.ts",
+    "az/2.53.0/sshkey.ts",
+    "az/2.53.0/stack-hci.ts",
+    "az/2.53.0/stack.ts",
+    "az/2.53.0/staticwebapp.ts",
+    "az/2.53.0/storage-mover.ts",
+    "az/2.53.0/storage.ts",
+    "az/2.53.0/storagesync.ts",
+    "az/2.53.0/stream-analytics.ts",
+    "az/2.53.0/support.ts",
+    "az/2.53.0/survey.ts",
+    "az/2.53.0/synapse.ts",
+    "az/2.53.0/tag.ts",
+    "az/2.53.0/term.ts",
+    "az/2.53.0/ts.ts",
+    "az/2.53.0/tsi.ts",
+    "az/2.53.0/upgrade.ts",
+    "az/2.53.0/version.ts",
+    "az/2.53.0/vm.ts",
+    "az/2.53.0/vmss.ts",
+    "az/2.53.0/vmware.ts",
+    "az/2.53.0/webapp.ts",
+    "az/2.53.0/webpubsub.ts",
+    "az/2.53.0/workloads.ts",
+    "az/2.53.0.ts",
+    "az/index.ts",
+    "babel.ts",
+    "banner.ts",
+    "barnard59.ts",
+    "base32.ts",
+    "base64.ts",
+    "basename.ts",
+    "basenc.ts",
+    "bc.ts",
+    "bcd.ts",
+    "bit.ts",
+    "blitz.ts",
+    "br.ts",
+    "broot.ts",
+    "btop.ts",
+    "build-storybook.ts",
+    "bw.ts",
+    "bwdc.ts",
+    "bws.ts",
+    "c++.ts",
+    "caffeinate.ts",
+    "cal.ts",
+    "cap.ts",
+    "cat.ts",
+    "cci.ts",
+    "cd.ts",
+    "cdk.ts",
+    "cdk8s.ts",
+    "charm.ts",
+    "chmod.ts",
+    "cicada.ts",
+    "circleci.ts",
+    "cl.ts",
+    "clang++.ts",
+    "clang.ts",
+    "clear.ts",
+    "cliff-jumper.ts",
+    "clilol.ts",
+    "clion.ts",
+    "clojure.ts",
+    "cloudflared.ts",
+    "cmake.ts",
+    "code-insiders.ts",
+    "code.ts",
+    "codesign.ts",
+    "command.ts",
+    "commercelayer.ts",
+    "copyfile.ts",
+    "copypath.ts",
+    "cosign.ts",
+    "cot.ts",
+    "cp.ts",
+    "create-completion-spec.ts",
+    "create-next-app.ts",
+    "create-nx-workspace.ts",
+    "create-react-app.ts",
+    "create-react-native-app.ts",
+    "create-redwood-app.ts",
+    "create-remix.ts",
+    "create-t3-app.ts",
+    "create-video.ts",
+    "create-web3-frontend.ts",
+    "croc.ts",
+    "crontab.ts",
+    "csdx.ts",
+    "curl.ts",
+    "cut.ts",
+    "dart.ts",
+    "date.ts",
+    "dateseq.ts",
+    "datree.ts",
+    "dbt.ts",
+    "dd.ts",
+    "ddev.ts",
+    "ddosify.ts",
+    "deno.ts",
+    "deta.ts",
+    "df.ts",
+    "diff.ts",
+    "dig.ts",
+    "dirname.ts",
+    "ditto.ts",
+    "do-release-upgrade.ts",
+    "do.ts",
+    "doctl.ts",
+    "dog.ts",
+    "doggo.ts",
+    "dos2unix.ts",
+    "dotenv-vault.ts",
+    "dotenv.ts",
+    "dotnet/dotnet-build-server.ts",
+    "dotnet/dotnet-build.ts",
+    "dotnet/dotnet-clean.ts",
+    "dotnet/dotnet-format.ts",
+    "dotnet/dotnet-help.ts",
+    "dotnet/dotnet-list.ts",
+    "dotnet/dotnet-migrate.ts",
+    "dotnet/dotnet-msbuild.ts",
+    "dotnet/dotnet-pack.ts",
+    "dotnet/dotnet-publish.ts",
+    "dotnet/dotnet-restore.ts",
+    "dotnet/dotnet-store.ts",
+    "dotslash.ts",
+    "dpkg.ts",
+    "dprint.ts",
+    "du.ts",
+    "dust.ts",
+    "electron.ts",
+    "eleventy.ts",
+    "elif.ts",
+    "elixir.ts",
+    "elm-format.ts",
+    "elm-review.ts",
+    "else.ts",
+    "emacs.ts",
+    "enapter.ts",
+    "encore.ts",
+    "exa.ts",
+    "example/git_push.ts",
+    "exec.ts",
+    "exercism.ts",
+    "export.ts",
+    "eza.ts",
+    "fastlane.ts",
+    "fastly.ts",
+    "fd.ts",
+    "fdisk.ts",
+    "fig/1.0.0.ts",
+    "fig/2.0.0.ts",
+    "figterm.ts",
+    "file.ts",
+    "find.ts",
+    "fly.ts",
+    "fmt.ts",
+    "fold.ts",
+    "for.ts",
+    "forc.ts",
+    "forge.ts",
+    "fzf-tmux.ts",
+    "fzf.ts",
+    "g++.ts",
+    "ganache-cli.ts",
+    "gatsby.ts",
+    "gcc.ts",
+    "gcloud/access-context-manager.ts",
+    "gcloud/active-directory.ts",
+    "gcloud/ai-platform.ts",
+    "gcloud/anthos.ts",
+    "gcloud/apigee.ts",
+    "gcloud/app.ts",
+    "gcloud/artifacts.ts",
+    "gcloud/asset.ts",
+    "gcloud/auth.ts",
+    "gcloud/bigtable.ts",
+    "gcloud/builds.ts",
+    "gcloud/cheat-sheet.ts",
+    "gcloud/cloud-shell.ts",
+    "gcloud/components.ts",
+    "gcloud/composer.ts",
+    "gcloud/compute.ts",
+    "gcloud/config.ts",
+    "gcloud/container.ts",
+    "gcloud/data-catalog.ts",
+    "gcloud/dataflow.ts",
+    "gcloud/dataproc.ts",
+    "gcloud/datastore.ts",
+    "gcloud/debug.ts",
+    "gcloud/deployment-manager.ts",
+    "gcloud/dns.ts",
+    "gcloud/docker.ts",
+    "gcloud/domains.ts",
+    "gcloud/endpoints.ts",
+    "gcloud/feedback.ts",
+    "gcloud/filestore.ts",
+    "gcloud/firebase.ts",
+    "gcloud/firestore.ts",
+    "gcloud/functions.ts",
+    "gcloud/game.ts",
+    "gcloud/healthcare.ts",
+    "gcloud/help.ts",
+    "gcloud/iam.ts",
+    "gcloud/iap.ts",
+    "gcloud/identity.ts",
+    "gcloud/info.ts",
+    "gcloud/init.ts",
+    "gcloud/iot.ts",
+    "gcloud/kms.ts",
+    "gcloud/logging.ts",
+    "gcloud/meta.ts",
+    "gcloud/ml-engine.ts",
+    "gcloud/ml.ts",
+    "gcloud/monitoring.ts",
+    "gcloud/network-management.ts",
+    "gcloud/organizations.ts",
+    "gcloud/policy-troubleshoot.ts",
+    "gcloud/projects.ts",
+    "gcloud/pubsub.ts",
+    "gcloud/recommender.ts",
+    "gcloud/redis.ts",
+    "gcloud/resource-manager.ts",
+    "gcloud/run.ts",
+    "gcloud/scc.ts",
+    "gcloud/scheduler.ts",
+    "gcloud/secrets.ts",
+    "gcloud/services.ts",
+    "gcloud/source.ts",
+    "gcloud/spanner.ts",
+    "gcloud/sql.ts",
+    "gcloud/survey.ts",
+    "gcloud/tasks.ts",
+    "gcloud/topic.ts",
+    "gcloud/version.ts",
+    "gcloud.ts",
+    "ghq.ts",
+    "git-quick-stats.ts",
+    "github.ts",
+    "glow.ts",
+    "gltfjsx.ts",
+    "goctl.ts",
+    "goland.ts",
+    "googler.ts",
+    "goreleaser.ts",
+    "gradle.ts",
+    "graphcdn.ts",
+    "grep.ts",
+    "grex.ts",
+    "gron.ts",
+    "gt.ts",
+    "hardhat.ts",
+    "hasura.ts",
+    "hb-service.ts",
+    "head.ts",
+    "helm.ts",
+    "helmfile.ts",
+    "heroku/8.0.0.ts",
+    "heroku/8.6.0.ts",
+    "homey.ts",
+    "hop.ts",
+    "hostname.ts",
+    "htop.ts",
+    "http.ts",
+    "https.ts",
+    "httpy.ts",
+    "hub.ts",
+    "hx.ts",
+    "hyperfine.ts",
+    "iex.ts",
+    "if.ts",
+    "infracost/0.10.0.ts",
+    "infracost/0.9.0.ts",
+    "install.ts",
+    "ionic.ts",
+    "java.ts",
+    "jest.ts",
+    "jmeter.ts",
+    "join.ts",
+    "jq.ts",
+    "julia.ts",
+    "jupyter.ts",
+    "k6.ts",
+    "kafkactl.ts",
+    "kdoctor.ts",
+    "keytool.ts",
+    "kitty.ts",
+    "klist.ts",
+    "knex.ts",
+    "kotlinc.ts",
+    "kubecolor.ts",
+    "laravel.ts",
+    "ldd.ts",
+    "leaf.ts",
+    "less.ts",
+    "lima.ts",
+    "ln.ts",
+    "locust.ts",
+    "lp.ts",
+    "lpass.ts",
+    "ls.ts",
+    "lsblk.ts",
+    "lsd.ts",
+    "luz.ts",
+    "lvim.ts",
+    "maigret.ts",
+    "mailsy.ts",
+    "mas.ts",
+    "mdls.ts",
+    "meroxa.ts",
+    "micro.ts",
+    "mikro-orm.ts",
+    "minectl.ts",
+    "minikube.ts",
+    "mkdir.ts",
+    "mkdocs.ts",
+    "mkfifo.ts",
+    "mknod.ts",
+    "mob.ts",
+    "molecule.ts",
+    "mongocli.ts",
+    "mongoimport.ts",
+    "mongosh.ts",
+    "more.ts",
+    "mosh.ts",
+    "mv.ts",
+    "mvn.ts",
+    "mypy.ts",
+    "mysql.ts",
+    "nano.ts",
+    "nativescript.ts",
+    "nc.ts",
+    "ncal.ts",
+    "ncu.ts",
+    "neofetch.ts",
+    "nest.ts",
+    "netlify.ts",
+    "newman.ts",
+    "next.ts",
+    "nginx.ts",
+    "ngrok.ts",
+    "nhost.ts",
+    "ni.ts",
+    "nl.ts",
+    "nmap.ts",
+    "nocorrect.ts",
+    "noglob.ts",
+    "northflank.ts",
+    "np.ts",
+    "nr.ts",
+    "nrm.ts",
+    "nu.ts",
+    "nuxi.ts",
+    "nuxt.ts",
+    "nvim.ts",
+    "nvm.ts",
+    "nylas.ts",
+    "oci.ts",
+    "od.ts",
+    "oh-my-posh.ts",
+    "okta.ts",
+    "omz.ts",
+    "onboardbase.ts",
+    "opa.ts",
+    "osascript.ts",
+    "pac.ts",
+    "pageres.ts",
+    "palera1n.ts",
+    "paper.ts",
+    "paste.ts",
+    "pathchk.ts",
+    "pdfunite.ts",
+    "pg_dump.ts",
+    "pgcli.ts",
+    "phpstorm.ts",
+    "phpunit.ts",
+    "pijul.ts",
+    "ping.ts",
+    "pip3.ts",
+    "pipenv.ts",
+    "pkg-config.ts",
+    "pkill.ts",
+    "planter.ts",
+    "plutil.ts",
+    "pm2.ts",
+    "pmset.ts",
+    "pnpx.ts",
+    "pocketbase.ts",
+    "poetry.ts",
+    "premake.ts",
+    "preset.ts",
+    "prettier.ts",
+    "prisma.ts",
+    "pro.ts",
+    "progressline.ts",
+    "pry.ts",
+    "ps.ts",
+    "psql.ts",
+    "publish.ts",
+    "pushd.ts",
+    "pwd.ts",
+    "pycharm.ts",
+    "pytest.ts",
+    "python/http.server.ts",
+    "qodana.ts",
+    "quasar.ts",
+    "railway.ts",
+    "readlink.ts",
+    "remix.ts",
+    "remotion.ts",
+    "repeat.ts",
+    "rg.ts",
+    "rm.ts",
+    "rmdir.ts",
+    "rojo.ts",
+    "rollup.ts",
+    "rome.ts",
+    "rscript.ts",
+    "rsync.ts",
+    "ruby.ts",
+    "rubymine.ts",
+    "ruff.ts",
+    "rushx.ts",
+    "rustc.ts",
+    "rustrover.ts",
+    "rvm.ts",
+    "sam.ts",
+    "sanity.ts",
+    "sapphire.ts",
+    "scp.ts",
+    "screen.ts",
+    "sed.ts",
+    "seq.ts",
+    "sequelize.ts",
+    "serve.ts",
+    "sfdx.ts",
+    "sftp.ts",
+    "sha1sum.ts",
+    "shasum.ts",
+    "shell-config.ts",
+    "shelve.ts",
+    "shopify/2.0.0.ts",
+    "shopify/3.0.0.ts",
+    "shred.ts",
+    "sidekiq.ts",
+    "simctl.ts",
+    "sips.ts",
+    "sl.ts",
+    "sls.ts",
+    "sort.ts",
+    "source.ts",
+    "space.ts",
+    "speedtest-cli.ts",
+    "speedtest.ts",
+    "splash.ts",
+    "split.ts",
+    "spotify.ts",
+    "sqlfluff.ts",
+    "sqlite3.ts",
+    "sqlmesh.ts",
+    "src.ts",
+    "ssh-keygen.ts",
+    "st2.ts",
+    "sta.ts",
+    "stack.ts",
+    "starkli.ts",
+    "start-storybook.ts",
+    "stat.ts",
+    "steadybit.ts",
+    "stencil.ts",
+    "stow.ts",
+    "streamlit.ts",
+    "stripe.ts",
+    "su.ts",
+    "subl.ts",
+    "sudo.ts",
+    "suitecloud.ts",
+    "supabase.ts",
+    "surreal.ts",
+    "svn.ts",
+    "svokit.ts",
+    "sw_vers.ts",
+    "swagger-typescript-api.ts",
+    "swc.ts",
+    "swift.ts",
+    "symfony.ts",
+    "tac.ts",
+    "tail.ts",
+    "tailcall.ts",
+    "tailwindcss.ts",
+    "tangram.ts",
+    "taplo.ts",
+    "tar.ts",
+    "tb.ts",
+    "tccutil.ts",
+    "tee.ts",
+    "then.ts",
+    "time.ts",
+    "tkn.ts",
+    "tmutil.ts",
+    "tns.ts",
+    "top.ts",
+    "touch.ts",
+    "tr.ts",
+    "traceroute.ts",
+    "trash.ts",
+    "tree.ts",
+    "truffle.ts",
+    "truncate.ts",
+    "trunk.ts",
+    "tsc.ts",
+    "tsx.ts",
+    "tuist.ts",
+    "twiggy.ts",
+    "typeorm.ts",
+    "typos.ts",
+    "typst.ts",
+    "ua.ts",
+    "ubuntu-advantage.ts",
+    "uname.ts",
+    "uniq.ts",
+    "unix2dos.ts",
+    "until.ts",
+    "unzip.ts",
+    "vale.ts",
+    "vapor.ts",
+    "vault.ts",
+    "vela.ts",
+    "vi.ts",
+    "vim.ts",
+    "vimr.ts",
+    "visudo.ts",
+    "volta.ts",
+    "vtex.ts",
+    "vue.ts",
+    "w.ts",
+    "wasm-bindgen.ts",
+    "wasm-pack.ts",
+    "watchman.ts",
+    "wc.ts",
+    "webstorm.ts",
+    "wezterm.ts",
+    "wget.ts",
+    "whence.ts",
+    "where.ts",
+    "whereis.ts",
+    "while.ts",
+    "who.ts",
+    "whois.ts",
+    "wing.ts",
+    "wp.ts",
+    "wrangler.ts",
+    "wrk.ts",
+    "wscat.ts",
+    "xargs.ts",
+    "xcode-select.ts",
+    "xcodebuild.ts",
+    "xcrun.ts",
+    "xdg-mime.ts",
+    "xdg-open.ts",
+    "xed.ts",
+    "xxd.ts",
+    "yank.ts",
+    "yomo.ts",
+    "zapier.ts",
+    "zed.ts",
+    "zig.ts",
+    "zip.ts",
+    "zipcloak.ts",
+    "zoxide.ts"
+  ],
+  "failed": [],
+  "needsManual": [
+    {
+      "file": "@usermn/sdc/index.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:47:39.743Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "amplify.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:40.285Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ansible-doc.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:40.332Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ant.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:40.344Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "apt.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:47:40.838Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "arduino-cli.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:47:40.840Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "asdf.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:40.941Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "assimp.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:40.943Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "atuin.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:47:45.359Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/acm.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:45.566Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/amplify.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:45.871Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/cloudformation.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:50.415Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/cloudwatch.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:50.972Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/ec2.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:47:58.347Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/ecs.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:58.650Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/eks.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:58.721Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/elasticbeanstalk.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:47:59.019Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/iam.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:03.175Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/lambda.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:07.026Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/s3.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:19.836Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/s3api.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:19.838Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/secretsmanager.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:21.282Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws/tnb.ts",
+      "warnings": [
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:24.568Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws-vault.ts",
+      "warnings": [
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:26.604Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "aws.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:26.607Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "bat.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.208Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "bazel.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.208Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "black.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.337Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "bosh.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.345Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "brew.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.347Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "browser-sync.ts",
+      "warnings": [
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.350Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "bun.ts",
+      "warnings": [
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.353Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "bundle.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.354Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "bunx.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.355Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "capacitor.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.536Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "cargo.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.543Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "cf.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.783Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "checkov.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.792Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "chezmoi.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.793Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "chown.ts",
+      "warnings": [
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.795Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "chsh.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:27.796Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "coda.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:28.048Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "composer.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:28.422Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "conda.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:28.429Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "copilot.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:28.439Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "cordova.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:28.462Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "create-vite.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.553Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "cw.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.619Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dapr.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.621Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dcli.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.748Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "defaultbrowser.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.806Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "defaults.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.806Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "degit.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.807Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "deno/generators.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.812Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "deployctl.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.814Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "direnv.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.844Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "django-admin.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.859Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "docker-compose.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.872Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "docker.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.877Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "doppler.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.890Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dotnet/dotnet-add.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.900Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dotnet/dotnet-new.ts",
+      "warnings": [
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.923Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dotnet/dotnet-nuget.ts",
+      "warnings": [
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.926Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dotnet/dotnet-remove.ts",
+      "warnings": [
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.930Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dotnet/dotnet-run.ts",
+      "warnings": [
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.931Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dotnet/dotnet-sln.ts",
+      "warnings": [
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.932Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dotnet/dotnet-test.ts",
+      "warnings": [
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.933Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dotnet/dotnet-tool.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.940Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dotnet.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.949Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "drush.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.974Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dscacheutil.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.980Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dscl.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.985Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "dtm.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:29.986Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "eas.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.009Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "eb.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.024Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "echo.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.031Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "elm-json.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.144Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "elm.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.166Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "env.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.255Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "envchain.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.262Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "esbuild.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.271Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "eslint.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.273Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "example/trigger.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.311Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "expo-cli.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.347Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "expo.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.360Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "expressots.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:30.394Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ffmpeg.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.608Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "fig/index.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.615Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "fig/shared.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.615Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "fin.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.618Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "firebase.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.619Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "firefox.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.619Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "fisher.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.620Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "flutter.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.621Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "flyctl.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.624Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "fnm.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.625Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "fvm.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:48:35.651Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "gem.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.740Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "gh.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.742Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "gibo.ts",
+      "warnings": [
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.747Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "git-cliff.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.749Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "git-flow.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.751Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "git-profile.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.751Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "git.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.755Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "go.ts",
+      "warnings": [
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.760Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "goto.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.965Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "gource.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.966Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "gpg.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.967Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "gum.ts",
+      "warnings": [
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:42.997Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "herd.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.194Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "heroku/index.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.522Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "heroku/shared.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.523Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "hexo.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.524Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "hugo.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.562Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "hyper.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.564Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ibus.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.568Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "iconv.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.569Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "id.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.569Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "idea.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.570Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ignite-cli.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.575Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "infracost/index.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.580Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ipatool.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.588Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "j.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.589Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "jenv.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.591Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "just.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.613Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "k3d.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.614Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "k9s.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.632Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "kamal.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.767Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "kill.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.796Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "killall.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.797Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "kind.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.798Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "kool.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.830Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "kubectl.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.836Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "kubectx.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.838Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "kubens.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.839Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "launchctl.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.844Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "lerna.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.852Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "limactl.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.860Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "login.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.864Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "lsof.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.926Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "m.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.932Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "mackup.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.933Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "magento.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.936Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "make.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.941Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "mamba.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.942Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "man.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.943Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "mask.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.945Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "mdfind.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:43.946Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "meteor.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:44.017Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "mgnl.ts",
+      "warnings": [
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:50:44.018Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "mix.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:50:44.064Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "mkinitcpio.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:50:44.071Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "mount.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:26.035Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "multipass.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:26.036Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "n.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:26.050Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "networkQuality.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:26.072Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "networksetup.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:26.073Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "nextflow.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:26.083Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ng.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:26.085Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "node.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:26.105Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "npm.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:29.020Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "npx.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:29.021Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ns.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:29.026Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "nx.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:29.037Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "okteto.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:31.506Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ollama.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:31.507Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "op.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:31.521Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "open.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:31.587Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "osqueryi.ts",
+      "warnings": [
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:31.589Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "oxlint.ts",
+      "warnings": [
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:31.590Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pandoc.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.004Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pass.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.069Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "passwd.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.069Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "php/artisan.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.077Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "php/bin-console.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.078Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "php/please.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.079Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "php.ts",
+      "warnings": [
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.080Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "phpunit-watcher.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.083Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pip.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.113Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pipx.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.134Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pkgutil.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.138Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "playwright.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.146Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pnpm.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.165Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pod.ts",
+      "warnings": [
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.174Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "podman.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.177Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pre-commit.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.208Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "projj.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.249Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pscale.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.253Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pulumi.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.260Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "pyenv.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.265Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "python.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.275Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "python3.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.275Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "q.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.277Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "quickmail.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.294Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "r.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.296Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "rails.ts",
+      "warnings": [
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.297Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "rake.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.304Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "rancher.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.305Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "rbenv.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.306Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "rclone.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.307Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "react-native.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.308Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "redwood.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:32.310Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "rich.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:33.780Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "robot.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:33.783Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "rubocop.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:33.809Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "rugby.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:33.815Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "rush.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:33.816Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "rustup.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:33.830Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "sake.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:33.832Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "scarb.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:33.901Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "scc.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:33.902Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "serverless.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:33.919Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "shadcn-ui.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.272Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "shopify/index.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.286Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "shortcuts.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.288Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "snaplet.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.331Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "softwareupdate.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.332Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "spring.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.360Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ssh.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.423Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "stepzen.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.531Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "svtplay-dl.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.763Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "sysctl.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.873Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "systemctl.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.874Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "tailscale.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.883Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "task/go-task.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.946Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "task/taskwarrior.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.949Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "task.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.949Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "terraform.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.971Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "terragrunt.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.973Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "tfenv.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.973Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "tfsec.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:34.975Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "tldr.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.356Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "tmux.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.366Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "tmuxinator.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.367Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "tokei.ts",
+      "warnings": [
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.368Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "trap.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.379Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "trex.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.387Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "trivy.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.391Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ts-node.ts",
+      "warnings": [
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.442Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "tsh.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.450Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "tsuru.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.452Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "turbo.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.531Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "twilio.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.540Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "unset.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.586Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "uv.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.594Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "v.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.595Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "valet.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.598Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "vercel.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.808Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "vite.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.818Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "vr.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.823Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "vsce.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.824Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "vultr-cli.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.839Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "watson.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.853Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "wd.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.859Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "webpack.ts",
+      "warnings": [
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.861Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "which.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.878Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "wifi-password.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:51:35.889Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "xc.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:38.653Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "xcodeproj.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:38.660Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "xcodes.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)"
+      ],
+      "timestamp": "2026-02-12T01:51:38.661Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "yalc.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:38.681Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "yarn.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:38.686Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "ykman.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)",
+        "Contains Generator definitions (requires runtime support)"
+      ],
+      "timestamp": "2026-02-12T01:51:38.687Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "yo.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:38.688Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "youtube-dl.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains Generator with script execution (requires manual conversion)",
+        "Contains function definitions (not supported in const context)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:38.692Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "z.ts",
+      "warnings": [
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:38.695Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    },
+    {
+      "file": "zellij.ts",
+      "warnings": [
+        "Contains Generator with postProcess function (requires manual conversion)",
+        "Contains arrow functions (not supported in const context)"
+      ],
+      "timestamp": "2026-02-12T01:51:38.709Z",
+      "reason": "Contains complex types (generators, functions, etc.)"
+    }
+  ],
+  "total": 1482,
+  "startTime": "2026-02-12T01:47:39.684Z"
+}

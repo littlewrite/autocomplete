@@ -1,0 +1,217 @@
+#!/usr/bin/env node
+/**
+ * generate-all-specs.cjs
+ *
+ * 独立脚本：扫描 dart/lib/specs/ 下所有 .dart 文件（含子目录），
+ * 解析每个文件中的 spec 变量名与 command name，生成 all_specs.dart。
+ *
+ * 与 ts-to-dart 转换器分离，仅负责生成「总入口」文件。
+ *
+ * 用法（在项目根目录）:
+ *   node tools/generate-all-specs.cjs
+ *
+ * 或在 tools 目录下:
+ *   node generate-all-specs.cjs
+ *
+ * 输出: dart/lib/specs/all_specs.dart
+ */
+
+const fs = require("fs");
+const path = require("path");
+
+const PROJECT_ROOT = path.resolve(__dirname, "..");
+const SPECS_DIR = path.join(PROJECT_ROOT, "dart", "lib", "specs");
+const ALL_SPECS_FILE = "all_specs.dart";
+const OUTPUT_PATH = path.join(SPECS_DIR, ALL_SPECS_FILE);
+
+// 匹配: final FigSpec xxxSpec = 或 const CompletionSpec xxxSpec =
+const SPEC_VAR_REGEX =
+  /(?:final|const)\s+(?:FigSpec|CompletionSpec)\s+(\w+)\s*=/;
+
+// 匹配第一个 name: '...' 或 name: "..."
+const NAME_REGEX = /name:\s*['"]([^'"]+)['"]/;
+
+/**
+ * 递归收集 specs 目录下所有 .dart 文件相对路径（不含 all_specs.dart）
+ * @param {string} dir - 当前目录绝对路径
+ * @param {string} baseDir - 基准目录（SPECS_DIR）
+ * @param {string[]} list - 收集到的相对路径列表
+ */
+function collectDartFiles(dir, baseDir, list) {
+  let entries;
+  try {
+    entries = fs.readdirSync(dir, { withFileTypes: true });
+  } catch (err) {
+    console.warn("Warning: cannot read dir " + dir + ": " + err.message);
+    return;
+  }
+  for (const e of entries) {
+    const full = path.join(dir, e.name);
+    const rel = path.relative(baseDir, full);
+    const relNormalized = rel.split(path.sep).join("/"); // 统一为 /
+
+    if (e.isDirectory()) {
+      collectDartFiles(full, baseDir, list);
+    } else if (e.isFile() && e.name.endsWith(".dart")) {
+      if (relNormalized === ALL_SPECS_FILE) continue;
+      list.push(relNormalized);
+    }
+  }
+}
+
+/**
+ * 从 Dart 文件内容中解析 spec 变量名和 command name
+ * @param {string} content
+ * @param {string} relPath - 用于 fallback 和报错
+ * @returns {{ specVar: string, commandName: string } | null}
+ */
+function parseSpecFile(content, relPath) {
+  const varMatch = content.match(SPEC_VAR_REGEX);
+  if (!varMatch) return null;
+  const specVar = varMatch[1];
+
+  const nameMatch = content.match(NAME_REGEX);
+  const commandName = nameMatch ? nameMatch[1] : deriveCommandNameFromPath(relPath);
+
+  return { specVar, commandName };
+}
+
+/**
+ * 无法从文件解析 name 时，根据相对路径推导 command name（简单启发式）
+ */
+function deriveCommandNameFromPath(relPath) {
+  const withoutExt = relPath.replace(/\.dart$/, "");
+  const last = withoutExt.split("/").pop() || "unknown";
+  return last;
+}
+
+/**
+ * 从 import 路径生成 Dart 合法的 prefix（用于 as prefix，避免同名 spec 冲突）
+ */
+function importPathToPrefix(importPath) {
+  const withoutExt = importPath.replace(/\.dart$/, "");
+  let s = withoutExt.replace(/[@/.-]+/g, "_").replace(/_+/g, "_").replace(/^_|_$/g, "");
+  if (!/^[a-zA-Z_]/.test(s)) s = "p_" + s;
+  return s.replace(/[^a-zA-Z0-9_]/g, "_") || "spec";
+}
+
+function main() {
+  if (!fs.existsSync(SPECS_DIR)) {
+    console.error("Specs directory not found: " + SPECS_DIR);
+    process.exit(1);
+  }
+
+  const dartFiles = [];
+  collectDartFiles(SPECS_DIR, SPECS_DIR, dartFiles);
+  dartFiles.sort();
+
+  const entries = [];
+  const skipped = [];
+  const errors = [];
+
+  for (const rel of dartFiles) {
+    const fullPath = path.join(SPECS_DIR, rel);
+    let content;
+    try {
+      content = fs.readFileSync(fullPath, "utf8");
+    } catch (err) {
+      errors.push(rel + ": " + err.message);
+      continue;
+    }
+
+    const parsed = parseSpecFile(content, rel);
+    if (!parsed) {
+      skipped.push(rel);
+      continue;
+    }
+
+    entries.push({
+      importPath: rel,
+      specVar: parsed.specVar,
+      commandName: parsed.commandName,
+    });
+  }
+
+  if (errors.length) {
+    console.error("Errors reading files:");
+    errors.forEach((e) => console.error("  " + e));
+  }
+  if (skipped.length) {
+    console.warn("Skipped (no spec variable found): " + skipped.length);
+    if (skipped.length <= 10) skipped.forEach((s) => console.warn("  " + s));
+    else console.warn("  (first 10) " + skipped.slice(0, 10).join(", "));
+  }
+
+  assignPrefixes(entries);
+  const dart = generateAllSpecsDart(entries);
+  fs.writeFileSync(OUTPUT_PATH, dart, "utf8");
+  console.log("Written: " + path.relative(PROJECT_ROOT, OUTPUT_PATH));
+  console.log("Total specs: " + entries.length);
+}
+
+/**
+ * 按 specVar 分组，同名者分配 prefix 以避免 ambiguous_import
+ */
+function assignPrefixes(entries) {
+  const byVar = new Map();
+  for (const e of entries) {
+    if (!byVar.has(e.specVar)) byVar.set(e.specVar, []);
+    byVar.get(e.specVar).push(e);
+  }
+  const usedPrefixes = new Set();
+  for (const [, list] of byVar) {
+    if (list.length === 1) {
+      list[0].prefix = null;
+      continue;
+    }
+    for (let i = 0; i < list.length; i++) {
+      const e = list[i];
+      let base = importPathToPrefix(e.importPath);
+      let prefix = base;
+      let n = 0;
+      while (usedPrefixes.has(prefix)) {
+        prefix = base + "_" + (++n);
+      }
+      usedPrefixes.add(prefix);
+      e.prefix = prefix;
+    }
+  }
+}
+
+/**
+ * 生成 all_specs.dart 内容
+ * @param {{ importPath: string, specVar: string, commandName: string, prefix?: string }[]} entries
+ */
+function generateAllSpecsDart(entries) {
+  const lines = [
+    "// Central import and registration for all specs.",
+    "// Dart does not support dynamic import, so every spec must be imported here.",
+    "// Generated by tools/generate-all-specs.cjs — do not edit by hand.",
+    "",
+    "import '../src/registry.dart';",
+  ];
+
+  for (const e of entries) {
+    if (e.prefix) {
+      lines.push("import '" + e.importPath + "' as " + e.prefix + ";");
+    } else {
+      lines.push("import '" + e.importPath + "';");
+    }
+  }
+
+  lines.push("");
+  lines.push(
+    "/// Register every spec. Called by [registerBuiltinSpecs] in autocomplete.dart."
+  );
+  lines.push("void registerAllSpecs() {");
+  for (const e of entries) {
+    const nameEscaped = e.commandName.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+    const ref = e.prefix ? e.prefix + "." + e.specVar : e.specVar;
+    lines.push("  registerSpec('" + nameEscaped + "', () => " + ref + ");");
+  }
+  lines.push("}");
+
+  return lines.join("\n") + "\n";
+}
+
+main();

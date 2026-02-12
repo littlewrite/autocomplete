@@ -10,7 +10,7 @@
 
 import 'dart:io';
 
-import '../lib/autocomplete.dart';
+import 'package:autocomplete/autocomplete.dart';
 
 Shell _parseShell(String name) {
   switch (name.toLowerCase()) {
@@ -51,7 +51,8 @@ void main(List<String> args) async {
   }
 
   if (cmd == null || cmd.isEmpty) {
-    print('Usage: dart run example/run_suggest.dart <command_line> [--shell bash]');
+    print(
+        'Usage: dart run example/run_suggest.dart <command_line> [--shell bash]');
     print('Example: dart run example/run_suggest.dart ls');
     print('         dart run example/run_suggest.dart "git sta" -s zsh');
     exit(1);
@@ -72,5 +73,6 @@ void main(List<String> args) async {
   for (final s in blob.suggestions) {
     print('${s.name}\t${s.description ?? ""}');
   }
-  print('(${blob.suggestions.length} suggestions, charactersToDrop: ${blob.charactersToDrop})');
+  print(
+      '(${blob.suggestions.length} suggestions, charactersToDrop: ${blob.charactersToDrop})');
 }
