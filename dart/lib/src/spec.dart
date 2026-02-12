@@ -512,6 +512,7 @@ class FigSpec {
     this.parserDirectives,
     this.requiresSubcommand,
     this.additionalSuggestions,
+    this.generateSpec,
   }) : args = _normalizeArgs(args);
 
   final String name;
@@ -540,6 +541,9 @@ class FigSpec {
 
   /// (string | Suggestion)[] in TS; appended below subcommand suggestions.
   final List<dynamic>? additionalSuggestions;
+
+  /// Dynamic spec (e.g. from TS generateSpec). Runtime may resolve to subcommands/options.
+  final dynamic generateSpec;
 
   Map<String, dynamic> toJson() => {
         'name': name,

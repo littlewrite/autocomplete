@@ -301,11 +301,41 @@ const FigSpec complexSpec = FigSpec(
 - TypeScript: `const spec: Fig.Spec = ...`
 - Dart: `const FigSpec spec = ...` (type on left side)
 
+## 🔖 TS_UNCONVERTED: 未自动转换的 TS 块（供人工/AI 处理）
+
+对含复杂类型（generators、函数、async）的文件，可使用 **注释回退**：能转的转成 Dart，不能转的保留为原 TS 并包在约定注释里，便于后续用 grep 或 AI 逐块处理。
+
+### 约定注释
+
+- **开始**: `// TS_UNCONVERTED_START` 或 `// TS_UNCONVERTED_START (label)`（如 `(generateSpec)`、`(gitGenerators)`）
+- **内容**: 原 TypeScript 源码，每行前加 `// `
+- **结束**: `// TS_UNCONVERTED_END`
+
+### 查找未转换块
+
+```bash
+# 列出所有未转换块及其行号
+grep -n "TS_UNCONVERTED_START\|TS_UNCONVERTED_END" dart/lib/specs/git.dart
+
+# 仅列出带 label 的块
+grep -n "TS_UNCONVERTED_START (" dart/lib/specs/git.dart
+```
+
+### 工作流建议
+
+1. 批量/自动转换：使用 `commentFallback` 或专用脚本（如 `node tools/convert-git-to-dart.cjs`）生成带 `TS_UNCONVERTED_*` 的 Dart。
+2. 后续由人工或 AI：用上述 grep 定位块，逐个把注释里的 TS 改成等效 Dart，删掉注释并补上真实实现。
+
+### 使用 commentFallback 的转换
+
+- 在调用转换引擎时传入 `{ commentFallback: true }`，则遇到函数/复杂类型不会抛错，而是输出 `// TS_UNCONVERTED_*` + Dart 占位（如 `null`）。
+- 示例：`convertTsToDart(tsFilePath, tsCode, { commentFallback: true })`（见 `tools/convert-git-to-dart.cjs`）。
+
 ## 🚀 Next Steps
 
 1. Use the converter tool: `cd tools && node ts-to-dart-converter.cjs`
 2. Review generated files for correctness
-3. Register new specs in `all_specs.dart`
+3. Register new specs: `node tools/generate-all-specs.cjs` (picks up new specs under `dart/lib/specs/`)
 4. Run `dart analyze` to check for errors (suggested: pipe through `grep` to avoid `info` noise)
 5. Test with your Dart application
 

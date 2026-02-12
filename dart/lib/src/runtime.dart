@@ -55,15 +55,24 @@ Future<List<Suggestion>> runTemplateSuggestions(FigArg? arg, String cwd) async {
   return raw.map((t) => Suggestion(name: t.name, allNames: [t.name], icon: iconForType(t.type), priority: t.priority, type: t.type)).toList();
 }
 
-/// Run generator (script + postProcess) if present. For now we only support template-based; script runs in Phase 3.
+/// Run generator (script + postProcess). Runs [gen.script] in [cwd], passes stdout to [gen.postProcess], returns suggestions.
 Future<List<Suggestion>> runGeneratorSuggestions(FigGenerator? gen, List<CommandToken> allTokens, String cwd) async {
   if (gen == null) return [];
-  if (gen.postProcess != null) {
-    // Script-based: would run Process.run(gen.script!) and pass stdout to postProcess.
-    // Phase 0/1: skip script generators; they are used in git etc.
+  if (gen.script == null || gen.script!.isEmpty || gen.postProcess == null) return [];
+  try {
+    final result = await Process.run(
+      gen.script!.first,
+      gen.script!.length > 1 ? gen.script!.sublist(1) : [],
+      workingDirectory: cwd,
+      runInShell: false,
+    );
+    final stdout = (result.stdout as String?) ?? '';
+    final tokens = allTokens.map((t) => t.token).toList();
+    final figSuggestions = gen.postProcess!(stdout, tokens);
+    return figSuggestions.map((s) => toSuggestion(s)).whereType<Suggestion>().toList();
+  } catch (_) {
     return [];
   }
-  return [];
 }
 
 /// Subcommand-driven recommendation: show subcommands, options, and arg suggestions (templates/generators).
@@ -90,6 +99,9 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
   if (argList.isNotEmpty) {
     final activeArg = argList.first;
     suggestions.addAll(await runTemplateSuggestions(activeArg, cwd));
+    for (final gen in activeArg.generatorsList) {
+      suggestions.addAll(await runGeneratorSuggestions(gen, allTokens, cwd));
+    }
     suggestions.addAll(filterSuggestions(activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
   }
   suggestions = removeDuplicates(sortByPriority(removeHidden(removeAccepted(suggestions, acceptedTokens), partialToken)));
@@ -114,6 +126,9 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   final allOptions = <FigOption>[...persistentOptions, ...(subcommand.options ?? [])];
   var suggestions = <Suggestion>[];
   suggestions.addAll(await runTemplateSuggestions(activeArg, cwd));
+  for (final gen in activeArg.generatorsList) {
+    suggestions.addAll(await runGeneratorSuggestions(gen, allTokens, cwd));
+  }
   suggestions.addAll(filterSuggestions(activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
   if (activeArg.isOptional || (activeArg.isVariadic && variadicArgBound)) {
     suggestions.addAll(filterSubcommandSuggestions(subcommand.subcommands, activeArg.filterStrategy, partial));

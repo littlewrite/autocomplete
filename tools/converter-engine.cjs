@@ -13,6 +13,7 @@ const ARG_ALLOWED_KEYS = new Set([
   "description",
   "template",
   "suggestions",
+  "generators",
   "isOptional",
   "isVariadic",
   "isDangerous",
@@ -31,6 +32,7 @@ const OPTION_ALLOWED_KEYS = new Set([
   "name",
   "description",
   "args",
+  "generators",
   "isRepeatable",
   "isPersistent",
   "isDangerous",
@@ -51,15 +53,32 @@ const SUBCOMMAND_ALLOWED_KEYS = new Set([
   "priority",
   "requiresSubcommand",
   "additionalSuggestions",
+  "generators",
+  "generateSpec",
+  "parserDirectives",
+]);
+const GENERATOR_ALLOWED_KEYS = new Set([
+  "script",
+  "scriptPath",
+  "template",
+  "postProcess",
+  "cache",
+  "getQueryTerm",
+  "trigger",
+  "splitOn",
+  "scriptTimeout",
 ]);
 
 /**
  * TypeScript Fig.Spec 转换器
  */
 class TsToDartConverter {
-  constructor(tsFilePath, tsCode) {
+  constructor(tsFilePath, tsCode, options = {}) {
     this.tsFilePath = tsFilePath;
     this.tsCode = tsCode;
+    this.options = options;
+    /** When true: do not throw on complex types; emit original TS as // TS_UNCONVERTED_* comments and null in Dart. */
+    this.commentFallback = !!options.commentFallback;
     this.imports = new Set();
     this.complexityWarnings = []; // 收集复杂类型警告
     this.hasComplexTypes = false; // 标记是否包含复杂类型
@@ -72,8 +91,8 @@ class TsToDartConverter {
     // 先检测是否包含复杂类型
     this.detectComplexity();
 
-    // 如果包含复杂类型，抛出错误
-    if (this.hasComplexTypes) {
+    // 如果包含复杂类型且未开启注释回退，抛出错误
+    if (this.hasComplexTypes && !this.commentFallback) {
       const error = new Error(
         "File contains complex types that cannot be auto-converted"
       );
@@ -94,6 +113,20 @@ class TsToDartConverter {
     dartCode += this.convertMainContent();
 
     return dartCode;
+  }
+
+  /**
+   * 将无法转换的 TS 源码格式化为 Dart 行注释块，便于后续 grep / AI 处理
+   * 约定: // TS_UNCONVERTED_START (label) ... // TS_UNCONVERTED_END
+   */
+  formatUnconvertedComment(rawValue, label = "") {
+    const prefix = label ? `// TS_UNCONVERTED_START (${label})\n` : "// TS_UNCONVERTED_START\n";
+    const safe = String(rawValue)
+      .replace(/\*\//g, "* /") // 避免块注释提前结束
+      .split("\n")
+      .map((line) => "// " + line)
+      .join("\n");
+    return prefix + safe + "\n// TS_UNCONVERTED_END";
   }
 
   /**
@@ -317,14 +350,15 @@ class TsToDartConverter {
       );
     }
 
-    // 过滤掉包含复杂类型的属性；Option 的 args 必须是对象/数组，不能是字符串
+    // 过滤掉包含复杂类型的属性（注释回退模式下保留并输出 TS 注释 + null）
     let validProperties = propsToUse.filter((prop) => {
       const convertedValue = this.convertValue(
         prop.value,
         indentLevel + 1,
         prop.key
       );
-      if (convertedValue.includes("/* TODO: Complex type */")) return false;
+      if (convertedValue && typeof convertedValue === "object" && convertedValue.__commentFallback) return true;
+      if (typeof convertedValue === "string" && convertedValue.includes("/* TODO: Complex type */")) return false;
       if (
         allowedKeys === OPTION_ALLOWED_KEYS &&
         this.cleanKey(prop.key) === "args"
@@ -346,10 +380,16 @@ class TsToDartConverter {
 
     validProperties.forEach((prop, index) => {
       const { key, value } = prop;
+      const convertedValue = this.convertValue(value, indentLevel + 1, key);
 
-      result += nextIndent;
-      result += `${this.toCamelCase(key)}: `;
-      result += this.convertValue(value, indentLevel + 1, key);
+      if (convertedValue && typeof convertedValue === "object" && convertedValue.__commentFallback) {
+        result += nextIndent + convertedValue.comment + "\n";
+        result += nextIndent + `${this.toCamelCase(key)}: ` + convertedValue.dart;
+      } else {
+        result += nextIndent;
+        result += `${this.toCamelCase(key)}: `;
+        result += convertedValue;
+      }
 
       if (index < validProperties.length - 1) {
         result += ",";
@@ -610,6 +650,12 @@ class TsToDartConverter {
       return value;
     }
 
+    // generators 引用: gitGenerators.xxx → gitGenerators['xxx']（便于后续实现 Map）
+    const gitGenMatch = value.match(/^gitGenerators\.([a-zA-Z_][a-zA-Z0-9_]*)$/);
+    if (gitGenMatch && (propertyName === "generators" || this.cleanKey(propertyName) === "generators")) {
+      return `gitGenerators['${gitGenMatch[1]}']`;
+    }
+
     // 数组（若 value 尾部落入外层对象的 "}" 会被 parseProperties 吃进，先剥掉再转，避免 template: ["filepaths"] 变成 ["filepaths"] } 少 ]）
     if (value.startsWith("[")) {
       value = value.replace(/\}\s*$/, "").trim();
@@ -655,6 +701,13 @@ class TsToDartConverter {
     }
 
     // 函数或其他复杂类型
+    if (this.commentFallback) {
+      return {
+        __commentFallback: true,
+        comment: this.formatUnconvertedComment(value, propertyName || this.cleanKey(propertyName)),
+        dart: "null",
+      };
+    }
     return "/* TODO: Complex type */";
   }
 
@@ -740,14 +793,15 @@ class TsToDartConverter {
     // args 数组元素：用 argsItem 避免每个元素被再包一层 []
     const childKey = propertyName === "args" ? "argsItem" : propertyName;
 
-    // 过滤掉复杂类型
+    // 过滤掉复杂类型（注释回退模式下保留并输出 TS 注释 + null）
     const validItems = items.filter((item) => {
       const converted = this.convertValue(
         item.trim(),
         indentLevel + 1,
         childKey
       );
-      return !converted.includes("/* TODO: Complex type */");
+      if (converted && typeof converted === "object" && converted.__commentFallback) return true;
+      return typeof converted !== "string" || !converted.includes("/* TODO: Complex type */");
     });
 
     // 如果所有元素都被过滤掉了，返回空数组
@@ -757,8 +811,14 @@ class TsToDartConverter {
 
     let result = "[\n";
     validItems.forEach((item, index) => {
-      result += nextIndent;
-      result += this.convertValue(item.trim(), indentLevel + 1, childKey);
+      const converted = this.convertValue(item.trim(), indentLevel + 1, childKey);
+      if (converted && typeof converted === "object" && converted.__commentFallback) {
+        result += nextIndent + converted.comment + "\n";
+        result += nextIndent + converted.dart;
+      } else {
+        result += nextIndent;
+        result += converted;
+      }
       if (index < validItems.length - 1) {
         result += ",";
       }
@@ -930,6 +990,17 @@ class TsToDartConverter {
       );
     }
 
+    // Generator 形对象（script/template/postProcess）→ Generator(...)，避免被转成 Record 语法
+    if (
+      (obj.includes("script:") || obj.includes("postProcess:") || (obj.includes("template:") && !obj.includes("subcommands:"))) &&
+      !obj.includes("subcommands:")
+    ) {
+      return (
+        "Generator" +
+        this.convertObject(obj, indentLevel, GENERATOR_ALLOWED_KEYS)
+      );
+    }
+
     // 提取 name 字段的值来辅助判断
     const nameMatch = obj.match(/name:\s*(\[|["'])/);
     let nameValue = "";
@@ -1020,9 +1091,12 @@ class TsToDartConverter {
 
 /**
  * 快速转换函数（供外部调用）
+ * @param {string} tsFilePath - 源 TS 文件路径
+ * @param {string} tsCode - 源 TS 源码
+ * @param {{ commentFallback?: boolean }} [options] - commentFallback: 复杂类型不抛错，用 // TS_UNCONVERTED_* 注释保留原 TS
  */
-function convertTsToDart(tsFilePath, tsCode) {
-  const converter = new TsToDartConverter(tsFilePath, tsCode);
+function convertTsToDart(tsFilePath, tsCode, options = {}) {
+  const converter = new TsToDartConverter(tsFilePath, tsCode, options);
   return converter.convert();
   // 不要捕获错误，让 isComplexFile 等属性传递到上层
 }
