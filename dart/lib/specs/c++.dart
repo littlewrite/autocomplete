@@ -1,11 +1,13 @@
-// Auto-generated from TypeScript source: c++.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
+// AI-generated completion spec for `c++` CLI
 
 import 'package:autocomplete/src/spec.dart';
+import 'clang++.dart';
 
 /// Completion spec for `c++` CLI
-final FigSpec cSpec = FigSpec(
+final FigSpec cppSpec = FigSpec(
   name: 'c++',
-  description: 'C++ compiler'
+  description: 'C++ compiler',
+  args: clangppSpec.args,
+  parserDirectives: clangppSpec.parserDirectives,
+  options: clangppSpec.options,
 );

@@ -1,4 +1,4 @@
-// Auto-generated from TypeScript source: clang.ts
+// AI-generated from TypeScript source: clang.ts
 // Generated at: 2026-02-12
 // WARNING: Manual changes may be overwritten!
 
@@ -174,6 +174,20 @@ final FigSpec clangSpec = FigSpec(
           name: '-cl-unsafe-math-optimizations',
           description:
               'OpenCL only. Allow unsafe floating-point optimizations. Also implies -cl-no-signed-zeros and -cl-mad-enable'),
+      Option(
+          name: '-std',
+          description: 'Language standard to compile for',
+          args: [
+            Arg(name: 'value', suggestions: [
+              ...stdCSuggestions,
+              ...stdCPPSuggestions,
+              ...stdOpenCLSuggestions,
+              ...stdOpenCLCPPSuggestions,
+              FigSuggestion(name: 'cuda', description: 'NVIDIA CUDA(tm)'),
+              FigSuggestion(name: 'hip', description: 'HIP'),
+              ...stdHLSLSuggestions
+            ])
+          ]),
       Option(
           name: '--config',
           description: 'Specifies configuration file',

@@ -1,34 +1,32 @@
-// Auto-generated from TypeScript source: clang++.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
+// AI-generated from TypeScript source: clang++.ts
 
 import 'package:autocomplete/src/spec.dart';
+import 'clang.dart';
 
 /// Completion spec for `clang++` CLI
-final FigSpec clangSpec = FigSpec(
+final FigSpec clangppSpec = FigSpec(
   name: 'clang++',
   description: 'Clang LLVM compiler for C++',
+  args: clangSpec.args,
+  parserDirectives: clangSpec.parserDirectives,
   options: [
-
+    ...(clangSpec.options ?? []).where((option) => option.name != '-std'),
     Option(
       name: '-std',
       description: 'Language standard to compile for',
       args: [
         Arg(
-        name: 'value',
-        suggestions: [
-
-          FigSuggestion(
-            name: 'cuda',
-            description: 'NVIDIA CUDA(tm)'
-          ),
-          FigSuggestion(
-            name: 'hip',
-            description: 'HIP'
-          )
-        ]
-      )
-      ]
-    )
-  ]
+          name: 'value',
+          suggestions: [
+            ...stdCPPSuggestions,
+            ...stdOpenCLCPPSuggestions,
+            FigSuggestion(name: 'cuda', description: 'NVIDIA CUDA(tm)'),
+            FigSuggestion(name: 'hip', description: 'HIP'),
+            ...stdHLSLSuggestions
+          ],
+        ),
+      ],
+      requiresSeparator: true,
+    ),
+  ],
 );

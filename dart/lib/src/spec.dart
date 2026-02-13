@@ -158,7 +158,7 @@ class FigGenerator {
   });
 
   /// Script command (e.g. ['git', 'branch']). TS also allows Function or ExecuteCommandInput.
-  final List<String>? script;
+  final dynamic script;
   final String? scriptPath;
 
   /// Template(s): "filepaths" | "folders" | "history" | "help" or list.
