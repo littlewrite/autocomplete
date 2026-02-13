@@ -9,6 +9,7 @@ final FigSpec npSpec = FigSpec(
   name: 'np',
   description: 'A better npm publish',
   options: [
+
     Option(
       name: '--any-branch',
       description: 'Allow publishing from any branch'

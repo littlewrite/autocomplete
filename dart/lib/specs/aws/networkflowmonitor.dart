@@ -9,10 +9,12 @@ final FigSpec networkflowmonitorSpec = FigSpec(
   name: 'networkflowmonitor',
   description: 'Network Flow Monitor is a feature of Amazon CloudWatch Network Monitoring that provides visibility into the performance of network flows for your Amazon Web Services workloads, between instances in subnets, as well as to and from Amazon Web Services. Lightweight agents that you install on the instances capture performance metrics for your network flows, such as packet loss and latency, and send them to the Network Flow Monitor backend. Then, you can view and analyze metrics from the top contributors for each metric type, to help troubleshoot issues. In addition, when you create a monitor, Network Flow Monitor provides a network health indicator (NHI) that informs you whether there were Amazon Web Services network issues for one or more of the network flows tracked by a monitor, during a time period that you choose. By using this value, you can independently determine if the Amazon Web Services network is impacting your workload during a specific time frame, to help you focus troubleshooting efforts. To learn more about Network Flow Monitor, see the Network Flow Monitor User Guide in the Amazon CloudWatch User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-monitor',
       description: 'Create a monitor for specific network flows between local and remote resources, so that you can monitor network performance for one or several of your workloads. For each monitor, Network Flow Monitor publishes detailed end-to-end performance metrics and a network health indicators (NHI) that informs you whether there were Amazon Web Services network issues for one or more of the network flows tracked by a monitor, during a time period that you choose',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -83,6 +85,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'create-scope',
       description: 'Create a scope of resources that you want to be available for Network Flow Monitor to generate metrics for, when you have active agents on those resources sending metrics reports to the Network Flow Monitor backend. This call returns a scope ID to identify the scope. When you create a scope, you enable permissions for Network Flow Monitor. The scope is set to the resources for the Amazon Web Services that enables the feature',
       options: [
+
         Option(
           name: '--targets',
           description: 'The targets to define the scope to be monitored. Currently, a target is an Amazon Web Services account',
@@ -138,6 +142,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'delete-monitor',
       description: 'Deletes a monitor in Network Flow Monitor',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor to delete',
@@ -175,6 +181,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'delete-scope',
       description: 'Deletes a scope that has been defined',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account',
@@ -212,6 +220,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'get-monitor',
       description: 'Gets information about a monitor in Network Flow Monitor based on a monitor name. The information returned includes the Amazon Resource Name (ARN), create time, modified time, resources included in the monitor, and status information',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -249,6 +259,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'get-query-results-monitor-top-contributors',
       description: 'Return the data for a query with the Network Flow Monitor query interface. You specify the query that you want to return results for by providing a query ID and a monitor name. This query returns the top contributors for a specific monitor. Create a query ID for this call by calling the corresponding API call to start the query, StartQueryMonitorTopContributors. Use the scope ID that was returned for your account by CreateScope. Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -340,6 +352,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -352,6 +365,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'get-query-results-workload-insights-top-contributors',
       description: 'Return the data for a query with the Network Flow Monitor query interface. You specify the query that you want to return results for by providing a query ID and a monitor name. This query returns the top contributors for a specific monitor. Create a query ID for this call by calling the corresponding API call to start the query, StartQueryWorkloadInsightsTopContributors. Use the scope ID that was returned for your account by CreateScope. Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account',
@@ -431,6 +445,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -443,6 +458,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'get-query-results-workload-insights-top-contributors-data',
       description: 'Return the data for a query with the Network Flow Monitor query interface. Specify the query that you want to return results for by providing a query ID and a scope ID. This query returns data for the top contributors for workload insights. Workload insights provide a high level view of network flow performance data collected by agents for a scope. Create a query ID for this call by calling the corresponding API call to start the query, StartQueryWorkloadInsightsTopContributorsData. Use the scope ID that was returned for your account by CreateScope. Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor. The top contributor network flows overall for a specific metric type, for example, the number of retransmissions',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account',
@@ -522,6 +538,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -534,6 +551,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'get-query-status-monitor-top-contributors',
       description: 'Returns the current status of a query for the Network Flow Monitor query interface, for a specified query ID and monitor. This call returns the query status for the top contributors for a monitor. When you start a query, use this call to check the status of the query to make sure that it has has SUCCEEDED before you review the results. Use the same query ID that you used for the corresponding API call to start the query, StartQueryMonitorTopContributors. When you run a query, use this call to check the status of the query to make sure that the query has SUCCEEDED before you review the results',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -568,6 +586,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -580,6 +599,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'get-query-status-workload-insights-top-contributors',
       description: 'Return the data for a query with the Network Flow Monitor query interface. Specify the query that you want to return results for by providing a query ID and a monitor name. This query returns the top contributors for workload insights. When you start a query, use this call to check the status of the query to make sure that it has has SUCCEEDED before you review the results. Use the same query ID that you used for the corresponding API call to start the query, StartQueryWorkloadInsightsTopContributors. Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account',
@@ -614,6 +634,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -626,6 +647,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'get-query-status-workload-insights-top-contributors-data',
       description: 'Returns the current status of a query for the Network Flow Monitor query interface, for a specified query ID and monitor. This call returns the query status for the top contributors data for workload insights. When you start a query, use this call to check the status of the query to make sure that it has has SUCCEEDED before you review the results. Use the same query ID that you used for the corresponding API call to start the query, StartQueryWorkloadInsightsTopContributorsData. Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor. The top contributor network flows overall for a specific metric type, for example, the number of retransmissions',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account. A scope ID is returned from a CreateScope API call',
@@ -660,6 +682,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -672,6 +695,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'get-scope',
       description: 'Gets information about a scope, including the name, status, tags, and target details. The scope in Network Flow Monitor is an account',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account. A scope ID is returned from a CreateScope API call',
@@ -697,6 +721,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -709,6 +734,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'list-monitors',
       description: 'List all monitors in an account. Optionally, you can list only monitors that have a specific status, by using the STATUS parameter',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results. You receive this token from a previous call',
@@ -779,6 +805,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -791,6 +818,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'list-scopes',
       description: 'List all the scopes for an account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results. You receive this token from a previous call',
@@ -852,6 +880,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -864,6 +893,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns all the tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -889,6 +919,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -901,6 +932,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'start-query-monitor-top-contributors',
       description: 'Start a query to return the data with the Network Flow Monitor query interface. Specify the query that you want to return results for by providing a query ID and a monitor name. This query returns the top contributors for a specific monitor. Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -971,6 +1003,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -983,6 +1016,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'start-query-workload-insights-top-contributors',
       description: 'Start a query to return the data with the Network Flow Monitor query interface. Specify the query that you want to start by providing a query ID and a monitor name. This query returns the top contributors for a specific monitor. Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account. A scope ID is returned from a CreateScope API call',
@@ -1053,6 +1087,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1065,6 +1100,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'start-query-workload-insights-top-contributors-data',
       description: 'Return the data for a query with the Network Flow Monitor query interface. Specify the query that you want to return results for by providing a query ID and a scope ID. This query returns data for the top contributors for workload insights. Workload insights provide a high level view of network flow performance data collected by agents for a scope. A query ID is returned from an API call to start a query of a specific type; for example  Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor. The top contributor network flows overall for a specific metric type, for example, the number of retransmissions',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account',
@@ -1126,6 +1162,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1138,6 +1175,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'stop-query-monitor-top-contributors',
       description: 'Stop a query with the Network Flow Monitor query interface. Specify the query that you want to stop by providing a query ID and a monitor name. This query returns the top contributors for a specific monitor. Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -1172,6 +1210,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1184,6 +1223,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'stop-query-workload-insights-top-contributors',
       description: 'Stop a query with the Network Flow Monitor query interface. Specify the query that you want to stop by providing a query ID and a monitor name. This query returns the top contributors for a specific monitor. Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account',
@@ -1218,6 +1258,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1230,6 +1271,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'stop-query-workload-insights-top-contributors-data',
       description: 'Return the data for a query with the Network Flow Monitor query interface. Specify the query that you want to return results for by providing a query ID and a scope ID. This query returns data for the top contributors for workload insights. Workload insights provide a high level view of network flow performance data collected by agents for a scope. Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor. The top contributor network flows overall for a specific metric type, for example, the number of retransmissions',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account',
@@ -1264,6 +1306,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1276,6 +1319,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a tag to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1310,6 +1354,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1322,6 +1367,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1356,6 +1402,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1368,6 +1415,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'update-monitor',
       description: 'Update a monitor to add or remove local or remote resources',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -1438,6 +1486,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1450,6 +1499,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
       name: 'update-scope',
       description: 'Update a scope to add or remove resources that you want to be available for Network Flow Monitor to generate metrics for, when you have active agents on those resources sending metrics reports to the Network Flow Monitor backend',
       options: [
+
         Option(
           name: '--scope-id',
           description: 'The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account',
@@ -1493,6 +1543,7 @@ final FigSpec networkflowmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec iotfleetwiseSpec = FigSpec(
   name: 'iotfleetwise',
   description: 'Amazon Web Services IoT FleetWise is a fully managed service that you can use to collect, model, and transfer vehicle data to the Amazon Web Services cloud at scale. With Amazon Web Services IoT FleetWise, you can standardize all of your vehicle data models, independent of the in-vehicle communication architecture, and define data collection rules to transfer only high-value data to the cloud.  For more information, see What is Amazon Web Services IoT FleetWise? in the Amazon Web Services IoT FleetWise Developer Guide.  Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see Amazon Web Services Region and feature availability in the Amazon Web Services IoT FleetWise Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'associate-vehicle-fleet',
       description: 'Adds, or associates, a vehicle with a fleet',
       options: [
+
         Option(
           name: '--vehicle-name',
           description: 'The unique ID of the vehicle to associate with the fleet',
@@ -47,6 +49,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'batch-create-vehicle',
       description: 'Creates a group, or batch, of vehicles.    You must specify a decoder manifest and a vehicle model (model manifest) for each vehicle.   For more information, see Create multiple vehicles (AWS CLI) in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--vehicles',
           description: 'A list of information about each vehicle to create. For more information, see the API data type',
@@ -84,6 +88,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'batch-update-vehicle',
       description: 'Updates a group, or batch, of vehicles.   You must specify a decoder manifest and a vehicle model (model manifest) for each vehicle.   For more information, see Update multiple vehicles (AWS CLI) in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--vehicles',
           description: 'A list of information about the vehicles to update. For more information, see the API data type',
@@ -121,6 +127,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -133,6 +140,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'create-campaign',
       description: 'Creates an orchestration of data collection rules. The Amazon Web Services IoT FleetWise Edge Agent software running in vehicles uses campaigns to decide how to collect and transfer data to the cloud. You create campaigns in the cloud. After you or your team approve campaigns, Amazon Web Services IoT FleetWise automatically deploys them to vehicles.  For more information, see Collect and transfer data with campaigns in the Amazon Web Services IoT FleetWise Developer Guide.  Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see Amazon Web Services Region and feature availability in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the campaign to create',
@@ -311,6 +319,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -323,6 +332,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'create-decoder-manifest',
       description: 'Creates the decoder manifest associated with a model manifest. To create a decoder manifest, the following must be true:   Every signal decoder has a unique name.   Each signal decoder is associated with a network interface.   Each network interface has a unique ID.   The signal decoders are specified in the model manifest',
       options: [
+
         Option(
           name: '--name',
           description: 'The unique name of the decoder manifest to create',
@@ -402,6 +412,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -414,6 +425,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'create-fleet',
       description: 'Creates a fleet that represents a group of vehicles.   You must create both a signal catalog and vehicles before you can create a fleet.   For more information, see Fleets in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--fleet-id',
           description: 'The unique ID of the fleet to create',
@@ -466,6 +478,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -478,6 +491,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'create-model-manifest',
       description: 'Creates a vehicle model (model manifest) that specifies signals (attributes, branches, sensors, and actuators).  For more information, see Vehicle models in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the vehicle model to create',
@@ -539,6 +553,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -551,6 +566,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'create-signal-catalog',
       description: 'Creates a collection of standardized signals that can be reused to create vehicle models',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the signal catalog to create',
@@ -603,6 +619,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -615,6 +632,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'create-state-template',
       description: 'Creates a state template. State templates contain state properties, which are signals that belong to a signal catalog that is synchronized between the Amazon Web Services IoT FleetWise Edge and the Amazon Web Services Cloud.  Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see Amazon Web Services Region and feature availability in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the state template',
@@ -694,6 +712,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -706,6 +725,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'create-vehicle',
       description: 'Creates a vehicle, which is an instance of a vehicle model (model manifest). Vehicles created from the same vehicle model consist of the same signals inherited from the vehicle model.   If you have an existing Amazon Web Services IoT thing, you can use Amazon Web Services IoT FleetWise to create a vehicle and collect data from your thing.   For more information, see Create a vehicle (AWS CLI) in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--vehicle-name',
           description: 'The unique ID of the vehicle to create',
@@ -785,6 +805,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -797,6 +818,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'delete-campaign',
       description: 'Deletes a data collection campaign. Deleting a campaign suspends all data collection and removes it from any vehicles',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the campaign to delete',
@@ -822,6 +844,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -834,6 +857,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'delete-decoder-manifest',
       description: 'Deletes a decoder manifest. You can\'t delete a decoder manifest if it has vehicles associated with it',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the decoder manifest to delete',
@@ -859,6 +883,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -871,6 +896,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'delete-fleet',
       description: 'Deletes a fleet. Before you delete a fleet, all vehicles must be dissociated from the fleet. For more information, see Delete a fleet (AWS CLI) in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--fleet-id',
           description: 'The ID of the fleet to delete',
@@ -896,6 +922,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -908,6 +935,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'delete-model-manifest',
       description: 'Deletes a vehicle model (model manifest)',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the model manifest to delete',
@@ -933,6 +961,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -945,6 +974,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'delete-signal-catalog',
       description: 'Deletes a signal catalog',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the signal catalog to delete',
@@ -970,6 +1000,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -982,6 +1013,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'delete-state-template',
       description: 'Deletes a state template',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A unique, service-generated identifier',
@@ -1007,6 +1039,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1019,6 +1052,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'delete-vehicle',
       description: 'Deletes a vehicle and removes it from any campaigns',
       options: [
+
         Option(
           name: '--vehicle-name',
           description: 'The ID of the vehicle to delete',
@@ -1044,6 +1078,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1056,6 +1091,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'disassociate-vehicle-fleet',
       description: 'Removes, or disassociates, a vehicle from a fleet. Disassociating a vehicle from a fleet doesn\'t delete the vehicle',
       options: [
+
         Option(
           name: '--vehicle-name',
           description: 'The unique ID of the vehicle to disassociate from the fleet',
@@ -1090,6 +1126,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1102,6 +1139,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-campaign',
       description: 'Retrieves information about a campaign.   Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see Amazon Web Services Region and feature availability in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the campaign to retrieve information about',
@@ -1127,6 +1165,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1139,6 +1178,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-decoder-manifest',
       description: 'Retrieves information about a created decoder manifest',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the decoder manifest to retrieve information about',
@@ -1164,6 +1204,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1176,6 +1217,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-encryption-configuration',
       description: 'Retrieves the encryption configuration for resources and data in Amazon Web Services IoT FleetWise',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1192,6 +1234,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1204,6 +1247,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-fleet',
       description: 'Retrieves information about a fleet',
       options: [
+
         Option(
           name: '--fleet-id',
           description: 'The ID of the fleet to retrieve information about',
@@ -1229,6 +1273,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1241,6 +1286,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-logging-options',
       description: 'Retrieves the logging options',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1257,6 +1303,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1269,6 +1316,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-model-manifest',
       description: 'Retrieves information about a vehicle model (model manifest)',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the vehicle model to retrieve information about',
@@ -1294,6 +1342,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1306,6 +1355,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-register-account-status',
       description: 'Retrieves information about the status of registering your Amazon Web Services account, IAM, and Amazon Timestream resources so that Amazon Web Services IoT FleetWise can transfer your vehicle data to the Amazon Web Services Cloud.  For more information, including step-by-step procedures, see Setting up Amazon Web Services IoT FleetWise.   This API operation doesn\'t require input parameters',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1322,6 +1372,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1334,6 +1385,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-signal-catalog',
       description: 'Retrieves information about a signal catalog',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the signal catalog to retrieve information about',
@@ -1359,6 +1411,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1371,6 +1424,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-state-template',
       description: 'Retrieves information about a state template.  Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see Amazon Web Services Region and feature availability in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A unique, service-generated identifier',
@@ -1396,6 +1450,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1408,6 +1463,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-vehicle',
       description: 'Retrieves information about a vehicle',
       options: [
+
         Option(
           name: '--vehicle-name',
           description: 'The ID of the vehicle to retrieve information about',
@@ -1433,6 +1489,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1445,6 +1502,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'get-vehicle-status',
       description: 'Retrieves information about the status of campaigns, decoder manifests, or state templates associated with a vehicle',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A pagination token for the next set of results. If the results of a search are large, only a portion of the results are returned, and a nextToken pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. This parameter is only supported for resources of type CAMPAIGN',
@@ -1515,6 +1573,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1527,6 +1586,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'import-decoder-manifest',
       description: 'Creates a decoder manifest using your existing CAN DBC file from your local device.  The CAN signal name must be unique and not repeated across CAN message definitions in a .dbc file',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the decoder manifest to import',
@@ -1561,6 +1621,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1573,6 +1634,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'import-signal-catalog',
       description: 'Creates a signal catalog using your existing VSS formatted content from your local device',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the signal catalog to import',
@@ -1625,6 +1687,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1637,6 +1700,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-campaigns',
       description: 'Lists information about created campaigns.   This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A pagination token for the next set of results. If the results of a search are large, only a portion of the results are returned, and a nextToken pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value',
@@ -1707,6 +1771,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1719,6 +1784,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-decoder-manifest-network-interfaces',
       description: 'Lists the network interfaces specified in a decoder manifest.   This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the decoder manifest to list information about',
@@ -1789,6 +1855,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1801,6 +1868,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-decoder-manifest-signals',
       description: 'A list of information about signal decoders specified in a decoder manifest.   This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the decoder manifest to list information about',
@@ -1871,6 +1939,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1883,6 +1952,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-decoder-manifests',
       description: 'Lists decoder manifests.   This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--model-manifest-arn',
           description: 'The Amazon Resource Name (ARN) of a vehicle model (model manifest) associated with the decoder manifest',
@@ -1953,6 +2023,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1965,6 +2036,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-fleets',
       description: 'Retrieves information for each created fleet in an Amazon Web Services account.   This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A pagination token for the next set of results. If the results of a search are large, only a portion of the results are returned, and a nextToken pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value',
@@ -2026,6 +2098,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2038,6 +2111,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-fleets-for-vehicle',
       description: 'Retrieves a list of IDs for all fleets that the vehicle is associated with.  This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--vehicle-name',
           description: 'The ID of the vehicle to retrieve information about',
@@ -2108,6 +2182,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2120,6 +2195,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-model-manifest-nodes',
       description: 'Lists information about nodes specified in a vehicle model (model manifest).   This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the vehicle model to list information about',
@@ -2190,6 +2266,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2202,6 +2279,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-model-manifests',
       description: 'Retrieves a list of vehicle models (model manifests).   This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--signal-catalog-arn',
           description: 'The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned',
@@ -2272,6 +2350,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2284,6 +2363,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-signal-catalog-nodes',
       description: 'Lists of information about the signals (nodes) specified in a signal catalog.   This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the signal catalog to list information about',
@@ -2363,6 +2443,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2375,6 +2456,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-signal-catalogs',
       description: 'Lists all the created signal catalogs in an Amazon Web Services account.  You can use to list information about each signal (node) specified in a signal catalog.  This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A pagination token for the next set of results. If the results of a search are large, only a portion of the results are returned, and a nextToken pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value',
@@ -2436,6 +2518,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2448,6 +2531,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-state-templates',
       description: 'Lists information about created state templates.  Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see Amazon Web Services Region and feature availability in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to retrieve the next set of results, or null if there are no more results',
@@ -2509,6 +2593,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2521,6 +2606,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags (metadata) you have assigned to the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -2546,6 +2632,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2558,6 +2645,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-vehicles',
       description: 'Retrieves a list of summaries of created vehicles.   This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--model-manifest-arn',
           description: 'The Amazon Resource Name (ARN) of a vehicle model (model manifest). You can use this optional parameter to list only the vehicles created from a certain vehicle model',
@@ -2646,6 +2734,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2658,6 +2747,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'list-vehicles-in-fleet',
       description: 'Retrieves a list of summaries of all vehicles associated with a fleet.   This API operation uses pagination. Specify the nextToken parameter in the request to return more results',
       options: [
+
         Option(
           name: '--fleet-id',
           description: 'The ID of a fleet',
@@ -2728,6 +2818,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2740,6 +2831,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'put-encryption-configuration',
       description: 'Creates or updates the encryption configuration. Amazon Web Services IoT FleetWise can encrypt your data and resources using an Amazon Web Services managed key. Or, you can use a KMS key that you own and manage. For more information, see Data encryption in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--kms-key-id',
           description: 'The ID of the KMS key that is used for encryption',
@@ -2774,6 +2866,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2786,6 +2879,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'put-logging-options',
       description: 'Creates or updates the logging option',
       options: [
+
         Option(
           name: '--cloud-watch-log-delivery',
           description: 'Creates or updates the log delivery option to Amazon CloudWatch Logs',
@@ -2811,6 +2905,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2823,6 +2918,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'register-account',
       description: 'This API operation contains deprecated parameters. Register your account again without the Timestream resources parameter so that Amazon Web Services IoT FleetWise can remove the Timestream metadata stored. You should then pass the data destination into the CreateCampaign API operation. You must delete any existing campaigns that include an empty data destination before you register your account again. For more information, see the DeleteCampaign API operation. If you want to delete the Timestream inline policy from the service-linked role, such as to mitigate an overly permissive policy, you must first delete any existing campaigns. Then delete the service-linked role and register your account again to enable CloudWatch metrics. For more information, see DeleteServiceLinkedRole in the Identity and Access Management API Reference.  Registers your Amazon Web Services account, IAM, and Amazon Timestream resources so Amazon Web Services IoT FleetWise can transfer your vehicle data to the Amazon Web Services Cloud. For more information, including step-by-step procedures, see Setting up Amazon Web Services IoT FleetWise.   An Amazon Web Services account is not the same thing as a "user." An Amazon Web Services user is an identity that you create using Identity and Access Management (IAM) and takes the form of either an IAM user or an IAM role, both with credentials. A single Amazon Web Services account can, and typically does, contain many users and roles',
       options: [
+
         Option(
           name: '--timestream-resources',
           description: 'The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to',
@@ -2857,6 +2953,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2869,6 +2966,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -2903,6 +3001,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2915,6 +3014,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the given tags (metadata) from the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -2949,6 +3049,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2961,6 +3062,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'update-campaign',
       description: 'Updates a campaign',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the campaign to update',
@@ -3013,6 +3115,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3025,6 +3128,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'update-decoder-manifest',
       description: 'Updates a decoder manifest. A decoder manifest can only be updated when the status is DRAFT. Only ACTIVE decoder manifests can be associated with vehicles',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the decoder manifest to update',
@@ -3131,6 +3235,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3143,6 +3248,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'update-fleet',
       description: 'Updates the description of an existing fleet',
       options: [
+
         Option(
           name: '--fleet-id',
           description: 'The ID of the fleet to update',
@@ -3177,6 +3283,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3189,6 +3296,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'update-model-manifest',
       description: 'Updates a vehicle model (model manifest). If created vehicles are associated with a vehicle model, it can\'t be updated',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the vehicle model to update',
@@ -3250,6 +3358,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3262,6 +3371,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'update-signal-catalog',
       description: 'Updates a signal catalog',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the signal catalog to update',
@@ -3323,6 +3433,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3335,6 +3446,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'update-state-template',
       description: 'Updates a state template.  Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see Amazon Web Services Region and feature availability in the Amazon Web Services IoT FleetWise Developer Guide',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A unique, service-generated identifier',
@@ -3405,6 +3517,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3417,6 +3530,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
       name: 'update-vehicle',
       description: 'Updates a vehicle',
       options: [
+
         Option(
           name: '--vehicle-name',
           description: 'The unique ID of the vehicle to update',
@@ -3496,6 +3610,7 @@ final FigSpec iotfleetwiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

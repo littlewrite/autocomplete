@@ -11,10 +11,14 @@ final FigSpec githubSpec = FigSpec(
   args: [
     Arg(
     name: 'path',
-    isOptional: true
+    isOptional: true,
+    generators: Generator(
+      template: 'folder'
+    )
   )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Show the help page for a command',
@@ -23,6 +27,7 @@ final FigSpec githubSpec = FigSpec(
         name: 'command',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'clone'),
           FigSuggestion(name: 'open'),
           FigSuggestion(name: 'help')
@@ -32,6 +37,7 @@ final FigSpec githubSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'clone',
       description: 'Clone a repository',
@@ -39,6 +45,7 @@ final FigSpec githubSpec = FigSpec(
         Arg(
         name: 'url|slug',
         suggestions: [
+
           FigSuggestion(
             name: 'https://github.com/',
             icon: 'https://github.com/fluidicon.png'
@@ -55,6 +62,7 @@ final FigSpec githubSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--branch', '-b'],
           description: 'The branch to checkout after cloning',
@@ -72,7 +80,10 @@ final FigSpec githubSpec = FigSpec(
       args: [
         Arg(
         name: 'path',
-        isOptional: true
+        isOptional: true,
+        generators: Generator(
+          template: 'folder'
+        )
       )
       ]
     ),
@@ -84,6 +95,7 @@ final FigSpec githubSpec = FigSpec(
         name: 'command',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'clone'),
           FigSuggestion(name: 'open'),
           FigSuggestion(name: 'help')

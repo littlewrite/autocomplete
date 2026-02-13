@@ -9,6 +9,7 @@ final FigSpec lddSpec = FigSpec(
   name: 'ldd',
   description: 'Print shared library dependencies',
   options: [
+
     Option(
       name: '--help',
       description: 'Show help for ldd'

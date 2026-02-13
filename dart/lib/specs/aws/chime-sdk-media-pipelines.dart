@@ -9,10 +9,12 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
   name: 'chime-sdk-media-pipelines',
   description: 'The Amazon Chime SDK media pipeline APIs in this section allow software developers to create Amazon Chime SDK media pipelines that capture, concatenate, or stream your Amazon Chime SDK meetings. For more information about media pipelines, see Amazon Chime SDK media pipelines',
   subcommands: [
+
     Subcommand(
       name: 'create-media-capture-pipeline',
       description: 'Creates a media pipeline',
       options: [
+
         Option(
           name: '--source-type',
           description: 'Source type from which the media artifacts are captured. A Chime SDK Meeting is the only supported source',
@@ -110,6 +112,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -122,6 +125,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'create-media-concatenation-pipeline',
       description: 'Creates a media concatenation pipeline',
       options: [
+
         Option(
           name: '--sources',
           description: 'An object that specifies the sources for the media concatenation pipeline',
@@ -174,6 +178,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -186,6 +191,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'create-media-insights-pipeline',
       description: 'Creates a media insights pipeline',
       options: [
+
         Option(
           name: '--media-insights-pipeline-configuration-arn',
           description: 'The ARN of the pipeline\'s configuration',
@@ -265,6 +271,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -277,6 +284,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'create-media-insights-pipeline-configuration',
       description: 'A structure that contains the static configurations for a media insights pipeline',
       options: [
+
         Option(
           name: '--media-insights-pipeline-configuration-name',
           description: 'The name of the media insights pipeline configuration',
@@ -347,6 +355,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -359,6 +368,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'create-media-live-connector-pipeline',
       description: 'Creates a media live connector pipeline in an Amazon Chime SDK meeting',
       options: [
+
         Option(
           name: '--sources',
           description: 'The media live connector pipeline\'s data sources',
@@ -411,6 +421,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -423,6 +434,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'create-media-pipeline-kinesis-video-stream-pool',
       description: 'Creates an Amazon Kinesis Video Stream pool for use with media stream pipelines.  If a meeting uses an opt-in Region as its MediaRegion, the KVS stream must be in that same Region. For example, if a meeting uses the af-south-1 Region, the KVS stream must also be in af-south-1. However, if the meeting uses a Region that AWS turns on by default, the KVS stream can be in any available Region, including an opt-in Region. For example, if the meeting uses ca-central-1, the KVS stream can be in eu-west-2, us-east-1, af-south-1, or any other Region that the Amazon Chime SDK supports. To learn which AWS Region a meeting uses, call the GetMeeting API and use the MediaRegion parameter from the response. For more information about opt-in Regions, refer to Available Regions in the Amazon Chime SDK Developer Guide, and Specify which AWS Regions your account can use, in the AWS Account Management Reference Guide',
       options: [
+
         Option(
           name: '--stream-configuration',
           description: 'The configuration settings for the stream',
@@ -475,6 +487,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -487,6 +500,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'create-media-stream-pipeline',
       description: 'Creates a streaming media pipeline',
       options: [
+
         Option(
           name: '--sources',
           description: 'The data sources for the media pipeline',
@@ -539,6 +553,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -551,6 +566,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'delete-media-capture-pipeline',
       description: 'Deletes the media pipeline',
       options: [
+
         Option(
           name: '--media-pipeline-id',
           description: 'The ID of the media pipeline being deleted',
@@ -576,6 +592,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -588,6 +605,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'delete-media-insights-pipeline-configuration',
       description: 'Deletes the specified configuration settings',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration',
@@ -613,6 +631,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -625,6 +644,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'delete-media-pipeline',
       description: 'Deletes the media pipeline',
       options: [
+
         Option(
           name: '--media-pipeline-id',
           description: 'The ID of the media pipeline to delete',
@@ -650,6 +670,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -662,6 +683,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'delete-media-pipeline-kinesis-video-stream-pool',
       description: 'Deletes an Amazon Kinesis Video Stream pool',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the requested resource. Valid values include the name and ARN of the media pipeline Kinesis Video Stream pool',
@@ -687,6 +709,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -699,6 +722,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'get-media-capture-pipeline',
       description: 'Gets an existing media pipeline',
       options: [
+
         Option(
           name: '--media-pipeline-id',
           description: 'The ID of the pipeline that you want to get',
@@ -724,6 +748,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -736,6 +761,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'get-media-insights-pipeline-configuration',
       description: 'Gets the configuration settings for a media insights pipeline',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration',
@@ -761,6 +787,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -773,6 +800,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'get-media-pipeline',
       description: 'Gets an existing media pipeline',
       options: [
+
         Option(
           name: '--media-pipeline-id',
           description: 'The ID of the pipeline that you want to get',
@@ -798,6 +826,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -810,6 +839,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'get-media-pipeline-kinesis-video-stream-pool',
       description: 'Gets an Kinesis video stream pool',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the requested resource. Valid values include the name and ARN of the media pipeline Kinesis Video Stream pool',
@@ -835,6 +865,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -847,6 +878,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'get-speaker-search-task',
       description: 'Retrieves the details of the specified speaker search task',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline',
@@ -881,6 +913,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -893,6 +926,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'get-voice-tone-analysis-task',
       description: 'Retrieves the details of a voice tone analysis task',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline',
@@ -927,6 +961,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -939,6 +974,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'list-media-capture-pipelines',
       description: 'Returns a list of media pipelines',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to retrieve the next page of results',
@@ -973,6 +1009,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -985,6 +1022,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'list-media-insights-pipeline-configurations',
       description: 'Lists the available media insights pipeline configurations',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to return the next page of results',
@@ -1019,6 +1057,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1031,6 +1070,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'list-media-pipeline-kinesis-video-stream-pools',
       description: 'Lists the video stream pools in the media pipeline',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to return the next page of results',
@@ -1065,6 +1105,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1077,6 +1118,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'list-media-pipelines',
       description: 'Returns a list of media pipelines',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to retrieve the next page of results',
@@ -1111,6 +1153,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1123,6 +1166,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags available for a media pipeline',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline\'s region, resource ID, and pipeline ID',
@@ -1148,6 +1192,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1160,6 +1205,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'start-speaker-search-task',
       description: 'Starts a speaker search task.  Before starting any speaker search tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the AWS service terms for the Amazon Chime SDK',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline',
@@ -1212,6 +1258,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1224,6 +1271,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'start-voice-tone-analysis-task',
       description: 'Starts a voice tone analysis task. For more information about voice tone analysis, see Using Amazon Chime SDK voice analytics in the Amazon Chime SDK Developer Guide.  Before starting any voice tone analysis tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the AWS service terms for the Amazon Chime SDK',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline',
@@ -1276,6 +1324,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1288,6 +1337,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'stop-speaker-search-task',
       description: 'Stops a speaker search task',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline',
@@ -1322,6 +1372,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1334,6 +1385,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'stop-voice-tone-analysis-task',
       description: 'Stops a voice tone analysis task',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline',
@@ -1368,6 +1420,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1380,6 +1433,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'tag-resource',
       description: 'The ARN of the media pipeline that you want to tag. Consists of the pipeline\'s endpoint region, resource ID, and pipeline ID',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline\'s endpoint region, resource ID, and pipeline ID',
@@ -1414,6 +1468,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1426,6 +1481,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes any tags from a media pipeline',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the pipeline that you want to untag',
@@ -1460,6 +1516,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1472,6 +1529,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'update-media-insights-pipeline-configuration',
       description: 'Updates the media insights pipeline\'s configuration settings',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier for the resource to be updated. Valid values include the name and ARN of the media insights pipeline configuration',
@@ -1524,6 +1582,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1536,6 +1595,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'update-media-insights-pipeline-status',
       description: 'Updates the status of a media insights pipeline',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline',
@@ -1570,6 +1630,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1582,6 +1643,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
       name: 'update-media-pipeline-kinesis-video-stream-pool',
       description: 'Updates an Amazon Kinesis Video Stream pool in a media pipeline',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the requested resource. Valid values include the name and ARN of the media pipeline Kinesis Video Stream pool',
@@ -1616,6 +1678,7 @@ final FigSpec chimeSdkMediaPipelinesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

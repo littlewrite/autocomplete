@@ -9,6 +9,7 @@ final FigSpec cpSpec = FigSpec(
   name: 'cp',
   description: 'Copy files and directories',
   args: [
+
     Arg(
       name: 'source',
       template: ['filepaths', 'folders'],
@@ -20,6 +21,7 @@ final FigSpec cpSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '-a',
       description: 'Preserves structure and attributes of files but not directory structure'

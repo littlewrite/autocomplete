@@ -15,6 +15,7 @@ final FigSpec afplaySpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-v', '--volume'],
       args: [

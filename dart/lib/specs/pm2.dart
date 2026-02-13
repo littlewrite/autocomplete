@@ -4,14 +4,363 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> sharedOptions = [
+
+  Option(
+    name: ['-V', '--version'],
+    description: 'Outputs the version number'
+  ),
+  Option(
+    name: '-v',
+    description: 'Gets version'
+  ),
+  Option(
+    name: ['-s', '--silent'],
+    description: 'Hides all messages'
+  ),
+  Option(
+    name: ['-m', '--mini-list'],
+    description: 'Displays a compacted list without formatting'
+  ),
+  Option(
+    name: ['-f', '--force'],
+    description: 'Forces actions'
+  ),
+  Option(
+    name: '--disable-logs',
+    description: 'Do not write logs'
+  ),
+  Option(
+    name: ['-n', '--name'],
+    description: 'Sets a name for script'
+  ),
+  Option(
+    name: ['-i', '--instances'],
+    description: 'Launches [number] instances (for networked app)(load balanced)'
+  ),
+  Option(
+    name: '--parallel',
+    description: 'Number of parallel actions (for restart/reload)'
+  ),
+  Option(
+    name: ['-l', '--log'],
+    description: 'Specifies entire log file (error and out are both included)',
+    args: [
+      Arg(
+      isOptional: true
+    )
+    ]
+  ),
+  Option(
+    name: ['-o', '--output'],
+    description: 'Specifies out log file'
+  ),
+  Option(
+    name: ['-e', '--error'],
+    description: 'Specifies error log file'
+  ),
+  Option(
+    name: ['-p', '--pid'],
+    description: 'Specify pid file',
+    args: [
+      Arg(
+      name: 'pid',
+      template: 'filepaths'
+    )
+    ]
+  ),
+  Option(
+    name: ['-k', '--kill-timeout'],
+    description: 'Delays before sending final SIGKILL signal to process',
+    args: [
+      Arg(
+      name: 'delay'
+    )
+    ]
+  ),
+  Option(
+    name: '--listen-timeout',
+    description: 'Listen timeout on application reload',
+    args: [
+      Arg(
+      name: 'delay'
+    )
+    ]
+  ),
+  Option(
+    name: '--max-memory-restart',
+    description: 'Specify max memory amount used to autorestart (in octet or use syntax like 100M)',
+    args: [
+      Arg(
+      name: 'memory'
+    )
+    ]
+  ),
+  Option(
+    name: '--restart-delay',
+    description: 'Specify a delay between restarts (in milliseconds)',
+    args: [
+      Arg(
+      name: 'delay'
+    )
+    ]
+  ),
+  Option(
+    name: '--env',
+    description: 'Specify environment to get specific env variables',
+    args: [
+      Arg(
+      name: 'Environment Name'
+    )
+    ]
+  ),
+  Option(
+    name: '--log-type',
+    description: 'Specify log output style (raw by default, json optional)',
+    args: [
+      Arg(
+      name: 'type',
+      defaultValue: 'raw'
+    )
+    ]
+  ),
+  Option(
+    name: ['-x', '--execute-command'],
+    description: 'Execute a program using fork system'
+  ),
+  Option(
+    name: '--max-restarts',
+    description: 'Only Restart the script COUNT times',
+    args: [
+      Arg(
+      name: 'Count',
+      isOptional: true
+    )
+    ]
+  ),
+  Option(
+    name: ['-u', '--user'],
+    description: 'Defines user when generating startup script',
+    args: [
+      Arg(
+      name: 'username'
+    )
+    ]
+  ),
+  Option(
+    name: '--uid',
+    description: 'Runs target script with <uid> rights',
+    args: [
+      Arg(
+      name: 'uid'
+    )
+    ]
+  ),
+  Option(
+    name: '--gid',
+    description: 'Runs target script with <gid> rights',
+    args: [
+      Arg(
+      name: 'gid'
+    )
+    ]
+  ),
+  Option(
+    name: '--cwd',
+    description: 'Runs target script as <username>'
+  ),
+  Option(
+    name: '--hp',
+    description: 'Defines home path when generating startup script',
+    args: [
+      Arg(
+      name: 'home path',
+      template: 'folders'
+    )
+    ]
+  ),
+  Option(
+    name: '--wait-ip',
+    description: 'Overrides systemd script to wait for full internet connectivity to launch pm2'
+  ),
+  Option(
+    name: '--service-name',
+    description: 'Defines service name when generating startup script'
+  ),
+  Option(
+    name: ['-c', '--cron'],
+    description: 'Restarts a running process based on a cron pattern',
+    args: [
+      Arg(
+      name: 'Cron Pattern'
+    )
+    ]
+  ),
+  Option(
+    name: ['-w', '--write'],
+    description: 'Writes configuration in local folder'
+  ),
+  Option(
+    name: '--interpreter',
+    description: 'The interpreter pm2 should use for executing app (bash, python…)',
+    args: [
+      Arg(
+      name: 'interpreter'
+    )
+    ]
+  ),
+  Option(
+    name: '--interpreter-args',
+    description: 'Interprets options (alias of –node-args)',
+    args: [
+      Arg(
+      name: 'Arguments'
+    )
+    ]
+  ),
+  Option(
+    name: '--log-date-format',
+    description: 'Adds custom prefix timestamp to logs',
+    args: [
+      Arg(
+      name: 'Date Format'
+    )
+    ]
+  ),
+  Option(
+    name: '--no-daemon',
+    description: 'Runs pm2 daemon in the foreground if it doesn’t exist already'
+  ),
+  Option(
+    name: ['-a', '--update-env'],
+    description: 'Updates environment on restart/reload (-a <=> apply)'
+  ),
+  Option(
+    name: '–-source-map-support',
+    description: 'Force source map support'
+  ),
+  Option(
+    name: '–-only',
+    description: 'With json declaration, allow to only act on one application'
+  ),
+  Option(
+    name: '–-disable-source-map-support',
+    description: 'Force source map support'
+  ),
+  Option(
+    name: '–-wait-ready',
+    description: 'Asks pm2 to wait for ready event from your app'
+  ),
+  Option(
+    name: '–-merge-logs',
+    description: 'Merges logs from different instances but keep error and out separated'
+  ),
+  Option(
+    name: '–-watch',
+    description: 'Watches application folder for changes (default: )',
+    args: [
+      Arg(
+      name: 'paths',
+      template: ['folders'],
+      isVariadic: true
+    )
+    ]
+  ),
+  Option(
+    name: '–-ignore-watch',
+    description: 'Folder/files to be ignored watching',
+    args: [
+      Arg(
+      name: 'Folder or Files',
+      template: ['folders', 'filepaths'],
+      isVariadic: true
+    )
+    ]
+  ),
+  Option(
+    name: '–-node-args',
+    description: 'Space delimited arguments to pass to node in cluster mode',
+    args: [
+      Arg(
+      name: 'Node Args',
+      description: '–node-args=`–debug=7001 –trace-deprecation`'
+    )
+    ]
+  ),
+  Option(
+    name: '–-no-color',
+    description: 'Skip colors'
+  ),
+  Option(
+    name: '–-no-vizion',
+    description: 'Starts an app without vizion feature (versioning control)'
+  ),
+  Option(
+    name: '–-no-autorestart',
+    description: 'Starts an app without automatic restart'
+  ),
+  Option(
+    name: '–-no-treekill',
+    description: 'Only kills the main process, not detached children'
+  ),
+  Option(
+    name: '–-no-pmx',
+    description: 'Starts an app without apm'
+  ),
+  Option(
+    name: '–-no-automation',
+    description: 'Starts an app without apm'
+  ),
+  Option(
+    name: '–-trace',
+    description: 'Enables transaction tracing with km'
+  ),
+  Option(
+    name: '–-disable-trace',
+    description: 'Disables transaction tracing with km'
+  ),
+  Option(
+    name: '–-attach',
+    description: 'Attaches logging after your start/restart/stop/reload'
+  ),
+  Option(
+    name: '–-sort',
+    description: 'Sort process according to field’s name',
+    args: [
+      Arg(
+      name: 'field name',
+      description: 'Field_name:sort'
+    )
+    ]
+  ),
+  Option(
+    name: '–-v8',
+    description: 'Enables v8 data collecting'
+  ),
+  Option(
+    name: '–-event-loop-inspector',
+    description: 'Enables event-loop-inspector dump in apm'
+  ),
+  Option(
+    name: '–-deep-monitoring',
+    description: 'Enables all monitoring tools (equivalent to –v8 –event-loop-inspector –trace)'
+  ),
+  Option(
+    name: ['-h', '–-help'],
+    description: 'Outputs usage information'
+  )
+];
+
 /// Completion spec for `pm2` CLI
 final FigSpec pm2Spec = FigSpec(
   name: 'pm2',
   description: 'Daemon process manager',
   subcommands: [
+
     Subcommand(
       name: 'start',
       description: 'Starts and daemonizes an app',
+      options: sharedOptions,
       args: [
         Arg(
         name: 'file, json, stdin, app name, pm id, etc'
@@ -22,6 +371,7 @@ final FigSpec pm2Spec = FigSpec(
       name: 'trigger',
       description: 'Deploy your json',
       args: [
+
         Arg(
           name: 'Proc Name'
         ),
@@ -68,6 +418,7 @@ final FigSpec pm2Spec = FigSpec(
     Subcommand(
       name: 'stop',
       description: 'Stop a process',
+      options: sharedOptions,
       args: [
         Arg(
         name: 'id, name, all, json, stdin, etc'
@@ -77,6 +428,7 @@ final FigSpec pm2Spec = FigSpec(
     Subcommand(
       name: 'restart',
       description: 'Restart a process',
+      options: sharedOptions,
       args: [
         Arg(
         name: 'id, name, all, json, stdin, etc'
@@ -136,6 +488,7 @@ final FigSpec pm2Spec = FigSpec(
       name: 'sendSignal',
       description: 'Send a system signal to the target process',
       args: [
+
         Arg(
           name: 'signal'
         ),
@@ -159,6 +512,7 @@ final FigSpec pm2Spec = FigSpec(
     Subcommand(
       name: ['install', 'module:install'],
       description: 'Install or update a module and run it forever',
+      options: sharedOptions,
       args: [
         Arg(
         name: 'module or git://',
@@ -192,6 +546,7 @@ final FigSpec pm2Spec = FigSpec(
       name: 'set',
       description: 'Sets the specified config',
       args: [
+
         Arg(
           isOptional: true
         ),
@@ -224,6 +579,7 @@ final FigSpec pm2Spec = FigSpec(
       name: 'conf',
       description: 'Get / set module config values',
       args: [
+
         Arg(
           isOptional: true
         ),
@@ -237,6 +593,7 @@ final FigSpec pm2Spec = FigSpec(
       name: 'config',
       description: 'Get / set module config values',
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -254,7 +611,9 @@ final FigSpec pm2Spec = FigSpec(
     Subcommand(
       name: ['link', 'interact'],
       description: 'Linking action to keymetrics.io',
+      options: sharedOptions,
       args: [
+
         Arg(
           name: 'secret',
           isOptional: true
@@ -304,6 +663,7 @@ final FigSpec pm2Spec = FigSpec(
       name: 'send',
       description: 'Send stdin to pm id',
       args: [
+
         Arg(
           name: 'pm id'
         ),
@@ -316,6 +676,7 @@ final FigSpec pm2Spec = FigSpec(
       name: 'attach',
       description: 'Attach stdin/stdout to application identified by pm id',
       args: [
+
         Arg(
           name: 'pm id'
         ),
@@ -349,6 +710,7 @@ final FigSpec pm2Spec = FigSpec(
         name: 'mode',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'null'),
           FigSuggestion(name: 'simple')
         ]
@@ -421,6 +783,7 @@ final FigSpec pm2Spec = FigSpec(
     Subcommand(
       name: 'logs',
       description: 'Stream logs logs file',
+      options: sharedOptions,
       args: [
         Arg(
         name: 'id or name'
@@ -435,6 +798,7 @@ final FigSpec pm2Spec = FigSpec(
       name: 'pull',
       description: 'Updates repository for a given app',
       args: [
+
         Arg(
           name: 'commit id',
           isOptional: true
@@ -461,6 +825,7 @@ final FigSpec pm2Spec = FigSpec(
       name: ['serve', 'expose'],
       description: 'Serves a directory over http via port',
       args: [
+
         Arg(
           name: 'path',
           isOptional: true
@@ -471,5 +836,15 @@ final FigSpec pm2Spec = FigSpec(
         )
       ]
     )
-  ]
+  ],
+  options: sharedOptions
 );
+
+// === TS Generator blocks: convert manually or with AI (grep TS_GENERATOR_BLOCK_START) ===
+
+// TS_GENERATOR_BLOCK_START (generators)
+// const generators: Record<string, Fig.Generator> = {
+//   jsonFileGenerator: filepaths({ extensions: ["json"] }),
+// };
+// TS_GENERATOR_BLOCK_END
+

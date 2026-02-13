@@ -9,10 +9,12 @@ final FigSpec esSpec = FigSpec(
   name: 'es',
   description: 'Amazon Elasticsearch Configuration Service Use the Amazon Elasticsearch Configuration API to create, configure, and manage Elasticsearch domains. For sample code that uses the Configuration API, see the Amazon Elasticsearch Service Developer Guide. The guide also contains sample code for sending signed HTTP requests to the Elasticsearch APIs. The endpoint for configuration service requests is region-specific: es.region.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see Regions and Endpoints',
   subcommands: [
+
     Subcommand(
       name: 'accept-inbound-cross-cluster-search-connection',
       description: 'Allows the destination domain owner to accept an inbound cross-cluster search connection request',
       options: [
+
         Option(
           name: '--cross-cluster-search-connection-id',
           description: 'The id of the inbound connection that you want to accept',
@@ -38,6 +40,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec esSpec = FigSpec(
       name: 'add-tags',
       description: 'Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See  Tagging Amazon Elasticsearch Service Domains for more information',
       options: [
+
         Option(
           name: '--arn',
           description: 'Specify the ARN for which you want to add the tags',
@@ -84,6 +88,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec esSpec = FigSpec(
       name: 'associate-package',
       description: 'Associates a package with an Amazon ES domain',
       options: [
+
         Option(
           name: '--package-id',
           description: 'Internal ID of the package that you want to associate with a domain. Use DescribePackages to find this value',
@@ -130,6 +136,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -142,6 +149,7 @@ final FigSpec esSpec = FigSpec(
       name: 'authorize-vpc-endpoint-access',
       description: 'Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the OpenSearch Service domain to provide access to',
@@ -176,6 +184,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +197,7 @@ final FigSpec esSpec = FigSpec(
       name: 'cancel-domain-config-change',
       description: 'Cancels a pending configuration change on an Amazon OpenSearch Service domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'Name of the OpenSearch Service domain configuration request to cancel',
@@ -221,6 +231,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +244,7 @@ final FigSpec esSpec = FigSpec(
       name: 'cancel-elasticsearch-service-software-update',
       description: 'Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before the AutomatedUpdateDate and when the UpdateStatus is in the PENDING_UPDATE state',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain that you want to stop the latest service software update on',
@@ -258,6 +270,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +283,7 @@ final FigSpec esSpec = FigSpec(
       name: 'create-elasticsearch-domain',
       description: 'Creates a new Elasticsearch domain. For more information, see Creating Elasticsearch Domains in the Amazon Elasticsearch Service Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -430,6 +444,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -442,6 +457,7 @@ final FigSpec esSpec = FigSpec(
       name: 'create-outbound-cross-cluster-search-connection',
       description: 'Creates a new cross-cluster search connection from a source domain to a destination domain',
       options: [
+
         Option(
           name: '--source-domain-info',
           description: 'Specifies the DomainInformation for the source Elasticsearch domain',
@@ -485,6 +501,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -497,6 +514,7 @@ final FigSpec esSpec = FigSpec(
       name: 'create-package',
       description: 'Create a package for use with Amazon ES domains',
       options: [
+
         Option(
           name: '--package-name',
           description: 'Unique identifier for the package',
@@ -549,6 +567,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -561,6 +580,7 @@ final FigSpec esSpec = FigSpec(
       name: 'create-vpc-endpoint',
       description: 'Creates an Amazon OpenSearch Service-managed VPC endpoint',
       options: [
+
         Option(
           name: '--domain-arn',
           description: 'The Amazon Resource Name (ARN) of the domain to grant access to',
@@ -604,6 +624,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -616,6 +637,7 @@ final FigSpec esSpec = FigSpec(
       name: 'delete-elasticsearch-domain',
       description: 'Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the Elasticsearch domain that you want to permanently delete',
@@ -641,6 +663,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -653,6 +676,7 @@ final FigSpec esSpec = FigSpec(
       name: 'delete-elasticsearch-service-role',
       description: 'Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before deleting the role. See Deleting Elasticsearch Service Role in VPC Endpoints for Amazon Elasticsearch Service Domains',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -669,6 +693,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -681,6 +706,7 @@ final FigSpec esSpec = FigSpec(
       name: 'delete-inbound-cross-cluster-search-connection',
       description: 'Allows the destination domain owner to delete an existing inbound cross-cluster search connection',
       options: [
+
         Option(
           name: '--cross-cluster-search-connection-id',
           description: 'The id of the inbound connection that you want to permanently delete',
@@ -706,6 +732,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -718,6 +745,7 @@ final FigSpec esSpec = FigSpec(
       name: 'delete-outbound-cross-cluster-search-connection',
       description: 'Allows the source domain owner to delete an existing outbound cross-cluster search connection',
       options: [
+
         Option(
           name: '--cross-cluster-search-connection-id',
           description: 'The id of the outbound connection that you want to permanently delete',
@@ -743,6 +771,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -755,6 +784,7 @@ final FigSpec esSpec = FigSpec(
       name: 'delete-package',
       description: 'Delete the package',
       options: [
+
         Option(
           name: '--package-id',
           description: 'Internal ID of the package that you want to delete. Use DescribePackages to find this value',
@@ -780,6 +810,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -792,6 +823,7 @@ final FigSpec esSpec = FigSpec(
       name: 'delete-vpc-endpoint',
       description: 'Deletes an Amazon OpenSearch Service-managed interface VPC endpoint',
       options: [
+
         Option(
           name: '--vpc-endpoint-id',
           description: 'The unique identifier of the endpoint to be deleted',
@@ -817,6 +849,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -829,6 +862,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-domain-auto-tunes',
       description: 'Provides scheduled Auto-Tune action details for the Elasticsearch domain, such as Auto-Tune action type, description, severity, and scheduled date',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'Specifies the domain name for which you want Auto-Tune action details',
@@ -872,6 +906,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -884,6 +919,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-domain-change-progress',
       description: 'Returns information about the current blue/green deployment happening on a domain, including a change ID, status, and progress stages',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The domain you want to get the progress information about',
@@ -918,6 +954,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -930,6 +967,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-elasticsearch-domain',
       description: 'Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the Elasticsearch domain for which you want information',
@@ -955,6 +993,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -967,6 +1006,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-elasticsearch-domain-config',
       description: 'Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The Elasticsearch domain that you want to get information about',
@@ -992,6 +1032,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1004,6 +1045,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-elasticsearch-domains',
       description: 'Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN',
       options: [
+
         Option(
           name: '--domain-names',
           description: 'The Elasticsearch domains for which you want information',
@@ -1029,6 +1071,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1041,6 +1084,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-elasticsearch-instance-type-limits',
       description: 'Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the  DomainName  to know what Limits are supported for modifying',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch  Limits  for existing domain',
@@ -1084,6 +1128,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1096,6 +1141,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-inbound-cross-cluster-search-connections',
       description: 'Lists all the inbound cross-cluster search connections for a destination domain',
       options: [
+
         Option(
           name: '--filters',
           description: 'A list of filters used to match properties for inbound cross-cluster search connection. Available Filter names for this operation are:  cross-cluster-search-connection-id source-domain-info.domain-name source-domain-info.owner-id source-domain-info.region destination-domain-info.domain-name',
@@ -1139,6 +1185,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1151,6 +1198,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-outbound-cross-cluster-search-connections',
       description: 'Lists all the outbound cross-cluster search connections for a source domain',
       options: [
+
         Option(
           name: '--filters',
           description: 'A list of filters used to match properties for outbound cross-cluster search connection. Available Filter names for this operation are:  cross-cluster-search-connection-id destination-domain-info.domain-name destination-domain-info.owner-id destination-domain-info.region source-domain-info.domain-name',
@@ -1194,6 +1242,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1206,6 +1255,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-packages',
       description: 'Describes all packages available to Amazon ES. Includes options for filtering, limiting the number of results, and pagination',
       options: [
+
         Option(
           name: '--filters',
           description: 'Only returns packages that match the DescribePackagesFilterList values',
@@ -1249,6 +1299,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1261,6 +1312,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-reserved-elasticsearch-instance-offerings',
       description: 'Lists available reserved Elasticsearch instance offerings',
       options: [
+
         Option(
           name: '--reserved-elasticsearch-instance-offering-id',
           description: 'The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier',
@@ -1331,6 +1383,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1343,6 +1396,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-reserved-elasticsearch-instances',
       description: 'Returns information about reserved Elasticsearch instances for this account',
       options: [
+
         Option(
           name: '--reserved-elasticsearch-instance-id',
           description: 'The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID',
@@ -1413,6 +1467,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1425,6 +1480,7 @@ final FigSpec esSpec = FigSpec(
       name: 'describe-vpc-endpoints',
       description: 'Describes one or more Amazon OpenSearch Service-managed VPC endpoints',
       options: [
+
         Option(
           name: '--vpc-endpoint-ids',
           description: 'The unique identifiers of the endpoints to get information about',
@@ -1450,6 +1506,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1462,6 +1519,7 @@ final FigSpec esSpec = FigSpec(
       name: 'dissociate-package',
       description: 'Dissociates a package from the Amazon ES domain',
       options: [
+
         Option(
           name: '--package-id',
           description: 'Internal ID of the package that you want to associate with a domain. Use DescribePackages to find this value',
@@ -1496,6 +1554,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1508,6 +1567,7 @@ final FigSpec esSpec = FigSpec(
       name: 'get-compatible-elasticsearch-versions',
       description: 'Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a  DomainName  to get all upgrade compatible Elasticsearch versions for that specific domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -1533,6 +1593,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1545,6 +1606,7 @@ final FigSpec esSpec = FigSpec(
       name: 'get-package-version-history',
       description: 'Returns a list of versions of the package, along with their creation time and commit message',
       options: [
+
         Option(
           name: '--package-id',
           description: 'Returns an audit history of versions of the package',
@@ -1588,6 +1650,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1600,6 +1663,7 @@ final FigSpec esSpec = FigSpec(
       name: 'get-upgrade-history',
       description: 'Retrieves the complete history of the last 10 upgrades that were performed on the domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -1670,6 +1734,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1682,6 +1747,7 @@ final FigSpec esSpec = FigSpec(
       name: 'get-upgrade-status',
       description: 'Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -1707,6 +1773,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1719,6 +1786,7 @@ final FigSpec esSpec = FigSpec(
       name: 'list-domain-names',
       description: 'Returns the name of all Elasticsearch domains owned by the current user\'s account',
       options: [
+
         Option(
           name: '--engine-type',
           description: 'Optional parameter to filter the output by domain engine type. Acceptable values are \'Elasticsearch\' and \'OpenSearch\'',
@@ -1744,6 +1812,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1756,6 +1825,7 @@ final FigSpec esSpec = FigSpec(
       name: 'list-domains-for-package',
       description: 'Lists all Amazon ES domains associated with the package',
       options: [
+
         Option(
           name: '--package-id',
           description: 'The package for which to list domains',
@@ -1799,6 +1869,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1811,6 +1882,7 @@ final FigSpec esSpec = FigSpec(
       name: 'list-elasticsearch-instance-types',
       description: 'List all Elasticsearch instance types that are supported for given ElasticsearchVersion',
       options: [
+
         Option(
           name: '--elasticsearch-version',
           description: 'Version of Elasticsearch for which list of supported elasticsearch instance types are needed',
@@ -1890,6 +1962,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1902,6 +1975,7 @@ final FigSpec esSpec = FigSpec(
       name: 'list-elasticsearch-versions',
       description: 'List all supported Elasticsearch versions',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored',
@@ -1963,6 +2037,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1975,6 +2050,7 @@ final FigSpec esSpec = FigSpec(
       name: 'list-packages-for-domain',
       description: 'Lists all packages associated with the Amazon ES domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain for which you want to list associated packages',
@@ -2018,6 +2094,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2030,6 +2107,7 @@ final FigSpec esSpec = FigSpec(
       name: 'list-tags',
       description: 'Returns all tags for the given Elasticsearch domain',
       options: [
+
         Option(
           name: '--arn',
           description: 'Specify the ARN for the Elasticsearch domain to which the tags are attached that you want to view',
@@ -2055,6 +2133,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2067,6 +2146,7 @@ final FigSpec esSpec = FigSpec(
       name: 'list-vpc-endpoint-access',
       description: 'Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the OpenSearch Service domain to retrieve access information for',
@@ -2101,6 +2181,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2113,6 +2194,7 @@ final FigSpec esSpec = FigSpec(
       name: 'list-vpc-endpoints',
       description: 'Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current account and Region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Identifier to allow retrieval of paginated results',
@@ -2138,6 +2220,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2150,6 +2233,7 @@ final FigSpec esSpec = FigSpec(
       name: 'list-vpc-endpoints-for-domain',
       description: 'Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'Name of the ElasticSearch domain whose VPC endpoints are to be listed',
@@ -2184,6 +2268,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2196,6 +2281,7 @@ final FigSpec esSpec = FigSpec(
       name: 'purchase-reserved-elasticsearch-instance-offering',
       description: 'Allows you to purchase reserved Elasticsearch instances',
       options: [
+
         Option(
           name: '--reserved-elasticsearch-instance-offering-id',
           description: 'The ID of the reserved Elasticsearch instance offering to purchase',
@@ -2239,6 +2325,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2251,6 +2338,7 @@ final FigSpec esSpec = FigSpec(
       name: 'reject-inbound-cross-cluster-search-connection',
       description: 'Allows the destination domain owner to reject an inbound cross-cluster search connection request',
       options: [
+
         Option(
           name: '--cross-cluster-search-connection-id',
           description: 'The id of the inbound connection that you want to reject',
@@ -2276,6 +2364,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2288,6 +2377,7 @@ final FigSpec esSpec = FigSpec(
       name: 'remove-tags',
       description: 'Removes the specified set of tags from the specified Elasticsearch domain',
       options: [
+
         Option(
           name: '--arn',
           description: 'Specifies the ARN for the Elasticsearch domain from which you want to delete the specified tags',
@@ -2322,6 +2412,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2334,6 +2425,7 @@ final FigSpec esSpec = FigSpec(
       name: 'revoke-vpc-endpoint-access',
       description: 'Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the OpenSearch Service domain',
@@ -2368,6 +2460,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2380,6 +2473,7 @@ final FigSpec esSpec = FigSpec(
       name: 'start-elasticsearch-service-software-update',
       description: 'Schedules a service software update for an Amazon ES domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain that you want to update to the latest service software',
@@ -2405,6 +2499,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2417,6 +2512,7 @@ final FigSpec esSpec = FigSpec(
       name: 'update-elasticsearch-domain-config',
       description: 'Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the Elasticsearch domain that you are updating',
@@ -2567,6 +2663,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2579,6 +2676,7 @@ final FigSpec esSpec = FigSpec(
       name: 'update-package',
       description: 'Updates a package for use with Amazon ES domains',
       options: [
+
         Option(
           name: '--package-id',
           description: 'Unique identifier for the package',
@@ -2631,6 +2729,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2643,6 +2742,7 @@ final FigSpec esSpec = FigSpec(
       name: 'update-vpc-endpoint',
       description: 'Modifies an Amazon OpenSearch Service-managed interface VPC endpoint',
       options: [
+
         Option(
           name: '--vpc-endpoint-id',
           description: 'Unique identifier of the VPC endpoint to be updated',
@@ -2677,6 +2777,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2689,6 +2790,7 @@ final FigSpec esSpec = FigSpec(
       name: 'upgrade-elasticsearch-domain',
       description: 'Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch version',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -2731,6 +2833,7 @@ final FigSpec esSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

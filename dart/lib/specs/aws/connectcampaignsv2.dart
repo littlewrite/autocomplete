@@ -9,10 +9,12 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
   name: 'connectcampaignsv2',
   description: 'Provide APIs to create and manage Amazon Connect Campaigns',
   subcommands: [
+
     Subcommand(
       name: 'create-campaign',
       description: 'Creates a campaign for the specified Amazon Connect account. This API is idempotent',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of an Amazon Connect Campaign name',
@@ -110,6 +112,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -122,6 +125,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'delete-campaign',
       description: 'Deletes a campaign from the specified Amazon Connect account',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -147,6 +151,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -159,6 +164,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'delete-campaign-channel-subtype-config',
       description: 'Deletes the channel subtype config of a campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -193,6 +199,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'delete-campaign-communication-limits',
       description: 'Deletes the communication limits config for a campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -239,6 +247,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +260,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'delete-campaign-communication-time',
       description: 'Deletes the communication time config for a campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -285,6 +295,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -297,6 +308,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'delete-connect-instance-config',
       description: 'Deletes a connect instance config from the specified AWS account',
       options: [
+
         Option(
           name: '--connect-instance-id',
           description: 'Amazon Connect Instance Id',
@@ -331,6 +343,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -343,6 +356,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'delete-connect-instance-integration',
       description: 'Delete the integration for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--connect-instance-id',
           description: 'Amazon Connect Instance Id',
@@ -377,6 +391,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -389,6 +404,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'delete-instance-onboarding-job',
       description: 'Delete the Connect Campaigns onboarding job for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--connect-instance-id',
           description: 'Amazon Connect Instance Id',
@@ -414,6 +430,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -426,6 +443,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'describe-campaign',
       description: 'Describes the specific campaign',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -451,6 +469,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -463,6 +482,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'get-campaign-state',
       description: 'Get state of a campaign for the specified Amazon Connect account',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -488,6 +508,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -500,6 +521,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'get-campaign-state-batch',
       description: 'Get state of campaigns for the specified Amazon Connect account',
       options: [
+
         Option(
           name: '--campaign-ids',
           description: 'List of CampaignId',
@@ -525,6 +547,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -537,6 +560,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'get-connect-instance-config',
       description: 'Get the specific Connect instance config',
       options: [
+
         Option(
           name: '--connect-instance-id',
           description: 'Amazon Connect Instance Id',
@@ -562,6 +586,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -574,6 +599,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'get-instance-onboarding-job-status',
       description: 'Get the specific instance onboarding job status',
       options: [
+
         Option(
           name: '--connect-instance-id',
           description: 'Amazon Connect Instance Id',
@@ -599,6 +625,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -611,6 +638,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'list-campaigns',
       description: 'Provides summary information about the campaigns under the specified Amazon Connect account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per page',
@@ -681,6 +709,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -693,6 +722,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'list-connect-instance-integrations',
       description: 'Provides summary information about the integration under the specified Connect instance',
       options: [
+
         Option(
           name: '--connect-instance-id',
           description: 'Amazon Connect Instance Id',
@@ -763,6 +793,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -775,6 +806,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List tags for a resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'Amazon Resource Names(ARN)',
@@ -800,6 +832,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -812,6 +845,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'pause-campaign',
       description: 'Pauses a campaign for the specified Amazon Connect account',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -837,6 +871,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -849,6 +884,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'put-connect-instance-integration',
       description: 'Put or update the integration for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--connect-instance-id',
           description: 'Amazon Connect Instance Id',
@@ -883,6 +919,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -895,6 +932,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'put-outbound-request-batch',
       description: 'Creates outbound requests for the specified campaign Amazon Connect account. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -929,6 +967,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -941,6 +980,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'put-profile-outbound-request-batch',
       description: 'Takes in a list of profile outbound requests to be placed as part of an outbound campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -975,6 +1015,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -987,6 +1028,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'resume-campaign',
       description: 'Stops a campaign for the specified Amazon Connect account',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -1012,6 +1054,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1024,6 +1067,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'start-campaign',
       description: 'Starts a campaign for the specified Amazon Connect account',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -1049,6 +1093,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1061,6 +1106,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'start-instance-onboarding-job',
       description: 'Onboard the specific Amazon Connect instance to Connect Campaigns',
       options: [
+
         Option(
           name: '--connect-instance-id',
           description: 'Amazon Connect Instance Id',
@@ -1095,6 +1141,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1107,6 +1154,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'stop-campaign',
       description: 'Stops a campaign for the specified Amazon Connect account',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -1132,6 +1180,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1144,6 +1193,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'tag-resource',
       description: 'Tag a resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'Amazon Resource Names(ARN)',
@@ -1178,6 +1228,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1190,6 +1241,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'untag-resource',
       description: 'Untag a resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'Amazon Resource Names(ARN)',
@@ -1224,6 +1276,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1236,6 +1289,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'update-campaign-channel-subtype-config',
       description: 'Updates the channel subtype config of a campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -1270,6 +1324,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1282,6 +1337,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'update-campaign-communication-limits',
       description: 'Updates the communication limits config for a campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -1316,6 +1372,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1328,6 +1385,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'update-campaign-communication-time',
       description: 'Updates the communication time config for a campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -1362,6 +1420,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1374,6 +1433,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'update-campaign-flow-association',
       description: 'Updates the campaign flow associated with a campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -1408,6 +1468,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1420,6 +1481,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'update-campaign-name',
       description: 'Updates the name of a campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -1454,6 +1516,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1466,6 +1529,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'update-campaign-schedule',
       description: 'Updates the schedule for a campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -1500,6 +1564,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1512,6 +1577,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
       name: 'update-campaign-source',
       description: 'Updates the campaign source with a campaign. This API is idempotent',
       options: [
+
         Option(
           name: '--id',
           description: 'Identifier representing a Campaign',
@@ -1546,6 +1612,7 @@ final FigSpec connectcampaignsv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

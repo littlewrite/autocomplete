@@ -9,10 +9,12 @@ final FigSpec csdxSpec = FigSpec(
   name: 'csdx',
   description: 'Content Stack CLI',
   subcommands: [
+
     Subcommand(
       name: 'login',
       description: 'The auth:login command lets you log in to Contentstack and save the session',
       options: [
+
         Option(
           name: ['-u', '--username'],
           description: 'Email address of your Contentstack account',
@@ -37,6 +39,7 @@ final FigSpec csdxSpec = FigSpec(
       name: 'auth:tokens:add',
       description: 'Lets you add an existing management token from your Contentstack account and save it to the session for further use',
       options: [
+
         Option(
           name: ['-a', '--alias'],
           description: 'Alias (name) you want to assign to the token',
@@ -83,6 +86,7 @@ final FigSpec csdxSpec = FigSpec(
       name: 'auth:tokens:remove',
       description: 'The auth:tokens:remove command lets you delete a management/ delivery token from your local CLI session',
       options: [
+
         Option(
           name: ['-a', '--alias'],
           description: 'Alias (name) you want to assign to the token',
@@ -102,6 +106,7 @@ final FigSpec csdxSpec = FigSpec(
       name: 'cm:bootstrap',
       description: 'The \'Bootstrap\' plugin in Contentstack CLI allows users to automate the process of project setup for starter apps',
       options: [
+
         Option(
           name: '--app-name',
           description: 'The name of the starter app you want to use. Example: reactjs-starter, nextjs-starter, gatsby-starter, angular-starter, nuxt-starter',
@@ -109,6 +114,7 @@ final FigSpec csdxSpec = FigSpec(
             Arg(
             name: 'app-name',
             suggestions: [
+
               FigSuggestion(
                 name: 'reactjs-starter'
               ),
@@ -144,6 +150,7 @@ final FigSpec csdxSpec = FigSpec(
             Arg(
             name: 'app-type',
             suggestions: [
+
               FigSuggestion(
                 name: 'Sample'
               ),
@@ -187,6 +194,7 @@ final FigSpec csdxSpec = FigSpec(
       name: 'auth:tokens',
       description: 'The auth:tokens command lists the existing tokens added to the session',
       options: [
+
         Option(
           name: ['-x', '--extended'],
           description: 'To show extra columns'
@@ -228,6 +236,7 @@ final FigSpec csdxSpec = FigSpec(
             Arg(
             name: 'format',
             suggestions: [
+
               FigSuggestion(
                 name: 'csv'
               ),
@@ -264,6 +273,7 @@ final FigSpec csdxSpec = FigSpec(
         name: 'region',
         description: 'The ContentStack AWS region you want to use',
         suggestions: [
+
           FigSuggestion(
             name: 'EU'
           ),
@@ -282,6 +292,7 @@ final FigSpec csdxSpec = FigSpec(
       name: 'cm:stacks:export',
       description: 'The cm:stacks:export command lets you export content from one stack to another',
       options: [
+
         Option(
           name: ['-c', '--config'],
           description: '[optional] path of the config',
@@ -334,6 +345,7 @@ final FigSpec csdxSpec = FigSpec(
             Arg(
             name: 'module',
             suggestions: [
+
               FigSuggestion(name: 'assets'),
               FigSuggestion(name: 'content-types'),
               FigSuggestion(name: 'entries'),
@@ -378,6 +390,7 @@ final FigSpec csdxSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for csdx',

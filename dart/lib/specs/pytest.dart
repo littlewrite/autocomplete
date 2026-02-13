@@ -16,6 +16,7 @@ final FigSpec pytestSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--assert',
       description: 'Control assertion debugging tools. \'plain\' performs no assertion debugging. \'rewrite\' (the default) rewrites assert statements in test modules on import to provide assert expression information',
@@ -23,6 +24,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'Mode',
         suggestions: [
+
           FigSuggestion(name: 'plain'),
           FigSuggestion(name: 'rewrite')
         ]
@@ -72,6 +74,7 @@ final FigSpec pytestSpec = FigSpec(
         name: 'Method',
         description: 'One of fd|sys|no|tee-sys',
         suggestions: [
+
           FigSuggestion(name: 'fd'),
           FigSuggestion(name: 'sys'),
           FigSuggestion(name: 'no'),
@@ -88,6 +91,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'Highlight',
         suggestions: [
+
           FigSuggestion(name: 'yes'),
           FigSuggestion(name: 'no')
         ]
@@ -109,6 +113,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'Color',
         suggestions: [
+
           FigSuggestion(name: 'yes'),
           FigSuggestion(name: 'no'),
           FigSuggestion(name: 'auto')
@@ -195,6 +200,7 @@ final FigSpec pytestSpec = FigSpec(
         name: 'Output format',
         description: 'None,cdiff,ndiff,udiff,only_first_failure',
         suggestions: [
+
           FigSuggestion(name: 'none'),
           FigSuggestion(name: 'cdiff'),
           FigSuggestion(name: 'ndiff'),
@@ -268,6 +274,7 @@ final FigSpec pytestSpec = FigSpec(
         name: 'Mode',
         defaultValue: 'prepend',
         suggestions: [
+
           FigSuggestion(name: 'prepend'),
           FigSuggestion(name: 'append'),
           FigSuggestion(name: 'importlib')
@@ -320,6 +327,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'Tests',
         suggestions: [
+
           FigSuggestion(name: 'all'),
           FigSuggestion(name: 'none')
         ],
@@ -338,6 +346,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'Log Auto Indent Setting',
         suggestions: [
+
           FigSuggestion(name: 'true'),
           FigSuggestion(name: 'false')
         ]
@@ -351,6 +360,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'Log CLI Level',
         suggestions: [
+
           FigSuggestion(name: 'CRITICAL'),
           FigSuggestion(name: 'ERROR'),
           FigSuggestion(name: 'WARNING'),
@@ -413,6 +423,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'Log File Level',
         suggestions: [
+
           FigSuggestion(name: 'CRITICAL'),
           FigSuggestion(name: 'ERROR'),
           FigSuggestion(name: 'WARNING'),
@@ -447,6 +458,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'Level',
         suggestions: [
+
           FigSuggestion(name: 'CRITICAL'),
           FigSuggestion(name: 'ERROR'),
           FigSuggestion(name: 'WARNING'),
@@ -521,6 +533,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'failed'),
           FigSuggestion(name: 'all')
         ]
@@ -556,6 +569,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'chars',
         suggestions: [
+
           FigSuggestion(name: 'a'),
           FigSuggestion(name: 'A'),
           FigSuggestion(name: 'E'),
@@ -609,6 +623,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'Capture method',
         suggestions: [
+
           FigSuggestion(name: 'no'),
           FigSuggestion(name: 'stdout'),
           FigSuggestion(name: 'stderr'),
@@ -646,6 +661,7 @@ final FigSpec pytestSpec = FigSpec(
         Arg(
         name: 'Traceback print mode',
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'long'),
           FigSuggestion(name: 'short'),

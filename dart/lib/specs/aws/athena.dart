@@ -9,10 +9,12 @@ final FigSpec athenaSpec = FigSpec(
   name: 'athena',
   description: 'Amazon Athena is an interactive query service that lets you use standard SQL to analyze data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds. Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the queries you run. Athena scales automatically—executing queries in parallel—so results are fast, even with large datasets and complex queries. For more information, see What is Amazon Athena in the Amazon Athena User Guide. If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the Amazon Athena API. Earlier version drivers do not support the API. For more information and to download the driver, see Accessing Amazon Athena with JDBC',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-named-query',
       description: 'Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Requires you to have access to the workgroup in which the queries were saved. Use ListNamedQueriesInput to get the list of named query IDs in the specified workgroup. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under UnprocessedNamedQueryId. Named queries differ from executed queries. Use BatchGetQueryExecutionInput to get details about each unique query execution, and ListQueryExecutionsInput to get a list of query execution IDs',
       options: [
+
         Option(
           name: '--named-query-ids',
           description: 'An array of query IDs',
@@ -38,6 +40,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'batch-get-prepared-statement',
       description: 'Returns the details of a single prepared statement or a list of up to 256 prepared statements for the array of prepared statement names that you provide. Requires you to have access to the workgroup to which the prepared statements belong. If a prepared statement cannot be retrieved for the name specified, the statement is listed in UnprocessedPreparedStatementNames',
       options: [
+
         Option(
           name: '--prepared-statement-names',
           description: 'A list of prepared statement names to return',
@@ -84,6 +88,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'batch-get-query-execution',
       description: 'Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To get a list of query execution IDs, use ListQueryExecutionsInput\$WorkGroup. Query executions differ from named (saved) queries. Use BatchGetNamedQueryInput to get details about named queries',
       options: [
+
         Option(
           name: '--query-execution-ids',
           description: 'An array of query execution IDs',
@@ -121,6 +127,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -133,6 +140,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'cancel-capacity-reservation',
       description: 'Cancels the capacity reservation with the specified name. Cancelled reservations remain in your account and will be deleted 45 days after cancellation. During the 45 days, you cannot re-purpose or reuse a reservation that has been cancelled, but you can refer to its tags and view it for historical reference',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the capacity reservation to cancel',
@@ -158,6 +166,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -170,6 +179,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'create-capacity-reservation',
       description: 'Creates a capacity reservation with the specified name and number of requested data processing units',
       options: [
+
         Option(
           name: '--target-dpus',
           description: 'The number of requested data processing units',
@@ -213,6 +223,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -225,6 +236,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'create-data-catalog',
       description: 'Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account. This API operation creates the following resources.   CFN Stack Name with a maximum length of 128 characters and prefix athenafederatedcatalog-CATALOG_NAME_SANITIZED with length 23 characters.   Lambda Function Name with a maximum length of 64 characters and prefix athenafederatedcatalog_CATALOG_NAME_SANITIZED with length 23 characters.   Glue Connection Name with a maximum length of 255 characters and a prefix athenafederatedcatalog_CATALOG_NAME_SANITIZED with length 23 characters',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena. For FEDERATED type the catalog name has following considerations and limits:   The catalog name allows special characters such as _ , @ , \\ , - . These characters are replaced with a hyphen (-) when creating the CFN Stack Name and with an underscore (_) when creating the Lambda Function and Glue Connection Name.   The catalog name has a theoretical limit of 128 characters. However, since we use it to create other resources that allow less characters and we prepend a prefix to it, the actual catalog name limit for FEDERATED catalog is 64 - 23 = 41 characters',
@@ -286,6 +298,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -298,6 +311,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'create-named-query',
       description: 'Creates a named query in the specified workgroup. Requires that you have access to the workgroup',
       options: [
+
         Option(
           name: '--name',
           description: 'The query name',
@@ -368,6 +382,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -380,6 +395,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'create-notebook',
       description: 'Creates an empty ipynb file in the specified Apache Spark enabled workgroup. Throws an error if a file in the workgroup with the same name already exists',
       options: [
+
         Option(
           name: '--work-group',
           description: 'The name of the Spark enabled workgroup in which the notebook will be created',
@@ -423,6 +439,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -435,6 +452,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'create-prepared-statement',
       description: 'Creates a prepared statement for use with SQL queries in Athena',
       options: [
+
         Option(
           name: '--statement-name',
           description: 'The name of the prepared statement',
@@ -487,6 +505,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -499,6 +518,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'create-presigned-notebook-url',
       description: 'Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access, CreatePresignedNotebookUrl must be called every 10 minutes to refresh the authentication token. For information about granting programmatic access, see Grant programmatic access',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The session ID',
@@ -524,6 +544,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -536,6 +557,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'create-work-group',
       description: 'Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled workgroup or an Athena SQL workgroup',
       options: [
+
         Option(
           name: '--name',
           description: 'The workgroup name',
@@ -588,6 +610,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -600,6 +623,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'delete-capacity-reservation',
       description: 'Deletes a cancelled capacity reservation. A reservation must be cancelled before it can be deleted. A deleted reservation is immediately removed from your account and can no longer be referenced, including by its ARN. A deleted reservation cannot be called by GetCapacityReservation, and deleted reservations do not appear in the output of ListCapacityReservations',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the capacity reservation to delete',
@@ -625,6 +649,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -637,6 +662,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'delete-data-catalog',
       description: 'Deletes a data catalog',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the data catalog to delete',
@@ -670,6 +696,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -682,6 +709,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'delete-named-query',
       description: 'Deletes the named query if you have access to the workgroup in which the query was saved',
       options: [
+
         Option(
           name: '--named-query-id',
           description: 'The unique ID of the query to delete',
@@ -707,6 +735,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -719,6 +748,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'delete-notebook',
       description: 'Deletes the specified notebook',
       options: [
+
         Option(
           name: '--notebook-id',
           description: 'The ID of the notebook to delete',
@@ -744,6 +774,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -756,6 +787,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'delete-prepared-statement',
       description: 'Deletes the prepared statement with the specified name from the specified workgroup',
       options: [
+
         Option(
           name: '--statement-name',
           description: 'The name of the prepared statement to delete',
@@ -790,6 +822,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -802,6 +835,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'delete-work-group',
       description: 'Deletes the workgroup with the specified name. The primary workgroup cannot be deleted',
       options: [
+
         Option(
           name: '--work-group',
           description: 'The unique name of the workgroup to delete',
@@ -835,6 +869,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -847,6 +882,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'export-notebook',
       description: 'Exports the specified notebook and its metadata',
       options: [
+
         Option(
           name: '--notebook-id',
           description: 'The ID of the notebook to export',
@@ -872,6 +908,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -884,6 +921,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-calculation-execution',
       description: 'Describes a previously submitted calculation execution',
       options: [
+
         Option(
           name: '--calculation-execution-id',
           description: 'The calculation execution UUID',
@@ -909,6 +947,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -921,6 +960,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-calculation-execution-code',
       description: 'Retrieves the unencrypted code that was executed for the calculation',
       options: [
+
         Option(
           name: '--calculation-execution-id',
           description: 'The calculation execution UUID',
@@ -946,6 +986,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -958,6 +999,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-calculation-execution-status',
       description: 'Gets the status of a current calculation',
       options: [
+
         Option(
           name: '--calculation-execution-id',
           description: 'The calculation execution UUID',
@@ -983,6 +1025,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -995,6 +1038,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-capacity-assignment-configuration',
       description: 'Gets the capacity assignment configuration for a capacity reservation, if one exists',
       options: [
+
         Option(
           name: '--capacity-reservation-name',
           description: 'The name of the capacity reservation to retrieve the capacity assignment configuration for',
@@ -1020,6 +1064,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1032,6 +1077,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-capacity-reservation',
       description: 'Returns information about the capacity reservation with the specified name',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the capacity reservation',
@@ -1057,6 +1103,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1069,6 +1116,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-data-catalog',
       description: 'Returns the specified data catalog',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the data catalog to return',
@@ -1103,6 +1151,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1115,6 +1164,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-database',
       description: 'Returns a database object for the specified database and data catalog',
       options: [
+
         Option(
           name: '--catalog-name',
           description: 'The name of the data catalog that contains the database to return',
@@ -1158,6 +1208,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1170,6 +1221,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-named-query',
       description: 'Returns information about a single query. Requires that you have access to the workgroup in which the query was saved',
       options: [
+
         Option(
           name: '--named-query-id',
           description: 'The unique ID of the query. Use ListNamedQueries to get query IDs',
@@ -1195,6 +1247,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1207,6 +1260,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-notebook-metadata',
       description: 'Retrieves notebook metadata for the specified notebook ID',
       options: [
+
         Option(
           name: '--notebook-id',
           description: 'The ID of the notebook whose metadata is to be retrieved',
@@ -1232,6 +1286,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1244,6 +1299,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-prepared-statement',
       description: 'Retrieves the prepared statement with the specified name from the specified workgroup',
       options: [
+
         Option(
           name: '--statement-name',
           description: 'The name of the prepared statement to retrieve',
@@ -1278,6 +1334,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1290,6 +1347,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-query-execution',
       description: 'Returns information about a single execution of a query if you have access to the workgroup in which the query ran. Each time a query executes, information about the query execution is saved with a unique ID',
       options: [
+
         Option(
           name: '--query-execution-id',
           description: 'The unique ID of the query execution',
@@ -1315,6 +1373,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1327,6 +1386,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-query-results',
       description: 'Streams the results of a single query execution specified by QueryExecutionId from the Athena query results location in Amazon S3. For more information, see Working with query results, recent queries, and output files in the Amazon Athena User Guide. This request does not execute the query but returns results. Use StartQueryExecution to run a query. To stream query results successfully, the IAM principal with permission to call GetQueryResults also must have permissions to the Amazon S3 GetObject action for the Athena query results location.  IAM principals with permission to the Amazon S3 GetObject action for the query results location are able to retrieve query results from Amazon S3 even if permission to the GetQueryResults action is denied. To restrict user or role access, ensure that Amazon S3 permissions to the Athena query location are denied',
       options: [
+
         Option(
           name: '--query-execution-id',
           description: 'The unique ID of the query execution',
@@ -1397,6 +1457,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1409,6 +1470,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-query-runtime-statistics',
       description: 'Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. Statistics from the Timeline section of the response object are available as soon as QueryExecutionStatus\$State is in a SUCCEEDED or FAILED state. The remaining non-timeline statistics in the response (like stage-level input and output row count and data size) are updated asynchronously and may not be available immediately after a query completes. The non-timeline statistics are also not included when a query has row-level filters defined in Lake Formation',
       options: [
+
         Option(
           name: '--query-execution-id',
           description: 'The unique ID of the query execution',
@@ -1434,6 +1496,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1446,6 +1509,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-session',
       description: 'Gets the full details of a previously created session, including the session status and configuration',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The session ID',
@@ -1471,6 +1535,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1483,6 +1548,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-session-status',
       description: 'Gets the current status of a session',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The session ID',
@@ -1508,6 +1574,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1520,6 +1587,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-table-metadata',
       description: 'Returns table metadata for the specified catalog, database, and table',
       options: [
+
         Option(
           name: '--catalog-name',
           description: 'The name of the data catalog that contains the database and table metadata to return',
@@ -1572,6 +1640,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1584,6 +1653,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'get-work-group',
       description: 'Returns information about the workgroup with the specified name',
       options: [
+
         Option(
           name: '--work-group',
           description: 'The name of the workgroup',
@@ -1609,6 +1679,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1621,6 +1692,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'import-notebook',
       description: 'Imports a single ipynb file to a Spark enabled workgroup. To import the notebook, the request must specify a value for either Payload or NoteBookS3LocationUri. If neither is specified or both are specified, an InvalidRequestException occurs. The maximum file size that can be imported is 10 megabytes. If an ipynb file with the same name already exists in the workgroup, throws an error',
       options: [
+
         Option(
           name: '--work-group',
           description: 'The name of the Spark enabled workgroup to import the notebook to',
@@ -1691,6 +1763,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1703,6 +1776,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-application-dpu-sizes',
       description: 'Returns the supported DPU sizes for the supported application runtimes (for example, Athena notebook version 1)',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Specifies the maximum number of results to return',
@@ -1737,6 +1811,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1749,6 +1824,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-calculation-executions',
       description: 'Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed first; older calculations are listed later',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The session ID',
@@ -1801,6 +1877,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1813,6 +1890,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-capacity-reservations',
       description: 'Lists the capacity reservations for the current account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated',
@@ -1847,6 +1925,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1859,6 +1938,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-data-catalogs',
       description: 'Lists the data catalogs in the current Amazon Web Services account.  In the Athena console, data catalogs are listed as "data sources" on the Data sources page under the Data source name column',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call',
@@ -1929,6 +2009,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1941,6 +2022,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-databases',
       description: 'Lists the databases in the specified data catalog',
       options: [
+
         Option(
           name: '--catalog-name',
           description: 'The name of the data catalog that contains the databases to return',
@@ -2020,6 +2102,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2032,6 +2115,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-engine-versions',
       description: 'Returns a list of engine versions that are available to choose from, including the Auto option',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call',
@@ -2066,6 +2150,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2078,6 +2163,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-executors',
       description: 'Lists, in descending order, the executors that joined a session. Newer executors are listed first; older executors are listed later. The result can be optionally filtered by state',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The session ID',
@@ -2130,6 +2216,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2142,6 +2229,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-named-queries',
       description: 'Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call',
@@ -2212,6 +2300,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2224,6 +2313,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-notebook-metadata',
       description: 'Displays the notebook files for the specified workgroup in paginated format',
       options: [
+
         Option(
           name: '--filters',
           description: 'Search filter string',
@@ -2276,6 +2366,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2288,6 +2379,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-notebook-sessions',
       description: 'Lists, in descending order, the sessions that have been created in a notebook that are in an active state like CREATING, CREATED, IDLE or BUSY. Newer sessions are listed first; older sessions are listed later',
       options: [
+
         Option(
           name: '--notebook-id',
           description: 'The ID of the notebook to list sessions for',
@@ -2331,6 +2423,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2343,6 +2436,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-prepared-statements',
       description: 'Lists the prepared statements in the specified workgroup',
       options: [
+
         Option(
           name: '--work-group',
           description: 'The workgroup to list the prepared statements for',
@@ -2386,6 +2480,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2398,6 +2493,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-query-executions',
       description: 'Provides a list of available query execution IDs for the queries in the specified workgroup. Athena keeps a query history for 45 days. If a workgroup is not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to the workgroup in which the queries ran',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call',
@@ -2468,6 +2564,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2480,6 +2577,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-sessions',
       description: 'Lists the sessions in a workgroup that are in an active state like CREATING, CREATED, IDLE, or BUSY. Newer sessions are listed first; older sessions are listed later',
       options: [
+
         Option(
           name: '--work-group',
           description: 'The workgroup to which the session belongs',
@@ -2532,6 +2630,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2544,6 +2643,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-table-metadata',
       description: 'Lists the metadata for the tables in the specified data catalog database',
       options: [
+
         Option(
           name: '--catalog-name',
           description: 'The name of the data catalog for which table metadata should be returned',
@@ -2641,6 +2741,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2653,6 +2754,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags associated with an Athena resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Lists the tags for the resource with the specified ARN',
@@ -2723,6 +2825,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2735,6 +2838,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'list-work-groups',
       description: 'Lists available workgroups for the account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call',
@@ -2769,6 +2873,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2781,6 +2886,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'put-capacity-assignment-configuration',
       description: 'Puts a new capacity assignment configuration for a specified capacity reservation. If a capacity assignment configuration already exists for the capacity reservation, replaces the existing capacity assignment configuration',
       options: [
+
         Option(
           name: '--capacity-reservation-name',
           description: 'The name of the capacity reservation to put a capacity assignment configuration for',
@@ -2815,6 +2921,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2827,6 +2934,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'start-calculation-execution',
       description: 'Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request.  The request syntax requires the StartCalculationExecutionRequest\$CodeBlock parameter or the CalculationConfiguration\$CodeBlock parameter, but not both. Because CalculationConfiguration\$CodeBlock is deprecated, use the StartCalculationExecutionRequest\$CodeBlock parameter instead',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The session ID',
@@ -2888,6 +2996,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2900,6 +3009,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'start-query-execution',
       description: 'Runs the SQL query statements contained in the Query. Requires you to have access to the workgroup in which the query ran. Running queries against an external catalog requires GetDataCatalog permission to the catalog. For code samples using the Amazon Web Services SDK for Java, see Examples and Code Samples in the Amazon Athena User Guide',
       options: [
+
         Option(
           name: '--query-string',
           description: 'The SQL query statements to be executed',
@@ -2979,6 +3089,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2991,6 +3102,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'start-session',
       description: 'Creates a session for running calculations within a workgroup. The session is ready when it reaches an IDLE state',
       options: [
+
         Option(
           name: '--description',
           description: 'The session description',
@@ -3061,6 +3173,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3073,6 +3186,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'stop-calculation-execution',
       description: 'Requests the cancellation of a calculation. A StopCalculationExecution call on a calculation that is already in a terminal state (for example, STOPPED, FAILED, or COMPLETED) succeeds but has no effect.  Cancelling a calculation is done on a best effort basis. If a calculation cannot be cancelled, you can be charged for its completion. If you are concerned about being charged for a calculation that cannot be cancelled, consider terminating the session in which the calculation is running',
       options: [
+
         Option(
           name: '--calculation-execution-id',
           description: 'The calculation execution UUID',
@@ -3098,6 +3212,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3110,6 +3225,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'stop-query-execution',
       description: 'Stops a query execution. Requires you to have access to the workgroup in which the query ran',
       options: [
+
         Option(
           name: '--query-execution-id',
           description: 'The unique ID of the query execution to stop',
@@ -3135,6 +3251,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3147,6 +3264,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups, data catalogs, or capacity reservations by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter the resources in your account. For best practices, see Tagging Best Practices. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Specifies the ARN of the Athena resource to which tags are to be added',
@@ -3181,6 +3299,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3193,6 +3312,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'terminate-session',
       description: 'Terminates an active session. A TerminateSession call on a session that is already inactive (for example, in a FAILED, TERMINATED or TERMINATING state) succeeds but has no effect. Calculations running in the session when TerminateSession is called are forcefully stopped, but may display as FAILED instead of STOPPED',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The session ID',
@@ -3218,6 +3338,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3230,6 +3351,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from an Athena resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Specifies the ARN of the resource from which tags are to be removed',
@@ -3264,6 +3386,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3276,6 +3399,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'update-capacity-reservation',
       description: 'Updates the number of requested data processing units for the capacity reservation with the specified name',
       options: [
+
         Option(
           name: '--target-dpus',
           description: 'The new number of requested data processing units',
@@ -3310,6 +3434,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3322,6 +3447,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'update-data-catalog',
       description: 'Updates the data catalog that has the specified name',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena',
@@ -3374,6 +3500,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3386,6 +3513,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'update-named-query',
       description: 'Updates a NamedQuery object. The database or workgroup cannot be updated',
       options: [
+
         Option(
           name: '--named-query-id',
           description: 'The unique identifier (UUID) of the query',
@@ -3438,6 +3566,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3450,6 +3579,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'update-notebook',
       description: 'Updates the contents of a Spark notebook',
       options: [
+
         Option(
           name: '--notebook-id',
           description: 'The ID of the notebook to update',
@@ -3511,6 +3641,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3523,6 +3654,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'update-notebook-metadata',
       description: 'Updates the metadata for a notebook',
       options: [
+
         Option(
           name: '--notebook-id',
           description: 'The ID of the notebook to update the metadata for',
@@ -3566,6 +3698,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3578,6 +3711,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'update-prepared-statement',
       description: 'Updates a prepared statement',
       options: [
+
         Option(
           name: '--statement-name',
           description: 'The name of the prepared statement',
@@ -3630,6 +3764,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3642,6 +3777,7 @@ final FigSpec athenaSpec = FigSpec(
       name: 'update-work-group',
       description: 'Updates the workgroup with the specified name. The workgroup\'s name cannot be changed. Only ConfigurationUpdates can be specified',
       options: [
+
         Option(
           name: '--work-group',
           description: 'The specified workgroup that will be updated',
@@ -3694,6 +3830,7 @@ final FigSpec athenaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

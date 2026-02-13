@@ -9,10 +9,12 @@ final FigSpec devicefarmSpec = FigSpec(
   name: 'devicefarm',
   description: 'Welcome to the AWS Device Farm API documentation, which contains APIs for:   Testing on desktop browsers  Device Farm makes it possible for you to test your web applications on desktop browsers using Selenium. The APIs for desktop browser testing contain TestGrid in their names. For more information, see Testing Web Applications on Selenium with Device Farm.   Testing on real mobile devices Device Farm makes it possible for you to test apps on physical phones, tablets, and other devices in the cloud. For more information, see the Device Farm Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-device-pool',
       description: 'Creates a device pool',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'The ARN of the project for the device pool',
@@ -74,6 +76,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'create-instance-profile',
       description: 'Creates a profile that can be applied to one or more private fleet device instances',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of your instance profile',
@@ -145,6 +149,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -157,6 +162,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'create-network-profile',
       description: 'Creates a network profile',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'The Amazon Resource Name (ARN) of the project for which you want to create a network profile',
@@ -281,6 +287,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -293,6 +300,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'create-project',
       description: 'Creates a project',
       options: [
+
         Option(
           name: '--name',
           description: 'The project\'s name',
@@ -336,6 +344,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -348,6 +357,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'create-remote-access-session',
       description: 'Specifies and starts a remote access session',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'The Amazon Resource Name (ARN) of the project for which you want to create a remote access session',
@@ -469,6 +479,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -481,6 +492,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'create-test-grid-project',
       description: 'Creates a Selenium testing project. Projects are used to track TestGridSession instances',
       options: [
+
         Option(
           name: '--name',
           description: 'Human-readable name of the Selenium testing project',
@@ -524,6 +536,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -536,6 +549,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'create-test-grid-url',
       description: 'Creates a signed, short-term URL that can be passed to a Selenium RemoteWebDriver constructor',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'ARN (from CreateTestGridProject or ListTestGridProjects) to associate with the short-term URL',
@@ -570,6 +584,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -582,6 +597,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'create-upload',
       description: 'Uploads an app or test scripts',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'The ARN of the project for the upload',
@@ -634,6 +650,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -646,6 +663,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'create-vpce-configuration',
       description: 'Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud (VPC) endpoint',
       options: [
+
         Option(
           name: '--vpce-configuration-name',
           description: 'The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily',
@@ -698,6 +716,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -710,6 +729,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'delete-device-pool',
       description: 'Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system',
       options: [
+
         Option(
           name: '--arn',
           description: 'Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete',
@@ -735,6 +755,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -747,6 +768,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'delete-instance-profile',
       description: 'Deletes a profile that can be applied to one or more private device instances',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the instance profile you are requesting to delete',
@@ -772,6 +794,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -784,6 +807,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'delete-network-profile',
       description: 'Deletes a network profile',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the network profile to delete',
@@ -809,6 +833,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -821,6 +846,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'delete-project',
       description: 'Deletes an AWS Device Farm project, given the project ARN.  Deleting this resource does not stop an in-progress run',
       options: [
+
         Option(
           name: '--arn',
           description: 'Represents the Amazon Resource Name (ARN) of the Device Farm project to delete',
@@ -846,6 +872,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -858,6 +885,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'delete-remote-access-session',
       description: 'Deletes a completed remote access session and its results',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the session for which you want to delete remote access',
@@ -883,6 +911,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -895,6 +924,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'delete-run',
       description: 'Deletes the run, given the run ARN.  Deleting this resource does not stop an in-progress run',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) for the run to delete',
@@ -920,6 +950,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -932,6 +963,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'delete-test-grid-project',
       description: 'Deletes a Selenium testing project and all content generated under it.   You cannot undo this operation.   You cannot delete a project if it has active sessions',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'The ARN of the project to delete, from CreateTestGridProject or ListTestGridProjects',
@@ -957,6 +989,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -969,6 +1002,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'delete-upload',
       description: 'Deletes an upload given the upload ARN',
       options: [
+
         Option(
           name: '--arn',
           description: 'Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete',
@@ -994,6 +1028,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1006,6 +1041,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'delete-vpce-configuration',
       description: 'Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete',
@@ -1031,6 +1067,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1043,6 +1080,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-account-settings',
       description: 'Returns the number of unmetered iOS or unmetered Android devices that have been purchased by the account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1059,6 +1097,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1071,6 +1110,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-device',
       description: 'Gets information about a unique device type',
       options: [
+
         Option(
           name: '--arn',
           description: 'The device type\'s ARN',
@@ -1096,6 +1136,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1108,6 +1149,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-device-instance',
       description: 'Returns information about a device instance that belongs to a private device fleet',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the instance you\'re requesting information about',
@@ -1133,6 +1175,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1145,6 +1188,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-device-pool',
       description: 'Gets information about a device pool',
       options: [
+
         Option(
           name: '--arn',
           description: 'The device pool\'s ARN',
@@ -1170,6 +1214,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1182,6 +1227,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-device-pool-compatibility',
       description: 'Gets information about compatibility with a device pool',
       options: [
+
         Option(
           name: '--device-pool-arn',
           description: 'The device pool\'s ARN',
@@ -1243,6 +1289,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1255,6 +1302,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-instance-profile',
       description: 'Returns information about the specified instance profile',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of an instance profile',
@@ -1280,6 +1328,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1292,6 +1341,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-job',
       description: 'Gets information about a job',
       options: [
+
         Option(
           name: '--arn',
           description: 'The job\'s ARN',
@@ -1317,6 +1367,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1329,6 +1380,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-network-profile',
       description: 'Returns information about a network profile',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the network profile to return information about',
@@ -1354,6 +1406,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1366,6 +1419,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-offering-status',
       description: 'Gets the current status and future status of all offerings purchased by an AWS account. The response indicates how many offerings are currently available and the offerings that will be available in the next period. The API returns a NotEligible error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact aws-devicefarm-support@amazon.com',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list',
@@ -1409,6 +1463,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1421,6 +1476,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-project',
       description: 'Gets information about a project',
       options: [
+
         Option(
           name: '--arn',
           description: 'The project\'s ARN',
@@ -1446,6 +1502,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1458,6 +1515,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-remote-access-session',
       description: 'Returns a link to a currently running remote access session',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the remote access session about which you want to get session information',
@@ -1483,6 +1541,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1495,6 +1554,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-run',
       description: 'Gets information about a run',
       options: [
+
         Option(
           name: '--arn',
           description: 'The run\'s ARN',
@@ -1520,6 +1580,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1532,6 +1593,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-suite',
       description: 'Gets information about a suite',
       options: [
+
         Option(
           name: '--arn',
           description: 'The suite\'s ARN',
@@ -1557,6 +1619,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1569,6 +1632,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-test',
       description: 'Gets information about a test',
       options: [
+
         Option(
           name: '--arn',
           description: 'The test\'s ARN',
@@ -1594,6 +1658,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1606,6 +1671,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-test-grid-project',
       description: 'Retrieves information about a Selenium testing project',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'The ARN of the Selenium testing project, from either CreateTestGridProject or ListTestGridProjects',
@@ -1631,6 +1697,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1643,6 +1710,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-test-grid-session',
       description: 'A session is an instance of a browser created through a RemoteWebDriver with the URL from CreateTestGridUrlResult\$url. You can use the following to look up sessions:   The session ARN (GetTestGridSessionRequest\$sessionArn).   The project ARN and a session ID (GetTestGridSessionRequest\$projectArn and GetTestGridSessionRequest\$sessionId)',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'The ARN for the project that this session belongs to. See CreateTestGridProject and ListTestGridProjects',
@@ -1686,6 +1754,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1698,6 +1767,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-upload',
       description: 'Gets information about an upload',
       options: [
+
         Option(
           name: '--arn',
           description: 'The upload\'s ARN',
@@ -1723,6 +1793,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1735,6 +1806,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'get-vpce-configuration',
       description: 'Returns information about the configuration settings for your Amazon Virtual Private Cloud (VPC) endpoint',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe',
@@ -1760,6 +1832,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1772,6 +1845,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'install-to-remote-access-session',
       description: 'Installs an application to the device in a remote access session. For Android applications, the file must be in .apk format. For iOS applications, the file must be in .ipa format',
       options: [
+
         Option(
           name: '--remote-access-session-arn',
           description: 'The Amazon Resource Name (ARN) of the remote access session about which you are requesting information',
@@ -1806,6 +1880,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1818,6 +1893,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-artifacts',
       description: 'Gets information about artifacts',
       options: [
+
         Option(
           name: '--arn',
           description: 'The run, job, suite, or test ARN',
@@ -1879,6 +1955,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1891,6 +1968,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-device-instances',
       description: 'Returns information about the private device instances associated with one or more AWS accounts',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An integer that specifies the maximum number of items you want to return in the API response',
@@ -1952,6 +2030,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1964,6 +2043,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-device-pools',
       description: 'Gets information about device pools',
       options: [
+
         Option(
           name: '--arn',
           description: 'The project ARN',
@@ -2025,6 +2105,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2037,6 +2118,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-devices',
       description: 'Gets information about unique device types',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the project',
@@ -2098,6 +2180,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2110,6 +2193,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-instance-profiles',
       description: 'Returns information about all the instance profiles in an AWS account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An integer that specifies the maximum number of items you want to return in the API response',
@@ -2171,6 +2255,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2183,6 +2268,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-jobs',
       description: 'Gets information about jobs for a given test run',
       options: [
+
         Option(
           name: '--arn',
           description: 'The run\'s Amazon Resource Name (ARN)',
@@ -2235,6 +2321,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2247,6 +2334,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-network-profiles',
       description: 'Returns the list of available network profiles',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the project for which you want to list network profiles',
@@ -2308,6 +2396,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2320,6 +2409,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-offering-promotions',
       description: 'Returns a list of offering promotions. Each offering promotion record contains the ID and description of the promotion. The API returns a NotEligible error if the caller is not permitted to invoke the operation. Contact aws-devicefarm-support@amazon.com if you must be able to invoke this operation',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list',
@@ -2363,6 +2453,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2375,6 +2466,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-offering-transactions',
       description: 'Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a NotEligible error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact aws-devicefarm-support@amazon.com',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list',
@@ -2418,6 +2510,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2430,6 +2523,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-offerings',
       description: 'Returns a list of products or offerings that the user can manage through the API. Each offering record indicates the recurring price per unit and the frequency for that offering. The API returns a NotEligible error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact aws-devicefarm-support@amazon.com',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list',
@@ -2473,6 +2567,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2485,6 +2580,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-projects',
       description: 'Gets information about projects',
       options: [
+
         Option(
           name: '--arn',
           description: 'Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN',
@@ -2537,6 +2633,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2549,6 +2646,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-remote-access-sessions',
       description: 'Returns a list of all currently running remote access sessions',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the project about which you are requesting information',
@@ -2601,6 +2699,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2613,6 +2712,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-runs',
       description: 'Gets information about runs, given an AWS Device Farm project ARN',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the project for which you want to list runs',
@@ -2665,6 +2765,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2677,6 +2778,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-samples',
       description: 'Gets information about samples, given an AWS Device Farm job ARN',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the job used to list samples',
@@ -2729,6 +2831,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2741,6 +2844,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-suites',
       description: 'Gets information about test suites for a given job',
       options: [
+
         Option(
           name: '--arn',
           description: 'The job\'s Amazon Resource Name (ARN)',
@@ -2793,6 +2897,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2805,6 +2910,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List the tags for an AWS Device Farm resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: PROJECT, RUN, NETWORK_PROFILE, INSTANCE_PROFILE, DEVICE_INSTANCE, SESSION, DEVICE_POOL, DEVICE, and VPCE_CONFIGURATION',
@@ -2830,6 +2936,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2842,6 +2949,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-test-grid-projects',
       description: 'Gets a list of all Selenium testing projects in your account',
       options: [
+
         Option(
           name: '--max-result',
           description: 'Return no more than this number of results',
@@ -2876,6 +2984,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2888,6 +2997,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-test-grid-session-actions',
       description: 'Returns a list of the actions taken in a TestGridSession',
       options: [
+
         Option(
           name: '--session-arn',
           description: 'The ARN of the session to retrieve',
@@ -2931,6 +3041,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2943,6 +3054,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-test-grid-session-artifacts',
       description: 'Retrieves a list of artifacts created during the session',
       options: [
+
         Option(
           name: '--session-arn',
           description: 'The ARN of a TestGridSession',
@@ -2995,6 +3107,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3007,6 +3120,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-test-grid-sessions',
       description: 'Retrieves a list of sessions for a TestGridProject',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'ARN of a TestGridProject',
@@ -3095,6 +3209,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3107,6 +3222,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-tests',
       description: 'Gets information about tests in a given test suite',
       options: [
+
         Option(
           name: '--arn',
           description: 'The test suite\'s Amazon Resource Name (ARN)',
@@ -3159,6 +3275,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3171,6 +3288,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-unique-problems',
       description: 'Gets information about unique problems, such as exceptions or crashes. Unique problems are defined as a single instance of an error across a run, job, or suite. For example, if a call in your application consistently raises an exception (OutOfBoundsException in MyActivity.java:386), ListUniqueProblems returns a single entry instead of many individual entries for that exception',
       options: [
+
         Option(
           name: '--arn',
           description: 'The unique problems\' ARNs',
@@ -3223,6 +3341,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3235,6 +3354,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-uploads',
       description: 'Gets information about uploads, given an AWS Device Farm project ARN',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the project for which you want to list uploads',
@@ -3296,6 +3416,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3308,6 +3429,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'list-vpce-configurations',
       description: 'Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations in the AWS account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An integer that specifies the maximum number of items you want to return in the API response',
@@ -3369,6 +3491,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3381,6 +3504,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'purchase-offering',
       description: 'Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for an offering, unless the renewal was overridden. The API returns a NotEligible error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact aws-devicefarm-support@amazon.com',
       options: [
+
         Option(
           name: '--offering-id',
           description: 'The ID of the offering',
@@ -3424,6 +3548,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3436,6 +3561,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'renew-offering',
       description: 'Explicitly sets the quantity of devices to renew for an offering, starting from the effectiveDate of the next period. The API returns a NotEligible error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact aws-devicefarm-support@amazon.com',
       options: [
+
         Option(
           name: '--offering-id',
           description: 'The ID of a request to renew an offering',
@@ -3470,6 +3596,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3482,6 +3609,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'schedule-run',
       description: 'Schedules a run',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'The ARN of the project for the run to be scheduled',
@@ -3570,6 +3698,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3582,6 +3711,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'stop-job',
       description: 'Initiates a stop request for the current job. AWS Device Farm immediately stops the job on the device where tests have not started. You are not billed for this device. On the device where tests have started, setup suite and teardown suite tests run to completion on the device. You are billed for setup, teardown, and any tests that were in progress or already completed',
       options: [
+
         Option(
           name: '--arn',
           description: 'Represents the Amazon Resource Name (ARN) of the Device Farm job to stop',
@@ -3607,6 +3737,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3619,6 +3750,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'stop-remote-access-session',
       description: 'Ends a specified remote access session',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the remote access session to stop',
@@ -3644,6 +3776,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3656,6 +3789,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'stop-run',
       description: 'Initiates a stop request for the current test run. AWS Device Farm immediately stops the run on devices where tests have not started. You are not billed for these devices. On devices where tests have started executing, setup suite and teardown suite tests run to completion on those devices. You are billed for setup, teardown, and any tests that were in progress or already completed',
       options: [
+
         Option(
           name: '--arn',
           description: 'Represents the Amazon Resource Name (ARN) of the Device Farm run to stop',
@@ -3681,6 +3815,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3693,6 +3828,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are also deleted',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: PROJECT, RUN, NETWORK_PROFILE, INSTANCE_PROFILE, DEVICE_INSTANCE, SESSION, DEVICE_POOL, DEVICE, and VPCE_CONFIGURATION',
@@ -3727,6 +3863,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3739,6 +3876,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes the specified tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: PROJECT, RUN, NETWORK_PROFILE, INSTANCE_PROFILE, DEVICE_INSTANCE, SESSION, DEVICE_POOL, DEVICE, and VPCE_CONFIGURATION',
@@ -3773,6 +3911,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3785,6 +3924,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'update-device-instance',
       description: 'Updates information about a private device instance',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the device instance',
@@ -3828,6 +3968,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3840,6 +3981,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'update-device-pool',
       description: 'Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a whole (or not at all)',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Device Farm device pool to update',
@@ -3909,6 +4051,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3921,6 +4064,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'update-instance-profile',
       description: 'Updates information about an existing private device instance profile',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the instance profile',
@@ -3989,6 +4133,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4001,6 +4146,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'update-network-profile',
       description: 'Updates the network profile',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the project for which you want to update network profile settings',
@@ -4125,6 +4271,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4137,6 +4284,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'update-project',
       description: 'Modifies the specified project name, given the project ARN and a new name',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the project whose name to update',
@@ -4189,6 +4337,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4201,6 +4350,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'update-test-grid-project',
       description: 'Change details of a project',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'ARN of the project to update',
@@ -4253,6 +4403,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4265,6 +4416,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'update-upload',
       description: 'Updates an uploaded test spec',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the uploaded test spec',
@@ -4316,6 +4468,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4328,6 +4481,7 @@ final FigSpec devicefarmSpec = FigSpec(
       name: 'update-vpce-configuration',
       description: 'Updates information about an Amazon Virtual Private Cloud (VPC) endpoint configuration',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update',
@@ -4389,6 +4543,7 @@ final FigSpec devicefarmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

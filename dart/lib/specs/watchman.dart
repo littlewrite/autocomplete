@@ -9,6 +9,7 @@ final FigSpec watchmanSpec = FigSpec(
   name: 'watchman',
   description: 'A file watching service',
   subcommands: [
+
     Subcommand(
       name: 'clock',
       description: 'Returns the current clock value for a watched root',
@@ -40,6 +41,7 @@ final FigSpec watchmanSpec = FigSpec(
       name: 'get-config',
       description: 'Returns the .watchmanconfig for the root',
       subcommands: [
+
         Subcommand(
           name: 'path',
           description: 'The path to root'
@@ -62,6 +64,7 @@ final FigSpec watchmanSpec = FigSpec(
         name: 'level',
         description: 'The log level',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'error'),
           FigSuggestion(name: 'off')
@@ -77,6 +80,7 @@ final FigSpec watchmanSpec = FigSpec(
         name: 'level',
         description: 'The log level',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'error'),
           FigSuggestion(name: 'off')
@@ -167,6 +171,7 @@ final FigSpec watchmanSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for watchman'
@@ -241,6 +246,7 @@ final FigSpec watchmanSpec = FigSpec(
         name: 'level',
         description: 'The log level',
         suggestions: [
+
           FigSuggestion(name: '0'),
           FigSuggestion(name: '1'),
           FigSuggestion(name: '2')
@@ -282,6 +288,7 @@ final FigSpec watchmanSpec = FigSpec(
         name: 'encoding',
         description: 'The output encoding',
         suggestions: [
+
           FigSuggestion(name: 'json'),
           FigSuggestion(name: 'bser')
         ]
@@ -296,6 +303,7 @@ final FigSpec watchmanSpec = FigSpec(
         name: 'encoding',
         description: 'The server encoding',
         suggestions: [
+
           FigSuggestion(name: 'bser'),
           FigSuggestion(name: 'json')
         ]

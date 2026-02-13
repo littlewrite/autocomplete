@@ -9,14 +9,17 @@ final FigSpec spaceSpec = FigSpec(
   name: 'space',
   description: 'Deta Space CLI for mananging Deta Space projects',
   subcommands: [
+
     Subcommand(
       name: 'completion',
       description: 'Generate the autocompletion script for the specified shell',
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Generate the autocompletion script for bash',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -27,6 +30,7 @@ final FigSpec spaceSpec = FigSpec(
           name: 'fish',
           description: 'Generate the autocompletion script for fish',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -37,6 +41,7 @@ final FigSpec spaceSpec = FigSpec(
           name: 'powershell',
           description: 'Generate the autocompletion script for powershell',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -47,6 +52,7 @@ final FigSpec spaceSpec = FigSpec(
           name: 'zsh',
           description: 'Generate the autocompletion script for zsh',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -59,6 +65,7 @@ final FigSpec spaceSpec = FigSpec(
       name: 'link',
       description: 'Link code to project',
       options: [
+
         Option(
           name: ['--dir', '-d'],
           description: 'Src of project to link',
@@ -89,6 +96,7 @@ final FigSpec spaceSpec = FigSpec(
       name: 'new',
       description: 'Create new project',
       options: [
+
         Option(
           name: ['--blank', '-b'],
           description: 'Create blank project'
@@ -119,6 +127,7 @@ final FigSpec spaceSpec = FigSpec(
       name: 'open',
       description: 'Open current project in browser',
       options: [
+
         Option(
           name: ['--dir', '-d'],
           description: 'Src of project to open',
@@ -145,6 +154,7 @@ final FigSpec spaceSpec = FigSpec(
       name: 'push',
       description: 'Push code for project',
       options: [
+
         Option(
           name: ['--dir', '-d'],
           description: 'Src of project to push',
@@ -188,6 +198,7 @@ final FigSpec spaceSpec = FigSpec(
       name: 'release',
       description: 'Create release for a project',
       options: [
+
         Option(
           name: ['--confirm', '-c'],
           description: 'Release latest revision'
@@ -249,6 +260,7 @@ final FigSpec spaceSpec = FigSpec(
       name: 'validate',
       description: 'Validate spacefile in dir',
       options: [
+
         Option(
           name: ['--dir', '-d'],
           description: 'Src of project to validate',
@@ -266,10 +278,12 @@ final FigSpec spaceSpec = FigSpec(
       name: 'version',
       description: 'Space CLI version',
       subcommands: [
+
         Subcommand(
           name: 'upgrade',
           description: 'Upgrade Space CLI version',
           options: [
+
             Option(
               name: ['--version', '-v'],
               description: 'Version number',
@@ -287,10 +301,12 @@ final FigSpec spaceSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'completion',
           description: 'Generate the autocompletion script for the specified shell',
           subcommands: [
+
             Subcommand(
               name: 'bash',
               description: 'Generate the autocompletion script for bash'
@@ -341,6 +357,7 @@ final FigSpec spaceSpec = FigSpec(
           name: 'version',
           description: 'Space CLI version',
           subcommands: [
+
             Subcommand(
               name: 'upgrade',
               description: 'Upgrade Space CLI version'
@@ -351,6 +368,7 @@ final FigSpec spaceSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Display help',

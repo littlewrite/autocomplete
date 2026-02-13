@@ -9,10 +9,12 @@ final FigSpec ivschatSpec = FigSpec(
   name: 'ivschat',
   description: 'Introduction  The Amazon IVS Chat control-plane API enables you to create and manage Amazon IVS Chat resources. You also need to integrate with the  Amazon IVS Chat Messaging API, to enable users to interact with chat rooms in real time. The API is an AWS regional service. For a list of supported regions and Amazon IVS Chat HTTPS service endpoints, see the Amazon IVS Chat information on the Amazon IVS page in the AWS General Reference.  This document describes HTTP operations. There is a separate messaging API for managing Chat resources; see the  Amazon IVS Chat Messaging API Reference.  Notes on terminology:    You create service applications using the Amazon IVS Chat API. We refer to these as applications.   You create front-end client applications (browser and Android/iOS apps) using the Amazon IVS Chat Messaging API. We refer to these as clients.     Resources  The following resources are part of Amazon IVS Chat:    LoggingConfiguration — A configuration that allows customers to store and record sent messages in a chat room. See the Logging Configuration endpoints for more information.    Room — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages. See the Room endpoints for more information.    Tagging  A tag is a metadata label that you assign to an AWS resource. A tag comprises a key and a value, both set by you. For example, you might set a tag as topic:nature to label a particular video category. See Best practices and strategies in Tagging Amazon Web Services Resources and Tag Editor for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no service-specific constraints beyond what is documented there. Tags can help you identify and organize your AWS resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see Access Tags). The Amazon IVS Chat API has these tag-related operations: TagResource, UntagResource, and ListTagsForResource. The following resource supports tagging: Room. At most 50 tags can be applied to a resource.  API Access Security  Your Amazon IVS Chat applications (service applications and clients) must be authenticated and authorized to access Amazon IVS Chat resources. Note the differences between these concepts:    Authentication is about verifying identity. Requests to the Amazon IVS Chat API must be signed to verify your identity.    Authorization is about granting permissions. Your IAM roles need to have permissions for Amazon IVS Chat API requests.   Users (viewers) connect to a room using secure access tokens that you create using the CreateChatToken operation through the AWS SDK. You call CreateChatToken for every user’s chat session, passing identity and authorization information about the user.  Signing API Requests  HTTP API requests must be signed with an AWS SigV4 signature using your AWS security credentials. The AWS Command Line Interface (CLI) and the AWS SDKs take care of signing the underlying API calls for you. However, if your application calls the Amazon IVS Chat HTTP API directly, it’s your responsibility to sign the requests. You generate a signature using valid AWS credentials for an IAM role that has permission to perform the requested action. For example, DeleteMessage requests must be made using an IAM role that has the ivschat:DeleteMessage permission. For more information:   Authentication and generating signatures — See Authenticating Requests (Amazon Web Services Signature Version 4) in the Amazon Web Services General Reference.   Managing Amazon IVS permissions — See Identity and Access Management on the Security page of the Amazon IVS User Guide.    Amazon Resource Names (ARNs)  ARNs uniquely identify AWS resources. An ARN is required when you need to specify a resource unambiguously across all of AWS, such as in IAM policies and API calls. For more information, see Amazon Resource Names in the AWS General Reference',
   subcommands: [
+
     Subcommand(
       name: 'create-chat-token',
       description: 'Creates an encrypted token that is used by a chat participant to establish an individual WebSocket chat connection to a room. When the token is used to connect to chat, the connection is valid for the session duration specified in the request. The token becomes invalid at the token-expiration timestamp included in the response. Use the capabilities field to permit an end user to send messages or moderate a room. The attributes field securely attaches structured data to the chat session; the data is included within each message sent by the end user and received by other participants in the room. Common use cases for attributes include passing end-user profile data like an icon, display name, colors, badges, and other display features. Encryption keys are owned by Amazon IVS Chat and never used directly by your application',
       options: [
+
         Option(
           name: '--room-identifier',
           description: 'Identifier of the room that the client is trying to access. Currently this must be an ARN',
@@ -74,6 +76,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'create-logging-configuration',
       description: 'Creates a logging configuration that allows clients to store and record sent messages',
       options: [
+
         Option(
           name: '--name',
           description: 'Logging-configuration name. The value does not need to be unique',
@@ -129,6 +133,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'create-room',
       description: 'Creates a room that allows clients to connect and pass messages',
       options: [
+
         Option(
           name: '--name',
           description: 'Room name. The value does not need to be unique',
@@ -211,6 +217,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -223,6 +230,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'delete-logging-configuration',
       description: 'Deletes the specified logging configuration',
       options: [
+
         Option(
           name: '--identifier',
           description: 'Identifier of the logging configuration to be deleted',
@@ -248,6 +256,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -260,6 +269,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'delete-message',
       description: 'Sends an event to a specific room which directs clients to delete a specific message; that is, unrender it from view and delete it from the client’s chat history. This event’s EventName is aws:DELETE_MESSAGE. This replicates the  DeleteMessage WebSocket operation in the Amazon IVS Chat Messaging API',
       options: [
+
         Option(
           name: '--room-identifier',
           description: 'Identifier of the room where the message should be deleted. Currently this must be an ARN',
@@ -303,6 +313,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -315,6 +326,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'delete-room',
       description: 'Deletes the specified room',
       options: [
+
         Option(
           name: '--identifier',
           description: 'Identifier of the room to be deleted. Currently this must be an ARN',
@@ -340,6 +352,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -352,6 +365,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'disconnect-user',
       description: 'Disconnects all connections using a specified user ID from a room. This replicates the  DisconnectUser WebSocket operation in the Amazon IVS Chat Messaging API',
       options: [
+
         Option(
           name: '--room-identifier',
           description: 'Identifier of the room from which the user\'s clients should be disconnected. Currently this must be an ARN',
@@ -395,6 +409,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -407,6 +422,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'get-logging-configuration',
       description: 'Gets the specified logging configuration',
       options: [
+
         Option(
           name: '--identifier',
           description: 'Identifier of the logging configuration to be retrieved',
@@ -432,6 +448,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -444,6 +461,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'get-room',
       description: 'Gets the specified room',
       options: [
+
         Option(
           name: '--identifier',
           description: 'Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN',
@@ -469,6 +487,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -481,6 +500,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'list-logging-configurations',
       description: 'Gets summary information about all your logging configurations in the AWS region where the API request is processed',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The first logging configurations to retrieve. This is used for pagination; see the nextToken response field',
@@ -515,6 +535,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -527,6 +548,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'list-rooms',
       description: 'Gets summary information about all your rooms in the AWS region where the API request is processed. Results are sorted in descending order of updateTime',
       options: [
+
         Option(
           name: '--name',
           description: 'Filters the list to match the specified room name',
@@ -588,6 +610,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -600,6 +623,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets information about AWS tags for the specified ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to be retrieved. The ARN must be URL-encoded',
@@ -625,6 +649,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -637,6 +662,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'send-event',
       description: 'Sends an event to a room. Use this within your application’s business logic to send events to clients of a room; e.g., to notify clients to change the way the chat UI is rendered',
       options: [
+
         Option(
           name: '--room-identifier',
           description: 'Identifier of the room to which the event will be sent. Currently this must be an ARN',
@@ -680,6 +706,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -692,6 +719,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or updates tags for the AWS resource with the specified ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to be tagged. The ARN must be URL-encoded',
@@ -726,6 +754,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -738,6 +767,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the resource with the specified ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to be untagged. The ARN must be URL-encoded',
@@ -772,6 +802,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -784,6 +815,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'update-logging-configuration',
       description: 'Updates a specified logging configuration',
       options: [
+
         Option(
           name: '--identifier',
           description: 'Identifier of the logging configuration to be updated',
@@ -827,6 +859,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -839,6 +872,7 @@ final FigSpec ivschatSpec = FigSpec(
       name: 'update-room',
       description: 'Updates a room’s configuration',
       options: [
+
         Option(
           name: '--identifier',
           description: 'Identifier of the room to be updated. Currently this must be an ARN',
@@ -909,6 +943,7 @@ final FigSpec ivschatSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

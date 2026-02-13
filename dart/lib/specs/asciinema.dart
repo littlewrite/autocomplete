@@ -9,6 +9,7 @@ final FigSpec asciinemaSpec = FigSpec(
   name: 'asciinema',
   description: 'Terminal session recorder',
   options: [
+
     Option(
       name: '--version',
       description: 'Ouput version information and exit'
@@ -20,6 +21,7 @@ final FigSpec asciinemaSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'rec',
       description: 'Start a recording',
@@ -30,6 +32,7 @@ final FigSpec asciinemaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--stdin',
           description: 'Enable stdin (keyboard) recording'
@@ -121,6 +124,7 @@ final FigSpec asciinemaSpec = FigSpec(
         name: 'file or URL',
         template: 'filepaths',
         suggestions: [
+
           FigSuggestion(
             name: '-',
             description: 'Stdin'
@@ -129,6 +133,7 @@ final FigSpec asciinemaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-i', '--idle-time-linit'],
           description: 'Limit replayed terminal inactivity',
@@ -159,6 +164,7 @@ final FigSpec asciinemaSpec = FigSpec(
         name: 'file or URL',
         template: 'filepaths',
         suggestions: [
+
           FigSuggestion(
             name: '-',
             description: 'Stdin'
@@ -175,6 +181,7 @@ final FigSpec asciinemaSpec = FigSpec(
         name: 'file or URL',
         template: 'filepaths',
         suggestions: [
+
           FigSuggestion(
             name: '-',
             description: 'Stdin'

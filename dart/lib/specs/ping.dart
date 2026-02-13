@@ -14,6 +14,7 @@ final FigSpec pingSpec = FigSpec(
   ],
   description: 'Send ICMP ECHO_REQUEST to network hosts',
   options: [
+
     Option(
       name: '-A',
       description: 'Audible. Output a bell (ASCII 0x07) character when no packet is received before the next packet is transmitted. To cater for round-trip times that are longer than the interval between trans- missions, further missing packets cause a bell only if the maxi- mum number of unreceived packets has increased'
@@ -110,6 +111,7 @@ final FigSpec pingSpec = FigSpec(
         Arg(
         name: 'trafficclass',
         suggestions: [
+
           FigSuggestion(name: 'BK_SYS'),
           FigSuggestion(name: 'BK'),
           FigSuggestion(name: 'BE'),
@@ -132,6 +134,7 @@ final FigSpec pingSpec = FigSpec(
         Arg(
         name: 'netservicetype',
         suggestions: [
+
           FigSuggestion(name: 'BK_SYS'),
           FigSuggestion(name: 'BK'),
           FigSuggestion(name: 'BE'),

@@ -9,6 +9,7 @@ final FigSpec lsblkSpec = FigSpec(
   name: 'lsblk',
   description: 'List block devices',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for lsblk'

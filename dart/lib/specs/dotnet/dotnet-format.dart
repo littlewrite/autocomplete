@@ -16,6 +16,7 @@ final FigSpec formatSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--diagnostics',
       description: 'A space-separated list of diagnostic IDs to use as a filter when fixing code style or third party issues. Default value is whichever IDs are listed in the editorconfig file',
@@ -34,6 +35,7 @@ final FigSpec formatSpec = FigSpec(
         isOptional: true,
         defaultValue: 'warn',
         suggestions: [
+
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warn'),
           FigSuggestion(name: 'error')
@@ -80,6 +82,7 @@ final FigSpec formatSpec = FigSpec(
         Arg(
         name: 'verbosity',
         suggestions: [
+
           FigSuggestion(name: 'quiet'),
           FigSuggestion(name: 'minimal'),
           FigSuggestion(name: 'normal'),

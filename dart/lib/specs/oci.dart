@@ -9,18 +9,22 @@ final FigSpec ociSpec = FigSpec(
   name: 'oci',
   description: 'Oracle Cloud Infrastructure CLI',
   subcommands: [
+
     Subcommand(
       name: 'compute',
       description: 'Manage Compute resources like instances and images',
       subcommands: [
+
         Subcommand(
           name: 'instance',
           description: 'Manage Compute instances',
           subcommands: [
+
             Subcommand(
               name: 'launch',
               description: 'Launch a new compute instance',
               options: [
+
                 Option(
                   name: '--availability-domain',
                   description: 'The availability domain of the instance'
@@ -39,6 +43,7 @@ final FigSpec ociSpec = FigSpec(
               name: 'terminate',
               description: 'Terminate a compute instance',
               options: [
+
                 Option(
                   name: '--instance-id',
                   description: 'The OCID of the instance'
@@ -49,6 +54,7 @@ final FigSpec ociSpec = FigSpec(
               name: 'start',
               description: 'Start a stopped instance',
               options: [
+
                 Option(
                   name: '--instance-id',
                   description: 'The OCID of the instance'
@@ -59,6 +65,7 @@ final FigSpec ociSpec = FigSpec(
               name: 'stop',
               description: 'Stop a running instance',
               options: [
+
                 Option(
                   name: '--instance-id',
                   description: 'The OCID of the instance'
@@ -71,10 +78,12 @@ final FigSpec ociSpec = FigSpec(
           name: 'image',
           description: 'Manage Custom Images',
           subcommands: [
+
             Subcommand(
               name: 'list',
               description: 'List available compute images',
               options: [
+
                 Option(
                   name: '--compartment-id',
                   description: 'The OCID of the compartment'
@@ -89,14 +98,17 @@ final FigSpec ociSpec = FigSpec(
       name: 'network',
       description: 'Manage Virtual Cloud Network resources',
       subcommands: [
+
         Subcommand(
           name: 'vcn',
           description: 'Manage Virtual Cloud Networks',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new VCN',
               options: [
+
                 Option(
                   name: '--compartment-id',
                   description: 'The OCID of the compartment'
@@ -115,14 +127,17 @@ final FigSpec ociSpec = FigSpec(
       name: 'db',
       description: 'Manage Database resources',
       subcommands: [
+
         Subcommand(
           name: 'autonomous-database',
           description: 'Manage Autonomous Databases',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an Autonomous Database',
               options: [
+
                 Option(
                   name: '--compartment-id',
                   description: 'The OCID of the compartment'
@@ -145,14 +160,17 @@ final FigSpec ociSpec = FigSpec(
       name: 'os',
       description: 'Object Storage commands',
       subcommands: [
+
         Subcommand(
           name: 'bucket',
           description: 'Manage buckets',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new bucket',
               options: [
+
                 Option(
                   name: '--compartment-id',
                   description: 'The OCID of the compartment'
@@ -171,14 +189,17 @@ final FigSpec ociSpec = FigSpec(
       name: 'iam',
       description: 'Manage Identity and Access Management resources',
       subcommands: [
+
         Subcommand(
           name: 'user',
           description: 'Manage users',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new user',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'Name of the user'
@@ -195,10 +216,12 @@ final FigSpec ociSpec = FigSpec(
           name: 'policy',
           description: 'Manage IAM policies',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new policy',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'Name of the policy'
@@ -215,10 +238,12 @@ final FigSpec ociSpec = FigSpec(
           name: 'group',
           description: 'Manage IAM groups',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new group',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the group'
@@ -235,10 +260,12 @@ final FigSpec ociSpec = FigSpec(
           name: 'compartment',
           description: 'Manage compartments',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new compartment',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the compartment'
@@ -257,14 +284,17 @@ final FigSpec ociSpec = FigSpec(
       name: 'kms',
       description: 'Manage Key Management resources',
       subcommands: [
+
         Subcommand(
           name: 'key',
           description: 'Manage encryption keys',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new key',
               options: [
+
                 Option(
                   name: '--compartment-id',
                   description: 'The OCID of the compartment'
@@ -279,6 +309,7 @@ final FigSpec ociSpec = FigSpec(
                   args: [
                     Arg(
                     suggestions: [
+
                       FigSuggestion(name: 'AES'),
                       FigSuggestion(name: 'RSA'),
                       FigSuggestion(name: 'ECDSA')
@@ -296,14 +327,17 @@ final FigSpec ociSpec = FigSpec(
       name: 'monitoring',
       description: 'Manage Monitoring and Alerts',
       subcommands: [
+
         Subcommand(
           name: 'alarm',
           description: 'Manage monitoring alarms',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new alarm',
               options: [
+
                 Option(
                   name: '--display-name',
                   description: 'Display name of the alarm'
@@ -322,10 +356,12 @@ final FigSpec ociSpec = FigSpec(
       name: 'budget',
       description: 'Manage Budgets and Cost Controls',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new budget',
           options: [
+
             Option(
               name: '--compartment-id',
               description: 'The OCID of the compartment'
@@ -340,6 +376,7 @@ final FigSpec ociSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(name: 'MONTHLY'),
                   FigSuggestion(name: 'YEARLY')
                 ]
@@ -352,6 +389,7 @@ final FigSpec ociSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for oci'
@@ -382,6 +420,7 @@ final FigSpec ociSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(name: 'us-ashburn-1'),
           FigSuggestion(name: 'us-phoenix-1'),
           FigSuggestion(name: 'us-chicago-1'),
@@ -414,6 +453,7 @@ final FigSpec ociSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(name: 'json'),
           FigSuggestion(name: 'table'),
           FigSuggestion(name: 'text')
@@ -431,6 +471,7 @@ final FigSpec ociSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(name: 'api_key'),
           FigSuggestion(name: 'instance_principal'),
           FigSuggestion(name: 'resource_principal'),
@@ -455,6 +496,7 @@ final FigSpec ociSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(name: 'ACCEPTED'),
           FigSuggestion(name: 'AVAILABLE'),
           FigSuggestion(name: 'RUNNING'),
@@ -496,6 +538,7 @@ final FigSpec ociSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(name: 'json'),
           FigSuggestion(name: 'table'),
           FigSuggestion(name: 'text')

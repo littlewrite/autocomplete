@@ -4,15 +4,31 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> helpAndVersionOptions = [
+
+  Option(
+    name: ['--help', '-h'],
+    description: 'Prints help information',
+    isPersistent: true
+  ),
+  Option(
+    name: ['--version', '-V'],
+    description: 'Prints version information',
+    isPersistent: true
+  )
+];
+
 /// Completion spec for `aliases` CLI
 final FigSpec aliasesSpec = FigSpec(
   name: 'aliases',
   description: 'Bash aliases on steroids, dynamic alias functions for bash',
   subcommands: [
+
     Subcommand(
       name: 'add',
       description: 'Add an alias via the cli',
       args: [
+
         Arg(
           name: 'name',
           description: 'The name of the alias'
@@ -27,12 +43,14 @@ final FigSpec aliasesSpec = FigSpec(
       name: 'clone',
       description: 'Clone external aliases',
       options: [
+
         Option(
           name: ['-E', '--enable'],
           description: 'Whether to enable the user if they are not currently enabled'
         )
       ],
       args: [
+
         Arg(
           name: 'username',
           description: 'The username of the aliases you want to clone'
@@ -51,6 +69,7 @@ final FigSpec aliasesSpec = FigSpec(
       name: 'exec',
       description: 'Execute an alias for a given directory',
       args: [
+
         Arg(
           name: 'directory',
           description: 'Directory where the alias is defined',
@@ -71,6 +90,7 @@ final FigSpec aliasesSpec = FigSpec(
       name: 'init',
       description: 'Initialize a directory for aliases',
       options: [
+
         Option(
           name: ['-g', '--global'],
           description: 'Returns the global initialization for the app'
@@ -90,6 +110,7 @@ final FigSpec aliasesSpec = FigSpec(
       name: 'list',
       description: 'List the aliases available',
       options: [
+
         Option(
           name: ['-g', '--global'],
           description: 'List only global aliases'
@@ -147,6 +168,7 @@ final FigSpec aliasesSpec = FigSpec(
       name: 'users',
       description: 'List the users',
       subcommands: [
+
         Subcommand(
           name: 'disable',
           description: 'Disable a user\'s aliases',
@@ -173,6 +195,7 @@ final FigSpec aliasesSpec = FigSpec(
           name: 'move',
           description: 'Move a user up or down the prioritization list',
           args: [
+
             Arg(
               name: 'username'
             ),
@@ -192,5 +215,6 @@ final FigSpec aliasesSpec = FigSpec(
         )
       ]
     )
-  ]
+  ],
+  options: helpAndVersionOptions
 );

@@ -9,10 +9,12 @@ final FigSpec starkliSpec = FigSpec(
   name: 'starkli',
   description: 'Starkli, a ⚡ blazing ⚡ fast ⚡ CLI tool for Starknet powered by 🦀 starknet-rs 🦀',
   subcommands: [
+
     Subcommand(
       name: 'account',
       description: 'Account management commands',
       subcommands: [
+
         Subcommand(
           name: 'fetch',
           description: 'Fetch account config from an already deployed account contract',
@@ -23,6 +25,7 @@ final FigSpec starkliSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--rpc',
               description: 'Starknet JSON-RPC endpoint',
@@ -39,6 +42,7 @@ final FigSpec starkliSpec = FigSpec(
                 Arg(
                 name: 'NETWORK',
                 suggestions: [
+
                   FigSuggestion(name: 'mainnet'),
                   FigSuggestion(name: 'goerli-1'),
                   FigSuggestion(name: 'goerli-2'),
@@ -82,6 +86,7 @@ final FigSpec starkliSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--rpc',
               description: 'Starknet JSON-RPC endpoint',
@@ -98,6 +103,7 @@ final FigSpec starkliSpec = FigSpec(
                 Arg(
                 name: 'NETWORK',
                 suggestions: [
+
                   FigSuggestion(name: 'mainnet'),
                   FigSuggestion(name: 'goerli-1'),
                   FigSuggestion(name: 'goerli-2'),
@@ -170,12 +176,14 @@ final FigSpec starkliSpec = FigSpec(
           name: 'oz',
           description: 'Create and manage OpenZeppelin account contracts',
           subcommands: [
+
             Subcommand(
               name: 'init',
               description: 'Create a new account configuration without actually deploying'
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Print help'
@@ -184,6 +192,7 @@ final FigSpec starkliSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Print help'
@@ -202,6 +211,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -218,6 +228,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -244,6 +255,7 @@ final FigSpec starkliSpec = FigSpec(
       name: 'block-hash',
       description: 'Get latest block hash',
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -260,6 +272,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -282,6 +295,7 @@ final FigSpec starkliSpec = FigSpec(
       name: 'block-number',
       description: 'Get latest block number',
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -298,6 +312,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -328,6 +343,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -344,6 +360,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -374,6 +391,7 @@ final FigSpec starkliSpec = FigSpec(
       name: 'call',
       description: 'Call contract functions without sending transactions',
       args: [
+
         Arg(
           name: 'CONTRACT_ADDRESS',
           description: 'Contract address'
@@ -388,6 +406,7 @@ final FigSpec starkliSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -404,6 +423,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -434,6 +454,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -450,6 +471,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -486,6 +508,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -502,6 +525,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -530,6 +554,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -546,6 +571,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -575,6 +601,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Print help'
@@ -591,6 +618,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -607,6 +635,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -640,6 +669,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -656,6 +686,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -699,6 +730,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'COMPILER_VERSION',
             suggestions: [
+
               FigSuggestion(name: '2.0.1')
             ]
           )
@@ -763,6 +795,7 @@ final FigSpec starkliSpec = FigSpec(
       name: 'deploy',
       description: 'Deploy contract via the Universal Deployer Contract',
       args: [
+
         Arg(
           name: 'CLASS_HASH',
           description: 'Class hash'
@@ -773,6 +806,7 @@ final FigSpec starkliSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -789,6 +823,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -894,6 +929,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -910,6 +946,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -1002,6 +1039,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--hex',
           description: 'Emit array elements in hexadecimal format'
@@ -1022,6 +1060,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -1038,6 +1077,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -1066,6 +1106,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Print help'
@@ -1082,6 +1123,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Print help'
@@ -1092,10 +1134,12 @@ final FigSpec starkliSpec = FigSpec(
       name: 'signer',
       description: 'Signer management commands',
       subcommands: [
+
         Subcommand(
           name: 'keystore',
           description: 'Keystore management commands',
           subcommands: [
+
             Subcommand(
               name: 'new',
               description: 'Randomly generate a new keystore',
@@ -1107,6 +1151,7 @@ final FigSpec starkliSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--password',
                   description: 'Supply password from command line option instead of prompt',
@@ -1137,6 +1182,7 @@ final FigSpec starkliSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--force',
                   description: 'Overwrite the file if it already exists'
@@ -1171,6 +1217,7 @@ final FigSpec starkliSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--password',
                   description: 'Supply password from command line option instead of prompt',
@@ -1201,6 +1248,7 @@ final FigSpec starkliSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--password',
                   description: 'Supply password from command line option instead of prompt',
@@ -1222,6 +1270,7 @@ final FigSpec starkliSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Print help'
@@ -1234,6 +1283,7 @@ final FigSpec starkliSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Print help'
@@ -1252,6 +1302,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -1268,6 +1319,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -1290,6 +1342,7 @@ final FigSpec starkliSpec = FigSpec(
       name: 'storage',
       description: 'Get storage value for a slot at a contract',
       args: [
+
         Arg(
           name: 'ADDRESS',
           description: 'Contract address'
@@ -1300,6 +1353,7 @@ final FigSpec starkliSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -1316,6 +1370,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -1338,6 +1393,7 @@ final FigSpec starkliSpec = FigSpec(
       name: 'syncing',
       description: 'Get node syncing status',
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -1354,6 +1410,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -1382,6 +1439,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--dec',
           description: 'Display the encoded value in decimal representation'
@@ -1402,6 +1460,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -1418,6 +1477,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),
@@ -1446,6 +1506,7 @@ final FigSpec starkliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rpc',
           description: 'Starknet JSON-RPC endpoint',
@@ -1462,6 +1523,7 @@ final FigSpec starkliSpec = FigSpec(
             Arg(
             name: 'NETWORK',
             suggestions: [
+
               FigSuggestion(name: 'mainnet'),
               FigSuggestion(name: 'goerli-1'),
               FigSuggestion(name: 'goerli-2'),

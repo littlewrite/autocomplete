@@ -9,10 +9,12 @@ final FigSpec imagebuilderSpec = FigSpec(
   name: 'imagebuilder',
   description: 'EC2 Image Builder is a fully managed Amazon Web Services service that makes it easier to automate the creation, management, and deployment of customized, secure, and up-to-date "golden" server images that are pre-installed and pre-configured with software and settings to meet specific IT standards',
   subcommands: [
+
     Subcommand(
       name: 'cancel-image-creation',
       description: 'CancelImageCreation cancels the creation of Image. This operation can only be used on images in a non-terminal state',
       options: [
+
         Option(
           name: '--image-build-version-arn',
           description: 'The Amazon Resource Name (ARN) of the image that you want to cancel creation for',
@@ -47,6 +49,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'cancel-lifecycle-execution',
       description: 'Cancel a specific image lifecycle policy runtime instance',
       options: [
+
         Option(
           name: '--lifecycle-execution-id',
           description: 'Identifies the specific runtime instance of the image lifecycle to cancel',
@@ -93,6 +97,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'create-component',
       description: 'Creates a new component that can be used to build, validate, test, and assess your image. The component is based on a YAML document that you specify using exactly one of the following methods:   Inline, using the data property in the request body.   A URL that points to a YAML document file stored in Amazon S3, using the uri property in the request body',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the component',
@@ -220,6 +226,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -232,6 +239,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'create-container-recipe',
       description: 'Creates a new container recipe. Container recipes define how images are configured, tested, and assessed',
       options: [
+
         Option(
           name: '--container-type',
           description: 'The type of container to create',
@@ -392,6 +400,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -404,6 +413,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'create-distribution-configuration',
       description: 'Creates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the distribution configuration',
@@ -465,6 +475,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -477,6 +488,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'create-image',
       description: 'Creates a new image. This request will create a new image along with all of the configured output resources defined in the distribution configuration. You must specify exactly one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn',
       options: [
+
         Option(
           name: '--image-recipe-arn',
           description: 'The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed',
@@ -591,6 +603,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -603,6 +616,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'create-image-pipeline',
       description: 'Creates a new image pipeline. Image pipelines enable you to automate the creation and distribution of images',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the image pipeline',
@@ -753,6 +767,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -765,6 +780,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'create-image-recipe',
       description: 'Creates a new image recipe. Image recipes define how images are configured, tested, and assessed',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the image recipe',
@@ -871,6 +887,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -883,6 +900,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'create-infrastructure-configuration',
       description: 'Creates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the infrastructure configuration',
@@ -1033,6 +1051,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1045,6 +1064,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'create-lifecycle-policy',
       description: 'Create a lifecycle policy resource',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the lifecycle policy to create',
@@ -1142,6 +1162,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1154,6 +1175,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'create-workflow',
       description: 'Create a new workflow or a new version of an existing workflow',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the workflow to create',
@@ -1260,6 +1282,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1272,6 +1295,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'delete-component',
       description: 'Deletes a component build version',
       options: [
+
         Option(
           name: '--component-build-version-arn',
           description: 'The Amazon Resource Name (ARN) of the component build version to delete',
@@ -1297,6 +1321,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1309,6 +1334,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'delete-container-recipe',
       description: 'Deletes a container recipe',
       options: [
+
         Option(
           name: '--container-recipe-arn',
           description: 'The Amazon Resource Name (ARN) of the container recipe to delete',
@@ -1334,6 +1360,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1346,6 +1373,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'delete-distribution-configuration',
       description: 'Deletes a distribution configuration',
       options: [
+
         Option(
           name: '--distribution-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the distribution configuration to delete',
@@ -1371,6 +1399,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1383,6 +1412,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'delete-image',
       description: 'Deletes an Image Builder image resource. This does not delete any EC2 AMIs or ECR container images that are created during the image build process. You must clean those up separately, using the appropriate Amazon EC2 or Amazon ECR console actions, or API or CLI commands.   To deregister an EC2 Linux AMI, see Deregister your Linux AMI in the  Amazon EC2 User Guide .   To deregister an EC2 Windows AMI, see Deregister your Windows AMI in the  Amazon EC2 Windows Guide .   To delete a container image from Amazon ECR, see Deleting an image in the Amazon ECR User Guide',
       options: [
+
         Option(
           name: '--image-build-version-arn',
           description: 'The Amazon Resource Name (ARN) of the Image Builder image resource to delete',
@@ -1408,6 +1438,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1420,6 +1451,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'delete-image-pipeline',
       description: 'Deletes an image pipeline',
       options: [
+
         Option(
           name: '--image-pipeline-arn',
           description: 'The Amazon Resource Name (ARN) of the image pipeline to delete',
@@ -1445,6 +1477,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1457,6 +1490,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'delete-image-recipe',
       description: 'Deletes an image recipe',
       options: [
+
         Option(
           name: '--image-recipe-arn',
           description: 'The Amazon Resource Name (ARN) of the image recipe to delete',
@@ -1482,6 +1516,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1494,6 +1529,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'delete-infrastructure-configuration',
       description: 'Deletes an infrastructure configuration',
       options: [
+
         Option(
           name: '--infrastructure-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the infrastructure configuration to delete',
@@ -1519,6 +1555,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1531,6 +1568,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'delete-lifecycle-policy',
       description: 'Delete the specified lifecycle policy resource',
       options: [
+
         Option(
           name: '--lifecycle-policy-arn',
           description: 'The Amazon Resource Name (ARN) of the lifecycle policy resource to delete',
@@ -1556,6 +1594,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1568,6 +1607,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'delete-workflow',
       description: 'Deletes a specific workflow resource',
       options: [
+
         Option(
           name: '--workflow-build-version-arn',
           description: 'The Amazon Resource Name (ARN) of the workflow resource to delete',
@@ -1593,6 +1633,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1605,6 +1646,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-component',
       description: 'Gets a component object',
       options: [
+
         Option(
           name: '--component-build-version-arn',
           description: 'The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix /\\d+\$',
@@ -1630,6 +1672,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1642,6 +1685,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-component-policy',
       description: 'Gets a component policy',
       options: [
+
         Option(
           name: '--component-arn',
           description: 'The Amazon Resource Name (ARN) of the component whose policy you want to retrieve',
@@ -1667,6 +1711,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1679,6 +1724,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-container-recipe',
       description: 'Retrieves a container recipe',
       options: [
+
         Option(
           name: '--container-recipe-arn',
           description: 'The Amazon Resource Name (ARN) of the container recipe to retrieve',
@@ -1704,6 +1750,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1716,6 +1763,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-container-recipe-policy',
       description: 'Retrieves the policy for a container recipe',
       options: [
+
         Option(
           name: '--container-recipe-arn',
           description: 'The Amazon Resource Name (ARN) of the container recipe for the policy being requested',
@@ -1741,6 +1789,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1753,6 +1802,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-distribution-configuration',
       description: 'Gets a distribution configuration',
       options: [
+
         Option(
           name: '--distribution-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve',
@@ -1778,6 +1828,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1790,6 +1841,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-image',
       description: 'Gets an image',
       options: [
+
         Option(
           name: '--image-build-version-arn',
           description: 'The Amazon Resource Name (ARN) of the image that you want to get',
@@ -1815,6 +1867,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1827,6 +1880,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-image-pipeline',
       description: 'Gets an image pipeline',
       options: [
+
         Option(
           name: '--image-pipeline-arn',
           description: 'The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve',
@@ -1852,6 +1906,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1864,6 +1919,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-image-policy',
       description: 'Gets an image policy',
       options: [
+
         Option(
           name: '--image-arn',
           description: 'The Amazon Resource Name (ARN) of the image whose policy you want to retrieve',
@@ -1889,6 +1945,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1901,6 +1958,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-image-recipe',
       description: 'Gets an image recipe',
       options: [
+
         Option(
           name: '--image-recipe-arn',
           description: 'The Amazon Resource Name (ARN) of the image recipe that you want to retrieve',
@@ -1926,6 +1984,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1938,6 +1997,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-image-recipe-policy',
       description: 'Gets an image recipe policy',
       options: [
+
         Option(
           name: '--image-recipe-arn',
           description: 'The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve',
@@ -1963,6 +2023,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1975,6 +2036,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-infrastructure-configuration',
       description: 'Gets an infrastructure configuration',
       options: [
+
         Option(
           name: '--infrastructure-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve',
@@ -2000,6 +2062,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2012,6 +2075,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-lifecycle-execution',
       description: 'Get the runtime information that was logged for a specific runtime instance of the lifecycle policy',
       options: [
+
         Option(
           name: '--lifecycle-execution-id',
           description: 'Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details',
@@ -2037,6 +2101,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2049,6 +2114,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-lifecycle-policy',
       description: 'Get details for the specified image lifecycle policy',
       options: [
+
         Option(
           name: '--lifecycle-policy-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the image lifecycle policy resource to get',
@@ -2074,6 +2140,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2086,6 +2153,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-marketplace-resource',
       description: 'Verify the subscription and perform resource dependency checks on the requested Amazon Web Services Marketplace resource. For Amazon Web Services Marketplace components, the response contains fields to download the components and their artifacts',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'Specifies which type of Amazon Web Services Marketplace resource Image Builder retrieves',
@@ -2129,6 +2197,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2141,6 +2210,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-workflow',
       description: 'Get a workflow resource object',
       options: [
+
         Option(
           name: '--workflow-build-version-arn',
           description: 'The Amazon Resource Name (ARN) of the workflow resource that you want to get',
@@ -2166,6 +2236,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2178,6 +2249,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-workflow-execution',
       description: 'Get the runtime information that was logged for a specific runtime instance of the workflow',
       options: [
+
         Option(
           name: '--workflow-execution-id',
           description: 'Use the unique identifier for a runtime instance of the workflow to get runtime details',
@@ -2203,6 +2275,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2215,6 +2288,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'get-workflow-step-execution',
       description: 'Get the runtime information that was logged for a specific runtime instance of the workflow step',
       options: [
+
         Option(
           name: '--step-execution-id',
           description: 'Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step',
@@ -2240,6 +2314,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2252,6 +2327,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'import-component',
       description: 'Imports a component and transforms its data into a component document',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the component',
@@ -2376,6 +2452,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2388,6 +2465,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'import-vm-image',
       description: 'When you export your virtual machine (VM) from its virtualization environment, that process creates a set of one or more disk container files that act as snapshots of your VM’s environment, settings, and data. The Amazon EC2 API ImportImage action uses those files to import your VM and create an AMI. To import using the CLI command, see import-image  You can reference the task ID from the VM import to pull in the AMI that the import created as the base image for your Image Builder recipe',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the base image that is created by the import process',
@@ -2476,6 +2554,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2488,6 +2567,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-component-build-versions',
       description: 'Returns the list of component build versions for the specified component version Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--component-version-arn',
           description: 'The component version Amazon Resource Name (ARN) whose versions you want to list',
@@ -2531,6 +2611,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2543,6 +2624,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-components',
       description: 'Returns the list of components that can be filtered by name, or by using the listed filters to streamline results. Newly created components can take up to two minutes to appear in the ListComponents API Results.  The semantic version has four nodes: <major>.<minor>.<patch>/<build>. You can assign values for the first three, and can filter on all of them.  Filtering: With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards',
       options: [
+
         Option(
           name: '--owner',
           description: 'Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you',
@@ -2603,6 +2685,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2615,6 +2698,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-container-recipes',
       description: 'Returns a list of container recipes',
       options: [
+
         Option(
           name: '--owner',
           description: 'Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account',
@@ -2667,6 +2751,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2679,6 +2764,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-distribution-configurations',
       description: 'Returns a list of distribution configurations',
       options: [
+
         Option(
           name: '--filters',
           description: 'You can filter on name to streamline results',
@@ -2722,6 +2808,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2734,6 +2821,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-image-build-versions',
       description: 'Returns a list of image build versions',
       options: [
+
         Option(
           name: '--image-version-arn',
           description: 'The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve',
@@ -2786,6 +2874,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2798,6 +2887,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-image-packages',
       description: 'List the Packages that are associated with an Image Build Version, as determined by Amazon Web Services Systems Manager Inventory at build time',
       options: [
+
         Option(
           name: '--image-build-version-arn',
           description: 'Filter results for the ListImagePackages request by the Image Build Version ARN',
@@ -2841,6 +2931,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2853,6 +2944,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-image-pipeline-images',
       description: 'Returns a list of images created by the specified pipeline',
       options: [
+
         Option(
           name: '--image-pipeline-arn',
           description: 'The Amazon Resource Name (ARN) of the image pipeline whose images you want to view',
@@ -2905,6 +2997,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2917,6 +3010,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-image-pipelines',
       description: 'Returns a list of image pipelines',
       options: [
+
         Option(
           name: '--filters',
           description: 'Use the following filters to streamline results:    description     distributionConfigurationArn     imageRecipeArn     infrastructureConfigurationArn     name     status',
@@ -2960,6 +3054,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2972,6 +3067,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-image-recipes',
       description: 'Returns a list of image recipes',
       options: [
+
         Option(
           name: '--owner',
           description: 'The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers',
@@ -3024,6 +3120,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3036,6 +3133,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-image-scan-finding-aggregations',
       description: 'Returns a list of image scan aggregations for your account. You can filter by the type of key that Image Builder uses to group results. For example, if you want to get a list of findings by severity level for one of your pipelines, you might specify your pipeline with the imagePipelineArn filter. If you don\'t specify a filter, Image Builder returns an aggregation for your account. To streamline results, you can use the following filters in your request:    accountId     imageBuildVersionArn     imagePipelineArn     vulnerabilityId',
       options: [
+
         Option(
           name: '--filter',
           description: 'A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs',
@@ -3070,6 +3168,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3082,6 +3181,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-image-scan-findings',
       description: 'Returns a list of image scan findings for your account',
       options: [
+
         Option(
           name: '--filters',
           description: 'An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:    imageBuildVersionArn     imagePipelineArn     vulnerabilityId     severity    If you don\'t request a filter, then all findings in your account are listed',
@@ -3125,6 +3225,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3137,6 +3238,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-images',
       description: 'Returns the list of images that you have access to. Newly created images can take up to two minutes to appear in the ListImages API Results',
       options: [
+
         Option(
           name: '--owner',
           description: 'The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers',
@@ -3205,6 +3307,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3217,6 +3320,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-infrastructure-configurations',
       description: 'Returns a list of infrastructure configurations',
       options: [
+
         Option(
           name: '--filters',
           description: 'You can filter on name to streamline results',
@@ -3260,6 +3364,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3272,6 +3377,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-lifecycle-execution-resources',
       description: 'List resources that the runtime instance of the image lifecycle identified for lifecycle actions',
       options: [
+
         Option(
           name: '--lifecycle-execution-id',
           description: 'Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details',
@@ -3324,6 +3430,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3336,6 +3443,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-lifecycle-executions',
       description: 'Get the lifecycle runtime history for the specified resource',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum items to return in a request',
@@ -3379,6 +3487,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3391,6 +3500,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-lifecycle-policies',
       description: 'Get a list of lifecycle policies in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--filters',
           description: 'Streamline results based on one of the following values: Name, Status',
@@ -3434,6 +3544,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3446,6 +3557,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns the list of tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve',
@@ -3471,6 +3583,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3483,6 +3596,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-waiting-workflow-steps',
       description: 'Get a list of workflow steps that are waiting for action for workflows in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum items to return in a request',
@@ -3517,6 +3631,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3529,6 +3644,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-workflow-build-versions',
       description: 'Returns a list of build versions for a specific workflow resource',
       options: [
+
         Option(
           name: '--workflow-version-arn',
           description: 'The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions',
@@ -3572,6 +3688,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3584,6 +3701,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-workflow-executions',
       description: 'Returns a list of workflow runtime instance metadata objects for a specific image build version',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum items to return in a request',
@@ -3627,6 +3745,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3639,6 +3758,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-workflow-step-executions',
       description: 'Returns runtime data for each step in a runtime instance of the workflow that you specify in the request',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum items to return in a request',
@@ -3682,6 +3802,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3694,6 +3815,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'list-workflows',
       description: 'Lists workflow build versions based on filtering parameters',
       options: [
+
         Option(
           name: '--owner',
           description: 'Used to get a list of workflow build version filtered by the identity of the creator',
@@ -3754,6 +3876,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3766,6 +3889,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'put-component-policy',
       description: 'Applies a policy to a component. We recommend that you call the RAM API CreateResourceShare to share resources. If you call the Image Builder API PutComponentPolicy, you must also call the RAM API PromoteResourceShareCreatedFromPolicy in order for the resource to be visible to all principals with whom the resource is shared',
       options: [
+
         Option(
           name: '--component-arn',
           description: 'The Amazon Resource Name (ARN) of the component that this policy should be applied to',
@@ -3800,6 +3924,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3812,6 +3937,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'put-container-recipe-policy',
       description: 'Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html) to share resources. If you call the Image Builder API PutContainerImagePolicy, you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html) in order for the resource to be visible to all principals with whom the resource is shared',
       options: [
+
         Option(
           name: '--container-recipe-arn',
           description: 'The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to',
@@ -3846,6 +3972,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3858,6 +3985,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'put-image-policy',
       description: 'Applies a policy to an image. We recommend that you call the RAM API CreateResourceShare to share resources. If you call the Image Builder API PutImagePolicy, you must also call the RAM API PromoteResourceShareCreatedFromPolicy in order for the resource to be visible to all principals with whom the resource is shared',
       options: [
+
         Option(
           name: '--image-arn',
           description: 'The Amazon Resource Name (ARN) of the image that this policy should be applied to',
@@ -3892,6 +4020,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3904,6 +4033,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'put-image-recipe-policy',
       description: 'Applies a policy to an image recipe. We recommend that you call the RAM API CreateResourceShare to share resources. If you call the Image Builder API PutImageRecipePolicy, you must also call the RAM API PromoteResourceShareCreatedFromPolicy in order for the resource to be visible to all principals with whom the resource is shared',
       options: [
+
         Option(
           name: '--image-recipe-arn',
           description: 'The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to',
@@ -3938,6 +4068,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3950,6 +4081,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'send-workflow-step-action',
       description: 'Pauses or resumes image creation when the associated workflow runs a WaitForAction step',
       options: [
+
         Option(
           name: '--step-execution-id',
           description: 'Uniquely identifies the workflow step that sent the step action',
@@ -4011,6 +4143,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4023,6 +4156,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'start-image-pipeline-execution',
       description: 'Manually triggers a pipeline to create an image',
       options: [
+
         Option(
           name: '--image-pipeline-arn',
           description: 'The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke',
@@ -4057,6 +4191,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4069,6 +4204,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'start-resource-state-update',
       description: 'Begin asynchronous resource state update for lifecycle changes to the specified image resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the Image Builder resource that is updated. The state update might also impact associated resources',
@@ -4148,6 +4284,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4160,6 +4297,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a tag to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to tag',
@@ -4194,6 +4332,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4206,6 +4345,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to untag',
@@ -4240,6 +4380,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4252,6 +4393,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'update-distribution-configuration',
       description: 'Updates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline',
       options: [
+
         Option(
           name: '--distribution-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the distribution configuration that you want to update',
@@ -4304,6 +4446,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4316,6 +4459,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'update-image-pipeline',
       description: 'Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images. You must specify exactly one recipe for your image, using either a containerRecipeArn or an imageRecipeArn.  UpdateImagePipeline does not support selective updates for the pipeline. You must specify all of the required properties in the update request, not just the properties that have changed',
       options: [
+
         Option(
           name: '--image-pipeline-arn',
           description: 'The Amazon Resource Name (ARN) of the image pipeline that you want to update',
@@ -4457,6 +4601,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4469,6 +4614,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'update-infrastructure-configuration',
       description: 'Updates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested',
       options: [
+
         Option(
           name: '--infrastructure-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update',
@@ -4610,6 +4756,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4622,6 +4769,7 @@ final FigSpec imagebuilderSpec = FigSpec(
       name: 'update-lifecycle-policy',
       description: 'Update the specified lifecycle policy',
       options: [
+
         Option(
           name: '--lifecycle-policy-arn',
           description: 'The Amazon Resource Name (ARN) of the lifecycle policy resource',
@@ -4710,6 +4858,7 @@ final FigSpec imagebuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

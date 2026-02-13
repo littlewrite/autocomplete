@@ -9,6 +9,7 @@ final FigSpec xdgMimeSpec = FigSpec(
   name: 'xdg-mime',
   description: 'Command line tool for querying information about file type handling and adding descriptions for new file types',
   subcommands: [
+
     Subcommand(
       name: 'query',
       description: 'Returns information related to file types',
@@ -24,6 +25,7 @@ final FigSpec xdgMimeSpec = FigSpec(
       name: 'default',
       description: 'Ask the desktop environment to make application the default application for opening files of type mimetype',
       args: [
+
         Arg(
           name: 'application'
         ),
@@ -37,12 +39,14 @@ final FigSpec xdgMimeSpec = FigSpec(
       name: 'install',
       description: 'Adds the file type descriptions provided in mimetypes-file to the desktop environment',
       options: [
+
         Option(
           name: '--mode',
           args: [
             Arg(
             name: 'mode',
             suggestions: [
+
               FigSuggestion(name: 'user'),
               FigSuggestion(name: 'system')
             ]
@@ -65,12 +69,14 @@ final FigSpec xdgMimeSpec = FigSpec(
       name: 'uninstall',
       description: 'Removes the file type descriptions provided in mimetypes-file and previously added with xdg-mime install from the desktop environment',
       options: [
+
         Option(
           name: '--mode',
           args: [
             Arg(
             name: 'mode',
             suggestions: [
+
               FigSuggestion(name: 'user'),
               FigSuggestion(name: 'system')
             ]
@@ -87,6 +93,7 @@ final FigSpec xdgMimeSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Show command synopsis'

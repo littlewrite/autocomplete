@@ -15,6 +15,7 @@ final FigSpec migrateSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--format-report-file-json',
       description: 'Output migration report file as JSON rather than user messages',
@@ -43,6 +44,7 @@ final FigSpec migrateSpec = FigSpec(
         name: 'type',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'Debug'),
           FigSuggestion(name: 'Release')
         ]

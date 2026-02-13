@@ -9,6 +9,7 @@ final FigSpec agSpec = FigSpec(
   name: 'ag',
   description: 'Recursively search for PATTERN in PATH. Like grep or ack, but faster',
   args: [
+
     Arg(
       name: 'pattern',
       isOptional: true
@@ -21,6 +22,7 @@ final FigSpec agSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--ackmate',
       description: 'Output results in a format parseable by AckMate https://github.com/protocool/AckMate'
@@ -304,6 +306,7 @@ final FigSpec agSpec = FigSpec(
         name: 'COMMAND',
         description: 'The pager',
         suggestions: [
+
           FigSuggestion(name: 'more'),
           FigSuggestion(name: 'less'),
           FigSuggestion(name: 'most')

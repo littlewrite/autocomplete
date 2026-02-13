@@ -9,14 +9,17 @@ final FigSpec dataprocSpec = FigSpec(
   name: 'dataproc',
   description: 'Create and manage Google Cloud Dataproc clusters and jobs',
   subcommands: [
+
     Subcommand(
       name: 'autoscaling-policies',
       description: 'Create and manage Google Cloud Dataproc autoscaling policies',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete an autoscaling policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -151,6 +154,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -173,6 +177,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'describe',
           description: 'Describe an autoscaling policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -307,6 +312,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -329,6 +335,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'export',
           description: 'Export an autoscaling policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -474,6 +481,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -496,6 +504,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get IAM policy for an autoscaling policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -630,6 +639,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -652,6 +662,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'import',
           description: 'Import an autoscaling policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -797,6 +808,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -819,6 +831,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'list',
           description: 'List autoscaling policies',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1001,6 +1014,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1017,6 +1031,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for an autoscaling policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1151,6 +1166,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1163,6 +1179,7 @@ final FigSpec dataprocSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'AUTOSCALING_POLICY',
               description: 'ID of the autoscaling policy or fully qualified identifier for the autoscaling policy'
@@ -1175,6 +1192,7 @@ final FigSpec dataprocSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1298,6 +1316,7 @@ final FigSpec dataprocSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1314,10 +1333,12 @@ final FigSpec dataprocSpec = FigSpec(
       name: 'clusters',
       description: 'Create and manage Google Cloud Dataproc clusters',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1815,6 +1836,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'PRIVATE_IPV6_GOOGLE_ACCESS_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'inherit-subnetwork'),
                   FigSuggestion(name: 'outbound'),
                   FigSuggestion(name: 'bidirectional')
@@ -1878,6 +1900,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'RESERVATION_AFFINITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'any'),
                   FigSuggestion(name: 'none'),
                   FigSuggestion(name: 'specific')
@@ -1937,6 +1960,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'preemptible'),
                   FigSuggestion(name: 'non-preemptible')
                 ]
@@ -2014,6 +2038,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2102,6 +2127,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'delete',
           description: 'Delete a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2240,6 +2266,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2262,6 +2289,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'describe',
           description: 'View the details of a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2396,6 +2424,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2418,6 +2447,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'diagnose',
           description: 'Run a detailed diagnostic on a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2552,6 +2582,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2574,6 +2605,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'export',
           description: 'Export a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2719,6 +2751,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2741,6 +2774,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get IAM policy for a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2919,6 +2953,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2941,6 +2976,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'import',
           description: 'Import a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3090,6 +3126,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3112,6 +3149,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'list',
           description: 'View a list of clusters in a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3290,6 +3328,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3306,6 +3345,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3440,6 +3480,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3452,6 +3493,7 @@ final FigSpec dataprocSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'CLUSTER',
               description: 'ID of the cluster or fully qualified identifier for the cluster'
@@ -3466,6 +3508,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'update',
           description: 'Update labels and/or the number of worker nodes in a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3720,6 +3763,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3740,6 +3784,7 @@ final FigSpec dataprocSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3863,6 +3908,7 @@ final FigSpec dataprocSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3879,10 +3925,12 @@ final FigSpec dataprocSpec = FigSpec(
       name: 'jobs',
       description: 'Submit and manage Google Cloud Dataproc jobs',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete the record of an inactive job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4017,6 +4065,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4039,6 +4088,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'describe',
           description: 'View the details of a job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4173,6 +4223,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4195,6 +4246,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get IAM policy for a job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4373,6 +4425,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4395,6 +4448,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'kill',
           description: 'Kill an active job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4529,6 +4583,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4551,6 +4606,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'list',
           description: 'List jobs in a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4725,6 +4781,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'STATE_FILTER',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'active'),
                   FigSuggestion(name: 'inactive')
                 ]
@@ -4754,6 +4811,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4770,6 +4828,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for a job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4904,6 +4963,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4916,6 +4976,7 @@ final FigSpec dataprocSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'JOB',
               description: 'ID of the job or fully qualified identifier for the job'
@@ -4930,10 +4991,12 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'submit',
           description: 'Submit Google Cloud Dataproc jobs to execute on a cluster',
           subcommands: [
+
             Subcommand(
               name: 'hadoop',
               description: 'Submit a Hadoop job to a cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5194,6 +5257,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5216,6 +5280,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'hive',
               description: 'Submit a Hive job to a cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5458,6 +5523,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5474,6 +5540,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'pig',
               description: 'Submit a Pig job to a cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5727,6 +5794,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5743,6 +5811,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'presto',
               description: 'Submit a Presto job to a cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5996,6 +6065,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6012,6 +6082,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'pyspark',
               description: 'Submit a PySpark job to a cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6261,6 +6332,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6273,6 +6345,7 @@ final FigSpec dataprocSpec = FigSpec(
                 )
               ],
               args: [
+
                 Arg(
                   name: 'PY_FILE',
                   description: 'Main .py file to run as the driver'
@@ -6287,6 +6360,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'spark',
               description: 'Submit a Spark job to a cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6547,6 +6621,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6569,6 +6644,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'spark-r',
               description: 'Submit a SparkR job to a cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6796,6 +6872,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6808,6 +6885,7 @@ final FigSpec dataprocSpec = FigSpec(
                 )
               ],
               args: [
+
                 Arg(
                   name: 'R_FILE',
                   description: 'Main .R file to run as the driver'
@@ -6822,6 +6900,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'spark-sql',
               description: 'Submit a Spark SQL job to a cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7071,6 +7150,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -7085,6 +7165,7 @@ final FigSpec dataprocSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7234,6 +7315,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7250,6 +7332,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'update',
           description: 'Update the labels for a job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7410,6 +7493,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7432,6 +7516,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'wait',
           description: 'View the output of a job as it runs or after it completes',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7566,6 +7651,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7586,6 +7672,7 @@ final FigSpec dataprocSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7709,6 +7796,7 @@ final FigSpec dataprocSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7725,10 +7813,12 @@ final FigSpec dataprocSpec = FigSpec(
       name: 'operations',
       description: 'View and manage Google Cloud Dataproc operations',
       subcommands: [
+
         Subcommand(
           name: 'cancel',
           description: 'Cancel an active operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7863,6 +7953,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7885,6 +7976,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'delete',
           description: 'Delete the record of an inactive operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8019,6 +8111,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8041,6 +8134,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'describe',
           description: 'View the details of an operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8175,6 +8269,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8197,6 +8292,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get IAM policy for an operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8375,6 +8471,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8397,6 +8494,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'list',
           description: 'View the list of all operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8571,6 +8669,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'STATE_FILTER',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'active'),
                   FigSuggestion(name: 'inactive')
                 ]
@@ -8600,6 +8699,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8616,6 +8716,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for an operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8750,6 +8851,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8762,6 +8864,7 @@ final FigSpec dataprocSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'OPERATION',
               description: 'ID of the operation or fully qualified identifier for the operation'
@@ -8774,6 +8877,7 @@ final FigSpec dataprocSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8897,6 +9001,7 @@ final FigSpec dataprocSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -8913,14 +9018,17 @@ final FigSpec dataprocSpec = FigSpec(
       name: 'workflow-templates',
       description: 'Create and manage Google Cloud Dataproc workflow templates',
       subcommands: [
+
         Subcommand(
           name: 'add-job',
           description: 'Add Google Cloud Dataproc jobs to workflow template',
           subcommands: [
+
             Subcommand(
               name: 'hadoop',
               description: 'Add a hadoop job to the workflow template',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9166,6 +9274,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -9200,6 +9309,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'hive',
               description: 'Add a Hive job to the workflow template',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9427,6 +9537,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -9455,6 +9566,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'pig',
               description: 'Add a Pig job to the workflow template',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9693,6 +9805,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -9721,6 +9834,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'presto',
               description: 'Add a Presto job to the workflow template',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9959,6 +10073,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -9987,6 +10102,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'pyspark',
               description: 'Add a PySpark job to the workflow template',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10221,6 +10337,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -10245,6 +10362,7 @@ final FigSpec dataprocSpec = FigSpec(
                 )
               ],
               args: [
+
                 Arg(
                   name: 'PY_FILE',
                   description: 'Main .py file to run as the driver'
@@ -10259,6 +10377,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'spark',
               description: 'Add a Spark job to the workflow template',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10504,6 +10623,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -10538,6 +10658,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'spark-r',
               description: 'Add a SparkR job to the workflow template',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10750,6 +10871,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -10774,6 +10896,7 @@ final FigSpec dataprocSpec = FigSpec(
                 )
               ],
               args: [
+
                 Arg(
                   name: 'R_FILE',
                   description: 'Main .R file to run as the driver'
@@ -10788,6 +10911,7 @@ final FigSpec dataprocSpec = FigSpec(
               name: 'spark-sql',
               description: 'Add a SparkSql job to the workflow template',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11022,6 +11146,7 @@ final FigSpec dataprocSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -11048,6 +11173,7 @@ final FigSpec dataprocSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11171,6 +11297,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11187,6 +11314,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'create',
           description: 'Create a workflow template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11332,6 +11460,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11354,6 +11483,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'delete',
           description: 'Delete a workflow template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11488,6 +11618,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11510,6 +11641,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'describe',
           description: 'Describe a workflow template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11644,6 +11776,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11666,6 +11799,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'export',
           description: 'Export a workflow template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11811,6 +11945,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11833,6 +11968,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get IAM policy for a workflow template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11967,6 +12103,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11989,6 +12126,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'import',
           description: 'Import a workflow template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12134,6 +12272,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -12156,6 +12295,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'instantiate',
           description: 'Instantiate a workflow template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12305,6 +12445,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -12327,6 +12468,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'instantiate-from-file',
           description: 'Instantiate a workflow template from a file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12477,6 +12619,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -12493,6 +12636,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'list',
           description: 'List workflow templates',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12671,6 +12815,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -12687,6 +12832,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'remove-job',
           description: 'Remove a job from workflow template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12832,6 +12978,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -12854,6 +13001,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'set-cluster-selector',
           description: 'Set cluster selector for the workflow template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12999,6 +13147,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -13021,6 +13170,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for a template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -13155,6 +13305,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -13167,6 +13318,7 @@ final FigSpec dataprocSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'TEMPLATE',
               description: 'ID of the template or fully qualified identifier for the template'
@@ -13181,6 +13333,7 @@ final FigSpec dataprocSpec = FigSpec(
           name: 'set-managed-cluster',
           description: 'Set a managed cluster for the workflow template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -13607,6 +13760,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'PRIVATE_IPV6_GOOGLE_ACCESS_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'inherit-subnetwork'),
                   FigSuggestion(name: 'outbound'),
                   FigSuggestion(name: 'bidirectional')
@@ -13670,6 +13824,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'RESERVATION_AFFINITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'any'),
                   FigSuggestion(name: 'none'),
                   FigSuggestion(name: 'specific')
@@ -13729,6 +13884,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'preemptible'),
                   FigSuggestion(name: 'non-preemptible')
                 ]
@@ -13806,6 +13962,7 @@ final FigSpec dataprocSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -13892,6 +14049,7 @@ final FigSpec dataprocSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -14015,6 +14173,7 @@ final FigSpec dataprocSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -14029,6 +14188,7 @@ final FigSpec dataprocSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -14152,6 +14312,7 @@ final FigSpec dataprocSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

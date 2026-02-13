@@ -9,10 +9,12 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
   name: 'zapier-platform-cli',
   description: 'The Zapier CLI is a developer-focused way to create and maintain Zapier integrations. See more at https://github.com/zapier/zapier-platform',
   subcommands: [
+
     Subcommand(
       name: 'analytics',
       description: 'Show the status of the analytics that are collected. Also used to change what is collected',
       options: [
+
         Option(
           name: ['-m', '--mode'],
           description: 'Choose how much information to share. Anonymous mode drops the OS type and Zapier user id, but keeps command info. Identifying information is used only for debugging purposes',
@@ -20,6 +22,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
             Arg(
             name: 'mode',
             suggestions: [
+
               FigSuggestion(name: 'enabled'),
               FigSuggestion(name: 'anonymous'),
               FigSuggestion(name: 'disabled')
@@ -33,6 +36,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'build',
       description: 'Build a pushable zip from the current directory',
       options: [
+
         Option(
           name: '--disable-dependency-detection',
           description: 'Disable "smart" file inclusion. By default, Zapier only includes files that are required by `index.js`. If you (or your dependencies) require files dynamically (such as with `require(someVar)`), then you may see "Cannot find module" errors. Disabling this may make your `build.zip` too large. If that\'s the case, try using the `includeInBuild` option in your `.zapierapprc`. See the docs about `includeInBuild` for more info'
@@ -43,6 +47,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'convert',
       description: 'Convert a Legacy Web Builder app or Visual Builder integration to a CLI integration',
       options: [
+
         Option(
           name: ['-v', '--version'],
           description: 'Convert a specific version. Required when converting a Visual Builder integration',
@@ -54,6 +59,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'integrationId',
           description: 'To get the integration/app ID, go to "https://zapier.com/app/developer", click on an integration, and copy the number directly after "/app/" in the URL'
@@ -86,6 +92,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       description: 'Mark a non-production version of your integration as deprecated, with removal by a certain date',
       options: [],
       args: [
+
         Arg(
           name: 'version',
           description: 'The version to deprecate'
@@ -117,6 +124,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       description: 'Set environment variables for a version',
       options: [],
       args: [
+
         Arg(
           name: 'version',
           description: 'The version to set the environment for. Values are copied forward when a new version is created, but this command will only ever affect the specified version'
@@ -134,6 +142,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       description: 'Unset environment variables for a version',
       options: [],
       args: [
+
         Arg(
           name: 'version',
           description: 'The version to set the environment for'
@@ -155,6 +164,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'init',
       description: 'Initialize a new Zapier integration with a project template',
       options: [
+
         Option(
           name: ['-t', '--template'],
           description: 'The template to start your integration with',
@@ -162,6 +172,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'basic-auth'),
               FigSuggestion(name: 'callback'),
               FigSuggestion(name: 'custom-auth'),
@@ -201,6 +212,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'login',
       description: 'Configure your `~/.zapierrc` with a deploy key',
       options: [
+
         Option(
           name: ['-s', '--sso'],
           description: 'Use this flag if you log into Zapier a Single Sign-On (SSO) button and don\'t have a Zapier password'
@@ -216,6 +228,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'logs',
       description: 'Print recent logs',
       options: [
+
         Option(
           name: ['-v', '--version'],
           description: 'Filter logs to the specified version',
@@ -232,6 +245,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
             Arg(
             name: 'status',
             suggestions: [
+
               FigSuggestion(name: 'any'),
               FigSuggestion(name: 'success'),
               FigSuggestion(name: 'error')
@@ -246,6 +260,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
             Arg(
             name: 'type',
             suggestions: [
+
               FigSuggestion(name: 'console'),
               FigSuggestion(name: 'bundle'),
               FigSuggestion(name: 'http')
@@ -281,6 +296,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'migrate',
       description: 'Migrate users from one version of your integration to another',
       options: [
+
         Option(
           name: '--user',
           description: 'Migrate only this user',
@@ -292,6 +308,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'fromVersion',
           description: 'The version FROM which to migrate users'
@@ -322,6 +339,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'push',
       description: 'Build and upload the current integration',
       options: [
+
         Option(
           name: '--disable-dependency-detection',
           description: 'Disable "smart" file inclusion. By default, Zapier only includes files that are required by `index.js`. If you (or your dependencies) require files dynamically (such as with `require(someVar)`), then you may see "Cannot find module" errors. Disabling this may make your `build.zip` too large. If that\'s the case, try using the `includeInBuild` option in your `.zapierapprc`. See the docs about `includeInBuild` for more info'
@@ -344,6 +362,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'scaffold',
       description: 'Add a starting trigger, create, search, or resource to your integration',
       options: [
+
         Option(
           name: ['-d', '--dest'],
           description: 'Specify the new file\'s directory. Use this flag when you want to create a different folder structure such as `src/triggers` instead of the default `triggers`. Defaults to `[triggers|searches|creates]/{noun}`',
@@ -384,9 +403,11 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'actionType',
           suggestions: [
+
             FigSuggestion(name: 'trigger'),
             FigSuggestion(name: 'search'),
             FigSuggestion(name: 'create'),
@@ -403,6 +424,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       description: 'Add a team member to your integration',
       options: [],
       args: [
+
         Arg(
           name: 'email',
           description: 'The user to be invited. If they don\'t have a Zapier account, they\'ll be prompted to create one'
@@ -411,6 +433,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
           name: 'role',
           description: 'The level the invited team member should be at. Admins can edit everything and get email updates. Subscribers only get email updates',
           suggestions: [
+
             FigSuggestion(name: 'admin'),
             FigSuggestion(name: 'subscriber')
           ]
@@ -436,6 +459,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'test',
       description: 'Test your integration via the "test" script in your "package.json"',
       options: [
+
         Option(
           name: '--skip-validate',
           description: 'Forgo running `zapier validate` before tests are run. This will speed up tests if you\'re modifying functionality of an existing integration rather than adding new actions'
@@ -455,6 +479,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: ['users:add', 'users:invite'],
       description: 'Add a user to some or all versions of your integration',
       options: [
+
         Option(
           name: ['-f', '--force'],
           description: 'Skip confirmation. Useful for running programmatically',
@@ -462,6 +487,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'email',
           description: 'The user to be invited. If they don\'t have a Zapier account, they\'ll be prompted to create one'
@@ -487,6 +513,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: ['users:remove', 'users:delete'],
       description: 'Remove a user from all versions of your integration',
       options: [
+
         Option(
           name: ['-f', '--force'],
           description: 'Skips confirmation. Useful for running programmatically',
@@ -504,6 +531,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'validate',
       description: 'Validate your integration',
       options: [
+
         Option(
           name: '--without-style',
           description: 'Forgo pinging the Zapier server to run further checks'
@@ -519,6 +547,7 @@ final FigSpec zapierPlatformCliSpec = FigSpec(
       name: 'help',
       description: 'Display help for <%= config.bin %>',
       options: [
+
         Option(
           name: '--all',
           description: 'See all commands in CLI'

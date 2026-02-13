@@ -9,10 +9,12 @@ final FigSpec privatenetworksSpec = FigSpec(
   name: 'privatenetworks',
   description: 'Amazon Web Services Private 5G is a managed service that makes it easy to deploy, operate, and scale your own private mobile network at your on-premises location. Private 5G provides the pre-configured hardware and software for mobile networks, helps automate setup, and scales capacity on demand to support additional devices as needed',
   subcommands: [
+
     Subcommand(
       name: 'acknowledge-order-receipt',
       description: 'Acknowledges that the specified network order was received',
       options: [
+
         Option(
           name: '--order-arn',
           description: 'The Amazon Resource Name (ARN) of the order',
@@ -38,6 +40,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'activate-device-identifier',
       description: 'Activates the specified device identifier',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see How to ensure idempotency',
@@ -84,6 +88,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'activate-network-site',
       description: 'Activates the specified network site',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see How to ensure idempotency',
@@ -148,6 +154,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'configure-access-point',
       description: 'Configures the specified network resource.   Use this action to specify the geographic position of the hardware. You must provide Certified Professional Installer (CPI) credentials in the request so that we can obtain spectrum grants. For more information, see Radio units in the Amazon Web Services Private 5G User Guide',
       options: [
+
         Option(
           name: '--access-point-arn',
           description: 'The Amazon Resource Name (ARN) of the network resource',
@@ -230,6 +238,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'create-network',
       description: 'Creates a network',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see How to ensure idempotency',
@@ -294,6 +304,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -306,6 +317,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'create-network-site',
       description: 'Creates a network site',
       options: [
+
         Option(
           name: '--availability-zone',
           description: 'The Availability Zone that is the parent of this site. You can\'t change the Availability Zone after you create the site',
@@ -394,6 +406,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -406,6 +419,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'deactivate-device-identifier',
       description: 'Deactivates the specified device identifier',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see How to ensure idempotency',
@@ -440,6 +454,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -452,6 +467,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'delete-network',
       description: 'Deletes the specified network. You must delete network sites before you delete the network. For more information, see DeleteNetworkSite in the API Reference for Amazon Web Services Private 5G',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see How to ensure idempotency',
@@ -486,6 +502,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -498,6 +515,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'delete-network-site',
       description: 'Deletes the specified network site. Return the hardware after you delete the network site. You are responsible for minimum charges. For more information, see Hardware returns in the Amazon Web Services Private 5G User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see How to ensure idempotency',
@@ -532,6 +550,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -544,6 +563,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'get-device-identifier',
       description: 'Gets the specified device identifier',
       options: [
+
         Option(
           name: '--device-identifier-arn',
           description: 'The Amazon Resource Name (ARN) of the device identifier',
@@ -569,6 +589,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -581,6 +602,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'get-network',
       description: 'Gets the specified network',
       options: [
+
         Option(
           name: '--network-arn',
           description: 'The Amazon Resource Name (ARN) of the network',
@@ -606,6 +628,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -618,6 +641,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'get-network-resource',
       description: 'Gets the specified network resource',
       options: [
+
         Option(
           name: '--network-resource-arn',
           description: 'The Amazon Resource Name (ARN) of the network resource',
@@ -643,6 +667,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -655,6 +680,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'get-network-site',
       description: 'Gets the specified network site',
       options: [
+
         Option(
           name: '--network-site-arn',
           description: 'The Amazon Resource Name (ARN) of the network site',
@@ -680,6 +706,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -692,6 +719,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'get-order',
       description: 'Gets the specified order',
       options: [
+
         Option(
           name: '--order-arn',
           description: 'The Amazon Resource Name (ARN) of the order',
@@ -717,6 +745,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -729,6 +758,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'list-device-identifiers',
       description: 'Lists device identifiers. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order, the status of device identifiers, or the ARN of the traffic group. If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of the specified filters',
       options: [
+
         Option(
           name: '--filters',
           description: 'The filters.    ORDER - The Amazon Resource Name (ARN) of the order.    STATUS - The status (ACTIVE | INACTIVE).    TRAFFIC_GROUP - The Amazon Resource Name (ARN) of the traffic group.   Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values',
@@ -808,6 +838,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -820,6 +851,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'list-network-resources',
       description: 'Lists network resources. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order or the status of network resources. If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of the specified filters',
       options: [
+
         Option(
           name: '--filters',
           description: 'The filters.    ORDER - The Amazon Resource Name (ARN) of the order.    STATUS - The status (AVAILABLE | DELETED | DELETING | PENDING | PENDING_RETURN | PROVISIONING | SHIPPED).   Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values',
@@ -899,6 +931,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -911,6 +944,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'list-network-sites',
       description: 'Lists network sites. Add filters to your request to return a more specific list of results. Use filters to match the status of the network site',
       options: [
+
         Option(
           name: '--filters',
           description: 'The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.    STATUS - The status (AVAILABLE | CREATED | DELETED | DEPROVISIONING | PROVISIONING).   Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values',
@@ -990,6 +1024,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1002,6 +1037,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'list-networks',
       description: 'Lists networks. Add filters to your request to return a more specific list of results. Use filters to match the status of the network',
       options: [
+
         Option(
           name: '--filters',
           description: 'The filters.    STATUS - The status (AVAILABLE | CREATED | DELETED | DEPROVISIONING | PROVISIONING).   Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values',
@@ -1072,6 +1108,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1084,6 +1121,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'list-orders',
       description: 'Lists orders. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of the network site or the status of the order. If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of the specified filters',
       options: [
+
         Option(
           name: '--filters',
           description: 'The filters.    NETWORK_SITE - The Amazon Resource Name (ARN) of the network site.    STATUS - The status (ACKNOWLEDGING | ACKNOWLEDGED | UNACKNOWLEDGED).   Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values',
@@ -1163,6 +1201,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1175,6 +1214,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1200,6 +1240,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1212,6 +1253,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'ping',
       description: 'Checks the health of the service',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1228,6 +1270,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1240,6 +1283,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'start-network-resource-update',
       description: 'Use this action to do the following tasks:   Update the duration and renewal status of the commitment period for a radio unit. The update goes into effect immediately.   Request a replacement for a network resource.   Request that you return a network resource.   After you submit a request to replace or return a network resource, the status of the network resource changes to CREATING_SHIPPING_LABEL. The shipping label is available when the status of the network resource is PENDING_RETURN. After the network resource is successfully returned, its status changes to DELETED. For more information, see Return a radio unit',
       options: [
+
         Option(
           name: '--commitment-configuration',
           description: 'Use this action to extend and automatically renew the commitment period for the radio unit. You can do the following:   Change a 60-day commitment to a 1-year or 3-year commitment. The change is immediate and the hourly rate decreases to the rate for the new commitment period.   Change a 1-year commitment to a 3-year commitment. The change is immediate and the hourly rate decreases to the rate for the 3-year commitment period.   Set a 1-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 1-year rate.   Set a 3-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 3-year rate.   Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment. You cannot use the automatic-renewal option for a 60-day commitment.   For pricing, see Amazon Web Services Private 5G Pricing',
@@ -1301,6 +1345,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1313,6 +1358,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1347,6 +1393,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1359,6 +1406,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1393,6 +1441,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1405,6 +1454,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'update-network-site',
       description: 'Updates the specified network site',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see How to ensure idempotency',
@@ -1448,6 +1498,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1460,6 +1511,7 @@ final FigSpec privatenetworksSpec = FigSpec(
       name: 'update-network-site-plan',
       description: 'Updates the specified network site plan',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see How to ensure idempotency',
@@ -1503,6 +1555,7 @@ final FigSpec privatenetworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

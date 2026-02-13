@@ -9,6 +9,7 @@ final FigSpec hardhatSpec = FigSpec(
   name: 'hardhat',
   description: 'Ethereum development environment',
   options: [
+
     Option(
       name: 'config',
       description: 'A Hardhat config file'
@@ -49,6 +50,7 @@ final FigSpec hardhatSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'accounts',
       description: 'Prints the list of accounts'
@@ -61,6 +63,7 @@ final FigSpec hardhatSpec = FigSpec(
       name: 'clean',
       description: 'Clears the cache and deletes all artifacts',
       options: [
+
         Option(
           name: '--global',
           description: 'Clear the global cache'
@@ -71,6 +74,7 @@ final FigSpec hardhatSpec = FigSpec(
       name: 'compile',
       description: 'Compiles the entire project, building all artifacts',
       options: [
+
         Option(
           name: '--force',
           description: 'Force compilation ignoring cache'
@@ -85,6 +89,7 @@ final FigSpec hardhatSpec = FigSpec(
       name: 'console',
       description: 'Opens a hardhat console',
       options: [
+
         Option(
           name: '--no-compile',
           description: 'Don\'t compile before running this task'
@@ -103,6 +108,7 @@ final FigSpec hardhatSpec = FigSpec(
       name: 'node',
       description: 'Starts a JSON-RPC server on top of Hardhat Network',
       options: [
+
         Option(
           name: '--fork',
           description: 'The URL of the JSON-RPC server to fork from'
@@ -125,6 +131,7 @@ final FigSpec hardhatSpec = FigSpec(
       name: 'run',
       description: 'Runs a user-defined script after compiling the project',
       options: [
+
         Option(
           name: '--no-compile',
           description: 'Don\'t compile before running this task'
@@ -135,6 +142,7 @@ final FigSpec hardhatSpec = FigSpec(
       name: 'test',
       description: 'Runs mocha tests',
       options: [
+
         Option(
           name: '--no-compile',
           description: 'Don\'t compile before running this task'

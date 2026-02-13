@@ -13,6 +13,7 @@ final FigSpec jestSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['--bail', '-b'],
       description: 'Exit the test suite immediately upon n number of failing test suite. Defaults to 1',
@@ -86,6 +87,7 @@ final FigSpec jestSpec = FigSpec(
         Arg(
         name: 'true|false',
         suggestions: [
+
           FigSuggestion(
             name: 'true'
           ),
@@ -103,6 +105,7 @@ final FigSpec jestSpec = FigSpec(
         Arg(
         name: 'babel|v8',
         suggestions: [
+
           FigSuggestion(
             name: 'babel'
           ),
@@ -129,6 +132,7 @@ final FigSpec jestSpec = FigSpec(
         name: 'jsdom|node|path/to/env.js',
         template: 'filepaths',
         suggestions: [
+
           FigSuggestion(
             name: 'jsdom'
           ),

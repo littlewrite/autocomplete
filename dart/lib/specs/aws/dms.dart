@@ -9,10 +9,12 @@ final FigSpec dmsSpec = FigSpec(
   name: 'dms',
   description: 'Database Migration Service Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL. For more information about DMS, see What Is Database Migration Service? in the Database Migration Service User Guide',
   subcommands: [
+
     Subcommand(
       name: 'add-tags-to-resource',
       description: 'Adds metadata tags to an DMS resource, including replication instance, endpoint, subnet group, and migration task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or used in a Condition statement in an IAM policy for DMS. For more information, see  Tag  data type description',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DMS, you can tag a replication instance, an endpoint, or a replication task',
@@ -47,6 +49,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'apply-pending-maintenance-action',
       description: 'Applies a pending maintenance action to a resource (for example, to a replication instance)',
       options: [
+
         Option(
           name: '--replication-instance-arn',
           description: 'The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to',
@@ -102,6 +106,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'batch-start-recommendations',
       description: 'Starts the analysis of up to 20 source databases to recommend target engines for each source database. This is a batch version of StartRecommendations. The result of analysis of each source database is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200',
       options: [
+
         Option(
           name: '--data',
           description: 'Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database',
@@ -139,6 +145,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -151,6 +158,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'cancel-replication-task-assessment-run',
       description: 'Cancels a single premigration assessment run. This operation prevents any individual assessments from running if they haven\'t started running. It also attempts to cancel any individual assessments that are currently running',
       options: [
+
         Option(
           name: '--replication-task-assessment-run-arn',
           description: 'Amazon Resource Name (ARN) of the premigration assessment run to be canceled',
@@ -176,6 +184,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +197,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-data-migration',
       description: 'Creates a data migration using the provided settings',
       options: [
+
         Option(
           name: '--data-migration-name',
           description: 'A user-friendly name for the data migration. Data migration names have the following constraints:   Must begin with a letter, and can only contain ASCII letters, digits, and hyphens.    Can\'t end with a hyphen or contain two consecutive hyphens.   Length must be from 1 to 255 characters',
@@ -284,6 +294,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -296,6 +307,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-data-provider',
       description: 'Creates a data provider using the provided settings. A data provider stores a data store type and location information about your database',
       options: [
+
         Option(
           name: '--data-provider-name',
           description: 'A user-friendly name for the data provider',
@@ -357,6 +369,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -369,6 +382,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-endpoint',
       description: 'Creates an endpoint using the provided settings.  For a MySQL source or target endpoint, don\'t explicitly specify the database using the DatabaseName request parameter on the CreateEndpoint API call. Specifying DatabaseName when you create a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task',
       options: [
+
         Option(
           name: '--endpoint-identifier',
           description: 'The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can\'t end with a hyphen, or contain two consecutive hyphens',
@@ -700,6 +714,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -712,6 +727,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-event-subscription',
       description: 'Creates an DMS event notification subscription.  You can specify the type of source (SourceType) you want to be notified of, provide a list of DMS source IDs (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you want to be notified of. If you specify both the SourceType and SourceIds, such as SourceType = replication-instance and SourceIdentifier = my-replinstance, you will be notified of all the replication instance events for the specified source. If you specify a SourceType but don\'t specify a SourceIdentifier, you receive notice of the events for that source type for all your DMS sources. If you don\'t specify either SourceType nor SourceIdentifier, you will be notified of events generated from all DMS sources belonging to your customer account. For more information about DMS events, see Working with Events and Notifications in the Database Migration Service User Guide',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the DMS event notification subscription. This name must be less than 255 characters',
@@ -790,6 +806,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -802,6 +819,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-fleet-advisor-collector',
       description: 'Creates a Fleet Advisor collector using the specified parameters',
       options: [
+
         Option(
           name: '--collector-name',
           description: 'The name of your Fleet Advisor collector (for example, sample-collector)',
@@ -854,6 +872,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -866,6 +885,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-instance-profile',
       description: 'Creates the instance profile using the specified parameters',
       options: [
+
         Option(
           name: '--availability-zone',
           description: 'The Availability Zone where the instance profile will be created. The default value is a random, system-chosen Availability Zone in the Amazon Web Services Region where your data provider is created, for examplem us-east-1d',
@@ -962,6 +982,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -974,6 +995,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-migration-project',
       description: 'Creates the migration project using the specified parameters. You can run this action only after you create an instance profile and data providers using CreateInstanceProfile and CreateDataProvider',
       options: [
+
         Option(
           name: '--migration-project-name',
           description: 'A user-friendly name for the migration project',
@@ -1062,6 +1084,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1074,6 +1097,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-replication-config',
       description: 'Creates a configuration that you can later provide to configure and start an DMS Serverless replication. You can also provide options to validate the configuration inputs before you start the replication',
       options: [
+
         Option(
           name: '--replication-config-identifier',
           description: 'A unique identifier that you want to use to create a ReplicationConfigArn that is returned as part of the output from this action. You can then pass this output ReplicationConfigArn as the value of the ReplicationConfigArn option for other actions to identify both DMS Serverless replications and replication configurations that you want those actions to operate on. For some actions, you can also use either this unique identifier or a corresponding ARN in action filters to identify the specific replication and replication configuration to operate on',
@@ -1180,6 +1204,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1192,6 +1217,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-replication-instance',
       description: 'Creates the replication instance using the specified parameters. DMS requires that your account have certain roles with appropriate permissions before you can create a replication instance. For information on the required roles, see Creating the IAM Roles to Use With the CLI and DMS API. For information on the required permissions, see IAM Permissions Needed to Use DMS.  If you don\'t specify a version when creating a replication instance, DMS will create the instance using the default engine version. For information about the default engine version, see Release Notes',
       options: [
+
         Option(
           name: '--replication-instance-identifier',
           description: 'The replication instance identifier. This parameter is stored as a lowercase string. Constraints:   Must contain 1-63 alphanumeric characters or hyphens.   First character must be a letter.   Can\'t end with a hyphen or contain two consecutive hyphens.   Example: myrepinstance',
@@ -1349,6 +1375,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1361,6 +1388,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-replication-subnet-group',
       description: 'Creates a replication subnet group given a list of the subnet IDs in a VPC. The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region, otherwise the service will throw a ReplicationSubnetGroupDoesNotCoverEnoughAZs exception. If a replication subnet group exists in your Amazon Web Services account, the CreateReplicationSubnetGroup action returns the following error message: The Replication Subnet Group already exists. In this case, delete the existing replication subnet group. To do so, use the DeleteReplicationSubnetGroup action. Optionally, choose Subnet groups in the DMS console, then choose your subnet group. Next, choose Delete from Actions',
       options: [
+
         Option(
           name: '--replication-subnet-group-identifier',
           description: 'The name for the replication subnet group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, or hyphens. Must not be "default". Example: mySubnetgroup',
@@ -1413,6 +1441,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1425,6 +1454,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'create-replication-task',
       description: 'Creates a replication task using the specified parameters',
       options: [
+
         Option(
           name: '--replication-task-identifier',
           description: 'An identifier for the replication task. Constraints:   Must contain 1-255 alphanumeric characters or hyphens.   First character must be a letter.   Cannot end with a hyphen or contain two consecutive hyphens',
@@ -1558,6 +1588,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1570,6 +1601,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-certificate',
       description: 'Deletes the specified certificate',
       options: [
+
         Option(
           name: '--certificate-arn',
           description: 'The Amazon Resource Name (ARN) of the certificate',
@@ -1595,6 +1627,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1607,6 +1640,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-connection',
       description: 'Deletes the connection between a replication instance and an endpoint',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'The Amazon Resource Name (ARN) string that uniquely identifies the endpoint',
@@ -1641,6 +1675,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1653,6 +1688,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-data-migration',
       description: 'Deletes the specified data migration',
       options: [
+
         Option(
           name: '--data-migration-identifier',
           description: 'The identifier (name or ARN) of the data migration to delete',
@@ -1678,6 +1714,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1690,6 +1727,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-data-provider',
       description: 'Deletes the specified data provider.  All migration projects associated with the data provider must be deleted or modified before you can delete the data provider',
       options: [
+
         Option(
           name: '--data-provider-identifier',
           description: 'The identifier of the data provider to delete',
@@ -1715,6 +1753,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1727,6 +1766,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-endpoint',
       description: 'Deletes the specified endpoint.  All tasks associated with the endpoint must be deleted before you can delete the endpoint',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'The Amazon Resource Name (ARN) string that uniquely identifies the endpoint',
@@ -1752,6 +1792,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1764,6 +1805,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-event-subscription',
       description: 'Deletes an DMS event subscription',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the DMS event notification subscription to be deleted',
@@ -1789,6 +1831,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1801,6 +1844,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-fleet-advisor-collector',
       description: 'Deletes the specified Fleet Advisor collector',
       options: [
+
         Option(
           name: '--collector-referenced-id',
           description: 'The reference ID of the Fleet Advisor collector to delete',
@@ -1826,6 +1870,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1838,6 +1883,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-fleet-advisor-databases',
       description: 'Deletes the specified Fleet Advisor collector databases',
       options: [
+
         Option(
           name: '--database-ids',
           description: 'The IDs of the Fleet Advisor collector databases to delete',
@@ -1863,6 +1909,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1875,6 +1922,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-instance-profile',
       description: 'Deletes the specified instance profile.  All migration projects associated with the instance profile must be deleted or modified before you can delete the instance profile',
       options: [
+
         Option(
           name: '--instance-profile-identifier',
           description: 'The identifier of the instance profile to delete',
@@ -1900,6 +1948,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1912,6 +1961,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-migration-project',
       description: 'Deletes the specified migration project.  The migration project must be closed before you can delete it',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The name or Amazon Resource Name (ARN) of the migration project to delete',
@@ -1937,6 +1987,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1949,6 +2000,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-replication-config',
       description: 'Deletes an DMS Serverless replication configuration. This effectively deprovisions any and all replications that use this configuration. You can\'t delete the configuration for an DMS Serverless replication that is ongoing. You can delete the configuration when the replication is in a non-RUNNING and non-STARTING state',
       options: [
+
         Option(
           name: '--replication-config-arn',
           description: 'The replication config to delete',
@@ -1974,6 +2026,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1986,6 +2039,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-replication-instance',
       description: 'Deletes the specified replication instance.  You must delete any migration tasks that are associated with the replication instance before you can delete it',
       options: [
+
         Option(
           name: '--replication-instance-arn',
           description: 'The Amazon Resource Name (ARN) of the replication instance to be deleted',
@@ -2011,6 +2065,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2023,6 +2078,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-replication-subnet-group',
       description: 'Deletes a subnet group',
       options: [
+
         Option(
           name: '--replication-subnet-group-identifier',
           description: 'The subnet group name of the replication instance',
@@ -2048,6 +2104,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2060,6 +2117,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-replication-task',
       description: 'Deletes the specified replication task',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'The Amazon Resource Name (ARN) of the replication task to be deleted',
@@ -2085,6 +2143,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2097,6 +2156,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'delete-replication-task-assessment-run',
       description: 'Deletes the record of a single premigration assessment run. This operation removes all metadata that DMS maintains about this assessment run. However, the operation leaves untouched all information about this assessment run that is stored in your Amazon S3 bucket',
       options: [
+
         Option(
           name: '--replication-task-assessment-run-arn',
           description: 'Amazon Resource Name (ARN) of the premigration assessment run to be deleted',
@@ -2122,6 +2182,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2134,6 +2195,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-account-attributes',
       description: 'Lists all of the DMS attributes for a customer account. These attributes include DMS quotas for the account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas supported by the account, such as the number of replication instances allowed. The description for each resource quota, includes the quota name, current usage toward that quota, and the quota\'s maximum value. DMS uses the unique account identifier to name each artifact used by DMS in the given region. This command does not take any parameters',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2150,6 +2212,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2162,6 +2225,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-applicable-individual-assessments',
       description: 'Provides a list of individual assessments that you can specify for a new premigration assessment run, given one or more parameters. If you specify an existing migration task, this operation provides the default individual assessments you can specify for that task. Otherwise, the specified parameters model elements of a possible migration task on which to base a premigration assessment run. To use these migration task modeling parameters, you must specify an existing replication instance, a source database engine, a target database engine, and a migration type. This combination of parameters potentially limits the default individual assessments available for an assessment run created for a corresponding migration task. If you specify no parameters, this operation provides a list of all possible individual assessments that you can specify for an assessment run. If you specify any one of the task modeling parameters, you must specify all of them or the operation cannot provide a list of individual assessments. The only parameter that you can specify alone is for an existing migration task. The specified task definition then determines the default list of individual assessments that you can specify in an assessment run for the task',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments',
@@ -2241,6 +2305,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2253,6 +2318,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-certificates',
       description: 'Provides a description of the certificate',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the certificates described in the form of key-value pairs. Valid values are certificate-arn and certificate-id',
@@ -2323,6 +2389,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2335,6 +2402,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-connections',
       description: 'Describes the status of the connections that have been made between the replication instance and an endpoint. Connections are created when you test an endpoint',
       options: [
+
         Option(
           name: '--filters',
           description: 'The filters applied to the connection. Valid filter names: endpoint-arn | replication-instance-arn',
@@ -2405,6 +2473,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2417,6 +2486,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-conversion-configuration',
       description: 'Returns configuration parameters for a schema conversion project',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The name or Amazon Resource Name (ARN) for the schema conversion project to describe',
@@ -2442,6 +2512,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2454,6 +2525,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-data-migrations',
       description: 'Returns information about data migrations',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the data migrations',
@@ -2540,6 +2612,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2552,6 +2625,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-data-providers',
       description: 'Returns a paginated list of data providers for your account in the current region',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the data providers described in the form of key-value pairs. Valid filter names: data-provider-identifier',
@@ -2595,6 +2669,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2607,6 +2682,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-endpoint-settings',
       description: 'Returns information about the possible endpoint settings available when you create an endpoint for a specific database engine',
       options: [
+
         Option(
           name: '--engine-name',
           description: 'The database engine used for your source or target endpoint',
@@ -2650,6 +2726,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2662,6 +2739,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-endpoint-types',
       description: 'Returns information about the type of endpoints available',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the endpoint types. Valid filter names: engine-name | endpoint-type',
@@ -2732,6 +2810,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2744,6 +2823,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-endpoints',
       description: 'Returns information about the endpoints for your account in the current region',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the endpoints. Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name',
@@ -2814,6 +2894,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2826,6 +2907,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-engine-versions',
       description: 'Returns information about the replication instance versions used in the project',
       options: [
+
         Option(
           name: '--max-records',
           description: 'The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so that the remaining results can be retrieved',
@@ -2860,6 +2942,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2872,6 +2955,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-event-categories',
       description: 'Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in Working with Events and Notifications in the Database Migration Service User Guide',
       options: [
+
         Option(
           name: '--source-type',
           description: 'The type of DMS resource that generates events.  Valid values: replication-instance | replication-task',
@@ -2906,6 +2990,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2918,6 +3003,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-event-subscriptions',
       description: 'Lists all the event subscriptions for a customer account. The description of a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status.  If you specify SubscriptionName, this action lists the description for that subscription',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the DMS event subscription to be described',
@@ -2997,6 +3083,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3009,6 +3096,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-events',
       description: 'Lists events for a given source identifier and source type. You can also specify a start and end time. For more information on DMS events, see Working with Events and Notifications in the Database Migration Service User Guide',
       options: [
+
         Option(
           name: '--source-identifier',
           description: 'The identifier of an event source',
@@ -3133,6 +3221,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3145,6 +3234,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-extension-pack-associations',
       description: 'Returns a paginated list of extension pack associations for the specified migration project. An extension pack is an add-on module that emulates functions present in a source database that are required when converting objects to the target database',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The name or Amazon Resource Name (ARN) for the migration project',
@@ -3197,6 +3287,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3209,6 +3300,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-fleet-advisor-collectors',
       description: 'Returns a list of the Fleet Advisor collectors in your account',
       options: [
+
         Option(
           name: '--filters',
           description: 'If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:    collector-referenced-id – The ID of the collector agent, for example d4610ac5-e323-4ad9-bc50-eaf7249dfe9d.    collector-name – The name of the collector agent.   An example is: describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"',
@@ -3252,6 +3344,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3264,6 +3357,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-fleet-advisor-databases',
       description: 'Returns a list of Fleet Advisor databases in your account',
       options: [
+
         Option(
           name: '--filters',
           description: 'If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria:     database-id – The ID of the database.    database-name – The name of the database.    database-engine – The name of the database engine.    server-ip-address – The IP address of the database server.    database-ip-address – The IP address of the database.    collector-name – The name of the associated Fleet Advisor collector.   An example is: describe-fleet-advisor-databases --filter Name="database-id",Values="45"',
@@ -3307,6 +3401,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3319,6 +3414,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-fleet-advisor-lsa-analysis',
       description: 'Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors',
       options: [
+
         Option(
           name: '--max-records',
           description: 'Sets the maximum number of records returned in the response',
@@ -3353,6 +3449,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3365,6 +3462,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-fleet-advisor-schema-object-summary',
       description: 'Provides descriptions of the schemas discovered by your Fleet Advisor collectors',
       options: [
+
         Option(
           name: '--filters',
           description: 'If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:    schema-id – The ID of the schema, for example d4610ac5-e323-4ad9-bc50-eaf7249dfe9d.   Example: describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"',
@@ -3408,6 +3506,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3420,6 +3519,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-fleet-advisor-schemas',
       description: 'Returns a list of schemas detected by Fleet Advisor Collectors in your account',
       options: [
+
         Option(
           name: '--filters',
           description: 'If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:    complexity – The schema\'s complexity, for example Simple.    database-id – The ID of the schema\'s database.    database-ip-address – The IP address of the schema\'s database.    database-name – The name of the schema\'s database.    database-engine – The name of the schema database\'s engine.    original-schema-name – The name of the schema\'s database\'s main schema.    schema-id – The ID of the schema, for example 15.    schema-name – The name of the schema.    server-ip-address – The IP address of the schema database\'s server.   An example is: describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"',
@@ -3463,6 +3563,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3475,6 +3576,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-instance-profiles',
       description: 'Returns a paginated list of instance profiles for your account in the current region',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the instance profiles described in the form of key-value pairs',
@@ -3518,6 +3620,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3530,6 +3633,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-metadata-model-assessments',
       description: 'Returns a paginated list of metadata model assessments for your account in the current region',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The name or Amazon Resource Name (ARN) of the migration project',
@@ -3582,6 +3686,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3594,6 +3699,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-metadata-model-conversions',
       description: 'Returns a paginated list of metadata model conversions for a migration project',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -3646,6 +3752,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3658,6 +3765,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-metadata-model-exports-as-script',
       description: 'Returns a paginated list of metadata model exports',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -3710,6 +3818,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3722,6 +3831,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-metadata-model-exports-to-target',
       description: 'Returns a paginated list of metadata model exports',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -3774,6 +3884,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3786,6 +3897,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-metadata-model-imports',
       description: 'Returns a paginated list of metadata model imports',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -3838,6 +3950,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3850,6 +3963,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-migration-projects',
       description: 'Returns a paginated list of migration projects for your account in the current region',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the migration projects described in the form of key-value pairs',
@@ -3893,6 +4007,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3905,6 +4020,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-orderable-replication-instances',
       description: 'Returns information about the replication instance types that can be created in the specified region',
       options: [
+
         Option(
           name: '--max-records',
           description: 'The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.  Default: 100 Constraints: Minimum 20, maximum 100',
@@ -3966,6 +4082,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3978,6 +4095,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-pending-maintenance-actions',
       description: 'For internal use only',
       options: [
+
         Option(
           name: '--replication-instance-arn',
           description: 'The Amazon Resource Name (ARN) of the replication instance',
@@ -4029,6 +4147,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4041,6 +4160,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-recommendation-limitations',
       description: 'Returns a paginated list of limitations for recommendations of target Amazon Web Services engines',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the limitations described in the form of key-value pairs',
@@ -4084,6 +4204,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4096,6 +4217,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-recommendations',
       description: 'Returns a paginated list of target engine recommendations for your source databases',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the target engine recommendations described in the form of key-value pairs',
@@ -4139,6 +4261,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4151,6 +4274,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-refresh-schemas-status',
       description: 'Returns the status of the RefreshSchemas operation',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'The Amazon Resource Name (ARN) string that uniquely identifies the endpoint',
@@ -4176,6 +4300,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4188,6 +4313,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-replication-configs',
       description: 'Returns one or more existing DMS Serverless replication configurations as a list of structures',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the replication configs',
@@ -4231,6 +4357,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4243,6 +4370,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-replication-instance-task-logs',
       description: 'Returns information about the task logs for the specified task',
       options: [
+
         Option(
           name: '--replication-instance-arn',
           description: 'The Amazon Resource Name (ARN) of the replication instance',
@@ -4286,6 +4414,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4298,6 +4427,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-replication-instances',
       description: 'Returns information about replication instances for your account in the current region',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to replication instances. Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version',
@@ -4368,6 +4498,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4380,6 +4511,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-replication-subnet-groups',
       description: 'Returns information about the replication subnet groups',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to replication subnet groups. Valid filter names: replication-subnet-group-id',
@@ -4450,6 +4582,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4462,6 +4595,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-replication-table-statistics',
       description: 'Returns table and schema statistics for one or more provisioned replications that use a given DMS Serverless replication configuration',
       options: [
+
         Option(
           name: '--replication-config-arn',
           description: 'The replication config to describe',
@@ -4514,6 +4648,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4526,6 +4661,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-replication-task-assessment-results',
       description: 'Returns the task assessment results from the Amazon S3 bucket that DMS creates in your Amazon Web Services account. This action always returns the latest results. For more information about DMS task assessments, see Creating a task assessment report in the Database Migration Service User Guide',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the MaxRecords and Marker parameters',
@@ -4596,6 +4732,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4608,6 +4745,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-replication-task-assessment-runs',
       description: 'Returns a paginated list of premigration assessment runs based on filter settings. These filter settings can specify a combination of premigration assessment runs, migration tasks, replication instances, and assessment run status values.  This operation doesn\'t return information about individual assessments. For this information, see the DescribeReplicationTaskIndividualAssessments operation',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the premigration assessment runs described in the form of key-value pairs. Valid filter names: replication-task-assessment-run-arn, replication-task-arn, replication-instance-arn, status',
@@ -4651,6 +4789,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4663,6 +4802,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-replication-task-individual-assessments',
       description: 'Returns a paginated list of individual assessments based on filter settings. These filter settings can specify a combination of premigration assessment runs, migration tasks, and assessment status values',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the individual assessments described in the form of key-value pairs. Valid filter names: replication-task-assessment-run-arn, replication-task-arn, status',
@@ -4706,6 +4846,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4718,6 +4859,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-replication-tasks',
       description: 'Returns information about replication tasks for your account in the current region',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to replication tasks. Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn',
@@ -4796,6 +4938,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4808,6 +4951,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-replications',
       description: 'Provides details on replication progress by returning status information for one or more provisioned DMS Serverless replications',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters applied to the replications',
@@ -4851,6 +4995,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4863,6 +5008,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-schemas',
       description: 'Returns information about the schema for the specified endpoint',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'The Amazon Resource Name (ARN) string that uniquely identifies the endpoint',
@@ -4933,6 +5079,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4945,6 +5092,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'describe-table-statistics',
       description: 'Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted. Note that the "last updated" column the DMS console only indicates the time that DMS last updated the table statistics record for a table. It does not indicate the time of the last update to the table',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'The Amazon Resource Name (ARN) of the replication task',
@@ -5024,6 +5172,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5036,6 +5185,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'export-metadata-model-assessment',
       description: 'Saves a copy of a database migration assessment report to your Amazon S3 bucket. DMS can save your assessment report as a comma-separated value (CSV) or a PDF file',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -5088,6 +5238,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5100,6 +5251,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'import-certificate',
       description: 'Uploads the specified certificate',
       options: [
+
         Option(
           name: '--certificate-identifier',
           description: 'A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can\'t end with a hyphen or contain two consecutive hyphens',
@@ -5152,6 +5304,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5164,6 +5317,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all metadata tags attached to an DMS resource, including replication instance, endpoint, subnet group, and migration task. For more information, see  Tag  data type description',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to list tags for. This returns a list of keys (names of tags) created for the resource and their associated tag values',
@@ -5198,6 +5352,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5210,6 +5365,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-conversion-configuration',
       description: 'Modifies the specified schema conversion configuration using the provided parameters',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -5244,6 +5400,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5256,6 +5413,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-data-migration',
       description: 'Modifies an existing DMS data migration',
       options: [
+
         Option(
           name: '--data-migration-identifier',
           description: 'The identifier (name or ARN) of the data migration to modify',
@@ -5343,6 +5501,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5355,6 +5514,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-data-provider',
       description: 'Modifies the specified data provider using the provided settings.  You must remove the data provider from all migration projects before you can modify it',
       options: [
+
         Option(
           name: '--data-provider-identifier',
           description: 'The identifier of the data provider. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can\'t end with a hyphen, or contain two consecutive hyphens',
@@ -5424,6 +5584,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5436,6 +5597,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-endpoint',
       description: 'Modifies the specified endpoint.  For a MySQL source or target endpoint, don\'t explicitly specify the database using the DatabaseName request parameter on the ModifyEndpoint API call. Specifying DatabaseName when you modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'The Amazon Resource Name (ARN) string that uniquely identifies the endpoint',
@@ -5757,6 +5919,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5769,6 +5932,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-event-subscription',
       description: 'Modifies an existing DMS event notification subscription',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the DMS event notification subscription to be modified',
@@ -5829,6 +5993,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5841,6 +6006,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-instance-profile',
       description: 'Modifies the specified instance profile using the provided parameters.  All migration projects associated with the instance profile must be deleted or modified before you can modify the instance profile',
       options: [
+
         Option(
           name: '--instance-profile-identifier',
           description: 'The identifier of the instance profile. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can\'t end with a hyphen, or contain two consecutive hyphens',
@@ -5937,6 +6103,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5949,6 +6116,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-migration-project',
       description: 'Modifies the specified migration project using the provided parameters.  The migration project must be closed before you can modify it',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The identifier of the migration project. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can\'t end with a hyphen, or contain two consecutive hyphens',
@@ -6037,6 +6205,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6049,6 +6218,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-replication-config',
       description: 'Modifies an existing DMS Serverless replication configuration that you can use to start a replication. This command includes input validation and logic to check the state of any replication that uses this configuration. You can only modify a replication configuration before any replication that uses it has started. As soon as you have initially started a replication with a given configuiration, you can\'t modify that configuration, even if you stop it. Other run statuses that allow you to run this command include FAILED and CREATED. A provisioning state that allows you to run this command is FAILED_PROVISION',
       options: [
+
         Option(
           name: '--replication-config-arn',
           description: 'The Amazon Resource Name of the replication to modify',
@@ -6146,6 +6316,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6158,6 +6329,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-replication-instance',
       description: 'Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request. Some settings are applied during the maintenance window',
       options: [
+
         Option(
           name: '--replication-instance-arn',
           description: 'The Amazon Resource Name (ARN) of the replication instance',
@@ -6278,6 +6450,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6290,6 +6463,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-replication-subnet-group',
       description: 'Modifies the settings for the specified replication subnet group',
       options: [
+
         Option(
           name: '--replication-subnet-group-identifier',
           description: 'The name of the replication instance subnet group',
@@ -6333,6 +6507,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6345,6 +6520,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'modify-replication-task',
       description: 'Modifies the specified replication task. You can\'t modify the task endpoints. The task must be stopped before you can modify it.  For more information about DMS tasks, see Working with Migration Tasks in the Database Migration Service User Guide',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'The Amazon Resource Name (ARN) of the replication task',
@@ -6442,6 +6618,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6454,6 +6631,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'move-replication-task',
       description: 'Moves a replication task from its current replication instance to a different target replication instance using the specified parameters. The target replication instance must be created with the same or later DMS version as the current replication instance',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'The Amazon Resource Name (ARN) of the task that you want to move',
@@ -6488,6 +6666,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6500,6 +6679,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'reboot-replication-instance',
       description: 'Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again',
       options: [
+
         Option(
           name: '--replication-instance-arn',
           description: 'The Amazon Resource Name (ARN) of the replication instance',
@@ -6541,6 +6721,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6553,6 +6734,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'refresh-schemas',
       description: 'Populates the schema for the specified endpoint. This is an asynchronous operation and can take several minutes. You can check the status of this operation by calling the DescribeRefreshSchemasStatus operation',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'The Amazon Resource Name (ARN) string that uniquely identifies the endpoint',
@@ -6587,6 +6769,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6599,6 +6782,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'reload-replication-tables',
       description: 'Reloads the target database table with the source data for a given DMS Serverless replication configuration. You can only use this operation with a task in the RUNNING state, otherwise the service will throw an InvalidResourceStateFault exception',
       options: [
+
         Option(
           name: '--replication-config-arn',
           description: 'The Amazon Resource Name of the replication config for which to reload tables',
@@ -6642,6 +6826,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6654,6 +6839,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'reload-tables',
       description: 'Reloads the target database table with the source data.  You can only use this operation with a task in the RUNNING state, otherwise the service will throw an InvalidResourceStateFault exception',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'The Amazon Resource Name (ARN) of the replication task',
@@ -6697,6 +6883,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6709,6 +6896,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'remove-tags-from-resource',
       description: 'Removes metadata tags from an DMS resource, including replication instance, endpoint, subnet group, and migration task. For more information, see  Tag  data type description',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN)',
@@ -6743,6 +6931,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6755,6 +6944,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'run-fleet-advisor-lsa-analysis',
       description: 'Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -6771,6 +6961,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6783,6 +6974,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-data-migration',
       description: 'Starts the specified data migration',
       options: [
+
         Option(
           name: '--data-migration-identifier',
           description: 'The identifier (name or ARN) of the data migration to start',
@@ -6817,6 +7009,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6829,6 +7022,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-extension-pack-association',
       description: 'Applies the extension pack to your target database. An extension pack is an add-on module that emulates functions present in a source database that are required when converting objects to the target database',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -6854,6 +7048,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6866,6 +7061,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-metadata-model-assessment',
       description: 'Creates a database migration assessment report by assessing the migration complexity for your source database. A database migration assessment report summarizes all of the schema conversion tasks. It also details the action items for database objects that can\'t be converted to the database engine of your target database instance',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -6900,6 +7096,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6912,6 +7109,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-metadata-model-conversion',
       description: 'Converts your source database objects to a format compatible with the target database',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -6946,6 +7144,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6958,6 +7157,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-metadata-model-export-as-script',
       description: 'Saves your converted code to a file as a SQL script, and stores this file on your Amazon S3 bucket',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -7010,6 +7210,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7022,6 +7223,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-metadata-model-export-to-target',
       description: 'Applies converted database objects to your target database',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -7064,6 +7266,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7076,6 +7279,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-metadata-model-import',
       description: 'Loads the metadata for all the dependent database objects of the parent object. This operation uses your project\'s Amazon S3 bucket as a metadata cache to improve performance',
       options: [
+
         Option(
           name: '--migration-project-identifier',
           description: 'The migration project name or Amazon Resource Name (ARN)',
@@ -7127,6 +7331,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7139,6 +7344,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-recommendations',
       description: 'Starts the analysis of your source database to provide recommendations of target engines. You can create recommendations for multiple source databases using BatchStartRecommendations',
       options: [
+
         Option(
           name: '--database-id',
           description: 'The identifier of the source database to analyze and provide recommendations for',
@@ -7173,6 +7379,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7185,6 +7392,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-replication',
       description: 'For a given DMS Serverless replication configuration, DMS connects to the source endpoint and collects the metadata to analyze the replication workload. Using this metadata, DMS then computes and provisions the required capacity and starts replicating to the target endpoint using the server resources that DMS has provisioned for the DMS Serverless replication',
       options: [
+
         Option(
           name: '--replication-config-arn',
           description: 'The Amazon Resource Name of the replication for which to start replication',
@@ -7246,6 +7454,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7258,6 +7467,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-replication-task',
       description: 'Starts the replication task. For more information about DMS tasks, see Working with Migration Tasks  in the Database Migration Service User Guide',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'The Amazon Resource Name (ARN) of the replication task to be started',
@@ -7319,6 +7529,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7331,6 +7542,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-replication-task-assessment',
       description: 'Starts the replication task assessment for unsupported data types in the source database.  You can only use this operation for a task if the following conditions are true:   The task must be in the stopped state.   The task must have successful connections to the source and target.   If either of these conditions are not met, an InvalidResourceStateFault error will result.  For information about DMS task assessments, see Creating a task assessment report in the Database Migration Service User Guide',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'The Amazon Resource Name (ARN) of the replication task',
@@ -7356,6 +7568,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7368,6 +7581,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'start-replication-task-assessment-run',
       description: 'Starts a new premigration assessment run for one or more individual assessments of a migration task. The assessments that you can specify depend on the source and target database engine and the migration type defined for the given task. To run this operation, your migration task must already be created. After you run this operation, you can review the status of each individual assessment. You can also run the migration task manually after the assessment run and its individual assessments complete',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start',
@@ -7474,6 +7688,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7486,6 +7701,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'stop-data-migration',
       description: 'Stops the specified data migration',
       options: [
+
         Option(
           name: '--data-migration-identifier',
           description: 'The identifier (name or ARN) of the data migration to stop',
@@ -7511,6 +7727,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7523,6 +7740,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'stop-replication',
       description: 'For a given DMS Serverless replication configuration, DMS stops any and all ongoing DMS Serverless replications. This command doesn\'t deprovision the stopped replications',
       options: [
+
         Option(
           name: '--replication-config-arn',
           description: 'The Amazon Resource Name of the replication to stop',
@@ -7548,6 +7766,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7560,6 +7779,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'stop-replication-task',
       description: 'Stops the replication task',
       options: [
+
         Option(
           name: '--replication-task-arn',
           description: 'The Amazon Resource Name(ARN) of the replication task to be stopped',
@@ -7585,6 +7805,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7597,6 +7818,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'test-connection',
       description: 'Tests the connection between the replication instance and the endpoint',
       options: [
+
         Option(
           name: '--replication-instance-arn',
           description: 'The Amazon Resource Name (ARN) of the replication instance',
@@ -7631,6 +7853,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7643,6 +7866,7 @@ final FigSpec dmsSpec = FigSpec(
       name: 'update-subscriptions-to-event-bridge',
       description: 'Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding Amazon EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance versions are 3.4.5 or higher. If any replication instances are from versions earlier than 3.4.5, the operation raises an error and tells you to upgrade these instances to version 3.4.5 or higher. To enable migration regardless of version, set the Force option to true. However, if you don\'t upgrade instances earlier than version 3.4.5, some types of events might not be available when you use Amazon EventBridge. To call this operation, make sure that you have certain permissions added to your user account. For more information, see Migrating event subscriptions to Amazon EventBridge in the Amazon Web Services Database Migration Service User Guide',
       options: [
+
         Option(
           name: '--force-move',
           description: 'When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.5 or higher'
@@ -7667,6 +7891,7 @@ final FigSpec dmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7679,10 +7904,12 @@ final FigSpec dmsSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'endpoint-deleted',
           description: 'Wait until testing endpoint is deleted. It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--filters',
               description: 'Filters applied to the endpoints. Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name',
@@ -7753,6 +7980,7 @@ final FigSpec dmsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7765,6 +7993,7 @@ final FigSpec dmsSpec = FigSpec(
           name: 'replication-instance-available',
           description: 'Wait until DMS replication instance is available. It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--filters',
               description: 'Filters applied to replication instances. Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version',
@@ -7835,6 +8064,7 @@ final FigSpec dmsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7847,6 +8077,7 @@ final FigSpec dmsSpec = FigSpec(
           name: 'replication-instance-deleted',
           description: 'Wait until DMS replication instance is deleted. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--filters',
               description: 'Filters applied to replication instances. Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version',
@@ -7917,6 +8148,7 @@ final FigSpec dmsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7929,6 +8161,7 @@ final FigSpec dmsSpec = FigSpec(
           name: 'replication-task-deleted',
           description: 'Wait until DMS replication task is deleted. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--filters',
               description: 'Filters applied to replication tasks. Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn',
@@ -8007,6 +8240,7 @@ final FigSpec dmsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -8019,6 +8253,7 @@ final FigSpec dmsSpec = FigSpec(
           name: 'replication-task-ready',
           description: 'Wait until DMS replication task is ready. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--filters',
               description: 'Filters applied to replication tasks. Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn',
@@ -8097,6 +8332,7 @@ final FigSpec dmsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -8109,6 +8345,7 @@ final FigSpec dmsSpec = FigSpec(
           name: 'replication-task-running',
           description: 'Wait until DMS replication task is running. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--filters',
               description: 'Filters applied to replication tasks. Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn',
@@ -8187,6 +8424,7 @@ final FigSpec dmsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -8199,6 +8437,7 @@ final FigSpec dmsSpec = FigSpec(
           name: 'replication-task-stopped',
           description: 'Wait until DMS replication task is stopped. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--filters',
               description: 'Filters applied to replication tasks. Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn',
@@ -8277,6 +8516,7 @@ final FigSpec dmsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -8289,6 +8529,7 @@ final FigSpec dmsSpec = FigSpec(
           name: 'test-connection-succeeds',
           description: 'Wait until testing connection succeeds. It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--filters',
               description: 'The filters applied to the connection. Valid filter names: endpoint-arn | replication-instance-arn',
@@ -8359,6 +8600,7 @@ final FigSpec dmsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

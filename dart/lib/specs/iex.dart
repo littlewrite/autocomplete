@@ -9,6 +9,7 @@ final FigSpec iexSpec = FigSpec(
   name: 'iex',
   description: 'Elixir Interactive Shell',
   options: [
+
     Option(
       name: '--dot-iex',
       description: 'Overrides default .iex.exs file and uses path instead; path can be empty, then no file will be loaded',

@@ -16,6 +16,7 @@ final FigSpec zipcloakSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show a short help for zipcloak'

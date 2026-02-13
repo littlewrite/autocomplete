@@ -9,6 +9,7 @@ final FigSpec gitQuickStatsSpec = FigSpec(
   name: 'git-quick-stats',
   description: 'Git quick statistics is a simple and efficient way to access various statistics in git repository',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for git-quick-stats'

@@ -9,6 +9,7 @@ final FigSpec pkillSpec = FigSpec(
   name: 'pkill',
   description: 'Send  the  specified  signal  (by default SIGTERM) to each specified process',
   options: [
+
     Option(
       name: '--signal',
       description: 'Signal to send (either number or name)',
@@ -17,6 +18,7 @@ final FigSpec pkillSpec = FigSpec(
         name: 'signal',
         description: 'Signal to send',
         suggestions: [
+
           FigSuggestion(name: 'SIGABRT'),
           FigSuggestion(name: 'SIGALRM'),
           FigSuggestion(name: 'SIGBUS'),
@@ -212,6 +214,7 @@ final FigSpec pkillSpec = FigSpec(
         name: 'ns',
         isVariadic: true,
         suggestions: [
+
           FigSuggestion(name: 'ipc'),
           FigSuggestion(name: 'mnt'),
           FigSuggestion(name: 'net'),

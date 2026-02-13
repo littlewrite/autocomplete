@@ -9,6 +9,7 @@ final FigSpec topSpec = FigSpec(
   name: 'top',
   description: 'Display Linux tasks',
   options: [
+
     Option(
       name: ['-h', '-v'],
       description: 'Show library version and usage prompt'

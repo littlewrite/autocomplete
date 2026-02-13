@@ -9,10 +9,12 @@ final FigSpec iotthingsgraphSpec = FigSpec(
   name: 'iotthingsgraph',
   description: 'AWS IoT Things Graph AWS IoT Things Graph provides an integrated set of tools that enable developers to connect devices and services that use different standards, such as units of measure and communication protocols. AWS IoT Things Graph makes it possible to build IoT applications with little to no code by connecting devices and services and defining how they interact at an abstract level. For more information about how AWS IoT Things Graph works, see the User Guide. The AWS IoT Things Graph service is discontinued',
   subcommands: [
+
     Subcommand(
       name: 'associate-entity-to-thing',
       description: 'Associates a device with a concrete thing that is in the user\'s registry. A thing can be associated with only one device at a time. If you associate a thing with a new device id, its previous association will be removed',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing to which the entity is to be associated',
@@ -56,6 +58,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'create-flow-template',
       description: 'Creates a workflow template. Workflows can be created only in the user\'s namespace. (The public namespace contains only entities.) The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the latest version of the user\'s namespace unless another namespace version is specified in the request',
       options: [
+
         Option(
           name: '--definition',
           description: 'The workflow DefinitionDocument',
@@ -102,6 +106,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'create-system-instance',
       description: 'Creates a system instance.  This action validates the system instance, prepares the deployment-related resources. For Greengrass deployments, it updates the Greengrass group that is specified by the greengrassGroupName parameter. It also adds a file to the S3 bucket specified by the s3BucketName parameter. You need to call DeploySystemInstance after running this action. For Greengrass deployments, since this action modifies and adds resources to a Greengrass group and an S3 bucket on the caller\'s behalf, the calling identity must have write permissions to both the specified Greengrass group and S3 bucket. Otherwise, the call will fail with an authorization error. For cloud deployments, this action requires a flowActionsRoleArn value. This is an IAM role that has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it executes. If the definition document doesn\'t specify a version of the user\'s namespace, the latest version will be used by default',
       options: [
+
         Option(
           name: '--tags',
           description: 'Metadata, consisting of key-value pairs, that can be used to categorize your system instances',
@@ -193,6 +199,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'create-system-template',
       description: 'Creates a system. The system is validated against the entities in the latest version of the user\'s namespace unless another namespace version is specified in the request',
       options: [
+
         Option(
           name: '--definition',
           description: 'The DefinitionDocument used to create the system',
@@ -239,6 +247,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +260,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'delete-flow-template',
       description: 'Deletes a workflow. Any new system or deployment that contains this workflow will fail to update or deploy. Existing deployments that contain the workflow will continue to run (since they use a snapshot of the workflow taken at the time of deployment)',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the workflow to be deleted. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME',
@@ -276,6 +286,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -288,6 +299,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'delete-namespace',
       description: 'Deletes the specified namespace. This action deletes all of the entities in the namespace. Delete the systems and flows that use entities in the namespace before performing this action. This action takes no request parameters',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -304,6 +316,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -316,6 +329,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'delete-system-instance',
       description: 'Deletes a system instance. Only system instances that have never been deployed, or that have been undeployed can be deleted. Users can create a new system instance that has the same ID as a deleted system instance',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the system instance to be deleted',
@@ -341,6 +355,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -353,6 +368,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'delete-system-template',
       description: 'Deletes a system. New deployments can\'t contain the system after its deletion. Existing deployments that contain the system will continue to work because they use a snapshot of the system that is taken when it is deployed',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the system to be deleted. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME',
@@ -378,6 +394,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -390,6 +407,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'deploy-system-instance',
       description: 'Greengrass and Cloud Deployments  Deploys the system instance to the target specified in CreateSystemInstance.   Greengrass Deployments  If the system or any workflows and entities have been updated before this action is called, then the deployment will create a new Amazon Simple Storage Service resource file and then deploy it. Since this action creates a Greengrass deployment on the caller\'s behalf, the calling identity must have write permissions to the specified Greengrass group. Otherwise, the call will fail with an authorization error. For information about the artifacts that get added to your Greengrass core device when you use this API, see AWS IoT Things Graph and AWS IoT Greengrass',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the system instance. This value is returned by the CreateSystemInstance action. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME',
@@ -415,6 +433,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -427,6 +446,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'deprecate-flow-template',
       description: 'Deprecates the specified workflow. This action marks the workflow for deletion. Deprecated flows can\'t be deployed, but existing deployments will continue to run',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the workflow to be deleted. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME',
@@ -452,6 +472,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -464,6 +485,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'deprecate-system-template',
       description: 'Deprecates the specified system',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the system to delete. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME',
@@ -489,6 +511,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -501,6 +524,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'describe-namespace',
       description: 'Gets the latest version of the user\'s namespace and the public version that it is tracking',
       options: [
+
         Option(
           name: '--namespace-name',
           description: 'The name of the user\'s namespace. Set this to aws to get the public namespace',
@@ -526,6 +550,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -538,6 +563,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'dissociate-entity-from-thing',
       description: 'Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only one entity of a particular type can be associated with a thing',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing to disassociate',
@@ -572,6 +598,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -584,6 +611,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'get-entities',
       description: 'Gets definitions of the specified entities. Uses the latest version of the user\'s namespace by default. This API returns the following TDM entities.   Properties   States   Events   Actions   Capabilities   Mappings   Devices   Device Models   Services   This action doesn\'t return definitions for systems, flows, and deployments',
       options: [
+
         Option(
           name: '--ids',
           description: 'An array of entity IDs. The IDs should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME',
@@ -618,6 +646,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -630,6 +659,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'get-flow-template',
       description: 'Gets the latest version of the DefinitionDocument and FlowTemplateSummary for the specified workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the workflow. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME',
@@ -664,6 +694,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -676,6 +707,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'get-flow-template-revisions',
       description: 'Gets revisions of the specified workflow. Only the last 100 revisions are stored. If the workflow has been deprecated, this action will return revisions that occurred before the deprecation. This action won\'t work for workflows that have been deleted',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the workflow. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME',
@@ -746,6 +778,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -758,6 +791,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'get-namespace-deletion-status',
       description: 'Gets the status of a namespace deletion task',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -774,6 +808,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -786,6 +821,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'get-system-instance',
       description: 'Gets a system instance',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the system deployment instance. This value is returned by CreateSystemInstance. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME',
@@ -811,6 +847,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -823,6 +860,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'get-system-template',
       description: 'Gets a system',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the system to get. This ID must be in the user\'s namespace. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME',
@@ -857,6 +895,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -869,6 +908,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'get-system-template-revisions',
       description: 'Gets revisions made to the specified system template. Only the previous 100 revisions are stored. If the system has been deprecated, this action will return the revisions that occurred before its deprecation. This action won\'t work with systems that have been deleted',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the system template. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME',
@@ -939,6 +979,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -951,6 +992,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'get-upload-status',
       description: 'Gets the status of the specified upload',
       options: [
+
         Option(
           name: '--upload-id',
           description: 'The ID of the upload. This value is returned by the UploadEntityDefinitions action',
@@ -976,6 +1018,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -988,6 +1031,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'list-flow-execution-messages',
       description: 'Returns a list of objects that contain information about events in a flow execution',
       options: [
+
         Option(
           name: '--flow-execution-id',
           description: 'The ID of the flow execution',
@@ -1058,6 +1102,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1070,6 +1115,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags on an AWS IoT Things Graph resource',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of tags to return',
@@ -1140,6 +1186,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1152,6 +1199,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'search-entities',
       description: 'Searches for entities of the specified type. You can search for entities in your namespace and the public namespace that you\'re tracking',
       options: [
+
         Option(
           name: '--entity-types',
           description: 'The entity types for which to search',
@@ -1240,6 +1288,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1252,6 +1301,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'search-flow-executions',
       description: 'Searches for AWS IoT Things Graph workflow execution instances',
       options: [
+
         Option(
           name: '--system-instance-id',
           description: 'The ID of the system instance that contains the flow',
@@ -1349,6 +1399,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1361,6 +1412,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'search-flow-templates',
       description: 'Searches for summary information about workflows',
       options: [
+
         Option(
           name: '--filters',
           description: 'An array of objects that limit the result set. The only valid filter is DEVICE_MODEL_ID',
@@ -1431,6 +1483,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1443,6 +1496,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'search-system-instances',
       description: 'Searches for system instances in the user\'s account',
       options: [
+
         Option(
           name: '--filters',
           description: 'Optional filter to apply to the search. Valid filters are SYSTEM_TEMPLATE_ID, STATUS, and GREENGRASS_GROUP_NAME. Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria',
@@ -1513,6 +1567,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1525,6 +1580,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'search-system-templates',
       description: 'Searches for summary information about systems in the user\'s account. You can filter by the ID of a workflow to return only systems that use the specified workflow',
       options: [
+
         Option(
           name: '--filters',
           description: 'An array of filters that limit the result set. The only valid filter is FLOW_TEMPLATE_ID',
@@ -1595,6 +1651,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1607,6 +1664,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'search-things',
       description: 'Searches for things associated with the specified entity. You can search by both device and device model. For example, if two different devices, camera1 and camera2, implement the camera device model, the user can associate thing1 to camera1 and thing2 to camera2. SearchThings(camera2) will return only thing2, but SearchThings(camera) will return both thing1 and thing2. This action searches for exact matches and doesn\'t perform partial text matching',
       options: [
+
         Option(
           name: '--entity-id',
           description: 'The ID of the entity to which the things are associated. The IDs should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME',
@@ -1686,6 +1744,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1698,6 +1757,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'tag-resource',
       description: 'Creates a tag for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource whose tags are returned',
@@ -1732,6 +1792,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1744,6 +1805,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'undeploy-system-instance',
       description: 'Removes a system instance from its target (Cloud or Greengrass)',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the system instance to remove from its target',
@@ -1769,6 +1831,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1781,6 +1844,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource whose tags are to be removed',
@@ -1815,6 +1879,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1827,6 +1892,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'update-flow-template',
       description: 'Updates the specified workflow. All deployed systems and system instances that use the workflow will see the changes in the flow when it is redeployed. If you don\'t want this behavior, copy the workflow (creating a new workflow with a different ID), and update the copy. The workflow can contain only entities in the specified namespace',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the workflow to be updated. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME',
@@ -1870,6 +1936,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1882,6 +1949,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'update-system-template',
       description: 'Updates the specified system. You don\'t need to run this action after updating a workflow. Any deployment that uses the system will see the changes in the system when it is redeployed',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the system to be updated. The ID should be in the following format.  urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME',
@@ -1925,6 +1993,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1937,6 +2006,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
       name: 'upload-entity-definitions',
       description: 'Asynchronously uploads one or more entity definitions to the user\'s namespace. The document parameter is required if syncWithPublicNamespace and deleteExistingEntites are false. If the syncWithPublicNamespace parameter is set to true, the user\'s namespace will synchronize with the latest version of the public namespace. If deprecateExistingEntities is set to true, all entities in the latest version will be deleted before the new DefinitionDocument is uploaded. When a user uploads entity definitions for the first time, the service creates a new namespace for the user. The new namespace tracks the public namespace. Currently users can have only one namespace. The namespace version increments whenever a user uploads entity definitions that are backwards-incompatible and whenever a user sets the syncWithPublicNamespace parameter or the deprecateExistingEntities parameter to true. The IDs for all of the entities should be in URN format. Each entity must be in the user\'s namespace. Users can\'t create entities in the public namespace, but entity definitions can refer to entities in the public namespace. Valid entities are Device, DeviceModel, Service, Capability, State, Action, Event, Property, Mapping, Enum',
       options: [
+
         Option(
           name: '--document',
           description: 'The DefinitionDocument that defines the updated entities',
@@ -1978,6 +2048,7 @@ final FigSpec iotthingsgraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

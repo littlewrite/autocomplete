@@ -9,10 +9,12 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
   name: 'amplifyuibuilder',
   description: 'The Amplify UI Builder API provides a programmatic interface for creating and configuring user interface (UI) component libraries and themes for use in your Amplify applications. You can then connect these UI components to an application\'s backend Amazon Web Services resources. You can also use the Amplify Studio visual designer to create UI components and model data for an app. For more information, see Introduction in the Amplify Docs. The Amplify Framework is a comprehensive set of SDKs, libraries, tools, and documentation for client app development. For more information, see the Amplify Framework. For more information about deploying an Amplify application to Amazon Web Services, see the Amplify User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-component',
       description: 'Creates a new component for an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app to associate with the component',
@@ -65,6 +67,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'create-form',
       description: 'Creates a new form for an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app to associate with the form',
@@ -129,6 +133,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'create-theme',
       description: 'Creates a theme to apply to the components in an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app associated with the theme',
@@ -193,6 +199,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'delete-component',
       description: 'Deletes a component from an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app associated with the component to delete',
@@ -248,6 +256,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -260,6 +269,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'delete-form',
       description: 'Deletes a form from an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app associated with the form to delete',
@@ -303,6 +313,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -315,6 +326,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'delete-theme',
       description: 'Deletes a theme from an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app associated with the theme to delete',
@@ -358,6 +370,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -370,6 +383,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'exchange-code-for-token',
       description: 'This is for internal use.  Amplify uses this action to exchange an access code for a token',
       options: [
+
         Option(
           name: '--provider',
           description: 'The third-party provider for the token. The only valid value is figma',
@@ -404,6 +418,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +431,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'export-components',
       description: 'Exports component configurations to code that is ready to integrate into an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app to export components to',
@@ -477,6 +493,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -489,6 +506,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'export-forms',
       description: 'Exports form configurations to code that is ready to integrate into an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app to export forms to',
@@ -550,6 +568,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -562,6 +581,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'export-themes',
       description: 'Exports theme configurations to code that is ready to integrate into an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app to export the themes to',
@@ -623,6 +643,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -635,6 +656,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'get-codegen-job',
       description: 'Returns an existing code generation job',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app associated with the code generation job',
@@ -678,6 +700,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -690,6 +713,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'get-component',
       description: 'Returns an existing component for an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app',
@@ -733,6 +757,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -745,6 +770,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'get-form',
       description: 'Returns an existing form for an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app',
@@ -788,6 +814,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -800,6 +827,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'get-metadata',
       description: 'Returns existing metadata for an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app',
@@ -834,6 +862,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -846,6 +875,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'get-theme',
       description: 'Returns an existing theme for an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID of the Amplify app',
@@ -889,6 +919,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -901,6 +932,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'list-codegen-jobs',
       description: 'Retrieves a list of code generation jobs for a specified Amplify app and backend environment',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID for the Amplify app',
@@ -980,6 +1012,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -992,6 +1025,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'list-components',
       description: 'Retrieves a list of components for a specified Amplify app and backend environment',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID for the Amplify app',
@@ -1071,6 +1105,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1083,6 +1118,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'list-forms',
       description: 'Retrieves a list of forms for a specified Amplify app and backend environment',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID for the Amplify app',
@@ -1162,6 +1198,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1174,6 +1211,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags for a specified Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) to use to list tags',
@@ -1199,6 +1237,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1211,6 +1250,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'list-themes',
       description: 'Retrieves a list of themes for a specified Amplify app and backend environment',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID for the Amplify app',
@@ -1290,6 +1330,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1302,6 +1343,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'put-metadata-flag',
       description: 'Stores the metadata information about a feature on a form',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID for the Amplify app',
@@ -1354,6 +1396,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1366,6 +1409,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'refresh-token',
       description: 'This is for internal use.  Amplify uses this action to refresh a previously issued access token that might have expired',
       options: [
+
         Option(
           name: '--provider',
           description: 'The third-party provider for the token. The only valid value is figma',
@@ -1400,6 +1444,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1412,6 +1457,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'start-codegen-job',
       description: 'Starts a code generation job for a specified Amplify app and backend environment',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID for the Amplify app',
@@ -1464,6 +1510,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1476,6 +1523,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags the resource with a tag key and value',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) to use to tag a resource',
@@ -1510,6 +1558,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1522,6 +1571,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'untag-resource',
       description: 'Untags a resource with a specified Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) to use to untag a resource',
@@ -1556,6 +1606,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1568,6 +1619,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'update-component',
       description: 'Updates an existing component',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID for the Amplify app',
@@ -1629,6 +1681,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1641,6 +1694,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'update-form',
       description: 'Updates an existing form',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID for the Amplify app',
@@ -1702,6 +1756,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1714,6 +1769,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
       name: 'update-theme',
       description: 'Updates an existing theme',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The unique ID for the Amplify app',
@@ -1775,6 +1831,7 @@ final FigSpec amplifyuibuilderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

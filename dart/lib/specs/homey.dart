@@ -8,10 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec homeySpec = FigSpec(
   name: 'homey',
   subcommands: [
+
     Subcommand(
       name: 'app',
       description: 'App related commands',
       subcommands: [
+
         Subcommand(
           name: 'add-types',
           description: 'Install the Apps SDK TypeScript declarations'
@@ -32,6 +34,7 @@ final FigSpec homeySpec = FigSpec(
           name: 'discovery',
           description: 'Discovery related commands',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new Discovery strategy'
@@ -42,6 +45,7 @@ final FigSpec homeySpec = FigSpec(
           name: 'driver',
           description: 'Driver related commands',
           subcommands: [
+
             Subcommand(
               name: 'capabilities',
               description: 'Change the capabilities of a Driver'
@@ -60,6 +64,7 @@ final FigSpec homeySpec = FigSpec(
           name: 'flow',
           description: 'Flow related commands',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new Flow'
@@ -70,6 +75,7 @@ final FigSpec homeySpec = FigSpec(
           name: 'install',
           description: 'Install a Homey App',
           options: [
+
             Option(
               name: ['-c', '--clean'],
               args: [
@@ -77,6 +83,7 @@ final FigSpec homeySpec = FigSpec(
                 name: 'clean',
                 defaultValue: 'false',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'false'
                   ),
@@ -94,6 +101,7 @@ final FigSpec homeySpec = FigSpec(
                 name: 'skip-build',
                 defaultValue: 'false',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'false'
                   ),
@@ -118,6 +126,7 @@ final FigSpec homeySpec = FigSpec(
           name: 'run',
           description: 'Run a Homey App in development mode',
           options: [
+
             Option(
               name: ['-c', '--clean'],
               args: [
@@ -125,6 +134,7 @@ final FigSpec homeySpec = FigSpec(
                 name: 'clean',
                 defaultValue: 'false',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'false'
                   ),
@@ -142,6 +152,7 @@ final FigSpec homeySpec = FigSpec(
                 name: 'skip-build',
                 defaultValue: 'false',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'false'
                   ),
@@ -167,6 +178,7 @@ final FigSpec homeySpec = FigSpec(
           name: 'validate',
           description: 'Validate a Homey App',
           options: [
+
             Option(
               name: ['-l', '--level'],
               description: 'Validation level',
@@ -174,6 +186,7 @@ final FigSpec homeySpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'debug'
                   ),
@@ -196,6 +209,7 @@ final FigSpec homeySpec = FigSpec(
             Arg(
             name: 'next',
             suggestions: [
+
               FigSuggestion(
                 name: 'patch'
               ),
@@ -219,6 +233,7 @@ final FigSpec homeySpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-p', '--path'],
           description: 'Path to a Homey App directory',
@@ -252,6 +267,7 @@ final FigSpec homeySpec = FigSpec(
       name: 'select',
       description: 'Select a Homey as active',
       options: [
+
         Option(
           name: ['-i', '--id'],
           description: 'ID of the Homey',
@@ -287,6 +303,7 @@ final FigSpec homeySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--help',
       isPersistent: true

@@ -9,6 +9,7 @@ final FigSpec ngrokSpec = FigSpec(
   name: 'ngrok',
   description: 'Tunnel local ports to public URLs and inspect traffic',
   subcommands: [
+
     Subcommand(
       name: 'help',
       description: 'Shows a list of commands or help for one command',
@@ -16,6 +17,7 @@ final FigSpec ngrokSpec = FigSpec(
         Arg(
         name: 'command',
         suggestions: [
+
           FigSuggestion(
             name: 'authtoken',
             description: 'Save authtoken to configuration file'
@@ -63,6 +65,7 @@ final FigSpec ngrokSpec = FigSpec(
         Arg(
         name: 'host',
         suggestions: [
+
           FigSuggestion(
             name: '8080',
             description: 'Port'
@@ -71,6 +74,7 @@ final FigSpec ngrokSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           description: 'Enforce basic auth on tunnel endpoint, \'user:password\'',
           name: ['--auth', '-auth'],
@@ -87,6 +91,7 @@ final FigSpec ngrokSpec = FigSpec(
             Arg(
             name: 'true/false/both',
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false'),
               FigSuggestion(name: 'both')
@@ -100,6 +105,7 @@ final FigSpec ngrokSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'rewrite')
             ]
           )
@@ -111,6 +117,7 @@ final FigSpec ngrokSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false')
             ]
@@ -141,6 +148,7 @@ final FigSpec ngrokSpec = FigSpec(
         name: 'tunnels',
         isVariadic: true,
         suggestions: [
+
           FigSuggestion(name: 'dev'),
           FigSuggestion(name: 'web'),
           FigSuggestion(name: 'blog')
@@ -148,6 +156,7 @@ final FigSpec ngrokSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--all', '-all'],
           description: 'Start all tunnels in the configuration file',
@@ -167,11 +176,13 @@ final FigSpec ngrokSpec = FigSpec(
         Arg(
         name: 'port',
         suggestions: [
+
           FigSuggestion(name: '22')
         ]
       )
       ],
       options: [
+
         Option(
           name: ['--remote-addr', '-remote-addr'],
           description: 'Bind remote address (requires you reserve an address)',
@@ -192,6 +203,7 @@ final FigSpec ngrokSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--client-cas', '-client-cas'],
           args: [
@@ -225,6 +237,7 @@ final FigSpec ngrokSpec = FigSpec(
       name: 'update',
       description: 'Update ngrok to the latest version',
       options: [
+
         Option(
           name: ['--channel', '-channel'],
           description: 'Update channel (stable, beta)',
@@ -232,6 +245,7 @@ final FigSpec ngrokSpec = FigSpec(
             Arg(
             name: 'channel',
             suggestions: [
+
               FigSuggestion(name: 'stable'),
               FigSuggestion(name: 'beta')
             ]

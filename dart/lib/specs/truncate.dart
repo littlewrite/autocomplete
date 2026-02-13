@@ -9,6 +9,7 @@ final FigSpec truncateSpec = FigSpec(
   name: 'truncate',
   description: 'Shrink or extend the size of a file to the specified size',
   options: [
+
     Option(
       name: ['--no-create', '-c'],
       description: 'Do not create any files'

@@ -9,10 +9,12 @@ final FigSpec mediapackageVodSpec = FigSpec(
   name: 'mediapackage-vod',
   description: 'AWS Elemental MediaPackage VOD',
   subcommands: [
+
     Subcommand(
       name: 'configure-logs',
       description: 'Changes the packaging group\'s properities to configure log subscription',
       options: [
+
         Option(
           name: '--egress-access-logs',
           description: 'Configure egress access logging',
@@ -47,6 +49,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'create-asset',
       description: 'Creates a new MediaPackage VOD Asset resource',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique identifier for the Asset',
@@ -129,6 +133,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'create-packaging-configuration',
       description: 'Creates a new MediaPackage VOD PackagingConfiguration resource',
       options: [
+
         Option(
           name: '--cmaf-package',
           description: 'A CMAF packaging configuration',
@@ -220,6 +226,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -232,6 +239,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'create-packaging-group',
       description: 'Creates a new MediaPackage VOD PackagingGroup resource',
       options: [
+
         Option(
           name: '--authorization',
           description: 'CDN Authorization credentials',
@@ -284,6 +292,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -296,6 +305,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'delete-asset',
       description: 'Deletes an existing MediaPackage VOD Asset resource',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the MediaPackage VOD Asset resource to delete',
@@ -321,6 +331,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -333,6 +344,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'delete-packaging-configuration',
       description: 'Deletes a MediaPackage VOD PackagingConfiguration resource',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the MediaPackage VOD PackagingConfiguration resource to delete',
@@ -358,6 +370,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -370,6 +383,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'delete-packaging-group',
       description: 'Deletes a MediaPackage VOD PackagingGroup resource',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the MediaPackage VOD PackagingGroup resource to delete',
@@ -395,6 +409,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -407,6 +422,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'describe-asset',
       description: 'Returns a description of a MediaPackage VOD Asset resource',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of an MediaPackage VOD Asset resource',
@@ -432,6 +448,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -444,6 +461,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'describe-packaging-configuration',
       description: 'Returns a description of a MediaPackage VOD PackagingConfiguration resource',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a MediaPackage VOD PackagingConfiguration resource',
@@ -469,6 +487,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -481,6 +500,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'describe-packaging-group',
       description: 'Returns a description of a MediaPackage VOD PackagingGroup resource',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a MediaPackage VOD PackagingGroup resource',
@@ -506,6 +526,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -518,6 +539,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'list-assets',
       description: 'Returns a collection of MediaPackage VOD Asset resources',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Upper bound on number of records to return',
@@ -588,6 +610,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -600,6 +623,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'list-packaging-configurations',
       description: 'Returns a collection of MediaPackage VOD PackagingConfiguration resources',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Upper bound on number of records to return',
@@ -670,6 +694,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -682,6 +707,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'list-packaging-groups',
       description: 'Returns a collection of MediaPackage VOD PackagingGroup resources',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Upper bound on number of records to return',
@@ -743,6 +769,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -755,6 +782,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of the tags assigned to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource',
@@ -780,6 +808,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -792,6 +821,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to the specified resource. You can specify one or more tags to add',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource',
@@ -826,6 +856,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -838,6 +869,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the specified resource. You can specify one or more tags to remove',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource',
@@ -872,6 +904,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -884,6 +917,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
       name: 'update-packaging-group',
       description: 'Updates a specific packaging group. You can\'t change the id attribute or any other system-generated attributes',
       options: [
+
         Option(
           name: '--authorization',
           description: 'CDN Authorization credentials',
@@ -918,6 +952,7 @@ final FigSpec mediapackageVodSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

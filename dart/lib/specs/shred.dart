@@ -9,6 +9,7 @@ final FigSpec shredSpec = FigSpec(
   name: 'shred',
   description: 'Overwrite a file to hide its contents, and optionally delete it',
   options: [
+
     Option(
       name: ['--force', '-f'],
       description: 'Change permissions to allow writing if necessary'
@@ -20,6 +21,7 @@ final FigSpec shredSpec = FigSpec(
         Arg(
         name: 'N',
         suggestions: [
+
           FigSuggestion(name: '3'),
           FigSuggestion(name: '5'),
           FigSuggestion(name: '7')
@@ -35,6 +37,7 @@ final FigSpec shredSpec = FigSpec(
         Arg(
         name: 'FILE',
         suggestions: [
+
           FigSuggestion(name: '/dev/urandom'),
           FigSuggestion(name: '/dev/random')
         ],
@@ -50,6 +53,7 @@ final FigSpec shredSpec = FigSpec(
         Arg(
         name: 'N',
         suggestions: [
+
           FigSuggestion(name: '1K'),
           FigSuggestion(name: '1M'),
           FigSuggestion(name: '1G')
@@ -65,6 +69,7 @@ final FigSpec shredSpec = FigSpec(
         name: 'HOW',
         description: '\'unlink\' => use a standard unlink call, \'wipe\' => also first obfuscate bytes in the name, \'wipesync\' => also sync each obfuscated byte to the device',
         suggestions: [
+
           FigSuggestion(name: 'unlink'),
           FigSuggestion(name: 'wipe'),
           FigSuggestion(name: 'wipesync')

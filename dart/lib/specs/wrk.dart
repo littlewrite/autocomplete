@@ -14,6 +14,7 @@ final FigSpec wrkSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-c', '--c'],
       description: 'Connections to keep open',

@@ -9,10 +9,12 @@ final FigSpec signerSpec = FigSpec(
   name: 'signer',
   description: 'AWS Signer is a fully managed code-signing service to help you ensure the trust and integrity of your code.  Signer supports the following applications: With code signing for AWS Lambda, you can sign AWS Lambda deployment packages. Integrated support is provided for Amazon S3, Amazon CloudWatch, and AWS CloudTrail. In order to sign code, you create a signing profile and then use Signer to sign Lambda zip files in S3.  With code signing for IoT, you can sign code for any IoT device that is supported by AWS. IoT code signing is available for Amazon FreeRTOS and AWS IoT Device Management, and is integrated with AWS Certificate Manager (ACM). In order to sign code, you import a third-party code-signing certificate using ACM, and use that to sign updates in Amazon FreeRTOS and AWS IoT Device Management.  With Signer and the Notation CLI from the Notary  Project, you can sign container images stored in a container registry such as Amazon Elastic Container Registry (ECR). The signatures are stored in the registry alongside the images, where they are available for verifying image authenticity and integrity. For more information about Signer, see the AWS Signer Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'add-profile-permission',
       description: 'Adds cross-account permissions to a signing profile',
       options: [
+
         Option(
           name: '--profile-name',
           description: 'The human-readable name of the signing profile',
@@ -83,6 +85,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'cancel-signing-profile',
       description: 'Changes the state of an ACTIVE signing profile to CANCELED. A canceled profile is still viewable with the ListSigningProfiles operation, but it cannot perform new signing jobs, and is deleted two years after cancelation',
       options: [
+
         Option(
           name: '--profile-name',
           description: 'The name of the signing profile to be canceled',
@@ -120,6 +124,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'describe-signing-job',
       description: 'Returns information about a specific code signing job. You specify the job by using the jobId value that is returned by the StartSigningJob operation',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID of the signing job on input',
@@ -157,6 +163,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'get-revocation-status',
       description: 'Retrieves the revocation status of one or more of the signing profile, signing job, and signing certificate',
       options: [
+
         Option(
           name: '--signature-timestamp',
           description: 'The timestamp of the signature that validates the profile or job',
@@ -230,6 +238,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'get-signing-platform',
       description: 'Returns information on a specific signing platform',
       options: [
+
         Option(
           name: '--platform-id',
           description: 'The ID of the target signing platform',
@@ -267,6 +277,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'get-signing-profile',
       description: 'Returns information on a specific signing profile',
       options: [
+
         Option(
           name: '--profile-name',
           description: 'The name of the target signing profile',
@@ -313,6 +325,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -325,6 +338,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'list-profile-permissions',
       description: 'Lists the cross-account permissions associated with a signing profile',
       options: [
+
         Option(
           name: '--profile-name',
           description: 'Name of the signing profile containing the cross-account permissions',
@@ -359,6 +373,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -371,6 +386,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'list-signing-jobs',
       description: 'Lists all your signing jobs. You can use the maxResults parameter to limit the number of signing jobs that are returned in the response. If additional jobs remain to be listed, AWS Signer returns a nextToken value. Use this value in subsequent calls to ListSigningJobs to fetch the remaining values. You can continue calling ListSigningJobs with your maxResults parameter and with new values that Signer returns in the nextToken parameter until all of your signing jobs have been returned',
       options: [
+
         Option(
           name: '--status',
           description: 'A status value with which to filter your results',
@@ -494,6 +510,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -506,6 +523,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'list-signing-platforms',
       description: 'Lists all signing platforms available in AWS Signer that match the request parameters. If additional jobs remain to be listed, Signer returns a nextToken value. Use this value in subsequent calls to ListSigningJobs to fetch the remaining values. You can continue calling ListSigningJobs with your maxResults parameter and with new values that Signer returns in the nextToken parameter until all of your signing jobs have been returned',
       options: [
+
         Option(
           name: '--category',
           description: 'The category type of a signing platform',
@@ -594,6 +612,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -606,6 +625,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'list-signing-profiles',
       description: 'Lists all available signing profiles in your AWS account. Returns only profiles with an ACTIVE status unless the includeCanceled request field is set to true. If additional jobs remain to be listed, AWS Signer returns a nextToken value. Use this value in subsequent calls to ListSigningJobs to fetch the remaining values. You can continue calling ListSigningJobs with your maxResults parameter and with new values that Signer returns in the nextToken parameter until all of your signing jobs have been returned',
       options: [
+
         Option(
           name: '--include-canceled',
           description: 'Designates whether to include profiles with the status of CANCELED'
@@ -693,6 +713,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -705,6 +726,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of the tags associated with a signing profile resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the signing profile',
@@ -730,6 +752,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -742,6 +765,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'put-signing-profile',
       description: 'Creates a signing profile. A signing profile is a code-signing template that can be used to carry out a pre-defined signing job',
       options: [
+
         Option(
           name: '--profile-name',
           description: 'The name of the signing profile to be created',
@@ -821,6 +845,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -833,6 +858,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'remove-profile-permission',
       description: 'Removes cross-account permissions from a signing profile',
       options: [
+
         Option(
           name: '--profile-name',
           description: 'A human-readable name for the signing profile with permissions to be removed',
@@ -876,6 +902,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -888,6 +915,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'revoke-signature',
       description: 'Changes the state of a signing job to REVOKED. This indicates that the signature is no longer valid',
       options: [
+
         Option(
           name: '--job-id',
           description: 'ID of the signing job to be revoked',
@@ -931,6 +959,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -943,6 +972,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'revoke-signing-profile',
       description: 'Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing profile after an effective start date are no longer valid',
       options: [
+
         Option(
           name: '--profile-name',
           description: 'The name of the signing profile to be revoked',
@@ -995,6 +1025,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1007,6 +1038,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'sign-payload',
       description: 'Signs a binary payload and returns a signature envelope',
       options: [
+
         Option(
           name: '--profile-name',
           description: 'The name of the signing profile',
@@ -1059,6 +1091,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1071,6 +1104,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'start-signing-job',
       description: 'Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the ListSigningJobs operation for two years after they are performed. Note the following requirements:     You must create an Amazon S3 source bucket. For more information, see Creating a Bucket in the Amazon S3 Getting Started Guide.    Your S3 source bucket must be version enabled.   You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket to write your signed code.   You specify the name of the source and destination buckets when calling the StartSigningJob operation.   You must ensure the S3 buckets are from the same Region as the signing profile. Cross-Region signing isn\'t supported.   You must also specify a request token that identifies your request to Signer.   You can call the DescribeSigningJob and the ListSigningJobs actions after you call StartSigningJob. For a Java example that shows how to use this action, see StartSigningJob',
       options: [
+
         Option(
           name: '--source',
           description: 'The S3 bucket that contains the object to sign or a BLOB that contains your raw code',
@@ -1132,6 +1166,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1144,6 +1179,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to a signing profile. Tags are labels that you can use to identify and organize your AWS resources. Each tag consists of a key and an optional value. To specify the signing profile, use its Amazon Resource Name (ARN). To specify the tag, use a key-value pair',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the signing profile',
@@ -1178,6 +1214,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1190,6 +1227,7 @@ final FigSpec signerSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from a signing profile. To remove the tags, specify a list of tag keys',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the signing profile',
@@ -1224,6 +1262,7 @@ final FigSpec signerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1236,10 +1275,12 @@ final FigSpec signerSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'successful-signing-job',
           description: 'Wait until JMESPath query status returns Succeeded when polling with ``describe-signing-job``. It will poll every 20 seconds until a successful state has been reached. This will exit with a return code of 255 after 25 failed checks',
           options: [
+
             Option(
               name: '--job-id',
               description: 'The ID of the signing job on input',
@@ -1265,6 +1306,7 @@ final FigSpec signerSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

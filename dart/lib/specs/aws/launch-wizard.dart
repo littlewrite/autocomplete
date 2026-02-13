@@ -9,10 +9,12 @@ final FigSpec launchWizardSpec = FigSpec(
   name: 'launch-wizard',
   description: 'Launch Wizard offers a guided way of sizing, configuring, and deploying Amazon Web Services resources for third party applications, such as Microsoft SQL Server Always On and HANA based SAP systems, without the need to manually identify and provision individual Amazon Web Services resources',
   subcommands: [
+
     Subcommand(
       name: 'create-deployment',
       description: 'Creates a deployment for the given workload. Deployments created by this operation are not available in the Launch Wizard console to use the Clone deployment action on',
       options: [
+
         Option(
           name: '--deployment-pattern-name',
           description: 'The name of the deployment pattern supported by a given workload. You can use the  ListWorkloadDeploymentPatterns  operation to discover supported values for this parameter',
@@ -82,6 +84,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -94,6 +97,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'delete-deployment',
       description: 'Deletes a deployment',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The ID of the deployment',
@@ -119,6 +123,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -131,6 +136,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'get-deployment',
       description: 'Returns information about the deployment',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The ID of the deployment',
@@ -156,6 +162,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +175,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'get-workload',
       description: 'Returns information about a workload',
       options: [
+
         Option(
           name: '--workload-name',
           description: 'The name of the workload',
@@ -193,6 +201,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +214,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'get-workload-deployment-pattern',
       description: 'Returns details for a given workload and deployment pattern, including the available specifications. You can use the ListWorkloads operation to discover the available workload names and the ListWorkloadDeploymentPatterns operation to discover the available deployment pattern names of a given workload',
       options: [
+
         Option(
           name: '--deployment-pattern-name',
           description: 'The name of the deployment pattern',
@@ -239,6 +249,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +262,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'list-deployment-events',
       description: 'Lists the events of a deployment',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The ID of the deployment',
@@ -321,6 +333,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -333,6 +346,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'list-deployments',
       description: 'Lists the deployments that have been created',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters to scope the results. The following filters are supported:    WORKLOAD_NAME - The name used in deployments.    DEPLOYMENT_STATUS - COMPLETED | CREATING | DELETE_IN_PROGRESS | DELETE_INITIATING | DELETE_FAILED | DELETED | FAILED | IN_PROGRESS | VALIDATING',
@@ -403,6 +417,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -415,6 +430,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags associated with a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -440,6 +456,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -452,6 +469,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'list-workload-deployment-patterns',
       description: 'Lists the workload deployment patterns for a given workload name. You can use the ListWorkloads operation to discover the available workload names',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output',
@@ -522,6 +540,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -534,6 +553,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'list-workloads',
       description: 'Lists the available workload names. You can use the ListWorkloadDeploymentPatterns operation to discover the available deployment patterns for a given workload',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output',
@@ -595,6 +615,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -607,6 +628,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tags to the given resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -641,6 +663,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -653,6 +676,7 @@ final FigSpec launchWizardSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the given resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -687,6 +711,7 @@ final FigSpec launchWizardSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,14 +9,17 @@ final FigSpec resourceManagerSpec = FigSpec(
   name: 'resource-manager',
   description: 'Manage Cloud Resources',
   subcommands: [
+
     Subcommand(
       name: 'folders',
       description: 'Manage Cloud Folders',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding for a folder',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -186,6 +189,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -208,6 +212,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'create',
           description: 'Create a new folder',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -369,6 +374,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -385,6 +391,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'delete',
           description: 'Delete a folder',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -508,6 +515,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -530,6 +538,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'describe',
           description: 'Show metadata for a folder',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -653,6 +662,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -675,6 +685,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'get-ancestors-iam-policy',
           description: 'Get IAM policies for a folder and its ancestors',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -842,6 +853,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -864,6 +876,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get IAM policy for a folder',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1031,6 +1044,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1053,6 +1067,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'list',
           description: 'List folders accessible by the active account',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1246,6 +1261,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1262,6 +1278,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'move',
           description: 'Move a folder to a new position within the same organization',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1411,6 +1428,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1433,6 +1451,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding for a folder',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1606,6 +1625,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1628,6 +1648,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for a folder',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1751,6 +1772,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1763,6 +1785,7 @@ final FigSpec resourceManagerSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'FOLDER_ID',
               description: 'ID for the folder whose policy you want to set'
@@ -1777,6 +1800,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'undelete',
           description: 'Undelete a folder',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1900,6 +1924,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1922,6 +1947,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'update',
           description: 'Update the display name of a folder',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2057,6 +2083,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2077,6 +2104,7 @@ final FigSpec resourceManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2200,6 +2228,7 @@ final FigSpec resourceManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2216,10 +2245,12 @@ final FigSpec resourceManagerSpec = FigSpec(
       name: 'org-policies',
       description: 'Manage Org Policies',
       subcommands: [
+
         Subcommand(
           name: 'allow',
           description: 'Add values to an Organization Policy allowed_values list policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2354,6 +2385,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2366,6 +2398,7 @@ final FigSpec resourceManagerSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'ORG_POLICY_ID',
               description: 'The Org Policy constraint name'
@@ -2381,6 +2414,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'delete',
           description: 'Delete an Organization Policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2515,6 +2549,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2537,6 +2572,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'deny',
           description: 'Add values to an Organization Policy denied_values list policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2671,6 +2707,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2683,6 +2720,7 @@ final FigSpec resourceManagerSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'ORG_POLICY_ID',
               description: 'The Org Policy constraint name'
@@ -2698,6 +2736,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'describe',
           description: 'Describe an Organization Policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2836,6 +2875,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2858,6 +2898,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'disable-enforce',
           description: 'Turns off enforcement of boolean Organization Policy constraint',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2992,6 +3033,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3014,6 +3056,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'enable-enforce',
           description: 'Turns on enforcement of boolean Organization Policy constraint',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3148,6 +3191,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3170,6 +3214,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'list',
           description: 'List Organization Policies associated with the specified resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3356,6 +3401,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3372,6 +3418,7 @@ final FigSpec resourceManagerSpec = FigSpec(
           name: 'set-policy',
           description: 'Set Organization Policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3506,6 +3553,7 @@ final FigSpec resourceManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3526,6 +3574,7 @@ final FigSpec resourceManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3649,6 +3698,7 @@ final FigSpec resourceManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3663,6 +3713,7 @@ final FigSpec resourceManagerSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3786,6 +3837,7 @@ final FigSpec resourceManagerSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

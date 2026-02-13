@@ -14,6 +14,7 @@ final FigSpec vimSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-v',
       description: 'Vi mode (like \'vi\')'
@@ -81,6 +82,7 @@ final FigSpec vimSpec = FigSpec(
       name: '-V',
       description: 'Be verbose [level N] [log messages to fname]',
       args: [
+
         Arg(
           name: 'N'
         ),

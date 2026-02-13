@@ -9,6 +9,7 @@ final FigSpec pathchkSpec = FigSpec(
   name: 'pathchk',
   description: 'Check pathnames for POSIX portability',
   options: [
+
     Option(
       name: '-p',
       description: 'Perform portability checks on the specified pathname arguments, writes messages if 1) path is longer than _POSIX_PATH_MAX (255) bytes 2) contains a component longer than _POSIX_NAME_MAX (14) bytes, contains any character not in the portable filename character set'

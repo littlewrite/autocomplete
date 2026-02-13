@@ -9,10 +9,12 @@ final FigSpec route53resolverSpec = FigSpec(
   name: 'route53resolver',
   description: 'When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC from Route 53 Resolver. By default, Resolver answers DNS queries for VPC domain names such as domain names for EC2 instances or Elastic Load Balancing load balancers. Resolver performs recursive lookups against public name servers for all other domain names. You can also configure DNS resolution between your VPC and your network over a Direct Connect or VPN connection:  Forward DNS queries from resolvers on your network to Route 53 Resolver  DNS resolvers on your network can forward DNS queries to Resolver in a specified VPC. This allows your DNS resolvers to easily resolve domain names for Amazon Web Services resources such as EC2 instances or records in a Route 53 private hosted zone. For more information, see How DNS Resolvers on Your Network Forward DNS Queries to Route 53 Resolver in the Amazon Route 53 Developer Guide.  Conditionally forward queries from a VPC to resolvers on your network  You can configure Resolver to forward queries that it receives from EC2 instances in your VPCs to DNS resolvers on your network. To forward selected queries, you create Resolver rules that specify the domain names for the DNS queries that you want to forward (such as example.com), and the IP addresses of the DNS resolvers on your network that you want to forward the queries to. If a query matches multiple rules (example.com, acme.example.com), Resolver chooses the rule with the most specific match (acme.example.com) and forwards the query to the IP addresses that you specified in that rule. For more information, see How Route 53 Resolver Forwards DNS Queries from Your VPCs to Your Network in the Amazon Route 53 Developer Guide. Like Amazon VPC, Resolver is Regional. In each Region where you have VPCs, you can choose whether to forward queries from your VPCs to your network (outbound queries), from your network to your VPCs (inbound queries), or both',
   subcommands: [
+
     Subcommand(
       name: 'associate-firewall-rule-group',
       description: 'Associates a FirewallRuleGroup with a VPC, to provide DNS filtering for the VPC',
       options: [
+
         Option(
           name: '--creator-request-id',
           description: 'A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. CreatorRequestId can be any unique string, for example, a date/time stamp',
@@ -92,6 +94,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -104,6 +107,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'associate-resolver-endpoint-ip-address',
       description: 'Adds IP addresses to an inbound or an outbound Resolver endpoint. If you want to add more than one IP address, submit one AssociateResolverEndpointIpAddress request for each IP address. To remove an IP address from an endpoint, see DisassociateResolverEndpointIpAddress',
       options: [
+
         Option(
           name: '--resolver-endpoint-id',
           description: 'The ID of the Resolver endpoint that you want to associate IP addresses with',
@@ -138,6 +142,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'associate-resolver-query-log-config',
       description: 'Associates an Amazon VPC with a specified query logging configuration. Route 53 Resolver logs DNS queries that originate in all of the Amazon VPCs that are associated with a specified query logging configuration. To associate more than one VPC with a configuration, submit one AssociateResolverQueryLogConfig request for each VPC.  The VPCs that you associate with a query logging configuration must be in the same Region as the configuration.  To remove a VPC from a query logging configuration, see DisassociateResolverQueryLogConfig',
       options: [
+
         Option(
           name: '--resolver-query-log-config-id',
           description: 'The ID of the query logging configuration that you want to associate a VPC with',
@@ -184,6 +190,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'associate-resolver-rule',
       description: 'Associates a Resolver rule with a VPC. When you associate a rule with a VPC, Resolver forwards all DNS queries for the domain name that is specified in the rule and that originate in the VPC. The queries are forwarded to the IP addresses for the DNS resolvers that are specified in the rule. For more information about rules, see CreateResolverRule',
       options: [
+
         Option(
           name: '--resolver-rule-id',
           description: 'The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use ListResolverRules',
@@ -239,6 +247,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +260,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'create-firewall-domain-list',
       description: 'Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new list with a file, using ImportFirewallDomains, or with domain strings, using UpdateFirewallDomains',
       options: [
+
         Option(
           name: '--creator-request-id',
           description: 'A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. CreatorRequestId can be any unique string, for example, a date/time stamp',
@@ -294,6 +304,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -306,6 +317,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'create-firewall-rule',
       description: 'Creates a single DNS Firewall rule in the specified rule group, using the specified domain list',
       options: [
+
         Option(
           name: '--creator-request-id',
           description: 'A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. CreatorRequestId can be any unique string, for example, a date/time stamp',
@@ -448,6 +460,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -460,6 +473,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'create-firewall-rule-group',
       description: 'Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC. You can add rules to the new rule group by calling CreateFirewallRule',
       options: [
+
         Option(
           name: '--creator-request-id',
           description: 'A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp',
@@ -503,6 +517,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -515,6 +530,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'create-outpost-resolver',
       description: 'Creates a Route 53 Resolver on an Outpost',
       options: [
+
         Option(
           name: '--creator-request-id',
           description: 'A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice.   CreatorRequestId can be any unique string, for example, a date/time stamp',
@@ -585,6 +601,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -597,6 +614,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'create-resolver-endpoint',
       description: 'Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:   An inbound Resolver endpoint forwards DNS queries to the DNS service for a VPC from your network.   An outbound Resolver endpoint forwards DNS queries from the DNS service for a VPC to your network',
       options: [
+
         Option(
           name: '--creator-request-id',
           description: 'A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. CreatorRequestId can be any unique string, for example, a date/time stamp',
@@ -703,6 +721,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -715,6 +734,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'create-resolver-query-log-config',
       description: 'Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that originate in your VPCs. Resolver can log queries only for VPCs that are in the same Region as the query logging configuration. To specify which VPCs you want to log queries for, you use AssociateResolverQueryLogConfig. For more information, see AssociateResolverQueryLogConfig.  You can optionally use Resource Access Manager (RAM) to share a query logging configuration with other Amazon Web Services accounts. The other accounts can then associate VPCs with the configuration. The query logs that Resolver creates for a configuration include all DNS queries that originate in all VPCs that are associated with the configuration',
       options: [
+
         Option(
           name: '--name',
           description: 'The name that you want to give the query logging configuration',
@@ -767,6 +787,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -779,6 +800,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'create-resolver-rule',
       description: 'For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network',
       options: [
+
         Option(
           name: '--creator-request-id',
           description: 'A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. CreatorRequestId can be any unique string, for example, a date/time stamp',
@@ -858,6 +880,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -870,6 +893,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'delete-firewall-domain-list',
       description: 'Deletes the specified domain list',
       options: [
+
         Option(
           name: '--firewall-domain-list-id',
           description: 'The ID of the domain list that you want to delete',
@@ -895,6 +919,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -907,6 +932,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'delete-firewall-rule',
       description: 'Deletes the specified firewall rule',
       options: [
+
         Option(
           name: '--firewall-rule-group-id',
           description: 'The unique identifier of the firewall rule group that you want to delete the rule from',
@@ -959,6 +985,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -971,6 +998,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'delete-firewall-rule-group',
       description: 'Deletes the specified firewall rule group',
       options: [
+
         Option(
           name: '--firewall-rule-group-id',
           description: 'The unique identifier of the firewall rule group that you want to delete',
@@ -996,6 +1024,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1008,6 +1037,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'delete-outpost-resolver',
       description: 'Deletes a Resolver on the Outpost',
       options: [
+
         Option(
           name: '--id',
           description: 'A unique string that identifies the Resolver on the Outpost',
@@ -1033,6 +1063,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1045,6 +1076,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'delete-resolver-endpoint',
       description: 'Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it\'s an inbound or an outbound Resolver endpoint:    Inbound: DNS queries from your network are no longer routed to the DNS service for the specified VPC.    Outbound: DNS queries from a VPC are no longer routed to your network',
       options: [
+
         Option(
           name: '--resolver-endpoint-id',
           description: 'The ID of the Resolver endpoint that you want to delete',
@@ -1070,6 +1102,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1082,6 +1115,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'delete-resolver-query-log-config',
       description: 'Deletes a query logging configuration. When you delete a configuration, Resolver stops logging DNS queries for all of the Amazon VPCs that are associated with the configuration. This also applies if the query logging configuration is shared with other Amazon Web Services accounts, and the other accounts have associated VPCs with the shared configuration. Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration. See DisassociateResolverQueryLogConfig. If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, you must stop sharing the configuration before you can delete a configuration. The accounts that you shared the configuration with can first disassociate VPCs that they associated with the configuration, but that\'s not necessary. If you stop sharing the configuration, those VPCs are automatically disassociated from the configuration',
       options: [
+
         Option(
           name: '--resolver-query-log-config-id',
           description: 'The ID of the query logging configuration that you want to delete',
@@ -1107,6 +1141,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1119,6 +1154,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'delete-resolver-rule',
       description: 'Deletes a Resolver rule. Before you can delete a Resolver rule, you must disassociate it from all the VPCs that you associated the Resolver rule with. For more information, see DisassociateResolverRule',
       options: [
+
         Option(
           name: '--resolver-rule-id',
           description: 'The ID of the Resolver rule that you want to delete',
@@ -1144,6 +1180,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1156,6 +1193,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'disassociate-firewall-rule-group',
       description: 'Disassociates a FirewallRuleGroup from a VPC, to remove DNS filtering from the VPC',
       options: [
+
         Option(
           name: '--firewall-rule-group-association-id',
           description: 'The identifier of the FirewallRuleGroupAssociation',
@@ -1181,6 +1219,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1193,6 +1232,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'disassociate-resolver-endpoint-ip-address',
       description: 'Removes IP addresses from an inbound or an outbound Resolver endpoint. If you want to remove more than one IP address, submit one DisassociateResolverEndpointIpAddress request for each IP address. To add an IP address to an endpoint, see AssociateResolverEndpointIpAddress',
       options: [
+
         Option(
           name: '--resolver-endpoint-id',
           description: 'The ID of the Resolver endpoint that you want to disassociate an IP address from',
@@ -1227,6 +1267,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1239,6 +1280,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'disassociate-resolver-query-log-config',
       description: 'Disassociates a VPC from a query logging configuration.  Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration. If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, VPCs can be disassociated from the configuration in the following ways:   The accounts that you shared the configuration with can disassociate VPCs from the configuration.   You can stop sharing the configuration',
       options: [
+
         Option(
           name: '--resolver-query-log-config-id',
           description: 'The ID of the query logging configuration that you want to disassociate a specified VPC from',
@@ -1273,6 +1315,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1285,6 +1328,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'disassociate-resolver-rule',
       description: 'Removes the association between a specified Resolver rule and a specified VPC.  If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the domain name that you specified in the Resolver rule',
       options: [
+
         Option(
           name: '--vpc-id',
           description: 'The ID of the VPC that you want to disassociate the Resolver rule from',
@@ -1319,6 +1363,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1331,6 +1376,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-firewall-config',
       description: 'Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC)',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The ID of the VPC from Amazon VPC that the configuration is for',
@@ -1356,6 +1402,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1368,6 +1415,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-firewall-domain-list',
       description: 'Retrieves the specified firewall domain list',
       options: [
+
         Option(
           name: '--firewall-domain-list-id',
           description: 'The ID of the domain list',
@@ -1393,6 +1441,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1405,6 +1454,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-firewall-rule-group',
       description: 'Retrieves the specified firewall rule group',
       options: [
+
         Option(
           name: '--firewall-rule-group-id',
           description: 'The unique identifier of the firewall rule group',
@@ -1430,6 +1480,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1442,6 +1493,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-firewall-rule-group-association',
       description: 'Retrieves a firewall rule group association, which enables DNS filtering for a VPC with one rule group. A VPC can have more than one firewall rule group association, and a rule group can be associated with more than one VPC',
       options: [
+
         Option(
           name: '--firewall-rule-group-association-id',
           description: 'The identifier of the FirewallRuleGroupAssociation',
@@ -1467,6 +1519,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1479,6 +1532,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-firewall-rule-group-policy',
       description: 'Returns the Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM)',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN (Amazon Resource Name) for the rule group',
@@ -1504,6 +1558,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1516,6 +1571,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-outpost-resolver',
       description: 'Gets information about a specified Resolver on the Outpost, such as its instance count and type, name, and the current status of the Resolver',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the Resolver on the Outpost',
@@ -1541,6 +1597,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1553,6 +1610,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-resolver-config',
       description: 'Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'Resource ID of the Amazon VPC that you want to get information about',
@@ -1578,6 +1636,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1590,6 +1649,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-resolver-dnssec-config',
       description: 'Gets DNSSEC validation information for a specified resource',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The ID of the virtual private cloud (VPC) for the DNSSEC validation status',
@@ -1615,6 +1675,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1627,6 +1688,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-resolver-endpoint',
       description: 'Gets information about a specified Resolver endpoint, such as whether it\'s an inbound or an outbound Resolver endpoint, and the current status of the endpoint',
       options: [
+
         Option(
           name: '--resolver-endpoint-id',
           description: 'The ID of the Resolver endpoint that you want to get information about',
@@ -1652,6 +1714,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1664,6 +1727,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-resolver-query-log-config',
       description: 'Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to',
       options: [
+
         Option(
           name: '--resolver-query-log-config-id',
           description: 'The ID of the Resolver query logging configuration that you want to get information about',
@@ -1689,6 +1753,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1701,6 +1766,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-resolver-query-log-config-association',
       description: 'Gets information about a specified association between a Resolver query logging configuration and an Amazon VPC. When you associate a VPC with a query logging configuration, Resolver logs DNS queries that originate in that VPC',
       options: [
+
         Option(
           name: '--resolver-query-log-config-association-id',
           description: 'The ID of the Resolver query logging configuration association that you want to get information about',
@@ -1726,6 +1792,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1738,6 +1805,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-resolver-query-log-config-policy',
       description: 'Gets information about a query logging policy. A query logging policy specifies the Resolver query logging operations and resources that you want to allow another Amazon Web Services account to be able to use',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the query logging configuration that you want to get the query logging policy for',
@@ -1763,6 +1831,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1775,6 +1844,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-resolver-rule',
       description: 'Gets information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the ID of the outbound Resolver endpoint that the rule is associated with',
       options: [
+
         Option(
           name: '--resolver-rule-id',
           description: 'The ID of the Resolver rule that you want to get information about',
@@ -1800,6 +1870,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1812,6 +1883,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-resolver-rule-association',
       description: 'Gets information about an association between a specified Resolver rule and a VPC. You associate a Resolver rule and a VPC using AssociateResolverRule',
       options: [
+
         Option(
           name: '--resolver-rule-association-id',
           description: 'The ID of the Resolver rule association that you want to get information about',
@@ -1837,6 +1909,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1849,6 +1922,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'get-resolver-rule-policy',
       description: 'Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule that you want to share with another account, the account that you want to share the rule with, and the Resolver operations that you want to allow the account to use',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ID of the Resolver rule that you want to get the Resolver rule policy for',
@@ -1874,6 +1948,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1886,6 +1961,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'import-firewall-domains',
       description: 'Imports domain names from a file into a domain list, for use in a DNS firewall rule group.  Each domain specification in your domain list must satisfy the following requirements:    It can optionally start with * (asterisk).   With the exception of the optional starting asterisk, it must only contain the following characters: A-Z, a-z, 0-9, - (hyphen).   It must be from 1-255 characters in length',
       options: [
+
         Option(
           name: '--firewall-domain-list-id',
           description: 'The ID of the domain list that you want to modify with the import operation',
@@ -1929,6 +2005,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1941,6 +2018,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-firewall-configs',
       description: 'Retrieves the firewall configurations that you have defined. DNS Firewall uses the configurations to manage firewall behavior for your VPCs.  A single call might return only a partial list of the configurations. For information, see MaxResults',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a NextToken value that you can use in a subsequent call to get the next batch of objects. If you don\'t specify a value for MaxResults, Resolver returns up to 100 objects',
@@ -2002,6 +2080,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2014,6 +2093,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-firewall-domain-lists',
       description: 'Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the domains that are defined for a list by calling ListFirewallDomains.  A single call to this list operation might return only a partial list of the domain lists. For information, see MaxResults',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a NextToken value that you can use in a subsequent call to get the next batch of objects. If you don\'t specify a value for MaxResults, Resolver returns up to 100 objects',
@@ -2075,6 +2155,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2087,6 +2168,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-firewall-domains',
       description: 'Retrieves the domains that you have defined for the specified firewall domain list.  A single call might return only a partial list of the domains. For information, see MaxResults',
       options: [
+
         Option(
           name: '--firewall-domain-list-id',
           description: 'The ID of the domain list whose domains you want to retrieve',
@@ -2157,6 +2239,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2169,6 +2252,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-firewall-rule-group-associations',
       description: 'Retrieves the firewall rule group associations that you have defined. Each association enables DNS filtering for a VPC with one rule group.  A single call might return only a partial list of the associations. For information, see MaxResults',
       options: [
+
         Option(
           name: '--firewall-rule-group-id',
           description: 'The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group',
@@ -2266,6 +2350,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2278,6 +2363,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-firewall-rule-groups',
       description: 'Retrieves the minimal high-level information for the rule groups that you have defined.  A single call might return only a partial list of the rule groups. For information, see MaxResults',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a NextToken value that you can use in a subsequent call to get the next batch of objects. If you don\'t specify a value for MaxResults, Resolver returns up to 100 objects',
@@ -2339,6 +2425,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2351,6 +2438,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-firewall-rules',
       description: 'Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the rules in a rule group to filter DNS network traffic for a VPC.  A single call might return only a partial list of the rules. For information, see MaxResults',
       options: [
+
         Option(
           name: '--firewall-rule-group-id',
           description: 'The unique identifier of the firewall rule group that you want to retrieve the rules for',
@@ -2439,6 +2527,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2451,6 +2540,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-outpost-resolvers',
       description: 'Lists all the Resolvers on Outposts that were created using the current Amazon Web Services account',
       options: [
+
         Option(
           name: '--outpost-arn',
           description: 'The Amazon Resource Name (ARN) of the Outpost',
@@ -2521,6 +2611,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2533,6 +2624,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-resolver-configs',
       description: 'Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses the configurations to manage DNS resolution behavior for your VPCs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of Resolver configurations that you want to return in the response to a ListResolverConfigs request. If you don\'t specify a value for MaxResults, up to 100 Resolver configurations are returned',
@@ -2594,6 +2686,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2606,6 +2699,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-resolver-dnssec-configs',
       description: 'Lists the configurations for DNSSEC validation that are associated with the current Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Optional: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return. If you don\'t specify a value for MaxResults, Route 53 returns up to 100 configuration per page',
@@ -2676,6 +2770,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2688,6 +2783,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-resolver-endpoint-ip-addresses',
       description: 'Gets the IP addresses for a specified Resolver endpoint',
       options: [
+
         Option(
           name: '--resolver-endpoint-id',
           description: 'The ID of the Resolver endpoint that you want to get IP addresses for',
@@ -2758,6 +2854,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2770,6 +2867,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-resolver-endpoints',
       description: 'Lists all the Resolver endpoints that were created using the current Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of Resolver endpoints that you want to return in the response to a ListResolverEndpoints request. If you don\'t specify a value for MaxResults, Resolver returns up to 100 Resolver endpoints',
@@ -2840,6 +2938,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2852,6 +2951,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-resolver-query-log-config-associations',
       description: 'Lists information about associations between Amazon VPCs and query logging configurations',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of query logging associations that you want to return in the response to a ListResolverQueryLogConfigAssociations request. If you don\'t specify a value for MaxResults, Resolver returns up to 100 query logging associations',
@@ -2940,6 +3040,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2952,6 +3053,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-resolver-query-log-configs',
       description: 'Lists information about the specified query logging configurations. Each configuration defines where you want Resolver to save DNS query logs and specifies the VPCs that you want to log queries for',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of query logging configurations that you want to return in the response to a ListResolverQueryLogConfigs request. If you don\'t specify a value for MaxResults, Resolver returns up to 100 query logging configurations',
@@ -3040,6 +3142,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3052,6 +3155,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-resolver-rule-associations',
       description: 'Lists the associations that were created between Resolver rules and VPCs using the current Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of rule associations that you want to return in the response to a ListResolverRuleAssociations request. If you don\'t specify a value for MaxResults, Resolver returns up to 100 rule associations',
@@ -3122,6 +3226,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3134,6 +3239,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-resolver-rules',
       description: 'Lists the Resolver rules that were created using the current Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of Resolver rules that you want to return in the response to a ListResolverRules request. If you don\'t specify a value for MaxResults, Resolver returns up to 100 Resolver rules',
@@ -3204,6 +3310,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3216,6 +3323,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags that you associated with the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource that you want to list tags for',
@@ -3286,6 +3394,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3298,6 +3407,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'put-firewall-rule-group-policy',
       description: 'Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing the rule group. You can use the policy to share the rule group using Resource Access Manager (RAM)',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN (Amazon Resource Name) for the rule group that you want to share',
@@ -3332,6 +3442,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3344,6 +3455,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'put-resolver-query-log-config-policy',
       description: 'Specifies an Amazon Web Services account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the account that you want to share rules with',
@@ -3378,6 +3490,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3390,6 +3503,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'put-resolver-rule-policy',
       description: 'Specifies an Amazon Web Services rule that you want to share with another account, the account that you want to share the rule with, and the operations that you want the account to be able to perform on the rule',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the rule that you want to share with another account',
@@ -3424,6 +3538,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3436,6 +3551,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource that you want to add tags to. To get the ARN for a resource, use the applicable Get or List command:     GetResolverEndpoint     GetResolverRule     GetResolverRuleAssociation     ListResolverEndpoints     ListResolverRuleAssociations     ListResolverRules',
@@ -3470,6 +3586,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3482,6 +3599,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource that you want to remove tags from. To get the ARN for a resource, use the applicable Get or List command:     GetResolverEndpoint     GetResolverRule     GetResolverRuleAssociation     ListResolverEndpoints     ListResolverRuleAssociations     ListResolverRules',
@@ -3516,6 +3634,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3528,6 +3647,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'update-firewall-config',
       description: 'Updates the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC)',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The ID of the VPC that the configuration is for',
@@ -3562,6 +3682,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3574,6 +3695,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'update-firewall-domains',
       description: 'Updates the firewall domain list from an array of domain specifications',
       options: [
+
         Option(
           name: '--firewall-domain-list-id',
           description: 'The ID of the domain list whose domains you want to update',
@@ -3617,6 +3739,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3629,6 +3752,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'update-firewall-rule',
       description: 'Updates the specified firewall rule',
       options: [
+
         Option(
           name: '--firewall-rule-group-id',
           description: 'The unique identifier of the firewall rule group for the rule',
@@ -3771,6 +3895,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3783,6 +3908,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'update-firewall-rule-group-association',
       description: 'Changes the association of a FirewallRuleGroup with a VPC. The association enables DNS filtering for the VPC',
       options: [
+
         Option(
           name: '--firewall-rule-group-association-id',
           description: 'The identifier of the FirewallRuleGroupAssociation',
@@ -3835,6 +3961,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3847,6 +3974,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'update-outpost-resolver',
       description: 'You can use UpdateOutpostResolver to update the instance count, type, or name of a Resolver on an Outpost',
       options: [
+
         Option(
           name: '--id',
           description: 'A unique string that identifies Resolver on an Outpost',
@@ -3899,6 +4027,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3911,6 +4040,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'update-resolver-config',
       description: 'Updates the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'Resource ID of the Amazon VPC that you want to update the Resolver configuration for',
@@ -3945,6 +4075,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3957,6 +4088,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'update-resolver-dnssec-config',
       description: 'Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC validation configuration, one is created',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The ID of the virtual private cloud (VPC) that you\'re updating the DNSSEC validation status for',
@@ -3991,6 +4123,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4003,6 +4136,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'update-resolver-endpoint',
       description: 'Updates the name, or endpoint type for an inbound or an outbound Resolver endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can\'t be updated to other type',
       options: [
+
         Option(
           name: '--resolver-endpoint-id',
           description: 'The ID of the Resolver endpoint that you want to update',
@@ -4064,6 +4198,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4076,6 +4211,7 @@ final FigSpec route53resolverSpec = FigSpec(
       name: 'update-resolver-rule',
       description: 'Updates settings for a specified Resolver rule. ResolverRuleId is required, and all other parameters are optional. If you don\'t specify a parameter, it retains its current value',
       options: [
+
         Option(
           name: '--resolver-rule-id',
           description: 'The ID of the Resolver rule that you want to update',
@@ -4110,6 +4246,7 @@ final FigSpec route53resolverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec pipenvSpec = FigSpec(
   name: 'pipenv',
   description: 'Python package manager',
   subcommands: [
+
     Subcommand(
       name: 'check',
       description: 'Checks for PyUp Safety security vulnerabilities and against PEP 508 markers provided in Pipfile',
       options: [
+
         Option(
           name: '--unused',
           description: 'Given a code path, show potentially unused dependencies',
@@ -101,6 +103,7 @@ final FigSpec pipenvSpec = FigSpec(
       name: 'clean',
       description: 'Uninstalls all packages not specified in Pipfile.lock',
       options: [
+
         Option(
           name: '--bare',
           description: 'Minimal output'
@@ -136,6 +139,7 @@ final FigSpec pipenvSpec = FigSpec(
       name: 'graph',
       description: 'Displays currently-installed dependency graph information',
       options: [
+
         Option(
           name: '--bare',
           description: 'Minimal output'
@@ -165,6 +169,7 @@ final FigSpec pipenvSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--system',
           description: 'Install a Pipfile’s contents into its parent system'
@@ -302,6 +307,7 @@ final FigSpec pipenvSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--dev-only',
           description: 'Generate a requirements file with only the development requirements'
@@ -365,6 +371,7 @@ final FigSpec pipenvSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--python',
           description: 'Specify which version of Python virtualenv should use'
@@ -395,11 +402,13 @@ final FigSpec pipenvSpec = FigSpec(
       name: 'run',
       description: 'Spawns a command installed into the virtualenv',
       subcommands: [
+
         Subcommand(
           name: 'command'
         )
       ],
       options: [
+
         Option(
           name: '--python',
           description: 'Specify which version of Python virtualenv should use',
@@ -440,6 +449,7 @@ final FigSpec pipenvSpec = FigSpec(
       name: 'scripts',
       description: 'Lists scripts in current environment config',
       options: [
+
         Option(
           name: '--python',
           description: 'Specify which version of Python virtualenv should use',
@@ -480,6 +490,7 @@ final FigSpec pipenvSpec = FigSpec(
       name: 'shell',
       description: 'Start a shell within the environment',
       options: [
+
         Option(
           name: '--fancy',
           description: 'Run in shell in fancy mode. Make sure the shell have no path manipulating scripts. Run \$pipenv shell for issues with compatibility mode'
@@ -520,6 +531,7 @@ final FigSpec pipenvSpec = FigSpec(
       name: 'sync',
       description: 'Installs all packages specified in Pipfile.lock',
       options: [
+
         Option(
           name: '--system',
           description: 'Install a Pipfile’s contents into its parent system'
@@ -591,6 +603,7 @@ final FigSpec pipenvSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--all-dev',
           description: 'Uninstall all package from [dev-packages]'
@@ -665,6 +678,7 @@ final FigSpec pipenvSpec = FigSpec(
       name: 'update',
       description: 'Runs lock, then sync',
       options: [
+
         Option(
           name: '--bare',
           description: 'Minimal output'
@@ -778,6 +792,7 @@ final FigSpec pipenvSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--where',
       description: 'View project home information'

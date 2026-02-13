@@ -9,10 +9,12 @@ final FigSpec panoramaSpec = FigSpec(
   name: 'panorama',
   description: 'AWS Panorama  Overview  This is the AWS Panorama API Reference. For an introduction to the service, see What is AWS Panorama? in the AWS Panorama Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-application-instance',
       description: 'Creates an application instance and deploys it to a device',
       options: [
+
         Option(
           name: '--application-instance-id-to-replace',
           description: 'The ID of an application instance to replace with the new instance',
@@ -101,6 +103,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -113,6 +116,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'create-job-for-devices',
       description: 'Creates a job to run on a device. A job can update a device\'s software or reboot it',
       options: [
+
         Option(
           name: '--device-ids',
           description: 'ID of target device',
@@ -156,6 +160,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +173,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'create-node-from-template-job',
       description: 'Creates a camera stream node',
       options: [
+
         Option(
           name: '--job-tags',
           description: 'Tags for the job',
@@ -247,6 +253,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -259,6 +266,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'create-package',
       description: 'Creates a package and storage location in an Amazon S3 access point',
       options: [
+
         Option(
           name: '--package-name',
           description: 'A name for the package',
@@ -293,6 +301,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -305,6 +314,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'create-package-import-job',
       description: 'Imports a node package',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A client token for the package import job',
@@ -366,6 +376,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -378,6 +389,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'delete-device',
       description: 'Deletes a device',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The device\'s ID',
@@ -403,6 +415,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -415,6 +428,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'delete-package',
       description: 'Deletes a package.  To delete a package, you need permission to call s3:DeleteObject in addition to permissions for the AWS Panorama API',
       options: [
+
         Option(
           name: '--force-delete',
           description: 'Delete the package even if it has artifacts stored in its access point. Deletes the package\'s artifacts from Amazon S3'
@@ -448,6 +462,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -460,6 +475,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'deregister-package-version',
       description: 'Deregisters a package version',
       options: [
+
         Option(
           name: '--owner-account',
           description: 'An owner account',
@@ -521,6 +537,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -533,6 +550,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'describe-application-instance',
       description: 'Returns information about an application instance on a device',
       options: [
+
         Option(
           name: '--application-instance-id',
           description: 'The application instance\'s ID',
@@ -558,6 +576,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -570,6 +589,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'describe-application-instance-details',
       description: 'Returns information about an application instance\'s configuration manifest',
       options: [
+
         Option(
           name: '--application-instance-id',
           description: 'The application instance\'s ID',
@@ -595,6 +615,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -607,6 +628,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'describe-device',
       description: 'Returns information about a device',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The device\'s ID',
@@ -632,6 +654,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -644,6 +667,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'describe-device-job',
       description: 'Returns information about a device job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job\'s ID',
@@ -669,6 +693,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -681,6 +706,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'describe-node',
       description: 'Returns information about a node',
       options: [
+
         Option(
           name: '--node-id',
           description: 'The node\'s ID',
@@ -715,6 +741,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -727,6 +754,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'describe-node-from-template-job',
       description: 'Returns information about a job to create a camera stream node',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job\'s ID',
@@ -752,6 +780,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -764,6 +793,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'describe-package',
       description: 'Returns information about a package',
       options: [
+
         Option(
           name: '--package-id',
           description: 'The package\'s ID',
@@ -789,6 +819,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -801,6 +832,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'describe-package-import-job',
       description: 'Returns information about a package import job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job\'s ID',
@@ -826,6 +858,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -838,6 +871,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'describe-package-version',
       description: 'Returns information about a package version',
       options: [
+
         Option(
           name: '--owner-account',
           description: 'The version\'s owner account',
@@ -890,6 +924,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -902,6 +937,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'list-application-instance-dependencies',
       description: 'Returns a list of application instance dependencies',
       options: [
+
         Option(
           name: '--application-instance-id',
           description: 'The application instance\'s ID',
@@ -945,6 +981,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -957,6 +994,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'list-application-instance-node-instances',
       description: 'Returns a list of application node instances',
       options: [
+
         Option(
           name: '--application-instance-id',
           description: 'The node instances\' application instance ID',
@@ -1000,6 +1038,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1012,6 +1051,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'list-application-instances',
       description: 'Returns a list of application instances',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The application instances\' device ID',
@@ -1064,6 +1104,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1076,6 +1117,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'list-devices',
       description: 'Returns a list of devices',
       options: [
+
         Option(
           name: '--device-aggregated-status-filter',
           description: 'Filter based on a device\'s status',
@@ -1146,6 +1188,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1158,6 +1201,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'list-devices-jobs',
       description: 'Returns a list of jobs',
       options: [
+
         Option(
           name: '--device-id',
           description: 'Filter results by the job\'s target device ID',
@@ -1201,6 +1245,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1213,6 +1258,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'list-node-from-template-jobs',
       description: 'Returns a list of camera stream node jobs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of node from template jobs to return in one page of results',
@@ -1247,6 +1293,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1259,6 +1306,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'list-nodes',
       description: 'Returns a list of nodes',
       options: [
+
         Option(
           name: '--category',
           description: 'Search for nodes by category',
@@ -1338,6 +1386,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1350,6 +1399,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'list-package-import-jobs',
       description: 'Returns a list of package import jobs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of package import jobs to return in one page of results',
@@ -1384,6 +1434,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1396,6 +1447,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'list-packages',
       description: 'Returns a list of packages',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of packages to return in one page of results',
@@ -1430,6 +1482,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1442,6 +1495,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s ARN',
@@ -1467,6 +1521,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1479,6 +1534,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'provision-device',
       description: 'Creates a device and returns a configuration archive. The configuration archive is a ZIP file that contains a provisioning certificate that is valid for 5 minutes. Name the configuration archive certificates-omni_device-name.zip and transfer it to the device within 5 minutes. Use the included USB storage device and connect it to the USB 3.0 port next to the HDMI output',
       options: [
+
         Option(
           name: '--description',
           description: 'A description for the device',
@@ -1531,6 +1587,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1543,6 +1600,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'register-package-version',
       description: 'Registers a package version',
       options: [
+
         Option(
           name: '--mark-latest',
           description: 'Whether to mark the new version as the latest version'
@@ -1603,6 +1661,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1615,6 +1674,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'remove-application-instance',
       description: 'Removes an application instance',
       options: [
+
         Option(
           name: '--application-instance-id',
           description: 'An application instance ID',
@@ -1640,6 +1700,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1652,6 +1713,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'signal-application-instance-node-instances',
       description: 'Signal camera nodes to stop or resume',
       options: [
+
         Option(
           name: '--application-instance-id',
           description: 'An application instance ID',
@@ -1686,6 +1748,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1698,6 +1761,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s ARN',
@@ -1732,6 +1796,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1744,6 +1809,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s ARN',
@@ -1778,6 +1844,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1790,6 +1857,7 @@ final FigSpec panoramaSpec = FigSpec(
       name: 'update-device-metadata',
       description: 'Updates a device\'s metadata',
       options: [
+
         Option(
           name: '--description',
           description: 'A description for the device',
@@ -1824,6 +1892,7 @@ final FigSpec panoramaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

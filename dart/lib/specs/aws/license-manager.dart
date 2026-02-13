@@ -9,10 +9,12 @@ final FigSpec licenseManagerSpec = FigSpec(
   name: 'license-manager',
   description: 'License Manager makes it easier to manage licenses from software vendors across multiple Amazon Web Services accounts and on-premises servers',
   subcommands: [
+
     Subcommand(
       name: 'accept-grant',
       description: 'Accepts the specified grant',
       options: [
+
         Option(
           name: '--grant-arn',
           description: 'Amazon Resource Name (ARN) of the grant',
@@ -38,6 +40,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'check-in-license',
       description: 'Checks in the specified license. Check in a license when it is no longer in use',
       options: [
+
         Option(
           name: '--license-consumption-token',
           description: 'License consumption token',
@@ -84,6 +88,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'checkout-borrow-license',
       description: 'Checks out the specified license for offline use',
       options: [
+
         Option(
           name: '--license-arn',
           description: 'Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration',
@@ -166,6 +172,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'checkout-license',
       description: 'Checks out the specified license.  If the account that created the license is the same that is performing the check out, you must specify the account as the beneficiary',
       options: [
+
         Option(
           name: '--product-sku',
           description: 'Product SKU',
@@ -257,6 +265,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -269,6 +278,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'create-grant',
       description: 'Creates a grant for the specified license. A grant shares the use of license entitlements with a specific Amazon Web Services account, an organization, or an organizational unit (OU). For more information, see Granted licenses in License Manager in the License Manager User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request',
@@ -339,6 +349,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -351,6 +362,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'create-grant-version',
       description: 'Creates a new version of the specified grant. For more information, see Granted licenses in License Manager in the License Manager User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request',
@@ -439,6 +451,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -451,6 +464,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'create-license',
       description: 'Creates a license',
       options: [
+
         Option(
           name: '--license-name',
           description: 'License name',
@@ -566,6 +580,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -578,6 +593,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'create-license-configuration',
       description: 'Creates a license configuration. A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), license affinity to host (how long a license must be associated with a host), and the number of licenses purchased and used',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the license configuration',
@@ -673,6 +689,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -685,6 +702,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'create-license-conversion-task-for-resource',
       description: 'Creates a new license conversion task',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the resource you are converting the license type for',
@@ -728,6 +746,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -740,6 +759,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'create-license-manager-report-generator',
       description: 'Creates a report generator',
       options: [
+
         Option(
           name: '--report-generator-name',
           description: 'Name of the report generator',
@@ -819,6 +839,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -831,6 +852,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'create-license-version',
       description: 'Creates a new version of the specified license',
       options: [
+
         Option(
           name: '--license-arn',
           description: 'Amazon Resource Name (ARN) of the license',
@@ -955,6 +977,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -967,6 +990,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'create-token',
       description: 'Creates a long-lived token. A refresh token is a JWT token used to get an access token. With an access token, you can call AssumeRoleWithWebIdentity to get role credentials that you can use to call License Manager to manage the specified license',
       options: [
+
         Option(
           name: '--license-arn',
           description: 'Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token',
@@ -1028,6 +1052,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1040,6 +1065,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'delete-grant',
       description: 'Deletes the specified grant',
       options: [
+
         Option(
           name: '--grant-arn',
           description: 'Amazon Resource Name (ARN) of the grant',
@@ -1083,6 +1109,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1095,6 +1122,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'delete-license',
       description: 'Deletes the specified license',
       options: [
+
         Option(
           name: '--license-arn',
           description: 'Amazon Resource Name (ARN) of the license',
@@ -1129,6 +1157,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1141,6 +1170,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'delete-license-configuration',
       description: 'Deletes the specified license configuration. You cannot delete a license configuration that is in use',
       options: [
+
         Option(
           name: '--license-configuration-arn',
           description: 'ID of the license configuration',
@@ -1166,6 +1196,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1178,6 +1209,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'delete-license-manager-report-generator',
       description: 'Deletes the specified report generator. This action deletes the report generator, which stops it from generating future reports. The action cannot be reversed. It has no effect on the previous reports from this generator',
       options: [
+
         Option(
           name: '--license-manager-report-generator-arn',
           description: 'Amazon Resource Name (ARN) of the report generator to be deleted',
@@ -1203,6 +1235,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1215,6 +1248,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'delete-token',
       description: 'Deletes the specified token. Must be called in the license home Region',
       options: [
+
         Option(
           name: '--token-id',
           description: 'Token ID',
@@ -1240,6 +1274,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1252,6 +1287,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'extend-license-consumption',
       description: 'Extends the expiration date for license consumption',
       options: [
+
         Option(
           name: '--license-consumption-token',
           description: 'License consumption token',
@@ -1285,6 +1321,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1297,6 +1334,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'get-access-token',
       description: 'Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens are valid for one hour',
       options: [
+
         Option(
           name: '--token',
           description: 'Refresh token, encoded as a JWT token',
@@ -1331,6 +1369,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1343,6 +1382,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'get-grant',
       description: 'Gets detailed information about the specified grant',
       options: [
+
         Option(
           name: '--grant-arn',
           description: 'Amazon Resource Name (ARN) of the grant',
@@ -1377,6 +1417,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1389,6 +1430,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'get-license',
       description: 'Gets detailed information about the specified license',
       options: [
+
         Option(
           name: '--license-arn',
           description: 'Amazon Resource Name (ARN) of the license',
@@ -1423,6 +1465,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1435,6 +1478,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'get-license-configuration',
       description: 'Gets detailed information about the specified license configuration',
       options: [
+
         Option(
           name: '--license-configuration-arn',
           description: 'Amazon Resource Name (ARN) of the license configuration',
@@ -1460,6 +1504,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1472,6 +1517,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'get-license-conversion-task',
       description: 'Gets information about the specified license type conversion task',
       options: [
+
         Option(
           name: '--license-conversion-task-id',
           description: 'ID of the license type conversion task to retrieve information on',
@@ -1497,6 +1543,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1509,6 +1556,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'get-license-manager-report-generator',
       description: 'Gets information about the specified report generator',
       options: [
+
         Option(
           name: '--license-manager-report-generator-arn',
           description: 'Amazon Resource Name (ARN) of the report generator',
@@ -1534,6 +1582,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1546,6 +1595,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'get-license-usage',
       description: 'Gets detailed information about the usage of the specified license',
       options: [
+
         Option(
           name: '--license-arn',
           description: 'Amazon Resource Name (ARN) of the license',
@@ -1571,6 +1621,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1583,6 +1634,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'get-service-settings',
       description: 'Gets the License Manager settings for the current Region',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1599,6 +1651,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1611,6 +1664,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-associations-for-license-configuration',
       description: 'Lists the resource associations for the specified license configuration. Resource associations need not consume licenses from a license configuration. For example, an AMI or a stopped instance might not consume a license (depending on the license rules)',
       options: [
+
         Option(
           name: '--license-configuration-arn',
           description: 'Amazon Resource Name (ARN) of a license configuration',
@@ -1681,6 +1735,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1693,6 +1748,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-distributed-grants',
       description: 'Lists the grants distributed for the specified license',
       options: [
+
         Option(
           name: '--grant-arns',
           description: 'Amazon Resource Names (ARNs) of the grants',
@@ -1745,6 +1801,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1757,6 +1814,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-failures-for-license-configuration-operations',
       description: 'Lists the license configuration operations that failed',
       options: [
+
         Option(
           name: '--license-configuration-arn',
           description: 'Amazon Resource Name of the license configuration',
@@ -1800,6 +1858,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1812,6 +1871,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-license-configurations',
       description: 'Lists the license configurations for your account',
       options: [
+
         Option(
           name: '--license-configuration-arns',
           description: 'Amazon Resource Names (ARN) of the license configurations',
@@ -1891,6 +1951,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1903,6 +1964,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-license-conversion-tasks',
       description: 'Lists the license type conversion tasks for your account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Token for the next set of results',
@@ -1946,6 +2008,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1958,6 +2021,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-license-manager-report-generators',
       description: 'Lists the report generators for your account',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters to scope the results. The following filters are supported:     LicenseConfigurationArn',
@@ -2001,6 +2065,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2013,6 +2078,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-license-specifications-for-resource',
       description: 'Describes the license configurations for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of a resource that has an associated license configuration',
@@ -2083,6 +2149,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2095,6 +2162,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-license-versions',
       description: 'Lists all versions of the specified license',
       options: [
+
         Option(
           name: '--license-arn',
           description: 'Amazon Resource Name (ARN) of the license',
@@ -2138,6 +2206,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2150,6 +2219,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-licenses',
       description: 'Lists the licenses for your account',
       options: [
+
         Option(
           name: '--license-arns',
           description: 'Amazon Resource Names (ARNs) of the licenses',
@@ -2202,6 +2272,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2214,6 +2285,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-received-grants',
       description: 'Lists grants that are received. Received grants are grants created while specifying the recipient as this Amazon Web Services account, your organization, or an organizational unit (OU) to which this member account belongs',
       options: [
+
         Option(
           name: '--grant-arns',
           description: 'Amazon Resource Names (ARNs) of the grants',
@@ -2266,6 +2338,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2278,6 +2351,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-received-grants-for-organization',
       description: 'Lists the grants received for all accounts in the organization',
       options: [
+
         Option(
           name: '--license-arn',
           description: 'The Amazon Resource Name (ARN) of the received license',
@@ -2330,6 +2404,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2342,6 +2417,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-received-licenses',
       description: 'Lists received licenses',
       options: [
+
         Option(
           name: '--license-arns',
           description: 'Amazon Resource Names (ARNs) of the licenses',
@@ -2394,6 +2470,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2406,6 +2483,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-received-licenses-for-organization',
       description: 'Lists the licenses received for all accounts in the organization',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters to scope the results. The following filters are supported:    Beneficiary     ProductSKU',
@@ -2449,6 +2527,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2461,6 +2540,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-resource-inventory',
       description: 'Lists resources managed using Systems Manager inventory',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of results to return in a single call',
@@ -2531,6 +2611,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2543,6 +2624,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified license configuration',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the license configuration',
@@ -2568,6 +2650,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2580,6 +2663,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-tokens',
       description: 'Lists your tokens',
       options: [
+
         Option(
           name: '--token-ids',
           description: 'Token IDs',
@@ -2632,6 +2716,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2644,6 +2729,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'list-usage-for-license-configuration',
       description: 'Lists all license usage records for a license configuration, displaying license consumption details by resource at a selected point in time. Use this action to audit the current license consumption for any license inventory and configuration',
       options: [
+
         Option(
           name: '--license-configuration-arn',
           description: 'Amazon Resource Name (ARN) of the license configuration',
@@ -2723,6 +2809,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2735,6 +2822,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'reject-grant',
       description: 'Rejects the specified grant',
       options: [
+
         Option(
           name: '--grant-arn',
           description: 'Amazon Resource Name (ARN) of the grant',
@@ -2760,6 +2848,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2772,6 +2861,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tags to the specified license configuration',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the license configuration',
@@ -2806,6 +2896,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2818,6 +2909,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the specified license configuration',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the license configuration',
@@ -2852,6 +2944,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2864,6 +2957,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'update-license-configuration',
       description: 'Modifies the attributes of an existing license configuration',
       options: [
+
         Option(
           name: '--license-configuration-arn',
           description: 'Amazon Resource Name (ARN) of the license configuration',
@@ -2959,6 +3053,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2971,6 +3066,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'update-license-manager-report-generator',
       description: 'Updates a report generator. After you make changes to a report generator, it starts generating new reports within 60 minutes of being updated',
       options: [
+
         Option(
           name: '--license-manager-report-generator-arn',
           description: 'Amazon Resource Name (ARN) of the report generator to update',
@@ -3050,6 +3146,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3062,6 +3159,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'update-license-specifications-for-resource',
       description: 'Adds or removes the specified license configurations for the specified Amazon Web Services resource. You can update the license specifications of AMIs, instances, and hosts. You cannot update the license specifications for launch templates and CloudFormation templates, as they send license configurations to the operation that creates the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the Amazon Web Services resource',
@@ -3105,6 +3203,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3117,6 +3216,7 @@ final FigSpec licenseManagerSpec = FigSpec(
       name: 'update-service-settings',
       description: 'Updates License Manager settings for the current Region',
       options: [
+
         Option(
           name: '--s3-bucket-arn',
           description: 'Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored',
@@ -3168,6 +3268,7 @@ final FigSpec licenseManagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

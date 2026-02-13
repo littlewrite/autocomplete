@@ -9,13 +9,16 @@ final FigSpec airflowSpec = FigSpec(
   name: 'airflow',
   description: 'Subcommand',
   subcommands: [
+
     Subcommand(
       name: 'celery',
       description: 'Celery components',
       subcommands: [
+
         Subcommand(
           name: 'flower',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -131,6 +134,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'stop',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -152,6 +156,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'worker',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -268,6 +273,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -277,6 +283,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'cheat-sheet',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -292,15 +299,18 @@ final FigSpec airflowSpec = FigSpec(
       name: 'config',
       description: 'View configuration',
       subcommands: [
+
         Subcommand(
           name: 'get-value',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
             )
           ],
           args: [
+
             Arg(
               name: 'section',
               description: 'The section name'
@@ -315,6 +325,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -327,6 +338,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: 'color',
                 description: 'Do emit colored output (default: auto)',
                 suggestions: [
+
                   FigSuggestion(name: 'off'),
                   FigSuggestion(name: 'auto'),
                   FigSuggestion(name: 'on')
@@ -339,6 +351,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -349,9 +362,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'connections',
       description: 'Manage connections',
       subcommands: [
+
         Subcommand(
           name: 'add',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -468,6 +483,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'delete',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -480,6 +496,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: 'color',
                 description: 'Do emit colored output (default: auto)',
                 suggestions: [
+
                   FigSuggestion(name: 'off'),
                   FigSuggestion(name: 'auto'),
                   FigSuggestion(name: 'on')
@@ -499,6 +516,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'export',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -511,6 +529,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: 'file_format',
                 description: 'File format for the export',
                 suggestions: [
+
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
                   FigSuggestion(name: 'env')
@@ -526,6 +545,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: 'format',
                 description: 'Deprecated -- use `--file-format` instead. File format to use for the export',
                 suggestions: [
+
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
                   FigSuggestion(name: 'env')
@@ -541,6 +561,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: 'serialization_format',
                 description: 'When exporting as `.env` format, defines how connections should be serialized. Default is `uri`',
                 suggestions: [
+
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'uri')
                 ]
@@ -559,6 +580,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'get',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -571,6 +593,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: 'color',
                 description: 'Do emit colored output (default: auto)',
                 suggestions: [
+
                   FigSuggestion(name: 'off'),
                   FigSuggestion(name: 'auto'),
                   FigSuggestion(name: 'on')
@@ -586,6 +609,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -610,6 +634,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'import',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -626,6 +651,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -648,6 +674,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -665,6 +692,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -674,6 +702,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'dag-processor',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -754,9 +783,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'dags',
       description: 'Manage DAGs',
       subcommands: [
+
         Subcommand(
           name: 'backfill',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -895,6 +926,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'delete',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -915,6 +947,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -927,6 +960,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -955,6 +989,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list-import-errors',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -967,6 +1002,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -995,6 +1031,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list-jobs',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1027,6 +1064,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -1055,6 +1093,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list-runs',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1091,6 +1130,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -1129,6 +1169,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'next-execution',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1165,6 +1206,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'pause',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1191,6 +1233,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'report',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1203,6 +1246,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -1231,6 +1275,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'reserialize',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1255,6 +1300,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'show',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1295,6 +1341,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'show-dependencies',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1329,6 +1376,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'state',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1345,6 +1393,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'dag_id',
               description: 'The id of the dag'
@@ -1359,6 +1408,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'test',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1403,6 +1453,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'dag_id',
               description: 'The id of the dag'
@@ -1418,6 +1469,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'trigger',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1474,6 +1526,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'unpause',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1499,6 +1552,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -1509,9 +1563,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'db',
       description: 'Database operations',
       subcommands: [
+
         Subcommand(
           name: 'check',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1522,6 +1578,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'check-migrations',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1542,6 +1599,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'clean',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1588,6 +1646,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'downgrade',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1646,6 +1705,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'init',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1656,6 +1716,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'reset',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1674,6 +1735,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'shell',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1684,6 +1746,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'upgrade',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1737,6 +1800,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -1746,6 +1810,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'info',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -1766,6 +1831,7 @@ final FigSpec airflowSpec = FigSpec(
             name: '(table, json, yaml, plain)',
             description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
             suggestions: [
+
               FigSuggestion(name: 'table'),
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'yaml'),
@@ -1785,9 +1851,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'jobs',
       description: 'Manage jobs',
       subcommands: [
+
         Subcommand(
           name: 'check',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1814,6 +1882,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: 'job_type',
                 description: 'The type of job(s) that will be checked',
                 suggestions: [
+
                   FigSuggestion(name: 'BackfillJob'),
                   FigSuggestion(name: 'LocalTaskJob'),
                   FigSuggestion(name: 'SchedulerJob'),
@@ -1837,6 +1906,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -1846,6 +1916,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'kerberos',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -1920,9 +1991,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'kubernetes',
       description: 'Tools to help run the KubernetesExecutor',
       subcommands: [
+
         Subcommand(
           name: 'cleanup-pods',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1953,6 +2026,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'generate-dag-yaml',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -1979,6 +2053,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'dag_id',
               description: 'The id of the dag'
@@ -1992,6 +2067,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -2001,6 +2077,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'plugins',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -2013,6 +2090,7 @@ final FigSpec airflowSpec = FigSpec(
             name: '(table, json, yaml, plain)',
             description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
             suggestions: [
+
               FigSuggestion(name: 'table'),
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'yaml'),
@@ -2032,9 +2110,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'pools',
       description: 'Manage pools',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2047,6 +2127,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2071,6 +2152,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'export',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2087,6 +2169,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'get',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2099,6 +2182,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2123,6 +2207,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'import',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2143,6 +2228,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2155,6 +2241,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2173,6 +2260,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'set',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2185,6 +2273,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2199,6 +2288,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'NAME',
               description: 'Pool name'
@@ -2216,6 +2306,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -2226,9 +2317,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'providers',
       description: 'Display providers',
       subcommands: [
+
         Subcommand(
           name: 'auth',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2241,6 +2334,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2259,6 +2353,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'behaviours',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2271,6 +2366,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2289,6 +2385,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'get',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2301,6 +2398,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: 'color',
                 description: 'Do emit colored output (default: auto)',
                 suggestions: [
+
                   FigSuggestion(name: 'off'),
                   FigSuggestion(name: 'auto'),
                   FigSuggestion(name: 'on')
@@ -2320,6 +2418,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2344,6 +2443,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'hooks',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2356,6 +2456,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2374,6 +2475,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'links',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2386,6 +2488,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2404,6 +2507,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2416,6 +2520,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2434,6 +2539,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'logging',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2446,6 +2552,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2464,6 +2571,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'secrets',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2476,6 +2584,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2494,6 +2603,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'widgets',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2506,6 +2616,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2523,6 +2634,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -2533,9 +2645,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'roles',
       description: 'Manage roles',
       subcommands: [
+
         Subcommand(
           name: 'create',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2558,6 +2672,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'delete',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2580,6 +2695,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'export',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2604,6 +2720,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'import',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2624,6 +2741,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2636,6 +2754,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -2653,6 +2772,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -2662,6 +2782,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'rotate-fernet-key',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -2672,6 +2793,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'scheduler',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -2755,6 +2877,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'standalone',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -2765,6 +2888,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'sync-perm',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -2780,9 +2904,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'tasks',
       description: 'Manage tasks',
       subcommands: [
+
         Subcommand(
           name: 'clear',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2871,6 +2997,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'failed-deps',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2897,6 +3024,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'dag_id',
               description: 'The id of the dag'
@@ -2915,6 +3043,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2949,6 +3078,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'render',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -2979,6 +3109,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'dag_id',
               description: 'The id of the dag'
@@ -2997,6 +3128,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'run',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3099,6 +3231,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'dag_id',
               description: 'The id of the dag'
@@ -3117,6 +3250,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'state',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3147,6 +3281,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'dag_id',
               description: 'The id of the dag'
@@ -3165,6 +3300,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'states-for-dag-run',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3177,6 +3313,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -3191,6 +3328,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'dag_id',
               description: 'The id of the dag'
@@ -3205,6 +3343,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'test',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3259,6 +3398,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'dag_id',
               description: 'The id of the dag'
@@ -3277,6 +3417,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -3286,6 +3427,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'triggerer',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -3352,9 +3494,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'users',
       description: 'Manage users',
       subcommands: [
+
         Subcommand(
           name: 'add-role',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3395,6 +3539,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'create',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3469,6 +3614,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'delete',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3499,6 +3645,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'export',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3515,6 +3662,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'import',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3531,6 +3679,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3543,6 +3692,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -3561,6 +3711,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'remove-role',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3600,6 +3751,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -3610,9 +3762,11 @@ final FigSpec airflowSpec = FigSpec(
       name: 'variables',
       description: 'Manage variables',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3629,6 +3783,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'export',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3645,6 +3800,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'get',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3679,6 +3835,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'import',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3695,6 +3852,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3707,6 +3865,7 @@ final FigSpec airflowSpec = FigSpec(
                 name: '(table, json, yaml, plain)',
                 description: 'Output format. Allowed values: json, yaml, plain, table (default: table)',
                 suggestions: [
+
                   FigSuggestion(name: 'table'),
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml'),
@@ -3725,6 +3884,7 @@ final FigSpec airflowSpec = FigSpec(
         Subcommand(
           name: 'set',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Show this help message and exit'
@@ -3735,6 +3895,7 @@ final FigSpec airflowSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'key',
               description: 'Variable key'
@@ -3748,6 +3909,7 @@ final FigSpec airflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -3757,6 +3919,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'version',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -3767,6 +3930,7 @@ final FigSpec airflowSpec = FigSpec(
     Subcommand(
       name: 'webserver',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show this help message and exit'
@@ -3908,6 +4072,7 @@ final FigSpec airflowSpec = FigSpec(
             name: 'workerclass',
             description: 'The worker class to use for Gunicorn',
             suggestions: [
+
               FigSuggestion(name: 'sync'),
               FigSuggestion(name: 'eventlet'),
               FigSuggestion(name: 'gevent'),
@@ -3931,6 +4096,7 @@ final FigSpec airflowSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Show this help message and exit'

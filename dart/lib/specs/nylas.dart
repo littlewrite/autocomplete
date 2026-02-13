@@ -9,22 +9,27 @@ final FigSpec nylasSpec = FigSpec(
   name: 'nylas',
   description: 'A command line interface for Nylas\'s API',
   subcommands: [
+
     Subcommand(
       name: 'api',
       description: 'Access the Nylas API endpoints',
       subcommands: [
+
         Subcommand(
           name: 'a',
           description: 'A API commands',
           subcommands: [
+
             Subcommand(
               name: 'accounts',
               description: 'Accounts commands',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete an Account',
                   options: [
+
                     Option(
                       name: '--display_columns',
                       description: '(optional) A comma separated list of column headers to display for the table output',
@@ -40,6 +45,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'get',
                   description: 'Return All Accounts',
                   options: [
+
                     Option(
                       name: '--display_columns',
                       description: '(optional) A comma separated list of column headers to display for the table output',
@@ -104,10 +110,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'accounts:downgrade',
               description: 'Accounts:downgrade commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Cancel an Account',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -134,10 +142,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'accounts:revoke-all',
               description: 'Accounts:revoke-all commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Revoke All Tokens',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -164,10 +174,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'accounts:token-info',
               description: 'Accounts:token-info commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Return Token Information',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -194,10 +206,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'accounts:upgrade',
               description: 'Accounts:upgrade commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Reactivate an Account',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -226,6 +240,7 @@ final FigSpec nylasSpec = FigSpec(
           name: 'accounts',
           description: 'Gets a list of authed accounts',
           options: [
+
             Option(
               name: ['--limit', '-l'],
               description: 'This is usage',
@@ -246,14 +261,17 @@ final FigSpec nylasSpec = FigSpec(
           name: 'calendars',
           description: 'Calendars API commands',
           subcommands: [
+
             Subcommand(
               name: 'availability',
               description: 'Availability commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Availability for a Single Meeting',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -280,10 +298,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'availability:consecutive',
               description: 'Availability:consecutive commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Availability for Multiple Meetings',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -310,6 +330,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'delete',
               description: 'Delete a Calendar',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -325,10 +346,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'free-busy',
               description: 'Free-busy commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Calendar Free or Busy',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -355,6 +378,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'get',
               description: 'Return All Calendars',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -426,6 +450,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'post',
               description: 'Create a Calendar',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -450,6 +475,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'put',
               description: 'Update A Calendar',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -476,14 +502,17 @@ final FigSpec nylasSpec = FigSpec(
           name: 'connect',
           description: 'Connect API commands',
           subcommands: [
+
             Subcommand(
               name: 'detect-provider',
               description: 'Detect-provider commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Detect Provider',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -512,10 +541,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'contacts',
           description: 'Contacts API commands',
           subcommands: [
+
             Subcommand(
               name: 'delete',
               description: 'Delete a Contact',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -531,6 +562,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'get',
               description: 'Return All Contacts',
               options: [
+
                 Option(
                   name: '--country',
                   description: 'Returns the contacts matching the contact\'s exact physical addresses',
@@ -638,10 +670,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'groups',
               description: 'Groups commands',
               subcommands: [
+
                 Subcommand(
                   name: 'get',
                   description: 'Return Contact Groups',
                   options: [
+
                     Option(
                       name: '--display_columns',
                       description: '(optional) A comma separated list of column headers to display for the table output',
@@ -659,10 +693,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'picture',
               description: 'Picture commands',
               subcommands: [
+
                 Subcommand(
                   name: 'get',
                   description: 'Returns a Contacts Picture',
                   options: [
+
                     Option(
                       name: '--display_columns',
                       description: '(optional) A comma separated list of column headers to display for the table output',
@@ -680,6 +716,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'post',
               description: 'Create a Contact',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -704,6 +741,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'put',
               description: 'Update a Contact',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -730,10 +768,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'delta',
           description: 'Delta API commands',
           subcommands: [
+
             Subcommand(
               name: 'get',
               description: 'Request Delta Cursors',
               options: [
+
                 Option(
                   name: '--cursor',
                   description: 'The data cursor from `/delta/latest_cursor`',
@@ -785,10 +825,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'latest:cursor',
               description: 'Latest:cursor commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Get a Delta Cursor',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -815,10 +857,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'longpoll',
               description: 'Longpoll commands',
               subcommands: [
+
                 Subcommand(
                   name: 'get',
                   description: 'Return Long-Polling Deltas',
                   options: [
+
                     Option(
                       name: '--cursor',
                       description: 'The data cursor from `/delta/latest_cursor`',
@@ -882,10 +926,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'streaming',
               description: 'Streaming commands',
               subcommands: [
+
                 Subcommand(
                   name: 'get',
                   description: 'Streaming Deltas',
                   options: [
+
                     Option(
                       name: '--cursor',
                       description: 'The data cursor from `/delta/latest_cursor`',
@@ -941,10 +987,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'drafts',
           description: 'Drafts API commands',
           subcommands: [
+
             Subcommand(
               name: 'delete',
               description: 'Delete a Draft',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -960,6 +1008,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'get',
               description: 'Return All Drafts',
               options: [
+
                 Option(
                   name: '--any_email',
                   description: 'Return emails that have been sent or received from this comma-separated list of email addresses. For example: mail1@mail.com,mail2@mail.com. A maximum of 25 emails may be specified',
@@ -1101,6 +1150,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'post',
               description: 'Create a New Draft',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -1125,6 +1175,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'put',
               description: 'Update a Draft',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -1151,10 +1202,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'events',
           description: 'Events API commands',
           subcommands: [
+
             Subcommand(
               name: 'delete',
               description: 'Delete An Event',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -1170,6 +1223,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'get',
               description: 'Return All Events',
               options: [
+
                 Option(
                   name: '--calendar_id',
                   description: 'Return events belonging to the specified calendar ID',
@@ -1331,6 +1385,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'post',
               description: 'Create an Event',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -1355,6 +1410,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'put',
               description: 'Update An Event',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -1379,10 +1435,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'to-ics',
               description: 'To-ics commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Generate ICS File',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -1411,10 +1469,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'files',
           description: 'Files API commands',
           subcommands: [
+
             Subcommand(
               name: 'delete',
               description: 'Delete a File',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -1430,10 +1490,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'download',
               description: 'Download commands',
               subcommands: [
+
                 Subcommand(
                   name: 'get',
                   description: 'Download a File',
                   options: [
+
                     Option(
                       name: '--display_columns',
                       description: '(optional) A comma separated list of column headers to display for the table output',
@@ -1451,6 +1513,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'get',
               description: 'Return All Files',
               options: [
+
                 Option(
                   name: '--content_type',
                   description: 'Return objects matching the specified content type',
@@ -1502,6 +1565,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'post',
               description: 'Upload a New File',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -1528,10 +1592,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'folders',
           description: 'Folders API commands',
           subcommands: [
+
             Subcommand(
               name: 'delete',
               description: 'Delete a Folder',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -1547,6 +1613,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'get',
               description: 'Return All Folders',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -1582,6 +1649,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'post',
               description: 'Create a Folder',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -1606,6 +1674,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'put',
               description: 'Update a Folder',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -1636,10 +1705,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'job-statuses',
           description: 'Job-Statuses API commands',
           subcommands: [
+
             Subcommand(
               name: 'get',
               description: 'Return All Job Statuses',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -1657,10 +1728,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'labels',
           description: 'Labels API commands',
           subcommands: [
+
             Subcommand(
               name: 'delete',
               description: 'Delete a Label',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -1676,6 +1749,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'get',
               description: 'Return All Labels',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -1711,6 +1785,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'post',
               description: 'Create a Label',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -1735,6 +1810,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'put',
               description: 'Update a Label',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -1761,10 +1837,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'messages',
           description: 'Messages API commands',
           subcommands: [
+
             Subcommand(
               name: 'get',
               description: 'Return All Messages',
               options: [
+
                 Option(
                   name: '--any_email',
                   description: 'Return emails that have been sent or received from this comma-separated list of email addresses. For example: mail1@mail.com,mail2@mail.com. A maximum of 25 emails may be specified',
@@ -1919,6 +1997,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'put',
               description: 'Update a Message',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -1945,14 +2024,17 @@ final FigSpec nylasSpec = FigSpec(
           name: 'neural',
           description: 'Neural API commands',
           subcommands: [
+
             Subcommand(
               name: 'categorize',
               description: 'Categorize commands',
               subcommands: [
+
                 Subcommand(
                   name: 'put',
                   description: 'Categorize a Message',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -1979,10 +2061,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'categorize:feedback',
               description: 'Categorize:feedback commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Categorize Message Feedback',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2009,10 +2093,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'conversation',
               description: 'Conversation commands',
               subcommands: [
+
                 Subcommand(
                   name: 'put',
                   description: 'Clean Conversation',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2039,10 +2125,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'conversation:feedback',
               description: 'Conversation:feedback commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Clean Conversations Feedback',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2069,10 +2157,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'ocr',
               description: 'Ocr commands',
               subcommands: [
+
                 Subcommand(
                   name: 'put',
                   description: 'Optical Character Recognition',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2099,10 +2189,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'ocr:feedback',
               description: 'Ocr:feedback commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Optical Character Recognition Feedback',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2129,10 +2221,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'sentiment',
               description: 'Sentiment commands',
               subcommands: [
+
                 Subcommand(
                   name: 'put',
                   description: 'Sentiment Analysis',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2159,10 +2253,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'sentiment:feedback',
               description: 'Sentiment:feedback commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Sentiment Analysis Feedback',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2189,10 +2285,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'signature',
               description: 'Signature commands',
               subcommands: [
+
                 Subcommand(
                   name: 'put',
                   description: 'Signature Extraction',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2219,10 +2317,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'signature:feedback',
               description: 'Signature:feedback commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Signature Extraction Feedback',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2251,10 +2351,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'resources',
           description: 'Resources API commands',
           subcommands: [
+
             Subcommand(
               name: 'get',
               description: 'Return Room Resource Information',
               options: [
+
                 Option(
                   name: '--display_columns',
                   description: '(optional) A comma separated list of column headers to display for the table output',
@@ -2282,10 +2384,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'send',
           description: 'Send API commands',
           subcommands: [
+
             Subcommand(
               name: 'post',
               description: 'Send a Message',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -2312,10 +2416,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'send-rsvp',
           description: 'Send-Rsvp API commands',
           subcommands: [
+
             Subcommand(
               name: 'post',
               description: 'Send RSVP',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -2342,10 +2448,12 @@ final FigSpec nylasSpec = FigSpec(
           name: 'threads',
           description: 'Threads API commands',
           subcommands: [
+
             Subcommand(
               name: 'get',
               description: 'Returns All Threads',
               options: [
+
                 Option(
                   name: '--any_email',
                   description: 'Return emails that have been sent or received from this comma-separated list of email addresses. For example: mail1@mail.com,mail2@mail.com. A maximum of 25 emails may be specified',
@@ -2534,6 +2642,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'put',
               description: 'Update a Thread',
               options: [
+
                 Option(
                   name: '--body',
                   description: 'Request body (or use < to redirect a JSON file)',
@@ -2560,14 +2669,17 @@ final FigSpec nylasSpec = FigSpec(
           name: 'v2',
           description: 'V2 API commands',
           subcommands: [
+
             Subcommand(
               name: 'outbox',
               description: 'Outbox commands',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete Scheduled Message',
                   options: [
+
                     Option(
                       name: '--display_columns',
                       description: '(optional) A comma separated list of column headers to display for the table output',
@@ -2583,6 +2695,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'get',
                   description: 'Return All Messages to Be Sent',
                   options: [
+
                     Option(
                       name: '--display_columns',
                       description: '(optional) A comma separated list of column headers to display for the table output',
@@ -2598,6 +2711,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'post',
                   description: 'Send a Message',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2622,6 +2736,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'put',
                   description: 'Update Send Time',
                   options: [
+
                     Option(
                       name: '--body',
                       description: 'Request body (or use < to redirect a JSON file)',
@@ -2650,6 +2765,7 @@ final FigSpec nylasSpec = FigSpec(
           name: 'webhooks',
           description: 'Gets a list of webhooks',
           options: [
+
             Option(
               name: ['--limit', '-l'],
               description: 'This is usage',
@@ -2684,10 +2800,12 @@ final FigSpec nylasSpec = FigSpec(
       name: 'webhook',
       description: 'Create and test Nylas\' Webhooks',
       subcommands: [
+
         Subcommand(
           name: 'tunnel',
           description: 'Starts listening for incoming Nylas webhook events',
           options: [
+
             Option(
               name: '--callback_domain',
               description: 'The domain for the callback URL',
@@ -2719,6 +2837,7 @@ final FigSpec nylasSpec = FigSpec(
                 name: 'triggers',
                 defaultValue: 'account.connected,account.running,account.stopped,account.invalid,account.sync_error,message.created,message.opened,message.updated,message.link_clicked,message.bounced,thread.replied,calendar.created,calendar.updated,calendar.deleted,event.created,event.updated,event.deleted,contact.created,contact.updated,contact.deleted,job.successful,job.failed',
                 suggestions: [
+
                   FigSuggestion(name: 'account.connected'),
                   FigSuggestion(name: 'account.running'),
                   FigSuggestion(name: 'account.stopped'),
@@ -2764,18 +2883,22 @@ final FigSpec nylasSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'api',
           description: 'Access the Nylas API endpoints',
           subcommands: [
+
             Subcommand(
               name: 'a',
               description: 'A API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'accounts',
                   description: 'Accounts commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'delete',
                       description: 'Delete an Account'
@@ -2790,6 +2913,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'accounts:downgrade',
                   description: 'Accounts:downgrade commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Cancel an Account'
@@ -2800,6 +2924,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'accounts:revoke-all',
                   description: 'Accounts:revoke-all commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Revoke All Tokens'
@@ -2810,6 +2935,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'accounts:token-info',
                   description: 'Accounts:token-info commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Return Token Information'
@@ -2820,6 +2946,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'accounts:upgrade',
                   description: 'Accounts:upgrade commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Reactivate an Account'
@@ -2840,10 +2967,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'calendars',
               description: 'Calendars API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'availability',
                   description: 'Availability commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Availability for a Single Meeting'
@@ -2854,6 +2983,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'availability:consecutive',
                   description: 'Availability:consecutive commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Availability for Multiple Meetings'
@@ -2868,6 +2998,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'free-busy',
                   description: 'Free-busy commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Calendar Free or Busy'
@@ -2892,10 +3023,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'connect',
               description: 'Connect API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'detect-provider',
                   description: 'Detect-provider commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Detect Provider'
@@ -2908,6 +3041,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'contacts',
               description: 'Contacts API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete a Contact'
@@ -2920,6 +3054,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'groups',
                   description: 'Groups commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'get',
                       description: 'Return Contact Groups'
@@ -2930,6 +3065,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'picture',
                   description: 'Picture commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'get',
                       description: 'Returns a Contacts Picture'
@@ -2950,6 +3086,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'delta',
               description: 'Delta API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'get',
                   description: 'Request Delta Cursors'
@@ -2958,6 +3095,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'latest:cursor',
                   description: 'Latest:cursor commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Get a Delta Cursor'
@@ -2968,6 +3106,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'longpoll',
                   description: 'Longpoll commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'get',
                       description: 'Return Long-Polling Deltas'
@@ -2978,6 +3117,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'streaming',
                   description: 'Streaming commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'get',
                       description: 'Streaming Deltas'
@@ -2990,6 +3130,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'drafts',
               description: 'Drafts API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete a Draft'
@@ -3012,6 +3153,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'events',
               description: 'Events API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete An Event'
@@ -3032,6 +3174,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'to-ics',
                   description: 'To-ics commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Generate ICS File'
@@ -3044,6 +3187,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'files',
               description: 'Files API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete a File'
@@ -3052,6 +3196,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'download',
                   description: 'Download commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'get',
                       description: 'Download a File'
@@ -3072,6 +3217,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'folders',
               description: 'Folders API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete a Folder'
@@ -3098,6 +3244,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'job-statuses',
               description: 'Job-Statuses API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'get',
                   description: 'Return All Job Statuses'
@@ -3108,6 +3255,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'labels',
               description: 'Labels API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete a Label'
@@ -3130,6 +3278,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'messages',
               description: 'Messages API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'get',
                   description: 'Return All Messages'
@@ -3144,10 +3293,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'neural',
               description: 'Neural API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'categorize',
                   description: 'Categorize commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'put',
                       description: 'Categorize a Message'
@@ -3158,6 +3309,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'categorize:feedback',
                   description: 'Categorize:feedback commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Categorize Message Feedback'
@@ -3168,6 +3320,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'conversation',
                   description: 'Conversation commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'put',
                       description: 'Clean Conversation'
@@ -3178,6 +3331,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'conversation:feedback',
                   description: 'Conversation:feedback commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Clean Conversations Feedback'
@@ -3188,6 +3342,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'ocr',
                   description: 'Ocr commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'put',
                       description: 'Optical Character Recognition'
@@ -3198,6 +3353,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'ocr:feedback',
                   description: 'Ocr:feedback commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Optical Character Recognition Feedback'
@@ -3208,6 +3364,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'sentiment',
                   description: 'Sentiment commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'put',
                       description: 'Sentiment Analysis'
@@ -3218,6 +3375,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'sentiment:feedback',
                   description: 'Sentiment:feedback commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Sentiment Analysis Feedback'
@@ -3228,6 +3386,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'signature',
                   description: 'Signature commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'put',
                       description: 'Signature Extraction'
@@ -3238,6 +3397,7 @@ final FigSpec nylasSpec = FigSpec(
                   name: 'signature:feedback',
                   description: 'Signature:feedback commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'post',
                       description: 'Signature Extraction Feedback'
@@ -3250,6 +3410,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'resources',
               description: 'Resources API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'get',
                   description: 'Return Room Resource Information'
@@ -3260,6 +3421,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'send',
               description: 'Send API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Send a Message'
@@ -3270,6 +3432,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'send-rsvp',
               description: 'Send-Rsvp API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'post',
                   description: 'Send RSVP'
@@ -3280,6 +3443,7 @@ final FigSpec nylasSpec = FigSpec(
               name: 'threads',
               description: 'Threads API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'get',
                   description: 'Returns All Threads'
@@ -3294,10 +3458,12 @@ final FigSpec nylasSpec = FigSpec(
               name: 'v2',
               description: 'V2 API commands',
               subcommands: [
+
                 Subcommand(
                   name: 'outbox',
                   description: 'Outbox commands',
                   subcommands: [
+
                     Subcommand(
                       name: 'delete',
                       description: 'Delete Scheduled Message'
@@ -3344,6 +3510,7 @@ final FigSpec nylasSpec = FigSpec(
           name: 'webhook',
           description: 'Create and test Nylas\' Webhooks',
           subcommands: [
+
             Subcommand(
               name: 'tunnel',
               description: 'Starts listening for incoming Nylas webhook events'
@@ -3354,6 +3521,7 @@ final FigSpec nylasSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--access_token',
       description: 'Nylas account access token',
@@ -3426,6 +3594,7 @@ final FigSpec nylasSpec = FigSpec(
         name: 'output',
         defaultValue: 'json',
         suggestions: [
+
           FigSuggestion(name: 'json'),
           FigSuggestion(name: 'table')
         ]
@@ -3440,6 +3609,7 @@ final FigSpec nylasSpec = FigSpec(
         Arg(
         name: 'region',
         suggestions: [
+
           FigSuggestion(name: 'us'),
           FigSuggestion(name: 'ireland'),
           FigSuggestion(name: 'canada'),

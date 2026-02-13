@@ -9,10 +9,12 @@ final FigSpec logsSpec = FigSpec(
   name: 'logs',
   description: 'You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, CloudTrail, and other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console. Alternatively, you can use CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs SDK. You can use CloudWatch Logs to:    Monitor logs from EC2 instances in real time: You can use CloudWatch Logs to monitor applications and systems using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs. Then, it can send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs uses your log data for monitoring so no code changes are required. For example, you can monitor application logs for specific literal terms (such as "NullReferenceException"). You can also count the number of occurrences of a literal term at a particular position in log data (such as "404" status codes in an Apache access log). When the term you are searching for is found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.    Monitor CloudTrail logged events: You can create alarms in CloudWatch and receive notifications of particular API activity as captured by CloudTrail. You can use the notification to perform troubleshooting.    Archive log data: You can use CloudWatch Logs to store your log data in highly durable storage. You can change the log retention setting so that any log events earlier than this setting are automatically deleted. The CloudWatch Logs agent helps to quickly send both rotated and non-rotated log data off of a host and into the log service. You can then access the raw log data when you need it',
   subcommands: [
+
     Subcommand(
       name: 'associate-kms-key',
       description: 'Associates the specified KMS key with either one log group in the account, or with all stored CloudWatch Logs query insights results in the account. When you use AssociateKmsKey, you specify either the logGroupName parameter or the resourceIdentifier parameter. You can\'t specify both of those parameters in the same operation.   Specify the logGroupName parameter to cause all log events stored in the log group to be encrypted with that key. Only the log events ingested after the key is associated are encrypted with that key. Associating a KMS key with a log group overrides any existing associations between the log group and a KMS key. After a KMS key is associated with a log group, all newly ingested data for the log group is encrypted using the KMS key. This association is stored as long as the data encrypted with the KMS key is still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested. Associating a key with a log group does not cause the results of queries of that log group to be encrypted with that key. To have query results encrypted with a KMS key, you must use an AssociateKmsKey operation with the resourceIdentifier parameter that specifies a query-result resource.    Specify the resourceIdentifier parameter with a query-result resource, to use that key to encrypt the stored results of all future StartQuery operations in the account. The response from a GetQueryResults operation will still return the query results in plain text. Even if you have not associated a key with your query results, the query results are encrypted when stored, using the default CloudWatch Logs method. If you run a query from a monitoring account that queries logs in a source account, the query results key from the monitoring account, if any, is used.    If you delete the key that is used to encrypt log events or log group query results, then all the associated stored log events or query results that were encrypted with that key will be unencryptable and unusable.   CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric KMS key with your log group or query results. For more information, see Using Symmetric and Asymmetric Keys.  It can take up to 5 minutes for this operation to take effect. If you attempt to associate a KMS key with a log group but the KMS key does not exist or the KMS key is disabled, you receive an InvalidParameterException error',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group. In your AssociateKmsKey operation, you must specify either the resourceIdentifier parameter or the logGroup parameter, but you can\'t specify both',
@@ -56,6 +58,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'cancel-export-task',
       description: 'Cancels the specified export task. The task must be in the PENDING or RUNNING state',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The ID of the export task',
@@ -93,6 +97,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'create-delivery',
       description: 'Creates a delivery. A delivery is a connection between a logical delivery source and a logical delivery destination that you have already created. Only some Amazon Web Services services support being configured as a delivery source using this operation. These services are listed as Supported [V2 Permissions] in the table at Enabling logging from Amazon Web Services services.  A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose. To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the following:   Create a delivery source, which is a logical object that represents the resource that is actually sending the logs. For more information, see PutDeliverySource.   Create a delivery destination, which is a logical object that represents the actual delivery destination. For more information, see PutDeliveryDestination.   If you are delivering logs cross-account, you must use PutDeliveryDestinationPolicy in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.    Use CreateDelivery to create a delivery by pairing exactly one delivery source and one delivery destination.    You can configure a single delivery source to send logs to multiple destinations by creating multiple deliveries. You can also create multiple deliveries to configure multiple delivery sources to send logs to the same delivery destination. To update an existing delivery configuration, use UpdateDeliveryConfiguration',
       options: [
+
         Option(
           name: '--delivery-source-name',
           description: 'The name of the delivery source to use for this delivery',
@@ -175,6 +181,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'create-export-task',
       description: 'Creates an export task so that you can efficiently export data from a log group to an Amazon S3 bucket. When you perform a CreateExportTask operation, you must use credentials that have permission to write to the S3 bucket that you specify as the destination. Exporting log data to S3 buckets that are encrypted by KMS is supported. Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention period is also supported. Exporting to S3 buckets that are encrypted with AES-256 is supported.  This is an asynchronous call. If all the required information is provided, this operation initiates an export task and responds with the ID of the task. After the task has started, you can use DescribeExportTasks to get the status of the export task. Each account can only have one active (RUNNING or PENDING) export task at a time. To cancel an export task, use CancelExportTask. You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate log data for each export task, specify a prefix to be used as the Amazon S3 key prefix for all exported objects.  Time-based sorting on chunks of log data inside an exported file is not guaranteed. You can sort the exported log field data by using Linux utilities',
       options: [
+
         Option(
           name: '--task-name',
           description: 'The name of the export task',
@@ -266,6 +274,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -278,6 +287,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'create-log-anomaly-detector',
       description: 'Creates an anomaly detector that regularly scans one or more log groups and look for patterns and anomalies in the logs. An anomaly detector can help surface issues by automatically discovering anomalies in your log event traffic. An anomaly detector uses machine learning algorithms to scan log events and find patterns. A pattern is a shared text structure that recurs among your log fields. Patterns provide a useful tool for analyzing large sets of logs because a large number of log events can often be compressed into a few patterns. The anomaly detector uses pattern recognition to find anomalies, which are unusual log events. It uses the evaluationFrequency to compare current log events and patterns with trained baselines.  Fields within a pattern are called tokens. Fields that vary within a pattern, such as a request ID or timestamp, are referred to as dynamic tokens and represented by <*>.  The following is an example of a pattern:  [INFO] Request time: <*> ms  This pattern represents log events like [INFO] Request time: 327 ms and other similar log events that differ only by the number, in this csse 327. When the pattern is displayed, the different numbers are replaced by <*>   Any parts of log events that are masked as sensitive data are not scanned for anomalies. For more information about masking sensitive data, see Help protect sensitive log data with masking',
       options: [
+
         Option(
           name: '--log-group-arn-list',
           description: 'An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log group ARN',
@@ -357,6 +367,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -369,6 +380,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'create-log-group',
       description: 'Creates a log group with the specified name. You can create up to 1,000,000 log groups per Region per account. You must use the following guidelines when naming a log group:   Log group names must be unique within a Region for an Amazon Web Services account.   Log group names can be between 1 and 512 characters long.   Log group names consist of the following characters: a-z, A-Z, 0-9, \'_\' (underscore), \'-\' (hyphen), \'/\' (forward slash), \'.\' (period), and \'#\' (number sign)   Log group names can\'t start with the string aws/    When you create a log group, by default the log events in the log group do not expire. To set a retention policy so that events expire and are deleted after a specified time, use PutRetentionPolicy. If you associate an KMS key with the log group, ingested data is encrypted using the KMS key. This association is stored as long as the data encrypted with the KMS key is still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested. If you attempt to associate a KMS key with the log group but the KMS key does not exist or the KMS key is disabled, you receive an InvalidParameterException error.   CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS key with your log group. For more information, see Using Symmetric and Asymmetric Keys',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'A name for the log group',
@@ -421,6 +433,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -433,6 +446,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'create-log-stream',
       description: 'Creates a log stream for the specified log group. A log stream is a sequence of log events that originate from a single source, such as an application instance or a resource that is being monitored. There is no limit on the number of log streams that you can create for a log group. There is a limit of 50 TPS on CreateLogStream operations, after which transactions are throttled. You must use the following guidelines when naming a log stream:   Log stream names must be unique within the log group.   Log stream names can be between 1 and 512 characters long.   Don\'t use \':\' (colon) or \'*\' (asterisk) characters',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -467,6 +481,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -479,6 +494,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-account-policy',
       description: 'Deletes a CloudWatch Logs account policy. This stops the account-wide policy from applying to log groups in the account. If you delete a data protection policy or subscription filter policy, any log-group level policies of those types remain in effect. To use this operation, you must be signed on with the correct permissions depending on the type of policy that you are deleting.   To delete a data protection policy, you must have the logs:DeleteDataProtectionPolicy and logs:DeleteAccountPolicy permissions.   To delete a subscription filter policy, you must have the logs:DeleteSubscriptionFilter and logs:DeleteAccountPolicy permissions.   To delete a transformer policy, you must have the logs:DeleteTransformer and logs:DeleteAccountPolicy permissions.   To delete a field index policy, you must have the logs:DeleteIndexPolicy and logs:DeleteAccountPolicy permissions.   If you delete a field index policy, the indexing of the log events that happened before you deleted the policy will still be used for up to 30 days to improve CloudWatch Logs Insights queries',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The name of the policy to delete',
@@ -513,6 +529,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -525,6 +542,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-data-protection-policy',
       description: 'Deletes the data protection policy from the specified log group.  For more information about data protection policies, see PutDataProtectionPolicy',
       options: [
+
         Option(
           name: '--log-group-identifier',
           description: 'The name or ARN of the log group that you want to delete the data protection policy for',
@@ -550,6 +568,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -562,6 +581,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-delivery',
       description: 'Deletes s delivery. A delivery is a connection between a logical delivery source and a logical delivery destination. Deleting a delivery only deletes the connection between the delivery source and delivery destination. It does not delete the delivery destination or the delivery source',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique ID of the delivery to delete. You can find the ID of a delivery with the DescribeDeliveries operation',
@@ -587,6 +607,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -599,6 +620,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-delivery-destination',
       description: 'Deletes a delivery destination. A delivery is a connection between a logical delivery source and a logical delivery destination. You can\'t delete a delivery destination if any current deliveries are associated with it. To find whether any deliveries are associated with this delivery destination, use the DescribeDeliveries operation and check the deliveryDestinationArn field in the results',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the delivery destination that you want to delete. You can find a list of delivery destionation names by using the DescribeDeliveryDestinations operation',
@@ -624,6 +646,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -636,6 +659,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-delivery-destination-policy',
       description: 'Deletes a delivery destination policy. For more information about these policies, see PutDeliveryDestinationPolicy',
       options: [
+
         Option(
           name: '--delivery-destination-name',
           description: 'The name of the delivery destination that you want to delete the policy for',
@@ -661,6 +685,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -673,6 +698,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-delivery-source',
       description: 'Deletes a delivery source. A delivery is a connection between a logical delivery source and a logical delivery destination. You can\'t delete a delivery source if any current deliveries are associated with it. To find whether any deliveries are associated with this delivery source, use the DescribeDeliveries operation and check the deliverySourceName field in the results',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the delivery source that you want to delete',
@@ -698,6 +724,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -710,6 +737,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-destination',
       description: 'Deletes the specified destination, and eventually disables all the subscription filters that publish to it. This operation does not delete the physical resource encapsulated by the destination',
       options: [
+
         Option(
           name: '--destination-name',
           description: 'The name of the destination',
@@ -735,6 +763,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -747,6 +776,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-index-policy',
       description: 'Deletes a log-group level field index policy that was applied to a single log group. The indexing of the log events that happened before you delete the policy will still be used for as many as 30 days to improve CloudWatch Logs Insights queries. You can\'t use this operation to delete an account-level index policy. Instead, use DeletAccountPolicy. If you delete a log-group level field index policy and there is an account-level field index policy, in a few minutes the log group begins using that account-wide policy to index new incoming log events',
       options: [
+
         Option(
           name: '--log-group-identifier',
           description: 'The log group to delete the index policy for. You can specify either the name or the ARN of the log group',
@@ -772,6 +802,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -784,6 +815,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-integration',
       description: 'Deletes the integration between CloudWatch Logs and OpenSearch Service. If your integration has active vended logs dashboards, you must specify true for the force parameter, otherwise the operation will fail. If you delete the integration by setting force to true, all your vended logs dashboards powered by OpenSearch Service will be deleted and the data that was on them will no longer be accessible',
       options: [
+
         Option(
           name: '--integration-name',
           description: 'The name of the integration to delete. To find the name of your integration, use ListIntegrations',
@@ -817,6 +849,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -829,6 +862,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-log-anomaly-detector',
       description: 'Deletes the specified CloudWatch Logs anomaly detector',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The ARN of the anomaly detector to delete. You can find the ARNs of log anomaly detectors in your account by using the ListLogAnomalyDetectors operation',
@@ -854,6 +888,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -866,6 +901,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-log-group',
       description: 'Deletes the specified log group and permanently deletes all the archived log events associated with the log group',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -891,6 +927,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -903,6 +940,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-log-stream',
       description: 'Deletes the specified log stream and permanently deletes all the archived log events associated with the log stream',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -937,6 +975,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -949,6 +988,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-metric-filter',
       description: 'Deletes the specified metric filter',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -983,6 +1023,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -995,6 +1036,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-query-definition',
       description: 'Deletes a saved CloudWatch Logs Insights query definition. A query definition contains details about a saved CloudWatch Logs Insights query. Each DeleteQueryDefinition operation can delete one query definition. You must have the logs:DeleteQueryDefinition permission to be able to perform this operation',
       options: [
+
         Option(
           name: '--query-definition-id',
           description: 'The ID of the query definition that you want to delete. You can use DescribeQueryDefinitions to retrieve the IDs of your saved query definitions',
@@ -1020,6 +1062,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1032,6 +1075,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes a resource policy from this account. This revokes the access of the identities in that policy to put log events to this account',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The name of the policy to be revoked. This parameter is required',
@@ -1057,6 +1101,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1069,6 +1114,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-retention-policy',
       description: 'Deletes the specified retention policy. Log events do not expire if they belong to log groups without a retention policy',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -1094,6 +1140,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1106,6 +1153,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-subscription-filter',
       description: 'Deletes the specified subscription filter',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -1140,6 +1188,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1152,6 +1201,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'delete-transformer',
       description: 'Deletes the log transformer for the specified log group. As soon as you do this, the transformation of incoming log events according to that transformer stops. If this account has an account-level transformer that applies to this log group, the log group begins using that account-level transformer when this log-group level transformer is deleted. After you delete a transformer, be sure to edit any metric filters or subscription filters that relied on the transformed versions of the log events',
       options: [
+
         Option(
           name: '--log-group-identifier',
           description: 'Specify either the name or ARN of the log group to delete the transformer for. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN',
@@ -1177,6 +1227,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1189,6 +1240,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-account-policies',
       description: 'Returns a list of all CloudWatch Logs account policies in the account',
       options: [
+
         Option(
           name: '--policy-type',
           description: 'Use this parameter to limit the returned policies to only the policies that match the policy type that you specify',
@@ -1241,6 +1293,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1253,6 +1306,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-configuration-templates',
       description: 'Use this operation to return the valid and default values that are used when creating delivery sources, delivery destinations, and deliveries. For more information about deliveries, see CreateDelivery',
       options: [
+
         Option(
           name: '--service',
           description: 'Use this parameter to filter the response to include only the configuration templates that apply to the Amazon Web Services service that you specify here',
@@ -1350,6 +1404,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1362,6 +1417,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-deliveries',
       description: 'Retrieves a list of the deliveries that have been created in the account. A delivery is a connection between a  delivery source  and a  delivery destination . A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web Services services support being configured as a delivery source. These services are listed in Enable logging from Amazon Web Services services',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of items to return. The token expires after 24 hours',
@@ -1423,6 +1479,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1435,6 +1492,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-delivery-destinations',
       description: 'Retrieves a list of the delivery destinations that have been created in the account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of items to return. The token expires after 24 hours',
@@ -1496,6 +1554,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1508,6 +1567,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-delivery-sources',
       description: 'Retrieves a list of the delivery sources that have been created in the account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of items to return. The token expires after 24 hours',
@@ -1569,6 +1629,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1581,6 +1642,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-destinations',
       description: 'Lists all your destinations. The results are ASCII-sorted by destination name',
       options: [
+
         Option(
           name: '--destination-name-prefix',
           description: 'The prefix to match. If you don\'t specify a value, no prefix filter is applied',
@@ -1651,6 +1713,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1663,6 +1726,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-export-tasks',
       description: 'Lists the specified export tasks. You can list all your export tasks or filter the results based on task ID or task status',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The ID of the export task. Specifying a task ID filters the results to one or zero export tasks',
@@ -1742,6 +1806,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1754,6 +1819,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-field-indexes',
       description: 'Returns a list of field indexes listed in the field index policies of one or more log groups. For more information about field index policies, see PutIndexPolicy',
       options: [
+
         Option(
           name: '--log-group-identifiers',
           description: 'An array containing the names or ARNs of the log groups that you want to retrieve field indexes for',
@@ -1788,6 +1854,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1800,6 +1867,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-index-policies',
       description: 'Returns the field index policies of one or more log groups. For more information about field index policies, see PutIndexPolicy. If a specified log group has a log-group level index policy, that policy is returned by this operation. If a specified log group doesn\'t have a log-group level index policy, but an account-wide index policy applies to it, that account-wide policy is returned by this operation. To find information about only account-level policies, use DescribeAccountPolicies instead',
       options: [
+
         Option(
           name: '--log-group-identifiers',
           description: 'An array containing the name or ARN of the log group that you want to retrieve field index policies for',
@@ -1834,6 +1902,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1846,6 +1915,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-log-groups',
       description: 'Lists the specified log groups. You can list all your log groups or filter the results by prefix. The results are ASCII-sorted by log group name. CloudWatch Logs doesn\'t support IAM policies that control access to the DescribeLogGroups action by using the aws:ResourceTag/key-name  condition key. Other CloudWatch Logs actions do support the use of the aws:ResourceTag/key-name  condition key to control access. For more information about using tags to control access, see Controlling access to Amazon Web Services resources using tags. If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see CloudWatch cross-account observability',
       options: [
+
         Option(
           name: '--account-identifiers',
           description: 'When includeLinkedAccounts is set to True, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array',
@@ -1951,6 +2021,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1963,6 +2034,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-log-streams',
       description: 'Lists the log streams for the specified log group. You can list all the log streams or filter the results by prefix. You can also control how the results are ordered. You can specify the log group to search by using either logGroupIdentifier or logGroupName. You must include one of these two parameters, but you can\'t include both.  This operation has a limit of five transactions per second, after which transactions are throttled. If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see CloudWatch cross-account observability',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group.   You must include either logGroupIdentifier or logGroupName, but not both',
@@ -2068,6 +2140,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2080,6 +2153,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-metric-filters',
       description: 'Lists the specified metric filters. You can list all of the metric filters or filter the results by log name, prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -2177,6 +2251,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2189,6 +2264,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-queries',
       description: 'Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or have been run recently in this account. You can request all queries or limit it to queries of a specific log group or queries with a certain status',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'Limits the returned queries to only those for the specified log group',
@@ -2277,6 +2353,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2289,6 +2366,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-query-definitions',
       description: 'This operation returns a paginated list of your saved CloudWatch Logs Insights query definitions. You can retrieve query definitions from the current account or from a source account that is linked to the current account. You can use the queryDefinitionNamePrefix parameter to limit the results to only the query definitions that have names that start with a certain string',
       options: [
+
         Option(
           name: '--query-language',
           description: 'The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see Supported query languages',
@@ -2341,6 +2419,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2353,6 +2432,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-resource-policies',
       description: 'Lists the resource policies in this account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of items to return. The token expires after 24 hours',
@@ -2414,6 +2494,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2426,6 +2507,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'describe-subscription-filters',
       description: 'Lists the subscription filters for the specified log group. You can list all the subscription filters or filter the results by prefix. The results are ASCII-sorted by filter name',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -2505,6 +2587,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2517,6 +2600,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'disassociate-kms-key',
       description: 'Disassociates the specified KMS key from the specified log group or from all CloudWatch Logs Insights query results in the account. When you use DisassociateKmsKey, you specify either the logGroupName parameter or the resourceIdentifier parameter. You can\'t specify both of those parameters in the same operation.   Specify the logGroupName parameter to stop using the KMS key to encrypt future log events ingested and stored in the log group. Instead, they will be encrypted with the default CloudWatch Logs method. The log events that were ingested while the key was associated with the log group are still encrypted with that key. Therefore, CloudWatch Logs will need permissions for the key whenever that data is accessed.   Specify the resourceIdentifier parameter with the query-result resource to stop using the KMS key to encrypt the results of all future StartQuery operations in the account. They will instead be encrypted with the default CloudWatch Logs method. The results from queries that ran while the key was associated with the account are still encrypted with that key. Therefore, CloudWatch Logs will need permissions for the key whenever that data is accessed.   It can take up to 5 minutes for this operation to take effect',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group. In your DisassociateKmsKey operation, you must specify either the resourceIdentifier parameter or the logGroup parameter, but you can\'t specify both',
@@ -2551,6 +2635,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2563,6 +2648,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'filter-log-events',
       description: 'Lists log events from the specified log group. You can list all the log events or filter the results using a filter pattern, a time range, and the name of the log stream. You must have the logs:FilterLogEvents permission to perform this operation. You can specify the log group to search by using either logGroupIdentifier or logGroupName. You must include one of these two parameters, but you can\'t include both.  By default, this operation returns as many log events as can fit in 1 MB (up to 10,000 log events) or all the events found within the specified time range. If the results include a token, that means there are more log events available. You can get additional results by specifying the token in a subsequent call. This operation can return empty results while there are more log events available through the token. The returned log events are sorted by event timestamp, the timestamp when the event was ingested by CloudWatch Logs, and the ID of the PutLogEvents request. If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see CloudWatch cross-account observability',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group to search.   You must include either logGroupIdentifier or logGroupName, but not both',
@@ -2703,6 +2789,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2715,6 +2802,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-data-protection-policy',
       description: 'Returns information about a log group data protection policy',
       options: [
+
         Option(
           name: '--log-group-identifier',
           description: 'The name or ARN of the log group that contains the data protection policy that you want to see',
@@ -2740,6 +2828,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2752,6 +2841,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-delivery',
       description: 'Returns complete information about one logical delivery. A delivery is a connection between a  delivery source  and a  delivery destination . A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web Services services support being configured as a delivery source. These services are listed in Enable logging from Amazon Web Services services.  You need to specify the delivery id in this operation. You can find the IDs of the deliveries in your account with the DescribeDeliveries operation',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the delivery that you want to retrieve',
@@ -2777,6 +2867,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2789,6 +2880,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-delivery-destination',
       description: 'Retrieves complete information about one delivery destination',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the delivery destination that you want to retrieve',
@@ -2814,6 +2906,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2826,6 +2919,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-delivery-destination-policy',
       description: 'Retrieves the delivery destination policy assigned to the delivery destination that you specify. For more information about delivery destinations and their policies, see PutDeliveryDestinationPolicy',
       options: [
+
         Option(
           name: '--delivery-destination-name',
           description: 'The name of the delivery destination that you want to retrieve the policy of',
@@ -2851,6 +2945,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2863,6 +2958,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-delivery-source',
       description: 'Retrieves complete information about one delivery source',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the delivery source that you want to retrieve',
@@ -2888,6 +2984,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2900,6 +2997,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-integration',
       description: 'Returns information about one integration between CloudWatch Logs and OpenSearch Service',
       options: [
+
         Option(
           name: '--integration-name',
           description: 'The name of the integration that you want to find information about. To find the name of your integration, use ListIntegrations',
@@ -2925,6 +3023,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2937,6 +3036,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-log-anomaly-detector',
       description: 'Retrieves information about the log anomaly detector that you specify',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The ARN of the anomaly detector to retrieve information about. You can find the ARNs of log anomaly detectors in your account by using the ListLogAnomalyDetectors operation',
@@ -2962,6 +3062,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2974,6 +3075,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-log-events',
       description: 'Lists log events from the specified log stream. You can list all of the log events or filter using a time range. By default, this operation returns as many log events as can fit in a response size of 1MB (up to 10,000 log events). You can get additional log events by specifying one of the tokens in a subsequent call. This operation can return empty results while there are more log events available through the token. If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see CloudWatch cross-account observability. You can specify the log group to search by using either logGroupIdentifier or logGroupName. You must include one of these two parameters, but you can\'t include both',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group.   You must include either logGroupIdentifier or logGroupName, but not both',
@@ -3069,6 +3171,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3081,6 +3184,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-log-group-fields',
       description: 'Returns a list of the fields that are included in log events in the specified log group. Includes the percentage of log events that contain each field. The search is limited to a time period that you specify. You can specify the log group to search by using either logGroupIdentifier or logGroupName. You must specify one of these parameters, but you can\'t specify both.  In the results, fields that start with @ are fields generated by CloudWatch Logs. For example, @timestamp is the timestamp of each log event. For more information about the fields that are generated by CloudWatch logs, see Supported Logs and Discovered Fields. The response results are sorted by the frequency percentage, starting with the highest percentage. If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see CloudWatch cross-account observability',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group to search.   You must include either logGroupIdentifier or logGroupName, but not both',
@@ -3124,6 +3228,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3136,6 +3241,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-log-record',
       description: 'Retrieves all of the fields and values of a single log event. All fields are retrieved, even if the original query that produced the logRecordPointer retrieved only a subset of fields. Fields are returned as field name/field value pairs. The full unparsed log event is returned within @message',
       options: [
+
         Option(
           name: '--log-record-pointer',
           description: 'The pointer corresponding to the log event record you want to retrieve. You get this from the response of a GetQueryResults operation. In that response, the value of the @ptr field for a log event is the value to use as logRecordPointer to retrieve that complete log event record',
@@ -3169,6 +3275,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3181,6 +3288,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-query-results',
       description: 'Returns the results from the specified query. Only the fields requested in the query are returned, along with a @ptr field, which is the identifier for the log record. You can use the value of @ptr in a GetLogRecord operation to get the full log record.  GetQueryResults does not start running a query. To run a query, use StartQuery. For more information about how long results of previous queries are available, see CloudWatch Logs quotas. If the value of the Status field in the output is Running, this operation returns only partial results. If you see a value of Scheduled or Running for the status, you can retry the operation later to see the final results.  If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to start queries in linked source accounts. For more information, see CloudWatch cross-account observability',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The ID number of the query',
@@ -3206,6 +3314,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3218,6 +3327,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'get-transformer',
       description: 'Returns the information about the log transformer associated with this log group. This operation returns data only for transformers created at the log group level. To get information for an account-level transformer, use DescribeAccountPolicies',
       options: [
+
         Option(
           name: '--log-group-identifier',
           description: 'Specify either the name or ARN of the log group to return transformer information for. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN',
@@ -3243,6 +3353,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3255,6 +3366,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'list-anomalies',
       description: 'Returns a list of anomalies that log anomaly detectors have found. For details about the structure format of each anomaly object that is returned, see the example in this section',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'Use this to optionally limit the results to only the anomalies found by a certain anomaly detector',
@@ -3334,6 +3446,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3346,6 +3459,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'list-integrations',
       description: 'Returns a list of integrations between CloudWatch Logs and other services in this account. Currently, only one integration can be created in an account, and this integration must be with OpenSearch Service',
       options: [
+
         Option(
           name: '--integration-name-prefix',
           description: 'To limit the results to integrations that start with a certain name prefix, specify that name prefix here',
@@ -3389,6 +3503,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3401,6 +3516,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'list-log-anomaly-detectors',
       description: 'Retrieves a list of the log anomaly detectors in the account',
       options: [
+
         Option(
           name: '--filter-log-group-arn',
           description: 'Use this to optionally filter the results to only include anomaly detectors that are associated with the specified log group',
@@ -3471,6 +3587,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3483,6 +3600,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'list-log-groups-for-query',
       description: 'Returns a list of the log groups that were analyzed during a single CloudWatch Logs Insights query. This can be useful for queries that use log group name prefixes or the filterIndex command, because the log groups are dynamically selected in these cases. For more information about field indexes, see Create field indexes to improve query performance and reduce costs',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The ID of the query to use. This query ID is from the response to your StartQuery operation',
@@ -3553,6 +3671,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3565,6 +3684,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Displays the tags associated with a CloudWatch Logs resource. Currently, log groups and destinations support tagging',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource that you want to view tags for. The ARN format of a log group is arn:aws:logs:Region:account-id:log-group:log-group-name   The ARN format of a destination is arn:aws:logs:Region:account-id:destination:destination-name   For more information about ARN format, see CloudWatch Logs resources and operations',
@@ -3590,6 +3710,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3602,6 +3723,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'list-tags-log-group',
       description: 'The ListTagsLogGroup operation is on the path to deprecation. We recommend that you use ListTagsForResource instead.  Lists the tags for the specified log group',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -3627,6 +3749,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3639,6 +3762,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-account-policy',
       description: 'Creates an account-level data protection policy, subscription filter policy, or field index policy that applies to all log groups or a subset of log groups in the account.  Data protection policy  A data protection policy can help safeguard sensitive data that\'s ingested by your log groups by auditing and masking the sensitive log data. Each account can have only one account-level data protection policy.  Sensitive data is detected and masked when it is ingested into a log group. When you set a data protection policy, log events ingested into the log groups before that time are not masked.  If you use PutAccountPolicy to create a data protection policy for your whole account, it applies to both existing log groups and all log groups that are created later in this account. The account-level policy is applied to existing log groups with eventual consistency. It might take up to 5 minutes before sensitive data in existing log groups begins to be masked. By default, when a user views a log event that includes masked data, the sensitive data is replaced by asterisks. A user who has the logs:Unmask permission can use a GetLogEvents or FilterLogEvents operation with the unmask parameter set to true to view the unmasked log events. Users with the logs:Unmask can also view unmasked data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with the unmask query command. For more information, including a list of types of data that can be audited and masked, see Protect sensitive log data with masking. To use the PutAccountPolicy operation for a data protection policy, you must be signed on with the logs:PutDataProtectionPolicy and logs:PutAccountPolicy permissions. The PutAccountPolicy operation applies to all log groups in the account. You can use PutDataProtectionPolicy to create a data protection policy that applies to just one log group. If a log group has its own data protection policy and the account also has an account-level data protection policy, then the two policies are cumulative. Any sensitive term specified in either policy is masked.  Subscription filter policy  A subscription filter policy sets up a real-time feed of log events from CloudWatch Logs to other Amazon Web Services services. Account-level subscription filter policies apply to both existing log groups and log groups that are created later in this account. Supported destinations are Kinesis Data Streams, Firehose, and Lambda. When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format. The following destinations are supported for subscription filters:   An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.   An Firehose data stream in the same account as the subscription policy, for same-account delivery.   A Lambda function in the same account as the subscription policy, for same-account delivery.   A logical destination in a different account created with PutDestination, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical destinations.   Each account can have one account-level subscription filter policy per Region. If you are updating an existing filter, you must specify the correct name in PolicyName. To perform a PutAccountPolicy subscription filter operation for any destination except a Lambda function, you must also have the iam:PassRole permission.  Transformer policy  Creates or updates a log transformer policy for your account. You use log transformers to transform log events into a different format, making them easier for you to process and analyze. You can also transform logs from different sources into standardized formats that contain relevant, source-specific information. After you have created a transformer, CloudWatch Logs performs this transformation at the time of log ingestion. You can then refer to the transformed versions of the logs during operations such as querying with CloudWatch Logs Insights or creating metric filters or subscription filters. You can also use a transformer to copy metadata from metadata keys into the log events themselves. This metadata can include log group name, log stream name, account ID and Region. A transformer for a log group is a series of processors, where each processor applies one type of transformation to the log events ingested into this log group. For more information about the available processors to use in a transformer, see  Processors that you can use. Having log events in standardized format enables visibility across your applications for your log analysis, reporting, and alarming needs. CloudWatch Logs provides transformation for common log types with out-of-the-box transformation templates for major Amazon Web Services log sources such as VPC flow logs, Lambda, and Amazon RDS. You can use pre-built transformation templates or create custom transformation policies. You can create transformers only for the log groups in the Standard log class. You can have one account-level transformer policy that applies to all log groups in the account. Or you can create as many as 20 account-level transformer policies that are each scoped to a subset of log groups with the selectionCriteria parameter. If you have multiple account-level transformer policies with selection criteria, no two of them can use the same or overlapping log group name prefixes. For example, if you have one policy filtered to log groups that start with my-log, you can\'t have another field index policy filtered to my-logpprod or my-logging. You can also set up a transformer at the log-group level. For more information, see PutTransformer. If there is both a log-group level transformer created with PutTransformer and an account-level transformer that could apply to the same log group, the log group uses only the log-group level transformer. It ignores the account-level transformer.  Field index policy  You can use field index policies to create indexes on fields found in log events in the log group. Creating field indexes can help lower the scan volume for CloudWatch Logs Insights queries that reference those fields, because these queries attempt to skip the processing of log events that are known to not match the indexed field. Good fields to index are fields that you often need to query for and fields or values that match only a small fraction of the total log events. Common examples of indexes include request ID, session ID, user IDs, or instance IDs. For more information, see Create field indexes to improve query performance and reduce costs  To find the fields that are in your log group events, use the GetLogGroupFields operation. For example, suppose you have created a field index for requestId. Then, any CloudWatch Logs Insights query on that log group that includes requestId = value  or requestId in [value, value, ...] will attempt to process only the log events where the indexed field matches the specified value. Matches of log events to the names of indexed fields are case-sensitive. For example, an indexed field of RequestId won\'t match a log event containing requestId. You can have one account-level field index policy that applies to all log groups in the account. Or you can create as many as 20 account-level field index policies that are each scoped to a subset of log groups with the selectionCriteria parameter. If you have multiple account-level index policies with selection criteria, no two of them can use the same or overlapping log group name prefixes. For example, if you have one policy filtered to log groups that start with my-log, you can\'t have another field index policy filtered to my-logpprod or my-logging. If you create an account-level field index policy in a monitoring account in cross-account observability, the policy is applied only to the monitoring account and not to any source accounts. If you want to create a field index policy for a single log group, you can use PutIndexPolicy instead of PutAccountPolicy. If you do so, that log group will use only that log-group level policy, and will ignore the account-level policy that you create with PutAccountPolicy',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'A name for the policy. This must be unique within the account',
@@ -3700,6 +3824,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3712,6 +3837,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-data-protection-policy',
       description: 'Creates a data protection policy for the specified log group. A data protection policy can help safeguard sensitive data that\'s ingested by the log group by auditing and masking the sensitive log data.  Sensitive data is detected and masked when it is ingested into the log group. When you set a data protection policy, log events ingested into the log group before that time are not masked.  By default, when a user views a log event that includes masked data, the sensitive data is replaced by asterisks. A user who has the logs:Unmask permission can use a GetLogEvents or FilterLogEvents operation with the unmask parameter set to true to view the unmasked log events. Users with the logs:Unmask can also view unmasked data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with the unmask query command. For more information, including a list of types of data that can be audited and masked, see Protect sensitive log data with masking. The PutDataProtectionPolicy operation applies to only the specified log group. You can also use PutAccountPolicy to create an account-level data protection policy that applies to all log groups in the account, including both existing log groups and log groups that are created level. If a log group has its own data protection policy and the account also has an account-level data protection policy, then the two policies are cumulative. Any sensitive term specified in either policy is masked',
       options: [
+
         Option(
           name: '--log-group-identifier',
           description: 'Specify either the log group name or log group ARN',
@@ -3746,6 +3872,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3758,6 +3885,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-delivery-destination',
       description: 'Creates or updates a logical delivery destination. A delivery destination is an Amazon Web Services resource that represents an Amazon Web Services service that logs can be sent to. CloudWatch Logs, Amazon S3, and Firehose are supported as logs delivery destinations. To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the following:   Create a delivery source, which is a logical object that represents the resource that is actually sending the logs. For more information, see PutDeliverySource.   Use PutDeliveryDestination to create a delivery destination, which is a logical object that represents the actual delivery destination.    If you are delivering logs cross-account, you must use PutDeliveryDestinationPolicy in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.    Use CreateDelivery to create a delivery by pairing exactly one delivery source and one delivery destination. For more information, see CreateDelivery.    You can configure a single delivery source to send logs to multiple destinations by creating multiple deliveries. You can also create multiple deliveries to configure multiple delivery sources to send logs to the same delivery destination. Only some Amazon Web Services services support being configured as a delivery source. These services are listed as Supported [V2 Permissions] in the table at Enabling logging from Amazon Web Services services.  If you use this operation to update an existing delivery destination, all the current delivery destination parameters are overwritten with the new parameter values that you specify',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for this delivery destination. This name must be unique for all delivery destinations in your account',
@@ -3810,6 +3938,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3822,6 +3951,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-delivery-destination-policy',
       description: 'Creates and assigns an IAM policy that grants permissions to CloudWatch Logs to deliver logs cross-account to a specified destination in this account. To configure the delivery of logs from an Amazon Web Services service in another account to a logs delivery destination in the current account, you must do the following:   Create a delivery source, which is a logical object that represents the resource that is actually sending the logs. For more information, see PutDeliverySource.   Create a delivery destination, which is a logical object that represents the actual delivery destination. For more information, see PutDeliveryDestination.   Use this operation in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.    Create a delivery by pairing exactly one delivery source and one delivery destination. For more information, see CreateDelivery.   Only some Amazon Web Services services support being configured as a delivery source. These services are listed as Supported [V2 Permissions] in the table at Enabling logging from Amazon Web Services services.  The contents of the policy must include two statements. One statement enables general logs delivery, and the other allows delivery to the chosen destination. See the examples for the needed policies',
       options: [
+
         Option(
           name: '--delivery-destination-name',
           description: 'The name of the delivery destination to assign this policy to',
@@ -3856,6 +3986,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3868,6 +3999,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-delivery-source',
       description: 'Creates or updates a logical delivery source. A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose. To configure logs delivery between a delivery destination and an Amazon Web Services service that is supported as a delivery source, you must do the following:   Use PutDeliverySource to create a delivery source, which is a logical object that represents the resource that is actually sending the logs.    Use PutDeliveryDestination to create a delivery destination, which is a logical object that represents the actual delivery destination. For more information, see PutDeliveryDestination.   If you are delivering logs cross-account, you must use PutDeliveryDestinationPolicy in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.    Use CreateDelivery to create a delivery by pairing exactly one delivery source and one delivery destination. For more information, see CreateDelivery.    You can configure a single delivery source to send logs to multiple destinations by creating multiple deliveries. You can also create multiple deliveries to configure multiple delivery sources to send logs to the same delivery destination. Only some Amazon Web Services services support being configured as a delivery source. These services are listed as Supported [V2 Permissions] in the table at Enabling logging from Amazon Web Services services.  If you use this operation to update an existing delivery source, all the current delivery source parameters are overwritten with the new parameter values that you specify',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for this delivery source. This name must be unique for all delivery sources in your account',
@@ -3920,6 +4052,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3932,6 +4065,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-destination',
       description: 'Creates or updates a destination. This operation is used only to create destinations for cross-account subscriptions. A destination encapsulates a physical resource (such as an Amazon Kinesis stream). With a destination, you can subscribe to a real-time stream of log events for a different account, ingested using PutLogEvents. Through an access policy, a destination controls what is written to it. By default, PutDestination does not set any access policy with the destination, which means a cross-account user cannot call PutSubscriptionFilter against this destination. To enable this, the destination owner must call PutDestinationPolicy after PutDestination. To perform a PutDestination operation, you must also have the iam:PassRole permission',
       options: [
+
         Option(
           name: '--destination-name',
           description: 'A name for the destination',
@@ -3984,6 +4118,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3996,6 +4131,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-destination-policy',
       description: 'Creates or updates an access policy associated with an existing destination. An access policy is an IAM policy document that is used to authorize claims to register a subscription filter against a given destination',
       options: [
+
         Option(
           name: '--destination-name',
           description: 'A name for an existing destination',
@@ -4038,6 +4174,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4050,6 +4187,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-index-policy',
       description: 'Creates or updates a field index policy for the specified log group. Only log groups in the Standard log class support field index policies. For more information about log classes, see Log classes. You can use field index policies to create field indexes on fields found in log events in the log group. Creating field indexes speeds up and lowers the costs for CloudWatch Logs Insights queries that reference those field indexes, because these queries attempt to skip the processing of log events that are known to not match the indexed field. Good fields to index are fields that you often need to query for and fields or values that match only a small fraction of the total log events. Common examples of indexes include request ID, session ID, userID, and instance IDs. For more information, see Create field indexes to improve query performance and reduce costs. To find the fields that are in your log group events, use the GetLogGroupFields operation. For example, suppose you have created a field index for requestId. Then, any CloudWatch Logs Insights query on that log group that includes requestId = value  or requestId IN [value, value, ...] will process fewer log events to reduce costs, and have improved performance. Each index policy has the following quotas and restrictions:   As many as 20 fields can be included in the policy.   Each field name can include as many as 100 characters.   Matches of log events to the names of indexed fields are case-sensitive. For example, a field index of RequestId won\'t match a log event containing requestId. Log group-level field index policies created with PutIndexPolicy override account-level field index policies created with PutAccountPolicy. If you use PutIndexPolicy to create a field index policy for a log group, that log group uses only that policy. The log group ignores any account-wide field index policy that you might have created',
       options: [
+
         Option(
           name: '--log-group-identifier',
           description: 'Specify either the log group name or log group ARN to apply this field index policy to. If you specify an ARN, use the format arn:aws:logs:region:account-id:log-group:log_group_name Don\'t include an * at the end',
@@ -4084,6 +4222,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4096,6 +4235,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-integration',
       description: 'Creates an integration between CloudWatch Logs and another service in this account. Currently, only integrations with OpenSearch Service are supported, and currently you can have only one integration in your account. Integrating with OpenSearch Service makes it possible for you to create curated vended logs dashboards, powered by OpenSearch Service analytics. For more information, see Vended log dashboards powered by Amazon OpenSearch Service. You can use this operation only to create a new integration. You can\'t modify an existing integration',
       options: [
+
         Option(
           name: '--integration-name',
           description: 'A name for the integration',
@@ -4139,6 +4279,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4151,6 +4292,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-log-events',
       description: 'Uploads a batch of log events to the specified log stream.  The sequence token is now ignored in PutLogEvents actions. PutLogEvents actions are always accepted and never return InvalidSequenceTokenException or DataAlreadyAcceptedException even if the sequence token is not valid. You can use parallel PutLogEvents actions on the same log stream.   The batch of events must satisfy the following constraints:   The maximum batch size is 1,048,576 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.   None of the log events in the batch can be more than 2 hours in the future.   None of the log events in the batch can be more than 14 days in the past. Also, none of the log events can be from earlier than the retention period of the log group.   The log events in the batch must be in chronological order by their timestamp. The timestamp is the time that the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. (In Amazon Web Services Tools for PowerShell and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.)    A batch of log events in a single request cannot span more than 24 hours. Otherwise, the operation fails.   Each log event can be no larger than 256 KB.   The maximum number of log events in a batch is 10,000.    The quota of five requests per second per log stream has been removed. Instead, PutLogEvents actions are throttled based on a per-second per-account quota. You can request an increase to the per-second throttling quota by using the Service Quotas service.    If a call to PutLogEvents returns "UnrecognizedClientException" the most likely cause is a non-valid Amazon Web Services access key ID or secret key',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -4212,6 +4354,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4224,6 +4367,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-metric-filter',
       description: 'Creates or updates a metric filter and associates it with the specified log group. With metric filters, you can configure rules to extract metric data from log events ingested through PutLogEvents. The maximum number of metric filters that can be associated with a log group is 100. Using regular expressions to create metric filters is supported. For these filters, there is a quota of two regular expression patterns within a single filter pattern. There is also a quota of five regular expression patterns per log group. For more information about using regular expressions in metric filters, see  Filter pattern syntax for metric filters, subscription filters, filter log events, and Live Tail. When you create a metric filter, you can also optionally assign a unit and dimensions to the metric that is created.  Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as IPAddress or requestID as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric.  CloudWatch Logs might disable a metric filter if it generates 1,000 different name/value pairs for your specified dimensions within one hour. You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see  Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -4284,6 +4428,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4296,6 +4441,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-query-definition',
       description: 'Creates or updates a query definition for CloudWatch Logs Insights. For more information, see Analyzing Log Data with CloudWatch Logs Insights. To update a query definition, specify its queryDefinitionId in your request. The values of name, queryString, and logGroupNames are changed to the values that you specify in your update operation. No current values are retained from the current query definition. For example, imagine updating a current query definition that includes log groups. If you don\'t specify the logGroupNames parameter in your update operation, the query definition changes to contain no log groups. You must have the logs:PutQueryDefinition permission to be able to perform this operation',
       options: [
+
         Option(
           name: '--query-language',
           description: 'Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see Supported query languages',
@@ -4366,6 +4512,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4378,6 +4525,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Creates or updates a resource policy allowing other Amazon Web Services services to put log events to this account, such as Amazon Route 53. An account can have up to 10 resource policies per Amazon Web Services Region',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'Name of the new policy. This parameter is required',
@@ -4412,6 +4560,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4424,6 +4573,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-retention-policy',
       description: 'Sets the retention of the specified log group. With a retention policy, you can configure the number of days for which to retain log events in the specified log group.  CloudWatch Logs doesn\'t immediately delete log events when they reach their retention setting. It typically takes up to 72 hours after that before log events are deleted, but in rare situations might take longer. To illustrate, imagine that you change a log group to have a longer retention setting when it contains log events that are past the expiration date, but haven\'t been deleted. Those log events will take up to 72 hours to be deleted after the new retention date is reached. To make sure that log data is deleted permanently, keep a log group at its lower retention setting until 72 hours after the previous retention period ends. Alternatively, wait to change the retention setting until you confirm that the earlier log events are deleted.  When log events reach their retention setting they are marked for deletion. After they are marked for deletion, they do not add to your archival storage costs anymore, even if they are not actually deleted until later. These log events marked for deletion are also not included when you use an API to retrieve the storedBytes value to see how many bytes a log group is storing',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -4458,6 +4608,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4470,6 +4621,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-subscription-filter',
       description: 'Creates or updates a subscription filter and associates it with the specified log group. With subscription filters, you can subscribe to a real-time stream of log events ingested through PutLogEvents and have them delivered to a specific destination. When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format. The following destinations are supported for subscription filters:   An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account delivery.   A logical destination created with PutDestination that belongs to a different account, for cross-account delivery. We currently support Kinesis Data Streams and Firehose as logical destinations.   An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.   An Lambda function that belongs to the same account as the subscription filter, for same-account delivery.   Each log group can have up to two subscription filters associated with it. If you are updating an existing filter, you must specify the correct name in filterName.  Using regular expressions to create subscription filters is supported. For these filters, there is a quotas of quota of two regular expression patterns within a single filter pattern. There is also a quota of five regular expression patterns per log group. For more information about using regular expressions in subscription filters, see  Filter pattern syntax for metric filters, subscription filters, filter log events, and Live Tail. To perform a PutSubscriptionFilter operation for any destination except a Lambda function, you must also have the iam:PassRole permission',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -4548,6 +4700,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4560,6 +4713,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'put-transformer',
       description: 'Creates or updates a log transformer for a single log group. You use log transformers to transform log events into a different format, making them easier for you to process and analyze. You can also transform logs from different sources into standardized formats that contains relevant, source-specific information. After you have created a transformer, CloudWatch Logs performs the transformations at the time of log ingestion. You can then refer to the transformed versions of the logs during operations such as querying with CloudWatch Logs Insights or creating metric filters or subscription filers. You can also use a transformer to copy metadata from metadata keys into the log events themselves. This metadata can include log group name, log stream name, account ID and Region. A transformer for a log group is a series of processors, where each processor applies one type of transformation to the log events ingested into this log group. The processors work one after another, in the order that you list them, like a pipeline. For more information about the available processors to use in a transformer, see  Processors that you can use. Having log events in standardized format enables visibility across your applications for your log analysis, reporting, and alarming needs. CloudWatch Logs provides transformation for common log types with out-of-the-box transformation templates for major Amazon Web Services log sources such as VPC flow logs, Lambda, and Amazon RDS. You can use pre-built transformation templates or create custom transformation policies. You can create transformers only for the log groups in the Standard log class. You can also set up a transformer at the account level. For more information, see PutAccountPolicy. If there is both a log-group level transformer created with PutTransformer and an account-level transformer that could apply to the same log group, the log group uses only the log-group level transformer. It ignores the account-level transformer',
       options: [
+
         Option(
           name: '--log-group-identifier',
           description: 'Specify either the name or ARN of the log group to create the transformer for',
@@ -4594,6 +4748,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4606,6 +4761,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'start-live-tail',
       description: 'Starts a Live Tail streaming session for one or more log groups. A Live Tail session provides a near real-time streaming of log events as they are ingested into selected log groups. A session can go on for a maximum of 3 hours.\n\nYou must have logs:StartLiveTail permission to perform this operation. If the log events matching the filters are more than 500 events per second, we sample the events to provide the real-time tailing experience.\n\nIf you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and start tailing on Log Group(s) present in the linked source accounts. For more information, see https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html.\n\nLive Tail sessions incur charges by session usage time, per minute. For pricing details, please refer to https://aws.amazon.com/cloudwatch/pricing/',
       options: [
+
         Option(
           name: '--log-group-identifiers',
           description: 'The Log Group Identifiers are the ARNs for the CloudWatch Logs groups to tail. You can provide up to 10 Log Group Identifiers.\n\nLogs can be filtered by Log Stream(s) by providing  --log-stream-names or --log-stream-name-prefixes. If more than one Log Group is provided --log-stream-names and --log-stream-name-prefixes  is disabled. --log-stream-names and --log-stream-name-prefixes can\'t be provided simultaneously.\n\nNote -  The Log Group ARN must be in the following format. Replace REGION and ACCOUNT_ID with your Region and account ID. ``arn:aws:logs:REGION :ACCOUNT_ID :log-group:LOG_GROUP_NAME``. A ``:*`` after the ARN is prohibited.For more information about ARN format, see CloudWatch Logs resources and operations',
@@ -4651,6 +4807,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'start-query',
       description: 'Starts a query of one or more log groups using CloudWatch Logs Insights. You specify the log groups and time range to query and the query string to use. For more information, see CloudWatch Logs Insights Query Syntax. After you run a query using StartQuery, the query results are stored by CloudWatch Logs. You can use GetQueryResults to retrieve the results of a query, using the queryId that StartQuery returns.   To specify the log groups to query, a StartQuery operation must include one of the following:   Either exactly one of the following parameters: logGroupName, logGroupNames, or logGroupIdentifiers    Or the queryString must include a SOURCE command to select log groups for the query. The SOURCE command can select log groups based on log group name prefix, account ID, and log class.  For more information about the SOURCE command, see SOURCE.    If you have associated a KMS key with the query results in this account, then StartQuery uses that key to encrypt the results when it stores them. If no key is associated with query results, the query results are encrypted with the default CloudWatch Logs encryption method. Queries time out after 60 minutes of runtime. If your queries are timing out, reduce the time range being searched or partition your query into a number of queries. If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to start a query in a linked source account. For more information, see CloudWatch cross-account observability. For a cross-account StartQuery operation, the query definition must be defined in the monitoring account. You can have up to 30 concurrent CloudWatch Logs insights queries, including queries that have been added to dashboards',
       options: [
+
         Option(
           name: '--query-language',
           description: 'Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see Supported query languages',
@@ -4739,6 +4896,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4751,6 +4909,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'stop-query',
       description: 'Stops a CloudWatch Logs Insights query that is in progress. If the query has already ended, the operation returns an error indicating that the specified query is not running',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The ID number of the query to stop. To find this ID number, use DescribeQueries',
@@ -4776,6 +4935,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4788,6 +4948,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'tag-log-group',
       description: 'The TagLogGroup operation is on the path to deprecation. We recommend that you use TagResource instead.  Adds or updates the specified tags for the specified log group. To list the tags for a log group, use ListTagsForResource. To remove tags, use UntagResource. For more information about tags, see Tag Log Groups in Amazon CloudWatch Logs in the Amazon CloudWatch Logs User Guide. CloudWatch Logs doesn\'t support IAM policies that prevent users from assigning specified tags to log groups using the aws:Resource/key-name  or aws:TagKeys condition keys. For more information about using tags to control access, see Controlling access to Amazon Web Services resources using tags',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -4822,6 +4983,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4834,6 +4996,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs resource. Currently, the only CloudWatch Logs resources that can be tagged are log groups and destinations.  Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. Tags don\'t have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters. You can use the TagResource action with a resource that already has tags. If you specify a new tag key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces the previous value for that tag. You can associate as many as 50 tags with a CloudWatch Logs resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource that you\'re adding tags to. The ARN format of a log group is arn:aws:logs:Region:account-id:log-group:log-group-name   The ARN format of a destination is arn:aws:logs:Region:account-id:destination:destination-name   For more information about ARN format, see CloudWatch Logs resources and operations',
@@ -4868,6 +5031,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4880,6 +5044,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'test-metric-filter',
       description: 'Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to validate the correctness of a metric filter pattern',
       options: [
+
         Option(
           name: '--filter-pattern',
           description: 'A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message',
@@ -4914,6 +5079,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4926,6 +5092,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'test-transformer',
       description: 'Use this operation to test a log transformer. You enter the transformer configuration and a set of log events to test with. The operation responds with an array that includes the original log events and the transformed versions',
       options: [
+
         Option(
           name: '--transformer-config',
           description: 'This structure contains the configuration of this log transformer that you want to test. A log transformer is an array of processors, where each processor applies one type of transformation to the log events that are ingested',
@@ -4960,6 +5127,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4972,6 +5140,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'untag-log-group',
       description: 'The UntagLogGroup operation is on the path to deprecation. We recommend that you use UntagResource instead.  Removes the specified tags from the specified log group. To list the tags for a log group, use ListTagsForResource. To add tags, use TagResource. CloudWatch Logs doesn\'t support IAM policies that prevent users from assigning specified tags to log groups using the aws:Resource/key-name  or aws:TagKeys condition keys',
       options: [
+
         Option(
           name: '--log-group-name',
           description: 'The name of the log group',
@@ -5006,6 +5175,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5018,6 +5188,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the CloudWatch Logs resource that you\'re removing tags from. The ARN format of a log group is arn:aws:logs:Region:account-id:log-group:log-group-name   The ARN format of a destination is arn:aws:logs:Region:account-id:destination:destination-name   For more information about ARN format, see CloudWatch Logs resources and operations',
@@ -5052,6 +5223,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5064,6 +5236,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'update-anomaly',
       description: 'Use this operation to suppress anomaly detection for a specified anomaly or pattern. If you suppress an anomaly, CloudWatch Logs won\'t report new occurrences of that anomaly and won\'t update that anomaly with new data. If you suppress a pattern, CloudWatch Logs won\'t report any anomalies related to that pattern. You must specify either anomalyId or patternId, but you can\'t specify both parameters in the same operation. If you have previously used this operation to suppress detection of a pattern or anomaly, you can use it again to cause CloudWatch Logs to end the suppression. To do this, use this operation and specify the anomaly or pattern to stop suppressing, and omit the suppressionType and suppressionPeriod parameters',
       options: [
+
         Option(
           name: '--anomaly-id',
           description: 'If you are suppressing or unsuppressing an anomaly, specify its unique ID here. You can find anomaly IDs by using the ListAnomalies operation',
@@ -5133,6 +5306,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5145,6 +5319,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'update-delivery-configuration',
       description: 'Use this operation to update the configuration of a delivery to change either the S3 path pattern or the format of the delivered logs. You can\'t use this operation to change the source or destination of the delivery',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the delivery to be updated by this request',
@@ -5197,6 +5372,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5209,6 +5385,7 @@ final FigSpec logsSpec = FigSpec(
       name: 'update-log-anomaly-detector',
       description: 'Updates an existing log anomaly detector',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The ARN of the anomaly detector that you want to update',
@@ -5269,6 +5446,7 @@ final FigSpec logsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

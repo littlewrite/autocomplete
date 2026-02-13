@@ -9,10 +9,12 @@ final FigSpec billingconductorSpec = FigSpec(
   name: 'billingconductor',
   description: 'Amazon Web Services Billing Conductor is a fully managed service that you can use to customize a proforma version of your billing data each month, to accurately show or chargeback your end customers. Amazon Web Services Billing Conductor doesn\'t change the way you\'re billed by Amazon Web Services each month by design. Instead, it provides you with a mechanism to configure, generate, and display rates to certain customers over a given billing period. You can also analyze the difference between the rates you apply to your accounting groupings relative to your actual rates from Amazon Web Services. As a result of your Amazon Web Services Billing Conductor configuration, the payer account can also see the custom rate applied on the billing details page of the Amazon Web Services Billing console, or configure a cost and usage report per billing group. This documentation shows how you can configure Amazon Web Services Billing Conductor using its API. For more information about using the Amazon Web Services Billing Conductor user interface, see the  Amazon Web Services Billing Conductor User Guide',
   subcommands: [
+
     Subcommand(
       name: 'associate-accounts',
       description: 'Connects an array of account IDs in a consolidated billing family to a predefined billing group. The account IDs must be a part of the consolidated billing family during the current month, and not already associated with another billing group. The maximum number of accounts that can be associated in one call is 30',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs',
@@ -47,6 +49,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'associate-pricing-rules',
       description: 'Connects an array of PricingRuleArns to a defined PricingPlan. The maximum number PricingRuleArn that can be associated in one call is 30',
       options: [
+
         Option(
           name: '--arn',
           description: 'The PricingPlanArn that the PricingRuleArns are associated with',
@@ -93,6 +97,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'batch-associate-resources-to-custom-line-item',
       description: 'Associates a batch of resources to a percentage custom line item',
       options: [
+
         Option(
           name: '--target-arn',
           description: 'A percentage custom line item ARN to associate the resources to',
@@ -148,6 +154,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'batch-disassociate-resources-from-custom-line-item',
       description: 'Disassociates a batch of resources from a percentage custom line item',
       options: [
+
         Option(
           name: '--target-arn',
           description: 'A percentage custom line item ARN to disassociate the resources from',
@@ -203,6 +211,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -215,6 +224,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'create-billing-group',
       description: 'Creates a billing group that resembles a consolidated billing family that Amazon Web Services charges, based off of the predefined pricing plan computation',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The token that is needed to support idempotency. Idempotency isn\'t currently supported, but will be implemented in a future update',
@@ -294,6 +304,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -306,6 +317,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'create-custom-line-item',
       description: 'Creates a custom line item that can be used to create a one-time fixed charge that can be applied to a single billing group for the current or previous billing period. The one-time fixed charge is either a fee or discount',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The token that is needed to support idempotency. Idempotency isn\'t currently supported, but will be implemented in a future update',
@@ -394,6 +406,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -406,6 +419,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'create-pricing-plan',
       description: 'Creates a pricing plan that is used for computing Amazon Web Services charges for billing groups',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The token that is needed to support idempotency. Idempotency isn\'t currently supported, but will be implemented in a future update',
@@ -467,6 +481,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -479,6 +494,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'create-pricing-rule',
       description: 'Creates a pricing rule can be associated to a pricing plan, or a set of pricing plans',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The token that\'s needed to support idempotency. Idempotency isn\'t currently supported, but will be implemented in a future update',
@@ -603,6 +619,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -615,6 +632,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'delete-billing-group',
       description: 'Deletes a billing group',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the billing group that you\'re deleting',
@@ -640,6 +658,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -652,6 +671,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'delete-custom-line-item',
       description: 'Deletes the custom line item identified by the given ARN in the current, or previous billing period',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the custom line item to be deleted',
@@ -686,6 +706,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -698,6 +719,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'delete-pricing-plan',
       description: 'Deletes a pricing plan. The pricing plan must not be associated with any billing groups to delete successfully',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the pricing plan that you\'re deleting',
@@ -723,6 +745,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -735,6 +758,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'delete-pricing-rule',
       description: 'Deletes the pricing rule that\'s identified by the input Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the pricing rule that you are deleting',
@@ -760,6 +784,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -772,6 +797,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'disassociate-accounts',
       description: 'Removes the specified list of account IDs from the given billing group',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from',
@@ -806,6 +832,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -818,6 +845,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'disassociate-pricing-rules',
       description: 'Disassociates a list of pricing rules from a pricing plan',
       options: [
+
         Option(
           name: '--arn',
           description: 'The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from',
@@ -852,6 +880,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -864,6 +893,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'get-billing-group-cost-report',
       description: 'Retrieves the margin summary report, which includes the Amazon Web Services cost and charged amount (pro forma cost) by Amazon Web Service for a specific billing group',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Number (ARN) that uniquely identifies the billing group',
@@ -925,6 +955,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -937,6 +968,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-account-associations',
       description: 'This is a paginated call to list linked accounts that are linked to the payer account for the specified time period. If no information is provided, the current billing period is used. The response will optionally include the billing group that\'s associated with the linked account',
       options: [
+
         Option(
           name: '--billing-period',
           description: 'The preferred billing period to get account associations',
@@ -998,6 +1030,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1010,6 +1043,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-billing-group-cost-reports',
       description: 'A paginated call to retrieve a summary report of actual Amazon Web Services charges and the calculated Amazon Web Services charges based on the associated pricing plan of a billing group',
       options: [
+
         Option(
           name: '--billing-period',
           description: 'The preferred billing period for your report',
@@ -1089,6 +1123,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1101,6 +1136,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-billing-groups',
       description: 'A paginated call to retrieve a list of billing groups for the given billing period. If you don\'t provide a billing group, the current billing period is used',
       options: [
+
         Option(
           name: '--billing-period',
           description: 'The preferred billing period to get billing groups',
@@ -1180,6 +1216,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1192,6 +1229,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-custom-line-item-versions',
       description: 'A paginated call to get a list of all custom line item versions',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) for the custom line item',
@@ -1271,6 +1309,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1283,6 +1322,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-custom-line-items',
       description: 'A paginated call to get a list of all custom line items (FFLIs) for the given billing period. If you don\'t provide a billing period, the current billing period is used',
       options: [
+
         Option(
           name: '--billing-period',
           description: 'The preferred billing period to get custom line items (FFLIs)',
@@ -1362,6 +1402,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1374,6 +1415,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-pricing-plans',
       description: 'A paginated call to get pricing plans for the given billing period. If you don\'t provide a billing period, the current billing period is used',
       options: [
+
         Option(
           name: '--billing-period',
           description: 'The preferred billing period to get pricing plan',
@@ -1453,6 +1495,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1465,6 +1508,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-pricing-plans-associated-with-pricing-rule',
       description: 'A list of the pricing plans that are associated with a pricing rule',
       options: [
+
         Option(
           name: '--billing-period',
           description: 'The pricing plan billing period for which associations will be listed',
@@ -1544,6 +1588,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1556,6 +1601,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-pricing-rules',
       description: 'Describes a pricing rule that can be associated to a pricing plan, or set of pricing plans',
       options: [
+
         Option(
           name: '--billing-period',
           description: 'The preferred billing period to get the pricing plan',
@@ -1635,6 +1681,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1647,6 +1694,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-pricing-rules-associated-to-pricing-plan',
       description: 'Lists the pricing rules that are associated with a pricing plan',
       options: [
+
         Option(
           name: '--billing-period',
           description: 'The billing period for which the pricing rule associations are to be listed',
@@ -1726,6 +1774,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1738,6 +1787,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-resources-associated-to-custom-line-item',
       description: 'List the resources that are associated to a custom line item',
       options: [
+
         Option(
           name: '--billing-period',
           description: 'The billing period for which the resource associations will be listed',
@@ -1826,6 +1876,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1838,6 +1889,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'A list the tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that identifies the resource to list the tags',
@@ -1863,6 +1915,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1875,6 +1928,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to which to add tags',
@@ -1909,6 +1963,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1921,6 +1976,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes specified tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to which to delete tags',
@@ -1955,6 +2011,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1967,6 +2024,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'update-billing-group',
       description: 'This updates an existing billing group',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the billing group being updated',
@@ -2037,6 +2095,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2049,6 +2108,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'update-custom-line-item',
       description: 'Update an existing custom line item in the current or previous billing period',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the custom line item to be updated',
@@ -2110,6 +2170,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2122,6 +2183,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'update-pricing-plan',
       description: 'This updates an existing pricing plan',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the pricing plan that you\'re updating',
@@ -2165,6 +2227,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2177,6 +2240,7 @@ final FigSpec billingconductorSpec = FigSpec(
       name: 'update-pricing-rule',
       description: 'Updates an existing pricing rule',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the pricing rule to update',
@@ -2247,6 +2311,7 @@ final FigSpec billingconductorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

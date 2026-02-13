@@ -9,6 +9,7 @@ final FigSpec pnpxSpec = FigSpec(
   name: 'pnpx',
   description: 'Execute binaries from npm packages',
   subcommands: [
+
     Subcommand(
       name: 'create-react-native-app',
       icon: 'https://reactnative.dev/img/pwa/manifest-icon-512.png',
@@ -41,6 +42,7 @@ final FigSpec pnpxSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--package', '-p'],
       description: 'Package to be executed',
@@ -94,6 +96,7 @@ final FigSpec pnpxSpec = FigSpec(
         Arg(
         name: 'shell',
         suggestions: [
+
           FigSuggestion(
             name: 'bash'
           ),
@@ -112,6 +115,7 @@ final FigSpec pnpxSpec = FigSpec(
         Arg(
         name: 'shell-fallback',
         suggestions: [
+
           FigSuggestion(
             name: 'bash'
           ),

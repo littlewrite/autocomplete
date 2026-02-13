@@ -9,10 +9,12 @@ final FigSpec curSpec = FigSpec(
   name: 'cur',
   description: 'You can use the Amazon Web Services Cost and Usage Report API to programmatically create, query, and delete Amazon Web Services Cost and Usage Report definitions. Amazon Web Services Cost and Usage Report track the monthly Amazon Web Services costs and usage associated with your Amazon Web Services account. The report contains line items for each unique combination of Amazon Web Services product, usage type, and operation that your Amazon Web Services account uses. You can configure the Amazon Web Services Cost and Usage Report to show only the data that you want, using the Amazon Web Services Cost and Usage Report API. Service Endpoint The Amazon Web Services Cost and Usage Report API provides the following endpoint:   cur.us-east-1.amazonaws.com',
   subcommands: [
+
     Subcommand(
       name: 'delete-report-definition',
       description: 'Deletes the specified report. Any tags associated with the report are also deleted',
       options: [
+
         Option(
           name: '--report-name',
           description: 'The name of the report that you want to delete. The name must be unique, is case sensitive, and can\'t include spaces',
@@ -38,6 +40,7 @@ final FigSpec curSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec curSpec = FigSpec(
       name: 'describe-report-definitions',
       description: 'Lists the Amazon Web Services Cost and Usage Report available to this account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results that Amazon Web Services returns for the operation',
@@ -111,6 +115,7 @@ final FigSpec curSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec curSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags associated with the specified report definition',
       options: [
+
         Option(
           name: '--report-name',
           description: 'The report name of the report definition that tags are to be returned for',
@@ -148,6 +154,7 @@ final FigSpec curSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec curSpec = FigSpec(
       name: 'modify-report-definition',
       description: 'Allows you to programmatically update your report preferences',
       options: [
+
         Option(
           name: '--report-name',
           description: 'The name of the report that you want to create. The name must be unique, is case sensitive, and can\'t include spaces',
@@ -194,6 +202,7 @@ final FigSpec curSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -206,6 +215,7 @@ final FigSpec curSpec = FigSpec(
       name: 'put-report-definition',
       description: 'Creates a new report using the description that you provide',
       options: [
+
         Option(
           name: '--report-definition',
           description: 'Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information',
@@ -240,6 +250,7 @@ final FigSpec curSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -252,6 +263,7 @@ final FigSpec curSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates a set of tags with a report definition',
       options: [
+
         Option(
           name: '--report-name',
           description: 'The report name of the report definition that tags are to be associated with',
@@ -286,6 +298,7 @@ final FigSpec curSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -298,6 +311,7 @@ final FigSpec curSpec = FigSpec(
       name: 'untag-resource',
       description: 'Disassociates a set of tags from a report definition',
       options: [
+
         Option(
           name: '--report-name',
           description: 'The report name of the report definition that tags are to be disassociated from',
@@ -332,6 +346,7 @@ final FigSpec curSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

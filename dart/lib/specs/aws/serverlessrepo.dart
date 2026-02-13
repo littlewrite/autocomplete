@@ -9,10 +9,12 @@ final FigSpec serverlessrepoSpec = FigSpec(
   name: 'serverlessrepo',
   description: 'The AWS Serverless Application Repository makes it easy for developers and enterprises to quickly find\n and deploy serverless applications in the AWS Cloud. For more information about serverless applications,\n see Serverless Computing and Applications on the AWS website.The AWS Serverless Application Repository is deeply integrated with the AWS Lambda console, so that developers of \n all levels can get started with serverless computing without needing to learn anything new. You can use category \n keywords to browse for applications such as web and mobile backends, data processing applications, or chatbots. \n You can also search for applications by name, publisher, or event source. To use an application, you simply choose it, \n configure any required fields, and deploy it with a few clicks. You can also easily publish applications, sharing them publicly with the community at large, or privately\n within your team or across your organization. To publish a serverless application (or app), you can use the\n AWS Management Console, AWS Command Line Interface (AWS CLI), or AWS SDKs to upload the code. Along with the\n code, you upload a simple manifest file, also known as the AWS Serverless Application Model (AWS SAM) template.\n For more information about AWS SAM, see AWS Serverless Application Model (AWS SAM) on the AWS Labs\n GitHub repository.The AWS Serverless Application Repository Developer Guide contains more information about the two developer\n experiences available:\n \n Consuming Applications – Browse for applications and view information about them, including\n source code and readme files. Also install, configure, and deploy applications of your choosing. \n Publishing Applications – Configure and upload applications to make them available to other\n developers, and publish new versions of applications',
   subcommands: [
+
     Subcommand(
       name: 'create-application',
       description: 'Creates an application, optionally including an AWS SAM file to create the first application version in the same call',
       options: [
+
         Option(
           name: '--author',
           description: 'The name of the author publishing the app.Minimum length=1. Maximum length=127.Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?\$";',
@@ -164,6 +166,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -176,6 +179,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'create-application-version',
       description: 'Creates an application version',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -246,6 +250,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -258,6 +263,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'create-cloud-formation-change-set',
       description: 'Creates an AWS CloudFormation change set for the given application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -391,6 +397,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -403,6 +410,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'create-cloud-formation-template',
       description: 'Creates an AWS CloudFormation template',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -437,6 +445,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -449,6 +458,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'delete-application',
       description: 'Deletes the specified application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -474,6 +484,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -486,6 +497,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'get-application',
       description: 'Gets the specified application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -520,6 +532,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -532,6 +545,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'get-application-policy',
       description: 'Retrieves the policy for the application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -557,6 +571,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -569,6 +584,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'get-cloud-formation-template',
       description: 'Gets the specified AWS CloudFormation template',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -603,6 +619,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -615,6 +632,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'list-application-dependencies',
       description: 'Retrieves the list of applications nested in the containing application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -685,6 +703,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -697,6 +716,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'list-application-versions',
       description: 'Lists versions for the specified application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -758,6 +778,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -770,6 +791,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'list-applications',
       description: 'Lists applications owned by the requester',
       options: [
+
         Option(
           name: '--max-items',
           description: 'The total number of items to return in the command\'s output.\nIf the total number of items available is more than the value\nspecified, a NextToken is provided in the command\'s\noutput.  To resume pagination, provide the\nNextToken value in the starting-token\nargument of a subsequent command.  Do not use the\nNextToken response element directly outside of the\nAWS CLI.\nFor usage examples, see Pagination in the AWS Command Line Interface User\nGuide',
@@ -822,6 +844,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -834,6 +857,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'put-application-policy',
       description: 'Sets the permission policy for an application. For the list of actions supported for this operation, see\n Application \n Permissions',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -868,6 +892,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -880,6 +905,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'unshare-application',
       description: 'Unshares an application from an AWS Organization.This operation can be called only from the organization\'s master account',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -914,6 +940,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -926,6 +953,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
       name: 'update-application',
       description: 'Updates the specified application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -1005,6 +1033,7 @@ final FigSpec serverlessrepoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

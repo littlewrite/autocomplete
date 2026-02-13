@@ -9,10 +9,12 @@ final FigSpec mediatailorSpec = FigSpec(
   name: 'mediatailor',
   description: 'Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the AWS Elemental MediaTailor User Guide. Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS)',
   subcommands: [
+
     Subcommand(
       name: 'configure-logs-for-channel',
       description: 'Configures Amazon CloudWatch log settings for a channel',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel',
@@ -47,6 +49,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'configure-logs-for-playback-configuration',
       description: 'Amazon CloudWatch log settings for a playback configuration',
       options: [
+
         Option(
           name: '--percent-enabled',
           description: 'The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the debug log mode. Valid values: 0 - 100',
@@ -93,6 +97,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'create-channel',
       description: 'Creates a channel. For information about MediaTailor channels, see Working with channels in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--audiences',
           description: 'The list of audiences defined in channel',
@@ -193,6 +199,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'create-live-source',
       description: 'The live source configuration',
       options: [
+
         Option(
           name: '--http-package-configurations',
           description: 'A list of HTTP package configuration parameters for this live source',
@@ -257,6 +265,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -269,6 +278,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'create-prefetch-schedule',
       description: 'Creates a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see Using ad prefetching in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--consumption',
           description: 'The configuration settings for MediaTailor\'s consumption of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the consumption window. Prefetch schedules automatically expire no earlier than seven days after the end time',
@@ -330,6 +340,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -342,6 +353,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'create-program',
       description: 'Creates a program within a channel. For information about programs, see Working with programs in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--ad-breaks',
           description: 'The ad break configuration settings',
@@ -430,6 +442,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -442,6 +455,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'create-source-location',
       description: 'Creates a source location. A source location is a container for sources. For more information about source locations, see Working with source locations in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--access-configuration',
           description: 'Access configuration parameters. Configures the type of authentication used to access content from your source location',
@@ -512,6 +526,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -524,6 +539,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'create-vod-source',
       description: 'The VOD source configuration parameters',
       options: [
+
         Option(
           name: '--http-package-configurations',
           description: 'A list of HTTP package configuration parameters for this VOD source',
@@ -576,6 +592,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -588,6 +605,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'delete-channel',
       description: 'Deletes a channel. For information about MediaTailor channels, see Working with channels in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel',
@@ -613,6 +631,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -625,6 +644,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'delete-channel-policy',
       description: 'The channel policy to delete',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel associated with this channel policy',
@@ -650,6 +670,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -662,6 +683,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'delete-live-source',
       description: 'The live source to delete',
       options: [
+
         Option(
           name: '--live-source-name',
           description: 'The name of the live source',
@@ -696,6 +718,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -708,6 +731,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'delete-playback-configuration',
       description: 'Deletes a playback configuration. For information about MediaTailor configurations, see Working with configurations in AWS Elemental MediaTailor',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the playback configuration',
@@ -733,6 +757,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -745,6 +770,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'delete-prefetch-schedule',
       description: 'Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code. For more information about ad prefetching, see Using ad prefetching in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body',
@@ -779,6 +805,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -791,6 +818,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'delete-program',
       description: 'Deletes a program within a channel. For information about programs, see Working with programs in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel',
@@ -825,6 +853,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -837,6 +866,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'delete-source-location',
       description: 'Deletes a source location. A source location is a container for sources. For more information about source locations, see Working with source locations in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--source-location-name',
           description: 'The name of the source location',
@@ -862,6 +892,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -874,6 +905,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'delete-vod-source',
       description: 'The video on demand (VOD) source to delete',
       options: [
+
         Option(
           name: '--source-location-name',
           description: 'The name of the source location associated with this VOD Source',
@@ -908,6 +940,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -920,6 +953,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'describe-channel',
       description: 'Describes a channel. For information about MediaTailor channels, see Working with channels in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel',
@@ -945,6 +979,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -957,6 +992,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'describe-live-source',
       description: 'The live source to describe',
       options: [
+
         Option(
           name: '--live-source-name',
           description: 'The name of the live source',
@@ -991,6 +1027,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1003,6 +1040,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'describe-program',
       description: 'Describes a program within a channel. For information about programs, see Working with programs in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel associated with this Program',
@@ -1037,6 +1075,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1049,6 +1088,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'describe-source-location',
       description: 'Describes a source location. A source location is a container for sources. For more information about source locations, see Working with source locations in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--source-location-name',
           description: 'The name of the source location',
@@ -1074,6 +1114,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1086,6 +1127,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'describe-vod-source',
       description: 'Provides details about a specific video on demand (VOD) source in a specific source location',
       options: [
+
         Option(
           name: '--source-location-name',
           description: 'The name of the source location associated with this VOD Source',
@@ -1120,6 +1162,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1132,6 +1175,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'get-channel-policy',
       description: 'Returns the channel\'s IAM policy. IAM policies are used to control access to your channel',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel associated with this Channel Policy',
@@ -1157,6 +1201,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1169,6 +1214,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'get-channel-schedule',
       description: 'Retrieves information about your channel\'s schedule',
       options: [
+
         Option(
           name: '--audience',
           description: 'The single audience for GetChannelScheduleRequest',
@@ -1257,6 +1303,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1269,6 +1316,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'get-playback-configuration',
       description: 'Retrieves a playback configuration. For information about MediaTailor configurations, see Working with configurations in AWS Elemental MediaTailor',
       options: [
+
         Option(
           name: '--name',
           description: 'The identifier for the playback configuration',
@@ -1294,6 +1342,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1306,6 +1355,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'get-prefetch-schedule',
       description: 'Retrieves a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see Using ad prefetching in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration',
@@ -1340,6 +1390,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1352,6 +1403,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'list-alerts',
       description: 'Lists the alerts that are associated with a MediaTailor channel assembly resource',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than MaxResults alerts, use the value of NextToken in the response to get the next page of results',
@@ -1422,6 +1474,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1434,6 +1487,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'list-channels',
       description: 'Retrieves information about the channels that are associated with the current AWS account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of channels that you want MediaTailor to return in response to the current request. If there are more than MaxResults channels, use the value of NextToken in the response to get the next page of results',
@@ -1495,6 +1549,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1507,6 +1562,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'list-live-sources',
       description: 'Lists the live sources contained in a source location. A source represents a piece of content',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than MaxResults live sources, use the value of NextToken in the response to get the next page of results',
@@ -1577,6 +1633,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1589,6 +1646,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'list-playback-configurations',
       description: 'Retrieves existing playback configurations. For information about MediaTailor configurations, see Working with Configurations in AWS Elemental MediaTailor',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than MaxResults playback configurations, use the value of NextToken in the response to get the next page of results',
@@ -1650,6 +1708,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1662,6 +1721,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'list-prefetch-schedules',
       description: 'Lists the prefetch schedules for a playback configuration',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results',
@@ -1741,6 +1801,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1753,6 +1814,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'list-source-locations',
       description: 'Lists the source locations for a channel. A source location defines the host server URL, and contains a list of sources',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than MaxResults source locations, use the value of NextToken in the response to get the next page of results',
@@ -1814,6 +1876,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1826,6 +1889,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'A list of tags that are associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see Tagging AWS Elemental MediaTailor Resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) associated with this resource',
@@ -1851,6 +1915,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1863,6 +1928,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'list-vod-sources',
       description: 'Lists the VOD sources contained in a source location. A source represents a piece of content',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than MaxResults VOD sources, use the value of NextToken in the response to get the next page of results',
@@ -1933,6 +1999,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1945,6 +2012,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'put-channel-policy',
       description: 'Creates an IAM policy for the channel. IAM policies are used to control access to your channel',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The channel name associated with this Channel Policy',
@@ -1979,6 +2047,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1991,6 +2060,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'put-playback-configuration',
       description: 'Creates a playback configuration. For information about MediaTailor configurations, see Working with configurations in AWS Elemental MediaTailor',
       options: [
+
         Option(
           name: '--ad-decision-server-url',
           description: 'The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters',
@@ -2142,6 +2212,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2154,6 +2225,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'start-channel',
       description: 'Starts a channel. For information about MediaTailor channels, see Working with channels in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel',
@@ -2179,6 +2251,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2191,6 +2264,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'stop-channel',
       description: 'Stops a channel. For information about MediaTailor channels, see Working with channels in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel',
@@ -2216,6 +2290,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2228,6 +2303,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'tag-resource',
       description: 'The resource to tag. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see Tagging AWS Elemental MediaTailor Resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) associated with the resource',
@@ -2262,6 +2338,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2274,6 +2351,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'untag-resource',
       description: 'The resource to untag',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to untag',
@@ -2308,6 +2386,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2320,6 +2399,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'update-channel',
       description: 'Updates a channel. For information about MediaTailor channels, see Working with channels in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--audiences',
           description: 'The list of audiences defined in channel',
@@ -2381,6 +2461,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2393,6 +2474,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'update-live-source',
       description: 'Updates a live source\'s configuration',
       options: [
+
         Option(
           name: '--http-package-configurations',
           description: 'A list of HTTP package configurations for the live source on this account',
@@ -2436,6 +2518,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2448,6 +2531,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'update-program',
       description: 'Updates a program within a channel',
       options: [
+
         Option(
           name: '--ad-breaks',
           description: 'The ad break configuration settings',
@@ -2509,6 +2593,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2521,6 +2606,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'update-source-location',
       description: 'Updates a source location. A source location is a container for sources. For more information about source locations, see Working with source locations in the MediaTailor User Guide',
       options: [
+
         Option(
           name: '--access-configuration',
           description: 'Access configuration parameters. Configures the type of authentication used to access content from your source location',
@@ -2582,6 +2668,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2594,6 +2681,7 @@ final FigSpec mediatailorSpec = FigSpec(
       name: 'update-vod-source',
       description: 'Updates a VOD source\'s configuration',
       options: [
+
         Option(
           name: '--http-package-configurations',
           description: 'A list of HTTP package configurations for the VOD source on this account',
@@ -2637,6 +2725,7 @@ final FigSpec mediatailorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,6 +9,7 @@ final FigSpec nuxtSpec = FigSpec(
   name: 'nuxt',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'dev',
       description: 'Launch the development server'
@@ -29,11 +30,13 @@ final FigSpec nuxtSpec = FigSpec(
       name: 'webpack',
       description: 'Inspect the webpack config',
       subcommands: [
+
         Subcommand(
           name: 'subcommands coming soon'
         )
       ],
       options: [
+
         Option(
           name: '--name',
           description: 'Bundle name to inspect. (client, server, modern)'

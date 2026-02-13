@@ -9,10 +9,12 @@ final FigSpec locationSpec = FigSpec(
   name: 'location',
   description: '"Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"',
   subcommands: [
+
     Subcommand(
       name: 'associate-tracker-consumer',
       description: 'Creates an association between a geofence collection and a tracker resource. This allows the tracker resource to communicate location data to the linked geofence collection.  You can associate up to five geofence collections to each tracker resource.  Currently not supported — Cross-account configurations, such as creating associations between a tracker resource in one account and a geofence collection in another account',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The name of the tracker resource to be associated with a geofence collection',
@@ -47,6 +49,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'batch-delete-device-position-history',
       description: 'Deletes the position history of one or more devices from a tracker resource',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The name of the tracker resource to delete the device position history from',
@@ -93,6 +97,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'batch-delete-geofence',
       description: 'Deletes a batch of geofences from a geofence collection.  This operation deletes the resource permanently',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'The geofence collection storing the geofences to be deleted',
@@ -139,6 +145,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -151,6 +158,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'batch-evaluate-geofences',
       description: 'Evaluates device positions against the geofence geometries from a given geofence collection. This operation always returns an empty response because geofences are asynchronously evaluated. The evaluation determines if the device has entered or exited a geofenced area, and then publishes one of the following events to Amazon EventBridge:    ENTER if Amazon Location determines that the tracked device has entered a geofenced area.    EXIT if Amazon Location determines that the tracked device has exited a geofenced area.    The last geofence that a device was observed within is tracked for 30 days after the most recent device position update.   Geofence evaluation uses the given device position. It does not account for the optional Accuracy of a DevicePositionUpdate.   The DeviceID is used as a string to represent the device. You do not need to have a Tracker associated with the DeviceID',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'The geofence collection used in evaluating the position of devices against its geofences',
@@ -185,6 +193,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -197,6 +206,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'batch-get-device-position',
       description: 'Lists the latest device positions for requested devices',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The tracker resource retrieving the device position',
@@ -231,6 +241,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -243,6 +254,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'batch-put-geofence',
       description: 'A batch request for storing geofence geometries into a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'The geofence collection storing the geofences',
@@ -277,6 +289,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -289,6 +302,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'batch-update-device-position',
       description: 'Uploads position update data for one or more devices to a tracker resource (up to 10 devices per batch). Amazon Location uses the data when it reports the last known device position and position history. Amazon Location retains location data for 30 days.  Position updates are handled based on the PositionFiltering property of the tracker. When PositionFiltering is set to TimeBased, updates are evaluated against linked geofence collections, and location data is stored at a maximum of one position per 30 second interval. If your update frequency is more often than every 30 seconds, only one update per 30 seconds is stored for each unique device ID. When PositionFiltering is set to DistanceBased filtering, location data is stored and evaluated against linked geofence collections only if the device has moved more than 30 m (98.4 ft). When PositionFiltering is set to AccuracyBased filtering, location data is stored and evaluated against linked geofence collections only if the device has moved more than the measured accuracy. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is neither stored or evaluated if the device has moved less than 15 m. If PositionFiltering is set to AccuracyBased filtering, Amazon Location uses the default value { "Horizontal": 0} when accuracy is not provided on a DevicePositionUpdate',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The name of the tracker resource to update',
@@ -323,6 +337,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -335,6 +350,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'calculate-route',
       description: 'Calculates a route given the following required parameters: DeparturePosition and DestinationPosition. Requires that you first create a route calculator resource. By default, a request that doesn\'t specify a departure time uses the best time of day to travel with the best traffic conditions when calculating the route. Additional options include:    Specifying a departure time using either DepartureTime or DepartNow. This calculates a route based on predictive traffic data at the given time.   You can\'t specify both DepartureTime and DepartNow in a single request. Specifying both parameters returns a validation error.     Specifying a travel mode using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in CarModeOptions if traveling by Car, or TruckModeOptions if traveling by Truck.  If you specify walking for the travel mode and your data provider is Esri, the start and destination must be within 40km',
       options: [
+
         Option(
           name: '--calculator-name',
           description: 'The name of the route calculator resource that you want to use to calculate the route',
@@ -475,6 +491,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -487,6 +504,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'calculate-route-matrix',
       description: 'Calculates a route matrix given the following required parameters: DeparturePositions and DestinationPositions. CalculateRouteMatrix calculates routes and returns the travel time and travel distance from each departure position to each destination position in the request. For example, given departure positions A and B, and destination positions X and Y, CalculateRouteMatrix will return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned (and routes calculated) will be the number of DeparturePositions times the number of DestinationPositions.  Your account is charged for each route calculated, not the number of requests.  Requires that you first create a route calculator resource. By default, a request that doesn\'t specify a departure time uses the best time of day to travel with the best traffic conditions when calculating routes. Additional options include:     Specifying a departure time using either DepartureTime or DepartNow. This calculates routes based on predictive traffic data at the given time.   You can\'t specify both DepartureTime and DepartNow in a single request. Specifying both parameters returns a validation error.     Specifying a travel mode using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in CarModeOptions if traveling by Car, or TruckModeOptions if traveling by Truck',
       options: [
+
         Option(
           name: '--calculator-name',
           description: 'The name of the route calculator resource that you want to use to calculate the route matrix',
@@ -592,6 +610,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -604,6 +623,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'create-geofence-collection',
       description: 'Creates a geofence collection, which manages and stores geofences',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'A custom name for the geofence collection. Requirements:   Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).    Must be a unique geofence collection name.   No spaces allowed. For example, ExampleGeofenceCollection',
@@ -674,6 +694,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -686,6 +707,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'create-key',
       description: 'Creates an API key resource in your Amazon Web Services account, which lets you grant actions for Amazon Location resources to the API key bearer.  For more information, see Using API keys',
       options: [
+
         Option(
           name: '--key-name',
           description: 'A custom name for the API key resource. Requirements:   Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).    Must be a unique API key name.   No spaces allowed. For example, ExampleAPIKey',
@@ -755,6 +777,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -767,6 +790,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'create-map',
       description: 'Creates a map resource in your Amazon Web Services account, which provides map tiles of different styles sourced from global location data providers.  If your application is tracking or routing assets you use in your business, such as delivery vehicles or employees, you must not use Esri as your geolocation provider. See section 82 of the Amazon Web Services service terms for more details',
       options: [
+
         Option(
           name: '--map-name',
           description: 'The name for the map resource. Requirements:   Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).    Must be a unique map resource name.    No spaces allowed. For example, ExampleMap',
@@ -828,6 +852,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -840,6 +865,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'create-place-index',
       description: 'Creates a place index resource in your Amazon Web Services account. Use a place index resource to geocode addresses and other text queries by using the SearchPlaceIndexForText operation, and reverse geocode coordinates by using the SearchPlaceIndexForPosition operation, and enable autosuggestions by using the SearchPlaceIndexForSuggestions operation.  If your application is tracking or routing assets you use in your business, such as delivery vehicles or employees, you must not use Esri as your geolocation provider. See section 82 of the Amazon Web Services service terms for more details',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the place index resource.  Requirements:   Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).   Must be a unique place index resource name.   No spaces allowed. For example, ExamplePlaceIndex',
@@ -910,6 +936,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -922,6 +949,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'create-route-calculator',
       description: 'Creates a route calculator resource in your Amazon Web Services account. You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A route calculator sources traffic and road network data from your chosen data provider.  If your application is tracking or routing assets you use in your business, such as delivery vehicles or employees, you must not use Esri as your geolocation provider. See section 82 of the Amazon Web Services service terms for more details',
       options: [
+
         Option(
           name: '--calculator-name',
           description: 'The name of the route calculator resource.  Requirements:   Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).   Must be a unique Route calculator resource name.   No spaces allowed. For example, ExampleRouteCalculator',
@@ -983,6 +1011,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -995,6 +1024,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'create-tracker',
       description: 'Creates a tracker resource in your Amazon Web Services account, which lets you retrieve current and historical location of devices',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The name for the tracker resource. Requirements:   Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).   Must be a unique tracker resource name.   No spaces allowed. For example, ExampleTracker',
@@ -1090,6 +1120,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1102,6 +1133,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'delete-geofence-collection',
       description: 'Deletes a geofence collection from your Amazon Web Services account.  This operation deletes the resource permanently. If the geofence collection is the target of a tracker resource, the devices will no longer be monitored',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'The name of the geofence collection to be deleted',
@@ -1127,6 +1159,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1139,6 +1172,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'delete-key',
       description: 'Deletes the specified API key. The API key must have been deactivated more than 90 days previously',
       options: [
+
         Option(
           name: '--key-name',
           description: 'The name of the API key to delete',
@@ -1172,6 +1206,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1184,6 +1219,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'delete-map',
       description: 'Deletes a map resource from your Amazon Web Services account.  This operation deletes the resource permanently. If the map is being used in an application, the map may not render',
       options: [
+
         Option(
           name: '--map-name',
           description: 'The name of the map resource to be deleted',
@@ -1209,6 +1245,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1221,6 +1258,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'delete-place-index',
       description: 'Deletes a place index resource from your Amazon Web Services account.  This operation deletes the resource permanently',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the place index resource to be deleted',
@@ -1246,6 +1284,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1258,6 +1297,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'delete-route-calculator',
       description: 'Deletes a route calculator resource from your Amazon Web Services account.  This operation deletes the resource permanently',
       options: [
+
         Option(
           name: '--calculator-name',
           description: 'The name of the route calculator resource to be deleted',
@@ -1283,6 +1323,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1295,6 +1336,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'delete-tracker',
       description: 'Deletes a tracker resource from your Amazon Web Services account.  This operation deletes the resource permanently. If the tracker resource is in use, you may encounter an error. Make sure that the target resource isn\'t a dependency for your applications',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The name of the tracker resource to be deleted',
@@ -1320,6 +1362,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1332,6 +1375,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'describe-geofence-collection',
       description: 'Retrieves the geofence collection details',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'The name of the geofence collection',
@@ -1357,6 +1401,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1369,6 +1414,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'describe-key',
       description: 'Retrieves the API key resource details',
       options: [
+
         Option(
           name: '--key-name',
           description: 'The name of the API key resource',
@@ -1394,6 +1440,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1406,6 +1453,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'describe-map',
       description: 'Retrieves the map resource details',
       options: [
+
         Option(
           name: '--map-name',
           description: 'The name of the map resource',
@@ -1431,6 +1479,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1443,6 +1492,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'describe-place-index',
       description: 'Retrieves the place index resource details',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the place index resource',
@@ -1468,6 +1518,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1480,6 +1531,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'describe-route-calculator',
       description: 'Retrieves the route calculator resource details',
       options: [
+
         Option(
           name: '--calculator-name',
           description: 'The name of the route calculator resource',
@@ -1505,6 +1557,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1517,6 +1570,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'describe-tracker',
       description: 'Retrieves the tracker resource details',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The name of the tracker resource',
@@ -1542,6 +1596,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1554,6 +1609,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'disassociate-tracker-consumer',
       description: 'Removes the association between a tracker resource and a geofence collection.  Once you unlink a tracker resource from a geofence collection, the tracker positions will no longer be automatically evaluated against geofences',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The name of the tracker resource to be dissociated from the consumer',
@@ -1588,6 +1644,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1600,6 +1657,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'forecast-geofence-events',
       description: 'Evaluates device positions against geofence geometries from a given geofence collection. The event forecasts three states for which a device can be in relative to a geofence:  ENTER: If a device is outside of a geofence, but would breach the fence if the device is moving at its current speed within time horizon window.  EXIT: If a device is inside of a geofence, but would breach the fence if the device is moving at its current speed within time horizon window.  IDLE: If a device is inside of a geofence, and the device is not moving',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'The name of the geofence collection',
@@ -1706,6 +1764,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1718,6 +1777,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'get-device-position',
       description: 'Retrieves a device\'s most recent position according to its sample time.  Device positions are deleted after 30 days',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The tracker resource receiving the position update',
@@ -1752,6 +1812,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1764,6 +1825,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'get-device-position-history',
       description: 'Retrieves the device position history from a tracker resource within a specified range of time.  Device positions are deleted after 30 days',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The tracker resource receiving the request for the device position history',
@@ -1861,6 +1923,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1873,6 +1936,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'get-geofence',
       description: 'Retrieves the geofence details from a geofence collection.  The returned geometry will always match the geometry format used when the geofence was created',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'The geofence collection storing the target geofence',
@@ -1907,6 +1971,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1919,6 +1984,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'get-map-glyphs',
       description: 'Retrieves glyphs used to display labels on a map',
       options: [
+
         Option(
           name: '--map-name',
           description: 'The map resource associated with the glyph ﬁle',
@@ -1970,6 +2036,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'get-map-sprites',
       description: 'Retrieves the sprite sheet corresponding to a map resource. The sprite sheet is a PNG image paired with a JSON document describing the offsets of individual icons that will be displayed on a rendered map',
       options: [
+
         Option(
           name: '--map-name',
           description: 'The map resource associated with the sprite ﬁle',
@@ -2012,6 +2079,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'get-map-style-descriptor',
       description: 'Retrieves the map style descriptor from a map resource.  The style descriptor contains speciﬁcations on how features render on a map. For example, what data to display, what order to display the data in, and the style for the data. Style descriptors follow the Mapbox Style Specification',
       options: [
+
         Option(
           name: '--map-name',
           description: 'The map resource to retrieve the style descriptor from',
@@ -2045,6 +2113,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'get-map-tile',
       description: 'Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. they\'re addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.  The origin (0, 0) is the top left of the map. Increasing the zoom level by 1 doubles both the X and Y dimensions, so a tile containing data for the entire world at (0/0/0) will be split into 4 tiles at zoom 1 (1/0/0, 1/0/1, 1/1/0, 1/1/1)',
       options: [
+
         Option(
           name: '--map-name',
           description: 'The map resource to retrieve the map tiles from',
@@ -2105,6 +2174,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'get-place',
       description: 'Finds a place by its unique ID. A PlaceId is returned by other search operations.  A PlaceId is valid only if all of the following are the same in the original search request and the call to GetPlace.   Customer Amazon Web Services account   Amazon Web Services Region   Data provider specified in the place index resource',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the place index resource that you want to use for the search',
@@ -2157,6 +2227,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2169,6 +2240,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'list-device-positions',
       description: 'A batch request to retrieve all device positions',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The tracker resource containing the requested devices',
@@ -2248,6 +2320,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2260,6 +2333,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'list-geofence-collections',
       description: 'Lists geofence collections in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional limit for the number of resources returned in a single call.  Default value: 100',
@@ -2321,6 +2395,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2333,6 +2408,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'list-geofences',
       description: 'Lists geofences stored in a given geofence collection',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'The name of the geofence collection storing the list of geofences',
@@ -2403,6 +2479,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2415,6 +2492,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'list-keys',
       description: 'Lists API key resources in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional limit for the number of resources returned in a single call.  Default value: 100',
@@ -2485,6 +2563,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2497,6 +2576,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'list-maps',
       description: 'Lists map resources in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional limit for the number of resources returned in a single call.  Default value: 100',
@@ -2558,6 +2638,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2570,6 +2651,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'list-place-indexes',
       description: 'Lists place index resources in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional limit for the maximum number of results returned in a single call. Default value: 100',
@@ -2631,6 +2713,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2643,6 +2726,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'list-route-calculators',
       description: 'Lists route calculator resources in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional maximum number of results returned in a single call. Default Value: 100',
@@ -2704,6 +2788,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2716,6 +2801,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags that are applied to the specified Amazon Location resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.   Format example: arn:aws:geo:region:account-id:resourcetype/ExampleResource',
@@ -2741,6 +2827,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2753,6 +2840,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'list-tracker-consumers',
       description: 'Lists geofence collections currently associated to the given tracker resource',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The tracker resource whose associated geofence collections you want to list',
@@ -2823,6 +2911,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2835,6 +2924,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'list-trackers',
       description: 'Lists tracker resources in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional limit for the number of resources returned in a single call.  Default value: 100',
@@ -2896,6 +2986,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2908,6 +2999,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'put-geofence',
       description: 'Stores a geofence geometry in a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'The geofence collection to store the geofence in',
@@ -2960,6 +3052,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2972,6 +3065,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'search-place-index-for-position',
       description: 'Reverse geocodes a given coordinate and returns a legible address. Allows you to search for Places or points of interest near a given position',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the place index resource you want to use for the search',
@@ -3033,6 +3127,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3045,6 +3140,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'search-place-index-for-suggestions',
       description: 'Generates suggestions for addresses and points of interest based on partial or misspelled free-form text. This operation is also known as autocomplete, autosuggest, or fuzzy matching. Optional parameters let you narrow your search results by bounding box or country, or bias your search toward a specific position on the globe.  You can search for suggested place names near a specified position by using BiasPosition, or filter results within a bounding box by using FilterBBox. These parameters are mutually exclusive; using both BiasPosition and FilterBBox in the same command returns an error',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the place index resource you want to use for the search',
@@ -3142,6 +3238,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3154,6 +3251,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'search-place-index-for-text',
       description: 'Geocodes free-form text, such as an address, name, city, or region to allow you to search for Places or points of interest.  Optional parameters let you narrow your search results by bounding box or country, or bias your search toward a specific position on the globe.  You can search for places near a given position using BiasPosition, or filter results within a bounding box using FilterBBox. Providing both parameters simultaneously returns an error.  Search results are returned in order of highest to lowest relevance',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the place index resource you want to use for the search',
@@ -3251,6 +3349,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3263,6 +3362,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns one or more tags (key-value pairs) to the specified Amazon Location Service resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values. You can use the TagResource operation with an Amazon Location Service resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the tags already associated with the resource. If you specify a tag key that\'s already associated with the resource, the new tag value that you specify replaces the previous value for that tag.  You can associate up to 50 tags with a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource whose tags you want to update.   Format example: arn:aws:geo:region:account-id:resourcetype/ExampleResource',
@@ -3297,6 +3397,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3309,6 +3410,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from the specified Amazon Location resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource from which you want to remove tags.   Format example: arn:aws:geo:region:account-id:resourcetype/ExampleResource',
@@ -3343,6 +3445,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3355,6 +3458,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'update-geofence-collection',
       description: 'Updates the specified properties of a given geofence collection',
       options: [
+
         Option(
           name: '--collection-name',
           description: 'The name of the geofence collection to update',
@@ -3407,6 +3511,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3419,6 +3524,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'update-key',
       description: 'Updates the specified properties of a given API key resource',
       options: [
+
         Option(
           name: '--key-name',
           description: 'The name of the API key resource to update',
@@ -3487,6 +3593,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3499,6 +3606,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'update-map',
       description: 'Updates the specified properties of a given map resource',
       options: [
+
         Option(
           name: '--map-name',
           description: 'The name of the map resource to update',
@@ -3551,6 +3659,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3563,6 +3672,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'update-place-index',
       description: 'Updates the specified properties of a given place index resource',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the place index resource to update',
@@ -3615,6 +3725,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3627,6 +3738,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'update-route-calculator',
       description: 'Updates the specified properties for a given route calculator resource',
       options: [
+
         Option(
           name: '--calculator-name',
           description: 'The name of the route calculator resource to update',
@@ -3670,6 +3782,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3682,6 +3795,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'update-tracker',
       description: 'Updates the specified properties of a given tracker resource',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The name of the tracker resource to update',
@@ -3759,6 +3873,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3771,6 +3886,7 @@ final FigSpec locationSpec = FigSpec(
       name: 'verify-device-position',
       description: 'Verifies the integrity of the device\'s position by determining if it was reported behind a proxy, and by comparing it to an inferred position estimated based on the device\'s state',
       options: [
+
         Option(
           name: '--tracker-name',
           description: 'The name of the tracker resource to be associated with verification request',
@@ -3814,6 +3930,7 @@ final FigSpec locationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

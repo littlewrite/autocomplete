@@ -9,14 +9,17 @@ final FigSpec networkManagementSpec = FigSpec(
   name: 'network-management',
   description: 'Manage Network Management resources',
   subcommands: [
+
     Subcommand(
       name: 'connectivity-tests',
       description: 'Manage Network Management ConnectivityTests',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new connectivity test',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -261,6 +264,7 @@ final FigSpec networkManagementSpec = FigSpec(
                 name: 'SOURCE_NETWORK_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'gcp-network'),
                   FigSuggestion(name: 'non-gcp-network')
                 ]
@@ -301,6 +305,7 @@ final FigSpec networkManagementSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -323,6 +328,7 @@ final FigSpec networkManagementSpec = FigSpec(
           name: 'delete',
           description: 'Delete a connectivity test',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -450,6 +456,7 @@ final FigSpec networkManagementSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -472,6 +479,7 @@ final FigSpec networkManagementSpec = FigSpec(
           name: 'describe',
           description: 'Describe a connectivity test',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -595,6 +603,7 @@ final FigSpec networkManagementSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -617,6 +626,7 @@ final FigSpec networkManagementSpec = FigSpec(
           name: 'list',
           description: 'List connectivity tests',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -784,6 +794,7 @@ final FigSpec networkManagementSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -800,6 +811,7 @@ final FigSpec networkManagementSpec = FigSpec(
           name: 'rerun',
           description: 'Rerun a connectivity test',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -927,6 +939,7 @@ final FigSpec networkManagementSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -949,6 +962,7 @@ final FigSpec networkManagementSpec = FigSpec(
           name: 'update',
           description: 'Update an existing connectivity test',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1209,6 +1223,7 @@ final FigSpec networkManagementSpec = FigSpec(
                 name: 'SOURCE_NETWORK_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'gcp-network'),
                   FigSuggestion(name: 'non-gcp-network')
                 ]
@@ -1249,6 +1264,7 @@ final FigSpec networkManagementSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1269,6 +1285,7 @@ final FigSpec networkManagementSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1392,6 +1409,7 @@ final FigSpec networkManagementSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1408,10 +1426,12 @@ final FigSpec networkManagementSpec = FigSpec(
       name: 'operations',
       description: 'Manage Network Management operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a Network Management operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1535,6 +1555,7 @@ final FigSpec networkManagementSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1557,6 +1578,7 @@ final FigSpec networkManagementSpec = FigSpec(
           name: 'list',
           description: 'List Network Management operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1724,6 +1746,7 @@ final FigSpec networkManagementSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1738,6 +1761,7 @@ final FigSpec networkManagementSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1861,6 +1885,7 @@ final FigSpec networkManagementSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1875,6 +1900,7 @@ final FigSpec networkManagementSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1998,6 +2024,7 @@ final FigSpec networkManagementSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

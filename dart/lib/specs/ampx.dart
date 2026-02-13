@@ -9,10 +9,12 @@ final FigSpec ampxSpec = FigSpec(
   name: 'ampx',
   description: 'CLI for Amplify Gen 2',
   subcommands: [
+
     Subcommand(
       name: 'sandbox',
       description: 'Deploy to your personal cloud sandbox',
       options: [
+
         Option(
           name: '--dir-to-watch',
           description: 'Directory to watch for file changes',
@@ -59,8 +61,9 @@ final FigSpec ampxSpec = FigSpec(
             Arg(
             name: 'format',
             suggestions: [
-              FigSuggestion(name: 'json'),
 
+              FigSuggestion(name: 'json'),
+              FigSuggestion(name: 'dart')
             ]
           )
           ]
@@ -72,8 +75,9 @@ final FigSpec ampxSpec = FigSpec(
             Arg(
             name: 'version',
             suggestions: [
-              FigSuggestion(name: '0'),
 
+              FigSuggestion(name: '0'),
+              FigSuggestion(name: '1')
             ]
           )
           ]
@@ -94,8 +98,9 @@ final FigSpec ampxSpec = FigSpec(
             Arg(
             name: 'boolean',
             suggestions: [
-              FigSuggestion(name: 'true'),
 
+              FigSuggestion(name: 'true'),
+              FigSuggestion(name: 'false')
             ]
           )
           ]
@@ -122,10 +127,12 @@ final FigSpec ampxSpec = FigSpec(
         )
       ],
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete your personal cloud sandbox',
           options: [
+
             Option(
               name: '--name',
               description: 'Name to distinguish between sandbox environments',
@@ -154,6 +161,7 @@ final FigSpec ampxSpec = FigSpec(
           name: 'secret',
           description: 'Manage backend secrets for your personal cloud sandbox',
           subcommands: [
+
             Subcommand(
               name: 'set',
               description: 'Set a secret',
@@ -163,6 +171,7 @@ final FigSpec ampxSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--profile',
                   description: 'AWS profile name',
@@ -183,6 +192,7 @@ final FigSpec ampxSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--profile',
                   description: 'AWS profile name',
@@ -198,6 +208,7 @@ final FigSpec ampxSpec = FigSpec(
               name: 'list',
               description: 'List all available secrets',
               options: [
+
                 Option(
                   name: '--profile',
                   description: 'AWS profile name',
@@ -218,6 +229,7 @@ final FigSpec ampxSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--profile',
                   description: 'AWS profile name',
@@ -237,10 +249,12 @@ final FigSpec ampxSpec = FigSpec(
       name: 'generate',
       description: 'Generate supplemental information or code',
       subcommands: [
+
         Subcommand(
           name: 'outputs',
           description: 'Generate backend outputs file',
           options: [
+
             Option(
               name: '--profile',
               description: 'AWS profile name',
@@ -257,8 +271,9 @@ final FigSpec ampxSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
-                  FigSuggestion(name: 'json'),
 
+                  FigSuggestion(name: 'json'),
+                  FigSuggestion(name: 'dart')
                 ]
               )
               ]
@@ -280,8 +295,9 @@ final FigSpec ampxSpec = FigSpec(
                 Arg(
                 name: 'version',
                 suggestions: [
-                  FigSuggestion(name: '0'),
 
+                  FigSuggestion(name: '0'),
+                  FigSuggestion(name: '1')
                 ]
               )
               ]
@@ -310,6 +326,7 @@ final FigSpec ampxSpec = FigSpec(
           name: 'graphql-client-code',
           description: 'Generate GraphQL statements and types',
           options: [
+
             Option(
               name: '--out',
               description: 'Directory where config is written',
@@ -327,6 +344,7 @@ final FigSpec ampxSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(name: 'modelgen'),
                   FigSuggestion(name: 'graphql-codegen'),
                   FigSuggestion(name: 'introspection')
@@ -341,6 +359,7 @@ final FigSpec ampxSpec = FigSpec(
                 Arg(
                 name: 'target',
                 suggestions: [
+
                   FigSuggestion(name: 'java'),
                   FigSuggestion(name: 'swift'),
                   FigSuggestion(name: 'javascript'),
@@ -357,6 +376,7 @@ final FigSpec ampxSpec = FigSpec(
                 Arg(
                 name: 'target',
                 suggestions: [
+
                   FigSuggestion(name: 'javascript'),
                   FigSuggestion(name: 'graphql'),
                   FigSuggestion(name: 'flow'),
@@ -373,6 +393,7 @@ final FigSpec ampxSpec = FigSpec(
                 Arg(
                 name: 'target',
                 suggestions: [
+
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'swift'),
                   FigSuggestion(name: 'typescript'),
@@ -416,6 +437,7 @@ final FigSpec ampxSpec = FigSpec(
           name: 'forms',
           description: 'Generate React form components',
           options: [
+
             Option(
               name: '--out-dir',
               description: 'Directory where generated forms are written',
@@ -449,6 +471,7 @@ final FigSpec ampxSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--stack',
           description: 'CloudFormation stack name',
@@ -495,6 +518,7 @@ final FigSpec ampxSpec = FigSpec(
       name: 'pipeline-deploy',
       description: 'Deploy Amplify project in a CI/CD pipeline',
       options: [
+
         Option(
           name: '--branch',
           description: 'Name of the git branch being deployed',
@@ -530,8 +554,9 @@ final FigSpec ampxSpec = FigSpec(
             Arg(
             name: 'version',
             suggestions: [
-              FigSuggestion(name: '0'),
 
+              FigSuggestion(name: '0'),
+              FigSuggestion(name: '1')
             ]
           )
           ]
@@ -540,6 +565,7 @@ final FigSpec ampxSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Display help information'

@@ -9,6 +9,7 @@ final FigSpec crontabSpec = FigSpec(
   name: 'crontab',
   description: 'Maintain crontab file for individual users',
   options: [
+
     Option(
       name: '-e',
       description: 'Edit the current crontab'

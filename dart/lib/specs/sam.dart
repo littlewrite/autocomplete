@@ -9,10 +9,12 @@ final FigSpec samSpec = FigSpec(
   name: 'sam',
   description: 'AWS Serverless Application Model CLI',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Init an AWS SAM application',
       options: [
+
         Option(
           name: '--no-interactive',
           description: 'Disable interactive prompting for init parameters, and fail if any required values are missing'
@@ -24,8 +26,9 @@ final FigSpec samSpec = FigSpec(
             Arg(
             name: 'architecture',
             suggestions: [
-              FigSuggestion(name: 'arm64'),
 
+              FigSuggestion(name: 'arm64'),
+              FigSuggestion(name: 'x86_64')
             ]
           )
           ]
@@ -46,6 +49,7 @@ final FigSpec samSpec = FigSpec(
             Arg(
             name: 'runtime',
             suggestions: [
+
               FigSuggestion(name: 'dotnet8'),
               FigSuggestion(name: 'dotnet6'),
               FigSuggestion(name: 'go1.x'),
@@ -76,8 +80,9 @@ final FigSpec samSpec = FigSpec(
             Arg(
             name: 'type',
             suggestions: [
-              FigSuggestion(name: 'zip'),
 
+              FigSuggestion(name: 'zip'),
+              FigSuggestion(name: 'image')
             ]
           )
           ]
@@ -89,6 +94,7 @@ final FigSpec samSpec = FigSpec(
             Arg(
             name: 'image name',
             suggestions: [
+
               FigSuggestion(name: 'amazon/dotnet8-base'),
               FigSuggestion(name: 'amazon/dotnet6-base'),
               FigSuggestion(name: 'amazon/go1.x-base'),
@@ -118,6 +124,7 @@ final FigSpec samSpec = FigSpec(
             Arg(
             name: 'manager',
             suggestions: [
+
               FigSuggestion(name: 'npm'),
               FigSuggestion(name: 'mod'),
               FigSuggestion(name: 'gradle'),
@@ -182,6 +189,7 @@ final FigSpec samSpec = FigSpec(
       name: 'build',
       description: 'Build your Lambda function code',
       options: [
+
         Option(
           name: ['-u', '--use-container'],
           description: 'If your functions depend on packages that have natively compiled dependencies, " +\n            "use this flag to build your function inside an AWS Lambda-like Docker container'
@@ -276,6 +284,7 @@ final FigSpec samSpec = FigSpec(
       description: 'Run your Serverless application locally for quick development & testing',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'generate-event',
           description: 'You can use this command to generate sample payloads from different event sources such as S3, API Gateway, and SNS',
@@ -285,6 +294,7 @@ final FigSpec samSpec = FigSpec(
           name: 'invoke',
           description: 'Invokes a local Lambda function once',
           options: [
+
             Option(
               name: ['-e', '--event'],
               description: 'JSON file containing event data passed to the Lambda function',
@@ -301,6 +311,7 @@ final FigSpec samSpec = FigSpec(
           name: 'start-api',
           description: 'Sets up a local endpoint you can use to test your API',
           options: [
+
             Option(
               name: ['-s', '--static-dir'],
               description: 'Any static assets files locates in this directory will be presented at /',
@@ -324,6 +335,7 @@ final FigSpec samSpec = FigSpec(
       name: 'package',
       description: 'Package an AWS SAM application',
       options: [
+
         Option(
           name: '--output-template-file',
           description: 'The path to the file where the command writes the output AWS CloudFormation template. If unspecified, the command writes the template to the standard output',
@@ -344,6 +356,7 @@ final FigSpec samSpec = FigSpec(
       name: 'delete',
       description: 'Delete an AWS SAM application and the artifacts created by `sam deploy`',
       options: [
+
         Option(
           name: '--no-prompts',
           description: 'Specify this flag to allow SAM CLI to skip through the guided prompts',
@@ -360,6 +373,7 @@ final FigSpec samSpec = FigSpec(
       name: 'publish',
       description: 'Publish a packaged AWS SAM template to the AWS Serverless Application Repository',
       options: [
+
         Option(
           name: '--semantic-version',
           description: 'The value provided here overrides SemanticVersion in the template metadata',
@@ -384,6 +398,7 @@ final FigSpec samSpec = FigSpec(
       description: 'Manage the continuous delivery of the application',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'init',
           description: 'Generates a CI/CD pipeline configuration file'
@@ -396,6 +411,7 @@ final FigSpec samSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--version',
       description: 'Show the version and exit'

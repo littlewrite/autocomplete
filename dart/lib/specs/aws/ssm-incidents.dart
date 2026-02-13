@@ -9,10 +9,12 @@ final FigSpec ssmIncidentsSpec = FigSpec(
   name: 'ssm-incidents',
   description: 'Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services.  Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-incident-findings',
       description: 'Retrieves details about all specified findings for an incident, including descriptive details about each finding. A finding represents a recent application environment change made by an CodeDeploy deployment or an CloudFormation stack creation or update that can be investigated as a potential cause of the incident',
       options: [
+
         Option(
           name: '--finding-ids',
           description: 'A list of IDs of findings for which you want to view details',
@@ -47,6 +49,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'create-replication-set',
       description: 'A replication set replicates and encrypts your data to the provided Regions with the provided KMS key',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures that the operation is called only once with the specified details',
@@ -102,6 +106,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'create-response-plan',
       description: 'Creates a response plan that automates the initial response to incidents. A response plan engages contacts, starts chat channel collaboration, and initiates runbooks at the beginning of an incident',
       options: [
+
         Option(
           name: '--actions',
           description: 'The actions that the response plan starts at the beginning of an incident',
@@ -211,6 +217,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -223,6 +230,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'create-timeline-event',
       description: 'Creates a custom timeline event on the incident details page of an incident record. Incident Manager automatically creates timeline events that mark key moments during an incident. You can create custom timeline events to mark important events that Incident Manager can detect automatically',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures that a client calls the action only once with the specified details',
@@ -293,6 +301,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -305,6 +314,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'delete-incident-record',
       description: 'Delete an incident record from Incident Manager',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the incident record you are deleting',
@@ -330,6 +340,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -342,6 +353,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'delete-replication-set',
       description: 'Deletes all Regions in your replication set. Deleting the replication set deletes all Incident Manager data',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the replication set you\'re deleting',
@@ -367,6 +379,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -379,6 +392,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes the resource policy that Resource Access Manager uses to share your Incident Manager resource',
       options: [
+
         Option(
           name: '--policy-id',
           description: 'The ID of the resource policy you\'re deleting',
@@ -413,6 +427,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -425,6 +440,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'delete-response-plan',
       description: 'Deletes the specified response plan. Deleting a response plan stops all linked CloudWatch alarms and EventBridge events from creating an incident with this response plan',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the response plan',
@@ -450,6 +466,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -462,6 +479,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'delete-timeline-event',
       description: 'Deletes a timeline event from an incident',
       options: [
+
         Option(
           name: '--event-id',
           description: 'The ID of the event to update. You can use ListTimelineEvents to find an event\'s ID',
@@ -496,6 +514,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -508,6 +527,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'get-incident-record',
       description: 'Returns the details for the specified incident record',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the incident record',
@@ -533,6 +553,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -545,6 +566,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'get-replication-set',
       description: 'Retrieve your Incident Manager replication set',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the replication set you want to retrieve',
@@ -570,6 +592,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -582,6 +605,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'get-resource-policies',
       description: 'Retrieves the resource policies attached to the specified response plan',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of resource policies to display for each page of results',
@@ -652,6 +676,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -664,6 +689,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'get-response-plan',
       description: 'Retrieves the details of the specified response plan',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the response plan',
@@ -689,6 +715,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -701,6 +728,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'get-timeline-event',
       description: 'Retrieves a timeline event based on its ID and incident record',
       options: [
+
         Option(
           name: '--event-id',
           description: 'The ID of the event. You can get an event\'s ID when you create it, or by using ListTimelineEvents',
@@ -735,6 +763,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -747,6 +776,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'list-incident-findings',
       description: 'Retrieves a list of the IDs of findings, plus their last modified times, that have been identified for a specified incident. A finding represents a recent application environment change made by an CloudFormation stack creation or update or an CodeDeploy deployment that can be investigated as a potential cause of the incident',
       options: [
+
         Option(
           name: '--incident-record-arn',
           description: 'The Amazon Resource Name (ARN) of the incident for which you want to view associated findings',
@@ -817,6 +847,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -829,6 +860,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'list-incident-records',
       description: 'Lists all incident records in your account. Use this command to retrieve the Amazon Resource Name (ARN) of the incident record you want to update',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters the list of incident records you want to search through. You can filter on the following keys:    creationTime     impact     status     createdBy    Note the following when when you use Filters:   If you don\'t specify a Filter, the response includes all incident records.   If you specify more than one filter in a single request, the response returns incident records that match all filters.   If you specify a filter with more than one value, the response returns incident records that match any of the values provided',
@@ -899,6 +931,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -911,6 +944,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'list-related-items',
       description: 'List all related items for an incident record',
       options: [
+
         Option(
           name: '--incident-record-arn',
           description: 'The Amazon Resource Name (ARN) of the incident record containing the listed related items',
@@ -981,6 +1015,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -993,6 +1028,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'list-replication-sets',
       description: 'Lists details about the replication set configured in your account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results per page',
@@ -1054,6 +1090,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1066,6 +1103,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'list-response-plans',
       description: 'Lists all response plans in your account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of response plans per page',
@@ -1127,6 +1165,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1139,6 +1178,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags that are attached to the specified response plan or incident',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the response plan or incident',
@@ -1164,6 +1204,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1176,6 +1217,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'list-timeline-events',
       description: 'Lists timeline events for the specified incident record',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:    eventReference     eventTime     eventType    Note the following when deciding how to use Filters:   If you don\'t specify a Filter, the response includes all timeline events.   If you specify more than one filter in a single request, the response returns timeline events that match all filters.   If you specify a filter with more than one value, the response returns timeline events that match any of the values provided',
@@ -1273,6 +1315,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1285,6 +1328,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Adds a resource policy to the specified response plan. The resource policy is used to share the response plan using Resource Access Manager (RAM). For more information about cross-account sharing, see Cross-Region and cross-account incident management',
       options: [
+
         Option(
           name: '--policy',
           description: 'Details of the resource policy',
@@ -1319,6 +1363,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1331,6 +1376,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'start-incident',
       description: 'Used to start an incident from CloudWatch alarms, EventBridge events, or manually',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token ensuring that the operation is called only once with the specified details',
@@ -1401,6 +1447,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1413,6 +1460,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a tag to a response plan',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the response plan you\'re adding the tags to',
@@ -1447,6 +1495,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1459,6 +1508,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the response plan you\'re removing a tag from',
@@ -1493,6 +1543,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1505,6 +1556,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'update-deletion-protection',
       description: 'Update deletion protection to either allow or deny deletion of the final Region in a replication set',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the replication set to update',
@@ -1547,6 +1599,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1559,6 +1612,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'update-incident-record',
       description: 'Update the details of an incident record. You can use this operation to update an incident record from the defined chat channel. For more information about using actions in chat channels, see Interacting through chat',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the incident record you are updating',
@@ -1647,6 +1701,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1659,6 +1714,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'update-related-items',
       description: 'Add or remove related items from the related items tab of an incident record',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures that a client calls the operation only once with the specified details',
@@ -1702,6 +1758,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1714,6 +1771,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'update-replication-set',
       description: 'Add or delete Regions from your replication set',
       options: [
+
         Option(
           name: '--actions',
           description: 'An action to add or delete a Region',
@@ -1757,6 +1815,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1769,6 +1828,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'update-response-plan',
       description: 'Updates the specified response plan',
       options: [
+
         Option(
           name: '--actions',
           description: 'The actions that this response plan takes at the beginning of an incident',
@@ -1902,6 +1962,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1914,6 +1975,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'update-timeline-event',
       description: 'Updates a timeline event. You can update events of type Custom Event',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures that a client calls the operation only once with the specified details',
@@ -1993,6 +2055,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2005,10 +2068,12 @@ final FigSpec ssmIncidentsSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'wait-for-replication-set-active',
           description: 'Wait for a replication set to become ACTIVE It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 5 failed checks',
           options: [
+
             Option(
               name: '--arn',
               description: 'The Amazon Resource Name (ARN) of the replication set you want to retrieve',
@@ -2034,6 +2099,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -2046,6 +2112,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
           name: 'wait-for-replication-set-deleted',
           description: 'Wait for a replication set to be deleted It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 5 failed checks',
           options: [
+
             Option(
               name: '--arn',
               description: 'The Amazon Resource Name (ARN) of the replication set you want to retrieve',
@@ -2071,6 +2138,7 @@ final FigSpec ssmIncidentsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

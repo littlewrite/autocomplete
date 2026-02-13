@@ -9,10 +9,12 @@ final FigSpec daxSpec = FigSpec(
   name: 'dax',
   description: 'DAX is a managed caching service engineered for Amazon DynamoDB. DAX dramatically speeds up database reads by caching frequently-accessed data from DynamoDB, so applications can access that data with sub-millisecond latency. You can create a DAX cluster easily, using the AWS Management Console. With a few simple modifications to your code, your application can begin taking advantage of the DAX cluster and realize significant improvements in read performance',
   subcommands: [
+
     Subcommand(
       name: 'create-cluster',
       description: 'Creates a DAX cluster. All nodes in the cluster run the same DAX caching software',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'The cluster identifier. This parameter is stored as a lowercase string.  Constraints:    A name must contain from 1 to 20 alphanumeric characters or hyphens.   The first character must be a letter.   A name cannot end with a hyphen or contain two consecutive hyphens',
@@ -155,6 +157,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -167,6 +170,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'create-parameter-group',
       description: 'Creates a new parameter group. A parameter group is a collection of parameters that you apply to all of the nodes in a DAX cluster',
       options: [
+
         Option(
           name: '--parameter-group-name',
           description: 'The name of the parameter group to apply to all of the clusters in this replication group',
@@ -201,6 +205,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -213,6 +218,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'create-subnet-group',
       description: 'Creates a new subnet group',
       options: [
+
         Option(
           name: '--subnet-group-name',
           description: 'A name for the subnet group. This value is stored as a lowercase string',
@@ -256,6 +262,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -268,6 +275,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'decrease-replication-factor',
       description: 'Removes one or more nodes from a DAX cluster.  You cannot use DecreaseReplicationFactor to remove the last node in a DAX cluster. If you need to do this, use DeleteCluster instead',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'The name of the DAX cluster from which you want to remove nodes',
@@ -320,6 +328,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -332,6 +341,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'delete-cluster',
       description: 'Deletes a previously provisioned DAX cluster. DeleteCluster deletes all associated nodes, node endpoints and the DAX cluster itself. When you receive a successful response from this action, DAX immediately begins deleting the cluster; you cannot cancel or revert this action',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'The name of the cluster to be deleted',
@@ -357,6 +367,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -369,6 +380,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'delete-parameter-group',
       description: 'Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any DAX clusters',
       options: [
+
         Option(
           name: '--parameter-group-name',
           description: 'The name of the parameter group to delete',
@@ -394,6 +406,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -406,6 +419,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'delete-subnet-group',
       description: 'Deletes a subnet group.  You cannot delete a subnet group if it is associated with any DAX clusters',
       options: [
+
         Option(
           name: '--subnet-group-name',
           description: 'The name of the subnet group to delete',
@@ -431,6 +445,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -443,6 +458,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'describe-clusters',
       description: 'Returns information about all provisioned DAX clusters if no cluster identifier is specified, or about a specific DAX cluster if a cluster identifier is supplied. If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned. If the cluster is in the DELETING state, only cluster level information will be displayed. If nodes are currently being added to the DAX cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the DAX cluster state is available, the cluster is ready for use. If nodes are currently being removed from the DAX cluster, no endpoint information for the removed nodes is displayed',
       options: [
+
         Option(
           name: '--cluster-names',
           description: 'The names of the DAX clusters being described',
@@ -513,6 +529,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -525,6 +542,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'describe-default-parameters',
       description: 'Returns the default system parameter information for the DAX caching software',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. The value for MaxResults must be between 20 and 100',
@@ -586,6 +604,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -598,6 +617,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'describe-events',
       description: 'Returns events related to DAX clusters and parameter groups. You can obtain events specific to a particular DAX cluster or parameter group by providing the name as a parameter. By default, only the events occurring within the last 24 hours are returned; however, you can retrieve up to 14 days\' worth of events if necessary',
       options: [
+
         Option(
           name: '--source-name',
           description: 'The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response',
@@ -704,6 +724,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -716,6 +737,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'describe-parameter-groups',
       description: 'Returns a list of parameter group descriptions. If a parameter group name is specified, the list will contain only the descriptions for that group',
       options: [
+
         Option(
           name: '--parameter-group-names',
           description: 'The names of the parameter groups',
@@ -786,6 +808,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -798,6 +821,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'describe-parameters',
       description: 'Returns the detailed parameter list for a particular parameter group',
       options: [
+
         Option(
           name: '--parameter-group-name',
           description: 'The name of the parameter group',
@@ -877,6 +901,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -889,6 +914,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'describe-subnet-groups',
       description: 'Returns a list of subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group',
       options: [
+
         Option(
           name: '--subnet-group-names',
           description: 'The name of the subnet group',
@@ -959,6 +985,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -971,6 +998,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'increase-replication-factor',
       description: 'Adds one or more nodes to a DAX cluster',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'The name of the DAX cluster that will receive additional nodes',
@@ -1014,6 +1042,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1026,6 +1055,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'list-tags',
       description: 'List all of the tags for a DAX cluster. You can call ListTags up to 10 times per second, per account',
       options: [
+
         Option(
           name: '--resource-name',
           description: 'The name of the DAX resource to which the tags belong',
@@ -1078,6 +1108,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1090,6 +1121,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'reboot-node',
       description: 'Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the node status is set to REBOOTING.   RebootNode restarts the DAX engine process and does not remove the contents of the cache',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'The name of the DAX cluster containing the node to be rebooted',
@@ -1124,6 +1156,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1136,6 +1169,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates a set of tags with a DAX resource. You can call TagResource up to 5 times per second, per account',
       options: [
+
         Option(
           name: '--resource-name',
           description: 'The name of the DAX resource to which tags should be added',
@@ -1170,6 +1204,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1182,6 +1217,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the association of tags from a DAX resource. You can call UntagResource up to 5 times per second, per account',
       options: [
+
         Option(
           name: '--resource-name',
           description: 'The name of the DAX resource from which the tags should be removed',
@@ -1216,6 +1252,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1228,6 +1265,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'update-cluster',
       description: 'Modifies the settings for a DAX cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'The name of the DAX cluster to be modified',
@@ -1307,6 +1345,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1319,6 +1358,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'update-parameter-group',
       description: 'Modifies the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs',
       options: [
+
         Option(
           name: '--parameter-group-name',
           description: 'The name of the parameter group',
@@ -1353,6 +1393,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1365,6 +1406,7 @@ final FigSpec daxSpec = FigSpec(
       name: 'update-subnet-group',
       description: 'Modifies an existing subnet group',
       options: [
+
         Option(
           name: '--subnet-group-name',
           description: 'The name of the subnet group',
@@ -1408,6 +1450,7 @@ final FigSpec daxSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

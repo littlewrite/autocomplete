@@ -9,10 +9,12 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
   name: 'chime-sdk-identity',
   description: 'The Amazon Chime SDK Identity APIs in this section allow software developers to create and manage unique instances of their messaging applications. These APIs provide the overarching framework for creating and sending messages. For more information about the identity APIs, refer to Amazon Chime SDK identity',
   subcommands: [
+
     Subcommand(
       name: 'create-app-instance',
       description: 'Creates an Amazon Chime SDK messaging AppInstance under an AWS account. Only SDK messaging customers use this API. CreateAppInstance supports idempotency behavior as described in the AWS API Standard. identity',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the AppInstance',
@@ -65,6 +67,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'create-app-instance-admin',
       description: 'Promotes an AppInstanceUser or AppInstanceBot to an AppInstanceAdmin. The promoted entity can perform the following actions.     ChannelModerator actions across all channels in the AppInstance.    DeleteChannelMessage actions.   Only an AppInstanceUser and AppInstanceBot can be promoted to an AppInstanceAdmin role',
       options: [
+
         Option(
           name: '--app-instance-admin-arn',
           description: 'The ARN of the administrator of the current AppInstance',
@@ -111,6 +115,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'create-app-instance-bot',
       description: 'Creates a bot under an Amazon Chime AppInstance. The request consists of a unique Configuration and Name for that bot',
       options: [
+
         Option(
           name: '--app-instance-arn',
           description: 'The ARN of the AppInstance request',
@@ -193,6 +199,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'create-app-instance-user',
       description: 'Creates a user under an Amazon Chime AppInstance. The request consists of a unique appInstanceUserId and Name for that user',
       options: [
+
         Option(
           name: '--app-instance-arn',
           description: 'The ARN of the AppInstance request',
@@ -284,6 +292,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -296,6 +305,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'delete-app-instance',
       description: 'Deletes an AppInstance and all associated data asynchronously',
       options: [
+
         Option(
           name: '--app-instance-arn',
           description: 'The ARN of the AppInstance',
@@ -321,6 +331,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -333,6 +344,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'delete-app-instance-admin',
       description: 'Demotes an AppInstanceAdmin to an AppInstanceUser or AppInstanceBot. This action does not delete the user',
       options: [
+
         Option(
           name: '--app-instance-admin-arn',
           description: 'The ARN of the AppInstance\'s administrator',
@@ -367,6 +379,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -379,6 +392,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'delete-app-instance-bot',
       description: 'Deletes an AppInstanceBot',
       options: [
+
         Option(
           name: '--app-instance-bot-arn',
           description: 'The ARN of the AppInstanceBot being deleted',
@@ -404,6 +418,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +431,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'delete-app-instance-user',
       description: 'Deletes an AppInstanceUser',
       options: [
+
         Option(
           name: '--app-instance-user-arn',
           description: 'The ARN of the user request being deleted',
@@ -441,6 +457,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -453,6 +470,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'deregister-app-instance-user-endpoint',
       description: 'Deregisters an AppInstanceUserEndpoint',
       options: [
+
         Option(
           name: '--app-instance-user-arn',
           description: 'The ARN of the AppInstanceUser',
@@ -487,6 +505,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -499,6 +518,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'describe-app-instance',
       description: 'Returns the full details of an AppInstance',
       options: [
+
         Option(
           name: '--app-instance-arn',
           description: 'The ARN of the AppInstance',
@@ -524,6 +544,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -536,6 +557,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'describe-app-instance-admin',
       description: 'Returns the full details of an AppInstanceAdmin',
       options: [
+
         Option(
           name: '--app-instance-admin-arn',
           description: 'The ARN of the AppInstanceAdmin',
@@ -570,6 +592,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -582,6 +605,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'describe-app-instance-bot',
       description: 'The AppInstanceBot\'s information',
       options: [
+
         Option(
           name: '--app-instance-bot-arn',
           description: 'The ARN of the AppInstanceBot',
@@ -607,6 +631,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -619,6 +644,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'describe-app-instance-user',
       description: 'Returns the full details of an AppInstanceUser',
       options: [
+
         Option(
           name: '--app-instance-user-arn',
           description: 'The ARN of the AppInstanceUser',
@@ -644,6 +670,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -656,6 +683,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'describe-app-instance-user-endpoint',
       description: 'Returns the full details of an AppInstanceUserEndpoint',
       options: [
+
         Option(
           name: '--app-instance-user-arn',
           description: 'The ARN of the AppInstanceUser',
@@ -690,6 +718,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -702,6 +731,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'get-app-instance-retention-settings',
       description: 'Gets the retention settings for an AppInstance',
       options: [
+
         Option(
           name: '--app-instance-arn',
           description: 'The ARN of the AppInstance',
@@ -727,6 +757,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -739,6 +770,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'list-app-instance-admins',
       description: 'Returns a list of the administrators in the AppInstance',
       options: [
+
         Option(
           name: '--app-instance-arn',
           description: 'The ARN of the AppInstance',
@@ -782,6 +814,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -794,6 +827,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'list-app-instance-bots',
       description: 'Lists all AppInstanceBots created under a single AppInstance',
       options: [
+
         Option(
           name: '--app-instance-arn',
           description: 'The ARN of the AppInstance',
@@ -837,6 +871,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -849,6 +884,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'list-app-instance-user-endpoints',
       description: 'Lists all the AppInstanceUserEndpoints created under a single AppInstanceUser',
       options: [
+
         Option(
           name: '--app-instance-user-arn',
           description: 'The ARN of the AppInstanceUser',
@@ -892,6 +928,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -904,6 +941,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'list-app-instance-users',
       description: 'List all AppInstanceUsers created under a single AppInstance',
       options: [
+
         Option(
           name: '--app-instance-arn',
           description: 'The ARN of the AppInstance',
@@ -947,6 +985,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -959,6 +998,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'list-app-instances',
       description: 'Lists all Amazon Chime AppInstances created under a single AWS account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of AppInstances that you want to return',
@@ -993,6 +1033,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1005,6 +1046,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags applied to an Amazon Chime SDK identity resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -1030,6 +1072,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1042,6 +1085,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'put-app-instance-retention-settings',
       description: 'Sets the amount of time in days that a given AppInstance retains data',
       options: [
+
         Option(
           name: '--app-instance-arn',
           description: 'The ARN of the AppInstance',
@@ -1076,6 +1120,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1088,6 +1133,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'put-app-instance-user-expiration-settings',
       description: 'Sets the number of days before the AppInstanceUser is automatically deleted.  A background process deletes expired AppInstanceUsers within 6 hours of expiration. Actual deletion times may vary. Expired AppInstanceUsers that have not yet been deleted appear as active, and you can update their expiration settings. The system honors the new settings',
       options: [
+
         Option(
           name: '--app-instance-user-arn',
           description: 'The ARN of the AppInstanceUser',
@@ -1122,6 +1168,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1134,6 +1181,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'register-app-instance-user-endpoint',
       description: 'Registers an endpoint under an Amazon Chime AppInstanceUser. The endpoint receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user',
       options: [
+
         Option(
           name: '--app-instance-user-arn',
           description: 'The ARN of the AppInstanceUser',
@@ -1213,6 +1261,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1225,6 +1274,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'tag-resource',
       description: 'Applies the specified tags to the specified Amazon Chime SDK identity resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN',
@@ -1259,6 +1309,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1271,6 +1322,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the specified Amazon Chime SDK identity resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN',
@@ -1305,6 +1357,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1317,6 +1370,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'update-app-instance',
       description: 'Updates AppInstance metadata',
       options: [
+
         Option(
           name: '--app-instance-arn',
           description: 'The ARN of the AppInstance',
@@ -1360,6 +1414,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1372,6 +1427,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'update-app-instance-bot',
       description: 'Updates the name and metadata of an AppInstanceBot',
       options: [
+
         Option(
           name: '--app-instance-bot-arn',
           description: 'The ARN of the AppInstanceBot',
@@ -1424,6 +1480,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1436,6 +1493,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'update-app-instance-user',
       description: 'Updates the details of an AppInstanceUser. You can update names and metadata',
       options: [
+
         Option(
           name: '--app-instance-user-arn',
           description: 'The ARN of the AppInstanceUser',
@@ -1479,6 +1537,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1491,6 +1550,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
       name: 'update-app-instance-user-endpoint',
       description: 'Updates the details of an AppInstanceUserEndpoint. You can update the name and AllowMessage values',
       options: [
+
         Option(
           name: '--app-instance-user-arn',
           description: 'The ARN of the AppInstanceUser',
@@ -1543,6 +1603,7 @@ final FigSpec chimeSdkIdentitySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec schemasSpec = FigSpec(
   name: 'schemas',
   description: 'Amazon EventBridge Schema Registry',
   subcommands: [
+
     Subcommand(
       name: 'create-discoverer',
       description: 'Creates a discoverer',
       options: [
+
         Option(
           name: '--description',
           description: 'A description for the discoverer',
@@ -64,6 +66,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -76,6 +79,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'create-registry',
       description: 'Creates a registry',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the registry to be created',
@@ -119,6 +123,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -131,6 +136,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'create-schema',
       description: 'Creates a schema definition. Inactive schemas will be deleted after two years',
       options: [
+
         Option(
           name: '--content',
           description: 'The source of the schema definition',
@@ -201,6 +207,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -213,6 +220,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'delete-discoverer',
       description: 'Deletes a discoverer',
       options: [
+
         Option(
           name: '--discoverer-id',
           description: 'The ID of the discoverer',
@@ -238,6 +246,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -250,6 +259,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'delete-registry',
       description: 'Deletes a Registry',
       options: [
+
         Option(
           name: '--registry-name',
           description: 'The name of the registry',
@@ -275,6 +285,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -287,6 +298,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Delete the resource-based policy attached to the specified registry',
       options: [
+
         Option(
           name: '--registry-name',
           description: 'The name of the registry',
@@ -312,6 +324,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -324,6 +337,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'delete-schema',
       description: 'Delete a schema definition',
       options: [
+
         Option(
           name: '--registry-name',
           description: 'The name of the registry',
@@ -358,6 +372,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -370,6 +385,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'delete-schema-version',
       description: 'Delete the schema version definition',
       options: [
+
         Option(
           name: '--registry-name',
           description: 'The name of the registry',
@@ -413,6 +429,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -425,6 +442,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'describe-code-binding',
       description: 'Describe the code binding URI',
       options: [
+
         Option(
           name: '--language',
           description: 'The language of the code binding',
@@ -477,6 +495,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -489,6 +508,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'describe-discoverer',
       description: 'Describes the discoverer',
       options: [
+
         Option(
           name: '--discoverer-id',
           description: 'The ID of the discoverer',
@@ -514,6 +534,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -526,6 +547,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'describe-registry',
       description: 'Describes the registry',
       options: [
+
         Option(
           name: '--registry-name',
           description: 'The name of the registry',
@@ -551,6 +573,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -563,6 +586,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'describe-schema',
       description: 'Retrieve the schema definition',
       options: [
+
         Option(
           name: '--registry-name',
           description: 'The name of the registry',
@@ -606,6 +630,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -617,6 +642,7 @@ final FigSpec schemasSpec = FigSpec(
     Subcommand(
       name: 'export-schema',
       options: [
+
         Option(
           name: '--registry-name',
           description: 'The name of the registry',
@@ -668,6 +694,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -680,6 +707,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'get-code-binding-source',
       description: 'Get the code binding source URI',
       options: [
+
         Option(
           name: '--language',
           description: 'The language of the code binding',
@@ -731,6 +759,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'get-discovered-schema',
       description: 'Get the discovered schema that was generated based on sampled events',
       options: [
+
         Option(
           name: '--events',
           description: 'An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events',
@@ -765,6 +794,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -777,6 +807,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'get-resource-policy',
       description: 'Retrieves the resource-based policy attached to a given registry',
       options: [
+
         Option(
           name: '--registry-name',
           description: 'The name of the registry',
@@ -802,6 +833,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -814,6 +846,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'list-discoverers',
       description: 'List the discoverers',
       options: [
+
         Option(
           name: '--discoverer-id-prefix',
           description: 'Specifying this limits the results to only those discoverer IDs that start with the specified prefix',
@@ -892,6 +925,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -904,6 +938,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'list-registries',
       description: 'List the registries',
       options: [
+
         Option(
           name: '--limit',
           args: [
@@ -982,6 +1017,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -994,6 +1030,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'list-schema-versions',
       description: 'Provides a list of the schema versions and related information',
       options: [
+
         Option(
           name: '--limit',
           args: [
@@ -1072,6 +1109,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1084,6 +1122,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'list-schemas',
       description: 'List the schemas',
       options: [
+
         Option(
           name: '--limit',
           args: [
@@ -1162,6 +1201,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1174,6 +1214,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Get tags for resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -1199,6 +1240,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1211,6 +1253,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'put-code-binding',
       description: 'Put code binding URI',
       options: [
+
         Option(
           name: '--language',
           description: 'The language of the code binding',
@@ -1263,6 +1306,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1275,6 +1319,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'The name of the policy',
       options: [
+
         Option(
           name: '--policy',
           description: 'The resource-based policy',
@@ -1318,6 +1363,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1330,6 +1376,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'search-schemas',
       description: 'Search the schemas',
       options: [
+
         Option(
           name: '--keywords',
           description: 'Specifying this limits the results to only schemas that include the provided keywords',
@@ -1408,6 +1455,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1420,6 +1468,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'start-discoverer',
       description: 'Starts the discoverer',
       options: [
+
         Option(
           name: '--discoverer-id',
           description: 'The ID of the discoverer',
@@ -1445,6 +1494,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1457,6 +1507,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'stop-discoverer',
       description: 'Stops the discoverer',
       options: [
+
         Option(
           name: '--discoverer-id',
           description: 'The ID of the discoverer',
@@ -1482,6 +1533,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1494,6 +1546,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'tag-resource',
       description: 'Add tags to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -1528,6 +1581,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1540,6 +1594,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -1574,6 +1629,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1586,6 +1642,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'update-discoverer',
       description: 'Updates the discoverer',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the discoverer to update',
@@ -1628,6 +1685,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1640,6 +1698,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'update-registry',
       description: 'Updates a registry',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the registry to update',
@@ -1674,6 +1733,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1686,6 +1746,7 @@ final FigSpec schemasSpec = FigSpec(
       name: 'update-schema',
       description: 'Updates the schema definition Inactive schemas will be deleted after two years',
       options: [
+
         Option(
           name: '--client-token-id',
           description: 'The ID of the client token',
@@ -1756,6 +1817,7 @@ final FigSpec schemasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1768,10 +1830,12 @@ final FigSpec schemasSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'code-binding-exists',
           description: 'Wait until code binding is generated It will poll every 2 seconds until a successful state has been reached. This will exit with a return code of 255 after 30 failed checks',
           options: [
+
             Option(
               name: '--language',
               description: 'The language of the code binding',
@@ -1824,6 +1888,7 @@ final FigSpec schemasSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

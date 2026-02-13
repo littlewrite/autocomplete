@@ -18,12 +18,14 @@ final FigSpec shasumSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-a', '--algorithm'],
       description: 'Select SHA algorithm',
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: '1',
             description: 'SHA-1 (default)'

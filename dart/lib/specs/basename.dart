@@ -9,6 +9,7 @@ final FigSpec basenameSpec = FigSpec(
   name: 'basename',
   description: 'Return filename portion of pathname',
   options: [
+
     Option(
       name: '-a',
       description: 'Treat every argument as a string'

@@ -9,6 +9,7 @@ final FigSpec createRemixSpec = FigSpec(
   name: 'create-remix',
   icon: 'https://remix.run/favicon-light.1.png',
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Display help for command'

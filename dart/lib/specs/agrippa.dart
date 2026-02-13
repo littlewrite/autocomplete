@@ -9,6 +9,7 @@ final FigSpec agrippaSpec = FigSpec(
   name: 'agrippa',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Generates a basic .agripparc.json file, with some default values for options that agrippa accepts'
@@ -22,12 +23,14 @@ final FigSpec agrippaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--props',
           description: 'Determines which prop declaration/validation solution to generate. Defaults to `ts` if `typescript` flag is `true`, `none` otherwise',
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'ts',
                 description: 'Generate a TypeScript interface for props (this requires the typescript option to be true)'
@@ -78,6 +81,7 @@ final FigSpec agrippaSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'named'
               ),
@@ -94,6 +98,7 @@ final FigSpec agrippaSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'const'
               ),
@@ -126,6 +131,7 @@ final FigSpec agrippaSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'none',
                 description: 'Generates no style'

@@ -9,10 +9,12 @@ final FigSpec serviceQuotasSpec = FigSpec(
   name: 'service-quotas',
   description: 'With Service Quotas, you can view and manage your quotas easily as your Amazon Web Services workloads grow. Quotas, also referred to as limits, are the maximum number of resources that you can create in your Amazon Web Services account. For more information, see the Service Quotas User Guide',
   subcommands: [
+
     Subcommand(
       name: 'associate-service-quota-template',
       description: 'Associates your quota request template with your organization. When a new Amazon Web Services account is created in your organization, the quota increase requests in the template are automatically applied to the account. You can add a quota increase request for any adjustable quota to your template',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -29,6 +31,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -41,6 +44,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'delete-service-quota-increase-request-from-template',
       description: 'Deletes the quota increase request for the specified quota from your quota request template',
       options: [
+
         Option(
           name: '--service-code',
           description: 'Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the ListServices operation',
@@ -84,6 +88,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'disassociate-service-quota-template',
       description: 'Disables your quota request template. After a template is disabled, the quota increase requests in the template are not applied to new Amazon Web Services accounts in your organization. Disabling a quota request template does not apply its quota increase requests',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -112,6 +118,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'get-aws-default-service-quota',
       description: 'Retrieves the default value for the specified quota. The default value does not reflect any quota increases',
       options: [
+
         Option(
           name: '--service-code',
           description: 'Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the ListServices operation',
@@ -158,6 +166,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -170,6 +179,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'get-association-for-service-quota-template',
       description: 'Retrieves the status of the association for the quota request template',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -186,6 +196,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -198,6 +209,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'get-requested-service-quota-change',
       description: 'Retrieves information about the specified quota increase request',
       options: [
+
         Option(
           name: '--request-id',
           description: 'Specifies the ID of the quota increase request',
@@ -223,6 +235,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -235,6 +248,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'get-service-quota',
       description: 'Retrieves the applied quota value for the specified quota. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved',
       options: [
+
         Option(
           name: '--service-code',
           description: 'Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the ListServices operation',
@@ -278,6 +292,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -290,6 +305,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'get-service-quota-increase-request-from-template',
       description: 'Retrieves information about the specified quota increase request in your quota request template',
       options: [
+
         Option(
           name: '--service-code',
           description: 'Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the ListServices operation',
@@ -333,6 +349,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -345,6 +362,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'list-aws-default-service-quotas',
       description: 'Lists the default values for the quotas for the specified Amazon Web Service. A default value does not reflect any quota increases',
       options: [
+
         Option(
           name: '--service-code',
           description: 'Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the ListServices operation',
@@ -415,6 +433,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -427,6 +446,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'list-requested-service-quota-change-history',
       description: 'Retrieves the quota increase requests for the specified Amazon Web Service',
       options: [
+
         Option(
           name: '--service-code',
           description: 'Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the ListServices operation',
@@ -515,6 +535,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -527,6 +548,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'list-requested-service-quota-change-history-by-quota',
       description: 'Retrieves the quota increase requests for the specified quota',
       options: [
+
         Option(
           name: '--service-code',
           description: 'Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the ListServices operation',
@@ -624,6 +646,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -636,6 +659,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'list-service-quota-increase-requests-in-template',
       description: 'Lists the quota increase requests in the specified quota request template',
       options: [
+
         Option(
           name: '--service-code',
           description: 'Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the ListServices operation',
@@ -715,6 +739,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -727,6 +752,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'list-service-quotas',
       description: 'Lists the applied quota values for the specified Amazon Web Service. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved',
       options: [
+
         Option(
           name: '--service-code',
           description: 'Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the ListServices operation',
@@ -815,6 +841,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -827,6 +854,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'list-services',
       description: 'Lists the names and codes for the Amazon Web Services integrated with Service Quotas',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Specifies a value for receiving additional results after you receive a NextToken response in a previous request. A NextToken response indicates that more output is available. Set this parameter to the value of the previous call\'s NextToken response to indicate where the output should continue from',
@@ -888,6 +916,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -900,6 +929,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of the tags assigned to the specified applied quota',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the list-service-quotas CLI command or the ListServiceQuotas Amazon Web Services API operation',
@@ -925,6 +955,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -937,6 +968,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'put-service-quota-increase-request-into-template',
       description: 'Adds a quota increase request to your quota request template',
       options: [
+
         Option(
           name: '--quota-code',
           description: 'Specifies the quota identifier. To find the quota code for a specific quota, use the ListServiceQuotas operation, and look for the QuotaCode response in the output for the quota you want',
@@ -989,6 +1021,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1001,6 +1034,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'request-service-quota-increase',
       description: 'Submits a quota increase request for the specified quota',
       options: [
+
         Option(
           name: '--service-code',
           description: 'Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the ListServices operation',
@@ -1053,6 +1087,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1065,6 +1100,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to the specified applied quota. You can include one or more tags to add to the quota',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the list-service-quotas CLI command or the ListServiceQuotas Amazon Web Services API operation',
@@ -1099,6 +1135,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1111,6 +1148,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the specified applied quota. You can specify one or more tags to remove',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the list-service-quotas CLI command or the ListServiceQuotas Amazon Web Services API operation',
@@ -1145,6 +1183,7 @@ final FigSpec serviceQuotasSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,6 +9,7 @@ final FigSpec k6Spec = FigSpec(
   name: 'k6',
   description: 'Grafana k6 is an open-source load testing tool that makes performance testing easy',
   subcommands: [
+
     Subcommand(
       name: 'archive',
       description: 'Create an archive',
@@ -39,6 +40,7 @@ final FigSpec k6Spec = FigSpec(
       )
       ],
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Generate the autocompletion script for bash'
@@ -97,6 +99,7 @@ final FigSpec k6Spec = FigSpec(
       )
       ],
       subcommands: [
+
         Subcommand(
           name: 'cloud',
           description: 'Authenticate with Load Impact'
@@ -125,6 +128,7 @@ final FigSpec k6Spec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--address',
           description: 'Address of the API server',
@@ -541,6 +545,7 @@ final FigSpec k6Spec = FigSpec(
       name: 'scale',
       description: 'Scale a running test',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Help for scale'
@@ -571,6 +576,7 @@ final FigSpec k6Spec = FigSpec(
       name: 'stats',
       description: 'Show test metrics',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Help for stats'
@@ -581,6 +587,7 @@ final FigSpec k6Spec = FigSpec(
       name: 'status',
       description: 'Show test status',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Help for status'
@@ -591,6 +598,7 @@ final FigSpec k6Spec = FigSpec(
       name: 'version',
       description: 'Show the application version and exit',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Help for version'
@@ -599,6 +607,7 @@ final FigSpec k6Spec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-v', '--verbose'],
       description: 'Enable verbose logging'

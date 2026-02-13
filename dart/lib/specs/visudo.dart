@@ -9,6 +9,7 @@ final FigSpec visudoSpec = FigSpec(
   name: 'visudo',
   description: 'Visudo edits the sudoers file, which defines the users and groups with administrator rights',
   options: [
+
     Option(
       name: ['--check', '-c'],
       description: 'Checking existing sudoers file for syntax errors'

@@ -9,14 +9,17 @@ final FigSpec recommenderSpec = FigSpec(
   name: 'recommender',
   description: 'Manage Cloud recommendations and recommendation rules',
   subcommands: [
+
     Subcommand(
       name: 'insights',
       description: 'Manage Cloud resource insights',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe an insight',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -162,6 +165,7 @@ final FigSpec recommenderSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -184,6 +188,7 @@ final FigSpec recommenderSpec = FigSpec(
           name: 'list',
           description: 'List insights for a Cloud project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -374,6 +379,7 @@ final FigSpec recommenderSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -390,6 +396,7 @@ final FigSpec recommenderSpec = FigSpec(
           name: 'mark-accepted',
           description: 'Mark an insight\'s state as ACCEPTED',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -558,6 +565,7 @@ final FigSpec recommenderSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -578,6 +586,7 @@ final FigSpec recommenderSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -701,6 +710,7 @@ final FigSpec recommenderSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -717,10 +727,12 @@ final FigSpec recommenderSpec = FigSpec(
       name: 'recommendations',
       description: 'Manage Cloud resource recommendations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a recommendation for a Cloud project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -866,6 +878,7 @@ final FigSpec recommenderSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -888,6 +901,7 @@ final FigSpec recommenderSpec = FigSpec(
           name: 'list',
           description: 'Lists recommendations for a Cloud project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1082,6 +1096,7 @@ final FigSpec recommenderSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1098,6 +1113,7 @@ final FigSpec recommenderSpec = FigSpec(
           name: 'mark-claimed',
           description: 'Mark a recommendation\'s state as CLAIMED',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1266,6 +1282,7 @@ final FigSpec recommenderSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1288,6 +1305,7 @@ final FigSpec recommenderSpec = FigSpec(
           name: 'mark-failed',
           description: 'Mark a recommendation\'s state as FAILED',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1456,6 +1474,7 @@ final FigSpec recommenderSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1478,6 +1497,7 @@ final FigSpec recommenderSpec = FigSpec(
           name: 'mark-succeeded',
           description: 'Mark a recommendation\'s state as SUCCEEDED',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1646,6 +1666,7 @@ final FigSpec recommenderSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1666,6 +1687,7 @@ final FigSpec recommenderSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1789,6 +1811,7 @@ final FigSpec recommenderSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1803,6 +1826,7 @@ final FigSpec recommenderSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1926,6 +1950,7 @@ final FigSpec recommenderSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

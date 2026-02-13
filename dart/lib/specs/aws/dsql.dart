@@ -9,10 +9,12 @@ final FigSpec dsqlSpec = FigSpec(
   name: 'dsql',
   description: 'This is an interface reference for Amazon Aurora DSQL. It contains documentation for one of the programming or command line interfaces you can use to manage Amazon Aurora DSQL. Amazon Aurora DSQL is a serverless, distributed SQL database suitable for workloads of any size. Aurora DSQL is available in both single-Region and multi-Region configurations, so your clusters and databases are always available even if an Availability Zone or an Amazon Web Services Region are unavailable. Aurora DSQL lets you focus on using your data to acquire new insights for your business and customers',
   subcommands: [
+
     Subcommand(
       name: 'create-cluster',
       description: 'Creates a cluster in Amazon Aurora DSQL',
       options: [
+
         Option(
           name: '--deletion-protection-enabled',
           description: 'If enabled, you can\'t delete your cluster. You must first disable this property before you can delete your cluster'
@@ -55,6 +57,7 @@ final FigSpec dsqlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -67,6 +70,7 @@ final FigSpec dsqlSpec = FigSpec(
       name: 'create-multi-region-clusters',
       description: 'Creates multi-Region clusters in Amazon Aurora DSQL. Multi-Region clusters require a linked Region list, which is an array of the Regions in which you want to create linked clusters. Multi-Region clusters require a witness Region, which participates in quorum in failure scenarios',
       options: [
+
         Option(
           name: '--linked-region-list',
           description: 'An array of the Regions in which you want to create additional clusters',
@@ -119,6 +123,7 @@ final FigSpec dsqlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -131,6 +136,7 @@ final FigSpec dsqlSpec = FigSpec(
       name: 'delete-cluster',
       description: 'Deletes a cluster in Amazon Aurora DSQL',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The ID of the cluster to delete',
@@ -165,6 +171,7 @@ final FigSpec dsqlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -177,6 +184,7 @@ final FigSpec dsqlSpec = FigSpec(
       name: 'delete-multi-region-clusters',
       description: 'Deletes a multi-Region cluster in Amazon Aurora DSQL',
       options: [
+
         Option(
           name: '--linked-cluster-arns',
           description: 'The ARNs of the clusters linked to the cluster you want to delete. also deletes these clusters as part of the operation',
@@ -211,6 +219,7 @@ final FigSpec dsqlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -223,6 +232,7 @@ final FigSpec dsqlSpec = FigSpec(
       name: 'get-cluster',
       description: 'Retrieves information about a cluster',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The ID of the cluster to retrieve',
@@ -248,6 +258,7 @@ final FigSpec dsqlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -260,6 +271,7 @@ final FigSpec dsqlSpec = FigSpec(
       name: 'list-clusters',
       description: 'Retrieves information about a list of clusters',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results',
@@ -321,6 +333,7 @@ final FigSpec dsqlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -333,6 +346,7 @@ final FigSpec dsqlSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all of the tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource for which you want to list the tags',
@@ -358,6 +372,7 @@ final FigSpec dsqlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -370,6 +385,7 @@ final FigSpec dsqlSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags a resource with a map of key and value pairs',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource that you want to tag',
@@ -404,6 +420,7 @@ final FigSpec dsqlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +433,7 @@ final FigSpec dsqlSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource from which to remove tags',
@@ -450,6 +468,7 @@ final FigSpec dsqlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -462,6 +481,7 @@ final FigSpec dsqlSpec = FigSpec(
       name: 'update-cluster',
       description: 'Updates a cluster',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The ID of the cluster you want to update',
@@ -504,6 +524,7 @@ final FigSpec dsqlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -516,10 +537,12 @@ final FigSpec dsqlSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'cluster-active',
           description: 'Wait until a Cluster is ACTIVE It will poll every 2 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--identifier',
               description: 'The ID of the cluster to retrieve',
@@ -545,6 +568,7 @@ final FigSpec dsqlSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -557,6 +581,7 @@ final FigSpec dsqlSpec = FigSpec(
           name: 'cluster-not-exists',
           description: 'Wait until a Cluster is gone It will poll every 2 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--identifier',
               description: 'The ID of the cluster to retrieve',
@@ -582,6 +607,7 @@ final FigSpec dsqlSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

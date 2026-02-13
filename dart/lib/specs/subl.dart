@@ -17,6 +17,7 @@ final FigSpec sublSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--project',
       description: 'Load the given project',

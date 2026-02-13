@@ -9,10 +9,12 @@ final FigSpec smsSpec = FigSpec(
   name: 'sms',
   description: 'Product update  We recommend Amazon Web Services Application Migration Service (Amazon Web Services MGN) as the primary migration service for lift-and-shift migrations. If Amazon Web Services MGN is unavailable in a specific Amazon Web Services Region, you can use the Server Migration Service APIs through March 2023.  Server Migration Service (Server Migration Service) makes it easier and faster for you to migrate your on-premises workloads to Amazon Web Services. To learn more about Server Migration Service, see the following resources:    Server Migration Service product page     Server Migration Service User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-app',
       description: 'Creates an application. An application consists of one or more server groups. Each server group contain one or more servers',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the new application',
@@ -83,6 +85,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'create-replication-job',
       description: 'Creates a replication job. The replication job schedules periodic replication runs to replicate your server to Amazon Web Services. Each replication run creates an Amazon Machine Image (AMI)',
       options: [
+
         Option(
           name: '--server-id',
           description: 'The ID of the server',
@@ -199,6 +203,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -211,6 +216,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'delete-app',
       description: 'Deletes the specified application. Optionally deletes the launched stack associated with the application and all Server Migration Service replication jobs for servers in the application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -252,6 +258,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -264,6 +271,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'delete-app-launch-configuration',
       description: 'Deletes the launch configuration for the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -289,6 +297,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -301,6 +310,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'delete-app-replication-configuration',
       description: 'Deletes the replication configuration for the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -326,6 +336,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -338,6 +349,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'delete-app-validation-configuration',
       description: 'Deletes the validation configuration for the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -363,6 +375,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -375,6 +388,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'delete-replication-job',
       description: 'Deletes the specified replication job. After you delete a replication job, there are no further replication runs. Amazon Web Services deletes the contents of the Amazon S3 bucket used to store Server Migration Service artifacts. The AMIs created by the replication runs are not deleted',
       options: [
+
         Option(
           name: '--replication-job-id',
           description: 'The ID of the replication job',
@@ -400,6 +414,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -412,6 +427,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'delete-server-catalog',
       description: 'Deletes all servers from your server catalog',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -428,6 +444,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -440,6 +457,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'disassociate-connector',
       description: 'Disassociates the specified connector from Server Migration Service. After you disassociate a connector, it is no longer available to support replication jobs',
       options: [
+
         Option(
           name: '--connector-id',
           description: 'The ID of the connector',
@@ -465,6 +483,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -477,6 +496,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'generate-change-set',
       description: 'Generates a target change set for a currently launched stack and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application associated with the change set',
@@ -511,6 +531,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -523,6 +544,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'generate-template',
       description: 'Generates an CloudFormation template based on the current launch configuration and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application associated with the CloudFormation template',
@@ -557,6 +579,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -569,6 +592,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'get-app',
       description: 'Retrieve information about the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -594,6 +618,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -606,6 +631,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'get-app-launch-configuration',
       description: 'Retrieves the application launch configuration associated with the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -631,6 +657,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -643,6 +670,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'get-app-replication-configuration',
       description: 'Retrieves the application replication configuration associated with the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -668,6 +696,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -680,6 +709,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'get-app-validation-configuration',
       description: 'Retrieves information about a configuration for validating an application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -705,6 +735,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -717,6 +748,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'get-app-validation-output',
       description: 'Retrieves output from validating an application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -742,6 +774,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -754,6 +787,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'get-connectors',
       description: 'Describes the connectors registered with the Server Migration Service',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -815,6 +849,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -827,6 +862,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'get-replication-jobs',
       description: 'Describes the specified replication job or all of your replication jobs',
       options: [
+
         Option(
           name: '--replication-job-id',
           description: 'The ID of the replication job',
@@ -897,6 +933,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -909,6 +946,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'get-replication-runs',
       description: 'Describes the replication runs for the specified replication job',
       options: [
+
         Option(
           name: '--replication-job-id',
           description: 'The ID of the replication job',
@@ -979,6 +1017,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -991,6 +1030,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'get-servers',
       description: 'Describes the servers in your server catalog. Before you can describe your servers, you must import them using ImportServerCatalog',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -1061,6 +1101,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1073,6 +1114,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'import-app-catalog',
       description: 'Allows application import from Migration Hub',
       options: [
+
         Option(
           name: '--role-name',
           description: 'The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in your account. Otherwise, the role that you provide must have the policy and trust policy described in the Migration Hub User Guide',
@@ -1098,6 +1140,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1110,6 +1153,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'import-server-catalog',
       description: 'Gathers a complete list of on-premises servers. Connectors must be installed and monitoring all servers to import. This call returns immediately, but might take additional time to retrieve all the servers',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1126,6 +1170,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1138,6 +1183,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'launch-app',
       description: 'Launches the specified application as a stack in CloudFormation',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -1163,6 +1209,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1175,6 +1222,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'list-apps',
       description: 'Retrieves summaries for all applications',
       options: [
+
         Option(
           name: '--app-ids',
           description: 'The unique application IDs',
@@ -1245,6 +1293,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1257,6 +1306,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'notify-app-validation-output',
       description: 'Provides information to Server Migration Service about whether application validation is successful',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -1291,6 +1341,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1303,6 +1354,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'put-app-launch-configuration',
       description: 'Creates or updates the launch configuration for the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -1354,6 +1406,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1366,6 +1419,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'put-app-replication-configuration',
       description: 'Creates or updates the replication configuration for the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -1400,6 +1454,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1412,6 +1467,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'put-app-validation-configuration',
       description: 'Creates or updates a validation configuration for the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -1455,6 +1511,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1467,6 +1524,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'start-app-replication',
       description: 'Starts replicating the specified application by creating replication jobs for each server in the application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -1492,6 +1550,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1504,6 +1563,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'start-on-demand-app-replication',
       description: 'Starts an on-demand replication run for the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -1538,6 +1598,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1550,6 +1611,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'start-on-demand-replication-run',
       description: 'Starts an on-demand replication run for the specified replication job. This replication run starts immediately. This replication run is in addition to the ones already scheduled. There is a limit on the number of on-demand replications runs that you can request in a 24-hour period',
       options: [
+
         Option(
           name: '--replication-job-id',
           description: 'The ID of the replication job',
@@ -1584,6 +1646,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1596,6 +1659,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'stop-app-replication',
       description: 'Stops replicating the specified application by deleting the replication job for each server in the application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -1621,6 +1685,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1633,6 +1698,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'terminate-app',
       description: 'Terminates the stack for the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -1658,6 +1724,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1670,6 +1737,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'update-app',
       description: 'Updates the specified application',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The ID of the application',
@@ -1740,6 +1808,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1752,6 +1821,7 @@ final FigSpec smsSpec = FigSpec(
       name: 'update-replication-job',
       description: 'Updates the specified settings for the specified replication job',
       options: [
+
         Option(
           name: '--replication-job-id',
           description: 'The ID of the replication job',
@@ -1848,6 +1918,7 @@ final FigSpec smsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

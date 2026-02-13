@@ -17,6 +17,7 @@ final FigSpec sqlite3Spec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-append',
       description: 'Append the database to the end of the file'
@@ -95,6 +96,7 @@ final FigSpec sqlite3Spec = FigSpec(
       name: '-lookaside',
       description: 'Use N entries of SZ bytes for lookaside memory',
       args: [
+
         Arg(
           name: 'SIZE'
         ),
@@ -144,6 +146,7 @@ final FigSpec sqlite3Spec = FigSpec(
       name: '-pagecache',
       description: 'Use N slots of SZ bytes each for page cache memory',
       args: [
+
         Arg(
           name: 'SIZE'
         ),

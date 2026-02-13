@@ -9,6 +9,7 @@ final FigSpec sshKeygenSpec = FigSpec(
   name: 'ssh-keygen',
   description: 'Generates, manages and converts authentication keys for ssh',
   options: [
+
     Option(
       name: '-A',
       description: 'For each of the key types (rsa, dsa, ecdsa and ed25519) for which host keys do not exist, generate the host keys with the default key file path, an empty passphrase, default bits for the key type, and default comment'
@@ -23,6 +24,7 @@ final FigSpec sshKeygenSpec = FigSpec(
         defaultValue: '16',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: '16')
         ]
       )
@@ -41,6 +43,7 @@ final FigSpec sshKeygenSpec = FigSpec(
         description: 'Number of bits in the key',
         defaultValue: '3072',
         suggestions: [
+
           FigSuggestion(name: '3072')
         ]
       )
@@ -79,6 +82,7 @@ final FigSpec sshKeygenSpec = FigSpec(
         description: 'Hash algorithm value',
         defaultValue: 'sha256',
         suggestions: [
+
           FigSuggestion(
             name: 'md5'
           ),
@@ -166,6 +170,7 @@ final FigSpec sshKeygenSpec = FigSpec(
         name: 'command',
         description: 'Use generate or screen',
         suggestions: [
+
           FigSuggestion(
             name: 'generate'
           ),
@@ -276,6 +281,7 @@ final FigSpec sshKeygenSpec = FigSpec(
         Arg(
         name: 'command',
         suggestions: [
+
           FigSuggestion(
             name: 'dsa'
           ),
@@ -335,6 +341,7 @@ final FigSpec sshKeygenSpec = FigSpec(
         Arg(
         name: 'command',
         suggestions: [
+
           FigSuggestion(
             name: 'find-principals',
             description: 'Find the principal(s) associated with the public key of a signature'

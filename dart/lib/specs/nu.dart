@@ -9,6 +9,7 @@ final FigSpec nuSpec = FigSpec(
   name: 'nu',
   description: 'Use the right package manage - upgrade',
   options: [
+
     Option(
       name: '-i',
       description: 'Display the outdated packages before performing any upgrade'

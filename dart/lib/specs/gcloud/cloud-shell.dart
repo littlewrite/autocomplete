@@ -9,10 +9,12 @@ final FigSpec cloudShellSpec = FigSpec(
   name: 'cloud-shell',
   description: 'Manage Google Cloud Shell',
   subcommands: [
+
     Subcommand(
       name: 'get-mount-command',
       description: 'Prints a command to mount the Cloud Shell home directory via sshfs',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -144,6 +146,7 @@ final FigSpec cloudShellSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -166,6 +169,7 @@ final FigSpec cloudShellSpec = FigSpec(
       name: 'scp',
       description: 'Copies files between Cloud Shell and the local machine',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -316,6 +320,7 @@ final FigSpec cloudShellSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -328,6 +333,7 @@ final FigSpec cloudShellSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: '(cloudshell|localhost):SRC',
           description: 'Specifies the files to copy',
@@ -343,6 +349,7 @@ final FigSpec cloudShellSpec = FigSpec(
       name: 'ssh',
       description: 'Allows you to establish an interactive SSH session with Cloud Shell',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -504,6 +511,7 @@ final FigSpec cloudShellSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -518,6 +526,7 @@ final FigSpec cloudShellSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -641,6 +650,7 @@ final FigSpec cloudShellSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

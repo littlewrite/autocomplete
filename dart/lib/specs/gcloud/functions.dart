@@ -9,10 +9,12 @@ final FigSpec functionsSpec = FigSpec(
   name: 'functions',
   description: 'Manage Google Cloud Functions',
   subcommands: [
+
     Subcommand(
       name: 'add-iam-policy-binding',
       description: 'Add an IAM policy binding for a Google Cloud Function',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -171,6 +173,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -193,6 +196,7 @@ final FigSpec functionsSpec = FigSpec(
       name: 'call',
       description: 'Trigger execution of a Google Cloud Function',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -338,6 +342,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -360,6 +365,7 @@ final FigSpec functionsSpec = FigSpec(
       name: 'delete',
       description: 'Delete a Google Cloud Function',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -494,6 +500,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -516,6 +523,7 @@ final FigSpec functionsSpec = FigSpec(
       name: 'deploy',
       description: 'Create or update a Google Cloud Function',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -592,6 +600,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'EGRESS_SETTINGS',
             description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
             suggestions: [
+
               FigSuggestion(name: 'private-ranges-only'),
               FigSuggestion(name: 'all')
             ]
@@ -687,6 +696,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'INGRESS_SETTINGS',
             description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
             suggestions: [
+
               FigSuggestion(name: 'all'),
               FigSuggestion(name: 'internal-only'),
               FigSuggestion(name: 'internal-and-gclb')
@@ -964,6 +974,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -997,6 +1008,7 @@ final FigSpec functionsSpec = FigSpec(
       name: 'describe',
       description: 'Display details of a Google Cloud Function',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1131,6 +1143,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1153,10 +1166,12 @@ final FigSpec functionsSpec = FigSpec(
       name: 'event-types',
       description: 'List types of events that can be a trigger for a Google Cloud Function',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List types of events that can be a trigger for a Google Cloud Function',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1280,6 +1295,7 @@ final FigSpec functionsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1294,6 +1310,7 @@ final FigSpec functionsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1417,6 +1434,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1433,6 +1451,7 @@ final FigSpec functionsSpec = FigSpec(
       name: 'get-iam-policy',
       description: 'Get IAM policy for a Google Cloud Function',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1615,6 +1634,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1637,6 +1657,7 @@ final FigSpec functionsSpec = FigSpec(
       name: 'list',
       description: 'List Google Cloud Functions',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1819,6 +1840,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1835,10 +1857,12 @@ final FigSpec functionsSpec = FigSpec(
       name: 'logs',
       description: 'Display log entries produced by Google Cloud Functions',
       subcommands: [
+
         Subcommand(
           name: 'read',
           description: 'Display log entries produced by Google Cloud Functions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1976,6 +2000,7 @@ final FigSpec functionsSpec = FigSpec(
                 name: 'MIN_LOG_LEVEL',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'error')
@@ -2069,6 +2094,7 @@ final FigSpec functionsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2089,6 +2115,7 @@ final FigSpec functionsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2212,6 +2239,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2228,10 +2256,12 @@ final FigSpec functionsSpec = FigSpec(
       name: 'regions',
       description: 'List regions available to Google Cloud Functions',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List regions available to Google Cloud Functions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2403,6 +2433,7 @@ final FigSpec functionsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2417,6 +2448,7 @@ final FigSpec functionsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2540,6 +2572,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2556,6 +2589,7 @@ final FigSpec functionsSpec = FigSpec(
       name: 'remove-iam-policy-binding',
       description: 'Removes an IAM policy binding from a Google Cloud Function',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2714,6 +2748,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2736,6 +2771,7 @@ final FigSpec functionsSpec = FigSpec(
       name: 'set-iam-policy',
       description: 'Sets IAM policy for a Google Cloud Function',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2870,6 +2906,7 @@ final FigSpec functionsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2882,6 +2919,7 @@ final FigSpec functionsSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'NAME',
           description: 'ID of the function or fully qualified identifier for the function'
@@ -2894,6 +2932,7 @@ final FigSpec functionsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3017,6 +3056,7 @@ final FigSpec functionsSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

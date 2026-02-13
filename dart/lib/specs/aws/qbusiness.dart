@@ -9,10 +9,12 @@ final FigSpec qbusinessSpec = FigSpec(
   name: 'qbusiness',
   description: 'This is the Amazon Q Business API Reference. Amazon Q Business is a fully managed, generative-AI powered enterprise chat assistant that you can deploy within your organization. Amazon Q Business enhances employee productivity by supporting key tasks such as question-answering, knowledge discovery, writing email messages, summarizing text, drafting document outlines, and brainstorming ideas. Users ask questions of Amazon Q Business and get answers that are presented in a conversational manner. For an introduction to the service, see the  Amazon Q Business User Guide . For an overview of the Amazon Q Business APIs, see Overview of Amazon Q Business API operations. For information about the IAM access control permissions you need to use this API, see IAM roles for Amazon Q Business in the Amazon Q Business User Guide. The following resources provide additional information about using the Amazon Q Business API:     Setting up for Amazon Q Business       Amazon Q Business CLI Reference       Amazon Web Services General Reference',
   subcommands: [
+
     Subcommand(
       name: 'associate-permission',
       description: 'Adds or updates a permission policy for a Q Business application, allowing cross-account access for an ISV. This operation creates a new policy statement for the specified Q Business application. The policy statement defines the IAM actions that the ISV is allowed to perform on the Q Business application\'s resources',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier of the Q Business application',
@@ -65,6 +67,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'batch-delete-document',
       description: 'Asynchronously deletes one or more documents added using the BatchPutDocument API from an Amazon Q Business index. You can see the progress of the deletion, and any error messages related to the process, by using CloudWatch',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application',
@@ -129,6 +133,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'batch-put-document',
       description: 'Adds one or more documents to an Amazon Q Business index. You use this API to:   ingest your structured and unstructured documents and documents stored in an Amazon S3 bucket into an Amazon Q Business index.   add custom attributes to documents in an Amazon Q Business index.   attach an access control list to the documents added to an Amazon Q Business index.   You can see the progress of the deletion, and any error messages related to the process, by using CloudWatch',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application',
@@ -202,6 +208,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -214,6 +221,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'chat-sync',
       description: 'Starts or continues a non-streaming Amazon Q Business conversation',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application linked to the Amazon Q Business conversation',
@@ -347,6 +355,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -359,6 +368,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'create-application',
       description: 'Creates an Amazon Q Business application.  There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro are also available in Amazon Q Business Lite. For information on what\'s included in Amazon Q Business Lite and what\'s included in Amazon Q Business Pro, see Amazon Q Business tiers. You must use the Amazon Q Business console to assign subscription tiers to users.  An Amazon Q Apps service linked role will be created if it\'s absent in the Amazon Web Services account when QAppsConfiguration is enabled in the request. For more information, see  Using service-linked roles for Q Apps. When you create an application, Amazon Q Business may securely transmit data for processing from your selected Amazon Web Services region, but within your geography. For more information, see Cross region inference in Amazon Q Business',
       options: [
+
         Option(
           name: '--display-name',
           description: 'A name for the Amazon Q Business application',
@@ -501,6 +511,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -513,6 +524,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'create-data-accessor',
       description: 'Creates a new data accessor for an ISV to access data from a Q Business application. The data accessor is an entity that represents the ISV\'s access to the Q Business application\'s data. It includes the IAM role ARN for the ISV, a friendly name, and a set of action configurations that define the specific actions the ISV is allowed to perform and any associated data filters. When the data accessor is created, an AWS IAM Identity Center application is also created to manage the ISV\'s identity and authentication for accessing the Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier of the Q Business application',
@@ -583,6 +595,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -595,6 +608,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'create-data-source',
       description: 'Creates a data source connector for an Amazon Q Business application.  CreateDataSource is a synchronous operation. The operation returns 200 if the data source was successfully created. Otherwise, an exception is raised',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application the data source will be attached to',
@@ -719,6 +733,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -731,6 +746,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'create-index',
       description: 'Creates an Amazon Q Business index. To determine if index creation has completed, check the Status field returned from a call to DescribeIndex. The Status field is set to ACTIVE when the index is ready to use. Once the index is active, you can index your documents using the  BatchPutDocument  API or the  CreateDataSource  API',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application using the index',
@@ -810,6 +826,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -822,6 +839,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'create-plugin',
       description: 'Creates an Amazon Q Business plugin',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application that will contain the plugin',
@@ -910,6 +928,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -922,6 +941,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'create-retriever',
       description: 'Adds a retriever to your Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of your Amazon Q Business application',
@@ -1001,6 +1021,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1013,6 +1034,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'create-user',
       description: 'Creates a universally unique identifier (UUID) mapped to a list of local user ids within an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application for which the user mapping will be created',
@@ -1065,6 +1087,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1077,6 +1100,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'create-web-experience',
       description: 'Creates an Amazon Q Business web experience',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business web experience',
@@ -1201,6 +1225,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1213,6 +1238,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-application',
       description: 'Deletes an Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application',
@@ -1238,6 +1264,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1250,6 +1277,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-chat-controls-configuration',
       description: 'Deletes chat controls configured for an existing Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application the chat controls have been configured for',
@@ -1275,6 +1303,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1287,6 +1316,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-conversation',
       description: 'Deletes an Amazon Q Business web experience conversation',
       options: [
+
         Option(
           name: '--conversation-id',
           description: 'The identifier of the Amazon Q Business web experience conversation being deleted',
@@ -1330,6 +1360,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1342,6 +1373,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-data-accessor',
       description: 'Deletes a specified data accessor. This operation permanently removes the data accessor and its associated AWS IAM Identity Center application. Any access granted to the ISV through this data accessor will be revoked',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier of the Q Business application',
@@ -1376,6 +1408,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1388,6 +1421,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-data-source',
       description: 'Deletes an Amazon Q Business data source connector. While the data source is being deleted, the Status field returned by a call to the DescribeDataSource API is set to DELETING',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application used with the data source connector',
@@ -1431,6 +1465,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1443,6 +1478,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-group',
       description: 'Deletes a group so that all users and sub groups that belong to the group can no longer access documents only available to that group. For example, after deleting the group "Summer Interns", all interns who belonged to that group no longer see intern-only documents in their chat results.  If you want to delete, update, or replace users or sub groups of a group, you need to use the PutGroup operation. For example, if a user in the group "Engineering" leaves the engineering team and another user takes their place, you provide an updated list of users or sub groups that belong to the "Engineering" group when calling PutGroup',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application in which the group mapping belongs',
@@ -1495,6 +1531,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1507,6 +1544,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-index',
       description: 'Deletes an Amazon Q Business index',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application the Amazon Q Business index is linked to',
@@ -1541,6 +1579,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1553,6 +1592,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-plugin',
       description: 'Deletes an Amazon Q Business plugin',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier the application attached to the Amazon Q Business plugin',
@@ -1587,6 +1627,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1599,6 +1640,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-retriever',
       description: 'Deletes the retriever used by an Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application using the retriever',
@@ -1633,6 +1675,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1645,6 +1688,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-user',
       description: 'Deletes a user by email id',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application from which the user is being deleted',
@@ -1679,6 +1723,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1691,6 +1736,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'delete-web-experience',
       description: 'Deletes an Amazon Q Business web experience',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application linked to the Amazon Q Business web experience',
@@ -1725,6 +1771,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1737,6 +1784,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'disassociate-permission',
       description: 'Removes a permission policy from a Q Business application, revoking the cross-account access that was previously granted to an ISV. This operation deletes the specified policy statement from the application\'s permission policy',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier of the Q Business application',
@@ -1771,6 +1819,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1783,6 +1832,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-application',
       description: 'Gets information about an existing Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application',
@@ -1808,6 +1858,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1820,6 +1871,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-chat-controls-configuration',
       description: 'Gets information about an chat controls configured for an existing Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application for which the chat controls are configured',
@@ -1890,6 +1942,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1902,6 +1955,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-data-accessor',
       description: 'Retrieves information about a specified data accessor. This operation returns details about the data accessor, including its display name, unique identifier, Amazon Resource Name (ARN), the associated Q Business application and AWS IAM Identity Center application, the IAM role for the ISV, the action configurations, and the timestamps for when the data accessor was created and last updated',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier of the Q Business application',
@@ -1936,6 +1990,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1948,6 +2003,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-data-source',
       description: 'Gets information about an existing Amazon Q Business data source connector',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application',
@@ -1991,6 +2047,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2003,6 +2060,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-group',
       description: 'Describes a group by group name',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application id the group is attached to',
@@ -2055,6 +2113,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2067,6 +2126,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-index',
       description: 'Gets information about an existing Amazon Q Business index',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application connected to the index',
@@ -2101,6 +2161,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2113,6 +2174,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-media',
       description: 'Returns the image bytes corresponding to a media object. If you have implemented your own application with the Chat and ChatSync APIs, and have enabled content extraction from visual data in Amazon Q Business, you use the GetMedia API operation to download the images so you can show them in your UI with responses. For more information, see Extracting semantic meaning from images and visuals',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business which contains the media object',
@@ -2165,6 +2227,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2177,6 +2240,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-plugin',
       description: 'Gets information about an existing Amazon Q Business plugin',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application which contains the plugin',
@@ -2211,6 +2275,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2223,6 +2288,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-policy',
       description: 'Retrieves the current permission policy for a Q Business application. The policy is returned as a JSON-formatted string and defines the IAM actions that are allowed or denied for the application\'s resources',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier of the Q Business application',
@@ -2248,6 +2314,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2260,6 +2327,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-retriever',
       description: 'Gets information about an existing retriever used by an Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application using the retriever',
@@ -2294,6 +2362,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2306,6 +2375,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-user',
       description: 'Describes the universally unique identifier (UUID) associated with a local user in a data source',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application connected to the user',
@@ -2340,6 +2410,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2352,6 +2423,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'get-web-experience',
       description: 'Gets information about an existing Amazon Q Business web experience',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application linked to the web experience',
@@ -2386,6 +2458,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2398,6 +2471,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-applications',
       description: 'Lists Amazon Q Business applications.  Amazon Q Business applications may securely transmit data for processing across Amazon Web Services Regions within your geography. For more information, see Cross region inference in Amazon Q Business',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the maxResults response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business applications',
@@ -2459,6 +2533,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2471,6 +2546,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-attachments',
       description: 'Gets a list of attachments associated with an Amazon Q Business web experience or a list of attachements associated with a specific Amazon Q Business conversation',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the Amazon Q Business application',
@@ -2559,6 +2635,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2571,6 +2648,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-conversations',
       description: 'Lists one or more Amazon Q Business conversations',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application',
@@ -2650,6 +2728,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2662,6 +2741,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-data-accessors',
       description: 'Lists the data accessors for a Q Business application. This operation returns a paginated list of data accessor summaries, including the friendly name, unique identifier, ARN, associated IAM role, and creation/update timestamps for each data accessor',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier of the Q Business application',
@@ -2732,6 +2812,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2744,6 +2825,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-data-source-sync-jobs',
       description: 'Get information about an Amazon Q Business data source connector synchronization',
       options: [
+
         Option(
           name: '--data-source-id',
           description: 'The identifier of the data source connector',
@@ -2859,6 +2941,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2871,6 +2954,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-data-sources',
       description: 'Lists the Amazon Q Business data source connectors that you have created',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application linked to the data source connectors',
@@ -2950,6 +3034,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2962,6 +3047,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-documents',
       description: 'A list of documents attached to an index',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application id the documents are attached to',
@@ -3050,6 +3136,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3062,6 +3149,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-groups',
       description: 'Provides a list of groups that are mapped to users',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application for getting a list of groups mapped to users',
@@ -3159,6 +3247,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3171,6 +3260,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-indices',
       description: 'Lists the Amazon Q Business indices you have created',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application connected to the index',
@@ -3241,6 +3331,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3253,6 +3344,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-messages',
       description: 'Gets a list of messages associated with an Amazon Q Business web experience',
       options: [
+
         Option(
           name: '--conversation-id',
           description: 'The identifier of the Amazon Q Business web experience conversation',
@@ -3341,6 +3433,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3353,6 +3446,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-plugin-actions',
       description: 'Lists configured Amazon Q Business actions for a specific plugin in an Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application the plugin is attached to',
@@ -3432,6 +3526,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3444,6 +3539,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-plugin-type-actions',
       description: 'Lists configured Amazon Q Business actions for any plugin type—both built-in and custom',
       options: [
+
         Option(
           name: '--plugin-type',
           description: 'The type of the plugin',
@@ -3514,6 +3610,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3526,6 +3623,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-plugin-type-metadata',
       description: 'Lists metadata for all Amazon Q Business plugin types',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the metadata returned exceeds maxResults, Amazon Q Business returns a next token as a pagination token to retrieve the next set of metadata',
@@ -3587,6 +3685,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3599,6 +3698,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-plugins',
       description: 'Lists configured Amazon Q Business plugins',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application the plugin is attached to',
@@ -3669,6 +3769,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3681,6 +3782,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-retrievers',
       description: 'Lists the retriever used by an Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application using the retriever',
@@ -3751,6 +3853,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3763,6 +3866,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets a list of tags associated with a specified resource. Amazon Q Business applications and data sources can have tags associated with them',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon Q Business application or data source to get a list of tags for',
@@ -3788,6 +3892,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3800,6 +3905,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'list-web-experiences',
       description: 'Lists one or more Amazon Q Business Web Experiences',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application linked to the listed web experiences',
@@ -3870,6 +3976,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3882,6 +3989,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'put-feedback',
       description: 'Enables your end user to provide feedback on their Amazon Q Business generated chat responses',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application associated with the feedback',
@@ -3952,6 +4060,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3964,6 +4073,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'put-group',
       description: 'Create, or updates, a mapping of users—who have access to a document—to groups. You can also map sub groups to groups. For example, the group "Company Intellectual Property Teams" includes sub groups "Research" and "Engineering". These sub groups include their own list of users or people who work in these teams. Only users who work in research and engineering, and therefore belong in the intellectual property group, can see top-secret company documents in their Amazon Q Business chat results',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application in which the user and group mapping belongs',
@@ -4043,6 +4153,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4055,6 +4166,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'search-relevant-content',
       description: 'Searches for relevant content in a Q Business application based on a query. This operation takes a search query text, the Q Business application identifier, and optional filters (such as content source and maximum results) as input. It returns a list of relevant content items, where each item includes the content text, the unique document identifier, the document title, the document URI, any relevant document attributes, and score attributes indicating the confidence level of the relevance',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier of the Q Business application to search',
@@ -4152,6 +4264,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4164,6 +4277,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'start-data-source-sync-job',
       description: 'Starts a data source connector synchronization job. If a synchronization job is already in progress, Amazon Q Business returns a ConflictException',
       options: [
+
         Option(
           name: '--data-source-id',
           description: 'The identifier of the data source connector',
@@ -4207,6 +4321,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4219,6 +4334,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'stop-data-source-sync-job',
       description: 'Stops an Amazon Q Business data source connector synchronization job already in progress',
       options: [
+
         Option(
           name: '--data-source-id',
           description: 'The identifier of the data source connector',
@@ -4262,6 +4378,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4274,6 +4391,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tag to the specified Amazon Q Business application or data source resource. If the tag already exists, the existing value is replaced with the new value',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon Q Business application or data source to tag',
@@ -4308,6 +4426,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4320,6 +4439,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from an Amazon Q Business application or a data source',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon Q Business application, or data source to remove the tag from',
@@ -4354,6 +4474,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4366,6 +4487,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'update-application',
       description: 'Updates an existing Amazon Q Business application.  Amazon Q Business applications may securely transmit data for processing across Amazon Web Services Regions within your geography. For more information, see Cross region inference in Amazon Q Business.   An Amazon Q Apps service-linked role will be created if it\'s absent in the Amazon Web Services account when QAppsConfiguration is enabled in the request. For more information, see Using service-linked roles for Q Apps',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application',
@@ -4463,6 +4585,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4475,6 +4598,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'update-chat-controls-configuration',
       description: 'Updates an set of chat controls configured for an existing Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application for which the chat controls are configured',
@@ -4554,6 +4678,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4566,6 +4691,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'update-data-accessor',
       description: 'Updates an existing data accessor. This operation allows modifying the action configurations (the allowed actions and associated filters) and the display name of the data accessor. It does not allow changing the IAM role associated with the data accessor or other core properties of the data accessor',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier of the Q Business application',
@@ -4618,6 +4744,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4630,6 +4757,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'update-data-source',
       description: 'Updates an existing Amazon Q Business data source connector',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application the data source is attached to',
@@ -4745,6 +4873,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4757,6 +4886,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'update-index',
       description: 'Updates an Amazon Q Business index',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application connected to the index',
@@ -4827,6 +4957,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4839,6 +4970,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'update-plugin',
       description: 'Updates an Amazon Q Business plugin',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application the plugin is attached to',
@@ -4918,6 +5050,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4930,6 +5063,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'update-retriever',
       description: 'Updates the retriever used for your Amazon Q Business application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of your Amazon Q Business application',
@@ -4991,6 +5125,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5003,6 +5138,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'update-user',
       description: 'Updates a information associated with a user id',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the application the user is attached to',
@@ -5055,6 +5191,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5067,6 +5204,7 @@ final FigSpec qbusinessSpec = FigSpec(
       name: 'update-web-experience',
       description: 'Updates an Amazon Q Business web experience',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The identifier of the Amazon Q Business application attached to the web experience',
@@ -5191,6 +5329,7 @@ final FigSpec qbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

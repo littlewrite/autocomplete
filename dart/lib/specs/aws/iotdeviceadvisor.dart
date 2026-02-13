@@ -9,10 +9,12 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
   name: 'iotdeviceadvisor',
   description: 'Amazon Web Services IoT Core Device Advisor is a cloud-based, fully managed test capability for validating IoT devices during device software development. Device Advisor provides pre-built tests that you can use to validate IoT devices for reliable and secure connectivity with Amazon Web Services IoT Core before deploying devices to production. By using Device Advisor, you can confirm that your devices can connect to Amazon Web Services IoT Core, follow security best practices and, if applicable, receive software updates from IoT Device Management. You can also download signed qualification reports to submit to the Amazon Web Services Partner Network to get your device qualified for the Amazon Web Services Partner Device Catalog without the need to send your device in and wait for it to be tested',
   subcommands: [
+
     Subcommand(
       name: 'create-suite-definition',
       description: 'Creates a Device Advisor test suite. Requires permission to access the CreateSuiteDefinition action',
       options: [
+
         Option(
           name: '--suite-definition-configuration',
           description: 'Creates a Device Advisor test suite with suite definition configuration',
@@ -56,6 +58,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'delete-suite-definition',
       description: 'Deletes a Device Advisor test suite. Requires permission to access the DeleteSuiteDefinition action',
       options: [
+
         Option(
           name: '--suite-definition-id',
           description: 'Suite definition ID of the test suite to be deleted',
@@ -93,6 +97,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'get-endpoint',
       description: 'Gets information about an Device Advisor endpoint',
       options: [
+
         Option(
           name: '--thing-arn',
           description: 'The thing ARN of the device. This is an optional parameter',
@@ -157,6 +163,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'get-suite-definition',
       description: 'Gets information about a Device Advisor test suite. Requires permission to access the GetSuiteDefinition action',
       options: [
+
         Option(
           name: '--suite-definition-id',
           description: 'Suite definition ID of the test suite to get',
@@ -203,6 +211,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -215,6 +224,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'get-suite-run',
       description: 'Gets information about a Device Advisor test suite run. Requires permission to access the GetSuiteRun action',
       options: [
+
         Option(
           name: '--suite-definition-id',
           description: 'Suite definition ID for the test suite run',
@@ -249,6 +259,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'get-suite-run-report',
       description: 'Gets a report download link for a successful Device Advisor qualifying test suite run. Requires permission to access the GetSuiteRunReport action',
       options: [
+
         Option(
           name: '--suite-definition-id',
           description: 'Suite definition ID of the test suite',
@@ -295,6 +307,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'list-suite-definitions',
       description: 'Lists the Device Advisor test suites you have created. Requires permission to access the ListSuiteDefinitions action',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return at once',
@@ -341,6 +355,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -353,6 +368,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'list-suite-runs',
       description: 'Lists runs of the specified Device Advisor test suite. You can list all runs of the test suite, or the runs of a specific version of the test suite. Requires permission to access the ListSuiteRuns action',
       options: [
+
         Option(
           name: '--suite-definition-id',
           description: 'Lists the test suite runs of the specified test suite based on suite definition ID',
@@ -405,6 +421,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -417,6 +434,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags attached to an IoT Device Advisor resource. Requires permission to access the ListTagsForResource action',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN of the IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN',
@@ -442,6 +460,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -454,6 +473,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'start-suite-run',
       description: 'Starts a Device Advisor test suite run. Requires permission to access the StartSuiteRun action',
       options: [
+
         Option(
           name: '--suite-definition-id',
           description: 'Suite definition ID of the test suite',
@@ -506,6 +526,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -518,6 +539,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'stop-suite-run',
       description: 'Stops a Device Advisor test suite run that is currently running. Requires permission to access the StopSuiteRun action',
       options: [
+
         Option(
           name: '--suite-definition-id',
           description: 'Suite definition ID of the test suite run to be stopped',
@@ -552,6 +574,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -564,6 +587,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds to and modifies existing tags of an IoT Device Advisor resource. Requires permission to access the TagResource action',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN',
@@ -598,6 +622,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -610,6 +635,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from an IoT Device Advisor resource. Requires permission to access the UntagResource action',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN',
@@ -644,6 +670,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -656,6 +683,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
       name: 'update-suite-definition',
       description: 'Updates a Device Advisor test suite. Requires permission to access the UpdateSuiteDefinition action',
       options: [
+
         Option(
           name: '--suite-definition-id',
           description: 'Suite definition ID of the test suite to be updated',
@@ -690,6 +718,7 @@ final FigSpec iotdeviceadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec mgnSpec = FigSpec(
   name: 'mgn',
   description: 'The Application Migration Service service',
   subcommands: [
+
     Subcommand(
       name: 'archive-application',
       description: 'Archive application',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -47,6 +49,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'archive-wave',
       description: 'Archive wave',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -93,6 +97,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'associate-applications',
       description: 'Associate applications to wave',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -148,6 +154,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'associate-source-servers',
       description: 'Associate source servers to application',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -212,6 +220,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'change-server-life-cycle-state',
       description: 'Allows the user to set the SourceServer.LifeCycle.state property for specific Source Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER. This command only works if the Source Server is already launchable (dataReplicationInfo.lagDuration is not null.)',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The request to change the source server migration account ID',
@@ -267,6 +277,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'create-application',
       description: 'Create application',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -331,6 +343,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -343,6 +356,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'create-connector',
       description: 'Create Connector',
       options: [
+
         Option(
           name: '--name',
           description: 'Create Connector request name',
@@ -395,6 +409,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -407,6 +422,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'create-launch-configuration-template',
       description: 'Creates a new Launch Configuration Template',
       options: [
+
         Option(
           name: '--associate-public-ip-address',
           description: 'Associate public Ip address'
@@ -545,6 +561,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -557,6 +574,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'create-replication-configuration-template',
       description: 'Creates a new ReplicationConfigurationTemplate',
       options: [
+
         Option(
           name: '--associate-default-security-group',
           description: 'Request to associate the default Application Migration Service Security group with the Replication Settings template'
@@ -704,6 +722,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -716,6 +735,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'create-wave',
       description: 'Create wave',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -768,6 +788,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -780,6 +801,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'delete-application',
       description: 'Delete application',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -814,6 +836,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -826,6 +849,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'delete-connector',
       description: 'Delete Connector',
       options: [
+
         Option(
           name: '--connector-id',
           description: 'Delete Connector request connector ID',
@@ -851,6 +875,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -863,6 +888,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'delete-job',
       description: 'Deletes a single Job by ID',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Request to delete Job from service by Account ID',
@@ -897,6 +923,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -909,6 +936,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'delete-launch-configuration-template',
       description: 'Deletes a single Launch Configuration Template by ID',
       options: [
+
         Option(
           name: '--launch-configuration-template-id',
           description: 'ID of resource to be deleted',
@@ -934,6 +962,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -946,6 +975,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'delete-replication-configuration-template',
       description: 'Deletes a single Replication Configuration Template by ID',
       options: [
+
         Option(
           name: '--replication-configuration-template-id',
           description: 'Request to delete Replication Configuration Template from service by Replication Configuration Template ID',
@@ -971,6 +1001,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -983,6 +1014,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'delete-source-server',
       description: 'Deletes a single source server by ID',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Request to delete Source Server from service by Account ID',
@@ -1017,6 +1049,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1029,6 +1062,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'delete-vcenter-client',
       description: 'Deletes a given vCenter client by ID',
       options: [
+
         Option(
           name: '--vcenter-client-id',
           description: 'ID of resource to be deleted',
@@ -1054,6 +1088,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1066,6 +1101,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'delete-wave',
       description: 'Delete wave',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -1100,6 +1136,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1112,6 +1149,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'describe-job-log-items',
       description: 'Retrieves detailed job log items with paging',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Request to describe Job log Account ID',
@@ -1191,6 +1229,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1203,6 +1242,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'describe-jobs',
       description: 'Returns a list of Jobs. Use the JobsID and fromDate and toData filters to limit which jobs are returned. The response is sorted by creationDataTime - latest date first. Jobs are normally created by the StartTest, StartCutover, and TerminateTargetInstances APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances, which are APIs available only to *Support* and only used in response to relevant support tickets',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Request to describe job log items by Account ID',
@@ -1282,6 +1322,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1294,6 +1335,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'describe-launch-configuration-templates',
       description: 'Lists all Launch Configuration Templates, filtered by Launch Configuration Template IDs',
       options: [
+
         Option(
           name: '--launch-configuration-template-ids',
           description: 'Request to filter Launch Configuration Templates list by Launch Configuration Template ID',
@@ -1364,6 +1406,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1376,6 +1419,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'describe-replication-configuration-templates',
       description: 'Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Request to describe Replication Configuration template by max results',
@@ -1455,6 +1499,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1467,6 +1512,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'describe-source-servers',
       description: 'Retrieves all SourceServers or multiple SourceServers by ID',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Request to filter Source Servers list by Accoun ID',
@@ -1546,6 +1592,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1558,6 +1605,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'describe-vcenter-clients',
       description: 'Returns a list of the installed vCenter clients',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum results to be returned in DescribeVcenterClients',
@@ -1619,6 +1667,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1631,6 +1680,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'disassociate-applications',
       description: 'Disassociate applications from wave',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -1674,6 +1724,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1686,6 +1737,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'disassociate-source-servers',
       description: 'Disassociate source servers from application',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -1738,6 +1790,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1750,6 +1803,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'disconnect-from-service',
       description: 'Disconnects specific Source Servers from Application Migration Service. Data replication is stopped immediately. All AWS resources created by Application Migration Service for enabling the replication of these source servers will be terminated / deleted within 90 minutes. Launched Test or Cutover instances will NOT be terminated. If the agent on the source server has not been prevented from communicating with the Application Migration Service service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Request to disconnect Source Server from service by Account ID',
@@ -1784,6 +1838,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1796,6 +1851,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'finalize-cutover',
       description: 'Finalizes the cutover immediately for specific Source Servers. All AWS resources created by Application Migration Service for enabling the replication of these source servers will be terminated / deleted within 90 minutes. Launched Test or Cutover instances will NOT be terminated. The AWS Replication Agent will receive a command to uninstall itself (within 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED; The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Request to finalize Cutover by Source Account ID',
@@ -1830,6 +1886,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1842,6 +1899,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'get-launch-configuration',
       description: 'Lists all LaunchConfigurations available, filtered by Source Server IDs',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Request to get Launch Configuration information by Account ID',
@@ -1876,6 +1934,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1888,6 +1947,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'get-replication-configuration',
       description: 'Lists all ReplicationConfigurations, filtered by Source Server ID',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Request to get Replication Configuration by Account ID',
@@ -1922,6 +1982,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1934,6 +1995,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'initialize-service',
       description: 'Initialize Application Migration Service',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1950,6 +2012,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1962,6 +2025,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-applications',
       description: 'Retrieves all applications or multiple applications by ID',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Applications list Account ID',
@@ -2041,6 +2105,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2053,6 +2118,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-connectors',
       description: 'List Connectors',
       options: [
+
         Option(
           name: '--filters',
           description: 'List Connectors Request filters',
@@ -2123,6 +2189,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2135,6 +2202,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-export-errors',
       description: 'List export errors',
       options: [
+
         Option(
           name: '--export-id',
           description: 'List export errors request export id',
@@ -2205,6 +2273,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2217,6 +2286,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-exports',
       description: 'List exports',
       options: [
+
         Option(
           name: '--filters',
           description: 'List exports request filters',
@@ -2287,6 +2357,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2299,6 +2370,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-import-errors',
       description: 'List import errors',
       options: [
+
         Option(
           name: '--import-id',
           description: 'List import errors request import id',
@@ -2369,6 +2441,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2381,6 +2454,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-imports',
       description: 'List imports',
       options: [
+
         Option(
           name: '--filters',
           description: 'List imports request filters',
@@ -2451,6 +2525,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2463,6 +2538,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-managed-accounts',
       description: 'List Managed Accounts',
       options: [
+
         Option(
           name: '--max-results',
           description: 'List managed accounts request max results',
@@ -2524,6 +2600,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2536,6 +2613,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-source-server-actions',
       description: 'List source server post migration custom actions',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID to return when listing source server post migration custom actions',
@@ -2624,6 +2702,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2636,6 +2715,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List all tags for your Application Migration Service resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'List tags for resource request by ARN',
@@ -2661,6 +2741,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2673,6 +2754,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-template-actions',
       description: 'List template post migration custom actions',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters to apply when listing template post migration custom actions',
@@ -2752,6 +2834,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2764,6 +2847,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'list-waves',
       description: 'Retrieves all waves or multiple waves by ID',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Request account ID',
@@ -2843,6 +2927,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2855,6 +2940,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'mark-as-archived',
       description: 'Archives specific Source Servers by setting the SourceServer.isArchived property to true for specified SourceServers by ID. This command only works for SourceServers with a lifecycle. state which equals DISCONNECTED or CUTOVER',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Mark as archived by Account ID',
@@ -2889,6 +2975,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2901,6 +2988,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'pause-replication',
       description: 'Pause Replication',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Pause Replication Request account ID',
@@ -2935,6 +3023,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2947,6 +3036,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'put-source-server-action',
       description: 'Put source server post migration custom action',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Source server post migration custom account ID',
@@ -3087,6 +3177,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3099,6 +3190,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'put-template-action',
       description: 'Put template post migration custom action',
       options: [
+
         Option(
           name: '--action-id',
           description: 'Template post migration custom action ID',
@@ -3239,6 +3331,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3251,6 +3344,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'remove-source-server-action',
       description: 'Remove source server post migration custom action',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Source server post migration account ID',
@@ -3294,6 +3388,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3306,6 +3401,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'remove-template-action',
       description: 'Remove template post migration custom action',
       options: [
+
         Option(
           name: '--action-id',
           description: 'Template post migration custom action ID to remove',
@@ -3340,6 +3436,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3352,6 +3449,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'resume-replication',
       description: 'Resume Replication',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Resume Replication Request account ID',
@@ -3386,6 +3484,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3398,6 +3497,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'retry-data-replication',
       description: 'Causes the data replication initiation sequence to begin immediately upon next Handshake for specified SourceServer IDs, regardless of when the previous initiation started. This command will not work if the SourceServer is not stalled or is in a DISCONNECTED or STOPPED state',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Retry data replication for Account ID',
@@ -3432,6 +3532,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3444,6 +3545,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'start-cutover',
       description: 'Launches a Cutover Instance for specific Source Servers. This command starts a LAUNCH job whose initiatedBy property is StartCutover and changes the SourceServer.lifeCycle.state property to CUTTING_OVER',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Start Cutover by Account IDs',
@@ -3496,6 +3598,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3508,6 +3611,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'start-export',
       description: 'Start export',
       options: [
+
         Option(
           name: '--s3-bucket',
           description: 'Start export request s3 bucket',
@@ -3551,6 +3655,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3563,6 +3668,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'start-import',
       description: 'Start import',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Start import request client token',
@@ -3597,6 +3703,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3609,6 +3716,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'start-replication',
       description: 'Starts replication for SNAPSHOT_SHIPPING agents',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID on which to start replication',
@@ -3643,6 +3751,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3655,6 +3764,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'start-test',
       description: 'Launches a Test Instance for specific Source Servers. This command starts a LAUNCH job whose initiatedBy property is StartTest and changes the SourceServer.lifeCycle.state property to TESTING',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Start Test for Account ID',
@@ -3707,6 +3817,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3719,6 +3830,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'stop-replication',
       description: 'Stop Replication',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Stop Replication Request account ID',
@@ -3753,6 +3865,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3765,6 +3878,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or overwrites only the specified tags for the specified Application Migration Service resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Tag resource by ARN',
@@ -3799,6 +3913,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3811,6 +3926,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'terminate-target-instances',
       description: 'Starts a job that terminates specific launched EC2 Test and Cutover instances. This command will not work for any Source Server with a lifecycle.state of TESTING, CUTTING_OVER, or CUTOVER',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Terminate Target instance by Account ID',
@@ -3863,6 +3979,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3875,6 +3992,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'unarchive-application',
       description: 'Unarchive application',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -3909,6 +4027,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3921,6 +4040,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'unarchive-wave',
       description: 'Unarchive wave',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -3955,6 +4075,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3967,6 +4088,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes the specified set of tags from the specified set of Application Migration Service resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Untag resource by ARN',
@@ -4001,6 +4123,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4013,6 +4136,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'update-application',
       description: 'Update application',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -4065,6 +4189,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4077,6 +4202,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'update-connector',
       description: 'Update Connector',
       options: [
+
         Option(
           name: '--connector-id',
           description: 'Update Connector request connector ID',
@@ -4120,6 +4246,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4132,6 +4259,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'update-launch-configuration',
       description: 'Updates multiple LaunchConfigurations by Source Server ID.  bootMode valid values are LEGACY_BIOS | UEFI',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Update Launch configuration Account ID',
@@ -4253,6 +4381,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4265,6 +4394,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'update-launch-configuration-template',
       description: 'Updates an existing Launch Configuration Template by ID',
       options: [
+
         Option(
           name: '--associate-public-ip-address',
           description: 'Associate public Ip address'
@@ -4403,6 +4533,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4415,6 +4546,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'update-replication-configuration',
       description: 'Allows you to update multiple ReplicationConfigurations by Source Server ID',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Update replication configuration Account ID request',
@@ -4589,6 +4721,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4601,6 +4734,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'update-replication-configuration-template',
       description: 'Updates multiple ReplicationConfigurationTemplates by ID',
       options: [
+
         Option(
           name: '--arn',
           description: 'Update replication configuration template ARN request',
@@ -4757,6 +4891,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4769,6 +4904,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'update-source-server',
       description: 'Update Source Server',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Update Source Server request account ID',
@@ -4812,6 +4948,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4824,6 +4961,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'update-source-server-replication-type',
       description: 'Allows you to change between the AGENT_BASED replication type and the SNAPSHOT_SHIPPING replication type',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID on which to update replication type',
@@ -4867,6 +5005,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4879,6 +5018,7 @@ final FigSpec mgnSpec = FigSpec(
       name: 'update-wave',
       description: 'Update wave',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Account ID',
@@ -4931,6 +5071,7 @@ final FigSpec mgnSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

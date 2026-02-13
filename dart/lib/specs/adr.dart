@@ -9,6 +9,7 @@ final FigSpec adrSpec = FigSpec(
   name: 'adr',
   description: 'Manage Architectural Design Records',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Create an ADR directory in the root of your project, example usage: \' adr init doc/architecture/decisions\'',
@@ -22,6 +23,7 @@ final FigSpec adrSpec = FigSpec(
       name: 'new',
       description: 'Create a new, numbered ADR file',
       options: [
+
         Option(
           name: '-s',
           description: 'Create a new ADR that supercedes a previous one (ADR 9, for example), use the -s option',

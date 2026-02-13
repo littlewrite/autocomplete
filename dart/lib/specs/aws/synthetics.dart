@@ -9,10 +9,12 @@ final FigSpec syntheticsSpec = FigSpec(
   name: 'synthetics',
   description: 'Amazon CloudWatch Synthetics You can use Amazon CloudWatch Synthetics to continually monitor your services. You can create and manage canaries, which are modular, lightweight scripts that monitor your endpoints and APIs from the outside-in. You can set up your canaries to run 24 hours a day, once per minute. The canaries help you check the availability and latency of your web services and troubleshoot anomalies by investigating load time data, screenshots of the UI, logs, and metrics. The canaries seamlessly integrate with CloudWatch ServiceLens to help you trace the causes of impacted nodes in your applications. For more information, see Using ServiceLens to Monitor the Health of Your Applications in the Amazon CloudWatch User Guide. Before you create and manage canaries, be aware of the security considerations. For more information, see Security Considerations for Synthetics Canaries',
   subcommands: [
+
     Subcommand(
       name: 'associate-resource',
       description: 'Associates a canary with a group. Using groups can help you with managing and automating your canaries, and you can also view aggregated run results and statistics for all canaries in a group.  You must run this operation in the Region where the canary exists',
       options: [
+
         Option(
           name: '--group-identifier',
           description: 'Specifies the group. You can specify the group name, the ARN, or the group ID as the GroupIdentifier',
@@ -47,6 +49,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'create-canary',
       description: 'Creates a canary. Canaries are scripts that monitor your endpoints and APIs from the outside-in. Canaries help you check the availability and latency of your web services and troubleshoot anomalies by investigating load time data, screenshots of the UI, logs, and metrics. You can set up a canary to run continuously or just once.  Do not use CreateCanary to modify an existing canary. Use UpdateCanary instead. To create canaries, you must have the CloudWatchSyntheticsFullAccess policy. If you are creating a new IAM role for the canary, you also need the iam:CreateRole, iam:CreatePolicy and iam:AttachRolePolicy permissions. For more information, see Necessary Roles and Permissions. Do not include secrets or proprietary information in your canary names. The canary name makes up part of the Amazon Resource Name (ARN) for the canary, and the ARN is included in outbound calls over the internet. For more information, see Security Considerations for Synthetics Canaries',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account. Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see Security Considerations for Synthetics Canaries',
@@ -201,6 +205,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -213,6 +218,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'create-group',
       description: 'Creates a group which you can use to associate canaries with each other, including cross-Region canaries. Using groups can help you with managing and automating your canaries, and you can also view aggregated run results and statistics for all canaries in a group.  Groups are global resources. When you create a group, it is replicated across Amazon Web Services Regions, and you can view it and add canaries to it from any Region. Although the group ARN format reflects the Region name where it was created, a group is not constrained to any Region. This means that you can put canaries from multiple Regions into the same group, and then use that group to view and manage all of those canaries in a single view. Groups are supported in all Regions except the Regions that are disabled by default. For more information about these Regions, see Enabling a Region. Each group can contain as many as 10 canaries. You can have as many as 20 groups in your account. Any single canary can be a member of up to 10 groups',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the group. It can include any Unicode characters. The names for all groups in your account, across all Regions, must be unique',
@@ -247,6 +253,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -259,6 +266,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'delete-canary',
       description: 'Permanently deletes the specified canary. If the canary\'s ProvisionedResourceCleanup field is set to AUTOMATIC or you specify DeleteLambda in this operation as true, CloudWatch Synthetics also deletes the Lambda functions and layers that are used by the canary. Other resources used and created by the canary are not automatically deleted. After you delete a canary, you should also delete the following:   The CloudWatch alarms created for this canary. These alarms have a name of Synthetics-Alarm-first-198-characters-of-canary-name-canaryId-alarm number     Amazon S3 objects and buckets, such as the canary\'s artifact location.   IAM roles created for the canary. If they were created in the console, these roles have the name  role/service-role/CloudWatchSyntheticsRole-First-21-Characters-of-CanaryName     CloudWatch Logs log groups created for the canary. These logs groups have the name /aws/lambda/cwsyn-First-21-Characters-of-CanaryName     Before you delete a canary, you might want to use GetCanary to display the information about this canary. Make note of the information returned by this operation so that you can delete these resources after you delete the canary',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the canary that you want to delete. To find the names of your canaries, use DescribeCanaries',
@@ -292,6 +300,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -304,6 +313,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'delete-group',
       description: 'Deletes a group. The group doesn\'t need to be empty to be deleted. If there are canaries in the group, they are not deleted when you delete the group.  Groups are a global resource that appear in all Regions, but the request to delete a group must be made from its home Region. You can find the home Region of a group within its ARN',
       options: [
+
         Option(
           name: '--group-identifier',
           description: 'Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the GroupIdentifier',
@@ -329,6 +339,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -341,6 +352,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'describe-canaries',
       description: 'This operation returns a list of the canaries in your account, along with full details about each canary. This operation supports resource-level authorization using an IAM policy and the Names parameter. If you specify the Names parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response. You are required to use the Names parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see  Limiting a user to viewing specific canaries',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results',
@@ -384,6 +396,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -396,6 +409,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'describe-canaries-last-run',
       description: 'Use this operation to see information from the most recent run of each canary that you have created. This operation supports resource-level authorization using an IAM policy and the Names parameter. If you specify the Names parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response. You are required to use the Names parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see  Limiting a user to viewing specific canaries',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates that there is more data available. You can use this token in a subsequent DescribeCanariesLastRun operation to retrieve the next set of results',
@@ -439,6 +453,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -451,6 +466,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'describe-runtime-versions',
       description: 'Returns a list of Synthetics canary runtime versions. For more information, see  Canary Runtime Versions',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates that there is more data available. You can use this token in a subsequent DescribeRuntimeVersions operation to retrieve the next set of results',
@@ -485,6 +501,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -497,6 +514,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'disassociate-resource',
       description: 'Removes a canary from a group. You must run this operation in the Region where the canary exists',
       options: [
+
         Option(
           name: '--group-identifier',
           description: 'Specifies the group. You can specify the group name, the ARN, or the group ID as the GroupIdentifier',
@@ -531,6 +549,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -543,6 +562,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'get-canary',
       description: 'Retrieves complete information about one canary. You must specify the name of the canary that you want. To get a list of canaries and their names, use DescribeCanaries',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the canary that you want details for',
@@ -568,6 +588,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -580,6 +601,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'get-canary-runs',
       description: 'Retrieves a list of runs for a specified canary',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the canary that you want to see runs for',
@@ -623,6 +645,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -635,6 +658,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'get-group',
       description: 'Returns information about one group. Groups are a global resource, so you can use this operation from any Region',
       options: [
+
         Option(
           name: '--group-identifier',
           description: 'Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the GroupIdentifier',
@@ -660,6 +684,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -672,6 +697,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'list-associated-groups',
       description: 'Returns a list of the groups that the specified canary is associated with. The canary that you specify must be in the current Region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results',
@@ -715,6 +741,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -727,6 +754,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'list-group-resources',
       description: 'This operation returns a list of the ARNs of the canaries that are associated with the specified group',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results',
@@ -770,6 +798,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -782,6 +811,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'list-groups',
       description: 'Returns a list of all groups in the account, displaying their names, unique IDs, and ARNs. The groups from all Regions are returned',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results',
@@ -816,6 +846,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -828,6 +859,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Displays the tags associated with a canary or group',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the canary or group that you want to view tags for. The ARN format of a canary is arn:aws:synthetics:Region:account-id:canary:canary-name . The ARN format of a group is arn:aws:synthetics:Region:account-id:group:group-name',
@@ -853,6 +885,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -865,6 +898,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'start-canary',
       description: 'Use this operation to run a canary that has already been created. The frequency of the canary runs is determined by the value of the canary\'s Schedule. To see a canary\'s schedule, use GetCanary',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the canary that you want to run. To find canary names, use DescribeCanaries',
@@ -890,6 +924,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -902,6 +937,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'stop-canary',
       description: 'Stops the canary to prevent all future runs. If the canary is currently running,the run that is in progress completes on its own, publishes metrics, and uploads artifacts, but it is not recorded in Synthetics as a completed run. You can use StartCanary to start it running again with the canary’s current schedule at any point in the future',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the canary that you want to stop. To find the names of your canaries, use ListCanaries',
@@ -927,6 +963,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -939,6 +976,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns one or more tags (key-value pairs) to the specified canary or group.  Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values. Tags don\'t have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters. You can use the TagResource action with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag. You can associate as many as 50 tags with a canary or group',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the canary or group that you\'re adding tags to. The ARN format of a canary is arn:aws:synthetics:Region:account-id:canary:canary-name . The ARN format of a group is arn:aws:synthetics:Region:account-id:group:group-name',
@@ -973,6 +1011,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -985,6 +1024,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the canary or group that you\'re removing tags from. The ARN format of a canary is arn:aws:synthetics:Region:account-id:canary:canary-name . The ARN format of a group is arn:aws:synthetics:Region:account-id:group:group-name',
@@ -1019,6 +1059,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1031,6 +1072,7 @@ final FigSpec syntheticsSpec = FigSpec(
       name: 'update-canary',
       description: 'Updates the configuration of a canary that has already been created. You can\'t use this operation to update the tags of an existing canary. To change the tags of an existing canary, use TagResource',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the canary that you want to update. To find the names of your canaries, use DescribeCanaries. You cannot change the name of a canary that has already been created',
@@ -1164,6 +1206,7 @@ final FigSpec syntheticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

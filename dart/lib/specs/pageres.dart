@@ -9,6 +9,7 @@ final FigSpec pageresSpec = FigSpec(
   name: 'pageres',
   description: 'Capture website screenshots',
   options: [
+
     Option(
       name: ['--verbose', '-v'],
       description: 'Verbose output to see errors if you need to troubleshoot'
@@ -126,6 +127,7 @@ final FigSpec pageresSpec = FigSpec(
         Arg(
         name: 'format',
         suggestions: [
+
           FigSuggestion(name: 'png'),
           FigSuggestion(name: 'jpg')
         ],
@@ -152,6 +154,7 @@ final FigSpec pageresSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'url | filepath',
       template: 'filepaths',

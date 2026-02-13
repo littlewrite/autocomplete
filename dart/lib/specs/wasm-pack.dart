@@ -9,6 +9,7 @@ final FigSpec wasmPackSpec = FigSpec(
   name: 'wasm-pack',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'build',
       icon: '🏗️',
@@ -51,6 +52,7 @@ final FigSpec wasmPackSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for wasm-pack or for the given subcommand(s)'
@@ -75,6 +77,7 @@ final FigSpec wasmPackSpec = FigSpec(
         name: 'log-level',
         defaultValue: 'info',
         suggestions: [
+
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warn'),
           FigSuggestion(name: 'error')

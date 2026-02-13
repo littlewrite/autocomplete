@@ -9,6 +9,7 @@ final FigSpec knexSpec = FigSpec(
   name: 'knex',
   description: 'SQL query builder for JavaScript',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Create a fresh knexfile',
@@ -109,6 +110,7 @@ final FigSpec knexSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--version',
       description: 'Output the version number',

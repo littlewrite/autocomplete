@@ -9,12 +9,14 @@ final FigSpec tsxSpec = FigSpec(
   name: 'tsx',
   description: 'Run TypeScript file using tsx',
   subcommands: [
+
     Subcommand(
       name: 'watch',
       description: 'Run the script and watch for changes'
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for tsx',

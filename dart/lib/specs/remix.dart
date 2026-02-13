@@ -9,6 +9,7 @@ final FigSpec remixSpec = FigSpec(
   name: 'remix',
   description: 'Remix CLI to start, build and export your application',
   options: [
+
     Option(
       name: '--help',
       description: 'Output usage information'
@@ -19,10 +20,12 @@ final FigSpec remixSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'build',
       description: 'Create an optimized production build of your application',
       options: [
+
         Option(
           name: '--sourcemap',
           description: 'Enables production sourcemap'
@@ -41,6 +44,7 @@ final FigSpec remixSpec = FigSpec(
       name: 'routes',
       description: 'Generate the route config of the application',
       options: [
+
         Option(
           name: '--json',
           description: 'Print the route config as JSON'

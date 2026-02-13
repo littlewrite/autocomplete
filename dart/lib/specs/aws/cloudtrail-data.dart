@@ -9,10 +9,12 @@ final FigSpec cloudtrailDataSpec = FigSpec(
   name: 'cloudtrail-data',
   description: 'The CloudTrail Data Service lets you ingest events into CloudTrail from any source in your hybrid environments, such as in-house or SaaS applications hosted on-premises or in the cloud, virtual machines, or containers. You can store, access, analyze, troubleshoot and take action on this data without maintaining multiple log aggregators and reporting tools. After you run PutAuditEvents to ingest your application activity into CloudTrail, you can use CloudTrail Lake to search, query, and analyze the data that is logged from your applications',
   subcommands: [
+
     Subcommand(
       name: 'put-audit-events',
       description: 'Ingests your application events into CloudTrail Lake. A required parameter, auditEvents, accepts the JSON records (also called payload) of events that you want CloudTrail to ingest. You can add up to 100 of these events (or up to 1 MB) per PutAuditEvents request',
       options: [
+
         Option(
           name: '--audit-events',
           description: 'The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file',
@@ -56,6 +58,7 @@ final FigSpec cloudtrailDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

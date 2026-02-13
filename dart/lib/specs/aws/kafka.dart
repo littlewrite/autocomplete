@@ -9,10 +9,12 @@ final FigSpec kafkaSpec = FigSpec(
   name: 'kafka',
   description: 'The operations for managing an Amazon MSK cluster',
   subcommands: [
+
     Subcommand(
       name: 'batch-associate-scram-secret',
       description: 'Associates one or more Scram Secrets with an Amazon MSK cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the cluster to be updated',
@@ -47,6 +49,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'create-cluster',
       description: 'Creates a new MSK cluster',
       options: [
+
         Option(
           name: '--broker-node-group-info',
           description: 'Information about the broker nodes in the cluster',
@@ -182,6 +186,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -194,6 +199,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'create-cluster-v2',
       description: 'Creates a new MSK cluster',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'The name of the cluster',
@@ -246,6 +252,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -258,6 +265,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'create-configuration',
       description: 'Creates a new MSK configuration',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the configuration',
@@ -310,6 +318,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -322,6 +331,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'create-replicator',
       description: 'Creates the replicator',
       options: [
+
         Option(
           name: '--description',
           description: 'A summary description of the replicator',
@@ -392,6 +402,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -404,6 +415,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'create-vpc-connection',
       description: 'Creates a new MSK VPC connection',
       options: [
+
         Option(
           name: '--target-cluster-arn',
           description: 'The cluster Amazon Resource Name (ARN) for the VPC connection',
@@ -474,6 +486,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -486,6 +499,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'delete-cluster',
       description: 'Deletes the MSK cluster specified by the Amazon Resource Name (ARN) in the request',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -520,6 +534,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -532,6 +547,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'delete-cluster-policy',
       description: 'Deletes the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the cluster',
@@ -557,6 +573,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -569,6 +586,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'delete-configuration',
       description: 'Deletes an MSK Configuration',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration',
@@ -594,6 +612,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -606,6 +625,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'delete-replicator',
       description: 'Deletes a replicator',
       options: [
+
         Option(
           name: '--current-version',
           description: 'The current version of the replicator',
@@ -640,6 +660,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -652,6 +673,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'delete-vpc-connection',
       description: 'Deletes a MSK VPC connection',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection',
@@ -677,6 +699,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -689,6 +712,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'describe-cluster',
       description: 'Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified in the request',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -714,6 +738,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -726,6 +751,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'describe-cluster-v2',
       description: 'Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified in the request',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -751,6 +777,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -763,6 +790,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'describe-cluster-operation',
       description: 'Returns a description of the cluster operation specified by the ARN',
       options: [
+
         Option(
           name: '--cluster-operation-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation',
@@ -788,6 +816,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -800,6 +829,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'describe-cluster-operation-v2',
       description: 'Returns a description of the cluster operation specified by the ARN',
       options: [
+
         Option(
           name: '--cluster-operation-arn',
           description: 'ARN of the cluster operation to describe',
@@ -825,6 +855,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -837,6 +868,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'describe-configuration',
       description: 'Returns a description of this MSK configuration',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions',
@@ -862,6 +894,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -874,6 +907,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'describe-configuration-revision',
       description: 'Returns a description of this revision of the configuration',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions',
@@ -908,6 +942,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -920,6 +955,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'describe-replicator',
       description: 'Describes a replicator',
       options: [
+
         Option(
           name: '--replicator-arn',
           description: 'The Amazon Resource Name (ARN) of the replicator to be described',
@@ -945,6 +981,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -957,6 +994,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'describe-vpc-connection',
       description: 'Returns a description of this MSK VPC connection',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection',
@@ -982,6 +1020,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -994,6 +1033,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'batch-disassociate-scram-secret',
       description: 'Disassociates one or more Scram Secrets from an Amazon MSK cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the cluster to be updated',
@@ -1028,6 +1068,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1040,6 +1081,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'get-bootstrap-brokers',
       description: 'A list of brokers that a client application can use to bootstrap. This list doesn\'t necessarily include all of the brokers in the cluster. The following Python 3.6 example shows how you can use the Amazon Resource Name (ARN) of a cluster to get its bootstrap brokers. If you don\'t know the ARN of your cluster, you can use the ListClusters operation to get the ARNs of all the clusters in this account and Region',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -1065,6 +1107,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1077,6 +1120,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'get-compatible-kafka-versions',
       description: 'Gets the Apache Kafka versions to which you can update the MSK cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the cluster check',
@@ -1102,6 +1146,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1114,6 +1159,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'get-cluster-policy',
       description: 'Get the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the cluster',
@@ -1139,6 +1185,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1151,6 +1198,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-cluster-operations',
       description: 'Returns a list of all the operations that have been performed on the specified MSK cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -1221,6 +1269,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1233,6 +1282,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-cluster-operations-v2',
       description: 'Returns a list of all the operations that have been performed on the specified MSK cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The arn of the cluster whose operations are being requested',
@@ -1303,6 +1353,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1315,6 +1366,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-clusters',
       description: 'Returns a list of all the MSK clusters in the current Region',
       options: [
+
         Option(
           name: '--cluster-name-filter',
           description: 'Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix',
@@ -1385,6 +1437,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1397,6 +1450,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-clusters-v2',
       description: 'Returns a list of all the MSK clusters in the current Region',
       options: [
+
         Option(
           name: '--cluster-name-filter',
           description: 'Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix',
@@ -1476,6 +1530,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1488,6 +1543,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-configuration-revisions',
       description: 'Returns a list of all the MSK configurations in this Region',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions',
@@ -1558,6 +1614,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1570,6 +1627,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-configurations',
       description: 'Returns a list of all the MSK configurations in this Region',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter',
@@ -1631,6 +1689,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1643,6 +1702,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-kafka-versions',
       description: 'Returns a list of Apache Kafka versions',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter',
@@ -1704,6 +1764,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1716,6 +1777,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-nodes',
       description: 'Returns a list of the broker nodes in the cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -1786,6 +1848,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1798,6 +1861,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-replicators',
       description: 'Lists the replicators',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter',
@@ -1868,6 +1932,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1880,6 +1945,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-scram-secrets',
       description: 'Returns a list of the Scram Secrets associated with an Amazon MSK cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The arn of the cluster',
@@ -1950,6 +2016,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1962,6 +2029,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of the tags associated with the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the resource that\'s associated with the tags',
@@ -1987,6 +2055,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1999,6 +2068,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-client-vpc-connections',
       description: 'Returns a list of all the VPC connections in this Region',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the cluster',
@@ -2069,6 +2139,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2081,6 +2152,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'list-vpc-connections',
       description: 'Returns a list of all the VPC connections in this Region',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter',
@@ -2142,6 +2214,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2154,6 +2227,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'reject-client-vpc-connection',
       description: 'Returns empty response',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the cluster',
@@ -2188,6 +2262,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2200,6 +2275,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'put-cluster-policy',
       description: 'Creates or updates the MSK cluster policy specified by the cluster Amazon Resource Name (ARN) in the request',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the cluster',
@@ -2243,6 +2319,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2255,6 +2332,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'reboot-broker',
       description: 'Reboots brokers',
       options: [
+
         Option(
           name: '--broker-ids',
           description: 'The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time',
@@ -2289,6 +2367,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2301,6 +2380,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to the specified MSK resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the resource that\'s associated with the tags',
@@ -2335,6 +2415,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2347,6 +2428,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the tags associated with the keys that are provided in the query',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the resource that\'s associated with the tags',
@@ -2381,6 +2463,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2393,6 +2476,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-broker-count',
       description: 'Updates the number of broker nodes in the cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -2436,6 +2520,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2448,6 +2533,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-broker-type',
       description: 'Updates EC2 instance type',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -2491,6 +2577,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2503,6 +2590,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-broker-storage',
       description: 'Updates the EBS storage associated with MSK brokers',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -2546,6 +2634,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2558,6 +2647,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-configuration',
       description: 'Updates an MSK configuration',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the configuration',
@@ -2601,6 +2691,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2613,6 +2704,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-connectivity',
       description: 'Updates the cluster\'s connectivity configuration',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the configuration',
@@ -2656,6 +2748,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2668,6 +2761,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-cluster-configuration',
       description: 'Updates the cluster with the configuration that is specified in the request body',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -2711,6 +2805,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2723,6 +2818,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-cluster-kafka-version',
       description: 'Updates the Apache Kafka version for the cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the cluster to be updated',
@@ -2775,6 +2871,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2787,6 +2884,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-monitoring',
       description: 'Updates the monitoring settings for the cluster. You can use this operation to specify which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can also specify settings for open monitoring with Prometheus',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) that uniquely identifies the cluster',
@@ -2847,6 +2945,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2859,6 +2958,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-replication-info',
       description: 'Updates replication info of a replicator',
       options: [
+
         Option(
           name: '--consumer-group-replication',
           description: 'Updated consumer group replication information',
@@ -2929,6 +3029,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2941,6 +3042,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-security',
       description: 'Updates the security settings for the cluster. You can use this operation to specify encryption and authentication on existing clusters',
       options: [
+
         Option(
           name: '--client-authentication',
           description: 'Includes all client authentication related information',
@@ -2993,6 +3095,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3005,6 +3108,7 @@ final FigSpec kafkaSpec = FigSpec(
       name: 'update-storage',
       description: 'Updates cluster broker volume size (or) sets cluster storage mode to TIERED',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The Amazon Resource Name (ARN) of the cluster to be updated',
@@ -3066,6 +3170,7 @@ final FigSpec kafkaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

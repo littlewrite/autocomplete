@@ -9,10 +9,12 @@ final FigSpec proSpec = FigSpec(
   name: 'pro',
   description: 'Manage Ubuntu Pro services from Canonical',
   subcommands: [
+
     Subcommand(
       name: 'attach',
       description: 'Connect an Ubuntu Pro support contract to this machine',
       options: [
+
         Option(
           name: '--no-auto-enable',
           description: 'Disable  the  automatic enablement of recommended entitlements'
@@ -40,6 +42,7 @@ final FigSpec proSpec = FigSpec(
       name: 'collect-logs',
       description: 'Create a tarball with all relevant logs and debug data',
       options: [
+
         Option(
           name: ['-o', '--output'],
           description: 'Path for tarball. Uses ua_logs.tar.gz in current directory if not specified',
@@ -63,6 +66,7 @@ final FigSpec proSpec = FigSpec(
         Arg(
         name: 'service',
         suggestions: [
+
           FigSuggestion(name: 'cc-eal'),
           FigSuggestion(name: 'cis'),
           FigSuggestion(name: 'esm'),
@@ -82,6 +86,7 @@ final FigSpec proSpec = FigSpec(
         Arg(
         name: 'service',
         suggestions: [
+
           FigSuggestion(name: 'cc-eal'),
           FigSuggestion(name: 'cis'),
           FigSuggestion(name: 'esm'),
@@ -115,12 +120,14 @@ final FigSpec proSpec = FigSpec(
       name: 'status',
       description: 'Report current status of Ubuntu Pro services on system',
       options: [
+
         Option(
           name: '--format',
           description: 'Output format',
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'tabular'),
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'yaml')

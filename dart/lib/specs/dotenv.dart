@@ -13,6 +13,7 @@ final FigSpec dotenvSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-f',
       exclusiveOn: ['-h', '-v', '-t'],

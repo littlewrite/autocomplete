@@ -9,10 +9,12 @@ final FigSpec appmeshSpec = FigSpec(
   name: 'appmesh',
   description: 'App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor and control microservices. App Mesh standardizes how your microservices communicate, giving you end-to-end visibility and helping to ensure high availability for your applications. App Mesh gives you consistent visibility and network traffic controls for every microservice in an application. You can use App Mesh with Amazon Web Services Fargate, Amazon ECS, Amazon EKS, Kubernetes on Amazon Web Services, and Amazon EC2.  App Mesh supports microservice applications that use service discovery naming for their components. For more information about service discovery on Amazon ECS, see Service Discovery in the Amazon Elastic Container Service Developer Guide. Kubernetes kube-dns and coredns are supported. For more information, see DNS for Services and Pods in the Kubernetes documentation',
   subcommands: [
+
     Subcommand(
       name: 'create-gateway-route',
       description: 'Creates a gateway route. A gateway route is attached to a virtual gateway and routes traffic to an existing virtual service. If a route matches a request, it can distribute traffic to a target virtual service. For more information about gateway routes, see Gateway routes',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -92,6 +94,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -104,6 +107,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'create-mesh',
       description: 'Creates a service mesh.  A service mesh is a logical boundary for network traffic between services that are represented by resources within the mesh. After you create your service mesh, you can create virtual services, virtual nodes, virtual routers, and routes to distribute traffic between the applications in your mesh. For more information about service meshes, see Service meshes',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -156,6 +160,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +173,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'create-route',
       description: 'Creates a route that is associated with a virtual router.  You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or more virtual nodes. For more information about routes, see Routes',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -247,6 +253,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -259,6 +266,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'create-virtual-gateway',
       description: 'Creates a virtual gateway. A virtual gateway allows resources outside your mesh to communicate to resources that are inside your mesh. The virtual gateway represents an Envoy proxy running in an Amazon ECS task, in a Kubernetes service, or on an Amazon EC2 instance. Unlike a virtual node, which represents an Envoy running with an application, a virtual gateway represents Envoy deployed by itself. For more information about virtual gateways, see Virtual gateways',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -329,6 +337,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -341,6 +350,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'create-virtual-node',
       description: 'Creates a virtual node within a service mesh.  A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your task group, and whether the proxy running in a task group will communicate with other proxies using Transport Layer Security (TLS). You define a listener for any inbound traffic that your virtual node expects. Any virtual service that your virtual node expects to communicate to is specified as a backend. The response metadata for your new virtual node contains the arn that is associated with the virtual node. Set this value to the full ARN; for example, arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp) as the APPMESH_RESOURCE_ARN environment variable for your task group\'s Envoy proxy container in your task definition or pod spec. This is then mapped to the node.id and node.cluster Envoy parameters.  By default, App Mesh uses the name of the resource you specified in APPMESH_RESOURCE_ARN when Envoy is referring to itself in metrics and traces. You can override this behavior by setting the APPMESH_RESOURCE_CLUSTER environment variable with your own name.  For more information about virtual nodes, see Virtual nodes. You must be using 1.15.0 or later of the Envoy image when setting these variables. For more information aboutApp Mesh Envoy variables, see Envoy image in the App Mesh User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -411,6 +421,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -423,6 +434,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'create-virtual-router',
       description: 'Creates a virtual router within a service mesh. Specify a listener for any inbound traffic that your virtual router receives. Create a virtual router for each protocol and port that you need to route. Virtual routers handle traffic for one or more virtual services within your mesh. After you create your virtual router, create and associate routes for your virtual router that direct incoming requests to different virtual nodes. For more information about virtual routers, see Virtual routers',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -493,6 +505,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -505,6 +518,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'create-virtual-service',
       description: 'Creates a virtual service within a service mesh. A virtual service is an abstraction of a real service that is provided by a virtual node directly or indirectly by means of a virtual router. Dependent services call your virtual service by its virtualServiceName, and those requests are routed to the virtual node or virtual router that is specified as the provider for the virtual service. For more information about virtual services, see Virtual services',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -575,6 +589,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -587,6 +602,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'delete-gateway-route',
       description: 'Deletes an existing gateway route',
       options: [
+
         Option(
           name: '--gateway-route-name',
           description: 'The name of the gateway route to delete',
@@ -639,6 +655,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -651,6 +668,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'delete-mesh',
       description: 'Deletes an existing service mesh. You must delete all resources (virtual services, routes, virtual routers, and virtual nodes) in the service mesh before you can delete the mesh itself',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh to delete',
@@ -676,6 +694,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -688,6 +707,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'delete-route',
       description: 'Deletes an existing route',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh to delete the route in',
@@ -740,6 +760,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -752,6 +773,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'delete-virtual-gateway',
       description: 'Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway routes are associated to it',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh to delete the virtual gateway from',
@@ -795,6 +817,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -807,6 +830,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'delete-virtual-node',
       description: 'Deletes an existing virtual node. You must delete any virtual services that list a virtual node as a service provider before you can delete the virtual node itself',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh to delete the virtual node in',
@@ -850,6 +874,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -862,6 +887,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'delete-virtual-router',
       description: 'Deletes an existing virtual router. You must delete any routes associated with the virtual router before you can delete the router itself',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh to delete the virtual router in',
@@ -905,6 +931,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -917,6 +944,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'delete-virtual-service',
       description: 'Deletes an existing virtual service',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh to delete the virtual service in',
@@ -960,6 +988,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -972,6 +1001,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'describe-gateway-route',
       description: 'Describes an existing gateway route',
       options: [
+
         Option(
           name: '--gateway-route-name',
           description: 'The name of the gateway route to describe',
@@ -1024,6 +1054,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1036,6 +1067,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'describe-mesh',
       description: 'Describes an existing service mesh',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh to describe',
@@ -1070,6 +1102,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1082,6 +1115,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'describe-route',
       description: 'Describes an existing route',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh that the route resides in',
@@ -1134,6 +1168,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1146,6 +1181,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'describe-virtual-gateway',
       description: 'Describes an existing virtual gateway',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh that the gateway route resides in',
@@ -1189,6 +1225,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1201,6 +1238,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'describe-virtual-node',
       description: 'Describes an existing virtual node',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh that the virtual node resides in',
@@ -1244,6 +1282,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1256,6 +1295,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'describe-virtual-router',
       description: 'Describes an existing virtual router',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh that the virtual router resides in',
@@ -1299,6 +1339,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1311,6 +1352,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'describe-virtual-service',
       description: 'Describes an existing virtual service',
       options: [
+
         Option(
           name: '--mesh-name',
           description: 'The name of the service mesh that the virtual service resides in',
@@ -1354,6 +1396,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1366,6 +1409,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'list-gateway-routes',
       description: 'Returns a list of existing gateway routes that are associated to a virtual gateway',
       options: [
+
         Option(
           name: '--limit',
           description: 'The maximum number of results returned by ListGatewayRoutes in paginated output. When you use this parameter, ListGatewayRoutes returns only limit results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListGatewayRoutes request with the returned nextToken value. This value can be between 1 and 100. If you don\'t use this parameter, ListGatewayRoutes returns up to 100 results and a nextToken value if applicable',
@@ -1454,6 +1498,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1466,6 +1511,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'list-meshes',
       description: 'Returns a list of existing service meshes',
       options: [
+
         Option(
           name: '--limit',
           description: 'The maximum number of results returned by ListMeshes in paginated output. When you use this parameter, ListMeshes returns only limit results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListMeshes request with the returned nextToken value. This value can be between 1 and 100. If you don\'t use this parameter, ListMeshes returns up to 100 results and a nextToken value if applicable',
@@ -1527,6 +1573,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1539,6 +1586,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'list-routes',
       description: 'Returns a list of existing routes in a service mesh',
       options: [
+
         Option(
           name: '--limit',
           description: 'The maximum number of results returned by ListRoutes in paginated output. When you use this parameter, ListRoutes returns only limit results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListRoutes request with the returned nextToken value. This value can be between 1 and 100. If you don\'t use this parameter, ListRoutes returns up to 100 results and a nextToken value if applicable',
@@ -1627,6 +1675,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1639,6 +1688,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List the tags for an App Mesh resource',
       options: [
+
         Option(
           name: '--limit',
           description: 'The maximum number of tag results returned by ListTagsForResource in paginated output. When this parameter is used, ListTagsForResource returns only limit results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListTagsForResource request with the returned nextToken value. This value can be between 1 and 100. If you don\'t use this parameter, ListTagsForResource returns up to 100 results and a nextToken value if applicable',
@@ -1709,6 +1759,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1721,6 +1772,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'list-virtual-gateways',
       description: 'Returns a list of existing virtual gateways in a service mesh',
       options: [
+
         Option(
           name: '--limit',
           description: 'The maximum number of results returned by ListVirtualGateways in paginated output. When you use this parameter, ListVirtualGateways returns only limit results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListVirtualGateways request with the returned nextToken value. This value can be between 1 and 100. If you don\'t use this parameter, ListVirtualGateways returns up to 100 results and a nextToken value if applicable',
@@ -1800,6 +1852,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1812,6 +1865,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'list-virtual-nodes',
       description: 'Returns a list of existing virtual nodes',
       options: [
+
         Option(
           name: '--limit',
           description: 'The maximum number of results returned by ListVirtualNodes in paginated output. When you use this parameter, ListVirtualNodes returns only limit results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListVirtualNodes request with the returned nextToken value. This value can be between 1 and 100. If you don\'t use this parameter, ListVirtualNodes returns up to 100 results and a nextToken value if applicable',
@@ -1891,6 +1945,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1903,6 +1958,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'list-virtual-routers',
       description: 'Returns a list of existing virtual routers in a service mesh',
       options: [
+
         Option(
           name: '--limit',
           description: 'The maximum number of results returned by ListVirtualRouters in paginated output. When you use this parameter, ListVirtualRouters returns only limit results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListVirtualRouters request with the returned nextToken value. This value can be between 1 and 100. If you don\'t use this parameter, ListVirtualRouters returns up to 100 results and a nextToken value if applicable',
@@ -1982,6 +2038,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1994,6 +2051,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'list-virtual-services',
       description: 'Returns a list of existing virtual services in a service mesh',
       options: [
+
         Option(
           name: '--limit',
           description: 'The maximum number of results returned by ListVirtualServices in paginated output. When you use this parameter, ListVirtualServices returns only limit results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListVirtualServices request with the returned nextToken value. This value can be between 1 and 100. If you don\'t use this parameter, ListVirtualServices returns up to 100 results and a nextToken value if applicable',
@@ -2073,6 +2131,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2085,6 +2144,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource aren\'t specified in the request parameters, they aren\'t changed. When a resource is deleted, the tags associated with that resource are also deleted',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to add tags to',
@@ -2119,6 +2179,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2131,6 +2192,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes specified tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to delete tags from',
@@ -2165,6 +2227,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2177,6 +2240,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'update-gateway-route',
       description: 'Updates an existing gateway route that is associated to a specified virtual gateway in a service mesh',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -2247,6 +2311,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2259,6 +2324,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'update-mesh',
       description: 'Updates an existing service mesh',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -2302,6 +2368,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2314,6 +2381,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'update-route',
       description: 'Updates an existing route for a specified service mesh and virtual router',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -2384,6 +2452,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2396,6 +2465,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'update-virtual-gateway',
       description: 'Updates an existing virtual gateway in a specified service mesh',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -2457,6 +2527,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2469,6 +2540,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'update-virtual-node',
       description: 'Updates an existing virtual node in a specified service mesh',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -2530,6 +2602,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2542,6 +2615,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'update-virtual-router',
       description: 'Updates an existing virtual router in a specified service mesh',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -2603,6 +2677,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2615,6 +2690,7 @@ final FigSpec appmeshSpec = FigSpec(
       name: 'update-virtual-service',
       description: 'Updates an existing virtual service in a specified service mesh',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed',
@@ -2676,6 +2752,7 @@ final FigSpec appmeshSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

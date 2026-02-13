@@ -16,6 +16,7 @@ final FigSpec cleanSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-c', '--configuration'],
       description: 'Defines the build configuration. The default for most projects is Debug, but you can override the build configuration settings in your project. This option is only required when cleaning if you specified it during build time',
@@ -23,6 +24,7 @@ final FigSpec cleanSpec = FigSpec(
         Arg(
         name: 'configuration',
         suggestions: [
+
           FigSuggestion(name: 'Debug'),
           FigSuggestion(name: 'Release')
         ]
@@ -67,6 +69,7 @@ final FigSpec cleanSpec = FigSpec(
         Arg(
         name: 'verbosity',
         suggestions: [
+
           FigSuggestion(name: 'quiet'),
           FigSuggestion(name: 'minimal'),
           FigSuggestion(name: 'normal'),

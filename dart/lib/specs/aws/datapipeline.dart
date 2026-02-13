@@ -9,10 +9,12 @@ final FigSpec datapipelineSpec = FigSpec(
   name: 'datapipeline',
   description: 'AWS Data Pipeline configures and manages a data-driven workflow called a pipeline. AWS Data Pipeline handles the details of scheduling and ensuring that data dependencies are met so that your application can focus on processing the data. AWS Data Pipeline provides a JAR implementation of a task runner called AWS Data Pipeline Task Runner. AWS Data Pipeline Task Runner provides logic for common data management scenarios, such as performing database queries and running data analysis using Amazon Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task Runner as your task runner, or you can write your own task runner to provide custom data management. AWS Data Pipeline implements two main sets of functionality. Use the first set to create a pipeline and define data sources, schedules, dependencies, and the transforms to be performed on the data. Use the second set in your task runner application to receive the next task ready for processing. The logic for performing the task, such as querying the data, running data analysis, or converting the data from one format to another, is contained within the task runner. The task runner performs the task assigned to it by the web service, reporting progress to the web service as it does so. When the task is done, the task runner reports the final success or failure of the task to the web service',
   subcommands: [
+
     Subcommand(
       name: 'activate-pipeline',
       description: 'Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails. If you need to pause the pipeline to investigate an issue with a component, such as a data source or script, call DeactivatePipeline. To activate a finished pipeline, modify the end date for the pipeline and then activate it',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline',
@@ -66,6 +68,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -78,6 +81,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'add-tags',
       description: 'Adds or modifies tags for the specified pipeline',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline',
@@ -112,6 +116,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +129,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'create-pipeline',
       description: 'Creates a new, empty pipeline. Use PutPipelineDefinition to populate the pipeline',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier',
@@ -176,6 +182,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +195,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'deactivate-pipeline',
       description: 'Deactivates the specified running pipeline. The pipeline is set to the DEACTIVATING state until the deactivation process completes. To resume a deactivated pipeline, use ActivatePipeline. By default, the pipeline resumes from the last completed execution. Optionally, you can specify the date and time to resume the pipeline',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline',
@@ -221,6 +229,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'delete-pipeline',
       description: 'Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently being processed by task runners. Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline. To temporarily pause a pipeline instead of deleting it, call SetStatus with the status set to PAUSE on individual components. Components that are paused by SetStatus can be resumed',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline',
@@ -258,6 +268,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'describe-objects',
       description: 'Gets the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields that define the properties of the object',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline that contains the object definitions',
@@ -339,6 +351,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -351,6 +364,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'describe-pipelines',
       description: 'Retrieves metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier, its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines that you or your IAM users have created. If you are using an IAM user account, you can retrieve metadata about only those pipelines for which you have read permissions. To retrieve the full pipeline definition instead of metadata about the pipeline, call GetPipelineDefinition',
       options: [
+
         Option(
           name: '--pipeline-ids',
           description: 'The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call ListPipelines',
@@ -376,6 +390,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -388,6 +403,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'evaluate-expression',
       description: 'Task runners call EvaluateExpression to evaluate a string in the context of the specified object. For example, a task runner can evaluate SQL queries stored in Amazon S3',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline',
@@ -431,6 +447,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -443,6 +460,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'get-pipeline-definition',
       description: 'Gets the definition of the specified pipeline. You can call GetPipelineDefinition to retrieve the pipeline definition that you provided using PutPipelineDefinition',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline',
@@ -477,6 +495,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -489,6 +508,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'list-pipelines',
       description: 'Lists the pipeline identifiers for all active pipelines that you have permission to access',
       options: [
+
         Option(
           name: '--marker',
           description: 'The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call ListPipelines with the marker value from the previous call to retrieve the next set of results',
@@ -532,6 +552,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -544,6 +565,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'poll-for-task',
       description: 'Task runners call PollForTask to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform by setting a value for the workerGroup parameter. The task returned can come from any of the pipelines that match the workerGroup value passed in by the task runner and that was launched using the IAM user credentials specified by the task runner. If tasks are ready in the work queue, PollForTask returns a response immediately. If no tasks are available in the queue, PollForTask uses long-polling and holds on to a poll connection for up to a 90 seconds, during which time the first newly scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner should not call PollForTask again on the same workerGroup until it receives a response, and this can take up to 90 seconds',
       options: [
+
         Option(
           name: '--worker-group',
           description: 'The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for workerGroup in the call to PollForTask. There are no wildcard values permitted in workerGroup; the string must be an exact, case-sensitive, match',
@@ -587,6 +609,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -599,6 +622,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'put-pipeline-definition',
       description: 'Adds tasks, schedules, and preconditions to the specified pipeline. You can use PutPipelineDefinition to populate a new pipeline.  PutPipelineDefinition also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following three validation errors exists in the pipeline.   An object is missing a name or identifier field. A string or reference field is empty. The number of objects in the pipeline exceeds the maximum allowed objects. The pipeline is in a FINISHED state.   Pipeline object definitions are passed to the PutPipelineDefinition action and returned by the GetPipelineDefinition action',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline',
@@ -661,6 +685,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -673,6 +698,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'query-objects',
       description: 'Queries the specified pipeline for the names of objects that match the specified set of conditions',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline',
@@ -761,6 +787,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -773,6 +800,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'remove-tags',
       description: 'Removes existing tags from the specified pipeline',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline',
@@ -807,6 +835,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -819,6 +848,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'report-task-progress',
       description: 'Task runners call ReportTaskProgress when assigned a task to acknowledge that it has the task. If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in a subsequent PollForTask call. After this initial acknowledgement, the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a reportProgressTimeout field in your pipeline. If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the task runner is unable to process the task and reassigns the task in a subsequent response to PollForTask. Task runners should call ReportTaskProgress every 60 seconds',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The ID of the task assigned to the task runner. This value is provided in the response for PollForTask',
@@ -853,6 +883,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -865,6 +896,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'report-task-runner-heartbeat',
       description: 'Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance',
       options: [
+
         Option(
           name: '--taskrunner-id',
           description: 'The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner',
@@ -908,6 +940,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -920,6 +953,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'set-status',
       description: 'Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline. This update might not occur immediately, but is eventually consistent. The status that can be set depends on the type of object (for example, DataNode or Activity). You cannot perform this operation on FINISHED pipelines and attempting to do so returns InvalidRequestException',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline that contains the objects',
@@ -963,6 +997,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -975,6 +1010,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'set-task-status',
       description: 'Task runners call SetTaskStatus to notify AWS Data Pipeline that a task is completed and provide information about the final status. A task runner makes this call regardless of whether the task was sucessful. A task runner does not need to call SetTaskStatus for tasks that are canceled by the web service during a call to ReportTaskProgress',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The ID of the task assigned to the task runner. This value is provided in the response for PollForTask',
@@ -1036,6 +1072,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1048,6 +1085,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'validate-pipeline-definition',
       description: 'Validates the specified pipeline definition to ensure that it is well formed and can be run without error',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline',
@@ -1100,6 +1138,7 @@ final FigSpec datapipelineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1112,6 +1151,7 @@ final FigSpec datapipelineSpec = FigSpec(
       name: 'list-runs',
       description: 'Lists the times the specified pipeline has run. You can optionally filter the complete list of results to include only the runs you are interested in',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The identifier of the pipeline',

@@ -9,6 +9,7 @@ final FigSpec rojoSpec = FigSpec(
   name: 'rojo',
   description: 'Enables professional-grade development tools for Roblox developers',
   subcommands: [
+
     Subcommand(
       name: 'help',
       description: 'Print this message or the help of the given subcommand(s)',
@@ -23,6 +24,7 @@ final FigSpec rojoSpec = FigSpec(
       name: 'build',
       description: 'Generates a model or place file from the Rojo project',
       options: [
+
         Option(
           name: ['--output', '-o'],
           description: 'Where to output the result. Should end in .rbxm, .rbxl, .rbxmx, or .rbxlx',
@@ -63,6 +65,7 @@ final FigSpec rojoSpec = FigSpec(
       name: 'init',
       description: 'Initializes a new Rojo project',
       options: [
+
         Option(
           name: '--kind',
           description: 'The kind of project to create, \'place\' or \'model\'. Defaults to place',
@@ -71,6 +74,7 @@ final FigSpec rojoSpec = FigSpec(
             name: 'KIND',
             description: 'The kind of project to create, \'place\' or \'model\'. Defaults to place',
             suggestions: [
+
               FigSuggestion(name: 'place'),
               FigSuggestion(name: 'model')
             ]
@@ -93,6 +97,7 @@ final FigSpec rojoSpec = FigSpec(
       name: 'serve',
       description: 'Expose a Rojo project to the Rojo Studio plugin',
       options: [
+
         Option(
           name: 'address',
           description: 'The IP address to listen on. Defaults to `127.0.0.1`',
@@ -109,6 +114,7 @@ final FigSpec rojoSpec = FigSpec(
       name: 'sourcemap',
       description: 'Generates a sourcemap file from the Rojo project',
       options: [
+
         Option(
           name: '--include-non-scripts',
           description: 'If non-script files should be included or not. Defaults to false'
@@ -135,6 +141,7 @@ final FigSpec rojoSpec = FigSpec(
       name: 'upload',
       description: 'Builds the project and uploads it to Roblox',
       options: [
+
         Option(
           name: '--api-key',
           description: 'API key obtained from create.roblox.com/credentials. Rojo will use the Open Cloud API when this is provided. Only supports uploading to a place',
@@ -183,6 +190,7 @@ final FigSpec rojoSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Print help information',
@@ -196,6 +204,7 @@ final FigSpec rojoSpec = FigSpec(
         Arg(
         name: 'COLOR',
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'never')

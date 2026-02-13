@@ -9,6 +9,7 @@ final FigSpec yomoSpec = FigSpec(
   name: 'yomo',
   description: 'CLI interface for YoMo',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Initial an example StreamFunction',
@@ -19,6 +20,7 @@ final FigSpec yomoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--rx',
           description: 'Generate Rx code template'
@@ -35,10 +37,12 @@ final FigSpec yomoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--target',
           description: 'Build to wasm or binary',
           args: [
+
             Arg(
               name: 'wasm'
             ),
@@ -68,6 +72,7 @@ final FigSpec yomoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-z', '--zipper'],
           description: 'Zipper endpoint this StreamFunction will connect to'
@@ -80,6 +85,7 @@ final FigSpec yomoSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for yomo'

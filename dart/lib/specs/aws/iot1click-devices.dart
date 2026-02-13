@@ -9,10 +9,12 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
   name: 'iot1click-devices',
   description: 'Describes all of the AWS IoT 1-Click device-related API operations for the service.\n Also provides sample requests, responses, and errors for the supported web services\n protocols',
   subcommands: [
+
     Subcommand(
       name: 'claim-devices-by-claim-code',
       description: 'Adds device(s) to your account (i.e., claim one or more devices) if and only if you\n received a claim code with the device(s)',
       options: [
+
         Option(
           name: '--claim-code',
           description: 'The claim code, starting with "C-", as provided by the device manufacturer',
@@ -38,6 +40,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'describe-device',
       description: 'Given a device ID, returns a DescribeDeviceResponse object describing the\n details of the device',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The unique identifier of the device',
@@ -75,6 +79,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'finalize-device-claim',
       description: 'Given a device ID, finalizes the claim request for the associated device.\n Claiming a device consists of initiating a claim, then publishing a device event,\n and finalizing the claim. For a device of type button, a device event can\n be published by simply clicking the device',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The unique identifier of the device',
@@ -121,6 +127,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -133,6 +140,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'get-device-methods',
       description: 'Given a device ID, returns the invokable methods associated with the device',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The unique identifier of the device',
@@ -158,6 +166,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -170,6 +179,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'initiate-device-claim',
       description: 'Given a device ID, initiates a claim request for the associated device.\n Claiming a device consists of initiating a claim, then publishing a device event,\n and finalizing the claim. For a device of type button, a device event can\n be published by simply clicking the device',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The unique identifier of the device',
@@ -195,6 +205,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -207,6 +218,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'invoke-device-method',
       description: 'Given a device ID, issues a request to invoke a named device method (with possible\n parameters). See the "Example POST" code snippet below',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The unique identifier of the device',
@@ -250,6 +262,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -262,6 +275,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'list-device-events',
       description: 'Using a device ID, returns a DeviceEventsResponse object containing an\n array of events for the device',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The unique identifier of the device',
@@ -350,6 +364,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -362,6 +377,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'list-devices',
       description: 'Lists the 1-Click compatible devices associated with your AWS account',
       options: [
+
         Option(
           name: '--device-type',
           description: 'The type of the device, such as "button"',
@@ -432,6 +448,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -444,6 +461,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags associated with the specified resource ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -469,6 +487,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -481,6 +500,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or updates the tags associated with the resource ARN. See AWS IoT 1-Click Service Limits for the maximum number of tags allowed per\n resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -515,6 +535,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -527,6 +548,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'unclaim-device',
       description: 'Disassociates a device from your AWS account using its device ID',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The unique identifier of the device',
@@ -552,6 +574,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -564,6 +587,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'untag-resource',
       description: 'Using tag keys, deletes the tags (key/value pairs) associated with the specified\n resource ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -598,6 +622,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -610,6 +635,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
       name: 'update-device-state',
       description: 'Using a Boolean value (true or false), this operation\n enables or disables the device given a device ID',
       options: [
+
         Option(
           name: '--device-id',
           description: 'The unique identifier of the device',
@@ -643,6 +669,7 @@ final FigSpec iot1clickDevicesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

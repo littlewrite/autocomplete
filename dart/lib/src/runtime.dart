@@ -52,13 +52,28 @@ Future<List<Suggestion>> runTemplateSuggestions(FigArg? arg, String cwd) async {
   final template = arg.template;
   if (template == null) return [];
   final raw = await runTemplates(template, cwd);
-  return raw.map((t) => Suggestion(name: t.name, allNames: [t.name], icon: iconForType(t.type), priority: t.priority, type: t.type)).toList();
+  return raw
+      .map((t) => Suggestion(
+          name: t.name,
+          allNames: [t.name],
+          icon: iconForType(t.type),
+          priority: t.priority,
+          type: t.type))
+      .toList();
 }
 
-/// Run generator (script + postProcess). Runs [gen.script] in [cwd], passes stdout to [gen.postProcess], returns suggestions.
-Future<List<Suggestion>> runGeneratorSuggestions(FigGenerator? gen, List<CommandToken> allTokens, String cwd) async {
+/// Run generator (script + postProcess, or custom). Runs [gen.script] in [cwd], passes stdout to [gen.postProcess], or returns [gen.customSuggestions].
+Future<List<Suggestion>> runGeneratorSuggestions(
+    FigGenerator? gen, List<CommandToken> allTokens, String cwd) async {
   if (gen == null) return [];
-  if (gen.script == null || gen.script!.isEmpty || gen.postProcess == null) return [];
+  if (gen.custom != null && gen.custom!.isNotEmpty) {
+    return gen.custom!
+        .map((s) => toSuggestion(s))
+        .whereType<Suggestion>()
+        .toList();
+  }
+  if (gen.script == null || gen.script!.isEmpty || gen.postProcess == null)
+    return [];
   try {
     final result = await Process.run(
       gen.script!.first,
@@ -69,7 +84,10 @@ Future<List<Suggestion>> runGeneratorSuggestions(FigGenerator? gen, List<Command
     final stdout = (result.stdout as String?) ?? '';
     final tokens = allTokens.map((t) => t.token).toList();
     final figSuggestions = gen.postProcess!(stdout, tokens);
-    return figSuggestions.map((s) => toSuggestion(s)).whereType<Suggestion>().toList();
+    return figSuggestions
+        .map((s) => toSuggestion(s))
+        .whereType<Suggestion>()
+        .toList();
   } catch (_) {
     return [];
   }
@@ -89,11 +107,19 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
 ) async {
   if (argsDepleted && argsFromSubcommand) return null;
   final partial = partialToken?.token ?? '';
-  final allOptions = <FigOption>[...persistentOptions, ...(subcommand.options ?? [])];
+  final allOptions = <FigOption>[
+    ...persistentOptions,
+    ...(subcommand.options ?? [])
+  ];
   var suggestions = <Suggestion>[];
   if (!argsFromSubcommand) {
-    suggestions.addAll(filterSubcommandSuggestions(subcommand.subcommands, subcommand.filterStrategy, partial));
-    suggestions.addAll(filterOptionSuggestions(allOptions, acceptedTokens.where((t) => t.isOption).map((t) => t.token).toSet(), subcommand.filterStrategy, partial));
+    suggestions.addAll(filterSubcommandSuggestions(
+        subcommand.subcommands, subcommand.filterStrategy, partial));
+    suggestions.addAll(filterOptionSuggestions(
+        allOptions,
+        acceptedTokens.where((t) => t.isOption).map((t) => t.token).toSet(),
+        subcommand.filterStrategy,
+        partial));
   }
   final argList = subcommand.args ?? [];
   if (argList.isNotEmpty) {
@@ -102,9 +128,11 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
     for (final gen in activeArg.generatorsList) {
       suggestions.addAll(await runGeneratorSuggestions(gen, allTokens, cwd));
     }
-    suggestions.addAll(filterSuggestions(activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
+    suggestions.addAll(filterSuggestions(
+        activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
   }
-  suggestions = removeDuplicates(sortByPriority(removeHidden(removeAccepted(suggestions, acceptedTokens), partialToken)));
+  suggestions = removeDuplicates(sortByPriority(
+      removeHidden(removeAccepted(suggestions, acceptedTokens), partialToken)));
   return SuggestionBlob(suggestions: suggestions);
 }
 
@@ -123,19 +151,31 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   if (args.isEmpty) return null;
   final activeArg = args.first;
   final partial = partialToken?.token ?? '';
-  final allOptions = <FigOption>[...persistentOptions, ...(subcommand.options ?? [])];
+  final allOptions = <FigOption>[
+    ...persistentOptions,
+    ...(subcommand.options ?? [])
+  ];
   var suggestions = <Suggestion>[];
   suggestions.addAll(await runTemplateSuggestions(activeArg, cwd));
   for (final gen in activeArg.generatorsList) {
     suggestions.addAll(await runGeneratorSuggestions(gen, allTokens, cwd));
   }
-  suggestions.addAll(filterSuggestions(activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
+  suggestions.addAll(filterSuggestions(
+      activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
   if (activeArg.isOptional || (activeArg.isVariadic && variadicArgBound)) {
-    suggestions.addAll(filterSubcommandSuggestions(subcommand.subcommands, activeArg.filterStrategy, partial));
-    suggestions.addAll(filterOptionSuggestions(allOptions, acceptedTokens.where((t) => t.isOption).map((t) => t.token).toSet(), activeArg.filterStrategy, partial));
+    suggestions.addAll(filterSubcommandSuggestions(
+        subcommand.subcommands, activeArg.filterStrategy, partial));
+    suggestions.addAll(filterOptionSuggestions(
+        allOptions,
+        acceptedTokens.where((t) => t.isOption).map((t) => t.token).toSet(),
+        activeArg.filterStrategy,
+        partial));
   }
-  suggestions = removeDuplicates(sortByPriority(removeHidden(removeAccepted(suggestions, acceptedTokens), partialToken)));
-  return SuggestionBlob(suggestions: suggestions, argumentDescription: activeArg.description ?? activeArg.name);
+  suggestions = removeDuplicates(sortByPriority(
+      removeHidden(removeAccepted(suggestions, acceptedTokens), partialToken)));
+  return SuggestionBlob(
+      suggestions: suggestions,
+      argumentDescription: activeArg.description ?? activeArg.name);
 }
 
 /// Handle option: if option has args, runArg; else continue runSubcommand.
@@ -153,9 +193,20 @@ Future<SuggestionBlob?> runOption(
   final activeToken = tokens.first;
   if (option.args != null) {
     final args = getArgs(option.args);
-    return runArg(tokens.skip(1).toList(), allTokens, args, subcommand, cwd, shell, persistentOptions, [...acceptedTokens, activeToken], true, false);
+    return runArg(
+        tokens.skip(1).toList(),
+        allTokens,
+        args,
+        subcommand,
+        cwd,
+        shell,
+        persistentOptions,
+        [...acceptedTokens, activeToken],
+        true,
+        false);
   }
-  return runSubcommand(tokens.skip(1).toList(), allTokens, subcommand, cwd, shell, persistentOptions, [...acceptedTokens, activeToken]);
+  return runSubcommand(tokens.skip(1).toList(), allTokens, subcommand, cwd,
+      shell, persistentOptions, [...acceptedTokens, activeToken]);
 }
 
 FigOption? getOption(CommandToken token, List<FigOption> options) {
@@ -178,30 +229,47 @@ Future<SuggestionBlob?> runSubcommand(
   bool argsUsed = false,
 ]) async {
   if (tokens.isEmpty) {
-    return getSubcommandDrivenRecommendation(subcommand, persistentOptions, null, argsDepleted, argsUsed, acceptedTokens, allTokens, cwd, shell);
+    return getSubcommandDrivenRecommendation(subcommand, persistentOptions,
+        null, argsDepleted, argsUsed, acceptedTokens, allTokens, cwd, shell);
   }
   final partialToken = tokens.first;
   if (!partialToken.complete) {
-    return getSubcommandDrivenRecommendation(subcommand, persistentOptions, partialToken, argsDepleted, argsUsed, acceptedTokens, allTokens, cwd, shell);
+    return getSubcommandDrivenRecommendation(
+        subcommand,
+        persistentOptions,
+        partialToken,
+        argsDepleted,
+        argsUsed,
+        acceptedTokens,
+        allTokens,
+        cwd,
+        shell);
   }
   final activeToken = tokens.first;
-  final allOptions = <FigOption>[...persistentOptions, ...(subcommand.options ?? [])];
+  final allOptions = <FigOption>[
+    ...persistentOptions,
+    ...(subcommand.options ?? [])
+  ];
   final option = getOption(activeToken, allOptions);
   if (option != null) {
-    return runOption(tokens, allTokens, option, subcommand, cwd, shell, persistentOptions, acceptedTokens);
+    return runOption(tokens, allTokens, option, subcommand, cwd, shell,
+        persistentOptions, acceptedTokens);
   }
   final nextSub = subcommand.subcommands?.cast<FigSubcommand?>().firstWhere(
         (s) => s!.nameList.contains(activeToken.token),
         orElse: () => null,
       );
   if (nextSub != null) {
-    return runSubcommand(tokens.skip(1).toList(), allTokens, nextSub, cwd, shell, persistentOptions, [...acceptedTokens, activeToken]);
+    return runSubcommand(tokens.skip(1).toList(), allTokens, nextSub, cwd,
+        shell, persistentOptions, [...acceptedTokens, activeToken]);
   }
   final args = getArgs(subcommand.args);
   if (args.isNotEmpty) {
-    return runArg(tokens, allTokens, args, subcommand, cwd, shell, allOptions, acceptedTokens, false, false);
+    return runArg(tokens, allTokens, args, subcommand, cwd, shell, allOptions,
+        acceptedTokens, false, false);
   }
-  return runSubcommand(tokens.skip(1).toList(), allTokens, subcommand, cwd, shell, persistentOptions, [...acceptedTokens, activeToken]);
+  return runSubcommand(tokens.skip(1).toList(), allTokens, subcommand, cwd,
+      shell, persistentOptions, [...acceptedTokens, activeToken]);
 }
 
 Future<SuggestionBlob?> runArg(
@@ -217,43 +285,82 @@ Future<SuggestionBlob?> runArg(
   bool fromVariadic,
 ) async {
   if (args.isEmpty) {
-    return runSubcommand(tokens, allTokens, subcommand, cwd, shell, persistentOptions, acceptedTokens, true, !fromOption);
+    return runSubcommand(tokens, allTokens, subcommand, cwd, shell,
+        persistentOptions, acceptedTokens, true, !fromOption);
   }
   if (tokens.isEmpty) {
-    return getArgDrivenRecommendation(args, subcommand, persistentOptions, null, acceptedTokens, allTokens, fromVariadic, cwd, shell);
+    return getArgDrivenRecommendation(args, subcommand, persistentOptions, null,
+        acceptedTokens, allTokens, fromVariadic, cwd, shell);
   }
   if (!tokens.first.complete) {
-    return getArgDrivenRecommendation(args, subcommand, persistentOptions, tokens.first, acceptedTokens, allTokens, fromVariadic, cwd, shell);
+    return getArgDrivenRecommendation(args, subcommand, persistentOptions,
+        tokens.first, acceptedTokens, allTokens, fromVariadic, cwd, shell);
   }
   final activeToken = tokens.first;
   final activeArg = args.first;
-  final allOpts = <FigOption>[...persistentOptions, ...(subcommand.options ?? [])];
+  final allOpts = <FigOption>[
+    ...persistentOptions,
+    ...(subcommand.options ?? [])
+  ];
   if (args.every((a) => a.isOptional) && activeToken.isOption) {
     final option = getOption(activeToken, allOpts);
-    if (option != null) return runOption(tokens, allTokens, option, subcommand, cwd, shell, persistentOptions, acceptedTokens);
+    if (option != null)
+      return runOption(tokens, allTokens, option, subcommand, cwd, shell,
+          persistentOptions, acceptedTokens);
   }
   if (activeArg.isVariadic) {
-    return runArg(tokens.skip(1).toList(), allTokens, args, subcommand, cwd, shell, persistentOptions, [...acceptedTokens, activeToken], fromOption, true);
+    return runArg(
+        tokens.skip(1).toList(),
+        allTokens,
+        args,
+        subcommand,
+        cwd,
+        shell,
+        persistentOptions,
+        [...acceptedTokens, activeToken],
+        fromOption,
+        true);
   }
   if (activeArg.isOptional) {
     final nextSub = subcommand.subcommands?.cast<FigSubcommand?>().firstWhere(
           (s) => s!.nameList.contains(activeToken.token),
           orElse: () => null,
         );
-    if (nextSub != null) return runSubcommand(tokens.skip(1).toList(), allTokens, nextSub, cwd, shell, persistentOptions, [...acceptedTokens, activeToken]);
+    if (nextSub != null)
+      return runSubcommand(tokens.skip(1).toList(), allTokens, nextSub, cwd,
+          shell, persistentOptions, [...acceptedTokens, activeToken]);
   }
-  return runArg(tokens.skip(1).toList(), allTokens, args.sublist(1), subcommand, cwd, shell, persistentOptions, [...acceptedTokens, activeToken], fromOption, false);
+  return runArg(
+      tokens.skip(1).toList(),
+      allTokens,
+      args.sublist(1),
+      subcommand,
+      cwd,
+      shell,
+      persistentOptions,
+      [...acceptedTokens, activeToken],
+      fromOption,
+      false);
 }
 
 /// Command-name completion when first token is incomplete (e.g. "gi" -> git).
 SuggestionBlob runCommand(CommandToken token) {
   final names = getSpecNames().where((s) => s.startsWith(token.token)).toList();
-  final suggestions = names.map((s) => Suggestion(name: s, allNames: [s], icon: suggestionIconSubcommand, priority: 40, type: SuggestionType.subcommand)).toList();
-  return SuggestionBlob(suggestions: suggestions, charactersToDrop: token.tokenLength);
+  final suggestions = names
+      .map((s) => Suggestion(
+          name: s,
+          allNames: [s],
+          icon: suggestionIconSubcommand,
+          priority: 40,
+          type: SuggestionType.subcommand))
+      .toList();
+  return SuggestionBlob(
+      suggestions: suggestions, charactersToDrop: token.tokenLength);
 }
 
 /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
-Future<SuggestionBlob?> getSuggestions(String cmd, String cwd, Shell shell) async {
+Future<SuggestionBlob?> getSuggestions(
+    String cmd, String cwd, Shell shell) async {
   final activeCmd = parseCommand(cmd, shell);
   if (activeCmd.isEmpty) return null;
   final rootToken = activeCmd.first;
@@ -265,10 +372,16 @@ Future<SuggestionBlob?> getSuggestions(String cmd, String cwd, Shell shell) asyn
   if (subcommand == null) return null;
 
   final resolvedCwd = await resolveCwd(cwd, shell);
-  final result = await runSubcommand(activeCmd.skip(1).toList(), activeCmd, subcommand, resolvedCwd, shell);
+  final result = await runSubcommand(
+      activeCmd.skip(1).toList(), activeCmd, subcommand, resolvedCwd, shell);
   if (result == null) return null;
-  if (result.suggestions.isEmpty && result.argumentDescription == null) return null;
+  if (result.suggestions.isEmpty && result.argumentDescription == null)
+    return null;
   final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
-  final charactersToDrop = lastToken?.complete == true ? 0 : (lastToken?.tokenLength ?? 0);
-  return SuggestionBlob(suggestions: result.suggestions, argumentDescription: result.argumentDescription, charactersToDrop: charactersToDrop);
+  final charactersToDrop =
+      lastToken?.complete == true ? 0 : (lastToken?.tokenLength ?? 0);
+  return SuggestionBlob(
+      suggestions: result.suggestions,
+      argumentDescription: result.argumentDescription,
+      charactersToDrop: charactersToDrop);
 }

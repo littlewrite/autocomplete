@@ -9,9 +9,11 @@ final FigSpec chmodSpec = FigSpec(
   name: 'chmod',
   description: 'Change file modes or Access Control Lists',
   args: [
+
     Arg(
       name: 'mode',
       suggestions: [
+
         FigSuggestion(
           name: 'u+x',
           description: 'Give execute permission for the user',
@@ -44,6 +46,7 @@ final FigSpec chmodSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '-f',
       description: 'Do not display a diagnostic message if chmod could not modify the mode for file, nor modify the exit status to reflect such failures'

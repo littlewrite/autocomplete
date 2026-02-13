@@ -9,10 +9,12 @@ final FigSpec wisdomSpec = FigSpec(
   name: 'wisdom',
   description: 'Amazon Connect Wisdom delivers agents the information they need to solve customer issues as they\'re actively speaking with customers. Agents can search across connected repositories from within their agent desktop to find answers quickly. Use Amazon Connect Wisdom to create an assistant and a knowledge base, for example, or manage content by uploading custom files',
   subcommands: [
+
     Subcommand(
       name: 'create-assistant',
       description: 'Creates an Amazon Connect Wisdom assistant',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -83,6 +85,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'create-assistant-association',
       description: 'Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the only supported association is with a knowledge base. An assistant can have only a single association',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -156,6 +160,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +173,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'create-content',
       description: 'Creates Wisdom content. Before to calling this API, use StartContentUpload to upload an asset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -256,6 +262,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -268,6 +275,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'create-knowledge-base',
       description: 'Creates a knowledge base.  When using this API, you cannot reuse Amazon AppIntegrations DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do, you\'ll get an InvalidRequestException error.  For example, you\'re programmatically managing your external knowledge base, and you want to add or remove one of the fields that is being ingested from Salesforce. Do the following:   Call DeleteKnowledgeBase.   Call DeleteDataIntegration.   Call CreateDataIntegration to recreate the DataIntegration or a create different one.   Call CreateKnowledgeBase',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -356,6 +364,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -368,6 +377,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'create-quick-response',
       description: 'Creates a Wisdom quick response',
       options: [
+
         Option(
           name: '--channels',
           description: 'The Amazon Connect channels this quick response applies to',
@@ -491,6 +501,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -503,6 +514,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'create-session',
       description: 'Creates a session. A session is a contextual container used for generating recommendations. Amazon Connect creates a new Wisdom session for each contact on which Wisdom is enabled',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -564,6 +576,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -576,6 +589,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'delete-assistant',
       description: 'Deletes an assistant',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -601,6 +615,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -613,6 +628,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'delete-assistant-association',
       description: 'Deletes an assistant association',
       options: [
+
         Option(
           name: '--assistant-association-id',
           description: 'The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -647,6 +663,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -659,6 +676,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'delete-content',
       description: 'Deletes the content',
       options: [
+
         Option(
           name: '--content-id',
           description: 'The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -693,6 +711,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -705,6 +724,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'delete-import-job',
       description: 'Deletes the quick response import job',
       options: [
+
         Option(
           name: '--import-job-id',
           description: 'The identifier of the import job to be deleted',
@@ -739,6 +759,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -751,6 +772,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'delete-knowledge-base',
       description: 'Deletes the knowledge base.  When you use this API to delete an external knowledge base such as Salesforce or ServiceNow, you must also delete the Amazon AppIntegrations DataIntegration. This is because you can\'t reuse the DataIntegration after it\'s been associated with an external knowledge base. However, you can delete and recreate it. See DeleteDataIntegration and CreateDataIntegration in the Amazon AppIntegrations API Reference',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -776,6 +798,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -788,6 +811,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'delete-quick-response',
       description: 'Deletes a quick response',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The knowledge base from which the quick response is deleted. The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you\'re storing Wisdom Content resource to it',
@@ -822,6 +846,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -834,6 +859,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'get-assistant',
       description: 'Retrieves information about an assistant',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -859,6 +885,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -871,6 +898,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'get-assistant-association',
       description: 'Retrieves information about an assistant association',
       options: [
+
         Option(
           name: '--assistant-association-id',
           description: 'The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -905,6 +933,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -917,6 +946,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'get-content',
       description: 'Retrieves content, including a pre-signed URL to download the content',
       options: [
+
         Option(
           name: '--content-id',
           description: 'The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -951,6 +981,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -963,6 +994,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'get-content-summary',
       description: 'Retrieves summary information about the content',
       options: [
+
         Option(
           name: '--content-id',
           description: 'The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -997,6 +1029,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1009,6 +1042,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'get-import-job',
       description: 'Retrieves the started import job',
       options: [
+
         Option(
           name: '--import-job-id',
           description: 'The identifier of the import job to retrieve',
@@ -1043,6 +1077,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1055,6 +1090,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'get-knowledge-base',
       description: 'Retrieves information about the knowledge base',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you\'re storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1080,6 +1116,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1092,6 +1129,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'get-quick-response',
       description: 'Retrieves the quick response',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base',
@@ -1126,6 +1164,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1138,6 +1177,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'get-recommendations',
       description: 'Retrieves recommendations for the specified session. To avoid retrieving the same recommendations in subsequent calls, use NotifyRecommendationsReceived. This API supports long-polling behavior with the waitTimeSeconds parameter. Short poll is the default behavior and only returns recommendations already available. To perform a manual query against an assistant, use QueryAssistant',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1190,6 +1230,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1202,6 +1243,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'get-session',
       description: 'Retrieves information for a specified session',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1236,6 +1278,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1248,6 +1291,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'list-assistant-associations',
       description: 'Lists information about assistant associations',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1318,6 +1362,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1330,6 +1375,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'list-assistants',
       description: 'Lists information about assistants',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per page',
@@ -1391,6 +1437,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1403,6 +1450,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'list-contents',
       description: 'Lists the content',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you\'re storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1473,6 +1521,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1485,6 +1534,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'list-import-jobs',
       description: 'Lists information about import jobs',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you\'re storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1555,6 +1605,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1567,6 +1618,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'list-knowledge-bases',
       description: 'Lists the knowledge bases',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per page',
@@ -1628,6 +1680,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1640,6 +1693,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'list-quick-responses',
       description: 'Lists information about quick response',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you\'re storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1710,6 +1764,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1722,6 +1777,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1747,6 +1803,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1759,6 +1816,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'notify-recommendations-received',
       description: 'Removes the specified recommendations from the specified assistant\'s queue of newly available recommendations. You can use this API in conjunction with GetRecommendations and a waitTimeSeconds input for long-polling behavior and avoiding duplicate recommendations',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1802,6 +1860,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1814,6 +1873,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'query-assistant',
       description: 'Performs a manual search against the specified assistant. To retrieve recommendations for an assistant, use GetRecommendations',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1893,6 +1953,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1905,6 +1966,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'remove-knowledge-base-template-uri',
       description: 'Removes a URI template from a knowledge base',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you\'re storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1930,6 +1992,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1942,6 +2005,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'search-content',
       description: 'Searches for content in a specified knowledge base. Can be used to get a specific content resource by its name',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you\'re storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2021,6 +2085,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2033,6 +2098,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'search-quick-responses',
       description: 'Searches existing Wisdom quick responses in a Wisdom knowledge base',
       options: [
+
         Option(
           name: '--attributes',
           description: 'The user-defined Amazon Connect contact attributes to be resolved when search results are returned',
@@ -2121,6 +2187,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2133,6 +2200,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'search-sessions',
       description: 'Searches for sessions',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2212,6 +2280,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2224,6 +2293,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'start-content-upload',
       description: 'Get a URL to upload content to a knowledge base. To upload content, first make a PUT request to the returned URL with your file, making sure to include the required headers. Then use CreateContent to finalize the content creation process or UpdateContent to modify an existing resource. You can only upload content to a knowledge base of type CUSTOM',
       options: [
+
         Option(
           name: '--content-type',
           description: 'The type of content to upload',
@@ -2267,6 +2337,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2279,6 +2350,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'start-import-job',
       description: 'Start an asynchronous job to import Wisdom resources from an uploaded source file. Before calling this API, use StartContentUpload to upload an asset that contains the resource data.   For importing Wisdom quick responses, you need to upload a csv file including the quick responses. For information about how to format the csv file for importing quick responses, see Import quick responses',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The tags used to organize, track, or control access for this resource',
@@ -2349,6 +2421,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2361,6 +2434,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -2395,6 +2469,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2407,6 +2482,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -2441,6 +2517,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2453,6 +2530,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'update-content',
       description: 'Updates information about the content',
       options: [
+
         Option(
           name: '--content-id',
           description: 'The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2540,6 +2618,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2552,6 +2631,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'update-knowledge-base-template-uri',
       description: 'Updates the template URI of a knowledge base. This is only supported for knowledge bases of type EXTERNAL. Include a single variable in \${variable} format; this interpolated by Wisdom using ingested content. For example, if you ingest a Salesforce article, it has an Id value, and you can set the template URI to https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*\${Id}*/view',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you\'re storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2586,6 +2666,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2598,6 +2679,7 @@ final FigSpec wisdomSpec = FigSpec(
       name: 'update-quick-response',
       description: 'Updates an existing Wisdom quick response',
       options: [
+
         Option(
           name: '--channels',
           description: 'The Amazon Connect contact channels this quick response applies to. The supported contact channel types include Chat',
@@ -2736,6 +2818,7 @@ final FigSpec wisdomSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

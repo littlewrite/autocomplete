@@ -9,6 +9,7 @@ final FigSpec createNextAppSpec = FigSpec(
   name: 'create-next-app',
   icon: 'https://nextjs.org/static/favicon/favicon-16x16.png',
   options: [
+
     Option(
       name: ['-V', '--version'],
       description: 'Output the version number'

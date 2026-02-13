@@ -9,10 +9,12 @@ final FigSpec glueSpec = FigSpec(
   name: 'glue',
   description: 'Glue Defines the public endpoint for the Glue service',
   subcommands: [
+
     Subcommand(
       name: 'batch-create-partition',
       description: 'Creates one or more partitions in a batch operation',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID',
@@ -65,6 +67,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-delete-connection',
       description: 'Deletes a list of connection definitions from the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default',
@@ -111,6 +115,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-delete-partition',
       description: 'Deletes one or more partitions in a batch operation',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -175,6 +181,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-delete-table',
       description: 'Deletes multiple tables at once.  After completing this operation, you no longer have access to the table versions and partitions that belong to the deleted table. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service. To ensure the immediate deletion of all related resources, before calling BatchDeleteTable, use DeleteTableVersion or BatchDeleteTableVersion, and DeletePartition or BatchDeletePartition, to delete any resources that belong to the table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -239,6 +247,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +260,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-delete-table-version',
       description: 'Deletes a specified batch of versions of a table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default',
@@ -303,6 +313,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -315,6 +326,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-get-blueprints',
       description: 'Retrieves information about a list of blueprints',
       options: [
+
         Option(
           name: '--names',
           description: 'A list of blueprint names',
@@ -356,6 +368,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -368,6 +381,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-get-crawlers',
       description: 'Returns a list of resource metadata for a given list of crawler names. After calling the ListCrawlers operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags',
       options: [
+
         Option(
           name: '--crawler-names',
           description: 'A list of crawler names, which might be the names returned from the ListCrawlers operation',
@@ -393,6 +407,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -405,6 +420,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-get-custom-entity-types',
       description: 'Retrieves the details for the custom patterns specified by a list of names',
       options: [
+
         Option(
           name: '--names',
           description: 'A list of names of the custom patterns that you want to retrieve',
@@ -430,6 +446,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -442,6 +459,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-get-data-quality-result',
       description: 'Retrieves a list of data quality results for the specified result IDs',
       options: [
+
         Option(
           name: '--result-ids',
           description: 'A list of unique result IDs for the data quality results',
@@ -467,6 +485,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -479,6 +498,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-get-dev-endpoints',
       description: 'Returns a list of resource metadata for a given list of development endpoint names. After calling the ListDevEndpoints operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags',
       options: [
+
         Option(
           name: '--dev-endpoint-names',
           description: 'The list of DevEndpoint names, which might be the names returned from the ListDevEndpoint operation',
@@ -504,6 +524,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -516,6 +537,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-get-jobs',
       description: 'Returns a list of resource metadata for a given list of job names. After calling the ListJobs operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags',
       options: [
+
         Option(
           name: '--job-names',
           description: 'A list of job names, which might be the names returned from the ListJobs operation',
@@ -541,6 +563,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -553,6 +576,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-get-partition',
       description: 'Retrieves partitions in a batch request',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default',
@@ -605,6 +629,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -617,6 +642,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-get-table-optimizer',
       description: 'Returns the configuration for the specified table optimizers',
       options: [
+
         Option(
           name: '--entries',
           description: 'A list of BatchGetTableOptimizerEntry objects specifying the table optimizers to retrieve',
@@ -642,6 +668,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -654,6 +681,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-get-triggers',
       description: 'Returns a list of resource metadata for a given list of trigger names. After calling the ListTriggers operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags',
       options: [
+
         Option(
           name: '--trigger-names',
           description: 'A list of trigger names, which may be the names returned from the ListTriggers operation',
@@ -679,6 +707,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -691,6 +720,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-get-workflows',
       description: 'Returns a list of resource metadata for a given list of workflow names. After calling the ListWorkflows operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags',
       options: [
+
         Option(
           name: '--names',
           description: 'A list of workflow names, which may be the names returned from the ListWorkflows operation',
@@ -724,6 +754,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -736,6 +767,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-put-data-quality-statistic-annotation',
       description: 'Annotate datapoints over time for a specific data quality statistic',
       options: [
+
         Option(
           name: '--inclusion-annotations',
           description: 'A list of DatapointInclusionAnnotation\'s',
@@ -770,6 +802,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -782,6 +815,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-stop-job-run',
       description: 'Stops one or more job runs for a specified job definition',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the job definition for which to stop job runs',
@@ -816,6 +850,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -828,6 +863,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'batch-update-partition',
       description: 'Updates one or more partitions in a batch operation',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID',
@@ -880,6 +916,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -892,6 +929,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'cancel-data-quality-rule-recommendation-run',
       description: 'Cancels the specified recommendation run that was being used to generate rules',
       options: [
+
         Option(
           name: '--run-id',
           description: 'The unique run identifier associated with this run',
@@ -917,6 +955,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -929,6 +968,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'cancel-data-quality-ruleset-evaluation-run',
       description: 'Cancels a run where a ruleset is being evaluated against a data source',
       options: [
+
         Option(
           name: '--run-id',
           description: 'The unique run identifier associated with this run',
@@ -954,6 +994,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -966,6 +1007,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'cancel-ml-task-run',
       description: 'Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling CancelMLTaskRun with a task run\'s parent transform\'s TransformID and the task run\'s TaskRunId',
       options: [
+
         Option(
           name: '--transform-id',
           description: 'The unique identifier of the machine learning transform',
@@ -1000,6 +1042,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1012,6 +1055,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'cancel-statement',
       description: 'Cancels the statement',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The Session ID of the statement to be cancelled',
@@ -1055,6 +1099,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1067,6 +1112,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'check-schema-version-validity',
       description: 'Validates the supplied schema. This call has no side effects, it simply validates using the supplied schema using DataFormat as the format. Since it does not take a schema set name, no compatibility checks are performed',
       options: [
+
         Option(
           name: '--data-format',
           description: 'The data format of the schema definition. Currently AVRO, JSON and PROTOBUF are supported',
@@ -1101,6 +1147,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1113,6 +1160,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-blueprint',
       description: 'Registers a blueprint with Glue',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the blueprint',
@@ -1165,6 +1213,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1177,6 +1226,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-catalog',
       description: 'Creates a new catalog in the Glue Data Catalog',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the catalog to create',
@@ -1220,6 +1270,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1232,6 +1283,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-classifier',
       description: 'Creates a classifier in the user\'s account. This can be a GrokClassifier, an XMLClassifier, a JsonClassifier, or a CsvClassifier, depending on which field of the request is present',
       options: [
+
         Option(
           name: '--grok-classifier',
           description: 'A GrokClassifier object specifying the classifier to create',
@@ -1284,6 +1336,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1296,6 +1349,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-column-statistics-task-settings',
       description: 'Creates settings for a column statistics task',
       options: [
+
         Option(
           name: '--database-name',
           description: 'The name of the database where the table resides',
@@ -1393,6 +1447,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1405,6 +1460,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-connection',
       description: 'Creates a connection definition in the Data Catalog. Connections used for creating federated resources require the IAM glue:PassConnection permission',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default',
@@ -1448,6 +1504,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1460,6 +1517,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-crawler',
       description: 'Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in the s3Targets field, the jdbcTargets field, or the DynamoDBTargets field',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the new crawler',
@@ -1611,6 +1669,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1623,6 +1682,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-custom-entity-type',
       description: 'Creates a custom pattern that is used to detect sensitive data across the columns and rows of your structured data. Each custom pattern you create specifies a regular expression and an optional list of context words. If no context words are passed only a regular expression is checked',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account',
@@ -1675,6 +1735,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1687,6 +1748,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-data-quality-ruleset',
       description: 'Creates a data quality ruleset with DQDL rules applied to a specified Glue table. You create the ruleset using the Data Quality Definition Language (DQDL). For more information, see the Glue developer guide',
       options: [
+
         Option(
           name: '--name',
           description: 'A unique name for the data quality ruleset',
@@ -1766,6 +1828,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1778,6 +1841,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-database',
       description: 'Creates a new database in a Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default',
@@ -1821,6 +1885,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1833,6 +1898,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-dev-endpoint',
       description: 'Creates a new development endpoint',
       options: [
+
         Option(
           name: '--endpoint-name',
           description: 'The name to be assigned to the new DevEndpoint',
@@ -1984,6 +2050,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1996,6 +2063,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-integration',
       description: 'Creates a Zero-ETL integration in the caller\'s account between two resources with Amazon Resource Names (ARNs): the SourceArn and TargetArn',
       options: [
+
         Option(
           name: '--integration-name',
           description: 'A unique name for an integration in Glue',
@@ -2084,6 +2152,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2096,6 +2165,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-integration-resource-property',
       description: 'This API can be used for setting up the ResourceProperty of the Glue connection (for the source) or Glue database ARN (for the target). These properties can include the role to access the connection or database. To set both source and target properties the same API needs to be invoked with the Glue connection ARN as ResourceArn with SourceProcessingProperties and the Glue database ARN as ResourceArn with TargetProcessingProperties respectively',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The connection ARN of the source, or the database ARN of the target',
@@ -2139,6 +2209,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2151,6 +2222,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-integration-table-properties',
       description: 'This API is used to provide optional override properties for the the tables that need to be replicated. These properties can include properties for filtering and partitioning for the source and target tables. To set both source and target properties the same API need to be invoked with the Glue connection ARN as ResourceArn with SourceTableConfig, and the Glue database ARN as ResourceArn with TargetTableConfig respectively',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The connection ARN of the source, or the database ARN of the target',
@@ -2203,6 +2275,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2215,6 +2288,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-job',
       description: 'Creates a new job definition',
       options: [
+
         Option(
           name: '--name',
           description: 'The name you assign to this job definition. It must be unique in your account',
@@ -2455,6 +2529,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2467,6 +2542,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-ml-transform',
       description: 'Creates an Glue machine learning transform. This operation creates the transform and all the necessary parameters to train it. Call this operation as the first step in the process of using a machine learning transform (such as the FindMatches transform) for deduplicating data. You can provide an optional Description, in addition to the parameters that you want to use for your algorithm. You must also specify certain parameters for the tasks that Glue runs on your behalf as part of learning from your data and creating a high-quality machine learning transform. These parameters include Role, and optionally, AllocatedCapacity, Timeout, and MaxRetries. For more information, see Jobs',
       options: [
+
         Option(
           name: '--name',
           description: 'The unique name that you give the transform when you create it',
@@ -2600,6 +2676,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2612,6 +2689,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-partition',
       description: 'Creates a new partition',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The Amazon Web Services account ID of the catalog in which the partition is to be created',
@@ -2664,6 +2742,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2676,6 +2755,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-partition-index',
       description: 'Creates a specified partition index in an existing table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The catalog ID where the table resides',
@@ -2728,6 +2808,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2740,6 +2821,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-registry',
       description: 'Creates a new registry which may be used to hold a collection of schemas',
       options: [
+
         Option(
           name: '--registry-name',
           description: 'Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace',
@@ -2783,6 +2865,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2795,6 +2878,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-schema',
       description: 'Creates a new schema set and registers the schema definition. Returns an error if the schema set already exists without actually registering the version. When the schema set is created, a version checkpoint will be set to the first version. Compatibility mode "DISABLED" restricts any additional schema versions from being added after the first schema version. For all other compatibility modes, validation of compatibility settings will be applied only from the second version onwards when the RegisterSchemaVersion API is used. When this API is called without a RegistryId, this will create an entry for a "default-registry" in the registry database tables, if it is not already present',
       options: [
+
         Option(
           name: '--registry-id',
           description: 'This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id',
@@ -2874,6 +2958,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2886,6 +2971,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-script',
       description: 'Transforms a directed acyclic graph (DAG) into code',
       options: [
+
         Option(
           name: '--dag-nodes',
           description: 'A list of the nodes in the DAG',
@@ -2929,6 +3015,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2941,6 +3028,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-security-configuration',
       description: 'Creates a new security configuration. A security configuration is a set of security properties that can be used by Glue. You can use a security configuration to encrypt data at rest. For information about using security configurations in Glue, see Encrypting Data Written by Crawlers, Jobs, and Development Endpoints',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the new security configuration',
@@ -2975,6 +3063,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2987,6 +3076,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-session',
       description: 'Creates a new session',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the session request',
@@ -3138,6 +3228,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3150,6 +3241,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-table',
       description: 'Creates a new table definition in the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which to create the Table. If none is supplied, the Amazon Web Services account ID is used by default',
@@ -3220,6 +3312,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3232,6 +3325,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-table-optimizer',
       description: 'Creates a new table optimizer for a specific function',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The Catalog ID of the table',
@@ -3293,6 +3387,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3305,6 +3400,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-trigger',
       description: 'Creates a new trigger',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the trigger',
@@ -3410,6 +3506,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3422,6 +3519,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-usage-profile',
       description: 'Creates an Glue usage profile',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the usage profile',
@@ -3474,6 +3572,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3486,6 +3585,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-user-defined-function',
       description: 'Creates a new function definition in the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default',
@@ -3529,6 +3629,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3541,6 +3642,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'create-workflow',
       description: 'Creates a new workflow',
       options: [
+
         Option(
           name: '--name',
           description: 'The name to be assigned to the workflow. It should be unique within your account',
@@ -3602,6 +3704,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3614,6 +3717,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-blueprint',
       description: 'Deletes an existing blueprint',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the blueprint to delete',
@@ -3639,6 +3743,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3651,6 +3756,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-catalog',
       description: 'Removes the specified catalog from the Glue Data Catalog. After completing this operation, you no longer have access to the databases, tables (and all table versions and partitions that might belong to the tables) and the user-defined functions in the deleted catalog. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service. To ensure the immediate deletion of all related resources before calling the DeleteCatalog operation, use DeleteTableVersion (or BatchDeleteTableVersion), DeletePartition (or BatchDeletePartition), DeleteTable (or BatchDeleteTable), DeleteUserDefinedFunction and DeleteDatabase to delete any resources that belong to the catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the catalog',
@@ -3676,6 +3782,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3688,6 +3795,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-classifier',
       description: 'Removes a classifier from the Data Catalog',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the classifier to remove',
@@ -3713,6 +3821,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3725,6 +3834,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-column-statistics-for-partition',
       description: 'Delete the partition column statistics of a column. The Identity and Access Management (IAM) permission required for this operation is DeletePartition',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default',
@@ -3786,6 +3896,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3798,6 +3909,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-column-statistics-for-table',
       description: 'Retrieves table statistics of columns. The Identity and Access Management (IAM) permission required for this operation is DeleteTable',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default',
@@ -3850,6 +3962,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3862,6 +3975,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-column-statistics-task-settings',
       description: 'Deletes settings for a column statistics task',
       options: [
+
         Option(
           name: '--database-name',
           description: 'The name of the database where the table resides',
@@ -3896,6 +4010,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3908,6 +4023,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-connection',
       description: 'Deletes a connection from the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -3942,6 +4058,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3954,6 +4071,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-crawler',
       description: 'Removes a specified crawler from the Glue Data Catalog, unless the crawler state is RUNNING',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the crawler to remove',
@@ -3979,6 +4097,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3991,6 +4110,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-custom-entity-type',
       description: 'Deletes a custom pattern by specifying its name',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the custom pattern that you want to delete',
@@ -4016,6 +4136,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4028,6 +4149,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-data-quality-ruleset',
       description: 'Deletes a data quality ruleset',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the data quality ruleset',
@@ -4053,6 +4175,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4065,6 +4188,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-database',
       description: 'Removes a specified database from a Data Catalog.  After completing this operation, you no longer have access to the tables (and all table versions and partitions that might belong to the tables) and the user-defined functions in the deleted database. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service. To ensure the immediate deletion of all related resources, before calling DeleteDatabase, use DeleteTableVersion or BatchDeleteTableVersion, DeletePartition or BatchDeletePartition, DeleteUserDefinedFunction, and DeleteTable or BatchDeleteTable, to delete any resources that belong to the database',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -4099,6 +4223,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4111,6 +4236,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-dev-endpoint',
       description: 'Deletes a specified development endpoint',
       options: [
+
         Option(
           name: '--endpoint-name',
           description: 'The name of the DevEndpoint',
@@ -4136,6 +4262,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4148,6 +4275,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-integration',
       description: 'Deletes the specified Zero-ETL integration',
       options: [
+
         Option(
           name: '--integration-identifier',
           description: 'The Amazon Resource Name (ARN) for the integration',
@@ -4173,6 +4301,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4185,6 +4314,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-integration-table-properties',
       description: 'Deletes the table properties that have been created for the tables that need to be replicated',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The connection ARN of the source, or the database ARN of the target',
@@ -4219,6 +4349,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4231,6 +4362,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-job',
       description: 'Deletes a specified job definition. If the job definition is not found, no exception is thrown',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the job definition to delete',
@@ -4256,6 +4388,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4268,6 +4401,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-ml-transform',
       description: 'Deletes an Glue machine learning transform. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. If you no longer need a transform, you can delete it by calling DeleteMLTransforms. However, any Glue jobs that still reference the deleted transform will no longer succeed',
       options: [
+
         Option(
           name: '--transform-id',
           description: 'The unique identifier of the transform to delete',
@@ -4293,6 +4427,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4305,6 +4440,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-partition',
       description: 'Deletes a specified partition',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -4357,6 +4493,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4369,6 +4506,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-partition-index',
       description: 'Deletes a specified partition index from an existing table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The catalog ID where the table resides',
@@ -4421,6 +4559,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4433,6 +4572,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-registry',
       description: 'Delete the entire registry including schema and all of its versions. To get the status of the delete operation, you can call the GetRegistry API after the asynchronous call. Deleting a registry will deactivate all online operations for the registry such as the UpdateRegistry, CreateSchema, UpdateSchema, and RegisterSchemaVersion APIs',
       options: [
+
         Option(
           name: '--registry-id',
           description: 'This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN)',
@@ -4458,6 +4598,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4470,6 +4611,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes a specified policy',
       options: [
+
         Option(
           name: '--policy-hash-condition',
           description: 'The hash value returned when this policy was set',
@@ -4504,6 +4646,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4516,6 +4659,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-schema',
       description: 'Deletes the entire schema set, including the schema set and all of its versions. To get the status of the delete operation, you can call GetSchema API after the asynchronous call. Deleting a registry will deactivate all online operations for the schema, such as the GetSchemaByDefinition, and RegisterSchemaVersion APIs',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN)',
@@ -4541,6 +4685,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4553,6 +4698,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-schema-versions',
       description: 'Remove versions from the specified schema. A version number or range may be supplied. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned. Calling the GetSchemaVersions API after this call will list the status of the deleted versions. When the range of version numbers contain check pointed version, the API will return a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint first using the DeleteSchemaCheckpoint API before using this API. You cannot use the DeleteSchemaVersions API to delete the first schema version in the schema set. The first schema version can only be deleted by the DeleteSchema API. This operation will also delete the attached SchemaVersionMetadata under the schema versions. Hard deletes will be enforced on the database. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN)',
@@ -4587,6 +4733,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4599,6 +4746,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-security-configuration',
       description: 'Deletes a specified security configuration',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the security configuration to delete',
@@ -4624,6 +4772,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4636,6 +4785,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-session',
       description: 'Deletes the session',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the session to be deleted',
@@ -4670,6 +4820,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4682,6 +4833,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-table',
       description: 'Removes a table definition from the Data Catalog.  After completing this operation, you no longer have access to the table versions and partitions that belong to the deleted table. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service. To ensure the immediate deletion of all related resources, before calling DeleteTable, use DeleteTableVersion or BatchDeleteTableVersion, and DeletePartition or BatchDeletePartition, to delete any resources that belong to the table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -4734,6 +4886,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4746,6 +4899,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-table-optimizer',
       description: 'Deletes an optimizer and all associated metadata for a table. The optimization will no longer be performed on the table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The Catalog ID of the table',
@@ -4798,6 +4952,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4810,6 +4965,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-table-version',
       description: 'Deletes a specified version of a table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default',
@@ -4862,6 +5018,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4874,6 +5031,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-trigger',
       description: 'Deletes a specified trigger. If the trigger is not found, no exception is thrown',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the trigger to delete',
@@ -4899,6 +5057,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4911,6 +5070,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-usage-profile',
       description: 'Deletes the Glue specified usage profile',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the usage profile to delete',
@@ -4936,6 +5096,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4948,6 +5109,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-user-defined-function',
       description: 'Deletes an existing function definition from the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default',
@@ -4991,6 +5153,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5003,6 +5166,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'delete-workflow',
       description: 'Deletes a workflow',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the workflow to be deleted',
@@ -5028,6 +5192,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5040,6 +5205,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'describe-connection-type',
       description: 'The DescribeConnectionType API provides full details of the supported options for a given connection type in Glue',
       options: [
+
         Option(
           name: '--connection-type',
           description: 'The name of the connection type to be described',
@@ -5065,6 +5231,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5077,6 +5244,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'describe-entity',
       description: 'Provides details regarding the entity used with the connection type, with a description of the data model for each field in the selected entity.  The response includes all the fields which make up the entity',
       options: [
+
         Option(
           name: '--connection-name',
           description: 'The name of the connection that contains the connection type credentials',
@@ -5156,6 +5324,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5168,6 +5337,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'describe-inbound-integrations',
       description: 'Returns a list of inbound integrations for the specified integration',
       options: [
+
         Option(
           name: '--integration-arn',
           description: 'The Amazon Resource Name (ARN) of the integration',
@@ -5220,6 +5390,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5232,6 +5403,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'describe-integrations',
       description: 'The API is used to retrieve a list of integrations',
       options: [
+
         Option(
           name: '--integration-identifier',
           description: 'The Amazon Resource Name (ARN) for the integration',
@@ -5284,6 +5456,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5296,6 +5469,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-blueprint',
       description: 'Retrieves the details of a blueprint',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the blueprint',
@@ -5337,6 +5511,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5349,6 +5524,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-blueprint-run',
       description: 'Retrieves the details of a blueprint run',
       options: [
+
         Option(
           name: '--blueprint-name',
           description: 'The name of the blueprint',
@@ -5383,6 +5559,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5395,6 +5572,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-blueprint-runs',
       description: 'Retrieves the details of blueprint runs for a specified blueprint',
       options: [
+
         Option(
           name: '--blueprint-name',
           description: 'The name of the blueprint',
@@ -5438,6 +5616,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5450,6 +5629,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-catalog',
       description: 'The name of the Catalog to retrieve. This should be all lowercase',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the parent catalog in which the catalog resides. If none is provided, the Amazon Web Services Account Number is used by default',
@@ -5475,6 +5655,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5487,6 +5668,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-catalog-import-status',
       description: 'Retrieves the status of a migration operation',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID',
@@ -5512,6 +5694,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5524,6 +5707,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-catalogs',
       description: 'Retrieves all catalogs defined in a catalog in the Glue Data Catalog. For a Redshift-federated catalog use case, this operation returns the list of catalogs mapped to Redshift databases in the Redshift namespace catalog',
       options: [
+
         Option(
           name: '--parent-catalog-id',
           description: 'The ID of the parent catalog in which the catalog resides. If none is provided, the Amazon Web Services Account Number is used by default',
@@ -5575,6 +5759,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5587,6 +5772,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-classifier',
       description: 'Retrieve a classifier by name',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the classifier to retrieve',
@@ -5612,6 +5798,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5624,6 +5811,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-classifiers',
       description: 'Lists all classifier objects in the Data Catalog',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The size of the list to return (optional)',
@@ -5685,6 +5873,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5697,6 +5886,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-column-statistics-for-partition',
       description: 'Retrieves partition statistics of columns. The Identity and Access Management (IAM) permission required for this operation is GetPartition',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default',
@@ -5758,6 +5948,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5770,6 +5961,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-column-statistics-for-table',
       description: 'Retrieves table statistics of columns. The Identity and Access Management (IAM) permission required for this operation is GetTable',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default',
@@ -5822,6 +6014,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5834,6 +6027,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-column-statistics-task-run',
       description: 'Get the associated metadata/information for a task run, given a task run ID',
       options: [
+
         Option(
           name: '--column-statistics-task-run-id',
           description: 'The identifier for the particular column statistics task run',
@@ -5859,6 +6053,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5871,6 +6066,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-column-statistics-task-runs',
       description: 'Retrieves information about all runs associated with the specified table',
       options: [
+
         Option(
           name: '--database-name',
           description: 'The name of the database where the table resides',
@@ -5923,6 +6119,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5935,6 +6132,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-column-statistics-task-settings',
       description: 'Gets settings for a column statistics task',
       options: [
+
         Option(
           name: '--database-name',
           description: 'The name of the database where the table resides',
@@ -5969,6 +6167,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5981,6 +6180,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-connection',
       description: 'Retrieves a connection definition from the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -6032,6 +6232,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6044,6 +6245,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-connections',
       description: 'Retrieves a list of connection definitions from the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default',
@@ -6131,6 +6333,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6143,6 +6346,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-crawler',
       description: 'Retrieves metadata for a specified crawler',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the crawler to retrieve metadata for',
@@ -6168,6 +6372,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6180,6 +6385,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-crawler-metrics',
       description: 'Retrieves metrics about specified crawlers',
       options: [
+
         Option(
           name: '--crawler-name-list',
           description: 'A list of the names of crawlers about which to retrieve metrics',
@@ -6250,6 +6456,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6262,6 +6469,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-crawlers',
       description: 'Retrieves metadata for all crawlers defined in the customer account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of crawlers to return on each call',
@@ -6323,6 +6531,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6335,6 +6544,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-custom-entity-type',
       description: 'Retrieves the details of a custom pattern by specifying its name',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the custom pattern that you want to retrieve',
@@ -6360,6 +6570,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6372,6 +6583,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-data-catalog-encryption-settings',
       description: 'Retrieves the security configuration for a specified catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default',
@@ -6397,6 +6609,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6409,6 +6622,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-data-quality-model',
       description: 'Retrieve the training status of the model along with more information (CompletedOn, StartedOn, FailureReason)',
       options: [
+
         Option(
           name: '--statistic-id',
           description: 'The Statistic ID',
@@ -6443,6 +6657,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6455,6 +6670,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-data-quality-model-result',
       description: 'Retrieve a statistic\'s predictions for a given Profile ID',
       options: [
+
         Option(
           name: '--statistic-id',
           description: 'The Statistic ID',
@@ -6489,6 +6705,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6501,6 +6718,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-data-quality-result',
       description: 'Retrieves the result of a data quality rule evaluation',
       options: [
+
         Option(
           name: '--result-id',
           description: 'A unique result ID for the data quality result',
@@ -6526,6 +6744,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6538,6 +6757,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-data-quality-rule-recommendation-run',
       description: 'Gets the specified recommendation run that was used to generate rules',
       options: [
+
         Option(
           name: '--run-id',
           description: 'The unique run identifier associated with this run',
@@ -6563,6 +6783,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6575,6 +6796,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-data-quality-ruleset',
       description: 'Returns an existing ruleset by identifier or name',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ruleset',
@@ -6600,6 +6822,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6612,6 +6835,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-data-quality-ruleset-evaluation-run',
       description: 'Retrieves a specific run where a ruleset is evaluated against a data source',
       options: [
+
         Option(
           name: '--run-id',
           description: 'The unique run identifier associated with this run',
@@ -6637,6 +6861,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6649,6 +6874,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-database',
       description: 'Retrieves the definition of a specified database',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -6683,6 +6909,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6695,6 +6922,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-databases',
       description: 'Retrieves all databases defined in a given Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog from which to retrieve Databases. If none is provided, the Amazon Web Services account ID is used by default',
@@ -6783,6 +7011,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6795,6 +7024,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-dataflow-graph',
       description: 'Transforms a Python script into a directed acyclic graph (DAG)',
       options: [
+
         Option(
           name: '--python-script',
           description: 'The Python script to transform',
@@ -6820,6 +7050,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6832,6 +7063,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-dev-endpoint',
       description: 'Retrieves information about a specified development endpoint.  When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address, and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address',
       options: [
+
         Option(
           name: '--endpoint-name',
           description: 'Name of the DevEndpoint to retrieve information for',
@@ -6857,6 +7089,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6869,6 +7102,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-dev-endpoints',
       description: 'Retrieves all the development endpoints in this Amazon Web Services account.  When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum size of information to return',
@@ -6930,6 +7164,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6942,6 +7177,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-entity-records',
       description: 'This API is used to query preview data from a given connection type or from a native Amazon S3 based Glue Data Catalog. Returns records as an array of JSON blobs. Each record is formatted using Jackson JsonNode based on the field type defined by the DescribeEntity API. Spark connectors generate schemas according to the same data type mapping as in the DescribeEntity API. Spark connectors convert data to the appropriate data types matching the schema when returning rows',
       options: [
+
         Option(
           name: '--connection-name',
           description: 'The name of the connection that contains the connection type credentials',
@@ -7048,6 +7284,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7060,6 +7297,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-integration-resource-property',
       description: 'This API is used for fetching the ResourceProperty of the Glue connection (for the source) or Glue database ARN (for the target)',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The connection ARN of the source, or the database ARN of the target',
@@ -7085,6 +7323,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7097,6 +7336,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-integration-table-properties',
       description: 'This API is used to retrieve optional override properties for the tables that need to be replicated. These properties can include properties for filtering and partition for source and target tables',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The connection ARN of the source, or the database ARN of the target',
@@ -7131,6 +7371,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7143,6 +7384,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-job',
       description: 'Retrieves an existing job definition',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the job definition to retrieve',
@@ -7168,6 +7410,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7180,6 +7423,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-job-bookmark',
       description: 'Returns information on a job bookmark entry. For more information about enabling and using job bookmarks, see:    Tracking processed data using job bookmarks     Job parameters used by Glue     Job structure',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the job in question',
@@ -7214,6 +7458,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7226,6 +7471,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-job-run',
       description: 'Retrieves the metadata for a given job run. Job run history is accessible for 90 days for your workflow and job run',
       options: [
+
         Option(
           name: '--job-name',
           description: 'Name of the job definition being run',
@@ -7268,6 +7514,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7280,6 +7527,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-job-runs',
       description: 'Retrieves metadata for all runs of a given job definition',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the job definition for which to retrieve all job runs',
@@ -7350,6 +7598,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7362,6 +7611,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-jobs',
       description: 'Retrieves all current job definitions',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is a continuation call',
@@ -7423,6 +7673,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7435,6 +7686,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-ml-task-run',
       description: 'Gets details for a specific task run on a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can check the stats of any task run by calling GetMLTaskRun with the TaskRunID and its parent transform\'s TransformID',
       options: [
+
         Option(
           name: '--transform-id',
           description: 'The unique identifier of the machine learning transform',
@@ -7469,6 +7721,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7481,6 +7734,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-ml-task-runs',
       description: 'Gets a list of runs for a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can get a sortable, filterable list of machine learning task runs by calling GetMLTaskRuns with their parent transform\'s TransformID and other optional parameters as documented in this section. This operation returns a list of historic runs and must be paginated',
       options: [
+
         Option(
           name: '--transform-id',
           description: 'The unique identifier of the machine learning transform',
@@ -7542,6 +7796,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7554,6 +7809,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-ml-transform',
       description: 'Gets an Glue machine learning transform artifact and all its corresponding metadata. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. You can retrieve their metadata by calling GetMLTransform',
       options: [
+
         Option(
           name: '--transform-id',
           description: 'The unique identifier of the transform, generated at the time that the transform was created',
@@ -7579,6 +7835,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7591,6 +7848,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-ml-transforms',
       description: 'Gets a sortable, filterable list of existing Glue machine learning transforms. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue, and you can retrieve their metadata by calling GetMLTransforms',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A paginated token to offset the results',
@@ -7643,6 +7901,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7655,6 +7914,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-mapping',
       description: 'Creates mappings',
       options: [
+
         Option(
           name: '--source',
           description: 'Specifies the source table',
@@ -7698,6 +7958,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7710,6 +7971,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-partition',
       description: 'Retrieves information about a specified partition',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -7762,6 +8024,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7774,6 +8037,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-partition-indexes',
       description: 'Retrieves the partition indexes associated with a table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The catalog ID where the table resides',
@@ -7844,6 +8108,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7856,6 +8121,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-partitions',
       description: 'Retrieves information about the partitions in a table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default',
@@ -7988,6 +8254,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8000,6 +8267,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-plan',
       description: 'Gets code to perform a specified mapping',
       options: [
+
         Option(
           name: '--mapping',
           description: 'The list of mappings from a source table to target tables',
@@ -8070,6 +8338,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8082,6 +8351,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-registry',
       description: 'Describes the specified registry in detail',
       options: [
+
         Option(
           name: '--registry-id',
           description: 'This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN)',
@@ -8107,6 +8377,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8119,6 +8390,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-resource-policies',
       description: 'Retrieves the resource policies set on individual resources by Resource Access Manager during cross-account permission grants. Also retrieves the Data Catalog resource policy. If you enabled metadata encryption in Data Catalog settings, and you do not have permission on the KMS key, the operation can\'t return the Data Catalog resource policy',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is a continuation request',
@@ -8180,6 +8452,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8192,6 +8465,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-resource-policy',
       description: 'Retrieves a specified resource policy',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use GetResourcePolicies to view all existing resource policies. For more information see Specifying Glue Resource ARNs',
@@ -8217,6 +8491,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8229,6 +8504,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-schema',
       description: 'Describes the specified schema in detail',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'This is a wrapper structure to contain schema identity fields. The structure contains:   SchemaId\$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either SchemaArn or SchemaName and RegistryName has to be provided.   SchemaId\$SchemaName: The name of the schema. Either SchemaArn or SchemaName and RegistryName has to be provided',
@@ -8254,6 +8530,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8266,6 +8543,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-schema-by-definition',
       description: 'Retrieves a schema by the SchemaDefinition. The schema definition is sent to the Schema Registry, canonicalized, and hashed. If the hash is matched within the scope of the SchemaName or ARN (or the default registry, if none is supplied), that schema’s metadata is returned. Otherwise, a 404 or NotFound error is returned. Schema versions in Deleted statuses will not be included in the results',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'This is a wrapper structure to contain schema identity fields. The structure contains:   SchemaId\$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of SchemaArn or SchemaName has to be provided.   SchemaId\$SchemaName: The name of the schema. One of SchemaArn or SchemaName has to be provided',
@@ -8300,6 +8578,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8312,6 +8591,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-schema-version',
       description: 'Get the specified schema by its unique ID assigned when a version of the schema is created or registered. Schema versions in Deleted status will not be included in the results',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'This is a wrapper structure to contain schema identity fields. The structure contains:   SchemaId\$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either SchemaArn or SchemaName and RegistryName has to be provided.   SchemaId\$SchemaName: The name of the schema. Either SchemaArn or SchemaName and RegistryName has to be provided',
@@ -8355,6 +8635,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8367,6 +8648,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-schema-versions-diff',
       description: 'Fetches the schema version difference in the specified difference type between two stored schema versions in the Schema Registry. This API allows you to compare two schema versions between two schema definitions under the same schema',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'This is a wrapper structure to contain schema identity fields. The structure contains:   SchemaId\$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of SchemaArn or SchemaName has to be provided.   SchemaId\$SchemaName: The name of the schema. One of SchemaArn or SchemaName has to be provided',
@@ -8419,6 +8701,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8431,6 +8714,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-security-configuration',
       description: 'Retrieves a specified security configuration',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the security configuration to retrieve',
@@ -8456,6 +8740,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8468,6 +8753,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-security-configurations',
       description: 'Retrieves a list of all security configurations',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -8529,6 +8815,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8541,6 +8828,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-session',
       description: 'Retrieves the session',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the session',
@@ -8575,6 +8863,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8587,6 +8876,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-statement',
       description: 'Retrieves the statement',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The Session ID of the statement',
@@ -8630,6 +8920,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8642,6 +8933,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-table',
       description: 'Retrieves the Table definition in a Data Catalog for a specified table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -8711,6 +9003,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8723,6 +9016,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-table-optimizer',
       description: 'Returns the configuration of all optimizers associated with a specified table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The Catalog ID of the table',
@@ -8775,6 +9069,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8787,6 +9082,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-table-version',
       description: 'Retrieves a specified version of a table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default',
@@ -8839,6 +9135,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8851,6 +9148,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-table-versions',
       description: 'Retrieves a list of strings that identify available versions of a specified table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default',
@@ -8939,6 +9237,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8951,6 +9250,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-tables',
       description: 'Retrieves the definitions of some or all of the tables in a given Database',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default',
@@ -9074,6 +9374,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9086,6 +9387,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-tags',
       description: 'Retrieves a list of tags associated with a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which to retrieve tags',
@@ -9111,6 +9413,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9123,6 +9426,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-trigger',
       description: 'Retrieves the definition of a trigger',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the trigger to retrieve',
@@ -9148,6 +9452,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9160,6 +9465,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-triggers',
       description: 'Gets all the triggers associated with a job',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is a continuation call',
@@ -9230,6 +9536,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9242,6 +9549,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-unfiltered-partition-metadata',
       description: 'Retrieves partition metadata from the Data Catalog that contains unfiltered metadata. For IAM authorization, the public IAM action associated with this API is glue:GetPartition',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The catalog ID where the partition resides',
@@ -9330,6 +9638,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9342,6 +9651,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-unfiltered-partitions-metadata',
       description: 'Retrieves partition metadata from the Data Catalog that contains unfiltered metadata. For IAM authorization, the public IAM action associated with this API is glue:GetPartitions',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default',
@@ -9457,6 +9767,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9469,6 +9780,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-unfiltered-table-metadata',
       description: 'Allows a third-party analytical engine to retrieve unfiltered table metadata from the Data Catalog. For IAM authorization, the public IAM action associated with this API is glue:GetTable',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The catalog ID where the table resides',
@@ -9584,6 +9896,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9596,6 +9909,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-usage-profile',
       description: 'Retrieves information about the specified Glue usage profile',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the usage profile to retrieve',
@@ -9621,6 +9935,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9633,6 +9948,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-user-defined-function',
       description: 'Retrieves a specified function definition from the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default',
@@ -9676,6 +9992,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9688,6 +10005,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-user-defined-functions',
       description: 'Retrieves multiple function definitions from the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default',
@@ -9776,6 +10094,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9788,6 +10107,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-workflow',
       description: 'Retrieves resource metadata for a workflow',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the workflow to retrieve',
@@ -9821,6 +10141,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9833,6 +10154,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-workflow-run',
       description: 'Retrieves the metadata for a given workflow run. Job run history is accessible for 90 days for your workflow and job run',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the workflow being run',
@@ -9875,6 +10197,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9887,6 +10210,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-workflow-run-properties',
       description: 'Retrieves the workflow run properties which were set during the run',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the workflow which was run',
@@ -9921,6 +10245,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9933,6 +10258,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'get-workflow-runs',
       description: 'Retrieves metadata for all runs of a given workflow',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the workflow whose metadata of runs should be returned',
@@ -10011,6 +10337,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10023,6 +10350,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'import-catalog-to-glue',
       description: 'Imports an existing Amazon Athena Data Catalog to Glue',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID',
@@ -10048,6 +10376,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10060,6 +10389,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-blueprints',
       description: 'Lists all the blueprint names in an account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is a continuation request',
@@ -10130,6 +10460,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10142,6 +10473,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-column-statistics-task-runs',
       description: 'List all task runs for a particular account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum size of the response',
@@ -10176,6 +10508,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10188,6 +10521,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-connection-types',
       description: 'The ListConnectionTypes API provides a discovery mechanism to learn available connection types in Glue. The response contains a list of connection types with high-level details of what is supported for each connection type. The connection types listed are the set of supported options for the ConnectionType value in the CreateConnection API',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -10249,6 +10583,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10261,6 +10596,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-crawlers',
       description: 'Retrieves the names of all crawler resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names. This operation takes the optional Tags field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum size of a list to return',
@@ -10304,6 +10640,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10316,6 +10653,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-crawls',
       description: 'Returns all the crawls of a specified crawler. Returns only the crawls that have occurred since the launch date of the crawler history feature, and only retains up to 12 months of crawls. Older crawls will not be returned. You may use this API to:   Retrive all the crawls of a specified crawler.   Retrieve all the crawls of a specified crawler within a limited count.   Retrieve all the crawls of a specified crawler in a specific time range.   Retrieve all the crawls of a specified crawler with a particular state, crawl ID, or DPU hour value',
       options: [
+
         Option(
           name: '--crawler-name',
           description: 'The name of the crawler whose runs you want to retrieve',
@@ -10368,6 +10706,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10380,6 +10719,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-custom-entity-types',
       description: 'Lists all the custom patterns that have been created',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A paginated token to offset the results',
@@ -10423,6 +10763,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10435,6 +10776,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-data-quality-results',
       description: 'Returns all data quality execution results for your account',
       options: [
+
         Option(
           name: '--filter',
           description: 'The filter criteria',
@@ -10478,6 +10820,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10490,6 +10833,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-data-quality-rule-recommendation-runs',
       description: 'Lists the recommendation runs meeting the filter criteria',
       options: [
+
         Option(
           name: '--filter',
           description: 'The filter criteria',
@@ -10533,6 +10877,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10545,6 +10890,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-data-quality-ruleset-evaluation-runs',
       description: 'Lists all the runs meeting the filter criteria, where a ruleset is evaluated against a data source',
       options: [
+
         Option(
           name: '--filter',
           description: 'The filter criteria',
@@ -10588,6 +10934,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10600,6 +10947,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-data-quality-rulesets',
       description: 'Returns a paginated list of rulesets for the specified list of Glue tables',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A paginated token to offset the results',
@@ -10652,6 +11000,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10664,6 +11013,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-data-quality-statistic-annotations',
       description: 'Retrieve annotations for a data quality statistic',
       options: [
+
         Option(
           name: '--statistic-id',
           description: 'The Statistic ID',
@@ -10725,6 +11075,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10737,6 +11088,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-data-quality-statistics',
       description: 'Retrieves a list of data quality statistics',
       options: [
+
         Option(
           name: '--statistic-id',
           description: 'The Statistic ID',
@@ -10798,6 +11150,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10810,6 +11163,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-dev-endpoints',
       description: 'Retrieves the names of all DevEndpoint resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names. This operation takes the optional Tags field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is a continuation request',
@@ -10853,6 +11207,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10865,6 +11220,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-entities',
       description: 'Returns the available entities supported by the connection type',
       options: [
+
         Option(
           name: '--connection-name',
           description: 'A name for the connection that has required credentials to query any connection type',
@@ -10944,6 +11300,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10956,6 +11313,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-jobs',
       description: 'Retrieves the names of all job resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names. This operation takes the optional Tags field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is a continuation request',
@@ -11026,6 +11384,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11038,6 +11397,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-ml-transforms',
       description: 'Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account, or the resources with the specified tag. This operation takes the optional Tags field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is a continuation request',
@@ -11099,6 +11459,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11111,6 +11472,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-registries',
       description: 'Returns a list of registries that you have created, with minimal registry information. Registries in the Deleting status will not be included in the results. Empty results will be returned if there are no registries available',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page',
@@ -11172,6 +11534,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11184,6 +11547,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-schema-versions',
       description: 'Returns a list of schema versions that you have created, with minimal information. Schema versions in Deleted status will not be included in the results. Empty results will be returned if there are no schema versions available',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'This is a wrapper structure to contain schema identity fields. The structure contains:   SchemaId\$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either SchemaArn or SchemaName and RegistryName has to be provided.   SchemaId\$SchemaName: The name of the schema. Either SchemaArn or SchemaName and RegistryName has to be provided',
@@ -11254,6 +11618,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11266,6 +11631,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-schemas',
       description: 'Returns a list of schemas with minimal details. Schemas in Deleting status will not be included in the results. Empty results will be returned if there are no schemas available. When the RegistryId is not provided, all the schemas across registries will be part of the API response',
       options: [
+
         Option(
           name: '--registry-id',
           description: 'A wrapper structure that may contain the registry name and Amazon Resource Name (ARN)',
@@ -11336,6 +11702,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11348,6 +11715,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-sessions',
       description: 'Retrieve a list of sessions',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results, or null if there are no more result',
@@ -11400,6 +11768,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11412,6 +11781,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-statements',
       description: 'Lists statements for the session',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The Session ID of the statements',
@@ -11455,6 +11825,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11467,6 +11838,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-table-optimizer-runs',
       description: 'Lists the history of previous optimizer runs for a specific table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The Catalog ID of the table',
@@ -11564,6 +11936,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11576,6 +11949,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-triggers',
       description: 'Retrieves the names of all trigger resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names. This operation takes the optional Tags field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is a continuation request',
@@ -11655,6 +12029,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11667,6 +12042,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-usage-profiles',
       description: 'List all the Glue usage profiles',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, included if this is a continuation call',
@@ -11728,6 +12104,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11740,6 +12117,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'list-workflows',
       description: 'Lists names of workflows created in the account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is a continuation request',
@@ -11801,6 +12179,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11813,6 +12192,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'modify-integration',
       description: 'Modifies a Zero-ETL integration in the caller\'s account',
       options: [
+
         Option(
           name: '--integration-identifier',
           description: 'The Amazon Resource Name (ARN) for the integration',
@@ -11865,6 +12245,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11877,6 +12258,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'put-data-catalog-encryption-settings',
       description: 'Sets the security configuration for a specified catalog. After the configuration has been set, the specified encryption is applied to every catalog write thereafter',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default',
@@ -11911,6 +12293,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11923,6 +12306,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'put-data-quality-profile-annotation',
       description: 'Annotate all datapoints for a Profile',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'The ID of the data quality monitoring profile to annotate',
@@ -11957,6 +12341,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11969,6 +12354,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Sets the Data Catalog resource policy for access control',
       options: [
+
         Option(
           name: '--policy-in-json',
           description: 'Contains the policy document to set, in JSON format',
@@ -12030,6 +12416,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12042,6 +12429,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'put-schema-version-metadata',
       description: 'Puts the metadata key value pair for a specified schema version ID. A maximum of 10 key value pairs will be allowed per schema version. They can be added over one or more calls',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'The unique ID for the schema',
@@ -12094,6 +12482,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12106,6 +12495,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'put-workflow-run-properties',
       description: 'Puts the specified workflow run properties for the given workflow run. If a property already exists for the specified run, then it overrides the value otherwise adds the property to existing properties',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the workflow which was run',
@@ -12149,6 +12539,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12161,6 +12552,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'query-schema-version-metadata',
       description: 'Queries for the schema version metadata information',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'A wrapper structure that may contain the schema name and Amazon Resource Name (ARN)',
@@ -12231,6 +12623,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12243,6 +12636,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'register-schema-version',
       description: 'Adds a new version to the existing schema. Returns an error if new version of schema does not meet the compatibility requirements of the schema set. This API will not create a new schema set and will return a 404 error if the schema set is not already present in the Schema Registry. If this is the first schema definition to be registered in the Schema Registry, this API will store the schema version and return immediately. Otherwise, this call has the potential to run longer than other operations due to compatibility modes. You can call the GetSchemaVersion API with the SchemaVersionId to check compatibility modes. If the same schema definition is already stored in Schema Registry as a version, the schema ID of the existing schema is returned to the caller',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'This is a wrapper structure to contain schema identity fields. The structure contains:   SchemaId\$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either SchemaArn or SchemaName and RegistryName has to be provided.   SchemaId\$SchemaName: The name of the schema. Either SchemaArn or SchemaName and RegistryName has to be provided',
@@ -12277,6 +12671,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12289,6 +12684,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'remove-schema-version-metadata',
       description: 'Removes a key value pair from the schema version metadata for the specified schema version ID',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'A wrapper structure that may contain the schema name and Amazon Resource Name (ARN)',
@@ -12341,6 +12737,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12353,6 +12750,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'reset-job-bookmark',
       description: 'Resets a bookmark entry. For more information about enabling and using job bookmarks, see:    Tracking processed data using job bookmarks     Job parameters used by Glue     Job structure',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the job in question',
@@ -12387,6 +12785,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12399,6 +12798,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'resume-workflow-run',
       description: 'Restarts selected nodes of a previous partially completed workflow run and resumes the workflow run. The selected nodes and all nodes that are downstream from the selected nodes are run',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the workflow to resume',
@@ -12442,6 +12842,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12454,6 +12855,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'run-statement',
       description: 'Executes the statement',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The Session Id of the statement to be run',
@@ -12497,6 +12899,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12509,6 +12912,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'search-tables',
       description: 'Searches a set of tables based on properties in the table metadata as well as on the parent database. You can search against text or filter conditions.  You can only get tables that you have access to based on the security policies defined in Lake Formation. You need at least a read-only access to the table for it to be returned. If you do not have access to all the columns in the table, these columns will not be searched against when returning the list of tables back to you. If you have access to the columns but not the data in the columns, those columns and the associated metadata for those columns will be included in the search',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'A unique identifier, consisting of  account_id',
@@ -12596,6 +13000,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12608,6 +13013,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-blueprint-run',
       description: 'Starts a new run of the specified blueprint',
       options: [
+
         Option(
           name: '--blueprint-name',
           description: 'The name of the blueprint',
@@ -12651,6 +13057,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12663,6 +13070,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-column-statistics-task-run',
       description: 'Starts a column statistics task run, for a specified table and columns',
       options: [
+
         Option(
           name: '--database-name',
           description: 'The name of the database where the table resides',
@@ -12742,6 +13150,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12754,6 +13163,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-column-statistics-task-run-schedule',
       description: 'Starts a column statistics task run schedule',
       options: [
+
         Option(
           name: '--database-name',
           description: 'The name of the database where the table resides',
@@ -12788,6 +13198,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12800,6 +13211,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-crawler',
       description: 'Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running, returns a CrawlerRunningException',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the crawler to start',
@@ -12825,6 +13237,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12837,6 +13250,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-crawler-schedule',
       description: 'Changes the schedule state of the specified crawler to SCHEDULED, unless the crawler is already running or the schedule state is already SCHEDULED',
       options: [
+
         Option(
           name: '--crawler-name',
           description: 'Name of the crawler to schedule',
@@ -12862,6 +13276,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12874,6 +13289,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-data-quality-rule-recommendation-run',
       description: 'Starts a recommendation run that is used to generate rules when you don\'t know what rules to write. Glue Data Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the ruleset and modify the generated ruleset to your liking. Recommendation runs are automatically deleted after 90 days',
       options: [
+
         Option(
           name: '--data-source',
           description: 'The data source (Glue table) associated with this run',
@@ -12953,6 +13369,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12965,6 +13382,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-data-quality-ruleset-evaluation-run',
       description: 'Once you have a ruleset definition (either recommended or your own), you call this operation to evaluate the ruleset against a data source (Glue table). The evaluation computes results which you can retrieve with the GetDataQualityResult API',
       options: [
+
         Option(
           name: '--data-source',
           description: 'The data source (Glue table) associated with this run',
@@ -13053,6 +13471,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13065,6 +13484,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-export-labels-task-run',
       description: 'Begins an asynchronous task to export all labeled data for a particular transform. This task is the only label-related API call that is not part of the typical active learning workflow. You typically use StartExportLabelsTaskRun when you want to work with all of your existing labels at the same time, such as when you want to remove or change labels that were previously submitted as truth. This API operation accepts the TransformId whose labels you want to export and an Amazon Simple Storage Service (Amazon S3) path to export the labels to. The operation returns a TaskRunId. You can check on the status of your task run by calling the GetMLTaskRun API',
       options: [
+
         Option(
           name: '--transform-id',
           description: 'The unique identifier of the machine learning transform',
@@ -13099,6 +13519,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13111,6 +13532,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-import-labels-task-run',
       description: 'Enables you to provide additional labels (examples of truth) to be used to teach the machine learning transform and improve its quality. This API operation is generally used as part of the active learning workflow that starts with the StartMLLabelingSetGenerationTaskRun call and that ultimately results in improving the quality of your machine learning transform.  After the StartMLLabelingSetGenerationTaskRun finishes, Glue machine learning will have generated a series of questions for humans to answer. (Answering these questions is often called \'labeling\' in the machine learning workflows). In the case of the FindMatches transform, these questions are of the form, “What is the correct way to group these rows together into groups composed entirely of matching records?” After the labeling process is finished, users upload their answers/labels with a call to StartImportLabelsTaskRun. After StartImportLabelsTaskRun finishes, all future runs of the machine learning transform use the new and improved labels and perform a higher-quality transformation. By default, StartMLLabelingSetGenerationTaskRun continually learns from and combines all labels that you upload unless you set Replace to true. If you set Replace to true, StartImportLabelsTaskRun deletes and forgets all previously uploaded labels and learns only from the exact set that you upload. Replacing labels can be helpful if you realize that you previously uploaded incorrect labels, and you believe that they are having a negative effect on your transform quality. You can check on the status of your task run by calling the GetMLTaskRun operation',
       options: [
+
         Option(
           name: '--transform-id',
           description: 'The unique identifier of the machine learning transform',
@@ -13153,6 +13575,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13165,6 +13588,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-job-run',
       description: 'Starts a job run using a job definition',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the job definition to use',
@@ -13288,6 +13712,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13300,6 +13725,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-ml-evaluation-task-run',
       description: 'Starts a task to estimate the quality of the transform.  When you provide label sets as examples of truth, Glue machine learning uses some of those examples to learn from them. The rest of the labels are used as a test to estimate quality. Returns a unique identifier for the run. You can call GetMLTaskRun to get more information about the stats of the EvaluationTaskRun',
       options: [
+
         Option(
           name: '--transform-id',
           description: 'The unique identifier of the machine learning transform',
@@ -13325,6 +13751,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13337,6 +13764,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-ml-labeling-set-generation-task-run',
       description: 'Starts the active learning workflow for your machine learning transform to improve the transform\'s quality by generating label sets and adding labels. When the StartMLLabelingSetGenerationTaskRun finishes, Glue will have generated a "labeling set" or a set of questions for humans to answer. In the case of the FindMatches transform, these questions are of the form, “What is the correct way to group these rows together into groups composed entirely of matching records?”  After the labeling process is finished, you can upload your labels with a call to StartImportLabelsTaskRun. After StartImportLabelsTaskRun finishes, all future runs of the machine learning transform will use the new and improved labels and perform a higher-quality transformation',
       options: [
+
         Option(
           name: '--transform-id',
           description: 'The unique identifier of the machine learning transform',
@@ -13371,6 +13799,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13383,6 +13812,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-trigger',
       description: 'Starts an existing trigger. See Triggering Jobs for information about how different types of trigger are started',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the trigger to start',
@@ -13408,6 +13838,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13420,6 +13851,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'start-workflow-run',
       description: 'Starts a new run of the specified workflow',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the workflow to start',
@@ -13454,6 +13886,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13466,6 +13899,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'stop-column-statistics-task-run',
       description: 'Stops a task run for the specified table',
       options: [
+
         Option(
           name: '--database-name',
           description: 'The name of the database where the table resides',
@@ -13500,6 +13934,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13512,6 +13947,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'stop-column-statistics-task-run-schedule',
       description: 'Stops a column statistics task run schedule',
       options: [
+
         Option(
           name: '--database-name',
           description: 'The name of the database where the table resides',
@@ -13546,6 +13982,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13558,6 +13995,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'stop-crawler',
       description: 'If the specified crawler is running, stops the crawl',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the crawler to stop',
@@ -13583,6 +14021,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13595,6 +14034,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'stop-crawler-schedule',
       description: 'Sets the schedule state of the specified crawler to NOT_SCHEDULED, but does not stop the crawler if it is already running',
       options: [
+
         Option(
           name: '--crawler-name',
           description: 'Name of the crawler whose schedule state to set',
@@ -13620,6 +14060,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13632,6 +14073,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'stop-session',
       description: 'Stops the session',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the session to be stopped',
@@ -13666,6 +14108,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13678,6 +14121,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'stop-trigger',
       description: 'Stops a specified trigger',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the trigger to stop',
@@ -13703,6 +14147,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13715,6 +14160,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'stop-workflow-run',
       description: 'Stops the execution of the specified workflow run',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the workflow to stop',
@@ -13749,6 +14195,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13761,6 +14208,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services resource. In Glue, you can tag only certain resources. For information about what resources you can tag, see Amazon Web Services Tags in Glue',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the Glue ARN string pattern',
@@ -13795,6 +14243,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13807,6 +14256,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'test-connection',
       description: 'Tests a connection to a service to validate the service credentials that you provide. You can either provide an existing connection name or a TestConnectionInput for testing a non-existing connection input. Providing both at the same time will cause an error. If the action is successful, the service sends back an HTTP 200 response',
       options: [
+
         Option(
           name: '--connection-name',
           description: 'Optional. The name of the connection to test. If only name is provided, the operation will get the connection and use that for testing',
@@ -13850,6 +14300,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13862,6 +14313,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource from which to remove the tags',
@@ -13896,6 +14348,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13908,6 +14361,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-blueprint',
       description: 'Updates a registered blueprint',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the blueprint',
@@ -13951,6 +14405,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13963,6 +14418,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-catalog',
       description: 'Updates an existing catalog\'s properties in the Glue Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the catalog',
@@ -13997,6 +14453,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14009,6 +14466,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-classifier',
       description: 'Modifies an existing classifier (a GrokClassifier, an XMLClassifier, a JsonClassifier, or a CsvClassifier, depending on which field is present)',
       options: [
+
         Option(
           name: '--grok-classifier',
           description: 'A GrokClassifier object with updated fields',
@@ -14061,6 +14519,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14073,6 +14532,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-column-statistics-for-partition',
       description: 'Creates or updates partition statistics of columns. The Identity and Access Management (IAM) permission required for this operation is UpdatePartition',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default',
@@ -14134,6 +14594,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14146,6 +14607,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-column-statistics-for-table',
       description: 'Creates or updates table statistics of columns. The Identity and Access Management (IAM) permission required for this operation is UpdateTable',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default',
@@ -14198,6 +14660,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14210,6 +14673,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-column-statistics-task-settings',
       description: 'Updates settings for a column statistics task',
       options: [
+
         Option(
           name: '--database-name',
           description: 'The name of the database where the table resides',
@@ -14298,6 +14762,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14310,6 +14775,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-connection',
       description: 'Updates a connection definition in the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -14353,6 +14819,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14365,6 +14832,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-crawler',
       description: 'Updates a crawler. If a crawler is running, you must stop it using StopCrawler before updating it',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the new crawler',
@@ -14507,6 +14975,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14519,6 +14988,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-crawler-schedule',
       description: 'Updates the schedule of a crawler using a cron expression',
       options: [
+
         Option(
           name: '--crawler-name',
           description: 'The name of the crawler whose schedule to update',
@@ -14553,6 +15023,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14565,6 +15036,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-data-quality-ruleset',
       description: 'Updates the specified data quality ruleset',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the data quality ruleset',
@@ -14608,6 +15080,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14620,6 +15093,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-database',
       description: 'Updates an existing database definition in a Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -14663,6 +15137,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14675,6 +15150,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-dev-endpoint',
       description: 'Updates a specified development endpoint',
       options: [
+
         Option(
           name: '--endpoint-name',
           description: 'The name of the DevEndpoint to be updated',
@@ -14762,6 +15238,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14774,6 +15251,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-integration-resource-property',
       description: 'This API can be used for updating the ResourceProperty of the Glue connection (for the source) or Glue database ARN (for the target). These properties can include the role to access the connection or database. Since the same resource can be used across multiple integrations, updating resource properties will impact all the integrations using it',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The connection ARN of the source, or the database ARN of the target',
@@ -14817,6 +15295,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14829,6 +15308,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-integration-table-properties',
       description: 'This API is used to provide optional override properties for the tables that need to be replicated. These properties can include properties for filtering and partitioning for the source and target tables. To set both source and target properties the same API need to be invoked with the Glue connection ARN as ResourceArn with SourceTableConfig, and the Glue database ARN as ResourceArn with TargetTableConfig respectively. The override will be reflected across all the integrations using same ResourceArn and source table',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The connection ARN of the source, or the database ARN of the target',
@@ -14881,6 +15361,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14893,6 +15374,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-job',
       description: 'Updates an existing job definition. The previous job definition is completely overwritten by this information',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the job definition to update',
@@ -14927,6 +15409,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14939,6 +15422,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-job-from-source-control',
       description: 'Synchronizes a job from the source control repository. This operation takes the job artifacts that are located in the remote repository and updates the Glue internal stores with these artifacts. This API supports optional parameters which take in the repository information',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the Glue job to be synchronized to or from the remote repository',
@@ -15036,6 +15520,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15048,6 +15533,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-ml-transform',
       description: 'Updates an existing machine learning transform. Call this operation to tune the algorithm parameters to achieve better results. After calling this operation, you can call the StartMLEvaluationTaskRun operation to assess how well your new parameters achieved your goals (such as improving the quality of your machine learning transform, or making it more cost-effective)',
       options: [
+
         Option(
           name: '--transform-id',
           description: 'A unique identifier that was generated when the transform was created',
@@ -15163,6 +15649,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15175,6 +15662,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-partition',
       description: 'Updates a partition',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -15236,6 +15724,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15248,6 +15737,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-registry',
       description: 'Updates an existing registry which is used to hold a collection of schemas. The updated properties relate to the registry, and do not modify any of the schemas within the registry',
       options: [
+
         Option(
           name: '--registry-id',
           description: 'This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN)',
@@ -15282,6 +15772,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15294,6 +15785,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-schema',
       description: 'Updates the description, compatibility setting, or version checkpoint for a schema set. For updating the compatibility setting, the call will not validate compatibility for the entire set of schema versions with the new compatibility setting. If the value for Compatibility is provided, the VersionNumber (a checkpoint) is also required. The API will validate the checkpoint version number for consistency. If the value for the VersionNumber (checkpoint) is provided, Compatibility is optional and this can be used to set/reset a checkpoint for the schema. This update will happen only if the schema is in the AVAILABLE state',
       options: [
+
         Option(
           name: '--schema-id',
           description: 'This is a wrapper structure to contain schema identity fields. The structure contains:   SchemaId\$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of SchemaArn or SchemaName has to be provided.   SchemaId\$SchemaName: The name of the schema. One of SchemaArn or SchemaName has to be provided',
@@ -15346,6 +15838,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15358,6 +15851,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-source-control-from-job',
       description: 'Synchronizes a job to the source control repository. This operation takes the job artifacts from the Glue internal stores and makes a commit to the remote repository that is configured on the job. This API supports optional parameters which take in the repository information',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the Glue job to be synchronized to or from the remote repository',
@@ -15455,6 +15949,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15467,6 +15962,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-table',
       description: 'Updates a metadata table in the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default',
@@ -15553,6 +16049,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15565,6 +16062,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-table-optimizer',
       description: 'Updates the configuration for an existing table optimizer',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The Catalog ID of the table',
@@ -15626,6 +16124,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15638,6 +16137,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-trigger',
       description: 'Updates a trigger definition',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the trigger to update',
@@ -15672,6 +16172,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15684,6 +16185,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-usage-profile',
       description: 'Update an Glue usage profile',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the usage profile',
@@ -15727,6 +16229,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15739,6 +16242,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-user-defined-function',
       description: 'Updates an existing function definition in the Data Catalog',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default',
@@ -15791,6 +16295,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15803,6 +16308,7 @@ final FigSpec glueSpec = FigSpec(
       name: 'update-workflow',
       description: 'Updates an existing workflow',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the workflow to be updated',
@@ -15855,6 +16361,7 @@ final FigSpec glueSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

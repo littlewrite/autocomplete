@@ -15,6 +15,7 @@ final FigSpec createReactNativeAppSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--template',
       description: 'The name of a template from expo/examples or URL to a GitHub repo that contains an example',

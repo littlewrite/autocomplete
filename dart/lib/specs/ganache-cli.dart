@@ -9,6 +9,7 @@ final FigSpec ganacheCliSpec = FigSpec(
   name: 'ganache-cli',
   description: 'Fast Ethereum RPC client',
   subcommands: [
+
     Subcommand(
       name: 'forkCacheSize',
       description: 'The maximum size, in bytes, of the in-memory cache for queries on a chain fork. Defaults to 1_073_741_824 bytes (1 gigabyte)',
@@ -20,6 +21,7 @@ final FigSpec ganacheCliSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-a', '--accounts'],
       description: 'Specify the number of accounts to generate at startup',
@@ -116,6 +118,7 @@ final FigSpec ganacheCliSpec = FigSpec(
         Arg(
         name: 'hardfork',
         suggestions: [
+
           FigSuggestion(name: 'byzantium'),
           FigSuggestion(name: 'constantinople'),
           FigSuggestion(name: 'petersburg'),

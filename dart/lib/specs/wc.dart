@@ -9,6 +9,7 @@ final FigSpec wcSpec = FigSpec(
   name: 'wc',
   description: 'World, line, character, and byte count',
   options: [
+
     Option(
       name: '-c',
       description: 'Output the number of bytes to the standard input'

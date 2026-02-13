@@ -13,6 +13,7 @@ final FigSpec psqlSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-a', '--echo-all'],
       description: 'Print all nonempty input lines to standard output as they are read. (This does not apply to lines read interactively.) This is equivalent to setting the variable ECHO to all'

@@ -9,6 +9,7 @@ final FigSpec createWeb3FrontendSpec = FigSpec(
   name: 'create-web3-frontend',
   description: 'Quickly create a Next.js project with wagmi and TailwindCSS ready to go',
   options: [
+
     Option(
       name: ['--ts', '--typescript'],
       description: 'Initialize as a TypeScript project'

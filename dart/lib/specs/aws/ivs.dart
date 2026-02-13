@@ -9,10 +9,12 @@ final FigSpec ivsSpec = FigSpec(
   name: 'ivs',
   description: 'Introduction  The Amazon Interactive Video Service (IVS) API is REST compatible, using a standard HTTP API and an Amazon Web Services EventBridge event stream for responses. JSON is used for both requests and responses, including errors. The API is an Amazon Web Services regional service. For a list of supported regions and Amazon IVS HTTPS service endpoints, see the Amazon IVS page in the Amazon Web Services General Reference.   All API request parameters and URLs are case sensitive.    For a summary of notable documentation changes in each release, see  Document History.  Allowed Header Values      Accept:  application/json     Accept-Encoding:  gzip, deflate     Content-Type: application/json    Key Concepts     Channel — Stores configuration data related to your live stream. You first create a channel and then use the channel’s stream key to start your live stream.    Stream key — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize streaming.  Treat the stream key like a secret, since it allows anyone to stream to the channel.      Playback key pair — Video playback may be restricted using playback-authorization tokens, which use public-key encryption. A playback key pair is the public-private pair of keys used to sign and validate the playback-authorization token.    Recording configuration — Stores configuration related to recording a live stream and where to store the recorded content. Multiple channels can reference the same recording configuration.    Playback restriction policy — Restricts playback by countries and/or origin sites.   For more information about your IVS live stream, also see Getting Started with IVS Low-Latency Streaming.  Tagging  A tag is a metadata label that you assign to an Amazon Web Services resource. A tag comprises a key and a value, both set by you. For example, you might set a tag as topic:nature to label a particular video category. See Best practices and strategies in Tagging Amazon Web Services Resources and Tag Editor for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there. Tags can help you identify and organize your Amazon Web Services resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see  Access Tags).  The Amazon IVS API has these tag-related operations: TagResource, UntagResource, and ListTagsForResource. The following resources support tagging: Channels, Stream Keys, Playback Key Pairs, and Recording Configurations. At most 50 tags can be applied to a resource.   Authentication versus Authorization  Note the differences between these concepts:    Authentication is about verifying identity. You need to be authenticated to sign Amazon IVS API requests.    Authorization is about granting permissions. Your IAM roles need to have permissions for Amazon IVS API requests. In addition, authorization is needed to view Amazon IVS private channels. (Private channels are channels that are enabled for "playback authorization.")    Authentication  All Amazon IVS API requests must be authenticated with a signature. The Amazon Web Services Command-Line Interface (CLI) and Amazon IVS Player SDKs take care of signing the underlying API calls for you. However, if your application calls the Amazon IVS API directly, it’s your responsibility to sign the requests. You generate a signature using valid Amazon Web Services credentials that have permission to perform the requested action. For example, you must sign PutMetadata requests with a signature generated from a user account that has the ivs:PutMetadata permission. For more information:   Authentication and generating signatures — See Authenticating Requests (Amazon Web Services Signature Version 4) in the Amazon Web Services General Reference.   Managing Amazon IVS permissions — See Identity and Access Management on the Security page of the Amazon IVS User Guide.    Amazon Resource Names (ARNs)  ARNs uniquely identify AWS resources. An ARN is required when you need to specify a resource unambiguously across all of AWS, such as in IAM policies and API calls. For more information, see Amazon Resource Names in the AWS General Reference',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-channel',
       description: 'Performs GetChannel on multiple ARNs simultaneously',
       options: [
+
         Option(
           name: '--arns',
           description: 'Array of ARNs, one per channel',
@@ -38,6 +40,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'batch-get-stream-key',
       description: 'Performs GetStreamKey on multiple ARNs simultaneously',
       options: [
+
         Option(
           name: '--arns',
           description: 'Array of ARNs, one per stream key',
@@ -75,6 +79,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'batch-start-viewer-session-revocation',
       description: 'Performs StartViewerSessionRevocation on multiple channel ARN and viewer ID pairs simultaneously',
       options: [
+
         Option(
           name: '--viewer-sessions',
           description: 'Array of viewer sessions, one per channel-ARN and viewer-ID pair',
@@ -112,6 +118,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'create-channel',
       description: 'Creates a new channel and an associated stream key to start streaming',
       options: [
+
         Option(
           name: '--authorized',
           description: 'Whether the channel is private (enabled for playback authorization). Default: false'
@@ -237,6 +245,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -249,6 +258,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'create-playback-restriction-policy',
       description: 'Creates a new playback restriction policy, for constraining playback by countries and/or origins',
       options: [
+
         Option(
           name: '--allowed-countries',
           description: 'A list of country codes that control geoblocking restriction. Allowed values are the officially assigned ISO 3166-1 alpha-2 codes. Default: All countries (an empty array)',
@@ -309,6 +319,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -321,6 +332,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'create-recording-configuration',
       description: 'Creates a new recording configuration, used to enable recording to Amazon S3.  Known issue: In the us-east-1 region, if you use the Amazon Web Services CLI to create a recording configuration, it returns success even if the S3 bucket is in a different region. In this case, the state of the recording configuration is CREATE_FAILED (instead of ACTIVE). (In other regions, the CLI correctly returns failure if the bucket is in a different region.)  Workaround: Ensure that your S3 bucket is in the same region as the recording configuration. If you create a recording configuration in a different region as your S3 bucket, delete that recording configuration and create a new one with an S3 bucket from the correct region',
       options: [
+
         Option(
           name: '--destination-configuration',
           description: 'A complex type that contains a destination configuration for where recorded video will be stored',
@@ -391,6 +403,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -403,6 +416,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'create-stream-key',
       description: 'Creates a stream key, used to initiate a stream, for the specified channel ARN. Note that CreateChannel creates a stream key. If you subsequently use CreateStreamKey on the same channel, it will fail because a stream key already exists and there is a limit of 1 stream key per channel. To reset the stream key on a channel, use DeleteStreamKey and then CreateStreamKey',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'ARN of the channel for which to create the stream key',
@@ -437,6 +451,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -449,6 +464,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'delete-channel',
       description: 'Deletes the specified channel and its associated stream keys. If you try to delete a live channel, you will get an error (409 ConflictException). To delete a channel that is live, call StopStream, wait for the Amazon EventBridge "Stream End" event (to verify that the stream\'s state is no longer Live), then call DeleteChannel. (See  Using EventBridge with Amazon IVS.)',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the channel to be deleted',
@@ -474,6 +490,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -486,6 +503,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'delete-playback-key-pair',
       description: 'Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s privateKey. For more information, see Setting Up Private Channels in the Amazon IVS User Guide',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the key pair to be deleted',
@@ -511,6 +529,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -523,6 +542,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'delete-playback-restriction-policy',
       description: 'Deletes the specified playback restriction policy',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the playback restriction policy to be deleted',
@@ -548,6 +568,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -560,6 +581,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'delete-recording-configuration',
       description: 'Deletes the recording configuration for the specified ARN. If you try to delete a recording configuration that is associated with a channel, you will get an error (409 ConflictException). To avoid this, for all channels that reference the recording configuration, first use UpdateChannel to set the recordingConfigurationArn field to an empty string, then use DeleteRecordingConfiguration',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the recording configuration to be deleted',
@@ -585,6 +607,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -597,6 +620,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'delete-stream-key',
       description: 'Deletes the stream key for the specified ARN, so it can no longer be used to stream',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the stream key to be deleted',
@@ -622,6 +646,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -634,6 +659,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'get-channel',
       description: 'Gets the channel configuration for the specified channel ARN. See also BatchGetChannel',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the channel for which the configuration is to be retrieved',
@@ -659,6 +685,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -671,6 +698,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'get-playback-key-pair',
       description: 'Gets a specified playback authorization key pair and returns the arn and fingerprint. The privateKey held by the caller can be used to generate viewer authorization tokens, to grant viewers access to private channels. For more information, see Setting Up Private Channels in the Amazon IVS User Guide',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the key pair to be returned',
@@ -696,6 +724,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -708,6 +737,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'get-playback-restriction-policy',
       description: 'Gets the specified playback restriction policy',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the playback restriction policy to be returned',
@@ -733,6 +763,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -745,6 +776,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'get-recording-configuration',
       description: 'Gets the recording configuration for the specified ARN',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the recording configuration to be retrieved',
@@ -770,6 +802,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -782,6 +815,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'get-stream',
       description: 'Gets information about the active (live) stream on a specified channel',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'Channel ARN for stream to be accessed',
@@ -807,6 +841,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -819,6 +854,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'get-stream-key',
       description: 'Gets stream-key information for a specified ARN',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN for the stream key to be retrieved',
@@ -844,6 +880,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -856,6 +893,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'get-stream-session',
       description: 'Gets metadata on a specified stream',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'ARN of the channel resource',
@@ -890,6 +928,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -902,6 +941,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'import-playback-key-pair',
       description: 'Imports the public portion of a new key pair and returns its arn and fingerprint. The privateKey can then be used to generate viewer authorization tokens, to grant viewers access to private channels. For more information, see Setting Up Private Channels in the Amazon IVS User Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'Playback-key-pair name. The value does not need to be unique',
@@ -945,6 +985,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -957,6 +998,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'list-channels',
       description: 'Gets summary information about all channels in your account, in the Amazon Web Services region where the API request is processed. This list can be filtered to match a specified name or recording-configuration ARN. Filters are mutually exclusive and cannot be used together. If you try to use both filters, you will get an error (409 ConflictException)',
       options: [
+
         Option(
           name: '--filter-by-name',
           description: 'Filters the channel list to match the specified name',
@@ -1045,6 +1087,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1057,6 +1100,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'list-playback-key-pairs',
       description: 'Gets summary information about playback key pairs. For more information, see Setting Up Private Channels in the Amazon IVS User Guide',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller',
@@ -1118,6 +1162,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1130,6 +1175,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'list-playback-restriction-policies',
       description: 'Gets summary information about playback restriction policies',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of policies to return. Default: 1',
@@ -1164,6 +1210,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1176,6 +1223,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'list-recording-configurations',
       description: 'Gets summary information about all recording configurations in your account, in the Amazon Web Services region where the API request is processed',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller',
@@ -1237,6 +1285,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1249,6 +1298,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'list-stream-keys',
       description: 'Gets summary information about stream keys for the specified channel',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'Channel ARN used to filter the list',
@@ -1319,6 +1369,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1331,6 +1382,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'list-stream-sessions',
       description: 'Gets a summary of current and previous streams for a specified channel in your account, in the AWS region where the API request is processed',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'Channel ARN used to filter the list',
@@ -1374,6 +1426,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1386,6 +1439,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'list-streams',
       description: 'Gets summary information about live streams in your account, in the Amazon Web Services region where the API request is processed',
       options: [
+
         Option(
           name: '--filter-by',
           description: 'Filters the stream list to match the specified criterion',
@@ -1456,6 +1510,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1468,6 +1523,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets information about Amazon Web Services tags for the specified ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to be retrieved. The ARN must be URL-encoded',
@@ -1493,6 +1549,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1505,6 +1562,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'put-metadata',
       description: 'Inserts metadata into the active stream of the specified channel. At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend batching your data into a single PutMetadata call.) At most 155 requests per second per account are allowed. Also see Embedding Metadata within a Video Stream in the Amazon IVS User Guide',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'ARN of the channel into which metadata is inserted. This channel must have an active stream',
@@ -1539,6 +1597,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1551,6 +1610,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'start-viewer-session-revocation',
       description: 'Starts the process of revoking the viewer session associated with a specified channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including that version. For instructions on associating a viewer ID with a viewer session, see Setting Up Private Channels',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'The ARN of the channel associated with the viewer session to revoke',
@@ -1594,6 +1654,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1606,6 +1667,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'stop-stream',
       description: 'Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with DeleteStreamKey to prevent further streaming to a channel.  Many streaming client-software libraries automatically reconnect a dropped RTMPS session, so to stop the stream permanently, you may want to first revoke the streamKey attached to the channel',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'ARN of the channel for which the stream is to be stopped',
@@ -1631,6 +1693,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1643,6 +1706,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or updates tags for the Amazon Web Services resource with the specified ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded',
@@ -1677,6 +1741,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1689,6 +1754,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the resource with the specified ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'ARN of the resource for which tags are to be removed. The ARN must be URL-encoded',
@@ -1723,6 +1789,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1735,6 +1802,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'update-channel',
       description: 'Updates a channel\'s configuration. Live channels cannot be updated. You must stop the ongoing stream, update the channel, and restart the stream for the changes to take effect',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the channel to be updated',
@@ -1848,6 +1916,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1860,6 +1929,7 @@ final FigSpec ivsSpec = FigSpec(
       name: 'update-playback-restriction-policy',
       description: 'Updates a specified playback restriction policy',
       options: [
+
         Option(
           name: '--allowed-countries',
           description: 'A list of country codes that control geoblocking restriction. Allowed values are the officially assigned ISO 3166-1 alpha-2 codes. Default: All countries (an empty array)',
@@ -1920,6 +1990,7 @@ final FigSpec ivsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

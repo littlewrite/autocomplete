@@ -28,9 +28,6 @@ const OUTPUT_PATH = path.join(SPECS_DIR, ALL_SPECS_FILE);
 const SPEC_VAR_REGEX =
   /(?:final|const)\s+(?:FigSpec|CompletionSpec)\s+(\w+)\s*=/;
 
-// 匹配第一个 name: '...' 或 name: "..."
-const NAME_REGEX = /name:\s*['"]([^'"]+)['"]/;
-
 /**
  * 递归收集 specs 目录下所有 .dart 文件相对路径（不含 all_specs.dart）
  * @param {string} dir - 当前目录绝对路径
@@ -60,29 +57,14 @@ function collectDartFiles(dir, baseDir, list) {
 }
 
 /**
- * 从 Dart 文件内容中解析 spec 变量名和 command name
+ * 从 Dart 文件内容中解析 spec 变量名
  * @param {string} content
- * @param {string} relPath - 用于 fallback 和报错
- * @returns {{ specVar: string, commandName: string } | null}
+ * @returns {{ specVar: string } | null}
  */
-function parseSpecFile(content, relPath) {
+function parseSpecFile(content) {
   const varMatch = content.match(SPEC_VAR_REGEX);
   if (!varMatch) return null;
-  const specVar = varMatch[1];
-
-  const nameMatch = content.match(NAME_REGEX);
-  const commandName = nameMatch ? nameMatch[1] : deriveCommandNameFromPath(relPath);
-
-  return { specVar, commandName };
-}
-
-/**
- * 无法从文件解析 name 时，根据相对路径推导 command name（简单启发式）
- */
-function deriveCommandNameFromPath(relPath) {
-  const withoutExt = relPath.replace(/\.dart$/, "");
-  const last = withoutExt.split("/").pop() || "unknown";
-  return last;
+  return { specVar: varMatch[1] };
 }
 
 /**
@@ -119,7 +101,7 @@ function main() {
       continue;
     }
 
-    const parsed = parseSpecFile(content, rel);
+    const parsed = parseSpecFile(content);
     if (!parsed) {
       skipped.push(rel);
       continue;
@@ -128,7 +110,6 @@ function main() {
     entries.push({
       importPath: rel,
       specVar: parsed.specVar,
-      commandName: parsed.commandName,
     });
   }
 
@@ -180,7 +161,8 @@ function assignPrefixes(entries) {
 
 /**
  * 生成 all_specs.dart 内容
- * @param {{ importPath: string, specVar: string, commandName: string, prefix?: string }[]} entries
+ * 使用 spec.name 作为注册名，避免解析文件中第一个 name: '...' 误匹配（如 mkdocs 里 Arg(name: 'theme')）
+ * @param {{ importPath: string, specVar: string, prefix?: string }[]} entries
  */
 function generateAllSpecsDart(entries) {
   const lines = [
@@ -205,9 +187,8 @@ function generateAllSpecsDart(entries) {
   );
   lines.push("void registerAllSpecs() {");
   for (const e of entries) {
-    const nameEscaped = e.commandName.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
     const ref = e.prefix ? e.prefix + "." + e.specVar : e.specVar;
-    lines.push("  registerSpec('" + nameEscaped + "', () => " + ref + ");");
+    lines.push("  registerSpec(" + ref + ".name, () => " + ref + ");");
   }
   lines.push("}");
 

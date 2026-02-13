@@ -9,10 +9,12 @@ final FigSpec notificationsSpec = FigSpec(
   name: 'notifications',
   description: 'The AWS User Notifications API Reference provides descriptions, API request parameters, and the JSON response for each of the User Notification API actions. User Notification control APIs are currently available in US East (Virginia) - us-east-1.  GetNotificationEvent and ListNotificationEvents APIs are currently available in commercial partition Regions and only return notifications stored in the same Region in which they\'re called. The User Notifications console can only be used in US East (Virginia). Your data however, is stored in each Region chosen as a notification hub in addition to US East (Virginia)',
   subcommands: [
+
     Subcommand(
       name: 'associate-channel',
       description: 'Associates a delivery Channel with a particular NotificationConfiguration. Supported Channels include AWS Chatbot, the AWS Console Mobile Application, and emails (notifications-contacts)',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Channel to associate with the NotificationConfiguration. Supported ARNs include AWS Chatbot, the Console Mobile Application, and notifications-contacts',
@@ -47,6 +49,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'create-event-rule',
       description: 'Creates an EventRule that is associated with a specified Notification Configuration',
       options: [
+
         Option(
           name: '--notification-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the NotificationConfiguration associated with this EventRule',
@@ -120,6 +124,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'create-notification-configuration',
       description: 'Creates a new NotificationConfiguration',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the NotificationConfiguration. Supports RFC 3986\'s unreserved characters',
@@ -184,6 +190,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'delete-event-rule',
       description: 'Deletes an EventRule',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the EventRule to delete',
@@ -221,6 +229,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'delete-notification-configuration',
       description: 'Deletes a NotificationConfiguration',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the NotificationConfiguration to delete',
@@ -258,6 +268,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'deregister-notification-hub',
       description: 'Deregisters a NotificationHub in the specified Region.  You can\'t deregister the last NotificationHub in the account. NotificationEvents stored in the deregistered NotificationHub are no longer be visible. Recreating a new NotificationHub in the same Region restores access to those NotificationEvents',
       options: [
+
         Option(
           name: '--notification-hub-region',
           description: 'The NotificationHub Region',
@@ -295,6 +307,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'disassociate-channel',
       description: 'Disassociates a Channel from a specified NotificationConfiguration. Supported Channels include AWS Chatbot, the AWS Console Mobile Application, and emails (notifications-contacts)',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Channel to disassociate',
@@ -341,6 +355,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -353,6 +368,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'get-event-rule',
       description: 'Returns a specified EventRule',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the EventRule to return',
@@ -378,6 +394,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -390,6 +407,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'get-notification-configuration',
       description: 'Returns a specified NotificationConfiguration',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the NotificationConfiguration to return',
@@ -415,6 +433,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -427,6 +446,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'get-notification-event',
       description: 'Returns a specified NotificationEvent.  User Notifications stores notifications in the individual Regions you register as notification hubs and the Region of the source event rule. GetNotificationEvent only returns notifications stored in the same Region in which the action is called. User Notifications doesn\'t backfill notifications to new Regions selected as notification hubs. For this reason, we recommend that you make calls in your oldest registered notification hub. For more information, see Notification hubs in the AWS User Notifications User Guide',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the NotificationEvent to return',
@@ -461,6 +481,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -473,6 +494,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'list-channels',
       description: 'Returns a list of Channels for a NotificationConfiguration',
       options: [
+
         Option(
           name: '--notification-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the NotificationConfiguration',
@@ -543,6 +565,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -555,6 +578,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'list-event-rules',
       description: 'Returns a list of EventRules according to specified filters, in reverse chronological order (newest first)',
       options: [
+
         Option(
           name: '--notification-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the NotificationConfiguration',
@@ -625,6 +649,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -637,6 +662,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'list-notification-configurations',
       description: 'Returns a list of abbreviated NotificationConfigurations according to specified filters, in reverse chronological order (newest first)',
       options: [
+
         Option(
           name: '--event-rule-source',
           description: 'The matched event source. Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, aws.ec2 and aws.cloudwatch. For more information, see Event delivery from AWS services in the Amazon EventBridge User Guide',
@@ -725,6 +751,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -737,6 +764,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'list-notification-events',
       description: 'Returns a list of NotificationEvents according to specified filters, in reverse chronological order (newest first).  User Notifications stores notifications in the individual Regions you register as notification hubs and the Region of the source event rule. ListNotificationEvents only returns notifications stored in the same Region in which the action is called. User Notifications doesn\'t backfill notifications to new Regions selected as notification hubs. For this reason, we recommend that you make calls in your oldest registered notification hub. For more information, see Notification hubs in the AWS User Notifications User Guide',
       options: [
+
         Option(
           name: '--start-time',
           description: 'The earliest time of events to return from this call',
@@ -851,6 +879,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -863,6 +892,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'list-notification-hubs',
       description: 'Returns a list of NotificationHubs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of records to list in a single response',
@@ -924,6 +954,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -936,6 +967,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags for a specified Amazon Resource Name (ARN). For more information, see Tagging your AWS resources in the Tagging AWS Resources User Guide.  This is only supported for NotificationConfigurations',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) to use to list tags',
@@ -961,6 +993,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -973,6 +1006,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'register-notification-hub',
       description: 'Registers a NotificationHub in the specified Region. There is a maximum of one NotificationHub per Region. You can have a maximum of 3 NotificationHubs at a time',
       options: [
+
         Option(
           name: '--notification-hub-region',
           description: 'The Region of the NotificationHub',
@@ -998,6 +1032,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1010,6 +1045,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags the resource with a tag key and value. For more information, see Tagging your AWS resources in the Tagging AWS Resources User Guide.  This is only supported for NotificationConfigurations',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) to use to tag a resource',
@@ -1044,6 +1080,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1056,6 +1093,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Untags a resource with a specified Amazon Resource Name (ARN). For more information, see Tagging your AWS resources in the Tagging AWS Resources User Guide',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) to use to untag a resource',
@@ -1090,6 +1128,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1102,6 +1141,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'update-event-rule',
       description: 'Updates an existing EventRule',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) to use to update the EventRule',
@@ -1145,6 +1185,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1157,6 +1198,7 @@ final FigSpec notificationsSpec = FigSpec(
       name: 'update-notification-configuration',
       description: 'Updates a NotificationConfiguration',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) used to update the NotificationConfiguration',
@@ -1209,6 +1251,7 @@ final FigSpec notificationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

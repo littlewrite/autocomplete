@@ -9,10 +9,12 @@ final FigSpec eksAuthSpec = FigSpec(
   name: 'eks-auth',
   description: 'The Amazon EKS Auth API and the AssumeRoleForPodIdentity action are only used by the EKS Pod Identity Agent',
   subcommands: [
+
     Subcommand(
       name: 'assume-role-for-pod-identity',
       description: 'The Amazon EKS Auth API and the AssumeRoleForPodIdentity action are only used by the EKS Pod Identity Agent. We recommend that applications use the Amazon Web Services SDKs to connect to Amazon Web Services services; if credentials from an EKS Pod Identity association are available in the pod, the latest versions of the SDKs use them automatically',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'The name of the cluster for the request',
@@ -47,6 +49,7 @@ final FigSpec eksAuthSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec lookoutequipmentSpec = FigSpec(
   name: 'lookoutequipment',
   description: 'Amazon Lookout for Equipment is a machine learning service that uses advanced analytics to identify anomalies in machines from sensor data for use in predictive maintenance',
   subcommands: [
+
     Subcommand(
       name: 'create-dataset',
       description: 'Creates a container for a collection of data being ingested for analysis. The dataset contains the metadata describing where the data is and what the data actually looks like. For example, it contains the location of the data source, the data schema, and other information. A dataset also contains any tags associated with the ingested data',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset being created',
@@ -74,6 +76,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'create-inference-scheduler',
       description: 'Creates a scheduled inference. Scheduling an inference is setting up a continuous real-time inference plan to analyze new measurement data. When setting up the schedule, you provide an S3 bucket location for the input data, assign it a delimiter between separate entries in the data, set an offset delay if desired, and set the frequency of inferencing. You must also provide an S3 bucket location for the output data',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the previously trained machine learning model being used to create the inference scheduler',
@@ -192,6 +196,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -204,6 +209,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'create-label',
       description: 'Creates a label for an event',
       options: [
+
         Option(
           name: '--label-group-name',
           description: 'The name of a group of labels.  Data in this field will be retained for service usage. Follow best practices for the security of your data',
@@ -292,6 +298,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -304,6 +311,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'create-label-group',
       description: 'Creates a group of labels',
       options: [
+
         Option(
           name: '--label-group-name',
           description: 'Names a group of labels. Data in this field will be retained for service usage. Follow best practices for the security of your data',
@@ -356,6 +364,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -368,6 +377,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'create-model',
       description: 'Creates a machine learning model for data inference.  A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for Equipment, the model learns the patterns of normal behavior and detects abnormal behavior that could be potential equipment failure (or maintenance events). The models are made by analyzing normal data and abnormalities in machine behavior that have already occurred. Your model is trained using a portion of the data from your dataset and uses that data to learn patterns of normal behavior and abnormal patterns that lead to equipment failure. Another portion of the data is used to evaluate the model\'s accuracy',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name for the machine learning model to be created',
@@ -519,6 +529,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -531,6 +542,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'create-retraining-scheduler',
       description: 'Creates a retraining scheduler on the specified model',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the model to add the retraining scheduler to',
@@ -601,6 +613,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -613,6 +626,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'delete-dataset',
       description: 'Deletes a dataset and associated artifacts. The operation will check to see if any inference scheduler or data ingestion job is currently using the dataset, and if there isn\'t, the dataset, its metadata, and any associated data stored in S3 will be deleted. This does not affect any models that used this dataset for training and evaluation, but does prevent it from being used in the future',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset to be deleted',
@@ -638,6 +652,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -650,6 +665,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'delete-inference-scheduler',
       description: 'Deletes an inference scheduler that has been set up. Prior inference results will not be deleted',
       options: [
+
         Option(
           name: '--inference-scheduler-name',
           description: 'The name of the inference scheduler to be deleted',
@@ -675,6 +691,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -687,6 +704,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'delete-label',
       description: 'Deletes a label',
       options: [
+
         Option(
           name: '--label-group-name',
           description: 'The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data',
@@ -721,6 +739,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -733,6 +752,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'delete-label-group',
       description: 'Deletes a group of labels',
       options: [
+
         Option(
           name: '--label-group-name',
           description: 'The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data',
@@ -758,6 +778,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -770,6 +791,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'delete-model',
       description: 'Deletes a machine learning model currently available for Amazon Lookout for Equipment. This will prevent it from being used with an inference scheduler, even one that is already set up',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the machine learning model to be deleted',
@@ -795,6 +817,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -807,6 +830,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes the resource policy attached to the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which the resource policy should be deleted',
@@ -832,6 +856,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -844,6 +869,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'delete-retraining-scheduler',
       description: 'Deletes a retraining scheduler from a model. The retraining scheduler must be in the STOPPED status',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the model whose retraining scheduler you want to delete',
@@ -869,6 +895,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -881,6 +908,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'describe-data-ingestion-job',
       description: 'Provides information on a specific data ingestion job such as creation time, dataset ARN, and status',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job ID of the data ingestion job',
@@ -906,6 +934,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -918,6 +947,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'describe-dataset',
       description: 'Provides a JSON description of the data in each time series dataset, including names, column names, and data types',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset to be described',
@@ -943,6 +973,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -955,6 +986,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'describe-inference-scheduler',
       description: 'Specifies information about the inference scheduler being used, including name, model, status, and associated metadata',
       options: [
+
         Option(
           name: '--inference-scheduler-name',
           description: 'The name of the inference scheduler being described',
@@ -980,6 +1012,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -992,6 +1025,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'describe-label',
       description: 'Returns the name of the label',
       options: [
+
         Option(
           name: '--label-group-name',
           description: 'Returns the name of the group containing the label',
@@ -1026,6 +1060,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1038,6 +1073,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'describe-label-group',
       description: 'Returns information about the label group',
       options: [
+
         Option(
           name: '--label-group-name',
           description: 'Returns the name of the label group',
@@ -1063,6 +1099,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1075,6 +1112,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'describe-model',
       description: 'Provides a JSON containing the overall information about a specific machine learning model, including model name and ARN, dataset, training and evaluation information, status, and so on',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the machine learning model to be described',
@@ -1100,6 +1138,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1112,6 +1151,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'describe-model-version',
       description: 'Retrieves information about a specific machine learning model version',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the machine learning model that this version belongs to',
@@ -1146,6 +1186,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1158,6 +1199,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'describe-resource-policy',
       description: 'Provides the details of a resource policy attached to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that is associated with the resource policy',
@@ -1183,6 +1225,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1195,6 +1238,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'describe-retraining-scheduler',
       description: 'Provides a description of the retraining scheduler, including information such as the model name and retraining parameters',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the model that the retraining scheduler is attached to',
@@ -1220,6 +1264,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1232,6 +1277,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'import-dataset',
       description: 'Imports a dataset',
       options: [
+
         Option(
           name: '--source-dataset-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset to import',
@@ -1293,6 +1339,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1305,6 +1352,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'import-model-version',
       description: 'Imports a model that has been trained successfully',
       options: [
+
         Option(
           name: '--source-model-version-arn',
           description: 'The Amazon Resource Name (ARN) of the model version to import',
@@ -1402,6 +1450,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1414,6 +1463,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-data-ingestion-jobs',
       description: 'Provides a list of all data ingestion jobs, including dataset name and ARN, S3 location of the input data, status, and so on',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset being used for the data ingestion job',
@@ -1466,6 +1516,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1478,6 +1529,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-datasets',
       description: 'Lists all datasets currently available in your account, filtering on the dataset name',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An opaque pagination token indicating where to continue the listing of datasets',
@@ -1521,6 +1573,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1533,6 +1586,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-inference-events',
       description: 'Lists all inference events that have been found for the specified inference scheduler',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An opaque pagination token indicating where to continue the listing of inference events',
@@ -1594,6 +1648,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1606,6 +1661,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-inference-executions',
       description: 'Lists all inference executions that have been performed by the specified inference scheduler',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An opaque pagination token indicating where to continue the listing of inference executions',
@@ -1676,6 +1732,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1688,6 +1745,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-inference-schedulers',
       description: 'Retrieves a list of all inference schedulers currently available for your account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An opaque pagination token indicating where to continue the listing of inference schedulers',
@@ -1749,6 +1807,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1761,6 +1820,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-label-groups',
       description: 'Returns a list of the label groups',
       options: [
+
         Option(
           name: '--label-group-name-begins-with',
           description: 'The beginning of the name of the label groups to be listed',
@@ -1804,6 +1864,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1816,6 +1877,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-labels',
       description: 'Provides a list of labels',
       options: [
+
         Option(
           name: '--label-group-name',
           description: 'Returns the name of the label group',
@@ -1895,6 +1957,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1907,6 +1970,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-model-versions',
       description: 'Generates a list of all model versions for a given model, including the model version, model version ARN, and status. To list a subset of versions, use the MaxModelVersion and MinModelVersion fields',
       options: [
+
         Option(
           name: '--model-name',
           description: 'Then name of the machine learning model for which the model versions are to be listed',
@@ -2004,6 +2068,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2016,6 +2081,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-models',
       description: 'Generates a list of all models in the account, including model name and ARN, dataset, and status',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An opaque pagination token indicating where to continue the listing of machine learning models',
@@ -2077,6 +2143,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2089,6 +2156,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-retraining-schedulers',
       description: 'Lists all retraining schedulers in your account, filtering by model name prefix and status',
       options: [
+
         Option(
           name: '--model-name-begins-with',
           description: 'Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify',
@@ -2141,6 +2209,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2153,6 +2222,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-sensor-statistics',
       description: 'Lists statistics about the data collected for each of the sensors that have been successfully ingested in the particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset associated with the list of Sensor Statistics',
@@ -2205,6 +2275,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2217,6 +2288,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all the tags for a specified resource, including key and value',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is the focus of the ListTagsForResource operation',
@@ -2242,6 +2314,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2254,6 +2327,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Creates a resource control policy for a given resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which the policy is being created',
@@ -2306,6 +2380,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2318,6 +2393,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'start-data-ingestion-job',
       description: 'Starts a data ingestion job. Amazon Lookout for Equipment returns the job status',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset being used by the data ingestion job',
@@ -2370,6 +2446,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2382,6 +2459,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'start-inference-scheduler',
       description: 'Starts an inference scheduler',
       options: [
+
         Option(
           name: '--inference-scheduler-name',
           description: 'The name of the inference scheduler to be started',
@@ -2407,6 +2485,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2419,6 +2498,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'start-retraining-scheduler',
       description: 'Starts a retraining scheduler',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the model whose retraining scheduler you want to start',
@@ -2444,6 +2524,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2456,6 +2537,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'stop-inference-scheduler',
       description: 'Stops an inference scheduler',
       options: [
+
         Option(
           name: '--inference-scheduler-name',
           description: 'The name of the inference scheduler to be stopped',
@@ -2481,6 +2563,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2493,6 +2576,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'stop-retraining-scheduler',
       description: 'Stops a retraining scheduler',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the model whose retraining scheduler you want to stop',
@@ -2518,6 +2602,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2530,6 +2615,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates a given tag to a resource in your account. A tag is a key-value pair which can be added to an Amazon Lookout for Equipment resource as metadata. Tags can be used for organizing your resources as well as helping you to search and filter by tag. Multiple tags can be added to a resource, either when you create it, or later. Up to 50 tags can be associated with each resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the specific resource to which the tag should be associated',
@@ -2564,6 +2650,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2576,6 +2663,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a specific tag from a given resource. The tag is specified by its key',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to which the tag is currently associated',
@@ -2610,6 +2698,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2622,6 +2711,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'update-active-model-version',
       description: 'Sets the active model version for a given machine learning model',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the machine learning model for which the active model version is being set',
@@ -2656,6 +2746,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2668,6 +2759,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'update-inference-scheduler',
       description: 'Updates an inference scheduler',
       options: [
+
         Option(
           name: '--inference-scheduler-name',
           description: 'The name of the inference scheduler to be updated',
@@ -2738,6 +2830,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2750,6 +2843,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'update-label-group',
       description: 'Updates the label group',
       options: [
+
         Option(
           name: '--label-group-name',
           description: 'The name of the label group to be updated',
@@ -2784,6 +2878,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2796,6 +2891,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'update-model',
       description: 'Updates a model in the account',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the model to update',
@@ -2848,6 +2944,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2860,6 +2957,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
       name: 'update-retraining-scheduler',
       description: 'Updates a retraining scheduler',
       options: [
+
         Option(
           name: '--model-name',
           description: 'The name of the model whose retraining scheduler you want to update',
@@ -2921,6 +3019,7 @@ final FigSpec lookoutequipmentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

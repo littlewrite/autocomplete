@@ -9,10 +9,12 @@ final FigSpec dsDataSpec = FigSpec(
   name: 'ds-data',
   description: 'Amazon Web Services Directory Service Data is an extension of Directory Service. This API reference provides detailed information about Directory Service Data operations and object types.   With Directory Service Data, you can create, read, update, and delete users, groups, and memberships from your Managed Microsoft AD without additional costs and without deploying dedicated management instances. You can also perform built-in object management tasks across directories without direct network connectivity, which simplifies provisioning and access management to achieve fully automated deployments. Directory Service Data supports user and group write operations, such as CreateUser and CreateGroup, within the organizational unit (OU) of your Managed Microsoft AD. Directory Service Data supports read operations, such as ListUsers and ListGroups, on all users, groups, and group memberships within your Managed Microsoft AD and across trusted realms. Directory Service Data supports adding and removing group members in your OU and the Amazon Web Services Delegated Groups OU, so you can grant and deny access to specific roles and permissions. For more information, see Manage users and groups in the Directory Service Administration Guide.    Directory management operations and configuration changes made against the Directory Service API will also reflect in Directory Service Data API with eventual consistency. You can expect a short delay between management changes, such as adding a new directory trust and calling the Directory Service Data API for the newly created trusted realm.    Directory Service Data connects to your Managed Microsoft AD domain controllers and performs operations on underlying directory objects. When you create your Managed Microsoft AD, you choose subnets for domain controllers that Directory Service creates on your behalf. If a domain controller is unavailable, Directory Service Data uses an available domain controller. As a result, you might notice eventual consistency while objects replicate from one domain controller to another domain controller. For more information, see What gets created in the Directory Service Administration Guide. Directory limits vary by Managed Microsoft AD edition:     Standard edition – Supports 8 transactions per second (TPS) for read operations and 4 TPS for write operations per directory. There\'s a concurrency limit of 10 concurrent requests.     Enterprise edition – Supports 16 transactions per second (TPS) for read operations and 8 TPS for write operations per directory. There\'s a concurrency limit of 10 concurrent requests.    Amazon Web Services Account - Supports a total of 100 TPS for Directory Service Data operations across all directories.    Directory Service Data only supports the Managed Microsoft AD directory type and is only available in the primary Amazon Web Services Region. For more information, see Managed Microsoft AD and Primary vs additional Regions in the Directory Service Administration Guide',
   subcommands: [
+
     Subcommand(
       name: 'add-group-member',
       description: 'Adds an existing user, group, or computer as a group member',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique and case-sensitive identifier that you provide to make sure the idempotency of the request, so multiple identical calls have the same effect as one single call.   A client token is valid for 8 hours after the first request that uses it completes. After 8 hours, any request with the same client token is treated as a new request. If the request succeeds, any future uses of that token will be idempotent for another 8 hours.   If you submit a request with the same client token but change one of the other parameters within the 8-hour idempotency window, Directory Service Data returns an ConflictException.    This parameter is optional when using the CLI or SDK',
@@ -74,6 +76,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'create-group',
       description: 'Creates a new group',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique and case-sensitive identifier that you provide to make sure the idempotency of the request, so multiple identical calls have the same effect as one single call.   A client token is valid for 8 hours after the first request that uses it completes. After 8 hours, any request with the same client token is treated as a new request. If the request succeeds, any future uses of that token will be idempotent for another 8 hours.   If you submit a request with the same client token but change one of the other parameters within the 8-hour idempotency window, Directory Service Data returns an ConflictException.    This parameter is optional when using the CLI or SDK',
@@ -156,6 +160,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +173,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'create-user',
       description: 'Creates a new user',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique and case-sensitive identifier that you provide to make sure the idempotency of the request, so multiple identical calls have the same effect as one single call.   A client token is valid for 8 hours after the first request that uses it completes. After 8 hours, any request with the same client token is treated as a new request. If the request succeeds, any future uses of that token will be idempotent for another 8 hours.   If you submit a request with the same client token but change one of the other parameters within the 8-hour idempotency window, Directory Service Data returns an ConflictException.    This parameter is optional when using the CLI or SDK',
@@ -247,6 +253,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -259,6 +266,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'delete-group',
       description: 'Deletes a group',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique and case-sensitive identifier that you provide to make sure the idempotency of the request, so multiple identical calls have the same effect as one single call.   A client token is valid for 8 hours after the first request that uses it completes. After 8 hours, any request with the same client token is treated as a new request. If the request succeeds, any future uses of that token will be idempotent for another 8 hours.   If you submit a request with the same client token but change one of the other parameters within the 8-hour idempotency window, Directory Service Data returns an ConflictException.    This parameter is optional when using the CLI or SDK',
@@ -302,6 +310,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -314,6 +323,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'delete-user',
       description: 'Deletes a user',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique and case-sensitive identifier that you provide to make sure the idempotency of the request, so multiple identical calls have the same effect as one single call.   A client token is valid for 8 hours after the first request that uses it completes. After 8 hours, any request with the same client token is treated as a new request. If the request succeeds, any future uses of that token will be idempotent for another 8 hours.   If you submit a request with the same client token but change one of the other parameters within the 8-hour idempotency window, Directory Service Data returns an ConflictException.    This parameter is optional when using the CLI or SDK',
@@ -357,6 +367,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -369,6 +380,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'describe-group',
       description: 'Returns information about a specific group',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The Identifier (ID) of the directory associated with the group',
@@ -421,6 +433,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -433,6 +446,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'describe-user',
       description: 'Returns information about a specific user',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier (ID) of the directory that\'s associated with the user',
@@ -485,6 +499,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -497,6 +512,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'disable-user',
       description: 'Deactivates an active user account. For information about how to enable an inactive user account, see ResetUserPassword in the Directory Service API Reference',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique and case-sensitive identifier that you provide to make sure the idempotency of the request, so multiple identical calls have the same effect as one single call.   A client token is valid for 8 hours after the first request that uses it completes. After 8 hours, any request with the same client token is treated as a new request. If the request succeeds, any future uses of that token will be idempotent for another 8 hours.   If you submit a request with the same client token but change one of the other parameters within the 8-hour idempotency window, Directory Service Data returns an ConflictException.    This parameter is optional when using the CLI or SDK',
@@ -540,6 +556,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -552,6 +569,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'list-group-members',
       description: 'Returns member information for the specified group.   This operation supports pagination with the use of the NextToken request and response parameters. If more results are available, the ListGroupMembers.NextToken member contains a token that you pass in the next call to ListGroupMembers. This retrieves the next set of items.   You can also specify a maximum number of return results with the MaxResults parameter',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier (ID) of the directory that\'s associated with the group',
@@ -649,6 +667,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -661,6 +680,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'list-groups',
       description: 'Returns group information for the specified directory.   This operation supports pagination with the use of the NextToken request and response parameters. If more results are available, the ListGroups.NextToken member contains a token that you pass in the next call to ListGroups. This retrieves the next set of items.   You can also specify a maximum number of return results with the MaxResults parameter',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier (ID) of the directory that\'s associated with the group',
@@ -740,6 +760,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -752,6 +773,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'list-groups-for-member',
       description: 'Returns group information for the specified member.   This operation supports pagination with the use of the NextToken request and response parameters. If more results are available, the ListGroupsForMember.NextToken member contains a token that you pass in the next call to ListGroupsForMember. This retrieves the next set of items.   You can also specify a maximum number of return results with the MaxResults parameter',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier (ID) of the directory that\'s associated with the member',
@@ -849,6 +871,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -861,6 +884,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'list-users',
       description: 'Returns user information for the specified directory.   This operation supports pagination with the use of the NextToken request and response parameters. If more results are available, the ListUsers.NextToken member contains a token that you pass in the next call to ListUsers. This retrieves the next set of items.   You can also specify a maximum number of return results with the MaxResults parameter',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier (ID) of the directory that\'s associated with the user',
@@ -940,6 +964,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -952,6 +977,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'remove-group-member',
       description: 'Removes a member from a group',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique and case-sensitive identifier that you provide to make sure the idempotency of the request, so multiple identical calls have the same effect as one single call.   A client token is valid for 8 hours after the first request that uses it completes. After 8 hours, any request with the same client token is treated as a new request. If the request succeeds, any future uses of that token will be idempotent for another 8 hours.   If you submit a request with the same client token but change one of the other parameters within the 8-hour idempotency window, Directory Service Data returns an ConflictException.    This parameter is optional when using the CLI or SDK',
@@ -1013,6 +1039,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1025,6 +1052,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'search-groups',
       description: 'Searches the specified directory for a group. You can find groups that match the SearchString parameter with the value of their attributes included in the SearchString parameter.   This operation supports pagination with the use of the NextToken request and response parameters. If more results are available, the SearchGroups.NextToken member contains a token that you pass in the next call to SearchGroups. This retrieves the next set of items.   You can also specify a maximum number of return results with the MaxResults parameter',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier (ID) of the directory that\'s associated with the group',
@@ -1122,6 +1150,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1134,6 +1163,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'search-users',
       description: 'Searches the specified directory for a user. You can find users that match the SearchString parameter with the value of their attributes included in the SearchString parameter.  This operation supports pagination with the use of the NextToken request and response parameters. If more results are available, the SearchUsers.NextToken member contains a token that you pass in the next call to SearchUsers. This retrieves the next set of items.   You can also specify a maximum number of return results with the MaxResults parameter',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier (ID) of the directory that\'s associated with the user',
@@ -1231,6 +1261,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1243,6 +1274,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'update-group',
       description: 'Updates group information',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique and case-sensitive identifier that you provide to make sure the idempotency of the request, so multiple identical calls have the same effect as one single call.   A client token is valid for 8 hours after the first request that uses it completes. After 8 hours, any request with the same client token is treated as a new request. If the request succeeds, any future uses of that token will be idempotent for another 8 hours.   If you submit a request with the same client token but change one of the other parameters within the 8-hour idempotency window, Directory Service Data returns an ConflictException.    This parameter is optional when using the CLI or SDK',
@@ -1322,6 +1354,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1334,6 +1367,7 @@ final FigSpec dsDataSpec = FigSpec(
       name: 'update-user',
       description: 'Updates user information',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique and case-sensitive identifier that you provide to make sure the idempotency of the request, so multiple identical calls have the same effect as one single call.   A client token is valid for 8 hours after the first request that uses it completes. After 8 hours, any request with the same client token is treated as a new request. If the request succeeds, any future uses of that token will be idempotent for another 8 hours.   If you submit a request with the same client token but change one of the other parameters within the 8-hour idempotency window, Directory Service Data returns an ConflictException.    This parameter is optional when using the CLI or SDK',
@@ -1422,6 +1456,7 @@ final FigSpec dsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

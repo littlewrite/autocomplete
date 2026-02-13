@@ -9,10 +9,12 @@ final FigSpec buildServerSpec = FigSpec(
   name: 'build-server',
   description: 'Interacts with servers started by a build',
   subcommands: [
+
     Subcommand(
       name: 'shutdown',
       description: 'Shuts down build servers that are started from dotnet. By default, all servers are shut down',
       options: [
+
         Option(
           name: '--msbuild',
           description: 'Shuts down the MSBuild build server'

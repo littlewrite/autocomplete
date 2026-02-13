@@ -9,10 +9,12 @@ final FigSpec grafanaSpec = FigSpec(
   name: 'grafana',
   description: 'Amazon Managed Grafana is a fully managed and secure data visualization service that you can use to instantly query, correlate, and visualize operational metrics, logs, and traces from multiple sources. Amazon Managed Grafana makes it easy to deploy, operate, and scale Grafana, a widely deployed data visualization tool that is popular for its extensible data support. With Amazon Managed Grafana, you create logically isolated Grafana servers called workspaces. In a workspace, you can create Grafana dashboards and visualizations to analyze your metrics, logs, and traces without having to build, package, or deploy any hardware to run Grafana servers',
   subcommands: [
+
     Subcommand(
       name: 'associate-license',
       description: 'Assigns a Grafana Enterprise license to a workspace. To upgrade, you must use ENTERPRISE for the licenseType, and pass in a valid Grafana Labs token for the grafanaToken. Upgrading to Grafana Enterprise incurs additional fees. For more information, see Upgrade a workspace to Grafana Enterprise',
       options: [
+
         Option(
           name: '--grafana-token',
           description: 'A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more information, see Link your account with Grafana Labs',
@@ -56,6 +58,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'create-workspace',
       description: 'Creates a workspace. In a workspace, you can create Grafana dashboards and visualizations to analyze your metrics, logs, and traces. You don\'t have to build, package, or deploy any hardware to run the Grafana server. Don\'t use CreateWorkspace to modify an existing workspace. Instead, use UpdateWorkspace',
       options: [
+
         Option(
           name: '--account-access-type',
           description: 'Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify ORGANIZATION, you must specify which organizational units the workspace can access in the workspaceOrganizationalUnits parameter',
@@ -237,6 +241,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -249,6 +254,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'create-workspace-api-key',
       description: 'Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the workspace\'s HTTP API. See https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html for available APIs and example requests.  In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API keys will be removed in a future release',
       options: [
+
         Option(
           name: '--key-name',
           description: 'Specifies the name of the key. Keynames must be unique to the workspace',
@@ -301,6 +307,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -313,6 +320,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'create-workspace-service-account',
       description: 'Creates a service account for the workspace. A service account can be used to call Grafana HTTP APIs, and run automated workloads. After creating the service account with the correct GrafanaRole for your use case, use CreateWorkspaceServiceAccountToken to create a token that can be used to authenticate and authorize Grafana HTTP API calls. You can only create service accounts for workspaces that are compatible with Grafana version 9 and above.  For more information about service accounts, see Service accounts in the Amazon Managed Grafana User Guide. For more information about the Grafana HTTP APIs, see Using Grafana HTTP APIs in the Amazon Managed Grafana User Guide',
       options: [
+
         Option(
           name: '--grafana-role',
           description: 'The permission level to use for this service account.  For more information about the roles and the permissions each has, see User roles in the Amazon Managed Grafana User Guide',
@@ -356,6 +364,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -368,6 +377,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'create-workspace-service-account-token',
       description: 'Creates a token that can be used to authenticate and authorize Grafana HTTP API operations for the given workspace service account. The service account acts as a user for the API operations, and defines the permissions that are used by the API.  When you create the service account token, you will receive a key that is used when calling Grafana APIs. Do not lose this key, as it will not be retrievable again. If you do lose the key, you can delete the token and recreate it to receive a new key. This will disable the initial key.  Service accounts are only available for workspaces that are compatible with Grafana version 9 and above',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the token to create',
@@ -420,6 +430,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -432,6 +443,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'delete-workspace',
       description: 'Deletes an Amazon Managed Grafana workspace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace to delete',
@@ -457,6 +469,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -469,6 +482,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'delete-workspace-api-key',
       description: 'Deletes a Grafana API key for the workspace.  In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API keys will be removed in a future release',
       options: [
+
         Option(
           name: '--key-name',
           description: 'The name of the API key to delete',
@@ -503,6 +517,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -515,6 +530,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'delete-workspace-service-account',
       description: 'Deletes a workspace service account from the workspace. This will delete any tokens created for the service account, as well. If the tokens are currently in use, the will fail to authenticate / authorize after they are deleted. Service accounts are only available for workspaces that are compatible with Grafana version 9 and above',
       options: [
+
         Option(
           name: '--service-account-id',
           description: 'The ID of the service account to delete',
@@ -549,6 +565,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -561,6 +578,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'delete-workspace-service-account-token',
       description: 'Deletes a token for the workspace service account. This will disable the key associated with the token. If any automation is currently using the key, it will no longer be authenticated or authorized to perform actions with the Grafana HTTP APIs. Service accounts are only available for workspaces that are compatible with Grafana version 9 and above',
       options: [
+
         Option(
           name: '--service-account-id',
           description: 'The ID of the service account from which to delete the token',
@@ -604,6 +622,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -616,6 +635,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'describe-workspace',
       description: 'Displays information about one Amazon Managed Grafana workspace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace to display information about',
@@ -641,6 +661,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -653,6 +674,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'describe-workspace-authentication',
       description: 'Displays information about the authentication methods used in one Amazon Managed Grafana workspace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace to return authentication information about',
@@ -678,6 +700,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -690,6 +713,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'describe-workspace-configuration',
       description: 'Gets the current configuration string for the given workspace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace to get configuration information for',
@@ -715,6 +739,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -727,6 +752,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'disassociate-license',
       description: 'Removes the Grafana Enterprise license from a workspace',
       options: [
+
         Option(
           name: '--license-type',
           description: 'The type of license to remove from the workspace',
@@ -761,6 +787,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -773,6 +800,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'list-permissions',
       description: 'Lists the users and groups who have the Grafana Admin and Editor roles in this workspace. If you use this operation without specifying userId or groupId, the operation returns the roles of all users and groups. If you specify a userId or a groupId, only the roles for that user or group are returned. If you do this, you can specify only one userId or one groupId',
       options: [
+
         Option(
           name: '--group-id',
           description: '(Optional) Limits the results to only the group that matches this ID',
@@ -870,6 +898,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -882,6 +911,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'The ListTagsForResource operation returns the tags that are associated with the Amazon Managed Service for Grafana resource specified by the resourceArn. Currently, the only resource that can be tagged is a workspace',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource the list of tags are associated with',
@@ -907,6 +937,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -919,6 +950,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'list-versions',
       description: 'Lists available versions of Grafana. These are available when calling CreateWorkspace. Optionally, include a workspace to list the versions to which it can be upgraded',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in the response',
@@ -989,6 +1021,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1001,6 +1034,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'list-workspace-service-account-tokens',
       description: 'Returns a list of tokens for a workspace service account.  This does not return the key for each token. You cannot access keys after they are created. To create a new key, delete the token and recreate it.  Service accounts are only available for workspaces that are compatible with Grafana version 9 and above',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of tokens to include in the results',
@@ -1080,6 +1114,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1092,6 +1127,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'list-workspace-service-accounts',
       description: 'Returns a list of service accounts for a workspace. Service accounts are only available for workspaces that are compatible with Grafana version 9 and above',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of service accounts to include in the results',
@@ -1162,6 +1198,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1174,6 +1211,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'list-workspaces',
       description: 'Returns a list of Amazon Managed Grafana workspaces in the account, with some information about each workspace. For more complete information about one workspace, use DescribeWorkspace',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of workspaces to include in the results',
@@ -1235,6 +1273,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1247,6 +1286,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'tag-resource',
       description: 'The TagResource operation associates tags with an Amazon Managed Grafana resource. Currently, the only resource that can be tagged is workspaces.  If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource the tag is associated with',
@@ -1281,6 +1321,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1293,6 +1334,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'untag-resource',
       description: 'The UntagResource operation removes the association of the tag with the Amazon Managed Grafana resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource the tag association is removed from',
@@ -1327,6 +1369,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1339,6 +1382,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'update-permissions',
       description: 'Updates which users in a workspace have the Grafana Admin or Editor roles',
       options: [
+
         Option(
           name: '--update-instruction-batch',
           description: 'An array of structures that contain the permission updates to make',
@@ -1373,6 +1417,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1385,6 +1430,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'update-workspace',
       description: 'Modifies an existing Amazon Managed Grafana workspace. If you use this operation and omit any optional parameters, the existing values of those parameters are not changed. To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use UpdateWorkspaceAuthentication. To modify which users in the workspace have the Admin and Editor Grafana roles, use UpdatePermissions',
       options: [
+
         Option(
           name: '--account-access-type',
           description: 'Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify ORGANIZATION, you must specify which organizational units the workspace can access in the workspaceOrganizationalUnits parameter',
@@ -1534,6 +1580,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1546,6 +1593,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'update-workspace-authentication',
       description: 'Use this operation to define the identity provider (IdP) that this workspace authenticates users from, using SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the Admin and Editor roles in the workspace.  Changes to the authentication method for a workspace may take a few minutes to take effect',
       options: [
+
         Option(
           name: '--authentication-providers',
           description: 'Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see User authentication in Amazon Managed Grafana',
@@ -1589,6 +1637,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1601,6 +1650,7 @@ final FigSpec grafanaSpec = FigSpec(
       name: 'update-workspace-configuration',
       description: 'Updates the configuration string for the given workspace',
       options: [
+
         Option(
           name: '--configuration',
           description: 'The new configuration string for the workspace. For more information about the format and configuration options available, see Working in your Grafana workspace',
@@ -1644,6 +1694,7 @@ final FigSpec grafanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec identitystoreSpec = FigSpec(
   name: 'identitystore',
   description: 'The Identity Store service used by IAM Identity Center provides a single place to retrieve all of your identities (users and groups). For more information, see the IAM Identity Center User Guide. This reference guide describes the identity store operations that you can call programmatically and includes detailed information about data types and errors.  IAM Identity Center uses the sso and identitystore API namespaces',
   subcommands: [
+
     Subcommand(
       name: 'create-group',
       description: 'Creates a group within the specified identity store',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -56,6 +58,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'create-group-membership',
       description: 'Creates a relationship between a member and a group. The following identifiers must be specified: GroupId, IdentityStoreId, and MemberId',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -111,6 +115,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'create-user',
       description: 'Creates a user within the specified identity store',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -265,6 +271,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -277,6 +284,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'delete-group',
       description: 'Delete a group within an identity store given GroupId',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -311,6 +319,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -323,6 +332,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'delete-group-membership',
       description: 'Delete a membership within a group given MembershipId',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -357,6 +367,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -369,6 +380,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'delete-user',
       description: 'Deletes a user within an identity store given UserId',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -403,6 +415,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -415,6 +428,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'describe-group',
       description: 'Retrieves the group metadata and attributes from GroupId in an identity store.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a fixed prefix, and 1234567890 is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created',
@@ -449,6 +463,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -461,6 +476,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'describe-group-membership',
       description: 'Retrieves membership metadata and attributes from MembershipId in an identity store.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -495,6 +511,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -507,6 +524,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'describe-user',
       description: 'Retrieves the user metadata and attributes from the UserId in an identity store.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a fixed prefix, and 1234567890 is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created',
@@ -541,6 +559,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -553,6 +572,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'get-group-id',
       description: 'Retrieves GroupId in an identity store.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -587,6 +607,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -599,6 +620,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'get-group-membership-id',
       description: 'Retrieves the MembershipId in an identity store.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -642,6 +664,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -654,6 +677,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'get-user-id',
       description: 'Retrieves the UserId in an identity store.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -688,6 +712,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -700,6 +725,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'is-member-in-groups',
       description: 'Checks the user\'s membership in all requested groups and returns if the member exists in all queried groups.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -743,6 +769,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -755,6 +782,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'list-group-memberships',
       description: 'For the specified group in the specified identity store, returns the list of all GroupMembership objects and returns results in paginated form.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -834,6 +862,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -846,6 +875,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'list-group-memberships-for-member',
       description: 'For the specified member in the specified identity store, returns the list of all GroupMembership objects and returns results in paginated form.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -925,6 +955,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -937,6 +968,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'list-groups',
       description: 'Lists all groups in the identity store. Returns a paginated list of complete Group objects. Filtering for a Group by the DisplayName attribute is deprecated. Instead, use the GetGroupId API action.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a fixed prefix, and 1234567890 is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created',
@@ -1016,6 +1048,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1028,6 +1061,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'list-users',
       description: 'Lists all users in the identity store. Returns a paginated list of complete User objects. Filtering for a User by the UserName attribute is deprecated. Instead, use the GetUserId API action.  If you have administrator access to a member account, you can use this API from the member account. Read about member accounts in the Organizations User Guide',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a fixed prefix, and 1234567890 is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created',
@@ -1107,6 +1141,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1119,6 +1154,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'update-group',
       description: 'For the specified group in the specified identity store, updates the group metadata and attributes',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -1162,6 +1198,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1174,6 +1211,7 @@ final FigSpec identitystoreSpec = FigSpec(
       name: 'update-user',
       description: 'For the specified user in the specified identity store, updates the user metadata and attributes',
       options: [
+
         Option(
           name: '--identity-store-id',
           description: 'The globally unique identifier for the identity store',
@@ -1217,6 +1255,7 @@ final FigSpec identitystoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

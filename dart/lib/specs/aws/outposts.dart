@@ -9,10 +9,12 @@ final FigSpec outpostsSpec = FigSpec(
   name: 'outposts',
   description: 'Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services infrastructure, APIs, and tools to customer premises. By providing local access to Amazon Web Services managed infrastructure, Amazon Web Services Outposts enables customers to build and run applications on premises using the same programming interfaces as in Amazon Web Services Regions, while using local compute and storage resources for lower latency and local data processing needs',
   subcommands: [
+
     Subcommand(
       name: 'cancel-capacity-task',
       description: 'Cancels the capacity task',
       options: [
+
         Option(
           name: '--capacity-task-id',
           description: 'ID of the capacity task that you want to cancel',
@@ -47,6 +49,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'cancel-order',
       description: 'Cancels the specified order for an Outpost',
       options: [
+
         Option(
           name: '--order-id',
           description: 'The ID of the order',
@@ -84,6 +88,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'create-order',
       description: 'Creates an order for an Outpost',
       options: [
+
         Option(
           name: '--outpost-identifier',
           description: 'The ID or the Amazon Resource Name (ARN) of the Outpost',
@@ -148,6 +154,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'create-outpost',
       description: 'Creates an Outpost. You can specify either an Availability one or an AZ ID',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the Outpost',
@@ -239,6 +247,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +260,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'create-site',
       description: 'Creates a site for an Outpost',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the site',
@@ -330,6 +340,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -342,6 +353,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'delete-outpost',
       description: 'Deletes the specified Outpost',
       options: [
+
         Option(
           name: '--outpost-id',
           description: 'The ID or ARN of the Outpost',
@@ -367,6 +379,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -379,6 +392,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'delete-site',
       description: 'Deletes the specified site',
       options: [
+
         Option(
           name: '--site-id',
           description: 'The ID or the Amazon Resource Name (ARN) of the site',
@@ -404,6 +418,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +431,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'get-capacity-task',
       description: 'Gets details of the specified capacity task',
       options: [
+
         Option(
           name: '--capacity-task-id',
           description: 'ID of the capacity task',
@@ -450,6 +466,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -462,6 +479,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'get-catalog-item',
       description: 'Gets information about the specified catalog item',
       options: [
+
         Option(
           name: '--catalog-item-id',
           description: 'The ID of the catalog item',
@@ -487,6 +505,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -499,6 +518,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'get-connection',
       description: 'Amazon Web Services uses this action to install Outpost servers.   Gets information about the specified connection.   Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see  Amazon Web Services managed policies for Amazon Web Services Outposts and  Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail in the Amazon Web Services Outposts User Guide',
       options: [
+
         Option(
           name: '--connection-id',
           description: 'The ID of the connection',
@@ -524,6 +544,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -536,6 +557,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'get-order',
       description: 'Gets information about the specified order',
       options: [
+
         Option(
           name: '--order-id',
           description: 'The ID of the order',
@@ -561,6 +583,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -573,6 +596,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'get-outpost',
       description: 'Gets information about the specified Outpost',
       options: [
+
         Option(
           name: '--outpost-id',
           description: 'The ID or ARN of the Outpost',
@@ -598,6 +622,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -610,6 +635,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'get-outpost-instance-types',
       description: 'Gets the instance types for the specified Outpost',
       options: [
+
         Option(
           name: '--outpost-id',
           description: 'The ID or ARN of the Outpost',
@@ -680,6 +706,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -692,6 +719,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'get-outpost-supported-instance-types',
       description: 'Gets the instance types that an Outpost can support in InstanceTypeCapacity. This will generally include instance types that are not currently configured and therefore cannot be launched with the current Outpost capacity configuration',
       options: [
+
         Option(
           name: '--outpost-identifier',
           description: 'The ID or ARN of the Outpost',
@@ -771,6 +799,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -783,6 +812,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'get-site',
       description: 'Gets information about the specified Outpost site',
       options: [
+
         Option(
           name: '--site-id',
           description: 'The ID or the Amazon Resource Name (ARN) of the site',
@@ -808,6 +838,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -820,6 +851,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'get-site-address',
       description: 'Gets the site address of the specified site',
       options: [
+
         Option(
           name: '--site-id',
           description: 'The ID or the Amazon Resource Name (ARN) of the site',
@@ -854,6 +886,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -866,6 +899,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'list-asset-instances',
       description: 'A list of Amazon EC2 instances, belonging to all accounts, running on the specified Outpost. Does not include Amazon EBS or Amazon S3 instances',
       options: [
+
         Option(
           name: '--outpost-identifier',
           description: 'The ID of the Outpost',
@@ -972,6 +1006,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -984,6 +1019,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'list-assets',
       description: 'Lists the hardware assets for the specified Outpost. Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter',
       options: [
+
         Option(
           name: '--outpost-identifier',
           description: 'The ID or the Amazon Resource Name (ARN) of the Outpost',
@@ -1072,6 +1108,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1084,6 +1121,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'list-blocking-instances-for-capacity-task',
       description: 'A list of Amazon EC2 instances running on the Outpost and belonging to the account that initiated the capacity task. Use this list to specify the instances you cannot stop to free up capacity to run the capacity task',
       options: [
+
         Option(
           name: '--outpost-identifier',
           description: 'The ID or ARN of the Outpost associated with the specified capacity task',
@@ -1163,6 +1201,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1175,6 +1214,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'list-capacity-tasks',
       description: 'Lists the capacity tasks for your Amazon Web Services account. Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter',
       options: [
+
         Option(
           name: '--outpost-identifier-filter',
           description: 'Filters the results by an Outpost ID or an Outpost ARN',
@@ -1254,6 +1294,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1266,6 +1307,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'list-catalog-items',
       description: 'Lists the items in the catalog. Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token',
@@ -1354,6 +1396,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1366,6 +1409,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'list-orders',
       description: 'Lists the Outpost orders for your Amazon Web Services account',
       options: [
+
         Option(
           name: '--outpost-identifier-filter',
           description: 'The ID or the Amazon Resource Name (ARN) of the Outpost',
@@ -1436,6 +1480,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1448,6 +1493,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'list-outposts',
       description: 'Lists the Outposts for your Amazon Web Services account. Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token',
@@ -1536,6 +1582,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1548,6 +1595,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'list-sites',
       description: 'Lists the Outpost sites for your Amazon Web Services account. Use filters to return specific results. Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token',
@@ -1636,6 +1684,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1648,6 +1697,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1673,6 +1723,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1685,6 +1736,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'start-capacity-task',
       description: 'Starts the specified capacity task. You can have one active capacity task per order or Outpost',
       options: [
+
         Option(
           name: '--outpost-identifier',
           description: 'The ID or ARN of the Outposts associated with the specified capacity task',
@@ -1754,6 +1806,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1766,6 +1819,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'start-connection',
       description: 'Amazon Web Services uses this action to install Outpost servers.   Starts the connection required for Outpost server installation.   Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see  Amazon Web Services managed policies for Amazon Web Services Outposts and  Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail in the Amazon Web Services Outposts User Guide',
       options: [
+
         Option(
           name: '--device-serial-number',
           description: 'The serial number of the dongle',
@@ -1818,6 +1872,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1830,6 +1885,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1864,6 +1920,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1876,6 +1933,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1910,6 +1968,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1922,6 +1981,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'update-outpost',
       description: 'Updates an Outpost',
       options: [
+
         Option(
           name: '--outpost-id',
           description: 'The ID or ARN of the Outpost',
@@ -1974,6 +2034,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1986,6 +2047,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'update-site',
       description: 'Updates the specified site',
       options: [
+
         Option(
           name: '--site-id',
           description: 'The ID or the Amazon Resource Name (ARN) of the site',
@@ -2038,6 +2100,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2050,6 +2113,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'update-site-address',
       description: 'Updates the address of the specified site. You can\'t update a site address if there is an order in progress. You must wait for the order to complete or cancel the order. You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated',
       options: [
+
         Option(
           name: '--site-id',
           description: 'The ID or the Amazon Resource Name (ARN) of the site',
@@ -2093,6 +2157,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2105,6 +2170,7 @@ final FigSpec outpostsSpec = FigSpec(
       name: 'update-site-rack-physical-properties',
       description: 'Update the physical and logistical details for a rack at a site. For more information about hardware requirements for racks, see Network readiness checklist in the Amazon Web Services Outposts User Guide.  To update a rack at a site with an order of IN_PROGRESS, you must wait for the order to complete or cancel the order',
       options: [
+
         Option(
           name: '--site-id',
           description: 'The ID or the Amazon Resource Name (ARN) of the site',
@@ -2211,6 +2277,7 @@ final FigSpec outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,14 +9,17 @@ final FigSpec kafkactlSpec = FigSpec(
   name: 'kafkactl',
   description: 'Command-line interface for Apache Kafka',
   subcommands: [
+
     Subcommand(
       name: ['edit', 'alter'],
       description: 'Alter topics, partitions',
       subcommands: [
+
         Subcommand(
           name: 'partition',
           description: 'Alter a partition',
           options: [
+
             Option(
               name: ['--replicas', '-r'],
               description: 'Set replicas for a partition',
@@ -37,6 +40,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'topic',
           description: 'Alter a topic',
           options: [
+
             Option(
               name: ['--config', '-c'],
               description: 'Configs in format `key=value`',
@@ -83,6 +87,7 @@ final FigSpec kafkactlSpec = FigSpec(
       name: 'clone',
       description: 'Clone topics, consumerGroups',
       subcommands: [
+
         Subcommand(
           name: ['cg', 'consumer-group'],
           description: 'Clone existing consumerGroup with all offsets'
@@ -101,6 +106,7 @@ final FigSpec kafkactlSpec = FigSpec(
       name: 'config',
       description: 'Show and edit configurations',
       subcommands: [
+
         Subcommand(
           name: ['currentContext', 'current-context'],
           description: 'Show current context'
@@ -109,6 +115,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: ['getContexts', 'get-contexts'],
           description: 'List configured contexts',
           options: [
+
             Option(
               name: ['--output', '-o'],
               description: 'Output format. One of: compact',
@@ -134,6 +141,7 @@ final FigSpec kafkactlSpec = FigSpec(
       name: 'consume',
       description: 'Consume messages from a topic',
       options: [
+
         Option(
           name: ['--exit', '-e'],
           description: 'Stop consuming when latest offset is reached'
@@ -301,10 +309,12 @@ final FigSpec kafkactlSpec = FigSpec(
       name: 'create',
       description: 'Create topics, consumerGroups, acls',
       subcommands: [
+
         Subcommand(
           name: ['acl', 'access-control-list'],
           description: 'Create an acl',
           options: [
+
             Option(
               name: ['--allow', '-a'],
               description: 'Acl of permissionType \'allow\' (choose this or \'deny\')'
@@ -384,6 +394,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: ['cg', 'consumer-group'],
           description: 'Create a consumerGroup',
           options: [
+
             Option(
               name: '--newest',
               description: 'Set the offset to newest offset (for all partitions or the specified partition)'
@@ -428,6 +439,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'topic',
           description: 'Create a topic',
           options: [
+
             Option(
               name: ['--config', '-c'],
               description: 'Configs in format `key=value`',
@@ -470,10 +482,12 @@ final FigSpec kafkactlSpec = FigSpec(
       name: 'delete',
       description: 'Delete topics, consumerGroups, consumer-group-offset, acls',
       subcommands: [
+
         Subcommand(
           name: ['acl', 'access-control-list'],
           description: 'Delete an acl',
           options: [
+
             Option(
               name: ['--allow', '-a'],
               description: 'Acl of permissionType \'allow\''
@@ -526,6 +540,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: ['cgo', 'offset', 'consumer-group-offset'],
           description: 'Delete a consumer-group-offset',
           options: [
+
             Option(
               name: ['--partition', '-p'],
               description: 'Delete offset for this partition. -1 stands for all partitions',
@@ -557,10 +572,12 @@ final FigSpec kafkactlSpec = FigSpec(
       name: 'describe',
       description: 'Describe topics, consumerGroups, brokers',
       subcommands: [
+
         Subcommand(
           name: 'broker',
           description: 'Describe a broker',
           options: [
+
             Option(
               name: ['--output', '-o'],
               description: 'Output format. One of: json|yaml|wide',
@@ -576,6 +593,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: ['cg', 'consumer-group'],
           description: 'Describe a consumerGroup',
           options: [
+
             Option(
               name: ['--only-with-lag', '-l'],
               description: 'Show only partitions that have a lag'
@@ -612,6 +630,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'topic',
           description: 'Describe a topic',
           options: [
+
             Option(
               name: ['--output', '-o'],
               description: 'Output format. One of: json|yaml|wide',
@@ -637,10 +656,12 @@ final FigSpec kafkactlSpec = FigSpec(
       name: ['list', 'get'],
       description: 'Get info about topics, consumerGroups, acls, brokers',
       subcommands: [
+
         Subcommand(
           name: ['acl', 'access-control-list'],
           description: 'List available acls',
           options: [
+
             Option(
               name: ['--allow', '-a'],
               description: 'Acl of permissionType \'allow\''
@@ -696,6 +717,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'brokers',
           description: 'List brokers',
           options: [
+
             Option(
               name: ['--output', '-o'],
               description: 'Output format. One of: json|yaml|compact',
@@ -711,6 +733,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: ['cg', 'consumer-groups'],
           description: 'List available consumerGroups',
           options: [
+
             Option(
               name: ['--output', '-o'],
               description: 'Output format. One of: json|yaml|wide|compact',
@@ -735,6 +758,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'topics',
           description: 'List available topics',
           options: [
+
             Option(
               name: ['--output', '-o'],
               description: 'Output format. One of: json|yaml|wide|compact',
@@ -752,6 +776,7 @@ final FigSpec kafkactlSpec = FigSpec(
       name: 'produce',
       description: 'Produce messages to a topic',
       options: [
+
         Option(
           name: ['--file', '-f'],
           description: 'File to read input from',
@@ -959,10 +984,12 @@ final FigSpec kafkactlSpec = FigSpec(
       name: 'reset',
       description: 'Reset consumerGroupsOffset',
       subcommands: [
+
         Subcommand(
           name: ['cgo', 'offset', 'consumer-group-offset'],
           description: 'Reset a consumer group offset',
           options: [
+
             Option(
               name: '--all-topics',
               description: 'Do the operation for all topics in the consumer group'
@@ -1030,10 +1057,12 @@ final FigSpec kafkactlSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: ['edit', 'alter'],
           description: 'Alter topics, partitions',
           subcommands: [
+
             Subcommand(
               name: 'partition',
               description: 'Alter a partition'
@@ -1052,6 +1081,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'clone',
           description: 'Clone topics, consumerGroups',
           subcommands: [
+
             Subcommand(
               name: ['cg', 'consumer-group'],
               description: 'Clone existing consumerGroup with all offsets'
@@ -1070,6 +1100,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'config',
           description: 'Show and edit configurations',
           subcommands: [
+
             Subcommand(
               name: ['currentContext', 'current-context'],
               description: 'Show current context'
@@ -1096,6 +1127,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'create',
           description: 'Create topics, consumerGroups, acls',
           subcommands: [
+
             Subcommand(
               name: ['acl', 'access-control-list'],
               description: 'Create an acl'
@@ -1114,6 +1146,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'delete',
           description: 'Delete topics, consumerGroups, consumer-group-offset, acls',
           subcommands: [
+
             Subcommand(
               name: ['acl', 'access-control-list'],
               description: 'Delete an acl'
@@ -1136,6 +1169,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'describe',
           description: 'Describe topics, consumerGroups, brokers',
           subcommands: [
+
             Subcommand(
               name: 'broker',
               description: 'Describe a broker'
@@ -1154,6 +1188,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: ['list', 'get'],
           description: 'Get info about topics, consumerGroups, acls, brokers',
           subcommands: [
+
             Subcommand(
               name: ['acl', 'access-control-list'],
               description: 'List available acls'
@@ -1180,6 +1215,7 @@ final FigSpec kafkactlSpec = FigSpec(
           name: 'reset',
           description: 'Reset consumerGroupsOffset',
           subcommands: [
+
             Subcommand(
               name: ['cgo', 'offset', 'consumer-group-offset'],
               description: 'Reset a consumer group offset'
@@ -1194,6 +1230,7 @@ final FigSpec kafkactlSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--config-file', '-C'],
       description: 'Config file. one of: [\$HOME/.config/kafkactl \$HOME/.kafkactl \$SNAP_REAL_HOME/.config/kafkactl \$SNAP_DATA/kafkactl /etc/kafkactl]',

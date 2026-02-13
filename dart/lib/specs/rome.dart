@@ -9,6 +9,7 @@ final FigSpec romeSpec = FigSpec(
   name: 'rome',
   description: 'Rome CLI',
   options: [
+
     Option(
       name: '--colors',
       description: 'Set the formatting mode for markup',
@@ -16,6 +17,7 @@ final FigSpec romeSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'off'),
           FigSuggestion(name: 'force')
         ]
@@ -41,6 +43,7 @@ final FigSpec romeSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'check',
       description: 'Run the linter on a set of files',
@@ -52,6 +55,7 @@ final FigSpec romeSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--apply',
           description: 'Apply safe fixes'
@@ -97,6 +101,7 @@ final FigSpec romeSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--formatter-enabled',
           description: 'Allow to enable or disable the formatter check'
@@ -140,6 +145,7 @@ final FigSpec romeSpec = FigSpec(
             Arg(
             name: 'style',
             suggestions: [
+
               FigSuggestion(name: 'tabs'),
               FigSuggestion(name: 'space')
             ]
@@ -171,6 +177,7 @@ final FigSpec romeSpec = FigSpec(
             Arg(
             name: 'style',
             suggestions: [
+
               FigSuggestion(name: 'single'),
               FigSuggestion(name: 'double')
             ]
@@ -184,6 +191,7 @@ final FigSpec romeSpec = FigSpec(
             Arg(
             name: 'property',
             suggestions: [
+
               FigSuggestion(name: 'as-needed'),
               FigSuggestion(name: 'preserve')
             ]
@@ -197,6 +205,7 @@ final FigSpec romeSpec = FigSpec(
             Arg(
             name: 'trailing',
             suggestions: [
+
               FigSuggestion(name: 'all'),
               FigSuggestion(name: 'es5'),
               FigSuggestion(name: 'none')
@@ -211,6 +220,7 @@ final FigSpec romeSpec = FigSpec(
             Arg(
             name: 'rule',
             suggestions: [
+
               FigSuggestion(name: 'always'),
               FigSuggestion(name: 'as-needed')
             ]
@@ -230,6 +240,7 @@ final FigSpec romeSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--write',
           description: 'Edit the files in place (beware!) instead of printing the diff to the console'
@@ -269,6 +280,7 @@ final FigSpec romeSpec = FigSpec(
             Arg(
             name: 'style',
             suggestions: [
+
               FigSuggestion(name: 'tabs'),
               FigSuggestion(name: 'space')
             ]
@@ -300,6 +312,7 @@ final FigSpec romeSpec = FigSpec(
             Arg(
             name: 'style',
             suggestions: [
+
               FigSuggestion(name: 'single'),
               FigSuggestion(name: 'double')
             ]
@@ -313,6 +326,7 @@ final FigSpec romeSpec = FigSpec(
             Arg(
             name: 'property',
             suggestions: [
+
               FigSuggestion(name: 'as-needed'),
               FigSuggestion(name: 'preserve')
             ]
@@ -326,6 +340,7 @@ final FigSpec romeSpec = FigSpec(
             Arg(
             name: 'trailing',
             suggestions: [
+
               FigSuggestion(name: 'all'),
               FigSuggestion(name: 'es5'),
               FigSuggestion(name: 'none')
@@ -340,6 +355,7 @@ final FigSpec romeSpec = FigSpec(
             Arg(
             name: 'rule',
             suggestions: [
+
               FigSuggestion(name: 'always'),
               FigSuggestion(name: 'as-needed')
             ]

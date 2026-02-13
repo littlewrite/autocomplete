@@ -9,10 +9,12 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
   name: 'applicationcostprofiler',
   description: 'This reference provides descriptions of the AWS Application Cost Profiler API. The AWS Application Cost Profiler API provides programmatic access to view, create, update, and delete application cost report definitions, as well as to import your usage data into the Application Cost Profiler service. For more information about using this service, see the AWS Application Cost Profiler User Guide',
   subcommands: [
+
     Subcommand(
       name: 'delete-report-definition',
       description: 'Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being generated',
       options: [
+
         Option(
           name: '--report-id',
           description: 'Required. ID of the report to delete',
@@ -38,6 +40,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
       name: 'get-report-definition',
       description: 'Retrieves the definition of a report already configured in AWS Application Cost Profiler',
       options: [
+
         Option(
           name: '--report-id',
           description: 'ID of the report to retrieve',
@@ -75,6 +79,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
       name: 'import-application-usage',
       description: 'Ingests application usage data from Amazon Simple Storage Service (Amazon S3). The data must already exist in the S3 location. As part of the action, AWS Application Cost Profiler copies the object from your S3 bucket to an S3 bucket owned by Amazon for processing asynchronously',
       options: [
+
         Option(
           name: '--source-s3-location',
           description: 'Amazon S3 location to import application usage data from',
@@ -112,6 +118,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
       name: 'list-report-definitions',
       description: 'Retrieves a list of all reports and their configurations for your AWS account. The maximum number of reports is one',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value from a previous call to access the next page of results',
@@ -185,6 +193,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -197,6 +206,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
       name: 'put-report-definition',
       description: 'Creates the report definition for a report in Application Cost Profiler',
       options: [
+
         Option(
           name: '--report-id',
           description: 'Required. ID of the report. You can choose any valid string matching the pattern for the ID',
@@ -258,6 +268,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
       name: 'update-report-definition',
       description: 'Updates existing report in AWS Application Cost Profiler',
       options: [
+
         Option(
           name: '--report-id',
           description: 'Required. ID of the report to update',
@@ -331,6 +343,7 @@ final FigSpec applicationcostprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -16,6 +16,7 @@ final FigSpec lsSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-@',
       description: 'Display extended attribute keys and sizes in long (-l) output'
@@ -186,6 +187,7 @@ final FigSpec lsSpec = FigSpec(
         Arg(
         name: 'when',
         suggestions: [
+
           FigSuggestion(
             name: ['always', 'yes', 'force'],
             description: 'Will make ls always output color'

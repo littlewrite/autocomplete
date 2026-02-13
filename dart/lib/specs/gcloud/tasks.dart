@@ -9,10 +9,12 @@ final FigSpec tasksSpec = FigSpec(
   name: 'tasks',
   description: 'Manage Cloud Tasks queues and tasks',
   subcommands: [
+
     Subcommand(
       name: 'create-app-engine-task',
       description: 'Create and add a task that targets App Engine',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -225,6 +227,7 @@ final FigSpec tasksSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -247,6 +250,7 @@ final FigSpec tasksSpec = FigSpec(
       name: 'create-http-task',
       description: 'Create and add a task that targets a HTTP endpoint',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -495,6 +499,7 @@ final FigSpec tasksSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -517,6 +522,7 @@ final FigSpec tasksSpec = FigSpec(
       name: 'delete',
       description: 'Delete a task from a queue',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -651,6 +657,7 @@ final FigSpec tasksSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -673,6 +680,7 @@ final FigSpec tasksSpec = FigSpec(
       name: 'describe',
       description: 'Show details about a task',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -792,6 +800,7 @@ final FigSpec tasksSpec = FigSpec(
             name: 'RESPONSE_VIEW',
             description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
             suggestions: [
+
               FigSuggestion(name: 'basic'),
               FigSuggestion(name: 'full'),
               FigSuggestion(name: 'view-unspecified')
@@ -822,6 +831,7 @@ final FigSpec tasksSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -844,6 +854,7 @@ final FigSpec tasksSpec = FigSpec(
       name: 'list',
       description: 'List tasks',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1027,6 +1038,7 @@ final FigSpec tasksSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1043,10 +1055,12 @@ final FigSpec tasksSpec = FigSpec(
       name: 'locations',
       description: 'Get information about Cloud Tasks locations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Show details about a location',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1170,6 +1184,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1192,6 +1207,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'list',
           description: 'Lists the locations where Cloud Tasks is available',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1363,6 +1379,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1377,6 +1394,7 @@ final FigSpec tasksSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1500,6 +1518,7 @@ final FigSpec tasksSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1516,10 +1535,12 @@ final FigSpec tasksSpec = FigSpec(
       name: 'queues',
       description: 'Manage Cloud Tasks queues',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding for a tasks queue',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1678,6 +1699,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1700,6 +1722,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'create',
           description: 'Create a Cloud Tasks queue',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1922,6 +1945,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1944,6 +1968,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'delete',
           description: 'Delete a queue',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2067,6 +2092,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2089,6 +2115,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'describe',
           description: 'Show details about a queue',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2212,6 +2239,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2234,6 +2262,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a queue',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2412,6 +2441,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2434,6 +2464,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'list',
           description: 'List all queues',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2605,6 +2636,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2621,6 +2653,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'pause',
           description: 'Pause a queue',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2744,6 +2777,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2766,6 +2800,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'purge',
           description: 'Purge a queue by deleting all of its tasks',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2889,6 +2924,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2911,6 +2947,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding of tasks queue',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3069,6 +3106,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3091,6 +3129,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'resume',
           description: 'Request to resume a paused or disabled queue',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3214,6 +3253,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3236,6 +3276,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a queue',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3370,6 +3411,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3382,6 +3424,7 @@ final FigSpec tasksSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'QUEUE',
               description: 'ID of the queue or fully qualified identifier for the queue'
@@ -3396,6 +3439,7 @@ final FigSpec tasksSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Tasks queue',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3654,6 +3698,7 @@ final FigSpec tasksSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3674,6 +3719,7 @@ final FigSpec tasksSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3797,6 +3843,7 @@ final FigSpec tasksSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3813,6 +3860,7 @@ final FigSpec tasksSpec = FigSpec(
       name: 'run',
       description: 'Force a task to run now',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3947,6 +3995,7 @@ final FigSpec tasksSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3967,6 +4016,7 @@ final FigSpec tasksSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4090,6 +4140,7 @@ final FigSpec tasksSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

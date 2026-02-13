@@ -12,6 +12,7 @@ final FigSpec xxdSpec = FigSpec(
     flagsArePosixNoncompliant: true
   ),
   options: [
+
     Option(
       name: ['-help', '-h'],
       description: 'Show help for xxd'
@@ -117,6 +118,7 @@ final FigSpec xxdSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'infile',
       template: 'filepaths'

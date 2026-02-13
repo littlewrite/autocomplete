@@ -9,6 +9,7 @@ final FigSpec tailcallSpec = FigSpec(
   name: 'tailcall',
   description: 'TailCall CLI for managing and optimizing GraphQL configurations',
   subcommands: [
+
     Subcommand(
       name: 'check',
       description: 'Validate a composition spec',
@@ -20,6 +21,7 @@ final FigSpec tailcallSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--n-plus-one-queries',
           description: 'Detect N+1 issues',
@@ -36,6 +38,7 @@ final FigSpec tailcallSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'gql'),
               FigSuggestion(name: 'graphql'),
               FigSuggestion(name: 'yml'),

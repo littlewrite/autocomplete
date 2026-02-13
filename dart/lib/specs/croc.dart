@@ -9,6 +9,7 @@ final FigSpec crocSpec = FigSpec(
   name: 'croc',
   description: 'Croc is a tool that allows any two computers to simply and securely transfer files and folders',
   subcommands: [
+
     Subcommand(
       name: 'send',
       description: 'Send file(s), or folder',
@@ -18,6 +19,7 @@ final FigSpec crocSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--code', '-c'],
           description: 'Codephrase used to connect to relay',
@@ -33,6 +35,7 @@ final FigSpec crocSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'xxhash'
               ),
@@ -73,6 +76,7 @@ final FigSpec crocSpec = FigSpec(
       name: 'relay',
       description: 'Start your own relay',
       options: [
+
         Option(
           name: '--host',
           description: 'Host of the relay',
@@ -105,6 +109,7 @@ final FigSpec crocSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for croc',
@@ -157,6 +162,7 @@ final FigSpec crocSpec = FigSpec(
         Arg(
         name: 'value',
         suggestions: [
+
           FigSuggestion(
             name: 'p521'
           ),

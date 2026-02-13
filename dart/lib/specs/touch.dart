@@ -16,6 +16,7 @@ final FigSpec touchSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-A',
       description: 'Adjust the access and modification time stamps for the file by the specified value',

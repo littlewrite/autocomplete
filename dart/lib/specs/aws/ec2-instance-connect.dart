@@ -9,10 +9,12 @@ final FigSpec ec2InstanceConnectSpec = FigSpec(
   name: 'ec2-instance-connect',
   description: 'This is the  Amazon EC2 Instance Connect API Reference. It provides descriptions, syntax, and usage examples for each of the actions for Amazon EC2 Instance Connect. Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH public keys to EC2, providing users a simple and secure way to connect to their instances. To view the Amazon EC2 Instance Connect content in the  Amazon EC2 User Guide, see Connect to your Linux instance using EC2 Instance Connect. For Amazon EC2 APIs, see the Amazon EC2 API Reference',
   subcommands: [
+
     Subcommand(
       name: 'send-ssh-public-key',
       description: 'Pushes an SSH public key to the specified EC2 instance for use by the specified user. The key remains for 60 seconds. For more information, see Connect to your Linux instance using EC2 Instance Connect in the Amazon EC2 User Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The ID of the EC2 instance',
@@ -65,6 +67,7 @@ final FigSpec ec2InstanceConnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec ec2InstanceConnectSpec = FigSpec(
       name: 'send-serial-console-ssh-public-key',
       description: 'Pushes an SSH public key to the specified EC2 instance. The key remains for 60 seconds, which gives you 60 seconds to establish a serial console connection to the instance using SSH. For more information, see EC2 Serial Console in the Amazon EC2 User Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The ID of the EC2 instance',
@@ -120,6 +124,7 @@ final FigSpec ec2InstanceConnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

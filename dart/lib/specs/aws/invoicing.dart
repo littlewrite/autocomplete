@@ -9,10 +9,12 @@ final FigSpec invoicingSpec = FigSpec(
   name: 'invoicing',
   description: 'Amazon Web Services Invoice Configuration  You can use Amazon Web Services Invoice Configuration APIs to programmatically create, update, delete, get, and list invoice units. You can also programmatically fetch the information of the invoice receiver. For example, business legal name, address, and invoicing contacts.  You can use Amazon Web Services Invoice Configuration to receive separate Amazon Web Services invoices based your organizational needs. By using Amazon Web Services Invoice Configuration, you can configure invoice units that are groups of Amazon Web Services accounts that represent your business entities, and receive separate invoices for each business entity. You can also assign a unique member or payer account as the invoice receiver for each invoice unit. As you create new accounts within your Organizations using Amazon Web Services Invoice Configuration APIs, you can automate the creation of new invoice units and subsequently automate the addition of new accounts to your invoice units. Service endpoint You can use the following endpoints for Amazon Web Services Invoice Configuration:    https://invoicing.us-east-1.api.aws',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-invoice-profile',
       description: 'This gets the invoice profile associated with a set of accounts. The accounts must be linked accounts under the requester management account organization',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'Retrieves the corresponding invoice profile data for these account IDs',
@@ -38,6 +40,7 @@ final FigSpec invoicingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec invoicingSpec = FigSpec(
       name: 'create-invoice-unit',
       description: 'This creates a new invoice unit with the provided definition',
       options: [
+
         Option(
           name: '--name',
           description: 'The unique name of the invoice unit that is shown on the generated invoice. This can\'t be changed once it is set. To change this name, you must delete the invoice unit recreate',
@@ -119,6 +123,7 @@ final FigSpec invoicingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -131,6 +136,7 @@ final FigSpec invoicingSpec = FigSpec(
       name: 'delete-invoice-unit',
       description: 'This deletes an invoice unit with the provided invoice unit ARN',
       options: [
+
         Option(
           name: '--invoice-unit-arn',
           description: 'The ARN to identify an invoice unit. This information can\'t be modified or deleted',
@@ -156,6 +162,7 @@ final FigSpec invoicingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +175,7 @@ final FigSpec invoicingSpec = FigSpec(
       name: 'get-invoice-unit',
       description: 'This retrieves the invoice unit definition',
       options: [
+
         Option(
           name: '--invoice-unit-arn',
           description: 'The ARN to identify an invoice unit. This information can\'t be modified or deleted',
@@ -202,6 +210,7 @@ final FigSpec invoicingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -214,6 +223,7 @@ final FigSpec invoicingSpec = FigSpec(
       name: 'list-invoice-units',
       description: 'This fetches a list of all invoice unit definitions for a given account, as of the provided AsOf date',
       options: [
+
         Option(
           name: '--filters',
           description: 'An optional input to the list API. If multiple filters are specified, the returned list will be a configuration that match all of the provided filters. Supported filter types are InvoiceReceivers, Names, and Accounts',
@@ -293,6 +303,7 @@ final FigSpec invoicingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -305,6 +316,7 @@ final FigSpec invoicingSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of tags to list',
@@ -330,6 +342,7 @@ final FigSpec invoicingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -342,6 +355,7 @@ final FigSpec invoicingSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a tag to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the tags',
@@ -376,6 +390,7 @@ final FigSpec invoicingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -388,6 +403,7 @@ final FigSpec invoicingSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) to untag',
@@ -422,6 +438,7 @@ final FigSpec invoicingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -434,6 +451,7 @@ final FigSpec invoicingSpec = FigSpec(
       name: 'update-invoice-unit',
       description: 'You can update the invoice unit configuration at any time, and Amazon Web Services will use the latest configuration at the end of the month',
       options: [
+
         Option(
           name: '--invoice-unit-arn',
           description: 'The ARN to identify an invoice unit. This information can\'t be modified or deleted',
@@ -485,6 +503,7 @@ final FigSpec invoicingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

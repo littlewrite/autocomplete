@@ -9,10 +9,12 @@ final FigSpec srcSpec = FigSpec(
   name: 'src',
   description: 'Interact with Sourcegraph from the command line',
   subcommands: [
+
     Subcommand(
       name: 'search',
       description: 'Run a code search',
       options: [
+
         Option(
           name: '-display',
           description: 'Limit the number of results that are displayed. Only supported together with stream flag. Statistics continue to report all results',
@@ -60,6 +62,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'api',
       description: 'Sourcegraph API Access',
       options: [
+
         Option(
           name: '-get-curl',
           description: 'Print the curl command for executing this query and exit (WARNING: includes printing your access token!)'
@@ -94,6 +97,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'login',
       description: '\'src login\' helps you authenticate \'src\' to access a Sourcegraph instance with your user credentials',
       options: [
+
         Option(
           name: '-dump-requests',
           description: 'Log GraphQL requests and responses to stdout'
@@ -120,6 +124,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'batch',
       description: '\'Batch gives you a declarative structure for finding and modifying code across all of your repositories',
       subcommands: [
+
         Subcommand(
           name: 'apply',
           description: 'Apply batch'
@@ -150,6 +155,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'config',
       description: '\'src config\' helps you configure \'src\'',
       subcommands: [
+
         Subcommand(
           name: 'edit',
           description: 'Edit config'
@@ -168,6 +174,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'extsvc',
       description: 'Edit or view external service configuration on the Sourcegraph instance',
       subcommands: [
+
         Subcommand(
           name: 'edit',
           description: 'Edit external service configuration'
@@ -182,6 +189,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'lsif',
       description: 'Upload an LSIF dumps',
       subcommands: [
+
         Subcommand(
           name: 'upload',
           description: 'Upload LSIF dump'
@@ -192,6 +200,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'orgs',
       description: 'Create, edit, view, or delete organizations and members',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create an organization'
@@ -218,6 +227,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'repos',
       description: 'View or delete repositories',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete repository'
@@ -236,6 +246,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'serve-git',
       description: 'By default \'src serve-git\' will recursively serve your current directory on the address \':3434\'',
       options: [
+
         Option(
           name: '-addr',
           description: 'Address on which to server (end with : for unused port)'
@@ -250,6 +261,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'users',
       description: 'Create, edit, view, tag, or delete users',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create user'
@@ -276,6 +288,7 @@ final FigSpec srcSpec = FigSpec(
       name: 'validate',
       description: 'EXPERIMENTAL: Instance validation provides a quick way to check that a Sourcegraph instance functions properly after a fresh install or an update',
       options: [
+
         Option(
           name: '-context',
           description: 'Comma-separated list of key=value pairs to add to the script execution context'
@@ -308,6 +321,7 @@ final FigSpec srcSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for src'

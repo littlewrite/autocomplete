@@ -9,6 +9,7 @@ final FigSpec klistSpec = FigSpec(
   name: 'klist',
   description: 'Reads and displays the current tickets in the credential cache (also known as the ticket file)',
   options: [
+
     Option(
       name: '-c',
       description: 'Credential cache to list',

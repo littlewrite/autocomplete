@@ -9,10 +9,12 @@ final FigSpec clouddirectorySpec = FigSpec(
   name: 'clouddirectory',
   description: 'Amazon Cloud Directory Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of cloud-scale web, mobile, and IoT applications. This guide describes the Cloud Directory operations that you can call programmatically and includes detailed information on data types and errors. For information about Cloud Directory features, see AWS Directory Service and the Amazon Cloud Directory Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'add-facet-to-object',
       description: 'Adds a new Facet to an object. An object can have more than one facet applied on it',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns',
@@ -65,6 +67,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'apply-schema',
       description: 'Copies the input published schema, at the specified version, into the Directory with the same name and version as that of the published schema',
       options: [
+
         Option(
           name: '--published-schema-arn',
           description: 'Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see arns',
@@ -111,6 +115,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'attach-object',
       description: 'Attaches an existing object to another object. An object can be accessed in two ways:   Using the path   Using ObjectIdentifier',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'Amazon Resource Name (ARN) that is associated with the Directory where both objects reside. For more information, see arns',
@@ -175,6 +181,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'attach-policy',
       description: 'Attaches a policy object to a regular object. An object can have a limited number of attached policies',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where both objects reside. For more information, see arns',
@@ -230,6 +238,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'attach-to-index',
       description: 'Attaches the specified object to the specified index',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) of the directory where the object and index exist',
@@ -285,6 +295,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -297,6 +308,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'attach-typed-link',
       description: 'Attaches a typed link to a specified source and target object. For more information, see Typed Links',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) of the directory where you want to attach the typed link',
@@ -358,6 +370,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -370,6 +383,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'batch-read',
       description: 'Performs all the read operations in a batch',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory. For more information, see arns',
@@ -413,6 +427,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -425,6 +440,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'batch-write',
       description: 'Performs all the write operations in a batch. Either all the operations succeed or none',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory. For more information, see arns',
@@ -459,6 +475,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -471,6 +488,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'create-directory',
       description: 'Creates a Directory by copying the published schema into the directory. A directory cannot be created without a schema. You can also quickly create a directory using a managed schema, called the QuickStartSchema. For more information, see Managed Schema in the Amazon Cloud Directory Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the Directory. Should be unique per account, per region',
@@ -505,6 +523,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -517,6 +536,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'create-facet',
       description: 'Creates a new Facet in a schema. Facet creation is allowed only in development or applied schemas',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The schema ARN in which the new Facet will be created. For more information, see arns',
@@ -578,6 +598,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -590,6 +611,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'create-index',
       description: 'Creates an index object. See Indexing and search for more information',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory where the index should be created',
@@ -650,6 +672,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -662,6 +685,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'create-object',
       description: 'Creates an object in a Directory. Additionally attaches the object to a parent, if a parent reference and LinkName is specified. An object is simply a collection of Facet attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory in which the object will be created. For more information, see arns',
@@ -723,6 +747,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -735,6 +760,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'create-schema',
       description: 'Creates a new schema in a development state. A schema can exist in three phases:    Development: This is a mutable phase of the schema. All new schemas are in the development phase. Once the schema is finalized, it can be published.    Published: Published schemas are immutable and have a version associated with them.    Applied: Applied schemas are mutable in a way that allows you to add new schema facets. You can also add new, nonrequired attributes to existing schema facets. You can apply only published schemas to directories',
       options: [
+
         Option(
           name: '--name',
           description: 'The name that is associated with the schema. This is unique to each account and in each region',
@@ -760,6 +786,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -772,6 +799,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'create-typed-link-facet',
       description: 'Creates a TypedLinkFacet. For more information, see Typed Links',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns',
@@ -806,6 +834,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -818,6 +847,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'delete-directory',
       description: 'Deletes a directory. Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise extreme caution when deleting directories',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory to delete',
@@ -843,6 +873,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -855,6 +886,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'delete-facet',
       description: 'Deletes a given Facet. All attributes and Rules that are associated with the facet will be deleted. Only development schema facets are allowed deletion',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Facet. For more information, see arns',
@@ -889,6 +921,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -901,6 +934,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'delete-object',
       description: 'Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted. The maximum number of attributes that can be deleted during an object deletion is 30. For more information, see Amazon Cloud Directory Limits',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns',
@@ -935,6 +969,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -947,6 +982,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'delete-schema',
       description: 'Deletes a given schema. Schemas in a development and published state can only be deleted',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) of the development schema. For more information, see arns',
@@ -972,6 +1008,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -984,6 +1021,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'delete-typed-link-facet',
       description: 'Deletes a TypedLinkFacet. For more information, see Typed Links',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns',
@@ -1018,6 +1056,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1030,6 +1069,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'detach-from-index',
       description: 'Detaches the specified object from the specified index',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) of the directory the index and object exist in',
@@ -1073,6 +1113,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1085,6 +1126,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'detach-object',
       description: 'Detaches a given object from the parent object. The object that is to be detached from the parent is specified by the link name',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where objects reside. For more information, see arns',
@@ -1128,6 +1170,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1140,6 +1183,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'detach-policy',
       description: 'Detaches a policy from an object',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where both objects reside. For more information, see arns',
@@ -1183,6 +1227,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1195,6 +1240,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'detach-typed-link',
       description: 'Detaches a typed link from a specified source and target object. For more information, see Typed Links',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) of the directory where you want to detach the typed link',
@@ -1229,6 +1275,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1241,6 +1288,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'disable-directory',
       description: 'Disables the specified directory. Disabled directories cannot be read or written to. Only enabled directories can be disabled. Disabled directories may be reenabled',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory to disable',
@@ -1266,6 +1314,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1278,6 +1327,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'enable-directory',
       description: 'Enables the specified directory. Only disabled directories can be enabled. Once enabled, the directory can then be read and written to',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory to enable',
@@ -1303,6 +1353,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1315,6 +1366,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'get-applied-schema-version',
       description: 'Returns current applied schema version ARN, including the minor version in use',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The ARN of the applied schema',
@@ -1340,6 +1392,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1352,6 +1405,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'get-directory',
       description: 'Retrieves metadata about a directory',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory',
@@ -1377,6 +1431,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1389,6 +1444,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'get-facet',
       description: 'Gets details of the Facet, such as facet name, attributes, Rules, or ObjectType. You can call this on all kinds of schema facets -- published, development, or applied',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Facet. For more information, see arns',
@@ -1423,6 +1479,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1435,6 +1492,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'get-link-attributes',
       description: 'Retrieves attributes that are associated with a typed link',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see arns or Typed Links',
@@ -1487,6 +1545,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1499,6 +1558,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'get-object-attributes',
       description: 'Retrieves attributes within a facet that are associated with an object',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where the object resides',
@@ -1560,6 +1620,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1572,6 +1633,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'get-object-information',
       description: 'Retrieves metadata about an object',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory being retrieved',
@@ -1615,6 +1677,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1627,6 +1690,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'get-schema-as-json',
       description: 'Retrieves a JSON representation of the schema. See JSON Schema Format for more information',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The ARN of the schema to retrieve',
@@ -1652,6 +1716,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1664,6 +1729,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'get-typed-link-facet-information',
       description: 'Returns the identity attribute order for a specific TypedLinkFacet. For more information, see Typed Links',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns',
@@ -1698,6 +1764,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1710,6 +1777,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-applied-schema-arns',
       description: 'Lists schema major versions applied to a directory. If SchemaArn is provided, lists the minor version',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory you are listing',
@@ -1789,6 +1857,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1801,6 +1870,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-attached-indices',
       description: 'Lists indices attached to the specified object',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory',
@@ -1889,6 +1959,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1901,6 +1972,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-development-schema-arns',
       description: 'Retrieves each Amazon Resource Name (ARN) of schemas in the development state',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token',
@@ -1962,6 +2034,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1974,6 +2047,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-directories',
       description: 'Lists directories created within an account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token',
@@ -2044,6 +2118,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2056,6 +2131,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-facet-attributes',
       description: 'Retrieves attributes attached to the facet',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The ARN of the schema where the facet resides',
@@ -2135,6 +2211,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2147,6 +2224,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-facet-names',
       description: 'Retrieves the names of facets that exist in a schema',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) to retrieve facet names from',
@@ -2217,6 +2295,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2229,6 +2308,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-incoming-typed-links',
       description: 'Returns a paginated list of all the incoming TypedLinkSpecifier information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see Typed Links',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) of the directory where you want to list the typed links',
@@ -2335,6 +2415,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2347,6 +2428,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-index',
       description: 'Lists objects attached to the specified index',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory that the index exists in',
@@ -2444,6 +2526,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2456,6 +2539,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-managed-schema-arns',
       description: 'Lists the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the minor version revisions in that family are listed instead',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed',
@@ -2526,6 +2610,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2538,6 +2623,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-object-attributes',
       description: 'Lists all attributes that are associated with an object',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns',
@@ -2635,6 +2721,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2647,6 +2734,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-object-children',
       description: 'Returns a paginated list of child objects that are associated with a given object',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns',
@@ -2708,6 +2796,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2720,6 +2809,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-object-parent-paths',
       description: 'Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see Directory Structure. Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory up to the requested object. The API returns the number of paths based on user-defined MaxResults, in case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among multiple API calls unless the objects are deleted or moved. Paths not leading to the directory root are ignored from the target object',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory to which the parent path applies',
@@ -2799,6 +2889,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2811,6 +2902,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-object-parents',
       description: 'Lists parent objects that are associated with a given object in pagination fashion',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns',
@@ -2880,6 +2972,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2892,6 +2985,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-object-policies',
       description: 'Returns policies attached to an object in pagination fashion',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where objects reside. For more information, see arns',
@@ -2980,6 +3074,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2992,6 +3087,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-outgoing-typed-links',
       description: 'Returns a paginated list of all the outgoing TypedLinkSpecifier information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see Typed Links',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) of the directory where you want to list the typed links',
@@ -3098,6 +3194,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3110,6 +3207,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-policy-attachments',
       description: 'Returns all of the ObjectIdentifiers to which a given policy is attached',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where objects reside. For more information, see arns',
@@ -3198,6 +3296,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3210,6 +3309,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-published-schema-arns',
       description: 'Lists the major version families of each published schema. If a major version ARN is provided as SchemaArn, the minor version revisions in that family are listed instead',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The response for ListPublishedSchemaArns when this parameter is used will list all minor version ARNs for a major version',
@@ -3280,6 +3380,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3292,6 +3393,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns tags for a resource. Tagging is currently supported only for directories with a limit of 50 tags per directory. All 50 tags are returned for a given directory with this API call',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories',
@@ -3362,6 +3464,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3374,6 +3477,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-typed-link-facet-attributes',
       description: 'Returns a paginated list of all attribute definitions for a particular TypedLinkFacet. For more information, see Typed Links',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns',
@@ -3453,6 +3557,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3465,6 +3570,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'list-typed-link-facet-names',
       description: 'Returns a paginated list of TypedLink facet names for a particular schema. For more information, see Typed Links',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns',
@@ -3535,6 +3641,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3547,6 +3654,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'lookup-policy',
       description: 'Lists all policies from the root of the Directory to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don\'t have the policies attached, it returns the ObjectIdentifier for such objects. If policies are present, it returns ObjectIdentifier, policyId, and policyType. Paths that don\'t lead to the root from the target object are ignored. For more information, see Policies',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory. For more information, see arns',
@@ -3626,6 +3734,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3638,6 +3747,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'publish-schema',
       description: 'Publishes a development schema with a major version and a recommended minor version',
       options: [
+
         Option(
           name: '--development-schema-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see arns',
@@ -3690,6 +3800,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3702,6 +3813,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'put-schema-from-json',
       description: 'Allows a schema to be updated using JSON upload. Only available for development schemas. See JSON Schema Format for more information',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The ARN of the schema to update',
@@ -3736,6 +3848,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3748,6 +3861,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'remove-facet-from-object',
       description: 'Removes the specified facet from the specified object',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The ARN of the directory in which the object resides',
@@ -3791,6 +3905,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3803,6 +3918,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'tag-resource',
       description: 'An API operation for adding tags to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories',
@@ -3837,6 +3953,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3849,6 +3966,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'untag-resource',
       description: 'An API operation for removing tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories',
@@ -3883,6 +4001,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3895,6 +4014,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'update-facet',
       description: 'Does the following:   Adds new Attributes, Rules, or ObjectTypes.   Updates existing Attributes, Rules, or ObjectTypes.   Deletes existing Attributes, Rules, or ObjectTypes',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Facet. For more information, see arns',
@@ -3947,6 +4067,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3959,6 +4080,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'update-link-attributes',
       description: 'Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s identity, as defined by its IdentityAttributeOrder',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see arns or Typed Links',
@@ -4002,6 +4124,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4014,6 +4137,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'update-object-attributes',
       description: 'Updates a given object\'s attributes',
       options: [
+
         Option(
           name: '--directory-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns',
@@ -4057,6 +4181,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4069,6 +4194,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'update-schema',
       description: 'Updates the schema name with a new name. Only development schema names can be updated',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) of the development schema. For more information, see arns',
@@ -4103,6 +4229,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4115,6 +4242,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'update-typed-link-facet',
       description: 'Updates a TypedLinkFacet. For more information, see Typed Links',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns',
@@ -4167,6 +4295,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4179,6 +4308,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'upgrade-applied-schema',
       description: 'Upgrades a single directory in-place using the PublishedSchemaArn with schema updates found in MinorVersion. Backwards-compatible minor version upgrades are instantaneously available for readers on all objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a given directory per call. To upgrade multiple directories from one schema, you would need to call this API on each directory',
       options: [
+
         Option(
           name: '--published-schema-arn',
           description: 'The revision of the published schema to upgrade the directory to',
@@ -4221,6 +4351,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4233,6 +4364,7 @@ final FigSpec clouddirectorySpec = FigSpec(
       name: 'upgrade-published-schema',
       description: 'Upgrades a published schema under a new minor version revision using the current contents of DevelopmentSchemaArn',
       options: [
+
         Option(
           name: '--development-schema-arn',
           description: 'The ARN of the development schema with the changes used for the upgrade',
@@ -4284,6 +4416,7 @@ final FigSpec clouddirectorySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -8,10 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec mainSpec = FigSpec(
   name: 'main',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Init shell-config setup with this CLI version. Execute this command only when you want to force-apply the latest shell-config setup',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -23,6 +25,7 @@ final FigSpec mainSpec = FigSpec(
       name: 'install',
       description: 'Install MacOS setup with Multi-Selection',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -34,6 +37,7 @@ final FigSpec mainSpec = FigSpec(
       name: 'shell',
       description: 'Setup a shell configuration with a robust set of tools and architecture',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -45,6 +49,7 @@ final FigSpec mainSpec = FigSpec(
       name: 'update',
       description: 'Update the CLI to the latest version',
       options: [
+
         Option(
           name: ['-t', '--target'],
           description: 'Select update version',
@@ -70,6 +75,7 @@ final FigSpec mainSpec = FigSpec(
       name: 'assets',
       description: 'Configure your shell assets, such as `gitprofile` and `npmrc`',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -81,10 +87,12 @@ final FigSpec mainSpec = FigSpec(
       name: 'external',
       description: 'Install and manage your external shell',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'Show list of all exists externals shells',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -96,6 +104,7 @@ final FigSpec mainSpec = FigSpec(
           name: 'install',
           description: 'Install external shell',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -103,6 +112,7 @@ final FigSpec mainSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'file_path',
               description: 'File to set as external shell'
@@ -117,6 +127,7 @@ final FigSpec mainSpec = FigSpec(
           name: 'delete',
           description: 'Delete external shell',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -138,6 +149,7 @@ final FigSpec mainSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -148,6 +160,7 @@ final FigSpec mainSpec = FigSpec(
     Subcommand(
       name: 'completion',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -158,6 +171,7 @@ final FigSpec mainSpec = FigSpec(
     Subcommand(
       name: 'completion-script',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -179,6 +193,7 @@ final FigSpec mainSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-V', '--version'],
       description: 'Output the version number'

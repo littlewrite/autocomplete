@@ -15,6 +15,7 @@ final FigSpec headSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-c', '--bytes'],
       description: 'Print the first [numBytes] bytes of each file',

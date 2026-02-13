@@ -12,6 +12,7 @@ final FigSpec foldSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   options: [
+
     Option(
       name: '-b'
     ),
@@ -24,6 +25,7 @@ final FigSpec foldSpec = FigSpec(
         Arg(
         name: 'width',
         suggestions: [
+
           FigSuggestion(name: '80'),
           FigSuggestion(name: '90'),
           FigSuggestion(name: '100'),

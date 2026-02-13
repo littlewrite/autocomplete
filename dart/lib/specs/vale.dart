@@ -9,6 +9,7 @@ final FigSpec valeSpec = FigSpec(
   name: 'vale',
   description: 'A syntax-aware linter for prose built with speed and extensibility in mind',
   subcommands: [
+
     Subcommand(
       name: 'ls-config',
       description: 'Print the current configuration to stdout'
@@ -25,6 +26,7 @@ final FigSpec valeSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for vale'
@@ -52,6 +54,7 @@ final FigSpec valeSpec = FigSpec(
         Arg(
         name: 'ext',
         suggestions: [
+
           FigSuggestion(name: '.md'),
           FigSuggestion(name: '.rst'),
           FigSuggestion(name: '.adoc'),
@@ -76,6 +79,7 @@ final FigSpec valeSpec = FigSpec(
         Arg(
         name: 'level',
         suggestions: [
+
           FigSuggestion(name: 'suggestion'),
           FigSuggestion(name: 'warning'),
           FigSuggestion(name: 'error')
@@ -90,6 +94,7 @@ final FigSpec valeSpec = FigSpec(
         Arg(
         name: 'style',
         suggestions: [
+
           FigSuggestion(name: 'line'),
           FigSuggestion(name: 'JSON')
         ]

@@ -9,10 +9,12 @@ final FigSpec pricingSpec = FigSpec(
   name: 'pricing',
   description: 'The Amazon Web Services Price List API is a centralized and convenient way to programmatically query Amazon Web Services for services, products, and pricing information. The Amazon Web Services Price List uses standardized product attributes such as Location, Storage Class, and Operating System, and provides prices at the SKU level. You can use the Amazon Web Services Price List to do the following:   Build cost control and scenario planning tools   Reconcile billing data   Forecast future spend for budgeting purposes   Provide cost benefit analysis that compare your internal workloads with Amazon Web Services   Use GetServices without a service code to retrieve the service codes for all Amazon Web Services services, then GetServices with a service code to retrieve the attribute names for that service. After you have the service code and attribute names, you can use GetAttributeValues to see what values are available for an attribute. With the service code and an attribute name and value, you can use GetProducts to find specific products that you\'re interested in, such as an AmazonEC2 instance, with a Provisioned IOPS volumeType. For more information, see Using the Amazon Web Services Price List API in the Billing User Guide',
   subcommands: [
+
     Subcommand(
       name: 'describe-services',
       description: 'Returns the metadata for one service or a list of the metadata for all services. Use this without a service code to get the service codes for all services. Use it with a service code, such as AmazonEC2, to get information specific to that service, such as the attribute names available for that service. For example, some of the attribute names available for EC2 are volumeType, maxIopsVolume, operation, locationType, and instanceCapacity10xlarge',
       options: [
+
         Option(
           name: '--service-code',
           description: 'The code for the service whose information you want to retrieve, such as AmazonEC2. You can use the ServiceCode to filter the results in a GetProducts call. To retrieve a list of all services, leave this blank',
@@ -92,6 +94,7 @@ final FigSpec pricingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -104,6 +107,7 @@ final FigSpec pricingSpec = FigSpec(
       name: 'get-attribute-values',
       description: 'Returns a list of attribute values. Attributes are similar to the details in a Price List API offer file. For a list of available attributes, see Offer File Definitions in the Billing and Cost Management User Guide',
       options: [
+
         Option(
           name: '--service-code',
           description: 'The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use AmazonEC2',
@@ -183,6 +187,7 @@ final FigSpec pricingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -195,6 +200,7 @@ final FigSpec pricingSpec = FigSpec(
       name: 'get-price-list-file-url',
       description: 'This feature is in preview release and is subject to change. Your use of Amazon Web Services Price List API is subject to the Beta Service Participation terms of the Amazon Web Services Service Terms (Section 1.10).   This returns the URL that you can retrieve your Price List file from. This URL is based on the PriceListArn and FileFormat that you retrieve from the ListPriceLists response',
       options: [
+
         Option(
           name: '--price-list-arn',
           description: 'The unique identifier that maps to where your Price List files are located. PriceListArn can be obtained from the ListPriceLists response',
@@ -229,6 +235,7 @@ final FigSpec pricingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -241,6 +248,7 @@ final FigSpec pricingSpec = FigSpec(
       name: 'get-products',
       description: 'Returns a list of all products that match the filter criteria',
       options: [
+
         Option(
           name: '--service-code',
           description: 'The code for the service whose products you want to retrieve',
@@ -329,6 +337,7 @@ final FigSpec pricingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -341,6 +350,7 @@ final FigSpec pricingSpec = FigSpec(
       name: 'list-price-lists',
       description: 'This feature is in preview release and is subject to change. Your use of Amazon Web Services Price List API is subject to the Beta Service Participation terms of the Amazon Web Services Service Terms (Section 1.10).   This returns a list of Price List references that the requester if authorized to view, given a ServiceCode, CurrencyCode, and an EffectiveDate. Use without a RegionCode filter to list Price List references from all available Amazon Web Services Regions. Use with a RegionCode filter to get the Price List reference that\'s specific to a specific Amazon Web Services Region. You can use the PriceListArn from the response to get your preferred Price List files through the GetPriceListFileUrl API',
       options: [
+
         Option(
           name: '--service-code',
           description: 'The service code or the Savings Plan service code for the attributes that you want to retrieve. For example, to get the list of applicable Amazon EC2 price lists, use AmazonEC2. For a full list of service codes containing On-Demand and Reserved Instance (RI) pricing, use the DescribeServices API. To retrieve the Reserved Instance and Compute Savings Plan price lists, use ComputeSavingsPlans.  To retrieve Machine Learning Savings Plans price lists, use MachineLearningSavingsPlans',
@@ -438,6 +448,7 @@ final FigSpec pricingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -15,6 +15,7 @@ final FigSpec cotSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       description: 'Show help message and exit',
       name: ['-h', '--help']

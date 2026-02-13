@@ -8,9 +8,11 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec barnard59Spec = FigSpec(
   name: 'barnard59',
   subcommands: [
+
     Subcommand(
       name: 'run',
       options: [
+
         Option(
           name: '--output',
           description: 'Output file',
@@ -67,10 +69,12 @@ final FigSpec barnard59Spec = FigSpec(
     Subcommand(
       name: 'cube',
       subcommands: [
+
         Subcommand(
           name: 'fetch-metadata',
           description: 'Retrieves cube and its constraint shape from SPARQL endpoint',
           options: [
+
             Option(
               name: '--endpoint',
               description: 'SPARQL endpoint',
@@ -117,6 +121,7 @@ final FigSpec barnard59Spec = FigSpec(
           name: 'check-metadata',
           description: 'Validate input cube and its constraint against profile shapes',
           options: [
+
             Option(
               name: '--profile',
               description: 'Cube constraint profile URL',
@@ -164,6 +169,7 @@ final FigSpec barnard59Spec = FigSpec(
           name: 'fetch-observations',
           description: 'Retrieves cube observations from SPARQL endpoint',
           options: [
+
             Option(
               name: '--endpoint',
               description: 'SPARQL endpoint',
@@ -210,6 +216,7 @@ final FigSpec barnard59Spec = FigSpec(
           name: 'check-observations',
           description: 'Validate input observations against cube constraint',
           options: [
+
             Option(
               name: '--constraint',
               description: 'Cube constraint file',
@@ -277,6 +284,7 @@ final FigSpec barnard59Spec = FigSpec(
           name: 'fetch-constraint',
           description: 'Retrieves cube constraint from SPARQL endpoint',
           options: [
+
             Option(
               name: '--endpoint',
               description: 'SPARQL endpoint',
@@ -323,6 +331,7 @@ final FigSpec barnard59Spec = FigSpec(
           name: 'fetch-cube',
           description: 'Retrieves cube with observations from SPARQL endpoint',
           options: [
+
             Option(
               name: '--endpoint',
               description: 'SPARQL endpoint',
@@ -379,6 +388,7 @@ final FigSpec barnard59Spec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-V', '--version'],
           description: 'Output the version number'
@@ -393,10 +403,12 @@ final FigSpec barnard59Spec = FigSpec(
     Subcommand(
       name: 'graph-store',
       subcommands: [
+
         Subcommand(
           name: 'put',
           description: 'Upload RDF documents using SPARQL Graph Store Protocol',
           options: [
+
             Option(
               name: '--source',
               description: 'Glob of RDF documents to upload',
@@ -476,6 +488,7 @@ final FigSpec barnard59Spec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-V', '--version'],
           description: 'Output the version number'
@@ -490,10 +503,12 @@ final FigSpec barnard59Spec = FigSpec(
     Subcommand(
       name: 'shacl',
       subcommands: [
+
         Subcommand(
           name: 'validate',
           description: 'Validates the RDF in standard input against a SHACL document',
           options: [
+
             Option(
               name: '--shapes',
               description: 'URL or path of the shapes graph',
@@ -540,6 +555,7 @@ final FigSpec barnard59Spec = FigSpec(
           name: 'report-summary',
           description: 'Human-readable summary of SHACL validation report',
           options: [
+
             Option(
               name: '--variable',
               description: 'Variable key/value pairs',
@@ -578,6 +594,7 @@ final FigSpec barnard59Spec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-V', '--version'],
           description: 'Output the version number'
@@ -603,6 +620,7 @@ final FigSpec barnard59Spec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--variable',
       description: 'Variable key/value pairs',
@@ -635,6 +653,7 @@ final FigSpec barnard59Spec = FigSpec(
         Arg(
         name: 'level',
         suggestions: [
+
           FigSuggestion(name: 'NONE'),
           FigSuggestion(name: 'ERROR'),
           FigSuggestion(name: 'WARN'),
@@ -654,6 +673,7 @@ final FigSpec barnard59Spec = FigSpec(
         Arg(
         name: 'exporter',
         suggestions: [
+
           FigSuggestion(name: 'otlp'),
           FigSuggestion(name: 'none')
         ],
@@ -678,6 +698,7 @@ final FigSpec barnard59Spec = FigSpec(
         Arg(
         name: 'exporter',
         suggestions: [
+
           FigSuggestion(name: 'otlp'),
           FigSuggestion(name: 'none')
         ],

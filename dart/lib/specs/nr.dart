@@ -9,6 +9,7 @@ final FigSpec nrSpec = FigSpec(
   name: 'nr',
   description: 'Use the right package manager - run',
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Output usage information'
@@ -22,6 +23,7 @@ final FigSpec nrSpec = FigSpec(
   )
   ],
   additionalSuggestions: [
+
     FigSuggestion(
       name: '-',
       insertValue: '-\n',

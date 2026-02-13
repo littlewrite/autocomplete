@@ -16,6 +16,7 @@ final FigSpec maigretSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-a', '--all-sites'],
       description: 'Use all sites for scan'
@@ -69,6 +70,7 @@ final FigSpec maigretSpec = FigSpec(
         name: 'Type',
         description: 'Type of identifier',
         suggestions: [
+
           FigSuggestion(name: 'username'),
           FigSuggestion(name: 'yandex_public_id'),
           FigSuggestion(name: 'gaia_id'),
@@ -272,6 +274,7 @@ final FigSpec maigretSpec = FigSpec(
         Arg(
         name: 'Type',
         suggestions: [
+
           FigSuggestion(name: 'simple'),
           FigSuggestion(name: 'ndjson')
         ]
@@ -285,6 +288,7 @@ final FigSpec maigretSpec = FigSpec(
         Arg(
         name: 'Type',
         suggestions: [
+
           FigSuggestion(name: 'default'),
           FigSuggestion(name: 'data')
         ]

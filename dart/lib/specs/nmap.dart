@@ -8,8 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec nmapSpec = FigSpec(
   name: 'nmap',
   description: 'Network exploration tool and security / port scanner',
-  parserDirectives: ParserDirectives(),
+  parserDirectives: ParserDirectives(
+    flagsArePosixNoncompliant: true,
+    optionsMustPrecedeArguments: false
+  ),
   options: [
+
     Option(
       name: '-iL',
       description: 'Input from list of hosts/networks'

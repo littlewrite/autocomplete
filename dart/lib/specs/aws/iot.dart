@@ -9,10 +9,12 @@ final FigSpec iotSpec = FigSpec(
   name: 'iot',
   description: 'IoT IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices. The service endpoints that expose this API are listed in Amazon Web Services IoT Core Endpoints and Quotas. You must use the endpoint for the region that has the resources you want to access. The service name used by Amazon Web Services Signature Version 4 to sign the request is: execute-api. For more information about how IoT works, see the Developer Guide. For information about how to use the credentials provider for IoT, see Authorizing Direct Calls to Amazon Web Services Services',
   subcommands: [
+
     Subcommand(
       name: 'accept-certificate-transfer',
       description: 'Accepts a pending certificate transfer. The default state of the certificate is INACTIVE. To check for pending certificate transfers, call ListCertificates to enumerate your certificates. Requires permission to access the AcceptCertificateTransfer action',
       options: [
+
         Option(
           name: '--certificate-id',
           description: 'The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)',
@@ -46,6 +48,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -58,6 +61,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'add-thing-to-billing-group',
       description: 'Adds a thing to a billing group. Requires permission to access the AddThingToBillingGroup action',
       options: [
+
         Option(
           name: '--billing-group-name',
           description: 'The name of the billing group.  This call is asynchronous. It might take several seconds for the detachment to propagate',
@@ -110,6 +114,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -122,6 +127,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'add-thing-to-thing-group',
       description: 'Adds a thing to a thing group. Requires permission to access the AddThingToThingGroup action',
       options: [
+
         Option(
           name: '--thing-group-name',
           description: 'The name of the group to which you are adding a thing',
@@ -182,6 +188,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -194,6 +201,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'associate-sbom-with-package-version',
       description: 'Associates the selected software bill of materials (SBOM) with a specific software package version. Requires permission to access the AssociateSbomWithPackageVersion action',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the new software package',
@@ -246,6 +254,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -258,6 +267,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'associate-targets-with-job',
       description: 'Associates a group with a continuous job. The following criteria must be met:    The job must have been created with the targetSelection field set to "CONTINUOUS".   The job status must currently be "IN_PROGRESS".   The total number of targets associated with a job must not exceed 100.   Requires permission to access the AssociateTargetsWithJob action',
       options: [
+
         Option(
           name: '--targets',
           description: 'A list of thing group ARNs that define the targets of the job',
@@ -310,6 +320,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -322,6 +333,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'attach-policy',
       description: 'Attaches the specified policy to the specified principal (certificate or other credential). Requires permission to access the AttachPolicy action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The name of the policy to attach',
@@ -356,6 +368,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -368,6 +381,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'attach-principal-policy',
       description: 'Attaches the specified policy to the specified principal (certificate or other credential).  Note: This action is deprecated and works as expected for backward compatibility, but we won\'t add enhancements. Use AttachPolicy instead. Requires permission to access the AttachPrincipalPolicy action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The policy name',
@@ -402,6 +416,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -414,6 +429,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'attach-security-profile',
       description: 'Associates a Device Defender security profile with a thing group or this account. Each thing group or account can have up to five security profiles associated with it. Requires permission to access the AttachSecurityProfile action',
       options: [
+
         Option(
           name: '--security-profile-name',
           description: 'The security profile that is attached',
@@ -448,6 +464,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -460,6 +477,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'attach-thing-principal',
       description: 'Attaches the specified principal to the specified thing. A principal can be X.509 certificates, Amazon Cognito identities or federated identities. Requires permission to access the AttachThingPrincipal action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing',
@@ -503,6 +521,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -515,6 +534,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'cancel-audit-mitigation-actions-task',
       description: 'Cancels a mitigation action task that is in progress. If the task is not in progress, an InvalidRequestException occurs. Requires permission to access the CancelAuditMitigationActionsTask action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The unique identifier for the task that you want to cancel',
@@ -540,6 +560,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -552,6 +573,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'cancel-audit-task',
       description: 'Cancels an audit that is in progress. The audit can be either scheduled or on demand. If the audit isn\'t in progress, an "InvalidRequestException" occurs. Requires permission to access the CancelAuditTask action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS"',
@@ -577,6 +599,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -589,6 +612,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'cancel-certificate-transfer',
       description: 'Cancels a pending transfer for the specified certificate.  Note Only the transfer source account can use this operation to cancel a transfer. (Transfer destinations can use RejectCertificateTransfer instead.) After transfer, IoT returns the certificate to the source account in the INACTIVE state. After the destination account has accepted the transfer, the transfer cannot be cancelled. After a certificate transfer is cancelled, the status of the certificate changes from PENDING_TRANSFER to INACTIVE. Requires permission to access the CancelCertificateTransfer action',
       options: [
+
         Option(
           name: '--certificate-id',
           description: 'The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)',
@@ -614,6 +638,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -626,6 +651,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'cancel-detect-mitigation-actions-task',
       description: 'Cancels a Device Defender ML Detect mitigation action.  Requires permission to access the CancelDetectMitigationActionsTask action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The unique identifier of the task',
@@ -651,6 +677,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -663,6 +690,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'cancel-job',
       description: 'Cancels a job. Requires permission to access the CancelJob action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The unique identifier you assigned to this job when it was created',
@@ -714,6 +742,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -726,6 +755,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'cancel-job-execution',
       description: 'Cancels the execution of a job for a given thing. Requires permission to access the CancelJobExecution action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID of the job to be canceled',
@@ -786,6 +816,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -798,6 +829,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'clear-default-authorizer',
       description: 'Clears the default authorizer. Requires permission to access the ClearDefaultAuthorizer action',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -814,6 +846,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -826,6 +859,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'confirm-topic-rule-destination',
       description: 'Confirms a topic rule destination. When you create a rule requiring a destination, IoT sends a confirmation message to the endpoint or base address you specify. The message includes a token which you pass back when calling ConfirmTopicRuleDestination to confirm that you own or have access to the endpoint. Requires permission to access the ConfirmTopicRuleDestination action',
       options: [
+
         Option(
           name: '--confirmation-token',
           description: 'The token used to confirm ownership or access to the topic rule confirmation URL',
@@ -851,6 +885,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -863,6 +898,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-audit-suppression',
       description: 'Creates a Device Defender audit suppression.  Requires permission to access the CreateAuditSuppression action',
       options: [
+
         Option(
           name: '--check-name',
           description: 'An audit check name. Checks must be enabled for your account. (Use DescribeAccountAuditConfiguration to see the list of all checks, including those that are enabled or use UpdateAccountAuditConfiguration to select which checks are enabled.)',
@@ -932,6 +968,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -944,6 +981,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-authorizer',
       description: 'Creates an authorizer. Requires permission to access the CreateAuthorizer action',
       options: [
+
         Option(
           name: '--authorizer-name',
           description: 'The authorizer name',
@@ -1030,6 +1068,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1042,6 +1081,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-billing-group',
       description: 'Creates a billing group. If this call is made multiple times using the same billing group name and configuration, the call will succeed. If this call is made with the same billing group name but different configuration a ResourceAlreadyExistsException is thrown. Requires permission to access the CreateBillingGroup action',
       options: [
+
         Option(
           name: '--billing-group-name',
           description: 'The name you wish to give to the billing group',
@@ -1085,6 +1125,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1097,6 +1138,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-certificate-from-csr',
       description: 'Creates an X.509 certificate using the specified certificate signing request.  Requires permission to access the CreateCertificateFromCsr action.   The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256, NIST P-384, or NIST P-521 curves. For supported certificates, consult  Certificate signing algorithms supported by IoT.    Reusing the same certificate signing request (CSR) results in a distinct certificate.  You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that directory, and then specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs. In the following commands, we assume that a set of CSRs are located inside of the directory my-csr-directory: On Linux and OS X, the command is:   \$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot create-certificate-from-csr Amazon Web Services CLI command to create a certificate for the corresponding CSR.  You can also run the aws iot create-certificate-from-csr part of the command in parallel to speed up the certificate creation process:  \$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}   On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is:  > ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/\$_}   On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is:  > forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path"',
       options: [
+
         Option(
           name: '--certificate-signing-request',
           description: 'The certificate signing request (CSR)',
@@ -1139,6 +1181,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1151,6 +1194,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-certificate-provider',
       description: 'Creates an Amazon Web Services IoT Core certificate provider. You can use Amazon Web Services IoT Core certificate provider to customize how to sign a certificate signing request (CSR) in IoT fleet provisioning. For more information, see Customizing certificate signing using Amazon Web Services IoT Core certificate provider from Amazon Web Services IoT Core Developer Guide. Requires permission to access the CreateCertificateProvider action.  After you create a certificate provider, the behavior of  CreateCertificateFromCsr API for fleet provisioning will change and all API calls to CreateCertificateFromCsr will invoke the certificate provider to create the certificates. It can take up to a few minutes for this behavior to change after a certificate provider is created',
       options: [
+
         Option(
           name: '--certificate-provider-name',
           description: 'The name of the certificate provider',
@@ -1212,6 +1256,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1224,6 +1269,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-command',
       description: 'Creates a command. A command contains reusable configurations that can be applied before they are sent to the devices',
       options: [
+
         Option(
           name: '--command-id',
           description: 'A unique identifier for the command. We recommend using UUID. Alpha-numeric characters, hyphens, and underscores are valid for use here',
@@ -1312,6 +1358,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1324,6 +1371,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-custom-metric',
       description: 'Use this API to define a Custom Metric published by your devices to Device Defender.  Requires permission to access the CreateCustomMetric action',
       options: [
+
         Option(
           name: '--metric-name',
           description: 'The name of the custom metric. This will be used in the metric report submitted from the device/thing. The name can\'t begin with aws:. You can\'t change the name after you define it',
@@ -1385,6 +1433,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1397,6 +1446,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-dimension',
       description: 'Create a dimension that you can use to limit the scope of a metric used in a security profile for IoT Device Defender. For example, using a TOPIC_FILTER dimension, you can narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the dimension. Requires permission to access the CreateDimension action',
       options: [
+
         Option(
           name: '--name',
           description: 'A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does',
@@ -1458,6 +1508,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1470,6 +1521,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-domain-configuration',
       description: 'Creates a domain configuration. Requires permission to access the CreateDomainConfiguration action',
       options: [
+
         Option(
           name: '--domain-configuration-name',
           description: 'The name of the domain configuration. This value must be unique to a region',
@@ -1594,6 +1646,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1606,6 +1659,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-dynamic-thing-group',
       description: 'Creates a dynamic thing group. Requires permission to access the CreateDynamicThingGroup action',
       options: [
+
         Option(
           name: '--thing-group-name',
           description: 'The dynamic thing group name to create',
@@ -1676,6 +1730,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1688,6 +1743,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-fleet-metric',
       description: 'Creates a fleet metric. Requires permission to access the CreateFleetMetric action',
       options: [
+
         Option(
           name: '--metric-name',
           description: 'The name of the fleet metric to create',
@@ -1794,6 +1850,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1806,6 +1863,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-job',
       description: 'Creates a job. Requires permission to access the CreateJob action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'A job identifier which must be unique for your account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here',
@@ -1975,6 +2033,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1987,6 +2046,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-job-template',
       description: 'Creates a job template. Requires permission to access the CreateJobTemplate action',
       options: [
+
         Option(
           name: '--job-template-id',
           description: 'A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here',
@@ -2120,6 +2180,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2132,6 +2193,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-keys-and-certificate',
       description: 'Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key. You can also call CreateKeysAndCertificate over MQTT from a device, for more information, see Provisioning MQTT API.  Note This is the only time IoT issues the private key for this certificate, so it is important to keep it in a secure location. Requires permission to access the CreateKeysAndCertificate action',
       options: [
+
         Option(
           name: '--set-as-active',
           description: 'Specifies whether the certificate is active'
@@ -2183,6 +2245,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2195,6 +2258,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-mitigation-action',
       description: 'Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Only certain types of mitigation actions can be applied to specific check names. For more information, see Mitigation actions. Each mitigation action can apply only one type of change. Requires permission to access the CreateMitigationAction action',
       options: [
+
         Option(
           name: '--action-name',
           description: 'A friendly name for the action. Choose a friendly name that accurately describes the action (for example, EnableLoggingAction)',
@@ -2247,6 +2311,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2259,6 +2324,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-ota-update',
       description: 'Creates an IoT OTA update on a target group of things or groups. Requires permission to access the CreateOTAUpdate action',
       options: [
+
         Option(
           name: '--ota-update-id',
           description: 'The ID of the OTA update to be created',
@@ -2392,6 +2458,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2404,6 +2471,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-package',
       description: 'Creates an IoT software package that can be deployed to your fleet. Requires permission to access the CreatePackage and GetIndexingConfiguration actions',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the new software package',
@@ -2456,6 +2524,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2468,6 +2537,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-package-version',
       description: 'Creates a new version for an existing IoT software package. Requires permission to access the CreatePackageVersion and GetIndexingConfiguration actions',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the associated software package',
@@ -2556,6 +2626,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2568,6 +2639,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-policy',
       description: 'Creates an IoT policy. The created policy is the default version for the policy. This operation creates a policy version with a version identifier of 1 and sets 1 as the policy\'s default version. Requires permission to access the CreatePolicy action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The policy name',
@@ -2611,6 +2683,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2623,6 +2696,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-policy-version',
       description: 'Creates a new version of the specified IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must use DeletePolicyVersion to delete an existing version before you create a new one. Optionally, you can set the new version as the policy\'s default version. The default version is the operative version (that is, the version that is in effect for the certificates to which the policy is attached). Requires permission to access the CreatePolicyVersion action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The policy name',
@@ -2665,6 +2739,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2677,6 +2752,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-provisioning-claim',
       description: 'Creates a provisioning claim. Requires permission to access the CreateProvisioningClaim action',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the provisioning template to use',
@@ -2702,6 +2778,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2714,6 +2791,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-provisioning-template',
       description: 'Creates a provisioning template. Requires permission to access the CreateProvisioningTemplate action',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the provisioning template',
@@ -2801,6 +2879,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2813,6 +2892,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-provisioning-template-version',
       description: 'Creates a new version of a provisioning template. Requires permission to access the CreateProvisioningTemplateVersion action',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the provisioning template',
@@ -2855,6 +2935,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2867,6 +2948,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-role-alias',
       description: 'Creates a role alias. Requires permission to access the CreateRoleAlias action.  The value of  credentialDurationSeconds  must be less than or equal to the maximum session duration of the IAM role that the role alias references. For more information, see  Modifying a role maximum session duration (Amazon Web Services API) from the Amazon Web Services Identity and Access Management User Guide',
       options: [
+
         Option(
           name: '--role-alias',
           description: 'The role alias that points to a role ARN. This allows you to change the role without having to update the device',
@@ -2919,6 +3001,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2931,6 +3014,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-scheduled-audit',
       description: 'Creates a scheduled audit that is run at a specified time interval. Requires permission to access the CreateScheduledAudit action',
       options: [
+
         Option(
           name: '--frequency',
           description: 'How often the scheduled audit takes place, either DAILY, WEEKLY, BIWEEKLY or MONTHLY. The start time of each audit is determined by the system',
@@ -3001,6 +3085,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3013,6 +3098,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-security-profile',
       description: 'Creates a Device Defender security profile. Requires permission to access the CreateSecurityProfile action',
       options: [
+
         Option(
           name: '--security-profile-name',
           description: 'The name you are giving to the security profile',
@@ -3101,6 +3187,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3113,6 +3200,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-stream',
       description: 'Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with a stream. Requires permission to access the CreateStream action',
       options: [
+
         Option(
           name: '--stream-id',
           description: 'The stream ID',
@@ -3174,6 +3262,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3186,6 +3275,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-thing',
       description: 'Creates a thing record in the registry. If this call is made multiple times using the same thing name and configuration, the call will succeed. If this call is made with the same thing name but different configuration a ResourceAlreadyExistsException is thrown.  This is a control plane operation. See Authorization for information about authorizing control plane actions.  Requires permission to access the CreateThing action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing to create. You can\'t change a thing\'s name after you create it. To change a thing\'s name, you must create a new thing, give it the new name, and then delete the old thing',
@@ -3238,6 +3328,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3250,6 +3341,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-thing-group',
       description: 'Create a thing group.  This is a control plane operation. See Authorization for information about authorizing control plane actions. If the ThingGroup that you create has the exact same attributes as an existing ThingGroup, you will get a 200 success response.   Requires permission to access the CreateThingGroup action',
       options: [
+
         Option(
           name: '--thing-group-name',
           description: 'The thing group name to create',
@@ -3302,6 +3394,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3314,6 +3407,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-thing-type',
       description: 'Creates a new thing type. If this call is made multiple times using the same thing type name and configuration, the call will succeed. If this call is made with the same thing type name but different configuration a ResourceAlreadyExistsException is thrown.  Requires permission to access the CreateThingType action',
       options: [
+
         Option(
           name: '--thing-type-name',
           description: 'The name of the thing type',
@@ -3357,6 +3451,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3369,6 +3464,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-topic-rule',
       description: 'Creates a rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule. Requires permission to access the CreateTopicRule action',
       options: [
+
         Option(
           name: '--rule-name',
           description: 'The name of the rule',
@@ -3412,6 +3508,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3424,6 +3521,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'create-topic-rule-destination',
       description: 'Creates a topic rule destination. The destination must be confirmed prior to use. Requires permission to access the CreateTopicRuleDestination action',
       options: [
+
         Option(
           name: '--destination-configuration',
           description: 'The topic rule destination configuration',
@@ -3449,6 +3547,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3461,6 +3560,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-account-audit-configuration',
       description: 'Restores the default settings for Device Defender audits for this account. Any configuration data you entered is deleted and all audit checks are reset to disabled.  Requires permission to access the DeleteAccountAuditConfiguration action',
       options: [
+
         Option(
           name: '--delete-scheduled-audits',
           description: 'If true, all scheduled audits are deleted'
@@ -3485,6 +3585,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3497,6 +3598,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-audit-suppression',
       description: 'Deletes a Device Defender audit suppression.  Requires permission to access the DeleteAuditSuppression action',
       options: [
+
         Option(
           name: '--check-name',
           description: 'An audit check name. Checks must be enabled for your account. (Use DescribeAccountAuditConfiguration to see the list of all checks, including those that are enabled or use UpdateAccountAuditConfiguration to select which checks are enabled.)',
@@ -3531,6 +3633,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3543,6 +3646,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-authorizer',
       description: 'Deletes an authorizer. Requires permission to access the DeleteAuthorizer action',
       options: [
+
         Option(
           name: '--authorizer-name',
           description: 'The name of the authorizer to delete',
@@ -3568,6 +3672,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3580,6 +3685,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-billing-group',
       description: 'Deletes the billing group. Requires permission to access the DeleteBillingGroup action',
       options: [
+
         Option(
           name: '--billing-group-name',
           description: 'The name of the billing group',
@@ -3614,6 +3720,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3626,6 +3733,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-ca-certificate',
       description: 'Deletes a registered CA certificate. Requires permission to access the DeleteCACertificate action',
       options: [
+
         Option(
           name: '--certificate-id',
           description: 'The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)',
@@ -3651,6 +3759,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3663,6 +3772,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-certificate',
       description: 'Deletes the specified certificate. A certificate cannot be deleted if it has a policy or IoT thing attached to it or if its status is set to ACTIVE. To delete a certificate, first use the DetachPolicy action to detach all policies. Next, use the UpdateCertificate action to set the certificate to the INACTIVE status. Requires permission to access the DeleteCertificate action',
       options: [
+
         Option(
           name: '--certificate-id',
           description: 'The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)',
@@ -3696,6 +3806,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3708,6 +3819,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-certificate-provider',
       description: 'Deletes a certificate provider. Requires permission to access the DeleteCertificateProvider action.  If you delete the certificate provider resource, the behavior of CreateCertificateFromCsr will resume, and IoT will create certificates signed by IoT from a certificate signing request (CSR)',
       options: [
+
         Option(
           name: '--certificate-provider-name',
           description: 'The name of the certificate provider',
@@ -3733,6 +3845,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3745,6 +3858,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-command',
       description: 'Delete a command resource',
       options: [
+
         Option(
           name: '--command-id',
           description: 'The unique identifier of the command to be deleted',
@@ -3770,6 +3884,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3782,6 +3897,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-command-execution',
       description: 'Delete a command execution.  Only command executions that enter a terminal state can be deleted from your account',
       options: [
+
         Option(
           name: '--execution-id',
           description: 'The unique identifier of the command execution that you want to delete from your account',
@@ -3816,6 +3932,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3828,6 +3945,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-custom-metric',
       description: 'Deletes a Device Defender detect custom metric.  Requires permission to access the DeleteCustomMetric action.  Before you can delete a custom metric, you must first remove the custom metric from all security profiles it\'s a part of. The security profile associated with the custom metric can be found using the ListSecurityProfiles API with metricName set to your custom metric name',
       options: [
+
         Option(
           name: '--metric-name',
           description: 'The name of the custom metric',
@@ -3853,6 +3971,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3865,6 +3984,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-dimension',
       description: 'Removes the specified dimension from your Amazon Web Services accounts. Requires permission to access the DeleteDimension action',
       options: [
+
         Option(
           name: '--name',
           description: 'The unique identifier for the dimension that you want to delete',
@@ -3890,6 +4010,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3902,6 +4023,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-domain-configuration',
       description: 'Deletes the specified domain configuration. Requires permission to access the DeleteDomainConfiguration action',
       options: [
+
         Option(
           name: '--domain-configuration-name',
           description: 'The name of the domain configuration to be deleted',
@@ -3927,6 +4049,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3939,6 +4062,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-dynamic-thing-group',
       description: 'Deletes a dynamic thing group. Requires permission to access the DeleteDynamicThingGroup action',
       options: [
+
         Option(
           name: '--thing-group-name',
           description: 'The name of the dynamic thing group to delete',
@@ -3973,6 +4097,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3985,6 +4110,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-fleet-metric',
       description: 'Deletes the specified fleet metric. Returns successfully with no error if the deletion is successful or you specify a fleet metric that doesn\'t exist. Requires permission to access the DeleteFleetMetric action',
       options: [
+
         Option(
           name: '--metric-name',
           description: 'The name of the fleet metric to delete',
@@ -4019,6 +4145,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4031,6 +4158,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-job',
       description: 'Deletes a job and its related job executions. Deleting a job may take time, depending on the number of job executions created for the job and various other factors. While the job is being deleted, the status of the job will be shown as "DELETION_IN_PROGRESS". Attempting to delete or cancel a job whose status is already "DELETION_IN_PROGRESS" will result in an error. Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException will occur. Requires permission to access the DeleteJob action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID of the job to be deleted. After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job',
@@ -4073,6 +4201,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4085,6 +4214,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-job-execution',
       description: 'Deletes a job execution. Requires permission to access the DeleteJobExecution action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID of the job whose execution on a particular device will be deleted',
@@ -4145,6 +4275,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4157,6 +4288,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-job-template',
       description: 'Deletes the specified job template',
       options: [
+
         Option(
           name: '--job-template-id',
           description: 'The unique identifier of the job template to delete',
@@ -4182,6 +4314,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4194,6 +4327,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-mitigation-action',
       description: 'Deletes a defined mitigation action from your Amazon Web Services accounts. Requires permission to access the DeleteMitigationAction action',
       options: [
+
         Option(
           name: '--action-name',
           description: 'The name of the mitigation action that you want to delete',
@@ -4219,6 +4353,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4231,6 +4366,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-ota-update',
       description: 'Delete an OTA update. Requires permission to access the DeleteOTAUpdate action',
       options: [
+
         Option(
           name: '--ota-update-id',
           description: 'The ID of the OTA update to delete',
@@ -4272,6 +4408,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4284,6 +4421,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-package',
       description: 'Deletes a specific version from a software package.  Note: All package versions must be deleted before deleting the software package. Requires permission to access the DeletePackageVersion action',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the target software package',
@@ -4318,6 +4456,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4330,6 +4469,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-package-version',
       description: 'Deletes a specific version from a software package.  Note: If a package version is designated as default, you must remove the designation from the software package using the UpdatePackage action',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the associated software package',
@@ -4373,6 +4513,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4385,6 +4526,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-policy',
       description: 'Deletes the specified policy. A policy cannot be deleted if it has non-default versions or it is attached to any certificate. To delete a policy, use the DeletePolicyVersion action to delete all non-default versions of the policy; use the DetachPolicy action to detach the policy from any certificate; and then use the DeletePolicy action to delete the policy. When a policy is deleted using DeletePolicy, its default version is deleted with it.  Because of the distributed nature of Amazon Web Services, it can take up to five minutes after a policy is detached before it\'s ready to be deleted.  Requires permission to access the DeletePolicy action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The name of the policy to delete',
@@ -4410,6 +4552,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4422,6 +4565,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-policy-version',
       description: 'Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this action. To delete the default version of a policy, use DeletePolicy. To find out which version of a policy is marked as the default version, use ListPolicyVersions. Requires permission to access the DeletePolicyVersion action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The name of the policy',
@@ -4456,6 +4600,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4468,6 +4613,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-provisioning-template',
       description: 'Deletes a provisioning template. Requires permission to access the DeleteProvisioningTemplate action',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the fleet provision template to delete',
@@ -4493,6 +4639,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4505,6 +4652,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-provisioning-template-version',
       description: 'Deletes a provisioning template version. Requires permission to access the DeleteProvisioningTemplateVersion action',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the provisioning template version to delete',
@@ -4539,6 +4687,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4551,6 +4700,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-registration-code',
       description: 'Deletes a CA certificate registration code. Requires permission to access the DeleteRegistrationCode action',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -4567,6 +4717,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4579,6 +4730,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-role-alias',
       description: 'Deletes a role alias Requires permission to access the DeleteRoleAlias action',
       options: [
+
         Option(
           name: '--role-alias',
           description: 'The role alias to delete',
@@ -4604,6 +4756,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4616,6 +4769,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-scheduled-audit',
       description: 'Deletes a scheduled audit. Requires permission to access the DeleteScheduledAudit action',
       options: [
+
         Option(
           name: '--scheduled-audit-name',
           description: 'The name of the scheduled audit you want to delete',
@@ -4641,6 +4795,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4653,6 +4808,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-security-profile',
       description: 'Deletes a Device Defender security profile. Requires permission to access the DeleteSecurityProfile action',
       options: [
+
         Option(
           name: '--security-profile-name',
           description: 'The name of the security profile to be deleted',
@@ -4687,6 +4843,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4699,6 +4856,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-stream',
       description: 'Deletes a stream. Requires permission to access the DeleteStream action',
       options: [
+
         Option(
           name: '--stream-id',
           description: 'The stream ID',
@@ -4724,6 +4882,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4736,6 +4895,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-thing',
       description: 'Deletes the specified thing. Returns successfully with no error if the deletion is successful or you specify a thing that doesn\'t exist. Requires permission to access the DeleteThing action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing to delete',
@@ -4770,6 +4930,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4782,6 +4943,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-thing-group',
       description: 'Deletes a thing group. Requires permission to access the DeleteThingGroup action',
       options: [
+
         Option(
           name: '--thing-group-name',
           description: 'The name of the thing group to delete',
@@ -4816,6 +4978,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4828,6 +4991,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-thing-type',
       description: 'Deletes the specified thing type. You cannot delete a thing type if it has things associated with it. To delete a thing type, first mark it as deprecated by calling DeprecateThingType, then remove any associated things by calling UpdateThing to change the thing type on any associated thing, and finally use DeleteThingType to delete the thing type. Requires permission to access the DeleteThingType action',
       options: [
+
         Option(
           name: '--thing-type-name',
           description: 'The name of the thing type',
@@ -4853,6 +5017,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4865,6 +5030,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-topic-rule',
       description: 'Deletes the rule. Requires permission to access the DeleteTopicRule action',
       options: [
+
         Option(
           name: '--rule-name',
           description: 'The name of the rule',
@@ -4890,6 +5056,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4902,6 +5069,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-topic-rule-destination',
       description: 'Deletes a topic rule destination. Requires permission to access the DeleteTopicRuleDestination action',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the topic rule destination to delete',
@@ -4927,6 +5095,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4939,6 +5108,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'delete-v2-logging-level',
       description: 'Deletes a logging level. Requires permission to access the DeleteV2LoggingLevel action',
       options: [
+
         Option(
           name: '--target-type',
           description: 'The type of resource for which you are configuring logging. Must be THING_Group',
@@ -4973,6 +5143,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4985,6 +5156,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'deprecate-thing-type',
       description: 'Deprecates a thing type. You can not associate new things with deprecated thing type. Requires permission to access the DeprecateThingType action',
       options: [
+
         Option(
           name: '--thing-type-name',
           description: 'The name of the thing type to deprecate',
@@ -5018,6 +5190,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5030,6 +5203,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-account-audit-configuration',
       description: 'Gets information about the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled. Requires permission to access the DescribeAccountAuditConfiguration action',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -5046,6 +5220,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5058,6 +5233,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-audit-finding',
       description: 'Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of the issue, and the start time when the audit that returned the finding. Requires permission to access the DescribeAuditFinding action',
       options: [
+
         Option(
           name: '--finding-id',
           description: 'A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding',
@@ -5083,6 +5259,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5095,6 +5272,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-audit-mitigation-actions-task',
       description: 'Gets information about an audit mitigation task that is used to apply mitigation actions to a set of audit findings. Properties include the actions being applied, the audit checks to which they\'re being applied, the task status, and aggregated task statistics',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The unique identifier for the audit mitigation task',
@@ -5120,6 +5298,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5132,6 +5311,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-audit-suppression',
       description: 'Gets information about a Device Defender audit suppression',
       options: [
+
         Option(
           name: '--check-name',
           description: 'An audit check name. Checks must be enabled for your account. (Use DescribeAccountAuditConfiguration to see the list of all checks, including those that are enabled or use UpdateAccountAuditConfiguration to select which checks are enabled.)',
@@ -5166,6 +5346,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5178,6 +5359,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-audit-task',
       description: 'Gets information about a Device Defender audit. Requires permission to access the DescribeAuditTask action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The ID of the audit whose information you want to get',
@@ -5203,6 +5385,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5215,6 +5398,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-authorizer',
       description: 'Describes an authorizer. Requires permission to access the DescribeAuthorizer action',
       options: [
+
         Option(
           name: '--authorizer-name',
           description: 'The name of the authorizer to describe',
@@ -5240,6 +5424,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5252,6 +5437,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-billing-group',
       description: 'Returns information about a billing group. Requires permission to access the DescribeBillingGroup action',
       options: [
+
         Option(
           name: '--billing-group-name',
           description: 'The name of the billing group',
@@ -5277,6 +5463,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5289,6 +5476,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-ca-certificate',
       description: 'Describes a registered CA certificate. Requires permission to access the DescribeCACertificate action',
       options: [
+
         Option(
           name: '--certificate-id',
           description: 'The CA certificate identifier',
@@ -5314,6 +5502,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5326,6 +5515,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-certificate',
       description: 'Gets information about the specified certificate. Requires permission to access the DescribeCertificate action',
       options: [
+
         Option(
           name: '--certificate-id',
           description: 'The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)',
@@ -5351,6 +5541,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5363,6 +5554,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-certificate-provider',
       description: 'Describes a certificate provider. Requires permission to access the DescribeCertificateProvider action',
       options: [
+
         Option(
           name: '--certificate-provider-name',
           description: 'The name of the certificate provider',
@@ -5388,6 +5580,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5400,6 +5593,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-custom-metric',
       description: 'Gets information about a Device Defender detect custom metric.  Requires permission to access the DescribeCustomMetric action',
       options: [
+
         Option(
           name: '--metric-name',
           description: 'The name of the custom metric',
@@ -5425,6 +5619,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5437,6 +5632,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-default-authorizer',
       description: 'Describes the default authorizer. Requires permission to access the DescribeDefaultAuthorizer action',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -5453,6 +5649,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5465,6 +5662,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-detect-mitigation-actions-task',
       description: 'Gets information about a Device Defender ML Detect mitigation action.  Requires permission to access the DescribeDetectMitigationActionsTask action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The unique identifier of the task',
@@ -5490,6 +5688,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5502,6 +5701,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-dimension',
       description: 'Provides details about a dimension that is defined in your Amazon Web Services accounts. Requires permission to access the DescribeDimension action',
       options: [
+
         Option(
           name: '--name',
           description: 'The unique identifier for the dimension',
@@ -5527,6 +5727,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5539,6 +5740,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-domain-configuration',
       description: 'Gets summary information about a domain configuration. Requires permission to access the DescribeDomainConfiguration action',
       options: [
+
         Option(
           name: '--domain-configuration-name',
           description: 'The name of the domain configuration',
@@ -5564,6 +5766,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5576,6 +5779,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-endpoint',
       description: 'Returns or creates a unique endpoint specific to the Amazon Web Services account making the call.  The first time DescribeEndpoint is called, an endpoint is created. All subsequent calls to DescribeEndpoint return the same endpoint.  Requires permission to access the DescribeEndpoint action',
       options: [
+
         Option(
           name: '--endpoint-type',
           description: 'The endpoint type. Valid endpoint types include:    iot:Data - Returns a VeriSign signed data endpoint.      iot:Data-ATS - Returns an ATS signed data endpoint.      iot:CredentialProvider - Returns an IoT credentials provider API endpoint.      iot:Jobs - Returns an IoT device management Jobs API endpoint.   We strongly recommend that customers use the newer iot:Data-ATS endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities. ATS Signed Certificates are more secure and are trusted by most popular browsers',
@@ -5601,6 +5805,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5613,6 +5818,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-event-configurations',
       description: 'Describes event configurations. Requires permission to access the DescribeEventConfigurations action',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -5629,6 +5835,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5641,6 +5848,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-fleet-metric',
       description: 'Gets information about the specified fleet metric. Requires permission to access the DescribeFleetMetric action',
       options: [
+
         Option(
           name: '--metric-name',
           description: 'The name of the fleet metric to describe',
@@ -5666,6 +5874,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5678,6 +5887,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-index',
       description: 'Describes a search index. Requires permission to access the DescribeIndex action',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The index name',
@@ -5703,6 +5913,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5715,6 +5926,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-job',
       description: 'Describes a job. Requires permission to access the DescribeJob action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The unique identifier you assigned to this job when it was created',
@@ -5748,6 +5960,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5760,6 +5973,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-job-execution',
       description: 'Describes a job execution. Requires permission to access the DescribeJobExecution action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The unique identifier you assigned to this job when it was created',
@@ -5803,6 +6017,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5815,6 +6030,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-job-template',
       description: 'Returns information about a job template',
       options: [
+
         Option(
           name: '--job-template-id',
           description: 'The unique identifier of the job template',
@@ -5840,6 +6056,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5852,6 +6069,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-managed-job-template',
       description: 'View details of a managed job template',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The unique name of a managed job template, which is required',
@@ -5886,6 +6104,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5898,6 +6117,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-mitigation-action',
       description: 'Gets information about a mitigation action. Requires permission to access the DescribeMitigationAction action',
       options: [
+
         Option(
           name: '--action-name',
           description: 'The friendly name that uniquely identifies the mitigation action',
@@ -5923,6 +6143,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5935,6 +6156,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-provisioning-template',
       description: 'Returns information about a provisioning template. Requires permission to access the DescribeProvisioningTemplate action',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the provisioning template',
@@ -5960,6 +6182,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5972,6 +6195,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-provisioning-template-version',
       description: 'Returns information about a provisioning template version. Requires permission to access the DescribeProvisioningTemplateVersion action',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The template name',
@@ -6006,6 +6230,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6018,6 +6243,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-role-alias',
       description: 'Describes a role alias. Requires permission to access the DescribeRoleAlias action',
       options: [
+
         Option(
           name: '--role-alias',
           description: 'The role alias to describe',
@@ -6043,6 +6269,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6055,6 +6282,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-scheduled-audit',
       description: 'Gets information about a scheduled audit. Requires permission to access the DescribeScheduledAudit action',
       options: [
+
         Option(
           name: '--scheduled-audit-name',
           description: 'The name of the scheduled audit whose information you want to get',
@@ -6080,6 +6308,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6092,6 +6321,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-security-profile',
       description: 'Gets information about a Device Defender security profile. Requires permission to access the DescribeSecurityProfile action',
       options: [
+
         Option(
           name: '--security-profile-name',
           description: 'The name of the security profile whose information you want to get',
@@ -6117,6 +6347,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6129,6 +6360,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-stream',
       description: 'Gets information about a stream. Requires permission to access the DescribeStream action',
       options: [
+
         Option(
           name: '--stream-id',
           description: 'The stream ID',
@@ -6154,6 +6386,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6166,6 +6399,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-thing',
       description: 'Gets information about the specified thing. Requires permission to access the DescribeThing action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing',
@@ -6191,6 +6425,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6203,6 +6438,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-thing-group',
       description: 'Describe a thing group. Requires permission to access the DescribeThingGroup action',
       options: [
+
         Option(
           name: '--thing-group-name',
           description: 'The name of the thing group',
@@ -6228,6 +6464,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6240,6 +6477,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-thing-registration-task',
       description: 'Describes a bulk thing provisioning task. Requires permission to access the DescribeThingRegistrationTask action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The task ID',
@@ -6265,6 +6503,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6277,6 +6516,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'describe-thing-type',
       description: 'Gets information about the specified thing type. Requires permission to access the DescribeThingType action',
       options: [
+
         Option(
           name: '--thing-type-name',
           description: 'The name of the thing type',
@@ -6302,6 +6542,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6314,6 +6555,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'detach-policy',
       description: 'Detaches a policy from the specified target.  Because of the distributed nature of Amazon Web Services, it can take up to five minutes after a policy is detached before it\'s ready to be deleted.  Requires permission to access the DetachPolicy action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The policy to detach',
@@ -6348,6 +6590,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6360,6 +6603,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'detach-principal-policy',
       description: 'Removes the specified policy from the specified certificate.  Note: This action is deprecated and works as expected for backward compatibility, but we won\'t add enhancements. Use DetachPolicy instead. Requires permission to access the DetachPrincipalPolicy action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The name of the policy to detach',
@@ -6394,6 +6638,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6406,6 +6651,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'detach-security-profile',
       description: 'Disassociates a Device Defender security profile from a thing group or from this account. Requires permission to access the DetachSecurityProfile action',
       options: [
+
         Option(
           name: '--security-profile-name',
           description: 'The security profile that is detached',
@@ -6440,6 +6686,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6452,6 +6699,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'detach-thing-principal',
       description: 'Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.  This call is asynchronous. It might take several seconds for the detachment to propagate.  Requires permission to access the DetachThingPrincipal action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing',
@@ -6486,6 +6734,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6498,6 +6747,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'disable-topic-rule',
       description: 'Disables the rule. Requires permission to access the DisableTopicRule action',
       options: [
+
         Option(
           name: '--rule-name',
           description: 'The name of the rule to disable',
@@ -6523,6 +6773,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6535,6 +6786,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'disassociate-sbom-from-package-version',
       description: 'Disassociates the selected software bill of materials (SBOM) from a specific software package version. Requires permission to access the DisassociateSbomWithPackageVersion action',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the new software package',
@@ -6578,6 +6830,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6590,6 +6843,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'enable-topic-rule',
       description: 'Enables the rule. Requires permission to access the EnableTopicRule action',
       options: [
+
         Option(
           name: '--rule-name',
           description: 'The name of the topic rule to enable',
@@ -6615,6 +6869,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6627,6 +6882,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-behavior-model-training-summaries',
       description: 'Returns a Device Defender\'s ML Detect Security Profile training model\'s status.  Requires permission to access the GetBehaviorModelTrainingSummaries action',
       options: [
+
         Option(
           name: '--security-profile-name',
           description: 'The name of the security profile',
@@ -6697,6 +6953,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6709,6 +6966,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-buckets-aggregation',
       description: 'Aggregates on indexed data with search queries pertaining to particular fields.  Requires permission to access the GetBucketsAggregation action',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the index to search',
@@ -6770,6 +7028,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6782,6 +7041,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-cardinality',
       description: 'Returns the approximate count of unique values that match the query. Requires permission to access the GetCardinality action',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the index to search',
@@ -6834,6 +7094,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6846,6 +7107,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-command',
       description: 'Gets information about the specified command',
       options: [
+
         Option(
           name: '--command-id',
           description: 'The unique identifier of the command for which you want to retrieve information',
@@ -6871,6 +7133,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6883,6 +7146,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-command-execution',
       description: 'Gets information about the specific command execution on a single device',
       options: [
+
         Option(
           name: '--execution-id',
           description: 'The unique identifier for the command execution. This information is returned as a response of the StartCommandExecution API request',
@@ -6925,6 +7189,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6937,6 +7202,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-effective-policies',
       description: 'Gets a list of the policies that have an effect on the authorization behavior of the specified device when it connects to the IoT device gateway. Requires permission to access the GetEffectivePolicies action',
       options: [
+
         Option(
           name: '--principal',
           description: 'The principal. Valid principals are CertificateArn (arn:aws:iot:region:accountId:cert/certificateId), thingGroupArn (arn:aws:iot:region:accountId:thinggroup/groupName) and CognitoId (region:id)',
@@ -6980,6 +7246,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6992,6 +7259,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-indexing-configuration',
       description: 'Gets the indexing configuration. Requires permission to access the GetIndexingConfiguration action',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -7008,6 +7276,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7020,6 +7289,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-job-document',
       description: 'Gets a job document. Requires permission to access the GetJobDocument action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The unique identifier you assigned to this job when it was created',
@@ -7053,6 +7323,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7065,6 +7336,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-logging-options',
       description: 'Gets the logging options. NOTE: use of this command is not recommended. Use GetV2LoggingOptions instead. Requires permission to access the GetLoggingOptions action',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -7081,6 +7353,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7093,6 +7366,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-ota-update',
       description: 'Gets an OTA update. Requires permission to access the GetOTAUpdate action',
       options: [
+
         Option(
           name: '--ota-update-id',
           description: 'The OTA update ID',
@@ -7118,6 +7392,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7130,6 +7405,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-package',
       description: 'Gets information about the specified software package. Requires permission to access the GetPackage action',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the target software package',
@@ -7155,6 +7431,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7167,6 +7444,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-package-configuration',
       description: 'Gets information about the specified software package\'s configuration. Requires permission to access the GetPackageConfiguration action',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -7183,6 +7461,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7195,6 +7474,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-package-version',
       description: 'Gets information about the specified package version.  Requires permission to access the GetPackageVersion action',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the associated package',
@@ -7229,6 +7509,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7241,6 +7522,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-percentiles',
       description: 'Groups the aggregated values that match the query into percentile groupings. The default percentile groupings are: 1,5,25,50,75,95,99, although you can specify your own when you call GetPercentiles. This function returns a value for each percentile group specified (or the default percentile groupings). The percentile group "1" contains the aggregated field value that occurs in approximately one percent of the values that match the query. The percentile group "5" contains the aggregated field value that occurs in approximately five percent of the values that match the query, and so on. The result is an approximation, the more values that match the query, the more accurate the percentile values. Requires permission to access the GetPercentiles action',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the index to search',
@@ -7302,6 +7584,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7314,6 +7597,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-policy',
       description: 'Gets information about the specified policy with the policy document of the default version. Requires permission to access the GetPolicy action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The name of the policy',
@@ -7339,6 +7623,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7351,6 +7636,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-policy-version',
       description: 'Gets information about the specified policy version. Requires permission to access the GetPolicyVersion action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The name of the policy',
@@ -7385,6 +7671,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7397,6 +7684,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-registration-code',
       description: 'Gets a registration code used to register a CA certificate with IoT. IoT will create a registration code as part of this API call if the registration code doesn\'t exist or has been deleted. If you already have a registration code, this API call will return the same registration code. Requires permission to access the GetRegistrationCode action',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -7413,6 +7701,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7425,6 +7714,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-statistics',
       description: 'Returns the count, average, sum, minimum, maximum, sum of squares, variance, and standard deviation for the specified aggregated field. If the aggregation field is of type String, only the count statistic is returned. Requires permission to access the GetStatistics action',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The name of the index to search. The default value is AWS_Things',
@@ -7477,6 +7767,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7489,6 +7780,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-topic-rule',
       description: 'Gets information about the rule. Requires permission to access the GetTopicRule action',
       options: [
+
         Option(
           name: '--rule-name',
           description: 'The name of the rule',
@@ -7514,6 +7806,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7526,6 +7819,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-topic-rule-destination',
       description: 'Gets information about a topic rule destination. Requires permission to access the GetTopicRuleDestination action',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the topic rule destination',
@@ -7551,6 +7845,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7563,6 +7858,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'get-v2-logging-options',
       description: 'Gets the fine grained logging options. Requires permission to access the GetV2LoggingOptions action',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -7579,6 +7875,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7591,6 +7888,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-active-violations',
       description: 'Lists the active violations for a given Device Defender security profile. Requires permission to access the ListActiveViolations action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing whose active violations are listed',
@@ -7696,6 +7994,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7708,6 +8007,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-attached-policies',
       description: 'Lists the policies attached to the specified thing group. Requires permission to access the ListAttachedPolicies action',
       options: [
+
         Option(
           name: '--target',
           description: 'The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:region:accountId:cert/certificateId), thingGroupArn (arn:aws:iot:region:accountId:thinggroup/groupName) and CognitoId (region:id)',
@@ -7777,6 +8077,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7789,6 +8090,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-audit-findings',
       description: 'Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time period. (Findings are retained for 90 days.) Requires permission to access the ListAuditFindings action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both',
@@ -7903,6 +8205,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7915,6 +8218,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-audit-mitigation-actions-executions',
       description: 'Gets the status of audit mitigation action tasks that were executed. Requires permission to access the ListAuditMitigationActionsExecutions action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'Specify this filter to limit results to actions for a specific audit mitigation actions task',
@@ -8003,6 +8307,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8015,6 +8320,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-audit-mitigation-actions-tasks',
       description: 'Gets a list of audit mitigation action tasks that match the specified filters. Requires permission to access the ListAuditMitigationActionsTasks action',
       options: [
+
         Option(
           name: '--audit-task-id',
           description: 'Specify this filter to limit results to tasks that were applied to results for a specific audit',
@@ -8121,6 +8427,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8133,6 +8440,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-audit-suppressions',
       description: 'Lists your Device Defender audit listings.  Requires permission to access the ListAuditSuppressions action',
       options: [
+
         Option(
           name: '--check-name',
           description: 'An audit check name. Checks must be enabled for your account. (Use DescribeAccountAuditConfiguration to see the list of all checks, including those that are enabled or use UpdateAccountAuditConfiguration to select which checks are enabled.)',
@@ -8220,6 +8528,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8232,6 +8541,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-audit-tasks',
       description: 'Lists the Device Defender audits that have been performed during a given time period. Requires permission to access the ListAuditTasks action',
       options: [
+
         Option(
           name: '--start-time',
           description: 'The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException"',
@@ -8329,6 +8639,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8341,6 +8652,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-authorizers',
       description: 'Lists the authorizers registered in your account. Requires permission to access the ListAuthorizers action',
       options: [
+
         Option(
           name: '--page-size',
           description: 'The size of each page to get in the AWS service call.  This\ndoes not affect the number of items returned in the command\'s\noutput.  Setting a smaller page size results in more calls to\nthe AWS service, retrieving fewer items in each call.  This can\nhelp prevent the AWS service calls from timing out.\nFor usage examples, see Pagination in the AWS Command Line Interface User\nGuide',
@@ -8410,6 +8722,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8422,6 +8735,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-billing-groups',
       description: 'Lists the billing groups you have created. Requires permission to access the ListBillingGroups action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -8492,6 +8806,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8504,6 +8819,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-ca-certificates',
       description: 'Lists the CA certificates registered for your Amazon Web Services account. The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results. Requires permission to access the ListCACertificates action',
       options: [
+
         Option(
           name: '--page-size',
           description: 'The size of each page to get in the AWS service call.  This\ndoes not affect the number of items returned in the command\'s\noutput.  Setting a smaller page size results in more calls to\nthe AWS service, retrieving fewer items in each call.  This can\nhelp prevent the AWS service calls from timing out.\nFor usage examples, see Pagination in the AWS Command Line Interface User\nGuide',
@@ -8573,6 +8889,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8585,6 +8902,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-certificate-providers',
       description: 'Lists all your certificate providers in your Amazon Web Services account. Requires permission to access the ListCertificateProviders action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results, or null if there are no more results',
@@ -8618,6 +8936,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8630,6 +8949,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-certificates',
       description: 'Lists the certificates registered in your Amazon Web Services account. The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results. Requires permission to access the ListCertificates action',
       options: [
+
         Option(
           name: '--page-size',
           description: 'The size of each page to get in the AWS service call.  This\ndoes not affect the number of items returned in the command\'s\noutput.  Setting a smaller page size results in more calls to\nthe AWS service, retrieving fewer items in each call.  This can\nhelp prevent the AWS service calls from timing out.\nFor usage examples, see Pagination in the AWS Command Line Interface User\nGuide',
@@ -8690,6 +9010,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8702,6 +9023,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-certificates-by-ca',
       description: 'List the device certificates signed by the specified CA certificate. Requires permission to access the ListCertificatesByCA action',
       options: [
+
         Option(
           name: '--ca-certificate-id',
           description: 'The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate',
@@ -8771,6 +9093,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8783,6 +9106,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-command-executions',
       description: 'List all command executions.  You must provide only the startedTimeFilter or the completedTimeFilter information. If you provide both time filters, the API will generate an error. You can use this information to find command executions that started within a specific timeframe',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in this operation',
@@ -8907,6 +9231,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8919,6 +9244,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-commands',
       description: 'List all commands in your account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in this operation. By default, the API returns up to a maximum of 25 results. You can override this default value to return up to a maximum of 100 results for this operation',
@@ -9007,6 +9333,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9019,6 +9346,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-custom-metrics',
       description: 'Lists your Device Defender detect custom metrics.  Requires permission to access the ListCustomMetrics action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -9080,6 +9408,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9092,6 +9421,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-detect-mitigation-actions-executions',
       description: 'Lists mitigation actions executions for a Device Defender ML Detect Security Profile.  Requires permission to access the ListDetectMitigationActionsExecutions action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The unique identifier of the task',
@@ -9198,6 +9528,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9210,6 +9541,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-detect-mitigation-actions-tasks',
       description: 'List of Device Defender ML Detect mitigation actions tasks.  Requires permission to access the ListDetectMitigationActionsTasks action',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return at one time. The default is 25',
@@ -9289,6 +9621,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9301,6 +9634,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-dimensions',
       description: 'List the set of dimensions that are defined for your Amazon Web Services accounts. Requires permission to access the ListDimensions action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -9362,6 +9696,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9374,6 +9709,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-domain-configurations',
       description: 'Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration name. Requires permission to access the ListDomainConfigurations action',
       options: [
+
         Option(
           name: '--marker',
           description: 'The marker for the next set of results',
@@ -9435,6 +9771,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9447,6 +9784,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-fleet-metrics',
       description: 'Lists all your fleet metrics.  Requires permission to access the ListFleetMetrics action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -9508,6 +9846,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9520,6 +9859,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-indices',
       description: 'Lists the search indices. Requires permission to access the ListIndices action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to get the next set of results, or null if there are no additional results',
@@ -9581,6 +9921,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9593,6 +9934,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-job-executions-for-job',
       description: 'Lists the job executions for a job. Requires permission to access the ListJobExecutionsForJob action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The unique identifier you assigned to this job when it was created',
@@ -9672,6 +10014,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9684,6 +10027,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-job-executions-for-thing',
       description: 'Lists the job executions for the specified thing. Requires permission to access the ListJobExecutionsForThing action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The thing name',
@@ -9781,6 +10125,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9793,6 +10138,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-job-templates',
       description: 'Returns a list of job templates. Requires permission to access the ListJobTemplates action',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the list',
@@ -9854,6 +10200,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9866,6 +10213,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-jobs',
       description: 'Lists jobs. Requires permission to access the ListJobs action',
       options: [
+
         Option(
           name: '--status',
           description: 'An optional filter that lets you search for jobs that have the specified status',
@@ -9972,6 +10320,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9984,6 +10333,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-managed-job-templates',
       description: 'Returns a list of managed job templates',
       options: [
+
         Option(
           name: '--template-name',
           description: 'An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned',
@@ -10054,6 +10404,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10066,6 +10417,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-metric-values',
       description: 'Lists the values reported for an IoT Device Defender metric (device-side metric, cloud-side metric, or custom metric) by the given thing during the specified time period',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing for which security profile metric values are returned',
@@ -10181,6 +10533,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10193,6 +10546,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-mitigation-actions',
       description: 'Gets a list of all mitigation actions that match the specified filter criteria. Requires permission to access the ListMitigationActions action',
       options: [
+
         Option(
           name: '--action-type',
           description: 'Specify a value to limit the result to mitigation actions with a specific action type',
@@ -10263,6 +10617,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10275,6 +10630,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-ota-updates',
       description: 'Lists OTA updates. Requires permission to access the ListOTAUpdates action',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return at one time',
@@ -10345,6 +10701,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10357,6 +10714,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-outgoing-certificates',
       description: 'Lists certificates that are being transferred but not yet accepted. Requires permission to access the ListOutgoingCertificates action',
       options: [
+
         Option(
           name: '--page-size',
           description: 'The size of each page to get in the AWS service call.  This\ndoes not affect the number of items returned in the command\'s\noutput.  Setting a smaller page size results in more calls to\nthe AWS service, retrieving fewer items in each call.  This can\nhelp prevent the AWS service calls from timing out.\nFor usage examples, see Pagination in the AWS Command Line Interface User\nGuide',
@@ -10417,6 +10775,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10429,6 +10788,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-package-versions',
       description: 'Lists the software package versions associated to the account. Requires permission to access the ListPackageVersions action',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the target software package',
@@ -10508,6 +10868,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10520,6 +10881,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-packages',
       description: 'Lists the software packages associated to the account. Requires permission to access the ListPackages action',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results returned at one time',
@@ -10581,6 +10943,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10593,6 +10956,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-policies',
       description: 'Lists your policies. Requires permission to access the ListPolicies action',
       options: [
+
         Option(
           name: '--marker',
           description: 'The marker for the next set of results',
@@ -10653,6 +11017,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10665,6 +11030,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-policy-principals',
       description: 'Lists the principals associated with the specified policy.  Note: This action is deprecated and works as expected for backward compatibility, but we won\'t add enhancements. Use ListTargetsForPolicy instead. Requires permission to access the ListPolicyPrincipals action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The policy name',
@@ -10734,6 +11100,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10746,6 +11113,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-policy-versions',
       description: 'Lists the versions of the specified policy and identifies the default version. Requires permission to access the ListPolicyVersions action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The policy name',
@@ -10771,6 +11139,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10783,6 +11152,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-principal-policies',
       description: 'Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in AmazonCognito Identity format.  Note: This action is deprecated and works as expected for backward compatibility, but we won\'t add enhancements. Use ListAttachedPolicies instead. Requires permission to access the ListPrincipalPolicies action',
       options: [
+
         Option(
           name: '--principal',
           description: 'The principal. Valid principals are CertificateArn (arn:aws:iot:region:accountId:cert/certificateId), thingGroupArn (arn:aws:iot:region:accountId:thinggroup/groupName) and CognitoId (region:id)',
@@ -10852,6 +11222,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10864,6 +11235,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-principal-things',
       description: 'Lists the things associated with the specified principal. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.  Requires permission to access the ListPrincipalThings action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -10934,6 +11306,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10946,6 +11319,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-principal-things-v2',
       description: 'Lists the things associated with the specified principal. A principal can be an X.509 certificate or an Amazon Cognito ID. Requires permission to access the ListPrincipalThings action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -11025,6 +11399,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11037,6 +11412,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-provisioning-template-versions',
       description: 'A list of provisioning template versions. Requires permission to access the ListProvisioningTemplateVersions action',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the provisioning template',
@@ -11107,6 +11483,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11119,6 +11496,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-provisioning-templates',
       description: 'Lists the provisioning templates in your Amazon Web Services account. Requires permission to access the ListProvisioningTemplates action',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return at one time',
@@ -11180,6 +11558,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11192,6 +11571,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-related-resources-for-audit-finding',
       description: 'The related resources of an Audit finding. The following resources can be returned from calling this API:   DEVICE_CERTIFICATE   CA_CERTIFICATE   IOT_POLICY   COGNITO_IDENTITY_POOL   CLIENT_ID   ACCOUNT_SETTINGS   ROLE_ALIAS   IAM_ROLE   ISSUER_CERTIFICATE    This API is similar to DescribeAuditFinding\'s RelatedResources but provides pagination and is not limited to 10 resources. When calling DescribeAuditFinding for the intermediate CA revoked for active device certificates check, RelatedResources will not be populated. You must use this API, ListRelatedResourcesForAuditFinding, to list the certificates',
       options: [
+
         Option(
           name: '--finding-id',
           description: 'The finding Id',
@@ -11262,6 +11642,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11274,6 +11655,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-role-aliases',
       description: 'Lists the role aliases registered in your account. Requires permission to access the ListRoleAliases action',
       options: [
+
         Option(
           name: '--page-size',
           description: 'The size of each page to get in the AWS service call.  This\ndoes not affect the number of items returned in the command\'s\noutput.  Setting a smaller page size results in more calls to\nthe AWS service, retrieving fewer items in each call.  This can\nhelp prevent the AWS service calls from timing out.\nFor usage examples, see Pagination in the AWS Command Line Interface User\nGuide',
@@ -11334,6 +11716,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11346,6 +11729,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-sbom-validation-results',
       description: 'The validation results for all software bill of materials (SBOM) attached to a specific software package version. Requires permission to access the ListSbomValidationResults action',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the new software package',
@@ -11434,6 +11818,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11446,6 +11831,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-scheduled-audits',
       description: 'Lists all of your scheduled audits. Requires permission to access the ListScheduledAudits action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -11507,6 +11893,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11519,6 +11906,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-security-profiles',
       description: 'Lists the Device Defender security profiles you\'ve created. You can filter security profiles by dimension or custom metric. Requires permission to access the ListSecurityProfiles action.   dimensionName and metricName cannot be used in the same request',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -11598,6 +11986,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11610,6 +11999,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-security-profiles-for-target',
       description: 'Lists the Device Defender security profiles attached to a target (thing group). Requires permission to access the ListSecurityProfilesForTarget action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -11688,6 +12078,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11700,6 +12091,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-streams',
       description: 'Lists all of the streams in your Amazon Web Services account. Requires permission to access the ListStreams action',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return at a time',
@@ -11769,6 +12161,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11781,6 +12174,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags (metadata) you have assigned to the resource. Requires permission to access the ListTagsForResource action',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -11833,6 +12227,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11845,6 +12240,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-targets-for-policy',
       description: 'List targets for the specified policy. Requires permission to access the ListTargetsForPolicy action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The policy name',
@@ -11906,6 +12302,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11918,6 +12315,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-targets-for-security-profile',
       description: 'Lists the targets (thing groups) associated with a given Device Defender security profile. Requires permission to access the ListTargetsForSecurityProfile action',
       options: [
+
         Option(
           name: '--security-profile-name',
           description: 'The security profile',
@@ -11988,6 +12386,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12000,6 +12399,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-thing-groups',
       description: 'List the thing groups in your account. Requires permission to access the ListThingGroups action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -12087,6 +12487,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12099,6 +12500,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-thing-groups-for-thing',
       description: 'List the thing groups to which the specified thing belongs. Requires permission to access the ListThingGroupsForThing action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The thing name',
@@ -12169,6 +12571,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12181,6 +12584,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-thing-principals',
       description: 'Lists the principals associated with the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities. Requires permission to access the ListThingPrincipals action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -12251,6 +12655,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12263,6 +12668,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-thing-principals-v2',
       description: 'Lists the principals associated with the specified thing. A principal can be an X.509 certificate or an Amazon Cognito ID. Requires permission to access the ListThingPrincipals action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -12342,6 +12748,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12354,6 +12761,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-thing-registration-task-reports',
       description: 'Information about the thing registration tasks',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The id of the task',
@@ -12433,6 +12841,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12445,6 +12854,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-thing-registration-tasks',
       description: 'List bulk thing provisioning tasks. Requires permission to access the ListThingRegistrationTasks action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -12515,6 +12925,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12527,6 +12938,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-thing-types',
       description: 'Lists the existing thing types. Requires permission to access the ListThingTypes action',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -12597,6 +13009,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12609,6 +13022,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-things',
       description: 'Lists your things. Use the attributeName and attributeValue parameters to filter your things. For example, calling ListThings with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute Color with the value Red. For more information, see List Things from the Amazon Web Services IoT Core Developer Guide. Requires permission to access the ListThings action.  You will not be charged for calling this API if an Access denied error is returned. You will also not be charged if no attributes or pagination token was provided in request and no pagination token and no results were returned',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -12705,6 +13119,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12717,6 +13132,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-things-in-billing-group',
       description: 'Lists the things you have added to the given billing group. Requires permission to access the ListThingsInBillingGroup action',
       options: [
+
         Option(
           name: '--billing-group-name',
           description: 'The name of the billing group',
@@ -12787,6 +13203,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12799,6 +13216,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-things-in-thing-group',
       description: 'Lists the things in the specified group. Requires permission to access the ListThingsInThingGroup action',
       options: [
+
         Option(
           name: '--thing-group-name',
           description: 'The thing group name',
@@ -12877,6 +13295,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12889,6 +13308,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-topic-rule-destinations',
       description: 'Lists all the topic rule destinations in your Amazon Web Services account. Requires permission to access the ListTopicRuleDestinations action',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return at one time',
@@ -12950,6 +13370,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12962,6 +13383,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-topic-rules',
       description: 'Lists the rules for the specific topic. Requires permission to access the ListTopicRules action',
       options: [
+
         Option(
           name: '--topic',
           description: 'The topic',
@@ -13040,6 +13462,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13052,6 +13475,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-v2-logging-levels',
       description: 'Lists logging levels. Requires permission to access the ListV2LoggingLevels action',
       options: [
+
         Option(
           name: '--target-type',
           description: 'The type of resource for which you are configuring logging. Must be THING_Group',
@@ -13122,6 +13546,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13134,6 +13559,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'list-violation-events',
       description: 'Lists the Device Defender security profile violations discovered during the given time period. You can use filters to limit the results to those alerts issued for a particular security profile, behavior, or thing (device). Requires permission to access the ListViolationEvents action',
       options: [
+
         Option(
           name: '--start-time',
           description: 'The start time for the alerts to be listed',
@@ -13257,6 +13683,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13269,6 +13696,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'put-verification-state-on-violation',
       description: 'Set a verification state and provide a description of that verification state on a violation (detect alarm)',
       options: [
+
         Option(
           name: '--violation-id',
           description: 'The violation ID',
@@ -13312,6 +13740,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13324,6 +13753,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'register-ca-certificate',
       description: 'Registers a CA certificate with Amazon Web Services IoT Core. There is no limit to the number of CA certificates you can register in your Amazon Web Services account. You can register up to 10 CA certificates with the same CA subject field per Amazon Web Services account. Requires permission to access the RegisterCACertificate action',
       options: [
+
         Option(
           name: '--ca-certificate',
           description: 'The CA certificate',
@@ -13401,6 +13831,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13413,6 +13844,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'register-certificate',
       description: 'Registers a device certificate with IoT in the same certificate mode as the signing CA. If you have more than one CA certificate that has the same subject field, you must specify the CA certificate that was used to sign the device certificate being registered. Requires permission to access the RegisterCertificate action',
       options: [
+
         Option(
           name: '--certificate-pem',
           description: 'The certificate data, in PEM format',
@@ -13464,6 +13896,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13476,6 +13909,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'register-certificate-without-ca',
       description: 'Register a certificate that does not have a certificate authority (CA). For supported certificates, consult  Certificate signing algorithms supported by IoT',
       options: [
+
         Option(
           name: '--certificate-pem',
           description: 'The certificate data, in PEM format',
@@ -13510,6 +13944,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13522,6 +13957,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'register-thing',
       description: 'Provisions a thing in the device registry. RegisterThing calls other IoT control plane APIs. These calls might exceed your account level  IoT Throttling Limits and cause throttle errors. Please contact Amazon Web Services Customer Support to raise your throttling limits if necessary. Requires permission to access the RegisterThing action',
       options: [
+
         Option(
           name: '--template-body',
           description: 'The provisioning template. See Provisioning Devices That Have Device Certificates for more information',
@@ -13556,6 +13992,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13568,6 +14005,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'reject-certificate-transfer',
       description: 'Rejects a pending certificate transfer. After IoT rejects a certificate transfer, the certificate status changes from PENDING_TRANSFER to INACTIVE. To check for pending certificate transfers, call ListCertificates to enumerate your certificates. This operation can only be called by the transfer destination. After it is called, the certificate will be returned to the source\'s account in the INACTIVE state. Requires permission to access the RejectCertificateTransfer action',
       options: [
+
         Option(
           name: '--certificate-id',
           description: 'The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)',
@@ -13602,6 +14040,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13614,6 +14053,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'remove-thing-from-billing-group',
       description: 'Removes the given thing from the billing group. Requires permission to access the RemoveThingFromBillingGroup action.  This call is asynchronous. It might take several seconds for the detachment to propagate',
       options: [
+
         Option(
           name: '--billing-group-name',
           description: 'The name of the billing group',
@@ -13666,6 +14106,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13678,6 +14119,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'remove-thing-from-thing-group',
       description: 'Remove the specified thing from the specified group. You must specify either a thingGroupArn or a thingGroupName to identify the thing group and either a thingArn or a thingName to identify the thing to remove from the thing group.  Requires permission to access the RemoveThingFromThingGroup action',
       options: [
+
         Option(
           name: '--thing-group-name',
           description: 'The group name',
@@ -13730,6 +14172,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13742,6 +14185,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'replace-topic-rule',
       description: 'Replaces the rule. You must specify all parameters for the new rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule. Requires permission to access the ReplaceTopicRule action',
       options: [
+
         Option(
           name: '--rule-name',
           description: 'The name of the rule',
@@ -13776,6 +14220,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13788,6 +14233,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'search-index',
       description: 'The query search index. Requires permission to access the SearchIndex action',
       options: [
+
         Option(
           name: '--index-name',
           description: 'The search index name',
@@ -13849,6 +14295,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13861,6 +14308,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'set-default-authorizer',
       description: 'Sets the default authorizer. This will be used if a websocket connection is made without specifying an authorizer. Requires permission to access the SetDefaultAuthorizer action',
       options: [
+
         Option(
           name: '--authorizer-name',
           description: 'The authorizer name',
@@ -13886,6 +14334,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13898,6 +14347,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'set-default-policy-version',
       description: 'Sets the specified version of the specified policy as the policy\'s default (operative) version. This action affects all certificates to which the policy is attached. To list the principals the policy is attached to, use the ListPrincipalPolicies action. Requires permission to access the SetDefaultPolicyVersion action',
       options: [
+
         Option(
           name: '--policy-name',
           description: 'The policy name',
@@ -13932,6 +14382,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13944,6 +14395,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'set-logging-options',
       description: 'Sets the logging options. NOTE: use of this command is not recommended. Use SetV2LoggingOptions instead. Requires permission to access the SetLoggingOptions action',
       options: [
+
         Option(
           name: '--logging-options-payload',
           description: 'The logging options payload',
@@ -13969,6 +14421,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13981,6 +14434,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'set-v2-logging-level',
       description: 'Sets the logging level. Requires permission to access the SetV2LoggingLevel action',
       options: [
+
         Option(
           name: '--log-target',
           description: 'The log target',
@@ -14015,6 +14469,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14027,6 +14482,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'set-v2-logging-options',
       description: 'Sets the logging options for the V2 logging service. Requires permission to access the SetV2LoggingOptions action',
       options: [
+
         Option(
           name: '--role-arn',
           description: 'The ARN of the role that allows IoT to write to Cloudwatch logs',
@@ -14069,6 +14525,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14081,6 +14538,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'start-audit-mitigation-actions-task',
       description: 'Starts a task that applies a set of mitigation actions to the specified target. Requires permission to access the StartAuditMitigationActionsTask action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it',
@@ -14133,6 +14591,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14145,6 +14604,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'start-detect-mitigation-actions-task',
       description: 'Starts a Device Defender ML Detect mitigation actions task.  Requires permission to access the StartDetectMitigationActionsTask action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The unique identifier of the task',
@@ -14222,6 +14682,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14234,6 +14695,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'start-on-demand-audit-task',
       description: 'Starts an on-demand Device Defender audit. Requires permission to access the StartOnDemandAuditTask action',
       options: [
+
         Option(
           name: '--target-check-names',
           description: 'Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use DescribeAccountAuditConfiguration to see the list of all checks, including those that are enabled or UpdateAccountAuditConfiguration to select which checks are enabled',
@@ -14259,6 +14721,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14271,6 +14734,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'start-thing-registration-task',
       description: 'Creates a bulk thing provisioning task. Requires permission to access the StartThingRegistrationTask action',
       options: [
+
         Option(
           name: '--template-body',
           description: 'The provisioning template',
@@ -14323,6 +14787,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14335,6 +14800,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'stop-thing-registration-task',
       description: 'Cancels a bulk thing provisioning task. Requires permission to access the StopThingRegistrationTask action',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The bulk thing provisioning task ID',
@@ -14360,6 +14826,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14372,6 +14839,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource. Requires permission to access the TagResource action',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -14406,6 +14874,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14418,6 +14887,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'test-authorization',
       description: 'Tests if a specified principal is authorized to perform an IoT action on a specified resource. Use this to test and debug the authorization behavior of devices that connect to the IoT device gateway. Requires permission to access the TestAuthorization action',
       options: [
+
         Option(
           name: '--principal',
           description: 'The principal. Valid principals are CertificateArn (arn:aws:iot:region:accountId:cert/certificateId), thingGroupArn (arn:aws:iot:region:accountId:thinggroup/groupName) and CognitoId (region:id)',
@@ -14488,6 +14958,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14500,6 +14971,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'test-invoke-authorizer',
       description: 'Tests a custom authorization behavior by invoking a specified custom authorizer. Use this to test and debug the custom authorization behavior of devices that connect to the IoT device gateway. Requires permission to access the TestInvokeAuthorizer action',
       options: [
+
         Option(
           name: '--authorizer-name',
           description: 'The custom authorizer name',
@@ -14570,6 +15042,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14582,6 +15055,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'transfer-certificate',
       description: 'Transfers the specified certificate to the specified Amazon Web Services account. Requires permission to access the TransferCertificate action. You can cancel the transfer until it is acknowledged by the recipient. No notification is sent to the transfer destination\'s account. It is up to the caller to notify the transfer target. The certificate being transferred must not be in the ACTIVE state. You can use the UpdateCertificate action to deactivate it. The certificate must not have any policies attached to it. You can use the DetachPolicy action to detach them',
       options: [
+
         Option(
           name: '--certificate-id',
           description: 'The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)',
@@ -14625,6 +15099,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14637,6 +15112,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the given tags (metadata) from the resource. Requires permission to access the UntagResource action',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -14671,6 +15147,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14683,6 +15160,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-account-audit-configuration',
       description: 'Configures or reconfigures the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled. Requires permission to access the UpdateAccountAuditConfiguration action',
       options: [
+
         Option(
           name: '--role-arn',
           description: 'The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit',
@@ -14726,6 +15204,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14738,6 +15217,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-audit-suppression',
       description: 'Updates a Device Defender audit suppression',
       options: [
+
         Option(
           name: '--check-name',
           description: 'An audit check name. Checks must be enabled for your account. (Use DescribeAccountAuditConfiguration to see the list of all checks, including those that are enabled or use UpdateAccountAuditConfiguration to select which checks are enabled.)',
@@ -14798,6 +15278,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14810,6 +15291,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-authorizer',
       description: 'Updates an authorizer. Requires permission to access the UpdateAuthorizer action',
       options: [
+
         Option(
           name: '--authorizer-name',
           description: 'The authorizer name',
@@ -14879,6 +15361,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14891,6 +15374,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-billing-group',
       description: 'Updates information about the billing group. Requires permission to access the UpdateBillingGroup action',
       options: [
+
         Option(
           name: '--billing-group-name',
           description: 'The name of the billing group',
@@ -14934,6 +15418,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14946,6 +15431,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-ca-certificate',
       description: 'Updates a registered CA certificate. Requires permission to access the UpdateCACertificate action',
       options: [
+
         Option(
           name: '--certificate-id',
           description: 'The CA certificate identifier',
@@ -15006,6 +15492,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15018,6 +15505,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-certificate',
       description: 'Updates the status of the specified certificate. This operation is idempotent. Requires permission to access the UpdateCertificate action. Certificates must be in the ACTIVE state to authenticate devices that use a certificate to connect to IoT. Within a few minutes of updating a certificate from the ACTIVE state to any other state, IoT disconnects all devices that used that certificate to connect. Devices cannot use a certificate that is not in the ACTIVE state to reconnect',
       options: [
+
         Option(
           name: '--certificate-id',
           description: 'The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)',
@@ -15052,6 +15540,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15064,6 +15553,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-certificate-provider',
       description: 'Updates a certificate provider. Requires permission to access the UpdateCertificateProvider action',
       options: [
+
         Option(
           name: '--certificate-provider-name',
           description: 'The name of the certificate provider',
@@ -15107,6 +15597,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15119,6 +15610,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-command',
       description: 'Update information about a command or mark a command for deprecation',
       options: [
+
         Option(
           name: '--command-id',
           description: 'The unique identifier of the command to be updated',
@@ -15170,6 +15662,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15182,6 +15675,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-custom-metric',
       description: 'Updates a Device Defender detect custom metric.  Requires permission to access the UpdateCustomMetric action',
       options: [
+
         Option(
           name: '--metric-name',
           description: 'The name of the custom metric. Cannot be updated',
@@ -15216,6 +15710,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15228,6 +15723,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-dimension',
       description: 'Updates the definition for a dimension. You cannot change the type of a dimension after it is created (you can delete it and recreate it). Requires permission to access the UpdateDimension action',
       options: [
+
         Option(
           name: '--name',
           description: 'A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does',
@@ -15262,6 +15758,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15274,6 +15771,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-domain-configuration',
       description: 'Updates values stored in the domain configuration. Domain configurations for default endpoints can\'t be updated. Requires permission to access the UpdateDomainConfiguration action',
       options: [
+
         Option(
           name: '--domain-configuration-name',
           description: 'The name of the domain configuration to be updated',
@@ -15370,6 +15868,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15382,6 +15881,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-dynamic-thing-group',
       description: 'Updates a dynamic thing group. Requires permission to access the UpdateDynamicThingGroup action',
       options: [
+
         Option(
           name: '--thing-group-name',
           description: 'The name of the dynamic thing group to update',
@@ -15452,6 +15952,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15464,6 +15965,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-event-configurations',
       description: 'Updates the event configurations. Requires permission to access the UpdateEventConfigurations action',
       options: [
+
         Option(
           name: '--event-configurations',
           description: 'The new event configuration values',
@@ -15489,6 +15991,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15501,6 +16004,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-fleet-metric',
       description: 'Updates the data for a fleet metric. Requires permission to access the UpdateFleetMetric action',
       options: [
+
         Option(
           name: '--metric-name',
           description: 'The name of the fleet metric to update',
@@ -15607,6 +16111,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15619,6 +16124,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-indexing-configuration',
       description: 'Updates the search configuration. Requires permission to access the UpdateIndexingConfiguration action',
       options: [
+
         Option(
           name: '--thing-indexing-configuration',
           description: 'Thing indexing configuration',
@@ -15653,6 +16159,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15665,6 +16172,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-job',
       description: 'Updates supported fields of the specified job. Requires permission to access the UpdateJob action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID of the job to be updated',
@@ -15753,6 +16261,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15765,6 +16274,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-mitigation-action',
       description: 'Updates the definition for the specified mitigation action. Requires permission to access the UpdateMitigationAction action',
       options: [
+
         Option(
           name: '--action-name',
           description: 'The friendly name for the mitigation action. You cannot change the name by using UpdateMitigationAction. Instead, you must delete and recreate the mitigation action with the new name',
@@ -15808,6 +16318,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15820,6 +16331,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-package',
       description: 'Updates the supported fields for a specific software package. Requires permission to access the UpdatePackage and GetIndexingConfiguration actions',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the target software package',
@@ -15880,6 +16392,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15892,6 +16405,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-package-configuration',
       description: 'Updates the software package configuration. Requires permission to access the UpdatePackageConfiguration and iam:PassRole actions',
       options: [
+
         Option(
           name: '--version-update-by-jobs-config',
           description: 'Configuration to manage job\'s package version reporting. This updates the thing\'s reserved named shadow that the job targets',
@@ -15926,6 +16440,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15938,6 +16453,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-package-version',
       description: 'Updates the supported fields for a specific package version. Requires permission to access the UpdatePackageVersion and GetIndexingConfiguration actions',
       options: [
+
         Option(
           name: '--package-name',
           description: 'The name of the associated software package',
@@ -16026,6 +16542,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16038,6 +16555,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-provisioning-template',
       description: 'Updates a provisioning template. Requires permission to access the UpdateProvisioningTemplate action',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the provisioning template',
@@ -16115,6 +16633,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16127,6 +16646,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-role-alias',
       description: 'Updates a role alias. Requires permission to access the UpdateRoleAlias action.  The value of  credentialDurationSeconds  must be less than or equal to the maximum session duration of the IAM role that the role alias references. For more information, see  Modifying a role maximum session duration (Amazon Web Services API) from the Amazon Web Services Identity and Access Management User Guide',
       options: [
+
         Option(
           name: '--role-alias',
           description: 'The role alias to update',
@@ -16170,6 +16690,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16182,6 +16703,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-scheduled-audit',
       description: 'Updates a scheduled audit, including which checks are performed and how often the audit takes place. Requires permission to access the UpdateScheduledAudit action',
       options: [
+
         Option(
           name: '--frequency',
           description: 'How often the scheduled audit takes place, either DAILY, WEEKLY, BIWEEKLY, or MONTHLY. The start time of each audit is determined by the system',
@@ -16243,6 +16765,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16255,6 +16778,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-security-profile',
       description: 'Updates a Device Defender security profile. Requires permission to access the UpdateSecurityProfile action',
       options: [
+
         Option(
           name: '--security-profile-name',
           description: 'The name of the security profile you want to update',
@@ -16375,6 +16899,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16387,6 +16912,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-stream',
       description: 'Updates an existing stream. The stream version will be incremented by one. Requires permission to access the UpdateStream action',
       options: [
+
         Option(
           name: '--stream-id',
           description: 'The stream ID',
@@ -16439,6 +16965,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16451,6 +16978,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-thing',
       description: 'Updates the data for a thing. Requires permission to access the UpdateThing action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing to update. You can\'t change a thing\'s name. To change a thing\'s name, you must create a new thing, give it the new name, and then delete the old thing',
@@ -16511,6 +17039,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16523,6 +17052,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-thing-group',
       description: 'Update a thing group. Requires permission to access the UpdateThingGroup action',
       options: [
+
         Option(
           name: '--thing-group-name',
           description: 'The thing group to update',
@@ -16566,6 +17096,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16578,6 +17109,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-thing-groups-for-thing',
       description: 'Updates the groups to which the thing belongs. Requires permission to access the UpdateThingGroupsForThing action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The thing whose group memberships will be updated',
@@ -16629,6 +17161,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16641,6 +17174,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-thing-type',
       description: 'Updates a thing type',
       options: [
+
         Option(
           name: '--thing-type-name',
           description: 'The name of a thing type',
@@ -16675,6 +17209,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16687,6 +17222,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'update-topic-rule-destination',
       description: 'Updates a topic rule destination. You use this to change the status, endpoint URL, or confirmation URL of the destination. Requires permission to access the UpdateTopicRuleDestination action',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the topic rule destination',
@@ -16721,6 +17257,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16733,6 +17270,7 @@ final FigSpec iotSpec = FigSpec(
       name: 'validate-security-profile-behaviors',
       description: 'Validates a Device Defender security profile behaviors specification. Requires permission to access the ValidateSecurityProfileBehaviors action',
       options: [
+
         Option(
           name: '--behaviors',
           description: 'Specifies the behaviors that, when violated by a device (thing), cause an alert',
@@ -16758,6 +17296,7 @@ final FigSpec iotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec servicediscoverySpec = FigSpec(
   name: 'servicediscovery',
   description: 'Cloud Map With Cloud Map, you can configure public DNS, private DNS, or HTTP namespaces that your microservice applications run in. When an instance becomes available, you can call the Cloud Map API to register the instance with Cloud Map. For public or private DNS namespaces, Cloud Map automatically creates DNS records and an optional health check. Clients that submit public or private DNS queries, or HTTP requests, for the service receive an answer that contains up to eight healthy records',
   subcommands: [
+
     Subcommand(
       name: 'create-http-namespace',
       description: 'Creates an HTTP namespace. Service instances registered using an HTTP namespace can be discovered using a DiscoverInstances request but can\'t be discovered using DNS. For the current quota on the number of namespaces that you can create using the same Amazon Web Services account, see Cloud Map quotas in the Cloud Map Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name that you want to assign to this namespace',
@@ -65,6 +67,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'create-private-dns-namespace',
       description: 'Creates a private namespace based on DNS, which is visible only inside a specified Amazon VPC. The namespace defines your service naming scheme. For example, if you name your namespace example.com and name your service backend, the resulting DNS name for the service is backend.example.com. Service instances that are registered using a private DNS namespace can be discovered using either a DiscoverInstances request or using DNS. For the current quota on the number of namespaces that you can create using the same Amazon Web Services account, see Cloud Map quotas in the Cloud Map Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace',
@@ -147,6 +151,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -159,6 +164,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'create-public-dns-namespace',
       description: 'Creates a public namespace based on DNS, which is visible on the internet. The namespace defines your service naming scheme. For example, if you name your namespace example.com and name your service backend, the resulting DNS name for the service is backend.example.com. You can discover instances that were registered with a public DNS namespace by using either a DiscoverInstances request or using DNS. For the current quota on the number of namespaces that you can create using the same Amazon Web Services account, see Cloud Map quotas in the Cloud Map Developer Guide.  The CreatePublicDnsNamespace API operation is not supported in the Amazon Web Services GovCloud (US) Regions',
       options: [
+
         Option(
           name: '--name',
           description: 'The name that you want to assign to this namespace.  Do not include sensitive information in the name. The name is publicly available using DNS queries',
@@ -220,6 +226,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -232,6 +239,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'create-service',
       description: 'Creates a service. This action defines the configuration for the following entities:   For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:    A     AAAA     A and AAAA     SRV     CNAME      Optionally, a health check   After you create the service, you can submit a RegisterInstance request, and Cloud Map uses the values in the configuration to create the specified entities. For the current quota on the number of instances that you can register using the same namespace and using the same service, see Cloud Map quotas in the Cloud Map Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name that you want to assign to the service.  Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.  If you want Cloud Map to create an SRV record when you register an instance and you\'re using a system that requires a specific SRV format, such as HAProxy, specify the following for Name:   Start the name with an underscore (_), such as _exampleservice.   End the name with ._protocol, such as ._tcp.   When you register an instance, Cloud Map creates an SRV record and assigns a name to the record by concatenating the service name and the namespace name (for example,  _exampleservice._tcp.example.com).  For services that are accessible by DNS queries, you can\'t create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can\'t be distinguished. However, if you use a namespace that\'s only accessible by API calls, then you can create services that with names that differ only by case',
@@ -329,6 +337,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -341,6 +350,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'delete-namespace',
       description: 'Deletes a namespace from the current account. If the namespace still contains one or more services, the request fails',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the namespace that you want to delete',
@@ -366,6 +376,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -378,6 +389,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'delete-service',
       description: 'Deletes a specified service. If the service still contains one or more registered instances, the request fails',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the service that you want to delete',
@@ -403,6 +415,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -415,6 +428,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'deregister-instance',
       description: 'Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified instance',
       options: [
+
         Option(
           name: '--service-id',
           description: 'The ID of the service that the instance is associated with',
@@ -449,6 +463,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -461,6 +476,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'discover-instances',
       description: 'Discovers registered instances for a specified namespace and service. You can use DiscoverInstances to discover instances for any type of namespace. DiscoverInstances returns a randomized list of instances allowing customers to distribute traffic evenly across instances. For public and private DNS namespaces, you can also use DNS queries to discover instances',
       options: [
+
         Option(
           name: '--namespace-name',
           description: 'The HttpName name of the namespace. It\'s found in the HttpProperties member of the Properties member of the namespace. In most cases, Name and HttpName match. However, if you reuse Name for namespace creation, a generated hash is added to HttpName to distinguish the two',
@@ -531,6 +547,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -543,6 +560,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'discover-instances-revision',
       description: 'Discovers the increasing revision associated with an instance',
       options: [
+
         Option(
           name: '--namespace-name',
           description: 'The HttpName name of the namespace. It\'s found in the HttpProperties member of the Properties member of the namespace',
@@ -577,6 +595,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -589,6 +608,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'get-instance',
       description: 'Gets information about a specified instance',
       options: [
+
         Option(
           name: '--service-id',
           description: 'The ID of the service that the instance is associated with',
@@ -623,6 +643,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -635,6 +656,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'get-instances-health-status',
       description: 'Gets the current health status (Healthy, Unhealthy, or Unknown) of one or more instances that are associated with a specified service.  There\'s a brief delay between when you register an instance and when the health status for the instance is available',
       options: [
+
         Option(
           name: '--service-id',
           description: 'The ID of the service that the instance is associated with',
@@ -687,6 +709,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -699,6 +722,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'get-namespace',
       description: 'Gets information about a namespace',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the namespace that you want to get information about',
@@ -724,6 +748,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -736,6 +761,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'get-operation',
       description: 'Gets information about any operation that returns an operation ID in the response, such as a CreateHttpNamespace request.  To get a list of operations that match specified criteria, see ListOperations',
       options: [
+
         Option(
           name: '--operation-id',
           description: 'The ID of the operation that you want to get more information about',
@@ -761,6 +787,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -773,6 +800,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'get-service',
       description: 'Gets the settings for a specified service',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the service that you want to get settings for',
@@ -798,6 +826,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -810,6 +839,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'list-instances',
       description: 'Lists summary information about the instances that you registered by using a specified service',
       options: [
+
         Option(
           name: '--service-id',
           description: 'The ID of the service that you want to list instances for',
@@ -880,6 +910,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -892,6 +923,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'list-namespaces',
       description: 'Lists summary information about the namespaces that were created by the current Amazon Web Services account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'For the first ListNamespaces request, omit this value. If the response contains NextToken, submit another ListNamespaces request to get the next group of results. Specify the value of NextToken from the previous response in the next request.  Cloud Map gets MaxResults namespaces and then filters them based on the specified criteria. It\'s possible that no namespaces in the first MaxResults namespaces matched the specified criteria but that subsequent groups of MaxResults namespaces do contain namespaces that match the criteria',
@@ -962,6 +994,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -974,6 +1007,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'list-operations',
       description: 'Lists operations that match the criteria that you specify',
       options: [
+
         Option(
           name: '--next-token',
           description: 'For the first ListOperations request, omit this value. If the response contains NextToken, submit another ListOperations request to get the next group of results. Specify the value of NextToken from the previous response in the next request.  Cloud Map gets MaxResults operations and then filters them based on the specified criteria. It\'s possible that no operations in the first MaxResults operations matched the specified criteria but that subsequent groups of MaxResults operations do contain operations that match the criteria',
@@ -1044,6 +1078,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1056,6 +1091,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'list-services',
       description: 'Lists summary information for all the services that are associated with one or more namespaces',
       options: [
+
         Option(
           name: '--next-token',
           description: 'For the first ListServices request, omit this value. If the response contains NextToken, submit another ListServices request to get the next group of results. Specify the value of NextToken from the previous response in the next request.  Cloud Map gets MaxResults services and then filters them based on the specified criteria. It\'s possible that no services in the first MaxResults services matched the specified criteria but that subsequent groups of MaxResults services do contain services that match the criteria',
@@ -1126,6 +1162,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1138,6 +1175,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for',
@@ -1163,6 +1201,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1175,6 +1214,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'register-instance',
       description: 'Creates or updates one or more records and, optionally, creates a health check based on the settings in a specified service. When you submit a RegisterInstance request, the following occurs:   For each DNS record that you define in the service that\'s specified by ServiceId, a record is created or updated in the hosted zone that\'s associated with the corresponding namespace.   If the service includes HealthCheckConfig, a health check is created based on the settings in the health check configuration.   The health check, if any, is associated with each of the new or updated records.    One RegisterInstance request must complete before you can submit another request and specify the same service ID and instance ID.  For more information, see CreateService. When Cloud Map receives a DNS query for the specified DNS name, it returns the applicable value:    If the health check is healthy: returns all the records    If the health check is unhealthy: returns the applicable value for the last healthy instance    If you didn\'t specify a health check configuration: returns all the records   For the current quota on the number of instances that you can register using the same namespace and using the same service, see Cloud Map quotas in the Cloud Map Developer Guide',
       options: [
+
         Option(
           name: '--service-id',
           description: 'The ID of the service that you want to use for settings for the instance',
@@ -1227,6 +1267,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1239,6 +1280,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for',
@@ -1273,6 +1315,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1285,6 +1328,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for',
@@ -1319,6 +1363,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1331,6 +1376,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'update-http-namespace',
       description: 'Updates an HTTP namespace',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the namespace that you want to update',
@@ -1374,6 +1420,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1386,6 +1433,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'update-instance-custom-health-status',
       description: 'Submits a request to change the health status of a custom health check to healthy or unhealthy. You can use UpdateInstanceCustomHealthStatus to change the status only for custom health checks, which you define using HealthCheckCustomConfig when you create a service. You can\'t use it to change the status for Route 53 health checks, which you define using HealthCheckConfig. For more information, see HealthCheckCustomConfig',
       options: [
+
         Option(
           name: '--service-id',
           description: 'The ID of the service that includes the configuration for the custom health check that you want to change the status for',
@@ -1429,6 +1477,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1441,6 +1490,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'update-private-dns-namespace',
       description: 'Updates a private DNS namespace',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the namespace that you want to update',
@@ -1484,6 +1534,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1496,6 +1547,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'update-public-dns-namespace',
       description: 'Updates a public DNS namespace',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the namespace being updated',
@@ -1539,6 +1591,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1551,6 +1604,7 @@ final FigSpec servicediscoverySpec = FigSpec(
       name: 'update-service',
       description: 'Submits a request to perform the following operations:   Update the TTL setting for existing DnsRecords configurations   Add, update, or delete HealthCheckConfig for a specified service  You can\'t add, update, or delete a HealthCheckCustomConfig configuration.    For public and private DNS namespaces, note the following:   If you omit any existing DnsRecords or HealthCheckConfig configurations from an UpdateService request, the configurations are deleted from the service.   If you omit an existing HealthCheckCustomConfig configuration from an UpdateService request, the configuration isn\'t deleted from the service.   When you update settings for a service, Cloud Map also updates the corresponding settings in all the records and health checks that were created by using the specified service',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the service that you want to update',
@@ -1585,6 +1639,7 @@ final FigSpec servicediscoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

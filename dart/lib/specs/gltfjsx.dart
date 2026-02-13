@@ -15,6 +15,7 @@ final FigSpec gltfjsxSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-t', '--types'],
       description: 'Add Typescript definitions'

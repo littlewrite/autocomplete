@@ -9,10 +9,12 @@ final FigSpec servicecatalogSpec = FigSpec(
   name: 'servicecatalog',
   description: 'Service Catalog  Service Catalog enables organizations to create and manage catalogs of IT services that are approved for Amazon Web Services. To get the most out of this documentation, you should be familiar with the terminology discussed in Service Catalog Concepts',
   subcommands: [
+
     Subcommand(
       name: 'accept-portfolio-share',
       description: 'Accepts an offer to share the specified portfolio',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -56,6 +58,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'associate-budget-with-resource',
       description: 'Associates the specified budget with the specified resource',
       options: [
+
         Option(
           name: '--budget-name',
           description: 'The name of the budget you want to associate',
@@ -102,6 +106,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'associate-principal-with-portfolio',
       description: 'Associates the specified principal ARN with the specified portfolio. If you share the portfolio with principal name sharing enabled, the PrincipalARN association is included in the share.  The PortfolioID, PrincipalARN, and PrincipalType parameters are required.  You can associate a maximum of 10 Principals with a portfolio using PrincipalType as IAM_PATTERN.   When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is not an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using PrincipalType as IAM. With this configuration, the PrincipalARN must already exist in the recipient account before it can be associated',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -166,6 +172,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'associate-product-with-portfolio',
       description: 'Associates the specified product with the specified portfolio. A delegated admin is authorized to invoke this command',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -230,6 +238,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'associate-service-action-with-provisioning-artifact',
       description: 'Associates a self-service action with a provisioning artifact',
       options: [
+
         Option(
           name: '--product-id',
           description: 'The product identifier. For example, prod-abcdzk7xy33qa',
@@ -303,6 +313,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -315,6 +326,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'associate-tag-option-with-resource',
       description: 'Associate the specified TagOption with the specified portfolio or product',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The resource identifier',
@@ -349,6 +361,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -361,6 +374,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'batch-associate-service-action-with-provisioning-artifact',
       description: 'Associates multiple self-service actions with provisioning artifacts',
       options: [
+
         Option(
           name: '--service-action-associations',
           description: 'One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID',
@@ -395,6 +409,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -407,6 +422,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'batch-disassociate-service-action-from-provisioning-artifact',
       description: 'Disassociates a batch of self-service actions from the specified provisioning artifact',
       options: [
+
         Option(
           name: '--service-action-associations',
           description: 'One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID',
@@ -441,6 +457,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -453,6 +470,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'copy-product',
       description: 'Copies the specified source product to the specified target product or a new product. You can copy a product to the same account or another account. You can copy a product to the same Region or another Region. If you copy a product to another account, you must first share the product in a portfolio using CreatePortfolioShare. This operation is performed asynchronously. To track the progress of the operation, use DescribeCopyProductStatus',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -532,6 +550,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -544,6 +563,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'create-constraint',
       description: 'Creates a constraint. A delegated admin is authorized to invoke this command',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -623,6 +643,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -635,6 +656,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'create-portfolio',
       description: 'Creates a portfolio. A delegated admin is authorized to invoke this command',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -705,6 +727,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -717,6 +740,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'create-portfolio-share',
       description: 'Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the management account of an organization or by a delegated administrator. You can share portfolios to an organization, an organizational unit, or a specific account. Note that if a delegated admin is de-registered, they can no longer create portfolio shares.  AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node. You can\'t share a shared resource, including portfolios that contain a shared product. If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the  UpdatePortfolioShare API instead.   When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is not an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using PrincipalType as IAM. With this configuration, the PrincipalARN must already exist in the recipient account before it can be associated',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -785,6 +809,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -797,6 +822,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'create-product',
       description: 'Creates a product. A delegated admin is authorized to invoke this command. The user or role that performs this operation must have the cloudformation:GetTemplate IAM policy permission. This policy permission is required when using the ImportFromPhysicalId template source in the information data section',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -930,6 +956,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -942,6 +969,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'create-provisioned-product-plan',
       description: 'Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed. You can create one plan for each provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILABLE or TAINTED. To view the resource changes in the change set, use DescribeProvisionedProductPlan. To create or modify the provisioned product, use ExecuteProvisionedProductPlan',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1057,6 +1085,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1069,6 +1098,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'create-provisioning-artifact',
       description: 'Creates a provisioning artifact (also known as a version) for the specified product. You cannot create a provisioning artifact for a product that was shared with you. The user or role that performs this operation must have the cloudformation:GetTemplate IAM policy permission. This policy permission is required when using the ImportFromPhysicalId template source in the information data section',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1121,6 +1151,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1133,6 +1164,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'create-service-action',
       description: 'Creates a self-service action',
       options: [
+
         Option(
           name: '--name',
           description: 'The self-service action name',
@@ -1203,6 +1235,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1215,6 +1248,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'create-tag-option',
       description: 'Creates a TagOption',
       options: [
+
         Option(
           name: '--key',
           description: 'The TagOption key',
@@ -1249,6 +1283,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1261,6 +1296,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'delete-constraint',
       description: 'Deletes the specified constraint. A delegated admin is authorized to invoke this command',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1295,6 +1331,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1307,6 +1344,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'delete-portfolio',
       description: 'Deletes the specified portfolio. You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or shared accounts. A delegated admin is authorized to invoke this command',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1341,6 +1379,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1353,6 +1392,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'delete-portfolio-share',
       description: 'Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization node can only be deleted by the management account of an organization or by a delegated administrator. Note that if a delegated admin is de-registered, portfolio shares created from that account are removed',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1405,6 +1445,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1417,6 +1458,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'delete-product',
       description: 'Deletes the specified product. You cannot delete a product if it was shared with you or is associated with a portfolio. A delegated admin is authorized to invoke this command',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1451,6 +1493,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1463,6 +1506,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'delete-provisioned-product-plan',
       description: 'Deletes the specified plan',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1505,6 +1549,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1517,6 +1562,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'delete-provisioning-artifact',
       description: 'Deletes the specified provisioning artifact (also known as a version) for the specified product. You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete the last provisioning artifact for a product, because a product must have at least one provisioning artifact',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1560,6 +1606,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1572,6 +1619,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'delete-service-action',
       description: 'Deletes a self-service action',
       options: [
+
         Option(
           name: '--id',
           description: 'The self-service action identifier. For example, act-fs7abcd89wxyz',
@@ -1615,6 +1663,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1627,6 +1676,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'delete-tag-option',
       description: 'Deletes the specified TagOption. You cannot delete a TagOption if it is associated with a product or portfolio',
       options: [
+
         Option(
           name: '--id',
           description: 'The TagOption identifier',
@@ -1652,6 +1702,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1664,6 +1715,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-constraint',
       description: 'Gets information about the specified constraint',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1698,6 +1750,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1710,6 +1763,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-copy-product-status',
       description: 'Gets the status of the specified copy product operation',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1744,6 +1798,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1756,6 +1811,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-portfolio',
       description: 'Gets information about the specified portfolio. A delegated admin is authorized to invoke this command',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1790,6 +1846,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1802,6 +1859,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-portfolio-share-status',
       description: 'Gets the status of the specified portfolio share operation. This API can only be called by the management account in the organization or by a delegated admin',
       options: [
+
         Option(
           name: '--portfolio-share-token',
           description: 'The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare',
@@ -1827,6 +1885,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1839,6 +1898,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-portfolio-shares',
       description: 'Returns a summary of each of the portfolio shares that were created for the specified portfolio. You can use this API to determine which accounts or organizational nodes this portfolio have been shared, whether the recipient entity has imported the share, and whether TagOptions are included with the share. The PortfolioId and Type parameters are both required',
       options: [
+
         Option(
           name: '--portfolio-id',
           description: 'The unique identifier of the portfolio for which shares will be retrieved',
@@ -1891,6 +1951,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1903,6 +1964,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-product',
       description: 'Gets information about the specified product.   Running this operation with administrator access results in a failure. DescribeProductAsAdmin should be used instead',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -1946,6 +2008,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1958,6 +2021,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-product-as-admin',
       description: 'Gets information about the specified product. This operation is run with administrator access',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -2010,6 +2074,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2022,6 +2087,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-product-view',
       description: 'Gets information about the specified product',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -2056,6 +2122,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2068,6 +2135,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-provisioned-product',
       description: 'Gets information about the specified provisioned product',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -2111,6 +2179,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2123,6 +2192,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-provisioned-product-plan',
       description: 'Gets information about the resource changes for the specified plan',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -2175,6 +2245,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2187,6 +2258,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-provisioning-artifact',
       description: 'Gets information about the specified provisioning artifact (also known as a version) for the specified product',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -2264,6 +2336,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2276,6 +2349,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-provisioning-parameters',
       description: 'Gets information about the configuration required to provision the specified product using the specified provisioning artifact. If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key. The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to ProvisionProduct, do not include conflicted TagOption keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags[N]:Value". Tag the provisioned product with the value sc-tagoption-conflict-portfolioId-productId',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -2355,6 +2429,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2367,6 +2442,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-record',
       description: 'Gets information about the specified request operation. Use this operation after calling a request operation (for example, ProvisionProduct, TerminateProvisionedProduct, or UpdateProvisionedProduct).   If a provisioned product was transferred to a new owner using UpdateProvisionedProductProperties, the new owner will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to use ListRecordHistory to see the product\'s history from when he was the owner',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -2419,6 +2495,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2431,6 +2508,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-service-action',
       description: 'Describes a self-service action',
       options: [
+
         Option(
           name: '--id',
           description: 'The self-service action identifier',
@@ -2465,6 +2543,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2477,6 +2556,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-service-action-execution-parameters',
       description: 'Finds the default parameters for a specific self-service action on a specific provisioned product and returns a map of the results to the user',
       options: [
+
         Option(
           name: '--provisioned-product-id',
           description: 'The identifier of the provisioned product',
@@ -2520,6 +2600,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2532,6 +2613,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'describe-tag-option',
       description: 'Gets information about the specified TagOption',
       options: [
+
         Option(
           name: '--id',
           description: 'The TagOption identifier',
@@ -2557,6 +2639,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2569,6 +2652,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'disable-aws-organizations-access',
       description: 'Disable portfolio sharing through the Organizations service. This command will not delete your current shares, but prevents you from creating new shares throughout your organization. Current shares are not kept in sync with your organization structure if the structure changes after calling this API. Only the management account in the organization can call this API. You cannot call this API if there are active delegated administrators in the organization. Note that a delegated administrator is not authorized to invoke DisableAWSOrganizationsAccess.  If you share an Service Catalog portfolio in an organization within Organizations, and then disable Organizations access for Service Catalog, the portfolio access permissions will not sync with the latest changes to the organization structure. Specifically, accounts that you removed from the organization after disabling Service Catalog access will retain access to the previously shared portfolio',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2585,6 +2669,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2597,6 +2682,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'disassociate-budget-from-resource',
       description: 'Disassociates the specified budget from the specified resource',
       options: [
+
         Option(
           name: '--budget-name',
           description: 'The name of the budget you want to disassociate',
@@ -2631,6 +2717,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2643,6 +2730,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'disassociate-principal-from-portfolio',
       description: 'Disassociates a previously associated principal ARN from a specified portfolio. The PrincipalType and PrincipalARN must match the AssociatePrincipalWithPortfolio call request details. For example, to disassociate an association created with a PrincipalARN of PrincipalType IAM you must use the PrincipalType IAM when calling DisassociatePrincipalFromPortfolio.  For portfolios that have been shared with principal name sharing enabled: after disassociating a principal, share recipient accounts will no longer be able to provision products in this portfolio using a role matching the name of the associated principal.  For more information, review associate-principal-with-portfolio in the Amazon Web Services CLI Command Reference.   If you disassociate a principal from a portfolio, with PrincipalType as IAM, the same principal will still have access to the portfolio if it matches one of the associated principals of type IAM_PATTERN. To fully remove access for a principal, verify all the associated Principals of type IAM_PATTERN, and then ensure you disassociate any IAM_PATTERN principals that match the principal whose access you are removing',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -2695,6 +2783,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2707,6 +2796,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'disassociate-product-from-portfolio',
       description: 'Disassociates the specified product from the specified portfolio.  A delegated admin is authorized to invoke this command',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -2750,6 +2840,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2762,6 +2853,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'disassociate-service-action-from-provisioning-artifact',
       description: 'Disassociates the specified self-service action association from the specified provisioning artifact',
       options: [
+
         Option(
           name: '--product-id',
           description: 'The product identifier. For example, prod-abcdzk7xy33qa',
@@ -2823,6 +2915,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2835,6 +2928,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'disassociate-tag-option-from-resource',
       description: 'Disassociates the specified TagOption from the specified resource',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The resource identifier',
@@ -2869,6 +2963,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2881,6 +2976,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'enable-aws-organizations-access',
       description: 'Enable portfolio sharing feature through Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the management account in the organization. When you call this API, Service Catalog calls organizations:EnableAWSServiceAccess on your behalf so that your shares stay in sync with any changes in your Organizations structure. Note that a delegated administrator is not authorized to invoke EnableAWSOrganizationsAccess.  If you have previously disabled Organizations access for Service Catalog, and then enable access again, the portfolio access permissions might not sync with the latest changes to the organization structure. Specifically, accounts that you removed from the organization after disabling Service Catalog access, and before you enabled access again, can retain access to the previously shared portfolio. As a result, an account that has been removed from the organization might still be able to create or manage Amazon Web Services resources when it is no longer authorized to do so. Amazon Web Services is working to resolve this issue',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2897,6 +2993,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2909,6 +3006,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'execute-provisioned-product-plan',
       description: 'Provisions or modifies a product based on the resource changes for the specified plan',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -2952,6 +3050,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2964,6 +3063,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'execute-provisioned-product-service-action',
       description: 'Executes a self-service action against a provisioned product',
       options: [
+
         Option(
           name: '--provisioned-product-id',
           description: 'The identifier of the provisioned product',
@@ -3025,6 +3125,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3037,6 +3138,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'get-aws-organizations-access-status',
       description: 'Get the Access Status for Organizations portfolio share feature. This API can only be called by the management account in the organization or by a delegated admin',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -3053,6 +3155,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3065,6 +3168,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'get-provisioned-product-outputs',
       description: 'This API takes either a ProvisonedProductId or a ProvisionedProductName, along with a list of one or more output keys, and responds with the key/value pairs of those outputs',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3135,6 +3239,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3147,6 +3252,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'import-as-provisioned-product',
       description: 'Requests the import of a resource as an Service Catalog provisioned product that is associated to an Service Catalog product and provisioning artifact. Once imported, all supported governance actions are supported on the provisioned product.   Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets, and non-root nested stacks, are not supported.   The CloudFormation stack must have one of the following statuses to be imported: CREATE_COMPLETE, UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE, IMPORT_COMPLETE, and IMPORT_ROLLBACK_COMPLETE.   Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog product provisioning artifact.    When you import an existing CloudFormation stack into a portfolio, Service Catalog does not apply the product\'s associated constraints during the import process. Service Catalog applies the constraints after you call UpdateProvisionedProduct for the provisioned product.    The user or role that performs this operation must have the cloudformation:GetTemplate and cloudformation:DescribeStacks IAM policy permissions.  You can only import one provisioned product at a time. The product\'s CloudFormation stack must have the IMPORT_COMPLETE status before you import another',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3217,6 +3323,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3229,6 +3336,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-accepted-portfolio-shares',
       description: 'Lists all imported portfolios for which account-to-account shares were accepted by this account. By specifying the PortfolioShareType, you can list portfolios for which organizational shares were accepted by this account',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3299,6 +3407,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3311,6 +3420,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-budgets-for-resource',
       description: 'Lists all the budgets associated to the specified resource',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3363,6 +3473,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3375,6 +3486,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-constraints-for-portfolio',
       description: 'Lists the constraints for the specified portfolio and product',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3454,6 +3566,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3466,6 +3579,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-launch-paths',
       description: 'Lists the paths to the specified product. A path describes how the user gets access to a specified product and is necessary when provisioning a product. A path also determines the constraints that are put on a product. A path is dependent on a specific product, porfolio, and principal.    When provisioning a product that\'s been added to a portfolio, you must grant your user, group, or role access to the portfolio. For more information, see Granting users access in the Service Catalog User Guide',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3536,6 +3650,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3548,6 +3663,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-organization-portfolio-access',
       description: 'Lists the organization nodes that have access to the specified portfolio. This API can only be called by the management account in the organization or by a delegated admin. If a delegated admin is de-registered, they can no longer perform this operation',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3627,6 +3743,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3639,6 +3756,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-portfolio-access',
       description: 'Lists the account IDs that have access to the specified portfolio. A delegated admin can list the accounts that have access to the shared portfolio. Note that if a delegated admin is de-registered, they can no longer perform this operation',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3700,6 +3818,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3712,6 +3831,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-portfolios',
       description: 'Lists all portfolios in the catalog',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3773,6 +3893,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3785,6 +3906,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-portfolios-for-product',
       description: 'Lists all portfolios that the specified product is associated with',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3855,6 +3977,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3867,6 +3990,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-principals-for-portfolio',
       description: 'Lists all PrincipalARNs and corresponding PrincipalTypes associated with the specified portfolio',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -3937,6 +4061,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3949,6 +4074,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-provisioned-product-plans',
       description: 'Lists the plans for the specified provisioned product or all plans to which the user has access',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -4028,6 +4154,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4040,6 +4167,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-provisioning-artifacts',
       description: 'Lists all provisioning artifacts (also known as versions) for the specified product',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -4074,6 +4202,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4086,6 +4215,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-provisioning-artifacts-for-service-action',
       description: 'Lists all provisioning artifacts (also known as versions) for the specified self-service action',
       options: [
+
         Option(
           name: '--service-action-id',
           description: 'The self-service action identifier. For example, act-fs7abcd89wxyz',
@@ -4156,6 +4286,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4168,6 +4299,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-record-history',
       description: 'Lists the specified requests or all performed requests',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -4247,6 +4379,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4259,6 +4392,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-resources-for-tag-option',
       description: 'Lists the resources associated with the specified TagOption',
       options: [
+
         Option(
           name: '--tag-option-id',
           description: 'The TagOption identifier',
@@ -4329,6 +4463,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4341,6 +4476,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-service-actions',
       description: 'Lists all self-service actions',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -4402,6 +4538,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4414,6 +4551,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-service-actions-for-provisioning-artifact',
       description: 'Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning Artifact ID',
       options: [
+
         Option(
           name: '--product-id',
           description: 'The product identifier. For example, prod-abcdzk7xy33qa',
@@ -4493,6 +4631,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4505,6 +4644,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-stack-instances-for-provisioned-product',
       description: 'Returns summary information about stack instances that are associated with the specified CFN_STACKSET type provisioned product. You can filter for stack instances that are associated with a specific Amazon Web Services account name or Region',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -4557,6 +4697,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4569,6 +4710,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'list-tag-options',
       description: 'Lists the specified TagOptions or all TagOptions',
       options: [
+
         Option(
           name: '--filters',
           description: 'The search filters. If no search filters are specified, the output includes all TagOptions',
@@ -4630,6 +4772,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4642,6 +4785,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'notify-provision-product-engine-workflow-result',
       description: 'Notifies the result of the provisioning engine execution',
       options: [
+
         Option(
           name: '--workflow-token',
           description: 'The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts',
@@ -4721,6 +4865,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4733,6 +4878,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'notify-terminate-provisioned-product-engine-workflow-result',
       description: 'Notifies the result of the terminate engine execution',
       options: [
+
         Option(
           name: '--workflow-token',
           description: 'The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts',
@@ -4794,6 +4940,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4806,6 +4953,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'notify-update-provisioned-product-engine-workflow-result',
       description: 'Notifies the result of the update engine execution',
       options: [
+
         Option(
           name: '--workflow-token',
           description: 'The encrypted contents of the update engine execution payload that Service Catalog sends after the Terraform product update workflow starts',
@@ -4876,6 +5024,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4888,6 +5037,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'provision-product',
       description: 'Provisions the specified product.   A provisioned product is a resourced instance of a product. For example, provisioning a product that\'s based on an CloudFormation template launches an CloudFormation stack and its underlying resources. You can check the status of this request using DescribeRecord.   If the request contains a tag key with an empty list of values, there\'s a tag conflict for that key. Don\'t include conflicted keys as tags, or this will cause the error "Parameter validation failed: Missing required parameter in Tags[N]:Value".    When provisioning a product that\'s been added to a portfolio, you must grant your user, group, or role access to the portfolio. For more information, see Granting users access in the Service Catalog User Guide',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -5021,6 +5171,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5033,6 +5184,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'reject-portfolio-share',
       description: 'Rejects an offer to share the specified portfolio',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -5076,6 +5228,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5088,6 +5241,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'scan-provisioned-products',
       description: 'Lists the provisioned products that are available (not terminated). To use additional filtering, see SearchProvisionedProducts',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -5158,6 +5312,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5170,6 +5325,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'search-products',
       description: 'Gets information about the products to which the caller has access',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -5240,6 +5396,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5252,6 +5409,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'search-products-as-admin',
       description: 'Gets information about the products for the specified portfolio or all products',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -5358,6 +5516,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5370,6 +5529,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'search-provisioned-products',
       description: 'Gets information about the provisioned products that meet the specified criteria',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -5449,6 +5609,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5461,6 +5622,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'terminate-provisioned-product',
       description: 'Terminates the specified provisioned product. This operation does not delete any records associated with the provisioned product. You can check the status of this request using DescribeRecord',
       options: [
+
         Option(
           name: '--provisioned-product-name',
           description: 'The name of the provisioned product. You cannot specify both ProvisionedProductName and ProvisionedProductId',
@@ -5529,6 +5691,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5541,6 +5704,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'update-constraint',
       description: 'Updates the specified constraint',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -5593,6 +5757,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5605,6 +5770,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'update-portfolio',
       description: 'Updates the specified portfolio. You cannot update a product that was shared with you',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -5684,6 +5850,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5696,6 +5863,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'update-portfolio-share',
       description: 'Updates the specified portfolio share. You can use this API to enable or disable TagOptions sharing or Principal sharing for an existing portfolio share.  The portfolio share cannot be updated if the CreatePortfolioShare operation is IN_PROGRESS, as the share is not available to recipient entities. In this case, you must wait for the portfolio share to be completed. You must provide the accountId or organization node in the input, but not both. If the portfolio is shared to both an external account and an organization node, and both shares need to be updated, you must invoke UpdatePortfolioShare separately for each share type.  This API cannot be used for removing the portfolio share. You must use DeletePortfolioShare API for that action.   When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is not an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using PrincipalType as IAM. With this configuration, the PrincipalARN must already exist in the recipient account before it can be associated',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -5764,6 +5932,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5776,6 +5945,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'update-product',
       description: 'Updates the specified product',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -5900,6 +6070,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5912,6 +6083,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'update-provisioned-product',
       description: 'Requests updates to the configuration of the specified provisioned product. If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates requested, this operation can update with no interruption, with some interruption, or replace the provisioned product entirely. You can check the status of this request using DescribeRecord',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -6045,6 +6217,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6057,6 +6230,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'update-provisioned-product-properties',
       description: 'Requests updates to the properties of the specified provisioned product',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -6109,6 +6283,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6121,6 +6296,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'update-provisioning-artifact',
       description: 'Updates the specified provisioning artifact (also known as a version) for the specified product. You cannot update a provisioning artifact for a product that was shared with you',
       options: [
+
         Option(
           name: '--accept-language',
           description: 'The language code.    jp - Japanese    zh - Chinese',
@@ -6199,6 +6375,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6211,6 +6388,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'update-service-action',
       description: 'Updates a self-service action',
       options: [
+
         Option(
           name: '--id',
           description: 'The self-service action identifier',
@@ -6272,6 +6450,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6284,6 +6463,7 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'update-tag-option',
       description: 'Updates the specified TagOption',
       options: [
+
         Option(
           name: '--id',
           description: 'The TagOption identifier',
@@ -6326,6 +6506,7 @@ final FigSpec servicecatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6338,10 +6519,12 @@ final FigSpec servicecatalogSpec = FigSpec(
       name: 'generate',
       description: 'Generate a Service Catalog product or provisioning artifact using a CloudFormation template specified as a local file path',
       subcommands: [
+
         Subcommand(
           name: 'product',
           description: 'Create a new product using a CloudFormation template specified as a local file path',
           options: [
+
             Option(
               name: '--product-name',
               description: 'The name of the product',
@@ -6367,6 +6550,7 @@ final FigSpec servicecatalogSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'CLOUD_FORMATION_TEMPLATE'),
                   FigSuggestion(name: 'MARKETPLACE')
                 ]
@@ -6462,6 +6646,7 @@ final FigSpec servicecatalogSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'CLOUD_FORMATION_TEMPLATE'),
                   FigSuggestion(name: 'MARKETPLACE_AMI'),
                   FigSuggestion(name: 'MARKETPLACE_CAR')
@@ -6475,6 +6660,7 @@ final FigSpec servicecatalogSpec = FigSpec(
           name: 'provisioning-artifact',
           description: 'Create a new provisioning artifact for the specified product using a CloudFormation template specified as a local file path',
           options: [
+
             Option(
               name: '--file-path',
               description: 'A local file path that references the CloudFormation template',
@@ -6518,6 +6704,7 @@ final FigSpec servicecatalogSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'CLOUD_FORMATION_TEMPLATE'),
                   FigSuggestion(name: 'MARKETPLACE_AMI'),
                   FigSuggestion(name: 'MARKETPLACE_CAR')

@@ -9,10 +9,12 @@ final FigSpec cloud9Spec = FigSpec(
   name: 'cloud9',
   description: 'Cloud9 Cloud9 is a collection of tools that you can use to code, build, run, test, debug, and release software in the cloud. For more information about Cloud9, see the Cloud9 User Guide. Cloud9 supports these operations:    CreateEnvironmentEC2: Creates an Cloud9 development environment, launches an Amazon EC2 instance, and then connects from the instance to the environment.    CreateEnvironmentMembership: Adds an environment member to an environment.    DeleteEnvironment: Deletes an environment. If an Amazon EC2 instance is connected to the environment, also terminates the instance.    DeleteEnvironmentMembership: Deletes an environment member from an environment.    DescribeEnvironmentMemberships: Gets information about environment members for an environment.    DescribeEnvironments: Gets information about environments.    DescribeEnvironmentStatus: Gets status information for an environment.    ListEnvironments: Gets a list of environment identifiers.    ListTagsForResource: Gets the tags for an environment.    TagResource: Adds tags to an environment.    UntagResource: Removes tags from an environment.    UpdateEnvironment: Changes the settings of an existing environment.    UpdateEnvironmentMembership: Changes the settings of an existing environment member for an environment',
   subcommands: [
+
     Subcommand(
       name: 'create-environment-ec2',
       description: 'Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the environment to create. This name is visible to other IAM users in the same Amazon Web Services account',
@@ -127,6 +129,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -139,6 +142,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'create-environment-membership',
       description: 'Adds an environment member to an Cloud9 development environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The ID of the environment that contains the environment member you want to add',
@@ -182,6 +186,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -194,6 +199,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'delete-environment',
       description: 'Deletes an Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also terminates the instance',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The ID of the environment to delete',
@@ -219,6 +225,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -231,6 +238,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'delete-environment-membership',
       description: 'Deletes an environment member from a development environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The ID of the environment to delete the environment member from',
@@ -265,6 +273,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -277,6 +286,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'describe-environment-memberships',
       description: 'Gets information about environment members for an Cloud9 development environment',
       options: [
+
         Option(
           name: '--user-arn',
           description: 'The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned',
@@ -365,6 +375,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -377,6 +388,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'describe-environment-status',
       description: 'Gets status information for an Cloud9 development environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The ID of the environment to get status information about',
@@ -402,6 +414,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -414,6 +427,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'describe-environments',
       description: 'Gets information about Cloud9 development environments',
       options: [
+
         Option(
           name: '--environment-ids',
           description: 'The IDs of individual environments to get information about',
@@ -439,6 +453,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -451,6 +466,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'list-environments',
       description: 'Gets a list of Cloud9 development environment identifiers',
       options: [
+
         Option(
           name: '--next-token',
           description: 'During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a next token. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned',
@@ -512,6 +528,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -524,6 +541,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets a list of the tags associated with an Cloud9 development environment',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for',
@@ -549,6 +567,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -561,6 +580,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to an Cloud9 development environment.  Tags that you add to an Cloud9 environment by using this method will NOT be automatically propagated to underlying resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to',
@@ -595,6 +615,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -607,6 +628,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from an Cloud9 development environment',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from',
@@ -641,6 +663,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -653,6 +676,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'update-environment',
       description: 'Changes the settings of an existing Cloud9 development environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The ID of the environment to change settings',
@@ -705,6 +729,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -717,6 +742,7 @@ final FigSpec cloud9Spec = FigSpec(
       name: 'update-environment-membership',
       description: 'Changes the settings of an existing environment member for an Cloud9 development environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The ID of the environment for the environment member whose settings you want to change',
@@ -760,6 +786,7 @@ final FigSpec cloud9Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

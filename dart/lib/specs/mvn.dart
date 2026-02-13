@@ -9,6 +9,7 @@ final FigSpec mvnSpec = FigSpec(
   name: 'mvn',
   description: 'Maven - a Java based project management and comprehension tool',
   options: [
+
     Option(
       name: ['--also-make', '-am'],
       description: 'Also build projects required by project list'
@@ -45,6 +46,7 @@ final FigSpec mvnSpec = FigSpec(
         Arg(
         name: 'color mode',
         suggestions: [
+
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'never'),
           FigSuggestion(name: 'auto')
@@ -258,6 +260,7 @@ final FigSpec mvnSpec = FigSpec(
     description: 'Goal or phase to execute',
     isVariadic: true,
     suggestions: [
+
       FigSuggestion(name: 'pre-clean'),
       FigSuggestion(name: 'clean'),
       FigSuggestion(name: 'post-clean'),

@@ -9,10 +9,12 @@ final FigSpec codecommitSpec = FigSpec(
   name: 'codecommit',
   description: 'CodeCommit This is the CodeCommit API Reference. This reference provides descriptions of the operations and data types for CodeCommit API along with usage examples. You can use the CodeCommit API to work with the following objects: Repositories, by calling the following:    BatchGetRepositories, which returns information about one or more repositories associated with your Amazon Web Services account.    CreateRepository, which creates an CodeCommit repository.    DeleteRepository, which deletes an CodeCommit repository.    GetRepository, which returns information about a specified repository.    ListRepositories, which lists all CodeCommit repositories associated with your Amazon Web Services account.    UpdateRepositoryDescription, which sets or updates the description of the repository.    UpdateRepositoryEncryptionKey, which updates the Key Management Service encryption key used to encrypt and decrypt a repository.    UpdateRepositoryName, which changes the name of the repository. If you change the name of a repository, no other users of that repository can access it until you send them the new HTTPS or SSH URL to use.   Branches, by calling the following:    CreateBranch, which creates a branch in a specified repository.    DeleteBranch, which deletes the specified branch in a repository unless it is the default branch.    GetBranch, which returns information about a specified branch.    ListBranches, which lists all branches for a specified repository.    UpdateDefaultBranch, which changes the default branch for a repository.   Files, by calling the following:    DeleteFile, which deletes the content of a specified file from a specified branch.    GetBlob, which returns the base-64 encoded content of an individual Git blob object in a repository.    GetFile, which returns the base-64 encoded content of a specified file.    GetFolder, which returns the contents of a specified folder or directory.    ListFileCommitHistory, which retrieves a list of commits and changes to a specified file.     PutFile, which adds or modifies a single file in a specified repository and branch.   Commits, by calling the following:    BatchGetCommits, which returns information about one or more commits in a repository.    CreateCommit, which creates a commit for changes to a repository.    GetCommit, which returns information about a commit, including commit messages and author and committer information.    GetDifferences, which returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified reference).   Merges, by calling the following:    BatchDescribeMergeConflicts, which returns information about conflicts in a merge between commits in a repository.    CreateUnreferencedMergeCommit, which creates an unreferenced commit between two branches or commits for the purpose of comparing them and identifying any potential conflicts.    DescribeMergeConflicts, which returns information about merge conflicts between the base, source, and destination versions of a file in a potential merge.    GetMergeCommit, which returns information about the merge between a source and destination commit.     GetMergeConflicts, which returns information about merge conflicts between the source and destination branch in a pull request.    GetMergeOptions, which returns information about the available merge options between two branches or commit specifiers.    MergeBranchesByFastForward, which merges two branches using the fast-forward merge option.    MergeBranchesBySquash, which merges two branches using the squash merge option.    MergeBranchesByThreeWay, which merges two branches using the three-way merge option.   Pull requests, by calling the following:    CreatePullRequest, which creates a pull request in a specified repository.    CreatePullRequestApprovalRule, which creates an approval rule for a specified pull request.    DeletePullRequestApprovalRule, which deletes an approval rule for a specified pull request.    DescribePullRequestEvents, which returns information about one or more pull request events.    EvaluatePullRequestApprovalRules, which evaluates whether a pull request has met all the conditions specified in its associated approval rules.    GetCommentsForPullRequest, which returns information about comments on a specified pull request.    GetPullRequest, which returns information about a specified pull request.    GetPullRequestApprovalStates, which returns information about the approval states for a specified pull request.    GetPullRequestOverrideState, which returns information about whether approval rules have been set aside (overriden) for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.    ListPullRequests, which lists all pull requests for a repository.    MergePullRequestByFastForward, which merges the source destination branch of a pull request into the specified destination branch for that pull request using the fast-forward merge option.    MergePullRequestBySquash, which merges the source destination branch of a pull request into the specified destination branch for that pull request using the squash merge option.    MergePullRequestByThreeWay, which merges the source destination branch of a pull request into the specified destination branch for that pull request using the three-way merge option.    OverridePullRequestApprovalRules, which sets aside all approval rule requirements for a pull request.    PostCommentForPullRequest, which posts a comment to a pull request at the specified line, file, or request.    UpdatePullRequestApprovalRuleContent, which updates the structure of an approval rule for a pull request.    UpdatePullRequestApprovalState, which updates the state of an approval on a pull request.    UpdatePullRequestDescription, which updates the description of a pull request.    UpdatePullRequestStatus, which updates the status of a pull request.    UpdatePullRequestTitle, which updates the title of a pull request.   Approval rule templates, by calling the following:    AssociateApprovalRuleTemplateWithRepository, which associates a template with a specified repository. After the template is associated with a repository, CodeCommit creates approval rules that match the template conditions on every pull request created in the specified repository.    BatchAssociateApprovalRuleTemplateWithRepositories, which associates a template with one or more specified repositories. After the template is associated with a repository, CodeCommit creates approval rules that match the template conditions on every pull request created in the specified repositories.    BatchDisassociateApprovalRuleTemplateFromRepositories, which removes the association between a template and specified repositories so that approval rules based on the template are not automatically created when pull requests are created in those repositories.    CreateApprovalRuleTemplate, which creates a template for approval rules that can then be associated with one or more repositories in your Amazon Web Services account.    DeleteApprovalRuleTemplate, which deletes the specified template. It does not remove approval rules on pull requests already created with the template.    DisassociateApprovalRuleTemplateFromRepository, which removes the association between a template and a repository so that approval rules based on the template are not automatically created when pull requests are created in the specified repository.    GetApprovalRuleTemplate, which returns information about an approval rule template.    ListApprovalRuleTemplates, which lists all approval rule templates in the Amazon Web Services Region in your Amazon Web Services account.    ListAssociatedApprovalRuleTemplatesForRepository, which lists all approval rule templates that are associated with a specified repository.    ListRepositoriesForApprovalRuleTemplate, which lists all repositories associated with the specified approval rule template.    UpdateApprovalRuleTemplateDescription, which updates the description of an approval rule template.    UpdateApprovalRuleTemplateName, which updates the name of an approval rule template.    UpdateApprovalRuleTemplateContent, which updates the content of an approval rule template.   Comments in a repository, by calling the following:    DeleteCommentContent, which deletes the content of a comment on a commit in a repository.    GetComment, which returns information about a comment on a commit.    GetCommentReactions, which returns information about emoji reactions to comments.    GetCommentsForComparedCommit, which returns information about comments on the comparison between two commit specifiers in a repository.    PostCommentForComparedCommit, which creates a comment on the comparison between two commit specifiers in a repository.    PostCommentReply, which creates a reply to a comment.    PutCommentReaction, which creates or updates an emoji reaction to a comment.    UpdateComment, which updates the content of a comment on a commit in a repository.   Tags used to tag resources in CodeCommit (not Git tags), by calling the following:    ListTagsForResource, which gets information about Amazon Web Servicestags for a specified Amazon Resource Name (ARN) in CodeCommit.    TagResource, which adds or updates tags for a resource in CodeCommit.    UntagResource, which removes tags for a resource in CodeCommit.   Triggers, by calling the following:    GetRepositoryTriggers, which returns information about triggers configured for a repository.    PutRepositoryTriggers, which replaces all triggers for a repository and can be used to create or delete triggers.    TestRepositoryTriggers, which tests the functionality of a repository trigger by sending data to the trigger target.   For information about how to use CodeCommit, see the CodeCommit User Guide',
   subcommands: [
+
     Subcommand(
       name: 'associate-approval-rule-template-with-repository',
       description: 'Creates an association between an approval rule template and a specified repository. Then, the next time a pull request is created in the repository where the destination reference (if specified) matches the destination reference (branch) for the pull request, an approval rule that matches the template conditions is automatically created for that pull request. If no destination references are specified in the template, an approval rule that matches the template contents is created for all pull requests in that repository',
       options: [
+
         Option(
           name: '--approval-rule-template-name',
           description: 'The name for the approval rule template',
@@ -47,6 +49,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'batch-associate-approval-rule-template-with-repositories',
       description: 'Creates an association between an approval rule template and one or more specified repositories',
       options: [
+
         Option(
           name: '--approval-rule-template-name',
           description: 'The name of the template you want to associate with one or more repositories',
@@ -93,6 +97,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'batch-describe-merge-conflicts',
       description: 'Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the squash or three-way merge strategy',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository that contains the merge conflicts you want to review',
@@ -211,6 +217,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -223,6 +230,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'batch-disassociate-approval-rule-template-from-repositories',
       description: 'Removes the association between an approval rule template and one or more specified repositories',
       options: [
+
         Option(
           name: '--approval-rule-template-name',
           description: 'The name of the template that you want to disassociate from one or more repositories',
@@ -257,6 +265,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -269,6 +278,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'batch-get-commits',
       description: 'Returns information about the contents of one or more commits in a repository',
       options: [
+
         Option(
           name: '--commit-ids',
           description: 'The full commit IDs of the commits to get information about.  You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs',
@@ -303,6 +313,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -315,6 +326,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'batch-get-repositories',
       description: 'Returns information about one or more repositories.  The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage',
       options: [
+
         Option(
           name: '--repository-names',
           description: 'The names of the repositories to get information about.  The length constraint limit is for each string in the array. The array itself can be empty',
@@ -340,6 +352,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -352,6 +365,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'create-approval-rule-template',
       description: 'Creates a template for approval rules that can then be associated with one or more repositories in your Amazon Web Services account. When you associate a template with a repository, CodeCommit creates an approval rule that matches the conditions of the template for all pull requests that meet the conditions of the template. For more information, see AssociateApprovalRuleTemplateWithRepository',
       options: [
+
         Option(
           name: '--approval-rule-template-name',
           description: 'The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories',
@@ -395,6 +409,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -407,6 +422,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'create-branch',
       description: 'Creates a branch in a repository and points the branch to a commit.  Calling the create branch operation does not set a repository\'s default branch. To do this, call the update default branch operation',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository in which you want to create the new branch',
@@ -450,6 +466,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -462,6 +479,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'create-commit',
       description: 'Creates a commit for a repository on the tip of a specified branch',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you create the commit',
@@ -567,6 +585,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -579,6 +598,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'create-pull-request',
       description: 'Creates a pull request in the specified repository',
       options: [
+
         Option(
           name: '--title',
           description: 'The title of the pull request. This title is used to identify the pull request to other users in the repository',
@@ -631,6 +651,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -643,6 +664,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'create-pull-request-approval-rule',
       description: 'Creates an approval rule for a pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request for which you want to create the approval rule',
@@ -686,6 +708,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -698,6 +721,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'create-repository',
       description: 'Creates a new, empty repository',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the new repository to be created.  The repository name must be unique across the calling Amazon Web Services account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see Quotas in the CodeCommit User Guide. The suffix .git is prohibited',
@@ -750,6 +774,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -762,6 +787,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'create-unreferenced-merge-commit',
       description: 'Creates an unreferenced commit that represents the result of merging two branches using a specified merge strategy. This can help you determine the outcome of a potential merge. This API cannot be used with the fast-forward merge strategy because that strategy does not create a merge commit.  This unreferenced merge commit can only be accessed using the GetCommit API or through git commands such as git fetch. To retrieve this commit, you must specify its commit ID or otherwise reference it',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you want to create the unreferenced merge commit',
@@ -876,6 +902,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -888,6 +915,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'delete-approval-rule-template',
       description: 'Deletes a specified approval rule template. Deleting a template does not remove approval rules on pull requests already created with the template',
       options: [
+
         Option(
           name: '--approval-rule-template-name',
           description: 'The name of the approval rule template to delete',
@@ -913,6 +941,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -925,6 +954,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'delete-branch',
       description: 'Deletes a branch from a repository, unless that branch is the default branch for the repository',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository that contains the branch to be deleted',
@@ -959,6 +989,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -971,6 +1002,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'delete-comment-content',
       description: 'Deletes the content of a comment made on a change, file, or commit in a repository',
       options: [
+
         Option(
           name: '--comment-id',
           description: 'The unique, system-generated ID of the comment. To get this ID, use GetCommentsForComparedCommit or GetCommentsForPullRequest',
@@ -996,6 +1028,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1008,6 +1041,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'delete-file',
       description: 'Deletes a specified file from a specified branch. A commit is created on the branch that contains the revision. The file still exists in the commits earlier to the commit that contains the deletion',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository that contains the file to delete',
@@ -1095,6 +1129,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1107,6 +1142,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'delete-pull-request-approval-rule',
       description: 'Deletes an approval rule from a specified pull request. Approval rules can be deleted from a pull request only if the pull request is open, and if the approval rule was created specifically for a pull request and not generated from an approval rule template associated with the repository where the pull request was created. You cannot delete an approval rule from a merged or closed pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request that contains the approval rule you want to delete',
@@ -1141,6 +1177,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1153,6 +1190,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'delete-repository',
       description: 'Deletes a repository. If a specified repository was already deleted, a null repository ID is returned.  Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository fail',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository to delete',
@@ -1178,6 +1216,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1190,6 +1229,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'describe-merge-conflicts',
       description: 'Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the squash or three-way merge strategy. If the merge option for the attempted merge is specified as FAST_FORWARD_MERGE, an exception is thrown',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you want to get information about a merge conflict',
@@ -1287,6 +1327,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1299,6 +1340,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'describe-pull-request-events',
       description: 'Returns information about one or more pull request events',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request. To get this ID, use ListPullRequests',
@@ -1387,6 +1429,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1399,6 +1442,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'disassociate-approval-rule-template-from-repository',
       description: 'Removes the association between a template and a repository so that approval rules based on the template are not automatically created when pull requests are created in the specified repository. This does not delete any approval rules previously created for pull requests through the template association',
       options: [
+
         Option(
           name: '--approval-rule-template-name',
           description: 'The name of the approval rule template to disassociate from a specified repository',
@@ -1433,6 +1477,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1445,6 +1490,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'evaluate-pull-request-approval-rules',
       description: 'Evaluates whether a pull request has met all the conditions specified in its associated approval rules',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request you want to evaluate',
@@ -1479,6 +1525,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1491,6 +1538,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-approval-rule-template',
       description: 'Returns information about a specified approval rule template',
       options: [
+
         Option(
           name: '--approval-rule-template-name',
           description: 'The name of the approval rule template for which you want to get information',
@@ -1516,6 +1564,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1528,6 +1577,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-blob',
       description: 'Returns the base-64 encoded content of an individual blob in a repository',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository that contains the blob',
@@ -1562,6 +1612,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1574,6 +1625,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-branch',
       description: 'Returns information about a repository branch, including its name and the last commit ID',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository that contains the branch for which you want to retrieve information',
@@ -1608,6 +1660,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1620,6 +1673,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-comment',
       description: 'Returns the content of a comment made on a change, file, or commit in a repository.   Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions',
       options: [
+
         Option(
           name: '--comment-id',
           description: 'The unique, system-generated ID of the comment. To get this ID, use GetCommentsForComparedCommit or GetCommentsForPullRequest',
@@ -1645,6 +1699,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1657,6 +1712,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-comment-reactions',
       description: 'Returns information about reactions to a specified comment ID. Reactions from users who have been deleted will not be included in the count',
       options: [
+
         Option(
           name: '--comment-id',
           description: 'The ID of the comment for which you want to get reactions information',
@@ -1709,6 +1765,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1721,6 +1778,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-comments-for-compared-commit',
       description: 'Returns information about comments made on the comparison between two commits.  Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you want to compare commits',
@@ -1809,6 +1867,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1821,6 +1880,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-comments-for-pull-request',
       description: 'Returns comments made on a pull request.  Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request. To get this ID, use ListPullRequests',
@@ -1918,6 +1978,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1930,6 +1991,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-commit',
       description: 'Returns information about a commit, including commit message and committer information',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository to which the commit was made',
@@ -1964,6 +2026,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1976,6 +2039,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-differences',
       description: 'Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified reference). Results can be limited to a specified path',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you want to get differences',
@@ -2082,6 +2146,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2094,6 +2159,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-file',
       description: 'Returns the base-64 encoded contents of a specified file and its metadata',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository that contains the file',
@@ -2137,6 +2203,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2149,6 +2216,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-folder',
       description: 'Returns the contents of a specified folder in a repository',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository',
@@ -2192,6 +2260,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2204,6 +2273,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-merge-commit',
       description: 'Returns information about a specified merge commit',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository that contains the merge commit about which you want to get information',
@@ -2265,6 +2335,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2277,6 +2348,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-merge-conflicts',
       description: 'Returns information about merge conflicts between the before and after commit IDs for a pull request in a repository',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where the pull request was created',
@@ -2365,6 +2437,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2377,6 +2450,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-merge-options',
       description: 'Returns information about the merge options available for merging two specified branches. For details about why a merge option is not available, use GetMergeConflicts or DescribeMergeConflicts',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository that contains the commits about which you want to get merge options',
@@ -2438,6 +2512,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2450,6 +2525,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-pull-request',
       description: 'Gets information about a pull request in a specified repository',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request. To get this ID, use ListPullRequests',
@@ -2475,6 +2551,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2487,6 +2564,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-pull-request-approval-states',
       description: 'Gets information about the approval states for a specified pull request. Approval states only apply to pull requests that have one or more approval rules applied to them',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID for the pull request',
@@ -2521,6 +2599,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2533,6 +2612,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-pull-request-override-state',
       description: 'Returns information about whether approval rules have been set aside (overridden) for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden)',
@@ -2567,6 +2647,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2579,6 +2660,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-repository',
       description: 'Returns information about a repository.  The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository to get information about',
@@ -2604,6 +2686,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2616,6 +2699,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'get-repository-triggers',
       description: 'Gets information about triggers configured for a repository',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository for which the trigger is configured',
@@ -2641,6 +2725,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2653,6 +2738,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'list-approval-rule-templates',
       description: 'Lists all approval rule templates in the specified Amazon Web Services Region in your Amazon Web Services account. If an Amazon Web Services Region is not specified, the Amazon Web Services Region where you are signed in is used',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An enumeration token that, when provided in a request, returns the next batch of the results',
@@ -2687,6 +2773,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2699,6 +2786,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'list-associated-approval-rule-templates-for-repository',
       description: 'Lists all approval rule templates that are associated with a specified repository',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository for which you want to list all associated approval rule templates',
@@ -2742,6 +2830,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2754,6 +2843,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'list-branches',
       description: 'Gets information about one or more branches in a repository',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository that contains the branches',
@@ -2806,6 +2896,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2818,6 +2909,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'list-file-commit-history',
       description: 'Retrieves a list of commits and changes to a specified file',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository that contains the file',
@@ -2879,6 +2971,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2891,6 +2984,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'list-pull-requests',
       description: 'Returns a list of pull requests for a specified repository. The return list can be refined by pull request status or pull request author ARN',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository for which you want to list pull requests',
@@ -2979,6 +3073,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2991,6 +3086,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'list-repositories',
       description: 'Gets information about one or more repositories',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is retrieved',
@@ -3052,6 +3148,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3064,6 +3161,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'list-repositories-for-approval-rule-template',
       description: 'Lists all repositories associated with the specified approval rule template',
       options: [
+
         Option(
           name: '--approval-rule-template-name',
           description: 'The name of the approval rule template for which you want to list repositories that are associated with that template',
@@ -3107,6 +3205,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3119,6 +3218,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets information about Amazon Web Servicestags for a specified Amazon Resource Name (ARN) in CodeCommit. For a list of valid resources in CodeCommit, see CodeCommit Resources and Operations in the CodeCommit User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any',
@@ -3153,6 +3253,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3165,6 +3266,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'merge-branches-by-fast-forward',
       description: 'Merges two branches using the fast-forward merge strategy',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you want to merge two branches',
@@ -3217,6 +3319,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3229,6 +3332,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'merge-branches-by-squash',
       description: 'Merges two branches using the squash merge strategy',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you want to merge two branches',
@@ -3343,6 +3447,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3355,6 +3460,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'merge-branches-by-three-way',
       description: 'Merges two specified branches using the three-way merge strategy',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you want to merge two branches',
@@ -3469,6 +3575,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3481,6 +3588,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'merge-pull-request-by-fast-forward',
       description: 'Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the fast-forward merge strategy. If the merge is successful, it closes the pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request. To get this ID, use ListPullRequests',
@@ -3524,6 +3632,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3536,6 +3645,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'merge-pull-request-by-squash',
       description: 'Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the squash merge strategy. If the merge is successful, it closes the pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request. To get this ID, use ListPullRequests',
@@ -3641,6 +3751,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3653,6 +3764,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'merge-pull-request-by-three-way',
       description: 'Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the three-way merge strategy. If the merge is successful, it closes the pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request. To get this ID, use ListPullRequests',
@@ -3758,6 +3870,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3770,6 +3883,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'override-pull-request-approval-rules',
       description: 'Sets aside (overrides) all approval rule requirements for a specified pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request for which you want to override all approval rule requirements. To get this information, use GetPullRequest',
@@ -3813,6 +3927,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3825,6 +3940,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'post-comment-for-compared-commit',
       description: 'Posts a comment on the comparison between two commits',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you want to post a comment on the comparison between commits',
@@ -3895,6 +4011,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3907,6 +4024,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'post-comment-for-pull-request',
       description: 'Posts a comment on a pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request. To get this ID, use ListPullRequests',
@@ -3986,6 +4104,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3998,6 +4117,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'post-comment-reply',
       description: 'Posts a comment in reply to an existing comment on a comparison between commits or a pull request',
       options: [
+
         Option(
           name: '--in-reply-to',
           description: 'The system-generated ID of the comment to which you want to reply. To get this ID, use GetCommentsForComparedCommit or GetCommentsForPullRequest',
@@ -4041,6 +4161,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4053,6 +4174,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'put-comment-reaction',
       description: 'Adds or updates a reaction to a specified comment for the user whose identity is used to make the request. You can only add or update a reaction for yourself. You cannot add, modify, or delete a reaction for another user',
       options: [
+
         Option(
           name: '--comment-id',
           description: 'The ID of the comment to which you want to add or update a reaction',
@@ -4087,6 +4209,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4099,6 +4222,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'put-file',
       description: 'Adds or updates a file in a branch in an CodeCommit repository, and generates a commit for the addition in the specified branch',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you want to add or update the file',
@@ -4196,6 +4320,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4208,6 +4333,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'put-repository-triggers',
       description: 'Replaces all triggers for a repository. Used to create or delete triggers',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository where you want to create or update the trigger',
@@ -4242,6 +4368,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4254,6 +4381,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or updates tags for a resource in CodeCommit. For a list of valid resources in CodeCommit, see CodeCommit Resources and Operations in the CodeCommit User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to which you want to add or update tags',
@@ -4288,6 +4416,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4300,6 +4429,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'test-repository-triggers',
       description: 'Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test sends data from the last commit. If no data is available, sample data is generated',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository in which to test the triggers',
@@ -4334,6 +4464,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4346,6 +4477,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags for a resource in CodeCommit. For a list of valid resources in CodeCommit, see CodeCommit Resources and Operations in the CodeCommit User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to which you want to remove tags',
@@ -4380,6 +4512,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4392,6 +4525,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-approval-rule-template-content',
       description: 'Updates the content of an approval rule template. You can change the number of required approvals, the membership of the approval rule, and whether an approval pool is defined',
       options: [
+
         Option(
           name: '--approval-rule-template-name',
           description: 'The name of the approval rule template where you want to update the content of the rule',
@@ -4435,6 +4569,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4447,6 +4582,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-approval-rule-template-description',
       description: 'Updates the description for a specified approval rule template',
       options: [
+
         Option(
           name: '--approval-rule-template-name',
           description: 'The name of the template for which you want to update the description',
@@ -4481,6 +4617,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4493,6 +4630,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-approval-rule-template-name',
       description: 'Updates the name of a specified approval rule template',
       options: [
+
         Option(
           name: '--old-approval-rule-template-name',
           description: 'The current name of the approval rule template',
@@ -4527,6 +4665,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4539,6 +4678,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-comment',
       description: 'Replaces the contents of a comment',
       options: [
+
         Option(
           name: '--comment-id',
           description: 'The system-generated ID of the comment you want to update. To get this ID, use GetCommentsForComparedCommit or GetCommentsForPullRequest',
@@ -4573,6 +4713,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4585,6 +4726,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-default-branch',
       description: 'Sets or changes the default branch name for the specified repository.  If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository for which you want to set or change the default branch',
@@ -4619,6 +4761,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4631,6 +4774,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-pull-request-approval-rule-content',
       description: 'Updates the structure of an approval rule created specifically for a pull request. For example, you can change the number of required approvers and the approval pool for approvers',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request',
@@ -4683,6 +4827,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4695,6 +4840,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-pull-request-approval-state',
       description: 'Updates the state of a user\'s approval on a pull request. The user is derived from the signed-in account when the request is made',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request',
@@ -4738,6 +4884,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4750,6 +4897,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-pull-request-description',
       description: 'Replaces the contents of the description of a pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request. To get this ID, use ListPullRequests',
@@ -4784,6 +4932,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4796,6 +4945,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-pull-request-status',
       description: 'Updates the status of a pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request. To get this ID, use ListPullRequests',
@@ -4830,6 +4980,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4842,6 +4993,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-pull-request-title',
       description: 'Replaces the title of a pull request',
       options: [
+
         Option(
           name: '--pull-request-id',
           description: 'The system-generated ID of the pull request. To get this ID, use ListPullRequests',
@@ -4876,6 +5028,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4888,6 +5041,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-repository-description',
       description: 'Sets or changes the comment or description for a repository.  The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository to set or change the comment or description for',
@@ -4922,6 +5076,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4934,6 +5089,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-repository-encryption-key',
       description: 'Updates the Key Management Service encryption key used to encrypt and decrypt a CodeCommit repository',
       options: [
+
         Option(
           name: '--repository-name',
           description: 'The name of the repository for which you want to update the KMS encryption key used to encrypt and decrypt the repository',
@@ -4968,6 +5124,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4980,6 +5137,7 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'update-repository-name',
       description: 'Renames a repository. The repository name must be unique across the calling Amazon Web Services account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix .git is prohibited. For more information about the limits on repository names, see Quotas in the CodeCommit User Guide',
       options: [
+
         Option(
           name: '--old-name',
           description: 'The current name of the repository',
@@ -5014,6 +5172,7 @@ final FigSpec codecommitSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5026,10 +5185,12 @@ final FigSpec codecommitSpec = FigSpec(
       name: 'credential-helper',
       description: 'Provide a SigV4 compatible user name and password for git smart HTTP  These commands are consumed by git and should not used directly. Erase and Store are no-ops. Get is operation to generate credentials to authenticate AWS CodeCommit. Run "aws codecommit credential-helper help" for details',
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Get a username SigV4 credential pair based on protocol, host and path provided from standard in. This is primarily called by git to generate credentials to authenticate against AWS CodeCommit',
           options: [
+
             Option(
               name: '--ignore-host-check',
               description: 'Optional. Generate credentials regardless of whether the domain is an Amazon domain'

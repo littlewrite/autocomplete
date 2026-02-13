@@ -9,10 +9,12 @@ final FigSpec dpkgSpec = FigSpec(
   name: 'dpkg',
   description: 'Debian package management system',
   subcommands: [
+
     Subcommand(
       name: 'query',
       description: 'Query the dpkg database',
       options: [
+
         Option(
           name: ['-l', '--list'],
           description: 'List packages matching a pattern',
@@ -78,6 +80,7 @@ final FigSpec dpkgSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-R', '--recursive'],
           description: 'Recursively handle packages'
@@ -129,6 +132,7 @@ final FigSpec dpkgSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-R', '--recursive'],
           description: 'Recursively remove packages'
@@ -152,6 +156,7 @@ final FigSpec dpkgSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-R', '--recursive'],
           description: 'Recursively remove packages'
@@ -171,6 +176,7 @@ final FigSpec dpkgSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--pending',
           description: 'Configure all unconfigured packages'
@@ -194,6 +200,7 @@ final FigSpec dpkgSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--no-triggers',
           description: 'Skip processing triggers'
@@ -208,6 +215,7 @@ final FigSpec dpkgSpec = FigSpec(
       name: 'list',
       description: 'List packages in the dpkg database',
       options: [
+
         Option(
           name: ['-l', '--list'],
           description: 'List packages matching a pattern',
@@ -289,6 +297,7 @@ final FigSpec dpkgSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-us', '--unsigned'],
           description: 'Build unsigned .changes and .dsc files'
@@ -356,6 +365,7 @@ final FigSpec dpkgSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-a', '--all'],
           description: 'Check all installed packages'
@@ -386,6 +396,7 @@ final FigSpec dpkgSpec = FigSpec(
       name: 'compare-versions',
       description: 'Compare package versions',
       args: [
+
         Arg(
           name: 'version1'
         ),
@@ -393,6 +404,7 @@ final FigSpec dpkgSpec = FigSpec(
           name: 'relation',
           isOptional: true,
           suggestions: [
+
             FigSuggestion(name: 'lt'),
             FigSuggestion(name: 'le'),
             FigSuggestion(name: 'eq'),
@@ -408,6 +420,7 @@ final FigSpec dpkgSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Help for dpkg'

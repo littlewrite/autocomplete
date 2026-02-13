@@ -1,14 +1,11 @@
-// Auto-generated from init.ts
+// Auto-generated from TypeScript source: init.ts
 // Generated at: 2026-02-12
+// WARNING: Manual changes may be overwritten!
 
 import 'package:autocomplete/src/spec.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// const completion: Fig.Spec = {
-//   name: "init",
-//   description: "It's an effortless setting up tool for configs",
-// };
-// 
-// export default completion;
-// 
+/// Completion spec for `init` CLI
+final FigSpec initSpec = FigSpec(
+  name: 'init',
+  description: 'It\'s an effortless setting up tool for configs'
+);

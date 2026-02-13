@@ -9,10 +9,12 @@ final FigSpec groundstationSpec = FigSpec(
   name: 'groundstation',
   description: 'Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure',
   subcommands: [
+
     Subcommand(
       name: 'cancel-contact',
       description: 'Cancels a contact with a specified contact ID',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'UUID of a contact',
@@ -38,6 +40,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'create-config',
       description: 'Creates a Config with the specified configData parameters. Only one type of configData can be specified',
       options: [
+
         Option(
           name: '--config-data',
           description: 'Parameters of a Config',
@@ -93,6 +97,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'create-dataflow-endpoint-group',
       description: 'Creates a DataflowEndpoint group containing the specified list of DataflowEndpoint objects. The name field in each endpoint is used in your mission profile DataflowEndpointConfig to specify which endpoints to use during a contact. When a contact uses multiple DataflowEndpointConfig objects, each Config must match a DataflowEndpoint in the same group',
       options: [
+
         Option(
           name: '--contact-post-pass-duration-seconds',
           description: 'Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a POSTPASS state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the POSTPASS state',
@@ -157,6 +163,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'create-ephemeris',
       description: 'Creates an Ephemeris with the specified EphemerisData',
       options: [
+
         Option(
           name: '--enabled',
           description: 'Whether to set the ephemeris status to ENABLED after validation. Setting this to false will set the ephemeris status to DISABLED after validation'
@@ -256,6 +264,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -268,6 +277,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'create-mission-profile',
       description: 'Creates a mission profile.  dataflowEdges is a list of lists of strings. Each lower level list of strings has two elements: a from ARN and a to ARN',
       options: [
+
         Option(
           name: '--contact-post-pass-duration-seconds',
           description: 'Amount of time after a contact ends that you’d like to receive a Ground Station Contact State Change event indicating the pass has finished',
@@ -365,6 +375,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -377,6 +388,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'delete-config',
       description: 'Deletes a Config',
       options: [
+
         Option(
           name: '--config-id',
           description: 'UUID of a Config',
@@ -411,6 +423,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -423,6 +436,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'delete-dataflow-endpoint-group',
       description: 'Deletes a dataflow endpoint group',
       options: [
+
         Option(
           name: '--dataflow-endpoint-group-id',
           description: 'UUID of a dataflow endpoint group',
@@ -448,6 +462,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -460,6 +475,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'delete-ephemeris',
       description: 'Deletes an ephemeris',
       options: [
+
         Option(
           name: '--ephemeris-id',
           description: 'The AWS Ground Station ephemeris ID',
@@ -485,6 +501,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -497,6 +514,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'delete-mission-profile',
       description: 'Deletes a mission profile',
       options: [
+
         Option(
           name: '--mission-profile-id',
           description: 'UUID of a mission profile',
@@ -522,6 +540,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -534,6 +553,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'describe-contact',
       description: 'Describes an existing contact',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'UUID of a contact',
@@ -559,6 +579,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -571,6 +592,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'describe-ephemeris',
       description: 'Describes an existing ephemeris',
       options: [
+
         Option(
           name: '--ephemeris-id',
           description: 'The AWS Ground Station ephemeris ID',
@@ -596,6 +618,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -608,6 +631,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'get-agent-configuration',
       description: 'For use by AWS Ground Station Agent and shouldn\'t be called directly.  Gets the latest configuration information for a registered agent',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'UUID of agent to get configuration information for',
@@ -633,6 +657,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -645,6 +670,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'get-config',
       description: 'Returns Config information. Only one Config response can be returned',
       options: [
+
         Option(
           name: '--config-id',
           description: 'UUID of a Config',
@@ -679,6 +705,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -691,6 +718,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'get-dataflow-endpoint-group',
       description: 'Returns the dataflow endpoint group',
       options: [
+
         Option(
           name: '--dataflow-endpoint-group-id',
           description: 'UUID of a dataflow endpoint group',
@@ -716,6 +744,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -728,6 +757,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'get-minute-usage',
       description: 'Returns the number of reserved minutes used by account',
       options: [
+
         Option(
           name: '--month',
           description: 'The month being requested, with a value of 1-12',
@@ -762,6 +792,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -774,6 +805,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'get-mission-profile',
       description: 'Returns a mission profile',
       options: [
+
         Option(
           name: '--mission-profile-id',
           description: 'UUID of a mission profile',
@@ -799,6 +831,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -811,6 +844,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'get-satellite',
       description: 'Returns a satellite',
       options: [
+
         Option(
           name: '--satellite-id',
           description: 'UUID of a satellite',
@@ -836,6 +870,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -848,6 +883,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'list-configs',
       description: 'Returns a list of Config objects',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of Configs returned',
@@ -909,6 +945,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -921,6 +958,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'list-contacts',
       description: 'Returns a list of contacts. If statusList contains AVAILABLE, the request must include groundStation, missionprofileArn, and satelliteArn',
       options: [
+
         Option(
           name: '--end-time',
           description: 'End time of a contact in UTC',
@@ -1036,6 +1074,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1048,6 +1087,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'list-dataflow-endpoint-groups',
       description: 'Returns a list of DataflowEndpoint groups',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of dataflow endpoint groups returned',
@@ -1109,6 +1149,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1121,6 +1162,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'list-ephemerides',
       description: 'List existing ephemerides',
       options: [
+
         Option(
           name: '--end-time',
           description: 'The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the startTime and endTime',
@@ -1218,6 +1260,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1230,6 +1273,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'list-ground-stations',
       description: 'Returns a list of ground stations',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of ground stations returned',
@@ -1300,6 +1344,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1312,6 +1357,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'list-mission-profiles',
       description: 'Returns a list of mission profiles',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of mission profiles returned',
@@ -1373,6 +1419,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1385,6 +1432,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'list-satellites',
       description: 'Returns a list of satellites',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of satellites returned',
@@ -1446,6 +1494,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1458,6 +1507,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags for a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'ARN of a resource',
@@ -1483,6 +1533,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1495,6 +1546,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'register-agent',
       description: 'For use by AWS Ground Station Agent and shouldn\'t be called directly.   Registers a new agent with AWS Ground Station',
       options: [
+
         Option(
           name: '--agent-details',
           description: 'Detailed information about the agent being registered',
@@ -1529,6 +1581,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1541,6 +1594,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'reserve-contact',
       description: 'Reserves a contact using specified parameters',
       options: [
+
         Option(
           name: '--end-time',
           description: 'End time of a contact in UTC',
@@ -1611,6 +1665,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1623,6 +1678,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns a tag to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'ARN of a resource tag',
@@ -1657,6 +1713,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1669,6 +1726,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deassigns a resource tag',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'ARN of a resource',
@@ -1703,6 +1761,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1715,6 +1774,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'update-agent-status',
       description: 'For use by AWS Ground Station Agent and shouldn\'t be called directly.  Update the status of the agent',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'UUID of agent to update',
@@ -1767,6 +1827,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1779,6 +1840,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'update-config',
       description: 'Updates the Config used when scheduling contacts. Updating a Config will not update the execution parameters for existing future contacts scheduled with this Config',
       options: [
+
         Option(
           name: '--config-data',
           description: 'Parameters of a Config',
@@ -1831,6 +1893,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1843,6 +1906,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'update-ephemeris',
       description: 'Updates an existing ephemeris',
       options: [
+
         Option(
           name: '--enabled',
           description: 'Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated'
@@ -1894,6 +1958,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1906,6 +1971,7 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'update-mission-profile',
       description: 'Updates a mission profile. Updating a mission profile will not update the execution parameters for existing future contacts',
       options: [
+
         Option(
           name: '--contact-post-pass-duration-seconds',
           description: 'Amount of time after a contact ends that you’d like to receive a Ground Station Contact State Change event indicating the pass has finished',
@@ -2003,6 +2069,7 @@ final FigSpec groundstationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2015,10 +2082,12 @@ final FigSpec groundstationSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'contact-scheduled',
           description: 'Waits until a contact has been scheduled It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 180 failed checks',
           options: [
+
             Option(
               name: '--contact-id',
               description: 'UUID of a contact',
@@ -2044,6 +2113,7 @@ final FigSpec groundstationSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

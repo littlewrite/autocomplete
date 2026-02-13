@@ -4,15 +4,171 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> installOptions = [
+
+  Option(
+    name: '-l',
+    description: 'Forward-lock the app'
+  ),
+  Option(
+    name: '-r',
+    description: 'Replace existing application'
+  ),
+  Option(
+    name: '-t',
+    description: 'Allow test packages'
+  ),
+  Option(
+    name: '-d',
+    description: 'Allow version code downgrade (debuggable packages only)'
+  ),
+  Option(
+    name: '-s',
+    description: 'Install on SD card instead of internal storage'
+  ),
+  Option(
+    name: '-g',
+    description: 'Grant all runtime permissions'
+  ),
+  Option(
+    description: 'Override platform\'s default ABI',
+    name: '--abi',
+    args: [
+      Arg(
+      name: 'ABI'
+    )
+    ]
+  ),
+  Option(
+    description: 'Cause the app to be installed as an ephemeral install app',
+    name: '--instant'
+  ),
+  Option(
+    description: 'Always push APK to device and invoke Package Manager as separate steps',
+    name: '--no-streaming'
+  ),
+  Option(
+    description: 'Force streaming APK directly into Package Manager',
+    name: '--streaming'
+  ),
+  Option(
+    description: 'Use fast deploy',
+    name: '--fastdeploy'
+  ),
+  Option(
+    description: 'Prevent use of fast deploy',
+    name: '--no-fastdeploy'
+  ),
+  Option(
+    description: 'Force update of deployment agent when using fast deploy',
+    name: '--force-agent'
+  ),
+  Option(
+    description: 'Update deployment agent when local version is newer and using fast deploy',
+    name: '--date-check-agent'
+  ),
+  Option(
+    description: 'Update deployment agent when local version has different version code and using fast deploy',
+    name: '--version-check-agent'
+  ),
+  Option(
+    description: 'Locate agent files from local source build (instead of SDK location)',
+    name: '--local-agent'
+  )
+];
+
+final List<Option> compressionOptions = [
+
+  Option(
+    description: 'Enable compression with a specified algorithm (any, none, brotli)',
+    name: '-z',
+    args: [
+      Arg(
+      name: 'ALGORITHM',
+      suggestions: [
+
+        FigSuggestion(
+          name: 'any'
+        ),
+        FigSuggestion(
+          name: 'none'
+        ),
+        FigSuggestion(
+          name: 'brotli'
+        )
+      ]
+    )
+    ]
+  ),
+  Option(
+    description: 'Disable compression',
+    name: '-Z'
+  )
+];
+
+final List<FigSuggestion> forwardConnectionSuggestions = [
+
+  FigSuggestion(
+    name: 'tcp',
+    insertValue: 'tcp:'
+  ),
+  FigSuggestion(
+    name: 'localabstract',
+    insertValue: 'localabstract:'
+  ),
+  FigSuggestion(
+    name: 'localreserved',
+    insertValue: 'localreserved:'
+  ),
+  FigSuggestion(
+    name: 'localfilesystem',
+    insertValue: 'localfilesystem:'
+  ),
+  FigSuggestion(
+    name: 'dev',
+    insertValue: 'dev:'
+  ),
+  FigSuggestion(
+    name: 'jdwp',
+    insertValue: 'jdwp:'
+  ),
+  FigSuggestion(
+    name: 'acceptfd',
+    insertValue: 'acceptfd:'
+  )
+];
+
+final List<FigSuggestion> reverseConnectionSuggestions = [
+
+  FigSuggestion(
+    name: 'tcp',
+    insertValue: 'tcp:'
+  ),
+  FigSuggestion(
+    name: 'localabstract',
+    insertValue: 'localabstract:'
+  ),
+  FigSuggestion(
+    name: 'localreserved',
+    insertValue: 'localreserved:'
+  ),
+  FigSuggestion(
+    name: 'localfilesystem',
+    insertValue: 'localfilesystem:'
+  )
+];
+
 /// Completion spec for `adb` CLI
 final FigSpec adbSpec = FigSpec(
   name: 'adb',
   description: 'Android Debug Bridge',
   subcommands: [
+
     Subcommand(
       name: 'devices',
       description: 'List connected devices',
       options: [
+
         Option(
           name: '-l',
           description: 'Long output'
@@ -38,6 +194,7 @@ final FigSpec adbSpec = FigSpec(
     Subcommand(
       name: 'remount',
       options: [
+
         Option(
           name: '-R',
           description: 'Reboot device'
@@ -82,6 +239,7 @@ final FigSpec adbSpec = FigSpec(
       description: 'Kick connection from host side to force reconnect',
       name: 'reconnect',
       subcommands: [
+
         Subcommand(
           description: 'Kick connection from device side to force reconnect',
           name: 'device'
@@ -108,6 +266,7 @@ final FigSpec adbSpec = FigSpec(
         isOptional: true,
         name: 'type',
         suggestions: [
+
           FigSuggestion(
             name: 'bootloader'
           ),
@@ -270,6 +429,7 @@ final FigSpec adbSpec = FigSpec(
       name: 'uninstall',
       description: 'Remove this app package from the device',
       options: [
+
         Option(
           name: '-k',
           description: 'Keep the data and cache directories'
@@ -290,6 +450,7 @@ final FigSpec adbSpec = FigSpec(
       name: 'pair',
       description: 'Pair with a device for secure TCP/IP communication',
       args: [
+
         Arg(
           name: 'HOST[:PORT]'
         ),
@@ -303,6 +464,7 @@ final FigSpec adbSpec = FigSpec(
       name: 'ppp',
       description: 'Run PPP over USB',
       args: [
+
         Arg(
           name: 'TTY'
         ),
@@ -330,7 +492,8 @@ final FigSpec adbSpec = FigSpec(
         name: 'PACKAGE',
         template: 'filepaths'
       )
-      ]
+      ],
+      options: installOptions
     ),
     Subcommand(
       name: 'install-multiple',
@@ -343,10 +506,12 @@ final FigSpec adbSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '-p',
           description: 'Partial application install (install-multiple only)'
-        )
+        ),
+        ...installOptions
       ]
     ),
     Subcommand(
@@ -360,16 +525,19 @@ final FigSpec adbSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '-p',
           description: 'Partial application install (install-multiple only)'
-        )
+        ),
+        ...installOptions
       ]
     ),
     Subcommand(
       name: 'shell',
       description: 'Run remote shell command (interactive shell if no command given)',
       options: [
+
         Option(
           name: '-e',
           description: 'Choose escape character, or `none` default \'~\''
@@ -407,6 +575,7 @@ final FigSpec adbSpec = FigSpec(
       name: 'mdns',
       description: 'Mdns utils',
       subcommands: [
+
         Subcommand(
           name: 'check',
           description: 'Check if mdns discovery is available'
@@ -421,6 +590,7 @@ final FigSpec adbSpec = FigSpec(
       name: 'push',
       description: 'Copy local files/directories to device',
       options: [
+
         Option(
           description: 'Only push files that are newer on the host than the device',
           name: '--sync'
@@ -428,9 +598,11 @@ final FigSpec adbSpec = FigSpec(
         Option(
           description: 'Dry run: push files to device without storing to the filesystem',
           name: '-n'
-        )
+        ),
+        ...compressionOptions
       ],
       args: [
+
         Arg(
           name: 'LOCAL',
           isVariadic: true,
@@ -445,6 +617,7 @@ final FigSpec adbSpec = FigSpec(
       name: 'sync',
       description: 'Sync a local build from \$ANDROID_PRODUCT_OUT to the device (default all)',
       options: [
+
         Option(
           description: 'Dry run: push files to device without storing to the filesystem',
           name: '-n'
@@ -452,12 +625,14 @@ final FigSpec adbSpec = FigSpec(
         Option(
           description: 'List files that would be copied, but don\'t copy them',
           name: '-l'
-        )
+        ),
+        ...compressionOptions
       ],
       args: [
         Arg(
         isOptional: true,
         suggestions: [
+
           FigSuggestion(
             name: 'all'
           ),
@@ -490,12 +665,15 @@ final FigSpec adbSpec = FigSpec(
       name: 'pull',
       description: 'Copy files/dirs from device',
       options: [
+
         Option(
           description: 'Preserve file timestamp and mode',
           name: '-a'
-        )
+        ),
+        ...compressionOptions
       ],
       args: [
+
         Arg(
           name: 'REMOTE',
           isVariadic: true,
@@ -510,6 +688,7 @@ final FigSpec adbSpec = FigSpec(
       name: 'forward',
       description: 'Forward connection',
       options: [
+
         Option(
           name: '--list',
           description: 'List all forward socket connections'
@@ -533,11 +712,14 @@ final FigSpec adbSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
-          name: 'LOCAL -> port|domain|device|pid'
+          name: 'LOCAL -> port|domain|device|pid',
+          suggestions: forwardConnectionSuggestions
         ),
         Arg(
-          name: 'REMOTE -> port|domain|device|pid'
+          name: 'REMOTE -> port|domain|device|pid',
+          suggestions: forwardConnectionSuggestions
         )
       ]
     ),
@@ -545,6 +727,7 @@ final FigSpec adbSpec = FigSpec(
       name: 'reverse',
       description: 'Reverse connection',
       options: [
+
         Option(
           name: '--list',
           description: 'List all reverse socket connections from device'
@@ -568,16 +751,20 @@ final FigSpec adbSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
-          name: 'REMOTE -> port|domain|device|pid'
+          name: 'REMOTE -> port|domain|device|pid',
+          suggestions: reverseConnectionSuggestions
         ),
         Arg(
-          name: 'LOCAL -> port|domain|device|pid'
+          name: 'LOCAL -> port|domain|device|pid',
+          suggestions: reverseConnectionSuggestions
         )
       ]
     )
   ],
   options: [
+
     Option(
       description: 'Listen on all network interfaces, not just localhost',
       name: '-a'

@@ -8,8 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec archSpec = FigSpec(
   name: 'arch',
   description: 'Print architecture type or run select architecture',
-  parserDirectives: ParserDirectives(),
+  parserDirectives: ParserDirectives(
+    flagsArePosixNoncompliant: true,
+    optionsMustPrecedeArguments: true
+  ),
   options: [
+
     Option(
       name: '-32',
       description: 'Add the native 32-bit architecture to the list of architectures'

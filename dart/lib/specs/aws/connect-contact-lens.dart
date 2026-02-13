@@ -9,10 +9,12 @@ final FigSpec connectContactLensSpec = FigSpec(
   name: 'connect-contact-lens',
   description: 'Contact Lens actions     Contact Lens data types    Amazon Connect Contact Lens enables you to analyze conversations between customer and agents, by using speech transcription, natural language processing, and intelligent search capabilities. It performs sentiment analysis, detects issues, and enables you to automatically categorize contacts. Amazon Connect Contact Lens provides both real-time and post-call analytics of customer-agent conversations. For more information, see Analyze conversations using speech analytics in the Amazon Connect Administrator Guide',
   subcommands: [
+
     Subcommand(
       name: 'list-realtime-contact-analysis-segments',
       description: 'Provides a list of analysis segments for a real-time analysis session',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance',
@@ -65,6 +67,7 @@ final FigSpec connectContactLensSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

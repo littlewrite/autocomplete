@@ -9,14 +9,17 @@ final FigSpec filestoreSpec = FigSpec(
   name: 'filestore',
   description: 'Create and manipulate Cloud Filestore resources',
   subcommands: [
+
     Subcommand(
       name: 'instances',
       description: 'Create and manage Cloud Filestore instances',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Cloud Filestore instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -186,6 +189,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'TIER',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'premium'),
                   FigSuggestion(name: 'standard')
                 ]
@@ -215,6 +219,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -248,6 +253,7 @@ final FigSpec filestoreSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Filestore instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -386,6 +392,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -419,6 +426,7 @@ final FigSpec filestoreSpec = FigSpec(
           name: 'describe',
           description: 'Show metadata for a Cloud Filestore instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -553,6 +561,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -586,6 +595,7 @@ final FigSpec filestoreSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Filestore instances',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -768,6 +778,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -795,6 +806,7 @@ final FigSpec filestoreSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Filestore instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -981,6 +993,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1012,6 +1025,7 @@ final FigSpec filestoreSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1135,6 +1149,7 @@ final FigSpec filestoreSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1151,10 +1166,12 @@ final FigSpec filestoreSpec = FigSpec(
       name: 'locations',
       description: '*(DEPRECATED)*  List locations where Cloud Filestore is available',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: '*(DEPRECATED)*  Describe a Cloud Filestore location',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1278,6 +1295,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1300,6 +1318,7 @@ final FigSpec filestoreSpec = FigSpec(
           name: 'list',
           description: '*(DEPRECATED)*  List all Cloud Filestore locations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1471,6 +1490,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1485,6 +1505,7 @@ final FigSpec filestoreSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1608,6 +1629,7 @@ final FigSpec filestoreSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1624,10 +1646,12 @@ final FigSpec filestoreSpec = FigSpec(
       name: 'operations',
       description: 'Read and manipulate Cloud Filestore operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a Cloud Filestore operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1762,6 +1786,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1795,6 +1820,7 @@ final FigSpec filestoreSpec = FigSpec(
           name: 'list',
           description: 'List all Cloud Filestore operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1977,6 +2003,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2002,6 +2029,7 @@ final FigSpec filestoreSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2125,6 +2153,7 @@ final FigSpec filestoreSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2141,10 +2170,12 @@ final FigSpec filestoreSpec = FigSpec(
       name: 'regions',
       description: 'List regions where Cloud Filestore is available',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List Filestore regions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2312,6 +2343,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2326,6 +2358,7 @@ final FigSpec filestoreSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2449,6 +2482,7 @@ final FigSpec filestoreSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2465,10 +2499,12 @@ final FigSpec filestoreSpec = FigSpec(
       name: 'zones',
       description: 'List zones where Cloud Filestore is available',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List Filestore zones',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2636,6 +2672,7 @@ final FigSpec filestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2650,6 +2687,7 @@ final FigSpec filestoreSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2773,6 +2811,7 @@ final FigSpec filestoreSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2787,6 +2826,7 @@ final FigSpec filestoreSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2910,6 +2950,7 @@ final FigSpec filestoreSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

@@ -9,10 +9,12 @@ final FigSpec inspectorScanSpec = FigSpec(
   name: 'inspector-scan',
   description: 'Amazon Inspector Scan is a vulnerability discovery service that scans a provided Software Bill of Materials (SBOM) for security vulnerabilities',
   subcommands: [
+
     Subcommand(
       name: 'scan-sbom',
       description: 'Scans a provided CycloneDX 1.5 SBOM and reports on any vulnerabilities discovered in that SBOM. You can generate compatible SBOMs for your resources using the Amazon Inspector SBOM generator',
       options: [
+
         Option(
           name: '--sbom',
           description: 'The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format',
@@ -47,6 +49,7 @@ final FigSpec inspectorScanSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

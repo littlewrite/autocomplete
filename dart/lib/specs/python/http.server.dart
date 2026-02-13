@@ -9,6 +9,7 @@ final FigSpec httpServerSpec = FigSpec(
   name: 'http.server',
   description: '',
   options: [
+
     Option(
       name: ['-d', '--directory'],
       description: 'Choose the directory to initiate the server from',

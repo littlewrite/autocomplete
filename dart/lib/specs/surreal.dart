@@ -4,6 +4,29 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> authOptions = [
+  Option(
+      name: ['--pass', '-p'],
+      description:
+          'Database authentication password to use when connecting [default: root]',
+      args: [
+        Arg(
+            name: 'pass',
+            description:
+                'Database authentication password to use when connecting [default: root]')
+      ]),
+  Option(
+      name: ['--user', '-u'],
+      description:
+          'Database authentication username to use when connecting [default: root]',
+      args: [
+        Arg(
+            name: 'user',
+            description:
+                'Database authentication username to use when connecting [default: root]')
+      ])
+];
+
 /// Completion spec for `surreal` CLI
 final FigSpec surrealSpec = FigSpec(
     name: 'surreal',
@@ -175,7 +198,8 @@ final FigSpec surrealSpec = FigSpec(
                 name: 'into',
                 description:
                     'Path to the remote database or file into which to import')
-          ]),
+          ],
+          options: authOptions),
       Subcommand(
           name: 'import',
           description: 'Import a SurrealQL script into an existing database'),
@@ -185,6 +209,16 @@ final FigSpec surrealSpec = FigSpec(
       Subcommand(
           name: 'version',
           description: 'Output the command-line tool version information'),
+      Subcommand(
+          name: 'sql',
+          description: 'Start an SQL REPL in your terminal with pipe support',
+          options: [
+            // ...connectionOptionsAndArgs("export", "from").options,
+            Option(
+                name: '--pretty',
+                description:
+                    'Whether database responses should be pretty printed')
+          ])
     ],
     options: [
       Option(name: ['--help', '-h'], description: 'Print help information')

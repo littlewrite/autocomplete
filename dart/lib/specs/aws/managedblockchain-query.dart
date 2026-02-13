@@ -9,10 +9,12 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
   name: 'managedblockchain-query',
   description: 'Amazon Managed Blockchain (AMB) Query provides you with convenient access to multi-blockchain network data, which makes it easier for you to extract contextual data related to blockchain activity. You can use AMB Query to read data from public blockchain networks, such as Bitcoin Mainnet and Ethereum Mainnet. You can also get information such as the current and historical balances of addresses, or you can get a list of blockchain transactions for a given time period. Additionally, you can get details of a given transaction, such as transaction events, which you can further analyze or use in business logic for your applications',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-token-balance',
       description: 'Gets the token balance for a batch of tokens by using the BatchGetTokenBalance action for every token in the request.  Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported',
       options: [
+
         Option(
           name: '--get-token-balance-inputs',
           description: 'An array of BatchGetTokenBalanceInputItem objects whose balance is being requested',
@@ -38,6 +40,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
       name: 'get-asset-contract',
       description: 'Gets the information about a specific contract deployed on the blockchain.    The Bitcoin blockchain networks do not support this operation.   Metadata is currently only available for some ERC-20 contracts. Metadata will be available for additional contracts in the future',
       options: [
+
         Option(
           name: '--contract-identifier',
           description: 'Contains the blockchain address and network information about the contract',
@@ -75,6 +79,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
       name: 'get-token-balance',
       description: 'Gets the balance of a specific token, including native tokens, for a given address (wallet or contract) on the blockchain.  Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported',
       options: [
+
         Option(
           name: '--token-identifier',
           description: 'The container for the identifier for the token, including the unique token ID and its blockchain network',
@@ -130,6 +136,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -142,6 +149,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
       name: 'get-transaction',
       description: 'Gets the details of a transaction.  This action will return transaction details for all transactions that are confirmed on the blockchain, even if they have not reached finality',
       options: [
+
         Option(
           name: '--transaction-hash',
           description: 'The hash of a transaction. It is generated when a transaction is created',
@@ -185,6 +193,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -197,6 +206,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
       name: 'list-asset-contracts',
       description: 'Lists all the contracts for a given contract type deployed by an address (either a contract address or a wallet address). The Bitcoin blockchain networks do not support this operation',
       options: [
+
         Option(
           name: '--contract-filter',
           description: 'Contains the filter parameter for the request',
@@ -267,6 +277,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
       name: 'list-filtered-transaction-events',
       description: 'Lists all the transaction events for an address on the blockchain.  This operation is only supported on the Bitcoin networks',
       options: [
+
         Option(
           name: '--network',
           description: 'The blockchain network where the transaction occurred. Valid Values: BITCOIN_MAINNET | BITCOIN_TESTNET',
@@ -394,6 +406,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -406,6 +419,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
       name: 'list-token-balances',
       description: 'This action returns the following for a given blockchain network:   Lists all token balances owned by an address (either a contract address or a wallet address).   Lists all token balances for all tokens created by a contract.   Lists all token balances for a given token.    You must always specify the network property of the tokenFilter when using this operation',
       options: [
+
         Option(
           name: '--owner-filter',
           description: 'The contract or wallet address on the blockchain network by which to filter the request. You must specify the address property of the ownerFilter when listing balances of tokens owned by the address',
@@ -485,6 +499,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -497,6 +512,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
       name: 'list-transaction-events',
       description: 'Lists all the transaction events for a transaction   This action will return transaction details for all transactions that are confirmed on the blockchain, even if they have not reached finality',
       options: [
+
         Option(
           name: '--transaction-hash',
           description: 'The hash of a transaction. It is generated when a transaction is created',
@@ -585,6 +601,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -597,6 +614,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
       name: 'list-transactions',
       description: 'Lists all the transaction events for a transaction',
       options: [
+
         Option(
           name: '--address',
           description: 'The address (either a contract or wallet), whose transactions are being requested',
@@ -712,6 +730,7 @@ final FigSpec managedblockchainQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec docdbElasticSpec = FigSpec(
   name: 'docdb-elastic',
   description: 'Amazon DocumentDB elastic clusters Amazon DocumentDB elastic-clusters support workloads with millions of reads/writes per second and petabytes of storage capacity. Amazon DocumentDB elastic clusters also simplify how developers interact with Amazon DocumentDB elastic-clusters by eliminating the need to choose, manage or upgrade instances. Amazon DocumentDB elastic-clusters were created to:   provide a solution for customers looking for a database that provides virtually limitless scale with rich query capabilities and MongoDB API compatibility.   give customers higher connection limits, and to reduce downtime from patching.   continue investing in a cloud-native, elastic, and class leading architecture for JSON workloads',
   subcommands: [
+
     Subcommand(
       name: 'apply-pending-maintenance-action',
       description: 'The type of pending maintenance action to be applied to the resource',
       options: [
+
         Option(
           name: '--apply-action',
           description: 'The pending maintenance action to apply to the resource. Valid actions are:    ENGINE_UPDATE      ENGINE_UPGRADE     SECURITY_UPDATE     OS_UPDATE     MASTER_USER_PASSWORD_UPDATE',
@@ -65,6 +67,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'copy-cluster-snapshot',
       description: 'Copies a snapshot of an elastic cluster',
       options: [
+
         Option(
           name: '--copy-tags',
           description: 'Set to true to copy all tags from the source cluster snapshot to the target elastic cluster snapshot. The default is false'
@@ -137,6 +141,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -149,6 +154,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'create-cluster',
       description: 'Creates a new Amazon DocumentDB elastic cluster and returns its cluster structure',
       options: [
+
         Option(
           name: '--admin-user-name',
           description: 'The name of the Amazon DocumentDB elastic clusters administrator.  Constraints:   Must be from 1 to 63 letters or numbers.   The first character must be a letter.   Cannot be a reserved word',
@@ -300,6 +306,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -312,6 +319,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'create-cluster-snapshot',
       description: 'Creates a snapshot of an elastic cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The ARN identifier of the elastic cluster of which you want to create a snapshot',
@@ -355,6 +363,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -367,6 +376,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'delete-cluster',
       description: 'Delete an elastic cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The ARN identifier of the elastic cluster that is to be deleted',
@@ -392,6 +402,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -404,6 +415,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'delete-cluster-snapshot',
       description: 'Delete an elastic cluster snapshot',
       options: [
+
         Option(
           name: '--snapshot-arn',
           description: 'The ARN identifier of the elastic cluster snapshot that is to be deleted',
@@ -429,6 +441,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -441,6 +454,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'get-cluster',
       description: 'Returns information about a specific elastic cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The ARN identifier of the elastic cluster',
@@ -466,6 +480,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -478,6 +493,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'get-cluster-snapshot',
       description: 'Returns information about a specific elastic cluster snapshot',
       options: [
+
         Option(
           name: '--snapshot-arn',
           description: 'The ARN identifier of the elastic cluster snapshot',
@@ -503,6 +519,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -515,6 +532,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'get-pending-maintenance-action',
       description: 'Retrieves all maintenance actions that are pending',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Retrieves pending maintenance actions for a specific Amazon Resource Name (ARN)',
@@ -540,6 +558,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -552,6 +571,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'list-cluster-snapshots',
       description: 'Returns information about snapshots for a specified elastic cluster',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The ARN identifier of the elastic cluster',
@@ -631,6 +651,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -643,6 +664,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'list-clusters',
       description: 'Returns information about provisioned Amazon DocumentDB elastic clusters',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of elastic cluster snapshot results to receive in the response',
@@ -704,6 +726,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -716,6 +739,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'list-pending-maintenance-actions',
       description: 'Retrieves a list of all maintenance actions that are pending',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in the response. If more records exist than the specified maxResults value, a pagination token (marker) is included in the response so that the remaining results can be retrieved',
@@ -777,6 +801,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -789,6 +814,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags on a elastic cluster resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN identifier of the elastic cluster resource',
@@ -814,6 +840,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -826,6 +853,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'restore-cluster-from-snapshot',
       description: 'Restores an elastic cluster from a snapshot',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'The name of the elastic cluster',
@@ -914,6 +942,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -926,6 +955,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'start-cluster',
       description: 'Restarts the stopped elastic cluster that is specified by clusterARN',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The ARN identifier of the elastic cluster',
@@ -951,6 +981,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -963,6 +994,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'stop-cluster',
       description: 'Stops the running elastic cluster that is specified by clusterArn. The elastic cluster must be in the available state',
       options: [
+
         Option(
           name: '--cluster-arn',
           description: 'The ARN identifier of the elastic cluster',
@@ -988,6 +1020,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1000,6 +1033,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds metadata tags to an elastic cluster resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN identifier of the elastic cluster resource',
@@ -1034,6 +1068,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1046,6 +1081,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes metadata tags from an elastic cluster resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN identifier of the elastic cluster resource',
@@ -1080,6 +1116,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1092,6 +1129,7 @@ final FigSpec docdbElasticSpec = FigSpec(
       name: 'update-cluster',
       description: 'Modifies an elastic cluster. This includes updating admin-username/password, upgrading the API version, and setting up a backup window and maintenance window',
       options: [
+
         Option(
           name: '--admin-user-password',
           description: 'The password associated with the elastic cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).  Constraints: Must contain from 8 to 100 characters',
@@ -1216,6 +1254,7 @@ final FigSpec docdbElasticSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

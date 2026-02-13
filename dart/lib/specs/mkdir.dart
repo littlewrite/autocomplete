@@ -15,6 +15,7 @@ final FigSpec mkdirSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-m', '--mode'],
       description: 'Set file mode (as in chmod), not a=rwx - umask',

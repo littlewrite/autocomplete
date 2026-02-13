@@ -9,6 +9,7 @@ final FigSpec sedSpec = FigSpec(
   name: 'sed',
   description: 'Stream editor',
   subcommands: [
+
     Subcommand(
       name: 'a',
       description: 'Appends `text` after a line'
@@ -159,6 +160,7 @@ final FigSpec sedSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '-E',
       description: 'Interprets regular expressions as extended (modern) regular expressions rather than basic regular expressions'
@@ -222,6 +224,7 @@ final FigSpec sedSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'command'
     ),

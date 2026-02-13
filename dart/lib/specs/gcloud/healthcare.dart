@@ -9,14 +9,17 @@ final FigSpec healthcareSpec = FigSpec(
   name: 'healthcare',
   description: 'Manage Cloud Healthcare resources',
   subcommands: [
+
     Subcommand(
       name: 'datasets',
       description: 'Manage Cloud Healthcare API datasets',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add an IAM policy binding to a Cloud Healthcare API dataset',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -197,6 +200,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -219,6 +223,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'create',
           description: 'Create a Cloud Healthcare API dataset',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -368,6 +373,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -390,6 +396,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'deidentify',
           description: 'Create a new Cloud Healthcare API dataset containing de-identified data from the source dataset',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -540,6 +547,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'TEXT_REDACTION_MODE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'all')
                 ]
               )
@@ -568,6 +576,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -590,6 +599,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Healthcare API dataset',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -724,6 +734,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -746,6 +757,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Healthcare API dataset',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -880,6 +892,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -902,6 +915,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Retrieve the IAM policy for a Cloud Healthcare API dataset',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1080,6 +1094,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1102,6 +1117,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Healthcare API datasets',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1284,6 +1300,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1300,6 +1317,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove an IAM policy binding to a Cloud Healthcare API dataset',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1484,6 +1502,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1506,6 +1525,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Cloud Healthcare API dataset',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1640,6 +1660,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1652,6 +1673,7 @@ final FigSpec healthcareSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'DATASET',
               description: 'ID of the dataset or fully qualified identifier for the dataset'
@@ -1666,6 +1688,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Healthcare API dataset',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1811,6 +1834,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1831,6 +1855,7 @@ final FigSpec healthcareSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1954,6 +1979,7 @@ final FigSpec healthcareSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1970,10 +1996,12 @@ final FigSpec healthcareSpec = FigSpec(
       name: 'dicom-stores',
       description: 'Manage Cloud Healthcare API DICOM stores',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add an IAM policy binding to a Cloud Healthcare API DICOM store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2165,6 +2193,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2187,6 +2216,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'create',
           description: 'Create a Cloud Healthcare API DICOM store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2343,6 +2373,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2365,6 +2396,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Healthcare API DICOM store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2510,6 +2542,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2532,6 +2565,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Healthcare API DICOM store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2677,6 +2711,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2699,10 +2734,12 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'export',
           description: 'Manage Cloud Healthcare API DICOM store exports',
           subcommands: [
+
             Subcommand(
               name: 'bq',
               description: 'Export a Cloud Healthcare API API DICOM store to BigQuery',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2868,6 +2905,7 @@ final FigSpec healthcareSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2890,6 +2928,7 @@ final FigSpec healthcareSpec = FigSpec(
               name: 'gcs',
               description: 'Export a Cloud Healthcare API DICOM store to Google Cloud Storage',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3062,6 +3101,7 @@ final FigSpec healthcareSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3082,6 +3122,7 @@ final FigSpec healthcareSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3205,6 +3246,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3221,6 +3263,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Retrieve the IAM policy for a Cloud Healthcare API DICOM store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3410,6 +3453,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3432,10 +3476,12 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'import',
           description: 'Manage Cloud Healthcare API DICOM store imports',
           subcommands: [
+
             Subcommand(
               name: 'gcs',
               description: 'Import DICOM objects into a Cloud Healthcare API DICOM store',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3597,6 +3643,7 @@ final FigSpec healthcareSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3617,6 +3664,7 @@ final FigSpec healthcareSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3740,6 +3788,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3756,6 +3805,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Healthcare API DICOM stores',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3950,6 +4000,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3966,6 +4017,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove an IAM policy binding from a Cloud Healthcare API DICOM store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4161,6 +4213,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4183,6 +4236,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Cloud Healthcare API DICOM store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4328,6 +4382,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4340,6 +4395,7 @@ final FigSpec healthcareSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'DICOM_STORE',
               description: 'ID of the dicomStore or fully qualified identifier for the dicomStore'
@@ -4354,6 +4410,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Healthcare API DICOM store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4510,6 +4567,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4530,6 +4588,7 @@ final FigSpec healthcareSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4653,6 +4712,7 @@ final FigSpec healthcareSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4669,10 +4729,12 @@ final FigSpec healthcareSpec = FigSpec(
       name: 'fhir-stores',
       description: 'Manage Cloud Healthcare API FHIR stores',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add an IAM policy binding to a Cloud Healthcare API FHIR store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4864,6 +4926,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4886,6 +4949,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'create',
           description: 'Create a Cloud Healthcare API FHIR store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5054,6 +5118,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5076,6 +5141,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Healthcare API FHIR store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5221,6 +5287,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5243,6 +5310,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Healthcare API FHIR store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5388,6 +5456,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5410,10 +5479,12 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'export',
           description: 'Manage Cloud Healthcare API FHIR store exports',
           subcommands: [
+
             Subcommand(
               name: 'bq',
               description: 'Export Cloud Healthcare API FHIR resources to BigQuery',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5571,6 +5642,7 @@ final FigSpec healthcareSpec = FigSpec(
                     name: 'SCHEMA_TYPE',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'analytics')
                     ]
                   )
@@ -5599,6 +5671,7 @@ final FigSpec healthcareSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5621,6 +5694,7 @@ final FigSpec healthcareSpec = FigSpec(
               name: 'gcs',
               description: 'Export Cloud Healthcare API FHIR resources to Google Cloud Storage',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5782,6 +5856,7 @@ final FigSpec healthcareSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5802,6 +5877,7 @@ final FigSpec healthcareSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5925,6 +6001,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5941,6 +6018,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Retrieve the IAM policy for a Cloud Healthcare API FHIR store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6130,6 +6208,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6152,10 +6231,12 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'import',
           description: 'Manage Cloud Healthcare API FHIR store imports',
           subcommands: [
+
             Subcommand(
               name: 'gcs',
               description: 'Import FHIR resources from Google Cloud Storage into a Cloud Healthcare API FHIR store',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6201,6 +6282,7 @@ final FigSpec healthcareSpec = FigSpec(
                     name: 'CONTENT_STRUCTURE',
                     description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                     suggestions: [
+
                       FigSuggestion(name: 'bundle'),
                       FigSuggestion(name: 'bundle-pretty'),
                       FigSuggestion(name: 'resource'),
@@ -6333,6 +6415,7 @@ final FigSpec healthcareSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6353,6 +6436,7 @@ final FigSpec healthcareSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6476,6 +6560,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6492,6 +6577,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Healthcare API FHIR stores',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6686,6 +6772,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6702,6 +6789,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove an IAM policy binding from a Cloud Healthcare API FHIR store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6897,6 +6985,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6919,6 +7008,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Cloud Healthcare API FHIR store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7064,6 +7154,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7076,6 +7167,7 @@ final FigSpec healthcareSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'FHIR_STORE',
               description: 'ID of the fhirStore or fully qualified identifier for the fhirStore'
@@ -7090,6 +7182,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Healthcare API FHIR store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7250,6 +7343,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7270,6 +7364,7 @@ final FigSpec healthcareSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7393,6 +7488,7 @@ final FigSpec healthcareSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7409,10 +7505,12 @@ final FigSpec healthcareSpec = FigSpec(
       name: 'hl7v2-stores',
       description: 'Manage Cloud Healthcare API HL7v2 stores',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add an IAM policy binding to a Cloud Healthcare API HL7v2 store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7604,6 +7702,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7626,6 +7725,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'create',
           description: 'Create a Cloud Healthcare API HL7v2 store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7782,6 +7882,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7804,6 +7905,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Healthcare API HL7v2 store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7949,6 +8051,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7971,6 +8074,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Healthcare API HL7v2 store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8116,6 +8220,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8138,6 +8243,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Retrieve the IAM policy for a Cloud Healthcare API HL7v2 store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8327,6 +8433,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8349,6 +8456,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Healthcare API HL7v2 stores',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8543,6 +8651,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8559,6 +8668,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove an IAM policy binding from a Cloud Healthcare API HL7v2 store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8754,6 +8864,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8776,6 +8887,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Cloud Healthcare API HL7v2 store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8921,6 +9033,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8933,6 +9046,7 @@ final FigSpec healthcareSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'HL7V2_STORE',
               description: 'ID of the hl7v2Store or fully qualified identifier for the hl7v2Store'
@@ -8947,6 +9061,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'update',
           description: 'Create a Cloud Healthcare API HL7v2 store',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9103,6 +9218,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9123,6 +9239,7 @@ final FigSpec healthcareSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9246,6 +9363,7 @@ final FigSpec healthcareSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -9262,10 +9380,12 @@ final FigSpec healthcareSpec = FigSpec(
       name: 'operations',
       description: 'Manage Cloud Healthcare API operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a Cloud Healthcare API operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9411,6 +9531,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9433,6 +9554,7 @@ final FigSpec healthcareSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Healthcare API operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9627,6 +9749,7 @@ final FigSpec healthcareSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9641,6 +9764,7 @@ final FigSpec healthcareSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9764,6 +9888,7 @@ final FigSpec healthcareSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -9778,6 +9903,7 @@ final FigSpec healthcareSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9901,6 +10027,7 @@ final FigSpec healthcareSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

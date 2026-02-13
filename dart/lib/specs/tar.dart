@@ -4,6 +4,393 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<String> overwriteExclusives = [
+  "k",
+  "-k",
+  "--keep-old-files",
+  "--keep-newer-files",
+  "--keep-directory-symlink",
+  "--no-overwrite-dir",
+  "--overwrite",
+  "--skip-old-files",
+  "U",
+  "-U",
+  "--unlink-first",
+  "O",
+  "-O",
+  "--to-stdout",
+];
+
+final List<Option> fileOptions = [
+  Option(
+      name: ['f', '-f', '--file'],
+      description: 'Use archive file or device ARCHIVE',
+      args: [Arg(name: 'ARCHIV')]),
+  Option(
+      name: '--force-local',
+      description: 'Archive file is local even if it has a colon',
+      dependsOn: ['f', '-f', '--file']),
+  Option(
+      name: ['F', '-F', '--info-script', '--new-volume-script'],
+      description: 'Run  COMMAND  at the end of each tape',
+      args: [Arg(name: 'COMMAN')]),
+  Option(
+      name: ['L', '-L', '--tape-length'],
+      description: 'Change tape after writing Nx1024 bytes',
+      args: [Arg(name: 'N')]),
+  Option(
+      name: ['M', '-M', '--multi-volume'],
+      description: 'Create/list/extract multi-volume archive'),
+  Option(
+      name: '--rmt-command',
+      description: 'Use  COMMAND instead of rmt when accessing remote archives',
+      args: [Arg(name: 'COMMAN')]),
+  Option(
+      name: '--rsh-command',
+      description: 'Use  COMMAND instead of rsh when accessing remote archives',
+      args: [Arg(name: 'COMMAN')]),
+  Option(
+      name: '--volno-file',
+      description:
+          'Tar will keep track of which volume of a multi-volume archive it is working in FILE',
+      dependsOn: ['M', '-M', '--multi-volume'],
+      args: [Arg(name: 'FIL')])
+];
+
+final List<Option> compressionOptions = [
+  Option(
+      name: ['a', '-a', '--auto-compress'],
+      description: 'Use archive suffix to determine the compression program'),
+  Option(
+      name: ['I', '-I', '--use-compress-program'],
+      description: 'Filter data through COMMAND',
+      args: [Arg(name: 'COMMAN')]),
+  Option(
+      name: ['j', '-j', '--bzip2'],
+      description: 'Filter the archive through bzip2'),
+  Option(
+      name: ['J', '-J', '--xz'], description: 'Filter the archive through xz'),
+  Option(name: '--lzip', description: 'Filter the archive through lzip'),
+  Option(name: '--lzma', description: 'Filter the archive through lzma'),
+  Option(name: '--lzop', description: 'Filter the archive through lzop'),
+  Option(
+      name: '--no-auto-compress',
+      description:
+          'Do not use archive suffix to determine the compression program'),
+  Option(
+      name: ['z', '-z', '--gzip', '--gunzip', '--ungzip'],
+      description: 'Filter the archive through gzip'),
+  Option(
+      name: ['Z', '-Z', '--compress', '--uncompress'],
+      description: 'Filter the archive through compress'),
+  Option(name: '--zstd', description: 'Filter the archive through zstd'),
+  Option(
+      name: ['--transform', '--xform'],
+      description: 'Use sed replace EXPRESSION to transform file names',
+      args: [Arg(name: 'EXPRESSIO')]),
+  Option(
+      name: '--checkpoint',
+      description: 'Display progress messages every Nth record',
+      args: [Arg(name: 'N', isOptional: true, defaultValue: '1')]),
+  Option(
+      name: '--checkpoint-action',
+      description: 'Run ACTION on each checkpoint',
+      args: [Arg(name: 'ACTIO')]),
+  Option(
+      name: '--full-time',
+      description: 'Print file time to its full resolution',
+      dependsOn: ['v', '-v', '--verbose']),
+  Option(
+      name: '--utc',
+      description: 'Print file modification times in UTC',
+      dependsOn: ['v', '-v', '--verbose'])
+];
+
+final List<Option> dumpOptions = [
+  Option(
+      name: '--ignore-failed-read',
+      description: 'Do not exit with nonzero on unreadable files'),
+  Option(
+      name: '--restrict',
+      description: 'Disable the use of some potentially harmful options',
+      dependsOn: ['M', '-M', '--multi-volume']),
+  Option(
+      name: '--remove-files',
+      description: 'Remove files from disk after adding them to the archive'),
+  Option(
+      name: ['W', '-W', '--verify'],
+      description: 'Verify the archive after writing it'),
+  Option(
+      name: '--atime-preserve',
+      description: 'Preserve access times on dumped files',
+      args: [
+        Arg(
+            name: 'METHOD',
+            defaultValue: 'replace',
+            isOptional: true,
+            suggestions: [
+              FigSuggestion(
+                  name: 'replace',
+                  description: 'Restore the times after reading'),
+              FigSuggestion(
+                  name: 'system',
+                  description: 'Not setting the times in the first place')
+            ])
+      ]),
+  Option(
+      name: '--group',
+      description: 'Force NAME as group for added files',
+      args: [
+        Arg(
+            name: 'NAME[:GID]',
+            description:
+                'If GID is not supplied, NAME can be either a user name or numeric GID')
+      ]),
+  Option(
+      name: '--group-map',
+      description: 'Read group translation map from FILE',
+      args: [
+        Arg(
+            name: 'FILE',
+            description:
+                'Each non-empty line in FILE defines translation for a single group',
+            template: 'filepaths')
+      ]),
+  Option(
+      name: '--mode',
+      description: 'Force symbolic mode CHANGES for added files',
+      args: [Arg(name: 'CHANGE')]),
+  Option(name: '--mtime', description: 'Set mtime for added files', args: [
+    Arg(
+        name: 'DATE-OR-FILE',
+        description:
+            'Either a date/time in almost arbitrary format, or the name of an existing file',
+        template: 'filepaths')
+  ]),
+  Option(
+      name: '--owner',
+      description: 'Force NAME as owner for added files',
+      args: [
+        Arg(
+            name: 'NAME[:GID]',
+            description:
+                'If UID is not supplied, NAME can be either a user name or numeric UID')
+      ]),
+  Option(
+      name: '--owner-map',
+      description: 'Read owner translation map from FILE',
+      args: [
+        Arg(
+            name: 'FILE',
+            description:
+                'Each non-empty line in FILE defines translation for a single UID',
+            template: 'filepaths')
+      ]),
+  Option(
+      name: '--sort',
+      description:
+          'When creating an archive, sort directory entries according to ORDER',
+      args: [
+        Arg(name: 'ORDER', defaultValue: 'none', suggestions: [
+          FigSuggestion(name: 'none'),
+          FigSuggestion(name: 'name'),
+          FigSuggestion(name: 'inode')
+        ])
+      ]),
+  Option(
+      name: '--add-file',
+      description: 'Add FILE to the archive',
+      args: [Arg(name: 'FILE', template: 'filepaths')]),
+  Option(
+      name: '--exclude',
+      description: 'Exclude files matching PATTERN',
+      args: [
+        Arg(name: 'PATTERN', description: 'A glob-style wildcard patter')
+      ]),
+  Option(
+      name: '--exclude-backups', description: 'Exclude backup and lock files'),
+  Option(
+      name: '--exclude-caches',
+      description:
+          'Exclude contents of directories containing file CACHEDIR.TAG, except for the tag file itself',
+      exclusiveOn: ['--exclude-caches-all', '--exclude-caches-under']),
+  Option(
+      name: '--exclude-caches-all',
+      description:
+          'Exclude directories containing file CACHEDIR.TAG and the file itself',
+      exclusiveOn: ['--exclude-caches', '--exclude-caches-under']),
+  Option(
+      name: '--exclude-caches-under',
+      description:
+          'Exclude everything under directories containing CACHEDIR.TAG',
+      exclusiveOn: ['--exclude-caches', '--exclude-caches-all']),
+  Option(
+      name: '--exclude-ignore',
+      description:
+          'Read exclusion patterns from FILE in directory before dumping',
+      exclusiveOn: ['--exclude-ignore-recursive'],
+      args: [Arg(name: 'FIL')]),
+  Option(
+      name: '--exclude-ignore-recursive',
+      description:
+          'Same  as --exclude-ignore, except that patterns from FILE affect both the directory and all its subdirectories',
+      exclusiveOn: ['--exclude-ignore'],
+      args: [Arg(name: 'FIL')]),
+  Option(
+      name: '--exclude-tag',
+      description:
+          'Exclude contents of directories containing FILE, except for FILE itself',
+      exclusiveOn: ['--exclude-tag-all', '--exclude-tag-under'],
+      args: [Arg(name: 'FIL')]),
+  Option(
+      name: '--exclude-tag-all',
+      description: 'Exclude directories containing FILE',
+      exclusiveOn: ['--exclude-tag', '--exclude-tag-under'],
+      args: [Arg(name: 'FIL')]),
+  Option(
+      name: '--exclude-tag-under',
+      description: 'Exclude everything under directories containing FILE',
+      exclusiveOn: ['--exclude-tag', '--exclude-tag-all'],
+      args: [Arg(name: 'FIL')]),
+  Option(
+      name: '--exclude-vcs',
+      description: 'Exclude version control system directories',
+      exclusiveOn: ['--exclude-vcs-ignores']),
+  Option(
+      name: '--exclude-vcs-ignores',
+      description:
+          'Exclude files that match patterns read from VCS-specific ignore files',
+      exclusiveOn: ['--exclude-vcs']),
+  Option(
+      name: ['h', '-h', '--dereference'],
+      description: 'Follow symlinks; archive and dump the files they point to'),
+  Option(
+      name: '--hard-dereference',
+      description:
+          'Follow hard links; archive and dump the files they refer to'),
+  Option(
+      name: ['N', '-N', '--newer', '--after-date'],
+      description: 'Only store files newer than DATE',
+      args: [
+        Arg(
+            name: 'DATE',
+            description:
+                'If DATE starts with / or . it is taken to be a file name',
+            template: 'filepaths')
+      ]),
+  Option(
+      name: '--one-file-system',
+      description: 'Stay in local file system when creating archive'),
+  Option(
+      name: ['P', '-P', '--absolute-names'],
+      description: 'Don\'t strip leading slashes from file names'),
+  Option(
+      name: '--anchored',
+      description: 'Patterns match file name start',
+      dependsOn: ['--exclude'],
+      exclusiveOn: ['--no-anchored']),
+  Option(
+      name: '--ignore-case',
+      description: 'Ignore case',
+      dependsOn: ['--exclude'],
+      exclusiveOn: ['--no-ignore-case']),
+  Option(
+      name: '--no-anchored',
+      description: 'Patterns match after any /',
+      dependsOn: ['--exclude'],
+      exclusiveOn: ['--anchored']),
+  Option(
+      name: '--no-ignore-case',
+      description: 'Case sensitive matching',
+      dependsOn: ['--exclude'],
+      exclusiveOn: ['--ignore-case']),
+  Option(
+      name: '--no-wildcards',
+      description: 'Verbatim string matching',
+      dependsOn: ['--exclude'],
+      exclusiveOn: ['--wildcards']),
+  Option(
+      name: '--no-wildcards-match-slash',
+      description: 'Wildcards do not match /',
+      dependsOn: ['--exclude', '--wildcards'],
+      exclusiveOn: ['--no-wildcards', '--wildcards-match-slash']),
+  Option(
+      name: '--wildcards',
+      description: 'Use wildcards',
+      dependsOn: ['--exclude'],
+      exclusiveOn: ['--no-wildcards']),
+  Option(
+      name: '--wildcards-match-slash',
+      description: 'Wildcards match /',
+      dependsOn: ['--exclude', '--wildcards'],
+      exclusiveOn: ['--no-wildcards', '--no-wildcards-match-slash']),
+  Option(
+      name: '--clamp-mtime',
+      description:
+          'Only set time when the file is more recent than what was given with --mtime',
+      dependsOn: ['--mtime']),
+  Option(
+      name: ['l', '-l', '--check-links'],
+      description: 'Print a message if not all links are dumped'),
+  ...compressionOptions
+];
+
+final List<Option> readOptions = [
+  Option(
+      name: ['n', '-n', '--seek'],
+      description: 'Assume the archive is seekable',
+      exclusiveOn: ['--no-seek']),
+  Option(
+      name: '--no-seek',
+      description: 'Assume the archive is not seekable',
+      exclusiveOn: ['n', '-n', '--seek']),
+  Option(
+      name: ['B', '-B', '--read-full-records'],
+      description:
+          'When listing or extracting, accept incomplete input records after end-of-file marker'),
+  Option(
+      name: ['i', '-i', '--ignore-zeros'],
+      description: 'Ignore zeroed blocks in archive'),
+  Option(
+      name: ['V', '-V', '--label'],
+      description: 'Use TEXT as a globbing pattern for volume name',
+      args: [Arg(name: 'TEX')]),
+  ...compressionOptions,
+  Option(
+      name: ['K', '-K', '--starting-file'],
+      description: 'Begin at the given member in the archive',
+      args: [Arg(name: 'MEMBE')]),
+  Option(
+      name: '--show-omitted-dirs',
+      description: 'List each directory that does not match search criteria')
+];
+
+final List<FigSuggestion> sizeSuffixes = [
+  FigSuggestion(name: 'Blocks', insertValue: '{cursor}b'),
+  FigSuggestion(name: 'Bytes', insertValue: '{cursor}c'),
+  FigSuggestion(name: 'Gigabytes', insertValue: '{cursor}G'),
+  FigSuggestion(name: 'Kilobytes', insertValue: '{cursor}K'),
+  FigSuggestion(name: 'Megabytes', insertValue: '{cursor}M'),
+  FigSuggestion(name: 'Petabytes', insertValue: '{cursor}P'),
+  FigSuggestion(name: 'Terabytes', insertValue: '{cursor}T'),
+  FigSuggestion(name: 'Words', insertValue: '{cursor}w')
+];
+
+final List<FigSuggestion> warningSuggestions = [
+  FigSuggestion(name: 'all', description: 'Enable all warning messages'),
+  FigSuggestion(name: 'none', description: 'Disable all warning messages'),
+  FigSuggestion(
+      name: 'filename-with-nuls',
+      description: '"%s: file name read contains nul character"'),
+  FigSuggestion(
+      name: 'no-filename-with-nuls',
+      description: 'No "%s: file name read contains nul character"'),
+  FigSuggestion(
+      name: 'alone-zero-block', description: '"A lone zero block at %s"'),
+  FigSuggestion(
+      name: 'no-alone-zero-block', description: 'No "A lone zero block at %s"')
+];
+
 /// Completion spec for `tar` CLI
 final FigSpec tarSpec = FigSpec(
     name: 'tar',
@@ -314,6 +701,7 @@ final FigSpec tarSpec = FigSpec(
                     'Do not check device numbers when creating incremental archives',
                 exclusiveOn: ['--check-device'],
                 dependsOn: ['g', '-g', '--listed-incremental']),
+            ...dumpOptions,
             Option(
                 name: ['b', '-b', '--blocking-factor'],
                 description: 'Set record size to BLOCKSx512 bytes',
@@ -324,7 +712,8 @@ final FigSpec tarSpec = FigSpec(
                 args: [
                   Arg(
                       name: 'NUMBER',
-                      description: 'The number of bytes per record')
+                      description: 'The number of bytes per record',
+                      suggestions: sizeSuffixes)
                 ]),
             Option(
                 name: ['H', '-H', '--format'],
@@ -407,6 +796,7 @@ final FigSpec tarSpec = FigSpec(
                 isPersistent: true,
                 args: [
                   Arg(name: 'KEYWORD', defaultValue: 'all', suggestions: [
+                    ...warningSuggestions,
                     FigSuggestion(
                         name: 'cachedir',
                         description:
@@ -486,13 +876,14 @@ final FigSpec tarSpec = FigSpec(
                   '--posix',
                   'o',
                   '-o',
-                ])
+                ]),
+            ...fileOptions
           ],
           args: [Arg(name: 'FILE', isVariadic: true, template: 'filepaths')]),
       Subcommand(
           name: ['d', '-d', '--diff', '--compare'],
           description: 'Find differences between archive and file system',
-          options: [],
+          options: [...fileOptions],
           args: [
             Arg(
                 name: 'FILE',
@@ -504,23 +895,25 @@ final FigSpec tarSpec = FigSpec(
       Subcommand(
           name: ['t', '-t', '--list'],
           description: 'List the contents of an archive',
-          options: [],
+          options: [...fileOptions, ...readOptions],
           args: [Arg(name: 'MEMBER', isOptional: true, isVariadic: true)]),
       Subcommand(
           name: ['r', '-r', '--append'],
           description: 'Append files to the end of an archive',
-          options: [],
+          options: [...fileOptions, ...dumpOptions],
           args: [Arg(name: 'FILE', isVariadic: true, template: 'filepaths')]),
       Subcommand(
           name: ['u', '-u', '--update'],
           description:
               'Append files which are newer than the corresponding copy in  the archive',
-          options: [],
+          options: [...fileOptions, ...dumpOptions],
           args: [Arg(name: 'FILE', isVariadic: true, template: 'filepaths')]),
       Subcommand(
           name: ['x', '-x', '--extract', '--get'],
           description: 'Extract files from an archive',
           options: [
+            ...fileOptions,
+            ...readOptions,
             Option(
                 name: ['k', '-k', '--keep-old-files'],
                 description: 'Don\'t replace existing files when extracting',
@@ -528,6 +921,7 @@ final FigSpec tarSpec = FigSpec(
                   '--keep-newer-files',
                   '--keep-directory-symlink',
                   '--no-overwrite-dir',
+                  ...overwriteExclusives,
                 ]),
             Option(
                 name: '--keep-newer-files',
@@ -550,6 +944,7 @@ final FigSpec tarSpec = FigSpec(
                 exclusiveOn: [
                   '--overwrite-dir',
                   '--recursive-unlink',
+                  ...overwriteExclusives,
                 ]),
             Option(
                 name: '--overwrite-dir',
@@ -634,6 +1029,7 @@ final FigSpec tarSpec = FigSpec(
                 isPersistent: true,
                 args: [
                   Arg(name: 'KEYWORD', defaultValue: 'all', suggestions: [
+                    ...warningSuggestions,
                     FigSuggestion(
                         name: 'existing-file',
                         description: '"%s: skipping existing file"'),
@@ -736,11 +1132,12 @@ final FigSpec tarSpec = FigSpec(
       Subcommand(
           name: '--delete',
           description: 'Delete from the archive',
-          options: [],
+          options: [...fileOptions],
           args: [Arg(name: 'MEMBER', isVariadic: true)]),
       Subcommand(
           name: '--test-label',
           description: 'Test the archive volume label and exit',
+          options: fileOptions,
           args: [Arg(name: 'LABEL', isOptional: true, isVariadic: true)]),
       Subcommand(
           name: '--show-defaults',

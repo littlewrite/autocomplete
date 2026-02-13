@@ -9,10 +9,12 @@ final FigSpec ramSpec = FigSpec(
   name: 'ram',
   description: 'This is the Resource Access Manager API Reference. This documentation provides descriptions and syntax for each of the actions and data types in RAM. RAM is a service that helps you securely share your Amazon Web Services resources to other Amazon Web Services accounts. If you use Organizations to manage your accounts, then you can share your resources with your entire organization or to organizational units (OUs). For supported resource types, you can also share resources with individual Identity and Access Management (IAM) roles and users.  To learn more about RAM, see the following resources:    Resource Access Manager product page     Resource Access Manager User Guide',
   subcommands: [
+
     Subcommand(
       name: 'accept-resource-share-invitation',
       description: 'Accepts an invitation to a resource share from another Amazon Web Services account. After you accept the invitation, the resources included in the resource share are available to interact with in the relevant Amazon Web Services Management Consoles and tools',
       options: [
+
         Option(
           name: '--resource-share-invitation-arn',
           description: 'The Amazon Resource Name (ARN) of the invitation that you want to accept',
@@ -47,6 +49,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'associate-resource-share',
       description: 'Adds the specified list of principals and list of resources to a resource share. Principals that already have access to this resource share immediately receive access to the added resources. Newly added principals immediately receive access to the resources shared in this resource share',
       options: [
+
         Option(
           name: '--resource-share-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource share that you want to add principals or resources to',
@@ -120,6 +124,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'associate-resource-share-permission',
       description: 'Adds or replaces the RAM permission for a resource type included in a resource share. You can have exactly one permission associated with each resource type in the resource share. You can add a new RAM permission only if there are currently no resources of that resource type currently in the resource share',
       options: [
+
         Option(
           name: '--resource-share-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource share to which you want to add or replace permissions',
@@ -192,6 +198,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -204,6 +211,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'create-permission',
       description: 'Creates a customer managed permission for a specified resource type that you can attach to resource shares. It is created in the Amazon Web Services Region in which you call the operation',
       options: [
+
         Option(
           name: '--name',
           description: 'Specifies the name of the customer managed permission. The name must be unique within the Amazon Web Services Region',
@@ -265,6 +273,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -277,6 +286,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'create-permission-version',
       description: 'Creates a new version of the specified customer managed permission. The new version is automatically set as the default version of the customer managed permission. New resource shares automatically use the default permission. Existing resource shares continue to use their original permission versions, but you can use ReplacePermissionAssociations to update them. If the specified customer managed permission already has the maximum of 5 versions, then you must delete one of the existing versions before you can create a new one',
       options: [
+
         Option(
           name: '--permission-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the customer managed permission you\'re creating a new version for',
@@ -320,6 +330,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -332,6 +343,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'create-resource-share',
       description: 'Creates a resource share. You can provide a list of the Amazon Resource Names (ARNs) for the resources that you want to share, a list of principals you want to share the resources with, and the permissions to grant those principals.  Sharing a resource makes it available for use by principals outside of the Amazon Web Services account that created the resource. Sharing doesn\'t change any permissions or quotas that apply to the resource in the account that created it',
       options: [
+
         Option(
           name: '--name',
           description: 'Specifies the name of the resource share',
@@ -419,6 +431,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -431,6 +444,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'delete-permission',
       description: 'Deletes the specified customer managed permission in the Amazon Web Services Region in which you call this operation. You can delete a customer managed permission only if it isn\'t attached to any resource share. The operation deletes all versions associated with the customer managed permission',
       options: [
+
         Option(
           name: '--permission-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the customer managed permission that you want to delete',
@@ -465,6 +479,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -477,6 +492,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'delete-permission-version',
       description: 'Deletes one version of a customer managed permission. The version you specify must not be attached to any resource share and must not be the default version for the permission. If a customer managed permission has the maximum of 5 versions, then you must delete at least one version before you can create another',
       options: [
+
         Option(
           name: '--permission-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the permission with the version you want to delete',
@@ -520,6 +536,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -532,6 +549,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'delete-resource-share',
       description: 'Deletes the specified resource share.  This doesn\'t delete any of the resources that were associated with the resource share; it only stops the sharing of those resources through this resource share',
       options: [
+
         Option(
           name: '--resource-share-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource share to delete',
@@ -566,6 +584,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -578,6 +597,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'disassociate-resource-share',
       description: 'Removes the specified principals or resources from participating in the specified resource share',
       options: [
+
         Option(
           name: '--resource-share-arn',
           description: 'Specifies Amazon Resource Name (ARN) of the resource share that you want to remove resources or principals from',
@@ -639,6 +659,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -651,6 +672,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'disassociate-resource-share-permission',
       description: 'Removes a managed permission from a resource share. Permission changes take effect immediately. You can remove a managed permission from a resource share only if there are currently no resources of the relevant resource type currently attached to the resource share',
       options: [
+
         Option(
           name: '--resource-share-arn',
           description: 'The Amazon Resource Name (ARN) of the resource share that you want to remove the managed permission from',
@@ -694,6 +716,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -706,6 +729,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'enable-sharing-with-aws-organization',
       description: 'Enables resource sharing within your organization in Organizations. This operation creates a service-linked role called AWSServiceRoleForResourceAccessManager that has the IAM managed policy named AWSResourceAccessManagerServiceRolePolicy attached. This role permits RAM to retrieve information about the organization and its structure. This lets you share resources with all of the accounts in the calling account\'s organization by specifying the organization ID, or all of the accounts in an organizational unit (OU) by specifying the OU ID. Until you enable sharing within the organization, you can specify only individual Amazon Web Services accounts, or for supported resource types, IAM roles and users. You must call this operation from an IAM role or user in the organization\'s management account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -722,6 +746,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -734,6 +759,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'get-permission',
       description: 'Retrieves the contents of a managed permission in JSON format',
       options: [
+
         Option(
           name: '--permission-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the ListPermissions operation or go to the Permissions library page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page',
@@ -768,6 +794,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -780,6 +807,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'get-resource-policies',
       description: 'Retrieves the resource policies for the specified resources that you own and have shared',
       options: [
+
         Option(
           name: '--resource-arns',
           description: 'Specifies the Amazon Resource Names (ARNs) of the resources whose policies you want to retrieve',
@@ -859,6 +887,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -871,6 +900,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'get-resource-share-associations',
       description: 'Retrieves the lists of resources and principals that associated for resource shares that you own',
       options: [
+
         Option(
           name: '--association-type',
           description: 'Specifies whether you want to retrieve the associations that involve a specified resource or principal.    PRINCIPAL – list the principals whose associations you want to see.    RESOURCE – list the resources whose associations you want to see',
@@ -977,6 +1007,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -989,6 +1020,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'get-resource-share-invitations',
       description: 'Retrieves details about invitations that you have received for resource shares',
       options: [
+
         Option(
           name: '--resource-share-invitation-arns',
           description: 'Specifies the Amazon Resource Names (ARNs) of the resource share invitations you want information about',
@@ -1068,6 +1100,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1080,6 +1113,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'get-resource-shares',
       description: 'Retrieves details about the resource shares that you own or that are shared with you',
       options: [
+
         Option(
           name: '--resource-share-arns',
           description: 'Specifies the Amazon Resource Names (ARNs) of individual resource shares that you want information about',
@@ -1204,6 +1238,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1216,6 +1251,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'list-pending-invitation-resources',
       description: 'Lists the resources in a resource share that is shared with you but for which the invitation is still PENDING. That means that you haven\'t accepted or rejected the invitation and the invitation hasn\'t expired',
       options: [
+
         Option(
           name: '--resource-share-invitation-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the invitation. You can use GetResourceShareInvitations to find the ARN of the invitation',
@@ -1268,6 +1304,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1280,6 +1317,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'list-permission-associations',
       description: 'Lists information about the managed permission and its associations to any resource shares that use this managed permission. This lets you see which resource shares use which versions of the specified managed permission',
       options: [
+
         Option(
           name: '--permission-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the managed permission',
@@ -1367,6 +1405,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1379,6 +1418,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'list-permission-versions',
       description: 'Lists the available versions of the specified RAM permission',
       options: [
+
         Option(
           name: '--permission-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the RAM permission whose versions you want to list. You can use the permissionVersion parameter on the AssociateResourceSharePermission operation to specify a non-default version to attach',
@@ -1422,6 +1462,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1434,6 +1475,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'list-permissions',
       description: 'Retrieves a list of available RAM permissions that you can use for the supported resource types',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'Specifies that you want to list only those permissions that apply to the specified resource type. This parameter is not case sensitive. For example, to list only permissions that apply to Amazon EC2 subnets, specify ec2:subnet. You can use the ListResourceTypes operation to get the specific string required',
@@ -1486,6 +1528,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1498,6 +1541,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'list-principals',
       description: 'Lists the principals that you are sharing resources with or that are sharing resources with you',
       options: [
+
         Option(
           name: '--resource-owner',
           description: 'Specifies that you want to list information for only resource shares that match the following:     SELF  – principals that your account is sharing resources with     OTHER-ACCOUNTS  – principals that are sharing resources with your account',
@@ -1604,6 +1648,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1616,6 +1661,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'list-replace-permission-associations-work',
       description: 'Retrieves the current status of the asynchronous tasks performed by RAM when you perform the ReplacePermissionAssociationsWork operation',
       options: [
+
         Option(
           name: '--work-ids',
           description: 'A list of IDs. These values come from the idfield of the replacePermissionAssociationsWorkstructure returned by the ReplacePermissionAssociations operation',
@@ -1668,6 +1714,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1680,6 +1727,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'list-resource-share-permissions',
       description: 'Lists the RAM permissions that are associated with a resource share',
       options: [
+
         Option(
           name: '--resource-share-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource share for which you want to retrieve the associated permissions',
@@ -1723,6 +1771,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1735,6 +1784,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'list-resource-types',
       description: 'Lists the resource types that can be shared by RAM',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Specifies that you want to receive the next page of results. Valid only if you received a NextToken response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call\'s NextToken response to request the next page of results',
@@ -1778,6 +1828,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1790,6 +1841,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'list-resources',
       description: 'Lists the resources that you added to a resource share or the resources that are shared with you',
       options: [
+
         Option(
           name: '--resource-owner',
           description: 'Specifies that you want to list only the resource shares that match the following:     SELF  – resources that your account shares with other accounts     OTHER-ACCOUNTS  – resources that other accounts share with your account',
@@ -1905,6 +1957,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1917,6 +1970,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'promote-permission-created-from-policy',
       description: 'When you attach a resource-based policy to a resource, RAM automatically creates a resource share of featureSet=CREATED_FROM_POLICY with a managed permission that has the same IAM permissions as the original resource-based policy. However, this type of managed permission is visible to only the resource share owner, and the associated resource share can\'t be modified by using RAM. This operation creates a separate, fully manageable customer managed permission that has the same IAM permissions as the original resource-based policy. You can associate this customer managed permission to any resource shares. Before you use PromoteResourceShareCreatedFromPolicy, you should first run this operation to ensure that you have an appropriate customer managed permission that can be associated with the promoted resource share.    The original CREATED_FROM_POLICY policy isn\'t deleted, and resource shares using that original policy aren\'t automatically updated.   You can\'t modify a CREATED_FROM_POLICY resource share so you can\'t associate the new customer managed permission by using ReplacePermsissionAssociations. However, if you use PromoteResourceShareCreatedFromPolicy, that operation automatically associates the fully manageable customer managed permission to the newly promoted STANDARD resource share.   After you promote a resource share, if the original CREATED_FROM_POLICY managed permission has no other associations to A resource share, then RAM automatically deletes it',
       options: [
+
         Option(
           name: '--permission-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the CREATED_FROM_POLICY permission that you want to promote. You can get this Amazon Resource Name (ARN) by calling the ListResourceSharePermissions operation',
@@ -1960,6 +2014,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1972,6 +2027,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'promote-resource-share-created-from-policy',
       description: 'When you attach a resource-based policy to a resource, RAM automatically creates a resource share of featureSet=CREATED_FROM_POLICY with a managed permission that has the same IAM permissions as the original resource-based policy. However, this type of managed permission is visible to only the resource share owner, and the associated resource share can\'t be modified by using RAM. This operation promotes the resource share to a STANDARD resource share that is fully manageable in RAM. When you promote a resource share, you can then manage the resource share in RAM and it becomes visible to all of the principals you shared it with.  Before you perform this operation, you should first run PromotePermissionCreatedFromPolicyto ensure that you have an appropriate customer managed permission that can be associated with this resource share after its is promoted. If this operation can\'t find a managed permission that exactly matches the existing CREATED_FROM_POLICY permission, then this operation fails',
       options: [
+
         Option(
           name: '--resource-share-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource share to promote',
@@ -1997,6 +2053,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2009,6 +2066,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'reject-resource-share-invitation',
       description: 'Rejects an invitation to a resource share from another Amazon Web Services account',
       options: [
+
         Option(
           name: '--resource-share-invitation-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the invitation that you want to reject',
@@ -2043,6 +2101,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2055,6 +2114,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'replace-permission-associations',
       description: 'Updates all resource shares that use a managed permission to a different managed permission. This operation always applies the default version of the target managed permission. You can optionally specify that the update applies to only resource shares that currently use a specified version. This enables you to update to the latest version, without changing the which managed permission is used. You can use this operation to update all of your resource shares to use the current default version of the permission by specifying the same value for the fromPermissionArn and toPermissionArn parameters. You can use the optional fromPermissionVersion parameter to update only those resources that use a specified version of the managed permission to the new managed permission.  To successfully perform this operation, you must have permission to update the resource-based policy on all affected resource types',
       options: [
+
         Option(
           name: '--from-permission-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the managed permission that you want to replace',
@@ -2107,6 +2167,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2119,6 +2180,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'set-default-permission-version',
       description: 'Designates the specified version number as the default version for the specified customer managed permission. New resource shares automatically use this new default permission. Existing resource shares continue to use their original permission version, but you can use ReplacePermissionAssociations to update them',
       options: [
+
         Option(
           name: '--permission-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the customer managed permission whose default version you want to change',
@@ -2162,6 +2224,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2174,6 +2237,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tag keys and values to a resource share or managed permission. If you choose a resource share, the tags are attached to only the resource share, not to the resources that are in the resource share. The tags on a managed permission are the same for all versions of the managed permission',
       options: [
+
         Option(
           name: '--resource-share-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource share that you want to add tags to. You must specify either resourceShareArn, or resourceArn, but not both',
@@ -2217,6 +2281,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2229,6 +2294,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tag key and value pairs from the specified resource share or managed permission',
       options: [
+
         Option(
           name: '--resource-share-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share. You must specify either resourceShareArn, or resourceArn, but not both',
@@ -2272,6 +2338,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2284,6 +2351,7 @@ final FigSpec ramSpec = FigSpec(
       name: 'update-resource-share',
       description: 'Modifies some of the properties of the specified resource share',
       options: [
+
         Option(
           name: '--resource-share-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource share that you want to modify',
@@ -2335,6 +2403,7 @@ final FigSpec ramSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

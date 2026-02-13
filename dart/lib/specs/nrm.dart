@@ -9,6 +9,7 @@ final FigSpec nrmSpec = FigSpec(
   name: 'nrm',
   description: 'Use the right package manage - remove',
   options: [
+
     Option(
       name: '-g',
       description: 'Operates in \'global\' mode, so that packages are removed from the prefix folder instead of the current working directory'

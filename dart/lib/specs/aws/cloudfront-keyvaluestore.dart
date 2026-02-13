@@ -9,10 +9,12 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
   name: 'cloudfront-keyvaluestore',
   description: 'Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS Resource',
   subcommands: [
+
     Subcommand(
       name: 'delete-key',
       description: 'Deletes the key value pair specified by the key',
       options: [
+
         Option(
           name: '--kvs-arn',
           description: 'The Amazon Resource Name (ARN) of the Key Value Store',
@@ -56,6 +58,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
       name: 'describe-key-value-store',
       description: 'Returns metadata information about Key Value Store',
       options: [
+
         Option(
           name: '--kvs-arn',
           description: 'The Amazon Resource Name (ARN) of the Key Value Store',
@@ -93,6 +97,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
       name: 'get-key',
       description: 'Returns a key value pair',
       options: [
+
         Option(
           name: '--kvs-arn',
           description: 'The Amazon Resource Name (ARN) of the Key Value Store',
@@ -139,6 +145,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -151,6 +158,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
       name: 'list-keys',
       description: 'Returns a list of key value pairs',
       options: [
+
         Option(
           name: '--kvs-arn',
           description: 'The Amazon Resource Name (ARN) of the Key Value Store',
@@ -221,6 +229,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
       name: 'put-key',
       description: 'Creates a new key value pair or replaces the value of an existing key',
       options: [
+
         Option(
           name: '--key',
           description: 'The key to put',
@@ -285,6 +295,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -297,6 +308,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
       name: 'update-keys',
       description: 'Puts or Deletes multiple key value pairs in a single, all-or-nothing operation',
       options: [
+
         Option(
           name: '--kvs-arn',
           description: 'The Amazon Resource Name (ARN) of the Key Value Store',
@@ -349,6 +361,7 @@ final FigSpec cloudfrontKeyvaluestoreSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

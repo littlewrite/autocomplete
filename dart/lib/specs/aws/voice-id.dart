@@ -9,10 +9,12 @@ final FigSpec voiceIdSpec = FigSpec(
   name: 'voice-id',
   description: 'Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection, which make voice interactions in contact centers more secure and efficient',
   subcommands: [
+
     Subcommand(
       name: 'associate-fraudster',
       description: 'Associates the fraudsters with the watchlist specified in the same domain',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the fraudster',
@@ -56,6 +58,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'create-domain',
       description: 'Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer audio, and voiceprints. Every domain is created with a default watchlist that fraudsters can be a part of',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -129,6 +133,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'create-watchlist',
       description: 'Creates a watchlist that fraudsters can be a part of',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -193,6 +199,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'delete-domain',
       description: 'Deletes the specified domain from Voice ID',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain you want to delete',
@@ -230,6 +238,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'delete-fraudster',
       description: 'Deletes the specified fraudster from Voice ID. This action disassociates the fraudster from any watchlists it is a part of',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the fraudster',
@@ -276,6 +286,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -288,6 +299,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'delete-speaker',
       description: 'Deletes the specified speaker from Voice ID',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the speaker',
@@ -322,6 +334,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -334,6 +347,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'delete-watchlist',
       description: 'Deletes the specified watchlist from Voice ID. This API throws an exception when there are fraudsters in the watchlist that you are trying to delete. You must delete the fraudsters, and then delete the watchlist. Every domain has a default watchlist which cannot be deleted',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the watchlist',
@@ -368,6 +382,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -380,6 +395,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'describe-domain',
       description: 'Describes the specified domain',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that you are describing',
@@ -405,6 +421,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -417,6 +434,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'describe-fraudster',
       description: 'Describes the specified fraudster',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the fraudster',
@@ -451,6 +469,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -463,6 +482,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'describe-fraudster-registration-job',
       description: 'Describes the specified fraudster registration job',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the fraudster registration job',
@@ -497,6 +517,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -509,6 +530,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'describe-speaker',
       description: 'Describes the specified speaker',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the speaker',
@@ -543,6 +565,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -555,6 +578,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'describe-speaker-enrollment-job',
       description: 'Describes the specified speaker enrollment job',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the speaker enrollment job',
@@ -589,6 +613,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -601,6 +626,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'describe-watchlist',
       description: 'Describes the specified watchlist',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the watchlist',
@@ -635,6 +661,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -647,6 +674,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'disassociate-fraudster',
       description: 'Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster from its only watchlist, a ValidationException is thrown',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the fraudster',
@@ -690,6 +718,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -702,6 +731,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'evaluate-session',
       description: 'Evaluates a specified session based on audio data accumulated during a streaming Amazon Connect Voice ID call',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain where the session started',
@@ -736,6 +766,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -748,6 +779,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'list-domains',
       description: 'Lists all the domains in the Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results that are returned per call. You can use NextToken to obtain more pages of results. The default is 100; the maximum allowed page size is also 100',
@@ -809,6 +841,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -821,6 +854,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'list-fraudster-registration-jobs',
       description: 'Lists all the fraudster registration jobs in the domain with the given JobStatus. If JobStatus is not provided, this lists all fraudster registration jobs in the given domain',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the fraudster registration Jobs',
@@ -900,6 +934,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -912,6 +947,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'list-fraudsters',
       description: 'Lists all fraudsters in a specified watchlist or domain',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain',
@@ -991,6 +1027,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1003,6 +1040,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'list-speaker-enrollment-jobs',
       description: 'Lists all the speaker enrollment jobs in the domain with the specified JobStatus. If JobStatus is not provided, this lists all jobs with all possible speaker enrollment job statuses',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the speaker enrollment jobs',
@@ -1082,6 +1120,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1094,6 +1133,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'list-speakers',
       description: 'Lists all speakers in a specified domain',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain',
@@ -1164,6 +1204,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1176,6 +1217,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags associated with a specified Voice ID resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags',
@@ -1201,6 +1243,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1213,6 +1256,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'list-watchlists',
       description: 'Lists all watchlists in a specified domain',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain',
@@ -1283,6 +1327,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1295,6 +1340,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'opt-out-speaker',
       description: 'Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether or not they already exist in Voice ID. If they don\'t yet exist, a new speaker is created in an opted out state. If they already exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in Voice ID',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The identifier of the domain that contains the speaker',
@@ -1329,6 +1375,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1341,6 +1388,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'start-fraudster-registration-job',
       description: 'Starts a new batch fraudster registration job using provided details',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -1420,6 +1468,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1432,6 +1481,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'start-speaker-enrollment-job',
       description: 'Starts a new batch speaker enrollment job using specified details',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -1511,6 +1561,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1523,6 +1574,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags a Voice ID resource with the provided list of tags',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Voice ID resource you want to tag',
@@ -1557,6 +1609,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1569,6 +1622,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes specified tags from a specified Amazon Connect Voice ID resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from',
@@ -1603,6 +1657,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1615,6 +1670,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'update-domain',
       description: 'Updates the specified domain. This API has clobber behavior, and clears and replaces all attributes. If an optional field, such as \'Description\' is not provided, it is removed from the domain',
       options: [
+
         Option(
           name: '--description',
           description: 'A brief description about this domain',
@@ -1667,6 +1723,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1679,6 +1736,7 @@ final FigSpec voiceIdSpec = FigSpec(
       name: 'update-watchlist',
       description: 'Updates the specified watchlist. Every domain has a default watchlist which cannot be updated',
       options: [
+
         Option(
           name: '--description',
           description: 'A brief description about this watchlist',
@@ -1731,6 +1789,7 @@ final FigSpec voiceIdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

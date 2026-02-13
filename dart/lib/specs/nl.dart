@@ -12,6 +12,7 @@ final FigSpec nlSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   options: [
+
     Option(
       name: '-b',
       description: 'Specify the logical page body lines to be numbered',
@@ -19,6 +20,7 @@ final FigSpec nlSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(
             name: 'a',
             description: 'Number all lines'
@@ -42,6 +44,7 @@ final FigSpec nlSpec = FigSpec(
         Arg(
         name: 'delim',
         suggestions: [
+
           FigSuggestion(name: '\\:')
         ],
         defaultValue: '\\:'
@@ -55,6 +58,7 @@ final FigSpec nlSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(name: 'n')
         ],
         defaultValue: 'n'
@@ -68,6 +72,7 @@ final FigSpec nlSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(name: 'n')
         ],
         defaultValue: 'n'
@@ -81,6 +86,7 @@ final FigSpec nlSpec = FigSpec(
         Arg(
         name: 'incr',
         suggestions: [
+
           FigSuggestion(name: '1')
         ],
         defaultValue: '1'
@@ -93,6 +99,7 @@ final FigSpec nlSpec = FigSpec(
         Arg(
         name: 'num',
         suggestions: [
+
           FigSuggestion(name: '1')
         ],
         defaultValue: '1'
@@ -106,6 +113,7 @@ final FigSpec nlSpec = FigSpec(
         Arg(
         name: 'format',
         suggestions: [
+
           FigSuggestion(
             name: 'ln',
             description: 'Left justified'
@@ -133,6 +141,7 @@ final FigSpec nlSpec = FigSpec(
         Arg(
         name: 'sep',
         suggestions: [
+
           FigSuggestion(name: '\\t')
         ],
         defaultValue: '\\t'
@@ -146,6 +155,7 @@ final FigSpec nlSpec = FigSpec(
         Arg(
         name: 'startnum',
         suggestions: [
+
           FigSuggestion(name: '1'),
           FigSuggestion(name: '2'),
           FigSuggestion(name: '3')
@@ -160,6 +170,7 @@ final FigSpec nlSpec = FigSpec(
         Arg(
         name: 'width',
         suggestions: [
+
           FigSuggestion(name: '6'),
           FigSuggestion(name: '5'),
           FigSuggestion(name: '4'),

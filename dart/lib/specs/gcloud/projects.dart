@@ -9,10 +9,12 @@ final FigSpec projectsSpec = FigSpec(
   name: 'projects',
   description: 'Create and manage project access policies',
   subcommands: [
+
     Subcommand(
       name: 'add-iam-policy-binding',
       description: 'Add IAM policy binding for a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -182,6 +184,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -204,6 +207,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'create',
       description: 'Create a new project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -379,6 +383,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -401,6 +406,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'delete',
       description: 'Delete a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -524,6 +530,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -546,6 +553,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'describe',
       description: 'Show metadata for a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -669,6 +677,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -691,6 +700,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'get-ancestors',
       description: 'Get the ancestors for a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -814,6 +824,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -836,6 +847,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'get-ancestors-iam-policy',
       description: 'Get IAM policies for a project and its ancestors',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1003,6 +1015,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1025,6 +1038,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'get-iam-policy',
       description: 'Get IAM policy for a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1192,6 +1206,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1214,6 +1229,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'list',
       description: 'List projects accessible by the active account',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1385,6 +1401,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1401,6 +1418,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'remove-iam-policy-binding',
       description: 'Remove IAM policy binding for a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1574,6 +1592,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1596,6 +1615,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'set-iam-policy',
       description: 'Set IAM policy for a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1719,6 +1739,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1731,6 +1752,7 @@ final FigSpec projectsSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'PROJECT_ID_OR_NUMBER',
           description: 'ID or number for the project you want to set IAM policy for'
@@ -1745,6 +1767,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'undelete',
       description: 'Undelete a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1868,6 +1891,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1890,6 +1914,7 @@ final FigSpec projectsSpec = FigSpec(
       name: 'update',
       description: 'Update the name of a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2025,6 +2050,7 @@ final FigSpec projectsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2045,6 +2071,7 @@ final FigSpec projectsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2168,6 +2195,7 @@ final FigSpec projectsSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

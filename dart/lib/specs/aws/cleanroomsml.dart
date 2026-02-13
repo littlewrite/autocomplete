@@ -9,10 +9,12 @@ final FigSpec cleanroomsmlSpec = FigSpec(
   name: 'cleanroomsml',
   description: 'Welcome to the Amazon Web Services Clean Rooms ML API Reference. Amazon Web Services Clean Rooms ML provides a privacy-enhancing method for two parties to identify similar users in their data without the need to share their data with each other. The first party brings the training data to Clean Rooms so that they can create and configure an audience model (lookalike model) and associate it with a collaboration. The second party then brings their seed data to Clean Rooms and generates an audience (lookalike segment) that resembles the training data. To learn more about Amazon Web Services Clean Rooms ML concepts, procedures, and best practices, see the Clean Rooms User Guide. To learn more about SQL commands, functions, and conditions supported in Clean Rooms, see the Clean Rooms SQL Reference',
   subcommands: [
+
     Subcommand(
       name: 'cancel-trained-model',
       description: 'Submits a request to cancel the trained model job',
       options: [
+
         Option(
           name: '--membership-identifier',
           description: 'The membership ID of the trained model job that you want to cancel',
@@ -47,6 +49,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'cancel-trained-model-inference-job',
       description: 'Submits a request to cancel a trained model inference job',
       options: [
+
         Option(
           name: '--membership-identifier',
           description: 'The membership ID of the trained model inference job that you want to cancel',
@@ -93,6 +97,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'create-audience-model',
       description: 'Defines the information necessary to create an audience model. An audience model is a machine learning model that Clean Rooms ML trains to measure similarity between users. Clean Rooms ML manages training and storing the audience model. The audience model can be used in multiple calls to the StartAudienceGenerationJob API',
       options: [
+
         Option(
           name: '--training-data-start-time',
           description: 'The start date and time of the training window',
@@ -184,6 +190,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'create-configured-audience-model',
       description: 'Defines the information necessary to create a configured audience model',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the configured audience model',
@@ -293,6 +301,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -305,6 +314,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'create-configured-model-algorithm',
       description: 'Creates a configured model algorithm using a container image stored in an ECR repository',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the configured model algorithm',
@@ -384,6 +394,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -396,6 +407,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'create-configured-model-algorithm-association',
       description: 'Associates a configured model algorithm to a collaboration for use by any member of the collaboration',
       options: [
+
         Option(
           name: '--membership-identifier',
           description: 'The membership ID of the member who is associating this configured model algorithm',
@@ -466,6 +478,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -478,6 +491,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'create-ml-input-channel',
       description: 'Provides the information to create an ML input channel. An ML input channel is the result of a query that can be used for ML modeling',
       options: [
+
         Option(
           name: '--membership-identifier',
           description: 'The membership ID of the member that is creating the ML input channel',
@@ -566,6 +580,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -578,6 +593,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'create-trained-model',
       description: 'Creates a trained model from an associated configured model algorithm using data from any member of the collaboration',
       options: [
+
         Option(
           name: '--membership-identifier',
           description: 'The membership ID of the member that is creating the trained model',
@@ -693,6 +709,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -705,6 +722,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'create-training-dataset',
       description: 'Defines the information necessary to create a training dataset. In Clean Rooms ML, the TrainingDataset is metadata that points to a Glue table, which is read only during AudienceModel creation',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the training dataset. This name must be unique in your account and region',
@@ -766,6 +784,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -778,6 +797,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'delete-audience-generation-job',
       description: 'Deletes the specified audience generation job, and removes all data associated with the job',
       options: [
+
         Option(
           name: '--audience-generation-job-arn',
           description: 'The Amazon Resource Name (ARN) of the audience generation job that you want to delete',
@@ -803,6 +823,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -815,6 +836,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'delete-audience-model',
       description: 'Specifies an audience model that you want to delete. You can\'t delete an audience model if there are any configured audience models that depend on the audience model',
       options: [
+
         Option(
           name: '--audience-model-arn',
           description: 'The Amazon Resource Name (ARN) of the audience model that you want to delete',
@@ -840,6 +862,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -852,6 +875,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'delete-configured-audience-model',
       description: 'Deletes the specified configured audience model. You can\'t delete a configured audience model if there are any lookalike models that use the configured audience model. If you delete a configured audience model, it will be removed from any collaborations that it is associated to',
       options: [
+
         Option(
           name: '--configured-audience-model-arn',
           description: 'The Amazon Resource Name (ARN) of the configured audience model that you want to delete',
@@ -877,6 +901,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -889,6 +914,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'delete-configured-audience-model-policy',
       description: 'Deletes the specified configured audience model policy',
       options: [
+
         Option(
           name: '--configured-audience-model-arn',
           description: 'The Amazon Resource Name (ARN) of the configured audience model policy that you want to delete',
@@ -914,6 +940,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -926,6 +953,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'delete-configured-model-algorithm',
       description: 'Deletes a configured model algorithm',
       options: [
+
         Option(
           name: '--configured-model-algorithm-arn',
           description: 'The Amazon Resource Name (ARN) of the configured model algorithm that you want to delete',
@@ -951,6 +979,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -963,6 +992,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'delete-configured-model-algorithm-association',
       description: 'Deletes a configured model algorithm association',
       options: [
+
         Option(
           name: '--configured-model-algorithm-association-arn',
           description: 'The Amazon Resource Name (ARN) of the configured model algorithm association that you want to delete',
@@ -997,6 +1027,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1009,6 +1040,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'delete-ml-configuration',
       description: 'Deletes a ML modeling configuration',
       options: [
+
         Option(
           name: '--membership-identifier',
           description: 'The membership ID of the of the member that is deleting the ML modeling configuration',
@@ -1034,6 +1066,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1046,6 +1079,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'delete-ml-input-channel-data',
       description: 'Provides the information necessary to delete an ML input channel',
       options: [
+
         Option(
           name: '--ml-input-channel-arn',
           description: 'The Amazon Resource Name (ARN) of the ML input channel that you want to delete',
@@ -1080,6 +1114,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1092,6 +1127,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'delete-trained-model-output',
       description: 'Deletes the output of a trained model',
       options: [
+
         Option(
           name: '--trained-model-arn',
           description: 'The Amazon Resource Name (ARN) of the trained model whose output you want to delete',
@@ -1126,6 +1162,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1138,6 +1175,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'delete-training-dataset',
       description: 'Specifies a training dataset that you want to delete. You can\'t delete a training dataset if there are any audience models that depend on the training dataset. In Clean Rooms ML, the TrainingDataset is metadata that points to a Glue table, which is read only during AudienceModel creation. This action deletes the metadata',
       options: [
+
         Option(
           name: '--training-dataset-arn',
           description: 'The Amazon Resource Name (ARN) of the training dataset that you want to delete',
@@ -1163,6 +1201,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1175,6 +1214,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-audience-generation-job',
       description: 'Returns information about an audience generation job',
       options: [
+
         Option(
           name: '--audience-generation-job-arn',
           description: 'The Amazon Resource Name (ARN) of the audience generation job that you are interested in',
@@ -1200,6 +1240,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1212,6 +1253,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-audience-model',
       description: 'Returns information about an audience model',
       options: [
+
         Option(
           name: '--audience-model-arn',
           description: 'The Amazon Resource Name (ARN) of the audience model that you are interested in',
@@ -1237,6 +1279,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1249,6 +1292,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-collaboration-configured-model-algorithm-association',
       description: 'Returns information about the configured model algorithm association in a collaboration',
       options: [
+
         Option(
           name: '--configured-model-algorithm-association-arn',
           description: 'The Amazon Resource Name (ARN) of the configured model algorithm association that you want to return information about',
@@ -1283,6 +1327,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1295,6 +1340,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-collaboration-ml-input-channel',
       description: 'Returns information about a specific ML input channel in a collaboration',
       options: [
+
         Option(
           name: '--ml-input-channel-arn',
           description: 'The Amazon Resource Name (ARN) of the ML input channel that you want to get',
@@ -1329,6 +1375,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1341,6 +1388,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-collaboration-trained-model',
       description: 'Returns information about a trained model in a collaboration',
       options: [
+
         Option(
           name: '--trained-model-arn',
           description: 'The Amazon Resource Name (ARN) of the trained model that you want to return information about',
@@ -1375,6 +1423,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1387,6 +1436,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-configured-audience-model',
       description: 'Returns information about a specified configured audience model',
       options: [
+
         Option(
           name: '--configured-audience-model-arn',
           description: 'The Amazon Resource Name (ARN) of the configured audience model that you are interested in',
@@ -1412,6 +1462,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1424,6 +1475,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-configured-audience-model-policy',
       description: 'Returns information about a configured audience model policy',
       options: [
+
         Option(
           name: '--configured-audience-model-arn',
           description: 'The Amazon Resource Name (ARN) of the configured audience model that you are interested in',
@@ -1449,6 +1501,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1461,6 +1514,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-configured-model-algorithm',
       description: 'Returns information about a configured model algorithm',
       options: [
+
         Option(
           name: '--configured-model-algorithm-arn',
           description: 'The Amazon Resource Name (ARN) of the configured model algorithm that you want to return information about',
@@ -1486,6 +1540,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1498,6 +1553,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-configured-model-algorithm-association',
       description: 'Returns information about a configured model algorithm association',
       options: [
+
         Option(
           name: '--configured-model-algorithm-association-arn',
           description: 'The Amazon Resource Name (ARN) of the configured model algorithm association that you want to return information about',
@@ -1532,6 +1588,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1544,6 +1601,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-ml-configuration',
       description: 'Returns information about a specific ML configuration',
       options: [
+
         Option(
           name: '--membership-identifier',
           description: 'The membership ID of the member that owns the ML configuration you want to return information about',
@@ -1569,6 +1627,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1581,6 +1640,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-ml-input-channel',
       description: 'Returns information about an ML input channel',
       options: [
+
         Option(
           name: '--ml-input-channel-arn',
           description: 'The Amazon Resource Name (ARN) of the ML input channel that you want to get',
@@ -1615,6 +1675,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1627,6 +1688,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-trained-model',
       description: 'Returns information about a trained model',
       options: [
+
         Option(
           name: '--trained-model-arn',
           description: 'The Amazon Resource Name (ARN) of the trained model that you are interested in',
@@ -1661,6 +1723,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1673,6 +1736,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-trained-model-inference-job',
       description: 'Returns information about a trained model inference job',
       options: [
+
         Option(
           name: '--membership-identifier',
           description: 'Provides the membership ID of the membership that contains the trained model inference job that you are interested in',
@@ -1707,6 +1771,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1719,6 +1784,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'get-training-dataset',
       description: 'Returns information about a training dataset',
       options: [
+
         Option(
           name: '--training-dataset-arn',
           description: 'The Amazon Resource Name (ARN) of the training dataset that you are interested in',
@@ -1744,6 +1810,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1756,6 +1823,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-audience-export-jobs',
       description: 'Returns a list of the audience export jobs',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -1826,6 +1894,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1838,6 +1907,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-audience-generation-jobs',
       description: 'Returns a list of audience generation jobs',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -1917,6 +1987,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1929,6 +2000,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-audience-models',
       description: 'Returns a list of audience models',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -1990,6 +2062,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2002,6 +2075,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-collaboration-configured-model-algorithm-associations',
       description: 'Returns a list of the configured model algorithm associations in a collaboration',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2072,6 +2146,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2084,6 +2159,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-collaboration-ml-input-channels',
       description: 'Returns a list of the ML input channels in a collaboration',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2154,6 +2230,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2166,6 +2243,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-collaboration-trained-model-export-jobs',
       description: 'Returns a list of the export jobs for a trained model in a collaboration',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2245,6 +2323,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2257,6 +2336,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-collaboration-trained-model-inference-jobs',
       description: 'Returns a list of trained model inference jobs in a specified collaboration',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2336,6 +2416,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2348,6 +2429,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-collaboration-trained-models',
       description: 'Returns a list of the trained models in a collaboration',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2418,6 +2500,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2430,6 +2513,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-configured-audience-models',
       description: 'Returns a list of the configured audience models',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2491,6 +2575,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2503,6 +2588,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-configured-model-algorithm-associations',
       description: 'Returns a list of configured model algorithm associations',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2573,6 +2659,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2585,6 +2672,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-configured-model-algorithms',
       description: 'Returns a list of configured model algorithms',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2646,6 +2734,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2658,6 +2747,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-ml-input-channels',
       description: 'Returns a list of ML input channels',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2728,6 +2818,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2740,6 +2831,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags for a provided resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you are interested in',
@@ -2765,6 +2857,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2777,6 +2870,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-trained-model-inference-jobs',
       description: 'Returns a list of trained model inference jobs that match the request parameters',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2856,6 +2950,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2868,6 +2963,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-trained-models',
       description: 'Returns a list of trained models',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -2938,6 +3034,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2950,6 +3047,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'list-training-datasets',
       description: 'Returns a list of training datasets',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token value retrieved from a previous call to access the next page of results',
@@ -3011,6 +3109,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3023,6 +3122,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'put-configured-audience-model-policy',
       description: 'Create or update the resource policy for a configured audience model',
       options: [
+
         Option(
           name: '--configured-audience-model-arn',
           description: 'The Amazon Resource Name (ARN) of the configured audience model that the resource policy will govern',
@@ -3075,6 +3175,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3087,6 +3188,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'put-ml-configuration',
       description: 'Assigns information about an ML configuration',
       options: [
+
         Option(
           name: '--membership-identifier',
           description: 'The membership ID of the member that is being configured',
@@ -3121,6 +3223,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3133,6 +3236,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'start-audience-export-job',
       description: 'Export an audience of a specified size after you have generated an audience',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the audience export job',
@@ -3185,6 +3289,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3197,6 +3302,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'start-audience-generation-job',
       description: 'Information necessary to start the audience generation job',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the audience generation job',
@@ -3275,6 +3381,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3287,6 +3394,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'start-trained-model-export-job',
       description: 'Provides the information necessary to start a trained model export job',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the trained model export job',
@@ -3348,6 +3456,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3360,6 +3469,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'start-trained-model-inference-job',
       description: 'Defines the information necessary to begin a trained model inference job',
       options: [
+
         Option(
           name: '--membership-identifier',
           description: 'The membership ID of the membership that contains the trained model inference job',
@@ -3484,6 +3594,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3496,6 +3607,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds metadata tags to a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to assign tags',
@@ -3530,6 +3642,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3542,6 +3655,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes metadata tags from a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to remove tags from',
@@ -3576,6 +3690,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3588,6 +3703,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
       name: 'update-configured-audience-model',
       description: 'Provides the information necessary to update a configured audience model. Updates that impact audience generation jobs take effect when a new job starts, but do not impact currently running jobs',
       options: [
+
         Option(
           name: '--configured-audience-model-arn',
           description: 'The Amazon Resource Name (ARN) of the configured audience model that you want to update',
@@ -3667,6 +3783,7 @@ final FigSpec cleanroomsmlSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

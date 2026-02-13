@@ -9,10 +9,12 @@ final FigSpec apigatewaymanagementapiSpec = FigSpec(
   name: 'apigatewaymanagementapi',
   description: 'The Amazon API Gateway Management API allows you to directly manage runtime aspects of your deployed APIs. To use it, you must explicitly set the SDK\'s endpoint to point to the endpoint of your deployed API. The endpoint will be of the form https://{api-id}.execute-api.{region}.amazonaws.com/{stage}, or will be the endpoint corresponding to your API\'s custom domain and base path, if applicable',
   subcommands: [
+
     Subcommand(
       name: 'delete-connection',
       description: 'Delete the connection with the provided id',
       options: [
+
         Option(
           name: '--connection-id',
           args: [
@@ -37,6 +39,7 @@ final FigSpec apigatewaymanagementapiSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -49,6 +52,7 @@ final FigSpec apigatewaymanagementapiSpec = FigSpec(
       name: 'get-connection',
       description: 'Get information about the connection with the provided id',
       options: [
+
         Option(
           name: '--connection-id',
           args: [
@@ -73,6 +77,7 @@ final FigSpec apigatewaymanagementapiSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -85,6 +90,7 @@ final FigSpec apigatewaymanagementapiSpec = FigSpec(
       name: 'post-to-connection',
       description: 'Sends the provided data to the specified connection',
       options: [
+
         Option(
           name: '--data',
           description: 'The data to be sent to the client specified by its connection id',
@@ -119,6 +125,7 @@ final FigSpec apigatewaymanagementapiSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

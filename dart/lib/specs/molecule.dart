@@ -9,6 +9,7 @@ final FigSpec moleculeSpec = FigSpec(
   name: 'molecule',
   description: 'Molecule aids in the development and testing of Ansible roles',
   subcommands: [
+
     Subcommand(
       name: 'check',
       description: 'Use the provisioner to perform a Dry-Run (destroy, dependency, create, prepare, converge)',
@@ -38,6 +39,7 @@ final FigSpec moleculeSpec = FigSpec(
       name: 'destroy',
       description: 'Use the provisioner to destroy the instances',
       options: [
+
         Option(
           name: '--all',
           description: 'Destroy all scenarios. Default is False',
@@ -54,6 +56,7 @@ final FigSpec moleculeSpec = FigSpec(
       name: 'drivers',
       description: 'List drivers',
       options: [
+
         Option(
           name: ['--format', '-f'],
           description: 'Change output format. (simple)',
@@ -61,6 +64,7 @@ final FigSpec moleculeSpec = FigSpec(
             Arg(
             name: 'TEXT',
             suggestions: [
+
               FigSuggestion(name: 'simple'),
               FigSuggestion(name: 'plain')
             ]
@@ -78,6 +82,7 @@ final FigSpec moleculeSpec = FigSpec(
       name: 'init',
       description: 'Initialize a new role or scenario',
       subcommands: [
+
         Subcommand(
           name: 'role',
           description: 'Initialize a new role for use with Molecule, namespace is required outside collections, like acme.myrole',
@@ -86,12 +91,16 @@ final FigSpec moleculeSpec = FigSpec(
             Arg(
             name: 'ROLE_NAM'
           )
-          ]
+          ],
+          parserDirectives: ParserDirectives(
+            optionsMustPrecedeArguments: true
+          )
         ),
         Subcommand(
           name: 'scenario',
           description: 'Initialize a new scenario for use with Molecule',
           options: [
+
             Option(
               name: ['--role-name', '-r'],
               description: 'Name of the role to create',
@@ -106,7 +115,10 @@ final FigSpec moleculeSpec = FigSpec(
             Arg(
             name: 'SCENARIO_NAM'
           )
-          ]
+          ],
+          parserDirectives: ParserDirectives(
+            optionsMustPrecedeArguments: true
+          )
         )
       ]
     ),
@@ -119,6 +131,7 @@ final FigSpec moleculeSpec = FigSpec(
       name: 'list',
       description: 'List status of instances',
       options: [
+
         Option(
           name: ['--format', '-f'],
           description: 'Change output format. (simple)',
@@ -126,6 +139,7 @@ final FigSpec moleculeSpec = FigSpec(
             Arg(
             name: 'TEXT',
             suggestions: [
+
               FigSuggestion(name: 'simple'),
               FigSuggestion(name: 'plain'),
               FigSuggestion(name: 'yaml')
@@ -139,6 +153,7 @@ final FigSpec moleculeSpec = FigSpec(
       name: 'login',
       description: 'Log in to one instance',
       options: [
+
         Option(
           name: ['--host', '-h'],
           description: 'Host to access',
@@ -159,6 +174,7 @@ final FigSpec moleculeSpec = FigSpec(
       name: 'prepare',
       description: 'Use the provisioner to prepare the instances into a particular starting state',
       options: [
+
         Option(
           name: '--force',
           description: 'Enable force mode. Default is disabled',
@@ -190,6 +206,7 @@ final FigSpec moleculeSpec = FigSpec(
       name: 'test',
       description: 'Test (dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy)',
       options: [
+
         Option(
           name: '--all',
           description: 'Test all scenarios. Default is False',
@@ -207,6 +224,7 @@ final FigSpec moleculeSpec = FigSpec(
             Arg(
             name: 'TEXT',
             suggestions: [
+
               FigSuggestion(name: 'always'),
               FigSuggestion(name: 'never')
             ]
@@ -217,6 +235,7 @@ final FigSpec moleculeSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Show help',

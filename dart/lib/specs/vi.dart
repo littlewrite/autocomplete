@@ -14,6 +14,7 @@ final FigSpec viSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Print help message for vi and exit'

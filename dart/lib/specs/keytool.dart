@@ -4,6 +4,108 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> commonOptions = [
+
+  Option(
+    name: ['-h', '-?', '--help', '-help'],
+    description: 'Show help message'
+  ),
+  Option(
+    name: '-v',
+    description: 'Verbose output'
+  )
+];
+
+final List<Option> repeatedOptions = [
+
+  Option(
+    name: '-alias',
+    description: 'Alias name of the entry to process',
+    args: [
+      Arg(
+      name: 'alias'
+    )
+    ]
+  ),
+  Option(
+    name: '-keystore',
+    description: 'Keystore name',
+    args: [
+      Arg(
+      name: 'keystore'
+    )
+    ]
+  ),
+  Option(
+    name: '-storepass',
+    description: 'Keystore password',
+    args: [
+      Arg(
+      name: 'arg'
+    )
+    ]
+  ),
+  Option(
+    name: '-storetype',
+    description: 'Keystore type',
+    args: [
+      Arg(
+      name: 'type'
+    )
+    ]
+  ),
+  Option(
+    name: '-providername',
+    description: 'Provider name',
+    args: [
+      Arg(
+      name: 'name'
+    )
+    ]
+  ),
+  Option(
+    name: '-addprovider',
+    description: 'Add security provider by name (e.g. SunPKCS11)',
+    args: [
+      Arg(
+      name: 'name'
+    )
+    ]
+  ),
+  Option(
+    name: '-providerclass',
+    description: 'Add security provider by fully-qualified class name',
+    args: [
+      Arg(
+      name: 'class'
+    )
+    ]
+  ),
+  Option(
+    name: '-providerarg',
+    description: 'Configure argument for -addprovider or -providerclass',
+    args: [
+      Arg(
+      name: 'arg'
+    )
+    ],
+    dependsOn: ['-addprovider', '-providerclass']
+  ),
+  Option(
+    name: '-providerpath',
+    description: 'Provider classpath',
+    args: [
+      Arg(
+      name: 'list'
+    )
+    ]
+  ),
+  Option(
+    name: '-protected',
+    description: 'Password through protected mechanism'
+  )
+];
+
 /// Completion spec for `keytool` CLI
 final FigSpec keytoolSpec = FigSpec(
   name: 'keytool',
@@ -12,6 +114,7 @@ final FigSpec keytoolSpec = FigSpec(
     flagsArePosixNoncompliant: true
   ),
   options: [
+
     Option(
       name: ['-h', '-?', '--help', '-help'],
       description: 'Show help message'
@@ -27,10 +130,14 @@ final FigSpec keytoolSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: '-certreq',
       description: 'Generates a certificate request',
       options: [
+
+        ...commonOptions,
+        ...repeatedOptions,
         Option(
           name: '-sigalg',
           description: 'Signature algorithm name',
@@ -83,6 +190,9 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-changealias',
       description: 'Changes an entry\'s alias',
       options: [
+
+        ...commonOptions,
+        ...repeatedOptions,
         Option(
           name: '-destalias',
           description: 'Destination alias',
@@ -111,6 +221,9 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-delete',
       description: 'Deletes an entry',
       options: [
+
+        ...commonOptions,
+        ...repeatedOptions,
         Option(
           name: '-cacerts',
           description: 'Access the cacerts keystore'
@@ -121,6 +234,9 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-exportcert',
       description: 'Exports certificate',
       options: [
+
+        ...commonOptions,
+        ...repeatedOptions,
         Option(
           name: '-rfc',
           description: 'Output in RFC style'
@@ -145,6 +261,9 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-genkeypair',
       description: 'Generate a key pair',
       options: [
+
+        ...commonOptions,
+        ...repeatedOptions,
         Option(
           name: '-keyalg',
           description: 'Key algorithm name',
@@ -241,6 +360,9 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-genseckey',
       description: 'Generates a secret key',
       options: [
+
+        ...commonOptions,
+        ...repeatedOptions,
         Option(
           name: '-keypass',
           description: 'Key password',
@@ -274,6 +396,9 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-gencert',
       description: 'Generates certificate from a certificate request',
       options: [
+
+        ...commonOptions,
+        ...repeatedOptions,
         Option(
           name: '-rfc',
           description: 'Output in RFC style'
@@ -358,6 +483,9 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-importcert',
       description: 'Imports a certificate or a certificate chain',
       options: [
+
+        ...commonOptions,
+        ...repeatedOptions,
         Option(
           name: '-noprompt',
           description: 'Do not prompt'
@@ -395,6 +523,9 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-importpass',
       description: 'Imports a password',
       options: [
+
+        ...commonOptions,
+        ...repeatedOptions,
         Option(
           name: '-keypass',
           description: 'Key password',
@@ -428,6 +559,8 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-importkeystore',
       description: 'Imports one or all entries from another keystore',
       options: [
+
+        ...commonOptions,
         Option(
           name: '-srckeystore',
           description: 'Source keystore name',
@@ -591,6 +724,8 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-keypasswd',
       description: 'Changes the key password of an entry',
       options: [
+
+        ...commonOptions,
         Option(
           name: '-keypass',
           description: 'Key password',
@@ -615,6 +750,9 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-list',
       description: 'Lists entries in a keystore',
       options: [
+
+        ...commonOptions,
+        ...repeatedOptions,
         Option(
           name: '-rfc',
           description: 'Output in RFC style'
@@ -629,6 +767,8 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-printcert',
       description: 'Prints the content of a certificate',
       options: [
+
+        ...commonOptions,
         Option(
           name: '-rfc',
           description: 'Output in RFC style'
@@ -668,6 +808,8 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-printcertreq',
       description: 'Prints the content of a certificate request',
       options: [
+
+        ...commonOptions,
         Option(
           name: '-file',
           description: 'Input file name',
@@ -684,6 +826,8 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-printcrl',
       description: 'Prints the content of a CRL file',
       options: [
+
+        ...commonOptions,
         Option(
           name: '-file',
           description: 'Input file name',
@@ -700,6 +844,8 @@ final FigSpec keytoolSpec = FigSpec(
       name: '-storepasswd',
       description: 'Changes the store password of a keystore',
       options: [
+
+        ...commonOptions,
         Option(
           name: '-new',
           description: 'New password',

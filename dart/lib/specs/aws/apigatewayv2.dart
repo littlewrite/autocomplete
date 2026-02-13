@@ -9,10 +9,12 @@ final FigSpec apigatewayv2Spec = FigSpec(
   name: 'apigatewayv2',
   description: 'Amazon API Gateway V2',
   subcommands: [
+
     Subcommand(
       name: 'create-api',
       description: 'Creates an Api resource',
       options: [
+
         Option(
           name: '--api-key-selection-expression',
           description: 'An API key selection expression. Supported only for WebSocket APIs. See API Key Selection Expressions',
@@ -144,6 +146,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -156,6 +159,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-api-mapping',
       description: 'Creates an API mapping',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -208,6 +212,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -220,6 +225,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-authorizer',
       description: 'Creates an Authorizer for an API',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -334,6 +340,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -346,6 +353,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-deployment',
       description: 'Creates a Deployment for an API',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -389,6 +397,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -401,6 +410,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-domain-name',
       description: 'Creates a domain name',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The domain name',
@@ -453,6 +463,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -465,6 +476,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-integration',
       description: 'Creates an Integration',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -643,6 +655,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -655,6 +668,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-integration-response',
       description: 'Creates an IntegrationResponses',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -734,6 +748,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -746,6 +761,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-model',
       description: 'Creates a Model for an API',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -807,6 +823,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -819,6 +836,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-route',
       description: 'Creates a Route for an API',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -942,6 +960,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -954,6 +973,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-route-response',
       description: 'Creates a RouteResponse for a Route',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1024,6 +1044,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1036,6 +1057,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-stage',
       description: 'Creates a Stage for an API',
       options: [
+
         Option(
           name: '--access-log-settings',
           description: 'Settings for logging access in this stage',
@@ -1150,6 +1172,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1162,6 +1185,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'create-vpc-link',
       description: 'Creates a VPC link',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the VPC link',
@@ -1214,6 +1238,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1226,6 +1251,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-access-log-settings',
       description: 'Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1260,6 +1286,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1272,6 +1299,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-api',
       description: 'Deletes an Api resource',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1297,6 +1325,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1309,6 +1338,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-api-mapping',
       description: 'Deletes an API mapping',
       options: [
+
         Option(
           name: '--api-mapping-id',
           description: 'The API mapping identifier',
@@ -1343,6 +1373,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1355,6 +1386,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-authorizer',
       description: 'Deletes an Authorizer',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1389,6 +1421,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1401,6 +1434,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-cors-configuration',
       description: 'Deletes a CORS configuration',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1426,6 +1460,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1438,6 +1473,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-deployment',
       description: 'Deletes a Deployment',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1472,6 +1508,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1484,6 +1521,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-domain-name',
       description: 'Deletes a domain name',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The domain name',
@@ -1509,6 +1547,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1521,6 +1560,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-integration',
       description: 'Deletes an Integration',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1555,6 +1595,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1567,6 +1608,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-integration-response',
       description: 'Deletes an IntegrationResponses',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1610,6 +1652,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1622,6 +1665,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-model',
       description: 'Deletes a Model',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1656,6 +1700,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1668,6 +1713,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-route',
       description: 'Deletes a Route',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1702,6 +1748,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1714,6 +1761,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-route-request-parameter',
       description: 'Deletes a route request parameter. Supported only for WebSocket APIs',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1757,6 +1805,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1769,6 +1818,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-route-response',
       description: 'Deletes a RouteResponse',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1812,6 +1862,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1824,6 +1875,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-route-settings',
       description: 'Deletes the RouteSettings for a stage',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1867,6 +1919,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1879,6 +1932,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-stage',
       description: 'Deletes a Stage',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -1913,6 +1967,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1925,6 +1980,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'delete-vpc-link',
       description: 'Deletes a VPC link',
       options: [
+
         Option(
           name: '--vpc-link-id',
           description: 'The ID of the VPC link',
@@ -1950,6 +2006,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1961,6 +2018,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
     Subcommand(
       name: 'export-api',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2029,6 +2087,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'reset-authorizers-cache',
       description: 'Resets all authorizer cache entries on a stage. Supported only for HTTP APIs',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2063,6 +2122,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2075,6 +2135,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-api',
       description: 'Gets an Api resource',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2100,6 +2161,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2112,6 +2174,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-api-mapping',
       description: 'Gets an API mapping',
       options: [
+
         Option(
           name: '--api-mapping-id',
           description: 'The API mapping identifier',
@@ -2146,6 +2209,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2158,6 +2222,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-api-mappings',
       description: 'Gets API mappings',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The domain name',
@@ -2201,6 +2266,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2213,6 +2279,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-apis',
       description: 'Gets a collection of Api resources',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of elements to be returned for this resource',
@@ -2274,6 +2341,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2286,6 +2354,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-authorizer',
       description: 'Gets an Authorizer',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2320,6 +2389,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2332,6 +2402,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-authorizers',
       description: 'Gets the Authorizers for an API',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2402,6 +2473,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2414,6 +2486,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-deployment',
       description: 'Gets a Deployment',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2448,6 +2521,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2460,6 +2534,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-deployments',
       description: 'Gets the Deployments for an API',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2530,6 +2605,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2542,6 +2618,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-domain-name',
       description: 'Gets a domain name',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The domain name',
@@ -2567,6 +2644,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2579,6 +2657,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-domain-names',
       description: 'Gets the domain names for an AWS account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of elements to be returned for this resource',
@@ -2640,6 +2719,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2652,6 +2732,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-integration',
       description: 'Gets an Integration',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2686,6 +2767,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2698,6 +2780,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-integration-response',
       description: 'Gets an IntegrationResponses',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2741,6 +2824,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2753,6 +2837,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-integration-responses',
       description: 'Gets the IntegrationResponses for an Integration',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2832,6 +2917,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2844,6 +2930,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-integrations',
       description: 'Gets the Integrations for an API',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2914,6 +3001,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2926,6 +3014,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-model',
       description: 'Gets a Model',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -2960,6 +3049,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2972,6 +3062,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-model-template',
       description: 'Gets a model template',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -3006,6 +3097,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3018,6 +3110,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-models',
       description: 'Gets the Models for an API',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -3088,6 +3181,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3100,6 +3194,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-route',
       description: 'Gets a Route',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -3134,6 +3229,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3146,6 +3242,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-route-response',
       description: 'Gets a RouteResponse',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -3189,6 +3286,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3201,6 +3299,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-route-responses',
       description: 'Gets the RouteResponses for a Route',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -3280,6 +3379,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3292,6 +3392,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-routes',
       description: 'Gets the Routes for an API',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -3362,6 +3463,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3374,6 +3476,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-stage',
       description: 'Gets a Stage',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -3408,6 +3511,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3420,6 +3524,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-stages',
       description: 'Gets the Stages for an API',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -3490,6 +3595,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3502,6 +3608,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-tags',
       description: 'Gets a collection of Tag resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN for the tag',
@@ -3527,6 +3634,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3539,6 +3647,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-vpc-link',
       description: 'Gets a VPC link',
       options: [
+
         Option(
           name: '--vpc-link-id',
           description: 'The ID of the VPC link',
@@ -3564,6 +3673,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3576,6 +3686,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'get-vpc-links',
       description: 'Gets a collection of VPC links',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of elements to be returned for this resource',
@@ -3610,6 +3721,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3622,6 +3734,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'import-api',
       description: 'Imports an API',
       options: [
+
         Option(
           name: '--basepath',
           description: 'Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see Set the OpenAPI basePath Property. Supported only for HTTP APIs',
@@ -3664,6 +3777,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3676,6 +3790,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'reimport-api',
       description: 'Puts an Api resource',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -3727,6 +3842,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3739,6 +3855,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'tag-resource',
       description: 'Creates a new Tag resource to represent a tag',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN for the tag',
@@ -3773,6 +3890,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3785,6 +3903,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes a Tag',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN for the tag',
@@ -3819,6 +3938,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3831,6 +3951,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-api',
       description: 'Updates an Api resource',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -3953,6 +4074,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3965,6 +4087,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-api-mapping',
       description: 'The API mapping',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -4026,6 +4149,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4038,6 +4162,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-authorizer',
       description: 'Updates an Authorizer',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -4161,6 +4286,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4173,6 +4299,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-deployment',
       description: 'Updates a Deployment',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -4216,6 +4343,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4228,6 +4356,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-domain-name',
       description: 'Updates a domain name',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The domain name',
@@ -4271,6 +4400,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4283,6 +4413,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-integration',
       description: 'Updates an Integration',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -4470,6 +4601,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4482,6 +4614,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-integration-response',
       description: 'Updates an IntegrationResponses',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -4570,6 +4703,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4582,6 +4716,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-model',
       description: 'Updates a Model',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -4652,6 +4787,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4664,6 +4800,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-route',
       description: 'Updates a Route',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -4796,6 +4933,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4808,6 +4946,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-route-response',
       description: 'Updates a RouteResponse',
       options: [
+
         Option(
           name: '--api-id',
           description: 'The API identifier',
@@ -4887,6 +5026,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4899,6 +5039,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-stage',
       description: 'Updates a Stage',
       options: [
+
         Option(
           name: '--access-log-settings',
           description: 'Settings for logging access in this stage',
@@ -5004,6 +5145,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5016,6 +5158,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
       name: 'update-vpc-link',
       description: 'Updates a VPC link',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the VPC link',
@@ -5050,6 +5193,7 @@ final FigSpec apigatewayv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

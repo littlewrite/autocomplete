@@ -15,6 +15,7 @@ final FigSpec whereSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-w',
       description: 'For each name, print \'name: word\', where \'word\' is the kind of command'

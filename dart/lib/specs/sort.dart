@@ -16,6 +16,7 @@ final FigSpec sortSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Shows help message'
@@ -31,6 +32,7 @@ final FigSpec sortSpec = FigSpec(
         name: 'output',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'silent'),
           FigSuggestion(name: 'quiet')
         ],
@@ -126,6 +128,7 @@ final FigSpec sortSpec = FigSpec(
     Option(
       name: ['-k', '--key'],
       args: [
+
         Arg(
           name: 'field1'
         ),
@@ -222,6 +225,7 @@ final FigSpec sortSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(name: 'general-numeric'),
           FigSuggestion(name: 'human-numeric'),
           FigSuggestion(name: 'month'),

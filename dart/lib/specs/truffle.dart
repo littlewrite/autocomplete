@@ -4,11 +4,85 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<FigSuggestion> truffleCommands = [
+
+  FigSuggestion(
+    name: 'build'
+  ),
+  FigSuggestion(
+    name: 'compile'
+  ),
+  FigSuggestion(
+    name: 'config'
+  ),
+  FigSuggestion(
+    name: 'console'
+  ),
+  FigSuggestion(
+    name: 'create'
+  ),
+  FigSuggestion(
+    name: 'debug'
+  ),
+  FigSuggestion(
+    name: 'deploy'
+  ),
+  FigSuggestion(
+    name: 'develop'
+  ),
+  FigSuggestion(
+    name: 'exec'
+  ),
+  FigSuggestion(
+    name: 'help'
+  ),
+  FigSuggestion(
+    name: 'init'
+  ),
+  FigSuggestion(
+    name: 'install'
+  ),
+  FigSuggestion(
+    name: 'networks'
+  ),
+  FigSuggestion(
+    name: 'obtain'
+  ),
+  FigSuggestion(
+    name: 'opcode'
+  ),
+  FigSuggestion(
+    name: 'publish'
+  ),
+  FigSuggestion(
+    name: 'run'
+  ),
+  FigSuggestion(
+    name: 'version'
+  ),
+  FigSuggestion(
+    name: 'watch'
+  ),
+  FigSuggestion(
+    name: 'preserve'
+  ),
+  FigSuggestion(
+    name: 'migrate'
+  ),
+  FigSuggestion(
+    name: 'unbox'
+  ),
+  FigSuggestion(
+    name: 'test'
+  )
+];
+
 /// Completion spec for `truffle` CLI
 final FigSpec truffleSpec = FigSpec(
   name: 'truffle',
   description: 'A world class development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier',
   subcommands: [
+
     Subcommand(
       name: 'build',
       description: 'Execute build pipeline (if configuration present)'
@@ -17,6 +91,7 @@ final FigSpec truffleSpec = FigSpec(
       name: 'compile',
       description: 'Compile contract source files',
       options: [
+
         Option(
           name: '--list',
           description: 'List all recent stable releases from solc-bin. If filter is specified then it will display only that type of release or docker tags',
@@ -25,6 +100,7 @@ final FigSpec truffleSpec = FigSpec(
             name: 'filter',
             description: 'The filter parameter must be one of the following: prereleases, releases, latestRelease or docker',
             suggestions: [
+
               FigSuggestion(
                 name: 'prereleases'
               ),
@@ -55,6 +131,7 @@ final FigSpec truffleSpec = FigSpec(
       name: 'config',
       description: 'Set user-level configuration options',
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Get a Truffle configuration option value',
@@ -68,6 +145,7 @@ final FigSpec truffleSpec = FigSpec(
           name: 'set',
           description: 'Set a Truffle configuration option value',
           args: [
+
             Arg(
               name: 'key'
             ),
@@ -78,6 +156,7 @@ final FigSpec truffleSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--enable-analytics',
           description: 'Enable Truffle to send usage data to Google Analytics',
@@ -94,6 +173,7 @@ final FigSpec truffleSpec = FigSpec(
       name: 'console',
       description: 'Run a console with contract abstractions and commands available',
       options: [
+
         Option(
           name: '--network',
           description: 'Specify the network to use',
@@ -129,10 +209,12 @@ final FigSpec truffleSpec = FigSpec(
       name: 'create',
       description: 'Helper to create new contracts, migrations and tests',
       args: [
+
         Arg(
           name: 'artifact_type',
           description: 'Create a new artifact where artifact_type is one of the following: contract, migration, test or all. The new artifact is created along with one(or all) of the followingfiles: `contracts/ArtifactName.sol`, `migrations/####_artifact_name.js` or`tests/artifact_name.js`. (required)',
           suggestions: [
+
             FigSuggestion(
               name: 'contract'
             ),
@@ -164,6 +246,7 @@ final FigSpec truffleSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--network',
           description: 'The network to connect to',
@@ -202,6 +285,7 @@ final FigSpec truffleSpec = FigSpec(
       name: 'develop',
       description: 'Open a console with a development blockchaine',
       options: [
+
         Option(
           name: '--log',
           description: 'Start/Connect to a Truffle develop session and log all RPC activity. See the Log RPC Activity docs for more information about using this option',
@@ -239,6 +323,7 @@ final FigSpec truffleSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--network',
           description: 'Specify the network to use, using artifacts specific to that network',
@@ -261,7 +346,8 @@ final FigSpec truffleSpec = FigSpec(
       args: [
         Arg(
         name: 'command',
-        description: 'Display usage information about the specified command'
+        description: 'Display usage information about the specified command',
+        suggestions: truffleCommands
       )
       ]
     ),
@@ -269,6 +355,7 @@ final FigSpec truffleSpec = FigSpec(
       name: 'init',
       description: 'Initialize new and empty Ethereum project',
       options: [
+
         Option(
           name: '--force',
           description: 'Initialize project regardless of the current working directory\'s state. Be careful, this could overwrite existing files that have name conflicts',
@@ -280,6 +367,7 @@ final FigSpec truffleSpec = FigSpec(
       name: 'install',
       description: 'Install a package from the Ethereum Package Registry',
       args: [
+
         Arg(
           name: 'package_name',
           description: 'Name of the package as listed in the Ethereum Package Registry. (required)'
@@ -294,6 +382,7 @@ final FigSpec truffleSpec = FigSpec(
       name: 'networks',
       description: 'Show addresses for deployed contracts on each network',
       options: [
+
         Option(
           name: '--clean',
           description: 'Remove all network artifacts that aren\'t associated with a named network'
@@ -304,6 +393,7 @@ final FigSpec truffleSpec = FigSpec(
       name: 'obtain',
       description: 'Fetch and cache a specified compiler',
       options: [
+
         Option(
           name: '--solc',
           description: 'Download and cache a version of the solc compiler. (required)',
@@ -357,6 +447,7 @@ final FigSpec truffleSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--environment',
           description: 'Environment name, as defined in truffle-config `environments` object',
@@ -385,6 +476,7 @@ final FigSpec truffleSpec = FigSpec(
       name: 'migrate',
       description: 'Run migrations to deploy contracts',
       options: [
+
         Option(
           name: '--reset',
           description: 'Run all migrations from the beginning, instead of running from the last completed migration'
@@ -449,16 +541,21 @@ final FigSpec truffleSpec = FigSpec(
       name: 'unbox',
       description: 'Download a Truffle Box, a pre-built Truffle project',
       args: [
+
         Arg(
           name: 'box_name',
           description: 'Name of the Truffle Box. (required)'
         ),
         Arg(
           name: 'path',
-          isOptional: true
+          isOptional: true,
+          generators: Generator(
+            template: 'filepaths'
+          )
         )
       ],
       options: [
+
         Option(
           name: '--force',
           description: 'Unbox project in the current directory regardless of its state. Be careful, this will potentially overwrite files that exist in the directory',
@@ -477,6 +574,7 @@ final FigSpec truffleSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--compile-all',
           description: 'Compile all contracts instead of intelligently choosing which contracts need to be compiled'

@@ -9,10 +9,12 @@ final FigSpec oktaSpec = FigSpec(
   name: 'okta',
   description: 'The Okta CLI is the easiest way to get started with Okta!',
   subcommands: [
+
     Subcommand(
       name: 'register',
       description: 'Sign up for a new Okta account',
       options: [
+
         Option(
           name: '--company',
           description: 'Company/organization used when registering a new Okta account'
@@ -39,10 +41,12 @@ final FigSpec oktaSpec = FigSpec(
       name: 'apps',
       description: 'Manage Okta apps',
       subcommands: [
+
         Subcommand(
           name: 'config',
           description: 'Show an Okta app\'s configuration',
           options: [
+
             Option(
               name: '--app',
               description: 'The App ID'
@@ -53,6 +57,7 @@ final FigSpec oktaSpec = FigSpec(
           name: 'create',
           description: 'Create a new Okta app',
           options: [
+
             Option(
               name: '--app-name',
               description: 'Application name to be created, defaults to current directory name'
@@ -81,6 +86,7 @@ final FigSpec oktaSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-f', '--force'],
               description: 'Deactivate and delete applications without confirmation'
@@ -104,6 +110,7 @@ final FigSpec oktaSpec = FigSpec(
       name: 'help',
       description: 'Displays help information about the specified command',
       options: [
+
         Option(
           name: 'register',
           description: 'Sign up for a new Okta account'
@@ -136,6 +143,7 @@ final FigSpec oktaSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for Okta CLI'

@@ -15,6 +15,7 @@ final FigSpec packSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-c', '--configuration'],
       description: 'Defines the build configuration. The default for most projects is Debug, but you can override the build configuration settings in your project',
@@ -22,6 +23,7 @@ final FigSpec packSpec = FigSpec(
         Arg(
         name: 'configuration',
         suggestions: [
+
           FigSuggestion(name: 'Debug'),
           FigSuggestion(name: 'Release')
         ]
@@ -99,6 +101,7 @@ final FigSpec packSpec = FigSpec(
         Arg(
         name: 'verbosity',
         suggestions: [
+
           FigSuggestion(name: 'quiet'),
           FigSuggestion(name: 'minimal'),
           FigSuggestion(name: 'normal'),

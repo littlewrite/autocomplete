@@ -9,10 +9,12 @@ final FigSpec medicalImagingSpec = FigSpec(
   name: 'medical-imaging',
   description: 'This is the AWS HealthImaging API Reference. AWS HealthImaging is a HIPAA eligible service that empowers healthcare providers, life science organizations, and their software partners to store, analyze, and share medical images in the cloud at petabyte scale. For an introduction to the service, see the  AWS HealthImaging Developer Guide .  We recommend using one of the AWS Software Development Kits (SDKs) for your programming language, as they take care of request authentication, serialization, and connection management. For more information, see Tools to build on AWS.  The following sections list AWS HealthImaging API actions categorized according to functionality. Links are provided to actions within this Reference, along with links back to corresponding sections in the AWS HealthImaging Developer Guide where you can view tested code examples.  Data store actions     CreateDatastore – See Creating a data store.    GetDatastore – See Getting data store properties.    ListDatastores – See Listing data stores.    DeleteDatastore – See Deleting a data store.    Import job actions     StartDICOMImportJob – See Starting an import job.    GetDICOMImportJob – See Getting import job properties.    ListDICOMImportJobs – See Listing import jobs.    Image set access actions     SearchImageSets – See Searching image sets.    GetImageSet – See Getting image set properties.    GetImageSetMetadata – See Getting image set metadata.    GetImageFrame – See Getting image set pixel data.    Image set modification actions     ListImageSetVersions – See Listing image set versions.    UpdateImageSetMetadata – See Updating image set metadata.    CopyImageSet – See Copying an image set.    DeleteImageSet – See Deleting an image set.    Tagging actions     TagResource – See Tagging a resource.    ListTagsForResource – See Listing tags for a resource.    UntagResource – See Untagging a resource',
   subcommands: [
+
     Subcommand(
       name: 'copy-image-set',
       description: 'Copy an image set',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -64,6 +66,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -76,6 +79,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'create-datastore',
       description: 'Create a data store',
       options: [
+
         Option(
           name: '--datastore-name',
           description: 'The data store name',
@@ -128,6 +132,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -140,6 +145,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'delete-datastore',
       description: 'Delete a data store.  Before a data store can be deleted, you must first delete all image sets within it',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -165,6 +171,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -177,6 +184,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'delete-image-set',
       description: 'Delete an image set',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -211,6 +219,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -223,6 +232,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'get-dicom-import-job',
       description: 'Get the import job properties to learn more about the job or job progress.  The jobStatus refers to the execution of the import job. Therefore, an import job can return a jobStatus as COMPLETED even if validation issues are discovered during the import process. If a jobStatus returns as COMPLETED, we still recommend you review the output manifests written to S3, as they provide details on the success or failure of individual P10 object imports',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -257,6 +267,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -269,6 +280,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'get-datastore',
       description: 'Get data store properties',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -294,6 +306,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -306,6 +319,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'get-image-frame',
       description: 'Get an image frame (pixel data) for an image set',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -348,6 +362,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'get-image-set',
       description: 'Get image set properties',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -391,6 +406,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -403,6 +419,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'get-image-set-metadata',
       description: 'Get metadata attributes for an image set',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -445,6 +462,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'list-dicom-import-jobs',
       description: 'List import jobs created for a specific data store',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -524,6 +542,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -536,6 +555,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'list-datastores',
       description: 'List data stores',
       options: [
+
         Option(
           name: '--datastore-status',
           description: 'The data store status',
@@ -606,6 +626,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -618,6 +639,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'list-image-set-versions',
       description: 'List image set versions',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -697,6 +719,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -709,6 +732,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags associated with a medical imaging resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the medical imaging resource to list tags for',
@@ -734,6 +758,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -746,6 +771,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'search-image-sets',
       description: 'Search image sets based on defined input attributes.   SearchImageSets accepts a single search query parameter and returns a paginated response of all image sets that have the matching criteria. All date range queries must be input as (lowerBound, upperBound). By default, SearchImageSets uses the updatedAt field for sorting in descending order from newest to oldest',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The identifier of the data store where the image sets reside',
@@ -825,6 +851,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -837,6 +864,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'start-dicom-import-job',
       description: 'Start importing bulk data into an ACTIVE data store. The import job imports DICOM P10 files found in the S3 prefix specified by the inputS3Uri parameter. The import job stores processing results in the file specified by the outputS3Uri parameter',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The import job name',
@@ -916,6 +944,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -928,6 +957,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a user-specifed key and value tag to a medical imaging resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the medical imaging resource that tags are being added to',
@@ -962,6 +992,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -974,6 +1005,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a medical imaging resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the medical imaging resource that tags are being removed from',
@@ -1008,6 +1040,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1020,6 +1053,7 @@ final FigSpec medicalImagingSpec = FigSpec(
       name: 'update-image-set-metadata',
       description: 'Update image set metadata attributes',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The data store identifier',
@@ -1080,6 +1114,7 @@ final FigSpec medicalImagingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

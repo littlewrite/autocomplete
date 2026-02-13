@@ -9,10 +9,12 @@ final FigSpec emrSpec = FigSpec(
   name: 'emr',
   description: 'Amazon EMR is a web service that makes it easier to process large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with several Amazon Web Services services to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific simulation, and data warehouse management',
   subcommands: [
+
     Subcommand(
       name: 'add-instance-fleet',
       description: 'Adds an instance fleet to a running cluster.  The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The unique identifier of the cluster',
@@ -47,6 +49,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'add-instance-groups',
       description: 'Adds an instance group to a running cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'A unique string that identifies a cluster. The create-cluster command returns this identifier. You can use the list-clusters command to get cluster IDs',
@@ -84,6 +88,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'add-tags',
       description: 'Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR Studio. Tags make it easier to associate resources in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see Tag Clusters',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID',
@@ -119,6 +124,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -131,6 +137,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'cancel-steps',
       description: 'Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is successfully submitted. When you use Amazon EMR releases 5.28.0 and later, you can cancel steps that are in a PENDING or RUNNING state. In earlier versions of Amazon EMR, you can only cancel steps that are in a PENDING state',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ClusterID for the specified steps that will be canceled. Use RunJobFlow and ListClusters to get ClusterIDs',
@@ -174,6 +181,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -186,6 +194,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'create-security-configuration',
       description: 'Creates a security configuration, which is stored in the service and can be specified when a cluster is created',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the security configuration',
@@ -220,6 +229,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -232,6 +242,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'create-studio',
       description: 'Creates a new Amazon EMR Studio',
       options: [
+
         Option(
           name: '--name',
           description: 'A descriptive name for the Amazon EMR Studio',
@@ -400,6 +411,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -412,6 +424,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'create-studio-session-mapping',
       description: 'Maps a user or group to the Amazon EMR Studio specified by StudioId, and applies a session policy to refine Studio permissions for that user or group. Use CreateStudioSessionMapping to assign users to a Studio when you use IAM Identity Center authentication. For instructions on how to assign users to a Studio when you use IAM authentication, see Assign a user or group to your EMR Studio',
       options: [
+
         Option(
           name: '--studio-id',
           description: 'The ID of the Amazon EMR Studio to which the user or group will be mapped',
@@ -473,6 +486,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -485,6 +499,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'delete-security-configuration',
       description: 'Deletes a security configuration',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the security configuration',
@@ -510,6 +525,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -522,6 +538,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'delete-studio',
       description: 'Removes an Amazon EMR Studio from the Studio metadata store',
       options: [
+
         Option(
           name: '--studio-id',
           description: 'The ID of the Amazon EMR Studio',
@@ -547,6 +564,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -559,6 +577,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'delete-studio-session-mapping',
       description: 'Removes a user or group from an Amazon EMR Studio',
       options: [
+
         Option(
           name: '--studio-id',
           description: 'The ID of the Amazon EMR Studio',
@@ -611,6 +630,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -623,6 +643,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'describe-cluster',
       description: 'Provides  cluster-level details including status, hardware and software configuration, VPC settings, bootstrap actions, instance groups and so on. Permissions needed for describe-cluster include elasticmapreduce:ListBootstrapActions, elasticmapreduce:ListInstanceFleets, elasticmapreduce:DescribeCluster, and elasticmapreduce:ListInstanceGroups',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'A unique string that identifies a cluster. The create-cluster command returns this identifier. You can use the list-clusters command to get cluster IDs',
@@ -638,6 +659,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'describe-notebook-execution',
       description: 'Provides details of a notebook execution',
       options: [
+
         Option(
           name: '--notebook-execution-id',
           description: 'The unique identifier of the notebook execution',
@@ -663,6 +685,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -675,6 +698,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'describe-release-label',
       description: 'Provides Amazon EMR release label details, such as the releases available the Region where the API request is run, and the available applications for a specific Amazon EMR release label. Can also list Amazon EMR releases that support a specified version of Spark',
       options: [
+
         Option(
           name: '--release-label',
           description: 'The target release label to be described',
@@ -718,6 +742,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -730,6 +755,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'describe-security-configuration',
       description: 'Provides the details of a security configuration by returning the configuration JSON',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the security configuration',
@@ -755,6 +781,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -767,6 +794,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'describe-step',
       description: 'Provides more detail about the cluster step',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The identifier of the cluster with steps to describe',
@@ -801,6 +829,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -813,6 +842,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'describe-studio',
       description: 'Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on',
       options: [
+
         Option(
           name: '--studio-id',
           description: 'The Amazon EMR Studio ID',
@@ -838,6 +868,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -850,6 +881,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'get-auto-termination-policy',
       description: 'Returns the auto-termination policy for an Amazon EMR cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched',
@@ -875,6 +907,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -887,6 +920,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'get-block-public-access-configuration',
       description: 'Returns the Amazon EMR block public access configuration for your Amazon Web Services account in the current Region. For more information see Configure Block Public Access for Amazon EMR in the Amazon EMR Management Guide',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -903,6 +937,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -915,6 +950,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'get-cluster-session-credentials',
       description: 'Provides temporary, HTTP basic credentials that are associated with a given runtime IAM role and used by a cluster with fine-grained access control activated. You can use these credentials to connect to cluster endpoints that support username and password authentication',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The unique identifier of the cluster',
@@ -949,6 +985,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -961,6 +998,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'get-managed-scaling-policy',
       description: 'Fetches the attached managed scaling policy for an Amazon EMR cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Specifies the ID of the cluster for which the managed scaling policy will be fetched',
@@ -986,6 +1024,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -998,6 +1037,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'get-studio-session-mapping',
       description: 'Fetches mapping details for the specified Amazon EMR Studio and identity (user or group)',
       options: [
+
         Option(
           name: '--studio-id',
           description: 'The ID of the Amazon EMR Studio',
@@ -1050,6 +1090,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1062,6 +1103,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'list-clusters',
       description: 'Provides the status of all clusters visible to this Amazon Web Services account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters in unsorted order per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls',
       options: [
+
         Option(
           name: '--created-after',
           description: 'List only those clusters created after the date and time specified in the format yyyy-mm-ddThh:mm:ss. For example, --created-after 2017-07-04T00:01:30',
@@ -1143,6 +1185,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1155,6 +1198,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'list-instance-fleets',
       description: 'Lists all available details about the instance fleets in a cluster.  The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The unique identifier of the cluster',
@@ -1207,6 +1251,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1219,6 +1264,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'list-instances',
       description: 'Provides information for all active Amazon EC2 instances and Amazon EC2 instances terminated in the last 30 days, up to a maximum of 2,000. Amazon EC2 instances in any of the following states are considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The identifier of the cluster for which to list the instances',
@@ -1316,6 +1362,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1328,6 +1375,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'list-notebook-executions',
       description: 'Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status, time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a longer notebook execution list across multiple ListNotebookExecutions calls',
       options: [
+
         Option(
           name: '--editor-id',
           description: 'The unique ID of the editor associated with the notebook execution',
@@ -1416,6 +1464,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1428,6 +1477,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'list-release-labels',
       description: 'Retrieves release labels of Amazon EMR services in the Region where the API is called',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters the results of the request. Prefix specifies the prefix of release labels to return. Application specifies the application (with/without version) of release labels to return',
@@ -1471,6 +1521,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1483,6 +1534,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'list-security-configurations',
       description: 'Lists all the security configurations visible to this account, providing their creation dates and times, and their names. This call returns a maximum of 50 clusters per call, but returns a marker to track the paging of the cluster list across multiple ListSecurityConfigurations calls',
       options: [
+
         Option(
           name: '--marker',
           description: 'The pagination token that indicates the set of results to retrieve',
@@ -1526,6 +1578,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1538,6 +1591,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'list-steps',
       description: 'Provides a list of steps for the cluster in reverse order unless you specify stepIds with the request or filter by StepStates. You can specify a maximum of 10 stepIDs. The CLI automatically paginates results to return a list greater than 50 steps. To return more than 50 steps using the CLI, specify a Marker, which is a pagination token that indicates the next set of steps to retrieve',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The identifier of the cluster for which to list the steps',
@@ -1608,6 +1662,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1620,6 +1675,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'list-studio-session-mappings',
       description: 'Returns a list of all user or group session mappings for the Amazon EMR Studio specified by StudioId',
       options: [
+
         Option(
           name: '--studio-id',
           description: 'The ID of the Amazon EMR Studio',
@@ -1681,6 +1737,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1693,6 +1750,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'list-studios',
       description: 'Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account. The list includes details such as ID, Studio Access URL, and creation time for each Studio',
       options: [
+
         Option(
           name: '--marker',
           description: 'The pagination token that indicates the set of results to retrieve',
@@ -1736,6 +1794,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1748,6 +1807,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'list-supported-instance-types',
       description: 'A list of the instance types that Amazon EMR supports. You can filter the list by Amazon Web Services Region and Amazon EMR release',
       options: [
+
         Option(
           name: '--release-label',
           description: 'The Amazon EMR release label determines the versions of open-source application packages that Amazon EMR has installed on the cluster. Release labels are in the format emr-x.x.x, where x.x.x is an Amazon EMR release number such as emr-6.10.0. For more information about Amazon EMR releases and their included application versions and features, see the  Amazon EMR Release Guide',
@@ -1782,6 +1842,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1794,6 +1855,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'modify-cluster',
       description: 'Modifies the number of steps that can be executed concurrently for the cluster specified using ClusterID',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The unique identifier of the cluster',
@@ -1828,6 +1890,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1840,6 +1903,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'modify-instance-fleet',
       description: 'Modifies the target On-Demand and target Spot capacities for the instance fleet with the specified InstanceFleetID within the cluster specified using ClusterID. The call either succeeds or fails atomically.  The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The unique identifier of the cluster',
@@ -1874,6 +1938,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1886,6 +1951,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'modify-instance-groups',
       description: 'ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the new target instance count for the group and the instance group ID. The call will either succeed or fail atomically',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster to which the instance group belongs',
@@ -1920,6 +1986,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1932,6 +1999,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'put-auto-scaling-policy',
       description: 'Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster',
@@ -1975,6 +2043,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1987,6 +2056,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'put-auto-termination-policy',
       description: 'Auto-termination is supported in Amazon EMR releases 5.30.0 and 6.1.0 and later. For more information, see Using an auto-termination policy.  Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see Control cluster termination',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached',
@@ -2021,6 +2091,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2033,6 +2104,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'put-block-public-access-configuration',
       description: 'Creates or updates an Amazon EMR block public access configuration for your Amazon Web Services account in the current Region. For more information see Configure Block Public Access for Amazon EMR in the Amazon EMR Management Guide',
       options: [
+
         Option(
           name: '--block-public-access-configuration',
           description: 'A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using PermittedPublicSecurityGroupRuleRanges in the BlockPublicAccessConfiguration. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating BlockPublicSecurityGroupRules to remove the exception.  For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region',
@@ -2058,6 +2130,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2070,6 +2143,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'put-managed-scaling-policy',
       description: 'Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the limits for resources, such as Amazon EC2 instances that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached',
@@ -2104,6 +2178,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2116,6 +2191,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'remove-auto-scaling-policy',
       description: 'Removes an automatic scaling policy from a specified instance group within an Amazon EMR cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster',
@@ -2150,6 +2226,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2162,6 +2239,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'remove-auto-termination-policy',
       description: 'Removes an auto-termination policy from an Amazon EMR cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed',
@@ -2187,6 +2265,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2199,6 +2278,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'remove-managed-scaling-policy',
       description: 'Removes a managed scaling policy from a specified Amazon EMR cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Specifies the ID of the cluster from which the managed scaling policy will be removed',
@@ -2224,6 +2304,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2236,6 +2317,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'remove-tags',
       description: 'Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR Studio. Tags make it easier to associate resources in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see Tag Clusters.  The following example removes the stack tag with value Prod from a cluster:',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID',
@@ -2270,6 +2352,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2282,6 +2365,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'start-notebook-execution',
       description: 'Starts a notebook execution',
       options: [
+
         Option(
           name: '--editor-id',
           description: 'The unique identifier of the Amazon EMR Notebook to use for notebook execution',
@@ -2406,6 +2490,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2418,6 +2503,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'stop-notebook-execution',
       description: 'Stops a notebook execution',
       options: [
+
         Option(
           name: '--notebook-execution-id',
           description: 'The unique identifier of the notebook execution',
@@ -2443,6 +2529,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2455,6 +2542,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'update-studio',
       description: 'Updates an Amazon EMR Studio configuration, including attributes such as name, description, and subnets',
       options: [
+
         Option(
           name: '--studio-id',
           description: 'The ID of the Amazon EMR Studio to update',
@@ -2525,6 +2613,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2537,6 +2626,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'update-studio-session-mapping',
       description: 'Updates the session policy attached to the user or group for the specified Amazon EMR Studio',
       options: [
+
         Option(
           name: '--studio-id',
           description: 'The ID of the Amazon EMR Studio',
@@ -2598,6 +2688,7 @@ final FigSpec emrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2610,6 +2701,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'terminate-clusters',
       description: 'Shuts down one or more clusters, each specified by cluster ID. Use this command only on clusters that do not have termination protection enabled. Clusters with termination protection enabled are not terminated. When a cluster is shut down, any step not yet completed is canceled and the Amazon EC2 instances in the cluster are terminated. Any log files not already saved are uploaded to Amazon S3 if a --log-uri was specified when the cluster was created. The maximum number of clusters allowed in the list is 10. The command is asynchronous. Depending on the configuration of the cluster, it may take from 5 to 20 minutes for the cluster to terminate completely and release allocated resources such as Amazon EC2 instances',
       options: [
+
         Option(
           name: '--cluster-ids',
           description: 'A list of clusters to terminate',
@@ -2626,6 +2718,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'modify-cluster-attributes',
       description: 'Modifies the cluster attributes \'visible-to-all-users\',  \'termination-protected\' and \'unhealthy-node-replacement\'',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'A unique string that identifies a cluster. The create-cluster command returns this identifier. You can use the list-clusters command to get cluster IDs',
@@ -2673,6 +2766,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'install-applications',
       description: 'Installs applications on a running cluster. Currently only Hive and Pig can be installed using this command, and this command is only supported by AMI versions (3.x and 2.x)',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'A unique string that identifies a cluster. The create-cluster command returns this identifier. You can use the list-clusters command to get cluster IDs',
@@ -2698,6 +2792,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'create-cluster',
       description: 'Creates an Amazon EMR cluster with the specified configurations',
       options: [
+
         Option(
           name: '--release-label',
           description: 'Specifies the Amazon EMR release version, which determines the versions of application software that are installed on the cluster. For example, --release-label emr-5.15.0 installs the application versions and features available in that version. For details about application versions and features available in each release, see the Amazon EMR Release Guide:https://docs.aws.amazon.com/emr/latest/ReleaseGuideUse --release-label only for Amazon EMR release version 4.0 and later. Use --ami-version for earlier versions. You cannot specify both a release label and AMI version',
@@ -3047,6 +3142,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'add-steps',
       description: 'Add a list of steps to a cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'A unique string that identifies a cluster. The create-cluster command returns this identifier. You can use the list-clusters command to get cluster IDs',
@@ -3081,6 +3177,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'restore-from-hbase-backup',
       description: 'Restores HBase from S3. This command is only available when using Amazon EMR versionsearlier than 4.0',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'A unique string that identifies a cluster. The create-cluster command returns this identifier. You can use the list-clusters command to get cluster IDs',
@@ -3114,6 +3211,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'create-hbase-backup',
       description: 'Creates a HBase backup in S3. This command is only available when using Amazon EMR versionsearlier than 4.0',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'A unique string that identifies a cluster. The create-cluster command returns this identifier. You can use the list-clusters command to get cluster IDs',
@@ -3142,6 +3240,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'schedule-hbase-backup',
       description: 'Adds a step to schedule automated HBase backup. This command is only available when using Amazon EMR versionsearlier than 4.0',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'A unique string that identifies a cluster. The create-cluster command returns this identifier. You can use the list-clusters command to get cluster IDs',
@@ -3206,6 +3305,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'disable-hbase-backups',
       description: 'Add a step to disable automated HBase backups. This command is only available when using Amazon EMR versionsearlier than 4.0',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'A unique string that identifies a cluster. The create-cluster command returns this identifier. You can use the list-clusters command to get cluster IDs',
@@ -3229,6 +3329,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'create-default-roles',
       description: 'Creates the default IAM role EMR_EC2_DefaultRole and EMR_DefaultRole which can be used when creating the cluster using the create-cluster command. The default roles for EMR use managed policies, which are updated automatically to support future EMR functionality.\n\nIf you do not have a Service Role and Instance Profile variable set for your create-cluster command in the AWS CLI config file, create-default-roles will automatically set the values for these variables with these default roles. If you have already set a value for Service Role or Instance Profile, create-default-roles will not automatically set the defaults for these variables in the AWS CLI config file. You can view settings for variables in the config file using the "aws configure get" command',
       options: [
+
         Option(
           name: '--iam-endpoint',
           description: 'The IAM endpoint to call for creating the roles. This is optional and should only be specified when a custom endpoint should be called for IAM operations',
@@ -3244,6 +3345,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'ssh',
       description: 'SSH into master node of the cluster.\n\nA value for the variable Key Pair File can be set in the AWS CLI config file using the "aws configure set emr.key_pair_file " command',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Cluster Id of cluster you want to ssh into',
@@ -3277,6 +3379,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'socks',
       description: 'Create a socks tunnel on port 8157 from your machine to the master.\n\nA value for the variable Key Pair File can be set in the AWS CLI config file using the "aws configure set emr.key_pair_file " command',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Cluster Id of cluster you want to ssh into',
@@ -3301,6 +3404,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'get',
       description: 'Get file from master node.\n\nA value for the variable Key Pair File can be set in the AWS CLI config file using the "aws configure set emr.key_pair_file " command',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Cluster Id of cluster you want to get file from',
@@ -3343,6 +3447,7 @@ final FigSpec emrSpec = FigSpec(
       name: 'put',
       description: 'Put file onto the master node.\n\nA value for the variable Key Pair File can be set in the AWS CLI config file using the "aws configure set emr.key_pair_file " command',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'Cluster Id of cluster you want to put file onto',
@@ -3385,10 +3490,12 @@ final FigSpec emrSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'cluster-running',
           description: 'Wait until JMESPath query Cluster.Status.State returns RUNNING when polling with ``describe-cluster``. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--cluster-id',
               description: 'The identifier of the cluster to describe',
@@ -3414,6 +3521,7 @@ final FigSpec emrSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3426,6 +3534,7 @@ final FigSpec emrSpec = FigSpec(
           name: 'cluster-terminated',
           description: 'Wait until JMESPath query Cluster.Status.State returns TERMINATED when polling with ``describe-cluster``. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--cluster-id',
               description: 'The identifier of the cluster to describe',
@@ -3451,6 +3560,7 @@ final FigSpec emrSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3463,6 +3573,7 @@ final FigSpec emrSpec = FigSpec(
           name: 'step-complete',
           description: 'Wait until JMESPath query Step.Status.State returns COMPLETED when polling with ``describe-step``. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--cluster-id',
               description: 'The identifier of the cluster with steps to describe',
@@ -3497,6 +3608,7 @@ final FigSpec emrSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

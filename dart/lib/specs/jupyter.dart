@@ -4,15 +4,52 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> commonOptions = [
+
+  Option(
+    name: '--debug',
+    description: 'Set log level to logging.DEBUG (maximize logging output)'
+  ),
+  Option(
+    name: ['-h', '--help'],
+    description: 'Show this message'
+  )
+];
+
+final List<Option> logConfigOptions = [
+
+  Option(
+    name: '--log-level',
+    description: 'Set the log level by value or name',
+    args: [
+      Arg(
+      name: 'level'
+    )
+    ]
+  ),
+  Option(
+    name: '--config',
+    description: 'Choose a config file',
+    args: [
+      Arg(
+      name: 'config',
+      template: 'filepaths'
+    )
+    ]
+  )
+];
+
 /// Completion spec for `jupyter` CLI
 final FigSpec jupyterSpec = FigSpec(
   name: 'jupyter',
   description: 'An interactive computing environment for notebook programming',
   subcommands: [
+
     Subcommand(
       name: 'bundlerextension',
       description: 'Work with Jupyter bundler extensions',
       subcommands: [
+
         Subcommand(
           name: 'enable',
           description: 'Enable a bundler extension'
@@ -27,6 +64,9 @@ final FigSpec jupyterSpec = FigSpec(
         )
       ],
       options: [
+
+        ...commonOptions,
+        ...logConfigOptions,
         Option(
           name: '--user',
           description: 'Apply the operation only for the given user',
@@ -54,6 +94,8 @@ final FigSpec jupyterSpec = FigSpec(
       name: 'kernel',
       description: 'Run a kernel locally in a subprocess',
       options: [
+
+        ...commonOptions,
         Option(
           name: '--kernel',
           args: [
@@ -76,9 +118,11 @@ final FigSpec jupyterSpec = FigSpec(
       name: 'kernelspec',
       description: 'Manage Jupyter kernel specifications',
       subcommands: [
+
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: '--json',
               description: 'Output spec name and location as json'
@@ -88,7 +132,11 @@ final FigSpec jupyterSpec = FigSpec(
         Subcommand(
           name: 'install',
           description: 'Install a kernel specification directory',
-          options: [],
+          options: [
+
+            ...logConfigOptions,
+            ...commonOptions
+          ],
           args: [
             Arg(
             name: 'kernel'
@@ -119,6 +167,9 @@ final FigSpec jupyterSpec = FigSpec(
       name: 'migrate',
       description: 'Migrate configuration and data from .ipython prior to 4.0 to Jupyter locations',
       options: [
+
+        ...commonOptions,
+        ...logConfigOptions,
         Option(
           name: '--generate-config',
           description: 'Generate default config file'
@@ -132,7 +183,11 @@ final FigSpec jupyterSpec = FigSpec(
     Subcommand(
       name: 'nbconvert',
       description: 'This application is used to convert notebook files (*.ipynb) to various other formats',
-      options: [],
+      options: [
+
+        ...commonOptions,
+        ...logConfigOptions
+      ],
       args: [
         Arg(
         name: 'file',
@@ -143,8 +198,13 @@ final FigSpec jupyterSpec = FigSpec(
     Subcommand(
       name: 'nbextension',
       description: '',
-      options: [],
+      options: [
+
+        ...commonOptions,
+        ...logConfigOptions
+      ],
       subcommands: [
+
         Subcommand(
           name: 'install',
           description: 'Install an nbextension',
@@ -191,6 +251,7 @@ final FigSpec jupyterSpec = FigSpec(
       name: 'notebook',
       description: 'Run the Jupyter notebook server',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List currently running notebook servers'
@@ -204,17 +265,29 @@ final FigSpec jupyterSpec = FigSpec(
           description: 'Set a password for the notebook server'
         )
       ],
-      options: []
+      options: [
+
+        ...commonOptions,
+        ...logConfigOptions
+      ]
     ),
     Subcommand(
       name: 'run',
       description: 'Run a notebook',
-      options: []
+      options: [
+
+        ...commonOptions,
+        ...logConfigOptions
+      ]
     ),
     Subcommand(
       name: 'serverextension',
       description: 'Manage server extensions',
-      options: []
+      options: [
+
+        ...commonOptions,
+        ...logConfigOptions
+      ]
     ),
     Subcommand(
       name: 'troubleshoot',
@@ -223,10 +296,15 @@ final FigSpec jupyterSpec = FigSpec(
     Subcommand(
       name: 'trust',
       description: 'Manage trust',
-      options: []
+      options: [
+
+        ...commonOptions,
+        ...logConfigOptions
+      ]
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for jupyter'

@@ -9,10 +9,12 @@ final FigSpec cloudhsmv2Spec = FigSpec(
   name: 'cloudhsmv2',
   description: 'For more information about CloudHSM, see CloudHSM and the  CloudHSM User Guide',
   subcommands: [
+
     Subcommand(
       name: 'copy-backup-to-region',
       description: 'Copy an CloudHSM cluster backup to a different region.  Cross-account use: No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--destination-region',
           description: 'The AWS region that will contain your copied CloudHSM cluster backup',
@@ -56,6 +58,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'create-cluster',
       description: 'Creates a new CloudHSM cluster.  Cross-account use: Yes. To perform this operation with an CloudHSM backup in a different AWS account, specify the full backup ARN in the value of the SourceBackupId parameter',
       options: [
+
         Option(
           name: '--backup-retention-policy',
           description: 'A policy that defines how the service retains backups',
@@ -138,6 +142,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'create-hsm',
       description: 'Creates a new hardware security module (HSM) in the specified CloudHSM cluster.  Cross-account use: No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Service account',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The identifier (ID) of the HSM\'s cluster. To find the cluster ID, use DescribeClusters',
@@ -193,6 +199,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'delete-backup',
       description: 'Deletes a specified CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request is made. For more information on restoring a backup, see RestoreBackup.  Cross-account use: No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--backup-id',
           description: 'The ID of the backup to be deleted. To find the ID of a backup, use the DescribeBackups operation',
@@ -230,6 +238,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'delete-cluster',
       description: 'Deletes the specified CloudHSM cluster. Before you can delete a cluster, you must delete all HSMs in the cluster. To see if the cluster contains any HSMs, use DescribeClusters. To delete an HSM, use DeleteHsm.  Cross-account use: No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use DescribeClusters',
@@ -267,6 +277,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'delete-hsm',
       description: 'Deletes the specified HSM. To specify an HSM, you can use its identifier (ID), the IP address of the HSM\'s elastic network interface (ENI), or the ID of the HSM\'s ENI. You need to specify only one of these values. To find these values, use DescribeClusters.  Cross-account use: No. You cannot perform this operation on an CloudHSM hsm in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The identifier (ID) of the cluster that contains the HSM that you are deleting',
@@ -331,6 +343,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -343,6 +356,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes an CloudHSM resource policy. Deleting a resource policy will result in the resource being unshared and removed from any RAM resource shares. Deleting the resource policy attached to a backup will not impact any clusters created from that backup.  Cross-account use: No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the resource from which the policy will be removed',
@@ -368,6 +382,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -380,6 +395,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'describe-backups',
       description: 'Gets information about backups of CloudHSM clusters. Lists either the backups you own or the backups shared with you when the Shared parameter is true. This is a paginated operation, which means that each response might contain only a subset of all the backups. When the response contains only a subset of backups, it includes a NextToken value. Use this value in a subsequent DescribeBackups request to get more backups. When you receive a response with no NextToken (or an empty or null value), that means there are no more backups to get.  Cross-account use: Yes. Customers can describe backups in other Amazon Web Services accounts that are shared with them',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The NextToken value that you received in the previous response. Use this value to get more backups',
@@ -466,6 +482,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -478,6 +495,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'describe-clusters',
       description: 'Gets information about CloudHSM clusters. This is a paginated operation, which means that each response might contain only a subset of all the clusters. When the response contains only a subset of clusters, it includes a NextToken value. Use this value in a subsequent DescribeClusters request to get more clusters. When you receive a response with no NextToken (or an empty or null value), that means there are no more clusters to get.  Cross-account use: No. You cannot perform this operation on CloudHSM clusters in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--filters',
           description: 'One or more filters to limit the items returned in the response. Use the clusterIds filter to return only the specified clusters. Specify clusters by their cluster identifier (ID). Use the vpcIds filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID). Use the states filter to return only clusters that match the specified state',
@@ -548,6 +566,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -560,6 +579,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'get-resource-policy',
       description: 'Retrieves the resource policy document attached to a given resource.   Cross-account use: No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the resource to which a policy is attached',
@@ -585,6 +605,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -597,6 +618,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'initialize-cluster',
       description: 'Claims an CloudHSM cluster by submitting the cluster certificate issued by your issuing certificate authority (CA) and the CA\'s root certificate. Before you can claim a cluster, you must sign the cluster\'s certificate signing request (CSR) with your issuing CA. To get the cluster\'s CSR, use DescribeClusters.  Cross-account use: No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use DescribeClusters',
@@ -640,6 +662,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -652,6 +675,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'list-tags',
       description: 'Gets a list of tags for the specified CloudHSM cluster. This is a paginated operation, which means that each response might contain only a subset of all the tags. When the response contains only a subset of tags, it includes a NextToken value. Use this value in a subsequent ListTags request to get more tags. When you receive a response with no NextToken (or an empty or null value), that means there are no more tags to get.  Cross-account use: No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use DescribeClusters',
@@ -722,6 +746,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -734,6 +759,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'modify-backup-attributes',
       description: 'Modifies attributes for CloudHSM backup.  Cross-account use: No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--backup-id',
           description: 'The identifier (ID) of the backup to modify. To find the ID of a backup, use the DescribeBackups operation',
@@ -767,6 +793,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -779,6 +806,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'modify-cluster',
       description: 'Modifies CloudHSM cluster.  Cross-account use: No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--backup-retention-policy',
           description: 'A policy that defines how the service retains backups',
@@ -813,6 +841,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -825,6 +854,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'put-resource-policy',
       description: 'Creates or updates an CloudHSM resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your CloudHSM resources. The following resources support CloudHSM resource policies:     Backup - The resource policy allows you to describe the backup and restore a cluster from the backup in another Amazon Web Services account.   In order to share a backup, it must be in a \'READY\' state and you must own it.  While you can share a backup using the CloudHSM PutResourcePolicy operation, we recommend using Resource Access Manager (RAM) instead. Using RAM provides multiple benefits as it creates the policy for you, allows multiple resources to be shared at one time, and increases the discoverability of shared resources. If you use PutResourcePolicy and want consumers to be able to describe the backups you share with them, you must promote the backup to a standard RAM Resource Share using the RAM PromoteResourceShareCreatedFromPolicy API operation. For more information, see  Working with shared backups in the CloudHSM User Guide   Cross-account use: No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the resource to which you want to attach a policy',
@@ -859,6 +889,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -871,6 +902,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'restore-backup',
       description: 'Restores a specified CloudHSM backup that is in the PENDING_DELETION state. For more information on deleting a backup, see DeleteBackup.  Cross-account use: No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--backup-id',
           description: 'The ID of the backup to be restored. To find the ID of a backup, use the DescribeBackups operation',
@@ -896,6 +928,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -908,6 +941,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or overwrites one or more tags for the specified CloudHSM cluster.  Cross-account use: No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use DescribeClusters',
@@ -942,6 +976,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -954,6 +989,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tag or tags from the specified CloudHSM cluster.  Cross-account use: No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use DescribeClusters',
@@ -988,6 +1024,7 @@ final FigSpec cloudhsmv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

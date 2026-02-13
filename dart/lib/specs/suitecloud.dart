@@ -12,11 +12,13 @@ final FigSpec suitecloudSpec = FigSpec(
     flagsArePosixNoncompliant: true
   ),
   subcommands: [
+
     Subcommand(
       icon: '🧩',
       name: 'account:manageauth',
       description: 'Manages authentication IDs (authID) for all your projects. An authentication ID is a custom alias you gave to a specific account-role combination',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -73,6 +75,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'account:savetoken',
       description: 'Saves a TBA token that you issued previously in NetSuite',
       options: [
+
         Option(
           name: '--account',
           description: 'Specifies the ID of the account to log in to',
@@ -129,6 +132,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'account:setup',
       description: 'Sets up an account to use with the SuiteCloud CLI for Node.js',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -148,6 +152,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'file:create',
       description: 'Creates a SuiteScript file',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -190,6 +195,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'file:import',
       description: 'Imports files from an account to your account customization project. You cannot import files from a SuiteApp',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -222,6 +228,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'file:list',
       description: 'Lists the files in the File Cabinet of your account',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -247,6 +254,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'file:upload',
       description: 'Uploads files from your project to an account',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -273,6 +281,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'object:import',
       description: 'Imports custom objects from your NetSuite account to the SuiteCloud project. In account customization projects (ACP), if SuiteScript files are referenced in the custom objects you import, these files get imported by default',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -313,6 +322,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'object:list',
       description: 'Lists the custom objects deployed in an account',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -356,6 +366,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'object:update',
       description: 'Overwrites the custom objects in the project with the custom objects in an account',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -389,6 +400,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'project:create',
       description: 'Creates a SuiteCloud project, either a SuiteApp or an account customization project (ACP)',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -439,6 +451,7 @@ final FigSpec suitecloudSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'ACCOUNTCUSTOMIZATION'),
               FigSuggestion(name: 'SUITEAPP')
             ]
@@ -456,6 +469,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'project:deploy',
       description: 'Deploys the folder containing the project. The project folder is zipped before deployment, only including the files and folders referenced in the deploy.xml file',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -484,6 +498,7 @@ final FigSpec suitecloudSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'ERROR'),
               FigSuggestion(name: 'WARNING')
             ],
@@ -506,6 +521,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'project:package',
       description: 'Generates a ZIP file from your project, respecting the structure specified in the deploy.xml file',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -521,6 +537,7 @@ final FigSpec suitecloudSpec = FigSpec(
       name: 'project:validate',
       description: 'Validates the folder containing the SuiteCloud project',
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Runs the command in interactive mode'
@@ -545,6 +562,7 @@ final FigSpec suitecloudSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'ERROR'),
               FigSuggestion(name: 'WARNING')
             ],
@@ -564,6 +582,7 @@ final FigSpec suitecloudSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--version',
       description: 'Outputs the version number'

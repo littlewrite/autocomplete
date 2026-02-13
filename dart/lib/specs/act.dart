@@ -9,14 +9,17 @@ final FigSpec actSpec = FigSpec(
   name: 'act',
   description: 'Run GitHub actions locally by specifying the event name (e.g. `push`) or an action name directly',
   subcommands: [
+
     Subcommand(
       name: 'completion',
       description: 'Generate the autocompletion script for the specified shell',
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Generate the autocompletion script for bash',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -27,6 +30,7 @@ final FigSpec actSpec = FigSpec(
           name: 'fish',
           description: 'Generate the autocompletion script for fish',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -37,6 +41,7 @@ final FigSpec actSpec = FigSpec(
           name: 'powershell',
           description: 'Generate the autocompletion script for powershell',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -47,6 +52,7 @@ final FigSpec actSpec = FigSpec(
           name: 'zsh',
           description: 'Generate the autocompletion script for zsh',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -59,10 +65,12 @@ final FigSpec actSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'completion',
           description: 'Generate the autocompletion script for the specified shell',
           subcommands: [
+
             Subcommand(
               name: 'bash',
               description: 'Generate the autocompletion script for bash'
@@ -85,6 +93,7 @@ final FigSpec actSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--bind', '-b'],
       description: 'Bind working directory to container, rather than copy'

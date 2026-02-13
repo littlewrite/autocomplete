@@ -9,18 +9,22 @@ final FigSpec containerSpec = FigSpec(
   name: 'container',
   description: 'Deploy and manage clusters of machines for running containers',
   subcommands: [
+
     Subcommand(
       name: 'binauthz',
       description: 'Manage attestations for Binary Authorization on Google Cloud Platform',
       subcommands: [
+
         Subcommand(
           name: 'attestations',
           description: 'Create and manage Google Binary Authorization attestations',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Binary Authorization attestation',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -218,6 +222,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -234,6 +239,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'list',
               description: 'List Binary Authorization attestations',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -439,6 +445,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -453,6 +460,7 @@ final FigSpec containerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -576,6 +584,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -592,10 +601,12 @@ final FigSpec containerSpec = FigSpec(
           name: 'attestors',
           description: 'Create and manage Google Binary Authorization Attestors',
           subcommands: [
+
             Subcommand(
               name: 'add-iam-policy-binding',
               description: 'Add IAM policy binding to a Binary Authorization attestor',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -743,6 +754,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -765,6 +777,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'create',
               description: 'Create an Attestor',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -922,6 +935,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -944,6 +958,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'delete',
               description: 'Delete an Attestor',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1067,6 +1082,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1089,6 +1105,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'describe',
               description: 'Describe an Attestor',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1212,6 +1229,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1234,6 +1252,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'get-iam-policy',
               description: 'Get the IAM policy for an attestor',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1405,6 +1424,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1427,6 +1447,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'list',
               description: 'List Attestors associated with the current project',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1598,6 +1619,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1614,10 +1636,12 @@ final FigSpec containerSpec = FigSpec(
               name: 'public-keys',
               description: 'Create and manage public keys associated with Attestation Authorities',
               subcommands: [
+
                 Subcommand(
                   name: 'add',
                   description: 'Add a public key to an Attestor',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1801,6 +1825,7 @@ final FigSpec containerSpec = FigSpec(
                         name: 'PKIX_PUBLIC_KEY_ALGORITHM',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'ec-sign-p256-sha256'),
                           FigSuggestion(name: 'ec-sign-p384-sha384'),
                           FigSuggestion(name: 'ec-sign-p521-sha512'),
@@ -1881,6 +1906,7 @@ final FigSpec containerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -1897,6 +1923,7 @@ final FigSpec containerSpec = FigSpec(
                   name: 'remove',
                   description: 'Remove a public key from an Attestor',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2032,6 +2059,7 @@ final FigSpec containerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2054,6 +2082,7 @@ final FigSpec containerSpec = FigSpec(
                   name: 'update',
                   description: 'Update a public key on an Attestor',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2211,6 +2240,7 @@ final FigSpec containerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2231,6 +2261,7 @@ final FigSpec containerSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2354,6 +2385,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2370,6 +2402,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'remove-iam-policy-binding',
               description: 'Remove IAM policy binding of a Binary Authorization attestor',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2517,6 +2550,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2539,6 +2573,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'set-iam-policy',
               description: 'Set the IAM policy for an attestor',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2662,6 +2697,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2674,6 +2710,7 @@ final FigSpec containerSpec = FigSpec(
                 )
               ],
               args: [
+
                 Arg(
                   name: 'ATTESTOR_NAME',
                   description: 'The name of the attestor whose IAM policy will be updated'
@@ -2688,6 +2725,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'update',
               description: 'Update an existing Attestor',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2822,6 +2860,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2842,6 +2881,7 @@ final FigSpec containerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2965,6 +3005,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2981,6 +3022,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'create-signature-payload',
           description: 'Create a JSON container image signature object',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3116,6 +3158,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3132,10 +3175,12 @@ final FigSpec containerSpec = FigSpec(
           name: 'policy',
           description: 'Create and manage Google Binary Authorization policy',
           subcommands: [
+
             Subcommand(
               name: 'add-iam-policy-binding',
               description: 'Add IAM policy binding to a Binary Authorization policy',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3283,6 +3328,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3299,6 +3345,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'export',
               description: 'Export the Binary Authorization policy for the current project',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3422,6 +3469,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3438,6 +3486,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'get-iam-policy',
               description: 'Get the IAM policy for a Binary Authorization policy',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3609,6 +3658,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3625,6 +3675,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'import',
               description: 'Import a Binary Authorization policy to the current project',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3752,6 +3803,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3774,6 +3826,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'remove-iam-policy-binding',
               description: 'Remove IAM policy binding of a Binary Authorization policy',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3921,6 +3974,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3937,6 +3991,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'set-iam-policy',
               description: 'Set the IAM policy for a Binary Authorization policy',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4060,6 +4115,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4080,6 +4136,7 @@ final FigSpec containerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4203,6 +4260,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4217,6 +4275,7 @@ final FigSpec containerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4340,6 +4399,7 @@ final FigSpec containerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4356,10 +4416,12 @@ final FigSpec containerSpec = FigSpec(
       name: 'clusters',
       description: 'Deploy and teardown Google Kubernetes Engine clusters',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a cluster for running containers',
           options: [
+
             Option(
               name: '--accelerator',
               description: 'Attaches accelerators (e.g. GPUs) to all nodes.\n+\n*type*::: (Required) The specific type (e.g. nvidia-tesla-k80 for nVidia Tesla K80)\nof accelerator to attach to the instances. Use ```gcloud compute\naccelerator-types list``` to learn about all available accelerator types.\n+\n*count*::: (Optional) The number of accelerators to attach to the\ninstances. The default value is 1',
@@ -4620,6 +4682,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'DISK_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'pd-standard'),
                   FigSuggestion(name: 'pd-ssd'),
                   FigSuggestion(name: 'pd-balanced')
@@ -5186,6 +5249,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'CHANNEL',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'None'),
                   FigSuggestion(name: 'rapid'),
                   FigSuggestion(name: 'regular'),
@@ -5213,6 +5277,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'RESERVATION_AFFINITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'any'),
                   FigSuggestion(name: 'none'),
                   FigSuggestion(name: 'specific')
@@ -5350,6 +5415,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5368,6 +5434,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'WORKLOAD_METADATA',
                 description: 'Googlecloudsdk.command_lib.container.flags:<lambda>',
                 suggestions: [
+
                   FigSuggestion(name: 'GCE_METADATA'),
                   FigSuggestion(name: 'GKE_METADATA')
                 ]
@@ -5408,6 +5475,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'delete',
           description: 'Delete an existing cluster for running containers',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5546,6 +5614,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5580,6 +5649,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'describe',
           description: 'Describe an existing cluster for running containers',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5714,6 +5784,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5747,6 +5818,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'get-credentials',
           description: 'Fetch credentials for a running cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5885,6 +5957,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5918,6 +5991,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'list',
           description: 'List existing clusters for running containers',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6100,6 +6174,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6127,6 +6202,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'resize',
           description: 'Resizes an existing cluster for running containers',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6298,6 +6374,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6331,6 +6408,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'update',
           description: 'Update cluster settings for an existing container cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6890,6 +6968,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'CHANNEL',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'None'),
                   FigSuggestion(name: 'rapid'),
                   FigSuggestion(name: 'regular'),
@@ -6999,6 +7078,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7043,6 +7123,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'upgrade',
           description: 'Upgrade the Kubernetes version of an existing container cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7218,6 +7299,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7249,6 +7331,7 @@ final FigSpec containerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7383,6 +7466,7 @@ final FigSpec containerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7410,6 +7494,7 @@ final FigSpec containerSpec = FigSpec(
       name: 'get-server-config',
       description: 'Get Kubernetes Engine server config',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7577,6 +7662,7 @@ final FigSpec containerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7604,14 +7690,17 @@ final FigSpec containerSpec = FigSpec(
       name: 'hub',
       description: 'Centrally manage features and services on all your Kubernetes clusters with Hub',
       subcommands: [
+
         Subcommand(
           name: 'memberships',
           description: 'Manage memberships of all your GKE and other Kubernetes cluster with HUB',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new membership for a cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7783,6 +7872,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -7805,6 +7895,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'delete',
               description: 'Delete a membership',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7943,6 +8034,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -7965,6 +8057,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'describe',
               description: 'Describe a membership',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8099,6 +8192,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8121,6 +8215,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'list',
               description: 'List memberships',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8292,6 +8387,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8308,6 +8404,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'register',
               description: 'Register a cluster with Hub',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8509,6 +8606,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8531,6 +8629,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'unregister',
               description: 'Unregister a cluster from Hub',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8699,6 +8798,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8721,6 +8821,7 @@ final FigSpec containerSpec = FigSpec(
               name: 'update',
               description: 'Update a membership',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8885,6 +8986,7 @@ final FigSpec containerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8905,6 +9007,7 @@ final FigSpec containerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9028,6 +9131,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9042,6 +9146,7 @@ final FigSpec containerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9165,6 +9270,7 @@ final FigSpec containerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -9181,10 +9287,12 @@ final FigSpec containerSpec = FigSpec(
       name: 'images',
       description: 'List and manipulate Google Container Registry images',
       subcommands: [
+
         Subcommand(
           name: 'add-tag',
           description: 'Adds tags to existing image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9308,6 +9416,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9320,6 +9429,7 @@ final FigSpec containerSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SRC_IMAGE',
               description: 'The fully qualified name(s) of image(s) to add tags for. The name(s) should be formatted as *.gcr.io/PROJECT_ID/IMAGE_PATH@sha256:DIGEST or *.gcr.io/PROJECT_ID/IMAGE_PATH:TAG'
@@ -9335,6 +9445,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'delete',
           description: 'Delete existing images',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9462,6 +9573,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9485,6 +9597,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'describe',
           description: 'Lists information about the specified image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9608,6 +9721,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9630,6 +9744,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'list',
           description: 'List existing images',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9812,6 +9927,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9828,6 +9944,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'list-tags',
           description: 'List tags and digests for the specified image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9995,6 +10112,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -10017,6 +10135,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'untag',
           description: 'Remove existing image tags',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10140,6 +10259,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -10161,6 +10281,7 @@ final FigSpec containerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10284,6 +10405,7 @@ final FigSpec containerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -10300,10 +10422,12 @@ final FigSpec containerSpec = FigSpec(
       name: 'node-pools',
       description: 'Create and delete operations for Google Kubernetes Engine node pools',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a node pool in a running cluster',
           options: [
+
             Option(
               name: '--accelerator',
               description: 'Attaches accelerators (e.g. GPUs) to all nodes.\n+\n*type*::: (Required) The specific type (e.g. nvidia-tesla-k80 for nVidia Tesla K80)\nof accelerator to attach to the instances. Use ```gcloud compute\naccelerator-types list``` to learn about all available accelerator types.\n+\n*count*::: (Optional) The number of accelerators to attach to the\ninstances. The default value is 1',
@@ -10389,6 +10513,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'DISK_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'pd-standard'),
                   FigSuggestion(name: 'pd-ssd'),
                   FigSuggestion(name: 'pd-balanced')
@@ -10700,6 +10825,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'RESERVATION_AFFINITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'any'),
                   FigSuggestion(name: 'none'),
                   FigSuggestion(name: 'specific')
@@ -10782,6 +10908,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -10800,6 +10927,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'WORKLOAD_METADATA',
                 description: 'Googlecloudsdk.command_lib.container.flags:<lambda>',
                 suggestions: [
+
                   FigSuggestion(name: 'GCE_METADATA'),
                   FigSuggestion(name: 'GKE_METADATA')
                 ]
@@ -10829,6 +10957,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'delete',
           description: 'Delete an existing node pool in a running cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10978,6 +11107,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11011,6 +11141,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'describe',
           description: 'Describe an existing node pool for a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11156,6 +11287,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11189,6 +11321,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'list',
           description: 'List existing node pools for a cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11382,6 +11515,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11409,6 +11543,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'rollback',
           description: 'Rollback a node-pool upgrade',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11558,6 +11693,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11591,6 +11727,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'update',
           description: 'Updates a node pool in a running cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11807,6 +11944,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -11825,6 +11963,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'WORKLOAD_METADATA',
                 description: 'Googlecloudsdk.command_lib.container.flags:<lambda>',
                 suggestions: [
+
                   FigSuggestion(name: 'GCE_METADATA'),
                   FigSuggestion(name: 'GKE_METADATA')
                 ]
@@ -11852,6 +11991,7 @@ final FigSpec containerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -11986,6 +12126,7 @@ final FigSpec containerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -12013,10 +12154,12 @@ final FigSpec containerSpec = FigSpec(
       name: 'operations',
       description: 'Get and list operations for Google Kubernetes Engine clusters',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe an operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12151,6 +12294,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -12184,6 +12328,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'list',
           description: 'List operations for container clusters',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12362,6 +12507,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -12389,6 +12535,7 @@ final FigSpec containerSpec = FigSpec(
           name: 'wait',
           description: 'Poll an operation for completion',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12523,6 +12670,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -12554,6 +12702,7 @@ final FigSpec containerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12688,6 +12837,7 @@ final FigSpec containerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -12715,10 +12865,12 @@ final FigSpec containerSpec = FigSpec(
       name: 'subnets',
       description: 'Manage subnets to be used by Google Kubernetes Engine clusters',
       subcommands: [
+
         Subcommand(
           name: 'list-usable',
           description: 'List subnets usable for cluster creation in a specific project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -12901,6 +13053,7 @@ final FigSpec containerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -12915,6 +13068,7 @@ final FigSpec containerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -13038,6 +13192,7 @@ final FigSpec containerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -13052,6 +13207,7 @@ final FigSpec containerSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -13175,6 +13331,7 @@ final FigSpec containerSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

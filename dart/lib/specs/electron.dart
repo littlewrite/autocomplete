@@ -16,6 +16,7 @@ final FigSpec electronSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-i', '--interactive'],
       description: 'Open a REPL to the main process'

@@ -14,6 +14,7 @@ final FigSpec vimrSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Show help'

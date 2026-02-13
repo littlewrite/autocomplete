@@ -9,6 +9,7 @@ final FigSpec xcodebuildSpec = FigSpec(
   name: 'xcodebuild',
   description: 'Build Xcode projects',
   options: [
+
     Option(
       name: '-usage',
       description: 'Print brief usage'
@@ -100,6 +101,7 @@ final FigSpec xcodebuildSpec = FigSpec(
         Arg(
         name: 'ARCH',
         suggestions: [
+
           FigSuggestion(name: 'x86_64'),
           FigSuggestion(name: 'arm64'),
           FigSuggestion(name: 'armv7')
@@ -183,6 +185,7 @@ final FigSpec xcodebuildSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'YES'),
           FigSuggestion(name: 'NO')
         ]
@@ -272,6 +275,7 @@ final FigSpec xcodebuildSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'YES'),
           FigSuggestion(name: 'NO')
         ]
@@ -285,6 +289,7 @@ final FigSpec xcodebuildSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'YES'),
           FigSuggestion(name: 'NO')
         ]
@@ -298,6 +303,7 @@ final FigSpec xcodebuildSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'YES'),
           FigSuggestion(name: 'NO')
         ]
@@ -389,6 +395,7 @@ final FigSpec xcodebuildSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'YES'),
           FigSuggestion(name: 'NO')
         ]
@@ -505,6 +512,7 @@ final FigSpec xcodebuildSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'YES'),
           FigSuggestion(name: 'NO')
         ]
@@ -572,6 +580,7 @@ final FigSpec xcodebuildSpec = FigSpec(
         Arg(
         name: 'Implementation',
         suggestions: [
+
           FigSuggestion(name: 'system'),
           FigSuggestion(name: 'xcode')
         ]

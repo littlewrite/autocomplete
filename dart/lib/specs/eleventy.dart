@@ -15,6 +15,7 @@ final FigSpec eleventySpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       description: 'Show help message and exit',
       name: ['-h', '--help']
@@ -76,6 +77,7 @@ final FigSpec eleventySpec = FigSpec(
         Arg(
         name: 'Template Names Separated by ,',
         suggestions: [
+
           FigSuggestion(name: 'md'),
           FigSuggestion(name: 'html'),
           FigSuggestion(name: 'ejs')

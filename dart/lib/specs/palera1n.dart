@@ -9,6 +9,7 @@ final FigSpec palera1nSpec = FigSpec(
   name: 'palera1n',
   description: 'Jailbreaking tool for iOS/iPadOS 15.x-16.x arm64',
   options: [
+
     Option(
       name: '--version',
       description: 'Print version'

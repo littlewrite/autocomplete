@@ -9,6 +9,7 @@ final FigSpec prySpec = FigSpec(
   name: 'pry',
   description: 'Interactive Ruby',
   options: [
+
     Option(
       name: ['-e', '--exec'],
       description: 'A line of code to execute in context before the session starts',

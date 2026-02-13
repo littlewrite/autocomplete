@@ -9,10 +9,12 @@ final FigSpec workspacesThinClientSpec = FigSpec(
   name: 'workspaces-thin-client',
   description: 'Amazon WorkSpaces Thin Client is an affordable device built to work with Amazon Web Services End User Computing (EUC) virtual desktops to provide users with a complete cloud desktop solution. WorkSpaces Thin Client is a compact device designed to connect up to two monitors and USB devices like a keyboard, mouse, headset, and webcam. To maximize endpoint security, WorkSpaces Thin Client devices do not allow local data storage or installation of unapproved applications. The WorkSpaces Thin Client device ships preloaded with device management software. You can use these APIs to complete WorkSpaces Thin Client tasks, such as creating environments or viewing devices. For more information about WorkSpaces Thin Client, including the required permissions to use the service, see the Amazon WorkSpaces Thin Client Administrator Guide. For more information about using the Command Line Interface (CLI) to manage your WorkSpaces Thin Client resources, see the WorkSpaces Thin Client section of the CLI Reference',
   subcommands: [
+
     Subcommand(
       name: 'create-environment',
       description: 'Creates an environment for your thin client devices',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the environment',
@@ -128,6 +130,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -140,6 +143,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'delete-device',
       description: 'Deletes a thin client device',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the device to delete',
@@ -174,6 +178,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -186,6 +191,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'delete-environment',
       description: 'Deletes an environment',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the environment to delete',
@@ -220,6 +226,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -232,6 +239,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'deregister-device',
       description: 'Deregisters a thin client device',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the device to deregister',
@@ -275,6 +283,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -287,6 +296,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'get-device',
       description: 'Returns information for a thin client device',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the device for which to return information',
@@ -312,6 +322,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -324,6 +335,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'get-environment',
       description: 'Returns information for an environment',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the environment for which to return information',
@@ -349,6 +361,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -361,6 +374,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'get-software-set',
       description: 'Returns information for a software set',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the software set for which to return information',
@@ -386,6 +400,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -398,6 +413,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'list-devices',
       description: 'Returns a list of thin client devices',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error',
@@ -459,6 +475,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -471,6 +488,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'list-environments',
       description: 'Returns a list of environments',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error',
@@ -532,6 +550,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -544,6 +563,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'list-software-sets',
       description: 'Returns a list of software sets',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error',
@@ -605,6 +625,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -617,6 +638,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which you want to retrieve tags',
@@ -642,6 +664,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -654,6 +677,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns one or more tags (key-value pairs) to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to tag',
@@ -688,6 +712,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -700,6 +725,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag or tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to untag',
@@ -734,6 +760,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -746,6 +773,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'update-device',
       description: 'Updates a thin client device',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the device to update',
@@ -798,6 +826,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -810,6 +839,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'update-environment',
       description: 'Updates an environment',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the environment to update',
@@ -907,6 +937,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -919,6 +950,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
       name: 'update-software-set',
       description: 'Updates a software set',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the software set to update',
@@ -953,6 +985,7 @@ final FigSpec workspacesThinClientSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

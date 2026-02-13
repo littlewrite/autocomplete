@@ -9,6 +9,7 @@ final FigSpec dustSpec = FigSpec(
   name: 'dust',
   description: 'Like du but more intuitive',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for dust'

@@ -9,6 +9,7 @@ final FigSpec uniqSpec = FigSpec(
   name: 'uniq',
   description: 'Report or omit repeated line',
   options: [
+
     Option(
       name: ['-c', '--count'],
       description: 'Prefix lines by the number of occurrences'
@@ -26,6 +27,7 @@ final FigSpec uniqSpec = FigSpec(
         defaultValue: 'none',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'none'),
           FigSuggestion(name: 'prepend'),
           FigSuggestion(name: 'separate')
@@ -82,6 +84,7 @@ final FigSpec uniqSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'input',
       isOptional: true,

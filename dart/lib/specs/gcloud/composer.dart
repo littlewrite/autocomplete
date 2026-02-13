@@ -9,14 +9,17 @@ final FigSpec composerSpec = FigSpec(
   name: 'composer',
   description: 'Create and manage Cloud Composer Environments',
   subcommands: [
+
     Subcommand(
       name: 'environments',
       description: 'Create and manage Cloud Composer environments',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create and initialize a Cloud Composer environment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -303,6 +306,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'PYTHON_VERSION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: '2'),
                   FigSuggestion(name: '3')
                 ]
@@ -391,6 +395,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -435,6 +440,7 @@ final FigSpec composerSpec = FigSpec(
           name: 'delete',
           description: 'Delete one or more Cloud Composer environments',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -573,6 +579,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -596,6 +603,7 @@ final FigSpec composerSpec = FigSpec(
           name: 'describe',
           description: 'Get details about a Cloud Composer environment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -730,6 +738,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -752,6 +761,7 @@ final FigSpec composerSpec = FigSpec(
           name: 'list',
           description: 'List the Cloud Composer environments under a project and location',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -935,6 +945,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -951,6 +962,7 @@ final FigSpec composerSpec = FigSpec(
           name: 'run',
           description: 'Run an Airflow sub-command remotely in a Cloud Composer environment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1085,6 +1097,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1097,6 +1110,7 @@ final FigSpec composerSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'ENVIRONMENT',
               description: 'ID of the environment or fully qualified identifier for the environment'
@@ -1115,14 +1129,17 @@ final FigSpec composerSpec = FigSpec(
           name: 'storage',
           description: 'Manage Cloud Storage objects stored as part of Cloud Composer environments',
           subcommands: [
+
             Subcommand(
               name: 'dags',
               description: 'Manage DAGs for Cloud Composer environments',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete DAG files from an Cloud Composer environment\'s Cloud Storage bucket',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1269,6 +1286,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -1291,6 +1309,7 @@ final FigSpec composerSpec = FigSpec(
                   name: 'export',
                   description: 'Export DAGs from an environment into local storage or Cloud Storage',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1460,6 +1479,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -1476,6 +1496,7 @@ final FigSpec composerSpec = FigSpec(
                   name: 'import',
                   description: 'Import DAGs from local storage or Cloud Storage into an environment',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1645,6 +1666,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -1661,6 +1683,7 @@ final FigSpec composerSpec = FigSpec(
                   name: 'list',
                   description: 'List the DAG files for a Cloud Composer environment',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1807,6 +1830,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -1821,6 +1845,7 @@ final FigSpec composerSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1944,6 +1969,7 @@ final FigSpec composerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1960,10 +1986,12 @@ final FigSpec composerSpec = FigSpec(
               name: 'data',
               description: 'Manage data for Cloud Composer environments',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete data from an Cloud Composer environment\'s Cloud Storage bucket',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2110,6 +2138,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2132,6 +2161,7 @@ final FigSpec composerSpec = FigSpec(
                   name: 'export',
                   description: 'Export data from an environment into local storage or Cloud Storage',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2301,6 +2331,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2317,6 +2348,7 @@ final FigSpec composerSpec = FigSpec(
                   name: 'import',
                   description: 'Import data from local storage or Cloud Storage into an environment',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2486,6 +2518,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2502,6 +2535,7 @@ final FigSpec composerSpec = FigSpec(
                   name: 'list',
                   description: 'List the data for a Cloud Composer environment',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2648,6 +2682,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2662,6 +2697,7 @@ final FigSpec composerSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2785,6 +2821,7 @@ final FigSpec composerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2801,10 +2838,12 @@ final FigSpec composerSpec = FigSpec(
               name: 'plugins',
               description: 'Manage plugins for Cloud Composer environments',
               subcommands: [
+
                 Subcommand(
                   name: 'delete',
                   description: 'Delete plugins from an Cloud Composer environment\'s Cloud Storage bucket',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2951,6 +2990,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2973,6 +3013,7 @@ final FigSpec composerSpec = FigSpec(
                   name: 'export',
                   description: 'Export plugins from an environment into local storage or Cloud Storage',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3142,6 +3183,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -3158,6 +3200,7 @@ final FigSpec composerSpec = FigSpec(
                   name: 'import',
                   description: 'Import plugins from local storage or Cloud Storage into an environment',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3327,6 +3370,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -3343,6 +3387,7 @@ final FigSpec composerSpec = FigSpec(
                   name: 'list',
                   description: 'List the plugins for a Cloud Composer environment',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3489,6 +3534,7 @@ final FigSpec composerSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -3503,6 +3549,7 @@ final FigSpec composerSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3626,6 +3673,7 @@ final FigSpec composerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3640,6 +3688,7 @@ final FigSpec composerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3763,6 +3812,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3779,6 +3829,7 @@ final FigSpec composerSpec = FigSpec(
           name: 'update',
           description: 'Update properties of a Cloud Composer environment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4044,6 +4095,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4064,6 +4116,7 @@ final FigSpec composerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4187,6 +4240,7 @@ final FigSpec composerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4203,10 +4257,12 @@ final FigSpec composerSpec = FigSpec(
       name: 'operations',
       description: 'Manage Cloud Composer operations',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete one or more completed Cloud Composer operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4341,6 +4397,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4364,6 +4421,7 @@ final FigSpec composerSpec = FigSpec(
           name: 'describe',
           description: 'Get details about an asynchronous operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4498,6 +4556,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4520,6 +4579,7 @@ final FigSpec composerSpec = FigSpec(
           name: 'list',
           description: 'Lists environment operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4703,6 +4763,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4719,6 +4780,7 @@ final FigSpec composerSpec = FigSpec(
           name: 'wait',
           description: 'Wait for asynchronous operation to complete',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4853,6 +4915,7 @@ final FigSpec composerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4873,6 +4936,7 @@ final FigSpec composerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4996,6 +5060,7 @@ final FigSpec composerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -5010,6 +5075,7 @@ final FigSpec composerSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5133,6 +5199,7 @@ final FigSpec composerSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

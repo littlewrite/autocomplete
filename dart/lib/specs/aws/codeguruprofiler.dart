@@ -9,10 +9,12 @@ final FigSpec codeguruprofilerSpec = FigSpec(
   name: 'codeguruprofiler',
   description: 'This section provides documentation for the Amazon CodeGuru Profiler API operations.   Amazon CodeGuru Profiler collects runtime performance data from your live applications, and provides recommendations that can help you fine-tune your application performance. Using machine learning algorithms, CodeGuru Profiler can help you find your most expensive lines of code and suggest ways you can improve efficiency and remove CPU bottlenecks.   Amazon CodeGuru Profiler provides different visualizations of profiling data to help you identify what code is running on the CPU, see how much time is consumed, and suggest ways to reduce CPU utilization.   Amazon CodeGuru Profiler currently supports applications written in all Java virtual machine (JVM) languages and Python. While CodeGuru Profiler supports both visualizations and recommendations for applications written in Java, it can also generate visualizations and a subset of recommendations for applications written in other JVM languages and Python.   For more information, see What is Amazon CodeGuru Profiler in the Amazon CodeGuru Profiler User Guide',
   subcommands: [
+
     Subcommand(
       name: 'add-notification-channels',
       description: 'Add up to 2 anomaly notifications channels for a profiling group',
       options: [
+
         Option(
           name: '--channels',
           description: 'One or 2 channels to report to when anomalies are detected',
@@ -47,6 +49,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'batch-get-frame-metric-data',
       description: 'Returns the time series of values for a requested list of frame metrics from a time period',
       options: [
+
         Option(
           name: '--end-time',
           description: 'The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC',
@@ -129,6 +133,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'configure-agent',
       description: 'Used by profiler agents to report their current state and to receive remote configuration updates. For example, ConfigureAgent can be used to tell an agent whether to profile or not and for how long to return profiling data',
       options: [
+
         Option(
           name: '--fleet-instance-id',
           description: 'A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container\'s task ID',
@@ -184,6 +190,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'create-profiling-group',
       description: 'Creates a profiling group',
       options: [
+
         Option(
           name: '--agent-orchestration-config',
           description: 'Specifies whether profiling is enabled or disabled for the created profiling group',
@@ -257,6 +265,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -269,6 +278,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'delete-profiling-group',
       description: 'Deletes a profiling group',
       options: [
+
         Option(
           name: '--profiling-group-name',
           description: 'The name of the profiling group to delete',
@@ -294,6 +304,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -306,6 +317,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'describe-profiling-group',
       description: 'Returns a  ProfilingGroupDescription  object that contains information about the requested profiling group',
       options: [
+
         Option(
           name: '--profiling-group-name',
           description: 'The name of the profiling group to get information about',
@@ -331,6 +343,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -343,6 +356,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'get-findings-report-account-summary',
       description: 'Returns a list of  FindingsReportSummary  objects that contain analysis results for all profiling groups in your AWS account',
       options: [
+
         Option(
           name: '--daily-reports-only',
           description: 'A Boolean value indicating whether to only return reports from daily profiles. If set to True, only analysis data from daily profiles is returned. If set to False, analysis data is returned from smaller time windows (for example, one hour)'
@@ -385,6 +399,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -397,6 +412,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'get-notification-configuration',
       description: 'Get the current configuration for anomaly notifications for a profiling group',
       options: [
+
         Option(
           name: '--profiling-group-name',
           description: 'The name of the profiling group we want to get the notification configuration for',
@@ -422,6 +438,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -434,6 +451,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'get-policy',
       description: 'Returns the JSON-formatted resource-based policy on a profiling group',
       options: [
+
         Option(
           name: '--profiling-group-name',
           description: 'The name of the profiling group',
@@ -459,6 +477,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -471,6 +490,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'get-profile',
       description: 'Gets the aggregated profile of a profiling group for a specified time range. Amazon CodeGuru Profiler collects posted agent profiles for a profiling group into aggregated profiles.   <note> <p> Because aggregated profiles expire over time <code>GetProfile</code> is not idempotent. </p> </note> <p> Specify the time range for the requested aggregated profile using 1 or 2 of the following parameters: <code>startTime</code>, <code>endTime</code>, <code>period</code>. The maximum time range allowed is 7 days. If you specify all 3 parameters, an exception is thrown. If you specify only <code>period</code>, the latest aggregated profile is returned. </p> <p> Aggregated profiles are available with aggregation periods of 5 minutes, 1 hour, and 1 day, aligned to UTC. The aggregation period of an aggregated profile determines how long it is retained. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html"> <code>AggregatedProfileTime</code> </a>. The aggregated profile\'s aggregation period determines how long it is retained by CodeGuru Profiler. </p> <ul> <li> <p> If the aggregation period is 5 minutes, the aggregated profile is retained for 15 days. </p> </li> <li> <p> If the aggregation period is 1 hour, the aggregated profile is retained for 60 days. </p> </li> <li> <p> If the aggregation period is 1 day, the aggregated profile is retained for 3 years. </p> </li> </ul> <p>There are two use cases for calling <code>GetProfile</code>.</p> <ol> <li> <p> If you want to return an aggregated profile that already exists, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html"> <code>ListProfileTimes</code> </a> to view the time ranges of existing aggregated profiles. Use them in a <code>GetProfile</code> request to return a specific, existing aggregated profile. </p> </li> <li> <p> If you want to return an aggregated profile for a time range that doesn\'t align with an existing aggregated profile, then CodeGuru Profiler makes a best effort to combine existing aggregated profiles from the requested time range and return them as one aggregated profile. </p> <p> If aggregated profiles do not exist for the full time range requested, then aggregated profiles for a smaller time range are returned. For example, if the requested time range is from 00:00 to 00:20, and the existing aggregated profiles are from 00:15 and 00:25, then the aggregated profiles from 00:15 to 00:20 are returned. </p> </li> </ol>',
       options: [
+
         Option(
           name: '--accept',
           description: 'The format of the returned profiling data. The format maps to the Accept and Content-Type headers of the HTTP request. You can specify one of the following: or the default .   <ul> <li> <p> <code>application/json</code> — standard JSON format </p> </li> <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> </ul>',
@@ -540,6 +560,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'get-recommendations',
       description: 'Returns a list of  Recommendation  objects that contain recommendations for a profiling group for a given time period. A list of  Anomaly  objects that contains details about anomalies detected in the profiling group for the same time period is also returned',
       options: [
+
         Option(
           name: '--end-time',
           description: 'The start time of the profile to get analysis data about. You must specify startTime and endTime. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC',
@@ -592,6 +613,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -604,6 +626,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'list-findings-reports',
       description: 'List the available reports for a given profiling group and time range',
       options: [
+
         Option(
           name: '--daily-reports-only',
           description: 'A Boolean value indicating whether to only return reports from daily profiles. If set to True, only analysis data from daily profiles is returned. If set to False, analysis data is returned from smaller time windows (for example, one hour)'
@@ -673,6 +696,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -685,6 +709,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'list-profile-times',
       description: 'Lists the start times of the available aggregated profiles of a profiling group for an aggregation period within the specified time range',
       options: [
+
         Option(
           name: '--end-time',
           description: 'The end time of the time range from which to list the profiles',
@@ -791,6 +816,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -803,6 +829,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'list-profiling-groups',
       description: 'Returns a list of profiling groups. The profiling groups are returned as  ProfilingGroupDescription  objects',
       options: [
+
         Option(
           name: '--include-description',
           description: 'A Boolean value indicating whether to include a description. If true, then a list of  ProfilingGroupDescription  objects that contain detailed information about profiling groups is returned. If false, then a list of profiling group names is returned'
@@ -845,6 +872,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -857,6 +885,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of the tags that are assigned to a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that contains the tags to return',
@@ -882,6 +911,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -894,6 +924,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'post-agent-profile',
       description: 'Submits profiling data to an aggregated profile of a profiling group. To get an aggregated profile that is created with this profiling data, use  GetProfile',
       options: [
+
         Option(
           name: '--agent-profile',
           description: 'The submitted profiling data',
@@ -946,6 +977,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -958,6 +990,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'put-permission',
       description: 'Adds permissions to a profiling group\'s resource-based policy that are provided using an action group. If a profiling group doesn\'t have a resource-based policy, one is created for it using the permissions in the action group and the roles and users in the principals parameter.   <p> The one supported action group that can be added is <code>agentPermission</code> which grants <code>ConfigureAgent</code> and <code>PostAgent</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html">Resource-based policies in CodeGuru Profiler</a> in the <i>Amazon CodeGuru Profiler User Guide</i>, <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html"> <code>PostAgentProfile</code> </a>. </p> <p> The first time you call <code>PutPermission</code> on a profiling group, do not specify a <code>revisionId</code> because it doesn\'t have a resource-based policy. Subsequent calls must provide a <code>revisionId</code> to specify which revision of the resource-based policy to add the permissions to. </p> <p> The response contains the profiling group\'s JSON-formatted resource policy. </p>',
       options: [
+
         Option(
           name: '--action-group',
           description: 'Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, agentPermissions, which grants permission to perform actions required by the profiling agent, ConfigureAgent and PostAgentProfile permissions',
@@ -1010,6 +1043,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1022,6 +1056,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'remove-notification-channel',
       description: 'Remove one anomaly notifications channel for a profiling group',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'The id of the channel that we want to stop receiving notifications',
@@ -1056,6 +1091,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1068,6 +1104,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'remove-permission',
       description: 'Removes permissions from a profiling group\'s resource-based policy that are provided using an action group. The one supported action group that can be removed is agentPermission which grants ConfigureAgent and PostAgent permissions. For more information, see Resource-based policies in CodeGuru Profiler in the Amazon CodeGuru Profiler User Guide,  ConfigureAgent , and  PostAgentProfile',
       options: [
+
         Option(
           name: '--action-group',
           description: 'Specifies an action group that contains the permissions to remove from a profiling group\'s resource-based policy. One action group is supported, agentPermissions, which grants ConfigureAgent and PostAgentProfile permissions',
@@ -1111,6 +1148,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1123,6 +1161,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'submit-feedback',
       description: 'Sends feedback to CodeGuru Profiler about whether the anomaly detected by the analysis is useful or not',
       options: [
+
         Option(
           name: '--anomaly-instance-id',
           description: 'The universally unique identifier (UUID) of the  AnomalyInstance  object that is included in the analysis data',
@@ -1175,6 +1214,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1187,6 +1227,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'tag-resource',
       description: 'Use to assign one or more tags to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that the tags are added to',
@@ -1221,6 +1262,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1233,6 +1275,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'untag-resource',
       description: 'Use to remove one or more tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that contains the tags to remove',
@@ -1267,6 +1310,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1279,6 +1323,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
       name: 'update-profiling-group',
       description: 'Updates a profiling group',
       options: [
+
         Option(
           name: '--agent-orchestration-config',
           description: 'Specifies whether profiling is enabled or disabled for a profiling group',
@@ -1313,6 +1358,7 @@ final FigSpec codeguruprofilerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

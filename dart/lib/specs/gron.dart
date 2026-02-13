@@ -9,6 +9,7 @@ final FigSpec gronSpec = FigSpec(
   name: 'gron',
   description: 'Gron is a tool to make it easier to understand big blobs of JSON',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for gron'

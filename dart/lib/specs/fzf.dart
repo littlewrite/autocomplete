@@ -9,6 +9,7 @@ final FigSpec fzfSpec = FigSpec(
   name: 'fzf',
   description: 'A general-purpose command-line fuzzy finder',
   options: [
+
     Option(
       name: ['-x', '--extended'],
       description: 'Enables extended-search mode',
@@ -31,6 +32,7 @@ final FigSpec fzfSpec = FigSpec(
         name: 'type',
         defaultValue: 'v2',
         suggestions: [
+
           FigSuggestion(name: 'v1'),
           FigSuggestion(name: 'v2')
         ]
@@ -101,6 +103,7 @@ final FigSpec fzfSpec = FigSpec(
         name: 'criteria',
         defaultValue: 'length',
         suggestions: [
+
           FigSuggestion(name: 'length'),
           FigSuggestion(name: 'begin'),
           FigSuggestion(name: 'end'),
@@ -195,6 +198,7 @@ final FigSpec fzfSpec = FigSpec(
         name: 'layout',
         defaultValue: 'default',
         suggestions: [
+
           FigSuggestion(name: 'default'),
           FigSuggestion(name: 'reverse'),
           FigSuggestion(name: 'reverse-list')
@@ -211,6 +215,7 @@ final FigSpec fzfSpec = FigSpec(
         isOptional: true,
         defaultValue: 'rounded',
         suggestions: [
+
           FigSuggestion(name: 'rounded'),
           FigSuggestion(name: 'sharp'),
           FigSuggestion(name: 'horizontal'),
@@ -252,6 +257,7 @@ final FigSpec fzfSpec = FigSpec(
         name: 'style',
         defaultValue: 'default',
         suggestions: [
+
           FigSuggestion(name: 'default'),
           FigSuggestion(name: 'inline'),
           FigSuggestion(name: 'hidden')
@@ -329,6 +335,7 @@ final FigSpec fzfSpec = FigSpec(
         name: 'color scheme',
         description: '(dark|light|16|bw) and/or custom colors',
         suggestions: [
+
           FigSuggestion(name: 'dark'),
           FigSuggestion(name: 'light'),
           FigSuggestion(name: '16'),
@@ -379,6 +386,7 @@ final FigSpec fzfSpec = FigSpec(
         isVariadic: true,
         defaultValue: 'default: right:50%',
         suggestions: [
+
           FigSuggestion(name: 'up'),
           FigSuggestion(name: 'down'),
           FigSuggestion(name: 'left'),

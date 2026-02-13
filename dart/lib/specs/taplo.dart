@@ -9,16 +9,19 @@ final FigSpec taploSpec = FigSpec(
   name: 'taplo',
   description: 'Tool for validation, formatting, and querying TOML documents with a jq-like fashion',
   subcommands: [
+
     Subcommand(
       name: ['config', 'cfg'],
       description: 'Operations with the Taplo config file',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Print help information for config'
         )
       ],
       subcommands: [
+
         Subcommand(
           name: 'default',
           description: 'Print the default `.taplo.toml` configuration file'
@@ -51,6 +54,7 @@ final FigSpec taploSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--config', '-c'],
           description: 'Path to the Taplo configuration file',
@@ -113,6 +117,7 @@ final FigSpec taploSpec = FigSpec(
             Arg(
             name: 'OPTIONS',
             suggestions: [
+
               FigSuggestion(name: 'indent_tables=true'),
               FigSuggestion(name: 'indent_tables=false')
             ]
@@ -135,6 +140,7 @@ final FigSpec taploSpec = FigSpec(
       name: 'get',
       description: 'Extract a value from the given TOML document',
       options: [
+
         Option(
           name: ['--file-path', '-f'],
           description: 'Path to the TOML document',
@@ -157,6 +163,7 @@ final FigSpec taploSpec = FigSpec(
             name: 'OUTPUT_FORMAT',
             defaultValue: 'value',
             suggestions: [
+
               FigSuggestion(name: 'value'),
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'toml')
@@ -186,6 +193,7 @@ final FigSpec taploSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--config', '-c'],
           description: 'Path to the Taplo configuration file',
@@ -245,6 +253,7 @@ final FigSpec taploSpec = FigSpec(
       name: 'lsp',
       description: 'Language server operations',
       subcommands: [
+
         Subcommand(
           name: 'help',
           description: 'Print help information for lsp'
@@ -259,6 +268,7 @@ final FigSpec taploSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Print help information for lsp'
@@ -267,6 +277,7 @@ final FigSpec taploSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Print help information for taplo'
@@ -280,6 +291,7 @@ final FigSpec taploSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'never')

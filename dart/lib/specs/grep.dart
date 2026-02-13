@@ -9,6 +9,7 @@ final FigSpec grepSpec = FigSpec(
   name: 'grep',
   description: 'Matches patterns in input text. Supports simple patterns and regular expressions',
   args: [
+
     Arg(
       name: 'search pattern'
     ),
@@ -18,6 +19,7 @@ final FigSpec grepSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Print a usage message briefly summarizing these command-line options and the bug-reporting address, then exit'
@@ -71,6 +73,7 @@ final FigSpec grepSpec = FigSpec(
         name: 'WHEN',
         defaultValue: 'auto',
         suggestions: [
+
           FigSuggestion(name: 'never'),
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'auto')
@@ -185,6 +188,7 @@ final FigSpec grepSpec = FigSpec(
         name: 'value',
         defaultValue: 'binary',
         suggestions: [
+
           FigSuggestion(
             name: 'binary',
             description: 'Search binary files but do not print them'
@@ -209,6 +213,7 @@ final FigSpec grepSpec = FigSpec(
         name: 'action',
         defaultValue: 'read',
         suggestions: [
+
           FigSuggestion(
             name: 'read',
             description: 'Read as if they were normal files'
@@ -229,6 +234,7 @@ final FigSpec grepSpec = FigSpec(
         name: 'action',
         defaultValue: 'read',
         suggestions: [
+
           FigSuggestion(
             name: 'read',
             description: 'Directories are read in the same manner as normal files'
@@ -328,6 +334,7 @@ final FigSpec grepSpec = FigSpec(
     )
   ],
   additionalSuggestions: [
+
     FigSuggestion(
       name: '-RIn',
       description: 'Search for a pattern [R]ecursively in the current directory, showing matching line [n]umbers, [I]gnoring non-text files',

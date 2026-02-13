@@ -15,6 +15,7 @@ final FigSpec rustcSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Prints out help info'
@@ -32,10 +33,12 @@ final FigSpec rustcSpec = FigSpec(
       name: '-L',
       description: 'Adds a directory to the library search path',
       args: [
+
         Arg(
           name: 'kind',
           description: 'The kind of search path',
           suggestions: [
+
             FigSuggestion(
               name: 'dependency',
               insertValue: 'KIND=dependency',
@@ -75,10 +78,12 @@ final FigSpec rustcSpec = FigSpec(
       name: '--l',
       description: 'Links the generated crate to a native library',
       args: [
+
         Arg(
           name: 'kind',
           description: 'Kind of library',
           suggestions: [
+
             FigSuggestion(
               name: 'dylib',
               insertValue: 'KIND=dylib',
@@ -111,6 +116,7 @@ final FigSpec rustcSpec = FigSpec(
         name: 'type',
         description: 'Type of crates',
         suggestions: [
+
           FigSuggestion(
             name: 'bin',
             description: 'A runnable executable program'
@@ -159,6 +165,7 @@ final FigSpec rustcSpec = FigSpec(
         Arg(
         name: 'edition',
         suggestions: [
+
           FigSuggestion(name: '2015'),
           FigSuggestion(name: '2018'),
           FigSuggestion(name: '2021')
@@ -173,6 +180,7 @@ final FigSpec rustcSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(
             name: 'asm',
             description: 'Generates a file with the crate\'s assembly code'
@@ -216,6 +224,7 @@ final FigSpec rustcSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(
             name: 'crate-name',
             description: 'The name of the crate'
@@ -419,6 +428,7 @@ final FigSpec rustcSpec = FigSpec(
         Arg(
         name: 'format',
         suggestions: [
+
           FigSuggestion(name: 'human'),
           FigSuggestion(name: 'json'),
           FigSuggestion(name: 'short')
@@ -433,6 +443,7 @@ final FigSpec rustcSpec = FigSpec(
         Arg(
         name: 'color',
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'never')

@@ -9,10 +9,12 @@ final FigSpec entityresolutionSpec = FigSpec(
   name: 'entityresolution',
   description: 'Welcome to the Entity Resolution API Reference. Entity Resolution is an Amazon Web Services service that provides pre-configured entity resolution capabilities that enable developers and analysts at advertising and marketing companies to build an accurate and complete view of their consumers.  With Entity Resolution, you can match source records containing consumer identifiers, such as name, email address, and phone number. This is true even when these records have incomplete or conflicting identifiers. For example, Entity Resolution can effectively match a source record from a customer relationship management (CRM) system with a source record from a marketing system containing campaign information. To learn more about Entity Resolution concepts, procedures, and best practices, see the Entity Resolution User Guide',
   subcommands: [
+
     Subcommand(
       name: 'add-policy-statement',
       description: 'Adds a policy statement object. To retrieve a list of existing policy statements, use the GetPolicy API',
       options: [
+
         Option(
           name: '--action',
           description: 'The action that the principal can use on the resource.  For example, entityresolution:GetIdMappingJob, entityresolution:GetMatchingJob',
@@ -83,6 +85,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'batch-delete-unique-id',
       description: 'Deletes multiple unique IDs in a matching workflow',
       options: [
+
         Option(
           name: '--input-source',
           description: 'The input source for the batch delete unique ID operation',
@@ -138,6 +142,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'create-id-mapping-workflow',
       description: 'Creates an IdMappingWorkflow object which stores the configuration of the data processing job to be run. Each IdMappingWorkflow must have a unique workflow name. To modify an existing workflow, use the UpdateIdMappingWorkflow API',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the workflow',
@@ -229,6 +235,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -241,6 +248,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'create-id-namespace',
       description: 'Creates an ID namespace object which will help customers provide metadata explaining their dataset and how to use it. Each ID namespace must have a unique name. To modify an existing ID namespace, use the UpdateIdNamespace API',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the ID namespace',
@@ -320,6 +328,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -332,6 +341,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'create-matching-workflow',
       description: 'Creates a MatchingWorkflow object which stores the configuration of the data processing job to be run. It is important to note that there should not be a pre-existing MatchingWorkflow with the same name. To modify an existing workflow, utilize the UpdateMatchingWorkflow API',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the workflow',
@@ -420,6 +430,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -432,6 +443,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'create-schema-mapping',
       description: 'Creates a schema mapping, which defines the schema of the input customer records table. The SchemaMapping also provides Entity Resolution with some metadata about the table, such as the attribute types of the columns and which columns to match on',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the schema',
@@ -484,6 +496,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -496,6 +509,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'delete-id-mapping-workflow',
       description: 'Deletes the IdMappingWorkflow with a given name. This operation will succeed even if a workflow with the given name does not exist',
       options: [
+
         Option(
           name: '--workflow-name',
           description: 'The name of the workflow to be deleted',
@@ -521,6 +535,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -533,6 +548,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'delete-id-namespace',
       description: 'Deletes the IdNamespace with a given name',
       options: [
+
         Option(
           name: '--id-namespace-name',
           description: 'The name of the ID namespace',
@@ -558,6 +574,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -570,6 +587,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'delete-matching-workflow',
       description: 'Deletes the MatchingWorkflow with a given name. This operation will succeed even if a workflow with the given name does not exist',
       options: [
+
         Option(
           name: '--workflow-name',
           description: 'The name of the workflow to be retrieved',
@@ -595,6 +613,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -607,6 +626,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'delete-policy-statement',
       description: 'Deletes the policy statement',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the resource for which the policy need to be deleted',
@@ -641,6 +661,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -653,6 +674,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'delete-schema-mapping',
       description: 'Deletes the SchemaMapping with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a MatchingWorkflow object that references the SchemaMapping in the workflow\'s InputSourceConfig',
       options: [
+
         Option(
           name: '--schema-name',
           description: 'The name of the schema to delete',
@@ -678,6 +700,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -690,6 +713,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'get-id-mapping-job',
       description: 'Gets the status, metrics, and errors (if there are any) that are associated with a job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID of the job',
@@ -724,6 +748,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -736,6 +761,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'get-id-mapping-workflow',
       description: 'Returns the IdMappingWorkflow with a given name, if it exists',
       options: [
+
         Option(
           name: '--workflow-name',
           description: 'The name of the workflow',
@@ -761,6 +787,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -773,6 +800,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'get-id-namespace',
       description: 'Returns the IdNamespace with a given name, if it exists',
       options: [
+
         Option(
           name: '--id-namespace-name',
           description: 'The name of the ID namespace',
@@ -798,6 +826,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -810,6 +839,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'get-match-id',
       description: 'Returns the corresponding Match ID of a customer record if the record has been processed',
       options: [
+
         Option(
           name: '--apply-normalization',
           description: 'Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an AttributeType of PHONE_NUMBER, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890'
@@ -852,6 +882,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -864,6 +895,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'get-matching-job',
       description: 'Gets the status, metrics, and errors (if there are any) that are associated with a job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID of the job',
@@ -898,6 +930,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -910,6 +943,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'get-matching-workflow',
       description: 'Returns the MatchingWorkflow with a given name, if it exists',
       options: [
+
         Option(
           name: '--workflow-name',
           description: 'The name of the workflow',
@@ -935,6 +969,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -947,6 +982,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'get-policy',
       description: 'Returns the resource-based policy',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which the policy need to be returned',
@@ -972,6 +1008,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -984,6 +1021,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'get-provider-service',
       description: 'Returns the ProviderService of a given name',
       options: [
+
         Option(
           name: '--provider-name',
           description: 'The name of the provider. This name is typically the company name',
@@ -1018,6 +1056,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1030,6 +1069,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'get-schema-mapping',
       description: 'Returns the SchemaMapping of a given name',
       options: [
+
         Option(
           name: '--schema-name',
           description: 'The name of the schema to be retrieved',
@@ -1055,6 +1095,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1067,6 +1108,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'list-id-mapping-jobs',
       description: 'Lists all ID mapping jobs for a given workflow',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects returned per page',
@@ -1137,6 +1179,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1149,6 +1192,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'list-id-mapping-workflows',
       description: 'Returns a list of all the IdMappingWorkflows that have been created for an Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects returned per page',
@@ -1210,6 +1254,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1222,6 +1267,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'list-id-namespaces',
       description: 'Returns a list of all ID namespaces',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of IdNamespace objects returned per page',
@@ -1283,6 +1329,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1295,6 +1342,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'list-matching-jobs',
       description: 'Lists all jobs for a given workflow',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects returned per page',
@@ -1365,6 +1413,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1377,6 +1426,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'list-matching-workflows',
       description: 'Returns a list of all the MatchingWorkflows that have been created for an Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects returned per page',
@@ -1438,6 +1488,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1450,6 +1501,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'list-provider-services',
       description: 'Returns a list of all the ProviderServices that are available in this Amazon Web Services Region',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects returned per page',
@@ -1520,6 +1572,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1532,6 +1585,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'list-schema-mappings',
       description: 'Returns a list of all the SchemaMappings that have been created for an Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects returned per page',
@@ -1593,6 +1647,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1605,6 +1660,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Displays the tags associated with an Entity Resolution resource. In Entity Resolution, SchemaMapping, and MatchingWorkflow can be tagged',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource for which you want to view tags',
@@ -1630,6 +1686,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1642,6 +1699,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'put-policy',
       description: 'Updates the resource-based policy',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which the policy needs to be updated',
@@ -1685,6 +1743,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1697,6 +1756,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'start-id-mapping-job',
       description: 'Starts the IdMappingJob of a workflow. The workflow must have previously been created using the CreateIdMappingWorkflow endpoint',
       options: [
+
         Option(
           name: '--output-source-config',
           description: 'A list of OutputSource objects',
@@ -1731,6 +1791,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1743,6 +1804,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'start-matching-job',
       description: 'Starts the MatchingJob of a workflow. The workflow must have previously been created using the CreateMatchingWorkflow endpoint',
       options: [
+
         Option(
           name: '--workflow-name',
           description: 'The name of the matching job to be retrieved',
@@ -1768,6 +1830,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1780,6 +1843,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns one or more tags (key-value pairs) to the specified Entity Resolution resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Entity Resolution, SchemaMapping and MatchingWorkflow can be tagged. Tags don\'t have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters. You can use the TagResource action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource for which you want to view tags',
@@ -1814,6 +1878,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1826,6 +1891,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from the specified Entity Resolution resource. In Entity Resolution, SchemaMapping, and MatchingWorkflow can be tagged',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource for which you want to untag',
@@ -1860,6 +1926,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1872,6 +1939,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'update-id-mapping-workflow',
       description: 'Updates an existing IdMappingWorkflow. This method is identical to CreateIdMappingWorkflow, except it uses an HTTP PUT request instead of a POST request, and the IdMappingWorkflow must already exist for the method to succeed',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the workflow',
@@ -1942,6 +2010,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1954,6 +2023,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'update-id-namespace',
       description: 'Updates an existing ID namespace',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the ID namespace',
@@ -2015,6 +2085,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2027,6 +2098,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'update-matching-workflow',
       description: 'Updates an existing MatchingWorkflow. This method is identical to CreateMatchingWorkflow, except it uses an HTTP PUT request instead of a POST request, and the MatchingWorkflow must already exist for the method to succeed',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the workflow',
@@ -2106,6 +2178,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2118,6 +2191,7 @@ final FigSpec entityresolutionSpec = FigSpec(
       name: 'update-schema-mapping',
       description: 'Updates a schema mapping.  A schema is immutable if it is being used by a workflow. Therefore, you can\'t update a schema mapping if it\'s associated with a workflow',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the schema',
@@ -2161,6 +2235,7 @@ final FigSpec entityresolutionSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

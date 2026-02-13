@@ -9,10 +9,12 @@ final FigSpec dbtSpec = FigSpec(
   name: 'dbt',
   description: 'CLI for dbt - Data Build Tool',
   subcommands: [
+
     Subcommand(
       name: 'build',
       description: 'Run models, test tests, snapshot snapshots, and seed seeds',
       options: [
+
         Option(
           name: '--full-refresh',
           description: 'Treat incremental models as table models'
@@ -30,6 +32,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Directory containing profiles.yml',
             template: 'folders',
             suggestions: [
+
               FigSuggestion(name: 'profiles')
             ]
           )
@@ -43,6 +46,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'name',
             description: 'Name of profile to use when running dbt project',
             suggestions: [
+
               FigSuggestion(name: 'default')
             ]
           )
@@ -56,6 +60,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'profile',
             description: 'Target profile configuration (dev/prod)',
             suggestions: [
+
               FigSuggestion(name: 'dev'),
               FigSuggestion(name: 'prod')
             ]
@@ -90,6 +95,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Select subset of models',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -108,6 +114,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Exclude subset of models',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -127,6 +134,7 @@ final FigSpec dbtSpec = FigSpec(
       name: 'run',
       description: 'Runs the models in a project',
       options: [
+
         Option(
           name: '--full-refresh',
           description: 'Treat incremental models as table models'
@@ -152,6 +160,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Directory containing profiles.yml',
             template: 'folders',
             suggestions: [
+
               FigSuggestion(name: 'profiles')
             ]
           )
@@ -165,6 +174,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'name',
             description: 'Name of profile to use when running dbt project',
             suggestions: [
+
               FigSuggestion(name: 'default')
             ]
           )
@@ -178,6 +188,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'Target profile',
             description: 'Target profile configuration (dev/prod)',
             suggestions: [
+
               FigSuggestion(name: 'dev'),
               FigSuggestion(name: 'prod')
             ]
@@ -212,6 +223,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Select subset of models',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -230,6 +242,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Exclude subset of models',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -249,6 +262,7 @@ final FigSpec dbtSpec = FigSpec(
       name: 'debug',
       description: 'Debugs dbt connections and projects',
       options: [
+
         Option(
           name: '--config-dir'
         )
@@ -263,6 +277,7 @@ final FigSpec dbtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--adapter',
           description: 'Add an adapter',
@@ -279,6 +294,7 @@ final FigSpec dbtSpec = FigSpec(
       name: 'compile',
       description: 'Compiles (but does not run) the models in a project',
       options: [
+
         Option(
           name: '--profiles-dir',
           description: 'Set the profiles directory',
@@ -288,6 +304,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Directory containing profiles.yml',
             template: 'folders',
             suggestions: [
+
               FigSuggestion(name: 'profiles')
             ]
           )
@@ -301,6 +318,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'name',
             description: 'Name of profile to use when running dbt project',
             suggestions: [
+
               FigSuggestion(name: 'default')
             ]
           )
@@ -314,6 +332,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'Target profile',
             description: 'Target profile configuration (dev/prod)',
             suggestions: [
+
               FigSuggestion(name: 'dev'),
               FigSuggestion(name: 'prod')
             ]
@@ -348,6 +367,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Select subset of models',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -366,6 +386,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Exclude subset of models',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -399,6 +420,7 @@ final FigSpec dbtSpec = FigSpec(
       name: 'test',
       description: 'Executes tests defined in a project',
       options: [
+
         Option(
           name: ['-x', '--fail-fast'],
           description: 'Exit immediately if a single model fails to build'
@@ -412,6 +434,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Directory containing profiles.yml',
             template: 'folders',
             suggestions: [
+
               FigSuggestion(name: 'profiles')
             ]
           )
@@ -425,6 +448,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'name',
             description: 'Name of profile to use when running dbt project',
             suggestions: [
+
               FigSuggestion(name: 'default')
             ]
           )
@@ -446,6 +470,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'subset',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -463,6 +488,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'subset',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -500,6 +526,7 @@ final FigSpec dbtSpec = FigSpec(
       name: 'snapshot',
       description: 'Executes \'snapshot\' jobs defined in a project',
       options: [
+
         Option(
           name: '--profiles-dir',
           description: 'Set the profiles directory',
@@ -509,6 +536,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Directory containing profiles.yml',
             template: 'folders',
             suggestions: [
+
               FigSuggestion(name: 'profiles')
             ]
           )
@@ -526,6 +554,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'Profile name',
             description: 'Name of profile to use when running dbt project',
             suggestions: [
+
               FigSuggestion(name: 'default')
             ]
           )
@@ -539,6 +568,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'Target profile',
             description: 'Target profile configuration (dev/prod)',
             suggestions: [
+
               FigSuggestion(name: 'dev'),
               FigSuggestion(name: 'prod')
             ]
@@ -572,6 +602,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'subset',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -589,6 +620,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'Exclude subset',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -612,6 +644,7 @@ final FigSpec dbtSpec = FigSpec(
       name: 'seed',
       description: 'Loads CSV files into the database',
       options: [
+
         Option(
           name: '--profiles-dir',
           description: 'Set the profiles directory',
@@ -621,6 +654,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Directory containing profiles.yml',
             template: 'folders',
             suggestions: [
+
               FigSuggestion(name: 'profiles')
             ]
           )
@@ -634,6 +668,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'Profile name',
             description: 'Name of profile to use when running dbt project',
             suggestions: [
+
               FigSuggestion(name: 'default')
             ]
           )
@@ -651,6 +686,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'Select subset',
             description: 'E.g. country_codes',
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -669,6 +705,7 @@ final FigSpec dbtSpec = FigSpec(
             description: 'Exclude subset of models',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -698,10 +735,12 @@ final FigSpec dbtSpec = FigSpec(
       name: 'docs',
       description: 'Generates documentation for a project',
       subcommands: [
+
         Subcommand(
           name: 'generate',
           description: 'Generate your project\'s documentation website',
           options: [
+
             Option(
               name: '--no-compile',
               description: 'Skip re-compilation'
@@ -712,6 +751,7 @@ final FigSpec dbtSpec = FigSpec(
           name: 'serve',
           description: 'Serve your documentation on a local webserver (default prot 8000)',
           options: [
+
             Option(
               name: '--profiles-dir',
               description: 'Skip re-compilation',
@@ -740,6 +780,7 @@ final FigSpec dbtSpec = FigSpec(
                 name: 'Target profile',
                 description: 'Target profile configuration (dev/prod)',
                 suggestions: [
+
                   FigSuggestion(name: 'dev'),
                   FigSuggestion(name: 'prod')
                 ]
@@ -764,9 +805,11 @@ final FigSpec dbtSpec = FigSpec(
       name: 'source',
       description: 'Provides tools for working with source data (including validating that sources are \'fresh\')',
       subcommands: [
+
         Subcommand(
           name: 'snapshot-freshness',
           options: [
+
             Option(
               name: ['-o', '--output'],
               description: 'Override the destination for sources.json',
@@ -785,6 +828,7 @@ final FigSpec dbtSpec = FigSpec(
                 name: 'Select subset',
                 isVariadic: true,
                 suggestions: [
+
                   FigSuggestion(name: 'path:'),
                   FigSuggestion(name: 'tag:'),
                   FigSuggestion(name: 'config:'),
@@ -808,6 +852,7 @@ final FigSpec dbtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--args',
           description: 'Supply arguments to the macro',
@@ -824,6 +869,7 @@ final FigSpec dbtSpec = FigSpec(
       name: 'rpc',
       description: 'Runs an RPC server that clients can submit queries to',
       options: [
+
         Option(
           name: '--host',
           description: 'Specify the host to listen on',
@@ -850,6 +896,7 @@ final FigSpec dbtSpec = FigSpec(
       name: ['ls', 'list'],
       description: 'Lists resources defined in a dbt project',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'This flag limits the \'resource types\' that dbt will return in the dbt ls command. By default, the following resources are included in the results of dbt ls: models, snapshots, seeds, tests, and sources',
@@ -857,6 +904,7 @@ final FigSpec dbtSpec = FigSpec(
             Arg(
             name: 'resource-type',
             suggestions: [
+
               FigSuggestion(name: 'source'),
               FigSuggestion(name: 'analysis'),
               FigSuggestion(name: 'model'),
@@ -877,6 +925,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'SELECTION_ARG',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -894,6 +943,7 @@ final FigSpec dbtSpec = FigSpec(
             name: 'SELECTOR',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(name: 'path:'),
               FigSuggestion(name: 'tag:'),
               FigSuggestion(name: 'config:'),
@@ -920,6 +970,7 @@ final FigSpec dbtSpec = FigSpec(
             Arg(
             name: 'output',
             suggestions: [
+
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'name'),
               FigSuggestion(name: 'path'),
@@ -937,6 +988,7 @@ final FigSpec dbtSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--version',
       description: 'Currently installed version'
@@ -962,6 +1014,7 @@ final FigSpec dbtSpec = FigSpec(
         Arg(
         name: 'log format',
         suggestions: [
+
           FigSuggestion(name: 'text'),
           FigSuggestion(name: 'json'),
           FigSuggestion(name: 'default')

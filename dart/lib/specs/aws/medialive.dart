@@ -9,10 +9,12 @@ final FigSpec medialiveSpec = FigSpec(
   name: 'medialive',
   description: 'API for AWS Elemental MediaLive',
   subcommands: [
+
     Subcommand(
       name: 'accept-input-device-transfer',
       description: 'Accept an incoming input device transfer. The ownership of the device will transfer to your AWS account',
       options: [
+
         Option(
           name: '--input-device-id',
           description: 'The unique ID of the input device to accept. For example, hd-123456789abcdef',
@@ -38,6 +40,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'batch-delete',
       description: 'Starts delete of resources',
       options: [
+
         Option(
           name: '--channel-ids',
           description: 'List of channel IDs',
@@ -102,6 +106,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'batch-start',
       description: 'Starts existing resources',
       options: [
+
         Option(
           name: '--channel-ids',
           description: 'List of channel IDs',
@@ -148,6 +154,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'batch-stop',
       description: 'Stops running resources',
       options: [
+
         Option(
           name: '--channel-ids',
           description: 'List of channel IDs',
@@ -194,6 +202,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -206,6 +215,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'batch-update-schedule',
       description: 'Update a channel schedule',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'Id of the channel whose schedule is being updated',
@@ -249,6 +259,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'cancel-input-device-transfer',
       description: 'Cancel an input device transfer that you have requested',
       options: [
+
         Option(
           name: '--input-device-id',
           description: 'The unique ID of the input device to cancel. For example, hd-123456789abcdef',
@@ -286,6 +298,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -298,6 +311,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'claim-device',
       description: 'Send a request to claim an AWS Elemental device that you have purchased from a third-party vendor. After the request succeeds, you will own the device',
       options: [
+
         Option(
           name: '--id',
           description: 'The id of the device you want to claim',
@@ -323,6 +337,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -335,6 +350,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-channel',
       description: 'Creates a new channel',
       options: [
+
         Option(
           name: '--cdi-input-specification',
           description: 'Specification of CDI inputs for this channel',
@@ -486,6 +502,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -498,6 +515,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-input',
       description: 'Create an input',
       options: [
+
         Option(
           name: '--destinations',
           description: 'Destination settings for PUSH type inputs',
@@ -640,6 +658,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -652,6 +671,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-input-security-group',
       description: 'Creates a Input Security Group',
       options: [
+
         Option(
           name: '--tags',
           description: 'A collection of key-value pairs',
@@ -686,6 +706,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -698,6 +719,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-multiplex',
       description: 'Create a new multiplex',
       options: [
+
         Option(
           name: '--availability-zones',
           description: 'A list of availability zones for the multiplex. You must specify exactly two',
@@ -759,6 +781,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -771,6 +794,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-multiplex-program',
       description: 'Create a new program in the multiplex',
       options: [
+
         Option(
           name: '--multiplex-id',
           description: 'ID of the multiplex where the program is to be created',
@@ -823,6 +847,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -835,6 +860,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-partner-input',
       description: 'Create a partner input',
       options: [
+
         Option(
           name: '--input-id',
           description: 'Unique ID of the input',
@@ -878,6 +904,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -890,6 +917,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-tags',
       description: 'Create tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Placeholder documentation for __string',
@@ -924,6 +952,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -936,6 +965,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-channel',
       description: 'Starts deletion of channel. The associated outputs are also deleted',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'Unique ID of the channel',
@@ -961,6 +991,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -973,6 +1004,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-input',
       description: 'Deletes the input end point',
       options: [
+
         Option(
           name: '--input-id',
           description: 'Unique ID of the input',
@@ -998,6 +1030,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1010,6 +1043,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-input-security-group',
       description: 'Deletes an Input Security Group',
       options: [
+
         Option(
           name: '--input-security-group-id',
           description: 'The Input Security Group to delete',
@@ -1035,6 +1069,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1047,6 +1082,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-multiplex',
       description: 'Delete a multiplex. The multiplex must be idle',
       options: [
+
         Option(
           name: '--multiplex-id',
           description: 'The ID of the multiplex',
@@ -1072,6 +1108,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1084,6 +1121,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-multiplex-program',
       description: 'Delete a program from a multiplex',
       options: [
+
         Option(
           name: '--multiplex-id',
           description: 'The ID of the multiplex that the program belongs to',
@@ -1118,6 +1156,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1130,6 +1169,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-reservation',
       description: 'Delete an expired reservation',
       options: [
+
         Option(
           name: '--reservation-id',
           description: 'Unique reservation ID, e.g. \'1234567\'',
@@ -1155,6 +1195,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1167,6 +1208,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-schedule',
       description: 'Delete all schedule actions on a channel',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'Id of the channel whose schedule is being deleted',
@@ -1192,6 +1234,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1204,6 +1247,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-tags',
       description: 'Removes tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Placeholder documentation for __string',
@@ -1238,6 +1282,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1250,6 +1295,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-account-configuration',
       description: 'Describe account configuration',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1266,6 +1312,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1278,6 +1325,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-channel',
       description: 'Gets details about a channel',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'Channel ID',
@@ -1303,6 +1351,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1315,6 +1364,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-input',
       description: 'Produces details about an input',
       options: [
+
         Option(
           name: '--input-id',
           description: 'Unique ID of the input',
@@ -1340,6 +1390,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1352,6 +1403,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-input-device',
       description: 'Gets the details for the input device',
       options: [
+
         Option(
           name: '--input-device-id',
           description: 'The unique ID of this input device. For example, hd-123456789abcdef',
@@ -1377,6 +1429,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1389,6 +1442,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-input-device-thumbnail',
       description: 'Get the latest thumbnail data for the input device',
       options: [
+
         Option(
           name: '--input-device-id',
           description: 'The unique ID of this input device. For example, hd-123456789abcdef',
@@ -1422,6 +1476,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-input-security-group',
       description: 'Produces a summary of an Input Security Group',
       options: [
+
         Option(
           name: '--input-security-group-id',
           description: 'The id of the Input Security Group to describe',
@@ -1447,6 +1502,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1459,6 +1515,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-multiplex',
       description: 'Gets details about a multiplex',
       options: [
+
         Option(
           name: '--multiplex-id',
           description: 'The ID of the multiplex',
@@ -1484,6 +1541,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1496,6 +1554,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-multiplex-program',
       description: 'Get the details for a program in a multiplex',
       options: [
+
         Option(
           name: '--multiplex-id',
           description: 'The ID of the multiplex that the program belongs to',
@@ -1530,6 +1589,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1542,6 +1602,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-offering',
       description: 'Get details for an offering',
       options: [
+
         Option(
           name: '--offering-id',
           description: 'Unique offering ID, e.g. \'87654321\'',
@@ -1567,6 +1628,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1579,6 +1641,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-reservation',
       description: 'Get details for a reservation',
       options: [
+
         Option(
           name: '--reservation-id',
           description: 'Unique reservation ID, e.g. \'1234567\'',
@@ -1604,6 +1667,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1616,6 +1680,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-schedule',
       description: 'Get a channel schedule',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'Id of the channel whose schedule is being updated',
@@ -1686,6 +1751,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1698,6 +1764,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-thumbnails',
       description: 'Describe the latest thumbnails data',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'Unique ID of the channel',
@@ -1741,6 +1808,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1753,6 +1821,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-channels',
       description: 'Produces list of channels that have been created',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Placeholder documentation for MaxResults',
@@ -1814,6 +1883,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1826,6 +1896,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-input-device-transfers',
       description: 'List input devices that are currently being transferred. List input devices that you are transferring from your AWS account or input devices that another AWS account is transferring to you',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Placeholder documentation for MaxResults',
@@ -1896,6 +1967,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1908,6 +1980,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-input-devices',
       description: 'List input devices',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Placeholder documentation for MaxResults',
@@ -1969,6 +2042,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1981,6 +2055,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-input-security-groups',
       description: 'Produces a list of Input Security Groups for an account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Placeholder documentation for MaxResults',
@@ -2042,6 +2117,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2054,6 +2130,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-inputs',
       description: 'Produces list of inputs that have been created',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Placeholder documentation for MaxResults',
@@ -2115,6 +2192,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2127,6 +2205,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-multiplex-programs',
       description: 'List the programs that currently exist for a specific multiplex',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return',
@@ -2197,6 +2276,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2209,6 +2289,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-multiplexes',
       description: 'Retrieve a list of the existing multiplexes',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return',
@@ -2270,6 +2351,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2282,6 +2364,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-offerings',
       description: 'List offerings available for purchase',
       options: [
+
         Option(
           name: '--channel-class',
           description: 'Filter by channel class, \'STANDARD\' or \'SINGLE_PIPELINE\'',
@@ -2433,6 +2516,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2445,6 +2529,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-reservations',
       description: 'List purchased reservations',
       options: [
+
         Option(
           name: '--channel-class',
           description: 'Filter by channel class, \'STANDARD\' or \'SINGLE_PIPELINE\'',
@@ -2578,6 +2663,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2590,6 +2676,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Produces list of tags that have been created for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Placeholder documentation for __string',
@@ -2615,6 +2702,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2627,6 +2715,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'purchase-offering',
       description: 'Purchase an offering and create a reservation',
       options: [
+
         Option(
           name: '--count',
           description: 'Number of resources',
@@ -2706,6 +2795,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2718,6 +2808,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'reboot-input-device',
       description: 'Send a reboot command to the specified input device. The device will begin rebooting within a few seconds of sending the command. When the reboot is complete, the device’s connection status will change to connected',
       options: [
+
         Option(
           name: '--force',
           description: 'Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes',
@@ -2752,6 +2843,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2764,6 +2856,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'reject-input-device-transfer',
       description: 'Reject the transfer of the specified input device to your AWS account',
       options: [
+
         Option(
           name: '--input-device-id',
           description: 'The unique ID of the input device to reject. For example, hd-123456789abcdef',
@@ -2789,6 +2882,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2801,6 +2895,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'start-channel',
       description: 'Starts an existing channel',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'A request to start a channel',
@@ -2826,6 +2921,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2838,6 +2934,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'start-input-device',
       description: 'Start an input device that is attached to a MediaConnect flow. (There is no need to start a device that is attached to a MediaLive input; MediaLive starts the device when the channel starts.)',
       options: [
+
         Option(
           name: '--input-device-id',
           description: 'The unique ID of the input device to start. For example, hd-123456789abcdef',
@@ -2863,6 +2960,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2875,6 +2973,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'start-input-device-maintenance-window',
       description: 'Start a maintenance window for the specified input device. Starting a maintenance window will give the device up to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming when the software is fully installed. Devices automatically install updates while they are powered on and their MediaLive channels are stopped. A maintenance window allows you to update a device without having to stop MediaLive channels that use the device. The device must remain powered on and connected to the internet for the duration of the maintenance',
       options: [
+
         Option(
           name: '--input-device-id',
           description: 'The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef',
@@ -2900,6 +2999,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2912,6 +3012,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'start-multiplex',
       description: 'Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each channel',
       options: [
+
         Option(
           name: '--multiplex-id',
           description: 'The ID of the multiplex',
@@ -2937,6 +3038,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2949,6 +3051,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'stop-channel',
       description: 'Stops a running channel',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'A request to stop a running channel',
@@ -2974,6 +3077,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2986,6 +3090,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'stop-input-device',
       description: 'Stop an input device that is attached to a MediaConnect flow. (There is no need to stop a device that is attached to a MediaLive input; MediaLive automatically stops the device when the channel stops.)',
       options: [
+
         Option(
           name: '--input-device-id',
           description: 'The unique ID of the input device to stop. For example, hd-123456789abcdef',
@@ -3011,6 +3116,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3023,6 +3129,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'stop-multiplex',
       description: 'Stops a running multiplex. If the multiplex isn\'t running, this action has no effect',
       options: [
+
         Option(
           name: '--multiplex-id',
           description: 'The ID of the multiplex',
@@ -3048,6 +3155,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3060,6 +3168,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'transfer-input-device',
       description: 'Start an input device transfer to another AWS account. After you make the request, the other account must accept or reject the transfer',
       options: [
+
         Option(
           name: '--input-device-id',
           description: 'The unique ID of this input device. For example, hd-123456789abcdef',
@@ -3112,6 +3221,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3124,6 +3234,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-account-configuration',
       description: 'Update account configuration',
       options: [
+
         Option(
           name: '--account-configuration',
           description: 'Placeholder documentation for AccountConfiguration',
@@ -3149,6 +3260,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3161,6 +3273,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-channel',
       description: 'Updates a channel',
       options: [
+
         Option(
           name: '--cdi-input-specification',
           description: 'Specification of CDI inputs for this channel',
@@ -3267,6 +3380,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3279,6 +3393,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-channel-class',
       description: 'Changes the class of the channel',
       options: [
+
         Option(
           name: '--channel-class',
           description: 'The channel class that you wish to update this channel to use',
@@ -3322,6 +3437,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3334,6 +3450,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-input',
       description: 'Updates an input',
       options: [
+
         Option(
           name: '--destinations',
           description: 'Destination settings for PUSH type inputs',
@@ -3440,6 +3557,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3452,6 +3570,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-input-device',
       description: 'Updates the parameters for the input device',
       options: [
+
         Option(
           name: '--hd-device-settings',
           description: 'The settings that you want to apply to the HD input device',
@@ -3513,6 +3632,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3525,6 +3645,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-input-security-group',
       description: 'Update an Input Security Group\'s Whilelists',
       options: [
+
         Option(
           name: '--input-security-group-id',
           description: 'The id of the Input Security Group to update',
@@ -3568,6 +3689,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3580,6 +3702,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-multiplex',
       description: 'Updates a multiplex',
       options: [
+
         Option(
           name: '--multiplex-id',
           description: 'ID of the multiplex to update',
@@ -3632,6 +3755,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3644,6 +3768,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-multiplex-program',
       description: 'Update a program in a multiplex',
       options: [
+
         Option(
           name: '--multiplex-id',
           description: 'The ID of the multiplex of the program to update',
@@ -3687,6 +3812,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3699,6 +3825,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-reservation',
       description: 'Update reservation',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the reservation',
@@ -3742,6 +3869,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3754,6 +3882,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'restart-channel-pipelines',
       description: 'Restart pipelines in one channel that is currently running',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'ID of channel',
@@ -3788,6 +3917,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3800,6 +3930,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-cloud-watch-alarm-template',
       description: 'Creates a cloudwatch alarm template to dynamically generate cloudwatch metric alarms on targeted resource types',
       options: [
+
         Option(
           name: '--comparison-operator',
           description: 'The comparison operator used to compare the specified statistic and the threshold',
@@ -3933,6 +4064,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3945,6 +4077,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-cloud-watch-alarm-template-group',
       description: 'Creates a cloudwatch alarm template group to group your cloudwatch alarm templates and to attach to signal maps for dynamically creating alarms',
       options: [
+
         Option(
           name: '--description',
           description: 'A resource\'s optional description',
@@ -3988,6 +4121,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4000,6 +4134,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-event-bridge-rule-template',
       description: 'Creates an eventbridge rule template to monitor events and send notifications to your targeted resources',
       options: [
+
         Option(
           name: '--description',
           description: 'A resource\'s optional description',
@@ -4070,6 +4205,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4082,6 +4218,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-event-bridge-rule-template-group',
       description: 'Creates an eventbridge rule template group to group your eventbridge rule templates and to attach to signal maps for dynamically creating notification rules',
       options: [
+
         Option(
           name: '--description',
           description: 'A resource\'s optional description',
@@ -4125,6 +4262,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4137,6 +4275,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-signal-map',
       description: 'Initiates the creation of a new signal map. Will discover a new mediaResourceMap based on the provided discoveryEntryPointArn',
       options: [
+
         Option(
           name: '--cloud-watch-alarm-template-group-identifiers',
           description: 'Placeholder documentation for __listOf__stringPatternS',
@@ -4207,6 +4346,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4219,6 +4359,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-cloud-watch-alarm-template',
       description: 'Deletes a cloudwatch alarm template',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A cloudwatch alarm template\'s identifier. Can be either be its id or current name',
@@ -4244,6 +4385,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4256,6 +4398,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-cloud-watch-alarm-template-group',
       description: 'Deletes a cloudwatch alarm template group. You must detach this group from all signal maps and ensure its existing templates are moved to another group or deleted',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A cloudwatch alarm template group\'s identifier. Can be either be its id or current name',
@@ -4281,6 +4424,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4293,6 +4437,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-event-bridge-rule-template',
       description: 'Deletes an eventbridge rule template',
       options: [
+
         Option(
           name: '--identifier',
           description: 'An eventbridge rule template\'s identifier. Can be either be its id or current name',
@@ -4318,6 +4463,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4330,6 +4476,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-event-bridge-rule-template-group',
       description: 'Deletes an eventbridge rule template group. You must detach this group from all signal maps and ensure its existing templates are moved to another group or deleted',
       options: [
+
         Option(
           name: '--identifier',
           description: 'An eventbridge rule template group\'s identifier. Can be either be its id or current name',
@@ -4355,6 +4502,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4367,6 +4515,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-signal-map',
       description: 'Deletes the specified signal map',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A signal map\'s identifier. Can be either be its id or current name',
@@ -4392,6 +4541,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4404,6 +4554,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'get-cloud-watch-alarm-template',
       description: 'Retrieves the specified cloudwatch alarm template',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A cloudwatch alarm template\'s identifier. Can be either be its id or current name',
@@ -4429,6 +4580,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4441,6 +4593,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'get-cloud-watch-alarm-template-group',
       description: 'Retrieves the specified cloudwatch alarm template group',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A cloudwatch alarm template group\'s identifier. Can be either be its id or current name',
@@ -4466,6 +4619,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4478,6 +4632,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'get-event-bridge-rule-template',
       description: 'Retrieves the specified eventbridge rule template',
       options: [
+
         Option(
           name: '--identifier',
           description: 'An eventbridge rule template\'s identifier. Can be either be its id or current name',
@@ -4503,6 +4658,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4515,6 +4671,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'get-event-bridge-rule-template-group',
       description: 'Retrieves the specified eventbridge rule template group',
       options: [
+
         Option(
           name: '--identifier',
           description: 'An eventbridge rule template group\'s identifier. Can be either be its id or current name',
@@ -4540,6 +4697,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4552,6 +4710,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'get-signal-map',
       description: 'Retrieves the specified signal map',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A signal map\'s identifier. Can be either be its id or current name',
@@ -4577,6 +4736,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4589,6 +4749,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-cloud-watch-alarm-template-groups',
       description: 'Lists cloudwatch alarm template groups',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Placeholder documentation for MaxResults',
@@ -4668,6 +4829,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4680,6 +4842,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-cloud-watch-alarm-templates',
       description: 'Lists cloudwatch alarm templates',
       options: [
+
         Option(
           name: '--group-identifier',
           description: 'A cloudwatch alarm template group\'s identifier. Can be either be its id or current name',
@@ -4768,6 +4931,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4780,6 +4944,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-event-bridge-rule-template-groups',
       description: 'Lists eventbridge rule template groups',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Placeholder documentation for MaxResults',
@@ -4850,6 +5015,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4862,6 +5028,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-event-bridge-rule-templates',
       description: 'Lists eventbridge rule templates',
       options: [
+
         Option(
           name: '--group-identifier',
           description: 'An eventbridge rule template group\'s identifier. Can be either be its id or current name',
@@ -4941,6 +5108,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4953,6 +5121,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-signal-maps',
       description: 'Lists signal maps',
       options: [
+
         Option(
           name: '--cloud-watch-alarm-template-group-identifier',
           description: 'A cloudwatch alarm template group\'s identifier. Can be either be its id or current name',
@@ -5032,6 +5201,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5044,6 +5214,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'start-delete-monitor-deployment',
       description: 'Initiates a deployment to delete the monitor of the specified signal map',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A signal map\'s identifier. Can be either be its id or current name',
@@ -5069,6 +5240,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5081,6 +5253,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'start-monitor-deployment',
       description: 'Initiates a deployment to deploy the latest monitor of the specified signal map',
       options: [
+
         Option(
           name: '--dry-run',
           description: 'Placeholder documentation for __boolean'
@@ -5114,6 +5287,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5126,6 +5300,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'start-update-signal-map',
       description: 'Initiates an update for the specified signal map. Will discover a new signal map if a changed discoveryEntryPointArn is provided',
       options: [
+
         Option(
           name: '--cloud-watch-alarm-template-group-identifiers',
           description: 'Placeholder documentation for __listOf__stringPatternS',
@@ -5204,6 +5379,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5216,6 +5392,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-cloud-watch-alarm-template',
       description: 'Updates the specified cloudwatch alarm template',
       options: [
+
         Option(
           name: '--comparison-operator',
           description: 'The comparison operator used to compare the specified statistic and the threshold',
@@ -5349,6 +5526,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5361,6 +5539,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-cloud-watch-alarm-template-group',
       description: 'Updates the specified cloudwatch alarm template group',
       options: [
+
         Option(
           name: '--description',
           description: 'A resource\'s optional description',
@@ -5395,6 +5574,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5407,6 +5587,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-event-bridge-rule-template',
       description: 'Updates the specified eventbridge rule template',
       options: [
+
         Option(
           name: '--description',
           description: 'A resource\'s optional description',
@@ -5477,6 +5658,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5489,6 +5671,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-event-bridge-rule-template-group',
       description: 'Updates the specified eventbridge rule template group',
       options: [
+
         Option(
           name: '--description',
           description: 'A resource\'s optional description',
@@ -5523,6 +5706,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5535,6 +5719,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-channel-placement-group',
       description: 'Create a ChannelPlacementGroup in the specified Cluster. As part of the create operation, you specify the Nodes to attach the group to.After you create a ChannelPlacementGroup, you add Channels to the group (you do this by modifying the Channels to add them to a specific group). You now have an association of Channels to ChannelPlacementGroup, and ChannelPlacementGroup to Nodes. This association means that all the Channels in the group are able to run on any of the Nodes associated with the group',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -5596,6 +5781,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5608,6 +5794,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-cluster',
       description: 'Create a new Cluster',
       options: [
+
         Option(
           name: '--cluster-type',
           description: 'Specify a type. All the Nodes that you later add to this Cluster must be this type of hardware. One Cluster instance can\'t contain different hardware types. You won\'t be able to change this parameter after you create the Cluster',
@@ -5678,6 +5865,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5690,6 +5878,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-network',
       description: 'Create as many Networks as you need. You will associate one or more Clusters with each Network.Each Network provides MediaLive Anywhere with required information about the network in your organization that you are using for video encoding using MediaLive',
       options: [
+
         Option(
           name: '--ip-pools',
           description: 'An array of IpPoolCreateRequests that identify a collection of IP addresses in your network that you want to reserve for use in MediaLive Anywhere. MediaLiveAnywhere uses these IP addresses for Push inputs (in both Bridge and NATnetworks) and for output destinations (only in Bridge networks). EachIpPoolUpdateRequest specifies one CIDR block',
@@ -5751,6 +5940,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5763,6 +5953,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-node',
       description: 'Create a Node in the specified Cluster. You can also create Nodes using the CreateNodeRegistrationScript. Note that you can\'t move a Node to another Cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -5833,6 +6024,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5845,6 +6037,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'create-node-registration-script',
       description: 'Create the Register Node script for all the nodes intended for a specific Cluster. You will then run the script on each hardware unit that is intended for that Cluster. The script creates a Node in the specified Cluster. It then binds the Node to this hardware unit, and activates the node hardware for use with MediaLive Anywhere',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -5915,6 +6108,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5927,6 +6121,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-channel-placement-group',
       description: 'Delete the specified ChannelPlacementGroup that exists in the specified Cluster',
       options: [
+
         Option(
           name: '--channel-placement-group-id',
           description: 'The ID of the channel placement group',
@@ -5961,6 +6156,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5973,6 +6169,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-cluster',
       description: 'Delete a Cluster. The Cluster must be idle',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -5998,6 +6195,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6010,6 +6208,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-network',
       description: 'Delete a Network. The Network must have no resources associated with it',
       options: [
+
         Option(
           name: '--network-id',
           description: 'The ID of the network',
@@ -6035,6 +6234,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6047,6 +6247,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'delete-node',
       description: 'Delete a Node. The Node must be IDLE',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -6081,6 +6282,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6093,6 +6295,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-channel-placement-group',
       description: 'Get details about a ChannelPlacementGroup',
       options: [
+
         Option(
           name: '--channel-placement-group-id',
           description: 'The ID of the channel placement group',
@@ -6127,6 +6330,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6139,6 +6343,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-cluster',
       description: 'Get details about a Cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -6164,6 +6369,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6176,6 +6382,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-network',
       description: 'Get details about a Network',
       options: [
+
         Option(
           name: '--network-id',
           description: 'The ID of the network',
@@ -6201,6 +6408,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6213,6 +6421,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'describe-node',
       description: 'Get details about a Node in the specified Cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -6247,6 +6456,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6259,6 +6469,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-channel-placement-groups',
       description: 'Retrieve the list of ChannelPlacementGroups in the specified Cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -6329,6 +6540,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6341,6 +6553,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-clusters',
       description: 'Retrieve the list of Clusters',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return',
@@ -6402,6 +6615,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6414,6 +6628,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-networks',
       description: 'Retrieve the list of Networks',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return',
@@ -6475,6 +6690,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6487,6 +6703,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'list-nodes',
       description: 'Retrieve the list of Nodes',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -6557,6 +6774,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6569,6 +6787,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-channel-placement-group',
       description: 'Change the settings for a ChannelPlacementGroup',
       options: [
+
         Option(
           name: '--channel-placement-group-id',
           description: 'The ID of the channel placement group',
@@ -6621,6 +6840,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6633,6 +6853,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-cluster',
       description: 'Change the settings for a Cluster',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -6676,6 +6897,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6688,6 +6910,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-network',
       description: 'Change the settings for a Network',
       options: [
+
         Option(
           name: '--ip-pools',
           description: 'Include this parameter only if you want to change the pool of IP addresses in the network. An array of IpPoolCreateRequests that identify a collection of IP addresses in this network that you want to reserve for use in MediaLive Anywhere. MediaLive Anywhere uses these IP addresses for Push inputs (in both Bridge and NAT networks) and for output destinations (only in Bridge networks). Each IpPoolUpdateRequest specifies one CIDR block',
@@ -6740,6 +6963,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6752,6 +6976,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-node',
       description: 'Change the settings for a Node',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -6804,6 +7029,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6816,6 +7042,7 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'update-node-state',
       description: 'Update the state of a node',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The ID of the cluster',
@@ -6859,6 +7086,7 @@ final FigSpec medialiveSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6871,10 +7099,12 @@ final FigSpec medialiveSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'channel-created',
           description: 'Wait until a channel has been created It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 5 failed checks',
           options: [
+
             Option(
               name: '--channel-id',
               description: 'Channel ID',
@@ -6900,6 +7130,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6912,6 +7143,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'channel-deleted',
           description: 'Wait until a channel has been deleted It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 84 failed checks',
           options: [
+
             Option(
               name: '--channel-id',
               description: 'Channel ID',
@@ -6937,6 +7169,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6949,6 +7182,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'channel-placement-group-assigned',
           description: 'Wait until the channel placement group has been assigned It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 5 failed checks',
           options: [
+
             Option(
               name: '--channel-placement-group-id',
               description: 'The ID of the channel placement group',
@@ -6983,6 +7217,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6995,6 +7230,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'channel-placement-group-deleted',
           description: 'Wait until the channel placement group has been deleted It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--channel-placement-group-id',
               description: 'The ID of the channel placement group',
@@ -7029,6 +7265,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7041,6 +7278,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'channel-placement-group-unassigned',
           description: 'Wait until the channel placement group has been unassigned It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--channel-placement-group-id',
               description: 'The ID of the channel placement group',
@@ -7075,6 +7313,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7087,6 +7326,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'channel-running',
           description: 'Wait until a channel is running It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 120 failed checks',
           options: [
+
             Option(
               name: '--channel-id',
               description: 'Channel ID',
@@ -7112,6 +7352,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7124,6 +7365,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'channel-stopped',
           description: 'Wait until a channel has is stopped It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--channel-id',
               description: 'Channel ID',
@@ -7149,6 +7391,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7161,6 +7404,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'cluster-created',
           description: 'Wait until a cluster has been created It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 5 failed checks',
           options: [
+
             Option(
               name: '--cluster-id',
               description: 'The ID of the cluster',
@@ -7186,6 +7430,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7198,6 +7443,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'cluster-deleted',
           description: 'Wait until a cluster has been deleted It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--cluster-id',
               description: 'The ID of the cluster',
@@ -7223,6 +7469,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7235,6 +7482,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'input-attached',
           description: 'Wait until an input has been attached It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--input-id',
               description: 'Unique ID of the input',
@@ -7260,6 +7508,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7272,6 +7521,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'input-deleted',
           description: 'Wait until an input has been deleted It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--input-id',
               description: 'Unique ID of the input',
@@ -7297,6 +7547,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7309,6 +7560,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'input-detached',
           description: 'Wait until an input has been detached It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 84 failed checks',
           options: [
+
             Option(
               name: '--input-id',
               description: 'Unique ID of the input',
@@ -7334,6 +7586,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7346,6 +7599,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'multiplex-created',
           description: 'Wait until a multiplex has been created It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 5 failed checks',
           options: [
+
             Option(
               name: '--multiplex-id',
               description: 'The ID of the multiplex',
@@ -7371,6 +7625,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7383,6 +7638,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'multiplex-deleted',
           description: 'Wait until a multiplex has been deleted It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--multiplex-id',
               description: 'The ID of the multiplex',
@@ -7408,6 +7664,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7420,6 +7677,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'multiplex-running',
           description: 'Wait until a multiplex is running It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 120 failed checks',
           options: [
+
             Option(
               name: '--multiplex-id',
               description: 'The ID of the multiplex',
@@ -7445,6 +7703,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7457,6 +7716,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'multiplex-stopped',
           description: 'Wait until a multiplex has is stopped It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 28 failed checks',
           options: [
+
             Option(
               name: '--multiplex-id',
               description: 'The ID of the multiplex',
@@ -7482,6 +7742,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7494,6 +7755,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'node-deregistered',
           description: 'Wait until a node has been deregistered It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--cluster-id',
               description: 'The ID of the cluster',
@@ -7528,6 +7790,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7540,6 +7803,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'node-registered',
           description: 'Wait until a node has been registered It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 5 failed checks',
           options: [
+
             Option(
               name: '--cluster-id',
               description: 'The ID of the cluster',
@@ -7574,6 +7838,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7586,6 +7851,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'signal-map-created',
           description: 'Wait until a signal map has been created It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--identifier',
               description: 'A signal map\'s identifier. Can be either be its id or current name',
@@ -7611,6 +7877,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7623,6 +7890,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'signal-map-monitor-deleted',
           description: 'Wait until a signal map\'s monitor has been deleted It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 120 failed checks',
           options: [
+
             Option(
               name: '--identifier',
               description: 'A signal map\'s identifier. Can be either be its id or current name',
@@ -7648,6 +7916,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7660,6 +7929,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'signal-map-monitor-deployed',
           description: 'Wait until a signal map\'s monitor has been deployed It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 120 failed checks',
           options: [
+
             Option(
               name: '--identifier',
               description: 'A signal map\'s identifier. Can be either be its id or current name',
@@ -7685,6 +7955,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7697,6 +7968,7 @@ final FigSpec medialiveSpec = FigSpec(
           name: 'signal-map-updated',
           description: 'Wait until a signal map has been updated It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--identifier',
               description: 'A signal map\'s identifier. Can be either be its id or current name',
@@ -7722,6 +7994,7 @@ final FigSpec medialiveSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

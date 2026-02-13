@@ -17,6 +17,7 @@ final FigSpec nvimSpec = FigSpec(
     flagsArePosixNoncompliant: true
   ),
   options: [
+
     Option(
       name: '+',
       description: 'Start at end of file'

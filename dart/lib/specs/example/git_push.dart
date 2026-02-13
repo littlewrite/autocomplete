@@ -9,6 +9,7 @@ final FigSpec git_push_exampleSpec = FigSpec(
   name: 'git_push_example',
   description: '',
   args: [
+
     Arg(
       name: 'repository',
       isOptional: true
@@ -20,6 +21,7 @@ final FigSpec git_push_exampleSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--all'
     ),

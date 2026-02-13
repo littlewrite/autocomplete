@@ -9,6 +9,7 @@ final FigSpec clangSpec = FigSpec(
   name: 'clang++',
   description: 'Clang LLVM compiler for C++',
   options: [
+
     Option(
       name: '-std',
       description: 'Language standard to compile for',
@@ -16,6 +17,7 @@ final FigSpec clangSpec = FigSpec(
         Arg(
         name: 'value',
         suggestions: [
+
           FigSuggestion(
             name: 'cuda',
             description: 'NVIDIA CUDA(tm)'

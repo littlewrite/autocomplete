@@ -9,10 +9,12 @@ final FigSpec mobSpec = FigSpec(
   name: 'mob',
   description: 'Fast git handover for remote collaboration with mob.sh',
   subcommands: [
+
     Subcommand(
       name: ['start', 's'],
       description: 'Start session from base branch in wip branch',
       options: [
+
         Option(
           name: ['--include-uncommitted-changes', '-i'],
           description: 'Move uncommitted changes to wip branch'
@@ -39,6 +41,7 @@ final FigSpec mobSpec = FigSpec(
       name: ['next', 'n'],
       description: 'Handover changes in wip branch to next person',
       options: [
+
         Option(
           name: ['--stay', '-s'],
           description: 'Stay on wip branch (default)'
@@ -62,6 +65,7 @@ final FigSpec mobSpec = FigSpec(
       name: ['done', 'd'],
       description: 'Squashes all changes in wip branch to index in base branch',
       options: [
+
         Option(
           name: '--no-squash',
           description: 'Squash no commits from wip branch, only merge wip branch'
@@ -80,6 +84,7 @@ final FigSpec mobSpec = FigSpec(
       name: 'reset',
       description: 'Removes local and remote wip branch',
       options: [
+
         Option(
           name: ['--branch', '-b'],
           description: 'Set wip branch to \'mob/<base-branch>/<branch-postfix>\'',
@@ -143,6 +148,7 @@ final FigSpec mobSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--debug',
       description: 'Enable verbose logging'

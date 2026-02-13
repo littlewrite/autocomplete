@@ -9,6 +9,7 @@ final FigSpec kotlincSpec = FigSpec(
   name: 'kotlinc',
   description: 'Kotlin compiler for JVM',
   subcommands: [
+
     Subcommand(
       name: '-version',
       description: 'Display the compiler version'

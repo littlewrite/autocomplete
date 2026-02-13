@@ -9,14 +9,17 @@ final FigSpec anthosSpec = FigSpec(
   name: 'anthos',
   description: 'Anthos command Group',
   subcommands: [
+
     Subcommand(
       name: 'auth',
       description: 'Authenticate clusters using the Anthos client',
       subcommands: [
+
         Subcommand(
           name: 'login',
           description: 'Authenticate clusters using the Anthos client',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -203,6 +206,7 @@ final FigSpec anthosSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -219,6 +223,7 @@ final FigSpec anthosSpec = FigSpec(
           name: 'version',
           description: 'Get version info for the Anthos Auth client',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -342,6 +347,7 @@ final FigSpec anthosSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -356,6 +362,7 @@ final FigSpec anthosSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -479,6 +486,7 @@ final FigSpec anthosSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -495,6 +503,7 @@ final FigSpec anthosSpec = FigSpec(
       name: 'create-login-config',
       description: 'Generates a login configuration file',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -652,6 +661,7 @@ final FigSpec anthosSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -666,6 +676,7 @@ final FigSpec anthosSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -789,6 +800,7 @@ final FigSpec anthosSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

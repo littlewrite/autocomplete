@@ -9,6 +9,7 @@ final FigSpec mikroOrmSpec = FigSpec(
   name: 'mikro-orm',
   description: 'TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns. Supports MongoDB, MySQL, MariaDB, PostgreSQL and SQLite databases',
   subcommands: [
+
     Subcommand(
       name: 'cache:clear',
       description: 'Clear metadata cache'
@@ -21,6 +22,7 @@ final FigSpec mikroOrmSpec = FigSpec(
       name: 'generate-entities',
       description: 'Generate entities based on current database schema',
       options: [
+
         Option(
           name: ['-s', '--save'],
           description: 'Saves entities to directory defined by --path'
@@ -72,6 +74,7 @@ final FigSpec mikroOrmSpec = FigSpec(
       name: 'seeder:create',
       description: 'Create a new seeder class',
       options: [
+
         Option(
           name: '--class',
           description: 'Seeder class to run'
@@ -82,6 +85,7 @@ final FigSpec mikroOrmSpec = FigSpec(
       name: 'schema:create',
       description: 'Create database schema based on current metadata',
       options: [
+
         Option(
           name: ['-r', '--run'],
           description: 'Runs queries'
@@ -118,6 +122,7 @@ final FigSpec mikroOrmSpec = FigSpec(
       name: 'schema:drop',
       description: 'Drop database schema based on current metadata',
       options: [
+
         Option(
           name: ['-r', '--run'],
           description: 'Runs queries'
@@ -153,6 +158,7 @@ final FigSpec mikroOrmSpec = FigSpec(
       name: 'schema:update',
       description: 'Update database schema based on current metadata',
       options: [
+
         Option(
           name: ['-r', '--run'],
           description: 'Runs queries'
@@ -188,6 +194,7 @@ final FigSpec mikroOrmSpec = FigSpec(
       name: 'schema:fresh',
       description: 'Drop and recreate database schema based on current metadata',
       options: [
+
         Option(
           name: ['-r', '--run'],
           description: 'Runs queries'
@@ -216,6 +223,7 @@ final FigSpec mikroOrmSpec = FigSpec(
       name: 'migration:create',
       description: 'Create new migration with current schema diff',
       options: [
+
         Option(
           name: ['-b', '--blank'],
           description: 'Create blank migration'
@@ -244,6 +252,7 @@ final FigSpec mikroOrmSpec = FigSpec(
       name: 'migration:up',
       description: 'Migrate up to the latest version',
       options: [
+
         Option(
           name: ['-t', '--to'],
           description: 'Migrate up to specific version'
@@ -262,6 +271,7 @@ final FigSpec mikroOrmSpec = FigSpec(
       name: 'migration:down',
       description: 'Migrate one step down',
       options: [
+
         Option(
           name: ['-t', '--to'],
           description: 'Migrate down to specific version'
@@ -288,6 +298,7 @@ final FigSpec mikroOrmSpec = FigSpec(
       name: 'migration:fresh',
       description: 'Clear the database and rerun all migrations',
       options: [
+
         Option(
           name: '--seed',
           description: 'Allows to seed the database on create or drop and recreate',
@@ -305,6 +316,7 @@ final FigSpec mikroOrmSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-v', '--version'],
       description: 'Show version number'

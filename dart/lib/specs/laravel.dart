@@ -4,16 +4,42 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> commonOptions = [
+
+  Option(
+    name: '--format',
+    description: 'The output format (txt, xml, json, or md)',
+    args: [
+      Arg(
+      suggestions: [
+
+        FigSuggestion(name: 'txt'),
+        FigSuggestion(name: 'xml'),
+        FigSuggestion(name: 'json'),
+        FigSuggestion(name: 'md')
+      ]
+    )
+    ]
+  ),
+  Option(
+    name: '--raw',
+    description: 'To output raw command list'
+  )
+];
+
 /// Completion spec for `laravel` CLI
 final FigSpec laravelSpec = FigSpec(
   name: 'laravel',
   description: 'Laravel Installer',
   subcommands: [
+
     Subcommand(
-      name: 'help'
+      name: 'help',
+      options: commonOptions
     ),
     Subcommand(
-      name: 'list'
+      name: 'list',
+      options: commonOptions
     ),
     Subcommand(
       name: 'new',
@@ -24,6 +50,7 @@ final FigSpec laravelSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--dev',
           description: 'Installs the latest "development" release'
@@ -64,6 +91,7 @@ final FigSpec laravelSpec = FigSpec(
             Arg(
             name: 'STACK',
             suggestions: [
+
               FigSuggestion(name: 'livewire'),
               FigSuggestion(name: 'inertia')
             ]
@@ -86,6 +114,7 @@ final FigSpec laravelSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Display the help message'

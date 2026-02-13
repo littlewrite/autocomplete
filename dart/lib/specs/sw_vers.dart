@@ -9,6 +9,7 @@ final FigSpec sw_versSpec = FigSpec(
   name: 'sw_vers',
   description: 'Print macOS version information',
   options: [
+
     Option(
       name: '-productName',
       description: 'Print product name'

@@ -9,14 +9,17 @@ final FigSpec redisSpec = FigSpec(
   name: 'redis',
   description: 'Manage Cloud Memorystore Redis resources',
   subcommands: [
+
     Subcommand(
       name: 'instances',
       description: 'Manage Cloud Memorystore Redis instances',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Memorystore Redis instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -73,6 +76,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'CONNECT_MODE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'connect-mode-unspecified'),
                   FigSuggestion(name: 'direct-peering'),
                   FigSuggestion(name: 'private-service-access')
@@ -199,6 +203,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERSION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'redis_3_2'),
                   FigSuggestion(name: 'redis_4_0'),
                   FigSuggestion(name: 'redis_5_0')
@@ -247,6 +252,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'TIER',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'basic'),
                   FigSuggestion(name: 'standard')
                 ]
@@ -276,6 +282,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -309,6 +316,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Redis instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -447,6 +455,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -469,6 +478,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'describe',
           description: 'Show metadata for a Memorystore Redis instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -603,6 +613,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -625,6 +636,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'export',
           description: 'Export data from a Memorystore Redis instance to Google Cloud Storage',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -763,6 +775,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -775,6 +788,7 @@ final FigSpec redisSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'DESTINATION',
               description: 'The Cloud Storage object path to export the instance to. Must have\nthe redis DB file extension *.rdb*'
@@ -789,6 +803,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'failover',
           description: 'Failover a standard tier Cloud Memorystore for Redis instance from the master node to its replica',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -834,6 +849,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'DATA_PROTECTION_MODE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'force-data-loss'),
                   FigSuggestion(name: 'limited-data-loss')
                 ]
@@ -941,6 +957,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -963,6 +980,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'import',
           description: 'Import data to a Memorystore Redis instance from Google Cloud Storage',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1101,6 +1119,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1113,6 +1132,7 @@ final FigSpec redisSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SOURCE',
               description: 'The Cloud Storage object path to import the instance from. Must have\nthe redis DB file extension *.rdb*'
@@ -1127,6 +1147,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'list',
           description: 'List Memorystore Redis instances',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1309,6 +1330,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1325,6 +1347,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'update',
           description: 'Update Memorystore Redis instances',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1533,6 +1556,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1555,6 +1579,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'upgrade',
           description: 'Upgrade a Memorystore for Redis instance to a specified Redis version',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1667,6 +1692,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERSION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'redis_4_0'),
                   FigSuggestion(name: 'redis_5_0')
                 ]
@@ -1708,6 +1734,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1728,6 +1755,7 @@ final FigSpec redisSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1851,6 +1879,7 @@ final FigSpec redisSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1867,10 +1896,12 @@ final FigSpec redisSpec = FigSpec(
       name: 'operations',
       description: 'Manage Cloud Memorystore Redis operations',
       subcommands: [
+
         Subcommand(
           name: 'cancel',
           description: 'Cancel a Memorystore Redis import or export operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2005,6 +2036,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2027,6 +2059,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'describe',
           description: 'Show metadata for a Memorystore Redis operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2161,6 +2194,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2183,6 +2217,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'list',
           description: 'List Memorystore Redis operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2365,6 +2400,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2379,6 +2415,7 @@ final FigSpec redisSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2502,6 +2539,7 @@ final FigSpec redisSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2518,10 +2556,12 @@ final FigSpec redisSpec = FigSpec(
       name: 'regions',
       description: 'Manage Cloud Memorystore Redis regions',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Show metadata for a Memorystore Redis region',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2645,6 +2685,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2667,6 +2708,7 @@ final FigSpec redisSpec = FigSpec(
           name: 'list',
           description: 'List Memorystore Redis regions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2838,6 +2880,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2852,6 +2895,7 @@ final FigSpec redisSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2975,6 +3019,7 @@ final FigSpec redisSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2991,10 +3036,12 @@ final FigSpec redisSpec = FigSpec(
       name: 'zones',
       description: 'Manage Cloud Memorystore Redis zones',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List Memorystore Redis zones',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3173,6 +3220,7 @@ final FigSpec redisSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3187,6 +3235,7 @@ final FigSpec redisSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3310,6 +3359,7 @@ final FigSpec redisSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3324,6 +3374,7 @@ final FigSpec redisSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3447,6 +3498,7 @@ final FigSpec redisSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

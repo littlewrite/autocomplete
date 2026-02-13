@@ -9,10 +9,12 @@ final FigSpec snsSpec = FigSpec(
   name: 'sns',
   description: 'Amazon Simple Notification Service Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this product see the Amazon SNS product page. For detailed information about Amazon SNS features and their associated API calls, see the Amazon SNS Developer Guide.  For information on the permissions you need to use this API, see Identity and access management in Amazon SNS in the Amazon SNS Developer Guide.  We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available SDKs, go to Tools for Amazon Web Services',
   subcommands: [
+
     Subcommand(
       name: 'add-permission',
       description: 'Adds a statement to a topic\'s access control policy, granting access for the specified Amazon Web Services accounts to the specified actions.  To remove the ability to change topic permissions, you must deny permissions to the AddPermission, RemovePermission, and SetTopicAttributes actions in your IAM policy',
       options: [
+
         Option(
           name: '--topic-arn',
           description: 'The ARN of the topic whose access control policy you wish to modify',
@@ -65,6 +67,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'check-if-phone-number-is-opted-out',
       description: 'Accepts a phone number and indicates whether the phone holder has opted out of receiving SMS messages from your Amazon Web Services account. You cannot send SMS messages to a number that is opted out. To resume sending messages, you can opt in the number by using the OptInPhoneNumber action',
       options: [
+
         Option(
           name: '--phone-number',
           description: 'The phone number for which you want to check the opt out status',
@@ -102,6 +106,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'confirm-subscription',
       description: 'Verifies an endpoint owner\'s intent to receive messages by validating the token sent to the endpoint by an earlier Subscribe action. If the token is valid, the action creates a new subscription and returns its Amazon Resource Name (ARN). This call requires an AWS signature only when the AuthenticateOnUnsubscribe flag is set to "true"',
       options: [
+
         Option(
           name: '--topic-arn',
           description: 'The ARN of the topic for which you wish to confirm a subscription',
@@ -157,6 +163,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'create-platform-application',
       description: 'Creates a platform application object for one of the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging), to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential attributes when using the CreatePlatformApplication action.  PlatformPrincipal and PlatformCredential are received from the notification service.   For ADM, PlatformPrincipal is client id and PlatformCredential is client secret.   For APNS and APNS_SANDBOX using certificate credentials, PlatformPrincipal is SSL certificate and PlatformCredential is private key.   For APNS and APNS_SANDBOX using token credentials, PlatformPrincipal is signing key ID and PlatformCredential is signing key.   For Baidu, PlatformPrincipal is API key and PlatformCredential is secret key.   For GCM (Firebase Cloud Messaging) using key credentials, there is no PlatformPrincipal. The PlatformCredential is API key.   For GCM (Firebase Cloud Messaging) using token credentials, there is no PlatformPrincipal. The PlatformCredential is a JSON formatted private key file. When using the Amazon Web Services CLI, the file must be in string format and special characters must be ignored. To format the file correctly, Amazon SNS recommends using the following command: SERVICE_JSON=`jq @json <<< cat service.json`.   For MPNS, PlatformPrincipal is TLS certificate and PlatformCredential is private key.   For WNS, PlatformPrincipal is Package Security Identifier and PlatformCredential is secret key.   You can use the returned PlatformApplicationArn as an attribute for the CreatePlatformEndpoint action',
       options: [
+
         Option(
           name: '--name',
           description: 'Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters long',
@@ -212,6 +220,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'create-platform-endpoint',
       description: 'Creates an endpoint for a device and mobile app on one of the supported push notification services, such as GCM (Firebase Cloud Messaging) and APNS. CreatePlatformEndpoint requires the PlatformApplicationArn that is returned from CreatePlatformApplication. You can use the returned EndpointArn to send a message to a mobile app or by the Subscribe action for subscription to a topic. The CreatePlatformEndpoint action is idempotent, so if the requester already owns an endpoint with the same device token and attributes, that endpoint\'s ARN is returned without creating a new endpoint. For more information, see Using Amazon SNS Mobile Push Notifications.  When using CreatePlatformEndpoint with Baidu, two attributes must be provided: ChannelId and UserId. The token field must also contain the ChannelId. For more information, see Creating an Amazon SNS Endpoint for Baidu',
       options: [
+
         Option(
           name: '--platform-application-arn',
           description: 'PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint',
@@ -276,6 +286,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -288,6 +299,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'create-sms-sandbox-phone-number',
       description: 'Adds a destination phone number to an Amazon Web Services account in the SMS sandbox and sends a one-time password (OTP) to that phone number. When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the SMS sandbox. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see SMS sandbox in the Amazon SNS Developer Guide',
       options: [
+
         Option(
           name: '--phone-number',
           description: 'The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to',
@@ -322,6 +334,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -334,6 +347,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'create-topic',
       description: 'Creates a topic to which notifications can be published. Users can create at most 100,000 standard topics (at most 1,000 FIFO topics). For more information, see Creating an Amazon SNS topic in the Amazon SNS Developer Guide. This action is idempotent, so if the requester already owns a topic with the specified name, that topic\'s ARN is returned without creating a new topic',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the topic you want to create. Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long. For a FIFO (first-in-first-out) topic, the name must end with the .fifo suffix',
@@ -386,6 +400,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -398,6 +413,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'delete-endpoint',
       description: 'Deletes the endpoint for a device and mobile app from Amazon SNS. This action is idempotent. For more information, see Using Amazon SNS Mobile Push Notifications.  When you delete an endpoint that is also subscribed to a topic, then you must also unsubscribe the endpoint from the topic',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'EndpointArn of endpoint to delete',
@@ -423,6 +439,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -435,6 +452,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'delete-platform-application',
       description: 'Deletes a platform application object for one of the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see Using Amazon SNS Mobile Push Notifications',
       options: [
+
         Option(
           name: '--platform-application-arn',
           description: 'PlatformApplicationArn of platform application object to delete',
@@ -460,6 +478,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -472,6 +491,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'delete-sms-sandbox-phone-number',
       description: 'Deletes an Amazon Web Services account\'s verified or pending phone number from the SMS sandbox. When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the SMS sandbox. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see SMS sandbox in the Amazon SNS Developer Guide',
       options: [
+
         Option(
           name: '--phone-number',
           description: 'The destination phone number to delete',
@@ -497,6 +517,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -509,6 +530,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'delete-topic',
       description: 'Deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an error',
       options: [
+
         Option(
           name: '--topic-arn',
           description: 'The ARN of the topic you want to delete',
@@ -534,6 +556,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -546,6 +569,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'get-data-protection-policy',
       description: 'Retrieves the specified inline DataProtectionPolicy document that is stored in the specified Amazon SNS topic',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the topic whose DataProtectionPolicy you want to get. For more information about ARNs, see Amazon Resource Names (ARNs) in the Amazon Web Services General Reference',
@@ -571,6 +595,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -583,6 +608,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'get-endpoint-attributes',
       description: 'Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM (Firebase Cloud Messaging) and APNS. For more information, see Using Amazon SNS Mobile Push Notifications',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'EndpointArn for GetEndpointAttributes input',
@@ -608,6 +634,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -620,6 +647,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'get-platform-application-attributes',
       description: 'Retrieves the attributes of the platform application object for the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see Using Amazon SNS Mobile Push Notifications',
       options: [
+
         Option(
           name: '--platform-application-arn',
           description: 'PlatformApplicationArn for GetPlatformApplicationAttributesInput',
@@ -645,6 +673,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -657,6 +686,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'get-sms-attributes',
       description: 'Returns the settings for sending SMS messages from your Amazon Web Services account. These settings are set with the SetSMSAttributes action',
       options: [
+
         Option(
           name: '--attributes',
           description: 'A list of the individual attribute names, such as MonthlySpendLimit, for which you want values. For all attribute names, see SetSMSAttributes. If you don\'t use this parameter, Amazon SNS returns all SMS attributes',
@@ -682,6 +712,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -694,6 +725,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'get-sms-sandbox-account-status',
       description: 'Retrieves the SMS sandbox status for the calling Amazon Web Services account in the target Amazon Web Services Region. When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the SMS sandbox. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see SMS sandbox in the Amazon SNS Developer Guide',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -710,6 +742,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -722,6 +755,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'get-subscription-attributes',
       description: 'Returns all of the properties of a subscription',
       options: [
+
         Option(
           name: '--subscription-arn',
           description: 'The ARN of the subscription whose properties you want to get',
@@ -747,6 +781,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -759,6 +794,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'get-topic-attributes',
       description: 'Returns all of the properties of a topic. Topic properties returned might differ based on the authorization of the user',
       options: [
+
         Option(
           name: '--topic-arn',
           description: 'The ARN of the topic whose properties you want to get',
@@ -784,6 +820,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -796,6 +833,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'list-endpoints-by-platform-application',
       description: 'Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM (Firebase Cloud Messaging) and APNS. The results for ListEndpointsByPlatformApplication are paginated and return a limited list of endpoints, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call ListEndpointsByPlatformApplication again using the NextToken string received from the previous call. When there are no more records to return, NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications.  This action is throttled at 30 transactions per second (TPS)',
       options: [
+
         Option(
           name: '--platform-application-arn',
           description: 'PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action',
@@ -848,6 +886,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -860,6 +899,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'list-origination-numbers',
       description: 'Lists the calling Amazon Web Services account\'s dedicated origination numbers and their metadata. For more information about origination numbers, see Origination numbers in the Amazon SNS Developer Guide',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Token that the previous ListOriginationNumbers request returns',
@@ -921,6 +961,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -933,6 +974,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'list-phone-numbers-opted-out',
       description: 'Returns a list of phone numbers that are opted out, meaning you cannot send SMS messages to them. The results for ListPhoneNumbersOptedOut are paginated, and each page returns up to 100 phone numbers. If additional phone numbers are available after the first page of results, then a NextToken string will be returned. To receive the next page, you call ListPhoneNumbersOptedOut again using the NextToken string received from the previous call. When there are no more records to return, NextToken will be null',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A NextToken string is used when you call the ListPhoneNumbersOptedOut action to retrieve additional records that are available after the first page of results',
@@ -976,6 +1018,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -988,6 +1031,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'list-platform-applications',
       description: 'Lists the platform application objects for the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). The results for ListPlatformApplications are paginated and return a limited list of applications, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call ListPlatformApplications using the NextToken string received from the previous call. When there are no more records to return, NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications.  This action is throttled at 15 transactions per second (TPS)',
       options: [
+
         Option(
           name: '--next-token',
           description: 'NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results',
@@ -1031,6 +1075,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1043,6 +1088,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'list-sms-sandbox-phone-numbers',
       description: 'Lists the calling Amazon Web Services account\'s current verified and pending destination phone numbers in the SMS sandbox. When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the SMS sandbox. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see SMS sandbox in the Amazon SNS Developer Guide',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Token that the previous ListSMSSandboxPhoneNumbersInput request returns',
@@ -1104,6 +1150,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1116,6 +1163,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'list-subscriptions',
       description: 'Returns a list of the requester\'s subscriptions. Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a NextToken is also returned. Use the NextToken parameter in a new ListSubscriptions call to get further results. This action is throttled at 30 transactions per second (TPS)',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Token returned by the previous ListSubscriptions request',
@@ -1159,6 +1207,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1171,6 +1220,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'list-subscriptions-by-topic',
       description: 'Returns a list of the subscriptions to a specific topic. Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a NextToken is also returned. Use the NextToken parameter in a new ListSubscriptionsByTopic call to get further results. This action is throttled at 30 transactions per second (TPS)',
       options: [
+
         Option(
           name: '--topic-arn',
           description: 'The ARN of the topic for which you wish to find subscriptions',
@@ -1223,6 +1273,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1235,6 +1286,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List all tags added to the specified Amazon SNS topic. For an overview, see Amazon SNS Tags in the Amazon Simple Notification Service Developer Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the topic for which to list tags',
@@ -1260,6 +1312,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1272,6 +1325,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'list-topics',
       description: 'Returns a list of the requester\'s topics. Each call returns a limited list of topics, up to 100. If there are more topics, a NextToken is also returned. Use the NextToken parameter in a new ListTopics call to get further results. This action is throttled at 30 transactions per second (TPS)',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Token returned by the previous ListTopics request',
@@ -1315,6 +1369,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1327,6 +1382,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'opt-in-phone-number',
       description: 'Use this request to opt in a phone number that is opted out, which enables you to resume sending SMS messages to the number. You can opt in a phone number only once every 30 days',
       options: [
+
         Option(
           name: '--phone-number',
           description: 'The phone number to opt in. Use E.164 format',
@@ -1352,6 +1408,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1364,6 +1421,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'publish',
       description: 'Sends a message to an Amazon SNS topic, a text message (SMS message) directly to a phone number, or a message to a mobile platform endpoint (when you specify the TargetArn). If you send a message to a topic, Amazon SNS delivers the message to each endpoint that is subscribed to the topic. The format of the message depends on the notification protocol for each subscribed endpoint. When a messageId is returned, the message is saved and Amazon SNS immediately delivers it to subscribers. To use the Publish action for publishing a message to a mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned when making a call with the CreatePlatformEndpoint action.  For more information about formatting messages, see Send Custom Platform-Specific Payloads in Messages to Mobile Devices.   You can publish messages only to topics and endpoints in the same Amazon Web Services Region',
       options: [
+
         Option(
           name: '--topic-arn',
           description: 'The topic you want to publish to. If you don\'t specify a value for the TopicArn parameter, you must specify a value for the PhoneNumber or TargetArn parameters',
@@ -1461,6 +1519,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1473,6 +1532,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'publish-batch',
       description: 'Publishes up to ten messages to the specified topic. This is a batch version of Publish. For FIFO topics, multiple messages within a single batch are published in the order they are sent, and messages are deduplicated within the batch and across batches for 5 minutes. The result of publishing each message is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200. The maximum allowed individual message size and the maximum total payload size (the sum of the individual lengths of all of the batched messages) are both 256 KB (262,144 bytes).  Some actions take lists of parameters. These lists are specified using the param.n notation. Values of n are integers starting from 1. For example, a parameter list with two elements looks like this:  &AttributeName.1=first &AttributeName.2=second If you send a batch message to a topic, Amazon SNS publishes the batch message to each endpoint that is subscribed to the topic. The format of the batch message depends on the notification protocol for each subscribed endpoint. When a messageId is returned, the batch message is saved and Amazon SNS immediately delivers the message to subscribers',
       options: [
+
         Option(
           name: '--topic-arn',
           description: 'The Amazon resource name (ARN) of the topic you want to batch publish to',
@@ -1507,6 +1567,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1519,6 +1580,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'put-data-protection-policy',
       description: 'Adds or updates an inline policy document that is stored in the specified Amazon SNS topic',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the topic whose DataProtectionPolicy you want to add or update. For more information about ARNs, see Amazon Resource Names (ARNs) in the Amazon Web Services General Reference',
@@ -1553,6 +1615,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1565,6 +1628,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'remove-permission',
       description: 'Removes a statement from a topic\'s access control policy.  To remove the ability to change topic permissions, you must deny permissions to the AddPermission, RemovePermission, and SetTopicAttributes actions in your IAM policy',
       options: [
+
         Option(
           name: '--topic-arn',
           description: 'The ARN of the topic whose access control policy you wish to modify',
@@ -1599,6 +1663,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1611,6 +1676,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'set-endpoint-attributes',
       description: 'Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM (Firebase Cloud Messaging) and APNS. For more information, see Using Amazon SNS Mobile Push Notifications',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'EndpointArn used for SetEndpointAttributes action',
@@ -1645,6 +1711,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1657,6 +1724,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'set-platform-application-attributes',
       description: 'Sets the attributes of the platform application object for the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see Using Amazon SNS Mobile Push Notifications. For information on configuring attributes for message delivery status, see Using Amazon SNS Application Attributes for Message Delivery Status',
       options: [
+
         Option(
           name: '--platform-application-arn',
           description: 'PlatformApplicationArn for SetPlatformApplicationAttributes action',
@@ -1691,6 +1759,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1703,6 +1772,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'set-sms-attributes',
       description: 'Use this request to set the default settings for sending SMS messages and receiving daily SMS usage reports. You can override some of these settings for a single message when you use the Publish action with the MessageAttributes.entry.N parameter. For more information, see Publishing to a mobile phone in the Amazon SNS Developer Guide.  To use this operation, you must grant the Amazon SNS service principal (sns.amazonaws.com) permission to perform the s3:ListBucket action',
       options: [
+
         Option(
           name: '--attributes',
           description: 'The default settings for sending SMS messages from your Amazon Web Services account. You can set values for the following attribute names:  MonthlySpendLimit – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.  Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During that interval, if you continue to send SMS messages, you will incur costs that exceed your limit.  By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to raise the limit, submit an SNS Limit Increase case. For New limit value, enter your desired monthly spend limit. In the Use Case Description field, explain that you are requesting an SMS monthly spend limit increase.  DeliveryStatusIAMRole – The ARN of the IAM role that allows Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message that you send, Amazon SNS writes a log that includes the message price, the success or failure status, the reason for failure (if the message failed), the message dwell time, and other information.  DeliveryStatusSuccessSamplingRate – The percentage of successful SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can be an integer from 0 - 100. For example, to write logs only for failed deliveries, set this value to 0. To write logs for 10% of your successful deliveries, set it to 10.  DefaultSenderID – A string, such as your business brand, that is displayed as the sender on the receiving device. Support for sender IDs varies by country. The sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one letter.  DefaultSMSType – The type of SMS message that you will send by default. You can assign the following values:    Promotional – (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.    Transactional – Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.    UsageReportS3Bucket – The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to the bucket. The report includes the following information for each SMS message that was successfully delivered by your Amazon Web Services account:   Time that the message was published (in UTC)   Message ID   Destination phone number   Message type   Delivery status   Message price (in USD)   Part number (a message is split into multiple parts if it is too long for a single message)   Total number of parts   To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the s3:PutObject and s3:GetBucketLocation actions. For an example bucket policy and usage report, see Monitoring SMS Activity in the Amazon SNS Developer Guide',
@@ -1728,6 +1798,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1740,6 +1811,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'set-subscription-attributes',
       description: 'Allows a subscription owner to set an attribute of the subscription to a new value',
       options: [
+
         Option(
           name: '--subscription-arn',
           description: 'The ARN of the subscription to modify',
@@ -1783,6 +1855,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1795,6 +1868,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'set-topic-attributes',
       description: 'Allows a topic owner to set an attribute of the topic to a new value.  To remove the ability to change topic permissions, you must deny permissions to the AddPermission, RemovePermission, and SetTopicAttributes actions in your IAM policy',
       options: [
+
         Option(
           name: '--topic-arn',
           description: 'The ARN of the topic to modify',
@@ -1838,6 +1912,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1850,6 +1925,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'subscribe',
       description: 'Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email, or if the endpoint and the topic are not in the same Amazon Web Services account, the endpoint owner must run the ConfirmSubscription action to confirm the subscription. You call the ConfirmSubscription action with the token from the subscription response. Confirmation tokens are valid for two days. This action is throttled at 100 transactions per second (TPS)',
       options: [
+
         Option(
           name: '--topic-arn',
           description: 'The ARN of the topic you want to subscribe to',
@@ -1910,6 +1986,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1922,6 +1999,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Add tags to the specified Amazon SNS topic. For an overview, see Amazon SNS Tags in the Amazon SNS Developer Guide. When you use topic tags, keep the following guidelines in mind:   Adding more than 50 tags to a topic isn\'t recommended.   Tags don\'t have any semantic meaning. Amazon SNS interprets tags as character strings.   Tags are case-sensitive.   A new tag with a key identical to that of an existing tag overwrites the existing tag.   Tagging actions are limited to 10 TPS per Amazon Web Services account, per Amazon Web Services Region. If your application requires a higher throughput, file a technical support request',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the topic to which to add tags',
@@ -1956,6 +2034,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1968,6 +2047,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'unsubscribe',
       description: 'Deletes a subscription. If the subscription requires authentication for deletion, only the owner of the subscription or the topic\'s owner can unsubscribe, and an Amazon Web Services signature is required. If the Unsubscribe call does not require authentication and the requester is not the subscription owner, a final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the Unsubscribe request was unintended.  Amazon SQS queue subscriptions require authentication for deletion. Only the owner of the subscription, or the owner of the topic can unsubscribe using the required Amazon Web Services signature.  This action is throttled at 100 transactions per second (TPS)',
       options: [
+
         Option(
           name: '--subscription-arn',
           description: 'The ARN of the subscription to be deleted',
@@ -1993,6 +2073,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2005,6 +2086,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Remove tags from the specified Amazon SNS topic. For an overview, see Amazon SNS Tags in the Amazon SNS Developer Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the topic from which to remove tags',
@@ -2039,6 +2121,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2051,6 +2134,7 @@ final FigSpec snsSpec = FigSpec(
       name: 'verify-sms-sandbox-phone-number',
       description: 'Verifies a destination phone number with a one-time password (OTP) for the calling Amazon Web Services account. When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the SMS sandbox. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see SMS sandbox in the Amazon SNS Developer Guide',
       options: [
+
         Option(
           name: '--phone-number',
           description: 'The destination phone number to verify',
@@ -2085,6 +2169,7 @@ final FigSpec snsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

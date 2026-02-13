@@ -8,10 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec lexv2ModelsSpec = FigSpec(
   name: 'lexv2-models',
   subcommands: [
+
     Subcommand(
       name: 'batch-create-custom-vocabulary-item',
       description: 'Create a batch of custom vocabulary items for a given bot locale\'s custom vocabulary',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot associated with this custom vocabulary',
@@ -64,6 +66,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -76,6 +79,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'batch-delete-custom-vocabulary-item',
       description: 'Delete a batch of custom vocabulary items for a given bot locale\'s custom vocabulary',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot associated with this custom vocabulary',
@@ -128,6 +132,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -140,6 +145,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'batch-update-custom-vocabulary-item',
       description: 'Update a batch of custom vocabulary items for a given bot locale\'s custom vocabulary',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot associated with this custom vocabulary',
@@ -192,6 +198,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -204,6 +211,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'build-bot-locale',
       description: 'Builds a bot, its intents, and its slot types into a specific locale. A bot can be built into multiple locales. At runtime the locale is used to choose a specific build of the bot',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot to build. The identifier is returned in the response from the CreateBot operation',
@@ -247,6 +255,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -259,6 +268,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-bot',
       description: 'Creates an Amazon Lex conversational bot',
       options: [
+
         Option(
           name: '--bot-name',
           description: 'The name of the bot. The bot name must be unique in the account that creates the bot',
@@ -356,6 +366,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -368,6 +379,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-bot-alias',
       description: 'Creates an alias for the specified version of a bot. Use an alias to enable you to change the version of a bot without updating applications that use the bot. For example, you can create an alias called "PROD" that your applications use to call the Amazon Lex bot',
       options: [
+
         Option(
           name: '--bot-alias-name',
           description: 'The alias to create. The name must be unique for the bot',
@@ -456,6 +468,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -468,6 +481,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-bot-locale',
       description: 'Creates a locale in the bot. The locale contains the intents and slot types that the bot uses in conversations with users in the specified language and locale. You must add a locale to a bot before you can add intents and slot types to the bot',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot to create the locale for',
@@ -547,6 +561,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -559,6 +574,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-bot-replica',
       description: 'Action to create a replication of the source bot in the secondary region',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The request for the unique bot ID of the source bot to be replicated in the secondary region',
@@ -593,6 +609,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -605,6 +622,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-bot-version',
       description: 'Creates an immutable version of the bot. When you create the first version of a bot, Amazon Lex sets the version number to 1. Subsequent bot versions increase in an increment of 1. The version number will always represent the total number of versions created of the bot, not the current number of versions. If a bot version is deleted, that bot version number will not be reused',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot to create the version for',
@@ -648,6 +666,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -660,6 +679,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-export',
       description: 'Creates a zip archive containing the contents of a bot or a bot locale. The archive contains a directory structure that contains JSON files that define the bot. You can create an archive that contains the complete definition of a bot, or you can specify that the archive contain only the definition of a single bot locale. For more information about exporting bots, and about the structure of the export archive, see  Importing and exporting bots',
       options: [
+
         Option(
           name: '--resource-specification',
           description: 'Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export',
@@ -703,6 +723,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -715,6 +736,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-intent',
       description: 'Creates an intent. To define the interaction between the user and your bot, you define one or more intents. For example, for a pizza ordering bot you would create an OrderPizza intent. When you create an intent, you must provide a name. You can optionally provide the following:   Sample utterances. For example, "I want to order a pizza" and "Can I order a pizza." You can\'t provide utterances for built-in intents.   Information to be gathered. You specify slots for the information that you bot requests from the user. You can specify standard slot types, such as date and time, or custom slot types for your application.   How the intent is fulfilled. You can provide a Lambda function or configure the intent to return the intent information to your client application. If you use a Lambda function, Amazon Lex invokes the function when all of the intent information is available.   A confirmation prompt to send to the user to confirm an intent. For example, "Shall I order your pizza?"   A conclusion statement to send to the user after the intent is fulfilled. For example, "I ordered your pizza."   A follow-up prompt that asks the user for additional activity. For example, "Do you want a drink with your pizza?"',
       options: [
+
         Option(
           name: '--intent-name',
           description: 'The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent',
@@ -875,6 +897,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -887,6 +910,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-resource-policy',
       description: 'Creates a new resource policy with the specified policy statements',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to',
@@ -921,6 +945,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -933,6 +958,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-resource-policy-statement',
       description: 'Adds a new resource policy statement to a bot or bot alias. If a resource policy exists, the statement is added to the current resource policy. If a policy doesn\'t exist, a new policy is created. You can\'t create a resource policy statement that allows cross-account access. You need to add the CreateResourcePolicy or UpdateResourcePolicy action to the bot role in order to call the API',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to',
@@ -1012,6 +1038,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1024,6 +1051,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-slot',
       description: 'Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an OrderPizza intent might need slots for size, crust, and number of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to elicit a response from the user',
       options: [
+
         Option(
           name: '--slot-name',
           description: 'The name of the slot. Slot names must be unique within the bot that contains the slot',
@@ -1139,6 +1167,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1151,6 +1180,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-slot-type',
       description: 'Creates a custom slot type  To create a custom slot type, specify a name for the slot type and a set of enumeration values, the values that a slot of this type can assume',
       options: [
+
         Option(
           name: '--slot-type-name',
           description: 'The name for the slot. A slot type name must be unique within the intent',
@@ -1257,6 +1287,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1269,6 +1300,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-test-set-discrepancy-report',
       description: 'Create a report that describes the differences between the bot and the test set',
       options: [
+
         Option(
           name: '--test-set-id',
           description: 'The test set Id for the test set discrepancy report',
@@ -1303,6 +1335,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1315,6 +1348,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'create-upload-url',
       description: 'Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1331,6 +1365,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1343,6 +1378,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-bot',
       description: 'Deletes all versions of a bot, including the Draft version. To delete a specific version, use the DeleteBotVersion operation. When you delete a bot, all of the resources contained in the bot are also deleted. Deleting a bot removes all locales, intents, slot, and slot types defined for the bot. If a bot has an alias, the DeleteBot operation returns a ResourceInUseException exception. If you want to delete the bot and the alias, set the skipResourceInUseCheck parameter to true',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot to delete',
@@ -1376,6 +1412,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1388,6 +1425,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-bot-alias',
       description: 'Deletes the specified bot alias',
       options: [
+
         Option(
           name: '--bot-alias-id',
           description: 'The unique identifier of the bot alias to delete',
@@ -1430,6 +1468,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1442,6 +1481,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-bot-locale',
       description: 'Removes a locale from a bot. When you delete a locale, all intents, slots, and slot types defined for the locale are also deleted',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot that contains the locale',
@@ -1485,6 +1525,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1497,6 +1538,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-bot-replica',
       description: 'The action to delete the replicated bot in the secondary region',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique ID of the replicated bot to be deleted from the secondary region',
@@ -1531,6 +1573,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1543,6 +1586,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-bot-version',
       description: 'Deletes a specific version of a bot. To delete all versions of a bot, use the DeleteBot operation',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot that contains the version',
@@ -1585,6 +1629,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1597,6 +1642,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-custom-vocabulary',
       description: 'Removes a custom vocabulary from the specified locale in the specified bot',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot to remove the custom vocabulary from',
@@ -1640,6 +1686,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1652,6 +1699,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-export',
       description: 'Removes a previous export and the associated files stored in an S3 bucket',
       options: [
+
         Option(
           name: '--export-id',
           description: 'The unique identifier of the export to delete',
@@ -1677,6 +1725,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1689,6 +1738,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-import',
       description: 'Removes a previous import and the associated file stored in an S3 bucket',
       options: [
+
         Option(
           name: '--import-id',
           description: 'The unique identifier of the import to delete',
@@ -1714,6 +1764,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1726,6 +1777,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-intent',
       description: 'Removes the specified intent. Deleting an intent also deletes the slots associated with the intent',
       options: [
+
         Option(
           name: '--intent-id',
           description: 'The unique identifier of the intent to delete',
@@ -1778,6 +1830,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1790,6 +1843,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Removes an existing policy from a bot or bot alias. If the resource doesn\'t have a policy attached, Amazon Lex returns an exception',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached',
@@ -1824,6 +1878,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1836,6 +1891,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-resource-policy-statement',
       description: 'Deletes a policy statement from a resource policy. If you delete the last statement from a policy, the policy is deleted. If you specify a statement ID that doesn\'t exist in the policy, or if the bot or bot alias doesn\'t have a policy attached, Amazon Lex returns an exception. You need to add the DeleteResourcePolicy or UpdateResourcePolicy action to the bot role in order to call the API',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to',
@@ -1879,6 +1935,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1891,6 +1948,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-slot',
       description: 'Deletes the specified slot from an intent',
       options: [
+
         Option(
           name: '--slot-id',
           description: 'The identifier of the slot to delete',
@@ -1952,6 +2010,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1964,6 +2023,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-slot-type',
       description: 'Deletes a slot type from a bot locale. If a slot is using the slot type, Amazon Lex throws a ResourceInUseException exception. To avoid the exception, set the skipResourceInUseCheck parameter to true',
       options: [
+
         Option(
           name: '--slot-type-id',
           description: 'The identifier of the slot type to delete',
@@ -2024,6 +2084,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2036,6 +2097,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-test-set',
       description: 'The action to delete the selected test set',
       options: [
+
         Option(
           name: '--test-set-id',
           description: 'The test set Id of the test set to be deleted',
@@ -2061,6 +2123,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2073,6 +2136,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'delete-utterances',
       description: 'Deletes stored utterances. Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the ListAggregatedUtterances operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input.. Use the DeleteUtterances operation to manually delete utterances for a specific session. When you use the DeleteUtterances operation, utterances stored for improving your bot\'s ability to respond to user input are deleted immediately. Utterances stored for use with the ListAggregatedUtterances operation are deleted after 15 days',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot that contains the utterances',
@@ -2116,6 +2180,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2128,6 +2193,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-bot',
       description: 'Provides metadata information about a bot',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot to describe',
@@ -2153,6 +2219,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2165,6 +2232,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-bot-alias',
       description: 'Get information about a specific bot alias',
       options: [
+
         Option(
           name: '--bot-alias-id',
           description: 'The identifier of the bot alias to describe',
@@ -2199,6 +2267,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2211,6 +2280,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-bot-locale',
       description: 'Describes the settings that a bot has for a specific locale',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot associated with the locale',
@@ -2254,6 +2324,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2266,6 +2337,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-bot-recommendation',
       description: 'Provides metadata information about a bot recommendation. This information will enable you to get a description on the request inputs, to download associated transcripts after processing is complete, and to download intents and slot-types generated by the bot recommendation',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot associated with the bot recommendation',
@@ -2318,6 +2390,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2330,6 +2403,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-bot-replica',
       description: 'Monitors the bot replication status through the UI console',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The request for the unique bot ID of the replicated bot being monitored',
@@ -2364,6 +2438,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2376,6 +2451,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-bot-resource-generation',
       description: 'Returns information about a request to generate a bot through natural language description, made through the StartBotResource API. Use the generatedBotLocaleUrl to retrieve the Amazon S3 object containing the bot locale configuration. You can then modify and import this configuration',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot for which to return the generation details',
@@ -2428,6 +2504,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2440,6 +2517,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-bot-version',
       description: 'Provides metadata about a version of a bot',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot containing the version to return metadata for',
@@ -2474,6 +2552,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2486,6 +2565,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-custom-vocabulary-metadata',
       description: 'Provides metadata information about a custom vocabulary',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot that contains the custom vocabulary',
@@ -2529,6 +2609,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2541,6 +2622,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-export',
       description: 'Gets information about a specific export',
       options: [
+
         Option(
           name: '--export-id',
           description: 'The unique identifier of the export to describe',
@@ -2566,6 +2648,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2578,6 +2661,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-import',
       description: 'Gets information about a specific import',
       options: [
+
         Option(
           name: '--import-id',
           description: 'The unique identifier of the import to describe',
@@ -2603,6 +2687,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2615,6 +2700,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-intent',
       description: 'Returns metadata about an intent',
       options: [
+
         Option(
           name: '--intent-id',
           description: 'The identifier of the intent to describe',
@@ -2667,6 +2753,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2679,6 +2766,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-resource-policy',
       description: 'Gets the resource policy and policy revision for a bot or bot alias',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to',
@@ -2704,6 +2792,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2716,6 +2805,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-slot',
       description: 'Gets metadata information about a slot',
       options: [
+
         Option(
           name: '--slot-id',
           description: 'The unique identifier for the slot',
@@ -2777,6 +2867,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2789,6 +2880,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-slot-type',
       description: 'Gets metadata information about a slot type',
       options: [
+
         Option(
           name: '--slot-type-id',
           description: 'The identifier of the slot type',
@@ -2841,6 +2933,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2853,6 +2946,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-test-execution',
       description: 'Gets metadata information about the test execution',
       options: [
+
         Option(
           name: '--test-execution-id',
           description: 'The execution Id of the test set execution',
@@ -2878,6 +2972,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2890,6 +2985,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-test-set',
       description: 'Gets metadata information about the test set',
       options: [
+
         Option(
           name: '--test-set-id',
           description: 'The test set Id for the test set request',
@@ -2915,6 +3011,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2927,6 +3024,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-test-set-discrepancy-report',
       description: 'Gets metadata information about the test set discrepancy report',
       options: [
+
         Option(
           name: '--test-set-discrepancy-report-id',
           description: 'The unique identifier of the test set discrepancy report',
@@ -2952,6 +3050,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2964,6 +3063,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'describe-test-set-generation',
       description: 'Gets metadata information about the test set generation',
       options: [
+
         Option(
           name: '--test-set-generation-id',
           description: 'The unique identifier of the test set generation',
@@ -2989,6 +3089,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3001,6 +3102,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'generate-bot-element',
       description: 'Generates sample utterances for an intent',
       options: [
+
         Option(
           name: '--intent-id',
           description: 'The intent unique Id for the bot request to generate utterances',
@@ -3053,6 +3155,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3065,6 +3168,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'get-test-execution-artifacts-url',
       description: 'The pre-signed Amazon S3 URL to download the test execution result artifacts',
       options: [
+
         Option(
           name: '--test-execution-id',
           description: 'The unique identifier of the completed test execution',
@@ -3090,6 +3194,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3102,6 +3207,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-aggregated-utterances',
       description: 'Provides a list of utterances that users have sent to the bot. Utterances are aggregated by the text of the utterance. For example, all instances where customers used the phrase "I want to order pizza" are aggregated into the same line in the response. You can see both detected utterances and missed utterances. A detected utterance is where the bot properly recognized the utterance and activated the associated intent. A missed utterance was not recognized by the bot and didn\'t activate an intent. Utterances can be aggregated for a bot alias or for a bot version, but not both at the same time. Utterances statistics are not generated under the following conditions:   The childDirected field was set to true when the bot was created.   You are using slot obfuscation with one or more slots.   You opted out of participating in improving Amazon Lex',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot associated with this request',
@@ -3199,6 +3305,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3211,6 +3318,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-bot-alias-replicas',
       description: 'The action to list the replicated bots created from the source bot alias',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The request for the unique bot ID of the replicated bot created from the source bot alias',
@@ -3263,6 +3371,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3275,6 +3384,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-bot-aliases',
       description: 'Gets a list of aliases for the specified bot',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot to list aliases for',
@@ -3318,6 +3428,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3330,6 +3441,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-bot-locales',
       description: 'Gets a list of locales for the specified bot',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot to list locales for',
@@ -3400,6 +3512,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3412,6 +3525,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-bot-recommendations',
       description: 'Get a list of bot recommendations that meet the specified criteria',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot that contains the bot recommendation list',
@@ -3473,6 +3587,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3485,6 +3600,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-bot-replicas',
       description: 'The action to list the replicated bots',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The request for the unique bot IDs in the list of replicated bots',
@@ -3510,6 +3626,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3522,6 +3639,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-bot-resource-generations',
       description: 'Lists the generation requests made for a bot locale',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot whose generation requests you want to view',
@@ -3592,6 +3710,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3604,6 +3723,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-bot-version-replicas',
       description: 'Contains information about all the versions replication statuses applicable for Global Resiliency',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The request for the unique ID in the list of replicated bots',
@@ -3665,6 +3785,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3677,6 +3798,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-bot-versions',
       description: 'Gets information about all of the versions of a bot. The ListBotVersions operation returns a summary of each version of a bot. For example, if a bot has three numbered versions, the ListBotVersions operation returns for summaries, one for each numbered version and one for the DRAFT version. The ListBotVersions operation always returns at least one version, the DRAFT version',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot to list versions for',
@@ -3729,6 +3851,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3741,6 +3864,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-bots',
       description: 'Gets a list of available bots',
       options: [
+
         Option(
           name: '--sort-by',
           description: 'Specifies sorting parameters for the list of bots. You can specify that the list be sorted by bot name in ascending or descending order',
@@ -3793,6 +3917,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3805,6 +3930,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-built-in-intents',
       description: 'Gets a list of built-in intents provided by Amazon Lex that you can use in your bot.  To use a built-in intent as a the base for your own intent, include the built-in intent signature in the parentIntentSignature parameter when you call the CreateIntent operation. For more information, see CreateIntent',
       options: [
+
         Option(
           name: '--locale-id',
           description: 'The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see Supported languages',
@@ -3857,6 +3983,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3869,6 +3996,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-built-in-slot-types',
       description: 'Gets a list of built-in slot types that meet the specified criteria',
       options: [
+
         Option(
           name: '--locale-id',
           description: 'The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see Supported languages',
@@ -3921,6 +4049,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3933,6 +4062,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-custom-vocabulary-items',
       description: 'Paginated list of custom vocabulary items for a given bot locale\'s custom vocabulary',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the version of the bot associated with this custom vocabulary',
@@ -3994,6 +4124,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4006,6 +4137,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-exports',
       description: 'Lists the exports for a bot, bot locale, or custom vocabulary. Exports are kept in the list for 7 days',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier that Amazon Lex assigned to the bot',
@@ -4085,6 +4217,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4097,6 +4230,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-imports',
       description: 'Lists the imports for a bot, bot locale, or custom vocabulary. Imports are kept in the list for 7 days',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier that Amazon Lex assigned to the bot',
@@ -4176,6 +4310,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4188,6 +4323,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-intent-metrics',
       description: 'Retrieves summary metrics for the intents in your bot. The following fields are required:    metrics – A list of AnalyticsIntentMetric objects. In each object, use the name field to specify the metric to calculate, the statistic field to specify whether to calculate the Sum, Average, or Max number, and the order field to specify whether to sort the results in Ascending or Descending order.    startDateTime and endDateTime – Define a time range for which you want to retrieve results.   Of the optional fields, you can organize the results in the following ways:   Use the filters field to filter the results, the groupBy field to specify categories by which to group the results, and the binBy field to specify time intervals by which to group the results.   Use the maxResults field to limit the number of results to return in a single response and the nextToken field to return the next batch of results if the response does not return the full set of results.   Note that an order field exists in both binBy and metrics. You can specify only one order in a given request',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier for the bot for which you want to retrieve intent metrics',
@@ -4285,6 +4421,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4297,6 +4434,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-intent-paths',
       description: 'Retrieves summary statistics for a path of intents that users take over sessions with your bot. The following fields are required:    startDateTime and endDateTime – Define a time range for which you want to retrieve results.    intentPath – Define an order of intents for which you want to retrieve metrics. Separate intents in the path with a forward slash. For example, populate the intentPath field with /BookCar/BookHotel to see details about how many times users invoked the BookCar and BookHotel intents in that order.   Use the optional filters field to filter the results',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier for the bot for which you want to retrieve intent path metrics',
@@ -4358,6 +4496,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4370,6 +4509,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-intent-stage-metrics',
       description: 'Retrieves summary metrics for the stages within intents in your bot. The following fields are required:    metrics – A list of AnalyticsIntentStageMetric objects. In each object, use the name field to specify the metric to calculate, the statistic field to specify whether to calculate the Sum, Average, or Max number, and the order field to specify whether to sort the results in Ascending or Descending order.    startDateTime and endDateTime – Define a time range for which you want to retrieve results.   Of the optional fields, you can organize the results in the following ways:   Use the filters field to filter the results, the groupBy field to specify categories by which to group the results, and the binBy field to specify time intervals by which to group the results.   Use the maxResults field to limit the number of results to return in a single response and the nextToken field to return the next batch of results if the response does not return the full set of results.   Note that an order field exists in both binBy and metrics. You can only specify one order in a given request',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier for the bot for which you want to retrieve intent stage metrics',
@@ -4467,6 +4607,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4479,6 +4620,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-intents',
       description: 'Get a list of intents that meet the specified criteria',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot that contains the intent',
@@ -4558,6 +4700,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4570,6 +4713,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-recommended-intents',
       description: 'Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in the response are ordered by relevance',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot associated with the recommended intents',
@@ -4640,6 +4784,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4652,6 +4797,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-session-analytics-data',
       description: 'Retrieves a list of metadata for individual user sessions with your bot. The startDateTime and endDateTime fields are required. These fields define a time range for which you want to retrieve results. Of the optional fields, you can organize the results in the following ways:   Use the filters field to filter the results and the sortBy field to specify the values by which to sort the results.   Use the maxResults field to limit the number of results to return in a single response and the nextToken field to return the next batch of results if the response does not return the full set of results',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier for the bot for which you want to retrieve session analytics',
@@ -4731,6 +4877,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4743,6 +4890,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-session-metrics',
       description: 'Retrieves summary metrics for the user sessions with your bot. The following fields are required:    metrics – A list of AnalyticsSessionMetric objects. In each object, use the name field to specify the metric to calculate, the statistic field to specify whether to calculate the Sum, Average, or Max number, and the order field to specify whether to sort the results in Ascending or Descending order.    startDateTime and endDateTime – Define a time range for which you want to retrieve results.   Of the optional fields, you can organize the results in the following ways:   Use the filters field to filter the results, the groupBy field to specify categories by which to group the results, and the binBy field to specify time intervals by which to group the results.   Use the maxResults field to limit the number of results to return in a single response and the nextToken field to return the next batch of results if the response does not return the full set of results.   Note that an order field exists in both binBy and metrics. Currently, you can specify it in either field, but not in both',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier for the bot for which you want to retrieve session metrics',
@@ -4840,6 +4988,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4852,6 +5001,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-slot-types',
       description: 'Gets a list of slot types that match the specified criteria',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot that contains the slot types',
@@ -4931,6 +5081,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4943,6 +5094,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-slots',
       description: 'Gets a list of slots that match the specified criteria',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier of the bot that contains the slot',
@@ -5031,6 +5183,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5043,6 +5196,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets a list of tags associated with a resource. Only bots, bot aliases, and bot channels can have tags associated with them',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to get a list of tags for',
@@ -5068,6 +5222,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5080,6 +5235,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-test-execution-result-items',
       description: 'Gets a list of test execution result items',
       options: [
+
         Option(
           name: '--test-execution-id',
           description: 'The unique identifier of the test execution to list the result items',
@@ -5132,6 +5288,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5144,6 +5301,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-test-executions',
       description: 'The list of test set executions',
       options: [
+
         Option(
           name: '--sort-by',
           description: 'The sort order of the test set executions',
@@ -5187,6 +5345,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5199,6 +5358,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-test-set-records',
       description: 'The list of test set records',
       options: [
+
         Option(
           name: '--test-set-id',
           description: 'The identifier of the test set to list its test set records',
@@ -5242,6 +5402,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5254,6 +5415,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-test-sets',
       description: 'The list of the test sets',
       options: [
+
         Option(
           name: '--sort-by',
           description: 'The sort order for the list of test sets',
@@ -5297,6 +5459,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5309,6 +5472,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-utterance-analytics-data',
       description: 'To use this API operation, your IAM role must have permissions to perform the ListAggregatedUtterances operation, which provides access to utterance-related analytics. See Viewing utterance statistics for the IAM policy to apply to the IAM role.  Retrieves a list of metadata for individual user utterances to your bot. The following fields are required:    startDateTime and endDateTime – Define a time range for which you want to retrieve results.   Of the optional fields, you can organize the results in the following ways:   Use the filters field to filter the results and the sortBy field to specify the values by which to sort the results.   Use the maxResults field to limit the number of results to return in a single response and the nextToken field to return the next batch of results if the response does not return the full set of results',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier for the bot for which you want to retrieve utterance analytics',
@@ -5388,6 +5552,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5400,6 +5565,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'list-utterance-metrics',
       description: 'To use this API operation, your IAM role must have permissions to perform the ListAggregatedUtterances operation, which provides access to utterance-related analytics. See Viewing utterance statistics for the IAM policy to apply to the IAM role.  Retrieves summary metrics for the utterances in your bot. The following fields are required:    metrics – A list of AnalyticsUtteranceMetric objects. In each object, use the name field to specify the metric to calculate, the statistic field to specify whether to calculate the Sum, Average, or Max number, and the order field to specify whether to sort the results in Ascending or Descending order.    startDateTime and endDateTime – Define a time range for which you want to retrieve results.   Of the optional fields, you can organize the results in the following ways:   Use the filters field to filter the results, the groupBy field to specify categories by which to group the results, and the binBy field to specify time intervals by which to group the results.   Use the maxResults field to limit the number of results to return in a single response and the nextToken field to return the next batch of results if the response does not return the full set of results.   Note that an order field exists in both binBy and metrics. Currently, you can specify it in either field, but not in both',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The identifier for the bot for which you want to retrieve utterance metrics',
@@ -5506,6 +5672,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5518,6 +5685,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'search-associated-transcripts',
       description: 'Search for associated transcripts that meet the specified criteria',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot associated with the transcripts that you are searching',
@@ -5606,6 +5774,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5618,6 +5787,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'start-bot-recommendation',
       description: 'Use this to provide your transcript data, and to start the bot recommendation process',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot containing the bot recommendation',
@@ -5679,6 +5849,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5691,6 +5862,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'start-bot-resource-generation',
       description: 'Starts a request for the descriptive bot builder to generate a bot locale configuration based on the prompt you provide it. After you make this call, use the DescribeBotResourceGeneration operation to check on the status of the generation and for the generatedBotLocaleUrl when the generation is complete. Use that value to retrieve the Amazon S3 object containing the bot locale configuration. You can then modify and import this configuration',
       options: [
+
         Option(
           name: '--generation-input-prompt',
           description: 'The prompt to generate intents and slot types for the bot locale. Your description should be both detailed and precise to help generate appropriate and sufficient intents for your bot. Include a list of actions to improve the intent creation process',
@@ -5743,6 +5915,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5755,6 +5928,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'start-import',
       description: 'Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you uploaded to an S3 bucket',
       options: [
+
         Option(
           name: '--import-id',
           description: 'The unique identifier for the import. It is included in the response from the CreateUploadUrl operation',
@@ -5807,6 +5981,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5819,6 +5994,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'start-test-execution',
       description: 'The action to start test set execution',
       options: [
+
         Option(
           name: '--test-set-id',
           description: 'The test set Id for the test set execution',
@@ -5871,6 +6047,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5883,6 +6060,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'start-test-set-generation',
       description: 'The action to start the generation of test set',
       options: [
+
         Option(
           name: '--test-set-name',
           description: 'The test set name for the test set generation request',
@@ -5953,6 +6131,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5965,6 +6144,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'stop-bot-recommendation',
       description: 'Stop an already running Bot Recommendation request',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot containing the bot recommendation to be stopped',
@@ -6017,6 +6197,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6029,6 +6210,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced with the new value',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag',
@@ -6063,6 +6245,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6075,6 +6258,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a bot, bot alias, or bot channel',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to remove the tags from',
@@ -6109,6 +6293,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6121,6 +6306,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'update-bot',
       description: 'Updates the configuration of an existing bot',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot to update. This identifier is returned by the CreateBot operation',
@@ -6209,6 +6395,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6221,6 +6408,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'update-bot-alias',
       description: 'Updates the configuration of an existing bot alias',
       options: [
+
         Option(
           name: '--bot-alias-id',
           description: 'The unique identifier of the bot alias',
@@ -6309,6 +6497,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6321,6 +6510,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'update-bot-locale',
       description: 'Updates the settings that a bot has for a specific locale',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot that contains the locale',
@@ -6400,6 +6590,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6412,6 +6603,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'update-bot-recommendation',
       description: 'Updates an existing bot recommendation request',
       options: [
+
         Option(
           name: '--bot-id',
           description: 'The unique identifier of the bot containing the bot recommendation to be updated',
@@ -6473,6 +6665,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6485,6 +6678,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'update-export',
       description: 'Updates the password used to protect an export zip archive. The password is not required. If you don\'t supply a password, Amazon Lex generates a zip file that is not protected by a password. This is the archive that is available at the pre-signed S3 URL provided by the DescribeExport operation',
       options: [
+
         Option(
           name: '--export-id',
           description: 'The unique identifier Amazon Lex assigned to the export',
@@ -6519,6 +6713,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6531,6 +6726,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'update-intent',
       description: 'Updates the settings for an intent',
       options: [
+
         Option(
           name: '--intent-id',
           description: 'The unique identifier of the intent to update',
@@ -6709,6 +6905,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6721,6 +6918,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'update-resource-policy',
       description: 'Replaces the existing resource policy for a bot or bot alias with a new one. If the policy doesn\'t exist, Amazon Lex returns an exception',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to',
@@ -6764,6 +6962,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6776,6 +6975,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'update-slot',
       description: 'Updates the settings for a slot',
       options: [
+
         Option(
           name: '--slot-id',
           description: 'The unique identifier for the slot to update',
@@ -6900,6 +7100,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6912,6 +7113,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'update-slot-type',
       description: 'Updates the configuration of an existing slot type',
       options: [
+
         Option(
           name: '--slot-type-id',
           description: 'The unique identifier of the slot type to update',
@@ -7027,6 +7229,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7039,6 +7242,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'update-test-set',
       description: 'The action to update the test set',
       options: [
+
         Option(
           name: '--test-set-id',
           description: 'The test set Id for which update test operation to be performed',
@@ -7082,6 +7286,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7094,10 +7299,12 @@ final FigSpec lexv2ModelsSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'bot-alias-available',
           description: 'Wait until a bot alias is available It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 35 failed checks',
           options: [
+
             Option(
               name: '--bot-alias-id',
               description: 'The identifier of the bot alias to describe',
@@ -7132,6 +7339,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7144,6 +7352,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
           name: 'bot-available',
           description: 'Wait until a bot is available It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 35 failed checks',
           options: [
+
             Option(
               name: '--bot-id',
               description: 'The unique identifier of the bot to describe',
@@ -7169,6 +7378,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7181,6 +7391,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
           name: 'bot-export-completed',
           description: 'Wait until a bot has been exported It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 35 failed checks',
           options: [
+
             Option(
               name: '--export-id',
               description: 'The unique identifier of the export to describe',
@@ -7206,6 +7417,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7218,6 +7430,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
           name: 'bot-import-completed',
           description: 'Wait until a bot has been imported It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 35 failed checks',
           options: [
+
             Option(
               name: '--import-id',
               description: 'The unique identifier of the import to describe',
@@ -7243,6 +7456,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7255,6 +7469,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
           name: 'bot-locale-built',
           description: 'Wait until a bot locale is built It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 35 failed checks',
           options: [
+
             Option(
               name: '--bot-id',
               description: 'The identifier of the bot associated with the locale',
@@ -7298,6 +7513,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7310,6 +7526,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
           name: 'bot-locale-created',
           description: 'Wait unit a bot locale is created It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 35 failed checks',
           options: [
+
             Option(
               name: '--bot-id',
               description: 'The identifier of the bot associated with the locale',
@@ -7353,6 +7570,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7365,6 +7583,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
           name: 'bot-locale-express-testing-available',
           description: 'Wait until a bot locale build is ready for express testing It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 35 failed checks',
           options: [
+
             Option(
               name: '--bot-id',
               description: 'The identifier of the bot associated with the locale',
@@ -7408,6 +7627,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7420,6 +7640,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
           name: 'bot-version-available',
           description: 'Wait until a bot version is available It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 35 failed checks',
           options: [
+
             Option(
               name: '--bot-id',
               description: 'The identifier of the bot containing the version to return metadata for',
@@ -7454,6 +7675,7 @@ final FigSpec lexv2ModelsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

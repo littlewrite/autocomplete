@@ -9,10 +9,12 @@ final FigSpec codestarConnectionsSpec = FigSpec(
   name: 'codestar-connections',
   description: 'AWS CodeStar Connections This Amazon Web Services CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types for the Amazon Web Services CodeStar Connections API. You can use the connections API to work with connections and installations.  Connections are configurations that you use to connect Amazon Web Services resources to external code repositories. Each connection is a resource that can be given to services such as CodePipeline to connect to a third-party repository such as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers your pipeline when a code change is made to your third-party code repository. Each connection is named and associated with a unique ARN that is used to reference the connection. When you create a connection, the console initiates a third-party connection handshake. Installations are the apps that are used to conduct this handshake. For example, the installation for the Bitbucket provider type is the Bitbucket app. When you create a connection, you can choose an existing installation or create one. When you want to create a connection to an installed provider type such as GitHub Enterprise Server, you create a host for your connections. You can work with connections by calling:    CreateConnection, which creates a uniquely named connection that can be referenced by services such as CodePipeline.    DeleteConnection, which deletes the specified connection.    GetConnection, which returns information about the connection, including the connection status.    ListConnections, which lists the connections associated with your account.   You can work with hosts by calling:    CreateHost, which creates a host that represents the infrastructure where your provider is installed.    DeleteHost, which deletes the specified host.    GetHost, which returns information about the host, including the setup status.    ListHosts, which lists the hosts associated with your account.   You can work with tags in Amazon Web Services CodeStar Connections by calling the following:    ListTagsForResource, which gets information about Amazon Web Services tags for a specified Amazon Resource Name (ARN) in Amazon Web Services CodeStar Connections.    TagResource, which adds or updates tags for a resource in Amazon Web Services CodeStar Connections.    UntagResource, which removes tags for a resource in Amazon Web Services CodeStar Connections.   For information about how to use Amazon Web Services CodeStar Connections, see the Developer Tools User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-connection',
       description: 'Creates a connection that can then be given to other Amazon Web Services services like CodePipeline so that it can access third-party code repositories. The connection is in pending status until the third-party connection handshake is completed from the console',
       options: [
+
         Option(
           name: '--provider-type',
           description: 'The name of the external provider where your third-party code repository is configured',
@@ -65,6 +67,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'create-host',
       description: 'Creates a resource that represents the infrastructure where a third-party provider is installed. The host is used when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You create one host for all connections to that provider.  A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by setting up the host in the console',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the host to be created',
@@ -138,6 +142,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'create-repository-link',
       description: 'Creates a link to a specified external Git repository. A repository link allows Git sync to monitor and sync changes to files in a specified Git repository',
       options: [
+
         Option(
           name: '--connection-arn',
           description: 'The Amazon Resource Name (ARN) of the connection to be associated with the repository link',
@@ -211,6 +217,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -223,6 +230,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'create-sync-configuration',
       description: 'Creates a sync configuration which allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource. Parameters for the sync configuration are determined by the sync type',
       options: [
+
         Option(
           name: '--branch',
           description: 'The branch in the repository from which changes will be synced',
@@ -311,6 +319,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -323,6 +332,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'delete-connection',
       description: 'The connection to be deleted',
       options: [
+
         Option(
           name: '--connection-arn',
           description: 'The Amazon Resource Name (ARN) of the connection to be deleted.  The ARN is never reused if the connection is deleted',
@@ -348,6 +358,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -360,6 +371,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'delete-host',
       description: 'The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.  A host cannot be deleted if it is in the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state',
       options: [
+
         Option(
           name: '--host-arn',
           description: 'The Amazon Resource Name (ARN) of the host to be deleted',
@@ -385,6 +397,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -397,6 +410,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'delete-repository-link',
       description: 'Deletes the association between your connection and a specified external Git repository',
       options: [
+
         Option(
           name: '--repository-link-id',
           description: 'The ID of the repository link to be deleted',
@@ -422,6 +436,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -434,6 +449,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'delete-sync-configuration',
       description: 'Deletes the sync configuration for a specified repository and connection',
       options: [
+
         Option(
           name: '--sync-type',
           description: 'The type of sync configuration to be deleted',
@@ -468,6 +484,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -480,6 +497,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'get-connection',
       description: 'Returns the connection ARN and details such as status, owner, and provider type',
       options: [
+
         Option(
           name: '--connection-arn',
           description: 'The Amazon Resource Name (ARN) of a connection',
@@ -505,6 +523,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -517,6 +536,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'get-host',
       description: 'Returns the host ARN and details such as status, provider type, endpoint, and, if applicable, the VPC configuration',
       options: [
+
         Option(
           name: '--host-arn',
           description: 'The Amazon Resource Name (ARN) of the requested host',
@@ -542,6 +562,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -554,6 +575,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'get-repository-link',
       description: 'Returns details about a repository link. A repository link allows Git sync to monitor and sync changes from files in a specified Git repository',
       options: [
+
         Option(
           name: '--repository-link-id',
           description: 'The ID of the repository link to get',
@@ -579,6 +601,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -591,6 +614,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'get-repository-sync-status',
       description: 'Returns details about the sync status for a repository. A repository sync uses Git sync to push and pull changes from your remote repository',
       options: [
+
         Option(
           name: '--branch',
           description: 'The branch of the repository link for the requested repository sync status',
@@ -634,6 +658,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -646,6 +671,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'get-resource-sync-status',
       description: 'Returns the status of the sync with the Git repository for a specific Amazon Web Services resource',
       options: [
+
         Option(
           name: '--resource-name',
           description: 'The name of the Amazon Web Services resource for the sync status with the Git repository',
@@ -680,6 +706,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -692,6 +719,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'get-sync-blocker-summary',
       description: 'Returns a list of the most recent sync blockers',
       options: [
+
         Option(
           name: '--sync-type',
           description: 'The sync type for the sync blocker summary',
@@ -726,6 +754,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -738,6 +767,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'get-sync-configuration',
       description: 'Returns details about a sync configuration, including the sync type and resource name. A sync configuration allows the configuration to sync (push and pull) changes from the remote repository for a specified branch in a Git repository',
       options: [
+
         Option(
           name: '--sync-type',
           description: 'The sync type for the sync configuration for which you want to retrieve information',
@@ -772,6 +802,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -784,6 +815,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'list-connections',
       description: 'Lists the connections associated with your account',
       options: [
+
         Option(
           name: '--provider-type-filter',
           description: 'Filters the list of connections to those associated with a specified provider, such as Bitbucket',
@@ -836,6 +868,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -848,6 +881,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'list-hosts',
       description: 'Lists the hosts associated with your account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value',
@@ -882,6 +916,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -894,6 +929,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'list-repository-links',
       description: 'Lists the repository links created for connections in your account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'A non-zero, non-negative integer used to limit the number of returned results',
@@ -928,6 +964,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -940,6 +977,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'list-repository-sync-definitions',
       description: 'Lists the repository sync definitions for repository links in your account',
       options: [
+
         Option(
           name: '--repository-link-id',
           description: 'The ID of the repository link for the sync definition for which you want to retrieve information',
@@ -974,6 +1012,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -986,6 +1025,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'list-sync-configurations',
       description: 'Returns a list of sync configurations for a specified repository',
       options: [
+
         Option(
           name: '--max-results',
           description: 'A non-zero, non-negative integer used to limit the number of returned results',
@@ -1038,6 +1078,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1050,6 +1091,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets the set of key-value pairs (metadata) that are used to manage the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any',
@@ -1075,6 +1117,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1087,6 +1130,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to which you want to add or update tags',
@@ -1121,6 +1165,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1133,6 +1178,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from an Amazon Web Services resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to remove tags from',
@@ -1167,6 +1213,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1179,6 +1226,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'update-host',
       description: 'Updates a specified host with the provided configurations',
       options: [
+
         Option(
           name: '--host-arn',
           description: 'The Amazon Resource Name (ARN) of the host to be updated',
@@ -1222,6 +1270,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1234,6 +1283,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'update-repository-link',
       description: 'Updates the association between your connection and a specified external Git repository. A repository link allows Git sync to monitor and sync changes to files in a specified Git repository',
       options: [
+
         Option(
           name: '--connection-arn',
           description: 'The Amazon Resource Name (ARN) of the connection for the repository link to be updated. The updated connection ARN must have the same providerType (such as GitHub) as the original connection ARN for the repo link',
@@ -1277,6 +1327,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1289,6 +1340,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'update-sync-blocker',
       description: 'Allows you to update the status of a sync blocker, resolving the blocker and allowing syncing to continue',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the sync blocker to be updated',
@@ -1341,6 +1393,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1353,6 +1406,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
       name: 'update-sync-configuration',
       description: 'Updates the sync configuration for your connection and a specified external Git repository',
       options: [
+
         Option(
           name: '--branch',
           description: 'The branch for the sync configuration to be updated',
@@ -1441,6 +1495,7 @@ final FigSpec codestarConnectionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

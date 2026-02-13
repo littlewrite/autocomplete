@@ -4,23 +4,84 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> sharedOptions = [
+
+  Option(
+    name: '--envfile',
+    description: '.env filename to load ENV vars from',
+    args: [
+      Arg(
+      name: 'string',
+      template: 'filepaths'
+    )
+    ]
+  ),
+  Option(
+    name: ['-h', '--help'],
+    description: 'Help for hasura'
+  ),
+  Option(
+    name: '--log-level',
+    description: 'Log level',
+    args: [
+      Arg(
+      name: 'string',
+      suggestions: [
+
+        FigSuggestion(name: 'DEBUG'),
+        FigSuggestion(name: 'INFO'),
+        FigSuggestion(name: 'WARN'),
+        FigSuggestion(name: 'ERROR'),
+        FigSuggestion(name: 'FATAL')
+      ],
+      defaultValue: 'INFO'
+    )
+    ]
+  ),
+  Option(
+    name: '--no-color',
+    description: 'Do not colorize output'
+  ),
+  Option(
+    name: '--project',
+    description: 'Directory where commands are executed',
+    args: [
+      Arg(
+      name: 'string',
+      template: 'folders'
+    )
+    ]
+  ),
+  Option(
+    name: '--skip-update-check',
+    description: 'Skip automatic update check on command execution'
+  )
+];
+
+final List<Option> actionsSharedOptions = [];
+
 /// Completion spec for `hasura` CLI
 final FigSpec hasuraSpec = FigSpec(
   name: 'hasura',
   description: 'Hasura GraphQL engine command line tool',
   subcommands: [
+
     Subcommand(
       name: 'actions',
       description: 'Manage Hasura actions',
       subcommands: [
+
         Subcommand(
           name: 'codegen',
           description: 'Generate code for actions',
           options: [
+
             Option(
               name: '--derive-from',
               description: 'Derive action from a hasura operation'
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ],
           args: [
             Arg(
@@ -34,6 +95,7 @@ final FigSpec hasuraSpec = FigSpec(
           name: 'create',
           description: 'Create a Hasura action',
           options: [
+
             Option(
               name: '--derive-from',
               description: 'Derive action from a Hasura operation'
@@ -46,6 +108,7 @@ final FigSpec hasuraSpec = FigSpec(
                 name: 'string',
                 isOptional: true,
                 suggestions: [
+
                   FigSuggestion(name: 'synchronous'),
                   FigSuggestion(name: 'asynchronous')
                 ]
@@ -65,7 +128,9 @@ final FigSpec hasuraSpec = FigSpec(
             Option(
               name: '--with-codegen',
               description: 'Create action along with codegen'
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ],
           args: [
             Arg(
@@ -78,6 +143,7 @@ final FigSpec hasuraSpec = FigSpec(
           name: 'use-codegen',
           description: 'Use the codegen to generate code for Hasura actions',
           options: [
+
             Option(
               name: '--framework',
               description: 'Framework to be used by codegen'
@@ -95,16 +161,23 @@ final FigSpec hasuraSpec = FigSpec(
             Option(
               name: '--with-starter-kit',
               description: 'Clone starter kit for a framework'
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ]
         )
       ],
-      options: []
+      options: [
+
+        ...actionsSharedOptions,
+        ...sharedOptions
+      ]
     ),
     Subcommand(
       name: 'completions',
       description: 'Generate auto completion code',
       options: [
+
         Option(
           name: '--file',
           description: 'File to which output has to be written',
@@ -114,13 +187,15 @@ final FigSpec hasuraSpec = FigSpec(
             template: 'filepaths'
           )
           ]
-        )
+        ),
+        ...sharedOptions
       ],
       args: [
         Arg(
         name: 'shell',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'bash'),
           FigSuggestion(name: 'zsh')
         ]
@@ -131,6 +206,7 @@ final FigSpec hasuraSpec = FigSpec(
       name: 'console',
       description: 'Open the console to manage the database and try out APIs',
       options: [
+
         Option(
           name: '--address',
           description: 'Address to serve console and migration API from',
@@ -189,13 +265,16 @@ final FigSpec hasuraSpec = FigSpec(
         Option(
           name: '--use-server-assets',
           description: 'When rendering console, use assets provided by HGE server'
-        )
+        ),
+        ...actionsSharedOptions,
+        ...sharedOptions
       ]
     ),
     Subcommand(
       name: 'init',
       description: 'Initialize a directory for Hasura GraphQL engine migrations',
       options: [
+
         Option(
           name: '--install-manifest',
           description: 'Install manifest to be cloned'
@@ -221,10 +300,12 @@ final FigSpec hasuraSpec = FigSpec(
     Subcommand(
       name: ['md', 'metadata'],
       subcommands: [
+
         Subcommand(
           name: 'apply',
           description: 'Apply Hasura metadata on a database',
           options: [
+
             Option(
               name: '--dry-run',
               description: 'Show metadata generated from project directory without applying to server'
@@ -237,25 +318,37 @@ final FigSpec hasuraSpec = FigSpec(
                 name: 'string',
                 isOptional: true,
                 suggestions: [
+
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'yaml')
                 ],
                 defaultValue: 'json'
               )
               ]
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ]
         ),
         Subcommand(
           name: 'clear',
           description: 'Clear Hasura GraphQL engine metadata on the database',
-          options: []
+          options: [
+
+            ...actionsSharedOptions,
+            ...sharedOptions
+          ]
         ),
         Subcommand(
           name: 'diff',
           description: 'Show a highlighted diff of Hasura metadata',
-          options: [],
+          options: [
+
+            ...actionsSharedOptions,
+            ...sharedOptions
+          ],
           args: [
+
             Arg(
               name: 'file1',
               isOptional: true,
@@ -272,6 +365,7 @@ final FigSpec hasuraSpec = FigSpec(
           name: 'export',
           description: 'Export Hasura GraphQL engine metadata from the database',
           options: [
+
             Option(
               name: ['-o', '--output'],
               description: 'Specify an output format for exported metadata'
@@ -282,40 +376,67 @@ final FigSpec hasuraSpec = FigSpec(
           name: ['ic', 'inconsistency', 'inconsistencies'],
           description: 'Manage inconsistent objects in Hasura metadata',
           subcommands: [
+
             Subcommand(
               name: 'drop',
               description: 'Drop inconsistent objects from the metadata',
-              options: []
+              options: [
+
+                ...actionsSharedOptions,
+                ...sharedOptions
+              ]
             ),
             Subcommand(
               name: ['ls', 'list'],
               description: 'List all inconsistent objects from the metadata',
-              options: []
+              options: [
+
+                ...actionsSharedOptions,
+                ...sharedOptions
+              ]
             ),
             Subcommand(
               name: 'status',
               description: 'Check if the metadata is inconsistent or not',
-              options: []
+              options: [
+
+                ...actionsSharedOptions,
+                ...sharedOptions
+              ]
             )
           ],
-          options: []
+          options: [
+
+            ...actionsSharedOptions,
+            ...sharedOptions
+          ]
         ),
         Subcommand(
           name: 'reload',
           description: 'Reload Hasura GraphQL engine metadata on the database',
-          options: []
+          options: [
+
+            ...actionsSharedOptions,
+            ...sharedOptions
+          ]
         )
       ],
-      options: []
+      options: [
+
+        ...actionsSharedOptions,
+        ...sharedOptions
+      ]
     ),
     Subcommand(
       name: 'migrate',
       description: 'Manage migrations on the database',
       subcommands: [
+
         Subcommand(
           name: 'apply',
           description: 'Apply migrations on the database',
           options: [
+
             Option(
               name: '--up',
               description: 'Apply all or N up migration steps',
@@ -355,6 +476,7 @@ final FigSpec hasuraSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'up'),
                   FigSuggestion(name: 'down')
                 ],
@@ -369,13 +491,16 @@ final FigSpec hasuraSpec = FigSpec(
             Option(
               name: '--all-databases',
               description: 'Set this flag to attempt to apply migrations on all databases present on server'
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ]
         ),
         Subcommand(
           name: 'create',
           description: 'Create files required for a migration',
           options: [
+
             Option(
               name: '--down-sql',
               description: 'Sql string/query that is to be used to create a down migration'
@@ -425,7 +550,9 @@ final FigSpec hasuraSpec = FigSpec(
             Option(
               name: '--up-sql',
               description: 'Sql string/query that is to be used to create an up migration'
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ],
           args: [
             Arg(
@@ -438,6 +565,7 @@ final FigSpec hasuraSpec = FigSpec(
           name: 'delete',
           description: 'Clear migrations from local project and server',
           options: [
+
             Option(
               name: '--all',
               description: 'Clears all migrations for selected database'
@@ -455,13 +583,16 @@ final FigSpec hasuraSpec = FigSpec(
                 name: 'uint'
               )
               ]
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ]
         ),
         Subcommand(
           name: 'squash',
           description: 'Squash multiple migrations into a single one',
           options: [
+
             Option(
               name: '--delete-source',
               description: 'Delete the source files after squashing without any confirmation'
@@ -484,7 +615,9 @@ final FigSpec hasuraSpec = FigSpec(
                 defaultValue: 'squashed'
               )
               ]
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ]
         ),
         Subcommand(
@@ -492,20 +625,27 @@ final FigSpec hasuraSpec = FigSpec(
           description: 'Display current status of migrations on a database'
         )
       ],
-      options: []
+      options: [
+
+        ...actionsSharedOptions,
+        ...sharedOptions
+      ]
     ),
     Subcommand(
       name: ['plugin', 'plugins'],
       description: 'Manage plugins for the CLI',
       subcommands: [
+
         Subcommand(
           name: 'install',
           description: 'Install a plugin from the index',
           options: [
+
             Option(
               name: '--version',
               description: 'Version to be installed'
-            )
+            ),
+            ...sharedOptions
           ],
           args: [
             Arg(
@@ -518,15 +658,18 @@ final FigSpec hasuraSpec = FigSpec(
           name: 'list',
           description: 'List all available plugins from index, versions and installation status',
           options: [
+
             Option(
               name: '--dont-update-index',
               description: 'Do not update the plugin index local cache, only show the list'
-            )
+            ),
+            ...sharedOptions
           ]
         ),
         Subcommand(
           name: 'uninstall',
           description: 'Uninstall a plugin',
+          options: sharedOptions,
           args: [
             Arg(
             name: 'plugin name',
@@ -538,10 +681,12 @@ final FigSpec hasuraSpec = FigSpec(
           name: 'upgrade',
           description: 'Upgrade a plugin to a newer version',
           options: [
+
             Option(
               name: '--version',
               description: 'Version to be upgraded'
-            )
+            ),
+            ...sharedOptions
           ],
           args: [
             Arg(
@@ -550,16 +695,19 @@ final FigSpec hasuraSpec = FigSpec(
           )
           ]
         )
-      ]
+      ],
+      options: sharedOptions
     ),
     Subcommand(
       name: 'scripts',
       description: 'Execute helper scripts to manage Hasura projects',
       subcommands: [
+
         Subcommand(
           name: 'update-project-v2',
           description: 'Update the Hasura project from config v1 to v2',
           options: [
+
             Option(
               name: '--metadata-dir',
               description: 'Metadata directory',
@@ -569,13 +717,16 @@ final FigSpec hasuraSpec = FigSpec(
                 template: 'folders'
               )
               ]
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ]
         ),
         Subcommand(
           name: 'update-project-v3',
           description: 'Update the Hasura project from config v2 to v3',
           options: [
+
             Option(
               name: '--database-name',
               description: 'Database name for which the current migrations / seeds belong to'
@@ -588,19 +739,24 @@ final FigSpec hasuraSpec = FigSpec(
             Option(
               name: '--move-state-only',
               description: 'Do only a state migration from old hdb_catalog'
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ]
         )
-      ]
+      ],
+      options: sharedOptions
     ),
     Subcommand(
       name: ['sd', 'seed', 'seeds'],
       description: 'Manage seed data',
       subcommands: [
+
         Subcommand(
           name: 'apply',
           description: 'Apply seed data',
           options: [
+
             Option(
               name: ['-f', '--file'],
               description: 'Seed file to apply',
@@ -610,13 +766,16 @@ final FigSpec hasuraSpec = FigSpec(
                 template: 'filepaths'
               )
               ]
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ]
         ),
         Subcommand(
           name: 'create',
           description: 'Create a new seed file',
           options: [
+
             Option(
               name: '--from-table',
               description: 'Name of table from which seed file has to be initialized',
@@ -625,7 +784,9 @@ final FigSpec hasuraSpec = FigSpec(
                 name: 'string array'
               )
               ]
-            )
+            ),
+            ...actionsSharedOptions,
+            ...sharedOptions
           ],
           args: [
             Arg(
@@ -635,16 +796,20 @@ final FigSpec hasuraSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--database-name',
           description: 'Database name for which the current migrations / seeds belong to'
-        )
+        ),
+        ...actionsSharedOptions,
+        ...sharedOptions
       ]
     ),
     Subcommand(
       name: 'update-cli',
       description: 'Update the CLI to latest or a specific version',
       options: [
+
         Option(
           name: '--version',
           description: 'A specific version to install',
@@ -654,12 +819,15 @@ final FigSpec hasuraSpec = FigSpec(
             isOptional: true
           )
           ]
-        )
+        ),
+        ...sharedOptions
       ]
     ),
     Subcommand(
       name: 'version',
-      description: 'Print the CLI version'
+      description: 'Print the CLI version',
+      options: sharedOptions
     )
-  ]
+  ],
+  options: sharedOptions
 );

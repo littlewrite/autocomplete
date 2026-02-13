@@ -9,6 +9,7 @@ final FigSpec lnSpec = FigSpec(
   name: 'ln',
   description: 'Create (default hard) symbolic links to files',
   options: [
+
     Option(
       name: '-s',
       description: 'Create a symbolic link'

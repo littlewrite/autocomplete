@@ -10,6 +10,7 @@ final FigSpec twiggySpec = FigSpec(
   description: 'A code-size profiler for WebAssembly',
   icon: '🌱',
   subcommands: [
+
     Subcommand(
       name: 'diff',
       description: 'Diff the old and new versions of a binary to see what sizes changed'
@@ -51,6 +52,7 @@ final FigSpec twiggySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Prints help information'

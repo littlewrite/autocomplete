@@ -16,6 +16,7 @@ final FigSpec wordpressCreateBlockSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-V', '--version'],
       description: 'Output the version number'
@@ -27,6 +28,7 @@ final FigSpec wordpressCreateBlockSpec = FigSpec(
         Arg(
         name: 'name',
         suggestions: [
+
           FigSuggestion(name: 'standard'),
           FigSuggestion(name: 'es5')
         ]

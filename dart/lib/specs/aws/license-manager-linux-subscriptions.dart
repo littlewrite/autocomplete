@@ -9,10 +9,12 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
   name: 'license-manager-linux-subscriptions',
   description: 'With License Manager, you can discover and track your commercial Linux subscriptions on running Amazon EC2 instances',
   subcommands: [
+
     Subcommand(
       name: 'deregister-subscription-provider',
       description: 'Remove a third-party subscription provider from the Bring Your Own License (BYOL) subscriptions registered to your account',
       options: [
+
         Option(
           name: '--subscription-provider-arn',
           description: 'The Amazon Resource Name (ARN) of the subscription provider resource to deregister',
@@ -38,6 +40,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
       name: 'get-registered-subscription-provider',
       description: 'Get details for a Bring Your Own License (BYOL) subscription that\'s registered to your account',
       options: [
+
         Option(
           name: '--subscription-provider-arn',
           description: 'The Amazon Resource Name (ARN) of the BYOL registration resource to get details for',
@@ -75,6 +79,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
       name: 'get-service-settings',
       description: 'Lists the Linux subscriptions service settings for your account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -103,6 +109,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -115,6 +122,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
       name: 'list-linux-subscription-instances',
       description: 'Lists the running Amazon EC2 instances that were discovered with commercial Linux subscriptions',
       options: [
+
         Option(
           name: '--filters',
           description: 'An array of structures that you can use to filter the results by your specified criteria. For example, you can specify Region in the Name, with the contains operator to list all subscriptions that match a partial string in the Value, such as us-west. For each filter, you can specify one of the following values for the Name key to streamline results:    AccountID     AmiID     DualSubscription     InstanceID     InstanceType     ProductCode     Region     Status     UsageOperation    For each filter, you can use one of the following Operator values to define the behavior of the filter:    contains     equals     Notequal',
@@ -185,6 +193,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -197,6 +206,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
       name: 'list-linux-subscriptions',
       description: 'Lists the Linux subscriptions that have been discovered. If you have linked your organization, the returned results will include data aggregated across your accounts in Organizations',
       options: [
+
         Option(
           name: '--filters',
           description: 'An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of Subscription with an optional operator to see subscriptions that match, partially match, or don\'t match a certain subscription\'s name. The valid names for this filter are:    Subscription    The valid Operators for this filter are:    contains     equals     Notequal',
@@ -267,6 +277,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
       name: 'list-registered-subscription-providers',
       description: 'List Bring Your Own License (BYOL) subscription registration resources for your account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum items to return in a request',
@@ -349,6 +361,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -361,6 +374,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List the metadata tags that are assigned to the specified Amazon Web Services resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which to list metadata tags',
@@ -386,6 +400,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -398,6 +413,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
       name: 'register-subscription-provider',
       description: 'Register the supported third-party subscription provider for your Bring Your Own License (BYOL) subscription',
       options: [
+
         Option(
           name: '--secret-arn',
           description: 'The Amazon Resource Name (ARN) of the secret where you\'ve stored your subscription provider\'s access token. For RHEL subscriptions managed through the Red Hat Subscription Manager (RHSM), the secret contains your Red Hat Offline token',
@@ -441,6 +457,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -453,6 +470,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Add metadata tags to the specified Amazon Web Services resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon Web Services resource to which to add the specified metadata tags',
@@ -487,6 +505,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -499,6 +518,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Remove one or more metadata tag from the specified Amazon Web Services resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon Web Services resource to remove the metadata tags from',
@@ -533,6 +553,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -545,6 +566,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
       name: 'update-service-settings',
       description: 'Updates the service settings for Linux subscriptions',
       options: [
+
         Option(
           name: '--allow-update',
           description: 'Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region'
@@ -587,6 +609,7 @@ final FigSpec licenseManagerLinuxSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

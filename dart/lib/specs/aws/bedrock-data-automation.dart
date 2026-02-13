@@ -9,10 +9,12 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
   name: 'bedrock-data-automation',
   description: 'Amazon Bedrock Keystone Build',
   subcommands: [
+
     Subcommand(
       name: 'create-blueprint',
       description: 'Creates an Amazon Bedrock Keystone Blueprint',
       options: [
+
         Option(
           name: '--blueprint-name',
           description: 'Name of the Blueprint',
@@ -83,6 +85,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
       name: 'create-blueprint-version',
       description: 'Creates a new version of an existing Amazon Bedrock Keystone Blueprint',
       options: [
+
         Option(
           name: '--blueprint-arn',
           description: 'ARN generated at the server side when a Blueprint is created',
@@ -129,6 +133,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
       name: 'create-data-automation-project',
       description: 'Creates an Amazon Bedrock Keystone DataAutomationProject',
       options: [
+
         Option(
           name: '--project-name',
           description: 'Name of the DataAutomationProject',
@@ -229,6 +235,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -241,6 +248,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
       name: 'delete-blueprint',
       description: 'Deletes an existing Amazon Bedrock Keystone Blueprint',
       options: [
+
         Option(
           name: '--blueprint-arn',
           description: 'ARN generated at the server side when a Blueprint is created',
@@ -275,6 +283,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -287,6 +296,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
       name: 'delete-data-automation-project',
       description: 'Deletes an existing Amazon Bedrock Keystone DataAutomationProject',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'ARN generated at the server side when a DataAutomationProject is created',
@@ -312,6 +322,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -324,6 +335,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
       name: 'get-blueprint',
       description: 'Gets an existing Amazon Bedrock Keystone Blueprint',
       options: [
+
         Option(
           name: '--blueprint-arn',
           description: 'ARN generated at the server side when a Blueprint is created',
@@ -367,6 +379,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -379,6 +392,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
       name: 'get-data-automation-project',
       description: 'Gets an existing Amazon Bedrock Keystone DataAutomationProject',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'ARN generated at the server side when a DataAutomationProject is created',
@@ -413,6 +427,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -425,6 +440,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
       name: 'list-blueprints',
       description: 'Lists all existing Amazon Bedrock Keystone Blueprints',
       options: [
+
         Option(
           name: '--blueprint-arn',
           description: 'ARN of a Blueprint',
@@ -522,6 +538,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -534,6 +551,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
       name: 'list-data-automation-projects',
       description: 'Lists all existing Amazon Bedrock Keystone DataAutomationProjects',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Max Results',
@@ -622,6 +640,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -634,6 +653,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
       name: 'update-blueprint',
       description: 'Updates an existing Amazon Bedrock Blueprint',
       options: [
+
         Option(
           name: '--blueprint-arn',
           description: 'ARN generated at the server side when a Blueprint is created',
@@ -677,6 +697,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -689,6 +710,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
       name: 'update-data-automation-project',
       description: 'Updates an existing Amazon Bedrock DataAutomationProject',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'ARN generated at the server side when a DataAutomationProject is created',
@@ -759,6 +781,7 @@ final FigSpec bedrockDataAutomationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

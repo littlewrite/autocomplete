@@ -9,10 +9,12 @@ final FigSpec cloudcontrolSpec = FigSpec(
   name: 'cloudcontrol',
   description: 'For more information about Amazon Web Services Cloud Control API, see the Amazon Web Services Cloud Control API User Guide',
   subcommands: [
+
     Subcommand(
       name: 'cancel-resource-request',
       description: 'Cancels the specified resource operation request. For more information, see Canceling resource operation requests in the Amazon Web Services Cloud Control API User Guide. Only resource operations requests with a status of PENDING or IN_PROGRESS can be canceled',
       options: [
+
         Option(
           name: '--request-token',
           description: 'The RequestToken of the ProgressEvent object returned by the resource operation request',
@@ -38,6 +40,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
       name: 'create-resource',
       description: 'Creates the specified resource. For more information, see Creating a resource in the Amazon Web Services Cloud Control API User Guide. After you have initiated a resource creation request, you can monitor the progress of your request by calling GetResourceRequestStatus using the RequestToken of the ProgressEvent type returned by CreateResource',
       options: [
+
         Option(
           name: '--type-name',
           description: 'The name of the resource type',
@@ -111,6 +115,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
       name: 'delete-resource',
       description: 'Deletes the specified resource. For details, see Deleting a resource in the Amazon Web Services Cloud Control API User Guide. After you have initiated a resource deletion request, you can monitor the progress of your request by calling GetResourceRequestStatus using the RequestToken of the ProgressEvent returned by DeleteResource',
       options: [
+
         Option(
           name: '--type-name',
           description: 'The name of the resource type',
@@ -184,6 +190,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
       name: 'get-resource',
       description: 'Returns information about the current state of the specified resource. For details, see Reading a resource\'s current state. You can use this action to return information about an existing resource in your account and Amazon Web Services Region, whether those resources were provisioned using Cloud Control API',
       options: [
+
         Option(
           name: '--type-name',
           description: 'The name of the resource type',
@@ -248,6 +256,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -260,6 +269,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
       name: 'get-resource-request-status',
       description: 'Returns the current status of a resource operation request. For more information, see Tracking the progress of resource operation requests in the Amazon Web Services Cloud Control API User Guide',
       options: [
+
         Option(
           name: '--request-token',
           description: 'A unique token used to track the progress of the resource operation request. Request tokens are included in the ProgressEvent type returned by a resource operation request',
@@ -285,6 +295,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -297,6 +308,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
       name: 'list-resource-requests',
       description: 'Returns existing resource operation requests. This includes requests of all status types. For more information, see Listing active resource operation requests in the Amazon Web Services Cloud Control API User Guide.  Resource operation requests expire after 7 days',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a NextToken value that you can assign to the NextToken request parameter to get the next set of results. The default is 20',
@@ -367,6 +379,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -379,6 +392,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
       name: 'list-resources',
       description: 'Returns information about the specified resources. For more information, see Discovering resources in the Amazon Web Services Cloud Control API User Guide. You can use this action to return information about existing resources in your account and Amazon Web Services Region, whether those resources were provisioned using Cloud Control API',
       options: [
+
         Option(
           name: '--type-name',
           description: 'The name of the resource type',
@@ -476,6 +490,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -488,6 +503,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
       name: 'update-resource',
       description: 'Updates the specified property values in the resource. You specify your resource property updates as a list of patch operations contained in a JSON patch document that adheres to the  RFC 6902 - JavaScript Object Notation (JSON) Patch  standard. For details on how Cloud Control API performs resource update operations, see Updating a resource in the Amazon Web Services Cloud Control API User Guide. After you have initiated a resource update request, you can monitor the progress of your request by calling GetResourceRequestStatus using the RequestToken of the ProgressEvent returned by UpdateResource. For more information about the properties of a specific resource, refer to the related topic for the resource in the Resource and property types reference in the CloudFormation Users Guide',
       options: [
+
         Option(
           name: '--type-name',
           description: 'The name of the resource type',
@@ -558,6 +574,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -570,10 +587,12 @@ final FigSpec cloudcontrolSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'resource-request-success',
           description: 'Wait until resource operation request is successful It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 24 failed checks',
           options: [
+
             Option(
               name: '--request-token',
               description: 'A unique token used to track the progress of the resource operation request. Request tokens are included in the ProgressEvent type returned by a resource operation request',
@@ -599,6 +618,7 @@ final FigSpec cloudcontrolSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

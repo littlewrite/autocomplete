@@ -9,6 +9,7 @@ final FigSpec storeSpec = FigSpec(
   name: 'store',
   description: 'Dotnet store stores the specified assemblies in the runtime package store. By default, assemblies are optimized for the target runtime and framework. For more information, see the runtime package store topic',
   options: [
+
     Option(
       name: ['-f', '--framework'],
       description: 'Specifies the target framework. The target framework has to be specified in the project file',
@@ -71,6 +72,7 @@ final FigSpec storeSpec = FigSpec(
         Arg(
         name: 'verbosity',
         suggestions: [
+
           FigSuggestion(name: 'quiet'),
           FigSuggestion(name: 'minimal'),
           FigSuggestion(name: 'normal'),

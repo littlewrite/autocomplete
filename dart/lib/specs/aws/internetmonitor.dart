@@ -9,10 +9,12 @@ final FigSpec internetmonitorSpec = FigSpec(
   name: 'internetmonitor',
   description: 'Amazon CloudWatch Internet Monitor provides visibility into how internet issues impact the performance and availability between your applications hosted on Amazon Web Services and your end users. It can reduce the time it takes for you to diagnose internet issues from days to minutes. Internet Monitor uses the connectivity data that Amazon Web Services captures from its global networking footprint to calculate a baseline of performance and availability for internet traffic. This is the same data that Amazon Web Services uses to monitor internet uptime and availability. With those measurements as a baseline, Internet Monitor raises awareness for you when there are significant problems for your end users in the different geographic locations where your application runs. Internet Monitor publishes internet measurements to CloudWatch Logs and CloudWatch Metrics, to easily support using CloudWatch tools with health information for geographies and networks specific to your application. Internet Monitor sends health events to Amazon EventBridge so that you can set up notifications. If an issue is caused by the Amazon Web Services network, you also automatically receive an Amazon Web Services Health Dashboard notification with the steps that Amazon Web Services is taking to mitigate the problem. To use Internet Monitor, you create a monitor and associate your application\'s resources with it - VPCs, NLBs, CloudFront distributions, or WorkSpaces directories - so Internet Monitor can determine where your application\'s internet traffic is. Internet Monitor then provides internet measurements from Amazon Web Services that are specific to the locations and ASNs (typically, internet service providers or ISPs) that communicate with your application. For more information, see Using Amazon CloudWatch Internet Monitor in the Amazon CloudWatch User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-monitor',
       description: 'Creates a monitor in Amazon CloudWatch Internet Monitor. A monitor is built based on information from the application resources that you add: VPCs, Network Load Balancers (NLBs), Amazon CloudFront distributions, and Amazon WorkSpaces directories. Internet Monitor then publishes internet measurements from Amazon Web Services that are specific to the city-networks. That is, the locations and ASNs (typically internet service providers or ISPs), where clients access your application. For more information, see Using Amazon CloudWatch Internet Monitor in the Amazon CloudWatch User Guide. When you create a monitor, you choose the percentage of traffic that you want to monitor. You can also set a maximum limit for the number of city-networks where client traffic is monitored, that caps the total traffic that Internet Monitor monitors. A city-network maximum is the limit of city-networks, but you only pay for the number of city-networks that are actually monitored. You can update your monitor at any time to change the percentage of traffic to monitor or the city-networks maximum. For more information, see Choosing a city-network maximum value in the Amazon CloudWatch User Guide',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -101,6 +103,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -113,6 +116,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'delete-monitor',
       description: 'Deletes a monitor in Amazon CloudWatch Internet Monitor',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor to delete',
@@ -138,6 +142,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'get-health-event',
       description: 'Gets information that Amazon CloudWatch Internet Monitor has created and stored about a health event for a specified monitor. This information includes the impacted locations, and all the information related to the event, by location. The information returned includes the impact on performance, availability, and round-trip time, information about the network providers (ASNs), the event type, and so on. Information rolled up at the global traffic level is also returned, including the impact type and total traffic impact',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -193,6 +199,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'get-internet-event',
       description: 'Gets information that Amazon CloudWatch Internet Monitor has generated about an internet event. Internet Monitor displays information about recent global health events, called internet events, on a global outages map that is available to all Amazon Web Services customers.  The information returned here includes the impacted location, when the event started and (if the event is over) ended, the type of event (PERFORMANCE or AVAILABILITY), and the status (ACTIVE or RESOLVED)',
       options: [
+
         Option(
           name: '--event-id',
           description: 'The EventId of the internet event to return information for',
@@ -230,6 +238,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'get-monitor',
       description: 'Gets information about a monitor in Amazon CloudWatch Internet Monitor based on a monitor name. The information returned includes the Amazon Resource Name (ARN), create time, modified time, resources included in the monitor, and status information',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -276,6 +286,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -288,6 +299,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'get-query-results',
       description: 'Return the data for a query with the Amazon CloudWatch Internet Monitor query interface. Specify the query that you want to return results for by providing a QueryId and a monitor name. For more information about using the query interface, including examples, see Using the Amazon CloudWatch Internet Monitor query interface in the Amazon CloudWatch Internet Monitor User Guide',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor to return data for',
@@ -340,6 +352,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -352,6 +365,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'get-query-status',
       description: 'Returns the current status of a query for the Amazon CloudWatch Internet Monitor query interface, for a specified query ID and monitor. When you run a query, check the status to make sure that the query has SUCCEEDED before you review the results.    QUEUED: The query is scheduled to run.    RUNNING: The query is in progress but not complete.    SUCCEEDED: The query completed sucessfully.    FAILED: The query failed due to an error.    CANCELED: The query was canceled',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -386,6 +400,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -398,6 +413,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'list-health-events',
       description: 'Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns information for health events including the event start and end times, and the status.  Health events that have start times during the time frame that is requested are not included in the list of health events',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -504,6 +520,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -516,6 +533,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'list-internet-events',
       description: 'Lists internet events that cause performance or availability issues for client locations. Amazon CloudWatch Internet Monitor displays information about recent global health events, called internet events, on a global outages map that is available to all Amazon Web Services customers.  You can constrain the list of internet events returned by providing a start time and end time to define a total time frame for events you want to list. Both start time and end time specify the time when an event started. End time is optional. If you don\'t include it, the default end time is the current time. You can also limit the events returned to a specific status (ACTIVE or RESOLVED) or type (PERFORMANCE or AVAILABILITY)',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results. You receive this token from a previous call',
@@ -613,6 +631,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -625,6 +644,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'list-monitors',
       description: 'Lists all of your monitors for Amazon CloudWatch Internet Monitor and their statuses, along with the Amazon Resource Name (ARN) and name of each monitor',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results. You receive this token from a previous call',
@@ -703,6 +723,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -715,6 +736,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for a resource. Tags are supported only for monitors in Amazon CloudWatch Internet Monitor',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for a resource',
@@ -740,6 +762,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -752,6 +775,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'start-query',
       description: 'Start a query to return data for a specific query type for the Amazon CloudWatch Internet Monitor query interface. Specify a time period for the data that you want returned by using StartTime and EndTime. You filter the query results to return by providing parameters that you specify with FilterParameters. For more information about using the query interface, including examples, see Using the Amazon CloudWatch Internet Monitor query interface in the Amazon CloudWatch Internet Monitor User Guide',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor to query',
@@ -822,6 +846,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -834,6 +859,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'stop-query',
       description: 'Stop a query that is progress for a specific monitor',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -868,6 +894,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -880,6 +907,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a tag to a resource. Tags are supported only for monitors in Amazon CloudWatch Internet Monitor. You can add a maximum of 50 tags in Internet Monitor. A minimum of one tag is required for this call. It returns an error if you use the TagResource request with 0 tags',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for a tag that you add to a resource. Tags are supported only for monitors in Amazon CloudWatch Internet Monitor',
@@ -914,6 +942,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -926,6 +955,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for a tag you remove a resource from',
@@ -960,6 +990,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -972,6 +1003,7 @@ final FigSpec internetmonitorSpec = FigSpec(
       name: 'update-monitor',
       description: 'Updates a monitor. You can update a monitor to change the percentage of traffic to monitor or the maximum number of city-networks (locations and ASNs), to add or remove resources, or to change the status of the monitor. Note that you can\'t change the name of a monitor. The city-network maximum that you choose is the limit, but you only pay for the number of city-networks that are actually monitored. For more information, see Choosing a city-network maximum value in the Amazon CloudWatch User Guide',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor',
@@ -1069,6 +1101,7 @@ final FigSpec internetmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

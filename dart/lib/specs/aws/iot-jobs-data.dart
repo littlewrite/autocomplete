@@ -9,10 +9,12 @@ final FigSpec iotJobsDataSpec = FigSpec(
   name: 'iot-jobs-data',
   description: 'IoT Jobs is a service that allows you to define a set of jobs — remote operations that are sent to and executed on one or more devices connected to Amazon Web Services IoT Core. For example, you can define a job that instructs a set of devices to download and install application or firmware updates, reboot, rotate certificates, or perform remote troubleshooting operations. Find the endpoint address for actions in the IoT jobs data plane by running this CLI command:  aws iot describe-endpoint --endpoint-type iot:Jobs  The service name used by Amazon Web Services Signature Version 4 to sign requests is: iot-jobs-data.  To create a job, you make a job document which is a description of the remote operations to be performed, and you specify a list of targets that should perform the operations. The targets can be individual things, thing groups or both.  IoT Jobs sends a message to inform the targets that a job is available. The target starts the execution of the job by downloading the job document, performing the operations it specifies, and reporting its progress to Amazon Web Services IoT Core. The Jobs service provides commands to track the progress of a job on a specific target and for all the targets of the job',
   subcommands: [
+
     Subcommand(
       name: 'describe-job-execution',
       description: 'Gets details of a job execution. Requires permission to access the DescribeJobExecution action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The unique identifier assigned to this job when it was created',
@@ -64,6 +66,7 @@ final FigSpec iotJobsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -76,6 +79,7 @@ final FigSpec iotJobsDataSpec = FigSpec(
       name: 'get-pending-job-executions',
       description: 'Gets the list of all jobs for a thing that are not in a terminal status. Requires permission to access the GetPendingJobExecutions action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing that is executing the job',
@@ -101,6 +105,7 @@ final FigSpec iotJobsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -113,6 +118,7 @@ final FigSpec iotJobsDataSpec = FigSpec(
       name: 'start-command-execution',
       description: 'Using the command created with the CreateCommand API, start a command execution on a specific device',
       options: [
+
         Option(
           name: '--target-arn',
           description: 'The Amazon Resource Number (ARN) of the device where the command execution is occurring',
@@ -174,6 +180,7 @@ final FigSpec iotJobsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -186,6 +193,7 @@ final FigSpec iotJobsDataSpec = FigSpec(
       name: 'start-next-pending-job-execution',
       description: 'Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for a thing. Requires permission to access the StartNextPendingJobExecution action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing associated with the device',
@@ -229,6 +237,7 @@ final FigSpec iotJobsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -241,6 +250,7 @@ final FigSpec iotJobsDataSpec = FigSpec(
       name: 'update-job-execution',
       description: 'Updates the status of a job execution. Requires permission to access the UpdateJobExecution action',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The unique identifier assigned to this job when it was created',
@@ -336,6 +346,7 @@ final FigSpec iotJobsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

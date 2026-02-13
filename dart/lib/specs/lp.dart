@@ -9,6 +9,7 @@ final FigSpec lpSpec = FigSpec(
   name: 'lp',
   description: 'Print files',
   options: [
+
     Option(
       name: '-E',
       description: 'Force encryption when connecting to the server'

@@ -14,6 +14,7 @@ final FigSpec bannerSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-t',
       description: 'Enable trace'

@@ -9,10 +9,12 @@ final FigSpec ssmContactsSpec = FigSpec(
   name: 'ssm-contacts',
   description: 'Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation',
   subcommands: [
+
     Subcommand(
       name: 'accept-page',
       description: 'Used to acknowledge an engagement to a contact channel during an incident',
       options: [
+
         Option(
           name: '--page-id',
           description: 'The Amazon Resource Name (ARN) of the engagement to a contact channel',
@@ -83,6 +85,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'activate-contact-channel',
       description: 'Activates a contact\'s contact channel. Incident Manager can\'t engage a contact until the contact channel has been activated',
       options: [
+
         Option(
           name: '--contact-channel-id',
           description: 'The Amazon Resource Name (ARN) of the contact channel',
@@ -129,6 +133,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'create-contact',
       description: 'Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident',
       options: [
+
         Option(
           name: '--alias',
           description: 'The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable',
@@ -211,6 +217,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -223,6 +230,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'create-contact-channel',
       description: 'A contact channel is the method that Incident Manager uses to engage your contact',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The Amazon Resource Name (ARN) of the contact you are adding the contact channel to',
@@ -292,6 +300,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -304,6 +313,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'create-rotation',
       description: 'Creates a rotation in an on-call schedule',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the rotation',
@@ -383,6 +393,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -395,6 +406,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'create-rotation-override',
       description: 'Creates an override for a rotation in an on-call schedule',
       options: [
+
         Option(
           name: '--rotation-id',
           description: 'The Amazon Resource Name (ARN) of the rotation to create an override for',
@@ -456,6 +468,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -468,6 +481,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'deactivate-contact-channel',
       description: 'To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel',
       options: [
+
         Option(
           name: '--contact-channel-id',
           description: 'The Amazon Resource Name (ARN) of the contact channel you\'re deactivating',
@@ -493,6 +507,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -505,6 +520,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'delete-contact',
       description: 'To remove a contact from Incident Manager, you can delete the contact. Deleting a contact removes them from all escalation plans and related response plans. Deleting an escalation plan removes it from all related response plans. You will have to recreate the contact and its contact channels before you can use it again',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The Amazon Resource Name (ARN) of the contact that you\'re deleting',
@@ -530,6 +546,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -542,6 +559,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'delete-contact-channel',
       description: 'To no longer receive engagements on a contact channel, you can delete the channel from a contact. Deleting the contact channel removes it from the contact\'s engagement plan. If you delete the only contact channel for a contact, you won\'t be able to engage that contact during an incident',
       options: [
+
         Option(
           name: '--contact-channel-id',
           description: 'The Amazon Resource Name (ARN) of the contact channel',
@@ -567,6 +585,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -579,6 +598,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'delete-rotation',
       description: 'Deletes a rotation from the system. If a rotation belongs to more than one on-call schedule, this operation deletes it from all of them',
       options: [
+
         Option(
           name: '--rotation-id',
           description: 'The Amazon Resource Name (ARN) of the on-call rotation to delete',
@@ -604,6 +624,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -616,6 +637,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'delete-rotation-override',
       description: 'Deletes an existing override for an on-call rotation',
       options: [
+
         Option(
           name: '--rotation-id',
           description: 'The Amazon Resource Name (ARN) of the rotation that was overridden',
@@ -650,6 +672,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -662,6 +685,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'describe-engagement',
       description: 'Incident Manager uses engagements to engage contacts and escalation plans during an incident. Use this command to describe the engagement that occurred during an incident',
       options: [
+
         Option(
           name: '--engagement-id',
           description: 'The Amazon Resource Name (ARN) of the engagement you want the details of',
@@ -687,6 +711,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -699,6 +724,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'describe-page',
       description: 'Lists details of the engagement to a contact channel',
       options: [
+
         Option(
           name: '--page-id',
           description: 'The ID of the engagement to a contact channel',
@@ -724,6 +750,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -736,6 +763,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'get-contact',
       description: 'Retrieves information about the specified contact or escalation plan',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The Amazon Resource Name (ARN) of the contact or escalation plan',
@@ -761,6 +789,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -773,6 +802,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'get-contact-channel',
       description: 'List details about a specific contact channel',
       options: [
+
         Option(
           name: '--contact-channel-id',
           description: 'The Amazon Resource Name (ARN) of the contact channel you want information about',
@@ -798,6 +828,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -810,6 +841,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'get-contact-policy',
       description: 'Retrieves the resource policies attached to the specified contact or escalation plan',
       options: [
+
         Option(
           name: '--contact-arn',
           description: 'The Amazon Resource Name (ARN) of the contact or escalation plan',
@@ -835,6 +867,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -847,6 +880,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'get-rotation',
       description: 'Retrieves information about an on-call rotation',
       options: [
+
         Option(
           name: '--rotation-id',
           description: 'The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about',
@@ -872,6 +906,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -884,6 +919,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'get-rotation-override',
       description: 'Retrieves information about an override to an on-call rotation',
       options: [
+
         Option(
           name: '--rotation-id',
           description: 'The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about',
@@ -918,6 +954,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -930,6 +967,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-contact-channels',
       description: 'Lists all contact channels for the specified contact',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The Amazon Resource Name (ARN) of the contact',
@@ -1000,6 +1038,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1012,6 +1051,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-contacts',
       description: 'Lists all contacts and escalation plans in Incident Manager',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token to continue to the next page of results',
@@ -1091,6 +1131,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1103,6 +1144,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-engagements',
       description: 'Lists all engagements that have happened in an incident',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token to continue to the next page of results',
@@ -1182,6 +1224,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1194,6 +1237,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-page-receipts',
       description: 'Lists all of the engagements to contact channels that have been acknowledged',
       options: [
+
         Option(
           name: '--page-id',
           description: 'The Amazon Resource Name (ARN) of the engagement to a specific contact channel',
@@ -1264,6 +1308,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1276,6 +1321,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-page-resolutions',
       description: 'Returns the resolution path of an engagement. For example, the escalation plan engaged in an incident might target an on-call schedule that includes several contacts in a rotation, but just one contact on-call when the incident starts. The resolution path indicates the hierarchy of escalation plan > on-call schedule > contact',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token to start the list. Use this token to get the next set of results',
@@ -1328,6 +1374,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1340,6 +1387,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-pages-by-contact',
       description: 'Lists the engagements to a contact\'s contact channels',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The Amazon Resource Name (ARN) of the contact you are retrieving engagements for',
@@ -1410,6 +1458,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1422,6 +1471,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-pages-by-engagement',
       description: 'Lists the engagements to contact channels that occurred by engaging a contact',
       options: [
+
         Option(
           name: '--engagement-id',
           description: 'The Amazon Resource Name (ARN) of the engagement',
@@ -1492,6 +1542,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1504,6 +1555,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-preview-rotation-shifts',
       description: 'Returns a list of shifts based on rotation configuration parameters.  The Incident Manager primarily uses this operation to populate the Preview calendar. It is not typically run by end users',
       options: [
+
         Option(
           name: '--rotation-start-time',
           description: 'The date and time a rotation would begin. The first shift is calculated from this date and time',
@@ -1628,6 +1680,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1640,6 +1693,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-rotation-overrides',
       description: 'Retrieves a list of overrides currently specified for an on-call rotation',
       options: [
+
         Option(
           name: '--rotation-id',
           description: 'The Amazon Resource Name (ARN) of the rotation to retrieve information about',
@@ -1728,6 +1782,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1740,6 +1795,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-rotation-shifts',
       description: 'Returns a list of shifts generated by an existing rotation in the system',
       options: [
+
         Option(
           name: '--rotation-id',
           description: 'The Amazon Resource Name (ARN) of the rotation to retrieve shift information about',
@@ -1828,6 +1884,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1840,6 +1897,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-rotations',
       description: 'Retrieves a list of on-call rotations',
       options: [
+
         Option(
           name: '--rotation-name-prefix',
           description: 'A filter to include rotations in list results based on their common prefix. For example, entering prod returns a list of all rotation names that begin with prod, such as production and prod-1',
@@ -1910,6 +1968,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1922,6 +1981,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags of an escalation plan or contact',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the contact or escalation plan',
@@ -1947,6 +2007,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1959,6 +2020,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'put-contact-policy',
       description: 'Adds a resource policy to the specified contact or escalation plan. The resource policy is used to share the contact or escalation plan using Resource Access Manager (RAM). For more information about cross-account sharing, see Setting up cross-account functionality',
       options: [
+
         Option(
           name: '--contact-arn',
           description: 'The Amazon Resource Name (ARN) of the contact or escalation plan',
@@ -1993,6 +2055,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2005,6 +2068,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'send-activation-code',
       description: 'Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in the console or with the ActivateChannel operation. Incident Manager can\'t engage a contact channel until it has been activated',
       options: [
+
         Option(
           name: '--contact-channel-id',
           description: 'The Amazon Resource Name (ARN) of the contact channel',
@@ -2030,6 +2094,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2042,6 +2107,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'start-engagement',
       description: 'Starts an engagement to a contact or escalation plan. The engagement engages each contact specified in the incident',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The Amazon Resource Name (ARN) of the contact being engaged',
@@ -2130,6 +2196,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2142,6 +2209,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'stop-engagement',
       description: 'Stops an engagement before it finishes the final stage of the escalation plan or engagement plan. Further contacts aren\'t engaged',
       options: [
+
         Option(
           name: '--engagement-id',
           description: 'The Amazon Resource Name (ARN) of the engagement',
@@ -2176,6 +2244,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2188,6 +2257,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags a contact or escalation plan. You can tag only contacts and escalation plans in the first region of your replication set',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the contact or escalation plan',
@@ -2222,6 +2292,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2234,6 +2305,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the contact or escalation plan',
@@ -2268,6 +2340,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2280,6 +2353,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'update-contact',
       description: 'Updates the contact or escalation plan specified',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The Amazon Resource Name (ARN) of the contact or escalation plan you\'re updating',
@@ -2323,6 +2397,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2335,6 +2410,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'update-contact-channel',
       description: 'Updates a contact\'s contact channel',
       options: [
+
         Option(
           name: '--contact-channel-id',
           description: 'The Amazon Resource Name (ARN) of the contact channel you want to update',
@@ -2378,6 +2454,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2390,6 +2467,7 @@ final FigSpec ssmContactsSpec = FigSpec(
       name: 'update-rotation',
       description: 'Updates the information specified for an on-call rotation',
       options: [
+
         Option(
           name: '--rotation-id',
           description: 'The Amazon Resource Name (ARN) of the rotation to update',
@@ -2451,6 +2529,7 @@ final FigSpec ssmContactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

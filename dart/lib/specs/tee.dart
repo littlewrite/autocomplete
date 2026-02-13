@@ -9,6 +9,7 @@ final FigSpec teeSpec = FigSpec(
   name: 'tee',
   description: 'Duplicate standard input',
   options: [
+
     Option(
       name: '-a',
       description: 'Append the output to the files rather than overwriting them'

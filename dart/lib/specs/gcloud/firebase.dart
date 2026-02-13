@@ -9,22 +9,27 @@ final FigSpec firebaseSpec = FigSpec(
   name: 'firebase',
   description: 'Work with Google Firebase',
   subcommands: [
+
     Subcommand(
       name: 'test',
       description: 'Interact with Firebase Test Lab',
       subcommands: [
+
         Subcommand(
           name: 'android',
           description: 'Command group for Android application testing',
           subcommands: [
+
             Subcommand(
               name: 'locales',
               description: 'Explore Android locales available for testing',
               subcommands: [
+
                 Subcommand(
                   name: 'describe',
                   description: 'Describe an Android locale',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -148,6 +153,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -170,6 +176,7 @@ final FigSpec firebaseSpec = FigSpec(
                   name: 'list',
                   description: 'List all Android locales available for testing internationalized apps',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -337,6 +344,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -351,6 +359,7 @@ final FigSpec firebaseSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -474,6 +483,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -490,10 +500,12 @@ final FigSpec firebaseSpec = FigSpec(
               name: 'models',
               description: 'Explore Android models available in the Test Environment catalog',
               subcommands: [
+
                 Subcommand(
                   name: 'describe',
                   description: 'Describe an Android model',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -617,6 +629,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -639,6 +652,7 @@ final FigSpec firebaseSpec = FigSpec(
                   name: 'list',
                   description: 'List all Android models available for testing',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -806,6 +820,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -820,6 +835,7 @@ final FigSpec firebaseSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -943,6 +959,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -959,6 +976,7 @@ final FigSpec firebaseSpec = FigSpec(
               name: 'run',
               description: 'Invoke a test in Firebase Test Lab for Android and view test results',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1424,6 +1442,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'TYPE',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'instrumentation'),
                       FigSuggestion(name: 'robo'),
                       FigSuggestion(name: 'game-loop')
@@ -1447,6 +1466,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1469,10 +1489,12 @@ final FigSpec firebaseSpec = FigSpec(
               name: 'versions',
               description: 'Explore Android versions available for testing',
               subcommands: [
+
                 Subcommand(
                   name: 'describe',
                   description: 'Describe an Android OS version',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1596,6 +1618,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -1618,6 +1641,7 @@ final FigSpec firebaseSpec = FigSpec(
                   name: 'list',
                   description: 'List all Android OS versions available for testing',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1785,6 +1809,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -1799,6 +1824,7 @@ final FigSpec firebaseSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1922,6 +1948,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1936,6 +1963,7 @@ final FigSpec firebaseSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2059,6 +2087,7 @@ final FigSpec firebaseSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2075,14 +2104,17 @@ final FigSpec firebaseSpec = FigSpec(
           name: 'ios',
           description: 'Command group for iOS application testing',
           subcommands: [
+
             Subcommand(
               name: 'locales',
               description: 'Explore iOS locales available for testing',
               subcommands: [
+
                 Subcommand(
                   name: 'describe',
                   description: 'Describe an iOS locale',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2206,6 +2238,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2228,6 +2261,7 @@ final FigSpec firebaseSpec = FigSpec(
                   name: 'list',
                   description: 'List all iOS locales available for testing internationalized apps',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2395,6 +2429,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2409,6 +2444,7 @@ final FigSpec firebaseSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2532,6 +2568,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2548,10 +2585,12 @@ final FigSpec firebaseSpec = FigSpec(
               name: 'models',
               description: 'Explore iOS models available in the Test Environment catalog',
               subcommands: [
+
                 Subcommand(
                   name: 'describe',
                   description: 'Describe an iOS model',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2675,6 +2714,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2697,6 +2737,7 @@ final FigSpec firebaseSpec = FigSpec(
                   name: 'list',
                   description: 'List all iOS models available for testing',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2864,6 +2905,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -2878,6 +2920,7 @@ final FigSpec firebaseSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3001,6 +3044,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3017,6 +3061,7 @@ final FigSpec firebaseSpec = FigSpec(
               name: 'run',
               description: 'Invoke a test in Firebase Test Lab for iOS and view test results',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3269,6 +3314,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'TYPE',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'xctest'),
                       FigSuggestion(name: 'game-loop')
                     ]
@@ -3287,6 +3333,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3331,10 +3378,12 @@ final FigSpec firebaseSpec = FigSpec(
               name: 'versions',
               description: 'Explore iOS versions available for testing',
               subcommands: [
+
                 Subcommand(
                   name: 'describe',
                   description: 'Describe an iOS operating system version',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3458,6 +3507,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -3480,6 +3530,7 @@ final FigSpec firebaseSpec = FigSpec(
                   name: 'list',
                   description: 'List all iOS versions available for testing',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3647,6 +3698,7 @@ final FigSpec firebaseSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -3661,6 +3713,7 @@ final FigSpec firebaseSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3784,6 +3837,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3798,6 +3852,7 @@ final FigSpec firebaseSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3921,6 +3976,7 @@ final FigSpec firebaseSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3937,10 +3993,12 @@ final FigSpec firebaseSpec = FigSpec(
           name: 'network-profiles',
           description: 'Explore network profiles available for testing',
           subcommands: [
+
             Subcommand(
               name: 'describe',
               description: 'Describe a network profile',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4064,6 +4122,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4086,6 +4145,7 @@ final FigSpec firebaseSpec = FigSpec(
               name: 'list',
               description: 'List all network profiles available for testing',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4253,6 +4313,7 @@ final FigSpec firebaseSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4267,6 +4328,7 @@ final FigSpec firebaseSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4390,6 +4452,7 @@ final FigSpec firebaseSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4404,6 +4467,7 @@ final FigSpec firebaseSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4527,6 +4591,7 @@ final FigSpec firebaseSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4541,6 +4606,7 @@ final FigSpec firebaseSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4664,6 +4730,7 @@ final FigSpec firebaseSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

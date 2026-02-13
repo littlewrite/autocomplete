@@ -9,10 +9,12 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
   name: 'license-manager-user-subscriptions',
   description: 'With License Manager, you can create user-based subscriptions to utilize licensed software with a per user subscription fee on Amazon EC2 instances',
   subcommands: [
+
     Subcommand(
       name: 'associate-user',
       description: 'Associates the user to an EC2 instance to utilize user-based subscriptions.  Your estimated bill for charges on the number of users and related costs will take 48 hours to appear for billing periods that haven\'t closed (marked as Pending billing status) in Amazon Web Services Billing. For more information, see Viewing your monthly charges in the Amazon Web Services Billing User Guide',
       options: [
+
         Option(
           name: '--domain',
           description: 'The domain name of the Active Directory that contains information for the user to associate',
@@ -74,6 +76,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'create-license-server-endpoint',
       description: 'Creates a network endpoint for the Remote Desktop Services (RDS) license server',
       options: [
+
         Option(
           name: '--identity-provider-arn',
           description: 'The Amazon Resource Name (ARN) that identifies the IdentityProvider resource that contains details about a registered identity provider. In the case of Active Directory, that can be a self-managed Active Directory or an Amazon Web Services Managed Active Directory that contains user identity details',
@@ -129,6 +133,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'delete-license-server-endpoint',
       description: 'Deletes a LicenseServerEndpoint resource',
       options: [
+
         Option(
           name: '--license-server-endpoint-arn',
           description: 'The Amazon Resource Name (ARN) that identifies the LicenseServerEndpoint resource to delete',
@@ -175,6 +181,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'deregister-identity-provider',
       description: 'Deregisters the Active Directory identity provider from License Manager user-based subscriptions',
       options: [
+
         Option(
           name: '--identity-provider',
           description: 'An object that specifies details for the Active Directory identity provider',
@@ -230,6 +238,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'disassociate-user',
       description: 'Disassociates the user from an EC2 instance providing user-based subscriptions',
       options: [
+
         Option(
           name: '--domain',
           description: 'The domain name of the Active Directory that contains information for the user to disassociate',
@@ -303,6 +313,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -315,6 +326,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'list-identity-providers',
       description: 'Lists the Active Directory identity providers for user-based subscriptions',
       options: [
+
         Option(
           name: '--filters',
           description: 'You can use the following filters to streamline results:   Product   DirectoryId',
@@ -385,6 +397,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -397,6 +410,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'list-instances',
       description: 'Lists the EC2 instances providing user-based subscriptions',
       options: [
+
         Option(
           name: '--filters',
           description: 'You can use the following filters to streamline results:   Status   InstanceId',
@@ -467,6 +481,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -479,6 +494,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'list-license-server-endpoints',
       description: 'List the Remote Desktop Services (RDS) License Server endpoints',
       options: [
+
         Option(
           name: '--filters',
           description: 'You can use the following filters to streamline results:   IdentityProviderArn',
@@ -549,6 +565,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -561,6 +578,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'list-product-subscriptions',
       description: 'Lists the user-based subscription products available from an identity provider',
       options: [
+
         Option(
           name: '--filters',
           description: 'You can use the following filters to streamline results:   Status   Username   Domain',
@@ -649,6 +667,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -661,6 +680,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns the list of tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve',
@@ -686,6 +706,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -698,6 +719,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'list-user-associations',
       description: 'Lists user associations for an identity provider',
       options: [
+
         Option(
           name: '--filters',
           description: 'You can use the following filters to streamline results:   Status   Username   Domain',
@@ -786,6 +808,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -798,6 +821,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'register-identity-provider',
       description: 'Registers an identity provider for user-based subscriptions',
       options: [
+
         Option(
           name: '--identity-provider',
           description: 'An object that specifies details for the identity provider to register',
@@ -850,6 +874,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -862,6 +887,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'start-product-subscription',
       description: 'Starts a product subscription for a user with the specified identity provider.  Your estimated bill for charges on the number of users and related costs will take 48 hours to appear for billing periods that haven\'t closed (marked as Pending billing status) in Amazon Web Services Billing. For more information, see Viewing your monthly charges in the Amazon Web Services Billing User Guide',
       options: [
+
         Option(
           name: '--domain',
           description: 'The domain name of the Active Directory that contains the user for whom to start the product subscription',
@@ -923,6 +949,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -935,6 +962,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'stop-product-subscription',
       description: 'Stops a product subscription for a user with the specified identity provider',
       options: [
+
         Option(
           name: '--domain',
           description: 'The domain name of the Active Directory that contains the user for whom to stop the product subscription',
@@ -996,6 +1024,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1008,6 +1037,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to tag',
@@ -1042,6 +1072,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1054,6 +1085,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to remove tags from',
@@ -1088,6 +1120,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1100,6 +1133,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
       name: 'update-identity-provider-settings',
       description: 'Updates additional product configuration settings for the registered identity provider',
       options: [
+
         Option(
           name: '--identity-provider',
           description: 'Refers to an identity provider',
@@ -1152,6 +1186,7 @@ final FigSpec licenseManagerUserSubscriptionsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

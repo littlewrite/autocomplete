@@ -9,10 +9,12 @@ final FigSpec s3tablesSpec = FigSpec(
   name: 's3tables',
   description: 'An Amazon S3 table represents a structured dataset consisting of tabular data in Apache Parquet format and related metadata. This data is stored inside an S3 table as a subresource. All tables in a table bucket are stored in the Apache Iceberg table format. Through integration with the AWS Glue Data Catalog you can interact with your tables using AWS analytics services, such as Amazon Athena and Amazon Redshift. Amazon S3 manages maintenance of your tables through automatic file compaction and snapshot management. For more information, see Amazon S3 table buckets',
   subcommands: [
+
     Subcommand(
       name: 'create-namespace',
       description: 'Creates a namespace. A namespace is a logical grouping of tables within your table bucket, which you can use to organize tables. For more information, see Table namespaces',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket to create the namespace in',
@@ -47,6 +49,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'create-table',
       description: 'Creates a new table associated with the given namespace in a table bucket',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket to create the table in',
@@ -111,6 +115,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'create-table-bucket',
       description: 'Creates a table bucket',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the table bucket',
@@ -148,6 +154,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'delete-namespace',
       description: 'Deletes a namespace',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket associated with the namespace',
@@ -194,6 +202,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -206,6 +215,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'delete-table',
       description: 'Deletes a table',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket that contains the table',
@@ -258,6 +268,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'delete-table-bucket',
       description: 'Deletes a table bucket',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket',
@@ -295,6 +307,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'delete-table-bucket-policy',
       description: 'Deletes a table bucket policy',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Number (ARN) of the table bucket',
@@ -332,6 +346,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -344,6 +359,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'delete-table-policy',
       description: 'Deletes a table policy',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Number (ARN) of the table bucket that contains the table',
@@ -387,6 +403,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -399,6 +416,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'get-namespace',
       description: 'Gets details about a namespace',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket',
@@ -433,6 +451,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -445,6 +464,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'get-table',
       description: 'Gets details about a table',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket associated with the table',
@@ -488,6 +508,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -500,6 +521,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'get-table-bucket',
       description: 'Gets details on a table bucket',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket',
@@ -525,6 +547,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -537,6 +560,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'get-table-bucket-maintenance-configuration',
       description: 'Gets details about a maintenance configuration for a given table bucket',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket associated with the maintenance configuration',
@@ -562,6 +586,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -574,6 +599,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'get-table-bucket-policy',
       description: 'Gets details about a table bucket policy',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Number (ARN) of the table bucket',
@@ -599,6 +625,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -611,6 +638,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'get-table-maintenance-configuration',
       description: 'Gets details about the maintenance configuration of a table',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket',
@@ -654,6 +682,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -666,6 +695,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'get-table-maintenance-job-status',
       description: 'Gets the status of a maintenance job for a table',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket',
@@ -709,6 +739,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -721,6 +752,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'get-table-metadata-location',
       description: 'Gets the location of the table metadata',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket',
@@ -764,6 +796,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -776,6 +809,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'get-table-policy',
       description: 'Gets details about a table policy',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Number (ARN) of the table bucket that contains the table',
@@ -819,6 +853,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -831,6 +866,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'list-namespaces',
       description: 'Lists the namespaces within a table bucket',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket',
@@ -910,6 +946,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -922,6 +959,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'list-table-buckets',
       description: 'Lists table buckets for your account',
       options: [
+
         Option(
           name: '--prefix',
           description: 'The prefix of the table buckets',
@@ -992,6 +1030,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1004,6 +1043,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'list-tables',
       description: 'List tables in the given table bucket',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon resource Number (ARN) of the table bucket',
@@ -1092,6 +1132,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1104,6 +1145,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'put-table-bucket-maintenance-configuration',
       description: 'Creates a new maintenance configuration or replaces an existing maintenance configuration for a table bucket',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket associated with the maintenance configuration',
@@ -1147,6 +1189,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1159,6 +1202,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'put-table-bucket-policy',
       description: 'Creates a new maintenance configuration or replaces an existing table bucket policy for a table bucket',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Number (ARN) of the table bucket',
@@ -1193,6 +1237,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1205,6 +1250,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'put-table-maintenance-configuration',
       description: 'Creates a new maintenance configuration or replaces an existing maintenance configuration for a table',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table associated with the maintenance configuration',
@@ -1266,6 +1312,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1278,6 +1325,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'put-table-policy',
       description: 'Creates a new maintenance configuration or replaces an existing table policy for a table',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Number (ARN) of the table bucket that contains the table',
@@ -1330,6 +1378,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1342,6 +1391,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'rename-table',
       description: 'Renames a table or a namespace',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket',
@@ -1412,6 +1462,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1424,6 +1475,7 @@ final FigSpec s3tablesSpec = FigSpec(
       name: 'update-table-metadata-location',
       description: 'Updates the metadata location for a table',
       options: [
+
         Option(
           name: '--table-bucket-arn',
           description: 'The Amazon Resource Name (ARN) of the table bucket',
@@ -1485,6 +1537,7 @@ final FigSpec s3tablesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

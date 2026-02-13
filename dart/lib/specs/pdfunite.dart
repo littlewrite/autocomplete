@@ -9,6 +9,7 @@ final FigSpec pdfuniteSpec = FigSpec(
   name: 'pdfunite',
   description: 'Combine multiple pdfs',
   options: [
+
     Option(
       name: '-v',
       description: 'Print copyright and version info'

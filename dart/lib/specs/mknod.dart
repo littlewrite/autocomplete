@@ -9,6 +9,7 @@ final FigSpec mknodSpec = FigSpec(
   name: 'mknod',
   description: 'Create device special file',
   subcommands: [
+
     Subcommand(
       name: 'c',
       description: 'Create (c)haracter device'
@@ -19,6 +20,7 @@ final FigSpec mknodSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '-F',
       description: 'Format',
@@ -26,6 +28,7 @@ final FigSpec mknodSpec = FigSpec(
         Arg(
         name: 'FORMAT',
         suggestions: [
+
           FigSuggestion(name: 'native'),
           FigSuggestion(name: '386bsd'),
           FigSuggestion(name: '4bsd'),
@@ -53,6 +56,7 @@ final FigSpec mknodSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'FILE',
       description: 'File to create'

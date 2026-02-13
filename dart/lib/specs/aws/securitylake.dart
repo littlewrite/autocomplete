@@ -9,10 +9,12 @@ final FigSpec securitylakeSpec = FigSpec(
   name: 'securitylake',
   description: 'Amazon Security Lake is a fully managed security data lake service. You can use Security Lake to automatically centralize security data from cloud, on-premises, and custom sources into a data lake that\'s stored in your Amazon Web Services account. Amazon Web Services Organizations is an account management service that lets you consolidate multiple Amazon Web Services accounts into an organization that you create and centrally manage. With Organizations, you can create member accounts and invite existing accounts to join your organization. Security Lake helps you analyze security data for a more complete understanding of your security posture across the entire organization. It can also help you improve the protection of your workloads, applications, and data. The data lake is backed by Amazon Simple Storage Service (Amazon S3) buckets, and you retain ownership over your data. Amazon Security Lake integrates with CloudTrail, a service that provides a record of actions taken by a user, role, or an Amazon Web Services service. In Security Lake, CloudTrail captures API calls for Security Lake as events. The calls captured include calls from the Security Lake console and code calls to the Security Lake API operations. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for Security Lake. If you don\'t configure a trail, you can still view the most recent events in the CloudTrail console in Event history. Using the information collected by CloudTrail you can determine the request that was made to Security Lake, the IP address from which the request was made, who made the request, when it was made, and additional details. To learn more about Security Lake information in CloudTrail, see the Amazon Security Lake User Guide. Security Lake automates the collection of security-related log and event data from integrated Amazon Web Services services and third-party services. It also helps you manage the lifecycle of data with customizable retention and replication settings. Security Lake converts ingested data into Apache Parquet format and a standard open-source schema called the Open Cybersecurity Schema Framework (OCSF). Other Amazon Web Services services and third-party services can subscribe to the data that\'s stored in Security Lake for incident response and security data analytics',
   subcommands: [
+
     Subcommand(
       name: 'create-aws-log-source',
       description: 'Adds a natively supported Amazon Web Services service as an Amazon Security Lake source. Enables source types for member accounts in required Amazon Web Services Regions, based on the parameters you specify. You can choose any source type in any Region for either accounts that are part of a trusted organization or standalone accounts. Once you add an Amazon Web Services service as a source, Security Lake starts collecting logs and events from it. You can use this API only to enable natively supported Amazon Web Services services as a source. Use CreateCustomLogSource to enable data collection from a custom source',
       options: [
+
         Option(
           name: '--sources',
           description: 'Specify the natively-supported Amazon Web Services service to add as a source in Security Lake',
@@ -38,6 +40,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'create-custom-log-source',
       description: 'Adds a third-party custom source in Amazon Security Lake, from the Amazon Web Services Region where you want to create a custom source. Security Lake can collect logs and events from third-party custom sources. After creating the appropriate IAM role to invoke Glue crawler, use this API to add a custom source name in Security Lake. This operation creates a partition in the Amazon S3 bucket for Security Lake as the target location for log files from the custom source. In addition, this operation also creates an associated Glue table and an Glue crawler',
       options: [
+
         Option(
           name: '--configuration',
           description: 'The configuration used for the third-party custom source',
@@ -102,6 +106,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'create-data-lake',
       description: 'Initializes an Amazon Security Lake instance with the provided (or default) configuration. You can enable Security Lake in Amazon Web Services Regions with customized settings before enabling log collection in Regions. To specify particular Regions, configure these Regions using the configurations parameter. If you have already enabled Security Lake in a Region when you call this command, the command will update the Region if you provide new configuration parameters. If you have not already enabled Security Lake in the Region when you call this API, it will set up the data lake in the Region with the specified configurations. When you enable Security Lake, it starts ingesting security data after the CreateAwsLogSource call and after you create subscribers using the CreateSubscriber API. This includes ingesting security data from sources, storing data, and making data accessible to subscribers. Security Lake also enables all the existing settings and resources that it stores or maintains for your Amazon Web Services account in the current Region, including security log and event data. For more information, see the Amazon Security Lake User Guide',
       options: [
+
         Option(
           name: '--configurations',
           description: 'Specify the Region or Regions that will contribute data to the rollup region',
@@ -157,6 +163,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'create-data-lake-exception-subscription',
       description: 'Creates the specified notification subscription in Amazon Security Lake for the organization you specify. The notification subscription is created for exceptions that cannot be resolved by Security Lake automatically',
       options: [
+
         Option(
           name: '--exception-time-to-live',
           description: 'The expiration period and time-to-live (TTL). It is the duration of time until which the exception message remains',
@@ -212,6 +220,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'create-data-lake-organization-configuration',
       description: 'Automatically enables Amazon Security Lake for new member accounts in your organization. Security Lake is not automatically enabled for any existing member accounts in your organization',
       options: [
+
         Option(
           name: '--auto-enable-new-account',
           description: 'Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization',
@@ -249,6 +259,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'create-subscriber',
       description: 'Creates a subscriber for accounts that are already enabled in Amazon Security Lake. You can create a subscriber with access to data in the current Amazon Web Services Region',
       options: [
+
         Option(
           name: '--access-types',
           description: 'The Amazon S3 or Lake Formation access type',
@@ -331,6 +343,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -343,6 +356,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'create-subscriber-notification',
       description: 'Notifies the subscriber when new data is written to the data lake for the sources that the subscriber consumes in Security Lake. You can create only one subscriber notification per subscriber',
       options: [
+
         Option(
           name: '--configuration',
           description: 'Specify the configuration using which you want to create the subscriber notification',
@@ -377,6 +391,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -389,6 +404,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'delete-aws-log-source',
       description: 'Removes a natively supported Amazon Web Services service as an Amazon Security Lake source. You can remove a source for one or more Regions. When you remove the source, Security Lake stops collecting data from that source in the specified Regions and accounts, and subscribers can no longer consume new data from the source. However, subscribers can still consume data that Security Lake collected from the source before removal. You can choose any source type in any Amazon Web Services Region for either accounts that are part of a trusted organization or standalone accounts',
       options: [
+
         Option(
           name: '--sources',
           description: 'Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake',
@@ -414,6 +430,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -426,6 +443,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'delete-custom-log-source',
       description: 'Removes a custom log source from Amazon Security Lake, to stop sending data from the custom source to Security Lake',
       options: [
+
         Option(
           name: '--source-name',
           description: 'The source name of custom log source that you want to delete',
@@ -460,6 +478,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -472,6 +491,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'delete-data-lake',
       description: 'When you disable Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services Regions and it stops collecting data from your sources. Also, this API automatically takes steps to remove the account from Security Lake. However, Security Lake retains all of your existing settings and the resources that it created in your Amazon Web Services account in the current Amazon Web Services Region. The DeleteDataLake operation does not delete the data that is stored in your Amazon S3 bucket, which is owned by your Amazon Web Services account. For more information, see the Amazon Security Lake User Guide',
       options: [
+
         Option(
           name: '--regions',
           description: 'The list of Regions where Security Lake is enabled',
@@ -497,6 +517,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -509,6 +530,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'delete-data-lake-exception-subscription',
       description: 'Deletes the specified notification subscription in Amazon Security Lake for the organization you specify',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -525,6 +547,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -537,6 +560,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'delete-data-lake-organization-configuration',
       description: 'Turns off automatic enablement of Amazon Security Lake for member accounts that are added to an organization in Organizations. Only the delegated Security Lake administrator for an organization can perform this operation. If the delegated Security Lake administrator performs this operation, new member accounts won\'t automatically contribute data to the data lake',
       options: [
+
         Option(
           name: '--auto-enable-new-account',
           description: 'Turns off automatic enablement of Security Lake for member accounts that are added to an organization',
@@ -562,6 +586,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -574,6 +599,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'delete-subscriber',
       description: 'Deletes the subscription permission and all notification settings for accounts that are already enabled in Amazon Security Lake. When you run DeleteSubscriber, the subscriber will no longer consume data from Security Lake and the subscriber is removed. This operation deletes the subscriber and removes access to data in the current Amazon Web Services Region',
       options: [
+
         Option(
           name: '--subscriber-id',
           description: 'A value created by Security Lake that uniquely identifies your DeleteSubscriber API request',
@@ -599,6 +625,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -611,6 +638,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'delete-subscriber-notification',
       description: 'Deletes the specified subscription notification in Amazon Security Lake for the organization you specify',
       options: [
+
         Option(
           name: '--subscriber-id',
           description: 'The ID of the Security Lake subscriber account',
@@ -636,6 +664,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -648,6 +677,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'deregister-data-lake-delegated-administrator',
       description: 'Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be called by the organization management account. The organization management account cannot be the delegated administrator account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -664,6 +694,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -676,6 +707,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'get-data-lake-exception-subscription',
       description: 'Retrieves the protocol and endpoint that were provided when subscribing to Amazon SNS topics for exception notifications',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -692,6 +724,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -704,6 +737,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'get-data-lake-organization-configuration',
       description: 'Retrieves the configuration that will be automatically set up for accounts added to the organization after the organization has onboarded to Amazon Security Lake. This API does not take input parameters',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -720,6 +754,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -732,6 +767,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'get-data-lake-sources',
       description: 'Retrieves a snapshot of the current Region, including whether Amazon Security Lake is enabled for those accounts and which sources Security Lake is collecting data from',
       options: [
+
         Option(
           name: '--accounts',
           description: 'The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved',
@@ -802,6 +838,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -814,6 +851,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'get-subscriber',
       description: 'Retrieves the subscription information for the specified subscription ID. You can get information about a specific subscriber',
       options: [
+
         Option(
           name: '--subscriber-id',
           description: 'A value created by Amazon Security Lake that uniquely identifies your GetSubscriber API request',
@@ -839,6 +877,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -851,6 +890,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'list-data-lake-exceptions',
       description: 'Lists the Amazon Security Lake exceptions that you can use to find the source of problems and fix them',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Lists the maximum number of failures in Security Lake',
@@ -921,6 +961,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -933,6 +974,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'list-data-lakes',
       description: 'Retrieves the Amazon Security Lake configuration object for the specified Amazon Web Services Regions. You can use this operation to determine whether Security Lake is enabled for a Region',
       options: [
+
         Option(
           name: '--regions',
           description: 'The list of Regions where Security Lake is enabled',
@@ -958,6 +1000,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -970,6 +1013,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'list-log-sources',
       description: 'Retrieves the log sources',
       options: [
+
         Option(
           name: '--accounts',
           description: 'The list of Amazon Web Services accounts for which log sources are displayed',
@@ -1058,6 +1102,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1070,6 +1115,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'list-subscribers',
       description: 'Lists all subscribers for the specific Amazon Security Lake account ID. You can retrieve a list of subscriptions associated with a specific organization or Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of accounts for which the configuration is displayed',
@@ -1131,6 +1177,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1143,6 +1190,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves the tags (keys and values) that are associated with an Amazon Security Lake resource: a subscriber, or the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon Security Lake resource for which you want to retrieve the tags',
@@ -1168,6 +1216,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1180,6 +1229,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'register-data-lake-delegated-administrator',
       description: 'Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be called by the organization management account. The organization management account cannot be the delegated administrator account',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The Amazon Web Services account ID of the Security Lake delegated administrator',
@@ -1205,6 +1255,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1217,6 +1268,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or updates one or more tags that are associated with an Amazon Security Lake resource: a subscriber, or the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region. A tag is a label that you can define and associate with Amazon Web Services resources. Each tag consists of a required tag key and an associated tag value. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor for a tag key. Tags can help you identify, categorize, and manage resources in different ways, such as by owner, environment, or other criteria. For more information, see Tagging Amazon Security Lake resources in the Amazon Security Lake User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon Security Lake resource to add or update the tags for',
@@ -1251,6 +1303,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1263,6 +1316,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags (keys and values) from an Amazon Security Lake resource: a subscriber, or the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon Security Lake resource to remove one or more tags from',
@@ -1297,6 +1351,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1309,6 +1364,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'update-data-lake',
       description: 'You can use UpdateDataLake to specify where to store your security data, how it should be encrypted at rest and for how long. You can add a Rollup Region to consolidate data from multiple Amazon Web Services Regions, replace default encryption (SSE-S3) with Customer Manged Key, or specify transition and expiration actions through storage Lifecycle management. The UpdateDataLake API works as an "upsert" operation that performs an insert if the specified item or record does not exist, or an update if it already exists. Security Lake securely stores your data at rest using Amazon Web Services encryption solutions. For more details, see Data protection in Amazon Security Lake. For example, omitting the key encryptionConfiguration from a Region that is included in an update call that currently uses KMS will leave that Region\'s KMS key in place, but specifying encryptionConfiguration: {kmsKeyId: \'S3_MANAGED_KEY\'} for that same Region will reset the key to S3-managed. For more details about lifecycle management and how to update retention settings for one or more Regions after enabling Security Lake, see the Amazon Security Lake User Guide',
       options: [
+
         Option(
           name: '--configurations',
           description: 'Specifies the Region or Regions that will contribute data to the rollup region',
@@ -1343,6 +1399,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1355,6 +1412,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'update-data-lake-exception-subscription',
       description: 'Updates the specified notification subscription in Amazon Security Lake for the organization you specify',
       options: [
+
         Option(
           name: '--exception-time-to-live',
           description: 'The time-to-live (TTL) for the exception message to remain. It is the duration of time until which the exception message remains',
@@ -1398,6 +1456,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1410,6 +1469,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'update-subscriber',
       description: 'Updates an existing subscription for the given Amazon Security Lake account ID. You can update a subscriber by changing the sources that the subscriber consumes data from',
       options: [
+
         Option(
           name: '--sources',
           description: 'The supported Amazon Web Services services from which logs and events are collected. For the list of supported Amazon Web Services services, see the Amazon Security Lake User Guide',
@@ -1471,6 +1531,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1483,6 +1544,7 @@ final FigSpec securitylakeSpec = FigSpec(
       name: 'update-subscriber-notification',
       description: 'Updates an existing notification method for the subscription (SQS or HTTPs endpoint) or switches the notification subscription endpoint for a subscriber',
       options: [
+
         Option(
           name: '--configuration',
           description: 'The configuration for subscriber notification',
@@ -1517,6 +1579,7 @@ final FigSpec securitylakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

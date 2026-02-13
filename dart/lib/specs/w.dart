@@ -12,6 +12,7 @@ final FigSpec wSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   options: [
+
     Option(
       name: '-h',
       description: 'Suppress the heading'

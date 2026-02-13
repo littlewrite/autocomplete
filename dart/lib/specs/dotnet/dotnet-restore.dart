@@ -16,6 +16,7 @@ final FigSpec restoreSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--configfile',
       description: 'The NuGet configuration file (nuget.config) to use. If specified, only the settings from this file will be used. If not specified, the hierarchy of configuration files from the current directory will be used',
@@ -106,6 +107,7 @@ final FigSpec restoreSpec = FigSpec(
         Arg(
         name: 'verbosity',
         suggestions: [
+
           FigSuggestion(name: 'quiet'),
           FigSuggestion(name: 'minimal'),
           FigSuggestion(name: 'normal'),

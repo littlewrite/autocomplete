@@ -18,6 +18,7 @@ final FigSpec calSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-h',
       description: 'Turns off highlighting of today'

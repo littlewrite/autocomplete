@@ -9,6 +9,7 @@ final FigSpec sqlmeshSpec = FigSpec(
   name: 'sqlmesh',
   description: 'SQLMesh command line tool',
   options: [
+
     Option(
       name: '--paths',
       description: 'Paths to SQLMesh project files',
@@ -63,10 +64,12 @@ final FigSpec sqlmeshSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Create a new SQLMesh repository',
       options: [
+
         Option(
           name: ['-t', '--template'],
           description: 'Project template. Supported values: airflow, dbt, dlt, default, empty',
@@ -74,6 +77,7 @@ final FigSpec sqlmeshSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'airflow'),
               FigSuggestion(name: 'dbt'),
               FigSuggestion(name: 'dlt'),
@@ -104,6 +108,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'render',
       description: 'Render a model\'s query, optionally expanding referenced models',
       options: [
+
         Option(
           name: '--dialect',
           description: 'The SQL dialect to render the query as',
@@ -165,6 +170,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'evaluate',
       description: 'Evaluate a model and return a dataframe with a default limit of 1000',
       options: [
+
         Option(
           name: '--start',
           description: 'Start time for evaluation',
@@ -212,6 +218,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'format',
       description: 'Format all SQL models and audits',
       options: [
+
         Option(
           name: ['-t', '--transpile'],
           description: 'Transpile project models to the specified dialect',
@@ -258,6 +265,7 @@ final FigSpec sqlmeshSpec = FigSpec(
             Arg(
             name: 'mode',
             suggestions: [
+
               FigSuggestion(name: 'upper'),
               FigSuggestion(name: 'lower')
             ]
@@ -304,6 +312,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'plan',
       description: 'Apply local changes to the target environment',
       options: [
+
         Option(
           name: '--create-from',
           description: 'The environment to create the target environment from if it doesn\'t exist. Default: prod',
@@ -426,6 +435,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'run',
       description: 'Evaluate missing intervals for the target environment',
       options: [
+
         Option(
           name: '--start',
           description: 'Start time for the run',
@@ -487,6 +497,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'invalidate',
       description: 'Invalidate the target environment, forcing its removal during the next run of the janitor process',
       options: [
+
         Option(
           name: ['-s', '--sync'],
           description: 'Wait for the environment to be deleted before returning'
@@ -502,6 +513,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'janitor',
       description: 'Run the janitor process on-demand',
       options: [
+
         Option(
           name: '--ignore-ttl',
           description: 'Cleanup snapshots that are not referenced in any environment, regardless of when they\'re set to expire'
@@ -512,6 +524,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'dag',
       description: 'Render the DAG as an html file',
       options: [
+
         Option(
           name: '--select-model',
           description: 'Select specific models to include in the dag',
@@ -533,10 +546,12 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'create_test',
       description: 'Generate a unit test fixture for a given model',
       options: [
+
         Option(
           name: ['-q', '--query'],
           description: 'Queries that will be used to generate data for the model\'s dependencies',
           args: [
+
             Arg(
               name: 'name'
             ),
@@ -554,6 +569,7 @@ final FigSpec sqlmeshSpec = FigSpec(
           name: ['-v', '--var'],
           description: 'Key-value pairs that will define variables needed by the model',
           args: [
+
             Arg(
               name: 'key'
             ),
@@ -596,6 +612,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'test',
       description: 'Run model unit tests',
       options: [
+
         Option(
           name: ['-k', '--match-pattern'],
           description: 'Only run tests matching pattern',
@@ -626,6 +643,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'audit',
       description: 'Run audits for the target model(s)',
       options: [
+
         Option(
           name: '--model',
           description: 'A model to audit',
@@ -669,6 +687,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'ui',
       description: 'Start a browser-based SQLMesh UI',
       options: [
+
         Option(
           name: '--host',
           description: 'Bind socket to this host',
@@ -696,6 +715,7 @@ final FigSpec sqlmeshSpec = FigSpec(
             Arg(
             name: 'mode',
             suggestions: [
+
               FigSuggestion(name: 'ide'),
               FigSuggestion(name: 'catalog'),
               FigSuggestion(name: 'docs'),
@@ -719,6 +739,7 @@ final FigSpec sqlmeshSpec = FigSpec(
       name: 'create_external_models',
       description: 'Create a schema file containing external model schemas',
       options: [
+
         Option(
           name: '--strict',
           description: 'Raise an error if the external model is missing in the database'

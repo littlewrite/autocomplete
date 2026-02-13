@@ -9,6 +9,7 @@ final FigSpec tracerouteSpec = FigSpec(
   name: 'traceroute',
   description: 'Print the route packets take to network host',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for traceroute'

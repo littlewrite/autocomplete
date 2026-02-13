@@ -9,14 +9,17 @@ final FigSpec iapSpec = FigSpec(
   name: 'iap',
   description: 'Manage IAP policies',
   subcommands: [
+
     Subcommand(
       name: 'settings',
       description: 'Manage IAP settings',
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Get the setting for an IAP resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -136,6 +139,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'RESOURCE_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'app-engine'),
                   FigSuggestion(name: 'iap_web'),
                   FigSuggestion(name: 'compute'),
@@ -179,6 +183,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -195,6 +200,7 @@ final FigSpec iapSpec = FigSpec(
           name: 'set',
           description: 'Set the setting for an IAP resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -314,6 +320,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'RESOURCE_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'app-engine'),
                   FigSuggestion(name: 'iap_web'),
                   FigSuggestion(name: 'compute'),
@@ -357,6 +364,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -377,6 +385,7 @@ final FigSpec iapSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -500,6 +509,7 @@ final FigSpec iapSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -516,10 +526,12 @@ final FigSpec iapSpec = FigSpec(
       name: 'web',
       description: 'Manage IAP web policies',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding to an IAP IAM resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -662,6 +674,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'RESOURCE_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'app-engine'),
                   FigSuggestion(name: 'backend-services')
                 ]
@@ -714,6 +727,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -730,6 +744,7 @@ final FigSpec iapSpec = FigSpec(
           name: 'disable',
           description: 'Disable Cloud Identity-Aware Proxy (Cloud IAP) on an IAP resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -838,6 +853,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'RESOURCE_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'app-engine'),
                   FigSuggestion(name: 'backend-services')
                 ]
@@ -879,6 +895,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -895,6 +912,7 @@ final FigSpec iapSpec = FigSpec(
           name: 'enable',
           description: 'Enable Cloud Identity-Aware Proxy (Cloud IAP) on an IAP resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1027,6 +1045,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'RESOURCE_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'app-engine'),
                   FigSuggestion(name: 'backend-services')
                 ]
@@ -1068,6 +1087,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1084,6 +1104,7 @@ final FigSpec iapSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get IAM policy for an IAP IAM resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1225,6 +1246,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'RESOURCE_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'app-engine'),
                   FigSuggestion(name: 'backend-services')
                 ]
@@ -1276,6 +1298,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1292,6 +1315,7 @@ final FigSpec iapSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding from an IAP IAM resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1438,6 +1462,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'RESOURCE_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'app-engine'),
                   FigSuggestion(name: 'backend-services')
                 ]
@@ -1490,6 +1515,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1506,6 +1532,7 @@ final FigSpec iapSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for an IAP IAM resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1614,6 +1641,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'RESOURCE_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'app-engine'),
                   FigSuggestion(name: 'backend-services')
                 ]
@@ -1654,6 +1682,7 @@ final FigSpec iapSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1674,6 +1703,7 @@ final FigSpec iapSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1797,6 +1827,7 @@ final FigSpec iapSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1811,6 +1842,7 @@ final FigSpec iapSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1934,6 +1966,7 @@ final FigSpec iapSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

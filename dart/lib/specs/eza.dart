@@ -16,6 +16,7 @@ final FigSpec ezaSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-?', '--help'],
       description: 'Show list of command-line options'
@@ -59,6 +60,7 @@ final FigSpec ezaSpec = FigSpec(
         Arg(
         name: 'when',
         suggestions: [
+
           FigSuggestion(
             name: ['auto', 'automatic'],
             description: 'Display file kind indicators only when the standard output is connected to a real terminal'
@@ -83,6 +85,7 @@ final FigSpec ezaSpec = FigSpec(
         Arg(
         name: 'when',
         suggestions: [
+
           FigSuggestion(
             name: ['auto', 'automatic'],
             description: 'To colorize the output only when the standard output is connected to a real terminal'
@@ -107,6 +110,7 @@ final FigSpec ezaSpec = FigSpec(
         Arg(
         name: 'field',
         suggestions: [
+
           FigSuggestion(name: 'all'),
           FigSuggestion(name: 'age'),
           FigSuggestion(name: 'size')
@@ -121,6 +125,7 @@ final FigSpec ezaSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'fixed'),
           FigSuggestion(name: 'gradient')
         ],
@@ -135,6 +140,7 @@ final FigSpec ezaSpec = FigSpec(
         Arg(
         name: 'when',
         suggestions: [
+
           FigSuggestion(
             name: ['auto', 'automatic'],
             description: 'Display icons only when the standard output is connected to a real terminal'
@@ -167,6 +173,7 @@ final FigSpec ezaSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'off'),
           FigSuggestion(name: 'on'),
           FigSuggestion(name: 'follow')
@@ -239,6 +246,7 @@ final FigSpec ezaSpec = FigSpec(
         Arg(
         name: 'field',
         suggestions: [
+
           FigSuggestion(
             name: 'name',
             description: 'Lowercase precede UPERCASE'
@@ -372,6 +380,7 @@ final FigSpec ezaSpec = FigSpec(
         Arg(
         name: 'field',
         suggestions: [
+
           FigSuggestion(name: 'modified'),
           FigSuggestion(name: 'changed'),
           FigSuggestion(name: 'accessed'),
@@ -408,6 +417,7 @@ final FigSpec ezaSpec = FigSpec(
         Arg(
         name: 'format',
         suggestions: [
+
           FigSuggestion(name: 'default'),
           FigSuggestion(name: 'iso'),
           FigSuggestion(name: 'long-iso'),

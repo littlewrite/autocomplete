@@ -9,10 +9,12 @@ final FigSpec workmailSpec = FigSpec(
   name: 'workmail',
   description: 'WorkMail is a secure, managed business email and calendaring service with support for existing desktop and mobile email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or other native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory and control both the keys that encrypt your data and the location in which your data is stored. The WorkMail API is designed for the following scenarios:   Listing and describing organizations     Managing users     Managing groups     Managing resources   All WorkMail API operations are Amazon-authenticated and certificate-signed. They not only require the use of the AWS SDK, but also allow for the exclusive use of AWS Identity and Access Management users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the WorkMail site, the IAM user gains full administrative visibility into the entire WorkMail organization (or as set in the IAM policy). This includes, but is not limited to, the ability to create, update, and delete users, groups, and resources. This allows developers to perform the scenarios listed above, as well as give users the ability to grant access on a selective basis using the IAM model',
   subcommands: [
+
     Subcommand(
       name: 'associate-delegate-to-resource',
       description: 'Adds a member (user or group) to the resource\'s set of delegates',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization under which the resource exists',
@@ -56,6 +58,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'associate-member-to-group',
       description: 'Adds a member (user or group) to the group\'s set',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization under which the group exists',
@@ -111,6 +115,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'assume-impersonation-role',
       description: 'Assumes an impersonation role for the given WorkMail organization. This method returns an authentication token you can use to make impersonated calls',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization under which the impersonation role will be assumed',
@@ -157,6 +163,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'cancel-mailbox-export-job',
       description: 'Cancels a mailbox export job.  If the mailbox export job is near completion, it might not be possible to cancel it',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The idempotency token for the client request',
@@ -212,6 +220,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'create-alias',
       description: 'Adds an alias to the set of a given member (user or group) of WorkMail',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization under which the member (user or group) exists',
@@ -267,6 +277,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'create-availability-configuration',
       description: 'Creates an AvailabilityConfiguration for the given WorkMail organization and domain',
       options: [
+
         Option(
           name: '--client-token',
           description: 'An idempotent token that ensures that an API request is executed only once',
@@ -340,6 +352,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -352,6 +365,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'create-group',
       description: 'Creates a group that can be used in WorkMail by calling the RegisterToWorkMail operation',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization under which the group is to be created',
@@ -394,6 +408,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -406,6 +421,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'create-identity-center-application',
       description: 'Creates the WorkMail application in IAM Identity Center that can be used later in the WorkMail - IdC integration. For more information, see PutIdentityProviderConfiguration. This action does not affect the authentication settings for any WorkMail organizations',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the IAM Identity Center application',
@@ -449,6 +465,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -461,6 +478,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'create-impersonation-role',
       description: 'Creates an impersonation role for the given WorkMail organization.  Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries also complete successfully without performing any further actions',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The idempotency token for the client request',
@@ -531,6 +549,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -543,6 +562,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'create-mobile-device-access-rule',
       description: 'Creates a new mobile device access rule for the specified WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization under which the rule will be created',
@@ -676,6 +696,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -688,6 +709,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'create-organization',
       description: 'Creates a new WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias must match the directory alias. If you choose not to associate an existing directory with your organization, then we create a new WorkMail directory for you. For more information, see Adding an organization in the WorkMail Administrator Guide. You can associate multiple email domains with an organization, then choose your default email domain from the WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For more information, see Adding a domain and Choosing the default domain in the WorkMail Administrator Guide. Optionally, you can use a customer managed key from AWS Key Management Service (AWS KMS) to encrypt email for your organization. If you don\'t associate an AWS KMS key, WorkMail creates a default, AWS managed key for you',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The AWS Directory Service directory ID',
@@ -757,6 +779,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -769,6 +792,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'create-resource',
       description: 'Creates a new WorkMail resource',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier associated with the organization for which the resource is created',
@@ -829,6 +853,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -841,6 +866,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'create-user',
       description: 'Creates a user who can be used in WorkMail by calling the RegisterToWorkMail operation',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier of the organization for which the user is created',
@@ -937,6 +963,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -949,6 +976,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-access-control-rule',
       description: 'Deletes an access control rule for the specified WorkMail organization.  Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization',
@@ -983,6 +1011,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -995,6 +1024,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-alias',
       description: 'Remove one or more specified aliases from a set of aliases for a given user',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the user exists',
@@ -1038,6 +1068,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1050,6 +1081,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-availability-configuration',
       description: 'Deletes the AvailabilityConfiguration for the given WorkMail organization and domain',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization for which the AvailabilityConfiguration will be deleted',
@@ -1084,6 +1116,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1096,6 +1129,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-email-monitoring-configuration',
       description: 'Deletes the email monitoring configuration for a specified organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The ID of the organization from which the email monitoring configuration is deleted',
@@ -1121,6 +1155,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1133,6 +1168,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-group',
       description: 'Deletes a group from WorkMail',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization that contains the group',
@@ -1167,6 +1203,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1179,6 +1216,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-identity-center-application',
       description: 'Deletes the IAM Identity Center application from WorkMail. This action does not affect the authentication settings for any WorkMail organizations',
       options: [
+
         Option(
           name: '--application-arn',
           description: 'The Amazon Resource Name (ARN) of the application',
@@ -1204,6 +1242,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1216,6 +1255,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-identity-provider-configuration',
       description: 'Disables the integration between IdC and WorkMail. Authentication will continue with the directory as it was before the IdC integration. You might have to reset your directory passwords and reconfigure your desktop and mobile email clients',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The Organization ID',
@@ -1241,6 +1281,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1253,6 +1294,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-impersonation-role',
       description: 'Deletes an impersonation role for the given WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization from which to delete the impersonation role',
@@ -1287,6 +1329,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1299,6 +1342,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-mailbox-permissions',
       description: 'Deletes permissions granted to a member (user or group)',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier of the organization under which the member (user or group) exists',
@@ -1342,6 +1386,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1354,6 +1399,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-mobile-device-access-override',
       description: 'Deletes the mobile device access override for the given WorkMail organization, user, and device.  Deleting already deleted and non-existing overrides does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization for which the access override will be deleted',
@@ -1397,6 +1443,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1409,6 +1456,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-mobile-device-access-rule',
       description: 'Deletes a mobile device access rule for the specified WorkMail organization.  Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization under which the rule will be deleted',
@@ -1443,6 +1491,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1455,6 +1504,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-organization',
       description: 'Deletes an WorkMail organization and all underlying AWS resources managed by WorkMail as part of the organization. You can choose whether to delete the associated directory. For more information, see Removing an organization in the WorkMail Administrator Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The idempotency token associated with the request',
@@ -1513,6 +1563,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1525,6 +1576,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-personal-access-token',
       description: 'Deletes the Personal Access Token from the provided WorkMail Organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The Organization ID',
@@ -1559,6 +1611,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1571,6 +1624,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-resource',
       description: 'Deletes the specified resource',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier associated with the organization from which the resource is deleted',
@@ -1605,6 +1659,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1617,6 +1672,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-retention-policy',
       description: 'Deletes the specified retention policy from the specified organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization ID',
@@ -1651,6 +1707,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1663,6 +1720,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'delete-user',
       description: 'Deletes a user from WorkMail and all subsequent systems. Before you can delete a user, the user state must be DISABLED. Use the DescribeUser action to confirm the user state. Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for 30 days before they are permanently removed',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization that contains the user to be deleted',
@@ -1697,6 +1755,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1709,6 +1768,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'deregister-from-work-mail',
       description: 'Mark a user, group, or resource as no longer used in WorkMail. This action disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is Disable',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the WorkMail entity exists',
@@ -1743,6 +1803,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1755,6 +1816,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'deregister-mail-domain',
       description: 'Removes a domain from WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address used by WorkMail entities before you remove the domain',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization for which the domain will be deregistered',
@@ -1789,6 +1851,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1801,6 +1864,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'describe-email-monitoring-configuration',
       description: 'Describes the current email monitoring configuration for a specified organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The ID of the organization for which the email monitoring configuration is described',
@@ -1826,6 +1890,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1838,6 +1903,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'describe-entity',
       description: 'Returns basic details about an entity in WorkMail',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the entity exists',
@@ -1872,6 +1938,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1884,6 +1951,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'describe-group',
       description: 'Returns the data available for the group',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the group exists',
@@ -1918,6 +1986,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1930,6 +1999,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'describe-identity-provider-configuration',
       description: 'Returns detailed information on the current IdC setup for the WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The Organization ID',
@@ -1955,6 +2025,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1967,6 +2038,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'describe-inbound-dmarc-settings',
       description: 'Lists the settings in a DMARC policy for a specified organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'Lists the ID of the given organization',
@@ -1992,6 +2064,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2004,6 +2077,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'describe-mailbox-export-job',
       description: 'Describes the current status of a mailbox export job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The mailbox export job ID',
@@ -2038,6 +2112,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2050,6 +2125,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'describe-organization',
       description: 'Provides more information regarding a given organization based on its identifier',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization to be described',
@@ -2075,6 +2151,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2087,6 +2164,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'describe-resource',
       description: 'Returns the data available for the resource',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier associated with the organization for which the resource is described',
@@ -2121,6 +2199,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2133,6 +2212,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'describe-user',
       description: 'Provides information regarding the user',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the user exists',
@@ -2167,6 +2247,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2179,6 +2260,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'disassociate-delegate-from-resource',
       description: 'Removes a member from the resource\'s set of delegates',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the resource exists',
@@ -2222,6 +2304,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2234,6 +2317,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'disassociate-member-from-group',
       description: 'Removes a member from a group',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the group exists',
@@ -2277,6 +2361,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2289,6 +2374,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'get-access-control-effect',
       description: 'Gets the effects of an organization\'s access control rules as they apply to a specified IPv4 address, access protocol action, and user ID or impersonation role ID. You must provide either the user ID or impersonation role ID. Impersonation role ID can only be used with Action EWS',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization',
@@ -2350,6 +2436,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2362,6 +2449,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'get-default-retention-policy',
       description: 'Gets the default retention policy details for the specified organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization ID',
@@ -2387,6 +2475,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2399,6 +2488,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'get-impersonation-role',
       description: 'Gets the impersonation role details for the given WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization from which to retrieve the impersonation role',
@@ -2433,6 +2523,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2445,6 +2536,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'get-impersonation-role-effect',
       description: 'Tests whether the given impersonation role can impersonate a target user',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization where the impersonation role is defined',
@@ -2488,6 +2580,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2500,6 +2593,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'get-mail-domain',
       description: 'Gets details for a mail domain, including domain records required to configure your domain with recommended security',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization for which the domain is retrieved',
@@ -2534,6 +2628,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2546,6 +2641,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'get-mailbox-details',
       description: 'Requests a user\'s mailbox details for a specified organization and user',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization that contains the user whose mailbox details are being requested',
@@ -2580,6 +2676,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2592,6 +2689,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'get-mobile-device-access-effect',
       description: 'Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access rules for the WorkMail organization for a particular user\'s attributes',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization to simulate the access effect for',
@@ -2653,6 +2751,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2665,6 +2764,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'get-mobile-device-access-override',
       description: 'Gets the mobile device access override for the given WorkMail organization, user, and device',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization to which you want to apply the override',
@@ -2708,6 +2808,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2720,6 +2821,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'get-personal-access-token-metadata',
       description: 'Requests details of a specific Personal Access Token within the WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The Organization ID',
@@ -2754,6 +2856,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2766,6 +2869,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-access-control-rules',
       description: 'Lists the access control rules for the specified organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization',
@@ -2791,6 +2895,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2803,6 +2908,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-aliases',
       description: 'Creates a paginated call to list the aliases associated with a given entity',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the entity exists',
@@ -2882,6 +2988,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2894,6 +3001,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-availability-configurations',
       description: 'List all the AvailabilityConfiguration\'s for the given WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization for which the AvailabilityConfiguration\'s will be listed',
@@ -2964,6 +3072,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2976,6 +3085,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-group-members',
       description: 'Returns an overview of the members of a group. Users and groups can be members of a group',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the group exists',
@@ -3055,6 +3165,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3067,6 +3178,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-groups',
       description: 'Returns summaries of the organization\'s groups',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the groups exist',
@@ -3146,6 +3258,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3158,6 +3271,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-groups-for-entity',
       description: 'Returns all the groups to which an entity belongs',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the entity exists',
@@ -3219,6 +3333,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3231,6 +3346,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-impersonation-roles',
       description: 'Lists all the impersonation roles for the given WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization to which the listed impersonation roles belong',
@@ -3274,6 +3390,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3286,6 +3403,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-mail-domains',
       description: 'Lists the mail domains in a given WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization for which to list domains',
@@ -3329,6 +3447,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3341,6 +3460,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-mailbox-export-jobs',
       description: 'Lists the mailbox export jobs started for the specified organization within the last seven days',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization ID',
@@ -3384,6 +3504,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3396,6 +3517,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-mailbox-permissions',
       description: 'Lists the mailbox permissions associated with a user, group, or resource mailbox',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier of the organization under which the user, group, or resource exists',
@@ -3475,6 +3597,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3487,6 +3610,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-mobile-device-access-overrides',
       description: 'Lists all the mobile device access overrides for any given combination of WorkMail organization, user, or device',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization under which to list mobile device access overrides',
@@ -3548,6 +3672,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3560,6 +3685,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-mobile-device-access-rules',
       description: 'Lists the mobile device access rules for the specified WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization for which to list the rules',
@@ -3585,6 +3711,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3597,6 +3724,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-organizations',
       description: 'Returns summaries of the customer\'s organizations',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to use to retrieve the next page of results. The first call does not contain any tokens',
@@ -3658,6 +3786,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3670,6 +3799,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-personal-access-tokens',
       description: 'Returns a summary of your Personal Access Tokens',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The Organization ID',
@@ -3749,6 +3879,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3761,6 +3892,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-resource-delegates',
       description: 'Lists the delegates associated with a resource. Users and groups can be resource delegates and answer requests on behalf of the resource',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization that contains the resource for which delegates are listed',
@@ -3840,6 +3972,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3852,6 +3985,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-resources',
       description: 'Returns summaries of the organization\'s resources',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the resources exist',
@@ -3931,6 +4065,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3943,6 +4078,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags applied to an WorkMail organization resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN',
@@ -3968,6 +4104,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3980,6 +4117,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'list-users',
       description: 'Returns summaries of the organization\'s users',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the users exist',
@@ -4059,6 +4197,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4071,6 +4210,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'put-access-control-rule',
       description: 'Adds a new access control rule for the specified organization. The rule allows or denies access to the organization for the specified IPv4 addresses, access protocol actions, user IDs and impersonation IDs. Adding a new rule with the same name as an existing rule replaces the older rule',
       options: [
+
         Option(
           name: '--name',
           description: 'The rule name',
@@ -4195,6 +4335,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4207,6 +4348,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'put-email-monitoring-configuration',
       description: 'Creates or updates the email monitoring configuration for a specified organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The ID of the organization for which the email monitoring configuration is set',
@@ -4250,6 +4392,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4262,6 +4405,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'put-identity-provider-configuration',
       description: 'Enables integration between IAM Identity Center (IdC) and WorkMail to proxy authentication requests for mailbox users. You can connect your IdC directory or your external directory to WorkMail through IdC and manage access to WorkMail mailboxes in a single place. For enhanced protection, you could enable Multifactor Authentication (MFA) and Personal Access Tokens',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The ID of the WorkMail Organization',
@@ -4314,6 +4458,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4326,6 +4471,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'put-inbound-dmarc-settings',
       description: 'Enables or disables a DMARC policy for a given organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The ID of the organization that you are applying the DMARC policy to',
@@ -4359,6 +4505,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4371,6 +4518,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'put-mailbox-permissions',
       description: 'Sets permissions for a user, group, or resource. This replaces any pre-existing permissions',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier of the organization under which the user, group, or resource exists',
@@ -4423,6 +4571,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4435,6 +4584,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'put-mobile-device-access-override',
       description: 'Creates or updates a mobile device access override for the given WorkMail organization, user, and device',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'Identifies the WorkMail organization for which you create the override',
@@ -4496,6 +4646,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4508,6 +4659,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'put-retention-policy',
       description: 'Puts a retention policy to the specified organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization ID',
@@ -4569,6 +4721,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4581,6 +4734,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'register-mail-domain',
       description: 'Registers a new domain in WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the specified domain for sending your users\' emails',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Idempotency token used when retrying requests',
@@ -4624,6 +4778,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4636,6 +4791,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'register-to-work-mail',
       description: 'Registers an existing and disabled user, group, or resource for WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user, group, or resource is deleted. This operation results in the accumulation of costs. For more information, see Pricing. The equivalent console functionality for this operation is Enable. Users can either be created by calling the CreateUser API operation or they can be synchronized from your directory. For more information, see DeregisterFromWorkMail',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the user, group, or resource exists',
@@ -4679,6 +4835,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4691,6 +4848,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'reset-password',
       description: 'Allows the administrator to reset the password for a user',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier of the organization that contains the user for which the password is reset',
@@ -4734,6 +4892,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4746,6 +4905,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'start-mailbox-export-job',
       description: 'Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see Exporting mailbox content in the WorkMail Administrator Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The idempotency token for the client request',
@@ -4834,6 +4994,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4846,6 +5007,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'tag-resource',
       description: 'Applies the specified tags to the specified WorkMailorganization resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN',
@@ -4880,6 +5042,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4892,6 +5055,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'test-availability-configuration',
       description: 'Performs a test on an availability provider to ensure that access is allowed. For EWS, it verifies the provided credentials can be used to successfully log in. For Lambda, it verifies that the Lambda function can be invoked and that the resource access policy was configured to deny anonymous access. An anonymous invocation is one done without providing either a SourceArn or SourceAccount header.  The request must contain either one provider definition (EwsProvider or LambdaProvider) or the DomainName parameter. If the DomainName parameter is provided, the configuration stored under the DomainName will be tested',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization where the availability provider will be tested',
@@ -4944,6 +5108,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4956,6 +5121,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'untag-resource',
       description: 'Untags the specified tags from the specified WorkMail organization resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN',
@@ -4990,6 +5156,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5002,6 +5169,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'update-availability-configuration',
       description: 'Updates an existing AvailabilityConfiguration for the given WorkMail organization and domain',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization for which the AvailabilityConfiguration will be updated',
@@ -5054,6 +5222,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5066,6 +5235,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'update-default-mail-domain',
       description: 'Updates the default mail domain for an organization. The default mail domain is used by the WorkMail AWS Console to suggest an email address when enabling a mail user. You can only have one default domain',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization for which to list domains',
@@ -5100,6 +5270,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5112,6 +5283,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'update-group',
       description: 'Updates attributes in a group',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the group exists',
@@ -5154,6 +5326,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5166,6 +5339,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'update-impersonation-role',
       description: 'Updates an impersonation role for the given WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization that contains the impersonation role to update',
@@ -5236,6 +5410,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5248,6 +5423,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'update-mailbox-quota',
       description: 'Updates a user\'s current mailbox quota for a specified organization and user',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization that contains the user for whom to update the mailbox quota',
@@ -5291,6 +5467,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5303,6 +5480,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'update-mobile-device-access-rule',
       description: 'Updates a mobile device access rule for the specified WorkMail organization',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The WorkMail organization under which the rule will be updated',
@@ -5436,6 +5614,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5448,6 +5627,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'update-primary-email-address',
       description: 'Updates the primary email for a user, group, or resource. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email), and the email provided in the input is promoted as the primary',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The organization that contains the user, group, or resource to update',
@@ -5491,6 +5671,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5503,6 +5684,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'update-resource',
       description: 'Updates data for the resource. To have the latest information, it must be preceded by a DescribeResource call. The dataset in the request should be the one expected when performing another DescribeResource call',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier associated with the organization for which the resource is updated',
@@ -5581,6 +5763,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5593,6 +5776,7 @@ final FigSpec workmailSpec = FigSpec(
       name: 'update-user',
       description: 'Updates data for the user. To have the latest information, it must be preceded by a DescribeUser call. The dataset in the request should be the one expected when performing another DescribeUser call',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The identifier for the organization under which the user exists',
@@ -5770,6 +5954,7 @@ final FigSpec workmailSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,6 +9,7 @@ final FigSpec ddosifySpec = FigSpec(
   name: 'ddosify',
   description: 'High-performance load testing tool, written in Golang',
   options: [
+
     Option(
       name: '-t',
       description: 'Target website URL. Example: https://ddosify.com',
@@ -51,6 +52,7 @@ final FigSpec ddosifySpec = FigSpec(
         name: 'RequestType',
         defaultValue: 'linear',
         suggestions: [
+
           FigSuggestion(
             name: 'linear'
           ),
@@ -72,6 +74,7 @@ final FigSpec ddosifySpec = FigSpec(
         name: 'HTTPMethod',
         defaultValue: 'GET',
         suggestions: [
+
           FigSuggestion(
             name: 'GET'
           ),
@@ -114,6 +117,7 @@ final FigSpec ddosifySpec = FigSpec(
         Arg(
         name: 'BasicAuth',
         suggestions: [
+
           FigSuggestion(
             name: 'username:password'
           )
@@ -130,6 +134,7 @@ final FigSpec ddosifySpec = FigSpec(
         Arg(
         name: 'header',
         suggestions: [
+
           FigSuggestion(
             name: 'Content-Type: application/json'
           ),
@@ -157,6 +162,7 @@ final FigSpec ddosifySpec = FigSpec(
         Arg(
         name: 'Proxy',
         suggestions: [
+
           FigSuggestion(
             name: 'http://user:pass@proxy_host.com:port'
           )
@@ -172,6 +178,7 @@ final FigSpec ddosifySpec = FigSpec(
         name: 'OutputFormat',
         defaultValue: 'stdout',
         suggestions: [
+
           FigSuggestion(
             name: 'stdout'
           ),

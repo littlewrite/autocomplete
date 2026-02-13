@@ -9,10 +9,12 @@ final FigSpec appintegrationsSpec = FigSpec(
   name: 'appintegrations',
   description: 'Amazon AppIntegrations actions     Amazon AppIntegrations data types    The Amazon AppIntegrations service enables you to configure and reuse connections to external applications. For information about how you can use external applications with Amazon Connect, see the following topics in the Amazon Connect Administrator Guide:    Third-party applications (3p apps) in the agent workspace     Use Amazon Q in Connect for generative AI–powered agent assistance in real-time',
   subcommands: [
+
     Subcommand(
       name: 'create-application',
       description: 'Creates and persists an Application resource',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the application',
@@ -110,6 +112,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -122,6 +125,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'create-data-integration',
       description: 'Creates and persists a DataIntegration resource.  You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the CreateDataIntegration API',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the DataIntegration',
@@ -219,6 +223,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -231,6 +236,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'create-data-integration-association',
       description: 'Creates and persists a DataIntegrationAssociation resource',
       options: [
+
         Option(
           name: '--data-integration-identifier',
           description: 'A unique identifier for the DataIntegration',
@@ -310,6 +316,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -322,6 +329,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'create-event-integration',
       description: 'Creates an EventIntegration, given a specified name, description, and a reference to an Amazon EventBridge bus in your account and a partner event source that pushes events to that bus. No objects are created in the your account, only metadata that is persisted on the EventIntegration control plane',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the event integration',
@@ -392,6 +400,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -404,6 +413,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'delete-application',
       description: 'Deletes the Application. Only Applications that don\'t have any Application Associations can be deleted',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Application',
@@ -429,6 +439,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -441,6 +452,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'delete-data-integration',
       description: 'Deletes the DataIntegration. Only DataIntegrations that don\'t have any DataIntegrationAssociations can be deleted. Deleting a DataIntegration also deletes the underlying Amazon AppFlow flow and service linked role.   You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the CreateDataIntegration API',
       options: [
+
         Option(
           name: '--data-integration-identifier',
           description: 'A unique identifier for the DataIntegration',
@@ -466,6 +478,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -478,6 +491,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'delete-event-integration',
       description: 'Deletes the specified existing event integration. If the event integration is associated with clients, the request is rejected',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the event integration',
@@ -503,6 +517,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -515,6 +530,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'get-application',
       description: 'Get an Application resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Application',
@@ -540,6 +556,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -552,6 +569,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'get-data-integration',
       description: 'Returns information about the DataIntegration.  You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the CreateDataIntegration API',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A unique identifier',
@@ -577,6 +595,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -589,6 +608,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'get-event-integration',
       description: 'Returns information about the event integration',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the event integration',
@@ -614,6 +634,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -626,6 +647,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'list-application-associations',
       description: 'Returns a paginated list of application associations for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'A unique identifier for the Application',
@@ -696,6 +718,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -708,6 +731,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'list-applications',
       description: 'Lists applications in the account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results',
@@ -769,6 +793,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -781,6 +806,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'list-data-integration-associations',
       description: 'Returns a paginated list of DataIntegration associations in the account.  You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the CreateDataIntegration API',
       options: [
+
         Option(
           name: '--data-integration-identifier',
           description: 'A unique identifier for the DataIntegration',
@@ -851,6 +877,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -863,6 +890,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'list-data-integrations',
       description: 'Returns a paginated list of DataIntegrations in the account.  You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the CreateDataIntegration API',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results',
@@ -924,6 +952,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -936,6 +965,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'list-event-integration-associations',
       description: 'Returns a paginated list of event integration associations in the account',
       options: [
+
         Option(
           name: '--event-integration-name',
           description: 'The name of the event integration',
@@ -1006,6 +1036,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1018,6 +1049,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'list-event-integrations',
       description: 'Returns a paginated list of event integrations in the account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results',
@@ -1079,6 +1111,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1091,6 +1124,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1116,6 +1150,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1128,6 +1163,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1162,6 +1198,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1174,6 +1211,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1208,6 +1246,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1220,6 +1259,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'update-application',
       description: 'Updates and persists an Application resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Application',
@@ -1299,6 +1339,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1311,6 +1352,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'update-data-integration',
       description: 'Updates the description of a DataIntegration.  You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the CreateDataIntegration API',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A unique identifier for the DataIntegration',
@@ -1354,6 +1396,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1366,6 +1409,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'update-data-integration-association',
       description: 'Updates and persists a DataIntegrationAssociation resource.   Updating a DataIntegrationAssociation with ExecutionConfiguration will rerun the on-demand job',
       options: [
+
         Option(
           name: '--data-integration-identifier',
           description: 'A unique identifier for the DataIntegration',
@@ -1409,6 +1453,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1421,6 +1466,7 @@ final FigSpec appintegrationsSpec = FigSpec(
       name: 'update-event-integration',
       description: 'Updates the description of an event integration',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the event integration',
@@ -1455,6 +1501,7 @@ final FigSpec appintegrationsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

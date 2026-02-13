@@ -9,10 +9,12 @@ final FigSpec personalizeSpec = FigSpec(
   name: 'personalize',
   description: 'Amazon Personalize is a machine learning service that makes it easy to add individualized recommendations to customers',
   subcommands: [
+
     Subcommand(
       name: 'create-batch-inference-job',
       description: 'Generates batch recommendations based on a list of items or users stored in Amazon S3 and exports the recommendations to an Amazon S3 bucket. To generate batch recommendations, specify the ARN of a solution version and an Amazon S3 URI for the input and output data. For user personalization, popular items, and personalized ranking solutions, the batch inference job generates a list of recommended items for each user ID in the input file. For related items solutions, the job generates a list of recommended items for each item ID in the input file. For more information, see Creating a batch inference job .  If you use the Similar-Items recipe, Amazon Personalize can add descriptive themes to batch recommendations. To generate themes, set the job\'s mode to THEME_GENERATION and specify the name of the field that contains item names in the input data.  For more information about generating themes, see Batch recommendations with themes from Content Generator .  You can\'t get batch recommendations with the Trending-Now or Next-Best-Action recipes',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the batch inference job to create',
@@ -128,6 +130,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -140,6 +143,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-batch-segment-job',
       description: 'Creates a batch segment job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see Getting batch recommendations and user segments',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the batch segment job to create',
@@ -228,6 +232,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -240,6 +245,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-campaign',
       description: 'You incur campaign costs while it is active. To avoid unnecessary costs, make sure to delete the campaign when you are finished. For information about campaign costs, see Amazon Personalize pricing.  Creates a campaign that deploys a solution version. When a client calls the GetRecommendations and GetPersonalizedRanking APIs, a campaign is specified in the request.  Minimum Provisioned TPS and Auto-Scaling    A high minProvisionedTPS will increase your cost. We recommend starting with 1 for minProvisionedTPS (the default). Track your usage using Amazon CloudWatch metrics, and increase the minProvisionedTPS as necessary.   When you create an Amazon Personalize campaign, you can specify the minimum provisioned transactions per second (minProvisionedTPS) for the campaign. This is the baseline transaction throughput for the campaign provisioned by Amazon Personalize. It sets the minimum billing charge for the campaign while it is active. A transaction is a single GetRecommendations or GetPersonalizedRanking request. The default minProvisionedTPS is 1.  If your TPS increases beyond the minProvisionedTPS, Amazon Personalize auto-scales the provisioned capacity up and down, but never below minProvisionedTPS. There\'s a short time delay while the capacity is increased that might cause loss of transactions. When your traffic reduces, capacity returns to the minProvisionedTPS.  You are charged for the the minimum provisioned TPS or, if your requests exceed the minProvisionedTPS, the actual TPS. The actual TPS is the total number of recommendation requests you make. We recommend starting with a low minProvisionedTPS, track your usage using Amazon CloudWatch metrics, and then increase the minProvisionedTPS as necessary. For more information about campaign costs, see Amazon Personalize pricing.  Status  A campaign can be in one of the following states:   CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED   DELETE PENDING > DELETE IN_PROGRESS   To get the campaign status, call DescribeCampaign.  Wait until the status of the campaign is ACTIVE before asking the campaign for recommendations.   Related APIs     ListCampaigns     DescribeCampaign     UpdateCampaign     DeleteCampaign',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the new campaign. The campaign name must be unique within your account',
@@ -301,6 +307,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -313,6 +320,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-data-deletion-job',
       description: 'Creates a batch job that deletes all references to specific users from an Amazon Personalize dataset group in batches. You specify the users to delete in a CSV file of userIds in an Amazon S3 bucket. After a job completes, Amazon Personalize no longer trains on the users’ data and no longer considers the users when generating user segments. For more information about creating a data deletion job, see Deleting users.   Your input file must be a CSV file with a single USER_ID column that lists the users IDs. For more information about preparing the CSV file, see Preparing your data deletion file and uploading it to Amazon S3.   To give Amazon Personalize permission to access your input CSV file of userIds, you must specify an IAM service role that has permission to read from the data source. This role needs GetObject and ListBucket permissions for the bucket and its content. These permissions are the same as importing data. For information on granting access to your Amazon S3 bucket, see Giving Amazon Personalize Access to Amazon S3 Resources.     After you create a job, it can take up to a day to delete all references to the users from datasets and models. Until the job completes, Amazon Personalize continues to use the data when training. And if you use a User Segmentation recipe, the users might appear in user segments.   Status  A data deletion job can have one of the following statuses:   PENDING > IN_PROGRESS > COMPLETED -or- FAILED   To get the status of the data deletion job, call DescribeDataDeletionJob API operation and specify the Amazon Resource Name (ARN) of the job. If the status is FAILED, the response includes a failureReason key, which describes why the job failed.  Related APIs     ListDataDeletionJobs     DescribeDataDeletionJob',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name for the data deletion job',
@@ -374,6 +382,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -386,6 +395,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-dataset',
       description: 'Creates an empty dataset and adds it to the specified dataset group. Use CreateDatasetImportJob to import your training data to a dataset. There are 5 types of datasets:   Item interactions   Items   Users   Action interactions   Actions   Each dataset type has an associated schema with required field types. Only the Item interactions dataset is required in order to train a model (also referred to as creating a solution). A dataset can be in one of the following states:   CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED   DELETE PENDING > DELETE IN_PROGRESS   To get the status of the dataset, call DescribeDataset.  Related APIs     CreateDatasetGroup     ListDatasets     DescribeDataset     DeleteDataset',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the dataset',
@@ -447,6 +457,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -459,6 +470,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-dataset-export-job',
       description: 'Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow Amazon Personalize to export the training data, you must specify an service-linked IAM role that gives Amazon Personalize PutObject permissions for your Amazon S3 bucket. For information, see Exporting a dataset in the Amazon Personalize developer guide.   Status  A dataset export job can be in one of the following states:   CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED    To get the status of the export job, call DescribeDatasetExportJob, and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a failureReason key, which describes why the job failed',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name for the dataset export job',
@@ -529,6 +541,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -541,6 +554,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-dataset-group',
       description: 'Creates an empty dataset group. A dataset group is a container for Amazon Personalize resources. A dataset group can contain at most three datasets, one for each type of dataset:   Item interactions   Items   Users   Actions   Action interactions    A dataset group can be a Domain dataset group, where you specify a domain and use pre-configured resources like recommenders, or a Custom dataset group, where you use custom resources, such as a solution with a solution version, that you deploy with a campaign. If you start with a Domain dataset group, you can still add custom resources such as solutions and solution versions trained with recipes for custom use cases and deployed with campaigns.  A dataset group can be in one of the following states:   CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED   DELETE PENDING   To get the status of the dataset group, call DescribeDatasetGroup. If the status shows as CREATE FAILED, the response includes a failureReason key, which describes why the creation failed.  You must wait until the status of the dataset group is ACTIVE before adding a dataset to the group.  You can specify an Key Management Service (KMS) key to encrypt the datasets in the group. If you specify a KMS key, you must also include an Identity and Access Management (IAM) role that has permission to access the key.  APIs that require a dataset group ARN in the request     CreateDataset     CreateEventTracker     CreateSolution     Related APIs     ListDatasetGroups     DescribeDatasetGroup     DeleteDatasetGroup',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the new dataset group',
@@ -602,6 +616,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -614,6 +629,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-dataset-import-job',
       description: 'Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import the training data, you must specify an IAM service role that has permission to read from the data source, as Amazon Personalize makes a copy of your data and processes it internally. For information on granting access to your Amazon S3 bucket, see Giving Amazon Personalize Access to Amazon S3 Resources.  If you already created a recommender or deployed a custom solution version with a campaign, how new bulk records influence recommendations depends on the domain use case or recipe that you use. For more information, see How new data influences real-time recommendations.  By default, a dataset import job replaces any existing data in the dataset that you imported in bulk. To add new records without replacing existing data, specify INCREMENTAL for the import mode in the CreateDatasetImportJob operation.   Status  A dataset import job can be in one of the following states:   CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED   To get the status of the import job, call DescribeDatasetImportJob, providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a failureReason key, which describes why the job failed.  Importing takes time. You must wait until the status shows as ACTIVE before training a model using the dataset.   Related APIs     ListDatasetImportJobs     DescribeDatasetImportJob',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name for the dataset import job',
@@ -692,6 +708,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -704,6 +721,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-event-tracker',
       description: 'Creates an event tracker that you use when adding event data to a specified dataset group using the PutEvents API.  Only one event tracker can be associated with a dataset group. You will get an error if you call CreateEventTracker using the same dataset group as an existing event tracker.  When you create an event tracker, the response includes a tracking ID, which you pass as a parameter when you use the PutEvents operation. Amazon Personalize then appends the event data to the Item interactions dataset of the dataset group you specify in your event tracker.  The event tracker can be in one of the following states:   CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED   DELETE PENDING > DELETE IN_PROGRESS   To get the status of the event tracker, call DescribeEventTracker.  The event tracker must be in the ACTIVE state before using the tracking ID.   Related APIs     ListEventTrackers     DescribeEventTracker     DeleteEventTracker',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the event tracker',
@@ -747,6 +765,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -759,6 +778,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-filter',
       description: 'Creates a recommendation filter. For more information, see Filtering recommendations and user segments',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the filter to create',
@@ -811,6 +831,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -823,6 +844,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-metric-attribution',
       description: 'Creates a metric attribution. A metric attribution creates reports on the data that you import into Amazon Personalize. Depending on how you imported the data, you can view reports in Amazon CloudWatch or Amazon S3. For more information, see Measuring impact of recommendations',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the metric attribution',
@@ -875,6 +897,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -887,6 +910,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-recommender',
       description: 'Creates a recommender with the recipe (a Domain dataset group use case) you specify. You create recommenders for a Domain dataset group and specify the recommender\'s Amazon Resource Name (ARN) when you make a GetRecommendations request.   Minimum recommendation requests per second   A high minRecommendationRequestsPerSecond will increase your bill. We recommend starting with 1 for minRecommendationRequestsPerSecond (the default). Track your usage using Amazon CloudWatch metrics, and increase the minRecommendationRequestsPerSecond as necessary.  When you create a recommender, you can configure the recommender\'s minimum recommendation requests per second. The minimum recommendation requests per second (minRecommendationRequestsPerSecond) specifies the baseline recommendation request throughput provisioned by Amazon Personalize. The default minRecommendationRequestsPerSecond is 1. A recommendation request is a single GetRecommendations operation. Request throughput is measured in requests per second and Amazon Personalize uses your requests per second to derive your requests per hour and the price of your recommender usage.   If your requests per second increases beyond minRecommendationRequestsPerSecond, Amazon Personalize auto-scales the provisioned capacity up and down, but never below minRecommendationRequestsPerSecond. There\'s a short time delay while the capacity is increased that might cause loss of requests.  Your bill is the greater of either the minimum requests per hour (based on minRecommendationRequestsPerSecond) or the actual number of requests. The actual request throughput used is calculated as the average requests/second within a one-hour window. We recommend starting with the default minRecommendationRequestsPerSecond, track your usage using Amazon CloudWatch metrics, and then increase the minRecommendationRequestsPerSecond as necessary.   Status  A recommender can be in one of the following states:   CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED   STOP PENDING > STOP IN_PROGRESS > INACTIVE > START PENDING > START IN_PROGRESS > ACTIVE   DELETE PENDING > DELETE IN_PROGRESS   To get the recommender status, call DescribeRecommender.  Wait until the status of the recommender is ACTIVE before asking the recommender for recommendations.   Related APIs     ListRecommenders     DescribeRecommender     UpdateRecommender     DeleteRecommender',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the recommender',
@@ -948,6 +972,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -960,6 +985,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-schema',
       description: 'Creates an Amazon Personalize schema from the specified schema string. The schema you create must be in Avro JSON format. Amazon Personalize recognizes three schema variants. Each schema is associated with a dataset type and has a set of required field and keywords. If you are creating a schema for a dataset in a Domain dataset group, you provide the domain of the Domain dataset group. You specify a schema when you call CreateDataset.  Related APIs     ListSchemas     DescribeSchema     DeleteSchema',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the schema',
@@ -1003,6 +1029,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1015,6 +1042,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-solution',
       description: 'By default, all new solutions use automatic training. With automatic training, you incur training costs while your solution is active. To avoid unnecessary costs, when you are finished you can update the solution to turn off automatic training. For information about training costs, see Amazon Personalize pricing.  Creates the configuration for training a model (creating a solution version). This configuration includes the recipe to use for model training and optional training configuration, such as columns to use in training and feature transformation parameters. For more information about configuring a solution, see Creating and configuring a solution.   By default, new solutions use automatic training to create solution versions every 7 days. You can change the training frequency. Automatic solution version creation starts within one hour after the solution is ACTIVE. If you manually create a solution version within the hour, the solution skips the first automatic training. For more information, see Configuring automatic training.  To turn off automatic training, set performAutoTraining to false. If you turn off automatic training, you must manually create a solution version by calling the CreateSolutionVersion operation. After training starts, you can get the solution version\'s Amazon Resource Name (ARN) with the ListSolutionVersions API operation. To get its status, use the DescribeSolutionVersion.  After training completes you can evaluate model accuracy by calling GetSolutionMetrics. When you are satisfied with the solution version, you deploy it using CreateCampaign. The campaign provides recommendations to a client through the GetRecommendations API.  Amazon Personalize doesn\'t support configuring the hpoObjective for solution hyperparameter optimization at this time.   Status  A solution can be in one of the following states:   CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED   DELETE PENDING > DELETE IN_PROGRESS   To get the status of the solution, call DescribeSolution. If you use manual training, the status must be ACTIVE before you call CreateSolutionVersion.  Related APIs     UpdateSolution     ListSolutions     CreateSolutionVersion     DescribeSolution     DeleteSolution       ListSolutionVersions     DescribeSolutionVersion',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the solution',
@@ -1109,6 +1137,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1121,6 +1150,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'create-solution-version',
       description: 'Trains or retrains an active solution in a Custom dataset group. A solution is created using the CreateSolution operation and must be in the ACTIVE state before calling CreateSolutionVersion. A new version of the solution is created every time you call this operation.  Status  A solution version can be in one of the following states:   CREATE PENDING   CREATE IN_PROGRESS   ACTIVE   CREATE FAILED   CREATE STOPPING   CREATE STOPPED   To get the status of the version, call DescribeSolutionVersion. Wait until the status shows as ACTIVE before calling CreateCampaign. If the status shows as CREATE FAILED, the response includes a failureReason key, which describes why the job failed.  Related APIs     ListSolutionVersions     DescribeSolutionVersion     ListSolutions     CreateSolution     DescribeSolution     DeleteSolution',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the solution version',
@@ -1173,6 +1203,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1185,6 +1216,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'delete-campaign',
       description: 'Removes a campaign by deleting the solution deployment. The solution that the campaign is based on is not deleted and can be redeployed when needed. A deleted campaign can no longer be specified in a GetRecommendations request. For information on creating campaigns, see CreateCampaign',
       options: [
+
         Option(
           name: '--campaign-arn',
           description: 'The Amazon Resource Name (ARN) of the campaign to delete',
@@ -1210,6 +1242,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1222,6 +1255,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'delete-dataset',
       description: 'Deletes a dataset. You can\'t delete a dataset if an associated DatasetImportJob or SolutionVersion is in the CREATE PENDING or IN PROGRESS state. For more information on datasets, see CreateDataset',
       options: [
+
         Option(
           name: '--dataset-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset to delete',
@@ -1247,6 +1281,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1259,6 +1294,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'delete-dataset-group',
       description: 'Deletes a dataset group. Before you delete a dataset group, you must delete the following:   All associated event trackers.   All associated solutions.   All datasets in the dataset group',
       options: [
+
         Option(
           name: '--dataset-group-arn',
           description: 'The ARN of the dataset group to delete',
@@ -1284,6 +1320,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1296,6 +1333,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'delete-event-tracker',
       description: 'Deletes the event tracker. Does not delete the dataset from the dataset group. For more information on event trackers, see CreateEventTracker',
       options: [
+
         Option(
           name: '--event-tracker-arn',
           description: 'The Amazon Resource Name (ARN) of the event tracker to delete',
@@ -1321,6 +1359,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1333,6 +1372,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'delete-filter',
       description: 'Deletes a filter',
       options: [
+
         Option(
           name: '--filter-arn',
           description: 'The ARN of the filter to delete',
@@ -1358,6 +1398,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1370,6 +1411,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'delete-metric-attribution',
       description: 'Deletes a metric attribution',
       options: [
+
         Option(
           name: '--metric-attribution-arn',
           description: 'The metric attribution\'s Amazon Resource Name (ARN)',
@@ -1395,6 +1437,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1407,6 +1450,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'delete-recommender',
       description: 'Deactivates and removes a recommender. A deleted recommender can no longer be specified in a GetRecommendations request',
       options: [
+
         Option(
           name: '--recommender-arn',
           description: 'The Amazon Resource Name (ARN) of the recommender to delete',
@@ -1432,6 +1476,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1444,6 +1489,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'delete-schema',
       description: 'Deletes a schema. Before deleting a schema, you must delete all datasets referencing the schema. For more information on schemas, see CreateSchema',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) of the schema to delete',
@@ -1469,6 +1515,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1481,6 +1528,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'delete-solution',
       description: 'Deletes all versions of a solution and the Solution object itself. Before deleting a solution, you must delete all campaigns based on the solution. To determine what campaigns are using the solution, call ListCampaigns and supply the Amazon Resource Name (ARN) of the solution. You can\'t delete a solution if an associated SolutionVersion is in the CREATE PENDING or IN PROGRESS state. For more information on solutions, see CreateSolution',
       options: [
+
         Option(
           name: '--solution-arn',
           description: 'The ARN of the solution to delete',
@@ -1506,6 +1554,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1518,6 +1567,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-algorithm',
       description: 'Describes the given algorithm',
       options: [
+
         Option(
           name: '--algorithm-arn',
           description: 'The Amazon Resource Name (ARN) of the algorithm to describe',
@@ -1543,6 +1593,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1555,6 +1606,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-batch-inference-job',
       description: 'Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status, input and output configurations, and the ARN of the solution version used to generate the recommendations',
       options: [
+
         Option(
           name: '--batch-inference-job-arn',
           description: 'The ARN of the batch inference job to describe',
@@ -1580,6 +1632,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1592,6 +1645,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-batch-segment-job',
       description: 'Gets the properties of a batch segment job including name, Amazon Resource Name (ARN), status, input and output configurations, and the ARN of the solution version used to generate segments',
       options: [
+
         Option(
           name: '--batch-segment-job-arn',
           description: 'The ARN of the batch segment job to describe',
@@ -1617,6 +1671,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1629,6 +1684,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-campaign',
       description: 'Describes the given campaign, including its status. A campaign can be in one of the following states:   CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED   DELETE PENDING > DELETE IN_PROGRESS   When the status is CREATE FAILED, the response includes the failureReason key, which describes why. For more information on campaigns, see CreateCampaign',
       options: [
+
         Option(
           name: '--campaign-arn',
           description: 'The Amazon Resource Name (ARN) of the campaign',
@@ -1654,6 +1710,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1666,6 +1723,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-data-deletion-job',
       description: 'Describes the data deletion job created by CreateDataDeletionJob, including the job status',
       options: [
+
         Option(
           name: '--data-deletion-job-arn',
           description: 'The Amazon Resource Name (ARN) of the data deletion job',
@@ -1691,6 +1749,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1703,6 +1762,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-dataset',
       description: 'Describes the given dataset. For more information on datasets, see CreateDataset',
       options: [
+
         Option(
           name: '--dataset-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset to describe',
@@ -1728,6 +1788,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1740,6 +1801,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-dataset-export-job',
       description: 'Describes the dataset export job created by CreateDatasetExportJob, including the export job status',
       options: [
+
         Option(
           name: '--dataset-export-job-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset export job to describe',
@@ -1765,6 +1827,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1777,6 +1840,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-dataset-group',
       description: 'Describes the given dataset group. For more information on dataset groups, see CreateDatasetGroup',
       options: [
+
         Option(
           name: '--dataset-group-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset group to describe',
@@ -1802,6 +1866,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1814,6 +1879,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-dataset-import-job',
       description: 'Describes the dataset import job created by CreateDatasetImportJob, including the import job status',
       options: [
+
         Option(
           name: '--dataset-import-job-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset import job to describe',
@@ -1839,6 +1905,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1851,6 +1918,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-event-tracker',
       description: 'Describes an event tracker. The response includes the trackingId and status of the event tracker. For more information on event trackers, see CreateEventTracker',
       options: [
+
         Option(
           name: '--event-tracker-arn',
           description: 'The Amazon Resource Name (ARN) of the event tracker to describe',
@@ -1876,6 +1944,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1888,6 +1957,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-feature-transformation',
       description: 'Describes the given feature transformation',
       options: [
+
         Option(
           name: '--feature-transformation-arn',
           description: 'The Amazon Resource Name (ARN) of the feature transformation to describe',
@@ -1913,6 +1983,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1925,6 +1996,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-filter',
       description: 'Describes a filter\'s properties',
       options: [
+
         Option(
           name: '--filter-arn',
           description: 'The ARN of the filter to describe',
@@ -1950,6 +2022,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1962,6 +2035,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-metric-attribution',
       description: 'Describes a metric attribution',
       options: [
+
         Option(
           name: '--metric-attribution-arn',
           description: 'The metric attribution\'s Amazon Resource Name (ARN)',
@@ -1987,6 +2061,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1999,6 +2074,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-recipe',
       description: 'Describes a recipe. A recipe contains three items:   An algorithm that trains a model.   Hyperparameters that govern the training.   Feature transformation information for modifying the input data before training.   Amazon Personalize provides a set of predefined recipes. You specify a recipe when you create a solution with the CreateSolution API. CreateSolution trains a model by using the algorithm in the specified recipe and a training dataset. The solution, when deployed as a campaign, can provide recommendations using the GetRecommendations API',
       options: [
+
         Option(
           name: '--recipe-arn',
           description: 'The Amazon Resource Name (ARN) of the recipe to describe',
@@ -2024,6 +2100,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2036,6 +2113,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-recommender',
       description: 'Describes the given recommender, including its status. A recommender can be in one of the following states:   CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED   STOP PENDING > STOP IN_PROGRESS > INACTIVE > START PENDING > START IN_PROGRESS > ACTIVE   DELETE PENDING > DELETE IN_PROGRESS   When the status is CREATE FAILED, the response includes the failureReason key, which describes why. The modelMetrics key is null when the recommender is being created or deleted. For more information on recommenders, see CreateRecommender',
       options: [
+
         Option(
           name: '--recommender-arn',
           description: 'The Amazon Resource Name (ARN) of the recommender to describe',
@@ -2061,6 +2139,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2073,6 +2152,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-schema',
       description: 'Describes a schema. For more information on schemas, see CreateSchema',
       options: [
+
         Option(
           name: '--schema-arn',
           description: 'The Amazon Resource Name (ARN) of the schema to retrieve',
@@ -2098,6 +2178,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2110,6 +2191,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-solution',
       description: 'Describes a solution. For more information on solutions, see CreateSolution',
       options: [
+
         Option(
           name: '--solution-arn',
           description: 'The Amazon Resource Name (ARN) of the solution to describe',
@@ -2135,6 +2217,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2147,6 +2230,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'describe-solution-version',
       description: 'Describes a specific version of a solution. For more information on solutions, see CreateSolution',
       options: [
+
         Option(
           name: '--solution-version-arn',
           description: 'The Amazon Resource Name (ARN) of the solution version',
@@ -2172,6 +2256,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2184,6 +2269,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'get-solution-metrics',
       description: 'Gets the metrics for the specified solution version',
       options: [
+
         Option(
           name: '--solution-version-arn',
           description: 'The Amazon Resource Name (ARN) of the solution version for which to get metrics',
@@ -2209,6 +2295,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2221,6 +2308,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-batch-inference-jobs',
       description: 'Gets a list of the batch inference jobs that have been performed off of a solution version',
       options: [
+
         Option(
           name: '--solution-version-arn',
           description: 'The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created',
@@ -2291,6 +2379,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2303,6 +2392,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-batch-segment-jobs',
       description: 'Gets a list of the batch segment jobs that have been performed off of a solution version that you specify',
       options: [
+
         Option(
           name: '--solution-version-arn',
           description: 'The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments',
@@ -2373,6 +2463,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2385,6 +2476,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-campaigns',
       description: 'Returns a list of campaigns that use the given solution. When a solution is not specified, all the campaigns associated with the account are listed. The response provides the properties for each campaign, including the Amazon Resource Name (ARN). For more information on campaigns, see CreateCampaign',
       options: [
+
         Option(
           name: '--solution-arn',
           description: 'The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed',
@@ -2455,6 +2547,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2467,6 +2560,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-data-deletion-jobs',
       description: 'Returns a list of data deletion jobs for a dataset group ordered by creation time, with the most recent first. When a dataset group is not specified, all the data deletion jobs associated with the account are listed. The response provides the properties for each job, including the Amazon Resource Name (ARN). For more information on data deletion jobs, see Deleting users',
       options: [
+
         Option(
           name: '--dataset-group-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset group to list data deletion jobs for',
@@ -2510,6 +2604,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2522,6 +2617,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-dataset-export-jobs',
       description: 'Returns a list of dataset export jobs that use the given dataset. When a dataset is not specified, all the dataset export jobs associated with the account are listed. The response provides the properties for each dataset export job, including the Amazon Resource Name (ARN). For more information on dataset export jobs, see CreateDatasetExportJob. For more information on datasets, see CreateDataset',
       options: [
+
         Option(
           name: '--dataset-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for',
@@ -2592,6 +2688,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2604,6 +2701,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-dataset-groups',
       description: 'Returns a list of dataset groups. The response provides the properties for each dataset group, including the Amazon Resource Name (ARN). For more information on dataset groups, see CreateDatasetGroup',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token returned from the previous call to ListDatasetGroups for getting the next set of dataset groups (if they exist)',
@@ -2665,6 +2763,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2677,6 +2776,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-dataset-import-jobs',
       description: 'Returns a list of dataset import jobs that use the given dataset. When a dataset is not specified, all the dataset import jobs associated with the account are listed. The response provides the properties for each dataset import job, including the Amazon Resource Name (ARN). For more information on dataset import jobs, see CreateDatasetImportJob. For more information on datasets, see CreateDataset',
       options: [
+
         Option(
           name: '--dataset-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for',
@@ -2747,6 +2847,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2759,6 +2860,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-datasets',
       description: 'Returns the list of datasets contained in the given dataset group. The response provides the properties for each dataset, including the Amazon Resource Name (ARN). For more information on datasets, see CreateDataset',
       options: [
+
         Option(
           name: '--dataset-group-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list',
@@ -2829,6 +2931,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2841,6 +2944,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-event-trackers',
       description: 'Returns the list of event trackers associated with the account. The response provides the properties for each event tracker, including the Amazon Resource Name (ARN) and tracking ID. For more information on event trackers, see CreateEventTracker',
       options: [
+
         Option(
           name: '--dataset-group-arn',
           description: 'The ARN of a dataset group used to filter the response',
@@ -2911,6 +3015,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2923,6 +3028,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-filters',
       description: 'Lists all filters that belong to a given dataset group',
       options: [
+
         Option(
           name: '--dataset-group-arn',
           description: 'The ARN of the dataset group that contains the filters',
@@ -2993,6 +3099,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3005,6 +3112,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-metric-attribution-metrics',
       description: 'Lists the metrics for the metric attribution',
       options: [
+
         Option(
           name: '--metric-attribution-arn',
           description: 'The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for',
@@ -3075,6 +3183,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3087,6 +3196,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-metric-attributions',
       description: 'Lists metric attributions',
       options: [
+
         Option(
           name: '--dataset-group-arn',
           description: 'The metric attributions\' dataset group Amazon Resource Name (ARN)',
@@ -3157,6 +3267,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3169,6 +3280,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-recipes',
       description: 'Returns a list of available recipes. The response provides the properties for each recipe, including the recipe\'s Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--recipe-provider',
           description: 'The default is SERVICE',
@@ -3248,6 +3360,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3260,6 +3373,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-recommenders',
       description: 'Returns a list of recommenders in a given Domain dataset group. When a Domain dataset group is not specified, all the recommenders associated with the account are listed. The response provides the properties for each recommender, including the Amazon Resource Name (ARN). For more information on recommenders, see CreateRecommender',
       options: [
+
         Option(
           name: '--dataset-group-arn',
           description: 'The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed',
@@ -3330,6 +3444,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3342,6 +3457,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-schemas',
       description: 'Returns the list of schemas associated with the account. The response provides the properties for each schema, including the Amazon Resource Name (ARN). For more information on schemas, see CreateSchema',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token returned from the previous call to ListSchemas for getting the next set of schemas (if they exist)',
@@ -3403,6 +3519,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3415,6 +3532,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-solution-versions',
       description: 'Returns a list of solution versions for the given solution. When a solution is not specified, all the solution versions associated with the account are listed. The response provides the properties for each solution version, including the Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--solution-arn',
           description: 'The Amazon Resource Name (ARN) of the solution',
@@ -3485,6 +3603,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3497,6 +3616,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-solutions',
       description: 'Returns a list of solutions in a given dataset group. When a dataset group is not specified, all the solutions associated with the account are listed. The response provides the properties for each solution, including the Amazon Resource Name (ARN). For more information on solutions, see CreateSolution',
       options: [
+
         Option(
           name: '--dataset-group-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset group',
@@ -3567,6 +3687,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3579,6 +3700,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Get a list of tags attached to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s Amazon Resource Name (ARN)',
@@ -3604,6 +3726,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3616,6 +3739,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'start-recommender',
       description: 'Starts a recommender that is INACTIVE. Starting a recommender does not create any new models, but resumes billing and automatic retraining for the recommender',
       options: [
+
         Option(
           name: '--recommender-arn',
           description: 'The Amazon Resource Name (ARN) of the recommender to start',
@@ -3641,6 +3765,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3653,6 +3778,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'stop-recommender',
       description: 'Stops a recommender that is ACTIVE. Stopping a recommender halts billing and automatic retraining for the recommender',
       options: [
+
         Option(
           name: '--recommender-arn',
           description: 'The Amazon Resource Name (ARN) of the recommender to stop',
@@ -3678,6 +3804,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3690,6 +3817,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'stop-solution-version-creation',
       description: 'Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.  Depending on the current state of the solution version, the solution version state changes as follows:   CREATE_PENDING > CREATE_STOPPED or   CREATE_IN_PROGRESS > CREATE_STOPPING > CREATE_STOPPED   You are billed for all of the training completed up until you stop the solution version creation. You cannot resume creating a solution version once it has been stopped',
       options: [
+
         Option(
           name: '--solution-version-arn',
           description: 'The Amazon Resource Name (ARN) of the solution version you want to stop creating',
@@ -3715,6 +3843,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3727,6 +3856,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'tag-resource',
       description: 'Add a list of tags to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s Amazon Resource Name (ARN)',
@@ -3761,6 +3891,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3773,6 +3904,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags that are attached to a resource. For more information, see Removing tags from Amazon Personalize resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s Amazon Resource Name (ARN)',
@@ -3807,6 +3939,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3819,6 +3952,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'update-campaign',
       description: 'Updates a campaign to deploy a retrained solution version with an existing campaign, change your campaign\'s minProvisionedTPS, or modify your campaign\'s configuration. For example, you can set enableMetadataWithRecommendations to true for an existing campaign.  To update a campaign to start automatically using the latest solution version, specify the following:   For the SolutionVersionArn parameter, specify the Amazon Resource Name (ARN) of your solution in SolutionArn/\$LATEST format.     In the campaignConfig, set syncWithLatestSolutionVersion to true.    To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the campaign status using the DescribeCampaign operation.  You can still get recommendations from a campaign while an update is in progress. The campaign will use the previous solution version and campaign configuration to generate recommendations until the latest campaign update status is Active.   For more information about updating a campaign, including code samples, see Updating a campaign. For more information about campaigns, see Creating a campaign',
       options: [
+
         Option(
           name: '--campaign-arn',
           description: 'The Amazon Resource Name (ARN) of the campaign',
@@ -3871,6 +4005,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3883,6 +4018,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'update-dataset',
       description: 'Update a dataset to replace its schema with a new or existing one. For more information, see Replacing a dataset\'s schema',
       options: [
+
         Option(
           name: '--dataset-arn',
           description: 'The Amazon Resource Name (ARN) of the dataset that you want to update',
@@ -3917,6 +4053,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3929,6 +4066,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'update-metric-attribution',
       description: 'Updates a metric attribution',
       options: [
+
         Option(
           name: '--add-metrics',
           description: 'Add new metric attributes to the metric attribution',
@@ -3981,6 +4119,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3993,6 +4132,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'update-recommender',
       description: 'Updates the recommender to modify the recommender configuration. If you update the recommender to modify the columns used in training, Amazon Personalize automatically starts a full retraining of the models backing your recommender. While the update completes, you can still get recommendations from the recommender. The recommender uses the previous configuration until the update completes. To track the status of this update, use the latestRecommenderUpdate returned in the DescribeRecommender operation',
       options: [
+
         Option(
           name: '--recommender-arn',
           description: 'The Amazon Resource Name (ARN) of the recommender to modify',
@@ -4027,6 +4167,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4039,6 +4180,7 @@ final FigSpec personalizeSpec = FigSpec(
       name: 'update-solution',
       description: 'Updates an Amazon Personalize solution to use a different automatic training configuration. When you update a solution, you can change whether the solution uses automatic training, and you can change the training frequency. For more information about updating a solution, see Updating a solution. A solution update can be in one of the following states: CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED To get the status of a solution update, call the DescribeSolution API operation and find the status in the latestSolutionUpdate',
       options: [
+
         Option(
           name: '--solution-arn',
           description: 'The Amazon Resource Name (ARN) of the solution to update',
@@ -4081,6 +4223,7 @@ final FigSpec personalizeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

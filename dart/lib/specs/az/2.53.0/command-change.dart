@@ -1,89 +1,127 @@
-// Auto-generated from command-change.ts
+// Auto-generated from TypeScript source: command-change.ts
 // Generated at: 2026-02-12
+// WARNING: Manual changes may be overwritten!
 
 import 'package:autocomplete/src/spec.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// const completion: Fig.Spec = {
-//   name: "command-change",
-//   description: "Commands for CLI modules metadata management",
-//   subcommands: [
-//     {
-//       name: "meta-diff",
-//       description: "Diff command meta between provided meta files",
-//       options: [
-//         {
-//           name: "--base-meta-file",
-//           description: "Command meta json file",
-//           args: { name: "base-meta-file" },
-//           isRequired: true,
-//         },
-//         {
-//           name: "--diff-meta-file",
-//           description: "Command meta json file to diff",
-//           args: { name: "diff-meta-file" },
-//           isRequired: true,
-//         },
-//         {
-//           name: "--only-break",
-//           description: "Whether include non breaking changes",
-//         },
-//         {
-//           name: "--output-file",
-//           description: "Command meta diff json file path to store",
-//           args: { name: "output-file" },
-//         },
-//         {
-//           name: "--output-type",
-//           description: "Format to print diff and suggest message",
-//           args: { name: "output-type", suggestions: ["dict", "text", "tree"] },
-//         },
-//       ],
-//     },
-//     {
-//       name: "version-diff",
-//       description: "Diff command meta data between different cli versions",
-//       options: [
-//         {
-//           name: "--base-version",
-//           description: "Azure cli version as base",
-//           args: { name: "base-version" },
-//           isRequired: true,
-//         },
-//         {
-//           name: "--diff-version",
-//           description: "Azure cli version to diff",
-//           args: { name: "diff-version" },
-//           isRequired: true,
-//         },
-//         {
-//           name: "--only-break",
-//           description: "Whether include non breaking changes",
-//         },
-//         {
-//           name: "--output-type",
-//           description: "Command meta diff format to store",
-//           args: { name: "output-type" },
-//         },
-//         {
-//           name: "--target-module",
-//           description: "Module chosen to diff between different cli versions",
-//           args: { name: "target-module" },
-//         },
-//         {
-//           name: "--use-cache",
-//           description: "Whether use cached metadata files",
-//         },
-//         {
-//           name: "--version-diff-file",
-//           description: "Command meta version diff file path to store",
-//           args: { name: "version-diff-file" },
-//         },
-//       ],
-//     },
-//   ],
-// };
-// 
-// export default completion;
-// 
+/// Completion spec for `command-change` CLI
+final FigSpec commandChangeSpec = FigSpec(
+  name: 'command-change',
+  description: 'Commands for CLI modules metadata management',
+  subcommands: [
+
+    Subcommand(
+      name: 'meta-diff',
+      description: 'Diff command meta between provided meta files',
+      options: [
+
+        Option(
+          name: '--base-meta-file',
+          description: 'Command meta json file',
+          args: [
+            Arg(
+            name: 'base-meta-fil'
+          )
+          ]
+        ),
+        Option(
+          name: '--diff-meta-file',
+          description: 'Command meta json file to diff',
+          args: [
+            Arg(
+            name: 'diff-meta-fil'
+          )
+          ]
+        ),
+        Option(
+          name: '--only-break',
+          description: 'Whether include non breaking changes'
+        ),
+        Option(
+          name: '--output-file',
+          description: 'Command meta diff json file path to store',
+          args: [
+            Arg(
+            name: 'output-fil'
+          )
+          ]
+        ),
+        Option(
+          name: '--output-type',
+          description: 'Format to print diff and suggest message',
+          args: [
+            Arg(
+            name: 'output-type',
+            suggestions: [
+
+              FigSuggestion(name: 'dict'),
+              FigSuggestion(name: 'text'),
+              FigSuggestion(name: 'tree')
+            ]
+          )
+          ]
+        )
+      ]
+    ),
+    Subcommand(
+      name: 'version-diff',
+      description: 'Diff command meta data between different cli versions',
+      options: [
+
+        Option(
+          name: '--base-version',
+          description: 'Azure cli version as base',
+          args: [
+            Arg(
+            name: 'base-versio'
+          )
+          ]
+        ),
+        Option(
+          name: '--diff-version',
+          description: 'Azure cli version to diff',
+          args: [
+            Arg(
+            name: 'diff-versio'
+          )
+          ]
+        ),
+        Option(
+          name: '--only-break',
+          description: 'Whether include non breaking changes'
+        ),
+        Option(
+          name: '--output-type',
+          description: 'Command meta diff format to store',
+          args: [
+            Arg(
+            name: 'output-typ'
+          )
+          ]
+        ),
+        Option(
+          name: '--target-module',
+          description: 'Module chosen to diff between different cli versions',
+          args: [
+            Arg(
+            name: 'target-modul'
+          )
+          ]
+        ),
+        Option(
+          name: '--use-cache',
+          description: 'Whether use cached metadata files'
+        ),
+        Option(
+          name: '--version-diff-file',
+          description: 'Command meta version diff file path to store',
+          args: [
+            Arg(
+            name: 'version-diff-fil'
+          )
+          ]
+        )
+      ]
+    )
+  ]
+);

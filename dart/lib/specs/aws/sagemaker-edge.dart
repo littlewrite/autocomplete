@@ -9,10 +9,12 @@ final FigSpec sagemakerEdgeSpec = FigSpec(
   name: 'sagemaker-edge',
   description: 'SageMaker Edge Manager dataplane service for communicating with active agents',
   subcommands: [
+
     Subcommand(
       name: 'get-deployments',
       description: 'Use to get the active deployments from a device',
       options: [
+
         Option(
           name: '--device-name',
           description: 'The unique name of the device you want to get the configuration of active deployments from',
@@ -47,6 +49,7 @@ final FigSpec sagemakerEdgeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec sagemakerEdgeSpec = FigSpec(
       name: 'get-device-registration',
       description: 'Use to check if a device is registered with SageMaker Edge Manager',
       options: [
+
         Option(
           name: '--device-name',
           description: 'The unique name of the device you want to get the registration status from',
@@ -93,6 +97,7 @@ final FigSpec sagemakerEdgeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec sagemakerEdgeSpec = FigSpec(
       name: 'send-heartbeat',
       description: 'Use to get the current status of devices registered on SageMaker Edge Manager',
       options: [
+
         Option(
           name: '--agent-metrics',
           description: 'For internal use. Returns a list of SageMaker Edge Manager agent operating metrics',
@@ -175,6 +181,7 @@ final FigSpec sagemakerEdgeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

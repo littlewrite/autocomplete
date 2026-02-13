@@ -9,6 +9,7 @@ final FigSpec pijulSpec = FigSpec(
   name: 'pijul',
   description: 'A distributed version control system that is at the same time theoretically sound, fast and easy to learn and use',
   subcommands: [
+
     Subcommand(
       name: 'add',
       description: 'Adds a path to the tree',
@@ -19,6 +20,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-f', '--force']
         ),
@@ -41,6 +43,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--channel',
           description: 'Apply change to this channel',
@@ -73,6 +76,7 @@ final FigSpec pijulSpec = FigSpec(
       name: 'archive',
       description: 'Creates an archive of the repository',
       options: [
+
         Option(
           name: '--change',
           description: 'Apply these changes after switching to the channel',
@@ -165,6 +169,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Print help information'
@@ -184,6 +189,7 @@ final FigSpec pijulSpec = FigSpec(
       name: 'channel',
       description: 'Manages different channels',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete a channel. The channel must not be the current channel',
@@ -193,6 +199,7 @@ final FigSpec pijulSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Print help information'
@@ -211,6 +218,7 @@ final FigSpec pijulSpec = FigSpec(
           name: 'rename',
           description: 'Rename a channel',
           args: [
+
             Arg(
               name: 'FROM'
             ),
@@ -219,6 +227,7 @@ final FigSpec pijulSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Print help information'
@@ -231,6 +240,7 @@ final FigSpec pijulSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Print help information'
@@ -250,6 +260,7 @@ final FigSpec pijulSpec = FigSpec(
       name: 'clone',
       description: 'Clones an existing pijul repository',
       args: [
+
         Arg(
           name: 'REMOTE',
           description: 'Clone this remote'
@@ -263,6 +274,7 @@ final FigSpec pijulSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--change',
           description: 'Clone this change and its dependencies',
@@ -319,6 +331,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--channel',
           description: 'Use this channel instead of the current channel',
@@ -353,6 +366,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--channel',
           description: 'Compare with this channel',
@@ -403,6 +417,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--change',
           description: 'Apply this change after creating the channel',
@@ -446,6 +461,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--channel',
           description: 'Set the name of the current channel (defaults to “main”)',
@@ -480,6 +496,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--channel',
           description: 'Show logs for this channel instead of the current channel',
@@ -552,6 +569,7 @@ final FigSpec pijulSpec = FigSpec(
       name: 'pull',
       description: 'Pulls changes from a remote upstream',
       args: [
+
         Arg(
           name: 'FROM',
           description: 'Pulls from this remote'
@@ -562,6 +580,7 @@ final FigSpec pijulSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-a', '--all'],
           description: 'Pull all changes'
@@ -624,6 +643,7 @@ final FigSpec pijulSpec = FigSpec(
       name: 'push',
       description: 'Pushes changes to a remote upstream',
       args: [
+
         Arg(
           name: 'TO',
           description: 'Push to this remote'
@@ -634,6 +654,7 @@ final FigSpec pijulSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-a', '--all'],
           description: 'Push all changes'
@@ -698,6 +719,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-a', '--all'],
           description: 'Record all paths that have changed'
@@ -778,6 +800,7 @@ final FigSpec pijulSpec = FigSpec(
       name: 'remote',
       description: 'Manages remote repositories',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Deletes the remote',
@@ -787,6 +810,7 @@ final FigSpec pijulSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Print help information'
@@ -799,6 +823,7 @@ final FigSpec pijulSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Print help information'
@@ -824,6 +849,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Print help information'
@@ -840,6 +866,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--channel',
           description: 'Reset the working copy to this channel, and change the current channel to this channel',
@@ -882,6 +909,7 @@ final FigSpec pijulSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--channel',
           description: 'Unrecord changes from this channel instead of the current channel',

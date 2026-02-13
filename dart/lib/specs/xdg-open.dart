@@ -15,6 +15,7 @@ final FigSpec xdgOpenSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Show command synopsis'

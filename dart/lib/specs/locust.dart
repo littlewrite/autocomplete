@@ -9,6 +9,7 @@ final FigSpec locustSpec = FigSpec(
   name: 'locust',
   description: 'Locust is an easy to use, scriptable and scalable Python-based performance testing tool',
   options: [
+
     Option(
       name: ['-v', '--version'],
       description: 'Show program\'s version number and exit'
@@ -178,6 +179,7 @@ final FigSpec locustSpec = FigSpec(
         Arg(
         name: 'loglevel',
         suggestions: [
+
           FigSuggestion(name: 'INFO'),
           FigSuggestion(name: 'WARNING'),
           FigSuggestion(name: 'DEBUG'),

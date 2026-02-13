@@ -9,6 +9,7 @@ final FigSpec speedtestCliSpec = FigSpec(
   name: 'speedtest-cli',
   description: 'Command line interface for testing internet bandwidth using speedtest.net',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show this help message and exit'

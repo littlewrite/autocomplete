@@ -9,10 +9,12 @@ final FigSpec s3outpostsSpec = FigSpec(
   name: 's3outposts',
   description: 'Amazon S3 on Outposts provides access to S3 on Outposts operations',
   subcommands: [
+
     Subcommand(
       name: 'create-endpoint',
       description: 'Creates an endpoint and associates it with the specified Outpost.  It can take up to 5 minutes for this action to finish.   Related actions include:    DeleteEndpoint     ListEndpoints',
       options: [
+
         Option(
           name: '--outpost-id',
           description: 'The ID of the Outposts',
@@ -74,6 +76,7 @@ final FigSpec s3outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec s3outpostsSpec = FigSpec(
       name: 'delete-endpoint',
       description: 'Deletes an endpoint.  It can take up to 5 minutes for this action to finish.   Related actions include:    CreateEndpoint     ListEndpoints',
       options: [
+
         Option(
           name: '--endpoint-id',
           description: 'The ID of the endpoint',
@@ -120,6 +124,7 @@ final FigSpec s3outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec s3outpostsSpec = FigSpec(
       name: 'list-endpoints',
       description: 'Lists endpoints associated with the specified Outpost.  Related actions include:    CreateEndpoint     DeleteEndpoint',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If a previous response from this operation included a NextToken value, provide that value here to retrieve the next page of results',
@@ -193,6 +199,7 @@ final FigSpec s3outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec s3outpostsSpec = FigSpec(
       name: 'list-outposts-with-s3',
       description: 'Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account. Includes S3 on Outposts that you have access to as the Outposts owner, or as a shared user from Resource Access Manager (RAM)',
       options: [
+
         Option(
           name: '--next-token',
           description: 'When you can get additional results from the ListOutpostsWithS3 call, a NextToken parameter is returned in the output. You can then pass in a subsequent command to the NextToken parameter to continue listing additional Outposts',
@@ -266,6 +274,7 @@ final FigSpec s3outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -278,6 +287,7 @@ final FigSpec s3outpostsSpec = FigSpec(
       name: 'list-shared-endpoints',
       description: 'Lists all endpoints associated with an Outpost that has been shared by Amazon Web Services Resource Access Manager (RAM). Related actions include:    CreateEndpoint     DeleteEndpoint',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If a previous response from this operation included a NextToken value, you can provide that value here to retrieve the next page of results',
@@ -348,6 +358,7 @@ final FigSpec s3outpostsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

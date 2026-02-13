@@ -9,6 +9,7 @@ final FigSpec sanitySpec = FigSpec(
   name: 'sanity',
   description: 'Sanity CLI tool for managing Sanity installations, managing plugins, schemas and datasets',
   subcommands: [
+
     Subcommand(
       name: 'help',
       description: 'Displays help information about Sanity',
@@ -23,6 +24,7 @@ final FigSpec sanitySpec = FigSpec(
       name: 'build',
       description: 'Builds the current Sanity configuration to a static bundle',
       options: [
+
         Option(
           name: '--source-maps',
           description: 'Enable source maps for built bundles (increases size of bundle)'
@@ -41,6 +43,7 @@ final FigSpec sanitySpec = FigSpec(
       name: 'codemod',
       description: 'Runs a code modification script',
       options: [
+
         Option(
           name: '--dry',
           description: 'Dry run (no changes are made to files)'
@@ -68,10 +71,12 @@ final FigSpec sanitySpec = FigSpec(
       name: 'cors',
       description: 'Interact with CORS-entries for your project',
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Allow a new origin to use your project API through CORS',
           options: [
+
             Option(
               name: '--credentials',
               description: 'Allow credentials (token/cookie) to be sent from this origin',
@@ -110,13 +115,16 @@ final FigSpec sanitySpec = FigSpec(
       name: 'dataset',
       description: 'Interact with datasets in your project',
       subcommands: [
+
         Subcommand(
           name: 'alias',
           description: 'You can manage your dataset alias using this command',
           subcommands: [
+
             Subcommand(
               name: 'create',
               args: [
+
                 Arg(
                   name: 'alias-name',
                   isOptional: true
@@ -138,12 +146,14 @@ final FigSpec sanitySpec = FigSpec(
             Subcommand(
               name: 'link',
               options: [
+
                 Option(
                   name: '--force',
                   description: 'Skips security prompt and forces link command'
                 )
               ],
               args: [
+
                 Arg(
                   name: 'alias-name',
                   isOptional: true
@@ -168,6 +178,7 @@ final FigSpec sanitySpec = FigSpec(
           name: 'copy',
           description: 'Manages dataset copying, including starting a new copy job, listing copy jobs and following the progress of a running copy job',
           options: [
+
             Option(
               name: '--detach',
               description: 'Start the copy without waiting for it to finish'
@@ -211,6 +222,7 @@ final FigSpec sanitySpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'source-dataset',
               isOptional: true
@@ -225,6 +237,7 @@ final FigSpec sanitySpec = FigSpec(
           name: 'create',
           description: 'Create a new dataset within your project',
           options: [
+
             Option(
               name: '--visibility',
               description: 'Set visibility for this dataset (public/private)',
@@ -232,8 +245,9 @@ final FigSpec sanitySpec = FigSpec(
                 Arg(
                 name: 'visibility',
                 suggestions: [
-                  FigSuggestion(name: 'public'),
 
+                  FigSuggestion(name: 'public'),
+                  FigSuggestion(name: 'private')
                 ]
               )
               ]
@@ -258,6 +272,7 @@ final FigSpec sanitySpec = FigSpec(
           name: 'export',
           description: 'Export dataset to local filesystem as a gzipped tarball',
           options: [
+
             Option(
               name: '--raw',
               description: 'Extract only documents, without rewriting asset references'
@@ -298,6 +313,7 @@ final FigSpec sanitySpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'name'
             ),
@@ -311,6 +327,7 @@ final FigSpec sanitySpec = FigSpec(
           name: 'import',
           description: 'Import documents to given dataset from ndjson file',
           options: [
+
             Option(
               name: '--missing',
               description: 'On duplicate document IDs, skip importing document in question'
@@ -329,6 +346,7 @@ final FigSpec sanitySpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'file',
               template: 'filepaths'
@@ -346,12 +364,14 @@ final FigSpec sanitySpec = FigSpec(
           name: 'visibility',
           description: 'Set visibility of a dataset',
           args: [
+
             Arg(
               name: 'dataset'
             ),
             Arg(
               name: 'mode',
               suggestions: [
+
                 FigSuggestion(name: 'get'),
                 FigSuggestion(name: 'set')
               ]
@@ -364,6 +384,7 @@ final FigSpec sanitySpec = FigSpec(
       name: 'debug',
       description: 'Gathers information on Sanity environment',
       options: [
+
         Option(
           name: '--secrets',
           description: 'Include API keys in output'
@@ -374,6 +395,7 @@ final FigSpec sanitySpec = FigSpec(
       name: 'deploy',
       description: 'Deploys a statically built Sanity studio',
       options: [
+
         Option(
           name: '--source-maps',
           description: 'Enable source maps for built bundles (increases size of bundle)'
@@ -402,10 +424,12 @@ final FigSpec sanitySpec = FigSpec(
       name: 'documents',
       description: 'Interact with documents in your project',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create one or more documents',
           options: [
+
             Option(
               name: '--replace',
               description: 'On duplicate document IDs, replace existing document with specified document(s)'
@@ -452,6 +476,7 @@ final FigSpec sanitySpec = FigSpec(
           name: 'delete',
           description: 'Delete a document by ID',
           options: [
+
             Option(
               name: '--dataset',
               description: 'NAME to override dataset',
@@ -472,6 +497,7 @@ final FigSpec sanitySpec = FigSpec(
           name: 'get',
           description: 'Get and print a document by ID',
           options: [
+
             Option(
               name: '--pretty',
               description: 'Colorized JSON output'
@@ -496,6 +522,7 @@ final FigSpec sanitySpec = FigSpec(
           name: 'query',
           description: 'Query for documents',
           options: [
+
             Option(
               name: '--pretty',
               description: 'Colorized JSON output'
@@ -531,6 +558,7 @@ final FigSpec sanitySpec = FigSpec(
       name: 'exec',
       description: 'Runs a script in Sanity context',
       options: [
+
         Option(
           name: '--with-user-token',
           description: 'Preload access token from CLI config into \'part:@sanity/base/client\' part'
@@ -551,10 +579,12 @@ final FigSpec sanitySpec = FigSpec(
       name: 'graphql',
       description: 'Interact with GraphQL APIs',
       subcommands: [
+
         Subcommand(
           name: 'deploy',
           description: 'Deploy a GraphQL API from the current Sanity schema',
           options: [
+
             Option(
               name: '--dataset',
               description: 'Deploy API for the given dataset',
@@ -608,6 +638,7 @@ final FigSpec sanitySpec = FigSpec(
           name: 'undeploy',
           description: 'Remove a deployed GraphQL API',
           options: [
+
             Option(
               name: '--dataset',
               description: 'Delete GraphQL API for the given dataset',
@@ -634,6 +665,7 @@ final FigSpec sanitySpec = FigSpec(
       name: 'hook',
       description: 'Interact with hooks in your project',
       subcommands: [
+
         Subcommand(
           name: 'attempt',
           description: 'Print details of a given webhook delivery attempt',
@@ -675,6 +707,7 @@ final FigSpec sanitySpec = FigSpec(
       name: 'init',
       description: 'Initialize a new Sanity project or plugin',
       options: [
+
         Option(
           name: ['-y', '--yes'],
           description: 'Use unattended mode, accepting defaults and using only flags for choices'
@@ -744,6 +777,7 @@ final FigSpec sanitySpec = FigSpec(
             Arg(
             name: 'mode',
             suggestions: [
+
               FigSuggestion(name: 'public'),
               FigSuggestion(name: 'private')
             ]
@@ -797,6 +831,7 @@ final FigSpec sanitySpec = FigSpec(
       name: 'login',
       description: 'Authenticates against the Sanity.io API (no flag) or a third-party identity provider (with --sso flag)',
       options: [
+
         Option(
           name: '--sso',
           description: 'Authenticate against a third-party identity provider',
@@ -820,10 +855,12 @@ final FigSpec sanitySpec = FigSpec(
       name: 'projects',
       description: 'Interact with projects connected to your logged in user',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'Lists projects connected to your user',
           options: [
+
             Option(
               name: '--sort',
               description: 'Sort output by specified column',
@@ -840,8 +877,9 @@ final FigSpec sanitySpec = FigSpec(
                 Arg(
                 name: 'order',
                 suggestions: [
-                  FigSuggestion(name: 'asc'),
 
+                  FigSuggestion(name: 'asc'),
+                  FigSuggestion(name: 'desc')
                 ]
               )
               ]
@@ -854,6 +892,7 @@ final FigSpec sanitySpec = FigSpec(
       name: 'start',
       description: 'Starts a web server for the Content Studio',
       options: [
+
         Option(
           name: '--port',
           description: 'TCP port to start server on. [default: 3333]',
@@ -891,6 +930,7 @@ final FigSpec sanitySpec = FigSpec(
       name: 'upgrade',
       description: 'Upgrades all (or some) Sanity modules to their latest versions',
       options: [
+
         Option(
           name: '--range',
           description: 'Version range to upgrade to, eg \'^2.2.7\' or \'2.1.x\'',
@@ -919,10 +959,12 @@ final FigSpec sanitySpec = FigSpec(
       name: 'users',
       description: 'Manage users of your project',
       subcommands: [
+
         Subcommand(
           name: 'invite',
           description: 'Invite a new user to the project',
           options: [
+
             Option(
               name: '--role',
               description: 'Role to invite the user as',
@@ -943,6 +985,7 @@ final FigSpec sanitySpec = FigSpec(
           name: 'list',
           description: 'List users of the project',
           options: [
+
             Option(
               name: '--no-invitations',
               description: 'Don\'t include pending invitations'
@@ -958,6 +1001,7 @@ final FigSpec sanitySpec = FigSpec(
                 Arg(
                 name: 'field',
                 suggestions: [
+
                   FigSuggestion(name: 'id'),
                   FigSuggestion(name: 'name'),
                   FigSuggestion(name: 'role'),
@@ -973,8 +1017,9 @@ final FigSpec sanitySpec = FigSpec(
                 Arg(
                 name: 'order',
                 suggestions: [
-                  FigSuggestion(name: 'asc'),
 
+                  FigSuggestion(name: 'asc'),
+                  FigSuggestion(name: 'desc')
                 ]
               )
               ]
@@ -989,6 +1034,7 @@ final FigSpec sanitySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for sanity'

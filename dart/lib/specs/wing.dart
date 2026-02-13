@@ -8,10 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec wingSpec = FigSpec(
   name: 'wing',
   subcommands: [
+
     Subcommand(
       name: 'run',
       description: 'Runs a Wing executable in the Wing Console',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -29,6 +31,7 @@ final FigSpec wingSpec = FigSpec(
       name: 'compile',
       description: 'Compiles a Wing program',
       options: [
+
         Option(
           name: ['-o', '--out-dir'],
           description: 'Output directory',
@@ -65,6 +68,7 @@ final FigSpec wingSpec = FigSpec(
       name: 'upgrade',
       description: 'Upgrades the Wing toolchain to the latest version',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',

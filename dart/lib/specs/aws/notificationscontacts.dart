@@ -9,10 +9,12 @@ final FigSpec notificationscontactsSpec = FigSpec(
   name: 'notificationscontacts',
   description: 'AWS User Notifications Contacts is a service that allows you to create and manage email contacts for AWS User Notifications. The AWS User Notifications Contacts API Reference provides descriptions, API request parameters, and the JSON response for all email contact related API actions',
   subcommands: [
+
     Subcommand(
       name: 'activate-email-contact',
       description: 'Activates an email contact using an activation code. This code is in the activation email sent to the email address associated with this email contact',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -47,6 +49,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
       name: 'create-email-contact',
       description: 'Creates an email contact for the provided email address',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the email contact',
@@ -102,6 +106,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
       name: 'delete-email-contact',
       description: 'Deletes an email contact.  Deleting an email contact removes it from all associated notification configurations',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -139,6 +145,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -151,6 +158,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
       name: 'get-email-contact',
       description: 'Returns an email contact',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the email contact to get',
@@ -176,6 +184,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +197,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
       name: 'list-email-contacts',
       description: 'Lists all email contacts created under the Account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved',
@@ -249,6 +259,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify. The resource can be a user, server, or role',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN you specified to list the tags of',
@@ -286,6 +298,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -298,6 +311,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
       name: 'send-activation-code',
       description: 'Sends an activation email to the email address associated with the specified email contact.  It might take a few minutes for the activation email to arrive. If it doesn\'t arrive, check in your spam folder or try sending another activation email',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -323,6 +337,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -335,6 +350,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Attaches a key-value pair to a resource, as identified by its Amazon Resource Name (ARN). Taggable resources in AWS User Notifications Contacts include email contacts',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the configuration',
@@ -369,6 +385,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -381,6 +398,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Detaches a key-value pair from a resource, as identified by its Amazon Resource Name (ARN). Taggable resources in AWS User Notifications Contacts include email contacts',
       options: [
+
         Option(
           name: '--arn',
           description: 'The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific AWS resource, such as a server, user, or role',
@@ -415,6 +433,7 @@ final FigSpec notificationscontactsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

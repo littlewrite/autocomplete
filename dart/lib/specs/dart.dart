@@ -4,11 +4,21 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> globalOptions = [
+
+  Option(
+    name: ['-h', '--help'],
+    description: 'Print this usage information'
+  )
+];
+
 /// Completion spec for `dart` CLI
 final FigSpec dartSpec = FigSpec(
   name: 'dart',
   description: 'A command-line utility for Dart development',
   options: [
+
+    ...globalOptions,
     Option(
       name: ['-v', '--verbose'],
       description: 'Print verbose output'
@@ -27,10 +37,13 @@ final FigSpec dartSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'analyze',
       description: 'Analyze Dart code in a directory',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--fatal-infos',
           description: 'Treat info level issues as fatal'
@@ -57,27 +70,42 @@ final FigSpec dartSpec = FigSpec(
     Subcommand(
       name: 'compile',
       description: 'Compile Dart to various formats',
-      options: [],
+      options: [
+
+        ...globalOptions
+      ],
       subcommands: [
+
         Subcommand(
           name: 'aot-snapshot',
           description: 'Compile Dart to an AOT snapshot',
-          options: []
+          options: [
+
+            ...globalOptions
+          ]
         ),
         Subcommand(
           name: 'exe',
           description: 'Compile Dart to a self-contained executable',
-          options: []
+          options: [
+
+            ...globalOptions
+          ]
         ),
         Subcommand(
           name: 'jit-snapshot',
           description: 'Compile Dart to a JIT snapshot',
-          options: []
+          options: [
+
+            ...globalOptions
+          ]
         ),
         Subcommand(
           name: 'js',
           description: 'Compile Dart to JavaScript',
           options: [
+
+            ...globalOptions,
             Option(
               name: ['-m', '--minified'],
               description: 'Generate minified output'
@@ -87,7 +115,10 @@ final FigSpec dartSpec = FigSpec(
         Subcommand(
           name: 'kernel',
           description: 'Compile Dart to a kernel snapshot',
-          options: []
+          options: [
+
+            ...globalOptions
+          ]
         )
       ]
     ),
@@ -95,6 +126,8 @@ final FigSpec dartSpec = FigSpec(
       name: 'create',
       description: 'Create a new Dart project',
       options: [
+
+        ...globalOptions,
         Option(
           name: ['-t', '--template'],
           description: 'The project template to use',
@@ -103,6 +136,7 @@ final FigSpec dartSpec = FigSpec(
             name: 'template-type',
             defaultValue: 'console-simple',
             suggestions: [
+
               FigSuggestion(
                 name: 'console',
                 description: 'A simple command-line application'
@@ -143,6 +177,8 @@ final FigSpec dartSpec = FigSpec(
       name: 'fix',
       description: 'Apply automated fixes to Dart source code',
       options: [
+
+        ...globalOptions,
         Option(
           name: ['-n', '--dry-run'],
           description: 'Preview the proposed changes but make no changes'
@@ -157,6 +193,8 @@ final FigSpec dartSpec = FigSpec(
       name: 'format',
       description: 'Idiomatically format Dart source code',
       options: [
+
+        ...globalOptions,
         Option(
           name: ['-v', '--verbose'],
           description: 'Show all options and flags with --help'
@@ -165,6 +203,7 @@ final FigSpec dartSpec = FigSpec(
           name: ['-o', '--output'],
           description: 'Set where to write formatted output',
           args: [
+
             Arg(
               name: 'json',
               description: 'Print code and selection as JSON'
@@ -185,6 +224,7 @@ final FigSpec dartSpec = FigSpec(
               name: '--show',
               description: 'Set which filenames to print',
               suggestions: [
+
                 FigSuggestion(
                   name: 'all',
                   description: 'All visited files and directories'
@@ -203,6 +243,7 @@ final FigSpec dartSpec = FigSpec(
               name: '--summary',
               description: 'Show the specified summary after formatting',
               suggestions: [
+
                 FigSuggestion(
                   name: 'line',
                   description: 'Single-line summary'
@@ -259,6 +300,7 @@ final FigSpec dartSpec = FigSpec(
             name: 'line-length',
             description: 'Line length to wrap',
             suggestions: [
+
               FigSuggestion(name: '80'),
               FigSuggestion(name: '120')
             ]
@@ -308,6 +350,8 @@ final FigSpec dartSpec = FigSpec(
       name: 'migrate',
       description: 'Perform null safety migration on a project',
       options: [
+
+        ...globalOptions,
         Option(
           name: ['-v', '--verbose'],
           description: 'Show additional command output'
@@ -381,6 +425,8 @@ final FigSpec dartSpec = FigSpec(
       name: 'pub',
       description: 'Work with packages',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--trace',
           description: 'Print debugging information when an error occurs',
@@ -397,10 +443,13 @@ final FigSpec dartSpec = FigSpec(
         )
       ],
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Add a dependency to pubspec.yaml',
           options: [
+
+            ...globalOptions,
             Option(
               name: ['-d', '--dev'],
               description: 'Adds package to the development dependencies instead'
@@ -440,12 +489,18 @@ final FigSpec dartSpec = FigSpec(
         Subcommand(
           name: 'cache',
           description: 'Work with the Pub system cache',
-          options: [],
+          options: [
+
+            ...globalOptions
+          ],
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Install a package',
               options: [
+
+                ...globalOptions,
                 Option(
                   name: '--all',
                   description: 'Install all matching versions'
@@ -463,7 +518,8 @@ final FigSpec dartSpec = FigSpec(
             ),
             Subcommand(
               name: 'repair',
-              description: 'Reinstall a cached package'
+              description: 'Reinstall a cached package',
+              options: globalOptions
             )
           ]
         ),
@@ -471,6 +527,8 @@ final FigSpec dartSpec = FigSpec(
           name: 'deps',
           description: 'Print package dependencies',
           options: [
+
+            ...globalOptions,
             Option(
               name: ['-s', '--style'],
               description: 'How output should be displayed',
@@ -478,6 +536,7 @@ final FigSpec dartSpec = FigSpec(
                 Arg(
                 name: 'style',
                 suggestions: [
+
                   FigSuggestion(name: 'compact'),
                   FigSuggestion(name: 'tree'),
                   FigSuggestion(name: 'list')
@@ -504,21 +563,31 @@ final FigSpec dartSpec = FigSpec(
         Subcommand(
           name: 'downgrade',
           description: 'Downgrade packages in a Flutter project',
-          options: []
+          options: [
+
+            ...globalOptions
+          ]
         ),
         Subcommand(
           name: 'get',
           description: 'Get packages in a Flutter project',
-          options: []
+          options: [
+
+            ...globalOptions
+          ]
         ),
         Subcommand(
           name: 'global',
           description: 'Work with Pub global packages',
+          options: globalOptions,
           subcommands: [
+
             Subcommand(
               name: 'activate',
               description: 'Make a package\'s executables globally available',
               options: [
+
+                ...globalOptions,
                 Option(
                   name: ['-s', '--source'],
                   description: 'The source used to find the package',
@@ -526,6 +595,7 @@ final FigSpec dartSpec = FigSpec(
                     Arg(
                     name: 'source',
                     suggestions: [
+
                       FigSuggestion(name: 'git'),
                       FigSuggestion(name: 'hosted'),
                       FigSuggestion(name: 'path')
@@ -558,16 +628,20 @@ final FigSpec dartSpec = FigSpec(
             ),
             Subcommand(
               name: 'deactivate',
-              description: 'Remove a previously activated package'
+              description: 'Remove a previously activated package',
+              options: globalOptions
             ),
             Subcommand(
               name: 'list',
-              description: 'List globally activated packages'
+              description: 'List globally activated packages',
+              options: globalOptions
             ),
             Subcommand(
               name: 'run',
               description: 'Run an executable from a globally activated package',
               options: [
+
+                ...globalOptions,
                 Option(
                   name: '--enable-experiment',
                   description: 'Runs the executable in a VM with the given experiments enabled. (Will disable snapshotting, resulting in slower startup)',
@@ -593,16 +667,20 @@ final FigSpec dartSpec = FigSpec(
         ),
         Subcommand(
           name: 'login',
-          description: 'Log into pub.dev'
+          description: 'Log into pub.dev',
+          options: globalOptions
         ),
         Subcommand(
           name: 'logout',
-          description: 'Log out of pub.dev'
+          description: 'Log out of pub.dev',
+          options: globalOptions
         ),
         Subcommand(
           name: 'outdated',
           description: 'Analyze dependencies to find which ones can be upgraded',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--color',
               description: 'Color the the output. Defaults to color when connected to a terminal, and no-color otherwise',
@@ -634,6 +712,7 @@ final FigSpec dartSpec = FigSpec(
                 Arg(
                 name: 'property',
                 suggestions: [
+
                   FigSuggestion(name: 'outdated'),
                   FigSuggestion(name: 'null-safety')
                 ]
@@ -670,6 +749,8 @@ final FigSpec dartSpec = FigSpec(
           name: 'publish',
           description: 'Publish the current package to pub.dartlang.org',
           options: [
+
+            ...globalOptions,
             Option(
               name: ['-f', '--force'],
               description: 'Publish without confirmation if there are no errors'
@@ -679,12 +760,17 @@ final FigSpec dartSpec = FigSpec(
         Subcommand(
           name: 'remove',
           description: 'Removes a dependency from the current package',
-          options: []
+          options: [
+
+            ...globalOptions
+          ]
         ),
         Subcommand(
           name: 'upgrade',
           description: 'Upgrade the current package\'s dependencies to latest versions',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--null-safety',
               description: 'Upgrade constraints in pubspec.yaml to null-safety versions'
@@ -699,6 +785,8 @@ final FigSpec dartSpec = FigSpec(
           name: 'uploader',
           description: 'Manage uploaders for a package on pub.dev',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--package',
               description: 'The package whose uploaders will be modified. (defaults to the current package)'
@@ -711,6 +799,8 @@ final FigSpec dartSpec = FigSpec(
       name: 'run',
       description: 'Run a Dart program',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--observe',
           description: 'The observe flag is a convenience flag used to run a program with a set of common options. Useful for debugging'
@@ -802,6 +892,7 @@ final FigSpec dartSpec = FigSpec(
             Arg(
             name: 'experiment',
             suggestions: [
+
               FigSuggestion(
                 name: 'const-functions',
                 description: 'Allow more of the Dart language to be executed in const expressions'
@@ -847,7 +938,10 @@ final FigSpec dartSpec = FigSpec(
     Subcommand(
       name: 'test',
       description: 'Run tests for a project',
-      options: []
+      options: [
+
+        ...globalOptions
+      ]
     )
   ]
 );

@@ -9,14 +9,17 @@ final FigSpec apigeeSpec = FigSpec(
   name: 'apigee',
   description: 'Manage Apigee resources',
   subcommands: [
+
     Subcommand(
       name: 'apis',
       description: 'Manage Apigee API proxies',
       subcommands: [
+
         Subcommand(
           name: 'deploy',
           description: 'Deploy an API proxy to an environment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -177,6 +180,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -199,6 +203,7 @@ final FigSpec apigeeSpec = FigSpec(
           name: 'describe',
           description: 'Describe an Apigee API proxy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -337,6 +342,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -359,6 +365,7 @@ final FigSpec apigeeSpec = FigSpec(
           name: 'list',
           description: 'List Apigee API proxies',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -541,6 +548,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -557,6 +565,7 @@ final FigSpec apigeeSpec = FigSpec(
           name: 'undeploy',
           description: 'Undeploy an Apigee API proxy from an environment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -713,6 +722,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -733,6 +743,7 @@ final FigSpec apigeeSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -856,6 +867,7 @@ final FigSpec apigeeSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -872,10 +884,12 @@ final FigSpec apigeeSpec = FigSpec(
       name: 'applications',
       description: 'Manage third-party applications which call Apigee API proxies',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe an Apigee application',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1010,6 +1024,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1032,6 +1047,7 @@ final FigSpec apigeeSpec = FigSpec(
           name: 'list',
           description: 'List Apigee applications',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1225,6 +1241,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1239,6 +1256,7 @@ final FigSpec apigeeSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1362,6 +1380,7 @@ final FigSpec apigeeSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1378,10 +1397,12 @@ final FigSpec apigeeSpec = FigSpec(
       name: 'deployments',
       description: 'Manage deployments of Apigee API proxies in runtime environments',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe an Apigee API proxy deployment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1538,6 +1559,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1560,6 +1582,7 @@ final FigSpec apigeeSpec = FigSpec(
           name: 'list',
           description: 'List Apigee API proxy deployments',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1775,6 +1798,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1789,6 +1813,7 @@ final FigSpec apigeeSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1912,6 +1937,7 @@ final FigSpec apigeeSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1928,10 +1954,12 @@ final FigSpec apigeeSpec = FigSpec(
       name: 'developers',
       description: 'Manage Apigee developers',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe an Apigee developer',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2066,6 +2094,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2088,6 +2117,7 @@ final FigSpec apigeeSpec = FigSpec(
           name: 'list',
           description: 'List Apigee developers by email address',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2270,6 +2300,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2284,6 +2315,7 @@ final FigSpec apigeeSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2407,6 +2439,7 @@ final FigSpec apigeeSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2423,10 +2456,12 @@ final FigSpec apigeeSpec = FigSpec(
       name: 'environments',
       description: 'Manage Apigee environments',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List Apigee deployment environments',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2609,6 +2644,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2623,6 +2659,7 @@ final FigSpec apigeeSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2746,6 +2783,7 @@ final FigSpec apigeeSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2762,10 +2800,12 @@ final FigSpec apigeeSpec = FigSpec(
       name: 'organizations',
       description: 'Manage Apigee organizations',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List Apigee organizations and their paired Cloud Platform projects',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2937,6 +2977,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2951,6 +2992,7 @@ final FigSpec apigeeSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3074,6 +3116,7 @@ final FigSpec apigeeSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3090,10 +3133,12 @@ final FigSpec apigeeSpec = FigSpec(
       name: 'products',
       description: 'Manage Apigee API products',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create an Apigee API product',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3325,6 +3370,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'QUOTA_UNIT',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'minute'),
                   FigSuggestion(name: 'hour'),
                   FigSuggestion(name: 'day'),
@@ -3367,6 +3413,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3389,6 +3436,7 @@ final FigSpec apigeeSpec = FigSpec(
           name: 'delete',
           description: 'Delete an Apigee API product',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3523,6 +3571,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3545,6 +3594,7 @@ final FigSpec apigeeSpec = FigSpec(
           name: 'describe',
           description: 'Describe an Apigee API product',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3679,6 +3729,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3701,6 +3752,7 @@ final FigSpec apigeeSpec = FigSpec(
           name: 'list',
           description: 'List Apigee API products',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3883,6 +3935,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3899,6 +3952,7 @@ final FigSpec apigeeSpec = FigSpec(
           name: 'update',
           description: 'Update an existing Apigee API product',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4165,6 +4219,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'QUOTA_UNIT',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'minute'),
                   FigSuggestion(name: 'hour'),
                   FigSuggestion(name: 'day'),
@@ -4251,6 +4306,7 @@ final FigSpec apigeeSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4271,6 +4327,7 @@ final FigSpec apigeeSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4394,6 +4451,7 @@ final FigSpec apigeeSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4408,6 +4466,7 @@ final FigSpec apigeeSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4531,6 +4590,7 @@ final FigSpec apigeeSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

@@ -9,6 +9,7 @@ final FigSpec svokitSpec = FigSpec(
   name: 'svokit',
   description: 'Runs built svokit project',
   subcommands: [
+
     Subcommand(
       name: 'setup',
       description: 'Creates svokit config (experimental)'
@@ -19,6 +20,7 @@ final FigSpec svokitSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for svokit'

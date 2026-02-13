@@ -10,6 +10,7 @@ final FigSpec createT3AppSpec = FigSpec(
   description: 'A CLI for creating web applications with the t3 stack',
   icon: 'https://create.t3.gg/favicon.svg',
   options: [
+
     Option(
       name: '--noGit',
       description: 'Explicitly tell the CLI to not initialize a new git repo in the project (default: false)'
@@ -35,6 +36,7 @@ final FigSpec createT3AppSpec = FigSpec(
         Arg(
         name: 'boolean',
         suggestions: [
+
           FigSuggestion(
             name: 'true',
             description: 'Install Tailwind CSS'
@@ -56,6 +58,7 @@ final FigSpec createT3AppSpec = FigSpec(
         Arg(
         name: 'boolean',
         suggestions: [
+
           FigSuggestion(
             name: 'true',
             description: 'Install NextAuth.js'
@@ -77,6 +80,7 @@ final FigSpec createT3AppSpec = FigSpec(
         Arg(
         name: 'boolean',
         suggestions: [
+
           FigSuggestion(
             name: 'true',
             description: 'Install Prisma'
@@ -98,6 +102,7 @@ final FigSpec createT3AppSpec = FigSpec(
         Arg(
         name: 'boolean',
         suggestions: [
+
           FigSuggestion(
             name: 'true',
             description: 'Install tRPC'
@@ -119,6 +124,7 @@ final FigSpec createT3AppSpec = FigSpec(
         Arg(
         name: 'alias',
         suggestions: [
+
           FigSuggestion(
             name: '~/',
             description: 'Use the ~/ alias'

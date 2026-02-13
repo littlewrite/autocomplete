@@ -9,10 +9,12 @@ final FigSpec cloudsearchSpec = FigSpec(
   name: 'cloudsearch',
   description: 'Amazon CloudSearch Configuration Service You use the Amazon CloudSearch configuration service to create, configure, and manage search domains. Configuration service requests are submitted using the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP GET or POST with a query parameter named Action. The endpoint for configuration service requests is region-specific: cloudsearch.region.amazonaws.com. For example, cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see Regions and Endpoints',
   subcommands: [
+
     Subcommand(
       name: 'build-suggesters',
       description: 'Indexes the search suggestions. For more information, see Configuring Suggesters in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -38,6 +40,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'create-domain',
       description: 'Creates a new search domain. For more information, see Creating a Search Domain in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long',
@@ -75,6 +79,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'define-analysis-scheme',
       description: 'Configures an analysis scheme that can be applied to a text or text-array field to define language-specific text processing options. For more information, see Configuring Analysis Schemes in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -121,6 +127,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -133,6 +140,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'define-expression',
       description: 'Configures an Expression for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see Configuring Expressions in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -176,6 +184,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +197,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'define-index-field',
       description: 'Configures an IndexField for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the IndexFieldType. If the field exists, the new configuration replaces the old one. For more information, see Configuring Index Fields in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -278,6 +288,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -290,6 +301,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'define-suggester',
       description: 'Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see Getting Search Suggestions in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -324,6 +336,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -336,6 +349,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'delete-analysis-scheme',
       description: 'Deletes an analysis scheme. For more information, see Configuring Analysis Schemes in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -370,6 +384,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -382,6 +397,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'delete-domain',
       description: 'Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see Deleting a Search Domain in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain you want to permanently delete',
@@ -407,6 +423,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -419,6 +436,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'delete-expression',
       description: 'Removes an Expression from the search domain. For more information, see Configuring Expressions in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -453,6 +471,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -465,6 +484,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'delete-index-field',
       description: 'Removes an IndexField from the search domain. For more information, see Configuring Index Fields in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -499,6 +519,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -511,6 +532,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'delete-suggester',
       description: 'Deletes a suggester. For more information, see Getting Search Suggestions in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -545,6 +567,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -557,6 +580,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'describe-analysis-schemes',
       description: 'Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a text field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the Deployed option to true to show the active configuration and exclude pending changes. For more information, see Configuring Analysis Schemes in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain you want to describe',
@@ -599,6 +623,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -611,6 +636,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'describe-availability-options',
       description: 'Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the Deployed option to true to show the active configuration and exclude pending changes. For more information, see Configuring Availability Options in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain you want to describe',
@@ -644,6 +670,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -656,6 +683,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'describe-domain-endpoint-options',
       description: 'Returns the domain\'s endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see Configuring Domain Endpoint Options in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain',
@@ -689,6 +717,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -701,6 +730,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'describe-domains',
       description: 'Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. To get the number of searchable documents in a domain, use the console or submit a matchall request to your domain\'s search endpoint: q=matchall&amp;q.parser=structured&amp;size=0. For more information, see Getting Information about a Search Domain in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-names',
           description: 'The names of the domains you want to include in the response',
@@ -726,6 +756,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -738,6 +769,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'describe-expressions',
       description: 'Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the Deployed option to true to show the active configuration and exclude pending changes. For more information, see Configuring Expressions in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain you want to describe',
@@ -780,6 +812,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -792,6 +825,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'describe-index-fields',
       description: 'Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the Deployed option to true to show the active configuration and exclude pending changes. For more information, see Getting Domain Information in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain you want to describe',
@@ -834,6 +868,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -846,6 +881,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'describe-scaling-parameters',
       description: 'Gets the scaling parameters configured for a domain. A domain\'s scaling parameters specify the desired search instance type and replication count. For more information, see Configuring Scaling Options in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -871,6 +907,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -883,6 +920,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'describe-service-access-policies',
       description: 'Gets information about the access policies that control access to the domain\'s document and search endpoints. By default, shows the configuration with any pending changes. Set the Deployed option to true to show the active configuration and exclude pending changes. For more information, see Configuring Access for a Search Domain in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain you want to describe',
@@ -916,6 +954,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -928,6 +967,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'describe-suggesters',
       description: 'Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the Deployed option to true to show the active configuration and exclude pending changes. For more information, see Getting Search Suggestions in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain you want to describe',
@@ -970,6 +1010,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -982,6 +1023,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'index-documents',
       description: 'Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose OptionStatus is RequiresIndexDocuments',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -1007,6 +1049,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1019,6 +1062,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'list-domain-names',
       description: 'Lists all search domains owned by an account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1035,6 +1079,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1047,6 +1092,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'update-availability-options',
       description: 'Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see Configuring Availability Options in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -1080,6 +1126,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1092,6 +1139,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'update-domain-endpoint-options',
       description: 'Updates the domain\'s endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see Configuring Domain Endpoint Options in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain',
@@ -1126,6 +1174,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1138,6 +1187,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'update-scaling-parameters',
       description: 'Configures scaling parameters for a domain. A domain\'s scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see Configuring Scaling Options in the Amazon CloudSearch Developer Guide',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -1172,6 +1222,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1184,6 +1235,7 @@ final FigSpec cloudsearchSpec = FigSpec(
       name: 'update-service-access-policies',
       description: 'Configures the access rules that control access to the domain\'s document and search endpoints. For more information, see  Configuring Access for an Amazon CloudSearch Domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)',
@@ -1218,6 +1270,7 @@ final FigSpec cloudsearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

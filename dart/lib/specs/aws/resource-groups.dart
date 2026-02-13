@@ -9,10 +9,12 @@ final FigSpec resourceGroupsSpec = FigSpec(
   name: 'resource-groups',
   description: 'Resource Groups lets you organize Amazon Web Services resources such as Amazon Elastic Compute Cloud instances, Amazon Relational Database Service databases, and Amazon Simple Storage Service buckets into groups using criteria that you define as tags. A resource group is a collection of resources that match the resource types specified in a query, and share one or more tags or portions of tags. You can create a group of resources based on their roles in your cloud infrastructure, lifecycle stages, regions, application layers, or virtually any criteria. Resource Groups enable you to automate management tasks, such as those in Amazon Web Services Systems Manager Automation documents, on tag-related resources in Amazon Web Services Systems Manager. Groups of tagged resources also let you quickly view a custom console in Amazon Web Services Systems Manager that shows Config compliance and other monitoring data about member resources. To create a resource group, build a resource query, and specify tags that identify the criteria that members of the group have in common. Tags are key-value pairs. For more information about Resource Groups, see the Resource Groups User Guide. Resource Groups uses a REST-compliant API that you can use to perform the following types of operations.   Create, Read, Update, and Delete (CRUD) operations on resource groups and resource query entities   Applying, editing, and removing tags from resource groups   Resolving resource group member Amazon resource names (ARN)s so they can be returned as search results   Getting data about resources that are members of a group   Searching Amazon Web Services resources based on a resource query',
   subcommands: [
+
     Subcommand(
       name: 'cancel-tag-sync-task',
       description: 'Cancels the specified tag-sync task.   Minimum permissions  To run this command, you must have the following permissions:    resource-groups:CancelTagSyncTask on the application group    resource-groups:DeleteGroup',
       options: [
+
         Option(
           name: '--task-arn',
           description: 'The Amazon resource name (ARN) of the tag-sync task',
@@ -38,6 +40,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'create-group',
       description: 'Creates a resource group with the specified name and description. You can optionally include either a resource query or a service configuration. For more information about constructing a resource query, see Build queries and groups in Resource Groups in the Resource Groups User Guide. For more information about service-linked groups and service configurations, see Service configurations for Resource Groups.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:CreateGroup',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the group, which is the identifier of the group in other operations. You can\'t change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with AWS, aws, or any other possible capitalization; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account',
@@ -138,6 +142,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'delete-group',
       description: 'Deletes the specified resource group. Deleting a resource group does not delete any resources that are members of the group; it only deletes the group structure.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:DeleteGroup',
       options: [
+
         Option(
           name: '--group-name',
           description: 'Deprecated - don\'t use this parameter. Use Group instead',
@@ -184,6 +190,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'get-account-settings',
       description: 'Retrieves the current status of optional features in Resource Groups',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -212,6 +220,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'get-group',
       description: 'Returns information about a specified resource group.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:GetGroup',
       options: [
+
         Option(
           name: '--group-name',
           description: 'Deprecated - don\'t use this parameter. Use Group instead',
@@ -258,6 +268,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'get-group-configuration',
       description: 'Retrieves the service configuration associated with the specified resource group. For details about the service configuration syntax, see Service configurations for Resource Groups.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:GetGroupConfiguration',
       options: [
+
         Option(
           name: '--group',
           description: 'The name or the Amazon resource name (ARN) of the resource group for which you want to retrive the service configuration',
@@ -295,6 +307,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'get-group-query',
       description: 'Retrieves the resource query associated with the specified resource group. For more information about resource queries, see Create a tag-based group in Resource Groups.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:GetGroupQuery',
       options: [
+
         Option(
           name: '--group-name',
           description: 'Don\'t use this parameter. Use Group instead',
@@ -341,6 +355,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -353,6 +368,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'get-tag-sync-task',
       description: 'Returns information about a specified tag-sync task.   Minimum permissions  To run this command, you must have the following permissions:    resource-groups:GetTagSyncTask on the application group',
       options: [
+
         Option(
           name: '--task-arn',
           description: 'The Amazon resource name (ARN) of the tag-sync task',
@@ -378,6 +394,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -390,6 +407,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'get-tags',
       description: 'Returns a list of tags that are associated with a resource group, specified by an Amazon resource name (ARN).  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:GetTags',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon resource name (ARN) of the resource group whose tags you want to retrieve',
@@ -415,6 +433,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -427,6 +446,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'group-resources',
       description: 'Adds the specified resources to the specified group.  You can only use this operation with the following groups:    AWS::EC2::HostManagement     AWS::EC2::CapacityReservationPool     AWS::ResourceGroups::ApplicationGroup    Other resource group types and resource types are not currently supported by this operation.   Minimum permissions  To run this command, you must have the following permissions:    resource-groups:GroupResources',
       options: [
+
         Option(
           name: '--group',
           description: 'The name or the Amazon resource name (ARN) of the resource group to add resources to',
@@ -461,6 +481,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -473,6 +494,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'list-group-resources',
       description: 'Returns a list of Amazon resource names (ARNs) of the resources that are members of a specified resource group.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:ListGroupResources     cloudformation:DescribeStacks     cloudformation:ListStackResources     tag:GetResources',
       options: [
+
         Option(
           name: '--group-name',
           description: 'Deprecated - don\'t use this parameter. Use the Group request field instead',
@@ -561,6 +583,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -573,6 +596,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'list-grouping-statuses',
       description: 'Returns the status of the last grouping or ungrouping action for each resource in the specified application group',
       options: [
+
         Option(
           name: '--group',
           description: 'The application group identifier, expressed as an Amazon resource name (ARN) or the application group name',
@@ -652,6 +676,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -664,6 +689,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'list-groups',
       description: 'Returns a list of existing Resource Groups in your account.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:ListGroups',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.    resource-type - Filter the results to include only those resource groups that have the specified resource type in their ResourceTypeFilter. For example, AWS::EC2::Instance would return any resource group with a ResourceTypeFilter that includes AWS::EC2::Instance.    configuration-type - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:    AWS::ResourceGroups::ApplicationGroup     AWS::AppRegistry::Application     AWS::AppRegistry::ApplicationResourceGroups     AWS::CloudFormation::Stack     AWS::EC2::CapacityReservationPool     AWS::EC2::HostManagement     AWS::NetworkFirewall::RuleGroup',
@@ -734,6 +760,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -746,6 +773,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'list-tag-sync-tasks',
       description: 'Returns a list of tag-sync tasks.   Minimum permissions  To run this command, you must have the following permissions:    resource-groups:ListTagSyncTasks with the group passed in the filters as the resource or * if using no filters',
       options: [
+
         Option(
           name: '--filters',
           description: 'The Amazon resource name (ARN) or name of the application group for which you want to return a list of tag-sync tasks',
@@ -816,6 +844,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -828,6 +857,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'put-group-configuration',
       description: 'Attaches a service configuration to the specified group. This occurs asynchronously, and can take time to complete. You can use GetGroupConfiguration to check the status of the update.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:PutGroupConfiguration',
       options: [
+
         Option(
           name: '--group',
           description: 'The name or Amazon resource name (ARN) of the resource group with the configuration that you want to update',
@@ -862,6 +892,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -874,6 +905,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'search-resources',
       description: 'Returns a list of Amazon Web Services resource identifiers that matches the specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:SearchResources     cloudformation:DescribeStacks     cloudformation:ListStackResources     tag:GetResources',
       options: [
+
         Option(
           name: '--resource-query',
           description: 'The search query, using the same formats that are supported for resource group definition. For more information, see CreateGroup',
@@ -944,6 +976,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -956,6 +989,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'start-tag-sync-task',
       description: 'Creates a new tag-sync task to onboard and sync resources tagged with a specific tag key-value pair to an application.   Minimum permissions  To run this command, you must have the following permissions:    resource-groups:StartTagSyncTask on the application group    resource-groups:CreateGroup     iam:PassRole on the role provided in the request',
       options: [
+
         Option(
           name: '--group',
           description: 'The Amazon resource name (ARN) or name of the application group for which you want to create a tag-sync task',
@@ -1008,6 +1042,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1020,6 +1055,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'tag',
       description: 'Adds tags to a resource group with the specified Amazon resource name (ARN). Existing tags on a resource group are not changed if they are not specified in the request parameters.  Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.   Minimum permissions  To run this command, you must have the following permissions:    resource-groups:Tag',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon resource name (ARN) of the resource group to which to add tags',
@@ -1054,6 +1090,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1066,6 +1103,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'ungroup-resources',
       description: 'Removes the specified resources from the specified group. This operation works only with static groups that you populated using the GroupResources operation. It doesn\'t work with any resource groups that are automatically populated by tag-based or CloudFormation stack-based queries.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:UngroupResources',
       options: [
+
         Option(
           name: '--group',
           description: 'The name or the Amazon resource name (ARN) of the resource group from which to remove the resources',
@@ -1100,6 +1138,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1112,6 +1151,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'untag',
       description: 'Deletes tags from a specified resource group.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:Untag',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon resource name (ARN) of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys',
@@ -1146,6 +1186,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1158,6 +1199,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'update-account-settings',
       description: 'Turns on or turns off optional features in Resource Groups. The preceding example shows that the request to turn on group lifecycle events is IN_PROGRESS. You can call the GetAccountSettings operation to check for completion by looking for GroupLifecycleEventsStatus to change to ACTIVE',
       options: [
+
         Option(
           name: '--group-lifecycle-events-desired-status',
           description: 'Specifies whether you want to turn group lifecycle events on or off. You can\'t turn on group lifecycle events if your resource groups quota is greater than 2,000',
@@ -1183,6 +1225,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1195,6 +1238,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'update-group',
       description: 'Updates the description for an existing group. You cannot update the name of a resource group.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:UpdateGroup',
       options: [
+
         Option(
           name: '--group-name',
           description: 'Don\'t use this parameter. Use Group instead',
@@ -1265,6 +1309,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1277,6 +1322,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
       name: 'update-group-query',
       description: 'Updates the resource query of a group. For more information about resource queries, see Create a tag-based group in Resource Groups.  Minimum permissions  To run this command, you must have the following permissions:    resource-groups:UpdateGroupQuery',
       options: [
+
         Option(
           name: '--group-name',
           description: 'Don\'t use this parameter. Use Group instead',
@@ -1320,6 +1366,7 @@ final FigSpec resourceGroupsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

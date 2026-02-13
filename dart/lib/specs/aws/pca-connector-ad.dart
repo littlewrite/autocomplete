@@ -9,10 +9,12 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
   name: 'pca-connector-ad',
   description: 'Amazon Web Services Private CA Connector for Active Directory creates a connector between Amazon Web Services Private CA and Active Directory (AD) that enables you to provision security certificates for AD signed by a private CA that you own. For more information, see Amazon Web Services Private CA Connector for Active Directory',
   subcommands: [
+
     Subcommand(
       name: 'create-connector',
       description: 'Creates a connector between Amazon Web Services Private CA and an Active Directory. You must specify the private CA, directory ID, and security groups',
       options: [
+
         Option(
           name: '--certificate-authority-arn',
           description: 'The Amazon Resource Name (ARN) of the certificate authority being used',
@@ -74,6 +76,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'create-directory-registration',
       description: 'Creates a directory registration that authorizes communication between Amazon Web Services Private CA and an Active Directory',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Idempotency token',
@@ -129,6 +133,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'create-service-principal-name',
       description: 'Creates a service principal name (SPN) for the service account in Active Directory. Kerberos authentication uses SPNs to associate a service instance with a service sign-in account',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Idempotency token',
@@ -184,6 +190,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'create-template',
       description: 'Creates an Active Directory compatible certificate template. The connectors issues certificates using these templates based on the requester’s Active Directory group membership',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Idempotency token',
@@ -257,6 +265,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -269,6 +278,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'create-template-group-access-control-entry',
       description: 'Create a group access control entry. Allow or deny Active Directory groups from enrolling and/or autoenrolling with the template based on the group security identifiers (SIDs)',
       options: [
+
         Option(
           name: '--access-rights',
           description: 'Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template',
@@ -330,6 +340,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -342,6 +353,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'delete-connector',
       description: 'Deletes a connector for Active Directory. You must provide the Amazon Resource Name (ARN) of the connector that you want to delete. You can find the ARN by calling the https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListConnectors action. Deleting a connector does not deregister your directory with Amazon Web Services Private CA. You can deregister your directory by calling the https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DeleteDirectoryRegistration action',
       options: [
+
         Option(
           name: '--connector-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you called CreateConnector',
@@ -367,6 +379,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -379,6 +392,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'delete-directory-registration',
       description: 'Deletes a directory registration. Deleting a directory registration deauthorizes Amazon Web Services Private CA with the directory',
       options: [
+
         Option(
           name: '--directory-registration-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you called CreateDirectoryRegistration',
@@ -404,6 +418,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +431,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'delete-service-principal-name',
       description: 'Deletes the service principal name (SPN) used by a connector to authenticate with your Active Directory',
       options: [
+
         Option(
           name: '--connector-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you called CreateConnector',
@@ -450,6 +466,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -462,6 +479,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'delete-template',
       description: 'Deletes a template. Certificates issued using the template are still valid until they are revoked or expired',
       options: [
+
         Option(
           name: '--template-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you called CreateTemplate',
@@ -487,6 +505,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -499,6 +518,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'delete-template-group-access-control-entry',
       description: 'Deletes a group access control entry',
       options: [
+
         Option(
           name: '--group-security-identifier',
           description: 'Security identifier (SID) of the group object from Active Directory. The SID starts with "S-"',
@@ -533,6 +553,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -545,6 +566,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'get-connector',
       description: 'Lists information about your connector. You specify the connector on input by its ARN (Amazon Resource Name)',
       options: [
+
         Option(
           name: '--connector-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you called CreateConnector',
@@ -570,6 +592,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -582,6 +605,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'get-directory-registration',
       description: 'A structure that contains information about your directory registration',
       options: [
+
         Option(
           name: '--directory-registration-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you called CreateDirectoryRegistration',
@@ -607,6 +631,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -619,6 +644,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'get-service-principal-name',
       description: 'Lists the service principal name that the connector uses to authenticate with Active Directory',
       options: [
+
         Option(
           name: '--connector-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you called CreateConnector',
@@ -653,6 +679,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -665,6 +692,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'get-template',
       description: 'Retrieves a certificate template that the connector uses to issue certificates from a private CA',
       options: [
+
         Option(
           name: '--template-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you called CreateTemplate',
@@ -690,6 +718,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -702,6 +731,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'get-template-group-access-control-entry',
       description: 'Retrieves the group access control entries for a template',
       options: [
+
         Option(
           name: '--group-security-identifier',
           description: 'Security identifier (SID) of the group object from Active Directory. The SID starts with "S-"',
@@ -736,6 +766,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -748,6 +779,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'list-connectors',
       description: 'Lists the connectors that you created by using the https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector action',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the NextToken element is sent in the response. Use this NextToken value in a subsequent request to retrieve additional items',
@@ -809,6 +841,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -821,6 +854,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'list-directory-registrations',
       description: 'Lists the directory registrations that you created by using the https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration action',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the NextToken element is sent in the response. Use this NextToken value in a subsequent request to retrieve additional items',
@@ -882,6 +916,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -894,6 +929,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'list-service-principal-names',
       description: 'Lists the service principal names that the connector uses to authenticate with Active Directory',
       options: [
+
         Option(
           name: '--directory-registration-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you called CreateDirectoryRegistration',
@@ -964,6 +1000,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -976,6 +1013,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags, if any, that are associated with your resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you created the resource',
@@ -1001,6 +1039,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1013,6 +1052,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'list-template-group-access-control-entries',
       description: 'Lists group access control entries you created',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the NextToken element is sent in the response. Use this NextToken value in a subsequent request to retrieve additional items',
@@ -1083,6 +1123,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1095,6 +1136,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'list-templates',
       description: 'Lists the templates, if any, that are associated with a connector',
       options: [
+
         Option(
           name: '--connector-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you called CreateConnector',
@@ -1165,6 +1207,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1177,6 +1220,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to your resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you created the resource',
@@ -1211,6 +1255,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1223,6 +1268,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from your resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that was returned when you created the resource',
@@ -1257,6 +1303,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1269,6 +1316,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'update-template',
       description: 'Update template configuration to define the information included in certificates',
       options: [
+
         Option(
           name: '--definition',
           description: 'Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings',
@@ -1311,6 +1359,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1323,6 +1372,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
       name: 'update-template-group-access-control-entry',
       description: 'Update a group access control entry you created using CreateTemplateGroupAccessControlEntry',
       options: [
+
         Option(
           name: '--access-rights',
           description: 'Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template',
@@ -1375,6 +1425,7 @@ final FigSpec pcaConnectorAdSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

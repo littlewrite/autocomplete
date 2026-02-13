@@ -14,6 +14,7 @@ final FigSpec nginxSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-c',
       description: 'Use an alternative configuration file',
@@ -31,6 +32,7 @@ final FigSpec nginxSpec = FigSpec(
         Arg(
         name: 'file',
         suggestions: [
+
           FigSuggestion(name: 'stderr')
         ]
       )
@@ -86,6 +88,7 @@ final FigSpec nginxSpec = FigSpec(
         Arg(
         name: 'signal',
         suggestions: [
+
           FigSuggestion(
             name: 'stop',
             description: 'Sends SIGTERM'

@@ -9,10 +9,12 @@ final FigSpec redshiftServerlessSpec = FigSpec(
   name: 'redshift-serverless',
   description: 'This is an interface reference for Amazon Redshift Serverless. It contains documentation for one of the programming or command line interfaces you can use to manage Amazon Redshift Serverless.  Amazon Redshift Serverless automatically provisions data warehouse capacity and intelligently scales the underlying resources based on workload demands. Amazon Redshift Serverless adjusts capacity in seconds to deliver consistently high performance and simplified operations for even the most demanding and volatile workloads. Amazon Redshift Serverless lets you focus on using your data to acquire new insights for your business and customers.   To learn more about Amazon Redshift Serverless, see What is Amazon Redshift Serverless?',
   subcommands: [
+
     Subcommand(
       name: 'convert-recovery-point-to-snapshot',
       description: 'Converts a recovery point to a snapshot. For more information about recovery points and snapshots, see Working with snapshots and recovery points',
       options: [
+
         Option(
           name: '--recovery-point-id',
           description: 'The unique identifier of the recovery point',
@@ -65,6 +67,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'create-custom-domain-association',
       description: 'Creates a custom domain association for Amazon Redshift Serverless',
       options: [
+
         Option(
           name: '--custom-domain-certificate-arn',
           description: 'The custom domain name’s certificate Amazon resource name (ARN)',
@@ -120,6 +124,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'create-endpoint-access',
       description: 'Creates an Amazon Redshift Serverless managed VPC endpoint',
       options: [
+
         Option(
           name: '--endpoint-name',
           description: 'The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can\'t contain two consecutive hyphens or end with a hyphen',
@@ -193,6 +199,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'create-namespace',
       description: 'Creates a namespace in Amazon Redshift Serverless',
       options: [
+
         Option(
           name: '--admin-password-secret-kms-key-id',
           description: 'The ID of the Key Management Service (KMS) key used to encrypt and store the namespace\'s admin credentials secret. You can only use this parameter if manageAdminPassword is true',
@@ -328,6 +336,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -340,6 +349,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'create-scheduled-action',
       description: 'Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the CreateSnapshot API operation',
       options: [
+
         Option(
           name: '--enabled',
           description: 'Indicates whether the schedule is enabled. If false, the scheduled action does not trigger. For more information about state of the scheduled action, see ScheduledAction'
@@ -436,6 +446,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -448,6 +459,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'create-snapshot',
       description: 'Creates a snapshot of all databases in a namespace. For more information about snapshots, see  Working with snapshots and recovery points',
       options: [
+
         Option(
           name: '--namespace-name',
           description: 'The namespace to create a snapshot for',
@@ -500,6 +512,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -512,6 +525,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'create-snapshot-copy-configuration',
       description: 'Creates a snapshot copy configuration that lets you copy snapshots to another Amazon Web Services Region',
       options: [
+
         Option(
           name: '--destination-kms-key-id',
           description: 'The KMS key to use to encrypt your snapshots in the destination Amazon Web Services Region',
@@ -564,6 +578,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -576,6 +591,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'create-usage-limit',
       description: 'Creates a usage limit for a specified Amazon Redshift Serverless usage type. The usage limit is identified by the returned usage limit identifier',
       options: [
+
         Option(
           name: '--amount',
           description: 'The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number',
@@ -637,6 +653,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -649,6 +666,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'create-workgroup',
       description: 'Creates an workgroup in Amazon Redshift Serverless. VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that you own in a Region from reaching or being reached from the internet through internet gateways and egress-only internet gateways. If a workgroup is in an account with VPC BPA turned on, the following capabilities are blocked:    Creating a public access workgroup   Modifying a private workgroup to public   Adding a subnet with VPC BPA turned on to the workgroup when the workgroup is public   For more information about VPC BPA, see Block public access to VPCs and subnets in the Amazon VPC User Guide',
       options: [
+
         Option(
           name: '--base-capacity',
           description: 'The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs)',
@@ -780,6 +798,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -792,6 +811,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'delete-custom-domain-association',
       description: 'Deletes a custom domain association for Amazon Redshift Serverless',
       options: [
+
         Option(
           name: '--custom-domain-name',
           description: 'The custom domain name associated with the workgroup',
@@ -826,6 +846,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -838,6 +859,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'delete-endpoint-access',
       description: 'Deletes an Amazon Redshift Serverless managed VPC endpoint',
       options: [
+
         Option(
           name: '--endpoint-name',
           description: 'The name of the VPC endpoint to delete',
@@ -863,6 +885,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -875,6 +898,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'delete-namespace',
       description: 'Deletes a namespace from Amazon Redshift Serverless. Before you delete the namespace, you can create a final snapshot that has all of the data within the namespace',
       options: [
+
         Option(
           name: '--final-snapshot-name',
           description: 'The name of the snapshot to be created before the namespace is deleted',
@@ -918,6 +942,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -930,6 +955,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes the specified resource policy',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the policy to delete',
@@ -955,6 +981,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -967,6 +994,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'delete-scheduled-action',
       description: 'Deletes a scheduled action',
       options: [
+
         Option(
           name: '--scheduled-action-name',
           description: 'The name of the scheduled action to delete',
@@ -992,6 +1020,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1004,6 +1033,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'delete-snapshot',
       description: 'Deletes a snapshot from Amazon Redshift Serverless',
       options: [
+
         Option(
           name: '--snapshot-name',
           description: 'The name of the snapshot to be deleted',
@@ -1029,6 +1059,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1041,6 +1072,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'delete-snapshot-copy-configuration',
       description: 'Deletes a snapshot copy configuration',
       options: [
+
         Option(
           name: '--snapshot-copy-configuration-id',
           description: 'The ID of the snapshot copy configuration to delete',
@@ -1066,6 +1098,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1078,6 +1111,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'delete-usage-limit',
       description: 'Deletes a usage limit from Amazon Redshift Serverless',
       options: [
+
         Option(
           name: '--usage-limit-id',
           description: 'The unique identifier of the usage limit to delete',
@@ -1103,6 +1137,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1115,6 +1150,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'delete-workgroup',
       description: 'Deletes a workgroup',
       options: [
+
         Option(
           name: '--workgroup-name',
           description: 'The name of the workgroup to be deleted',
@@ -1140,6 +1176,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1152,6 +1189,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-credentials',
       description: 'Returns a database user name and temporary password with temporary authorization to log in to Amazon Redshift Serverless. By default, the temporary credentials expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes). The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources. If the DbName parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name',
       options: [
+
         Option(
           name: '--custom-domain-name',
           description: 'The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request',
@@ -1204,6 +1242,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1216,6 +1255,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-custom-domain-association',
       description: 'Gets information about a specific custom domain association',
       options: [
+
         Option(
           name: '--custom-domain-name',
           description: 'The custom domain name associated with the workgroup',
@@ -1250,6 +1290,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1262,6 +1303,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-endpoint-access',
       description: 'Returns information, such as the name, about a VPC endpoint',
       options: [
+
         Option(
           name: '--endpoint-name',
           description: 'The name of the VPC endpoint to return information for',
@@ -1287,6 +1329,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1299,6 +1342,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-namespace',
       description: 'Returns information about a namespace in Amazon Redshift Serverless',
       options: [
+
         Option(
           name: '--namespace-name',
           description: 'The name of the namespace to retrieve information for',
@@ -1324,6 +1368,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1336,6 +1381,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-recovery-point',
       description: 'Returns information about a recovery point',
       options: [
+
         Option(
           name: '--recovery-point-id',
           description: 'The unique identifier of the recovery point to return information for',
@@ -1361,6 +1407,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1373,6 +1420,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-resource-policy',
       description: 'Returns a resource policy',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to return',
@@ -1398,6 +1446,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1410,6 +1459,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-scheduled-action',
       description: 'Returns information about a scheduled action',
       options: [
+
         Option(
           name: '--scheduled-action-name',
           description: 'The name of the scheduled action',
@@ -1435,6 +1485,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1447,6 +1498,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-snapshot',
       description: 'Returns information about a specific snapshot',
       options: [
+
         Option(
           name: '--owner-account',
           description: 'The owner Amazon Web Services account of a snapshot shared with another user',
@@ -1490,6 +1542,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1502,6 +1555,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-table-restore-status',
       description: 'Returns information about a TableRestoreStatus object',
       options: [
+
         Option(
           name: '--table-restore-request-id',
           description: 'The ID of the RestoreTableFromSnapshot request to return status for',
@@ -1527,6 +1581,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1539,6 +1594,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-usage-limit',
       description: 'Returns information about a usage limit',
       options: [
+
         Option(
           name: '--usage-limit-id',
           description: 'The unique identifier of the usage limit to return information for',
@@ -1564,6 +1620,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1576,6 +1633,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'get-workgroup',
       description: 'Returns information about a specific workgroup',
       options: [
+
         Option(
           name: '--workgroup-name',
           description: 'The name of the workgroup to return information for',
@@ -1601,6 +1659,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1613,6 +1672,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-custom-domain-associations',
       description: 'Lists custom domain associations for Amazon Redshift Serverless',
       options: [
+
         Option(
           name: '--custom-domain-certificate-arn',
           description: 'The custom domain name’s certificate Amazon resource name (ARN)',
@@ -1692,6 +1752,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1704,6 +1765,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-endpoint-access',
       description: 'Returns an array of EndpointAccess objects and relevant information',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results',
@@ -1792,6 +1854,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1804,6 +1867,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-managed-workgroups',
       description: 'Returns information about a list of specified managed workgroups in your account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results',
@@ -1874,6 +1938,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1886,6 +1951,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-namespaces',
       description: 'Returns information about a list of specified namespaces',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results',
@@ -1947,6 +2013,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1959,6 +2026,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-recovery-points',
       description: 'Returns an array of recovery points',
       options: [
+
         Option(
           name: '--end-time',
           description: 'The time when creation of the recovery point finished',
@@ -2056,6 +2124,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2068,6 +2137,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-scheduled-actions',
       description: 'Returns a list of scheduled actions. You can use the flags to filter the list of returned scheduled actions',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. Use nextToken to display the next page of results',
@@ -2138,6 +2208,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2150,6 +2221,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-snapshot-copy-configurations',
       description: 'Returns a list of snapshot copy configurations',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results',
@@ -2220,6 +2292,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2232,6 +2305,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-snapshots',
       description: 'Returns a list of snapshots',
       options: [
+
         Option(
           name: '--end-time',
           description: 'The timestamp showing when the snapshot creation finished',
@@ -2338,6 +2412,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2350,6 +2425,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-table-restore-status',
       description: 'Returns information about an array of TableRestoreStatus objects',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results',
@@ -2429,6 +2505,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2441,6 +2518,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags assigned to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to list tags for',
@@ -2466,6 +2544,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2478,6 +2557,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-usage-limits',
       description: 'Lists all usage limits within Amazon Redshift Serverless',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to get the next page of results. The default is 100',
@@ -2557,6 +2637,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2569,6 +2650,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'list-workgroups',
       description: 'Returns information about a list of specified workgroups',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results',
@@ -2639,6 +2721,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2651,6 +2734,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Creates or updates a resource policy. Currently, you can use policies to share snapshots across Amazon Web Services accounts',
       options: [
+
         Option(
           name: '--policy',
           description: 'The policy to create or update. For example, the following policy grants a user authorization to restore a snapshot.  "{\\"Version\\": \\"2012-10-17\\", \\"Statement\\" : [{ \\"Sid\\": \\"AllowUserRestoreFromSnapshot\\", \\"Principal\\":{\\"AWS\\": [\\"739247239426\\"]}, \\"Action\\": [\\"redshift-serverless:RestoreFromSnapshot\\"] , \\"Effect\\": \\"Allow\\" }]}"',
@@ -2685,6 +2769,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2697,6 +2782,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'restore-from-recovery-point',
       description: 'Restore the data from a recovery point',
       options: [
+
         Option(
           name: '--namespace-name',
           description: 'The name of the namespace to restore data into',
@@ -2740,6 +2826,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2752,6 +2839,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'restore-from-snapshot',
       description: 'Restores a namespace from a snapshot',
       options: [
+
         Option(
           name: '--admin-password-secret-kms-key-id',
           description: 'The ID of the Key Management Service (KMS) key used to encrypt and store the namespace\'s admin credentials secret',
@@ -2830,6 +2918,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2842,6 +2931,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'restore-table-from-recovery-point',
       description: 'Restores a table from a recovery point to your Amazon Redshift Serverless instance. You can\'t use this operation to restore tables with interleaved sort keys',
       options: [
+
         Option(
           name: '--activate-case-sensitive-identifier',
           description: 'Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false'
@@ -2947,6 +3037,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2959,6 +3050,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'restore-table-from-snapshot',
       description: 'Restores a table from a snapshot to your Amazon Redshift Serverless instance. You can\'t use this operation to restore tables with interleaved sort keys',
       options: [
+
         Option(
           name: '--activate-case-sensitive-identifier',
           description: 'Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false'
@@ -3064,6 +3156,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3076,6 +3169,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns one or more tags to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to tag',
@@ -3110,6 +3204,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3122,6 +3217,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag or set of tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to remove tags from',
@@ -3156,6 +3252,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3168,6 +3265,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'update-custom-domain-association',
       description: 'Updates an Amazon Redshift Serverless certificate associated with a custom domain',
       options: [
+
         Option(
           name: '--custom-domain-certificate-arn',
           description: 'The custom domain name’s certificate Amazon resource name (ARN). This is optional',
@@ -3211,6 +3309,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3223,6 +3322,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'update-endpoint-access',
       description: 'Updates an Amazon Redshift Serverless managed endpoint',
       options: [
+
         Option(
           name: '--endpoint-name',
           description: 'The name of the VPC endpoint to update',
@@ -3257,6 +3357,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3269,6 +3370,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'update-namespace',
       description: 'Updates a namespace with the specified settings. Unless required, you can\'t update multiple parameters in one request. For example, you must specify both adminUsername and adminUserPassword to update either field, but you can\'t update both kmsKeyId and logExports in a single request',
       options: [
+
         Option(
           name: '--admin-password-secret-kms-key-id',
           description: 'The ID of the Key Management Service (KMS) key used to encrypt and store the namespace\'s admin credentials secret. You can only use this parameter if manageAdminPassword is true',
@@ -3365,6 +3467,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3377,6 +3480,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'update-scheduled-action',
       description: 'Updates a scheduled action',
       options: [
+
         Option(
           name: '--enabled',
           description: 'Specifies whether to enable the scheduled action'
@@ -3464,6 +3568,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3476,6 +3581,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'update-snapshot',
       description: 'Updates a snapshot',
       options: [
+
         Option(
           name: '--retention-period',
           description: 'The new retention period of the snapshot',
@@ -3510,6 +3616,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3522,6 +3629,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'update-snapshot-copy-configuration',
       description: 'Updates a snapshot copy configuration',
       options: [
+
         Option(
           name: '--snapshot-copy-configuration-id',
           description: 'The ID of the snapshot copy configuration to update',
@@ -3556,6 +3664,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3568,6 +3677,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'update-usage-limit',
       description: 'Update a usage limit in Amazon Redshift Serverless. You can\'t update the usage type or period of a usage limit',
       options: [
+
         Option(
           name: '--amount',
           description: 'The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number',
@@ -3611,6 +3721,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3623,6 +3734,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
       name: 'update-workgroup',
       description: 'Updates a workgroup with the specified configuration settings. You can\'t update multiple parameters in one request. For example, you can update baseCapacity or port in a single request, but you can\'t update both in the same request. VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that you own in a Region from reaching or being reached from the internet through internet gateways and egress-only internet gateways. If a workgroup is in an account with VPC BPA turned on, the following capabilities are blocked:    Creating a public access workgroup   Modifying a private workgroup to public   Adding a subnet with VPC BPA turned on to the workgroup when the workgroup is public   For more information about VPC BPA, see Block public access to VPCs and subnets in the Amazon VPC User Guide',
       options: [
+
         Option(
           name: '--base-capacity',
           description: 'The new base data warehouse capacity in Redshift Processing Units (RPUs)',
@@ -3736,6 +3848,7 @@ final FigSpec redshiftServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

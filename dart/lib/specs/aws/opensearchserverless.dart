@@ -9,10 +9,12 @@ final FigSpec opensearchserverlessSpec = FigSpec(
   name: 'opensearchserverless',
   description: 'Use the Amazon OpenSearch Serverless API to create, configure, and manage OpenSearch Serverless collections and security policies. OpenSearch Serverless is an on-demand, pre-provisioned serverless configuration for Amazon OpenSearch Service. OpenSearch Serverless removes the operational complexities of provisioning, configuring, and tuning your OpenSearch clusters. It enables you to easily search and analyze petabytes of data without having to worry about the underlying infrastructure and data management.  To learn more about OpenSearch Serverless, see What is Amazon OpenSearch Serverless?',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-collection',
       description: 'Returns attributes for one or more collections, including the collection endpoint and the OpenSearch Dashboards endpoint. For more information, see Creating and managing Amazon OpenSearch Serverless collections',
       options: [
+
         Option(
           name: '--ids',
           description: 'A list of collection IDs. You can\'t provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the ListCollections API',
@@ -47,6 +49,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'batch-get-effective-lifecycle-policy',
       description: 'Returns a list of successful and failed retrievals for the OpenSearch Serverless indexes. For more information, see Viewing data lifecycle policies',
       options: [
+
         Option(
           name: '--resource-identifiers',
           description: 'The unique identifiers of policy types and resource names',
@@ -84,6 +88,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'batch-get-lifecycle-policy',
       description: 'Returns one or more configured OpenSearch Serverless lifecycle policies. For more information, see Viewing data lifecycle policies',
       options: [
+
         Option(
           name: '--identifiers',
           description: 'The unique identifiers of policy types and policy names',
@@ -121,6 +127,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -133,6 +140,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'batch-get-vpc-endpoint',
       description: 'Returns attributes for one or more VPC endpoints associated with the current account. For more information, see Access Amazon OpenSearch Serverless using an interface endpoint',
       options: [
+
         Option(
           name: '--ids',
           description: 'A list of VPC endpoint identifiers',
@@ -158,6 +166,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -170,6 +179,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'create-access-policy',
       description: 'Creates a data access policy for OpenSearch Serverless. Access policies limit access to collections and the resources within them, and allow a user to access that data irrespective of the access mechanism or network source. For more information, see Data access control for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -231,6 +241,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -243,6 +254,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'create-collection',
       description: 'Creates a new OpenSearch Serverless collection. For more information, see Creating and managing Amazon OpenSearch Serverless collections',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -313,6 +325,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -325,6 +338,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'create-lifecycle-policy',
       description: 'Creates a lifecyle policy to be applied to OpenSearch Serverless indexes. Lifecycle policies define the number of days or hours to retain the data on an OpenSearch Serverless index. For more information, see Creating data lifecycle policies',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure idempotency of the request',
@@ -386,6 +400,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -398,6 +413,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'create-security-config',
       description: 'Specifies a security configuration for OpenSearch Serverless. For more information, see SAML authentication for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -468,6 +484,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -480,6 +497,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'create-security-policy',
       description: 'Creates a security policy to be used by one or more OpenSearch Serverless collections. Security policies provide access to a collection and its OpenSearch Dashboards endpoint from public networks or specific VPC endpoints. They also allow you to secure a collection with a KMS encryption key. For more information, see Network access for Amazon OpenSearch Serverless and Encryption at rest for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -541,6 +559,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -553,6 +572,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'create-vpc-endpoint',
       description: 'Creates an OpenSearch Serverless-managed interface VPC endpoint. For more information, see Access Amazon OpenSearch Serverless using an interface endpoint',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -614,6 +634,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -626,6 +647,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'delete-access-policy',
       description: 'Deletes an OpenSearch Serverless access policy. For more information, see Data access control for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -669,6 +691,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -681,6 +704,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'delete-collection',
       description: 'Deletes an OpenSearch Serverless collection. For more information, see Creating and managing Amazon OpenSearch Serverless collections',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure idempotency of the request',
@@ -715,6 +739,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -727,6 +752,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'delete-lifecycle-policy',
       description: 'Deletes an OpenSearch Serverless lifecycle policy. For more information, see Deleting data lifecycle policies',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -770,6 +796,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -782,6 +809,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'delete-security-config',
       description: 'Deletes a security configuration for OpenSearch Serverless. For more information, see SAML authentication for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -816,6 +844,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -828,6 +857,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'delete-security-policy',
       description: 'Deletes an OpenSearch Serverless security policy',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -871,6 +901,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -883,6 +914,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'delete-vpc-endpoint',
       description: 'Deletes an OpenSearch Serverless-managed interface endpoint. For more information, see Access Amazon OpenSearch Serverless using an interface endpoint',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -917,6 +949,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -929,6 +962,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'get-access-policy',
       description: 'Returns an OpenSearch Serverless access policy. For more information, see Data access control for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the access policy',
@@ -963,6 +997,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -975,6 +1010,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'get-account-settings',
       description: 'Returns account-level settings related to OpenSearch Serverless',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -991,6 +1027,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1003,6 +1040,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'get-policies-stats',
       description: 'Returns statistical information about your OpenSearch Serverless access policies, security configurations, and security policies',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1019,6 +1057,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1031,6 +1070,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'get-security-config',
       description: 'Returns information about an OpenSearch Serverless security configuration. For more information, see SAML authentication for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique identifier of the security configuration',
@@ -1056,6 +1096,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1068,6 +1109,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'get-security-policy',
       description: 'Returns information about a configured OpenSearch Serverless security policy. For more information, see Network access for Amazon OpenSearch Serverless and Encryption at rest for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the security policy',
@@ -1102,6 +1144,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1114,6 +1157,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'list-access-policies',
       description: 'Returns information about a list of OpenSearch Serverless access policies',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to get the next page of results. The default is 20',
@@ -1166,6 +1210,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1178,6 +1223,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'list-collections',
       description: 'Lists all OpenSearch Serverless collections. For more information, see Creating and managing Amazon OpenSearch Serverless collections.  Make sure to include an empty request body {} if you don\'t include any collection filters in the request',
       options: [
+
         Option(
           name: '--collection-filters',
           description: 'A list of filter names and values that you can use for requests',
@@ -1221,6 +1267,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1233,6 +1280,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'list-lifecycle-policies',
       description: 'Returns a list of OpenSearch Serverless lifecycle policies. For more information, see Viewing data lifecycle policies',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use use nextToken to get the next page of results. The default is 10',
@@ -1285,6 +1333,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1297,6 +1346,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'list-security-configs',
       description: 'Returns information about configured OpenSearch Serverless security configurations. For more information, see SAML authentication for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to get the next page of results. The default is 20',
@@ -1340,6 +1390,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1352,6 +1403,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'list-security-policies',
       description: 'Returns information about configured OpenSearch Serverless security policies',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to get the next page of results. The default is 20',
@@ -1404,6 +1456,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1416,6 +1469,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns the tags for an OpenSearch Serverless resource. For more information, see Tagging Amazon OpenSearch Serverless collections',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. The resource must be active (not in the DELETING state), and must be owned by the account ID included in the request',
@@ -1441,6 +1495,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1453,6 +1508,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'list-vpc-endpoints',
       description: 'Returns the OpenSearch Serverless-managed interface VPC endpoints associated with the current account. For more information, see Access Amazon OpenSearch Serverless using an interface endpoint',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to get the next page of results. The default is 20',
@@ -1496,6 +1552,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1508,6 +1565,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates tags with an OpenSearch Serverless resource. For more information, see Tagging Amazon OpenSearch Serverless collections',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. The resource must be active (not in the DELETING state), and must be owned by the account ID included in the request',
@@ -1542,6 +1600,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1554,6 +1613,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag or set of tags from an OpenSearch Serverless resource. For more information, see Tagging Amazon OpenSearch Serverless collections',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to remove tags from. The resource must be active (not in the DELETING state), and must be owned by the account ID included in the request',
@@ -1588,6 +1648,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1600,6 +1661,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'update-access-policy',
       description: 'Updates an OpenSearch Serverless access policy. For more information, see Data access control for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -1670,6 +1732,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1682,6 +1745,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'update-account-settings',
       description: 'Update the OpenSearch Serverless settings for the current Amazon Web Services account. For more information, see Managing capacity limits for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--capacity-limits',
           description: 'The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see Managing capacity limits for Amazon OpenSearch Serverless',
@@ -1707,6 +1771,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1719,6 +1784,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'update-collection',
       description: 'Updates an OpenSearch Serverless collection',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -1762,6 +1828,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1774,6 +1841,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'update-lifecycle-policy',
       description: 'Updates an OpenSearch Serverless access policy. For more information, see Updating data lifecycle policies',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure idempotency of the request',
@@ -1844,6 +1912,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1856,6 +1925,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'update-security-config',
       description: 'Updates a security configuration for OpenSearch Serverless. For more information, see SAML authentication for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -1926,6 +1996,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1938,6 +2009,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'update-security-policy',
       description: 'Updates an OpenSearch Serverless security policy. For more information, see Network access for Amazon OpenSearch Serverless and Encryption at rest for Amazon OpenSearch Serverless',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier to ensure idempotency of the request',
@@ -2008,6 +2080,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2020,6 +2093,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
       name: 'update-vpc-endpoint',
       description: 'Updates an OpenSearch Serverless-managed interface endpoint. For more information, see Access Amazon OpenSearch Serverless using an interface endpoint',
       options: [
+
         Option(
           name: '--add-security-group-ids',
           description: 'The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint',
@@ -2090,6 +2164,7 @@ final FigSpec opensearchserverlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

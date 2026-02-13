@@ -16,6 +16,7 @@ final FigSpec publishSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-a', '--arch'],
       description: 'Specifies the target architecture. This is a shorthand syntax for setting the Runtime Identifier (RID), where the provided value is combined with the default RID. For example, on a win-x64 machine, specifying --arch x86 sets the RID to win-x86. If you use this option, don\'t use the -r|--runtime option. Available since .NET 6 Preview 7',
@@ -23,6 +24,7 @@ final FigSpec publishSpec = FigSpec(
         Arg(
         name: 'arch',
         suggestions: [
+
           FigSuggestion(name: 'x86'),
           FigSuggestion(name: 'x64'),
           FigSuggestion(name: 'arm'),
@@ -38,6 +40,7 @@ final FigSpec publishSpec = FigSpec(
         Arg(
         name: 'configuration',
         suggestions: [
+
           FigSuggestion(name: 'Debug'),
           FigSuggestion(name: 'Release')
         ]
@@ -115,6 +118,7 @@ final FigSpec publishSpec = FigSpec(
         defaultValue: 'true',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'true'),
           FigSuggestion(name: 'false')
         ]
@@ -141,6 +145,7 @@ final FigSpec publishSpec = FigSpec(
         Arg(
         name: 'verbosity',
         suggestions: [
+
           FigSuggestion(name: 'quiet'),
           FigSuggestion(name: 'minimal'),
           FigSuggestion(name: 'normal'),

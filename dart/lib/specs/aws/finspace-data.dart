@@ -9,10 +9,12 @@ final FigSpec finspaceDataSpec = FigSpec(
   name: 'finspace-data',
   description: 'The FinSpace APIs let you take actions inside the FinSpace',
   subcommands: [
+
     Subcommand(
       name: 'associate-user-to-permission-group',
       description: 'Adds a user to a permission group to grant permissions for actions a user can perform in FinSpace',
       options: [
+
         Option(
           name: '--permission-group-id',
           description: 'The unique identifier for the permission group',
@@ -56,6 +58,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'create-changeset',
       description: 'Creates a new Changeset in a FinSpace Dataset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures idempotency. This token expires in 10 minutes',
@@ -129,6 +133,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'create-data-view',
       description: 'Creates a Dataview for a Dataset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures idempotency. This token expires in 10 minutes',
@@ -219,6 +225,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -231,6 +238,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'create-dataset',
       description: 'Creates a new FinSpace Dataset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures idempotency. This token expires in 10 minutes',
@@ -319,6 +327,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -331,6 +340,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'create-permission-group',
       description: 'Creates a group of permissions for various actions that a user can perform in FinSpace',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the permission group',
@@ -383,6 +393,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -395,6 +406,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'create-user',
       description: 'Creates a new user in FinSpace',
       options: [
+
         Option(
           name: '--email-address',
           description: 'The email address of the user that you want to register. The email address serves as a uniquer identifier for each user and cannot be changed after it\'s created',
@@ -474,6 +486,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -486,6 +499,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'delete-dataset',
       description: 'Deletes a FinSpace Dataset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures idempotency. This token expires in 10 minutes',
@@ -520,6 +534,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -532,6 +547,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'delete-permission-group',
       description: 'Deletes a permission group. This action is irreversible',
       options: [
+
         Option(
           name: '--permission-group-id',
           description: 'The unique identifier for the permission group that you want to delete',
@@ -566,6 +582,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -578,6 +595,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'disable-user',
       description: 'Denies access to the FinSpace web application and API for the specified user',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The unique identifier for the user that you want to deactivate',
@@ -612,6 +630,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -624,6 +643,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'disassociate-user-from-permission-group',
       description: 'Removes a user from a permission group',
       options: [
+
         Option(
           name: '--permission-group-id',
           description: 'The unique identifier for the permission group',
@@ -667,6 +687,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -679,6 +700,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'enable-user',
       description: 'Allows the specified user to access the FinSpace web application and API',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The unique identifier for the user that you want to activate',
@@ -713,6 +735,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -725,6 +748,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'get-changeset',
       description: 'Get information about a Changeset',
       options: [
+
         Option(
           name: '--dataset-id',
           description: 'The unique identifier for the FinSpace Dataset where the Changeset is created',
@@ -759,6 +783,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -771,6 +796,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'get-data-view',
       description: 'Gets information about a Dataview',
       options: [
+
         Option(
           name: '--data-view-id',
           description: 'The unique identifier for the Dataview',
@@ -805,6 +831,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -817,6 +844,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'get-dataset',
       description: 'Returns information about a Dataset',
       options: [
+
         Option(
           name: '--dataset-id',
           description: 'The unique identifier for a Dataset',
@@ -842,6 +870,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -854,6 +883,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'get-external-data-view-access-details',
       description: 'Returns the credentials to access the external Dataview from an S3 location. To call this API:   You must retrieve the programmatic credentials.   You must be a member of a FinSpace user group, where the dataset that you want to access has Read Dataset Data permissions',
       options: [
+
         Option(
           name: '--data-view-id',
           description: 'The unique identifier for the Dataview that you want to access',
@@ -888,6 +918,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -900,6 +931,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'get-permission-group',
       description: 'Retrieves the details of a specific permission group',
       options: [
+
         Option(
           name: '--permission-group-id',
           description: 'The unique identifier for the permission group',
@@ -925,6 +957,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -937,6 +970,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'get-programmatic-access-credentials',
       description: 'Request programmatic credentials to use with FinSpace SDK. For more information, see Step 2. Access credentials programmatically using IAM access key id and secret access key',
       options: [
+
         Option(
           name: '--duration-in-minutes',
           description: 'The time duration in which the credentials remain valid',
@@ -971,6 +1005,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -983,6 +1018,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'get-user',
       description: 'Retrieves details for a specific user',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The unique identifier of the user to get data for',
@@ -1008,6 +1044,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1020,6 +1057,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'get-working-location',
       description: 'A temporary Amazon S3 location, where you can copy your files from a source location to stage or use as a scratch space in FinSpace notebook',
       options: [
+
         Option(
           name: '--location-type',
           description: 'Specify the type of the working location.    SAGEMAKER – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.    INGESTION – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation',
@@ -1045,6 +1083,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1057,6 +1096,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'list-changesets',
       description: 'Lists the FinSpace Changesets for a Dataset',
       options: [
+
         Option(
           name: '--dataset-id',
           description: 'The unique identifier for the FinSpace Dataset to which the Changeset belongs',
@@ -1127,6 +1167,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1139,6 +1180,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'list-data-views',
       description: 'Lists all available Dataviews for a Dataset',
       options: [
+
         Option(
           name: '--dataset-id',
           description: 'The unique identifier of the Dataset for which to retrieve Dataviews',
@@ -1209,6 +1251,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1221,6 +1264,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'list-datasets',
       description: 'Lists all of the active Datasets that a user has access to',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates where a results page should begin',
@@ -1282,6 +1326,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1294,6 +1339,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'list-permission-groups',
       description: 'Lists all available permission groups in FinSpace',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates where a results page should begin',
@@ -1355,6 +1401,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1367,6 +1414,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'list-permission-groups-by-user',
       description: 'Lists all the permission groups that are associated with a specific user',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The unique identifier for the user',
@@ -1410,6 +1458,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1422,6 +1471,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'list-users',
       description: 'Lists all available users in FinSpace',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates where a results page should begin',
@@ -1483,6 +1533,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1495,6 +1546,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'list-users-by-permission-group',
       description: 'Lists details of all the users in a specific permission group',
       options: [
+
         Option(
           name: '--permission-group-id',
           description: 'The unique identifier for the permission group',
@@ -1538,6 +1590,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1550,6 +1603,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'reset-user-password',
       description: 'Resets the password for a specified user ID and generates a temporary one. Only a superuser can reset password for other users. Resetting the password immediately invalidates the previous password associated with the user',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The unique identifier of the user that a temporary password is requested for',
@@ -1584,6 +1638,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1596,6 +1651,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'update-changeset',
       description: 'Updates a FinSpace Changeset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures idempotency. This token expires in 10 minutes',
@@ -1657,6 +1713,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1669,6 +1726,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'update-dataset',
       description: 'Updates a FinSpace Dataset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures idempotency. This token expires in 10 minutes',
@@ -1748,6 +1806,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1760,6 +1819,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'update-permission-group',
       description: 'Modifies the details of a permission group. You cannot modify a permissionGroupID',
       options: [
+
         Option(
           name: '--permission-group-id',
           description: 'The unique identifier for the permission group to update',
@@ -1821,6 +1881,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1833,6 +1894,7 @@ final FigSpec finspaceDataSpec = FigSpec(
       name: 'update-user',
       description: 'Modifies the details of the specified user. You cannot update the userId for a user',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The unique identifier for the user that you want to update',
@@ -1912,6 +1974,7 @@ final FigSpec finspaceDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

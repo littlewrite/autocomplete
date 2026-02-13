@@ -9,10 +9,12 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
   name: 'ssm-quicksetup',
   description: 'Quick Setup helps you quickly configure frequently used services and features with recommended best practices. Quick Setup simplifies setting up services, including Systems Manager, by automating common or recommended tasks',
   subcommands: [
+
     Subcommand(
       name: 'create-configuration-manager',
       description: 'Creates a Quick Setup configuration manager resource. This object is a collection of desired state configurations for multiple configuration definitions and summaries describing the deployments of those definitions',
       options: [
+
         Option(
           name: '--configuration-definitions',
           description: 'The definition of the Quick Setup configuration that the configuration manager deploys',
@@ -65,6 +67,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'delete-configuration-manager',
       description: 'Deletes a configuration manager',
       options: [
+
         Option(
           name: '--manager-arn',
           description: 'The ID of the configuration manager',
@@ -102,6 +106,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'get-configuration',
       description: 'Returns details about the specified configuration',
       options: [
+
         Option(
           name: '--configuration-id',
           description: 'A service generated identifier for the configuration',
@@ -139,6 +145,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -151,6 +158,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'get-configuration-manager',
       description: 'Returns a configuration manager',
       options: [
+
         Option(
           name: '--manager-arn',
           description: 'The ARN of the configuration manager',
@@ -176,6 +184,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +197,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'get-service-settings',
       description: 'Returns settings configured for Quick Setup in the requesting Amazon Web Services account and Amazon Web Services Region',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -204,6 +214,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -216,6 +227,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'list-configuration-managers',
       description: 'Returns Quick Setup configuration managers',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters the results returned by the request',
@@ -268,6 +280,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -280,6 +293,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'list-configurations',
       description: 'Returns configurations deployed by Quick Setup in the requesting Amazon Web Services account and Amazon Web Services Region',
       options: [
+
         Option(
           name: '--configuration-definition-id',
           description: 'The ID of the configuration definition',
@@ -350,6 +364,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -362,6 +377,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'list-quick-setup-types',
       description: 'Returns the available Quick Setup types',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -378,6 +394,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -390,6 +407,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns tags assigned to the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource the tag is assigned to',
@@ -415,6 +433,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -427,6 +446,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns key-value pairs of metadata to Amazon Web Services resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to tag',
@@ -461,6 +481,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -473,6 +494,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to remove tags from',
@@ -507,6 +529,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -519,6 +542,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'update-configuration-definition',
       description: 'Updates a Quick Setup configuration definition',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the configuration definition you want to update',
@@ -589,6 +613,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -601,6 +626,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'update-configuration-manager',
       description: 'Updates a Quick Setup configuration manager',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the configuration manager',
@@ -644,6 +670,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -656,6 +683,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
       name: 'update-service-settings',
       description: 'Updates settings configured for Quick Setup',
       options: [
+
         Option(
           name: '--explorer-enabling-role-arn',
           description: 'The IAM role used to enable Explorer',
@@ -681,6 +709,7 @@ final FigSpec ssmQuicksetupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

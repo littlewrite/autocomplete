@@ -9,10 +9,12 @@ final FigSpec accessanalyzerSpec = FigSpec(
   name: 'accessanalyzer',
   description: 'Identity and Access Management Access Analyzer helps you to set, verify, and refine your IAM policies by providing a suite of capabilities. Its features include findings for external and unused access, basic and custom policy checks for validating policies, and policy generation to generate fine-grained policies. To start using IAM Access Analyzer to identify external or unused access, you first need to create an analyzer.  External access analyzers help identify potential risks of accessing resources by enabling you to identify any resource policies that grant access to an external principal. It does this by using logic-based reasoning to analyze resource-based policies in your Amazon Web Services environment. An external principal can be another Amazon Web Services account, a root user, an IAM user or role, a federated user, an Amazon Web Services service, or an anonymous user. You can also use IAM Access Analyzer to preview public and cross-account access to your resources before deploying permissions changes.  Unused access analyzers help identify potential identity access risks by enabling you to identify unused IAM roles, unused access keys, unused console passwords, and IAM principals with unused service and action-level permissions. Beyond findings, IAM Access Analyzer provides basic and custom policy checks to validate IAM policies before deploying permissions changes. You can use policy generation to refine permissions by attaching a policy generated using access activity logged in CloudTrail logs.  This guide describes the IAM Access Analyzer operations that you can call programmatically. For general information about IAM Access Analyzer, see Identity and Access Management Access Analyzer in the IAM User Guide',
   subcommands: [
+
     Subcommand(
       name: 'apply-archive-rule',
       description: 'Retroactively applies the archive rule to existing findings that meet the archive rule criteria',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The Amazon resource name (ARN) of the analyzer',
@@ -56,6 +58,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'cancel-policy-generation',
       description: 'Cancels the requested policy generation',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The JobId that is returned by the StartPolicyGeneration operation. The JobId can be used with GetGeneratedPolicy to retrieve the generated policies or used with CancelPolicyGeneration to cancel the policy generation request',
@@ -93,6 +97,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'check-access-not-granted',
       description: 'Checks whether the specified access isn\'t allowed by a policy',
       options: [
+
         Option(
           name: '--policy-document',
           description: 'The JSON policy document to use as the content for the policy',
@@ -148,6 +154,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'check-no-new-access',
       description: 'Checks whether new access is allowed for an updated policy when compared to the existing policy. You can find examples for reference policies and learn how to set up and run a custom policy check for new access in the IAM Access Analyzer custom policy checks samples repository on GitHub. The reference policies in this repository are meant to be passed to the existingPolicyDocument request parameter',
       options: [
+
         Option(
           name: '--new-policy-document',
           description: 'The JSON policy document to use as the content for the updated policy',
@@ -203,6 +211,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -215,6 +224,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'check-no-public-access',
       description: 'Checks whether a resource policy can grant public access to the specified resource type',
       options: [
+
         Option(
           name: '--policy-document',
           description: 'The JSON policy document to evaluate for public access',
@@ -249,6 +259,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'create-access-preview',
       description: 'Creates an access preview that allows you to preview IAM Access Analyzer findings for your resource before deploying resource permissions',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the account analyzer used to generate the access preview. You can only create an access preview for analyzers with an Account type and Active status',
@@ -304,6 +316,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -316,6 +329,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'create-analyzer',
       description: 'Creates an analyzer for your account',
       options: [
+
         Option(
           name: '--analyzer-name',
           description: 'The name of the analyzer to create',
@@ -386,6 +400,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -398,6 +413,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'create-archive-rule',
       description: 'Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet the criteria you define when you create the rule. To learn about filter keys that you can use to create an archive rule, see IAM Access Analyzer filter keys in the IAM User Guide',
       options: [
+
         Option(
           name: '--analyzer-name',
           description: 'The name of the created analyzer',
@@ -450,6 +466,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -462,6 +479,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'delete-analyzer',
       description: 'Deletes the specified analyzer. When you delete an analyzer, IAM Access Analyzer is disabled for the account or organization in the current or specific Region. All findings that were generated by the analyzer are deleted. You cannot undo this action',
       options: [
+
         Option(
           name: '--analyzer-name',
           description: 'The name of the analyzer to delete',
@@ -496,6 +514,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -508,6 +527,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'delete-archive-rule',
       description: 'Deletes the specified archive rule',
       options: [
+
         Option(
           name: '--analyzer-name',
           description: 'The name of the analyzer that associated with the archive rule to delete',
@@ -551,6 +571,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -563,6 +584,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'generate-finding-recommendation',
       description: 'Creates a recommendation for an unused permissions finding',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer used to generate the finding recommendation',
@@ -597,6 +619,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -609,6 +632,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'get-access-preview',
       description: 'Retrieves information about an access preview for the specified analyzer',
       options: [
+
         Option(
           name: '--access-preview-id',
           description: 'The unique ID for the access preview',
@@ -643,6 +667,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -655,6 +680,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'get-analyzed-resource',
       description: 'Retrieves information about a resource that was analyzed',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer to retrieve information from',
@@ -689,6 +715,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -701,6 +728,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'get-analyzer',
       description: 'Retrieves information about the specified analyzer',
       options: [
+
         Option(
           name: '--analyzer-name',
           description: 'The name of the analyzer retrieved',
@@ -726,6 +754,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -738,6 +767,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'get-archive-rule',
       description: 'Retrieves information about an archive rule. To learn about filter keys that you can use to create an archive rule, see IAM Access Analyzer filter keys in the IAM User Guide',
       options: [
+
         Option(
           name: '--analyzer-name',
           description: 'The name of the analyzer to retrieve rules from',
@@ -772,6 +802,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -784,6 +815,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'get-finding',
       description: 'Retrieves information about the specified finding. GetFinding and GetFindingV2 both use access-analyzer:GetFinding in the Action element of an IAM policy statement. You must have permission to perform the access-analyzer:GetFinding action',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer that generated the finding',
@@ -818,6 +850,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -830,6 +863,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'get-finding-recommendation',
       description: 'Retrieves information about a finding recommendation for the specified analyzer',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer used to generate the finding recommendation',
@@ -909,6 +943,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -921,6 +956,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'get-finding-v2',
       description: 'Retrieves information about the specified finding. GetFinding and GetFindingV2 both use access-analyzer:GetFinding in the Action element of an IAM policy statement. You must have permission to perform the access-analyzer:GetFinding action',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer that generated the finding',
@@ -1000,6 +1036,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1012,6 +1049,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'get-generated-policy',
       description: 'Retrieves the policy that was generated using StartPolicyGeneration',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The JobId that is returned by the StartPolicyGeneration operation. The JobId can be used with GetGeneratedPolicy to retrieve the generated policies or used with CancelPolicyGeneration to cancel the policy generation request',
@@ -1053,6 +1091,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1065,6 +1104,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'list-access-preview-findings',
       description: 'Retrieves a list of access preview findings generated by the specified access preview',
       options: [
+
         Option(
           name: '--access-preview-id',
           description: 'The unique ID for the access preview',
@@ -1153,6 +1193,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1165,6 +1206,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'list-access-previews',
       description: 'Retrieves a list of access previews for the specified analyzer',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer used to generate the access preview',
@@ -1235,6 +1277,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1247,6 +1290,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'list-analyzed-resources',
       description: 'Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer to retrieve a list of analyzed resources from',
@@ -1326,6 +1370,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1338,6 +1383,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'list-analyzers',
       description: 'Retrieves a list of analyzers',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token used for pagination of results returned',
@@ -1408,6 +1454,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1420,6 +1467,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'list-archive-rules',
       description: 'Retrieves a list of archive rules created for the specified analyzer',
       options: [
+
         Option(
           name: '--analyzer-name',
           description: 'The name of the analyzer to retrieve rules from',
@@ -1490,6 +1538,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1502,6 +1551,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'list-findings',
       description: 'Retrieves a list of findings generated by the specified analyzer. ListFindings and ListFindingsV2 both use access-analyzer:ListFindings in the Action element of an IAM policy statement. You must have permission to perform the access-analyzer:ListFindings action. To learn about filter keys that you can use to retrieve a list of findings, see IAM Access Analyzer filter keys in the IAM User Guide',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer to retrieve findings from',
@@ -1590,6 +1640,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1602,6 +1653,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'list-findings-v2',
       description: 'Retrieves a list of findings generated by the specified analyzer. ListFindings and ListFindingsV2 both use access-analyzer:ListFindings in the Action element of an IAM policy statement. You must have permission to perform the access-analyzer:ListFindings action. To learn about filter keys that you can use to retrieve a list of findings, see IAM Access Analyzer filter keys in the IAM User Guide',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer to retrieve findings from',
@@ -1690,6 +1742,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1702,6 +1755,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'list-policy-generations',
       description: 'Lists all of the policy generations requested in the last seven days',
       options: [
+
         Option(
           name: '--principal-arn',
           description: 'The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with ListGeneratedPolicies to filter the results to only include results for a specific principal',
@@ -1772,6 +1826,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1784,6 +1839,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves a list of tags applied to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to retrieve tags from',
@@ -1809,6 +1865,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1821,6 +1878,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'start-policy-generation',
       description: 'Starts the policy generation request',
       options: [
+
         Option(
           name: '--policy-generation-details',
           description: 'Contains the ARN of the IAM entity (user or role) for which you are generating a policy',
@@ -1864,6 +1922,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1876,6 +1935,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'start-resource-scan',
       description: 'Immediately starts a scan of the policies applied to the specified resource',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer to use to scan the policies applied to the specified resource',
@@ -1919,6 +1979,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1931,6 +1992,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a tag to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to add the tag to',
@@ -1965,6 +2027,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1977,6 +2040,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to remove the tag from',
@@ -2011,6 +2075,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2023,6 +2088,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'update-analyzer',
       description: 'Modifies the configuration of an existing analyzer',
       options: [
+
         Option(
           name: '--analyzer-name',
           description: 'The name of the analyzer to modify',
@@ -2057,6 +2123,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2069,6 +2136,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'update-archive-rule',
       description: 'Updates the criteria and values for the specified archive rule',
       options: [
+
         Option(
           name: '--analyzer-name',
           description: 'The name of the analyzer to update the archive rules for',
@@ -2121,6 +2189,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2133,6 +2202,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'update-findings',
       description: 'Updates the status for the specified findings',
       options: [
+
         Option(
           name: '--analyzer-arn',
           description: 'The ARN of the analyzer that generated the findings to update',
@@ -2194,6 +2264,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2206,6 +2277,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
       name: 'validate-policy',
       description: 'Requests the validation of a policy and returns a list of findings. The findings help you identify issues and provide actionable recommendations to resolve the issue and enable you to author functional policies that meet security best practices',
       options: [
+
         Option(
           name: '--locale',
           description: 'The locale to use for localizing the findings',
@@ -2303,6 +2375,7 @@ final FigSpec accessanalyzerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

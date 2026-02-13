@@ -9,10 +9,12 @@ final FigSpec elastictranscoderSpec = FigSpec(
   name: 'elastictranscoder',
   description: 'AWS Elastic Transcoder Service The AWS Elastic Transcoder Service',
   subcommands: [
+
     Subcommand(
       name: 'cancel-job',
       description: 'The CancelJob operation cancels an unfinished job.  You can only cancel a job that has a status of Submitted. To prevent a pipeline from starting to process a job while you\'re getting the job identifier, use UpdatePipelineStatus to temporarily pause the pipeline',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the job that you want to cancel. To get a list of the jobs (including their jobId) that have a status of Submitted, use the ListJobsByStatus API action',
@@ -38,6 +40,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'create-job',
       description: 'When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created. If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console)',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The Id of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files',
@@ -138,6 +142,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'create-pipeline',
       description: 'The CreatePipeline operation creates a pipeline with settings that you specify',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced. Constraints: Maximum 40 characters',
@@ -238,6 +244,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -250,6 +257,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'create-preset',
       description: 'The CreatePreset operation creates a preset with settings that you specify.  Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (ValidationException) and does not create the preset. If the settings are valid for Elastic Transcoder but aren\'t strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.  Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced',
@@ -320,6 +328,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -332,6 +341,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'delete-pipeline',
       description: 'The DeletePipeline operation removes a pipeline.  You can only delete a pipeline that has never been used or that is not currently in use (doesn\'t contain any active jobs). If the pipeline is currently in use, DeletePipeline returns an error',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the pipeline that you want to delete',
@@ -357,6 +367,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -369,6 +380,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'delete-preset',
       description: 'The DeletePreset operation removes a preset that you\'ve added in an AWS region.  You can\'t delete the default presets that are included with Elastic Transcoder',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the preset for which you want to get detailed information',
@@ -394,6 +406,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -406,6 +419,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'list-jobs-by-pipeline',
       description: 'The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline. Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria',
       options: [
+
         Option(
           name: '--pipeline-id',
           description: 'The ID of the pipeline for which you want to get job information',
@@ -467,6 +481,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -479,6 +494,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'list-jobs-by-status',
       description: 'The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria',
       options: [
+
         Option(
           name: '--status',
           description: 'To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: Submitted, Progressing, Complete, Canceled, or Error',
@@ -540,6 +556,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -552,6 +569,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'list-pipelines',
       description: 'The ListPipelines operation gets a list of the pipelines associated with the current AWS account',
       options: [
+
         Option(
           name: '--ascending',
           description: 'To list pipelines in chronological order by the date and time that they were created, enter true. To list pipelines in reverse chronological order, enter false',
@@ -604,6 +622,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -616,6 +635,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'list-presets',
       description: 'The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you\'ve added in an AWS region',
       options: [
+
         Option(
           name: '--ascending',
           description: 'To list presets in chronological order by the date and time that they were created, enter true. To list presets in reverse chronological order, enter false',
@@ -668,6 +688,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -680,6 +701,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'read-job',
       description: 'The ReadJob operation returns detailed information about a job',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the job for which you want to get detailed information',
@@ -705,6 +727,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -717,6 +740,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'read-pipeline',
       description: 'The ReadPipeline operation gets detailed information about a pipeline',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the pipeline to read',
@@ -742,6 +766,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -754,6 +779,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'read-preset',
       description: 'The ReadPreset operation gets detailed information about a preset',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the preset for which you want to get detailed information',
@@ -779,6 +805,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -791,6 +818,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'test-role',
       description: 'The TestRole operation tests the IAM role used to create the pipeline. The TestRole action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify',
       options: [
+
         Option(
           name: '--role',
           description: 'The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test',
@@ -843,6 +871,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -855,6 +884,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'update-pipeline',
       description: 'Use the UpdatePipeline operation to update settings for a pipeline.  When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the pipeline that you want to update',
@@ -943,6 +973,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -955,6 +986,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'update-pipeline-notifications',
       description: 'With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline. When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the pipeline for which you want to change notification settings',
@@ -989,6 +1021,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1001,6 +1034,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'update-pipeline-status',
       description: 'The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs. Changing the pipeline status is useful if you want to cancel one or more jobs. You can\'t cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a CancelJob request',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the pipeline to update',
@@ -1035,6 +1069,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1047,10 +1082,12 @@ final FigSpec elastictranscoderSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'job-complete',
           description: 'Wait until JMESPath query Job.Status returns Complete when polling with ``read-job``. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 120 failed checks',
           options: [
+
             Option(
               name: '--id',
               description: 'The identifier of the job for which you want to get detailed information',
@@ -1076,6 +1113,7 @@ final FigSpec elastictranscoderSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

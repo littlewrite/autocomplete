@@ -9,10 +9,12 @@ final FigSpec buildsSpec = FigSpec(
   name: 'builds',
   description: 'Create and manage builds for Google Cloud Build',
   subcommands: [
+
     Subcommand(
       name: 'cancel',
       description: 'Cancel an ongoing build',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -147,6 +149,7 @@ final FigSpec buildsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -170,6 +173,7 @@ final FigSpec buildsSpec = FigSpec(
       name: 'describe',
       description: 'Get information about a particular build',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -304,6 +308,7 @@ final FigSpec buildsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -326,6 +331,7 @@ final FigSpec buildsSpec = FigSpec(
       name: 'list',
       description: 'List builds',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -512,6 +518,7 @@ final FigSpec buildsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -528,6 +535,7 @@ final FigSpec buildsSpec = FigSpec(
       name: 'log',
       description: 'Stream the logs for a build',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -666,6 +674,7 @@ final FigSpec buildsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -688,6 +697,7 @@ final FigSpec buildsSpec = FigSpec(
       name: 'submit',
       description: 'Submit a build using Google Cloud Build',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -840,6 +850,7 @@ final FigSpec buildsSpec = FigSpec(
             name: 'MACHINE_TYPE',
             description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
             suggestions: [
+
               FigSuggestion(name: 'n1-highcpu-32'),
               FigSuggestion(name: 'n1-highcpu-8')
             ]
@@ -947,6 +958,7 @@ final FigSpec buildsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -978,6 +990,7 @@ final FigSpec buildsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1101,6 +1114,7 @@ final FigSpec buildsSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

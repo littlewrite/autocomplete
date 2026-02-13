@@ -9,12 +9,14 @@ final FigSpec quasarSpec = FigSpec(
   name: 'quasar',
   description: 'Quasar Framework CLI',
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Output usage information'
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'create',
       description: 'Create a new Quasar project',
@@ -25,6 +27,7 @@ final FigSpec quasarSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--kit', '-k'],
           description: 'Use specific starter kit',
@@ -61,6 +64,7 @@ final FigSpec quasarSpec = FigSpec(
       name: 'info',
       description: 'Gather environment information for issue reporting',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Output usage information'
@@ -71,6 +75,7 @@ final FigSpec quasarSpec = FigSpec(
       name: 'upgrade',
       description: 'Upgrade Quasar Framework packages',
       options: [
+
         Option(
           name: ['--install', '-i'],
           description: 'Also perform package upgrades'
@@ -100,6 +105,7 @@ final FigSpec quasarSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--port', '-p'],
           description: 'Port to use',

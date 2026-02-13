@@ -9,10 +9,12 @@ final FigSpec backupstorageSpec = FigSpec(
   name: 'backupstorage',
   description: 'The frontend service for Cryo Storage',
   subcommands: [
+
     Subcommand(
       name: 'delete-object',
       description: 'Delete Object from the incremental base Backup',
       options: [
+
         Option(
           name: '--backup-job-id',
           description: 'Backup job Id for the in-progress backup',
@@ -47,6 +49,7 @@ final FigSpec backupstorageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec backupstorageSpec = FigSpec(
       name: 'get-chunk',
       description: 'Gets the specified object\'s chunk',
       options: [
+
         Option(
           name: '--storage-job-id',
           description: 'Storage job id',
@@ -92,6 +96,7 @@ final FigSpec backupstorageSpec = FigSpec(
       name: 'get-object-metadata',
       description: 'Get metadata associated with an Object',
       options: [
+
         Option(
           name: '--storage-job-id',
           description: 'Backup job id for the in-progress backup',
@@ -125,6 +130,7 @@ final FigSpec backupstorageSpec = FigSpec(
       name: 'list-chunks',
       description: 'List chunks in a given Object',
       options: [
+
         Option(
           name: '--storage-job-id',
           description: 'Storage job id',
@@ -177,6 +183,7 @@ final FigSpec backupstorageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -189,6 +196,7 @@ final FigSpec backupstorageSpec = FigSpec(
       name: 'list-objects',
       description: 'List all Objects in a given Backup',
       options: [
+
         Option(
           name: '--storage-job-id',
           description: 'Storage job id',
@@ -268,6 +276,7 @@ final FigSpec backupstorageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -280,6 +289,7 @@ final FigSpec backupstorageSpec = FigSpec(
       name: 'notify-object-complete',
       description: 'Complete upload',
       options: [
+
         Option(
           name: '--backup-job-id',
           description: 'Backup job Id for the in-progress backup',
@@ -377,6 +387,7 @@ final FigSpec backupstorageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -389,6 +400,7 @@ final FigSpec backupstorageSpec = FigSpec(
       name: 'put-chunk',
       description: 'Upload chunk',
       options: [
+
         Option(
           name: '--backup-job-id',
           description: 'Backup job Id for the in-progress backup',
@@ -468,6 +480,7 @@ final FigSpec backupstorageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -480,6 +493,7 @@ final FigSpec backupstorageSpec = FigSpec(
       name: 'put-object',
       description: 'Upload object that can store object metadata String and data blob in single API call using inline chunk field',
       options: [
+
         Option(
           name: '--backup-job-id',
           description: 'Backup job Id for the in-progress backup',
@@ -585,6 +599,7 @@ final FigSpec backupstorageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -597,6 +612,7 @@ final FigSpec backupstorageSpec = FigSpec(
       name: 'start-object',
       description: 'Start upload containing one or many chunks',
       options: [
+
         Option(
           name: '--backup-job-id',
           description: 'Backup job Id for the in-progress backup',
@@ -639,6 +655,7 @@ final FigSpec backupstorageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

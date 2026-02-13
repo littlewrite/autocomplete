@@ -62,6 +62,12 @@ List<FigGenerator> _normalizeGenerators(dynamic g) {
   return [g as FigGenerator];
 }
 
+/// Normalize generators to List<FigGenerator>? (null when empty). Used for typed storage.
+List<FigGenerator>? _normalizeGeneratorsNullable(dynamic g) {
+  final list = _normalizeGenerators(g);
+  return list.isEmpty ? null : list;
+}
+
 /// A single suggestion item (subcommand, option, static suggestion).
 /// Aligns with Fig.Suggestion and Fig.BaseSuggestion.
 class FigSuggestion {
@@ -148,6 +154,7 @@ class FigGenerator {
     this.trigger,
     this.splitOn,
     this.scriptTimeout,
+    this.custom,
   });
 
   /// Script command (e.g. ['git', 'branch']). TS also allows Function or ExecuteCommandInput.
@@ -177,6 +184,9 @@ class FigGenerator {
   /// Timeout in ms (default 5000 in TS).
   final int? scriptTimeout;
 
+  /// Static list used when TS would use `custom: async () => list`. Serializable; use with [getQueryTerm] for comma-separated etc.
+  final List<FigSuggestion>? custom;
+
   Map<String, dynamic> toJson() => {
         if (script != null) 'script': script,
         if (scriptPath != null) 'scriptPath': scriptPath,
@@ -188,16 +198,18 @@ class FigGenerator {
           'trigger': trigger,
         if (splitOn != null) 'splitOn': splitOn,
         if (scriptTimeout != null) 'scriptTimeout': scriptTimeout,
+        if (custom != null && custom!.isNotEmpty)
+          'custom': custom!.map((s) => s.toJson()).toList(),
       };
 }
 
 /// Argument definition (positional arg with optional generators/template/suggestions).
 /// TS: suggestions = (string|Suggestion)[]; generators = SingleOrArray<Generator>.
 class FigArg {
-  const FigArg({
+  FigArg({
     this.name,
     this.description,
-    this.generators,
+    dynamic generators,
     this.template,
     this.suggestions,
     this.isOptional = false,
@@ -213,13 +225,13 @@ class FigArg {
     this.debounce,
     this.loadSpec,
     this.parserDirectives,
-  });
+  }) : generators = _normalizeGeneratorsNullable(generators);
 
   final String? name;
   final String? description;
 
-  /// Single generator or list (TS SingleOrArray<Generator>).
-  final dynamic generators;
+  /// Normalized list (TS SingleOrArray<Generator>). Pass single [FigGenerator] or [List<FigGenerator>] to constructor.
+  final List<FigGenerator>? generators;
   final dynamic
       template; // String or List<String>: "filepaths", "folders", "history", "help"
   /// String or FigSuggestion per item (TS (string|Suggestion)[]).
@@ -263,7 +275,7 @@ class FigArg {
   }
 
   /// Normalized list of generators (single or array).
-  List<FigGenerator> get generatorsList => _normalizeGenerators(generators);
+  List<FigGenerator> get generatorsList => generators ?? [];
 
   /// Suggestions as List<FigSuggestion> (string entries become FigSuggestion(name: s)).
   List<FigSuggestion> get suggestionsAsList {
@@ -276,12 +288,8 @@ class FigArg {
   Map<String, dynamic> toJson() => {
         if (name != null) 'name': name,
         if (description != null) 'description': description,
-        if (generators != null)
-          'generators': generators is List
-              ? (generators as List)
-                  .map((e) => (e as FigGenerator).toJson())
-                  .toList()
-              : (generators as FigGenerator).toJson(),
+        if (generators != null && generators!.isNotEmpty)
+          'generators': generators!.map((e) => e.toJson()).toList(),
         if (template != null) 'template': template,
         if (suggestions != null)
           'suggestions': suggestions!
@@ -513,6 +521,7 @@ class FigSpec {
     this.requiresSubcommand,
     this.additionalSuggestions,
     this.generateSpec,
+    this.loadSpec,
   }) : args = _normalizeArgs(args);
 
   final String name;
@@ -544,6 +553,8 @@ class FigSpec {
 
   /// Dynamic spec (e.g. from TS generateSpec). Runtime may resolve to subcommands/options.
   final dynamic generateSpec;
+
+  final dynamic loadSpec;
 
   Map<String, dynamic> toJson() => {
         'name': name,

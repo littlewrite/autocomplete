@@ -9,6 +9,7 @@ final FigSpec swcSpec = FigSpec(
   name: 'swc',
   description: 'SWC is a super-fast compiler written in rust; producing widely-supported javascript from modern standards and typescript',
   options: [
+
     Option(
       name: ['--filename', '-f'],
       description: 'Filename to use when reading from stdin. This will be used in source maps and errors',
@@ -38,6 +39,7 @@ final FigSpec swcSpec = FigSpec(
         Arg(
         name: 'ENV_NAME',
         suggestions: [
+
           FigSuggestion(name: 'production'),
           FigSuggestion(name: 'development'),
           FigSuggestion(name: 'test')
@@ -88,6 +90,7 @@ final FigSpec swcSpec = FigSpec(
         name: 'SOURCE_MAP',
         description: 'Source map type',
         suggestions: [
+
           FigSuggestion(name: 'true'),
           FigSuggestion(name: 'false'),
           FigSuggestion(name: 'inline'),

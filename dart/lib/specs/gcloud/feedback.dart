@@ -9,6 +9,7 @@ final FigSpec feedbackSpec = FigSpec(
   name: 'feedback',
   description: 'Provide feedback to the Google Cloud SDK team',
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -143,6 +144,7 @@ final FigSpec feedbackSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

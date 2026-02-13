@@ -9,6 +9,7 @@ final FigSpec cliffJumperSpec = FigSpec(
   name: 'cliff-jumper',
   description: 'A small CLI tool to create a semantic release and git-cliff powered Changelog',
   options: [
+
     Option(
       name: ['--help', '-h'],
       priority: 10,
@@ -73,6 +74,7 @@ final FigSpec cliffJumperSpec = FigSpec(
     Option(
       name: ['--commit-message-template', '-c'],
       description: [
+
         'A custom commit message template to use.',
         'Defaults to "chore({{name}}): release {{full-name}}@{{new-version}}"',
         'You can use "{{new-version}}" in your template which will be dynamically replaced with whatever the new version is that will be published.',
@@ -88,6 +90,7 @@ final FigSpec cliffJumperSpec = FigSpec(
     Option(
       name: '--tag-template',
       description: [
+
         'A custom tag template to use.',
         'When "org" is provided this will default to "@{{org}}/{{name}}@{{new-version}}", for example "@favware/cliff-jumper@1.0.0"',
         'When "org" is not provided this will default to "v{{new-version}}", for example "v1.0.0"',

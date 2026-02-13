@@ -9,6 +9,7 @@ final FigSpec mvSpec = FigSpec(
   name: 'mv',
   description: 'Move & rename files and folders',
   args: [
+
     Arg(
       name: 'source',
       isVariadic: true,
@@ -20,6 +21,7 @@ final FigSpec mvSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '-f',
       description: 'Do not prompt for confirmation before overwriting the destination path',

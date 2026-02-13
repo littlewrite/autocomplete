@@ -9,6 +9,7 @@ final FigSpec httpySpec = FigSpec(
   name: 'httpy',
   description: 'Programmable command-line HTTP client for the API',
   args: [
+
     Arg(
       name: 'URL',
       description: 'The scheme defaults to \'http://\' if the URL does not include one'
@@ -17,6 +18,7 @@ final FigSpec httpySpec = FigSpec(
       name: 'METHOD',
       isOptional: true,
       suggestions: [
+
         FigSuggestion(name: 'GET'),
         FigSuggestion(name: 'POST'),
         FigSuggestion(name: 'PUT'),
@@ -27,6 +29,7 @@ final FigSpec httpySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--exec', '-x'],
       description: 'Execute httpy command'

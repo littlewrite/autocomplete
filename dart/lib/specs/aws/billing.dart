@@ -9,10 +9,12 @@ final FigSpec billingSpec = FigSpec(
   name: 'billing',
   description: 'You can use the Billing API to programatically list the billing views available to you for a given time period. A billing view represents a set of billing data.  The Billing API provides the following endpoint:  https://billing.us-east-1.api.aws',
   subcommands: [
+
     Subcommand(
       name: 'list-billing-views',
       description: 'Lists the billing views available for a given time period.  Every Amazon Web Services account has a unique PRIMARY billing view that represents the billing data available by default. Accounts that use Billing Conductor also have BILLING_GROUP billing views representing pro forma costs associated with each created billing group',
       options: [
+
         Option(
           name: '--active-time-range',
           description: 'The time range for the billing views listed. PRIMARY billing view is always listed. BILLING_GROUP billing views are listed for time ranges when the associated billing group resource in Billing Conductor is active. The time range must be within one calendar month',
@@ -83,6 +85,7 @@ final FigSpec billingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

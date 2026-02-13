@@ -9,6 +9,7 @@ final FigSpec mkfifoSpec = FigSpec(
   name: 'mkfifo',
   description: 'Make FIFOs (first-in, first-out)',
   options: [
+
     Option(
       name: '-m',
       description: 'Set the file permission bits of newly-created fifos to mode, without respect to the current umask; the mode is specified as in chmod(1)',
@@ -16,6 +17,7 @@ final FigSpec mkfifoSpec = FigSpec(
         Arg(
         name: 'MODE',
         suggestions: [
+
           FigSuggestion(name: '0666'),
           FigSuggestion(name: '0644'),
           FigSuggestion(name: '0444')

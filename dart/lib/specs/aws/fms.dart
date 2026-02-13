@@ -9,10 +9,12 @@ final FigSpec fmsSpec = FigSpec(
   name: 'fms',
   description: 'This is the Firewall Manager API Reference. This guide is for developers who need detailed information about the Firewall Manager API actions, data types, and errors. For detailed information about Firewall Manager features, see the Firewall Manager Developer Guide. Some API actions require explicit resource permissions. For information, see the developer guide topic Service roles for Firewall Manager',
   subcommands: [
+
     Subcommand(
       name: 'associate-admin-account',
       description: 'Sets a Firewall Manager default administrator account. The Firewall Manager default administrator account can manage third-party firewalls and has full administrative scope that allows administration of all policy types, accounts, organizational units, and Regions. This account must be a member account of the organization in Organizations whose resources you want to protect. For information about working with Firewall Manager administrator accounts, see Managing Firewall Manager administrators in the Firewall Manager Developer Guide',
       options: [
+
         Option(
           name: '--admin-account',
           description: 'The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager default administrator account. This account must be a member account of the organization in Organizations whose resources you want to protect. For more information about Organizations, see Managing the Amazon Web Services Accounts in Your Organization',
@@ -38,6 +40,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'associate-third-party-firewall',
       description: 'Sets the Firewall Manager policy administrator as a tenant administrator of a third-party firewall service. A tenant is an instance of the third-party firewall service that\'s associated with your Amazon Web Services customer account',
       options: [
+
         Option(
           name: '--third-party-firewall',
           description: 'The name of the third-party firewall vendor',
@@ -75,6 +79,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'batch-associate-resource',
       description: 'Associate resources to a Firewall Manager resource set',
       options: [
+
         Option(
           name: '--resource-set-identifier',
           description: 'A unique identifier for the resource set, used in a request to refer to the resource set',
@@ -121,6 +127,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -133,6 +140,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'batch-disassociate-resource',
       description: 'Disassociates resources from a Firewall Manager resource set',
       options: [
+
         Option(
           name: '--resource-set-identifier',
           description: 'A unique identifier for the resource set, used in a request to refer to the resource set',
@@ -167,6 +175,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -179,6 +188,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'delete-apps-list',
       description: 'Permanently deletes an Firewall Manager applications list',
       options: [
+
         Option(
           name: '--list-id',
           description: 'The ID of the applications list that you want to delete. You can retrieve this ID from PutAppsList, ListAppsLists, and GetAppsList',
@@ -204,6 +214,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -216,6 +227,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'delete-notification-channel',
       description: 'Deletes an Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS) topic that is used to record Firewall Manager SNS logs',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -232,6 +244,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -244,6 +257,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'delete-policy',
       description: 'Permanently deletes an Firewall Manager policy',
       options: [
+
         Option(
           name: '--policy-id',
           description: 'The ID of the policy that you want to delete. You can retrieve this ID from PutPolicy and ListPolicies',
@@ -277,6 +291,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -289,6 +304,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'delete-protocols-list',
       description: 'Permanently deletes an Firewall Manager protocols list',
       options: [
+
         Option(
           name: '--list-id',
           description: 'The ID of the protocols list that you want to delete. You can retrieve this ID from PutProtocolsList, ListProtocolsLists, and GetProtocolsLost',
@@ -314,6 +330,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -326,6 +343,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'delete-resource-set',
       description: 'Deletes the specified ResourceSet',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A unique identifier for the resource set, used in a request to refer to the resource set',
@@ -351,6 +369,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -363,6 +382,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'disassociate-admin-account',
       description: 'Disassociates an Firewall Manager administrator account. To set a different account as an Firewall Manager administrator, submit a PutAdminAccount request. To set an account as a default administrator account, you must submit an AssociateAdminAccount request. Disassociation of the default administrator account follows the first in, last out principle. If you are the default administrator, all Firewall Manager administrators within the organization must first disassociate their accounts before you can disassociate your account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -379,6 +399,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -391,6 +412,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'disassociate-third-party-firewall',
       description: 'Disassociates a Firewall Manager policy administrator from a third-party firewall tenant. When you call DisassociateThirdPartyFirewall, the third-party firewall vendor deletes all of the firewalls that are associated with the account',
       options: [
+
         Option(
           name: '--third-party-firewall',
           description: 'The name of the third-party firewall vendor',
@@ -416,6 +438,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -428,6 +451,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-admin-account',
       description: 'Returns the Organizations account that is associated with Firewall Manager as the Firewall Manager default administrator',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -444,6 +468,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -456,6 +481,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-admin-scope',
       description: 'Returns information about the specified account\'s administrative scope. The administrative scope defines the resources that an Firewall Manager administrator can manage',
       options: [
+
         Option(
           name: '--admin-account',
           description: 'The administrator account that you want to get the details for',
@@ -481,6 +507,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -493,6 +520,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-apps-list',
       description: 'Returns information about the specified Firewall Manager applications list',
       options: [
+
         Option(
           name: '--list-id',
           description: 'The ID of the Firewall Manager applications list that you want the details for',
@@ -526,6 +554,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -538,6 +567,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-compliance-detail',
       description: 'Returns detailed compliance information about the specified member account. Details include resources that are in and out of compliance with the specified policy.  The reasons for resources being considered compliant depend on the Firewall Manager policy type',
       options: [
+
         Option(
           name: '--policy-id',
           description: 'The ID of the policy that you want to get the details for. PolicyId is returned by PutPolicy and by ListPolicies',
@@ -572,6 +602,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -584,6 +615,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-notification-channel',
       description: 'Information about the Amazon Simple Notification Service (SNS) topic that is used to record Firewall Manager SNS logs',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -600,6 +632,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -612,6 +645,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-policy',
       description: 'Returns information about the specified Firewall Manager policy',
       options: [
+
         Option(
           name: '--policy-id',
           description: 'The ID of the Firewall Manager policy that you want the details for',
@@ -637,6 +671,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -649,6 +684,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-protection-status',
       description: 'If you created a Shield Advanced policy, returns policy-level attack summary information in the event of a potential DDoS attack. Other policy types are currently unsupported',
       options: [
+
         Option(
           name: '--policy-id',
           description: 'The ID of the policy for which you want to get the attack information',
@@ -719,6 +755,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -731,6 +768,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-protocols-list',
       description: 'Returns information about the specified Firewall Manager protocols list',
       options: [
+
         Option(
           name: '--list-id',
           description: 'The ID of the Firewall Manager protocols list that you want the details for',
@@ -764,6 +802,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -776,6 +815,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-resource-set',
       description: 'Gets information about a specific resource set',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A unique identifier for the resource set, used in a request to refer to the resource set',
@@ -801,6 +841,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -813,6 +854,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-third-party-firewall-association-status',
       description: 'The onboarding status of a Firewall Manager admin account to third-party firewall vendor tenant',
       options: [
+
         Option(
           name: '--third-party-firewall',
           description: 'The name of the third-party firewall vendor',
@@ -838,6 +880,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -850,6 +893,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'get-violation-details',
       description: 'Retrieves violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account',
       options: [
+
         Option(
           name: '--policy-id',
           description: 'The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:   WAF   DNS Firewall   Imported Network Firewall   Network Firewall   Security group content audit   Network ACL   Third-party firewall',
@@ -902,6 +946,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -914,6 +959,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-admin-accounts-for-organization',
       description: 'Returns a AdminAccounts object that lists the Firewall Manager administrators within the organization that are onboarded to Firewall Manager by AssociateAdminAccount. This operation can be called only from the organization\'s management account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'When you request a list of objects with a MaxResults setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a NextToken value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request',
@@ -975,6 +1021,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -987,6 +1034,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-admins-managing-account',
       description: 'Lists the accounts that are managing the specified Organizations member account. This is useful for any member account so that they can view the accounts who are managing their account. This operation only returns the managing administrators that have the requested account within their AdminScope',
       options: [
+
         Option(
           name: '--next-token',
           description: 'When you request a list of objects with a MaxResults setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a NextToken value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request',
@@ -1048,6 +1096,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1060,6 +1109,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-apps-lists',
       description: 'Returns an array of AppsListDataSummary objects',
       options: [
+
         Option(
           name: '--default-lists',
           description: 'Specifies whether the lists to retrieve are default lists owned by Firewall Manager'
@@ -1129,6 +1179,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1141,6 +1192,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-compliance-status',
       description: 'Returns an array of PolicyComplianceStatus objects. Use PolicyComplianceStatus to get a summary of which member accounts are protected by the specified policy',
       options: [
+
         Option(
           name: '--policy-id',
           description: 'The ID of the Firewall Manager policy that you want the details for',
@@ -1211,6 +1263,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1223,6 +1276,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-discovered-resources',
       description: 'Returns an array of resources in the organization\'s accounts that are available to be associated with a resource set',
       options: [
+
         Option(
           name: '--member-account-ids',
           description: 'The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization',
@@ -1275,6 +1329,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1287,6 +1342,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-member-accounts',
       description: 'Returns a MemberAccounts object that lists the member accounts in the administrator\'s Amazon Web Services organization. Either an Firewall Manager administrator or the organization\'s management account can make this request',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If you specify a value for MaxResults and you have more account IDs than the number that you specify for MaxResults, Firewall Manager returns a NextToken value in the response that allows you to list another group of IDs. For the second and subsequent ListMemberAccountsRequest requests, specify the value of NextToken from the previous response to get information about another batch of member account IDs',
@@ -1348,6 +1404,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1360,6 +1417,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-policies',
       description: 'Returns an array of PolicySummary objects',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If you specify a value for MaxResults and you have more PolicySummary objects than the number that you specify for MaxResults, Firewall Manager returns a NextToken value in the response that allows you to list another group of PolicySummary objects. For the second and subsequent ListPolicies requests, specify the value of NextToken from the previous response to get information about another batch of PolicySummary objects',
@@ -1421,6 +1479,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1433,6 +1492,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-protocols-lists',
       description: 'Returns an array of ProtocolsListDataSummary objects',
       options: [
+
         Option(
           name: '--default-lists',
           description: 'Specifies whether the lists to retrieve are default lists owned by Firewall Manager'
@@ -1502,6 +1562,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1514,6 +1575,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-resource-set-resources',
       description: 'Returns an array of resources that are currently associated to a resource set',
       options: [
+
         Option(
           name: '--identifier',
           description: 'A unique identifier for the resource set, used in a request to refer to the resource set',
@@ -1557,6 +1619,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1569,6 +1632,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-resource-sets',
       description: 'Returns an array of ResourceSetSummary objects',
       options: [
+
         Option(
           name: '--next-token',
           description: 'When you request a list of objects with a MaxResults setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a NextToken value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request',
@@ -1603,6 +1667,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1615,6 +1680,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves the list of tags for the specified Amazon Web Services resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists',
@@ -1640,6 +1706,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1652,6 +1719,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'list-third-party-firewall-firewall-policies',
       description: 'Retrieves a list of all of the third-party firewall policies that are associated with the third-party firewall administrator\'s account',
       options: [
+
         Option(
           name: '--third-party-firewall',
           description: 'The name of the third-party firewall vendor',
@@ -1722,6 +1790,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1734,6 +1803,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'put-admin-account',
       description: 'Creates or updates an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by AssociateAdminAccount. Only the organization\'s management account can create an Firewall Manager administrator account. When you create an Firewall Manager administrator account, the service checks to see if the account is already a delegated administrator within Organizations. If the account isn\'t a delegated administrator, Firewall Manager calls Organizations to delegate the account within Organizations. For more information about administrator accounts within Organizations, see Managing the Amazon Web Services Accounts in Your Organization',
       options: [
+
         Option(
           name: '--admin-account',
           description: 'The Amazon Web Services account ID to add as an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by AssociateAdminAccount. For more information about Organizations, see Managing the Amazon Web Services Accounts in Your Organization',
@@ -1768,6 +1838,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1780,6 +1851,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'put-apps-list',
       description: 'Creates an Firewall Manager applications list',
       options: [
+
         Option(
           name: '--apps-list',
           description: 'The details of the Firewall Manager applications list to be created',
@@ -1814,6 +1886,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1826,6 +1899,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'put-notification-channel',
       description: 'Designates the IAM role and Amazon Simple Notification Service (SNS) topic that Firewall Manager uses to record SNS logs. To perform this action outside of the console, you must first configure the SNS topic\'s access policy to allow the SnsRoleName to publish SNS logs. If the SnsRoleName provided is a role other than the AWSServiceRoleForFMS service-linked role, this role must have a trust relationship configured to allow the Firewall Manager service principal fms.amazonaws.com to assume this role. For information about configuring an SNS access policy, see Service roles for Firewall Manager in the Firewall Manager Developer Guide',
       options: [
+
         Option(
           name: '--sns-topic-arn',
           description: 'The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager',
@@ -1860,6 +1934,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1872,6 +1947,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'put-policy',
       description: 'Creates an Firewall Manager policy. A Firewall Manager policy is specific to the individual policy type. If you want to enforce multiple policy types across accounts, you can create multiple policies. You can create more than one policy for each type.  If you add a new account to an organization that you created with Organizations, Firewall Manager automatically applies the policy to the resources in that account that are within scope of the policy.  Firewall Manager provides the following types of policies:     WAF policy - This policy applies WAF web ACL protections to specified accounts and resources.     Shield Advanced policy - This policy applies Shield Advanced protection to specified accounts and resources.     Security Groups policy - This type of policy gives you control over security groups that are in use throughout your organization in Organizations and lets you enforce a baseline set of rules across your organization.     Network ACL policy - This type of policy gives you control over the network ACLs that are in use throughout your organization in Organizations and lets you enforce a baseline set of first and last network ACL rules across your organization.     Network Firewall policy - This policy applies Network Firewall protection to your organization\'s VPCs.     DNS Firewall policy - This policy applies Amazon Route 53 Resolver DNS Firewall protections to your organization\'s VPCs.     Third-party firewall policy - This policy applies third-party firewall protections. Third-party firewalls are available by subscription through the Amazon Web Services Marketplace console at Amazon Web Services Marketplace.    Palo Alto Networks Cloud NGFW policy - This policy applies Palo Alto Networks Cloud Next Generation Firewall (NGFW) protections and Palo Alto Networks Cloud NGFW rulestacks to your organization\'s VPCs.    Fortigate CNF policy - This policy applies Fortigate Cloud Native Firewall (CNF) protections. Fortigate CNF is a cloud-centered solution that blocks Zero-Day threats and secures cloud infrastructures with industry-leading advanced threat prevention, smart web application firewalls (WAF), and API protection',
       options: [
+
         Option(
           name: '--policy',
           description: 'The details of the Firewall Manager policy to be created',
@@ -1906,6 +1982,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1918,6 +1995,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'put-protocols-list',
       description: 'Creates an Firewall Manager protocols list',
       options: [
+
         Option(
           name: '--protocols-list',
           description: 'The details of the Firewall Manager protocols list to be created',
@@ -1952,6 +2030,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1964,6 +2043,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'put-resource-set',
       description: 'Creates the resource set. An Firewall Manager resource set defines the resources to import into an Firewall Manager policy from another Amazon Web Services service',
       options: [
+
         Option(
           name: '--resource-set',
           description: 'Details about the resource set to be created or updated.>',
@@ -1998,6 +2078,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2010,6 +2091,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to an Amazon Web Services resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists',
@@ -2044,6 +2126,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2056,6 +2139,7 @@ final FigSpec fmsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from an Amazon Web Services resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists',
@@ -2090,6 +2174,7 @@ final FigSpec fmsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

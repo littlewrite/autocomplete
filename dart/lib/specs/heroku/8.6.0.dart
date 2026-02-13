@@ -8,6 +8,7 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec herokuSpec = FigSpec(
   name: 'heroku',
   subcommands: [
+
     Subcommand(
       name: ['auth:2fa', '2fa', 'twofactor'],
       description: 'Check 2fa status'
@@ -20,6 +21,7 @@ final FigSpec herokuSpec = FigSpec(
       name: ['auth:login', 'login'],
       description: 'Login with your Heroku credentials',
       options: [
+
         Option(
           name: '--browser',
           description: 'Browser to open SSO with (example: "firefox", "safari")',
@@ -50,6 +52,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'auth:token',
       description: 'Outputs current CLI authentication token.\nBy default, the CLI auth token is only valid for 1 year. To generate a long-lived token, use heroku authorizations:create',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -64,6 +67,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'authorizations',
       description: 'List OAuth authorizations',
       options: [
+
         Option(
           name: ['-j', '--json'],
           description: 'Output in json format'
@@ -74,6 +78,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'authorizations:create',
       description: 'Create a new OAuth authorization',
       options: [
+
         Option(
           name: ['-d', '--description'],
           description: 'Set a custom authorization',
@@ -112,6 +117,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'authorizations:info',
       description: 'Show an existing OAuth authorization',
       options: [
+
         Option(
           name: ['-j', '--json'],
           description: 'Output in json format'
@@ -145,6 +151,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'authorizations:update',
       description: 'Updates an OAuth authorization',
       options: [
+
         Option(
           name: ['-d', '--description'],
           description: 'Set a custom authorization description',
@@ -180,6 +187,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'autocomplete',
       description: 'Display autocomplete installation instructions',
       options: [
+
         Option(
           name: ['-r', '--refresh-cache'],
           description: 'Refresh cache only (ignores displaying instructions)'
@@ -196,6 +204,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'buildpacks',
       description: 'Display the buildpacks for an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -219,6 +228,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'buildpacks:add',
       description: 'Add new app buildpack, inserting into list of buildpacks if necessary',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -256,6 +266,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'buildpacks:clear',
       description: 'Clear all buildpacks set on the app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -289,6 +300,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'buildpacks:remove',
       description: 'Remove a buildpack set on the app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -326,6 +338,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'buildpacks:search',
       description: 'Search for buildpacks',
       options: [
+
         Option(
           name: '--namespace',
           description: 'Buildpack namespaces to filter on using a comma separated list',
@@ -361,6 +374,7 @@ final FigSpec herokuSpec = FigSpec(
     Subcommand(
       name: 'buildpacks:set',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -408,6 +422,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci',
       description: 'Display the most recent CI runs for the given pipeline',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App name',
@@ -439,6 +454,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci:info',
       description: 'Show the status of a specific test run',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App name',
@@ -475,6 +491,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci:last',
       description: 'Looks for the most recent run and returns the output of that run',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App name',
@@ -506,6 +523,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci:rerun',
       description: 'Rerun tests against current directory',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App name',
@@ -534,6 +552,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci:run',
       description: 'Run tests against current directory',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App name',
@@ -557,6 +576,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'clients',
       description: 'List your OAuth clients',
       options: [
+
         Option(
           name: ['-j', '--json'],
           description: 'Output in json format'
@@ -567,6 +587,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'clients:create',
       description: 'Create a new OAuth client',
       options: [
+
         Option(
           name: ['-j', '--json'],
           description: 'Output in json format'
@@ -577,6 +598,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'name'
         ),
@@ -598,6 +620,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'clients:info',
       description: 'Show details of an oauth client',
       options: [
+
         Option(
           name: ['-j', '--json'],
           description: 'Output in json format'
@@ -617,6 +640,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'clients:rotate',
       description: 'Rotate OAuth client secret',
       options: [
+
         Option(
           name: ['-j', '--json'],
           description: 'Output in json format'
@@ -636,6 +660,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'clients:update',
       description: 'Update OAuth client',
       options: [
+
         Option(
           name: ['-n', '--name'],
           description: 'Change the client name',
@@ -663,6 +688,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'config',
       description: 'Display the config vars for an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -694,6 +720,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'config:edit',
       description: 'Interactively edit config vars\nThis command opens the app config in a text editor set by \$VISUAL or \$EDITOR.\nAny variables added/removed/changed will be updated on the app after saving and closing the file',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -723,6 +750,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'config:get',
       description: 'Display a single config value for an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -755,6 +783,7 @@ final FigSpec herokuSpec = FigSpec(
       name: ['config:unset', 'config:remove'],
       description: 'Unset one or more config vars',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -778,6 +807,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'domains',
       description: 'List domains for an app',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -837,9 +867,10 @@ final FigSpec herokuSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'csv'),
               FigSuggestion(name: 'json'),
-
+              FigSuggestion(name: 'yaml')
             ]
           )
           ]
@@ -858,6 +889,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'domains:add',
       description: 'Add a domain to an app',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -905,6 +937,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'domains:clear',
       description: 'Remove all domains from an app',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -932,6 +965,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'domains:info',
       description: 'Show detailed information for a domain on an app',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -964,6 +998,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'domains:remove',
       description: 'Remove a domain from an app',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -996,6 +1031,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'domains:update',
       description: 'Update a domain to use a different SSL certificate on an app',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -1036,6 +1072,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'domains:wait',
       description: 'Wait for domain to be active for an app',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -1068,6 +1105,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'git:clone',
       description: 'Clones a heroku app to your local machine at DIRECTORY (defaults to app name)',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'The Heroku app to use',
@@ -1097,6 +1135,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'git:remote',
       description: 'Adds a git remote to an app repo\nextra arguments will be passed to git remote add\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'The Heroku app to use',
@@ -1120,6 +1159,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'labs:disable',
       description: 'Disables an experimental feature',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1155,6 +1195,7 @@ final FigSpec herokuSpec = FigSpec(
       name: ['local', 'local:start'],
       description: 'Run heroku app locally\nStart the application specified by a Procfile (defaults to ./Procfile)',
       options: [
+
         Option(
           name: ['-f', '--procfile'],
           description: 'Use a different Procfile',
@@ -1191,6 +1232,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'local:run',
       description: 'Run a one-off command',
       options: [
+
         Option(
           name: ['-e', '--env'],
           args: [
@@ -1216,6 +1258,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'logs',
       description: 'Display recent log output\ndisable colors with --no-color, HEROKU_LOGS_COLOR=0, or HEROKU_COLOR=0',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1271,6 +1314,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines',
       description: 'List pipelines you have access to',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -1281,6 +1325,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:add',
       description: 'Add this app to a pipeline\nThe app and pipeline names must be specified.\nThe stage of the app will be guessed based on its name if not specified',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1318,6 +1363,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:connect',
       description: 'Connect a github repo to an existing pipeline',
       options: [
+
         Option(
           name: ['-r', '--repo'],
           description: 'The GitHub repository to connect to',
@@ -1338,6 +1384,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:create',
       description: 'Create a new pipeline\n  An existing app must be specified as the first app in the pipeline.\n  The pipeline name will be inferred from the app name if not specified.\n  The stage of the app will be guessed based on its name if not specified.\n  The pipeline owner will be the user creating the pipeline if not specified with -t for teams or -o for orgs',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1394,6 +1441,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:diff',
       description: 'Compares the latest release of this app to its downstream app(s)',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1417,6 +1465,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:info',
       description: 'Show list of apps in a pipeline',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -1443,6 +1492,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:promote',
       description: 'Promote the latest release of this app to its downstream app(s)',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1474,6 +1524,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:remove',
       description: 'Remove this app from its pipeline',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1497,6 +1548,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:rename',
       description: 'Rename a pipeline',
       args: [
+
         Arg(
           name: 'pipeline',
           description: 'Current name of pipeline'
@@ -1511,6 +1563,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:setup',
       description: 'Bootstrap a new pipeline with common settings and create a production and staging app (requires a fully formed app.json in the repo)',
       options: [
+
         Option(
           name: ['-t', '--team'],
           description: 'The team to assign pipeline ownership to (defaults to current user)',
@@ -1525,6 +1578,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'name',
           description: 'Name of pipeline',
@@ -1541,6 +1595,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:transfer',
       description: 'Transfer ownership of a pipeline',
       options: [
+
         Option(
           name: ['-p', '--pipeline'],
           description: 'Name of pipeline',
@@ -1568,6 +1623,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pipelines:update',
       description: 'Update the app\'s stage in a pipeline',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1599,6 +1655,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:autoscale:disable',
       description: 'Disable web dyno autoscaling',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1622,6 +1679,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:autoscale:enable',
       description: 'Enable web dyno autoscaling',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1673,6 +1731,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:wait',
       description: 'Wait for all dynos to be running latest version after a release',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1717,6 +1776,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'regions',
       description: 'List available regions for deployment',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -1735,6 +1795,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'reviewapps:disable',
       description: 'Disable review apps and/or settings on an existing pipeline',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'Parent app used by review apps',
@@ -1777,6 +1838,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'reviewapps:enable',
       description: 'Enable review apps and/or settings on an existing pipeline',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'Parent app used by review apps',
@@ -1820,6 +1882,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'run',
       description: 'Run a one-off process inside a heroku dyno\nShows a notification if the dyno takes more than 20 seconds to start',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'Parent app used by review apps',
@@ -1879,6 +1942,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'run:detached',
       description: 'Run a detached dyno, where output is sent to your logs',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1930,6 +1994,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'sessions',
       description: 'List your OAuth sessions',
       options: [
+
         Option(
           name: ['-j', '--json'],
           description: 'Output in json format'
@@ -1949,6 +2014,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'status',
       description: 'Display current status of the Heroku platform',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -1959,6 +2025,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'webhooks',
       description: 'List webhooks on an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -1982,6 +2049,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'webhooks:add',
       description: 'Add a webhook to an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2045,6 +2113,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'webhooks:deliveries',
       description: 'List webhook deliveries on an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2076,6 +2145,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'webhooks:deliveries:info',
       description: 'Info for a webhook event on an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2104,6 +2174,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'webhooks:events',
       description: 'List webhook events on an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2127,6 +2198,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'webhooks:events:info',
       description: 'Info for a webhook event on an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2155,6 +2227,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'webhooks:info',
       description: 'Info for a webhook on an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2183,6 +2256,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'webhooks:remove',
       description: 'Removes a webhook from an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2212,6 +2286,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'webhooks:update',
       description: 'Updates a webhook in an app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2280,6 +2355,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci:config',
       description: 'Display CI config vars\nExample:\n\n    \$ heroku ci:config --app murmuring-headland-14719 --json',
       options: [
+
         Option(
           name: ['-s', '--shell'],
           description: 'Output config vars in shell format'
@@ -2319,6 +2395,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci:config:get',
       description: 'Get a CI config var\nExamples:\n\n    \$ heroku ci:config:get RAILS_ENV\n    test\n',
       options: [
+
         Option(
           name: ['-s', '--shell'],
           description: 'Output config var in shell format'
@@ -2359,6 +2436,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci:config:set',
       description: 'Set CI config vars\nExamples:\n\n    \$ heroku ci:config:set RAILS_ENV=test\n    Setting test config vars... done\n\n    RAILS_ENV: test\n',
       options: [
+
         Option(
           name: ['-p', '--pipeline'],
           description: 'Pipeline',
@@ -2390,6 +2468,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci:config:unset',
       description: 'Unset CI config vars\nExamples:\n\n    \$ heroku ci:config:uset RAILS_ENV\n    Unsetting RAILS_ENV... done\n',
       options: [
+
         Option(
           name: ['-p', '--pipeline'],
           description: 'Pipeline',
@@ -2421,6 +2500,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci:debug',
       description: 'Opens an interactive test debugging session with the contents of the current directory\nExample:\n\n    \$ heroku ci:debug\n    Preparing source... done\n    Creating test run... done\n    Running setup and attaching to test dyno...\n\n~ \$\n',
       options: [
+
         Option(
           name: '--no-setup',
           description: 'Start test dyno without running test-setup'
@@ -2464,6 +2544,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ci:open',
       description: 'Open the Dashboard version of Heroku CI\nopens a browser to view the Dashboard version of Heroku CI\n\n    Example:\n\n    \$ heroku ci:open --app murmuring-headland-14719',
       options: [
+
         Option(
           name: ['-p', '--pipeline'],
           description: 'Pipeline',
@@ -2495,6 +2576,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons',
       description: 'Lists your add-ons and attachments\nThe default filter applied depends on whether you are in a Heroku app\ndirectory. If so, the --app flag is implied. If not, the default of --all\nis implied. Explicitly providing either flag overrides the default\nbehavior',
       options: [
+
         Option(
           name: ['-A', '--all'],
           description: 'Show add-ons and attachments for all accessible apps'
@@ -2526,6 +2608,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:attach',
       description: 'Attach an existing add-on resource to an app\n',
       options: [
+
         Option(
           name: '--as',
           description: 'Name for add-on attachment',
@@ -2578,6 +2661,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:create',
       description: 'Create a new add-on resource\n',
       options: [
+
         Option(
           name: '--name',
           description: 'Name for the add-on resource',
@@ -2634,6 +2718,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:destroy',
       description: 'Permanently destroy an add-on resource\n',
       options: [
+
         Option(
           name: ['-f', '--force'],
           description: 'Allow destruction even if connected to other apps'
@@ -2672,6 +2757,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:detach',
       description: 'Detach an existing add-on resource from an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2700,6 +2786,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:docs',
       description: 'Open an add-on\'s Dev Center documentation in your browser\n',
       options: [
+
         Option(
           name: '--show-url',
           description: 'Show URL, do not open browser'
@@ -2732,6 +2819,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:downgrade',
       description: 'Change add-on plan\nSee available plans with `heroku addons:plans SERVICE`.\n\nNote that `heroku addons:upgrade` and `heroku addons:downgrade` are the same.\nEither one can be used to change an add-on plan up or down.\n\nhttps://devcenter.heroku.com/articles/managing-add-ons',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2751,6 +2839,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'addon'
         ),
@@ -2764,6 +2853,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:info',
       description: 'Show detailed add-on resource and attachment information\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2792,6 +2882,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:open',
       description: 'Open an add-on\'s dashboard in your browser\n',
       options: [
+
         Option(
           name: '--show-url',
           description: 'Show URL, do not open browser'
@@ -2824,6 +2915,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:plans',
       description: 'List all available plans for an add-on services\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -2839,6 +2931,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:rename',
       description: 'Rename an add-on\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2858,6 +2951,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'addon'
         ),
@@ -2870,6 +2964,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:services',
       description: 'List all available add-on services\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -2880,6 +2975,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:upgrade',
       description: 'Change add-on plan\nSee available plans with `heroku addons:plans SERVICE`.\n\nNote that `heroku addons:upgrade` and `heroku addons:downgrade` are the same.\nEither one can be used to change an add-on plan up or down.\n\nhttps://devcenter.heroku.com/articles/managing-add-ons',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2899,6 +2995,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'addon'
         ),
@@ -2912,6 +3009,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'addons:wait',
       description: 'Show provisioning status of the add-ons on the app\n',
       options: [
+
         Option(
           name: '--wait-interval',
           description: 'How frequently to poll in seconds',
@@ -2948,6 +3046,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs',
       description: 'List SSL certificates for an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -2971,6 +3070,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:add',
       description: 'Add an SSL certificate to an app\nNote: certificates with PEM encoding are also valid',
       options: [
+
         Option(
           name: '--bypass',
           description: 'Bypass the trust chain completion step'
@@ -2994,6 +3094,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'CRT'
         ),
@@ -3006,6 +3107,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:auto',
       description: 'Show ACM status for an app\n',
       options: [
+
         Option(
           name: '--wait',
           description: 'Watch ACM status and display the status when complete'
@@ -3033,6 +3135,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:auto:disable',
       description: 'Disable ACM for an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3056,6 +3159,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:auto:enable',
       description: 'Enable ACM status for an app\n',
       options: [
+
         Option(
           name: '--wait',
           description: 'Watch ACM status and exit when complete'
@@ -3083,6 +3187,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:auto:refresh',
       description: 'Refresh ACM for an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3106,6 +3211,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:chain',
       description: 'Print an ordered & complete chain for a certificate\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3129,6 +3235,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:generate',
       description: 'Generate a key and a CSR or self-signed certificate\nGenerate a key and certificate signing request (or self-signed certificate)\nfor an app. Prompts for information to put in the certificate unless --now\nis used, or at least one of the --subject, --owner, --country, --area, or\n--city options is specified',
       options: [
+
         Option(
           name: '--selfsigned',
           description: 'Generate a self-signed certificate instead of a CSR'
@@ -3213,6 +3320,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:info',
       description: 'Show certificate information for an SSL certificate\n',
       options: [
+
         Option(
           name: '--name',
           description: 'Name to check info on',
@@ -3256,6 +3364,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:key',
       description: 'Print the correct key for the given certificate\nYou must pass one single certificate, and one or more keys.\nThe first key that signs the certificate will be printed back',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3279,6 +3388,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:remove',
       description: 'Remove an SSL certificate from an app\n',
       options: [
+
         Option(
           name: '--name',
           description: 'Name to remove',
@@ -3318,6 +3428,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'certs:update',
       description: 'Update an SSL certificate on an app\nNote: certificates with PEM encoding are also valid',
       options: [
+
         Option(
           name: '--bypass',
           description: 'Bypass the trust chain completion step'
@@ -3357,6 +3468,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'CRT'
         ),
@@ -3373,6 +3485,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'container:login',
       description: 'Log in to Heroku Container Registry\nUsage:\n        heroku container:login',
       options: [
+
         Option(
           name: ['-v', '--verbose']
         )
@@ -3382,6 +3495,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'container:logout',
       description: 'Log out from Heroku Container Registry\n',
       options: [
+
         Option(
           name: ['-v', '--verbose']
         )
@@ -3391,6 +3505,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'container:pull',
       description: 'Pulls an image from an app\'s process type\n\n    Usage:\n    heroku container:pull web        # Pulls the web image from the app\n    heroku container:pull web worker # Pulls both the web and worker images from the app\n    heroku container:pull web:latest # Pulls the latest tag from the web image',
       options: [
+
         Option(
           name: ['-v', '--verbose']
         ),
@@ -3417,6 +3532,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'container:push',
       description: 'Builds, then pushes Docker images to deploy your Heroku app\n',
       options: [
+
         Option(
           name: ['-v', '--verbose']
         ),
@@ -3463,6 +3579,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'container:release',
       description: 'Releases previously pushed Docker images to your Heroku app\n\n    Usage:\n    heroku container:release web                       # Releases the previously pushed web process type\n    heroku container:release web worker                # Releases the previously pushed web and worker process types',
       options: [
+
         Option(
           name: ['-v', '--verbose']
         ),
@@ -3489,6 +3606,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'container:rm',
       description: 'Remove the process type from your app\n\n    Usage:\n    heroku container:rm web        # Destroys the web container\n    heroku container:rm web worker # Destroys the web and worker containers',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3512,6 +3630,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'container:run',
       description: 'Builds, then runs the docker image locally\n\n    Usage:\n    heroku container:run web bash # Runs bash on the local web docker container\n    heroku container:run worker   # Runs the container CMD on the local worker container',
       options: [
+
         Option(
           name: ['-p', '--port'],
           description: 'Port the app will run on',
@@ -3546,6 +3665,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg',
       description: 'Show database information\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3574,6 +3694,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups',
       description: 'List database backups\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3597,6 +3718,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups:cancel',
       description: 'Cancel an in-progress backup or restore (default newest)\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3625,6 +3747,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups:capture',
       description: 'Capture a new backup\n',
       options: [
+
         Option(
           name: '--wait-interval',
           args: [
@@ -3663,6 +3786,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups:delete',
       description: 'Delete a backup\n',
       options: [
+
         Option(
           name: ['-c', '--confirm'],
           args: [
@@ -3698,6 +3822,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups:download',
       description: 'Downloads database backup\n',
       options: [
+
         Option(
           name: ['-o', '--output'],
           description: 'Location to download to. Defaults to latest.dump',
@@ -3734,6 +3859,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups:info',
       description: 'Get information about a specific backup\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3762,6 +3888,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups:restore',
       description: 'Restore a backup (default latest) to a database\ndefaults to saving the latest database to DATABASE_URL',
       options: [
+
         Option(
           name: '--wait-interval',
           args: [
@@ -3806,6 +3933,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'backup',
           isOptional: true
@@ -3820,6 +3948,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups:schedule',
       description: 'Schedule daily backups for given database\n',
       options: [
+
         Option(
           name: '--at',
           description: 'At a specific (24h) hour in the given timezone. Defaults to UTC. --at \'[HOUR]:00 [TIMEZONE]\'',
@@ -3856,6 +3985,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups:schedules',
       description: 'List backup schedule\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3879,6 +4009,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups:unschedule',
       description: 'Stop daily backups\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3907,6 +4038,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:backups:url',
       description: 'Get secret but publicly accessible URL of a backup\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3935,6 +4067,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:bloat',
       description: 'Show table and index bloat in your database ordered by most wasteful\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3963,6 +4096,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:blocking',
       description: 'Display queries holding locks other queries are waiting to be released\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -3991,6 +4125,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:connection-pooling:attach',
       description: 'Add an attachment to a database using connection pooling\nExample:\n\n  heroku pg:connection-pooling:attach postgresql-something-12345\n',
       options: [
+
         Option(
           name: '--as',
           description: 'Name for add-on attachment',
@@ -4027,6 +4162,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:copy',
       description: 'Copy all data from source db to target\nat least one of the databases must be a Heroku PostgreSQL DB',
       options: [
+
         Option(
           name: '--wait-interval',
           args: [
@@ -4063,6 +4199,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'source'
         ),
@@ -4075,6 +4212,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:credentials',
       description: 'Show information on credentials in the database\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -4103,6 +4241,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:credentials:create',
       description: 'Create credential within database\nExample:\n\n    heroku pg:credentials:create postgresql-something-12345 --name new-cred-name\n',
       options: [
+
         Option(
           name: ['-n', '--name'],
           description: 'Name of the new credential within the database',
@@ -4139,6 +4278,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:credentials:destroy',
       description: 'Destroy credential within database\nExample:\n\n    heroku pg:credentials:destroy postgresql-transparent-56874 --name cred-name -a woodstock-production\n',
       options: [
+
         Option(
           name: ['-n', '--name'],
           description: 'Unique identifier for the credential',
@@ -4182,6 +4322,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:credentials:repair-default',
       description: 'Repair the permissions of the default credential within database\nExample:\n\n    heroku pg:credentials:repair-default postgresql-something-12345\n',
       options: [
+
         Option(
           name: ['-c', '--confirm'],
           args: [
@@ -4217,6 +4358,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:credentials:rotate',
       description: 'Rotate the database credentials\n',
       options: [
+
         Option(
           name: ['-n', '--name'],
           description: 'Which credential to rotate (default credentials if not specified)',
@@ -4268,6 +4410,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:credentials:url',
       description: 'Show information on a database credential\n',
       options: [
+
         Option(
           name: ['-n', '--name'],
           description: 'Which credential to show (default credentials if not specified)',
@@ -4304,6 +4447,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:diagnose',
       description: 'Run or view diagnostics report\n\ndefaults to DATABASE_URL database if no DATABASE is specified\nif REPORT_ID is specified instead, a previous report is displayed\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as JSON'
@@ -4336,6 +4480,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:info',
       description: 'Show database information\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -4364,6 +4509,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:kill',
       description: 'Kill a query\n',
       options: [
+
         Option(
           name: ['-f', '--force']
         ),
@@ -4386,6 +4532,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'pid'
         ),
@@ -4399,6 +4546,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:killall',
       description: 'Terminates all connections for all credentials\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -4427,6 +4575,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:links',
       description: 'Lists all databases and information on link\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -4455,6 +4604,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:links:create',
       description: 'Create a link between data stores\nExample:\n\n    heroku pg:links:create HEROKU_REDIS_RED HEROKU_POSTGRESQL_CERULEAN',
       options: [
+
         Option(
           name: '--as',
           description: 'Name of link to create',
@@ -4482,6 +4632,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'remote'
         ),
@@ -4494,6 +4645,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:links:destroy',
       description: 'Destroys a link between data stores\nExample:\n\n    heroku pg:links:destroy HEROKU_POSTGRESQL_CERULEAN redis-symmetrical-100',
       options: [
+
         Option(
           name: ['-c', '--confirm'],
           args: [
@@ -4520,6 +4672,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'database'
         ),
@@ -4532,6 +4685,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:locks',
       description: 'Display queries with active locks\n',
       options: [
+
         Option(
           name: ['-t', '--truncate'],
           description: 'Truncates queries to 40 charaters'
@@ -4564,6 +4718,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:maintenance',
       description: 'Show current maintenance information\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -4592,6 +4747,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:maintenance:run',
       description: 'Start maintenance\n',
       options: [
+
         Option(
           name: ['-f', '--force']
         ),
@@ -4623,6 +4779,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:maintenance:window',
       description: 'Set weekly maintenance window\nAll times are in UTC.\n\nExample:\n\n    heroku pg:maintenance:window postgres-slippery-100 "Sunday 06:00"',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -4642,6 +4799,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'database'
         ),
@@ -4654,6 +4812,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:outliers',
       description: 'Show 10 queries that have longest execution time in aggregate\n',
       options: [
+
         Option(
           name: '--reset',
           description: 'Resets statistics gathered by pg_stat_statements'
@@ -4698,6 +4857,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:promote',
       description: 'Sets DATABASE as your DATABASE_URL\n',
       options: [
+
         Option(
           name: ['-f', '--force']
         ),
@@ -4729,6 +4889,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:ps',
       description: 'View active queries with execution time\n',
       options: [
+
         Option(
           name: ['-v', '--verbose']
         ),
@@ -4760,6 +4921,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:psql',
       description: 'Open a psql shell to the database\n',
       options: [
+
         Option(
           name: ['-c', '--command'],
           description: 'SQL command to run',
@@ -4812,6 +4974,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:pull',
       description: 'Pull Heroku database into local or remote database\nPull from SOURCE into TARGET.\n\nTARGET must be one of:\n  * a database name (i.e. on a local PostgreSQL server)  => TARGET must not exist and will be created\n  * a fully qualified URL to a local PostgreSQL server   => TARGET must not exist and will be created\n  * a fully qualified URL to a remote PostgreSQL server  => TARGET must exist and be empty\n\nTo delete a local database run `dropdb TARGET`\nTo create an empty remote database, run `createdb` with connection command-line options (run `createdb --help` for details).\n\nExamples:\n\n    # pull Heroku DB named postgresql-swimmingly-100 into local DB mylocaldb that must not exist\n    \$ heroku pg:pull postgresql-swimmingly-100 mylocaldb --app sushi\n\n    # pull Heroku DB named postgresql-swimmingly-100 into empty remote DB at postgres://myhost/mydb\n    \$ heroku pg:pull postgresql-swimmingly-100 postgres://myhost/mydb --app sushi\n',
       options: [
+
         Option(
           name: '--exclude-table-data',
           description: 'Tables for which data should be excluded (use \';\' to split multiple names)',
@@ -4839,6 +5002,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'source'
         ),
@@ -4851,6 +5015,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:push',
       description: 'Push local or remote into Heroku database\nPush from SOURCE into TARGET. TARGET must be empty.\n\nTo empty a Heroku database for push run `heroku pg:reset`\n\nSOURCE must be either the name of a database existing on your localhost or the\nfully qualified URL of a remote database.\n\nExamples:\n\n    # push mylocaldb into a Heroku DB named postgresql-swimmingly-100\n    \$ heroku pg:push mylocaldb postgresql-swimmingly-100\n\n    # push remote DB at postgres://myhost/mydb into a Heroku DB named postgresql-swimmingly-100\n    \$ heroku pg:push postgres://myhost/mydb postgresql-swimmingly-100\n',
       options: [
+
         Option(
           name: '--exclude-table-data',
           description: 'Tables for which data should be excluded (use \';\' to split multiple names)',
@@ -4878,6 +5043,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'source'
         ),
@@ -4890,6 +5056,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:reset',
       description: 'Delete all data in DATABASE\n',
       options: [
+
         Option(
           name: ['-e', '--extensions'],
           description: 'Comma-separated list of extensions to pre-install in the public schema',
@@ -4933,6 +5100,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings',
       description: 'Show your current database settings\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -4961,6 +5129,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:auto-explain',
       description: 'Automatically log execution plans of queries without running EXPLAIN by hand.\nThe auto_explain module is loaded at session-time so existing connections will not be logged.\nRestart your Heroku app and/or restart existing connections for logging to start taking place',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -4980,6 +5149,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -4994,6 +5164,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:auto-explain:log-analyze',
       description: 'Shows actual run times on the execution plan.\nThis is equivalent to calling EXPLAIN ANALYZE.\n\nWARNING: EXPLAIN ANALYZE will be run on ALL queries, not just logged queries. This can cause significant performance impacts to your database and should be used with caution.\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5013,6 +5184,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -5027,6 +5199,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:auto-explain:log-buffers',
       description: 'Includes buffer usage statistics when execution plans are logged.\nThis is equivalent to calling EXPLAIN BUFFERS and can only be used in conjunction with pg:settings:auto-explain:log-analyze turned on',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5046,6 +5219,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -5060,6 +5234,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:auto-explain:log-min-duration',
       description: 'Sets the minimum execution time in milliseconds for a statement\'s plan to be logged.\nSetting this value to 0 will log all queries. Setting this value to -1 will disable logging entirely.\n\nWARNING: Setting a low value may have performance impacts on your database as well as generate a large volume of logs',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5079,6 +5254,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -5093,6 +5269,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:auto-explain:log-nested-statements',
       description: 'Nested statements are included in the execution plan\'s log.\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5112,6 +5289,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -5126,6 +5304,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:auto-explain:log-triggers',
       description: 'Includes trigger execution statistics in execution plan logs.\nThis parameter can only be used in conjunction with pg:settings:auto-explain:log-analyze turned on',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5145,6 +5324,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -5159,6 +5339,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:auto-explain:log-verbose',
       description: 'Include verbose details in execution plans.\nThis is equivalent to calling EXPLAIN VERBOSE',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5178,6 +5359,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -5192,6 +5374,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:log-lock-waits',
       description: 'Controls whether a log message is produced when a session waits longer than the deadlock_timeout to acquire a lock. deadlock_timeout is set to 1 second\nDelays due to lock contention occur when multiple transactions are trying to access the same resource at the same time.\nApplications and their query patterns should try to avoid changes to many different tables within the same transaction',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5211,6 +5394,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -5225,6 +5409,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:log-min-duration-statement',
       description: 'The duration of each completed statement will be logged if the statement completes after the time specified by VALUE.\nVALUE needs to specified as a whole number, in milliseconds.\nSetting log_min_duration_statement to zero prints all statement durations and -1 will disable logging statement durations',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5244,6 +5429,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -5258,6 +5444,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:log-statement',
       description: 'Log_statement controls which SQL statements are logged.\nValid values for VALUE:\nnone - No statements are logged\nddl  - All data definition statements, such as CREATE, ALTER and DROP will be logged\nmod  - Includes all statements from ddl as well as data-modifying statements such as INSERT, UPDATE, DELETE, TRUNCATE, COPY\nall  - All statements are logged',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5277,6 +5464,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -5291,6 +5479,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:settings:track-functions',
       description: 'Track_functions controls tracking of function call counts and time used. Default is none.\nValid values for VALUE:\nnone - No functions are tracked\npl   - Only procedural language functions are tracked\nall  - All functions, including SQL and C language functions, are tracked. Simple SQL-language that are inlined are not tracked',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5310,6 +5499,7 @@ final FigSpec herokuSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'value',
           isOptional: true
@@ -5324,6 +5514,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:unfollow',
       description: 'Stop a replica from following and make it a writeable database\n',
       options: [
+
         Option(
           name: ['-c', '--confirm'],
           args: [
@@ -5359,6 +5550,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:upgrade',
       description: 'Unfollow a database and upgrade it to the latest stable PostgreSQL version\nto upgrade to another PostgreSQL version, use pg:copy instead',
       options: [
+
         Option(
           name: ['-c', '--confirm'],
           args: [
@@ -5402,6 +5594,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:vacuum-stats',
       description: 'Show dead rows and whether an automatic vacuum is expected to be triggered\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5430,6 +5623,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'pg:wait',
       description: 'Blocks until database is available\n',
       options: [
+
         Option(
           name: '--wait-interval',
           description: 'How frequently to poll in seconds (to avoid rate limiting)',
@@ -5470,6 +5664,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'psql',
       description: 'Open a psql shell to the database\n',
       options: [
+
         Option(
           name: ['-c', '--command'],
           description: 'SQL command to run',
@@ -5522,6 +5717,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis',
       description: 'Gets information about redis\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as JSON'
@@ -5554,6 +5750,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:cli',
       description: 'Opens a redis prompt\n',
       options: [
+
         Option(
           name: ['-c', '--confirm'],
           args: [
@@ -5589,6 +5786,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:credentials',
       description: 'Display credentials information\n',
       options: [
+
         Option(
           name: '--reset',
           description: 'Reset credentials'
@@ -5621,6 +5819,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:info',
       description: 'Gets information about redis\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as JSON'
@@ -5653,6 +5852,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:keyspace-notifications',
       description: 'Set the keyspace notifications configuration\nSet the configuration to enable keyspace notification events:\n    K     Keyspace events, published with __keyspace@<db>__ prefix.\n    E     Keyevent events, published with __keyevent@<db>__ prefix.\n    g     Generic commands (non-type specific) like DEL, EXPIRE, RENAME, ...\n    \$     String commands\n    l     List commands\n    s     Set commands\n    h     Hash commands\n    z     Sorted set commands\n    t     Stream commands\n    x     Expired events (events generated every time a key expires)\n    e     Evicted events (events generated when a key is evicted for maxmemory)\n    m     Key miss events (events generated when a key that doesn\'t exist is accessed)\n    A     Alias for "g\$lshztxe", so that the "AKE" string means all the events except "m".\n\n    pass an empty string (\'\') to disable keyspace notifications\n',
       options: [
+
         Option(
           name: ['-c', '--config'],
           description: 'Set keyspace notifications configuration',
@@ -5689,6 +5889,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:maintenance',
       description: 'Manage maintenance windows\nSet or change the maintenance window for your Redis instance',
       options: [
+
         Option(
           name: ['-w', '--window'],
           description: 'Set weekly UTC maintenance window',
@@ -5733,6 +5934,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:maxmemory',
       description: 'Set the key eviction policy\nSet the key eviction policy when instance reaches its storage limit. Available policies for key eviction include:\n\n    noeviction      # returns errors when memory limit is reached\n    allkeys-lfu     # removes less frequently used keys first\n    volatile-lfu    # removes less frequently used keys first that have an expiry set\n    allkeys-lru     # removes less recently used keys first\n    volatile-lru    # removes less recently used keys first that have an expiry set\n    allkeys-random  # evicts random keys\n    volatile-random # evicts random keys but only those that have an expiry set\n    volatile-ttl    # only evicts keys with an expiry set and a short TTL\n',
       options: [
+
         Option(
           name: ['-p', '--policy'],
           description: 'Set policy name',
@@ -5769,6 +5971,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:promote',
       description: 'Sets DATABASE as your REDIS_URL\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -5797,6 +6000,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:stats-reset',
       description: 'Reset all stats covered by RESETSTAT (https://redis.io/commands/config-resetstat)\n',
       options: [
+
         Option(
           name: ['-c', '--confirm'],
           args: [
@@ -5832,6 +6036,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:timeout',
       description: 'Set the number of seconds to wait before killing idle connections\nSets the number of seconds to wait before killing idle connections. A value of zero means that connections will not be closed',
       options: [
+
         Option(
           name: ['-s', '--seconds'],
           description: 'Set timeout value',
@@ -5868,6 +6073,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:upgrade',
       description: 'Perform in-place version upgrade\n',
       options: [
+
         Option(
           name: ['-c', '--confirm'],
           args: [
@@ -5910,6 +6116,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'redis:wait',
       description: 'Wait for Redis instance to be available\n',
       options: [
+
         Option(
           name: '--wait-interval',
           description: 'How frequently to poll in seconds',
@@ -5946,6 +6153,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces',
       description: 'List available spaces\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -5964,6 +6172,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:create',
       description: 'Create a new space\nExample:\n\n    \$ heroku spaces:create --space my-space --team my-team --region oregon\n    Creating space my-space in team my-team... done\n    === my-space\n    ID:         e7b99e37-69b3-4475-ad47-a5cc5d75fd9f\n    Team:       my-team\n    Region:     oregon\n    CIDR:       10.0.0.0/16\n    Data CIDR:  172.23.0.0/20\n    State:      allocating\n    Created at: 2016-01-06T03:23:13Z\n\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Name of space to create',
@@ -6010,6 +6219,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:destroy',
       description: 'Destroy a space\nExample:\n\n    \$ heroku spaces:destroy --space my-space\n    Destroying my-space... done\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to destroy',
@@ -6032,6 +6242,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:info',
       description: 'Show info about a space\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to get info of',
@@ -6050,6 +6261,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:peering:info',
       description: 'Display the information necessary to initiate a peering connection\nExample:\n\n    \$ heroku spaces:peering:info example-space\n    === example-space Peering Info\n    AWS Account ID:    012345678910\n    AWS Region:        us-west-2\n    AWS VPC ID:        vpc-baadf00d\n    AWS VPC CIDR:      10.0.0.0/16\n    Space CIDRs:       10.0.128.0/20, 10.0.144.0/20\n    Unavailable CIDRs: 10.1.0.0/16\n\nYou will use the information provied by this command to establish a peering connection request from your AWS VPC to your private space.\n\nTo start the peering process, go into your AWS console for the VPC you would like peered with your Private Space,\nnavigate to the VPC service, choose the "Peering Connections" option and click the "Create peering connection" button.\n\n- The AWS Account ID and VPC ID are necessary for the AWS VPC Peering connection wizard.\n- You will also need to configure your VPC route table to route the Dyno CIDRs through the peering connection.\n\nOnce you\'ve established the peering connection request, you can use the spaces:peerings:accept command to accept and\nconfigure the peering connection for the space.\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to get peering info from',
@@ -6068,6 +6280,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:peerings',
       description: 'List peering connections for a space\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to get peer list from',
@@ -6086,6 +6299,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:peerings:accept',
       description: 'Accepts a pending peering request for a private space\nExample:\n\n    \$ heroku spaces:peerings:accept pcx-4bd27022 --space example-space\n    Accepting and configuring peering connection pcx-4bd27022\n',
       options: [
+
         Option(
           name: ['-p', '--pcxid'],
           description: 'PCX ID of a pending peering',
@@ -6108,6 +6322,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:peerings:destroy',
       description: 'Destroys an active peering connection in a private space\nExample:\n\n    \$ heroku spaces:peerings:destroy pcx-4bd27022 --confirm pcx-4bd27022 --space example-space\n    Tearing down peering connection pcx-4bd27022\n',
       options: [
+
         Option(
           name: ['-p', '--pcxid'],
           description: 'PCX ID of a pending peering',
@@ -6138,6 +6353,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:ps',
       description: 'List dynos for a space\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to get dynos of',
@@ -6156,6 +6372,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:rename',
       description: 'Renames a space\nExample:\n\n    \$ heroku spaces:rename --from old-space-name --to new-space-name\n    Renaming space old-space-name to new-space-name... done\n',
       options: [
+
         Option(
           name: '--from',
           description: 'Current name of space',
@@ -6178,6 +6395,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:topology',
       description: 'Show space topology\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to get topology of',
@@ -6196,6 +6414,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:transfer',
       description: 'Transfer a space to another team\nExample:\n\n    \$ heroku spaces:transfer --space=space-name --team=team-name\n    Transferring space-name to team-name... done\n',
       options: [
+
         Option(
           name: '--space',
           description: 'Name of space',
@@ -6218,6 +6437,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:vpn:config',
       description: 'Display the configuration information for VPN\nExample:\n\n    \$ heroku spaces:vpn:config --space my-space vpn-connection-name\n    === vpn-connection-name VPN Tunnels\n    VPN Tunnel  Customer Gateway  VPN Gateway     Pre-shared Key  Routable Subnets  IKE Version\n    ──────────  ────────────────  ──────────────  ──────────────  ────────────────  ───────────\n    Tunnel 1    104.196.121.200   35.171.237.136  abcdef12345     10.0.0.0/16       1\n    Tunnel 2    104.196.121.200   52.44.7.216     fedcba54321     10.0.0.0/16       1\n\nYou will use the information provided by this command to establish a Private Space VPN Connection.\n\n- You must configure your VPN Gateway to use both Tunnels provided by Heroku\n- The VPN Gateway values are the IP addresses of the Private Space Tunnels\n- The Customer Gateway value is the Public IP of your VPN Gateway\n- The VPN Gateway must use the IKE Version shown and the Pre-shared Keys as the authentication method\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space the VPN connection belongs to',
@@ -6244,6 +6464,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:vpn:connect',
       description: 'Create VPN\nPrivate Spaces can be connected to another private network via an IPSec VPN connection allowing dynos to connect to hosts on your private networks and vice versa.\nThe connection is established over the public Internet but all traffic is encrypted using IPSec',
       options: [
+
         Option(
           name: ['-n', '--name'],
           description: 'VPN name',
@@ -6282,6 +6503,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:vpn:connections',
       description: 'List the VPN Connections for a space\nExample:\n\n  \$ heroku spaces:vpn:connections --space my-space\n  === my-space VPN Connections\n  Name    Status  Tunnels\n  ──────  ──────  ───────\n  office  active  UP/UP\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to get VPN connections from',
@@ -6300,6 +6522,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:vpn:destroy',
       description: 'Destroys VPN in a private space\nExample:\n\n    \$ heroku spaces:vpn:destroy --space example-space vpn-connection-name --confirm vpn-connection-name\n    Tearing down VPN Connection vpn-connection-name in space example-space\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to get peering info from',
@@ -6330,6 +6553,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:vpn:info',
       description: 'Display the information for VPN\nExample:\n\n    \$ heroku spaces:vpn:info --space my-space vpn-connection-name\n    === vpn-connection-name VPN Tunnel Info\n    Name:           vpn-connection-name\n    ID:             123456789012\n    Public IP:      35.161.69.30\n    Routable CIDRs: 172.16.0.0/16\n    Status:         failed\n    Status Message: supplied CIDR block already in use\n    === my-space Tunnel Info\n    VPN Tunnel  IP Address     Status  Status Last Changed   Details\n    ──────────  ─────────────  ──────  ────────────────────  ──────────────\n    Tunnel 1    52.44.146.197  UP      2016-10-25T22:09:05Z  status message\n    Tunnel 2    52.44.146.197  UP      2016-10-25T22:09:05Z  status message',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space the vpn connection belongs to',
@@ -6356,6 +6580,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:vpn:update',
       description: 'Update VPN\nPrivate Spaces can be connected to another private network via an IPSec VPN connection allowing dynos to connect to hosts on your private networks and vice versa.\nThe connection is established over the public Internet but all traffic is encrypted using IPSec',
       options: [
+
         Option(
           name: ['-n', '--name'],
           description: 'VPN name',
@@ -6386,6 +6611,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:vpn:wait',
       description: 'Wait for VPN Connection to be created\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space the vpn connection belongs to',
@@ -6428,6 +6654,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'spaces:wait',
       description: 'Wait for a space to be created\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to get info of',
@@ -6462,6 +6689,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'trusted-ips',
       description: 'List trusted IP ranges for a space\n\nTrusted IP ranges are only available on Private Spaces.\n\nThe space name is a required parameter. Newly created spaces will have 0.0.0.0/0 set by default\nallowing all traffic to applications in the space. More than one CIDR block can be provided at\na time to the commands listed below. For example 1.2.3.4/20 and 5.6.7.8/20 can be added with:\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to get inbound rules from',
@@ -6480,6 +6708,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'trusted-ips:add',
       description: 'Add one range to the list of trusted IP ranges\n\nUses CIDR notation.\n\nExample:\n\n    \$ heroku trusted-ips:add --space my-space 192.168.2.0/24\n    Added 192.168.0.1/24 to trusted IP ranges on my-space\n',
       options: [
+
         Option(
           name: ['-s', '--space'],
           description: 'Space to add rule to',
@@ -6507,6 +6736,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'trusted-ips:remove',
       description: 'Remove a range from the list of trusted IP ranges\n\nUses CIDR notation.\n\nExample:\n\n    \$ heroku trusted-ips:remove --space my-space 192.168.2.0/24\n    Removed 192.168.2.0/24 from trusted IP ranges on my-space\n',
       options: [
+
         Option(
           name: '--space',
           description: 'Space to remove rule from',
@@ -6534,6 +6764,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'access',
       description: 'List who has access to an app\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -6561,6 +6792,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'access:add',
       description: 'Add new users to your app\n',
       options: [
+
         Option(
           name: ['-p', '--permissions'],
           description: 'List of permissions comma separated',
@@ -6597,6 +6829,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'access:remove',
       description: 'Remove users from a team app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -6625,6 +6858,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'access:update',
       description: 'Update existing collaborators on an team app\n',
       options: [
+
         Option(
           name: ['-p', '--permissions'],
           description: 'Comma-delimited list of permissions to update (deploy,manage,operate)',
@@ -6661,6 +6895,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:join',
       description: 'Add yourself to a team app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -6684,6 +6919,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:leave',
       description: 'Remove yourself from a team app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -6707,6 +6943,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:lock',
       description: 'Prevent team members from joining an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -6730,6 +6967,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:transfer',
       description: 'Transfer applications to another user or team\n',
       options: [
+
         Option(
           name: ['-l', '--locked'],
           description: 'Lock the app upon transfer'
@@ -6767,6 +7005,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:unlock',
       description: 'Unlock an app so any team member can join\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -6790,6 +7029,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'join',
       description: 'Add yourself to a team app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -6813,6 +7053,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'leave',
       description: 'Remove yourself from a team app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -6836,6 +7077,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'lock',
       description: 'Prevent team members from joining an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -6859,6 +7101,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'members',
       description: 'List members of a team\n',
       options: [
+
         Option(
           name: ['-r', '--role'],
           description: 'Filter by role',
@@ -6889,6 +7132,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'members:add',
       description: 'Adds a user to a team\n',
       options: [
+
         Option(
           name: ['-r', '--role'],
           description: 'Member role (admin, collaborator, member, owner)',
@@ -6916,6 +7160,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'members:remove',
       description: 'Removes a user from a team\n',
       options: [
+
         Option(
           name: ['-t', '--team'],
           description: 'Team to use',
@@ -6935,6 +7180,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'members:set',
       description: 'Sets a members role in a team\n',
       options: [
+
         Option(
           name: ['-r', '--role'],
           description: 'Member role (admin, collaborator, member, owner)',
@@ -6962,6 +7208,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'orgs',
       description: 'List the teams that you are a member of\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -6976,6 +7223,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'orgs:open',
       description: 'Open the team interface in a browser window\n',
       options: [
+
         Option(
           name: ['-t', '--team'],
           description: 'Team to use',
@@ -6990,6 +7238,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'teams',
       description: 'List the teams that you are a member of\n\nUse heroku members:* to manage team members.\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -7000,6 +7249,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'unlock',
       description: 'Unlock an app so any team member can join\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7023,6 +7273,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps',
       description: 'List your apps\n',
       options: [
+
         Option(
           name: ['-A', '--all'],
           description: 'Include apps in all teams'
@@ -7057,6 +7308,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:create',
       description: 'Creates a new app\n',
       options: [
+
         Option(
           name: '--addons',
           description: 'Comma-delimited list of addons to install',
@@ -7134,6 +7386,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:destroy',
       description: 'Permanently destroy an app\nThis will also destroy all add-ons on the app',
       options: [
+
         Option(
           name: ['-c', '--confirm'],
           args: [
@@ -7164,6 +7417,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:errors',
       description: 'View app errors\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -7207,6 +7461,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:favorites',
       description: 'List favorited apps\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -7217,6 +7472,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:favorites:add',
       description: 'Favorites an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7240,6 +7496,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:favorites:remove',
       description: 'Unfavorites an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7263,6 +7520,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:info',
       description: 'Show detailed app information\n\$ heroku apps:info\n=== example\nGit URL:   https://git.heroku.com/example.git\nRepo Size: 5M\n...\n\n\$ heroku apps:info --shell\ngit_url=https://git.heroku.com/example.git\nrepo_size=5000000\n',
       options: [
+
         Option(
           name: ['-s', '--shell'],
           description: 'Output more shell friendly key/value pairs'
@@ -7293,6 +7551,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:open',
       description: 'Open the app in a web browser\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7321,6 +7580,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:rename',
       description: 'Rename an app\nThis will locally update the git remote if it is set to the old app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7349,6 +7609,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:stacks',
       description: 'Show the list of available stacks\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7372,6 +7633,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'apps:stacks:set',
       description: 'Set the stack of an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7400,6 +7662,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'config:set',
       description: 'Set one or more config vars\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7423,6 +7686,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'drains',
       description: 'Display the log drains of an app\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -7450,6 +7714,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'drains:add',
       description: 'Adds a log drain to an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7478,6 +7743,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'drains:remove',
       description: 'Removes a log drain from an app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7506,6 +7772,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'dyno:kill',
       description: 'Stop app dyno\n\nstop app dyno or dyno type',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7534,6 +7801,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'dyno:resize',
       description: 'Manage dyno sizes\n\nCalled with no arguments shows the current dyno size.\n\nCalled with one argument sets the size.\nWhere SIZE is one of eco|basic|standard-1x|standard-2x|performance\n\nCalled with 1..n TYPE=SIZE arguments sets the quantity per type.\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7557,6 +7825,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'dyno:restart',
       description: 'Restart app dynos\nif DYNO is not specified, restarts all dynos on app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7585,6 +7854,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'dyno:scale',
       description: 'Scale dyno quantity up or down\nAppending a size (eg. web=2:Standard-2X) allows simultaneous scaling and resizing.\n\nOmitting any arguments will display the app\'s current dyno formation, in a\nformat suitable for passing back into ps:scale',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7608,6 +7878,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'dyno:stop',
       description: 'Stop app dyno\n\nstop app dyno or dyno type',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7636,6 +7907,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'features',
       description: 'List available app features\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -7663,6 +7935,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'features:disable',
       description: 'Disables an app feature\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7691,6 +7964,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'features:enable',
       description: 'Enables an app feature\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7719,6 +7993,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'features:info',
       description: 'Display information about a feature\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -7751,6 +8026,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'keys',
       description: 'Display your SSH keys\n',
       options: [
+
         Option(
           name: ['-l', '--long'],
           description: 'Display full SSH keys'
@@ -7765,6 +8041,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'keys:add',
       description: 'Add an SSH key for a user\nif no KEY is specified, will try to find ~/.ssh/id_rsa.pub',
       options: [
+
         Option(
           name: ['-y', '--yes'],
           description: 'Automatically answer yes for all prompts'
@@ -7793,6 +8070,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'labs',
       description: 'List experimental features\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Display as json'
@@ -7820,6 +8098,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'labs:enable',
       description: 'Enables an experimental feature\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7848,6 +8127,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'labs:info',
       description: 'Show feature info\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Display as json'
@@ -7880,6 +8160,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'maintenance',
       description: 'Display the current maintenance status of app\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7903,6 +8184,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'maintenance:off',
       description: 'Take the app out of maintenance mode\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7926,6 +8208,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'maintenance:on',
       description: 'Put the app into maintenance mode\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -7949,6 +8232,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'notifications',
       description: 'Display notifications\n',
       options: [
+
         Option(
           name: '--all',
           description: 'View all notifications (not just the ones for the current app)'
@@ -7984,6 +8268,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps',
       description: 'List dynos for an app\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Display as json'
@@ -8011,6 +8296,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:kill',
       description: 'Stop app dyno\n\nstop app dyno or dyno type',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -8039,6 +8325,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:resize',
       description: 'Manage dyno sizes\n\nCalled with no arguments shows the current dyno size.\n\nCalled with one argument sets the size.\nWhere SIZE is one of eco|basic|standard-1x|standard-2x|performance\n\nCalled with 1..n TYPE=SIZE arguments sets the quantity per type.\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -8062,6 +8349,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:restart',
       description: 'Restart app dynos\nif DYNO is not specified, restarts all dynos on app',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -8090,6 +8378,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:scale',
       description: 'Scale dyno quantity up or down\nAppending a size (eg. web=2:Standard-2X) allows simultaneous scaling and resizing.\n\nOmitting any arguments will display the app\'s current dyno formation, in a\nformat suitable for passing back into ps:scale',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -8113,6 +8402,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:stop',
       description: 'Stop app dyno\n\nstop app dyno or dyno type',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -8141,6 +8431,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:type',
       description: 'Manage dyno sizes\n\nCalled with no arguments shows the current dyno size.\n\nCalled with one argument sets the size.\nWhere SIZE is one of eco|basic|standard-1x|standard-2x|performance\n\nCalled with 1..n TYPE=SIZE arguments sets the quantity per type.\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -8164,6 +8455,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'releases',
       description: 'Display the releases for an app\n',
       options: [
+
         Option(
           name: ['-n', '--num'],
           description: 'Number of releases to show',
@@ -8199,6 +8491,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'releases:info',
       description: 'View detailed information for a release\n',
       options: [
+
         Option(
           name: '--json',
           description: 'Output in json format'
@@ -8235,6 +8528,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'releases:output',
       description: 'View the release command output\n',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -8263,6 +8557,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'releases:rollback',
       description: 'Rollback to a previous release\nIf RELEASE is not specified, it will rollback one release',
       options: [
+
         Option(
           name: ['-a', '--app'],
           description: 'App to run command against',
@@ -8291,6 +8586,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:copy',
       description: 'Copy a file from a dyno to the local filesystem\nExample:\n\n    \$ heroku ps:copy FILENAME --app murmuring-headland-14719',
       options: [
+
         Option(
           name: ['-d', '--dyno'],
           description: 'Specify the dyno to connect to',
@@ -8335,6 +8631,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:exec',
       description: 'Create an SSH session to a dyno\nExample:\n\n    \$ heroku ps:exec \'node -i\' --app murmuring-headland-14719',
       options: [
+
         Option(
           name: ['-d', '--dyno'],
           description: 'Specify the dyno to connect to',
@@ -8374,6 +8671,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:forward',
       description: 'Forward traffic on a local port to a dyno\nProvide a port or comma-separated list of ports to forward.\n\n    For example, "4000,9000:9001" will forward port 4000 to port 4000 and\n    port 9000 to port 9001.\n\n    Example:\n\n    \$ heroku ps:forward 8080 --app murmuring-headland-14719',
       options: [
+
         Option(
           name: ['-d', '--dyno'],
           description: 'Specify the dyno to connect to',
@@ -8410,6 +8708,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'ps:socks',
       description: 'Launch a SOCKS proxy into a dyno\nExample:\n\n    \$ heroku ps:socks --app murmuring-headland-14719\n    Establishing credentials... done\n    SOCKSv5 proxy server started on port 1080\n    Use CTRL+C to stop the proxy',
       options: [
+
         Option(
           name: ['-d', '--dyno'],
           description: 'Specify the dyno to connect to',
@@ -8441,6 +8740,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'commands',
       description: 'List all the commands',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8491,9 +8791,10 @@ final FigSpec herokuSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'csv'),
               FigSuggestion(name: 'json'),
-
+              FigSuggestion(name: 'yaml')
             ]
           )
           ]
@@ -8516,6 +8817,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'update',
       description: 'Update the <%= config.bin %> CLI',
       options: [
+
         Option(
           name: ['-a', '--available'],
           description: 'Install a specific version'
@@ -8547,6 +8849,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'plugins',
       description: 'List installed plugins',
       options: [
+
         Option(
           name: '--core',
           description: 'Show core plugins'
@@ -8557,6 +8860,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'plugins:inspect',
       description: 'Displays installation properties of a plugin',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8581,6 +8885,7 @@ final FigSpec herokuSpec = FigSpec(
       name: ['plugins:install', 'plugins:add'],
       description: 'Installs a plugin into the CLI.\nCan be installed from npm or a git url.\n\nInstallation of a user-installed plugin will override a core plugin.\n\ne.g. If you have a core plugin that has a \'hello\' command, installing a user-installed plugin with a \'hello\' command will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in the CLI without the need to patch and update the whole CLI.\n',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -8604,6 +8909,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'plugins:link',
       description: 'Links a plugin into the CLI for development.\nInstallation of a linked plugin will override a user-installed or core plugin.\n\ne.g. If you have a user-installed or core plugin that has a \'hello\' command, installing a linked plugin with a \'hello\' command will override the user-installed or core plugin implementation. This is useful for development work.\n',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -8624,6 +8930,7 @@ final FigSpec herokuSpec = FigSpec(
       name: ['plugins:uninstall', 'plugins:unlink', 'plugins:remove'],
       description: 'Removes a plugin from the CLI',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -8643,6 +8950,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'plugins:update',
       description: 'Update installed plugins',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -8655,6 +8963,7 @@ final FigSpec herokuSpec = FigSpec(
     Subcommand(
       name: 'version',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8673,6 +8982,7 @@ final FigSpec herokuSpec = FigSpec(
       name: 'help',
       description: 'Display help for <%= config.bin %>',
       options: [
+
         Option(
           name: ['-n', '--nested-commands'],
           description: 'Include all nested commands in the output'

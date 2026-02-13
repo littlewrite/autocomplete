@@ -10,6 +10,7 @@ final FigSpec RscriptSpec = FigSpec(
   description: 'Scripting Front-End for R',
   icon: 'https://www.r-project.org/favicon-32x32.png',
   options: [
+
     Option(
       name: '-e',
       description: 'R expression to run',
@@ -77,6 +78,7 @@ final FigSpec RscriptSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'file',
       description: 'R script to run'

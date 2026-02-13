@@ -9,10 +9,12 @@ final FigSpec iotwirelessSpec = FigSpec(
   name: 'iotwireless',
   description: 'AWS IoT Wireless provides bi-directional communication between internet-connected wireless devices and the AWS Cloud. To onboard both LoRaWAN and Sidewalk devices to AWS IoT, use the IoT Wireless API. These wireless devices use the Low Power Wide Area Networking (LPWAN) communication protocol to communicate with AWS IoT. Using the API, you can perform create, read, update, and delete operations for your wireless devices, gateways, destinations, and profiles. After onboarding your devices, you can use the API operations to set log levels and monitor your devices with CloudWatch. You can also use the API operations to create multicast groups and schedule a multicast session for sending a downlink message to devices in the group. By using Firmware Updates Over-The-Air (FUOTA) API operations, you can create a FUOTA task and schedule a session to update the firmware of individual devices or an entire group of devices in a multicast group. To connect to the AWS IoT Wireless Service, use the Service endpoints as described in IoT Wireless Service endpoints in the AWS General Reference',
   subcommands: [
+
     Subcommand(
       name: 'associate-aws-account-with-partner-account',
       description: 'Associates a partner account with your AWS account',
       options: [
+
         Option(
           name: '--sidewalk',
           description: 'The Sidewalk account credentials',
@@ -56,6 +58,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'associate-multicast-group-with-fuota-task',
       description: 'Associate a multicast group with a FUOTA task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a FUOTA task',
@@ -102,6 +106,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'associate-wireless-device-with-fuota-task',
       description: 'Associate a wireless device with a FUOTA task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a FUOTA task',
@@ -148,6 +154,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'associate-wireless-device-with-multicast-group',
       description: 'Associates a wireless device with a multicast group',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -194,6 +202,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -206,6 +215,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'associate-wireless-device-with-thing',
       description: 'Associates a wireless device with a thing',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to update',
@@ -240,6 +250,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -252,6 +263,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'associate-wireless-gateway-with-certificate',
       description: 'Associates a wireless gateway with a certificate',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to update',
@@ -286,6 +298,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -298,6 +311,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'associate-wireless-gateway-with-thing',
       description: 'Associates a wireless gateway with a thing',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to update',
@@ -332,6 +346,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -344,6 +359,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'cancel-multicast-group-session',
       description: 'Cancels an existing multicast group session',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -369,6 +385,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -381,6 +398,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'create-destination',
       description: 'Creates a new destination that maps a device message to an AWS IoT rule',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the new resource',
@@ -460,6 +478,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -472,6 +491,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'create-device-profile',
       description: 'Creates a new device profile',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the new resource',
@@ -533,6 +553,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -545,6 +566,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'create-fuota-task',
       description: 'Creates a FUOTA task',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of a FUOTA task',
@@ -660,6 +682,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -672,6 +695,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'create-multicast-group',
       description: 'Creates a multicast group',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the multicast group',
@@ -733,6 +757,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -745,6 +770,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'create-network-analyzer-configuration',
       description: 'Creates a new network analyzer configuration',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the network analyzer configuration',
@@ -833,6 +859,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -845,6 +872,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'create-service-profile',
       description: 'Creates a new service profile',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the new resource',
@@ -897,6 +925,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -909,6 +938,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'create-wireless-device',
       description: 'Provisions a wireless device',
       options: [
+
         Option(
           name: '--type',
           description: 'The wireless device type',
@@ -1006,6 +1036,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1018,6 +1049,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'create-wireless-gateway',
       description: 'Provisions a wireless gateway.  When provisioning a wireless gateway, you might run into duplication errors for the following reasons.   If you specify a GatewayEui value that already exists.   If you used a ClientRequestToken with the same parameters within the last 10 minutes.   To avoid this error, make sure that you use unique identifiers and parameters for each request within the specified time period',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the new resource',
@@ -1079,6 +1111,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1091,6 +1124,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'create-wireless-gateway-task',
       description: 'Creates a task for a wireless gateway',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to update',
@@ -1125,6 +1159,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1137,6 +1172,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'create-wireless-gateway-task-definition',
       description: 'Creates a gateway task definition',
       options: [
+
         Option(
           name: '--auto-create-tasks',
           description: 'Whether to automatically create tasks using this task definition for all gateways with the specified current version. If false, the task must me created by calling CreateWirelessGatewayTask'
@@ -1197,6 +1233,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1209,6 +1246,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-destination',
       description: 'Deletes a destination',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the resource to delete',
@@ -1234,6 +1272,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1246,6 +1285,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-device-profile',
       description: 'Deletes a device profile',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to delete',
@@ -1271,6 +1311,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1283,6 +1324,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-fuota-task',
       description: 'Deletes a FUOTA task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a FUOTA task',
@@ -1308,6 +1350,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1320,6 +1363,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-multicast-group',
       description: 'Deletes a multicast group if it is not in use by a fuota task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -1345,6 +1389,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1357,6 +1402,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-network-analyzer-configuration',
       description: 'Deletes a network analyzer configuration',
       options: [
+
         Option(
           name: '--configuration-name',
           description: 'Name of the network analyzer configuration',
@@ -1382,6 +1428,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1394,6 +1441,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-queued-messages',
       description: 'Remove queued messages from the downlink queue',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a given wireless device for which downlink messages will be deleted',
@@ -1437,6 +1485,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1449,6 +1498,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-service-profile',
       description: 'Deletes a service profile',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to delete',
@@ -1474,6 +1524,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1486,6 +1537,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-wireless-device',
       description: 'Deletes a wireless device',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to delete',
@@ -1511,6 +1563,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1523,6 +1576,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-wireless-device-import-task',
       description: 'Delete an import task',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique identifier of the import task to be deleted',
@@ -1548,6 +1602,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1560,6 +1615,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-wireless-gateway',
       description: 'Deletes a wireless gateway.  When deleting a wireless gateway, you might run into duplication errors for the following reasons.   If you specify a GatewayEui value that already exists.   If you used a ClientRequestToken with the same parameters within the last 10 minutes.   To avoid this error, make sure that you use unique identifiers and parameters for each request within the specified time period',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to delete',
@@ -1585,6 +1641,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1597,6 +1654,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-wireless-gateway-task',
       description: 'Deletes a wireless gateway task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to delete',
@@ -1622,6 +1680,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1634,6 +1693,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'delete-wireless-gateway-task-definition',
       description: 'Deletes a wireless gateway task definition. Deleting this task definition does not affect tasks that are currently in progress',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to delete',
@@ -1659,6 +1719,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1671,6 +1732,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'deregister-wireless-device',
       description: 'Deregister a wireless device from AWS IoT Wireless',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The identifier of the wireless device to deregister from AWS IoT Wireless',
@@ -1705,6 +1767,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1717,6 +1780,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'disassociate-aws-account-from-partner-account',
       description: 'Disassociates your AWS account from a partner account. If PartnerAccountId and PartnerType are null, disassociates your AWS account from all partner accounts',
       options: [
+
         Option(
           name: '--partner-account-id',
           description: 'The partner account ID to disassociate from the AWS account',
@@ -1751,6 +1815,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1763,6 +1828,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'disassociate-multicast-group-from-fuota-task',
       description: 'Disassociates a multicast group from a fuota task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a FUOTA task',
@@ -1797,6 +1863,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1809,6 +1876,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'disassociate-wireless-device-from-fuota-task',
       description: 'Disassociates a wireless device from a FUOTA task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a FUOTA task',
@@ -1843,6 +1911,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1855,6 +1924,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'disassociate-wireless-device-from-multicast-group',
       description: 'Disassociates a wireless device from a multicast group',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -1889,6 +1959,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1901,6 +1972,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'disassociate-wireless-device-from-thing',
       description: 'Disassociates a wireless device from its currently associated thing',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to update',
@@ -1926,6 +1998,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1938,6 +2011,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'disassociate-wireless-gateway-from-certificate',
       description: 'Disassociates a wireless gateway from its currently associated certificate',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to update',
@@ -1963,6 +2037,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1975,6 +2050,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'disassociate-wireless-gateway-from-thing',
       description: 'Disassociates a wireless gateway from its currently associated thing',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to update',
@@ -2000,6 +2076,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2012,6 +2089,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-destination',
       description: 'Gets information about a destination',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the resource to get',
@@ -2037,6 +2115,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2049,6 +2128,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-device-profile',
       description: 'Gets information about a device profile',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to get',
@@ -2074,6 +2154,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2086,6 +2167,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-event-configuration-by-resource-types',
       description: 'Get the event configuration based on resource types',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2102,6 +2184,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2114,6 +2197,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-fuota-task',
       description: 'Gets information about a FUOTA task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a FUOTA task',
@@ -2139,6 +2223,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2151,6 +2236,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-log-levels-by-resource-types',
       description: 'Returns current default log levels or log levels by resource types. Based on resource types, log levels can be for wireless device log options or wireless gateway log options',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2167,6 +2253,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2179,6 +2266,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-metric-configuration',
       description: 'Get the metric configuration status for this AWS account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2195,6 +2283,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2207,6 +2296,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-metrics',
       description: 'Get the summary metrics for this AWS account',
       options: [
+
         Option(
           name: '--summary-metric-queries',
           description: 'The list of queries to retrieve the summary metrics',
@@ -2232,6 +2322,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2244,6 +2335,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-multicast-group',
       description: 'Gets information about a multicast group',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -2269,6 +2361,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2281,6 +2374,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-multicast-group-session',
       description: 'Gets information about a multicast group session',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -2306,6 +2400,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2318,6 +2413,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-network-analyzer-configuration',
       description: 'Get network analyzer configuration',
       options: [
+
         Option(
           name: '--configuration-name',
           description: 'Name of the network analyzer configuration',
@@ -2343,6 +2439,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2355,6 +2452,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-partner-account',
       description: 'Gets information about a partner account. If PartnerAccountId and PartnerType are null, returns all partner accounts',
       options: [
+
         Option(
           name: '--partner-account-id',
           description: 'The partner account ID to disassociate from the AWS account',
@@ -2389,6 +2487,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2401,6 +2500,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-position',
       description: 'Get the position information for a given resource.  This action is no longer supported. Calls to retrieve the position information should use the GetResourcePosition API operation instead',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'Resource identifier used to retrieve the position information',
@@ -2435,6 +2535,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2447,6 +2548,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-position-configuration',
       description: 'Get position configuration for a given resource.  This action is no longer supported. Calls to retrieve the position configuration should use the GetResourcePosition API operation instead',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'Resource identifier used in a position configuration',
@@ -2481,6 +2583,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2493,6 +2596,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-position-estimate',
       description: 'Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using solvers that are provided by third-party vendors',
       options: [
+
         Option(
           name: '--wi-fi-access-points',
           description: 'Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE\'s Wi-Fi based solver',
@@ -2553,6 +2657,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-resource-event-configuration',
       description: 'Get the event configuration for a particular resource identifier',
       options: [
+
         Option(
           name: '--identifier',
           description: 'Resource identifier to opt in for event messaging',
@@ -2596,6 +2701,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2608,6 +2714,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-resource-log-level',
       description: 'Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for a wireless device, wireless gateway or fuota task',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID',
@@ -2642,6 +2749,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2654,6 +2762,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-resource-position',
       description: 'Get the position information for a given wireless device or a wireless gateway resource. The position information uses the  World Geodetic System (WGS84)',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type',
@@ -2687,6 +2796,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-service-endpoint',
       description: 'Gets the account-specific endpoint for Configuration and Update Server (CUPS) protocol or LoRaWAN Network Server (LNS) connections',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The service type for which to get endpoint information about. Can be CUPS for the Configuration and Update Server endpoint, or LNS for the LoRaWAN Network Server endpoint or CLAIM for the global endpoint',
@@ -2712,6 +2822,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2724,6 +2835,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-service-profile',
       description: 'Gets information about a service profile',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to get',
@@ -2749,6 +2861,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2761,6 +2874,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-wireless-device',
       description: 'Gets information about a wireless device',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The identifier of the wireless device to get',
@@ -2795,6 +2909,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2807,6 +2922,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-wireless-device-import-task',
       description: 'Get information about an import task and count of device onboarding summary information for the import task',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the import task for which information is requested',
@@ -2832,6 +2948,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2844,6 +2961,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-wireless-device-statistics',
       description: 'Gets operating information about a wireless device',
       options: [
+
         Option(
           name: '--wireless-device-id',
           description: 'The ID of the wireless device for which to get the data',
@@ -2869,6 +2987,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2881,6 +3000,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-wireless-gateway',
       description: 'Gets information about a wireless gateway',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The identifier of the wireless gateway to get',
@@ -2915,6 +3035,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2927,6 +3048,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-wireless-gateway-certificate',
       description: 'Gets the ID of the certificate that is currently associated with a wireless gateway',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to get',
@@ -2952,6 +3074,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2964,6 +3087,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-wireless-gateway-firmware-information',
       description: 'Gets the firmware version and other information about a wireless gateway',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to get',
@@ -2989,6 +3113,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3001,6 +3126,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-wireless-gateway-statistics',
       description: 'Gets operating information about a wireless gateway',
       options: [
+
         Option(
           name: '--wireless-gateway-id',
           description: 'The ID of the wireless gateway for which to get the data',
@@ -3026,6 +3152,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3038,6 +3165,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-wireless-gateway-task',
       description: 'Gets information about a wireless gateway task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to get',
@@ -3063,6 +3191,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3075,6 +3204,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'get-wireless-gateway-task-definition',
       description: 'Gets information about a wireless gateway task definition',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to get',
@@ -3100,6 +3230,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3112,6 +3243,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-destinations',
       description: 'Lists the destinations registered to your AWS account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in this operation',
@@ -3146,6 +3278,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3158,6 +3291,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-device-profiles',
       description: 'Lists the device profiles registered to your AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -3201,6 +3335,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3213,6 +3348,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-devices-for-wireless-device-import-task',
       description: 'List the Sidewalk devices in an import task and their onboarding status',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the import task for which wireless devices are listed',
@@ -3265,6 +3401,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3277,6 +3414,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-event-configurations',
       description: 'List event configurations where at least one event topic has been enabled',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'Resource type to filter event configurations',
@@ -3320,6 +3458,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3332,6 +3471,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-fuota-tasks',
       description: 'Lists the FUOTA tasks registered to your AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -3366,6 +3506,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3378,6 +3519,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-multicast-groups',
       description: 'Lists the multicast groups registered to your AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -3412,6 +3554,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3424,6 +3567,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-multicast-groups-by-fuota-task',
       description: 'List all multicast groups associated with a fuota task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a FUOTA task',
@@ -3467,6 +3611,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3479,6 +3624,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-network-analyzer-configurations',
       description: 'Lists the network analyzer configurations',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in this operation',
@@ -3513,6 +3659,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3525,6 +3672,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-partner-accounts',
       description: 'Lists the partner accounts associated with your AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -3559,6 +3707,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3571,6 +3720,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-position-configurations',
       description: 'List position configurations for a given resource, such as positioning solvers.  This action is no longer supported. Calls to retrieve position information should use the GetResourcePosition API operation instead',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'Resource type for which position configurations are listed',
@@ -3614,6 +3764,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3626,6 +3777,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-queued-messages',
       description: 'List queued messages in the downlink queue',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a given wireless device which the downlink message packets are being sent',
@@ -3678,6 +3830,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3690,6 +3843,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-service-profiles',
       description: 'Lists the service profiles registered to your AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -3724,6 +3878,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3736,6 +3891,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags (metadata) you have assigned to the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource for which you want to list tags',
@@ -3761,6 +3917,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3773,6 +3930,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-wireless-device-import-tasks',
       description: 'List wireless devices that have been added to an import task',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in this operation',
@@ -3807,6 +3965,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3819,6 +3978,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-wireless-devices',
       description: 'Lists the wireless devices registered to your AWS account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in this operation',
@@ -3907,6 +4067,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3919,6 +4080,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-wireless-gateway-task-definitions',
       description: 'List the wireless gateway tasks definitions registered to your AWS account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in this operation',
@@ -3962,6 +4124,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3974,6 +4137,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'list-wireless-gateways',
       description: 'Lists the wireless gateways registered to your AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -4008,6 +4172,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4020,6 +4185,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'put-position-configuration',
       description: 'Put position configuration for a given resource.  This action is no longer supported. Calls to update the position configuration should use the UpdateResourcePosition API operation instead',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'Resource identifier used to update the position configuration',
@@ -4072,6 +4238,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4084,6 +4251,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'put-resource-log-level',
       description: 'Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway or a wireless device. A limit of 200 log level override can be set per account',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID',
@@ -4127,6 +4295,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4139,6 +4308,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'reset-all-resource-log-levels',
       description: 'Removes the log-level overrides for all resources; wireless devices, wireless gateways, and fuota tasks',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -4155,6 +4325,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4167,6 +4338,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'reset-resource-log-level',
       description: 'Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a wireless device, a wireless gateway, or a fuota task',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID',
@@ -4201,6 +4373,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4213,6 +4386,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'send-data-to-multicast-group',
       description: 'Sends the specified data to a multicast group',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -4256,6 +4430,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4268,6 +4443,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'send-data-to-wireless-device',
       description: 'Sends a decrypted application data frame to a device',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the wireless device to receive the data',
@@ -4320,6 +4496,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4332,6 +4509,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'start-bulk-associate-wireless-device-with-multicast-group',
       description: 'Starts a bulk association of all qualifying wireless devices with a multicast group',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -4375,6 +4553,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4387,6 +4566,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'start-bulk-disassociate-wireless-device-from-multicast-group',
       description: 'Starts a bulk disassociatin of all qualifying wireless devices from a multicast group',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -4430,6 +4610,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4442,6 +4623,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'start-fuota-task',
       description: 'Starts a FUOTA task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a FUOTA task',
@@ -4476,6 +4658,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4488,6 +4671,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'start-multicast-group-session',
       description: 'Starts a multicast group session',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -4522,6 +4706,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4534,6 +4719,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'start-single-wireless-device-import-task',
       description: 'Start import task for a single wireless device',
       options: [
+
         Option(
           name: '--destination-name',
           description: 'The name of the Sidewalk destination that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless',
@@ -4595,6 +4781,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4607,6 +4794,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'start-wireless-device-import-task',
       description: 'Start import task for provisioning Sidewalk devices in bulk using an S3 CSV file',
       options: [
+
         Option(
           name: '--destination-name',
           description: 'The name of the Sidewalk destination that describes the IoT rule to route messages from the devices in the import task that are onboarded to AWS IoT Wireless',
@@ -4659,6 +4847,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4671,6 +4860,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a tag to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to add tags to',
@@ -4705,6 +4895,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4717,6 +4908,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'test-wireless-device',
       description: 'Simulates a provisioned device by sending an uplink data payload of Hello',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the wireless device to test',
@@ -4742,6 +4934,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4754,6 +4947,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to remove tags from',
@@ -4788,6 +4982,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4800,6 +4995,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-destination',
       description: 'Updates properties of a destination',
       options: [
+
         Option(
           name: '--name',
           description: 'The new name of the resource',
@@ -4861,6 +5057,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4873,6 +5070,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-event-configuration-by-resource-types',
       description: 'Update the event configuration based on resource types',
       options: [
+
         Option(
           name: '--device-registration-state',
           description: 'Device registration state resource type event configuration object for enabling and disabling wireless gateway topic',
@@ -4934,6 +5132,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4946,6 +5145,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-fuota-task',
       description: 'Updates properties of a FUOTA task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a FUOTA task',
@@ -5052,6 +5252,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5064,6 +5265,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-log-levels-by-resource-types',
       description: 'Set default log level, or log levels by resource types. This can be for wireless device log options or wireless gateways log options and is used to control the log messages that\'ll be displayed in CloudWatch',
       options: [
+
         Option(
           name: '--default-log-level',
           description: 'The log level for a log message. The log levels can be disabled, or set to ERROR to display less verbose logs containing only error information, or to INFO for more detailed logs',
@@ -5116,6 +5318,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5128,6 +5331,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-metric-configuration',
       description: 'Update the summary metric configuration',
       options: [
+
         Option(
           name: '--summary-metric',
           description: 'The value to be used to set summary metric configuration',
@@ -5153,6 +5357,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5165,6 +5370,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-multicast-group',
       description: 'Updates properties of a multicast group session',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the multicast group',
@@ -5217,6 +5423,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5229,6 +5436,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-network-analyzer-configuration',
       description: 'Update network analyzer configuration',
       options: [
+
         Option(
           name: '--configuration-name',
           description: 'Name of the network analyzer configuration',
@@ -5326,6 +5534,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5338,6 +5547,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-partner-account',
       description: 'Updates properties of a partner account',
       options: [
+
         Option(
           name: '--sidewalk',
           description: 'The Sidewalk account credentials',
@@ -5381,6 +5591,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5393,6 +5604,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-position',
       description: 'Update the position information of a resource.  This action is no longer supported. Calls to update the position information should use the UpdateResourcePosition API operation instead',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'Resource identifier of the resource for which position is updated',
@@ -5436,6 +5648,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5448,6 +5661,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-resource-event-configuration',
       description: 'Update the event configuration for a particular resource identifier',
       options: [
+
         Option(
           name: '--identifier',
           description: 'Resource identifier to opt in for event messaging',
@@ -5536,6 +5750,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5548,6 +5763,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-resource-position',
       description: 'Update the position information of a given wireless device or a wireless gateway resource. The position coordinates are based on the  World Geodetic System (WGS84)',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type',
@@ -5591,6 +5807,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5603,6 +5820,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-wireless-device',
       description: 'Updates properties of a wireless device',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to update',
@@ -5673,6 +5891,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5685,6 +5904,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-wireless-device-import-task',
       description: 'Update an import task to add more devices to the task',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the import task to be updated',
@@ -5719,6 +5939,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5731,6 +5952,7 @@ final FigSpec iotwirelessSpec = FigSpec(
       name: 'update-wireless-gateway',
       description: 'Updates properties of a wireless gateway',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the resource to update',
@@ -5801,6 +6023,7 @@ final FigSpec iotwirelessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

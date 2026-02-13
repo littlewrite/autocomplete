@@ -9,10 +9,12 @@ final FigSpec backupSpec = FigSpec(
   name: 'backup',
   description: 'Backup Backup is a unified backup service designed to protect Amazon Web Services services and their associated data. Backup simplifies the creation, migration, restoration, and deletion of backups, while also providing reporting and auditing',
   subcommands: [
+
     Subcommand(
       name: 'cancel-legal-hold',
       description: 'Removes the specified legal hold on a recovery point. This action can only be performed by a user with sufficient permissions',
       options: [
+
         Option(
           name: '--legal-hold-id',
           description: 'The ID of the legal hold',
@@ -56,6 +58,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'create-backup-plan',
       description: 'Creates a backup plan using a backup plan name and backup rules. A backup plan is a document that contains information that Backup uses to schedule tasks that create recovery points for resources. If you call CreateBackupPlan with a plan that already exists, you receive an AlreadyExistsException exception',
       options: [
+
         Option(
           name: '--backup-plan',
           description: 'The body of a backup plan. Includes a BackupPlanName and one or more sets of Rules',
@@ -111,6 +115,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'create-backup-selection',
       description: 'Creates a JSON document that specifies a set of resources to assign to a backup plan. For examples, see Assigning resources programmatically',
       options: [
+
         Option(
           name: '--backup-plan-id',
           description: 'The ID of the backup plan',
@@ -166,6 +172,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'create-backup-vault',
       description: 'Creates a logical container where backups are stored. A CreateBackupVault request includes a name, optionally one or more resource tags, an encryption key, and a request ID.  Do not include sensitive data, such as passport numbers, in the name of a backup vault',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens',
@@ -230,6 +238,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'create-framework',
       description: 'Creates a framework with one or more controls. A framework is a collection of controls that you can use to evaluate your backup practices. By using pre-built customizable controls to define your policies, you can evaluate whether your backup practices comply with your policies and which resources are not yet in compliance',
       options: [
+
         Option(
           name: '--framework-name',
           description: 'The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_)',
@@ -303,6 +313,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -315,6 +326,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'create-legal-hold',
       description: 'Creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a recovery point will fail with an error if one or more active legal holds are on the recovery point',
       options: [
+
         Option(
           name: '--title',
           description: 'The title of the legal hold',
@@ -376,6 +388,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -388,6 +401,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'create-logically-air-gapped-backup-vault',
       description: 'Creates a logical container to where backups may be copied. This request includes a name, the Region, the maximum number of retention days, the minimum number of retention days, and optionally can include tags and a creator request ID.  Do not include sensitive data, such as passport numbers, in the name of a backup vault',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created',
@@ -449,6 +463,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -461,6 +476,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'create-report-plan',
       description: 'Creates a report plan. A report plan is a document that contains information about the contents of the report and where Backup will deliver it. If you call CreateReportPlan with a plan that already exists, you receive an AlreadyExistsException exception',
       options: [
+
         Option(
           name: '--report-plan-name',
           description: 'The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_)',
@@ -531,6 +547,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -543,6 +560,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'create-restore-testing-plan',
       description: 'Creates a restore testing plan. The first of two steps to create a restore testing plan. After this request is successful, finish the procedure using CreateRestoreTestingSelection',
       options: [
+
         Option(
           name: '--creator-request-id',
           description: 'This is a unique string that identifies the request and allows failed requests to be retriedwithout the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or \'-_.\' characters',
@@ -586,6 +604,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -598,6 +617,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'create-restore-testing-selection',
       description: 'This request can be sent after CreateRestoreTestingPlan request returns successfully. This is the second part of creating a resource testing plan, and it must be completed sequentially. This consists of RestoreTestingSelectionName, ProtectedResourceType, and one of the following:    ProtectedResourceArns     ProtectedResourceConditions    Each protected resource type can have one single value. A restore testing selection can include a wildcard value ("*") for ProtectedResourceArns along with ProtectedResourceConditions. Alternatively, you can include up to 30 specific protected resource ARNs in ProtectedResourceArns. Cannot select by both protected resource types AND specific ARNs. Request will fail if both are included',
       options: [
+
         Option(
           name: '--creator-request-id',
           description: 'This is an optional unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. If used, this parameter must contain 1 to 50 alphanumeric or \'-_.\' characters',
@@ -641,6 +661,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -653,6 +674,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-backup-plan',
       description: 'Deletes a backup plan. A backup plan can only be deleted after all associated selections of resources have been deleted. Deleting a backup plan deletes the current version of a backup plan. Previous versions, if any, will still exist',
       options: [
+
         Option(
           name: '--backup-plan-id',
           description: 'Uniquely identifies a backup plan',
@@ -678,6 +700,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -690,6 +713,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-backup-selection',
       description: 'Deletes the resource selection associated with a backup plan that is specified by the SelectionId',
       options: [
+
         Option(
           name: '--backup-plan-id',
           description: 'Uniquely identifies a backup plan',
@@ -724,6 +748,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -736,6 +761,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-backup-vault',
       description: 'Deletes the backup vault identified by its name. A vault can be deleted only if it is empty',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -761,6 +787,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -773,6 +800,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-backup-vault-access-policy',
       description: 'Deletes the policy document that manages permissions on a backup vault',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens',
@@ -798,6 +826,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -810,6 +839,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-backup-vault-lock-configuration',
       description: 'Deletes Backup Vault Lock from a backup vault specified by a backup vault name. If the Vault Lock configuration is immutable, then you cannot delete Vault Lock using API operations, and you will receive an InvalidRequestException if you attempt to do so. For more information, see Vault Lock in the Backup Developer Guide',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of the backup vault from which to delete Backup Vault Lock',
@@ -835,6 +865,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -847,6 +878,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-backup-vault-notifications',
       description: 'Deletes event notifications for the specified backup vault',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created',
@@ -872,6 +904,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -884,6 +917,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-framework',
       description: 'Deletes the framework specified by a framework name',
       options: [
+
         Option(
           name: '--framework-name',
           description: 'The unique name of a framework',
@@ -909,6 +943,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -921,6 +956,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-recovery-point',
       description: 'Deletes the recovery point specified by a recovery point ID. If the recovery point ID belongs to a continuous backup, calling this endpoint deletes the existing continuous backup and stops future continuous backup. When an IAM role\'s permissions are insufficient to call this API, the service sends back an HTTP 200 response with an empty HTTP body, but the recovery point is not deleted. Instead, it enters an EXPIRED state.  EXPIRED recovery points can be deleted with this API once the IAM role has the iam:CreateServiceLinkedRole action. To learn more about adding this role, see  Troubleshooting manual deletions. If the user or role is deleted or the permission within the role is removed, the deletion will not be successful and will enter an EXPIRED state',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -955,6 +991,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -967,6 +1004,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-report-plan',
       description: 'Deletes the report plan specified by a report plan name',
       options: [
+
         Option(
           name: '--report-plan-name',
           description: 'The unique name of a report plan',
@@ -992,6 +1030,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1004,6 +1043,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-restore-testing-plan',
       description: 'This request deletes the specified restore testing plan. Deletion can only successfully occur if all associated restore testing selections are deleted first',
       options: [
+
         Option(
           name: '--restore-testing-plan-name',
           description: 'Required unique name of the restore testing plan you wish to delete',
@@ -1029,6 +1069,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1041,6 +1082,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'delete-restore-testing-selection',
       description: 'Input the Restore Testing Plan name and Restore Testing Selection name. All testing selections associated with a restore testing plan must be deleted before the restore testing plan can be deleted',
       options: [
+
         Option(
           name: '--restore-testing-plan-name',
           description: 'Required unique name of the restore testing plan that contains the restore testing selection you wish to delete',
@@ -1075,6 +1117,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1087,6 +1130,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-backup-job',
       description: 'Returns backup job details for the specified BackupJobId',
       options: [
+
         Option(
           name: '--backup-job-id',
           description: 'Uniquely identifies a request to Backup to back up a resource',
@@ -1112,6 +1156,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1124,6 +1169,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-backup-vault',
       description: 'Returns metadata about a backup vault specified by its name',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -1158,6 +1204,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1170,6 +1217,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-copy-job',
       description: 'Returns metadata associated with creating a copy of a resource',
       options: [
+
         Option(
           name: '--copy-job-id',
           description: 'Uniquely identifies a copy job',
@@ -1195,6 +1243,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1207,6 +1256,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-framework',
       description: 'Returns the framework details for the specified FrameworkName',
       options: [
+
         Option(
           name: '--framework-name',
           description: 'The unique name of a framework',
@@ -1232,6 +1282,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1244,6 +1295,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-global-settings',
       description: 'Describes whether the Amazon Web Services account is opted in to cross-account backup. Returns an error if the account is not a member of an Organizations organization. Example: describe-global-settings --region us-west-2',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1260,6 +1312,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1272,6 +1325,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-protected-resource',
       description: 'Returns information about a saved resource, including the last time it was backed up, its Amazon Resource Name (ARN), and the Amazon Web Services service type of the saved resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type',
@@ -1297,6 +1351,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1309,6 +1364,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-recovery-point',
       description: 'Returns metadata associated with a recovery point, including ID, status, encryption, and lifecycle',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -1352,6 +1408,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1364,6 +1421,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-region-settings',
       description: 'Returns the current service opt-in settings for the Region. If service opt-in is enabled for a service, Backup tries to protect that service\'s resources in this Region, when the resource is included in an on-demand backup or scheduled backup plan. Otherwise, Backup does not try to protect that service\'s resources in this Region',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1380,6 +1438,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1392,6 +1451,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-report-job',
       description: 'Returns the details associated with creating a report as specified by its ReportJobId',
       options: [
+
         Option(
           name: '--report-job-id',
           description: 'The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited',
@@ -1417,6 +1477,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1429,6 +1490,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-report-plan',
       description: 'Returns a list of all report plans for an Amazon Web Services account and Amazon Web Services Region',
       options: [
+
         Option(
           name: '--report-plan-name',
           description: 'The unique name of a report plan',
@@ -1454,6 +1516,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1466,6 +1529,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'describe-restore-job',
       description: 'Returns metadata associated with a restore job that is specified by a job ID',
       options: [
+
         Option(
           name: '--restore-job-id',
           description: 'Uniquely identifies the job that restores a recovery point',
@@ -1491,6 +1555,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1503,6 +1568,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'disassociate-recovery-point',
       description: 'Deletes the specified continuous backup recovery point from Backup and releases control of that continuous backup to the source service, such as Amazon RDS. The source service will continue to create and retain continuous backups using the lifecycle that you specified in your original backup plan. Does not support snapshot backup recovery points',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The unique name of an Backup vault',
@@ -1537,6 +1603,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1549,6 +1616,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'disassociate-recovery-point-from-parent',
       description: 'This action to a specific child (nested) recovery point removes the relationship between the specified recovery point and its parent (composite) recovery point',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where the child (nested) recovery point is stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -1583,6 +1651,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1595,6 +1664,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'export-backup-plan-template',
       description: 'Returns the backup plan that is specified by the plan ID as a backup template',
       options: [
+
         Option(
           name: '--backup-plan-id',
           description: 'Uniquely identifies a backup plan',
@@ -1620,6 +1690,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1632,6 +1703,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-backup-plan',
       description: 'Returns BackupPlan details for the specified BackupPlanId. The details are the body of a backup plan in JSON format, in addition to plan metadata',
       options: [
+
         Option(
           name: '--backup-plan-id',
           description: 'Uniquely identifies a backup plan',
@@ -1666,6 +1738,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1678,6 +1751,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-backup-plan-from-json',
       description: 'Returns a valid JSON document specifying a backup plan or an error',
       options: [
+
         Option(
           name: '--backup-plan-template-json',
           description: 'A customer-supplied backup plan document in JSON format',
@@ -1703,6 +1777,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1715,6 +1790,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-backup-plan-from-template',
       description: 'Returns the template specified by its templateId as a backup plan',
       options: [
+
         Option(
           name: '--backup-plan-template-id',
           description: 'Uniquely identifies a stored backup plan template',
@@ -1740,6 +1816,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1752,6 +1829,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-backup-selection',
       description: 'Returns selection metadata and a document in JSON format that specifies a list of resources that are associated with a backup plan',
       options: [
+
         Option(
           name: '--backup-plan-id',
           description: 'Uniquely identifies a backup plan',
@@ -1786,6 +1864,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1798,6 +1877,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-backup-vault-access-policy',
       description: 'Returns the access policy document that is associated with the named backup vault',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -1823,6 +1903,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1835,6 +1916,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-backup-vault-notifications',
       description: 'Returns event notifications for the specified backup vault',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -1860,6 +1942,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1872,6 +1955,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-legal-hold',
       description: 'This action returns details for a specified legal hold. The details are the body of a legal hold in JSON format, in addition to metadata',
       options: [
+
         Option(
           name: '--legal-hold-id',
           description: 'The ID of the legal hold',
@@ -1897,6 +1981,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1909,6 +1994,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-recovery-point-restore-metadata',
       description: 'Returns a set of metadata key-value pairs that were used to create the backup',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -1952,6 +2038,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1964,6 +2051,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-restore-job-metadata',
       description: 'This request returns the metadata for the specified restore job',
       options: [
+
         Option(
           name: '--restore-job-id',
           description: 'This is a unique identifier of a restore job within Backup',
@@ -1989,6 +2077,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2001,6 +2090,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-restore-testing-inferred-metadata',
       description: 'This request returns the minimal required set of metadata needed to start a restore job with secure default settings. BackupVaultName and RecoveryPointArn are required parameters. BackupVaultAccountId is an optional parameter',
       options: [
+
         Option(
           name: '--backup-vault-account-id',
           description: 'The account ID of the specified backup vault',
@@ -2044,6 +2134,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2056,6 +2147,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-restore-testing-plan',
       description: 'Returns RestoreTestingPlan details for the specified RestoreTestingPlanName. The details are the body of a restore testing plan in JSON format, in addition to plan metadata',
       options: [
+
         Option(
           name: '--restore-testing-plan-name',
           description: 'Required unique name of the restore testing plan',
@@ -2081,6 +2173,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2093,6 +2186,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-restore-testing-selection',
       description: 'Returns RestoreTestingSelection, which displays resources and elements of the restore testing plan',
       options: [
+
         Option(
           name: '--restore-testing-plan-name',
           description: 'Required unique name of the restore testing plan',
@@ -2127,6 +2221,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2139,6 +2234,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'get-supported-resource-types',
       description: 'Returns the Amazon Web Services resource types supported by Backup',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2155,6 +2251,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2167,6 +2264,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-backup-job-summaries',
       description: 'This is a request for a summary of backup jobs created or running within the most recent 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter results. This request returns a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Returns the job count for the specified account. If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor\'s account will be returned. Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.  AGGREGATE_ALL aggregates job counts from all accounts within the authenticated organization, then returns the sum',
@@ -2246,6 +2344,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2258,6 +2357,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-backup-jobs',
       description: 'Returns a list of existing backup jobs for an authenticated account for the last 30 days. For a longer period of time, consider using these monitoring tools',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token',
@@ -2418,6 +2518,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2430,6 +2531,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-backup-plan-templates',
       description: 'Lists the backup plan templates',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token',
@@ -2491,6 +2593,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2503,6 +2606,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-backup-plan-versions',
       description: 'Returns version metadata of your backup plans, including Amazon Resource Names (ARNs), backup plan IDs, creation and deletion dates, plan names, and version IDs',
       options: [
+
         Option(
           name: '--backup-plan-id',
           description: 'Uniquely identifies a backup plan',
@@ -2573,6 +2677,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2585,6 +2690,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-backup-plans',
       description: 'Lists the active backup plans for the account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token',
@@ -2654,6 +2760,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2666,6 +2773,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-backup-selections',
       description: 'Returns an array containing metadata of the resources associated with the target backup plan',
       options: [
+
         Option(
           name: '--backup-plan-id',
           description: 'Uniquely identifies a backup plan',
@@ -2736,6 +2844,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2748,6 +2857,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-backup-vaults',
       description: 'Returns a list of recovery point storage containers along with information about them',
       options: [
+
         Option(
           name: '--by-vault-type',
           description: 'This parameter will sort the list of vaults by vault type',
@@ -2826,6 +2936,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2838,6 +2949,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-copy-job-summaries',
       description: 'This request obtains a list of copy jobs created or running within the the most recent 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter results. This request returns a summary that contains Region, Account, State, RestourceType, MessageCategory, StartTime, EndTime, and Count of included jobs',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Returns the job count for the specified account. If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor\'s account will be returned. Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.  AGGREGATE_ALL aggregates job counts from all accounts within the authenticated organization, then returns the sum',
@@ -2917,6 +3029,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2929,6 +3042,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-copy-jobs',
       description: 'Returns metadata about your copy jobs',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token',
@@ -3089,6 +3203,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3101,6 +3216,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-frameworks',
       description: 'Returns a list of all frameworks for an Amazon Web Services account and Amazon Web Services Region',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data',
@@ -3135,6 +3251,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3147,6 +3264,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-legal-holds',
       description: 'This action returns metadata about active and previous legal holds',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The next item following a partial list of returned resources. For example, if a request is made to return MaxResults number of resources, NextToken allows you to return more items in your list starting at the location pointed to by the next token',
@@ -3208,6 +3326,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3220,6 +3339,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-protected-resources',
       description: 'Returns an array of resources successfully backed up by Backup, including the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token',
@@ -3281,6 +3401,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3293,6 +3414,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-protected-resources-by-backup-vault',
       description: 'This request lists the protected resources corresponding to each backup vault',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The list of protected resources by backup vault within the vault(s) you specify by name',
@@ -3372,6 +3494,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3384,6 +3507,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-recovery-points-by-backup-vault',
       description: 'Returns detailed information about the recovery points stored in a backup vault',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.  Backup vault name might not be available when a supported service creates the backup',
@@ -3517,6 +3641,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3529,6 +3654,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-recovery-points-by-legal-hold',
       description: 'This action returns recovery point ARNs (Amazon Resource Names) of the specified legal hold',
       options: [
+
         Option(
           name: '--legal-hold-id',
           description: 'The ID of the legal hold',
@@ -3599,6 +3725,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3611,6 +3738,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-recovery-points-by-resource',
       description: 'The information about the recovery points of the type specified by a resource Amazon Resource Name (ARN).  For Amazon EFS and Amazon EC2, this action only lists recovery points created by Backup',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type',
@@ -3689,6 +3817,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3701,6 +3830,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-report-jobs',
       description: 'Returns details about your report jobs',
       options: [
+
         Option(
           name: '--by-report-plan-name',
           description: 'Returns only report jobs with the specified report plan name',
@@ -3771,6 +3901,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3783,6 +3914,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-report-plans',
       description: 'Returns a list of your report plans. For detailed information about a single report plan, use DescribeReportPlan',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data',
@@ -3817,6 +3949,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3829,6 +3962,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-restore-job-summaries',
       description: 'This request obtains a summary of restore jobs created or running within the the most recent 30 days. You can include parameters AccountID, State, ResourceType, AggregationPeriod, MaxResults, or NextToken to filter results. This request returns a summary that contains Region, Account, State, RestourceType, MessageCategory, StartTime, EndTime, and Count of included jobs',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Returns the job count for the specified account. If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor\'s account will be returned. Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.  AGGREGATE_ALL aggregates job counts from all accounts within the authenticated organization, then returns the sum',
@@ -3899,6 +4033,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3911,6 +4046,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-restore-jobs',
       description: 'Returns a list of jobs that Backup initiated to restore a saved resource, including details about the recovery process',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token',
@@ -4044,6 +4180,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4056,6 +4193,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-restore-jobs-by-protected-resource',
       description: 'This returns restore jobs that contain the specified protected resource. You must include ResourceArn. You can optionally include NextToken, ByStatus, MaxResults, ByRecoveryPointCreationDateAfter , and ByRecoveryPointCreationDateBefore',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Returns only restore jobs that match the specified resource Amazon Resource Name (ARN)',
@@ -4153,6 +4291,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4165,6 +4304,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-restore-testing-plans',
       description: 'Returns a list of restore testing plans',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to be returned',
@@ -4226,6 +4366,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4238,6 +4379,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-restore-testing-selections',
       description: 'Returns a list of restore testing selections. Can be filtered by MaxResults and RestoreTestingPlanName',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to be returned',
@@ -4308,6 +4450,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4320,6 +4463,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'list-tags',
       description: 'Returns the tags assigned to the resource, such as a target recovery point, backup plan, or backup vault',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for ListTags are recovery points, backup plans, and backup vaults',
@@ -4363,6 +4507,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4375,6 +4520,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'put-backup-vault-access-policy',
       description: 'Sets a resource-based policy that is used to manage access permissions on the target backup vault. Requires a backup vault name and an access policy document in JSON format',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -4409,6 +4555,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4421,6 +4568,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'put-backup-vault-lock-configuration',
       description: 'Applies Backup Vault Lock to a backup vault, preventing attempts to delete any recovery point stored in or created in a backup vault. Vault Lock also prevents attempts to update the lifecycle policy that controls the retention period of any recovery point currently stored in a backup vault. If specified, Vault Lock enforces a minimum and maximum retention period for future backup and copy jobs that target a backup vault.  Backup Vault Lock has been assessed by Cohasset Associates for use in environments that are subject to SEC 17a-4, CFTC, and FINRA regulations. For more information about how Backup Vault Lock relates to these regulations, see the Cohasset Associates Compliance Assessment.   For more information, see Backup Vault Lock',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The Backup Vault Lock configuration that specifies the name of the backup vault it protects',
@@ -4473,6 +4621,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4485,6 +4634,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'put-backup-vault-notifications',
       description: 'Turns on notifications on a backup vault for the specified topic and events',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -4528,6 +4678,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4540,6 +4691,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'put-restore-validation-result',
       description: 'This request allows you to send your independent self-run restore test validation results. RestoreJobId and ValidationStatus are required. Optionally, you can input a ValidationStatusMessage',
       options: [
+
         Option(
           name: '--restore-job-id',
           description: 'This is a unique identifier of a restore job within Backup',
@@ -4583,6 +4735,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4595,6 +4748,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'start-backup-job',
       description: 'Starts an on-demand backup job for the specified resource',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -4692,6 +4846,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4704,6 +4859,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'start-copy-job',
       description: 'Starts a job to create a one-time copy of the specified resource. Does not support continuous backups',
       options: [
+
         Option(
           name: '--recovery-point-arn',
           description: 'An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45',
@@ -4774,6 +4930,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4786,6 +4943,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'start-report-job',
       description: 'Starts an on-demand report job for the specified report plan',
       options: [
+
         Option(
           name: '--report-plan-name',
           description: 'The unique name of a report plan',
@@ -4820,6 +4978,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4832,6 +4991,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'start-restore-job',
       description: 'Recovers the saved resource identified by an Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--recovery-point-arn',
           description: 'An ARN that uniquely identifies a recovery point; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45',
@@ -4901,6 +5061,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4913,6 +5074,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'stop-backup-job',
       description: 'Attempts to cancel a job to create a one-time backup of a resource. This action is not supported for the following services: Amazon FSx for Windows File Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP, Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon Neptune',
       options: [
+
         Option(
           name: '--backup-job-id',
           description: 'Uniquely identifies a request to Backup to back up a resource',
@@ -4938,6 +5100,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4950,6 +5113,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns a set of key-value pairs to a recovery point, backup plan, or backup vault identified by an Amazon Resource Name (ARN). This API is supported for recovery points for resource types including Aurora, Amazon DocumentDB. Amazon EBS, Amazon FSx, Neptune, and Amazon RDS',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource. ARNs that do not include backup are incompatible with tagging. TagResource and UntagResource with invalid ARNs will result in an error. Acceptable ARN content can include arn:aws:backup:us-east. Invalid ARN content may look like arn:aws:ec2:us-east',
@@ -4984,6 +5148,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4996,6 +5161,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a set of key-value pairs from a recovery point, backup plan, or backup vault identified by an Amazon Resource Name (ARN) This API is not supported for recovery points for resource types including Aurora, Amazon DocumentDB. Amazon EBS, Amazon FSx, Neptune, and Amazon RDS',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource. ARNs that do not include backup are incompatible with tagging. TagResource and UntagResource with invalid ARNs will result in an error. Acceptable ARN content can include arn:aws:backup:us-east. Invalid ARN content may look like arn:aws:ec2:us-east',
@@ -5030,6 +5196,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5042,6 +5209,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'update-backup-plan',
       description: 'Updates the specified backup plan. The new version is uniquely identified by its ID',
       options: [
+
         Option(
           name: '--backup-plan-id',
           description: 'The ID of the backup plan',
@@ -5076,6 +5244,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5088,6 +5257,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'update-framework',
       description: 'Updates the specified framework',
       options: [
+
         Option(
           name: '--framework-name',
           description: 'The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_)',
@@ -5140,6 +5310,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5152,6 +5323,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'update-global-settings',
       description: 'Updates whether the Amazon Web Services account is opted in to cross-account backup. Returns an error if the account is not an Organizations management account. Use the DescribeGlobalSettings API to determine the current settings',
       options: [
+
         Option(
           name: '--global-settings',
           description: 'A value for isCrossAccountBackupEnabled and a Region. Example: update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2',
@@ -5177,6 +5349,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5189,6 +5362,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'update-recovery-point-lifecycle',
       description: 'Sets the transition lifecycle of a recovery point. The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. Resource types that can transition to cold storage are listed in the Feature availability by resource table. Backup ignores this expression for other resource types. Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.  If your lifecycle currently uses the parameters DeleteAfterDays and MoveToColdStorageAfterDays, include these parameters and their values when you call this operation. Not including them may result in your plan updating with null values.  This operation does not support continuous backups',
       options: [
+
         Option(
           name: '--backup-vault-name',
           description: 'The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created',
@@ -5232,6 +5406,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5244,6 +5419,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'update-region-settings',
       description: 'Updates the current service opt-in settings for the Region. Use the DescribeRegionSettings API to determine the resource types that are supported',
       options: [
+
         Option(
           name: '--resource-type-opt-in-preference',
           description: 'Updates the list of services along with the opt-in preferences for the Region. If resource assignments are only based on tags, then service opt-in settings are applied. If a resource type is explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included in the backup even if the opt-in is not enabled for that particular service. If both a resource type and tags are specified in a resource assignment, the resource type specified in the backup plan takes priority over the tag condition. Service opt-in settings are disregarded in this situation',
@@ -5278,6 +5454,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5290,6 +5467,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'update-report-plan',
       description: 'Updates the specified report plan',
       options: [
+
         Option(
           name: '--report-plan-name',
           description: 'The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_)',
@@ -5351,6 +5529,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5363,6 +5542,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'update-restore-testing-plan',
       description: 'This request will send changes to your specified restore testing plan. RestoreTestingPlanName cannot be updated after it is created.  RecoveryPointSelection can contain:    Algorithm     ExcludeVaults     IncludeVaults     RecoveryPointTypes     SelectionWindowDays',
       options: [
+
         Option(
           name: '--restore-testing-plan',
           description: 'Specifies the body of a restore testing plan',
@@ -5397,6 +5577,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5409,6 +5590,7 @@ final FigSpec backupSpec = FigSpec(
       name: 'update-restore-testing-selection',
       description: 'Updates the specified restore testing selection. Most elements except the RestoreTestingSelectionName can be updated with this request. You can use either protected resource ARNs or conditions, but not both',
       options: [
+
         Option(
           name: '--restore-testing-plan-name',
           description: 'The restore testing plan name is required to update the indicated testing plan',
@@ -5452,6 +5634,7 @@ final FigSpec backupSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,6 +9,7 @@ final FigSpec dockerSpec = FigSpec(
   name: 'docker',
   description: '*(DEPRECATED)*  Enable Docker CLI access to Google Container Registry',
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -158,6 +159,7 @@ final FigSpec dockerSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

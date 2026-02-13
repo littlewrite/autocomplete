@@ -9,6 +9,7 @@ final FigSpec leafSpec = FigSpec(
   name: 'leaf',
   description: 'Create and interact with your leaf projects',
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Display help for the given command. When no command is given display help for the list command'
@@ -42,6 +43,7 @@ final FigSpec leafSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'completion',
       description: 'Dump the shell completion script'
@@ -96,6 +98,7 @@ final FigSpec leafSpec = FigSpec(
       name: 'serve',
       description: 'Run your Leaf app',
       options: [
+
         Option(
           name: '--port',
           description: 'The port number to run the server on',

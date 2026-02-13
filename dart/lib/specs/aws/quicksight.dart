@@ -9,10 +9,12 @@ final FigSpec quicksightSpec = FigSpec(
   name: 'quicksight',
   description: 'Amazon QuickSight API Reference Amazon QuickSight is a fully managed, serverless business intelligence service for the Amazon Web Services Cloud that makes it easy to extend data and insights to every user in your organization. This API reference contains documentation for a programming interface that you can use to manage Amazon QuickSight',
   subcommands: [
+
     Subcommand(
       name: 'batch-create-topic-reviewed-answer',
       description: 'Creates new reviewed answers for a Q Topic',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that you want to create a reviewed answer in',
@@ -56,6 +58,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'batch-delete-topic-reviewed-answer',
       description: 'Deletes reviewed answers for Q Topic',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that you want to delete a reviewed answers in',
@@ -111,6 +115,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'cancel-ingestion',
       description: 'Cancels an ongoing ingestion of data into SPICE',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -166,6 +172,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-account-customization',
       description: 'Creates Amazon QuickSight customizations for the current Amazon Web Services Region. Currently, you can add a custom default theme by using the CreateAccountCustomization or UpdateAccountCustomization API operation. To further customize Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all new users, see Customizing Amazon QuickSight in the Amazon QuickSight User Guide.  You can create customizations for your Amazon Web Services account or, if you specify a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace always override customizations that apply to an Amazon Web Services account. To find out which customizations apply, use the DescribeAccountCustomization API operation. Before you use the CreateAccountCustomization API operation to add a theme as the namespace default, make sure that you first share the theme with the namespace. If you don\'t share it with the namespace, the theme isn\'t visible to your users even if you make it the default theme. To check if the theme is shared, view the current permissions by using the  DescribeThemePermissions  API operation. To share the theme, grant permissions by using the  UpdateThemePermissions  API operation',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for',
@@ -230,6 +238,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-account-subscription',
       description: 'Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q. The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you don\'t have an Amazon Web Services account, see Sign up for Amazon Web Services in the Amazon QuickSight User Guide. The person who signs up for Amazon QuickSight needs to have the correct Identity and Access Management (IAM) permissions. For more information, see IAM Policy Examples for Amazon QuickSight in the Amazon QuickSight User Guide. If your IAM policy includes both the Subscribe and CreateAccountSubscription actions, make sure that both actions are set to Allow. If either action is set to Deny, the Deny action prevails and your API call fails. You can\'t pass an existing IAM role to access other Amazon Web Services services using this API operation. To pass your existing IAM role to Amazon QuickSight, see Passing IAM roles to Amazon QuickSight in the Amazon QuickSight User Guide. You can\'t set default resource access on the new account from the Amazon QuickSight API. Instead, add default resource access from the Amazon QuickSight console. For more information about setting default resource access to Amazon Web Services services, see Setting default resource access to Amazon Web Services services in the Amazon QuickSight User Guide',
       options: [
+
         Option(
           name: '--edition',
           description: 'The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from ENTERPRISE or ENTERPRISE_AND_Q. If you choose ENTERPRISE_AND_Q, the following parameters are required:    FirstName     LastName     EmailAddress     ContactNumber',
@@ -429,6 +439,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -441,6 +452,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-analysis',
       description: 'Creates an analysis in Amazon QuickSight. Analyses can be created either from a template or from an AnalysisDefinition',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account where you are creating an analysis',
@@ -556,6 +568,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -568,6 +581,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-brand',
       description: 'Creates an Amazon QuickSight brand',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that owns the brand',
@@ -620,6 +634,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -632,6 +647,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-custom-permissions',
       description: 'Creates a custom permissions profile',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that you want to create the custom permissions profile in',
@@ -684,6 +700,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -696,6 +713,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-dashboard',
       description: 'Creates a dashboard from either a template or directly with a DashboardDefinition. To first create a template, see the  CreateTemplate  API operation. A dashboard is an entity in Amazon QuickSight that identifies Amazon QuickSight reports, created from analyses. You can share Amazon QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. If you have the correct permissions, you can create a dashboard from a template that exists in a different Amazon Web Services account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account where you want to create the dashboard',
@@ -847,6 +865,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -859,6 +878,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-data-set',
       description: 'Creates a dataset. This operation doesn\'t support datasets that include uploaded files as a source',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -1019,6 +1039,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1031,6 +1052,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-data-source',
       description: 'Creates a data source',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -1146,6 +1168,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1158,6 +1181,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-folder',
       description: 'Creates an empty shared folder',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account where you want to create the folder',
@@ -1246,6 +1270,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1258,6 +1283,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-folder-membership',
       description: 'Adds an asset, such as a dashboard, analysis, or dataset into a folder',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder',
@@ -1310,6 +1336,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1322,6 +1349,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-group',
       description: 'Use the CreateGroup operation to create a group in Amazon QuickSight. You can create up to 10,000 groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact Amazon Web Services Support. The permissions resource is arn:aws:quicksight:<your-region>:<relevant-aws-account-id>:group/default/<group-name> . The response is a group object',
       options: [
+
         Option(
           name: '--group-name',
           description: 'A name for the group that you want to create',
@@ -1374,6 +1402,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1386,6 +1415,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-group-membership',
       description: 'Adds an Amazon QuickSight user to an Amazon QuickSight group',
       options: [
+
         Option(
           name: '--member-name',
           description: 'The name of the user that you want to add to the group membership',
@@ -1438,6 +1468,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1450,6 +1481,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-iam-policy-assignment',
       description: 'Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To avoid overwriting rules in other namespaces, use assignment names that are unique',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups',
@@ -1520,6 +1552,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1532,6 +1565,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-ingestion',
       description: 'Creates and starts a new SPICE ingestion for a dataset. You can manually refresh datasets in an Enterprise edition account 32 times in a 24-hour period. You can manually refresh datasets in a Standard edition account 8 times in a 24-hour period. Each 24-hour period is measured starting 24 hours before the current date and time. Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an example, see How do I create an IAM policy to control access to Amazon EC2 resources using tags? in the Amazon Web Services Knowledge Center. Tags are visible on the tagged dataset, but not on the ingestion resource',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The ID of the dataset used in the ingestion',
@@ -1584,6 +1618,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1596,6 +1631,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-namespace',
       description: '(Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight. A namespace allows you to isolate the Amazon QuickSight users and groups that are registered for that namespace. Users that access the namespace can share assets only with other users or groups in the same namespace. They can\'t see users and groups in other namespaces. You can create a namespace after your Amazon Web Services account is subscribed to Amazon QuickSight. The namespace must be unique within the Amazon Web Services account. By default, there is a limit of 100 namespaces per Amazon Web Services account. To increase your limit, create a ticket with Amazon Web Services Support',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in',
@@ -1648,6 +1684,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1660,6 +1697,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-refresh-schedule',
       description: 'Creates a refresh schedule for a dataset. You can create up to 5 different schedules for a single dataset',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The ID of the dataset',
@@ -1703,6 +1741,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1715,6 +1754,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-role-membership',
       description: 'Use CreateRoleMembership to add an existing Amazon QuickSight group to an existing role',
       options: [
+
         Option(
           name: '--member-name',
           description: 'The name of the group that you want to add to the role',
@@ -1767,6 +1807,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1779,6 +1820,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-template',
       description: 'Creates a template either from a TemplateDefinition or from an existing Amazon QuickSight analysis or template. You can use the resulting template to create additional dashboards, templates, or analyses. A template is an entity in Amazon QuickSight that encapsulates the metadata required to create an analysis and that you can use to create s dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with the analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account',
@@ -1876,6 +1918,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1888,6 +1931,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-template-alias',
       description: 'Creates a template alias for a template',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the template that you creating an alias for',
@@ -1940,6 +1984,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1952,6 +1997,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-theme',
       description: 'Creates a theme. A theme is set of configuration options for color and layout. Themes apply to analyses and dashboards. For more information, see Using Themes in Amazon QuickSight in the Amazon QuickSight User Guide',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account where you want to store the new theme',
@@ -2040,6 +2086,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2052,6 +2099,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-theme-alias',
       description: 'Creates a theme alias for a theme',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the theme for the new theme alias',
@@ -2104,6 +2152,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2116,6 +2165,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-topic',
       description: 'Creates a new Q topic',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that you want to create a topic in',
@@ -2177,6 +2227,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2189,6 +2240,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-topic-refresh-schedule',
       description: 'Creates a topic refresh schedule',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the topic you\'re creating a refresh schedule for',
@@ -2250,6 +2302,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2262,6 +2315,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'create-vpc-connection',
       description: 'Creates a new VPC connection',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID of the account where you want to create a new VPC connection',
@@ -2350,6 +2404,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2362,6 +2417,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-account-customization',
       description: 'Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for the specified Amazon Web Services account and Amazon QuickSight namespace',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region',
@@ -2396,6 +2452,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2408,6 +2465,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-account-subscription',
       description: 'Use the DeleteAccountSubscription operation to delete an Amazon QuickSight account. This operation will result in an error message if you have configured your account termination protection settings to True. To change this setting and delete your account, call the UpdateAccountSettings API and set the value of the TerminationProtectionEnabled parameter to False, then make another call to the DeleteAccountSubscription API',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID of the account that you want to delete',
@@ -2433,6 +2491,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2445,6 +2504,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-analysis',
       description: 'Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can restore the analysis. If you don\'t specify a recovery window value, the operation defaults to 30 days. Amazon QuickSight attaches a DeletionTime stamp to the response that specifies the end of the recovery window. At the end of the recovery window, Amazon QuickSight deletes the analysis permanently. At any time before recovery window ends, you can use the RestoreAnalysis API operation to remove the DeletionTime stamp and cancel the deletion of the analysis. The analysis remains visible in the API until it\'s deleted, so you can describe it but you can\'t make a template from it. An analysis that\'s scheduled for deletion isn\'t accessible in the Amazon QuickSight console. To access it in the console, restore it. Deleting an analysis doesn\'t delete the dashboards that you publish from it',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account where you want to delete an analysis',
@@ -2496,6 +2556,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2508,6 +2569,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-brand',
       description: 'Deletes an Amazon QuickSight brand',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that owns the brand',
@@ -2542,6 +2604,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2554,6 +2617,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-brand-assignment',
       description: 'Deletes a brand assignment',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that owns the brand assignment',
@@ -2579,6 +2643,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2591,6 +2656,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-custom-permissions',
       description: 'Deletes a custom permissions profile',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the custom permissions profile that you want to delete',
@@ -2625,6 +2691,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2637,6 +2704,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-dashboard',
       description: 'Deletes a dashboard',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard that you\'re deleting',
@@ -2680,6 +2748,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2692,6 +2761,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-data-set',
       description: 'Deletes a dataset',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -2726,6 +2796,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2738,6 +2809,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-data-set-refresh-properties',
       description: 'Deletes the dataset refresh properties of the dataset',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -2772,6 +2844,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2784,6 +2857,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-data-source',
       description: 'Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data source',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -2818,6 +2892,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2830,6 +2905,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-default-q-business-application',
       description: 'Deletes a linked Amazon Q Business application from an Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon QuickSight account that you want to disconnect from a Amazon Q Business application',
@@ -2864,6 +2940,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2876,6 +2953,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-folder',
       description: 'Deletes an empty folder',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder',
@@ -2910,6 +2988,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2922,6 +3001,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-folder-membership',
       description: 'Removes an asset, such as a dashboard, analysis, or dataset, from a folder',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder',
@@ -2974,6 +3054,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2986,6 +3067,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-group',
       description: 'Removes a user group from Amazon QuickSight',
       options: [
+
         Option(
           name: '--group-name',
           description: 'The name of the group that you want to delete',
@@ -3029,6 +3111,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3041,6 +3124,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-group-membership',
       description: 'Removes a user from a group so that the user is no longer a member of the group',
       options: [
+
         Option(
           name: '--member-name',
           description: 'The name of the user that you want to delete from the group membership',
@@ -3093,6 +3177,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3105,6 +3190,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-iam-policy-assignment',
       description: 'Deletes an existing IAM policy assignment',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID where you want to delete the IAM policy assignment',
@@ -3148,6 +3234,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3160,6 +3247,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-identity-propagation-config',
       description: 'Deletes all access scopes and authorized targets that are associated with a service from the Amazon QuickSight IAM Identity Center application. This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that you want to delete an identity propagation configuration from',
@@ -3194,6 +3282,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3206,6 +3295,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-namespace',
       description: 'Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these assets, you use the API operations for the relevant asset',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from',
@@ -3240,6 +3330,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3252,6 +3343,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-refresh-schedule',
       description: 'Deletes a refresh schedule from a dataset',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The ID of the dataset',
@@ -3295,6 +3387,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3307,6 +3400,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-role-custom-permission',
       description: 'Removes custom permissions from the role',
       options: [
+
         Option(
           name: '--role',
           description: 'The role that you want to remove permissions from',
@@ -3350,6 +3444,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3362,6 +3457,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-role-membership',
       description: 'Removes a group from a role',
       options: [
+
         Option(
           name: '--member-name',
           description: 'The name of the group',
@@ -3414,6 +3510,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3426,6 +3523,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-template',
       description: 'Deletes a template',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the template that you\'re deleting',
@@ -3469,6 +3567,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3481,6 +3580,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-template-alias',
       description: 'Deletes the item that the specified template alias points to. If you provide a specific alias, you delete the version of the template that the alias points to',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the item to delete',
@@ -3524,6 +3624,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3536,6 +3637,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-theme',
       description: 'Deletes a theme',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the theme that you\'re deleting',
@@ -3579,6 +3681,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3591,6 +3694,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-theme-alias',
       description: 'Deletes the version of the theme that the specified theme alias points to. If you provide a specific alias, you delete the version of the theme that the alias points to',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the theme alias to delete',
@@ -3634,6 +3738,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3646,6 +3751,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-topic',
       description: 'Deletes a topic',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the topic that you want to delete',
@@ -3680,6 +3786,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3692,6 +3799,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-topic-refresh-schedule',
       description: 'Deletes a topic refresh schedule',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -3735,6 +3843,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3747,6 +3856,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-user',
       description: 'Deletes the Amazon QuickSight user that is associated with the identity of the IAM user or role that\'s making the call. The IAM user isn\'t deleted as a result of this call',
       options: [
+
         Option(
           name: '--user-name',
           description: 'The name of the user that you want to delete',
@@ -3790,6 +3900,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3802,6 +3913,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-user-by-principal-id',
       description: 'Deletes a user identified by its principal ID',
       options: [
+
         Option(
           name: '--principal-id',
           description: 'The principal ID of the user',
@@ -3845,6 +3957,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3857,6 +3970,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-user-custom-permission',
       description: 'Deletes a custom permissions profile from a user',
       options: [
+
         Option(
           name: '--user-name',
           description: 'The username of the user that you want to remove custom permissions from',
@@ -3900,6 +4014,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3912,6 +4027,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'delete-vpc-connection',
       description: 'Deletes a VPC connection',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID of the account where you want to delete a VPC connection',
@@ -3946,6 +4062,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3958,6 +4075,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-account-customization',
       description: 'Describes the customizations associated with the provided Amazon Web Services account and Amazon Amazon QuickSight namespace in an Amazon Web Services Region. The Amazon QuickSight console evaluates which customizations to apply by running this API operation with the Resolved flag included.  To determine what customizations display when you run this command, it can help to visualize the relationship of the entities involved.     Amazon Web Services account - The Amazon Web Services account exists at the top of the hierarchy. It has the potential to use all of the Amazon Web Services Regions and Amazon Web Services Services. When you subscribe to Amazon QuickSight, you choose one Amazon Web Services Region to use as your home Region. That\'s where your free SPICE capacity is located. You can use Amazon QuickSight in any supported Amazon Web Services Region.     Amazon Web Services Region - In each Amazon Web Services Region where you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as a separate instance of the same service. If you have a user directory, it resides in us-east-1, which is the US East (N. Virginia). Generally speaking, these users have access to Amazon QuickSight in any Amazon Web Services Region, unless they are constrained to a namespace.  To run the command in a different Amazon Web Services Region, you change your Region settings. If you\'re using the CLI, you can use one of the following options:   Use command line options.    Use named profiles.    Run aws configure to change your default Amazon Web Services Region. Use Enter to key the same settings for your keys. For more information, see Configuring the CLI.      Namespace - A QuickSight namespace is a partition that contains users and assets (data sources, datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also be part of the same namespace. People who share a namespace are completely isolated from users and assets in other namespaces, even if they are in the same Amazon Web Services account and Amazon Web Services Region.    Applied customizations - Within an Amazon Web Services Region, a set of Amazon QuickSight customizations can apply to an Amazon Web Services account or to a namespace. Settings that you apply to a namespace override settings that you apply to an Amazon Web Services account. All settings are isolated to a single Amazon Web Services Region. To apply them in other Amazon Web Services Regions, run the CreateAccountCustomization command in each Amazon Web Services Region where you want to apply the same customizations',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for',
@@ -4000,6 +4118,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4012,6 +4131,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-account-settings',
       description: 'Describes the settings that were used when your Amazon QuickSight subscription was first created in this Amazon Web Services account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the settings that you want to list',
@@ -4037,6 +4157,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4049,6 +4170,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-account-subscription',
       description: 'Use the DescribeAccountSubscription operation to receive a description of an Amazon QuickSight account\'s subscription. A successful API call returns an AccountInfo object that includes an account\'s name, subscription status, authentication type, edition, and notification email address',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID associated with your Amazon QuickSight account',
@@ -4074,6 +4196,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4086,6 +4209,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-analysis',
       description: 'Provides a summary of the metadata for an analysis',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in',
@@ -4120,6 +4244,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4132,6 +4257,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-analysis-definition',
       description: 'Provides a detailed description of the definition of an analysis.  If you do not need to know details about the content of an Analysis, for instance if you are trying to check the status of a recently created or updated Analysis, use the  DescribeAnalysis  instead',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in',
@@ -4166,6 +4292,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4178,6 +4305,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-analysis-permissions',
       description: 'Provides the read and write permissions for an analysis',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the analysis whose permissions you\'re describing. You must be using the Amazon Web Services account that the analysis is in',
@@ -4212,6 +4340,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4224,6 +4353,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-asset-bundle-export-job',
       description: 'Describes an existing export job. Poll job descriptions after a job starts to know the status of the job. When a job succeeds, a URL is provided to download the exported assets\' data from. Download URLs are valid for five minutes after they are generated. You can call the DescribeAssetBundleExportJob API for a new download URL as needed. Job descriptions are available for 14 days after the job starts',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account the export job is executed in',
@@ -4258,6 +4388,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4270,6 +4401,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-asset-bundle-import-job',
       description: 'Describes an existing import job. Poll job descriptions after starting a job to know when it has succeeded or failed. Job descriptions are available for 14 days after job starts',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account the import job was executed in',
@@ -4304,6 +4436,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4316,6 +4449,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-brand',
       description: 'Describes a brand',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that owns the brand',
@@ -4359,6 +4493,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4371,6 +4506,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-brand-assignment',
       description: 'Describes a brand assignment',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that owns the brand assignment',
@@ -4396,6 +4532,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4408,6 +4545,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-brand-published-version',
       description: 'Describes the published version of the brand',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that owns the brand',
@@ -4442,6 +4580,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4454,6 +4593,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-custom-permissions',
       description: 'Describes a custom permissions profile',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the custom permissions profile that you want described',
@@ -4488,6 +4628,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4500,6 +4641,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-dashboard',
       description: 'Provides a summary for a dashboard',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard that you\'re describing',
@@ -4552,6 +4694,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4564,6 +4707,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-dashboard-definition',
       description: 'Provides a detailed description of the definition of a dashboard.  If you do not need to know details about the content of a dashboard, for instance if you are trying to check the status of a recently created or updated dashboard, use the  DescribeDashboard  instead',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard that you\'re describing',
@@ -4616,6 +4760,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4628,6 +4773,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-dashboard-permissions',
       description: 'Describes read and write permissions for a dashboard',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard that you\'re describing permissions for',
@@ -4662,6 +4808,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4674,6 +4821,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-dashboard-snapshot-job',
       description: 'Describes an existing snapshot job. Poll job descriptions after a job starts to know the status of the job. For information on available status codes, see JobStatus',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that the dashboard snapshot job is executed in',
@@ -4717,6 +4865,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4729,6 +4878,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-dashboard-snapshot-job-result',
       description: 'Describes the result of an existing snapshot job that has finished running. A finished snapshot job will return a COMPLETED or FAILED status when you poll the job with a DescribeDashboardSnapshotJob API call. If the job has not finished running, this operation returns a message that says Dashboard Snapshot Job with id <SnapshotjobId> has not reached a terminal state',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that the dashboard snapshot job is executed in',
@@ -4772,6 +4922,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4784,6 +4935,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-dashboards-qa-configuration',
       description: 'Describes an existing dashboard QA configuration',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard QA configuration that you want described',
@@ -4809,6 +4961,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4821,6 +4974,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-data-set',
       description: 'Describes a dataset. This operation doesn\'t support datasets that include uploaded files as a source',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -4855,6 +5009,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4867,6 +5022,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-data-set-permissions',
       description: 'Describes the permissions on a dataset. The permissions resource is arn:aws:quicksight:region:aws-account-id:dataset/data-set-id',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -4901,6 +5057,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4913,6 +5070,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-data-set-refresh-properties',
       description: 'Describes the refresh properties of a dataset',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -4947,6 +5105,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4959,6 +5118,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-data-source',
       description: 'Describes a data source',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -4993,6 +5153,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5005,6 +5166,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-data-source-permissions',
       description: 'Describes the resource permissions for a data source',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -5039,6 +5201,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5051,6 +5214,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-default-q-business-application',
       description: 'Describes a Amazon Q Business application that is linked to an Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon QuickSight account that is linked to the Amazon Q Business application that you want described',
@@ -5085,6 +5249,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5097,6 +5262,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-folder',
       description: 'Describes a folder',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder',
@@ -5131,6 +5297,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5143,6 +5310,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-folder-permissions',
       description: 'Describes permissions for a folder',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder',
@@ -5231,6 +5399,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5243,6 +5412,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-folder-resolved-permissions',
       description: 'Describes the folder resolved permissions. Permissions consists of both folder direct permissions and the inherited permissions from the ancestor folders',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder',
@@ -5331,6 +5501,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5343,6 +5514,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-group',
       description: 'Returns an Amazon QuickSight group\'s description and Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--group-name',
           description: 'The name of the group that you want to describe',
@@ -5386,6 +5558,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5398,6 +5571,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-group-membership',
       description: 'Use the DescribeGroupMembership operation to determine if a user is a member of the specified group. If the user exists and is a member of the specified group, an associated GroupMember object is returned',
       options: [
+
         Option(
           name: '--member-name',
           description: 'The user name of the user that you want to search for',
@@ -5450,6 +5624,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5462,6 +5637,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-iam-policy-assignment',
       description: 'Describes an existing IAM policy assignment, as specified by the assignment name',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the assignment that you want to describe',
@@ -5505,6 +5681,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5517,6 +5694,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-ingestion',
       description: 'Describes a SPICE ingestion',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -5560,6 +5738,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5572,6 +5751,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-ip-restriction',
       description: 'Provides a summary and status of IP rules',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the IP rules',
@@ -5597,6 +5777,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5609,6 +5790,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-key-registration',
       description: 'Describes all customer managed key registrations in a Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the customer managed key registration that you want to describe',
@@ -5642,6 +5824,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5654,6 +5837,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-namespace',
       description: 'Describes the current namespace',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe',
@@ -5688,6 +5872,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5700,6 +5885,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-q-personalization-configuration',
       description: 'Describes a personalization configuration',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the personalization configuration that the user wants described',
@@ -5725,6 +5911,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5737,6 +5924,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-quick-sight-q-search-configuration',
       description: 'Describes the state of a Amazon QuickSight Q Search configuration',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the Amazon QuickSight Q Search configuration that the user wants described',
@@ -5762,6 +5950,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5774,6 +5963,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-refresh-schedule',
       description: 'Provides a summary of a refresh schedule',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -5817,6 +6007,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5829,6 +6020,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-role-custom-permission',
       description: 'Describes all custom permissions that are mapped to a role',
       options: [
+
         Option(
           name: '--role',
           description: 'The name of the role whose permissions you want described',
@@ -5872,6 +6064,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5884,6 +6077,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-template',
       description: 'Describes a template\'s metadata',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the template that you\'re describing',
@@ -5936,6 +6130,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5948,6 +6143,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-template-alias',
       description: 'Describes the template alias for a template',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the template alias that you\'re describing',
@@ -5991,6 +6187,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6003,6 +6200,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-template-definition',
       description: 'Provides a detailed description of the definition of a template.  If you do not need to know details about the content of a template, for instance if you are trying to check the status of a recently created or updated template, use the  DescribeTemplate  instead',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the template. You must be using the Amazon Web Services account that the template is in',
@@ -6055,6 +6253,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6067,6 +6266,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-template-permissions',
       description: 'Describes read and write permissions on a template',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the template that you\'re describing',
@@ -6101,6 +6301,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6113,6 +6314,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-theme',
       description: 'Describes a theme',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the theme that you\'re describing',
@@ -6165,6 +6367,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6177,6 +6380,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-theme-alias',
       description: 'Describes the alias for a theme',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the theme alias that you\'re describing',
@@ -6220,6 +6424,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6232,6 +6437,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-theme-permissions',
       description: 'Describes the read and write permissions for a theme',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the theme that you\'re describing',
@@ -6266,6 +6472,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6278,6 +6485,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-topic',
       description: 'Describes a topic',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -6312,6 +6520,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6324,6 +6533,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-topic-permissions',
       description: 'Describes the permissions of a topic',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the topic that you want described',
@@ -6358,6 +6568,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6370,6 +6581,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-topic-refresh',
       description: 'Describes the status of a topic refresh',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe',
@@ -6413,6 +6625,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6425,6 +6638,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-topic-refresh-schedule',
       description: 'Deletes a topic refresh schedule',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -6468,6 +6682,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6480,6 +6695,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-user',
       description: 'Returns information about a user, given the user name',
       options: [
+
         Option(
           name: '--user-name',
           description: 'The name of the user that you want to describe',
@@ -6523,6 +6739,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6535,6 +6752,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'describe-vpc-connection',
       description: 'Describes a VPC connection',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID of the account that contains the VPC connection that you want described',
@@ -6569,6 +6787,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6581,6 +6800,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'generate-embed-url-for-anonymous-user',
       description: 'Generates an embed URL that you can use to embed an Amazon QuickSight dashboard or visual in your website, without having to register any reader users. Before you use this action, make sure that you have configured the dashboards and permissions. The following rules apply to the generated URL:   It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.   The URL validity period should not be confused with the actual session lifetime that can be customized using the  SessionLifetimeInMinutes  parameter. The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours.   You are charged only when the URL is used or there is interaction with Amazon QuickSight.   For more information, see Embedded Analytics in the Amazon QuickSight User Guide. For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the Amazon QuickSight Developer Portal',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the dashboard that you\'re embedding',
@@ -6660,6 +6880,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6672,6 +6893,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'generate-embed-url-for-registered-user',
       description: 'Generates an embed URL that you can use to embed an Amazon QuickSight experience in your website. This action can be used for any type of user registered in an Amazon QuickSight account. Before you use this action, make sure that you have configured the relevant Amazon QuickSight resource and permissions. The following rules apply to the generated URL:   It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.   The URL validity period should not be confused with the actual session lifetime that can be customized using the  SessionLifetimeInMinutes  parameter. The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours.   You are charged only when the URL is used or there is interaction with Amazon QuickSight.   For more information, see Embedded Analytics in the Amazon QuickSight User Guide. For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the Amazon QuickSight Developer Portal',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the dashboard that you\'re embedding',
@@ -6733,6 +6955,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6745,6 +6968,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'generate-embed-url-for-registered-user-with-identity',
       description: 'Generates an embed URL that you can use to embed an Amazon QuickSight experience in your website. This action can be used for any type of user that is registered in an Amazon QuickSight account that uses IAM Identity Center for authentication. This API requires identity-enhanced IAM Role sessions for the authenticated user that the API call is being made for. This API uses trusted identity propagation to ensure that an end user is authenticated and receives the embed URL that is specific to that user. The IAM Identity Center application that the user has logged into needs to have trusted Identity Propagation enabled for Amazon QuickSight with the scope value set to quicksight:read. Before you use this action, make sure that you have configured the relevant Amazon QuickSight resource and permissions',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services registered user',
@@ -6797,6 +7021,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6809,6 +7034,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'get-dashboard-embed-url',
       description: 'Generates a temporary session URL and authorization code(bearer token) that you can use to embed an Amazon QuickSight read-only dashboard in your website or application. Before you use this command, make sure that you have configured the dashboards and permissions.  Currently, you can use GetDashboardEmbedURL only from the server, not from the user\'s browser. The following rules apply to the generated URL:   They must be used together.   They can be used one time only.   They are valid for 5 minutes after you run this command.   You are charged only when the URL is used or there is interaction with Amazon QuickSight.   The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum). You can use the optional SessionLifetimeInMinutes parameter to customize session duration.   For more information, see Embedding Analytics Using GetDashboardEmbedUrl in the Amazon QuickSight User Guide. For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the Amazon QuickSight Developer Portal',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the dashboard that you\'re embedding',
@@ -6912,6 +7138,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6924,6 +7151,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'get-session-embed-url',
       description: 'Generates a session URL and authorization code that you can use to embed the Amazon Amazon QuickSight console in your web server code. Use GetSessionEmbedUrl where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who access an embedded Amazon QuickSight console need belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the  UpdateUser  API operation. Use  RegisterUser  API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the Amazon QuickSight User Guide:    Embedding Analytics     Customizing Access to the Amazon QuickSight Console',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription',
@@ -6976,6 +7204,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6988,6 +7217,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-analyses',
       description: 'Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the analyses',
@@ -7058,6 +7288,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7070,6 +7301,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-asset-bundle-export-jobs',
       description: 'Lists all asset bundle export jobs that have been taken place in the last 14 days. Jobs created more than 14 days ago are deleted forever and are not returned. If you are using the same job ID for multiple jobs, ListAssetBundleExportJobs only returns the most recent job that uses the repeated job ID',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that the export jobs were executed in',
@@ -7140,6 +7372,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7152,6 +7385,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-asset-bundle-import-jobs',
       description: 'Lists all asset bundle import jobs that have taken place in the last 14 days. Jobs created more than 14 days ago are deleted forever and are not returned. If you are using the same job ID for multiple jobs, ListAssetBundleImportJobs only returns the most recent job that uses the repeated job ID',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that the import jobs were executed in',
@@ -7222,6 +7456,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7234,6 +7469,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-brands',
       description: 'Lists all brands in an Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that owns the brands that you want to list',
@@ -7304,6 +7540,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7316,6 +7553,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-custom-permissions',
       description: 'Returns a list of all the custom permissions profiles',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the custom permissions profiles that you want to list',
@@ -7386,6 +7624,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7398,6 +7637,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-dashboard-versions',
       description: 'Lists all the versions of the dashboards in the Amazon QuickSight subscription',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard that you\'re listing versions for',
@@ -7477,6 +7717,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7489,6 +7730,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-dashboards',
       description: 'Lists dashboards in an Amazon Web Services account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboards that you\'re listing',
@@ -7559,6 +7801,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7571,6 +7814,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-data-sets',
       description: 'Lists all of the datasets belonging to the current Amazon Web Services account in an Amazon Web Services Region. The permissions resource is arn:aws:quicksight:region:aws-account-id:dataset/*',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -7641,6 +7885,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7653,6 +7898,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-data-sources',
       description: 'Lists data sources in current Amazon Web Services Region that belong to this Amazon Web Services account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -7723,6 +7969,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7735,6 +7982,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-folder-members',
       description: 'List all assets (DASHBOARD, ANALYSIS, and DATASET) in a folder',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder',
@@ -7814,6 +8062,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7826,6 +8075,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-folders',
       description: 'Lists all folders in an account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder',
@@ -7896,6 +8146,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7908,6 +8159,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-folders-for-resource',
       description: 'List all folders that a resource is a member of',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the resource',
@@ -7987,6 +8239,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7999,6 +8252,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-group-memberships',
       description: 'Lists member users in a group',
       options: [
+
         Option(
           name: '--group-name',
           description: 'The name of the group that you want to see a membership list of',
@@ -8087,6 +8341,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8099,6 +8354,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-groups',
       description: 'Lists all user groups in Amazon QuickSight',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account',
@@ -8178,6 +8434,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8190,6 +8447,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-iam-policy-assignments',
       description: 'Lists the IAM policy assignments in the current Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains these IAM policy assignments',
@@ -8278,6 +8536,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8290,6 +8549,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-iam-policy-assignments-for-user',
       description: 'Lists all of the IAM policy assignments, including the Amazon Resource Names (ARNs), for the IAM policies assigned to the specified user and group, or groups that the user belongs to',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the assignments',
@@ -8378,6 +8638,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8390,6 +8651,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-identity-propagation-configs',
       description: 'Lists all services and authorized targets that the Amazon QuickSight IAM Identity Center application can access. This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contain the identity propagation configurations of',
@@ -8433,6 +8695,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8445,6 +8708,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-ingestions',
       description: 'Lists the history of SPICE ingestions for a dataset',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The ID of the dataset used in the ingestion',
@@ -8524,6 +8788,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8536,6 +8801,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-namespaces',
       description: 'Lists the namespaces for the specified Amazon Web Services account. This operation doesn\'t list deleted namespaces',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list',
@@ -8606,6 +8872,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8618,6 +8885,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-refresh-schedules',
       description: 'Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -8652,6 +8920,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8664,6 +8933,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-role-memberships',
       description: 'Lists all groups that are associated with a role',
       options: [
+
         Option(
           name: '--role',
           description: 'The name of the role',
@@ -8752,6 +9022,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8764,6 +9035,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags assigned to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want a list of tags for',
@@ -8789,6 +9061,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8801,6 +9074,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-template-aliases',
       description: 'Lists all the aliases of a template',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the template aliases that you\'re listing',
@@ -8880,6 +9154,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8892,6 +9167,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-template-versions',
       description: 'Lists all the versions of the templates in the current Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the templates that you\'re listing',
@@ -8971,6 +9247,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8983,6 +9260,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-templates',
       description: 'Lists all the templates in the current Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the templates that you\'re listing',
@@ -9053,6 +9331,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9065,6 +9344,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-theme-aliases',
       description: 'Lists all the aliases of a theme',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the theme aliases that you\'re listing',
@@ -9117,6 +9397,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9129,6 +9410,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-theme-versions',
       description: 'Lists all the versions of the themes in the current Amazon Web Services account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the themes that you\'re listing',
@@ -9208,6 +9490,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9220,6 +9503,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-themes',
       description: 'Lists all the themes in the current Amazon Web Services account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the themes that you\'re listing',
@@ -9299,6 +9583,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9311,6 +9596,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-topic-refresh-schedules',
       description: 'Lists all of the refresh schedules for a topic',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want described',
@@ -9345,6 +9631,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9357,6 +9644,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-topic-reviewed-answers',
       description: 'Lists all reviewed answers for a Q Topic',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that containd the reviewed answers that you want listed',
@@ -9391,6 +9679,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9403,6 +9692,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-topics',
       description: 'Lists all of the topics within an account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the topics that you want to list',
@@ -9446,6 +9736,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9458,6 +9749,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-user-groups',
       description: 'Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of',
       options: [
+
         Option(
           name: '--user-name',
           description: 'The Amazon QuickSight user name that you want to list group memberships for',
@@ -9546,6 +9838,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9558,6 +9851,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-users',
       description: 'Returns a list of all of the Amazon QuickSight users belonging to this account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account',
@@ -9637,6 +9931,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9649,6 +9944,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'list-vpc-connections',
       description: 'Lists all of the VPC connections in the current set Amazon Web Services Region of an Amazon Web Services account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID of the account that contains the VPC connections that you want to list',
@@ -9692,6 +9988,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9704,6 +10001,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'predict-qa-results',
       description: 'Predicts existing visuals or generates new visuals to answer a given query',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that the user wants to execute Predict QA results in',
@@ -9765,6 +10063,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9777,6 +10076,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'put-data-set-refresh-properties',
       description: 'Creates or updates the dataset refresh properties for the dataset',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -9820,6 +10120,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9832,6 +10133,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'register-user',
       description: 'Creates an Amazon QuickSight user whose identity is associated with the Identity and Access Management (IAM) identity or role specified in the request. When you register a new user from the Amazon QuickSight API, Amazon QuickSight generates a registration URL. The user accesses this registration URL to create their account. Amazon QuickSight doesn\'t send a registration email to users who are registered from the Amazon QuickSight API. If you want new users to receive a registration email, then add those users in the Amazon QuickSight console. For more information on registering a new user in the Amazon QuickSight console, see  Inviting users to access Amazon QuickSight',
       options: [
+
         Option(
           name: '--identity-type',
           description: 'The identity type that your Amazon QuickSight account uses to manage the identity of users',
@@ -9965,6 +10267,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9977,6 +10280,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'restore-analysis',
       description: 'Restores an analysis',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the analysis',
@@ -10019,6 +10323,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10031,6 +10336,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'search-analyses',
       description: 'Searches for analyses that belong to the user specified in the filter.  This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the analyses that you\'re searching for',
@@ -10110,6 +10416,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10122,6 +10429,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'search-dashboards',
       description: 'Searches for dashboards that belong to a user.   This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the user whose dashboards you\'re searching for',
@@ -10201,6 +10509,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10213,6 +10522,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'search-data-sets',
       description: 'Use the SearchDataSets operation to search for datasets that belong to an account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -10292,6 +10602,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10304,6 +10615,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'search-data-sources',
       description: 'Use the SearchDataSources operation to search for data sources that belong to an account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -10383,6 +10695,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10395,6 +10708,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'search-folders',
       description: 'Searches the subfolders in a folder',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder',
@@ -10474,6 +10788,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10486,6 +10801,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'search-groups',
       description: 'Use the SearchGroups operation to search groups in a specified Amazon QuickSight namespace using the supplied filters',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account',
@@ -10574,6 +10890,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10586,6 +10903,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'search-topics',
       description: 'Searches for any Q topic that exists in an Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the topic that you want to find',
@@ -10665,6 +10983,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10677,6 +10996,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'start-asset-bundle-export-job',
       description: 'Starts an Asset Bundle export job. An Asset Bundle export job exports specified Amazon QuickSight assets. You can also choose to export any asset dependencies in the same job. Export jobs run asynchronously and can be polled with a DescribeAssetBundleExportJob API call. When a job is successfully completed, a download URL that contains the exported assets is returned. The URL is valid for 5 minutes and can be refreshed with a DescribeAssetBundleExportJob API call. Each Amazon QuickSight account can run up to 5 export jobs concurrently. The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account to export assets from',
@@ -10788,6 +11108,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10800,6 +11121,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'start-asset-bundle-import-job',
       description: 'Starts an Asset Bundle import job. An Asset Bundle import job imports specified Amazon QuickSight assets into an Amazon QuickSight account. You can also choose to import a naming prefix and specified configuration overrides. The assets that are contained in the bundle file that you provide are used to create or update a new or existing asset in your Amazon QuickSight account. Each Amazon QuickSight account can run up to 5 import jobs concurrently. The API caller must have the necessary "create", "describe", and "update" permissions in their IAM role to access each resource type that is contained in the bundle file before the resources can be imported',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account to import assets into',
@@ -10897,6 +11219,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10909,6 +11232,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'start-dashboard-snapshot-job',
       description: 'Starts an asynchronous job that generates a snapshot of a dashboard\'s output. You can request one or several of the following format configurations in each API call.   1 Paginated PDF   1 Excel workbook that includes up to 5 table or pivot table visuals   5 CSVs from table or pivot table visuals   The status of a submitted job can be polled with the DescribeDashboardSnapshotJob API. When you call the DescribeDashboardSnapshotJob API, check the JobStatus field in the response. Once the job reaches a COMPLETED or FAILED status, use the DescribeDashboardSnapshotJobResult API to obtain the URLs for the generated files. If the job fails, the DescribeDashboardSnapshotJobResult API returns detailed information about the error that occurred.  StartDashboardSnapshotJob API throttling  Amazon QuickSight utilizes API throttling to create a more consistent user experience within a time span for customers when they call the StartDashboardSnapshotJob. By default, 12 jobs can run simlutaneously in one Amazon Web Services account and users can submit up 10 API requests per second before an account is throttled. If an overwhelming number of API requests are made by the same user in a short period of time, Amazon QuickSight throttles the API calls to maintin an optimal experience and reliability for all Amazon QuickSight users.  Common throttling scenarios  The following list provides information about the most commin throttling scenarios that can occur.    A large number of SnapshotExport API jobs are running simultaneously on an Amazon Web Services account. When a new StartDashboardSnapshotJob is created and there are already 12 jobs with the RUNNING status, the new job request fails and returns a LimitExceededException error. Wait for a current job to comlpete before you resubmit the new job.    A large number of API requests are submitted on an Amazon Web Services account. When a user makes more than 10 API calls to the Amazon QuickSight API in one second, a ThrottlingException is returned.   If your use case requires a higher throttling limit, contact your account admin or Amazon Web ServicesSupport to explore options to tailor a more optimal expereince for your account.  Best practices to handle throttling  If your use case projects high levels of API traffic, try to reduce the degree of frequency and parallelism of API calls as much as you can to avoid throttling. You can also perform a timing test to calculate an estimate for the total processing time of your projected load that stays within the throttling limits of the Amazon QuickSight APIs. For example, if your projected traffic is 100 snapshot jobs before 12:00 PM per day, start 12 jobs in parallel and measure the amount of time it takes to proccess all 12 jobs. Once you obtain the result, multiply the duration by 9, for example (12 minutes * 9 = 108 minutes). Use the new result to determine the latest time at which the jobs need to be started to meet your target deadline. The time that it takes to process a job can be impacted by the following factors:   The dataset type (Direct Query or SPICE).   The size of the dataset.   The complexity of the calculated fields that are used in the dashboard.   The number of visuals that are on a sheet.   The types of visuals that are on the sheet.   The number of formats and snapshots that are requested in the job configuration.   The size of the generated snapshots',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that the dashboard snapshot job is executed in',
@@ -10970,6 +11294,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10982,6 +11307,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'start-dashboard-snapshot-job-schedule',
       description: 'Starts an asynchronous job that runs an existing dashboard schedule and sends the dashboard snapshot through email.  Only one job can run simultaneously in a given schedule. Repeated requests are skipped with a 202 HTTP status code. For more information, see Scheduling and sending Amazon QuickSight reports by email and Configuring email report settings for a Amazon QuickSight dashboard in the Amazon QuickSight User Guide',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that the dashboard snapshot job is executed in',
@@ -11025,6 +11351,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11037,6 +11364,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight resource.  Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values. You can use the TagResource operation with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag. You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging on data set, data source, dashboard, template, topic, and user.  Tagging for Amazon QuickSight works in a similar way to tagging for other Amazon Web Services services, except for the following:   Tags are used to track costs for users in Amazon QuickSight. You can\'t tag other resources that Amazon QuickSight costs are based on, such as storage capacoty (SPICE), session usage, alert consumption, or reporting units.   Amazon QuickSight doesn\'t currently support the tag editor for Resource Groups',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to tag',
@@ -11071,6 +11399,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11083,6 +11412,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag or tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to untag',
@@ -11117,6 +11447,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11129,6 +11460,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-account-customization',
       description: 'Updates Amazon QuickSight customizations for the current Amazon Web Services Region. Currently, the only customization that you can use is a theme. You can use customizations for your Amazon Web Services account or, if you specify a namespace, for a Amazon QuickSight namespace instead. Customizations that apply to a namespace override customizations that apply to an Amazon Web Services account. To find out which customizations apply, use the DescribeAccountCustomization API operation',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for',
@@ -11172,6 +11504,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11184,6 +11517,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-account-settings',
       description: 'Updates the Amazon QuickSight settings in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list',
@@ -11235,6 +11569,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11247,6 +11582,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-analysis',
       description: 'Updates an analysis in Amazon QuickSight',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the analysis that you\'re updating',
@@ -11335,6 +11671,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11347,6 +11684,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-analysis-permissions',
       description: 'Updates the read and write permissions for an analysis',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the analysis whose permissions you\'re updating. You must be using the Amazon Web Services account that the analysis is in',
@@ -11399,6 +11737,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11411,6 +11750,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-application-with-token-exchange-grant',
       description: 'Updates an Amazon QuickSight application with a token exchange grant. This operation only supports Amazon QuickSight applications that are registered with IAM Identity Center',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account to be updated with a token exchange grant',
@@ -11445,6 +11785,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11457,6 +11798,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-brand',
       description: 'Updates a brand',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that owns the brand',
@@ -11500,6 +11842,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11512,6 +11855,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-brand-assignment',
       description: 'Updates a brand assignment',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that owns the brand assignment',
@@ -11546,6 +11890,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11558,6 +11903,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-brand-published-version',
       description: 'Updates the published version of a brand',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that owns the brand',
@@ -11601,6 +11947,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11613,6 +11960,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-custom-permissions',
       description: 'Updates a custom permissions profile',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the custom permissions profile that you want to update',
@@ -11656,6 +12004,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11668,6 +12017,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-dashboard',
       description: 'Updates a dashboard in an Amazon Web Services account.  Updating a Dashboard creates a new dashboard version but does not immediately publish the new version. You can update the published version of a dashboard by using the  UpdateDashboardPublishedVersion  API operation',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard that you\'re updating',
@@ -11774,6 +12124,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11786,6 +12137,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-dashboard-links',
       description: 'Updates the linked analyses on a dashboard',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard whose links you want to update',
@@ -11829,6 +12181,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11841,6 +12194,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-dashboard-permissions',
       description: 'Updates read and write permissions on a dashboard',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard whose permissions you\'re updating',
@@ -11911,6 +12265,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11923,6 +12278,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-dashboard-published-version',
       description: 'Updates the published version of a dashboard',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard that you\'re updating',
@@ -11966,6 +12322,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11978,6 +12335,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-dashboards-qa-configuration',
       description: 'Updates a Dashboard QA configuration',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the dashboard QA configuration that you want to update',
@@ -12012,6 +12370,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12024,6 +12383,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-data-set',
       description: 'Updates a dataset. This operation doesn\'t support datasets that include uploaded files as a source. Partial updates are not supported by this operation',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -12157,6 +12517,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12169,6 +12530,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-data-set-permissions',
       description: 'Updates the permissions on a dataset. The permissions resource is arn:aws:quicksight:region:aws-account-id:dataset/data-set-id',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -12221,6 +12583,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12233,6 +12596,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-data-source',
       description: 'Updates a data source',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -12312,6 +12676,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12324,6 +12689,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-data-source-permissions',
       description: 'Updates the permissions to a data source',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID',
@@ -12376,6 +12742,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12388,6 +12755,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-default-q-business-application',
       description: 'Updates a Amazon Q Business application that is linked to a Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon QuickSight account that is connected to the Amazon Q Business application that you want to update',
@@ -12431,6 +12799,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12443,6 +12812,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-folder',
       description: 'Updates the name of a folder',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder to update',
@@ -12486,6 +12856,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12498,6 +12869,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-folder-permissions',
       description: 'Updates permissions of a folder',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID for the Amazon Web Services account that contains the folder to update',
@@ -12550,6 +12922,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12562,6 +12935,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-group',
       description: 'Changes a group description',
       options: [
+
         Option(
           name: '--group-name',
           description: 'The name of the group that you want to update',
@@ -12614,6 +12988,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12626,6 +13001,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-iam-policy-assignment',
       description: 'Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that are specified in the request. This overwrites all of the users included in Identities',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the IAM policy assignment',
@@ -12696,6 +13072,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12708,6 +13085,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-identity-propagation-config',
       description: 'Adds or updates services and authorized targets to configure what the Amazon QuickSight IAM Identity Center application can access. This operation is only supported for Amazon QuickSight accounts using IAM Identity Center',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the identity propagation configuration that you want to update',
@@ -12751,6 +13129,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12763,6 +13142,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-ip-restriction',
       description: 'Updates the content and status of IP rules. Traffic from a source is allowed when the source satisfies either the IpRestrictionRule, VpcIdRestrictionRule, or VpcEndpointIdRestrictionRule. To use this operation, you must provide the entire map of rules. You can use the DescribeIpRestriction operation to get the current rule map',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the IP rules',
@@ -12823,6 +13203,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12835,6 +13216,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-key-registration',
       description: 'Updates a customer managed key in a Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the customer managed key registration that you want to update',
@@ -12869,6 +13251,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12881,6 +13264,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-public-sharing-settings',
       description: 'Use the UpdatePublicSharingSettings operation to turn on or turn off the public sharing settings of an Amazon QuickSight dashboard. To use this operation, turn on session capacity pricing for your Amazon QuickSight account. Before you can turn on public sharing on your account, make sure to give public sharing permissions to an administrative user in the Identity and Access Management (IAM) console. For more information on using IAM with Amazon QuickSight, see Using Amazon QuickSight with IAM in the Amazon QuickSight User Guide',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID associated with your Amazon QuickSight subscription',
@@ -12914,6 +13298,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12926,6 +13311,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-q-personalization-configuration',
       description: 'Updates a personalization configuration',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account account that contains the personalization configuration that the user wants to update',
@@ -12960,6 +13346,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12972,6 +13359,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-quick-sight-q-search-configuration',
       description: 'Updates the state of a Amazon QuickSight Q Search configuration',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the Amazon QuickSight Q Search configuration that you want to update',
@@ -13006,6 +13394,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13018,6 +13407,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-refresh-schedule',
       description: 'Updates a refresh schedule for a dataset',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The ID of the dataset',
@@ -13061,6 +13451,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13073,6 +13464,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-role-custom-permission',
       description: 'Updates the custom permissions that are associated with a role',
       options: [
+
         Option(
           name: '--custom-permissions-name',
           description: 'The name of the custom permission that you want to update the role with',
@@ -13125,6 +13517,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13137,6 +13530,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-spice-capacity-configuration',
       description: 'Updates the SPICE capacity configuration for a Amazon QuickSight account',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the SPICE configuration that you want to update',
@@ -13171,6 +13565,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13183,6 +13578,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-template',
       description: 'Updates a template from an existing Amazon QuickSight analysis or another template',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the template that you\'re updating',
@@ -13262,6 +13658,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13274,6 +13671,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-template-alias',
       description: 'Updates the template alias of a template',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the template alias that you\'re updating',
@@ -13326,6 +13724,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13338,6 +13737,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-template-permissions',
       description: 'Updates the resource permissions for a template',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the template',
@@ -13390,6 +13790,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13402,6 +13803,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-theme',
       description: 'Updates a theme',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the theme that you\'re updating',
@@ -13472,6 +13874,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13484,6 +13887,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-theme-alias',
       description: 'Updates an alias of a theme',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the theme alias that you\'re updating',
@@ -13536,6 +13940,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13548,6 +13953,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-theme-permissions',
       description: 'Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on, for example "quicksight:DescribeTheme". Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions, which are user, owner, or no permissions:    User    "quicksight:DescribeTheme"     "quicksight:DescribeThemeAlias"     "quicksight:ListThemeAliases"     "quicksight:ListThemeVersions"      Owner    "quicksight:DescribeTheme"     "quicksight:DescribeThemeAlias"     "quicksight:ListThemeAliases"     "quicksight:ListThemeVersions"     "quicksight:DeleteTheme"     "quicksight:UpdateTheme"     "quicksight:CreateThemeAlias"     "quicksight:DeleteThemeAlias"     "quicksight:UpdateThemeAlias"     "quicksight:UpdateThemePermissions"     "quicksight:DescribeThemePermissions"      To specify no permissions, omit the permissions list',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the theme',
@@ -13600,6 +14006,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13612,6 +14019,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-topic',
       description: 'Updates a topic',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the topic that you want to update',
@@ -13655,6 +14063,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13667,6 +14076,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-topic-permissions',
       description: 'Updates the permissions of a topic',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for',
@@ -13719,6 +14129,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13731,6 +14142,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-topic-refresh-schedule',
       description: 'Updates a topic refresh schedule',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update',
@@ -13783,6 +14195,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13795,6 +14208,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-user',
       description: 'Updates an Amazon QuickSight user',
       options: [
+
         Option(
           name: '--user-name',
           description: 'The Amazon QuickSight user name that you want to update',
@@ -13900,6 +14314,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13912,6 +14327,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-user-custom-permission',
       description: 'Updates a custom permissions profile for a user',
       options: [
+
         Option(
           name: '--user-name',
           description: 'The username of the user that you want to update custom permissions for',
@@ -13964,6 +14380,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13976,6 +14393,7 @@ final FigSpec quicksightSpec = FigSpec(
       name: 'update-vpc-connection',
       description: 'Updates a VPC connection',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account ID of the account that contains the VPC connection that you want to update',
@@ -14055,6 +14473,7 @@ final FigSpec quicksightSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

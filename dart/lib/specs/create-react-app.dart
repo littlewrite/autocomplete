@@ -15,6 +15,7 @@ final FigSpec createReactAppSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--template',
       description: 'Specify a template for the created project (a custom template on npm (search for "cra-template-*"), a relative path, or an archive (.tgz or .tar.gz))',

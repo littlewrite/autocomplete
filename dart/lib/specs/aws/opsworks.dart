@@ -9,10 +9,12 @@ final FigSpec opsworksSpec = FigSpec(
   name: 'opsworks',
   description: 'OpsWorks Welcome to the OpsWorks Stacks API Reference. This guide provides descriptions, syntax, and usage examples for OpsWorks Stacks actions and data types, including common parameters and error codes.  OpsWorks Stacks is an application management service that provides an integrated experience for managing the complete application lifecycle. For information about OpsWorks, see the OpsWorks information page.  SDKs and CLI  Use the OpsWorks Stacks API by using the Command Line Interface (CLI) or by using one of the Amazon Web Services SDKs to implement applications in your preferred language. For more information, see:    CLI     SDK for Java     SDK for .NET     SDK for PHP     SDK for Ruby     Amazon Web Services SDK for Node.js     SDK for Python (Boto)     Endpoints  OpsWorks Stacks supports the following endpoints, all HTTPS. You must connect to one of the following endpoints. Stacks can only be accessed or managed within the endpoint in which they are created.   opsworks.us-east-1.amazonaws.com   opsworks.us-east-2.amazonaws.com   opsworks.us-west-1.amazonaws.com   opsworks.us-west-2.amazonaws.com   opsworks.ca-central-1.amazonaws.com (API only; not available in the Amazon Web Services Management Console)   opsworks.eu-west-1.amazonaws.com   opsworks.eu-west-2.amazonaws.com   opsworks.eu-west-3.amazonaws.com   opsworks.eu-central-1.amazonaws.com   opsworks.ap-northeast-1.amazonaws.com   opsworks.ap-northeast-2.amazonaws.com   opsworks.ap-south-1.amazonaws.com   opsworks.ap-southeast-1.amazonaws.com   opsworks.ap-southeast-2.amazonaws.com   opsworks.sa-east-1.amazonaws.com    Chef Versions  When you call CreateStack, CloneStack, or UpdateStack we recommend you use the ConfigurationManager parameter to specify the Chef version. The recommended and default value for Linux stacks is currently 12. Windows stacks use Chef 12.2. For more information, see Chef Versions.  You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We recommend migrating your existing Linux stacks to Chef 12 as soon as possible',
   subcommands: [
+
     Subcommand(
       name: 'assign-instance',
       description: 'Assign a registered instance to a layer.   You can assign registered on-premises instances to any layer type.   You can assign registered Amazon EC2 instances only to custom layers.   You cannot use this action with instances that were created with OpsWorks Stacks.    Required Permissions: To use this action, an Identity and Access Management (IAM) user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID',
@@ -47,6 +49,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'assign-volume',
       description: 'Assigns one of the stack\'s registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack by calling RegisterVolume. After you register the volume, you must call UpdateVolume to specify a mount point before calling AssignVolume. For more information, see Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--volume-id',
           description: 'The volume ID',
@@ -93,6 +97,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'associate-elastic-ip',
       description: 'Associates one of the stack\'s registered Elastic IP addresses with a specified instance. The address must first be registered with the stack by calling RegisterElasticIp. For more information, see Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--elastic-ip',
           description: 'The Elastic IP address',
@@ -139,6 +145,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -151,6 +158,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'attach-elastic-load-balancer',
       description: 'Attaches an Elastic Load Balancing load balancer to a specified layer. OpsWorks Stacks does not support Application Load Balancer. You can only use Classic Load Balancer with OpsWorks Stacks. For more information, see Elastic Load Balancing.  You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see the Elastic Load Balancing Developer Guide.   Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--elastic-load-balancer-name',
           description: 'The Elastic Load Balancing instance\'s name',
@@ -185,6 +193,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -197,6 +206,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'clone-stack',
       description: 'Creates a clone of a specified stack. For more information, see Clone a Stack. By default, all parameters are set to the values used by the parent stack.  Required Permissions: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--source-stack-id',
           description: 'The source stack ID',
@@ -408,6 +418,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -420,6 +431,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'create-app',
       description: 'Creates an app for a specified stack. For more information, see Creating Apps.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -543,6 +555,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -555,6 +568,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'create-deployment',
       description: 'Runs deployment or stack commands. For more information, see Deploying Apps and Run Stack Commands.  Required Permissions: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -634,6 +648,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -646,6 +661,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'create-instance',
       description: 'Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -822,6 +838,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -834,6 +851,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'create-layer',
       description: 'Creates a layer. For more information, see How to Create a Layer.  You should use CreateLayer for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have an arbitrary number of custom layers, so you can call CreateLayer as many times as you like for that layer type.   Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The layer stack ID',
@@ -1007,6 +1025,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1019,6 +1038,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'create-stack',
       description: 'Creates a new stack. For more information, see Create a New Stack.  Required Permissions: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--name',
           description: 'The stack name. Stack names can be a maximum of 64 characters',
@@ -1204,6 +1224,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1216,6 +1237,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'create-user-profile',
       description: 'Creates a new user profile.  Required Permissions: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--iam-user-arn',
           description: 'The user\'s IAM ARN; this can also be a federated user\'s ARN',
@@ -1267,6 +1289,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1279,6 +1302,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'delete-app',
       description: 'Deletes a specified app.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1304,6 +1328,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1316,6 +1341,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'delete-instance',
       description: 'Deletes a specified instance, which terminates the associated Amazon EC2 instance. You must stop an instance before you can delete it. For more information, see Deleting Instances.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID',
@@ -1357,6 +1383,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1369,6 +1396,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'delete-layer',
       description: 'Deletes a specified layer. You must first stop and then delete all associated instances or unassign registered instances. For more information, see How to Delete a Layer.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--layer-id',
           description: 'The layer ID',
@@ -1394,6 +1422,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1406,6 +1435,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'delete-stack',
       description: 'Deletes a specified stack. You must first delete all instances, layers, and apps or deregister registered instances. For more information, see Shut Down a Stack.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -1431,6 +1461,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1443,6 +1474,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'delete-user-profile',
       description: 'Deletes a user profile.  Required Permissions: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--iam-user-arn',
           description: 'The user\'s IAM ARN. This can also be a federated user\'s ARN',
@@ -1468,6 +1500,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1480,6 +1513,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'deregister-ecs-cluster',
       description: 'Deregisters a specified Amazon ECS cluster from a stack. For more information, see  Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html',
       options: [
+
         Option(
           name: '--ecs-cluster-arn',
           description: 'The cluster\'s Amazon Resource Number (ARN)',
@@ -1505,6 +1539,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1517,6 +1552,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'deregister-elastic-ip',
       description: 'Deregisters a specified Elastic IP address. The address can be registered by another stack after it is deregistered. For more information, see Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--elastic-ip',
           description: 'The Elastic IP address',
@@ -1542,6 +1578,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1554,6 +1591,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'deregister-instance',
       description: 'Deregister an instance from OpsWorks Stacks. The instance can be a registered instance (Amazon EC2 or on-premises) or an instance created with OpsWorks. This action removes the instance from the stack and returns it to your control.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID',
@@ -1579,6 +1617,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1591,6 +1630,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'deregister-rds-db-instance',
       description: 'Deregisters an Amazon RDS instance.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--rds-db-instance-arn',
           description: 'The Amazon RDS instance\'s ARN',
@@ -1616,6 +1656,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1628,6 +1669,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'deregister-volume',
       description: 'Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--volume-id',
           description: 'The OpsWorks Stacks volume ID, which is the GUID that OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID',
@@ -1653,6 +1695,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1665,6 +1708,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-agent-versions',
       description: 'Describes the available OpsWorks Stacks agent versions. You must specify a stack ID or a configuration manager. DescribeAgentVersions returns a list of available agent versions for the specified stack or configuration manager',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -1699,6 +1743,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1711,6 +1756,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-apps',
       description: 'Requests a description of a specified set of apps.  This call accepts only one resource-identifying parameter.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The app stack ID. If you use this parameter, DescribeApps returns a description of the apps in the specified stack',
@@ -1745,6 +1791,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1757,6 +1804,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-commands',
       description: 'Describes the results of specified commands.  This call accepts only one resource-identifying parameter.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The deployment ID. If you include this parameter, DescribeCommands returns a description of the commands associated with the specified deployment',
@@ -1800,6 +1848,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1812,6 +1861,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-deployments',
       description: 'Requests a description of a specified set of deployments.  This call accepts only one resource-identifying parameter.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack',
@@ -1855,6 +1905,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1867,6 +1918,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-ecs-clusters',
       description: 'Describes Amazon ECS clusters that are registered with a stack. If you specify only a stack ID, you can use the MaxResults and NextToken parameters to paginate the response. However, OpsWorks Stacks currently supports only one cluster per layer, so the result set has a maximum of one element.  Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permission. For more information about user permissions, see Managing User Permissions. This call accepts only one resource-identifying parameter',
       options: [
+
         Option(
           name: '--ecs-cluster-arns',
           description: 'A list of ARNs, one for each cluster to be described',
@@ -1946,6 +1998,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1958,6 +2011,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-elastic-ips',
       description: 'Describes Elastic IP addresses.  This call accepts only one resource-identifying parameter.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID. If you include this parameter, DescribeElasticIps returns a description of the Elastic IP addresses associated with the specified instance',
@@ -2001,6 +2055,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2013,6 +2068,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-elastic-load-balancers',
       description: 'Describes a stack\'s Elastic Load Balancing instances.  This call accepts only one resource-identifying parameter.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'A stack ID. The action describes the stack\'s Elastic Load Balancing instances',
@@ -2047,6 +2103,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2059,6 +2116,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-instances',
       description: 'Requests a description of a set of instances.  This call accepts only one resource-identifying parameter.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'A stack ID. If you use this parameter, DescribeInstances returns descriptions of the instances associated with the specified stack',
@@ -2102,6 +2160,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2114,6 +2173,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-layers',
       description: 'Requests a description of one or more layers in a specified stack.  This call accepts only one resource-identifying parameter.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -2148,6 +2208,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2160,6 +2221,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-load-based-auto-scaling',
       description: 'Describes load-based auto scaling configurations for specified layers.  You must specify at least one of the parameters.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--layer-ids',
           description: 'An array of layer IDs',
@@ -2185,6 +2247,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2197,6 +2260,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-my-user-profile',
       description: 'Describes a user\'s SSH information.  Required Permissions: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2213,6 +2277,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2225,6 +2290,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-operating-systems',
       description: 'Describes the operating systems that are supported by OpsWorks Stacks',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2241,6 +2307,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2253,6 +2320,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-permissions',
       description: 'Describes the permissions for a specified stack.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--iam-user-arn',
           description: 'The user\'s IAM ARN. This can also be a federated user\'s ARN. For more information about IAM ARNs, see Using Identifiers',
@@ -2287,6 +2355,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2299,6 +2368,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-raid-arrays',
       description: 'Describe an instance\'s RAID arrays.  This call accepts only one resource-identifying parameter.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID. If you use this parameter, DescribeRaidArrays returns descriptions of the RAID arrays associated with the specified instance',
@@ -2342,6 +2412,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2354,6 +2425,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-rds-db-instances',
       description: 'Describes Amazon RDS instances.  Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions. This call accepts only one resource-identifying parameter',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances',
@@ -2388,6 +2460,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2400,6 +2473,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-service-errors',
       description: 'Describes OpsWorks Stacks service errors.  Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions. This call accepts only one resource-identifying parameter',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID. If you use this parameter, DescribeServiceErrors returns descriptions of the errors associated with the specified stack',
@@ -2443,6 +2517,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2455,6 +2530,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-stack-provisioning-parameters',
       description: 'Requests a description of a stack\'s provisioning parameters.  Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -2480,6 +2556,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2492,6 +2569,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-stack-summary',
       description: 'Describes the number of layers and apps in a specified stack, and the number of instances in each state, such as running_setup or online.  Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -2517,6 +2595,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2529,6 +2608,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-stacks',
       description: 'Requests a description of one or more stacks.  Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-ids',
           description: 'An array of stack IDs that specify the stacks to be described. If you omit this parameter, and have permissions to get information about all stacks, DescribeStacks returns a description of every stack. If the IAM policy that is attached to an IAM user limits the DescribeStacks action to specific stack ARNs, this parameter is required, and the user must specify a stack ARN that is allowed by the policy. Otherwise, DescribeStacks returns an AccessDenied error',
@@ -2554,6 +2634,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2566,6 +2647,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-time-based-auto-scaling',
       description: 'Describes time-based auto scaling configurations for specified instances.  You must specify at least one of the parameters.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-ids',
           description: 'An array of instance IDs',
@@ -2591,6 +2673,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2603,6 +2686,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-user-profiles',
       description: 'Describe specified users.  Required Permissions: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--iam-user-arns',
           description: 'An array of IAM or federated user ARNs that identify the users to be described',
@@ -2628,6 +2712,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2640,6 +2725,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'describe-volumes',
       description: 'Describes an instance\'s Amazon EBS volumes.  This call accepts only one resource-identifying parameter.   Required Permissions: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID. If you use this parameter, DescribeVolumes returns descriptions of the volumes associated with the specified instance',
@@ -2692,6 +2778,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2704,6 +2791,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'detach-elastic-load-balancer',
       description: 'Detaches a specified Elastic Load Balancing instance from its layer.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--elastic-load-balancer-name',
           description: 'The Elastic Load Balancing instance\'s name',
@@ -2738,6 +2826,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2750,6 +2839,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'disassociate-elastic-ip',
       description: 'Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--elastic-ip',
           description: 'The Elastic IP address',
@@ -2775,6 +2865,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2787,6 +2878,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'get-hostname-suggestion',
       description: 'Gets a generated host name for the specified layer, based on the current host name theme.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--layer-id',
           description: 'The layer ID',
@@ -2812,6 +2904,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2824,6 +2917,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'grant-access',
       description: 'This action can be used only with Windows stacks.  Grants RDP access to a Windows instance for a specified time period',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance\'s OpsWorks Stacks ID',
@@ -2858,6 +2952,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2870,6 +2965,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'list-tags',
       description: 'Returns a list of tags that are applied to the specified stack or layer',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The stack or layer\'s Amazon Resource Number (ARN)',
@@ -2913,6 +3009,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2925,6 +3022,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'reboot-instance',
       description: 'Reboots a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID',
@@ -2950,6 +3048,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2962,6 +3061,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'register-ecs-cluster',
       description: 'Registers a specified Amazon ECS cluster with a stack. You can register only one cluster with a stack. A cluster can be registered with only one stack. For more information, see  Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see  Managing User Permissions',
       options: [
+
         Option(
           name: '--ecs-cluster-arn',
           description: 'The cluster\'s ARN',
@@ -2996,6 +3096,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3008,6 +3109,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'register-elastic-ip',
       description: 'Registers an Elastic IP address with a specified stack. An address can be registered with only one stack at a time. If the address is already registered, you must first deregister it by calling DeregisterElasticIp. For more information, see Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--elastic-ip',
           description: 'The Elastic IP address',
@@ -3042,6 +3144,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3054,6 +3157,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'register-instance',
       description: 'Registers instances that were created outside of OpsWorks Stacks with a specified stack.  We do not recommend using this action to register instances. The complete registration operation includes two tasks: installing the OpsWorks Stacks agent on the instance, and registering the instance with the stack. RegisterInstance handles only the second step. You should instead use the CLI register command, which performs the entire registration operation. For more information, see  Registering an Instance with an OpsWorks Stacks Stack.  Registered instances have the same requirements as instances that are created by using the CreateInstance API. For example, registered instances must be running a supported Linux-based operating system, and they must have a supported instance type. For more information about requirements for instances that you want to register, see  Preparing the Instance.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The ID of the stack that the instance is to be registered with',
@@ -3133,6 +3237,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3145,6 +3250,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'register-rds-db-instance',
       description: 'Registers an Amazon RDS instance with a stack.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -3197,6 +3303,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3209,6 +3316,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'register-volume',
       description: 'Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one stack at a time. If the volume is already registered, you must first deregister it by calling DeregisterVolume. For more information, see Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--ec2-volume-id',
           description: 'The Amazon EBS volume ID',
@@ -3252,6 +3360,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3264,6 +3373,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'set-load-based-auto-scaling',
       description: 'Specify the load-based auto scaling configuration for a specified layer. For more information, see Managing Load with Time-based and Load-based Instances.  To use load-based auto scaling, you must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle the maximum anticipated load.   Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--layer-id',
           description: 'The layer ID',
@@ -3315,6 +3425,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3327,6 +3438,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'set-permission',
       description: 'Specifies a user\'s permissions. For more information, see Security and Permissions.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -3386,6 +3498,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3398,6 +3511,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'set-time-based-auto-scaling',
       description: 'Specify the time-based auto scaling configuration for a specified instance. For more information, see Managing Load with Time-based and Load-based Instances.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID',
@@ -3432,6 +3546,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3444,6 +3559,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'start-instance',
       description: 'Starts a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID',
@@ -3469,6 +3585,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3481,6 +3598,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'start-stack',
       description: 'Starts a stack\'s instances.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -3506,6 +3624,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3518,6 +3637,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'stop-instance',
       description: 'Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see Starting, Stopping, and Rebooting Instances.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID',
@@ -3551,6 +3671,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3563,6 +3684,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'stop-stack',
       description: 'Stops a specified stack.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -3588,6 +3710,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3600,6 +3723,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'tag-resource',
       description: 'Apply cost-allocation tags to a specified stack or layer in OpsWorks Stacks. For more information about how tagging works, see Tags in the OpsWorks User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The stack or layer\'s Amazon Resource Number (ARN)',
@@ -3634,6 +3758,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3646,6 +3771,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'unassign-instance',
       description: 'Unassigns a registered instance from all layers that are using the instance. The instance remains in the stack as an unassigned instance, and can be assigned to another layer as needed. You cannot use this action with instances that were created with OpsWorks Stacks.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID',
@@ -3671,6 +3797,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3683,6 +3810,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'unassign-volume',
       description: 'Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--volume-id',
           description: 'The volume ID',
@@ -3708,6 +3836,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3720,6 +3849,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a specified stack or layer',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The stack or layer\'s Amazon Resource Number (ARN)',
@@ -3754,6 +3884,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3766,6 +3897,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'update-app',
       description: 'Updates a specified app.  Required Permissions: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -3880,6 +4012,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3892,6 +4025,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'update-elastic-ip',
       description: 'Updates a registered Elastic IP address\'s name. For more information, see Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--elastic-ip',
           description: 'The IP address for which you want to update the name',
@@ -3926,6 +4060,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3938,6 +4073,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'update-instance',
       description: 'Updates a specified instance.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The instance ID',
@@ -4060,6 +4196,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4072,6 +4209,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'update-layer',
       description: 'Updates a specified layer.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--layer-id',
           description: 'The layer ID',
@@ -4235,6 +4373,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4247,6 +4386,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'update-my-user-profile',
       description: 'Updates a user\'s SSH public key.  Required Permissions: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--ssh-public-key',
           description: 'The user\'s SSH public key',
@@ -4272,6 +4412,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4284,6 +4425,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'update-rds-db-instance',
       description: 'Updates an Amazon RDS instance.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--rds-db-instance-arn',
           description: 'The Amazon RDS instance\'s ARN',
@@ -4327,6 +4469,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4339,6 +4482,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'update-stack',
       description: 'Updates a specified stack.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'The stack ID',
@@ -4515,6 +4659,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4527,6 +4672,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'update-user-profile',
       description: 'Updates a specified user profile.  Required Permissions: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--iam-user-arn',
           description: 'The user IAM ARN. This can also be a federated user\'s ARN',
@@ -4578,6 +4724,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4590,6 +4737,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'update-volume',
       description: 'Updates an Amazon EBS volume\'s name or mount point. For more information, see Resource Management.  Required Permissions: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions',
       options: [
+
         Option(
           name: '--volume-id',
           description: 'The volume ID',
@@ -4633,6 +4781,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4645,6 +4794,7 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'register',
       description: 'Registers an EC2 instance or machine with AWS OpsWorks.\n\nRegistering a machine using this command will install the AWS OpsWorks\nagent on the target machine and register it with an existing OpsWorks\nstack',
       options: [
+
         Option(
           name: '--stack-id',
           description: 'A stack ID. The instance will be registered with the\n                         given stack',
@@ -4661,6 +4811,7 @@ final FigSpec opsworksSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'ec2'),
               FigSuggestion(name: 'on-premises')
             ]
@@ -4741,10 +4892,12 @@ final FigSpec opsworksSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'app-exists',
           description: 'Wait until 200 response is received when polling with ``describe-apps``. It will poll every 1 seconds until a successful state has been reached. This will exit with a return code of 255 after 40 failed checks',
           options: [
+
             Option(
               name: '--stack-id',
               description: 'The app stack ID. If you use this parameter, DescribeApps returns a description of the apps in the specified stack',
@@ -4779,6 +4932,7 @@ final FigSpec opsworksSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -4791,6 +4945,7 @@ final FigSpec opsworksSpec = FigSpec(
           name: 'deployment-successful',
           description: 'Wait until a deployment has completed successfully. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 40 failed checks',
           options: [
+
             Option(
               name: '--stack-id',
               description: 'The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack',
@@ -4834,6 +4989,7 @@ final FigSpec opsworksSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -4846,6 +5002,7 @@ final FigSpec opsworksSpec = FigSpec(
           name: 'instance-online',
           description: 'Wait until OpsWorks instance is online. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 40 failed checks',
           options: [
+
             Option(
               name: '--stack-id',
               description: 'A stack ID. If you use this parameter, DescribeInstances returns descriptions of the instances associated with the specified stack',
@@ -4889,6 +5046,7 @@ final FigSpec opsworksSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -4901,6 +5059,7 @@ final FigSpec opsworksSpec = FigSpec(
           name: 'instance-registered',
           description: 'Wait until OpsWorks instance is registered. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 40 failed checks',
           options: [
+
             Option(
               name: '--stack-id',
               description: 'A stack ID. If you use this parameter, DescribeInstances returns descriptions of the instances associated with the specified stack',
@@ -4944,6 +5103,7 @@ final FigSpec opsworksSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -4956,6 +5116,7 @@ final FigSpec opsworksSpec = FigSpec(
           name: 'instance-stopped',
           description: 'Wait until OpsWorks instance is stopped. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 40 failed checks',
           options: [
+
             Option(
               name: '--stack-id',
               description: 'A stack ID. If you use this parameter, DescribeInstances returns descriptions of the instances associated with the specified stack',
@@ -4999,6 +5160,7 @@ final FigSpec opsworksSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -5011,6 +5173,7 @@ final FigSpec opsworksSpec = FigSpec(
           name: 'instance-terminated',
           description: 'Wait until OpsWorks instance is terminated. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 40 failed checks',
           options: [
+
             Option(
               name: '--stack-id',
               description: 'A stack ID. If you use this parameter, DescribeInstances returns descriptions of the instances associated with the specified stack',
@@ -5054,6 +5217,7 @@ final FigSpec opsworksSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

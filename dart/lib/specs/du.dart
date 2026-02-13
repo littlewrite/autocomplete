@@ -9,6 +9,7 @@ final FigSpec duSpec = FigSpec(
   name: 'du',
   description: 'Display disk usage statistics',
   options: [
+
     Option(
       name: '-a',
       description: 'Display an entry for each file in a file hierarchy',
@@ -74,6 +75,7 @@ final FigSpec duSpec = FigSpec(
         Arg(
         name: 'depth',
         suggestions: [
+
           FigSuggestion(name: '0'),
           FigSuggestion(name: '1'),
           FigSuggestion(name: '2')

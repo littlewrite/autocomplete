@@ -9,10 +9,12 @@ final FigSpec networkmanagerSpec = FigSpec(
   name: 'networkmanager',
   description: 'Amazon Web Services enables you to centrally manage your Amazon Web Services Cloud WAN core network and your Transit Gateway network across Amazon Web Services accounts, Regions, and on-premises locations',
   subcommands: [
+
     Subcommand(
       name: 'accept-attachment',
       description: 'Accepts a core network attachment request.  Once the attachment request is accepted by a core network owner, the attachment is created and connected to a core network',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The ID of the attachment',
@@ -38,6 +40,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'associate-connect-peer',
       description: 'Associates a core network Connect peer with a device and optionally, with a link.  If you specify a link, it must be associated with the specified device. You can only associate core network Connect peers that have been created on a core network Connect attachment on a core network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of your global network',
@@ -102,6 +106,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'associate-customer-gateway',
       description: 'Associates a customer gateway with a device and optionally, with a link. If you specify a link, it must be associated with the specified device.  You can only associate customer gateways that are connected to a VPN attachment on a transit gateway or core network registered in your global network. When you register a transit gateway or core network, customer gateways that are connected to the transit gateway are automatically included in the global network. To list customer gateways that are connected to a transit gateway, use the DescribeVpnConnections EC2 API and filter by transit-gateway-id. You cannot associate a customer gateway with more than one device and link',
       options: [
+
         Option(
           name: '--customer-gateway-arn',
           description: 'The Amazon Resource Name (ARN) of the customer gateway',
@@ -166,6 +172,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'associate-link',
       description: 'Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -221,6 +229,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'associate-transit-gateway-connect-peer',
       description: 'Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device.  You can only associate transit gateway Connect peers that have been created on a transit gateway that\'s registered in your global network. You cannot associate a transit gateway Connect peer with more than one device and link',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -285,6 +295,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -297,6 +308,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-connect-attachment',
       description: 'Creates a core network Connect attachment from a specified core network attachment.  A core network Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection between a core network and an appliance. A core network Connect attachment uses an existing VPC attachment as the underlying transport mechanism',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network where you want to create the attachment',
@@ -367,6 +379,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -379,6 +392,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-connect-peer',
       description: 'Creates a core network Connect peer for a specified core network connect attachment between a core network and an appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6)',
       options: [
+
         Option(
           name: '--connect-attachment-id',
           description: 'The ID of the connection attachment',
@@ -467,6 +481,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -479,6 +494,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-connection',
       description: 'Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an on-premises network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -558,6 +574,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -570,6 +587,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-core-network',
       description: 'Creates a core network as part of your global network, and optionally, with a core network policy',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network that a core network will be a part of',
@@ -631,6 +649,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -643,6 +662,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-device',
       description: 'Creates a new device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -749,6 +769,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -761,6 +782,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-direct-connect-gateway-attachment',
       description: 'Creates an Amazon Web Services Direct Connect gateway attachment',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of the Cloud WAN core network that the Direct Connect gateway attachment should be attached to',
@@ -822,6 +844,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -834,6 +857,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-global-network',
       description: 'Creates a new, empty global network',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the global network. Constraints: Maximum length of 256 characters',
@@ -868,6 +892,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -880,6 +905,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-link',
       description: 'Creates a new link for a specified site',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -959,6 +985,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -971,6 +998,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-site',
       description: 'Creates a new site in a global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -1023,6 +1051,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1035,6 +1064,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-site-to-site-vpn-attachment',
       description: 'Creates an Amazon Web Services site-to-site VPN attachment on an edge location of a core network',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network where you\'re creating a site-to-site VPN attachment',
@@ -1087,6 +1117,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1099,6 +1130,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-transit-gateway-peering',
       description: 'Creates a transit gateway peering connection',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -1151,6 +1183,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1163,6 +1196,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-transit-gateway-route-table-attachment',
       description: 'Creates a transit gateway route table attachment',
       options: [
+
         Option(
           name: '--peering-id',
           description: 'The ID of the peer for the',
@@ -1215,6 +1249,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1227,6 +1262,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'create-vpc-attachment',
       description: 'Creates a VPC attachment on an edge location of a core network',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network for the VPC attachment',
@@ -1297,6 +1333,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1309,6 +1346,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-attachment',
       description: 'Deletes an attachment. Supports all attachment types',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The ID of the attachment to delete',
@@ -1334,6 +1372,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1346,6 +1385,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-connect-peer',
       description: 'Deletes a Connect peer',
       options: [
+
         Option(
           name: '--connect-peer-id',
           description: 'The ID of the deleted Connect peer',
@@ -1371,6 +1411,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1383,6 +1424,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-connection',
       description: 'Deletes the specified connection in your global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -1417,6 +1459,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1429,6 +1472,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-core-network',
       description: 'Deletes a core network along with all core network policies. This can only be done if there are no attachments on a core network',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The network ID of the deleted core network',
@@ -1454,6 +1498,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1466,6 +1511,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-core-network-policy-version',
       description: 'Deletes a policy version from a core network. You can\'t delete the current LIVE policy',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network for the deleted policy',
@@ -1500,6 +1546,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1512,6 +1559,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-device',
       description: 'Deletes an existing device. You must first disassociate the device from any links and customer gateways',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -1546,6 +1594,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1558,6 +1607,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-global-network',
       description: 'Deletes an existing global network. You must first delete all global network objects (devices, links, and sites), deregister all transit gateways, and delete any core networks',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -1583,6 +1633,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1595,6 +1646,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-link',
       description: 'Deletes an existing link. You must first disassociate the link from any devices and customer gateways',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -1629,6 +1681,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1641,6 +1694,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-peering',
       description: 'Deletes an existing peering connection',
       options: [
+
         Option(
           name: '--peering-id',
           description: 'The ID of the peering connection to delete',
@@ -1666,6 +1720,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1678,6 +1733,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes a resource policy for the specified resource. This revokes the access of the principals specified in the resource policy',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the policy to delete',
@@ -1703,6 +1759,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1715,6 +1772,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'delete-site',
       description: 'Deletes an existing site. The site cannot be associated with any device or link',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -1749,6 +1807,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1761,6 +1820,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'deregister-transit-gateway',
       description: 'Deregisters a transit gateway from your global network. This action does not delete your transit gateway, or modify any of its attachments. This action removes any customer gateway associations',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -1795,6 +1855,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1807,6 +1868,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'describe-global-networks',
       description: 'Describes one or more global networks. By default, all global networks are described. To describe the objects in your global network, you must use the appropriate Get* action. For example, to list the transit gateways in your global network, use GetTransitGatewayRegistrations',
       options: [
+
         Option(
           name: '--global-network-ids',
           description: 'The IDs of one or more global networks. The maximum is 10',
@@ -1877,6 +1939,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1889,6 +1952,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'disassociate-connect-peer',
       description: 'Disassociates a core network Connect peer from a device and a link',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -1923,6 +1987,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1935,6 +2000,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'disassociate-customer-gateway',
       description: 'Disassociates a customer gateway from a device and a link',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -1969,6 +2035,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1981,6 +2048,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'disassociate-link',
       description: 'Disassociates an existing device from a link. You must first disassociate any customer gateways that are associated with the link',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -2024,6 +2092,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2036,6 +2105,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'disassociate-transit-gateway-connect-peer',
       description: 'Disassociates a transit gateway Connect peer from a device and link',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -2070,6 +2140,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2082,6 +2153,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'execute-core-network-change-set',
       description: 'Executes a change set on your core network. Deploys changes globally based on the policy submitted',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -2116,6 +2188,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2128,6 +2201,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-connect-attachment',
       description: 'Returns information about a core network Connect attachment',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The ID of the attachment',
@@ -2153,6 +2227,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2165,6 +2240,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-connect-peer',
       description: 'Returns information about a core network Connect peer',
       options: [
+
         Option(
           name: '--connect-peer-id',
           description: 'The ID of the Connect peer',
@@ -2190,6 +2266,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2202,6 +2279,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-connect-peer-associations',
       description: 'Returns information about a core network Connect peer associations',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -2281,6 +2359,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2293,6 +2372,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-connections',
       description: 'Gets information about one or more of your connections in a global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -2381,6 +2461,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2393,6 +2474,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-core-network',
       description: 'Returns information about the LIVE policy for a core network',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -2418,6 +2500,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2430,6 +2513,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-core-network-change-events',
       description: 'Returns information about a core network change event',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -2509,6 +2593,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2521,6 +2606,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-core-network-change-set',
       description: 'Returns a change set between the LIVE core network policy and a submitted policy',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -2600,6 +2686,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2612,6 +2699,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-core-network-policy',
       description: 'Returns details about a core network policy. You can get details about your current live policy or any previous policy version',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -2655,6 +2743,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2667,6 +2756,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-customer-gateway-associations',
       description: 'Gets the association information for customer gateways that are associated with devices and links in your global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -2746,6 +2836,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2758,6 +2849,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-devices',
       description: 'Gets information about one or more of your devices in a global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -2846,6 +2938,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2858,6 +2951,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-direct-connect-gateway-attachment',
       description: 'Returns information about a specific Amazon Web Services Direct Connect gateway attachment',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The ID of the Direct Connect gateway attachment that you want to see details about',
@@ -2883,6 +2977,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2895,6 +2990,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-link-associations',
       description: 'Gets the link associations for a device or a link. Either the device ID or the link ID must be specified',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -2983,6 +3079,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2995,6 +3092,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-links',
       description: 'Gets information about one or more links in a specified global network. If you specify the site ID, you cannot specify the type or provider in the same request. You can specify the type and provider in the same request',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -3101,6 +3199,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3113,6 +3212,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-network-resource-counts',
       description: 'Gets the count of network resources, by resource type, for the specified global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -3192,6 +3292,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3204,6 +3305,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-network-resource-relationships',
       description: 'Gets the network resource relationships for the specified global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -3328,6 +3430,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3340,6 +3443,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-network-resources',
       description: 'Describes the network resources for the specified global network. The results include information from the corresponding Describe call for the resource, minus any sensitive information such as pre-shared keys',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -3464,6 +3568,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3476,6 +3581,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-network-routes',
       description: 'Gets the network routes of the specified global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -3582,6 +3688,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3594,6 +3701,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-network-telemetry',
       description: 'Gets the network telemetry of the specified global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -3718,6 +3826,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3730,6 +3839,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-resource-policy',
       description: 'Returns information about a resource policy',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -3755,6 +3865,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3767,6 +3878,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-route-analysis',
       description: 'Gets information about the specified route analysis',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -3801,6 +3913,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3813,6 +3926,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-site-to-site-vpn-attachment',
       description: 'Returns information about a site-to-site VPN attachment',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The ID of the attachment',
@@ -3838,6 +3952,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3850,6 +3965,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-sites',
       description: 'Gets information about one or more of your sites in a global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -3929,6 +4045,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3941,6 +4058,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-transit-gateway-connect-peer-associations',
       description: 'Gets information about one or more of your transit gateway Connect peer associations in a global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -4020,6 +4138,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4032,6 +4151,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-transit-gateway-peering',
       description: 'Returns information about a transit gateway peer',
       options: [
+
         Option(
           name: '--peering-id',
           description: 'The ID of the peering request',
@@ -4057,6 +4177,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4069,6 +4190,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-transit-gateway-registrations',
       description: 'Gets information about the transit gateway registrations in a specified global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -4148,6 +4270,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4160,6 +4283,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-transit-gateway-route-table-attachment',
       description: 'Returns information about a transit gateway route table attachment',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The ID of the transit gateway route table attachment',
@@ -4185,6 +4309,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4197,6 +4322,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'get-vpc-attachment',
       description: 'Returns information about a VPC attachment',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The ID of the attachment',
@@ -4222,6 +4348,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4234,6 +4361,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'list-attachments',
       description: 'Returns a list of core network attachments',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -4331,6 +4459,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4343,6 +4472,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'list-connect-peers',
       description: 'Returns a list of core network Connect peers',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -4422,6 +4552,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4434,6 +4565,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'list-core-network-policy-versions',
       description: 'Returns a list of core network policy versions',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -4504,6 +4636,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4516,6 +4649,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'list-core-networks',
       description: 'Returns a list of owned and shared core networks',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -4577,6 +4711,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4589,6 +4724,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'list-organization-service-access-status',
       description: 'Gets the status of the Service Linked Role (SLR) deployment for the accounts in a given Amazon Web Services Organization',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -4623,6 +4759,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4635,6 +4772,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'list-peerings',
       description: 'Lists the peerings for a core network',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -4732,6 +4870,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4744,6 +4883,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -4769,6 +4909,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4781,6 +4922,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'put-core-network-policy',
       description: 'Creates a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and the submitted policy',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -4842,6 +4984,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4854,6 +4997,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Creates or updates a resource policy',
       options: [
+
         Option(
           name: '--policy-document',
           description: 'The JSON resource policy document',
@@ -4888,6 +5032,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4900,6 +5045,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'register-transit-gateway',
       description: 'Registers a transit gateway in your global network. Not all Regions support transit gateways for global networks. For a list of the supported Regions, see Region Availability in the Amazon Web Services Transit Gateways for Global Networks User Guide. The transit gateway can be in any of the supported Amazon Web Services Regions, but it must be owned by the same Amazon Web Services account that owns the global network. You cannot register a transit gateway in more than one global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -4934,6 +5080,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4946,6 +5093,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'reject-attachment',
       description: 'Rejects a core network attachment request',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The ID of the attachment',
@@ -4971,6 +5119,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4983,6 +5132,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'restore-core-network-policy-version',
       description: 'Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and restored policy',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -5017,6 +5167,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5029,6 +5180,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'start-organization-service-access-update',
       description: 'Enables the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization',
       options: [
+
         Option(
           name: '--action',
           description: 'The action to take for the update request. This can be either ENABLE or DISABLE',
@@ -5054,6 +5206,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5066,6 +5219,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'start-route-analysis',
       description: 'Starts analyzing the routing path between the specified source and destination. For more information, see Route Analyzer',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -5125,6 +5279,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5137,6 +5292,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -5171,6 +5327,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5183,6 +5340,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -5217,6 +5375,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5229,6 +5388,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'update-connection',
       description: 'Updates the information for an existing connection. To remove information for any of the parameters, specify an empty string',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -5290,6 +5450,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5302,6 +5463,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'update-core-network',
       description: 'Updates the description of a core network',
       options: [
+
         Option(
           name: '--core-network-id',
           description: 'The ID of a core network',
@@ -5336,6 +5498,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5348,6 +5511,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'update-device',
       description: 'Updates the details for an existing device. To remove information for any of the parameters, specify an empty string',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -5454,6 +5618,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5466,6 +5631,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'update-direct-connect-gateway-attachment',
       description: 'Updates the edge locations associated with an Amazon Web Services Direct Connect gateway attachment',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The ID of the Direct Connect gateway attachment for the updated edge locations',
@@ -5500,6 +5666,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5512,6 +5679,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'update-global-network',
       description: 'Updates an existing global network. To remove information for any of the parameters, specify an empty string',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of your global network',
@@ -5546,6 +5714,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5558,6 +5727,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'update-link',
       description: 'Updates the details for an existing link. To remove information for any of the parameters, specify an empty string',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -5628,6 +5798,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5640,6 +5811,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'update-network-resource-metadata',
       description: 'Updates the resource metadata for the specified global network',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -5683,6 +5855,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5695,6 +5868,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'update-site',
       description: 'Updates the information for an existing site. To remove information for any of the parameters, specify an empty string',
       options: [
+
         Option(
           name: '--global-network-id',
           description: 'The ID of the global network',
@@ -5747,6 +5921,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5759,6 +5934,7 @@ final FigSpec networkmanagerSpec = FigSpec(
       name: 'update-vpc-attachment',
       description: 'Updates a VPC attachment',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The ID of the attachment',
@@ -5811,6 +5987,7 @@ final FigSpec networkmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec apprunnerSpec = FigSpec(
   name: 'apprunner',
   description: 'App Runner App Runner is an application service that provides a fast, simple, and cost-effective way to go directly from an existing container image or source code to a running service in the Amazon Web Services Cloud in seconds. You don\'t need to learn new technologies, decide which compute service to use, or understand how to provision and configure Amazon Web Services resources. App Runner connects directly to your container registry or source code repository. It provides an automatic delivery pipeline with fully managed operations, high performance, scalability, and security. For more information about App Runner, see the App Runner Developer Guide. For release information, see the App Runner Release Notes.  To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that you can use to access the API, see Tools for Amazon Web Services.  Endpoints  For a list of Region-specific endpoints that App Runner supports, see App Runner endpoints and quotas in the Amazon Web Services General Reference',
   subcommands: [
+
     Subcommand(
       name: 'associate-custom-domain',
       description: 'Associate your own domain name with the App Runner subdomain URL of your App Runner service. After you call AssociateCustomDomain and receive a successful response, use the information in the CustomDomain record that\'s returned to add CNAME records to your Domain Name System (DNS). For each mapped domain name, add a mapping to the target App Runner subdomain and one or more certificate validation records. App Runner then performs DNS validation to verify that you own or control the domain name that you associated. App Runner tracks domain validity in a certificate stored in AWS Certificate Manager (ACM)',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with',
@@ -55,6 +57,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -67,6 +70,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'create-auto-scaling-configuration',
       description: 'Create an App Runner automatic scaling configuration resource. App Runner requires this resource when you create or update App Runner services and you require non-default auto scaling settings. You can share an auto scaling configuration across multiple services. Create multiple revisions of a configuration by calling this action multiple times using the same AutoScalingConfigurationName. The call returns incremental AutoScalingConfigurationRevision values. When you create a service and configure an auto scaling configuration resource, the service uses the latest active revision of the auto scaling configuration by default. You can optionally configure the service to use a specific revision. Configure a higher MinSize to increase the spread of your App Runner service over more Availability Zones in the Amazon Web Services Region. The tradeoff is a higher minimal cost. Configure a lower MaxSize to control your cost. The tradeoff is lower responsiveness during peak demand',
       options: [
+
         Option(
           name: '--auto-scaling-configuration-name',
           description: 'A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number 1 of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.  Prior to the release of Auto scale configuration enhancements, the name DefaultConfiguration was reserved.  This restriction is no longer in place. You can now manage DefaultConfiguration the same way you manage your custom auto scaling configurations. This means you can do the following with the DefaultConfiguration that App Runner provides:   Create new revisions of the DefaultConfiguration.   Delete the revisions of the DefaultConfiguration.   Delete the auto scaling configuration for which the App Runner DefaultConfiguration was created.   If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same DefaultConfiguration name. The original DefaultConfiguration resource provided by App Runner remains in your account unless you make changes to it',
@@ -128,6 +132,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -140,6 +145,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'create-connection',
       description: 'Create an App Runner connection resource. App Runner requires a connection resource when you create App Runner services that access private repositories from certain third-party providers. You can share a connection across multiple services. A connection resource is needed to access GitHub and Bitbucket repositories. Both require a user interface approval process through the App Runner console before you can use the connection',
       options: [
+
         Option(
           name: '--connection-name',
           description: 'A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region',
@@ -183,6 +189,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -195,6 +202,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'create-observability-configuration',
       description: 'Create an App Runner observability configuration resource. App Runner requires this resource when you create or update App Runner services and you want to enable non-default observability features. You can share an observability configuration across multiple services. Create multiple revisions of a configuration by calling this action multiple times using the same ObservabilityConfigurationName. The call returns incremental ObservabilityConfigurationRevision values. When you create a service and configure an observability configuration resource, the service uses the latest active revision of the observability configuration by default. You can optionally configure the service to use a specific revision. The observability configuration resource is designed to configure multiple features (currently one feature, tracing). This action takes optional parameters that describe the configuration of these features (currently one parameter, TraceConfiguration). If you don\'t specify a feature parameter, App Runner doesn\'t enable the feature',
       options: [
+
         Option(
           name: '--observability-configuration-name',
           description: 'A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number 1 of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.  The name DefaultConfiguration is reserved. You can\'t use it to create a new observability configuration, and you can\'t create a revision of it. When you want to use your own observability configuration for your App Runner service, create a configuration with a different name, and then provide it when you create or update your service',
@@ -238,6 +246,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -250,6 +259,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'create-service',
       description: 'Create an App Runner service. After the service is created, the action also automatically starts a deployment. This is an asynchronous operation. On a successful call, you can use the returned OperationId and the ListOperations call to track the operation\'s progress',
       options: [
+
         Option(
           name: '--service-name',
           description: 'A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region',
@@ -347,6 +357,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -359,6 +370,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'create-vpc-connector',
       description: 'Create an App Runner VPC connector resource. App Runner requires this resource when you want to associate your App Runner service to a custom Amazon Virtual Private Cloud (Amazon VPC)',
       options: [
+
         Option(
           name: '--vpc-connector-name',
           description: 'A name for the VPC connector',
@@ -411,6 +423,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -423,6 +436,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'create-vpc-ingress-connection',
       description: 'Create an App Runner VPC Ingress Connection resource. App Runner requires this resource when you want to associate your App Runner service with an Amazon VPC endpoint',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) for this App Runner service that is used to create the VPC Ingress Connection resource',
@@ -475,6 +489,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -487,6 +502,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'delete-auto-scaling-configuration',
       description: 'Delete an App Runner automatic scaling configuration resource. You can delete a top level auto scaling configuration, a specific revision of one, or all revisions associated with the top level configuration. You can\'t delete the default auto scaling configuration or a configuration that\'s used by one or more App Runner services',
       options: [
+
         Option(
           name: '--auto-scaling-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete. The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either .../name  or .../name/revision . If a revision isn\'t specified, the latest active revision is deleted',
@@ -520,6 +536,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -532,6 +549,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'delete-connection',
       description: 'Delete an App Runner connection. You must first ensure that there are no running App Runner services that use this connection. If there are any, the DeleteConnection action fails',
       options: [
+
         Option(
           name: '--connection-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner connection that you want to delete',
@@ -557,6 +575,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -569,6 +588,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'delete-observability-configuration',
       description: 'Delete an App Runner observability configuration resource. You can delete a specific revision or the latest active revision. You can\'t delete a configuration that\'s used by one or more App Runner services',
       options: [
+
         Option(
           name: '--observability-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete. The ARN can be a full observability configuration ARN, or a partial ARN ending with either .../name  or .../name/revision . If a revision isn\'t specified, the latest active revision is deleted',
@@ -594,6 +614,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -606,6 +627,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'delete-service',
       description: 'Delete an App Runner service. This is an asynchronous operation. On a successful call, you can use the returned OperationId and the ListOperations call to track the operation\'s progress.  Make sure that you don\'t have any active VPCIngressConnections associated with the service you want to delete',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner service that you want to delete',
@@ -631,6 +653,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -643,6 +666,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'delete-vpc-connector',
       description: 'Delete an App Runner VPC connector resource. You can\'t delete a connector that\'s used by one or more App Runner services',
       options: [
+
         Option(
           name: '--vpc-connector-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete. The ARN must be a full VPC connector ARN',
@@ -668,6 +692,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -680,6 +705,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'delete-vpc-ingress-connection',
       description: 'Delete an App Runner VPC Ingress Connection resource that\'s associated with an App Runner service. The VPC Ingress Connection must be in one of the following states to be deleted:     AVAILABLE     FAILED_CREATION     FAILED_UPDATE     FAILED_DELETION',
       options: [
+
         Option(
           name: '--vpc-ingress-connection-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete',
@@ -705,6 +731,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -717,6 +744,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'describe-auto-scaling-configuration',
       description: 'Return a full description of an App Runner automatic scaling configuration resource',
       options: [
+
         Option(
           name: '--auto-scaling-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for. The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either .../name  or .../name/revision . If a revision isn\'t specified, the latest active revision is described',
@@ -742,6 +770,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -754,6 +783,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'describe-custom-domains',
       description: 'Return a description of custom domain names that are associated with an App Runner service',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for',
@@ -797,6 +827,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -809,6 +840,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'describe-observability-configuration',
       description: 'Return a full description of an App Runner observability configuration resource',
       options: [
+
         Option(
           name: '--observability-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for. The ARN can be a full observability configuration ARN, or a partial ARN ending with either .../name  or .../name/revision . If a revision isn\'t specified, the latest active revision is described',
@@ -834,6 +866,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -846,6 +879,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'describe-service',
       description: 'Return a full description of an App Runner service',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner service that you want a description for',
@@ -871,6 +905,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -883,6 +918,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'describe-vpc-connector',
       description: 'Return a description of an App Runner VPC connector resource',
       options: [
+
         Option(
           name: '--vpc-connector-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for. The ARN must be a full VPC connector ARN',
@@ -908,6 +944,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -920,6 +957,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'describe-vpc-ingress-connection',
       description: 'Return a full description of an App Runner VPC Ingress Connection resource',
       options: [
+
         Option(
           name: '--vpc-ingress-connection-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for',
@@ -945,6 +983,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -957,6 +996,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'disassociate-custom-domain',
       description: 'Disassociate a custom domain name from an App Runner service. Certificates tracking domain validity are associated with a custom domain and are stored in AWS Certificate Manager (ACM). These certificates aren\'t deleted as part of this action. App Runner delays certificate deletion for 30 days after a domain is disassociated from your service',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from',
@@ -991,6 +1031,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1003,6 +1044,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'list-auto-scaling-configurations',
       description: 'Returns a list of active App Runner automatic scaling configurations in your Amazon Web Services account. You can query the revisions for a specific configuration name or the revisions for all active configurations in your account. You can optionally query only the latest revision of each requested name. To retrieve a full description of a particular configuration revision, call and provide one of the ARNs returned by ListAutoScalingConfigurations',
       options: [
+
         Option(
           name: '--auto-scaling-configuration-name',
           description: 'The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations',
@@ -1054,6 +1096,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1066,6 +1109,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'list-connections',
       description: 'Returns a list of App Runner connections that are associated with your Amazon Web Services account',
       options: [
+
         Option(
           name: '--connection-name',
           description: 'If specified, only this connection is returned. If not specified, the result isn\'t filtered by name',
@@ -1109,6 +1153,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1121,6 +1166,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'list-observability-configurations',
       description: 'Returns a list of active App Runner observability configurations in your Amazon Web Services account. You can query the revisions for a specific configuration name or the revisions for all active configurations in your account. You can optionally query only the latest revision of each requested name. To retrieve a full description of a particular configuration revision, call and provide one of the ARNs returned by ListObservabilityConfigurations',
       options: [
+
         Option(
           name: '--observability-configuration-name',
           description: 'The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations',
@@ -1172,6 +1218,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1184,6 +1231,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'list-operations',
       description: 'Return a list of operations that occurred on an App Runner service. The resulting list of OperationSummary objects is sorted in reverse chronological order. The first object on the list represents the last started operation',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for',
@@ -1227,6 +1275,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1239,6 +1288,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'list-services',
       description: 'Returns a list of running App Runner services in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request. If you don\'t specify NextToken, the request retrieves the first result page',
@@ -1273,6 +1323,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1285,6 +1336,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'list-services-for-auto-scaling-configuration',
       description: 'Returns a list of the associated App Runner services using an auto scaling configuration',
       options: [
+
         Option(
           name: '--auto-scaling-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to list the services for. The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either .../name  or .../name/revision . If a revision isn\'t specified, the latest active revision is used',
@@ -1328,6 +1380,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1340,6 +1393,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List tags that are associated with for an App Runner resource. The response contains a list of tag key-value pairs',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that a tag list is requested for. It must be the ARN of an App Runner resource',
@@ -1365,6 +1419,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1377,6 +1432,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'list-vpc-connectors',
       description: 'Returns a list of App Runner VPC connectors in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in each response (result page). It\'s used for a paginated request. If you don\'t specify MaxResults, the request retrieves all available results in a single response',
@@ -1411,6 +1467,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1423,6 +1480,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'list-vpc-ingress-connections',
       description: 'Return a list of App Runner VPC Ingress Connections in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--filter',
           description: 'The VPC Ingress Connections to be listed based on either the Service Arn or Vpc Endpoint Id, or both',
@@ -1466,6 +1524,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1478,6 +1537,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'pause-service',
       description: 'Pause an active App Runner service. App Runner reduces compute capacity for the service to zero and loses state (for example, ephemeral storage is removed). This is an asynchronous operation. On a successful call, you can use the returned OperationId and the ListOperations call to track the operation\'s progress',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner service that you want to pause',
@@ -1503,6 +1563,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1515,6 +1576,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'resume-service',
       description: 'Resume an active App Runner service. App Runner provisions compute capacity for the service. This is an asynchronous operation. On a successful call, you can use the returned OperationId and the ListOperations call to track the operation\'s progress',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner service that you want to resume',
@@ -1540,6 +1602,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1552,6 +1615,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'start-deployment',
       description: 'Initiate a manual deployment of the latest commit in a source code repository or the latest image in a source image repository to an App Runner service. For a source code repository, App Runner retrieves the commit and builds a Docker image. For a source image repository, App Runner retrieves the latest Docker image. In both cases, App Runner then deploys the new image to your service and starts a new container instance. This is an asynchronous operation. On a successful call, you can use the returned OperationId and the ListOperations call to track the operation\'s progress',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to',
@@ -1577,6 +1641,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1589,6 +1654,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'tag-resource',
       description: 'Add tags to, or update the tag values of, an App Runner resource. A tag is a key-value pair',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to update tags for. It must be the ARN of an App Runner resource',
@@ -1623,6 +1689,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1635,6 +1702,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'untag-resource',
       description: 'Remove tags from an App Runner resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to remove tags from. It must be the ARN of an App Runner resource',
@@ -1669,6 +1737,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1681,6 +1750,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'update-default-auto-scaling-configuration',
       description: 'Update an auto scaling configuration to be the default. The existing default auto scaling configuration will be set to non-default automatically',
       options: [
+
         Option(
           name: '--auto-scaling-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to set as the default. The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either .../name  or .../name/revision . If a revision isn\'t specified, the latest active revision is set as the default',
@@ -1706,6 +1776,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1718,6 +1789,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'update-service',
       description: 'Update an App Runner service. You can update the source configuration and instance configuration of the service. You can also update the ARN of the auto scaling configuration resource that\'s associated with the service. However, you can\'t change the name or the encryption configuration of the service. These can be set only when you create the service. To update the tags applied to your service, use the separate actions TagResource and UntagResource. This is an asynchronous operation. On a successful call, you can use the returned OperationId and the ListOperations call to track the operation\'s progress',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The Amazon Resource Name (ARN) of the App Runner service that you want to update',
@@ -1797,6 +1869,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1809,6 +1882,7 @@ final FigSpec apprunnerSpec = FigSpec(
       name: 'update-vpc-ingress-connection',
       description: 'Update an existing App Runner VPC Ingress Connection resource. The VPC Ingress Connection must be in one of the following states to be updated:    AVAILABLE     FAILED_CREATION     FAILED_UPDATE',
       options: [
+
         Option(
           name: '--vpc-ingress-connection-arn',
           description: 'The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update',
@@ -1843,6 +1917,7 @@ final FigSpec apprunnerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

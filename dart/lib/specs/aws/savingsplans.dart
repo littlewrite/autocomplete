@@ -9,10 +9,12 @@ final FigSpec savingsplansSpec = FigSpec(
   name: 'savingsplans',
   description: 'Savings Plans are a pricing model that offer significant savings on Amazon Web Services usage (for example, on Amazon EC2 instances). You commit to a consistent amount of usage per hour, in the specified currency, for a term of one or three years, and receive a lower price for that usage. For more information, see the Amazon Web Services Savings Plans User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-savings-plan',
       description: 'Creates a Savings Plan',
       options: [
+
         Option(
           name: '--savings-plan-offering-id',
           description: 'The ID of the offering',
@@ -83,6 +85,7 @@ final FigSpec savingsplansSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec savingsplansSpec = FigSpec(
       name: 'delete-queued-savings-plan',
       description: 'Deletes the queued purchase for the specified Savings Plan',
       options: [
+
         Option(
           name: '--savings-plan-id',
           description: 'The ID of the Savings Plan',
@@ -120,6 +124,7 @@ final FigSpec savingsplansSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec savingsplansSpec = FigSpec(
       name: 'describe-savings-plan-rates',
       description: 'Describes the rates for the specified Savings Plan',
       options: [
+
         Option(
           name: '--savings-plan-id',
           description: 'The ID of the Savings Plan',
@@ -184,6 +190,7 @@ final FigSpec savingsplansSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec savingsplansSpec = FigSpec(
       name: 'describe-savings-plans',
       description: 'Describes the specified Savings Plans',
       options: [
+
         Option(
           name: '--savings-plan-arns',
           description: 'The Amazon Resource Names (ARN) of the Savings Plans',
@@ -266,6 +274,7 @@ final FigSpec savingsplansSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -278,6 +287,7 @@ final FigSpec savingsplansSpec = FigSpec(
       name: 'describe-savings-plans-offering-rates',
       description: 'Describes the offering rates for the specified Savings Plans',
       options: [
+
         Option(
           name: '--savings-plan-offering-ids',
           description: 'The IDs of the offerings',
@@ -384,6 +394,7 @@ final FigSpec savingsplansSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -396,6 +407,7 @@ final FigSpec savingsplansSpec = FigSpec(
       name: 'describe-savings-plans-offerings',
       description: 'Describes the offerings for the specified Savings Plans',
       options: [
+
         Option(
           name: '--offering-ids',
           description: 'The IDs of the offerings',
@@ -529,6 +541,7 @@ final FigSpec savingsplansSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -541,6 +554,7 @@ final FigSpec savingsplansSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -566,6 +580,7 @@ final FigSpec savingsplansSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -578,6 +593,7 @@ final FigSpec savingsplansSpec = FigSpec(
       name: 'return-savings-plan',
       description: 'Returns the specified Savings Plan',
       options: [
+
         Option(
           name: '--savings-plan-id',
           description: 'The ID of the Savings Plan',
@@ -612,6 +628,7 @@ final FigSpec savingsplansSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -624,6 +641,7 @@ final FigSpec savingsplansSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -658,6 +676,7 @@ final FigSpec savingsplansSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -670,6 +689,7 @@ final FigSpec savingsplansSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -704,6 +724,7 @@ final FigSpec savingsplansSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

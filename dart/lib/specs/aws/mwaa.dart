@@ -9,10 +9,12 @@ final FigSpec mwaaSpec = FigSpec(
   name: 'mwaa',
   description: 'Amazon Managed Workflows for Apache Airflow This section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API reference documentation. For more information, see What is Amazon MWAA?.  Endpoints     api.airflow.{region}.amazonaws.com - This endpoint is used for environment management.    CreateEnvironment     DeleteEnvironment     GetEnvironment     ListEnvironments     ListTagsForResource     TagResource     UntagResource     UpdateEnvironment       env.airflow.{region}.amazonaws.com - This endpoint is used to operate the Airflow environment.    CreateCliToken     CreateWebLoginToken     InvokeRestApi       Regions  For a list of supported regions, see Amazon MWAA endpoints and quotas in the Amazon Web Services General Reference',
   subcommands: [
+
     Subcommand(
       name: 'create-cli-token',
       description: 'Creates a CLI token for the Airflow CLI. To learn more, see Creating an Apache Airflow CLI token',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the Amazon MWAA environment. For example, MyMWAAEnvironment',
@@ -38,6 +40,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'create-environment',
       description: 'Creates an Amazon Managed Workflows for Apache Airflow (Amazon MWAA) environment',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the Amazon MWAA environment. For example, MyMWAAEnvironment',
@@ -291,6 +295,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -303,6 +308,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'create-web-login-token',
       description: 'Creates a web login token for the Airflow Web UI. To learn more, see Creating an Apache Airflow web login token',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the Amazon MWAA environment. For example, MyMWAAEnvironment',
@@ -328,6 +334,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -340,6 +347,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'delete-environment',
       description: 'Deletes an Amazon Managed Workflows for Apache Airflow (Amazon MWAA) environment',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the Amazon MWAA environment. For example, MyMWAAEnvironment',
@@ -365,6 +373,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -377,6 +386,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'get-environment',
       description: 'Describes an Amazon Managed Workflows for Apache Airflow (MWAA) environment',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the Amazon MWAA environment. For example, MyMWAAEnvironment',
@@ -402,6 +412,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -414,6 +425,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'invoke-rest-api',
       description: 'Invokes the Apache Airflow REST API on the webserver with the specified inputs. To learn more, see Using the Apache Airflow REST API',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the Amazon MWAA environment. For example, MyMWAAEnvironment',
@@ -475,6 +487,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -487,6 +500,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'list-environments',
       description: 'Lists the Amazon Managed Workflows for Apache Airflow (MWAA) environments',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Retrieves the next page of the results',
@@ -548,6 +562,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -560,6 +575,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the key-value tag pairs associated to the Amazon Managed Workflows for Apache Airflow (MWAA) environment. For example, "Environment": "Staging"',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment',
@@ -585,6 +601,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -597,6 +614,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'publish-metrics',
       description: 'Internal only. Publishes environment health metrics to Amazon CloudWatch',
       options: [
+
         Option(
           name: '--environment-name',
           description: 'Internal only. The name of the environment',
@@ -631,6 +649,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -643,6 +662,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates key-value tag pairs to your Amazon Managed Workflows for Apache Airflow (MWAA) environment',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment',
@@ -677,6 +697,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -689,6 +710,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes key-value tag pairs associated to your Amazon Managed Workflows for Apache Airflow (MWAA) environment. For example, "Environment": "Staging"',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment',
@@ -723,6 +745,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -735,6 +758,7 @@ final FigSpec mwaaSpec = FigSpec(
       name: 'update-environment',
       description: 'Updates an Amazon Managed Workflows for Apache Airflow (MWAA) environment',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of your Amazon MWAA environment. For example, MyMWAAEnvironment',
@@ -949,6 +973,7 @@ final FigSpec mwaaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

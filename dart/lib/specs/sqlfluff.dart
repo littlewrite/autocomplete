@@ -9,6 +9,7 @@ final FigSpec sqlfluffSpec = FigSpec(
   name: 'sqlfluff',
   description: 'A dialect-flexible and configurable SQL linter',
   options: [
+
     Option(
       name: '--version',
       description: 'Show the version and exit',
@@ -21,6 +22,7 @@ final FigSpec sqlfluffSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'lint',
       description: 'Lint SQL files via passing a list of files or using stdin',
@@ -32,6 +34,7 @@ final FigSpec sqlfluffSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--nocolor', '-n'],
           description: 'No color - output will be without ANSI color codes'
@@ -76,6 +79,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             name: 'templater',
             description: 'Name of templater to use, eg. raw',
             suggestions: [
+
               FigSuggestion(name: 'raw'),
               FigSuggestion(name: 'jinja'),
               FigSuggestion(name: 'python'),
@@ -92,6 +96,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             name: 'dialect',
             description: 'Name of dialect, eg. ANSI',
             suggestions: [
+
               FigSuggestion(name: 'ansi'),
               FigSuggestion(name: 'bigquery'),
               FigSuggestion(name: 'exasol'),
@@ -116,6 +121,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             Arg(
             name: 'format',
             suggestions: [
+
               FigSuggestion(name: 'human'),
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'yaml'),
@@ -150,6 +156,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             name: 'logger',
             description: 'Name of logger to limit to, eg. templater',
             suggestions: [
+
               FigSuggestion(name: 'templater'),
               FigSuggestion(name: 'lexer'),
               FigSuggestion(name: 'parser'),
@@ -200,6 +207,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             name: 'annotation-level',
             description: 'Level of annotation, eg. notice',
             suggestions: [
+
               FigSuggestion(name: 'notice'),
               FigSuggestion(name: 'warning'),
               FigSuggestion(name: 'failure'),
@@ -237,6 +245,7 @@ final FigSpec sqlfluffSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--nocolor', '-n'],
           description: 'No color - output will be without ANSI color codes'
@@ -281,6 +290,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             name: 'templater',
             description: 'Name of templater to use, eg. raw',
             suggestions: [
+
               FigSuggestion(name: 'raw'),
               FigSuggestion(name: 'jinja'),
               FigSuggestion(name: 'python'),
@@ -297,6 +307,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             name: 'dialect',
             description: 'Name of dialect, eg. ANSI',
             suggestions: [
+
               FigSuggestion(name: 'ansi'),
               FigSuggestion(name: 'bigquery'),
               FigSuggestion(name: 'exasol'),
@@ -321,6 +332,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             Arg(
             name: 'format',
             suggestions: [
+
               FigSuggestion(name: 'human'),
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'yaml'),
@@ -364,6 +376,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             name: 'logger',
             description: 'Name of logger to limit to, eg. templater',
             suggestions: [
+
               FigSuggestion(name: 'templater'),
               FigSuggestion(name: 'lexer'),
               FigSuggestion(name: 'parser'),
@@ -429,6 +442,7 @@ final FigSpec sqlfluffSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--nocolor', '-n'],
           description: 'No color - output will be without ANSI color codes'
@@ -473,6 +487,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             name: 'templater',
             description: 'Name of templater to use, eg. raw',
             suggestions: [
+
               FigSuggestion(name: 'raw'),
               FigSuggestion(name: 'jinja'),
               FigSuggestion(name: 'python'),
@@ -489,6 +504,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             name: 'dialect',
             description: 'Name of dialect, eg. ANSI',
             suggestions: [
+
               FigSuggestion(name: 'ansi'),
               FigSuggestion(name: 'bigquery'),
               FigSuggestion(name: 'exasol'),
@@ -521,6 +537,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             Arg(
             name: 'format',
             suggestions: [
+
               FigSuggestion(name: 'human'),
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'yaml'),
@@ -555,6 +572,7 @@ final FigSpec sqlfluffSpec = FigSpec(
             name: 'logger',
             description: 'Name of logger to limit to, eg. templater',
             suggestions: [
+
               FigSuggestion(name: 'templater'),
               FigSuggestion(name: 'lexer'),
               FigSuggestion(name: 'parser'),
@@ -611,6 +629,7 @@ final FigSpec sqlfluffSpec = FigSpec(
       name: 'dialects',
       description: 'Show the current dialects available',
       options: [
+
         Option(
           name: ['--nocolor', '-n'],
           description: 'No color - output will be without ANSI color codes'
@@ -626,6 +645,7 @@ final FigSpec sqlfluffSpec = FigSpec(
       name: 'version',
       description: 'Show the version of sqlfluff',
       options: [
+
         Option(
           name: ['--nocolor', '-n'],
           description: 'No color - output will be without ANSI color codes'
@@ -641,6 +661,7 @@ final FigSpec sqlfluffSpec = FigSpec(
       name: 'rules',
       description: 'Show the current rules in use',
       options: [
+
         Option(
           name: ['--nocolor', '-n'],
           description: 'No color - output will be without ANSI color codes'

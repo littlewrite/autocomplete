@@ -9,10 +9,12 @@ final FigSpec sesv2Spec = FigSpec(
   name: 'sesv2',
   description: 'Amazon SES API v2  Amazon SES is an Amazon Web Services service that you can use to send email messages to your customers. If you\'re new to Amazon SES API v2, you might find it helpful to review the Amazon Simple Email Service Developer Guide. The Amazon SES Developer Guide provides information and code samples that demonstrate how to use Amazon SES API v2 features programmatically',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-metric-data',
       description: 'Retrieves batches of metric data collected based on your sending activity. You can execute this operation no more than 16 times per second, and with at most 160 queries from the batches per second (cumulative)',
       options: [
+
         Option(
           name: '--queries',
           description: 'A list of queries for metrics to be retrieved',
@@ -38,6 +40,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'cancel-export-job',
       description: 'Cancels an export job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The export job ID',
@@ -75,6 +79,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-configuration-set',
       description: 'Create a configuration set. Configuration sets are groups of rules that you can apply to the emails that you send. You apply a configuration set to an email by specifying the name of the configuration set when you call the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only',
@@ -175,6 +181,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-configuration-set-event-destination',
       description: 'Create an event destination. Events include message sends, deliveries, opens, clicks, bounces, and complaints. Event destinations are places that you can send information about these events to. For example, you can send event data to Amazon EventBridge and associate a rule to send the event to the specified target. A single configuration set can include more than one event destination',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set',
@@ -230,6 +238,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-contact',
       description: 'Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list',
       options: [
+
         Option(
           name: '--contact-list-name',
           description: 'The name of the contact list to which the contact should be added',
@@ -302,6 +312,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -314,6 +325,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-contact-list',
       description: 'Creates a contact list',
       options: [
+
         Option(
           name: '--contact-list-name',
           description: 'The name of the contact list',
@@ -366,6 +378,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -378,6 +391,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-custom-verification-email-template',
       description: 'Creates a new custom verification email template. For more information about custom verification email templates, see Using custom verification email templates in the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the custom verification email template',
@@ -448,6 +462,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -460,6 +475,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-dedicated-ip-pool',
       description: 'Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are associated with your Amazon Web Services account. You can associate a pool with a configuration set. When you send an email that uses that configuration set, the message is sent from one of the addresses in the associated pool',
       options: [
+
         Option(
           name: '--pool-name',
           description: 'The name of the dedicated IP pool',
@@ -503,6 +519,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -515,6 +532,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-deliverability-test-report',
       description: 'Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. Amazon SES then sends that message to special email addresses spread across several major email providers. After about 24 hours, the test is complete, and you can use the GetDeliverabilityTestReport operation to view the results of the test',
       options: [
+
         Option(
           name: '--report-name',
           description: 'A unique name that helps you to identify the predictive inbox placement test when you retrieve the results',
@@ -567,6 +585,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -579,6 +598,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-email-identity',
       description: 'Starts the process of verifying an email identity. An identity is an email address or domain that you use when you send email. Before you can use an identity to send email, you first have to verify it. By verifying an identity, you demonstrate that you\'re the owner of the identity, and that you\'ve given Amazon SES API v2 permission to send email from the identity. When you verify an email address, Amazon SES sends an email to the address. Your email address is verified as soon as you follow the link in the verification email.  When you verify a domain without specifying the DkimSigningAttributes object, this operation provides a set of DKIM tokens. You can convert these tokens into CNAME records, which you then add to the DNS configuration for your domain. Your domain is verified when Amazon SES detects these records in the DNS configuration for your domain. This verification method is known as Easy DKIM. Alternatively, you can perform the verification process by providing your own public-private key pair. This verification method is known as Bring Your Own DKIM (BYODKIM). To use BYODKIM, your call to the CreateEmailIdentity operation has to include the DkimSigningAttributes object. When you specify this object, you provide a selector (a component of the DNS record name that identifies the public key to use for DKIM authentication) and a private key. When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens. You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon SES detects these records in the DNS configuration for your domain. For some DNS providers, it can take 72 hours or more to complete the domain verification process. Additionally, you can associate an existing configuration set with the email identity that you\'re verifying',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The email address or domain to verify',
@@ -631,6 +651,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -643,6 +664,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-email-identity-policy',
       description: 'Creates the specified sending authorization policy for the given identity (an email address or a domain).  This API is for the identity owner only. If you have not verified the identity, this API will return an error.  Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The email identity',
@@ -686,6 +708,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -698,6 +721,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-email-template',
       description: 'Creates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the template',
@@ -732,6 +756,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -744,6 +769,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-export-job',
       description: 'Creates an export job for a data source and destination. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--export-data-source',
           description: 'The data source for the export job',
@@ -778,6 +804,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -790,6 +817,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'create-import-job',
       description: 'Creates an import job for a data destination',
       options: [
+
         Option(
           name: '--import-destination',
           description: 'The destination for the import job',
@@ -824,6 +852,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -836,6 +865,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'delete-configuration-set',
       description: 'Delete an existing configuration set.  Configuration sets are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set',
@@ -861,6 +891,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -873,6 +904,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'delete-configuration-set-event-destination',
       description: 'Delete an event destination.  Events include message sends, deliveries, opens, clicks, bounces, and complaints. Event destinations are places that you can send information about these events to. For example, you can send event data to Amazon EventBridge and associate a rule to send the event to the specified target',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set that contains the event destination to delete',
@@ -907,6 +939,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -919,6 +952,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'delete-contact',
       description: 'Removes a contact from a contact list',
       options: [
+
         Option(
           name: '--contact-list-name',
           description: 'The name of the contact list from which the contact should be removed',
@@ -953,6 +987,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -965,6 +1000,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'delete-contact-list',
       description: 'Deletes a contact list and all of the contacts on that list',
       options: [
+
         Option(
           name: '--contact-list-name',
           description: 'The name of the contact list',
@@ -990,6 +1026,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1002,6 +1039,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'delete-custom-verification-email-template',
       description: 'Deletes an existing custom verification email template. For more information about custom verification email templates, see Using custom verification email templates in the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the custom verification email template that you want to delete',
@@ -1027,6 +1065,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1039,6 +1078,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'delete-dedicated-ip-pool',
       description: 'Delete a dedicated IP pool',
       options: [
+
         Option(
           name: '--pool-name',
           description: 'The name of the dedicated IP pool that you want to delete',
@@ -1064,6 +1104,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1076,6 +1117,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'delete-email-identity',
       description: 'Deletes an email identity. An identity can be either an email address or a domain name',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The identity (that is, the email address or domain) to delete',
@@ -1101,6 +1143,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1113,6 +1156,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'delete-email-identity-policy',
       description: 'Deletes the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.  This API is for the identity owner only. If you have not verified the identity, this API will return an error.  Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The email identity',
@@ -1147,6 +1191,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1159,6 +1204,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'delete-email-template',
       description: 'Deletes an email template. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the template to be deleted',
@@ -1184,6 +1230,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1196,6 +1243,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'delete-suppressed-destination',
       description: 'Removes an email address from the suppression list for your account',
       options: [
+
         Option(
           name: '--email-address',
           description: 'The suppressed email destination to remove from the account suppression list',
@@ -1221,6 +1269,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1233,6 +1282,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-account',
       description: 'Obtain information about the email-sending status and capabilities of your Amazon SES account in the current Amazon Web Services Region',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1249,6 +1299,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1261,6 +1312,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-blacklist-reports',
       description: 'Retrieve a list of the blacklists that your dedicated IP addresses appear on',
       options: [
+
         Option(
           name: '--blacklist-item-names',
           description: 'A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint',
@@ -1286,6 +1338,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1298,6 +1351,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-configuration-set',
       description: 'Get information about an existing configuration set, including the dedicated IP pool that it\'s associated with, whether or not it\'s enabled for sending email, and more.  Configuration sets are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set',
@@ -1323,6 +1377,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1335,6 +1390,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-configuration-set-event-destinations',
       description: 'Retrieve a list of event destinations that are associated with a configuration set.  Events include message sends, deliveries, opens, clicks, bounces, and complaints. Event destinations are places that you can send information about these events to. For example, you can send event data to Amazon EventBridge and associate a rule to send the event to the specified target',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set that contains the event destination',
@@ -1360,6 +1416,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1372,6 +1429,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-contact',
       description: 'Returns a contact from a contact list',
       options: [
+
         Option(
           name: '--contact-list-name',
           description: 'The name of the contact list to which the contact belongs',
@@ -1406,6 +1464,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1418,6 +1477,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-contact-list',
       description: 'Returns contact list metadata. It does not return any information about the contacts present in the list',
       options: [
+
         Option(
           name: '--contact-list-name',
           description: 'The name of the contact list',
@@ -1443,6 +1503,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1455,6 +1516,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-custom-verification-email-template',
       description: 'Returns the custom email verification template for the template name you specify. For more information about custom verification email templates, see Using custom verification email templates in the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the custom verification email template that you want to retrieve',
@@ -1480,6 +1542,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1492,6 +1555,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-dedicated-ip',
       description: 'Get information about a dedicated IP address, including the name of the dedicated IP pool that it\'s associated with, as well information about the automatic warm-up process for the address',
       options: [
+
         Option(
           name: '--ip',
           description: 'The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that\'s assocaited with your Amazon Web Services account',
@@ -1517,6 +1581,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1529,6 +1594,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-dedicated-ip-pool',
       description: 'Retrieve information about the dedicated pool',
       options: [
+
         Option(
           name: '--pool-name',
           description: 'The name of the dedicated IP pool to retrieve',
@@ -1554,6 +1620,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1566,6 +1633,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-dedicated-ips',
       description: 'List the dedicated IP addresses that are associated with your Amazon Web Services account',
       options: [
+
         Option(
           name: '--pool-name',
           description: 'The name of the IP pool that the dedicated IP address is associated with',
@@ -1609,6 +1677,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1621,6 +1690,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-deliverability-dashboard-options',
       description: 'Retrieve information about the status of the Deliverability dashboard for your account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email. You also gain the ability to perform predictive inbox placement tests. When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see Amazon SES Pricing',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1637,6 +1707,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1649,6 +1720,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-deliverability-test-report',
       description: 'Retrieve the results of a predictive inbox placement test',
       options: [
+
         Option(
           name: '--report-id',
           description: 'A unique string that identifies the predictive inbox placement test',
@@ -1674,6 +1746,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1686,6 +1759,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-domain-deliverability-campaign',
       description: 'Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for',
       options: [
+
         Option(
           name: '--campaign-id',
           description: 'The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign',
@@ -1711,6 +1785,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1723,6 +1798,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-domain-statistics-report',
       description: 'Retrieve inbox placement and engagement rates for the domains that you use to send email',
       options: [
+
         Option(
           name: '--domain',
           description: 'The domain that you want to obtain deliverability metrics for',
@@ -1766,6 +1842,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1778,6 +1855,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-email-identity',
       description: 'Provides information about a specific identity, including the identity\'s verification status, sending authorization policies, its DKIM authentication status, and its custom Mail-From settings',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The email identity',
@@ -1803,6 +1881,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1815,6 +1894,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-email-identity-policies',
       description: 'Returns the requested sending authorization policies for the given identity (an email address or a domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.  This API is for the identity owner only. If you have not verified the identity, this API will return an error.  Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The email identity',
@@ -1840,6 +1920,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1852,6 +1933,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-email-template',
       description: 'Displays the template object (which includes the subject line, HTML part and text part) for the template you specify. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the template',
@@ -1877,6 +1959,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1889,6 +1972,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-export-job',
       description: 'Provides information about an export job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The export job ID',
@@ -1914,6 +1998,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1926,6 +2011,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-import-job',
       description: 'Provides information about an import job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID of the import job',
@@ -1951,6 +2037,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1963,6 +2050,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-message-insights',
       description: 'Provides information about a specific message, including the from address, the subject, the recipient address, email tags, as well as events associated with the message. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--message-id',
           description: 'A MessageId is a unique identifier for a message, and is returned when sending emails through Amazon SES',
@@ -1988,6 +2076,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2000,6 +2089,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'get-suppressed-destination',
       description: 'Retrieves information about a specific email address that\'s on the suppression list for your account',
       options: [
+
         Option(
           name: '--email-address',
           description: 'The email address that\'s on the account suppression list',
@@ -2025,6 +2115,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2037,6 +2128,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-configuration-sets',
       description: 'List all of the configuration sets associated with your account in the current region.  Configuration sets are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets',
@@ -2071,6 +2163,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2083,6 +2176,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-contact-lists',
       description: 'Lists all of the contact lists available',
       options: [
+
         Option(
           name: '--page-size',
           description: 'Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the NextToken element is sent in the response. Use the NextToken value in subsequent requests to retrieve additional lists',
@@ -2117,6 +2211,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2129,6 +2224,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-contacts',
       description: 'Lists the contacts present in a specific contact list',
       options: [
+
         Option(
           name: '--contact-list-name',
           description: 'The name of the contact list',
@@ -2181,6 +2277,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2193,6 +2290,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-custom-verification-email-templates',
       description: 'Lists the existing custom verification email templates for your account in the current Amazon Web Services Region. For more information about custom verification email templates, see Using custom verification email templates in the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token returned from a previous call to ListCustomVerificationEmailTemplates to indicate the position in the list of custom verification email templates',
@@ -2227,6 +2325,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2239,6 +2338,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-dedicated-ip-pools',
       description: 'List all of the dedicated IP pools that exist in your Amazon Web Services account in the current Region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token returned from a previous call to ListDedicatedIpPools to indicate the position in the list of dedicated IP pools',
@@ -2273,6 +2373,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2285,6 +2386,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-deliverability-test-reports',
       description: 'Show a list of the predictive inbox placement tests that you\'ve performed, regardless of their statuses. For predictive inbox placement tests that are complete, you can use the GetDeliverabilityTestReport operation to view the results',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token returned from a previous call to ListDeliverabilityTestReports to indicate the position in the list of predictive inbox placement tests',
@@ -2319,6 +2421,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2331,6 +2434,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-domain-deliverability-campaigns',
       description: 'Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain',
       options: [
+
         Option(
           name: '--start-date',
           description: 'The first day that you want to obtain deliverability data for',
@@ -2392,6 +2496,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2404,6 +2509,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-email-identities',
       description: 'Returns a list of all of the email identities that are associated with your Amazon Web Services account. An identity can be either an email address or a domain. This operation returns identities that are verified as well as those that aren\'t. This operation returns identities that are associated with Amazon SES and Amazon Pinpoint',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token returned from a previous call to ListEmailIdentities to indicate the position in the list of identities',
@@ -2438,6 +2544,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2450,6 +2557,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-email-templates',
       description: 'Lists the email templates present in your Amazon SES account in the current Amazon Web Services Region. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token returned from a previous call to ListEmailTemplates to indicate the position in the list of email templates',
@@ -2484,6 +2592,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2496,6 +2605,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-export-jobs',
       description: 'Lists all of the export jobs',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token returned from a previous call to ListExportJobs to indicate the position in the list of export jobs',
@@ -2548,6 +2658,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2560,6 +2671,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-import-jobs',
       description: 'Lists all of the import jobs',
       options: [
+
         Option(
           name: '--import-destination-type',
           description: 'The destination of the import job, which can be used to list import jobs that have a certain ImportDestinationType',
@@ -2603,6 +2715,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2615,6 +2728,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-recommendations',
       description: 'Lists the recommendations present in your Amazon SES account in the current Amazon Web Services Region. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--filter',
           description: 'Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of STATUS and IMPACT or STATUS and TYPE',
@@ -2658,6 +2772,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2670,6 +2785,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-suppressed-destinations',
       description: 'Retrieves a list of email addresses that are on the suppression list for your account',
       options: [
+
         Option(
           name: '--reasons',
           description: 'The factors that caused the email address to be added to',
@@ -2731,6 +2847,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2743,6 +2860,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieve a list of the tags (keys and values) that are associated with a specified resource. A tag is a label that you optionally define and associate with a resource. Each tag consists of a required tag key and an optional associated tag value. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for',
@@ -2768,6 +2886,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2780,6 +2899,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-account-dedicated-ip-warmup-attributes',
       description: 'Enable or disable the automatic warm-up feature for dedicated IP addresses',
       options: [
+
         Option(
           name: '--auto-warmup-enabled',
           description: 'Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to true to enable the automatic warm-up feature, or set to false to disable it'
@@ -2804,6 +2924,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2816,6 +2937,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-account-details',
       description: 'Update your Amazon SES account details',
       options: [
+
         Option(
           name: '--mail-type',
           description: 'The type of email your account will send',
@@ -2885,6 +3007,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2897,6 +3020,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-account-sending-attributes',
       description: 'Enable or disable the ability of your account to send email',
       options: [
+
         Option(
           name: '--sending-enabled',
           description: 'Enables or disables your account\'s ability to send email. Set to true to enable email sending, or set to false to disable email sending.  If Amazon Web Services paused your account\'s ability to send email, you can\'t use this operation to resume your account\'s ability to send email'
@@ -2921,6 +3045,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2933,6 +3058,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-account-suppression-attributes',
       description: 'Change the settings for the account-level suppression list',
       options: [
+
         Option(
           name: '--suppressed-reasons',
           description: 'A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:    COMPLAINT – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.    BOUNCE – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce',
@@ -2958,6 +3084,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2970,6 +3097,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-account-vdm-attributes',
       description: 'Update your Amazon SES account VDM attributes. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--vdm-attributes',
           description: 'The VDM attributes that you wish to apply to your Amazon SES account',
@@ -2995,6 +3123,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3007,6 +3136,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-configuration-set-delivery-options',
       description: 'Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of dedicated IP addresses for sending specific types of email',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set to associate with a dedicated IP pool',
@@ -3059,6 +3189,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3071,6 +3202,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-configuration-set-reputation-options',
       description: 'Enable or disable collection of reputation metrics for emails that you send using a particular configuration set in a specific Amazon Web Services Region',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set',
@@ -3104,6 +3236,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3116,6 +3249,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-configuration-set-sending-options',
       description: 'Enable or disable email sending for messages that use a particular configuration set in a specific Amazon Web Services Region',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set to enable or disable email sending for',
@@ -3149,6 +3283,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3161,6 +3296,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-configuration-set-suppression-options',
       description: 'Specify the account suppression list preferences for a configuration set',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set to change the suppression list preferences for',
@@ -3195,6 +3331,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3207,6 +3344,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-configuration-set-tracking-options',
       description: 'Specify a custom domain to use for open and click tracking elements in email that you send',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set',
@@ -3250,6 +3388,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3262,6 +3401,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-configuration-set-vdm-options',
       description: 'Specify VDM preferences for email that you send using the configuration set. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set',
@@ -3296,6 +3436,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3308,6 +3449,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-dedicated-ip-in-pool',
       description: 'Move a dedicated IP address to an existing dedicated IP pool.  The dedicated IP address that you specify must already exist, and must be associated with your Amazon Web Services account.  The dedicated IP pool you specify must already exist. You can create a new pool by using the CreateDedicatedIpPool operation',
       options: [
+
         Option(
           name: '--ip',
           description: 'The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that\'s associated with your Amazon Web Services account',
@@ -3342,6 +3484,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3354,6 +3497,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-dedicated-ip-pool-scaling-attributes',
       description: 'Used to convert a dedicated IP pool to a different scaling mode.   MANAGED pools cannot be converted to STANDARD scaling mode',
       options: [
+
         Option(
           name: '--pool-name',
           description: 'The name of the dedicated IP pool',
@@ -3388,6 +3532,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3399,6 +3544,7 @@ final FigSpec sesv2Spec = FigSpec(
     Subcommand(
       name: 'put-dedicated-ip-warmup-attributes',
       options: [
+
         Option(
           name: '--ip',
           description: 'The dedicated IP address that you want to update the warm-up attributes for',
@@ -3433,6 +3579,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3445,6 +3592,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-deliverability-dashboard-option',
       description: 'Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email. You also gain the ability to perform predictive inbox placement tests. When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see Amazon SES Pricing',
       options: [
+
         Option(
           name: '--dashboard-enabled',
           description: 'Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to true'
@@ -3478,6 +3626,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3490,6 +3639,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-email-identity-configuration-set-attributes',
       description: 'Used to associate a configuration set with an email identity',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The email address or domain to associate with a configuration set',
@@ -3524,6 +3674,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3536,6 +3687,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-email-identity-dkim-attributes',
       description: 'Used to enable or disable DKIM authentication for an email identity',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The email identity',
@@ -3569,6 +3721,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3581,6 +3734,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-email-identity-dkim-signing-attributes',
       description: 'Used to configure or change the DKIM authentication settings for an email domain identity. You can use this operation to do any of the following:   Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).   Update the key length that should be used for Easy DKIM.   Change from using no DKIM authentication to using Easy DKIM.   Change from using no DKIM authentication to using BYODKIM.   Change from using Easy DKIM to using BYODKIM.   Change from using BYODKIM to using Easy DKIM',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The email identity',
@@ -3624,6 +3778,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3636,6 +3791,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-email-identity-feedback-attributes',
       description: 'Used to enable or disable feedback forwarding for an identity. This setting determines what happens when an identity is used to send an email that results in a bounce or complaint event. If the value is true, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the Return-Path header of the original email. You\'re required to have a method of tracking bounces and complaints. If you haven\'t set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled)',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The email identity',
@@ -3669,6 +3825,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3681,6 +3838,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-email-identity-mail-from-attributes',
       description: 'Used to enable or disable the custom Mail-From domain configuration for an email identity',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The verified email identity',
@@ -3724,6 +3882,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3736,6 +3895,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'put-suppressed-destination',
       description: 'Adds an email address to the suppression list for your account',
       options: [
+
         Option(
           name: '--email-address',
           description: 'The email address that should be added to the suppression list for your account',
@@ -3770,6 +3930,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3782,6 +3943,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'send-bulk-email',
       description: 'Composes an email message to multiple destinations',
       options: [
+
         Option(
           name: '--from-email-address',
           description: 'The email address to use as the "From" address for the email. The address that you specify has to be verified',
@@ -3879,6 +4041,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3891,6 +4054,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'send-custom-verification-email',
       description: 'Adds an email address to the list of identities for your Amazon SES account in the current Amazon Web Services Region and attempts to verify it. As a result of executing this operation, a customized verification email is sent to the specified address. To use this operation, you must first create a custom verification email template. For more information about creating and using custom verification email templates, see Using custom verification email templates in the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--email-address',
           description: 'The email address to verify',
@@ -3934,6 +4098,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3946,6 +4111,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'send-email',
       description: 'Sends an email message. You can use the Amazon SES API v2 to send the following types of messages:    Simple – A standard email message. When you create this type of message, you specify the sender, the recipient, and the message body, and Amazon SES assembles the message for you.    Raw – A raw, MIME-formatted email message. When you send this type of email, you have to specify all of the message headers, as well as the message body. You can use this message type to send messages that contain attachments. The message that you specify has to be a valid MIME message.    Templated – A message that contains personalization tags. When you send this type of email, Amazon SES API v2 automatically replaces the tags with values that you specify',
       options: [
+
         Option(
           name: '--from-email-address',
           description: 'The email address to use as the "From" address for the email. The address that you specify has to be verified',
@@ -4052,6 +4218,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4064,6 +4231,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'tag-resource',
       description: 'Add one or more tags (keys and values) to a specified resource. A tag is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags. Each tag consists of a required tag key and an associated tag value, both of which you define. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to',
@@ -4098,6 +4266,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4110,6 +4279,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'test-render-email-template',
       description: 'Creates a preview of the MIME content of an email when provided with a template and a set of replacement data. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the template',
@@ -4144,6 +4314,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4156,6 +4327,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'untag-resource',
       description: 'Remove one or more tags (keys and values) from a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from',
@@ -4190,6 +4362,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4202,6 +4375,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'update-configuration-set-event-destination',
       description: 'Update the configuration of an event destination for a configuration set.  Events include message sends, deliveries, opens, clicks, bounces, and complaints. Event destinations are places that you can send information about these events to. For example, you can send event data to Amazon EventBridge and associate a rule to send the event to the specified target',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set that contains the event destination to modify',
@@ -4245,6 +4419,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4257,6 +4432,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'update-contact',
       description: 'Updates a contact\'s preferences for a list.  You must specify all existing topic preferences in the TopicPreferences object, not just the ones that need updating; otherwise, all your existing preferences will be removed',
       options: [
+
         Option(
           name: '--contact-list-name',
           description: 'The name of the contact list',
@@ -4317,6 +4493,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4329,6 +4506,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'update-contact-list',
       description: 'Updates contact list metadata. This operation does a complete replacement',
       options: [
+
         Option(
           name: '--contact-list-name',
           description: 'The name of the contact list',
@@ -4372,6 +4550,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4384,6 +4563,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'update-custom-verification-email-template',
       description: 'Updates an existing custom verification email template. For more information about custom verification email templates, see Using custom verification email templates in the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the custom verification email template that you want to update',
@@ -4454,6 +4634,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4466,6 +4647,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'update-email-identity-policy',
       description: 'Updates the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.  This API is for the identity owner only. If you have not verified the identity, this API will return an error.  Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--email-identity',
           description: 'The email identity',
@@ -4509,6 +4691,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4521,6 +4704,7 @@ final FigSpec sesv2Spec = FigSpec(
       name: 'update-email-template',
       description: 'Updates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the Amazon SES Developer Guide. You can execute this operation no more than once per second',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the template',
@@ -4555,6 +4739,7 @@ final FigSpec sesv2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

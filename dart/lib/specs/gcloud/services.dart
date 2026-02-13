@@ -9,10 +9,12 @@ final FigSpec servicesSpec = FigSpec(
   name: 'services',
   description: 'List, enable and disable APIs and services',
   subcommands: [
+
     Subcommand(
       name: 'disable',
       description: 'Disable a service for consumption for a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -144,6 +146,7 @@ final FigSpec servicesSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -166,6 +169,7 @@ final FigSpec servicesSpec = FigSpec(
       name: 'enable',
       description: 'Enables a service for consumption for a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -293,6 +297,7 @@ final FigSpec servicesSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -315,6 +320,7 @@ final FigSpec servicesSpec = FigSpec(
       name: 'list',
       description: 'List services for a project',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -490,6 +496,7 @@ final FigSpec servicesSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -506,10 +513,12 @@ final FigSpec servicesSpec = FigSpec(
       name: 'operations',
       description: 'Manage Operation for various services',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describes an operation resource for a given operation name',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -644,6 +653,7 @@ final FigSpec servicesSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -666,6 +676,7 @@ final FigSpec servicesSpec = FigSpec(
           name: 'wait',
           description: 'Waits for an operation to complete for a given operation name',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -789,6 +800,7 @@ final FigSpec servicesSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -809,6 +821,7 @@ final FigSpec servicesSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -932,6 +945,7 @@ final FigSpec servicesSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -948,6 +962,7 @@ final FigSpec servicesSpec = FigSpec(
       name: 'peered-dns-domains',
       description: 'Peered DNS domains for various private service connections',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1071,6 +1086,7 @@ final FigSpec servicesSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1087,10 +1103,12 @@ final FigSpec servicesSpec = FigSpec(
       name: 'vpc-peerings',
       description: 'VPC Peerings to various services',
       subcommands: [
+
         Subcommand(
           name: 'connect',
           description: 'Connect to a service via VPC peering for a project network',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1253,6 +1271,7 @@ final FigSpec servicesSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1269,6 +1288,7 @@ final FigSpec servicesSpec = FigSpec(
           name: 'list',
           description: 'List connections to a service via VPC peering for a project network',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1415,6 +1435,7 @@ final FigSpec servicesSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1431,10 +1452,12 @@ final FigSpec servicesSpec = FigSpec(
           name: 'operations',
           description: 'Manage VPC Peering operations',
           subcommands: [
+
             Subcommand(
               name: 'describe',
               description: 'Describes an operation resource for a given operation name',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1570,6 +1593,7 @@ final FigSpec servicesSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1586,6 +1610,7 @@ final FigSpec servicesSpec = FigSpec(
               name: 'wait',
               description: 'Waits for an operation to complete  for a given operation name',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1721,6 +1746,7 @@ final FigSpec servicesSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1735,6 +1761,7 @@ final FigSpec servicesSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1858,6 +1885,7 @@ final FigSpec servicesSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1874,6 +1902,7 @@ final FigSpec servicesSpec = FigSpec(
           name: 'update',
           description: 'Update a private service connection to a service for a project network',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2039,6 +2068,7 @@ final FigSpec servicesSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2053,6 +2083,7 @@ final FigSpec servicesSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2176,6 +2207,7 @@ final FigSpec servicesSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2190,6 +2222,7 @@ final FigSpec servicesSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2313,6 +2346,7 @@ final FigSpec servicesSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

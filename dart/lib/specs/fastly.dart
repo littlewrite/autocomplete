@@ -9,14 +9,17 @@ final FigSpec fastlySpec = FigSpec(
   name: 'fastly',
   description: 'A CLI for interacting with the Fastly platform',
   subcommands: [
+
     Subcommand(
       name: 'acl',
       description: 'Manipulate Fastly ACLs (Access Control Lists)',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new ACL attached to the specified service version',
           options: [
+
             Option(
               name: '--name',
               description: 'Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace',
@@ -63,6 +66,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'delete',
           description: 'Delete an ACL from the specified service version',
           options: [
+
             Option(
               name: '--name',
               description: 'The name of the ACL to delete',
@@ -109,6 +113,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'describe',
           description: 'Retrieve a single ACL by name for the version and service',
           options: [
+
             Option(
               name: '--name',
               description: 'The name of the ACL',
@@ -155,6 +160,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List ACLs',
           options: [
+
             Option(
               name: '--version',
               description: '\'latest\', \'active\', or the number of a specific version',
@@ -192,6 +198,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update an ACL for a particular service and version',
           options: [
+
             Option(
               name: '--name',
               description: 'The name of the ACL to update',
@@ -249,10 +256,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'acl-entry',
       description: 'Manipulate Fastly ACL (Access Control List) entries',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Add an ACL entry to an ACL',
           options: [
+
             Option(
               name: '--acl-id',
               description: 'Alphanumeric string identifying a ACL',
@@ -317,6 +326,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'delete',
           description: 'Delete an ACL entry from a specified ACL',
           options: [
+
             Option(
               name: '--acl-id',
               description: 'Alphanumeric string identifying a ACL',
@@ -359,6 +369,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'describe',
           description: 'Retrieve a single ACL entry',
           options: [
+
             Option(
               name: '--acl-id',
               description: 'Alphanumeric string identifying a ACL',
@@ -405,6 +416,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List ACLs',
           options: [
+
             Option(
               name: '--acl-id',
               description: 'Alphanumeric string identifying a ACL',
@@ -478,6 +490,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update an ACL entry for a specified ACL',
           options: [
+
             Option(
               name: '--acl-id',
               description: 'Alphanumeric string identifying a ACL',
@@ -562,10 +575,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'auth-token',
       description: 'Manage API tokens for Fastly service users',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create an API token',
           options: [
+
             Option(
               name: '--password',
               description: 'User password corresponding with --token or \$FASTLY_API_TOKEN',
@@ -617,6 +632,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'delete',
           description: 'Revoke an API token',
           options: [
+
             Option(
               name: '--current',
               description: 'Revoke the token used to authenticate the request'
@@ -645,6 +661,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'describe',
           description: 'Get the current API token',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -655,6 +672,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List API tokens',
           options: [
+
             Option(
               name: '--customer-id',
               description: 'Alphanumeric string identifying the customer (falls back to FASTLY_CUSTOMER_ID)',
@@ -676,10 +694,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'backend',
       description: 'Manipulate Fastly service version backends',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a backend on a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -918,6 +938,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'delete',
           description: 'Delete a backend on a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -964,6 +985,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'describe',
           description: 'Show detailed information about a backend on a Fastly service version',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -1010,6 +1032,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List backends on a Fastly service version',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -1047,6 +1070,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update a backend on a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -1296,10 +1320,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'compute',
       description: 'Manage Compute@Edge packages',
       subcommands: [
+
         Subcommand(
           name: 'build',
           description: 'Build a Compute@Edge package locally',
           options: [
+
             Option(
               name: '--include-source',
               description: 'Include source code in built package'
@@ -1341,6 +1367,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'deploy',
           description: 'Deploy a package to a Fastly Compute@Edge service',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -1410,6 +1437,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'init',
           description: 'Initialize a new Compute@Edge package locally',
           options: [
+
             Option(
               name: '--name',
               description: 'Name of package, falls back to --directory',
@@ -1474,6 +1502,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'pack',
           description: 'Package a pre-compiled Wasm binary for a Fastly Compute@Edge service',
           options: [
+
             Option(
               name: '--wasm-binary',
               description: 'Path to a pre-compiled Wasm binary',
@@ -1489,6 +1518,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'publish',
           description: 'Build and deploy a Compute@Edge package to a Fastly service',
           options: [
+
             Option(
               name: '--comment',
               description: 'Human-readable comment',
@@ -1584,6 +1614,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'serve',
           description: 'Build and run a Compute@Edge package locally',
           options: [
+
             Option(
               name: '--addr',
               description: 'The IPv4 address and port to listen on',
@@ -1660,6 +1691,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update a package on a Fastly Compute@Edge service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -1706,6 +1738,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'validate',
           description: 'Validate a Compute@Edge package',
           options: [
+
             Option(
               name: '--package',
               description: 'Path to a package tar.gz',
@@ -1723,6 +1756,7 @@ final FigSpec fastlySpec = FigSpec(
       name: 'config',
       description: 'Display the Fastly CLI configuration',
       options: [
+
         Option(
           name: '--location',
           description: 'Print the location of the CLI configuration file'
@@ -1733,10 +1767,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'dictionary',
       description: 'Manipulate Fastly edge dictionaries',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Fastly edge dictionary on a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -1792,6 +1828,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'delete',
           description: 'Delete a Fastly edge dictionary from a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -1838,6 +1875,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'describe',
           description: 'Show detailed information about a Fastly edge dictionary',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -1884,6 +1922,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List all dictionaries on a Fastly service version',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -1921,6 +1960,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update name of dictionary on a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -1987,10 +2027,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'dictionary-item',
       description: 'Manipulate Fastly edge dictionary items',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new item on a Fastly edge dictionary',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -2042,6 +2084,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'delete',
           description: 'Delete an item from a Fastly edge dictionary',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -2084,6 +2127,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'describe',
           description: 'Show detailed information about a Fastly edge dictionary item',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -2130,6 +2174,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List items in a Fastly edge dictionary',
           options: [
+
             Option(
               name: '--dictionary-id',
               description: 'Dictionary ID',
@@ -2203,6 +2248,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update or insert an item on a Fastly edge dictionary',
           options: [
+
             Option(
               name: '--dictionary-id',
               description: 'Dictionary ID',
@@ -2265,10 +2311,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'domain',
       description: 'Manipulate Fastly service version domains',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a domain on a Fastly service version',
           options: [
+
             Option(
               name: '--name',
               description: 'Domain name',
@@ -2324,6 +2372,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'delete',
           description: 'Delete a domain on a Fastly service version',
           options: [
+
             Option(
               name: '--name',
               description: 'Domain name',
@@ -2370,6 +2419,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'describe',
           description: 'Show detailed information about a domain on a Fastly service version',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -2416,6 +2466,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List domains on a Fastly service version',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -2453,6 +2504,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update a domain on a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -2517,6 +2569,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'validate',
           description: 'Checks the status of a specific domain\'s DNS record for a Service Version',
           options: [
+
             Option(
               name: '--version',
               description: '\'latest\', \'active\', or the number of a specific version',
@@ -2565,10 +2618,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'healthcheck',
       description: 'Manipulate Fastly service version healthchecks',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a healthcheck on a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -2714,6 +2769,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'delete',
           description: 'Delete a healthcheck on a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -2760,6 +2816,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'describe',
           description: 'Show detailed information about a healthcheck on a Fastly service version',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -2806,6 +2863,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List healthchecks on a Fastly service version',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -2843,6 +2901,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update a healthcheck on a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -3003,6 +3062,7 @@ final FigSpec fastlySpec = FigSpec(
       name: 'log-tail',
       description: 'Tail Compute@Edge logs',
       options: [
+
         Option(
           name: '--service-id',
           description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -3072,14 +3132,17 @@ final FigSpec fastlySpec = FigSpec(
       name: 'logging',
       description: 'Manipulate Fastly service version logging endpoints',
       subcommands: [
+
         Subcommand(
           name: 'azureblob',
           description: 'Manipulate Fastly service version Azure Blob Storage logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an Azure Blob Storage logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Azure Blob Storage logging object. Used as a primary key for API access',
@@ -3261,6 +3324,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete an Azure Blob Storage logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -3307,6 +3371,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about an Azure Blob Storage logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -3353,6 +3418,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Azure Blob Storage logging endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -3390,6 +3456,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update an Azure Blob Storage logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -3582,10 +3649,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'bigquery',
           description: 'Manipulate Fastly service version BigQuery logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a BigQuery logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the BigQuery logging object. Used as a primary key for API access',
@@ -3722,6 +3791,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a BigQuery logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -3768,6 +3838,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a BigQuery logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -3814,6 +3885,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List BigQuery endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -3851,6 +3923,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a BigQuery logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -3998,10 +4071,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'cloudfiles',
           description: 'Manipulate Fastly service version Cloudfiles logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Cloudfiles logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Cloudfiles logging object. Used as a primary key for API access',
@@ -4183,6 +4258,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Cloudfiles logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -4229,6 +4305,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Cloudfiles logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -4275,6 +4352,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Cloudfiles endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -4312,6 +4390,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Cloudfiles logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -4504,10 +4583,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'datadog',
           description: 'Manipulate Fastly service version Datadog logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Datadog logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Datadog logging object. Used as a primary key for API access',
@@ -4608,6 +4689,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Datadog logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -4654,6 +4736,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Datadog logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -4700,6 +4783,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Datadog endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -4737,6 +4821,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Datadog logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -4848,10 +4933,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'digitalocean',
           description: 'Manipulate Fastly service version DigitalOcean Spaces logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a DigitalOcean Spaces logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the DigitalOcean Spaces logging object. Used as a primary key for API access',
@@ -5033,6 +5120,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a DigitalOcean Spaces logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -5079,6 +5167,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a DigitalOcean Spaces logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -5125,6 +5214,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List DigitalOcean Spaces logging endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -5162,6 +5252,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a DigitalOcean Spaces logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -5354,10 +5445,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'elasticsearch',
           description: 'Manipulate Fastly service version Elasticsearch logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an Elasticsearch logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Elasticsearch logging object. Used as a primary key for API access',
@@ -5521,6 +5614,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete an Elasticsearch logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -5567,6 +5661,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about an Elasticsearch logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -5613,6 +5708,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Elasticsearch endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -5650,6 +5746,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update an Elasticsearch logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -5824,10 +5921,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'ftp',
           description: 'Manipulate Fastly service version FTP logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an FTP logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the FTP logging object. Used as a primary key for API access',
@@ -5991,6 +6090,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete an FTP logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -6037,6 +6137,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about an FTP logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -6083,6 +6184,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List FTP endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -6120,6 +6222,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update an FTP logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -6303,10 +6406,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'gcs',
           description: 'Manipulate Fastly service version GCS logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a GCS logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the GCS logging object. Used as a primary key for API access',
@@ -6470,6 +6575,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a GCS logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -6516,6 +6622,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a GCS logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -6562,6 +6669,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List GCS endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -6599,6 +6707,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a GCS logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -6773,10 +6882,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'googlepubsub',
           description: 'Manipulate Fastly service version Google Cloud Pub/Sub logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Google Cloud Pub/Sub logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Google Cloud Pub/Sub logging object. Used as a primary key for API access',
@@ -6895,6 +7006,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Google Cloud Pub/Sub logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -6941,6 +7053,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Google Cloud Pub/Sub logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -6987,6 +7100,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Google Cloud Pub/Sub endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -7024,6 +7138,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Google Cloud Pub/Sub logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -7153,10 +7268,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'heroku',
           description: 'Manipulate Fastly service version Heroku logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Heroku logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Heroku logging object. Used as a primary key for API access',
@@ -7257,6 +7374,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Heroku logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -7303,6 +7421,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Heroku logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -7349,6 +7468,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Heroku endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -7386,6 +7506,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Heroku logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -7497,10 +7618,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'honeycomb',
           description: 'Manipulate Fastly service version Honeycomb logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Honeycomb logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Honeycomb logging object. Used as a primary key for API access',
@@ -7601,6 +7724,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Honeycomb logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -7647,6 +7771,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Honeycomb logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -7693,6 +7818,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Honeycomb endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -7730,6 +7856,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Honeycomb logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -7841,10 +7968,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'https',
           description: 'Manipulate Fastly service version HTTPS logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an HTTPS logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the HTTPS logging object. Used as a primary key for API access',
@@ -8044,6 +8173,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete an HTTPS logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -8090,6 +8220,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about an HTTPS logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -8136,6 +8267,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List HTTPS endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -8173,6 +8305,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update an HTTPS logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -8383,10 +8516,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'kafka',
           description: 'Manipulate Fastly service version Kafka logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Kafka logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Kafka logging object. Used as a primary key for API access',
@@ -8589,6 +8724,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Kafka logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -8635,6 +8771,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Kafka logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -8681,6 +8818,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Kafka endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -8718,6 +8856,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Kafka logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -8931,10 +9070,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'kinesis',
           description: 'Manipulate a Kinesis logging endpoint for a specific Fastly service version',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an Amazon Kinesis logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Kinesis logging object. Used as a primary key for API access',
@@ -9062,6 +9203,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Kinesis logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -9108,6 +9250,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Kinesis logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -9154,6 +9297,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Kinesis endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -9191,6 +9335,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Kinesis logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -9329,10 +9474,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'logentries',
           description: 'Manipulate Fastly service version Logentries logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Logentries logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Logentries logging object. Used as a primary key for API access',
@@ -9446,6 +9593,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Logentries logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -9492,6 +9640,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Logentries logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -9538,6 +9687,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Logentries endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -9575,6 +9725,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Logentries logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -9699,10 +9850,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'loggly',
           description: 'Manipulate Fastly service version Loggly logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Loggly logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Loggly logging object. Used as a primary key for API access',
@@ -9794,6 +9947,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Loggly logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -9840,6 +9994,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Loggly logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -9886,6 +10041,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Loggly endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -9923,6 +10079,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Loggly logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -10025,10 +10182,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'logshuttle',
           description: 'Manipulate Fastly service version Logshuttle logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Logshuttle logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Logshuttle logging object. Used as a primary key for API access',
@@ -10129,6 +10288,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Logshuttle logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -10175,6 +10335,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Logshuttle logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -10221,6 +10382,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Logshuttle endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -10258,6 +10420,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Logshuttle logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -10369,10 +10532,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'newrelic',
           description: 'Manipulate a NewRelic logging endpoint for a specific Fastly service version',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an New Relic logging endpoint attached to the specified service version',
               options: [
+
                 Option(
                   name: '--key',
                   description: 'The Insert API key from the Account page of your New Relic account',
@@ -10473,6 +10638,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete the New Relic Logs logging object for a particular service and version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name for the real-time logging configuration to delete',
@@ -10519,6 +10685,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Get the details of a New Relic Logs logging object for a particular service and version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name for the real-time logging configuration',
@@ -10565,6 +10732,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List all of the New Relic Logs logging objects for a particular service and version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -10602,6 +10770,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a New Relic Logs logging object for a particular service and version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name for the real-time logging configuration to update',
@@ -10713,10 +10882,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'openstack',
           description: 'Manipulate Fastly service version OpenStack logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an OpenStack logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the OpenStack logging object. Used as a primary key for API access',
@@ -10898,6 +11069,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete an OpenStack logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -10944,6 +11116,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about an OpenStack logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -10990,6 +11163,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List OpenStack logging endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -11027,6 +11201,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update an OpenStack logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -11219,10 +11394,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'papertrail',
           description: 'Manipulate Fastly service version Papertrail logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Papertrail logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Papertrail logging object. Used as a primary key for API access',
@@ -11323,6 +11500,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Papertrail logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -11369,6 +11547,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Papertrail logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -11415,6 +11594,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Papertrail endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -11452,6 +11632,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Papertrail logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -11563,10 +11744,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 's3',
           description: 'Manipulate Fastly service version S3 logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an Amazon S3 logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the S3 logging object. Used as a primary key for API access',
@@ -11784,6 +11967,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a S3 logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -11830,6 +12014,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a S3 logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -11876,6 +12061,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List S3 endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -11913,6 +12099,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a S3 logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -12141,10 +12328,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'scalyr',
           description: 'Manipulate Fastly service version Scalyr logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Scalyr logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Scalyr logging object. Used as a primary key for API access',
@@ -12245,6 +12434,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Scalyr logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -12291,6 +12481,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Scalyr logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -12337,6 +12528,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Scalyr endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -12374,6 +12566,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Scalyr logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -12485,10 +12678,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'sftp',
           description: 'Manipulate Fastly service version SFTP logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an SFTP logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the SFTP logging object. Used as a primary key for API access',
@@ -12688,6 +12883,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete an SFTP logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -12734,6 +12930,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about an SFTP logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -12780,6 +12977,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List SFTP endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -12817,6 +13015,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update an SFTP logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -13027,10 +13226,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'splunk',
           description: 'Manipulate Fastly service version Splunk logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Splunk logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Splunk logging object. Used as a primary key for API access',
@@ -13167,6 +13368,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Splunk logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -13213,6 +13415,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Splunk logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -13259,6 +13462,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Splunk endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -13296,6 +13500,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Splunk logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -13443,10 +13648,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'sumologic',
           description: 'Manipulate Fastly service version Sumologic logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Sumologic logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Sumologic logging object. Used as a primary key for API access',
@@ -13547,6 +13754,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Sumologic logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -13593,6 +13801,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Sumologic logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -13639,6 +13848,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Sumologic endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -13676,6 +13886,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Sumologic logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -13787,10 +13998,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'syslog',
           description: 'Manipulate Fastly service version Syslog logging endpoints',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Syslog logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the Syslog logging object. Used as a primary key for API access',
@@ -13949,6 +14162,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a Syslog logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -13995,6 +14209,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Show detailed information about a Syslog logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -14041,6 +14256,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List Syslog endpoints on a Fastly service version',
               options: [
+
                 Option(
                   name: '--json',
                   description: 'Render output as JSON'
@@ -14078,6 +14294,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a Syslog logging endpoint on a Fastly service version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -14253,6 +14470,7 @@ final FigSpec fastlySpec = FigSpec(
       name: 'profile',
       description: 'Manage user profiles',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create user profile'
@@ -14273,6 +14491,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'token',
           description: 'Print access token',
           options: [
+
             Option(
               name: '--name',
               description: 'Print access token for the named profile',
@@ -14294,6 +14513,7 @@ final FigSpec fastlySpec = FigSpec(
       name: 'purge',
       description: 'Invalidate objects in the Fastly cache',
       options: [
+
         Option(
           name: '--all',
           description: 'Purge everything from a service'
@@ -14353,10 +14573,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'service',
       description: 'Manipulate Fastly services',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Fastly service',
           options: [
+
             Option(
               name: '--name',
               description: 'Service name',
@@ -14390,6 +14612,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'delete',
           description: 'Delete a Fastly service',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -14418,6 +14641,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'describe',
           description: 'Show detailed information about a Fastly service',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -14446,6 +14670,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List Fastly services',
           options: [
+
             Option(
               name: '--direction',
               description: 'Direction in which to sort results',
@@ -14492,6 +14717,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'search',
           description: 'Search for a Fastly service by name',
           options: [
+
             Option(
               name: '--name',
               description: 'Service name',
@@ -14507,6 +14733,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update a Fastly service',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -14551,10 +14778,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'service-version',
       description: 'Manipulate Fastly service versions',
       subcommands: [
+
         Subcommand(
           name: 'activate',
           description: 'Activate a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -14592,6 +14821,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'clone',
           description: 'Clone a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -14625,6 +14855,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'deactivate',
           description: 'Deactivate a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -14658,6 +14889,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List Fastly service versions',
           options: [
+
             Option(
               name: '--json',
               description: 'Render output as JSON'
@@ -14686,6 +14918,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'lock',
           description: 'Lock a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -14719,6 +14952,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update a Fastly service version',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -14767,10 +15001,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'stats',
       description: 'View historical and realtime statistics for a Fastly service',
       subcommands: [
+
         Subcommand(
           name: 'historical',
           description: 'View historical stats for a Fastly service',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -14840,6 +15076,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'realtime',
           description: 'View realtime stats for a Fastly service',
           options: [
+
             Option(
               name: '--service-id',
               description: 'Service ID (falls back to FASTLY_SERVICE_ID, then fastly.toml)',
@@ -14883,10 +15120,12 @@ final FigSpec fastlySpec = FigSpec(
       name: 'user',
       description: 'Manipulate users of the Fastly API and web interface',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a user of the Fastly API and web interface',
           options: [
+
             Option(
               name: '--login',
               description: 'The login associated with the user (typically, an email address)',
@@ -14920,6 +15159,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'delete',
           description: 'Delete a user of the Fastly API and web interface',
           options: [
+
             Option(
               name: '--id',
               description: 'Alphanumeric string identifying the user',
@@ -14935,6 +15175,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'describe',
           description: 'Get a specific user of the Fastly API and web interface',
           options: [
+
             Option(
               name: '--current',
               description: 'Get the logged in user'
@@ -14958,6 +15199,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'list',
           description: 'List all users from a specified customer id',
           options: [
+
             Option(
               name: '--customer-id',
               description: 'Alphanumeric string identifying the customer (falls back to FASTLY_CUSTOMER_ID)',
@@ -14977,6 +15219,7 @@ final FigSpec fastlySpec = FigSpec(
           name: 'update',
           description: 'Update a user of the Fastly API and web interface',
           options: [
+
             Option(
               name: '--id',
               description: 'Alphanumeric string identifying the user',
@@ -15025,14 +15268,17 @@ final FigSpec fastlySpec = FigSpec(
       name: 'vcl',
       description: 'Manipulate Fastly service version VCL',
       subcommands: [
+
         Subcommand(
           name: 'custom',
           description: 'Manipulate Fastly service version custom VCL',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Upload a VCL for a particular service and version',
               options: [
+
                 Option(
                   name: '--content',
                   description: 'VCL passed as file path or content, e.g. \$(< main.vcl)',
@@ -15092,6 +15338,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete the uploaded VCL for a particular service and version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the VCL to delete',
@@ -15138,6 +15385,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Get the uploaded VCL for a particular service and version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the VCL',
@@ -15184,6 +15432,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List the uploaded VCLs for a particular service and version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -15221,6 +15470,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update the uploaded VCL for a particular service and version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the VCL to update',
@@ -15287,10 +15537,12 @@ final FigSpec fastlySpec = FigSpec(
           name: 'snippet',
           description: 'Manipulate Fastly VCL snippets (blocks of VCL logic inserted into your service\'s configuration that don\'t require custom VCL)',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a snippet for a particular service and version',
               options: [
+
                 Option(
                   name: '--content',
                   description: 'VCL snippet passed as file path or content, e.g. \$(< snippet.vcl)',
@@ -15368,6 +15620,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'delete',
               description: 'Delete a specific snippet for a particular service and version',
               options: [
+
                 Option(
                   name: '--name',
                   description: 'The name of the VCL snippet to delete',
@@ -15414,6 +15667,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'describe',
               description: 'Get the uploaded VCL snippet for a particular service and version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -15473,6 +15727,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'list',
               description: 'List the uploaded VCL snippets for a particular service and version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -15510,6 +15765,7 @@ final FigSpec fastlySpec = FigSpec(
               name: 'update',
               description: 'Update a VCL snippet for a particular service and version',
               options: [
+
                 Option(
                   name: '--version',
                   description: '\'latest\', \'active\', or the number of a specific version',
@@ -15615,6 +15871,7 @@ final FigSpec fastlySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Show context-sensitive help'

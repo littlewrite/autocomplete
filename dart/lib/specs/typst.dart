@@ -10,11 +10,13 @@ final FigSpec typstSpec = FigSpec(
   description: 'The Typst compiler',
   icon: '📄',
   subcommands: [
+
     Subcommand(
       name: ['compile', 'c'],
       description: 'Compiles an input file into a supported output format',
       icon: '📄',
       options: [
+
         Option(
           name: '--root',
           description: 'Configures the project root (for absolute paths)',
@@ -43,6 +45,7 @@ final FigSpec typstSpec = FigSpec(
             Arg(
             name: 'diagnostic_format',
             suggestions: [
+
               FigSuggestion(name: 'human'),
               FigSuggestion(name: 'short')
             ],
@@ -57,6 +60,7 @@ final FigSpec typstSpec = FigSpec(
             Arg(
             name: 'format',
             suggestions: [
+
               FigSuggestion(name: 'pdf'),
               FigSuggestion(name: 'png'),
               FigSuggestion(name: 'svg')
@@ -103,6 +107,7 @@ final FigSpec typstSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'input',
           description: 'Path to input Typst file'
@@ -120,6 +125,7 @@ final FigSpec typstSpec = FigSpec(
       description: 'Watches an input file and recompiles on changes',
       icon: '🔄',
       options: [
+
         Option(
           name: '--root',
           description: 'Configures the project root (for absolute paths)',
@@ -148,6 +154,7 @@ final FigSpec typstSpec = FigSpec(
             Arg(
             name: 'diagnostic_format',
             suggestions: [
+
               FigSuggestion(name: 'human'),
               FigSuggestion(name: 'short')
             ],
@@ -162,6 +169,7 @@ final FigSpec typstSpec = FigSpec(
             Arg(
             name: 'format',
             suggestions: [
+
               FigSuggestion(name: 'pdf'),
               FigSuggestion(name: 'png'),
               FigSuggestion(name: 'svg')
@@ -208,6 +216,7 @@ final FigSpec typstSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'input',
           description: 'Path to input Typst file'
@@ -225,6 +234,7 @@ final FigSpec typstSpec = FigSpec(
       description: 'Processes an input file to extract provided metadata',
       icon: '🔍',
       options: [
+
         Option(
           name: '--root',
           description: 'Configures the project root (for absolute paths)',
@@ -253,6 +263,7 @@ final FigSpec typstSpec = FigSpec(
             Arg(
             name: 'diagnostic_format',
             suggestions: [
+
               FigSuggestion(name: 'human'),
               FigSuggestion(name: 'short')
             ],
@@ -276,6 +287,7 @@ final FigSpec typstSpec = FigSpec(
             Arg(
             name: 'format',
             suggestions: [
+
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'yaml')
             ],
@@ -293,6 +305,7 @@ final FigSpec typstSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'input',
           description: 'Path to input Typst file'
@@ -308,6 +321,7 @@ final FigSpec typstSpec = FigSpec(
       description: 'Lists all discovered fonts in system and custom font paths',
       icon: '🔤',
       options: [
+
         Option(
           name: '--font-path',
           description: 'Adds additional directories to search for fonts',
@@ -334,6 +348,7 @@ final FigSpec typstSpec = FigSpec(
       description: 'Self update the Typst CLI (disabled)',
       icon: '🆙',
       options: [
+
         Option(
           name: '--force',
           description: 'Forces a downgrade to an older version (required for downgrading)',
@@ -362,6 +377,7 @@ final FigSpec typstSpec = FigSpec(
       description: 'Print this message or the help of the given subcommand(s)',
       icon: 'ℹ️',
       subcommands: [
+
         Subcommand(
           name: 'compile',
           description: 'Compiles an input file into a supported output format',
@@ -396,6 +412,7 @@ final FigSpec typstSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--cert',
       description: 'Path to a custom CA certificate to use when making network requests',

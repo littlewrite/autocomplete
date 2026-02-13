@@ -12,6 +12,7 @@ final FigSpec bcSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Print the usage and exit'

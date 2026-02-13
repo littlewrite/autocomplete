@@ -9,10 +9,12 @@ final FigSpec mediaconvertSpec = FigSpec(
   name: 'mediaconvert',
   description: 'AWS Elemental MediaConvert',
   subcommands: [
+
     Subcommand(
       name: 'associate-certificate',
       description: 'Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the ACM certificate that you want to associate with your MediaConvert resource',
@@ -38,6 +40,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'cancel-job',
       description: 'Permanently cancel a job. Once you have canceled a job, you can\'t start it again',
       options: [
+
         Option(
           name: '--id',
           description: 'The Job ID of the job to be cancelled',
@@ -75,6 +79,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'create-job',
       description: 'Create a new transcoding job. For information about jobs and job settings, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html',
       options: [
+
         Option(
           name: '--acceleration-settings',
           description: 'Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide',
@@ -229,6 +235,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -241,6 +248,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'create-job-template',
       description: 'Create a new job template. For information about job templates see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html',
       options: [
+
         Option(
           name: '--acceleration-settings',
           description: 'Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide',
@@ -347,6 +355,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -359,6 +368,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'create-preset',
       description: 'Create a new preset. For information about job templates see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html',
       options: [
+
         Option(
           name: '--category',
           description: 'Optional. A category for the preset you are creating',
@@ -420,6 +430,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -432,6 +443,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'create-queue',
       description: 'Create a new transcoding queue. For information about queues, see Working With Queues in the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html',
       options: [
+
         Option(
           name: '--concurrent-jobs',
           description: 'Specify the maximum number of jobs your queue can process concurrently. For on-demand queues, the value you enter is constrained by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per account. For reserved queues, specify the number of jobs you can process concurrently in your reservation plan instead',
@@ -511,6 +523,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -523,6 +536,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'delete-job-template',
       description: 'Permanently delete a job template you have created',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the job template to be deleted',
@@ -548,6 +562,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -560,6 +575,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'delete-policy',
       description: 'Permanently delete a policy that you created',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -576,6 +592,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -588,6 +605,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'delete-preset',
       description: 'Permanently delete a preset you have created',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the preset to be deleted',
@@ -613,6 +631,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -625,6 +644,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'delete-queue',
       description: 'Permanently delete a queue you have created',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the queue that you want to delete',
@@ -650,6 +670,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -662,6 +683,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'describe-endpoints',
       description: 'Send a request with an empty body to the regional API endpoint to get your account API endpoint. Note that DescribeEndpoints is no longer required. We recommend that you send your requests directly to the regional endpoint instead',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Optional. Max number of endpoints, up to twenty, that will be returned at one time',
@@ -732,6 +754,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -744,6 +767,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'disassociate-certificate',
       description: 'Removes an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource',
@@ -769,6 +793,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -781,6 +806,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'get-job',
       description: 'Retrieve the JSON for a specific transcoding job',
       options: [
+
         Option(
           name: '--id',
           description: 'The job ID of the job',
@@ -806,6 +832,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -818,6 +845,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'get-job-template',
       description: 'Retrieve the JSON for a specific job template',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the job template',
@@ -843,6 +871,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -855,6 +884,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'get-policy',
       description: 'Retrieve the JSON for your policy',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -871,6 +901,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -883,6 +914,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'get-preset',
       description: 'Retrieve the JSON for a specific preset',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the preset',
@@ -908,6 +940,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -920,6 +953,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'get-queue',
       description: 'Retrieve the JSON for a specific queue',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the queue that you want information about',
@@ -945,6 +979,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -957,6 +992,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'list-job-templates',
       description: 'Retrieve a JSON array of up to twenty of your job templates. This will return the templates themselves, not just a list of them. To retrieve the next twenty templates, use the nextToken string returned with the array',
       options: [
+
         Option(
           name: '--category',
           description: 'Optionally, specify a job template category to limit responses to only job templates from that category',
@@ -1045,6 +1081,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1057,6 +1094,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'list-jobs',
       description: 'Retrieve a JSON array of up to twenty of your most recently created jobs. This array includes in-process, completed, and errored jobs. This will return the jobs themselves, not just a list of the jobs. To retrieve the twenty next most recent jobs, use the nextToken string returned with the array',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Optional. Number of jobs, up to twenty, that will be returned at one time',
@@ -1145,6 +1183,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1157,6 +1196,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'list-presets',
       description: 'Retrieve a JSON array of up to twenty of your presets. This will return the presets themselves, not just a list of them. To retrieve the next twenty presets, use the nextToken string returned with the array',
       options: [
+
         Option(
           name: '--category',
           description: 'Optionally, specify a preset category to limit responses to only presets from that category',
@@ -1245,6 +1285,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1257,6 +1298,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'list-queues',
       description: 'Retrieve a JSON array of up to twenty of your queues. This will return the queues themselves, not just a list of them. To retrieve the next twenty queues, use the nextToken string returned with the array',
       options: [
+
         Option(
           name: '--list-by',
           description: 'Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don\'t specify, the service will list them by creation date',
@@ -1336,6 +1378,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1348,6 +1391,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieve the tags for a MediaConvert resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to list tags for. To get the ARN, send a GET request with the resource name',
@@ -1373,6 +1417,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1385,6 +1430,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'list-versions',
       description: 'Retrieve a JSON array of all available Job engine versions and the date they expire',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Optional. Number of valid Job engine versions, up to twenty, that will be returned at one time',
@@ -1446,6 +1492,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1458,6 +1505,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'put-policy',
       description: 'Create or change your policy. For more information about policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html',
       options: [
+
         Option(
           name: '--policy',
           description: 'A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html',
@@ -1483,6 +1531,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1495,6 +1544,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'search-jobs',
       description: 'Retrieve a JSON array that includes job details for up to twenty of your most recent jobs. Optionally filter results further according to input file, queue, or status. To retrieve the twenty next most recent jobs, use the nextToken string returned with the array',
       options: [
+
         Option(
           name: '--input-file',
           description: 'Optional. Provide your input file URL or your partial input file name. The maximum length for an input file is 300 characters',
@@ -1592,6 +1642,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1604,6 +1655,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'tag-resource',
       description: 'Add tags to a MediaConvert queue, preset, or job template. For information about tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to tag. To get the ARN, send a GET request with the resource name',
@@ -1638,6 +1690,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1650,6 +1703,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'untag-resource',
       description: 'Remove tags from a MediaConvert queue, preset, or job template. For information about tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to remove tags from. To get the ARN, send a GET request with the resource name',
@@ -1684,6 +1738,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1696,6 +1751,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'update-job-template',
       description: 'Modify one of your existing job templates',
       options: [
+
         Option(
           name: '--acceleration-settings',
           description: 'Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide',
@@ -1793,6 +1849,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1805,6 +1862,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'update-preset',
       description: 'Modify one of your existing presets',
       options: [
+
         Option(
           name: '--category',
           description: 'The new category for the preset, if you are changing it',
@@ -1857,6 +1915,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1869,6 +1928,7 @@ final FigSpec mediaconvertSpec = FigSpec(
       name: 'update-queue',
       description: 'Modify one of your existing queues',
       options: [
+
         Option(
           name: '--concurrent-jobs',
           description: 'Specify the maximum number of jobs your queue can process concurrently. For on-demand queues, the value you enter is constrained by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per account. For reserved queues, update your reservation plan instead in order to increase your yearly commitment',
@@ -1930,6 +1990,7 @@ final FigSpec mediaconvertSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

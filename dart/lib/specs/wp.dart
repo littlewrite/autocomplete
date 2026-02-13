@@ -9,15 +9,18 @@ final FigSpec wpSpec = FigSpec(
   name: 'wp',
   description: 'WP-CLI is the command-line interface for WordPress',
   subcommands: [
+
     Subcommand(
       name: 'cache',
       description: 'Adds, removes, fetches, and flushes the WP Object Cache object',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Adds a value to the object cache',
           args: [
+
             Arg(
               name: 'key',
               description: 'Cache key'
@@ -40,6 +43,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'decr',
           description: 'Decrements a value in the object cache',
           args: [
+
             Arg(
               name: 'key',
               description: 'Cache key'
@@ -58,6 +62,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'delete',
           description: 'Removes a value from the object cache',
           args: [
+
             Arg(
               name: 'key',
               description: 'Cache key'
@@ -76,6 +81,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'get',
           description: 'Gets a value from the object cache',
           args: [
+
             Arg(
               name: 'key',
               description: 'Cache key'
@@ -90,6 +96,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'incr',
           description: 'Increments a value in the object cache',
           args: [
+
             Arg(
               name: 'key',
               description: 'Cache key'
@@ -108,6 +115,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'replace',
           description: 'Replaces a value in the object cache, if the value already exists',
           args: [
+
             Arg(
               name: 'key',
               description: 'Cache key'
@@ -130,6 +138,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'set',
           description: 'Sets a value to the object cache, regardless of whether it already exists',
           args: [
+
             Arg(
               name: 'key',
               description: 'Cache key'
@@ -159,10 +168,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Adds, removes, and lists capabilities of a user role',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Adds a value to the object cache',
           args: [
+
             Arg(
               name: 'role',
               description: 'Key for the role'
@@ -173,6 +184,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--grant',
               description: 'Adds the capability as an explicit boolean value, instead of implicitly defaulting to true',
@@ -180,6 +192,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'true'
                   ),
@@ -202,6 +215,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--format',
               description: 'Render output in a particular format',
@@ -209,6 +223,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'list'
                   ),
@@ -241,6 +256,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'remove',
           description: 'Removes capabilities from a given role',
           args: [
+
             Arg(
               name: 'role',
               description: 'Key for the role'
@@ -258,10 +274,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Reviews current WP-CLI info, checks for updates, or views defined aliases',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'alias',
           description: 'Retrieves, sets and updates aliases for WordPress Installations',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Creates an alias',
@@ -272,6 +290,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--set-user',
                   description: 'Set user for alias',
@@ -334,6 +353,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'global'
                       ),
@@ -356,6 +376,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--config',
                   description: 'Config file to be considered for operations',
@@ -363,6 +384,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'global'
                       ),
@@ -389,6 +411,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'list',
               description: 'Lists available WP-CLI aliases',
               options: [
+
                 Option(
                   name: '--format',
                   description: 'Set user for alias',
@@ -396,6 +419,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'yaml'
                       ),
@@ -421,6 +445,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--set-user',
                   description: 'Set user for alias',
@@ -483,6 +508,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'global'
                       ),
@@ -501,6 +527,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'cache',
           description: 'Manages the internal WP-CLI cache,',
           subcommands: [
+
             Subcommand(
               name: 'clear',
               description: 'Clears the internal cache'
@@ -515,6 +542,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'check-update',
           description: 'Checks to see if there is a newer version of WP-CLI available',
           options: [
+
             Option(
               name: '--patch',
               description: 'Only list patch updates'
@@ -552,6 +580,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -581,6 +610,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'completions',
           description: 'Generates tab completion strings',
           options: [
+
             Option(
               name: '--line',
               description: 'The current command line to be executed',
@@ -615,6 +645,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'info',
           description: 'Prints various details about the WP-CLI environment',
           options: [
+
             Option(
               name: '--format',
               description: 'Render output in a particular format',
@@ -622,6 +653,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'list'
                   ),
@@ -638,6 +670,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'param-dump',
           description: 'Dumps the list of global parameters, as JSON or in var_export format',
           options: [
+
             Option(
               name: '--with-values',
               description: 'Display current values also'
@@ -649,6 +682,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'var_export'
                   ),
@@ -665,6 +699,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'update',
           description: 'Updates WP-CLI to the latest release',
           options: [
+
             Option(
               name: '--patch',
               description: 'Only perform patch updates'
@@ -706,6 +741,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Creates, updates, deletes, and moderates comments',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'approve',
           description: 'Approves a comment',
@@ -730,6 +766,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'create',
           description: 'Creates a new comment',
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',
@@ -756,6 +793,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--force',
               description: 'Skip the trash bin'
@@ -776,6 +814,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'generate',
           description: 'Generates some number of new dummy comments',
           options: [
+
             Option(
               name: '--count',
               description: 'How many comments to generate?',
@@ -783,6 +822,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'default',
                 suggestions: [
+
                   FigSuggestion(
                     name: '100'
                   )
@@ -806,6 +846,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'progress'
                   ),
@@ -828,6 +869,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--field',
               description: 'Instead of returning the whole comment, returns the value of a single field',
@@ -853,6 +895,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -875,6 +918,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Gets a list of comments',
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',
@@ -905,6 +949,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -933,10 +978,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'meta',
           description: 'Adds, updates, deletes, and lists comment custom fields',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -951,6 +998,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -958,6 +1006,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -974,6 +1023,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'delete',
               description: 'Delete a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -988,6 +1038,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'Delete all meta for the object'
@@ -998,6 +1049,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'get',
               description: 'Get meta field value',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -1008,6 +1060,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'Get value in a particular format',
@@ -1015,6 +1068,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'var_export'
                       ),
@@ -1040,6 +1094,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--keys',
                   description: 'Limit output to metadata of specific keys',
@@ -1065,6 +1120,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -1091,6 +1147,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'id'
                       ),
@@ -1111,6 +1168,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'asc'
                       ),
@@ -1131,10 +1189,12 @@ final FigSpec wpSpec = FigSpec(
               name: 'patch',
               description: 'Update a nested value for a meta field',
               args: [
+
                 Arg(
                   name: 'options',
                   description: 'Patch action to perform',
                   suggestions: [
+
                     FigSuggestion(
                       name: 'insert'
                     ),
@@ -1164,6 +1224,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -1171,6 +1232,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -1187,6 +1249,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'pluck',
               description: 'Get a nested value from a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -1201,6 +1264,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The output format of the value',
@@ -1208,6 +1272,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -1227,6 +1292,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'update',
               description: 'Update a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -1241,6 +1307,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -1248,6 +1315,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -1342,6 +1410,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',
@@ -1356,10 +1425,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Generates and reads the wp-config.php file',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Generates a wp-config.php file',
           options: [
+
             Option(
               name: '--dbname',
               description: 'Set the database name',
@@ -1385,6 +1456,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'plaintext'
                   ),
@@ -1402,6 +1474,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'default',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'localhost'
                   )
@@ -1416,6 +1489,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'default',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'wp_'
                   )
@@ -1430,6 +1504,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'default',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'utf8'
                   )
@@ -1487,6 +1562,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--type',
               description: 'Type of the config value to delete. Defaults to ‘all’',
@@ -1494,6 +1570,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'constant'
                   ),
@@ -1523,6 +1600,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--type',
               description: 'Type of the config value to delete. Defaults to ‘all’',
@@ -1530,6 +1608,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'constant'
                   ),
@@ -1550,6 +1629,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'var_export'
                   ),
@@ -1575,6 +1655,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--type',
               description: 'Type of the config value to delete. Defaults to ‘all’',
@@ -1582,6 +1663,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'constant'
                   ),
@@ -1607,6 +1689,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--fields',
               description: 'Limit the output to specific fields. Defaults to all fields',
@@ -1623,6 +1706,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -1653,6 +1737,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'set',
           description: 'Sets the value of a specific constant or variable defined in wp-config.php file',
           args: [
+
             Arg(
               name: 'name',
               description: 'Name of the wp-config.php constant or variable'
@@ -1663,6 +1748,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--add',
               description: 'Add the value if it doesn’t exist yet. This is the default behavior, override with –no-add'
@@ -1691,6 +1777,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'before'
                   ),
@@ -1717,6 +1804,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'constant'
                   ),
@@ -1742,6 +1830,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--force',
               description: 'If an unknown key is requested to be shuffled, add it instead of throwing a warning'
@@ -1759,10 +1848,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Downloads, installs, updates, and manages a WordPress installation',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'check-update',
           description: 'Checks for WordPress updates via Version Check API',
           options: [
+
             Option(
               name: '--minor',
               description: 'Compare only the first two parts of the version number'
@@ -1796,6 +1887,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -1827,6 +1919,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--path',
               description: 'Specify the path in which to install WordPress. Defaults to current directory',
@@ -1853,6 +1946,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: '<number>'
                   ),
@@ -1884,6 +1978,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'install',
           description: 'Runs the standard WordPress installation process',
           options: [
+
             Option(
               name: '--url',
               description: 'The address of the new site',
@@ -1939,6 +2034,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'is-installed',
           description: 'Checks if WordPress is installed',
           options: [
+
             Option(
               name: '--network',
               description: 'Check if this is a multisite installation'
@@ -1949,6 +2045,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'multisite-convert',
           description: 'Transforms an existing single-site installation into a multisite installation',
           options: [
+
             Option(
               name: '--title',
               description: 'The title of the new network',
@@ -1965,6 +2062,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'url-path',
                 suggestions: [
+
                   FigSuggestion(
                     name: '/'
                   )
@@ -1982,6 +2080,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'multisite-install',
           description: 'Installs WordPress multisite from scratch',
           options: [
+
             Option(
               name: '--url',
               description: 'The address of the new site',
@@ -1998,6 +2097,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'url-path',
                 suggestions: [
+
                   FigSuggestion(
                     name: '/'
                   )
@@ -2025,6 +2125,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'username',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'admin'
                   )
@@ -2071,6 +2172,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--minor',
               description: 'Only perform updates for minor releases (e.g. update from WP 4.3 to 4.3.3 instead of 4.4.2)'
@@ -2107,6 +2209,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'update-db',
           description: 'Runs the WordPress database update procedure',
           options: [
+
             Option(
               name: '--network',
               description: 'Update databases for all sites on a network'
@@ -2121,6 +2224,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'verify-checksums',
           description: 'Verifies WordPress files against WordPress.org’s checksums',
           options: [
+
             Option(
               name: '--version',
               description: 'Verify checksums against a specific version of WordPress',
@@ -2149,6 +2253,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'version',
           description: 'Displays the WordPress version',
           options: [
+
             Option(
               name: '--extra',
               description: 'Show extended version information'
@@ -2162,10 +2267,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Tests, runs, and deletes WP-Cron events; manages WP-Cron schedules',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'event',
           description: 'Schedules, runs, and deletes WP-Cron events',
           subcommands: [
+
             Subcommand(
               name: 'delete',
               description: 'Deletes all scheduled cron events for the given hook',
@@ -2180,6 +2287,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'list',
               description: 'Lists scheduled cron events',
               options: [
+
                 Option(
                   name: '--fields',
                   description: 'Limit the output to specific object fields',
@@ -2210,6 +2318,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -2244,6 +2353,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--due-now',
                   description: 'Run all hooks due right now'
@@ -2258,6 +2368,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'schedule',
               description: 'Schedules a new cron event',
               args: [
+
                 Arg(
                   name: 'hook',
                   description: 'The hook name'
@@ -2272,6 +2383,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--field=value',
                   insertValue: '--',
@@ -2295,10 +2407,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'schedule',
           description: 'Gets WP-Cron schedules',
           subcommands: [
+
             Subcommand(
               name: 'list',
               description: 'List available cron schedules',
               options: [
+
                 Option(
                   name: '--fields',
                   description: 'Limit the output to specific object fields',
@@ -2324,6 +2438,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'options',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -2358,10 +2473,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Performs basic database operations using credentials stored in wp-config.php',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'check',
           description: 'Checks the current status of the database',
           options: [
+
             Option(
               name: '--dbuser',
               description: 'Username to pass to mysqlcheck. Defaults to DB_USER',
@@ -2395,6 +2512,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'clean',
           description: 'Removes all tables with `\$table_prefix` from the database',
           options: [
+
             Option(
               name: '--dbuser',
               description: 'Username to pass to mysqlcheck. Defaults to DB_USER',
@@ -2423,6 +2541,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'cli',
           description: 'Opens a MySQL console using credentials from wp-config.php',
           options: [
+
             Option(
               name: '--database',
               description: 'Use a specific database. Defaults to DB_NAME',
@@ -2480,6 +2599,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--format',
               description: 'Render output in a particular format',
@@ -2487,6 +2607,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -2509,6 +2630,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'create',
           description: 'Creates a new database',
           options: [
+
             Option(
               name: '--dbuser',
               description: 'Username to pass to mysql. Defaults to DB_USER',
@@ -2533,6 +2655,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'drop',
           description: 'Deletes the existing database',
           options: [
+
             Option(
               name: '--dbuser',
               description: 'Username to pass to mysql. Defaults to DB_USER',
@@ -2567,6 +2690,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--dbuser',
               description: 'Username to pass to mysqldump. Defaults to DB_USER',
@@ -2632,6 +2756,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--dbuser',
               description: 'Username to pass to mysql. Defaults to DB_USER',
@@ -2639,6 +2764,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'DB_USER'
                   )
@@ -2653,6 +2779,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'DB_PASSWORD'
                   )
@@ -2679,6 +2806,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'optimize',
           description: 'Optimizes the database',
           options: [
+
             Option(
               name: '--dbuser',
               description: 'Username to pass to mysqlcheck. Defaults to DB_USER',
@@ -2686,6 +2814,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'DB_USER'
                   )
@@ -2700,6 +2829,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'DB_PASSWORD'
                   )
@@ -2732,6 +2862,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--dbuser',
               description: 'Username to pass to mysql. Defaults to DB_USER',
@@ -2739,6 +2870,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'DB_USER'
                   )
@@ -2753,6 +2885,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'DB_PASSWORD'
                   )
@@ -2775,6 +2908,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'repair',
           description: 'Repairs the database',
           options: [
+
             Option(
               name: '--dbuser',
               description: 'Username to pass to mysqlcheck. Defaults to DB_USER',
@@ -2782,6 +2916,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'DB_USER'
                   )
@@ -2796,6 +2931,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'DB_PASSWORD'
                   )
@@ -2818,6 +2954,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'reset',
           description: 'Removes all tables from the database',
           options: [
+
             Option(
               name: '--dbuser',
               description: 'Username to pass to mysql. Defaults to DB_USER',
@@ -2825,6 +2962,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'DB_USER'
                   )
@@ -2839,6 +2977,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'value',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'DB_PASSWORD'
                   )
@@ -2856,6 +2995,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'search',
           description: 'Finds a string in the database',
           args: [
+
             Arg(
               name: 'search',
               description: 'String to search for. The search is case-insensitive by default'
@@ -2866,6 +3006,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--network',
               description: 'Search through all the tables registered to \$wpdb in a multisite install'
@@ -2885,6 +3026,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'num',
                 suggestions: [
+
                   FigSuggestion(
                     name: '40'
                   )
@@ -2899,6 +3041,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'num',
                 suggestions: [
+
                   FigSuggestion(
                     name: '40'
                   )
@@ -2977,6 +3120,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'size',
           description: 'Displays the database name and size',
           options: [
+
             Option(
               name: '--size_format',
               description: 'Display the database size only, as a bare number',
@@ -2984,6 +3128,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'b'
                   ),
@@ -3045,6 +3190,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -3094,6 +3240,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--scope',
               description: 'Can be all, global, ms_global, blog, or old tables. Defaults to all',
@@ -3122,6 +3269,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'options',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'list'
                   ),
@@ -3140,6 +3288,7 @@ final FigSpec wpSpec = FigSpec(
       name: 'dist-archive',
       description: 'Create a distribution archive based on a project’s .distignore file',
       args: [
+
         Arg(
           name: 'path',
           description: 'Path to the project that includes a .distignore file',
@@ -3152,6 +3301,7 @@ final FigSpec wpSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--create-target-dir',
           description: 'Automatically create the target directory as needed'
@@ -3163,6 +3313,7 @@ final FigSpec wpSpec = FigSpec(
             Arg(
             name: 'options',
             suggestions: [
+
               FigSuggestion(
                 name: 'zip'
               ),
@@ -3180,10 +3331,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Inspects oEmbed providers, clears embed cache, and more',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'cache',
           description: 'Finds, triggers, and deletes oEmbed caches',
           subcommands: [
+
             Subcommand(
               name: 'clear',
               description: 'Deletes all oEmbed caches for a given post',
@@ -3204,6 +3357,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--width',
                   description: 'Width of the embed in pixels. Part of cache key so must match. Defaults to content_width if set else 500px, so is theme and context dependent',
@@ -3250,6 +3404,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--width',
               description: 'Width of the embed in pixels',
@@ -3313,6 +3468,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'json|xml',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'json'
                   ),
@@ -3329,10 +3485,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'handler',
           description: 'Retrieves embed handlers',
           subcommands: [
+
             Subcommand(
               name: 'list',
               description: 'Lists all available embed handlers',
               options: [
+
                 Option(
                   name: '--field',
                   description: 'Display the value of a single field',
@@ -3358,6 +3516,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -3379,10 +3538,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'provider',
           description: 'Retrieves oEmbed providers',
           subcommands: [
+
             Subcommand(
               name: 'list',
               description: 'Lists all available oEmbed providers',
               options: [
+
                 Option(
                   name: '--field',
                   description: 'Display the value of a single field',
@@ -3408,6 +3569,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -3433,6 +3595,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--discover',
                   description: 'Whether to use oEmbed discovery or not. Defaults to true'
@@ -3453,6 +3616,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'json|xml',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'json'
                       ),
@@ -3479,6 +3643,7 @@ final FigSpec wpSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--skip-wordpress',
           description: 'Execute code without loading WordPress'
@@ -3489,6 +3654,7 @@ final FigSpec wpSpec = FigSpec(
       name: 'eval-file',
       description: 'Loads and executes a PHP file',
       args: [
+
         Arg(
           name: 'file',
           description: 'The path to the PHP file to execute. Use ‘-‘ to run code from STDIN'
@@ -3499,6 +3665,7 @@ final FigSpec wpSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--skip-wordpress',
           description: 'Load and execute file without loading WordPress'
@@ -3509,6 +3676,7 @@ final FigSpec wpSpec = FigSpec(
       name: 'export',
       description: 'Exports WordPress content to a WXR file',
       options: [
+
         Option(
           name: '--dir',
           description: 'Full path to directory where WXR export files should be stored. Defaults to current working directory',
@@ -3534,6 +3702,7 @@ final FigSpec wpSpec = FigSpec(
             Arg(
             name: 'MB',
             suggestions: [
+
               FigSuggestion(
                 name: '15'
               )
@@ -3566,6 +3735,7 @@ final FigSpec wpSpec = FigSpec(
             Arg(
             name: 'post-type',
             suggestions: [
+
               FigSuggestion(
                 name: 'any'
               )
@@ -3662,6 +3832,7 @@ final FigSpec wpSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--skip-ignored-paths',
           description: 'Skip the paths that are ignored by default'
@@ -3709,6 +3880,7 @@ final FigSpec wpSpec = FigSpec(
             Arg(
             name: 'options',
             suggestions: [
+
               FigSuggestion(
                 name: 'table'
               ),
@@ -3746,10 +3918,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Provides internationalization tools for WordPress projects',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'make-json',
           description: 'Extract JavaScript strings from PO files and add them to individual JSON files',
           args: [
+
             Arg(
               name: 'source',
               template: 'filepaths',
@@ -3762,6 +3936,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--purge',
               description: 'Whether to purge the strings that were extracted from the original source file. Defaults to true, use --no-purge to skip the removal'
@@ -3776,6 +3951,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'make-mo',
           description: 'Create MO files from PO files',
           args: [
+
             Arg(
               name: 'source',
               template: 'filepaths',
@@ -3792,6 +3968,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'make-pot',
           description: 'Create a POT file for a WordPress project',
           args: [
+
             Arg(
               name: 'source',
               description: 'Directory to scan for string extraction'
@@ -3802,6 +3979,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--slug',
               description: 'Plugin or theme slug. Defaults to the source directory’s basename',
@@ -3918,6 +4096,7 @@ final FigSpec wpSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--authors',
           description: 'How the author mapping should be handled. Options are ‘create’, ‘mapping.csv’, or ‘skip’. The first will create any non-existent users from the WXR file. The second will read author mapping associations from a CSV, or create a CSV for editing if the file path doesn’t exist. The CSV requires two columns, and a header row like “old_user_login,new_user_login”. The last option will skip any author mapping',
@@ -3943,10 +4122,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Installs, activates, and manages language packs',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'core',
           description: 'Installs, activates, and manages core language packs',
           subcommands: [
+
             Subcommand(
               name: 'activate',
               description: 'Activates a given language',
@@ -3967,6 +4148,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--activate',
                   description: 'If set, the language will be activated immediately after install'
@@ -3987,6 +4169,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'list',
               description: 'Lists all available languages',
               options: [
+
                 Option(
                   name: '--field',
                   description: 'Display the value of a single field',
@@ -4017,6 +4200,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -4046,6 +4230,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'update',
               description: 'Updates installed languages for core',
               options: [
+
                 Option(
                   name: '--dry-run',
                   description: 'Preview which translations would be updated'
@@ -4058,10 +4243,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'plugin',
           description: 'Installs, activates, and manages plugin language packs',
           subcommands: [
+
             Subcommand(
               name: 'install',
               description: 'Installs a given language for a plugin',
               args: [
+
                 Arg(
                   name: 'plugin',
                   description: 'Plugin to install language for'
@@ -4072,6 +4259,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, languages for all plugins will be installed'
@@ -4083,6 +4271,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -4105,6 +4294,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'is-installed',
               description: 'Checks if a given language is installed',
               args: [
+
                 Arg(
                   name: 'plugin',
                   description: 'Plugin to check for'
@@ -4125,6 +4315,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, languages for all plugins will be listed'
@@ -4159,6 +4350,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -4178,6 +4370,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'uninstall',
               description: 'Uninstalls a given language for a plugin',
               args: [
+
                 Arg(
                   name: 'plugin',
                   description: 'Plugin to uninstall language for'
@@ -4198,6 +4391,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, languages for all plugins will be updated'
@@ -4214,10 +4408,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'theme',
           description: 'Installs, activates, and manages theme language packs',
           subcommands: [
+
             Subcommand(
               name: 'install',
               description: 'Installs a given language for a theme',
               args: [
+
                 Arg(
                   name: 'theme',
                   description: 'Theme to install language for'
@@ -4228,6 +4424,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, languages for all themes will be installed'
@@ -4239,6 +4436,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -4261,6 +4459,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'is-installed',
               description: 'Checks if a given language is installed',
               args: [
+
                 Arg(
                   name: 'theme',
                   description: 'Theme to install language for'
@@ -4281,6 +4480,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, available languages for all themes will be listed'
@@ -4315,6 +4515,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -4334,6 +4535,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'uninstall',
               description: 'Uninstalls a given language for a theme',
               args: [
+
                 Arg(
                   name: 'theme',
                   description: 'Theme to uninstall language for'
@@ -4354,6 +4556,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, languages for all themes will be updated'
@@ -4373,10 +4576,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Activates, deactivates or checks the status of the maintenance mode of a site',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'activate',
           description: 'Activates maintenance mode',
           options: [
+
             Option(
               name: '--force',
               description: 'Force maintenance mode activation operation'
@@ -4402,6 +4607,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Imports files as attachments, regenerates thumbnails, or lists registered image sizes',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'fix-orientation',
           description: 'Fix image orientation for one or more attachments',
@@ -4412,6 +4618,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--dry-run',
               description: 'Check images needing orientation without performing the operation'
@@ -4422,6 +4629,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'image-size',
           description: 'Lists image sizes registered with WordPress',
           options: [
+
             Option(
               name: '--fields',
               description: 'Limit the output to specific fields. Defaults to all fields',
@@ -4438,6 +4646,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -4470,6 +4679,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--post_id',
               description: 'ID of the post to attach the imported files to',
@@ -4543,6 +4753,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--image_size',
               description: 'Name of the image size to regenerate. Only thumbnails of this image size will be regenerated, thumbnails of other image sizes will not',
@@ -4573,6 +4784,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Lists, creates, assigns, and deletes the active theme’s navigation menus',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates a new menu',
@@ -4583,6 +4795,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--porcelain',
               description: 'Output just the new menu ID'
@@ -4603,10 +4816,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'item',
           description: 'List, add, and delete items associated with a menu',
           subcommands: [
+
             Subcommand(
               name: 'add-custom',
               description: 'Adds a custom menu item',
               args: [
+
                 Arg(
                   name: 'menu',
                   description: 'The name, slug, or term ID for the menu'
@@ -4621,6 +4836,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--description',
                   description: 'Set a custom description for the menu item',
@@ -4685,6 +4901,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'add-post',
               description: 'Adds a post as a menu item',
               args: [
+
                 Arg(
                   name: 'menu',
                   description: 'The name, slug, or term ID for the menu'
@@ -4695,6 +4912,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--title',
                   description: 'Set a custom title for the menu item',
@@ -4777,6 +4995,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'add-term',
               description: 'Adds a taxonomy term as a menu item',
               args: [
+
                 Arg(
                   name: 'menu',
                   description: 'The name, slug, or term ID for the menu'
@@ -4791,6 +5010,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--title',
                   description: 'Set a custom title for the menu item',
@@ -4889,6 +5109,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--fields',
                   description: 'Limit the output to specific object fields',
@@ -4905,6 +5126,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -4939,6 +5161,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--title',
                   description: 'Set a custom title for the menu item',
@@ -5019,6 +5242,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Gets a list of menus',
           options: [
+
             Option(
               name: '--fields',
               description: 'Limit the output to specific object fields',
@@ -5035,6 +5259,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -5063,10 +5288,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'location',
           description: 'Assigns, removes, and lists a menu’s locations',
           subcommands: [
+
             Subcommand(
               name: 'assign',
               description: 'Assigns a location to a menu',
               args: [
+
                 Arg(
                   name: 'menu',
                   description: 'The name, slug, or term ID for the menu'
@@ -5081,6 +5308,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'list',
               description: 'Lists locations for the current theme',
               options: [
+
                 Option(
                   name: '--format',
                   description: 'Render output in a particular format',
@@ -5088,6 +5316,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -5116,6 +5345,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'remove',
               description: 'Removes a location from a menu',
               args: [
+
                 Arg(
                   name: 'menu',
                   description: 'The name, slug, or term ID for the menu'
@@ -5135,14 +5365,17 @@ final FigSpec wpSpec = FigSpec(
       description: 'Perform network-wide operations',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'meta',
           description: 'Gets, adds, updates, deletes, and lists network custom fields',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -5157,6 +5390,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -5164,6 +5398,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -5180,6 +5415,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'delete',
               description: 'Delete a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -5194,6 +5430,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'Delete all meta for the object'
@@ -5204,6 +5441,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'get',
               description: 'Get meta field value',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -5214,6 +5452,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'Get value in a particular format',
@@ -5221,6 +5460,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'var_export'
                       ),
@@ -5246,6 +5486,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--keys',
                   description: 'Limit output to metadata of specific keys',
@@ -5271,6 +5512,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -5297,6 +5539,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'fields',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'id'
                       ),
@@ -5317,6 +5560,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'order',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'asc'
                       ),
@@ -5337,10 +5581,12 @@ final FigSpec wpSpec = FigSpec(
               name: 'patch',
               description: 'Update a nested value for a meta field',
               args: [
+
                 Arg(
                   name: 'action',
                   description: 'Patch action to perform',
                   suggestions: [
+
                     FigSuggestion(
                       name: 'insert'
                     ),
@@ -5370,6 +5616,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -5377,6 +5624,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -5393,6 +5641,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'pluck',
               description: 'Get a nested value from a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -5407,6 +5656,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The output format of the value',
@@ -5414,6 +5664,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -5433,6 +5684,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'update',
               description: 'Update a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -5447,6 +5699,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -5454,6 +5707,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -5475,10 +5729,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Retrieves and sets site options, including plugin and WordPress settings',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Adds a new option value',
           args: [
+
             Arg(
               name: 'key',
               description: 'The name of the option to add'
@@ -5489,6 +5745,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--format',
               description: 'The serialization format for the value',
@@ -5496,6 +5753,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'plaintext'
                   ),
@@ -5513,6 +5771,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'autoload',
                 suggestions: [
+
                   FigSuggestion(
                     name: '\'yes\''
                   ),
@@ -5545,6 +5804,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--format',
               description: 'Get value in a particular format',
@@ -5552,6 +5812,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'var_export'
                   ),
@@ -5571,6 +5832,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Lists options and their values',
           options: [
+
             Option(
               name: '--search',
               description: 'Use wildcards ( * and ? ) to match option name',
@@ -5635,6 +5897,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -5664,6 +5927,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'fields',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'option_id'
                   ),
@@ -5684,6 +5948,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'order',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'asc'
                   ),
@@ -5700,10 +5965,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'patch',
           description: 'Updates a nested value in an option',
           args: [
+
             Arg(
               name: 'action',
               description: 'Patch action to perform',
               suggestions: [
+
                 FigSuggestion(
                   name: 'insert'
                 ),
@@ -5729,6 +5996,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--format',
               description: 'The serialization format for the value',
@@ -5736,6 +6004,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'plaintext'
                   ),
@@ -5752,6 +6021,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'pluck',
           description: 'Gets a nested value from an option',
           args: [
+
             Arg(
               name: 'key',
               description: 'The option name'
@@ -5762,6 +6032,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--format',
               description: 'The output format for the value',
@@ -5769,6 +6040,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'plaintext'
                   ),
@@ -5788,6 +6060,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'update',
           description: 'Updates an option value',
           args: [
+
             Arg(
               name: 'key',
               description: 'The name of the option to update'
@@ -5798,6 +6071,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--autoload',
               description: 'Requires WP 4.2. Should this option be automatically loaded',
@@ -5805,6 +6079,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'autoload',
                 suggestions: [
+
                   FigSuggestion(
                     name: '\'yes\''
                   ),
@@ -5822,6 +6097,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'plaintext'
                   ),
@@ -5841,10 +6117,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Lists, installs, and removes WP-CLI packages',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'browse',
           description: 'Browses WP-CLI packages available for installation',
           options: [
+
             Option(
               name: '--fields',
               description: 'Limit the output to specific fields. Defaults to all fields',
@@ -5861,6 +6139,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -5892,6 +6171,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--insecure',
               description: 'Retry downloads without certificate validation if TLS handshake fails. Note: This makes the request vulnerable to a MITM attack'
@@ -5902,6 +6182,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Lists installed WP-CLI packages',
           options: [
+
             Option(
               name: '--fields',
               description: 'Limit the output to specific fields. Defaults to all fields',
@@ -5918,6 +6199,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -5971,6 +6253,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Manages plugins, including installs, activations, and updates',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'activate',
           description: 'Activates one or more plugins',
@@ -5981,6 +6264,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'If set, all plugins will be activated'
@@ -5995,6 +6279,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'auto-updates',
           description: 'Manages plugin auto-updates',
           subcommands: [
+
             Subcommand(
               name: 'disable',
               description: 'Disables the auto-updates for a plugin',
@@ -6005,6 +6290,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, auto-updates will be disabled for all plugins'
@@ -6025,6 +6311,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, auto-updates will be enabled for all plugins'
@@ -6045,6 +6332,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, the status of auto-updates for all plugins will be shown'
@@ -6080,6 +6368,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--uninstall',
               description: 'Uninstall the plugin after deactivation'
@@ -6104,6 +6393,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'If set, all plugins will be deleted'
@@ -6120,6 +6410,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--field',
               description: 'Instead of returning the whole plugin, returns the value of a single field',
@@ -6145,6 +6436,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -6173,6 +6465,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--version',
               description: 'If set, get that particular version from wordpress.org, instead of the stable version',
@@ -6210,6 +6503,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--network',
               description: 'If set, check if plugin is network-activated'
@@ -6230,6 +6524,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Gets a list of plugins',
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',
@@ -6260,6 +6555,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -6286,6 +6582,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'status',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'active'
                   ),
@@ -6317,6 +6614,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--dir',
               description: 'If set, get the path to the closest parent directory, instead of the plugin file'
@@ -6333,6 +6631,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--page',
               description: 'Optional page to display',
@@ -6340,6 +6639,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'page',
                 suggestions: [
+
                   FigSuggestion(
                     name: '1'
                   )
@@ -6354,6 +6654,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'per-page',
                 suggestions: [
+
                   FigSuggestion(
                     name: '10'
                   )
@@ -6377,6 +6678,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'fields',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'name'
                   ),
@@ -6469,6 +6771,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'plaintext'
                   ),
@@ -6513,6 +6816,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--network',
               description: 'If set, the plugin will be toggled for the entire multisite network'
@@ -6529,6 +6833,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--deactivate',
               description: 'Deactivate the plugin before uninstalling. Default behavior is to warn and skip if the plugin is active'
@@ -6553,6 +6858,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'If set, all plugins that have updates will be updated'
@@ -6581,6 +6887,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -6621,6 +6928,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'If set, all plugins will be verified'
@@ -6636,6 +6944,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -6668,6 +6977,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Manages posts, content, and meta',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates a new post',
@@ -6678,6 +6988,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--post_author',
               description: 'The ID of the user who added the post. Default is the current user ID',
@@ -6766,6 +7077,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'comment_status',
                 suggestions: [
+
                   FigSuggestion(
                     name: '\'open\''
                   ),
@@ -6783,6 +7095,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'ping_status',
                 suggestions: [
+
                   FigSuggestion(
                     name: '\'open\''
                   ),
@@ -6863,6 +7176,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'post_parent',
                 suggestions: [
+
                   FigSuggestion(
                     name: '0'
                   )
@@ -6877,6 +7191,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'menu_order',
                 suggestions: [
+
                   FigSuggestion(
                     name: '0'
                   )
@@ -6963,6 +7278,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--force',
               description: 'Skip the trash bin'
@@ -6997,6 +7313,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'generate',
           description: 'Generates some posts',
           options: [
+
             Option(
               name: '--count',
               description: 'How many posts to generate?',
@@ -7004,6 +7321,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'number',
                 suggestions: [
+
                   FigSuggestion(
                     name: '100'
                   )
@@ -7018,6 +7336,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'type',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'post'
                   )
@@ -7032,6 +7351,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'status',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'publish'
                   )
@@ -7086,6 +7406,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'number',
                 suggestions: [
+
                   FigSuggestion(
                     name: '1'
                   )
@@ -7100,6 +7421,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'progress'
                   ),
@@ -7122,6 +7444,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--field',
               description: 'Instead of returning the whole post, returns the value of a single field',
@@ -7147,6 +7470,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -7169,6 +7493,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Gets a list of posts',
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',
@@ -7181,6 +7506,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'fields',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'ID'
                   ),
@@ -7267,6 +7593,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'fields',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'ID'
                   ),
@@ -7353,6 +7680,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -7381,10 +7709,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'meta',
           description: 'Adds, updates, deletes, and lists post custom fields',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -7399,6 +7729,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -7406,6 +7737,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -7422,6 +7754,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'delete',
               description: 'Delete a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -7436,6 +7769,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'Delete all meta for the object'
@@ -7446,6 +7780,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'get',
               description: 'Get meta field value',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -7456,6 +7791,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'Get value in a particular format',
@@ -7463,6 +7799,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'var_export'
                       ),
@@ -7488,6 +7825,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--keys',
                   description: 'Limit output to metadata of specific keys',
@@ -7513,6 +7851,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -7539,6 +7878,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'fields',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'id'
                       ),
@@ -7559,6 +7899,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'order',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'asc'
                       ),
@@ -7579,10 +7920,12 @@ final FigSpec wpSpec = FigSpec(
               name: 'patch',
               description: 'Update a nested value for a meta field',
               args: [
+
                 Arg(
                   name: 'action',
                   description: 'Patch action to perform',
                   suggestions: [
+
                     FigSuggestion(
                       name: 'insert'
                     ),
@@ -7612,6 +7955,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -7619,6 +7963,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -7635,6 +7980,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'pluck',
               description: 'Get a nested value from a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -7649,6 +7995,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The output format of the value',
@@ -7656,6 +8003,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -7675,6 +8023,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'update',
               description: 'Update a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -7689,6 +8038,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -7696,6 +8046,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -7714,10 +8065,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'term',
           description: 'Adds, updates, removes, and lists post terms',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add a term to an object',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -7732,6 +8085,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--by',
                   description: 'Explicitly handle the term value as a slug or id',
@@ -7739,6 +8093,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'field',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'slug'
                       ),
@@ -7755,6 +8110,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'list',
               description: 'List all terms associated with an object',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -7765,6 +8121,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--field',
                   description: 'Prints the value of a single field for each term',
@@ -7772,6 +8129,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'field',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'term_id'
                       ),
@@ -7810,6 +8168,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'fields',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'term_id'
                       ),
@@ -7848,6 +8207,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -7876,6 +8236,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'remove',
               description: 'Remove a term from an object',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -7890,6 +8251,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--by',
                   description: 'Explicitly handle the term value as a slug or id',
@@ -7897,6 +8259,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'field',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'slug'
                       ),
@@ -7917,6 +8280,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'set',
               description: 'Set object terms',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -7931,6 +8295,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--by',
                   description: 'Explicitly handle the term value as a slug or id',
@@ -7938,6 +8303,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'field',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'slug'
                       ),
@@ -7956,6 +8322,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'update',
           description: 'Updates one or more existing posts',
           args: [
+
             Arg(
               name: 'id',
               description: 'One or more IDs of posts to update'
@@ -7966,6 +8333,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--post_author',
               description: 'The ID of the user who added the post. Default is the current user ID',
@@ -8054,6 +8422,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'comment_status',
                 suggestions: [
+
                   FigSuggestion(
                     name: '\'open\''
                   ),
@@ -8071,6 +8440,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'ping_status',
                 suggestions: [
+
                   FigSuggestion(
                     name: '\'open\''
                   ),
@@ -8142,6 +8512,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'post_parent',
                 suggestions: [
+
                   FigSuggestion(
                     name: '0'
                   )
@@ -8156,6 +8527,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'menu_order',
                 suggestions: [
+
                   FigSuggestion(
                     name: '0'
                   )
@@ -8234,6 +8606,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Retrieves details on the site’s registered post types',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Gets details about a registered post type',
@@ -8244,6 +8617,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--field',
               description: 'Instead of returning the whole taxonomy, returns the value of a single field',
@@ -8269,6 +8643,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -8291,6 +8666,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Lists registered post types',
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',
@@ -8321,6 +8697,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -8349,6 +8726,7 @@ final FigSpec wpSpec = FigSpec(
       description: '',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'eval',
           description: 'Profile arbitrary code execution',
@@ -8359,6 +8737,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--hook',
               description: 'Focus on key metrics for all hooks, or callbacks on a specific hook',
@@ -8384,6 +8763,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -8407,6 +8787,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'order',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'ASC'
                   ),
@@ -8439,6 +8820,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--hook',
               description: 'Focus on key metrics for all hooks, or callbacks on a specific hook',
@@ -8464,6 +8846,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -8487,6 +8870,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'order',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'ASC'
                   ),
@@ -8518,6 +8902,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'Profile callbacks for all WordPress hooks'
@@ -8551,6 +8936,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -8574,6 +8960,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'order',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'ASC'
                   ),
@@ -8605,6 +8992,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'Expand upon all stages'
@@ -8638,6 +9026,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -8661,6 +9050,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'order',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'asc'
                   ),
@@ -8689,10 +9079,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Lists or flushes the site’s rewrite rules, updates the permalink structure',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'flush',
           description: 'Flushes rewrite rules',
           options: [
+
             Option(
               name: '--hard',
               description: 'Perform a hard flush – update .htaccess rules as well as rewrite rules in database. Works only on single site installs'
@@ -8703,6 +9095,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Gets a list of the current rewrite rules',
           options: [
+
             Option(
               name: '--match',
               description: 'Show rewrite rules matching a particular URL',
@@ -8737,6 +9130,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -8768,6 +9162,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--category-base',
               description: 'Set the base for category permalinks, i.e. ‘/category/’',
@@ -8799,10 +9194,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Manages user roles, including creating new roles and resetting to defaults',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates a new role',
           args: [
+
             Arg(
               name: 'role-key',
               description: 'The internal name of the role'
@@ -8813,6 +9210,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--clone',
               description: 'Clone capabilities from an existing role',
@@ -8848,6 +9246,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Lists all roles',
           options: [
+
             Option(
               name: '--fields',
               description: 'Limit the output to specific row fields',
@@ -8873,6 +9272,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -8904,6 +9304,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'If set, all default roles will be reset'
@@ -8917,6 +9318,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Generates code for post types, taxonomies, plugins, child themes, etc',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'block',
           description: 'Generates PHP, JS and CSS code for registering a Gutenberg block for a plugin or theme',
@@ -8927,6 +9329,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--title',
               description: 'The display title for your block',
@@ -8952,6 +9355,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'category',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'common'
                   ),
@@ -9000,6 +9404,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--parent_theme',
               description: 'What to put in the ‘Template:’ header in ‘style.css’',
@@ -9069,6 +9474,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--dir',
               description: 'Put the new plugin in some arbitrary directory path. Plugin directory will be path plus supplied slug',
@@ -9135,6 +9541,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'provider',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'travis'
                   ),
@@ -9173,6 +9580,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--dir',
               description: 'Generate test files for a non-standard plugin path. If no plugin slug is specified, the directory name is used',
@@ -9190,6 +9598,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'provider',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'travis'
                   ),
@@ -9223,6 +9632,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--label',
               description: 'The text used to translate the update messages',
@@ -9283,6 +9693,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--post_types',
               description: 'Post types to register for use with the taxonomy',
@@ -9343,6 +9754,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--dir',
               description: 'Generate test files for a non-standard theme path. If no theme slug is specified, the directory name is used',
@@ -9360,6 +9772,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'provider',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'travis'
                   ),
@@ -9393,6 +9806,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--activate',
               description: 'Activate the newly downloaded theme'
@@ -9452,6 +9866,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--activate',
               description: 'Activate the newly downloaded theme'
@@ -9507,6 +9922,7 @@ final FigSpec wpSpec = FigSpec(
       name: 'search-replace',
       description: 'Searches/replaces strings in the database',
       args: [
+
         Arg(
           name: 'old',
           description: 'A string to search for within the database'
@@ -9521,6 +9937,7 @@ final FigSpec wpSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--dry-run',
           description: 'Run the entire search/replace operation and show report, but don’t save changes to the database'
@@ -9553,6 +9970,7 @@ final FigSpec wpSpec = FigSpec(
             Arg(
             name: 'rows',
             suggestions: [
+
               FigSuggestion(
                 name: '50'
               )
@@ -9641,6 +10059,7 @@ final FigSpec wpSpec = FigSpec(
             Arg(
             name: 'format',
             suggestions: [
+
               FigSuggestion(
                 name: 'table'
               ),
@@ -9692,6 +10111,7 @@ final FigSpec wpSpec = FigSpec(
       name: 'server',
       description: 'Launches PHP’s built-in web server for a specific WordPress installation',
       options: [
+
         Option(
           name: '--host',
           description: 'The hostname to bind the server to',
@@ -9699,6 +10119,7 @@ final FigSpec wpSpec = FigSpec(
             Arg(
             name: 'host',
             suggestions: [
+
               FigSuggestion(
                 name: 'localhost'
               )
@@ -9713,6 +10134,7 @@ final FigSpec wpSpec = FigSpec(
             Arg(
             name: 'port',
             suggestions: [
+
               FigSuggestion(
                 name: '8080'
               )
@@ -9745,6 +10167,7 @@ final FigSpec wpSpec = FigSpec(
       name: 'shell',
       description: 'Opens an interactive PHP console for running and testing PHP code',
       options: [
+
         Option(
           name: '--basic',
           description: 'Force the use of WP-CLI’s built-in PHP REPL, even if the Boris or PsySH PHP REPLs are available'
@@ -9756,10 +10179,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Lists registered sidebars',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'Lists registered sidebars',
           options: [
+
             Option(
               name: '--fields',
               description: 'Limit the output to specific row fields',
@@ -9776,6 +10201,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -9807,6 +10233,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Creates, deletes, empties, moderates, and lists one or more sites on a multisite installation',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'activate',
           description: 'Activates one or more sites',
@@ -9831,6 +10258,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'create',
           description: 'Creates a site in a multisite installation',
           options: [
+
             Option(
               name: '--slug',
               description: 'Path for the new site. Subdomain on subdomain installs, directory on subdirectory installs',
@@ -9897,6 +10325,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--slug',
               description: 'Path of the blog to be deleted. Subdomain on subdomain installs, directory on subdirectory installs',
@@ -9920,6 +10349,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'empty',
           description: 'Empties a site of its content (posts, comments, terms, and meta)',
           options: [
+
             Option(
               name: '--uploads',
               description: 'Also delete all files in the site’s uploads directory'
@@ -9934,6 +10364,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Lists all sites in a multisite installation',
           options: [
+
             Option(
               name: '--network',
               description: 'The network to which the sites belong',
@@ -9982,6 +10413,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -10020,10 +10452,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'meta',
           description: 'Adds, updates, deletes, and lists site custom fields',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -10038,6 +10472,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -10045,6 +10480,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -10061,6 +10497,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'delete',
               description: 'Delete a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -10075,6 +10512,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'Delete all meta for the object'
@@ -10085,6 +10523,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'get',
               description: 'Get meta field value',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -10095,6 +10534,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'Get value in a particular format',
@@ -10102,6 +10542,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'var_export'
                       ),
@@ -10127,6 +10568,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--keys',
                   description: 'Limit output to metadata of specific keys',
@@ -10143,6 +10585,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'fields',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'id,meta_key,meta_value'
                       )
@@ -10157,6 +10600,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -10183,6 +10627,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'fields',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'id'
                       ),
@@ -10203,6 +10648,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'order',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'asc'
                       ),
@@ -10223,10 +10669,12 @@ final FigSpec wpSpec = FigSpec(
               name: 'patch',
               description: 'Update a nested value for a meta field',
               args: [
+
                 Arg(
                   name: 'action',
                   description: 'Patch action to perform',
                   suggestions: [
+
                     FigSuggestion(
                       name: 'insert'
                     ),
@@ -10256,6 +10704,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -10263,6 +10712,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -10279,6 +10729,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'pluck',
               description: 'Get a nested value from a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -10293,6 +10744,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The output format of the value',
@@ -10300,6 +10752,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -10319,6 +10772,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'update',
               description: 'Update a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -10333,6 +10787,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -10340,6 +10795,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -10358,10 +10814,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'option',
           description: 'Adds, updates, deletes, and lists site options in a multisite installation',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Adds a site option',
               args: [
+
                 Arg(
                   name: 'key',
                   description: 'The name of the site option to add'
@@ -10372,6 +10830,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -10379,6 +10838,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -10411,6 +10871,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'Get value in a particular format',
@@ -10418,6 +10879,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'var_export'
                       ),
@@ -10437,6 +10899,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'list',
               description: 'Lists site options',
               options: [
+
                 Option(
                   name: '--search',
                   description: 'Use wildcards ( * and ? ) to match option name',
@@ -10480,6 +10943,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -10508,10 +10972,12 @@ final FigSpec wpSpec = FigSpec(
               name: 'patch',
               description: 'Updates a nested value in an option',
               args: [
+
                 Arg(
                   name: 'action',
                   description: 'Patch action to perform',
                   suggestions: [
+
                     FigSuggestion(
                       name: 'insert'
                     ),
@@ -10537,6 +11003,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -10544,6 +11011,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -10560,6 +11028,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'pluck',
               description: 'Gets a nested value from an option',
               args: [
+
                 Arg(
                   name: 'key',
                   description: 'The option name'
@@ -10570,6 +11039,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The output format of the value',
@@ -10577,6 +11047,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -10596,6 +11067,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'update',
               description: 'Updates a site option',
               args: [
+
                 Arg(
                   name: 'key',
                   description: 'The name of the site option to update'
@@ -10606,6 +11078,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -10613,6 +11086,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -10704,6 +11178,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Lists, adds, or removes super admin users on a multisite installation',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Grants super admin privileges to one or more users',
@@ -10718,6 +11193,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Lists users with super admin capabilities',
           options: [
+
             Option(
               name: '--format',
               description: 'Render output in a particular format',
@@ -10725,6 +11201,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'list'
                   ),
@@ -10766,6 +11243,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Retrieves information about registered taxonomies',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Gets details about a registered taxonomy',
@@ -10776,6 +11254,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--field',
               description: 'Instead of returning the whole taxonomy, returns the value of a single field',
@@ -10801,6 +11280,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -10823,6 +11303,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Lists registered taxonomies',
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',
@@ -10853,6 +11334,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -10881,10 +11363,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Manages taxonomy terms and term meta, with create, delete, and list commands',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates a new term',
           args: [
+
             Arg(
               name: 'taxonomy',
               description: 'Taxonomy for the new term'
@@ -10895,6 +11379,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--slug',
               description: 'A unique slug for the new term. Defaults to sanitized version of name',
@@ -10932,6 +11417,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'delete',
           description: 'Deletes an existing term',
           args: [
+
             Arg(
               name: 'taxonomy',
               description: 'Taxonomy of the term to delete'
@@ -10942,6 +11428,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--by',
               description: 'Explicitly handle the term value as a slug or id',
@@ -10949,6 +11436,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'field',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'slug'
                   ),
@@ -10971,6 +11459,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--count',
               description: 'How many terms to generate?',
@@ -10978,6 +11467,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'number',
                 suggestions: [
+
                   FigSuggestion(
                     name: '100'
                   )
@@ -10992,6 +11482,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'number',
                 suggestions: [
+
                   FigSuggestion(
                     name: '1'
                   )
@@ -11006,6 +11497,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'progress'
                   ),
@@ -11022,6 +11514,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'get',
           description: 'Gets details about a term',
           args: [
+
             Arg(
               name: 'taxonomy',
               description: 'Taxonomy of the term to get'
@@ -11032,6 +11525,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--by',
               description: 'Explicitly handle the term value as a slug or id',
@@ -11039,6 +11533,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'field',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'slug'
                   ),
@@ -11074,6 +11569,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -11102,6 +11598,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',
@@ -11132,6 +11629,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -11160,10 +11658,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'meta',
           description: 'Adds, updates, deletes, and lists term custom fields',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -11178,6 +11678,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -11185,6 +11686,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -11201,6 +11703,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'delete',
               description: 'Delete a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -11215,6 +11718,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'Delete all meta for the object'
@@ -11225,6 +11729,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'get',
               description: 'Get meta field value',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -11235,6 +11740,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'Get value in a particular format',
@@ -11242,6 +11748,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'var_export'
                       ),
@@ -11267,6 +11774,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--keys',
                   description: 'Limit output to metadata of specific keys',
@@ -11283,6 +11791,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'fields',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'id,meta_key,meta_value'
                       )
@@ -11297,6 +11806,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -11323,6 +11833,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'fields',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'id'
                       ),
@@ -11343,6 +11854,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'order',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'asc'
                       ),
@@ -11363,10 +11875,12 @@ final FigSpec wpSpec = FigSpec(
               name: 'patch',
               description: 'Update a nested value for a meta field',
               args: [
+
                 Arg(
                   name: 'action',
                   description: 'Patch action to perform',
                   suggestions: [
+
                     FigSuggestion(
                       name: 'insert'
                     ),
@@ -11396,6 +11910,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -11403,6 +11918,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -11419,6 +11935,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'pluck',
               description: 'Get a nested value from a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -11433,6 +11950,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The output format of the value',
@@ -11440,6 +11958,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -11459,6 +11978,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'update',
               description: 'Update a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -11473,6 +11993,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -11480,6 +12001,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -11504,6 +12026,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--by',
               description: 'Explicitly handle the term value as a slug or id',
@@ -11511,6 +12034,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'field',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'slug'
                   ),
@@ -11555,6 +12079,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'update',
           description: 'Updates an existing term',
           args: [
+
             Arg(
               name: 'taxonomy',
               description: 'Taxonomy of the term to update'
@@ -11565,6 +12090,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--by',
               description: 'Explicitly handle the term value as a slug or id',
@@ -11572,6 +12098,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'field',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'slug'
                   ),
@@ -11627,6 +12154,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Manages themes, including installs, activations, and updates',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'activate',
           description: 'Activates a theme',
@@ -11641,6 +12169,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'auto-updates',
           description: 'Manages theme auto-updates',
           subcommands: [
+
             Subcommand(
               name: 'disable',
               description: 'Disables the auto-updates for a theme',
@@ -11651,6 +12180,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, auto-updates will be disabled for all themes'
@@ -11671,6 +12201,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, auto-updates will be enabled for all themes'
@@ -11691,6 +12222,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'If set, the status of auto-updates for all themes will be shown'
@@ -11726,6 +12258,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'If set, all themes will be deleted except active theme'
@@ -11746,6 +12279,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--network',
               description: 'If set, the theme is disabled on the network level. Note that individual sites may still have this theme enabled if it was enabled for them independently'
@@ -11762,6 +12296,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--network',
               description: 'If set, the theme is enabled for the entire network'
@@ -11782,6 +12317,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--field',
               description: 'Instead of returning the whole theme, returns the value of a single field',
@@ -11807,6 +12343,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -11835,6 +12372,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--version',
               description: 'If set, get that particular version from wordpress.org, instead of the stable version',
@@ -11882,6 +12420,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Gets a list of themes',
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',
@@ -11912,6 +12451,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -11938,6 +12478,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'status',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'active'
                   ),
@@ -11957,6 +12498,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'mod',
           description: 'Sets, gets, and removes theme mods',
           subcommands: [
+
             Subcommand(
               name: 'get',
               description: 'Gets one or more theme mods',
@@ -11967,6 +12509,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--field',
                   description: 'Returns the value of a single field'
@@ -11982,6 +12525,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -12004,6 +12548,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'list',
               description: 'Gets a list of theme mods',
               options: [
+
                 Option(
                   name: '--field',
                   description: 'Returns the value of a single field',
@@ -12020,6 +12565,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -12048,6 +12594,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'Remove all theme mods'
@@ -12058,6 +12605,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'set',
               description: 'Sets the value of a theme mod',
               args: [
+
                 Arg(
                   name: 'mod',
                   description: 'The name of the theme mod to set or update'
@@ -12080,6 +12628,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--dir',
               description: 'If set, get the path to the closest parent directory, instead of the theme’s “style.css” file'
@@ -12096,6 +12645,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--page',
               description: 'Optional page to display',
@@ -12103,6 +12653,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'page',
                 suggestions: [
+
                   FigSuggestion(
                     name: '1'
                   )
@@ -12117,6 +12668,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'per-page',
                 suggestions: [
+
                   FigSuggestion(
                     name: '10'
                   )
@@ -12140,6 +12692,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'fields',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'name'
                   ),
@@ -12184,6 +12737,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -12225,6 +12779,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'If set, all themes that have updates will be updated'
@@ -12245,6 +12800,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -12287,6 +12843,7 @@ final FigSpec wpSpec = FigSpec(
       description: 'Adds, gets, and deletes entries in the WordPress Transient Cache',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Deletes a transient value',
@@ -12297,6 +12854,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--network',
               description: 'Delete the value of a network|site transient. On single site, this is a specially-named cache key. On multisite, this is a global cache (instead of local to the site)'
@@ -12321,6 +12879,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--format',
               description: 'Render output in a particular format',
@@ -12328,6 +12887,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -12354,6 +12914,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Lists transients and their values',
           options: [
+
             Option(
               name: '--search',
               description: 'Use wildcards ( * and ? ) to match transient name',
@@ -12400,6 +12961,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -12425,6 +12987,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'set',
           description: 'Sets a transient value',
           args: [
+
             Arg(
               name: 'key',
               description: 'Key for the transient'
@@ -12439,6 +13002,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--network',
               description: 'Set the value of a network|site transient. On single site, this is a specially-named cache key. On multisite, this is a global cache (instead of local to the site)'
@@ -12456,10 +13020,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Manages users, along with their roles, capabilities, and meta',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'add-cap',
           description: 'Adds a capability to a user',
           args: [
+
             Arg(
               name: 'user',
               description: 'User ID, user email, or user login'
@@ -12474,6 +13040,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'add-role',
           description: 'Adds a role for a user',
           args: [
+
             Arg(
               name: 'user',
               description: 'User ID, user email, or user login'
@@ -12488,6 +13055,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'check-password',
           description: 'Checks if a user’s password is valid or not',
           args: [
+
             Arg(
               name: 'user',
               description: 'The user login, user email or user ID of the user to check credentials for'
@@ -12498,6 +13066,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--escape-chars',
               description: 'Escape password with wp_slash() to mimic the same behavior as wp-login.php'
@@ -12508,6 +13077,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'create',
           description: 'Creates a new user',
           args: [
+
             Arg(
               name: 'user-login',
               description: 'The login of the user to create'
@@ -12518,6 +13088,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--role',
               description: 'The role of the user to create. Default: default role. Possible values include ‘administrator’, ‘editor’, ‘author’, ‘contributor’, ‘subscriber’',
@@ -12525,6 +13096,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'role',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'administrator'
                   ),
@@ -12654,6 +13226,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--network',
               description: 'On multisite, delete the user from the entire network'
@@ -12677,6 +13250,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'generate',
           description: 'Generates some users',
           options: [
+
             Option(
               name: '--count',
               description: 'How many users to generate?',
@@ -12684,6 +13258,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'number',
                 suggestions: [
+
                   FigSuggestion(
                     name: '100'
                   )
@@ -12707,6 +13282,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'progress'
                   ),
@@ -12729,6 +13305,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--field',
               description: 'Instead of returning the whole user, returns the value of a single field',
@@ -12754,6 +13331,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -12782,6 +13360,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--send-email',
               description: 'Send an email to new users with their account details'
@@ -12796,6 +13375,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'list',
           description: 'Lists users',
           options: [
+
             Option(
               name: '--role',
               description: 'Only display users with a certain role',
@@ -12839,6 +13419,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -12873,6 +13454,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--format',
               description: 'Render output in a particular format',
@@ -12880,6 +13462,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'list'
                   ),
@@ -12908,10 +13491,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'meta',
           description: 'Adds, updates, deletes, and lists user custom fields',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Adds a meta field',
               args: [
+
                 Arg(
                   name: 'user',
                   description: 'The user login, user email, or user ID of the user to add metadata for'
@@ -12926,6 +13511,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -12933,6 +13519,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -12949,6 +13536,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'delete',
               description: 'Deletes a meta field',
               args: [
+
                 Arg(
                   name: 'user',
                   description: 'The user login, user email, or user ID of the user to delete metadata from'
@@ -12967,6 +13555,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'get',
               description: 'Gets meta field value',
               args: [
+
                 Arg(
                   name: 'user',
                   description: 'The user login, user email, or user ID of the user to get metadata for'
@@ -12977,6 +13566,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'Render output in a particular format',
@@ -12984,6 +13574,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -13012,6 +13603,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--keys',
                   description: 'Limit output to metadata of specific keys',
@@ -13028,6 +13620,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'fields',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'id,meta_key,meta_value'
                       )
@@ -13042,6 +13635,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -13068,6 +13662,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'fields',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'id'
                       ),
@@ -13088,6 +13683,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'order',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'asc'
                       ),
@@ -13108,10 +13704,12 @@ final FigSpec wpSpec = FigSpec(
               name: 'patch',
               description: 'Update a nested value for a meta field',
               args: [
+
                 Arg(
                   name: 'action',
                   description: 'Patch action to perform',
                   suggestions: [
+
                     FigSuggestion(
                       name: 'insert'
                     ),
@@ -13141,6 +13739,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -13148,6 +13747,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -13164,6 +13764,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'pluck',
               description: 'Get a nested value from a meta field',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -13178,6 +13779,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The output format of the value',
@@ -13185,6 +13787,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -13204,6 +13807,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'update',
               description: 'Updates a meta field',
               args: [
+
                 Arg(
                   name: 'user',
                   description: 'The user login, user email, or user ID of the user to update metadata for'
@@ -13218,6 +13822,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--format',
                   description: 'The serialization format for the value',
@@ -13225,6 +13830,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'plaintext'
                       ),
@@ -13243,6 +13849,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'remove-cap',
           description: 'Removes a user’s capability',
           args: [
+
             Arg(
               name: 'user',
               description: 'User ID, user email, or user login'
@@ -13257,6 +13864,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'remove-role',
           description: 'Removes a user’s role',
           args: [
+
             Arg(
               name: 'user',
               description: 'User ID, user email, or user login'
@@ -13277,6 +13885,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--skip-email',
               description: 'Don’t send an email notification to the affected user(s)'
@@ -13287,10 +13896,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'session',
           description: 'Destroys and lists a user’s sessions',
           subcommands: [
+
             Subcommand(
               name: 'destroy',
               description: 'Destroy a session for the given user',
               args: [
+
                 Arg(
                   name: 'user',
                   description: 'User ID, user email, or user login'
@@ -13301,6 +13912,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--all',
                   description: 'Destroy all of the user’s sessions'
@@ -13317,6 +13929,7 @@ final FigSpec wpSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--fields',
                   description: 'Limit the output to specific fields',
@@ -13333,6 +13946,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -13363,6 +13977,7 @@ final FigSpec wpSpec = FigSpec(
           name: 'set-role',
           description: 'Sets the user role',
           args: [
+
             Arg(
               name: 'user',
               description: 'User ID, user email, or user login'
@@ -13387,10 +14002,12 @@ final FigSpec wpSpec = FigSpec(
           name: 'term',
           description: 'Adds, updates, removes, and lists user terms',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add a term to an object',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -13405,6 +14022,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--by',
                   description: 'Explicitly handle the term value as a slug or id',
@@ -13412,6 +14030,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'field',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'slug'
                       ),
@@ -13428,6 +14047,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'list',
               description: 'List all terms associated with an object',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'ID for the object'
@@ -13438,6 +14058,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--field',
                   description: 'Prints the value of a single field for each term',
@@ -13463,6 +14084,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'format',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'table'
                       ),
@@ -13491,6 +14113,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'remove',
               description: 'Remove a term from an object',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -13505,6 +14128,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--by',
                   description: 'Explicitly handle the term value as a slug or id',
@@ -13512,6 +14136,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'field',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'slug'
                       ),
@@ -13532,6 +14157,7 @@ final FigSpec wpSpec = FigSpec(
               name: 'set',
               description: 'Set object terms',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the object'
@@ -13546,6 +14172,7 @@ final FigSpec wpSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--by',
                   description: 'Explicitly handle the term value as a slug or id',
@@ -13553,6 +14180,7 @@ final FigSpec wpSpec = FigSpec(
                     Arg(
                     name: 'field',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'slug'
                       ),
@@ -13587,6 +14215,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--user_pass',
               description: 'A string that contains the plain text password for the user',
@@ -13717,10 +14346,12 @@ final FigSpec wpSpec = FigSpec(
       description: 'Manages widgets, including adding and moving them within sidebars',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Adds a widget to a sidebar',
           args: [
+
             Arg(
               name: 'name',
               description: 'Widget name'
@@ -13735,6 +14366,7 @@ final FigSpec wpSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',
@@ -13772,6 +14404,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--fields',
               description: 'Limit the output to specific row fields',
@@ -13788,6 +14421,7 @@ final FigSpec wpSpec = FigSpec(
                 Arg(
                 name: 'format',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'table'
                   ),
@@ -13822,6 +14456,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--position',
               description: 'Assign the widget to a new position',
@@ -13852,6 +14487,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'If set, all sidebars will be reset'
@@ -13868,6 +14504,7 @@ final FigSpec wpSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--field=value',
               insertValue: '--',

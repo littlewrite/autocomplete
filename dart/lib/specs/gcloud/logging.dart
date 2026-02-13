@@ -9,14 +9,17 @@ final FigSpec loggingSpec = FigSpec(
   name: 'logging',
   description: 'Manage Cloud Logging',
   subcommands: [
+
     Subcommand(
       name: 'logs',
       description: 'Manages your project\'s logs',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Deletes all entries from a log',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -140,6 +143,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -162,6 +166,7 @@ final FigSpec loggingSpec = FigSpec(
           name: 'list',
           description: 'Lists your project\'s logs',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -318,6 +323,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -332,6 +338,7 @@ final FigSpec loggingSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -455,6 +462,7 @@ final FigSpec loggingSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -471,10 +479,12 @@ final FigSpec loggingSpec = FigSpec(
       name: 'metrics',
       description: 'Manages logs-based metrics',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates a logs-based metric',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -622,6 +632,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -644,6 +655,7 @@ final FigSpec loggingSpec = FigSpec(
           name: 'delete',
           description: 'Deletes a logs-based metric',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -767,6 +779,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -789,6 +802,7 @@ final FigSpec loggingSpec = FigSpec(
           name: 'describe',
           description: 'Shows the definition of a logs-based metric',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -912,6 +926,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -934,6 +949,7 @@ final FigSpec loggingSpec = FigSpec(
           name: 'list',
           description: 'Displays all logs-based metrics',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1090,6 +1106,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1106,6 +1123,7 @@ final FigSpec loggingSpec = FigSpec(
           name: 'update',
           description: 'Updates the definition of a logs-based metric',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1251,6 +1269,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1271,6 +1290,7 @@ final FigSpec loggingSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1394,6 +1414,7 @@ final FigSpec loggingSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1410,6 +1431,7 @@ final FigSpec loggingSpec = FigSpec(
       name: 'read',
       description: 'Read log entries',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1547,6 +1569,7 @@ final FigSpec loggingSpec = FigSpec(
             name: 'ORDER',
             description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
             suggestions: [
+
               FigSuggestion(name: 'desc'),
               FigSuggestion(name: 'asc')
             ]
@@ -1591,6 +1614,7 @@ final FigSpec loggingSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1613,10 +1637,12 @@ final FigSpec loggingSpec = FigSpec(
       name: 'resource-descriptors',
       description: 'Get information about resource descriptors',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'Lists all available resource descriptors',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1773,6 +1799,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1787,6 +1814,7 @@ final FigSpec loggingSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1910,6 +1938,7 @@ final FigSpec loggingSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1926,10 +1955,12 @@ final FigSpec loggingSpec = FigSpec(
       name: 'sinks',
       description: 'Manages sinks used to export logs',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates a sink',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2090,6 +2121,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2102,6 +2134,7 @@ final FigSpec loggingSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SINK_NAME',
               description: 'The name for the sink'
@@ -2116,6 +2149,7 @@ final FigSpec loggingSpec = FigSpec(
           name: 'delete',
           description: 'Deletes a sink',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2261,6 +2295,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2283,6 +2318,7 @@ final FigSpec loggingSpec = FigSpec(
           name: 'describe',
           description: 'Displays information about a sink',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2428,6 +2464,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2450,6 +2487,7 @@ final FigSpec loggingSpec = FigSpec(
           name: 'list',
           description: 'Lists the defined sinks',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2628,6 +2666,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2644,6 +2683,7 @@ final FigSpec loggingSpec = FigSpec(
           name: 'update',
           description: 'Updates a sink',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2800,6 +2840,7 @@ final FigSpec loggingSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2812,6 +2853,7 @@ final FigSpec loggingSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SINK_NAME',
               description: 'The name of the sink to update'
@@ -2824,6 +2866,7 @@ final FigSpec loggingSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2947,6 +2990,7 @@ final FigSpec loggingSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2963,6 +3007,7 @@ final FigSpec loggingSpec = FigSpec(
       name: 'write',
       description: 'Write a log entry',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3089,6 +3134,7 @@ final FigSpec loggingSpec = FigSpec(
             name: 'PAYLOAD_TYPE',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'text'),
               FigSuggestion(name: 'json')
             ]
@@ -3107,6 +3153,7 @@ final FigSpec loggingSpec = FigSpec(
             name: 'SEVERITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'DEFAULT'),
               FigSuggestion(name: 'DEBUG'),
               FigSuggestion(name: 'INFO'),
@@ -3143,6 +3190,7 @@ final FigSpec loggingSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3155,6 +3203,7 @@ final FigSpec loggingSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'LOG_NAME',
           description: 'Name of the log where the log entry will be written'
@@ -3167,6 +3216,7 @@ final FigSpec loggingSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3290,6 +3340,7 @@ final FigSpec loggingSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

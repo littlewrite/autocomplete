@@ -9,6 +9,7 @@ final FigSpec versionSpec = FigSpec(
   name: 'version',
   description: 'Print version information for Cloud SDK components',
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -132,6 +133,7 @@ final FigSpec versionSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

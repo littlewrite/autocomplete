@@ -15,6 +15,7 @@ final FigSpec serveSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Shows help message'
@@ -30,6 +31,7 @@ final FigSpec serveSpec = FigSpec(
         Arg(
         name: 'listen_uri',
         suggestions: [
+
           FigSuggestion(
             name: 'port',
             description: 'E.g. serve --listen 1234',

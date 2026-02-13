@@ -9,10 +9,12 @@ final FigSpec redshiftSpec = FigSpec(
   name: 'redshift',
   description: 'Amazon Redshift  Overview  This is an interface reference for Amazon Redshift. It contains documentation for one of the programming or command line interfaces you can use to manage Amazon Redshift clusters. Note that Amazon Redshift is asynchronous, which means that some interfaces may require techniques, such as polling or asynchronous callback handlers, to determine when a command has been applied. In this reference, the parameter descriptions indicate whether a change is applied immediately, on the next instance reboot, or during the next maintenance window. For a summary of the Amazon Redshift cluster management interfaces, go to Using the Amazon Redshift Management Interfaces. Amazon Redshift manages all the work of setting up, operating, and scaling a data warehouse: provisioning capacity, monitoring and backing up the cluster, and applying patches and upgrades to the Amazon Redshift engine. You can focus on using your data to acquire new insights for your business and customers. If you are a first-time user of Amazon Redshift, we recommend that you begin by reading the Amazon Redshift Getting Started Guide. If you are a database developer, the Amazon Redshift Database Developer Guide explains how to design, build, query, and maintain the databases that make up your data warehouse',
   subcommands: [
+
     Subcommand(
       name: 'accept-reserved-node-exchange',
       description: 'Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type, or number of nodes) and no additional costs',
       options: [
+
         Option(
           name: '--reserved-node-id',
           description: 'A string representing the node identifier of the DC1 Reserved Node to be exchanged',
@@ -47,6 +49,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'add-partner',
       description: 'Adds a partner integration to a cluster. This operation authorizes a partner to push status updates for the specified database. To complete the integration, you also set up the integration on the partner website',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The Amazon Web Services account ID that owns the cluster',
@@ -111,6 +115,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'associate-data-share-consumer',
       description: 'From a datashare consumer account, associates a datashare with the account (AssociateEntireAccount) or the specified namespace (ConsumerArn). If you make this association, the consumer can consume the datashare',
       options: [
+
         Option(
           name: '--data-share-arn',
           description: 'The Amazon Resource Name (ARN) of the datashare that the consumer is to use',
@@ -182,6 +188,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -194,6 +201,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'authorize-cluster-security-group-ingress',
       description: 'Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group. If you authorize access to an Amazon EC2 security group, specify EC2SecurityGroupName and EC2SecurityGroupOwnerId. The Amazon EC2 security group and Amazon Redshift cluster must be in the same Amazon Web Services Region.  If you authorize access to a CIDR/IP address range, specify CIDRIP. For an overview of CIDR blocks, see the Wikipedia article on Classless Inter-Domain Routing.  You must also associate the security group with a cluster so that clients running on these IP addresses or the EC2 instance are authorized to connect to the cluster. For information about managing security groups, go to Working with Security Groups in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-security-group-name',
           description: 'The name of the security group to which the ingress rule is added',
@@ -246,6 +254,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -258,6 +267,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'authorize-data-share',
       description: 'From a data producer account, authorizes the sharing of a datashare with one or more consumer accounts or managing entities. To authorize a datashare for a data consumer, the producer account must have the correct access permissions',
       options: [
+
         Option(
           name: '--data-share-arn',
           description: 'The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for',
@@ -300,6 +310,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -312,6 +323,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'authorize-endpoint-access',
       description: 'Grants access to a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The cluster identifier of the cluster to grant access to',
@@ -355,6 +367,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -367,6 +380,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'authorize-snapshot-access',
       description: 'Authorizes the specified Amazon Web Services account to restore the specified snapshot.  For more information about working with snapshots, go to Amazon Redshift Snapshots in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--snapshot-identifier',
           description: 'The identifier of the snapshot the account is authorized to restore',
@@ -419,6 +433,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -431,6 +446,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'batch-delete-cluster-snapshots',
       description: 'Deletes a set of cluster snapshots',
       options: [
+
         Option(
           name: '--identifiers',
           description: 'A list of identifiers for the snapshots that you want to delete',
@@ -456,6 +472,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -468,6 +485,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'batch-modify-cluster-snapshots',
       description: 'Modifies the settings for a set of cluster snapshots',
       options: [
+
         Option(
           name: '--snapshot-identifier-list',
           description: 'A list of snapshot identifiers you want to modify',
@@ -510,6 +528,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -522,6 +541,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'cancel-resize',
       description: 'Cancels a resize operation for a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier for the cluster that you want to cancel a resize operation for',
@@ -547,6 +567,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -559,6 +580,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'copy-cluster-snapshot',
       description: 'Copies the specified automated cluster snapshot to a new manual cluster snapshot. The source must be an automated snapshot and it must be in the available state. When you delete a cluster, Amazon Redshift deletes any automated snapshots of the cluster. Also, when the retention period of the snapshot expires, Amazon Redshift automatically deletes it. If you want to keep an automated snapshot for a longer period, you can make a manual copy of the snapshot. Manual snapshots are retained until you delete them.  For more information about working with snapshots, go to Amazon Redshift Snapshots in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--source-snapshot-identifier',
           description: 'The identifier for the source snapshot. Constraints:   Must be the identifier for a valid automated snapshot whose state is available',
@@ -611,6 +633,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -623,6 +646,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-authentication-profile',
       description: 'Creates an authentication profile with the specified parameters',
       options: [
+
         Option(
           name: '--authentication-profile-name',
           description: 'The name of the authentication profile to be created',
@@ -657,6 +681,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -669,6 +694,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-cluster',
       description: 'Creates a new cluster with the specified parameters. To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more information about managing clusters, go to Amazon Redshift Clusters in the Amazon Redshift Cluster Management Guide. VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that you own in a Region from reaching or being reached from the internet through internet gateways and egress-only internet gateways. If a subnet group for a provisioned cluster is in an account with VPC BPA turned on, the following capabilities are blocked:   Creating a public cluster   Restoring a public cluster   Modifying a private cluster to be public   Adding a subnet with VPC BPA turned on to the subnet group when there\'s at least one public cluster within the group   For more information about VPC BPA, see Block public access to VPCs and subnets in the Amazon VPC User Guide',
       options: [
+
         Option(
           name: '--db-name',
           description: 'The name of the first database to be created when the cluster is created. To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to Create a Database in the Amazon Redshift Database Developer Guide.  Default: dev  Constraints:   Must contain 1 to 64 alphanumeric characters.   Must contain only lowercase letters.   Cannot be a word that is reserved by the service. A list of reserved words can be found in Reserved Words in the Amazon Redshift Database Developer Guide',
@@ -1029,6 +1055,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1041,6 +1068,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-cluster-parameter-group',
       description: 'Creates an Amazon Redshift parameter group. Creating parameter groups is independent of creating clusters. You can associate a cluster with a parameter group when you create the cluster. You can also associate an existing cluster with a parameter group after the cluster is created by using ModifyCluster.  Parameters in the parameter group define specific behavior that applies to the databases you create on the cluster. For more information about parameters and parameter groups, go to Amazon Redshift Parameter Groups in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--parameter-group-name',
           description: 'The name of the cluster parameter group. Constraints:   Must be 1 to 255 alphanumeric characters or hyphens   First character must be a letter.   Cannot end with a hyphen or contain two consecutive hyphens.   Must be unique withing your Amazon Web Services account.    This value is stored as a lower-case string',
@@ -1093,6 +1121,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1105,6 +1134,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-cluster-security-group',
       description: 'Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.  For information about managing security groups, go to Amazon Redshift Cluster Security Groups in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-security-group-name',
           description: 'The name for the security group. Amazon Redshift stores the value as a lowercase string. Constraints:   Must contain no more than 255 alphanumeric characters or hyphens.   Must not be "Default".   Must be unique for all security groups that are created by your Amazon Web Services account.   Example: examplesecuritygroup',
@@ -1148,6 +1178,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1160,6 +1191,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-cluster-snapshot',
       description: 'Creates a manual snapshot of the specified cluster. The cluster must be in the available state.   For more information about working with snapshots, go to Amazon Redshift Snapshots in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--snapshot-identifier',
           description: 'A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account. Constraints:   Cannot be null, empty, or blank   Must contain from 1 to 255 alphanumeric characters or hyphens   First character must be a letter   Cannot end with a hyphen or contain two consecutive hyphens   Example: my-snapshot-id',
@@ -1212,6 +1244,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1224,6 +1257,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-cluster-subnet-group',
       description: 'Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.  For information about subnet groups, go to Amazon Redshift Cluster Subnet Groups in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-subnet-group-name',
           description: 'The name for the subnet group. Amazon Redshift stores the value as a lowercase string. Constraints:   Must contain no more than 255 alphanumeric characters or hyphens.   Must not be "Default".   Must be unique for all subnet groups that are created by your Amazon Web Services account.   Example: examplesubnetgroup',
@@ -1276,6 +1310,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1288,6 +1323,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-custom-domain-association',
       description: 'Used to create a custom domain name for a cluster. Properties include the custom domain name, the cluster the custom domain is associated with, and the certificate Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--custom-domain-name',
           description: 'The custom domain name for a custom domain association',
@@ -1331,6 +1367,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1343,6 +1380,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-endpoint-access',
       description: 'Creates a Redshift-managed VPC endpoint',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The cluster identifier of the cluster to access',
@@ -1404,6 +1442,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1416,6 +1455,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-event-subscription',
       description: 'Creates an Amazon Redshift event notification subscription. This action requires an ARN (Amazon Resource Name) of an Amazon SNS topic created by either the Amazon Redshift console, the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console. You can specify the source type, and lists of Amazon Redshift source IDs, event categories, and event severities. Notifications will be sent for all events you want that match those criteria. For example, you can specify source type = cluster, source ID = my-cluster-1 and mycluster2, event categories = Availability, Backup, and severity = ERROR. The subscription will only send notifications for those ERROR events in the Availability and Backup categories for the specified clusters. If you specify both the source type and source IDs, such as source type = cluster and source identifier = my-cluster-1, notifications will be sent for all the cluster events for my-cluster-1. If you specify a source type but do not specify a source identifier, you will receive notice of the events for the objects of that type in your Amazon Web Services account. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all Amazon Redshift sources belonging to your Amazon Web Services account. You must specify a source type if you specify a source ID',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the event subscription to be created. Constraints:   Cannot be null, empty, or blank.   Must contain from 1 to 255 alphanumeric characters or hyphens.   First character must be a letter.   Cannot end with a hyphen or contain two consecutive hyphens',
@@ -1503,6 +1543,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1515,6 +1556,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-hsm-client-certificate',
       description: 'Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client\'s HSM in order to store and retrieve the keys used to encrypt the cluster databases. The command returns a public key, which you must store in the HSM. In addition to creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to store and use encryption keys in the HSM. For more information, go to Hardware Security Modules in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--hsm-client-certificate-identifier',
           description: 'The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys',
@@ -1549,6 +1591,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1561,6 +1604,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-hsm-configuration',
       description: 'Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster. The cluster will then store its encryption keys in the HSM. In addition to creating an HSM configuration, you must also create an HSM client certificate. For more information, go to Hardware Security Modules in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--hsm-configuration-identifier',
           description: 'The identifier to be assigned to the new Amazon Redshift HSM configuration',
@@ -1640,6 +1684,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1652,6 +1697,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-integration',
       description: 'Creates a zero-ETL integration or S3 event integration with Amazon Redshift',
       options: [
+
         Option(
           name: '--source-arn',
           description: 'The Amazon Resource Name (ARN) of the database to use as the source for replication',
@@ -1731,6 +1777,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1743,6 +1790,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-redshift-idc-application',
       description: 'Creates an Amazon Redshift application for use with IAM Identity Center',
       options: [
+
         Option(
           name: '--idc-instance-arn',
           description: 'The Amazon resource name (ARN) of the IAM Identity Center instance where Amazon Redshift creates a new managed application',
@@ -1822,6 +1870,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1834,6 +1883,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-scheduled-action',
       description: 'Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the ResizeCluster API operation',
       options: [
+
         Option(
           name: '--scheduled-action-name',
           description: 'The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see ScheduledAction',
@@ -1921,6 +1971,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1933,6 +1984,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-snapshot-copy-grant',
       description: 'Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric key from Key Management Service (KMS) to encrypt copied snapshots in a destination region.  For more information about managing snapshot copy grants, go to Amazon Redshift Database Encryption in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--snapshot-copy-grant-name',
           description: 'The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account. Constraints:   Must contain from 1 to 63 alphanumeric characters or hyphens.   Alphabetic characters must be lowercase.   First character must be a letter.   Cannot end with a hyphen or contain two consecutive hyphens.   Must be unique for all clusters within an Amazon Web Services account',
@@ -1976,6 +2028,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1988,6 +2041,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-snapshot-schedule',
       description: 'Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule',
       options: [
+
         Option(
           name: '--schedule-definitions',
           description: 'The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)"',
@@ -2054,6 +2108,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2066,6 +2121,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-tags',
       description: 'Adds tags to a cluster. A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, you will receive an error and the attempt will fail. If you specify a key that already exists for the resource, the value for that key will be updated with the new value',
       options: [
+
         Option(
           name: '--resource-name',
           description: 'The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example, arn:aws:redshift:us-east-2:123456789:cluster:t1',
@@ -2100,6 +2156,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2112,6 +2169,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'create-usage-limit',
       description: 'Creates a usage limit for a specified Amazon Redshift feature on a cluster. The usage limit is identified by the returned usage limit identifier',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster that you want to limit usage',
@@ -2191,6 +2249,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2203,6 +2262,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'deauthorize-data-share',
       description: 'From a datashare producer account, removes authorization from the specified datashare',
       options: [
+
         Option(
           name: '--data-share-arn',
           description: 'The namespace Amazon Resource Name (ARN) of the datashare to remove authorization from',
@@ -2237,6 +2297,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2249,6 +2310,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-authentication-profile',
       description: 'Deletes an authentication profile',
       options: [
+
         Option(
           name: '--authentication-profile-name',
           description: 'The name of the authentication profile to delete',
@@ -2274,6 +2336,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2286,6 +2349,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-cluster',
       description: 'Deletes a previously provisioned cluster without its final snapshot being created. A successful response from the web service indicates that the request was received correctly. Use DescribeClusters to monitor the status of the deletion. The delete operation cannot be canceled or reverted once submitted. For more information about managing clusters, go to Amazon Redshift Clusters in the Amazon Redshift Cluster Management Guide. If you want to shut down the cluster and retain it for future use, set SkipFinalClusterSnapshot to false and specify a name for FinalClusterSnapshotIdentifier. You can later restore this snapshot to resume using the cluster. If a final cluster snapshot is requested, the status of the cluster will be "final-snapshot" while the snapshot is being taken, then it\'s "deleting" once Amazon Redshift begins deleting the cluster.   For more information about managing clusters, go to Amazon Redshift Clusters in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster to be deleted. Constraints:   Must contain lowercase characters.   Must contain from 1 to 63 alphanumeric characters or hyphens.   First character must be a letter.   Cannot end with a hyphen or contain two consecutive hyphens',
@@ -2337,6 +2401,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2349,6 +2414,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-cluster-parameter-group',
       description: 'Deletes a specified Amazon Redshift parameter group.  You cannot delete a parameter group if it is associated with a cluster',
       options: [
+
         Option(
           name: '--parameter-group-name',
           description: 'The name of the parameter group to be deleted. Constraints:   Must be the name of an existing cluster parameter group.   Cannot delete a default cluster parameter group',
@@ -2374,6 +2440,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2386,6 +2453,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-cluster-security-group',
       description: 'Deletes an Amazon Redshift security group.  You cannot delete a security group that is associated with any clusters. You cannot delete the default security group.   For information about managing security groups, go to Amazon Redshift Cluster Security Groups in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-security-group-name',
           description: 'The name of the cluster security group to be deleted',
@@ -2411,6 +2479,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2423,6 +2492,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-cluster-snapshot',
       description: 'Deletes the specified manual snapshot. The snapshot must be in the available state, with no other users authorized to access the snapshot.  Unlike automated snapshots, manual snapshots are retained even after you delete your cluster. Amazon Redshift does not delete your manual snapshots. You must delete manual snapshot explicitly to avoid getting charged. If other accounts are authorized to access the snapshot, you must revoke all of the authorizations before you can delete the snapshot',
       options: [
+
         Option(
           name: '--snapshot-identifier',
           description: 'The unique identifier of the manual snapshot to be deleted. Constraints: Must be the name of an existing snapshot that is in the available, failed, or cancelled state',
@@ -2457,6 +2527,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2469,6 +2540,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-cluster-subnet-group',
       description: 'Deletes the specified cluster subnet group',
       options: [
+
         Option(
           name: '--cluster-subnet-group-name',
           description: 'The name of the cluster subnet group name to be deleted',
@@ -2494,6 +2566,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2506,6 +2579,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-custom-domain-association',
       description: 'Contains information about deleting a custom domain association for a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster to delete a custom domain association for',
@@ -2540,6 +2614,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2552,6 +2627,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-endpoint-access',
       description: 'Deletes a Redshift-managed VPC endpoint',
       options: [
+
         Option(
           name: '--endpoint-name',
           description: 'The Redshift-managed VPC endpoint to delete',
@@ -2577,6 +2653,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2589,6 +2666,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-event-subscription',
       description: 'Deletes an Amazon Redshift event notification subscription',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the Amazon Redshift event notification subscription to be deleted',
@@ -2614,6 +2692,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2626,6 +2705,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-hsm-client-certificate',
       description: 'Deletes the specified HSM client certificate',
       options: [
+
         Option(
           name: '--hsm-client-certificate-identifier',
           description: 'The identifier of the HSM client certificate to be deleted',
@@ -2651,6 +2731,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2663,6 +2744,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-hsm-configuration',
       description: 'Deletes the specified Amazon Redshift HSM configuration',
       options: [
+
         Option(
           name: '--hsm-configuration-identifier',
           description: 'The identifier of the Amazon Redshift HSM configuration to be deleted',
@@ -2688,6 +2770,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2700,6 +2783,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-integration',
       description: 'Deletes a zero-ETL integration or S3 event integration with Amazon Redshift',
       options: [
+
         Option(
           name: '--integration-arn',
           description: 'The unique identifier of the integration to delete',
@@ -2725,6 +2809,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2737,6 +2822,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-partner',
       description: 'Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted at the partner\'s website',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The Amazon Web Services account ID that owns the cluster',
@@ -2789,6 +2875,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2801,6 +2888,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-redshift-idc-application',
       description: 'Deletes an Amazon Redshift IAM Identity Center application',
       options: [
+
         Option(
           name: '--redshift-idc-application-arn',
           description: 'The ARN for a deleted Amazon Redshift IAM Identity Center application',
@@ -2826,6 +2914,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2838,6 +2927,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes the resource policy for a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource of which its resource policy is deleted',
@@ -2863,6 +2953,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2875,6 +2966,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-scheduled-action',
       description: 'Deletes a scheduled action',
       options: [
+
         Option(
           name: '--scheduled-action-name',
           description: 'The name of the scheduled action to delete',
@@ -2900,6 +2992,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2912,6 +3005,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-snapshot-copy-grant',
       description: 'Deletes the specified snapshot copy grant',
       options: [
+
         Option(
           name: '--snapshot-copy-grant-name',
           description: 'The name of the snapshot copy grant to delete',
@@ -2937,6 +3031,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2949,6 +3044,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-snapshot-schedule',
       description: 'Deletes a snapshot schedule',
       options: [
+
         Option(
           name: '--schedule-identifier',
           description: 'A unique identifier of the snapshot schedule to delete',
@@ -2974,6 +3070,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2986,6 +3083,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-tags',
       description: 'Deletes tags from a resource. You must provide the ARN of the resource from which you want to delete the tag or tags',
       options: [
+
         Option(
           name: '--resource-name',
           description: 'The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, arn:aws:redshift:us-east-2:123456789:cluster:t1',
@@ -3020,6 +3118,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3032,6 +3131,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'delete-usage-limit',
       description: 'Deletes a usage limit from a cluster',
       options: [
+
         Option(
           name: '--usage-limit-id',
           description: 'The identifier of the usage limit to delete',
@@ -3057,6 +3157,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3069,6 +3170,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'deregister-namespace',
       description: 'Deregisters a cluster or serverless namespace from the Amazon Web Services Glue Data Catalog',
       options: [
+
         Option(
           name: '--namespace-identifier',
           description: 'The unique identifier of the cluster or serverless namespace that you want to deregister',
@@ -3103,6 +3205,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3115,6 +3218,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-account-attributes',
       description: 'Returns a list of attributes attached to an account',
       options: [
+
         Option(
           name: '--attribute-names',
           description: 'A list of attribute names',
@@ -3140,6 +3244,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3152,6 +3257,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-authentication-profiles',
       description: 'Describes an authentication profile',
       options: [
+
         Option(
           name: '--authentication-profile-name',
           description: 'The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed',
@@ -3177,6 +3283,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3189,6 +3296,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-cluster-db-revisions',
       description: 'Returns an array of ClusterDbRevision objects',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'A unique identifier for a cluster whose ClusterDbRevisions you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default',
@@ -3259,6 +3367,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3271,6 +3380,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-cluster-parameter-groups',
       description: 'Returns a list of Amazon Redshift parameter groups, including parameter groups you created and the default parameter group. For each parameter group, the response includes the parameter group name, description, and parameter group family name. You can optionally specify a name to retrieve the description of a specific parameter group.  For more information about parameters and parameter groups, go to Amazon Redshift Parameter Groups in the Amazon Redshift Cluster Management Guide. If you specify both tag keys and tag values in the same request, Amazon Redshift returns all parameter groups that match any combination of the specified keys and values. For example, if you have owner and environment for tag keys, and admin and test for tag values, all parameter groups that have any combination of those values are returned. If both tag keys and values are omitted from the request, parameter groups are returned regardless of whether they have tag keys or values associated with them',
       options: [
+
         Option(
           name: '--parameter-group-name',
           description: 'The name of a specific parameter group for which to return details. By default, details about all parameter groups and the default parameter group are returned',
@@ -3359,6 +3469,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3371,6 +3482,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-cluster-parameters',
       description: 'Returns a detailed list of parameters contained within the specified Amazon Redshift parameter group. For each parameter the response includes information such as parameter name, description, data type, value, whether the parameter value is modifiable, and so on. You can specify source filter to retrieve parameters of only specific type. For example, to retrieve parameters that were modified by a user action such as from ModifyClusterParameterGroup, you can specify source equal to user.  For more information about parameters and parameter groups, go to Amazon Redshift Parameter Groups in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--parameter-group-name',
           description: 'The name of a cluster parameter group for which to return details',
@@ -3450,6 +3562,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3462,6 +3575,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-cluster-security-groups',
       description: 'Returns information about Amazon Redshift security groups. If the name of a security group is specified, the response will contain only information about only that security group.  For information about managing security groups, go to Amazon Redshift Cluster Security Groups in the Amazon Redshift Cluster Management Guide. If you specify both tag keys and tag values in the same request, Amazon Redshift returns all security groups that match any combination of the specified keys and values. For example, if you have owner and environment for tag keys, and admin and test for tag values, all security groups that have any combination of those values are returned. If both tag keys and values are omitted from the request, security groups are returned regardless of whether they have tag keys or values associated with them',
       options: [
+
         Option(
           name: '--cluster-security-group-name',
           description: 'The name of a cluster security group for which you are requesting details. You must specify either the Marker parameter or a ClusterSecurityGroupName parameter, but not both.   Example: securitygroup1',
@@ -3550,6 +3664,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3562,6 +3677,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-cluster-snapshots',
       description: 'Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns information about all snapshots of all clusters that are owned by your Amazon Web Services account. No information is returned for snapshots owned by inactive Amazon Web Services accounts. If you specify both tag keys and tag values in the same request, Amazon Redshift returns all snapshots that match any combination of the specified keys and values. For example, if you have owner and environment for tag keys, and admin and test for tag values, all snapshots that have any combination of those values are returned. Only snapshots that you own are returned in the response; shared snapshots are not returned with the tag key and tag value request parameters. If both tag keys and values are omitted from the request, snapshots are returned regardless of whether they have tag keys or values associated with them',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster which generated the requested snapshots',
@@ -3720,6 +3836,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3732,6 +3849,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-cluster-subnet-groups',
       description: 'Returns one or more cluster subnet group objects, which contain metadata about your cluster subnet groups. By default, this operation returns information about all cluster subnet groups that are defined in your Amazon Web Services account. If you specify both tag keys and tag values in the same request, Amazon Redshift returns all subnet groups that match any combination of the specified keys and values. For example, if you have owner and environment for tag keys, and admin and test for tag values, all subnet groups that have any combination of those values are returned. If both tag keys and values are omitted from the request, subnet groups are returned regardless of whether they have tag keys or values associated with them',
       options: [
+
         Option(
           name: '--cluster-subnet-group-name',
           description: 'The name of the cluster subnet group for which information is requested',
@@ -3820,6 +3938,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3832,6 +3951,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-cluster-tracks',
       description: 'Returns a list of all the available maintenance tracks',
       options: [
+
         Option(
           name: '--maintenance-track-name',
           description: 'The name of the maintenance track',
@@ -3902,6 +4022,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3914,6 +4035,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-cluster-versions',
       description: 'Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before creating any clusters to learn more about the Amazon Redshift versions. For more information about managing clusters, go to Amazon Redshift Clusters in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-version',
           description: 'The specific cluster version to return. Example: 1.0',
@@ -3993,6 +4115,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4005,6 +4128,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-clusters',
       description: 'Returns properties of provisioned clusters including general cluster properties, cluster database properties, maintenance and backup properties, and security and access properties. This operation supports pagination. For more information about managing clusters, go to Amazon Redshift Clusters in the Amazon Redshift Cluster Management Guide. If you specify both tag keys and tag values in the same request, Amazon Redshift returns all clusters that match any combination of the specified keys and values. For example, if you have owner and environment for tag keys, and admin and test for tag values, all clusters that have any combination of those values are returned. If both tag keys and values are omitted from the request, clusters are returned regardless of whether they have tag keys or values associated with them',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive. The default is that all clusters defined for an account are returned',
@@ -4093,6 +4217,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4105,6 +4230,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-custom-domain-associations',
       description: 'Contains information about custom domain associations for a cluster',
       options: [
+
         Option(
           name: '--custom-domain-name',
           description: 'The custom domain name for the custom domain association',
@@ -4184,6 +4310,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4196,6 +4323,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-data-shares',
       description: 'Shows the status of any inbound or outbound datashares available in the specified account',
       options: [
+
         Option(
           name: '--data-share-arn',
           description: 'The Amazon resource name (ARN) of the datashare to describe details of',
@@ -4266,6 +4394,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4278,6 +4407,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-data-shares-for-consumer',
       description: 'Returns a list of datashares where the account identifier being called is a consumer account identifier',
       options: [
+
         Option(
           name: '--consumer-arn',
           description: 'The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares',
@@ -4357,6 +4487,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4369,6 +4500,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-data-shares-for-producer',
       description: 'Returns a list of datashares when the account identifier being called is a producer account identifier',
       options: [
+
         Option(
           name: '--producer-arn',
           description: 'The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares',
@@ -4448,6 +4580,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4460,6 +4593,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-default-cluster-parameters',
       description: 'Returns a list of parameter settings for the specified parameter group family.  For more information about parameters and parameter groups, go to Amazon Redshift Parameter Groups in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--parameter-group-family',
           description: 'The name of the cluster parameter group family',
@@ -4530,6 +4664,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4542,6 +4677,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-endpoint-access',
       description: 'Describes a Redshift-managed VPC endpoint',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The cluster identifier associated with the described endpoint',
@@ -4639,6 +4775,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4651,6 +4788,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-endpoint-authorization',
       description: 'Describes an endpoint authorization',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The cluster identifier of the cluster to access',
@@ -4738,6 +4876,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4750,6 +4889,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-event-categories',
       description: 'Displays a list of event categories for all event source types, or for a specified source type. For a list of the event categories and source types, go to Amazon Redshift Event Notifications',
       options: [
+
         Option(
           name: '--source-type',
           description: 'The source type, such as cluster or parameter group, to which the described event categories apply. Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action',
@@ -4775,6 +4915,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4787,6 +4928,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-event-subscriptions',
       description: 'Lists descriptions of all the Amazon Redshift event notification subscriptions for a customer account. If you specify a subscription name, lists the description for that subscription. If you specify both tag keys and tag values in the same request, Amazon Redshift returns all event notification subscriptions that match any combination of the specified keys and values. For example, if you have owner and environment for tag keys, and admin and test for tag values, all subscriptions that have any combination of those values are returned. If both tag keys and values are omitted from the request, subscriptions are returned regardless of whether they have tag keys or values associated with them',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the Amazon Redshift event notification subscription to be described',
@@ -4875,6 +5017,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4887,6 +5030,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-events',
       description: 'Returns events related to clusters, security groups, snapshots, and parameter groups for the past 14 days. Events specific to a particular cluster, security group, snapshot or parameter group can be obtained by providing the name as a parameter. By default, the past hour of events are returned',
       options: [
+
         Option(
           name: '--source-identifier',
           description: 'The identifier of the event source for which events will be returned. If this parameter is not specified, then all sources are included in the response. Constraints: If SourceIdentifier is supplied, SourceType must also be provided.   Specify a cluster identifier when SourceType is cluster.   Specify a cluster security group name when SourceType is cluster-security-group.   Specify a cluster parameter group name when SourceType is cluster-parameter-group.   Specify a cluster snapshot identifier when SourceType is cluster-snapshot',
@@ -4993,6 +5137,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5005,6 +5150,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-hsm-client-certificates',
       description: 'Returns information about the specified HSM client certificate. If no certificate ID is specified, returns information about all the HSM certificates owned by your Amazon Web Services account. If you specify both tag keys and tag values in the same request, Amazon Redshift returns all HSM client certificates that match any combination of the specified keys and values. For example, if you have owner and environment for tag keys, and admin and test for tag values, all HSM client certificates that have any combination of those values are returned. If both tag keys and values are omitted from the request, HSM client certificates are returned regardless of whether they have tag keys or values associated with them',
       options: [
+
         Option(
           name: '--hsm-client-certificate-identifier',
           description: 'The identifier of a specific HSM client certificate for which you want information. If no identifier is specified, information is returned for all HSM client certificates owned by your Amazon Web Services account',
@@ -5093,6 +5239,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5105,6 +5252,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-hsm-configurations',
       description: 'Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified, returns information about all the HSM configurations owned by your Amazon Web Services account. If you specify both tag keys and tag values in the same request, Amazon Redshift returns all HSM connections that match any combination of the specified keys and values. For example, if you have owner and environment for tag keys, and admin and test for tag values, all HSM connections that have any combination of those values are returned. If both tag keys and values are omitted from the request, HSM connections are returned regardless of whether they have tag keys or values associated with them',
       options: [
+
         Option(
           name: '--hsm-configuration-identifier',
           description: 'The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account',
@@ -5193,6 +5341,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5205,6 +5354,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-inbound-integrations',
       description: 'Returns a list of inbound integrations',
       options: [
+
         Option(
           name: '--integration-arn',
           description: 'The Amazon Resource Name (ARN) of the inbound integration',
@@ -5284,6 +5434,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5296,6 +5447,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-integrations',
       description: 'Describes one or more zero-ETL or S3 event integrations with Amazon Redshift',
       options: [
+
         Option(
           name: '--integration-arn',
           description: 'The unique identifier of the integration',
@@ -5375,6 +5527,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5387,6 +5540,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-logging-status',
       description: 'Describes whether information, such as queries and connection attempts, is being logged for the specified Amazon Redshift cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster from which to get the logging status. Example: examplecluster',
@@ -5412,6 +5566,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5424,6 +5579,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-node-configuration-options',
       description: 'Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type',
       options: [
+
         Option(
           name: '--action-type',
           description: 'The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster',
@@ -5539,6 +5695,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5551,6 +5708,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-orderable-cluster-options',
       description: 'Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find what options are available, such as the EC2 Availability Zones (AZ) in the specific Amazon Web Services Region that you can specify, and the node types you can request. The node types differ by available storage, memory, CPU and price. With the cost involved you might want to obtain a list of cluster options in the specific region and specify values when creating a cluster. For more information about managing clusters, go to Amazon Redshift Clusters in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-version',
           description: 'The version filter value. Specify this parameter to show only the available offerings matching the specified version. Default: All versions. Constraints: Must be one of the version returned from DescribeClusterVersions',
@@ -5630,6 +5788,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5642,6 +5801,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-partners',
       description: 'Returns information about the partner integrations defined for a cluster',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The Amazon Web Services account ID that owns the cluster',
@@ -5694,6 +5854,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5706,6 +5867,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-redshift-idc-applications',
       description: 'Lists the Amazon Redshift IAM Identity Center applications',
       options: [
+
         Option(
           name: '--redshift-idc-application-arn',
           description: 'The ARN for the Redshift application that integrates with IAM Identity Center',
@@ -5776,6 +5938,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5788,6 +5951,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-reserved-node-exchange-status',
       description: 'Returns exchange status details and associated metadata for a reserved-node exchange. Statuses include such values as in progress and requested',
       options: [
+
         Option(
           name: '--reserved-node-id',
           description: 'The identifier of the source reserved node in a reserved-node exchange request',
@@ -5867,6 +6031,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5879,6 +6044,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-reserved-node-offerings',
       description: 'Returns a list of the available reserved node offerings by Amazon Redshift with their descriptions including the node type, the fixed and recurring costs of reserving the node and duration the node will be reserved for you. These descriptions help you determine which reserve node offering you want to purchase. You then use the unique offering ID in you call to PurchaseReservedNodeOffering to reserve one or more nodes for your Amazon Redshift cluster.   For more information about reserved node offerings, go to Purchasing Reserved Nodes in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--reserved-node-offering-id',
           description: 'The unique identifier for the offering',
@@ -5949,6 +6115,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5961,6 +6128,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-reserved-nodes',
       description: 'Returns the descriptions of the reserved nodes',
       options: [
+
         Option(
           name: '--reserved-node-id',
           description: 'Identifier for the node reservation',
@@ -6031,6 +6199,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6043,6 +6212,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-resize',
       description: 'Returns information about the last resize operation for the specified cluster. If no resize operation has ever been initiated for the specified cluster, a HTTP 404 error is returned. If a resize operation was initiated and completed, the status of the resize remains as SUCCEEDED until the next resize.  A resize operation can be requested using ModifyCluster and specifying a different number or type of nodes for the cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. By default, resize operations for all clusters defined for an Amazon Web Services account are returned',
@@ -6068,6 +6238,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6080,6 +6251,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-scheduled-actions',
       description: 'Describes properties of scheduled actions',
       options: [
+
         Option(
           name: '--scheduled-action-name',
           description: 'The name of the scheduled action to retrieve',
@@ -6194,6 +6366,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6206,6 +6379,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-snapshot-copy-grants',
       description: 'Returns a list of snapshot copy grants owned by the Amazon Web Services account in the destination region.  For more information about managing snapshot copy grants, go to Amazon Redshift Database Encryption in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--snapshot-copy-grant-name',
           description: 'The name of the snapshot copy grant',
@@ -6294,6 +6468,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6306,6 +6481,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-snapshot-schedules',
       description: 'Returns a list of snapshot schedules',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier for the cluster whose snapshot schedules you want to view',
@@ -6403,6 +6579,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6415,6 +6592,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-storage',
       description: 'Returns account level backups storage size and provisional storage',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -6431,6 +6609,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6443,6 +6622,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-table-restore-status',
       description: 'Lists the status of one or more table restore requests made using the RestoreTableFromClusterSnapshot API action. If you don\'t specify a value for the TableRestoreRequestId parameter, then DescribeTableRestoreStatus returns the status of all table restore requests ordered by the date and time of the request in ascending order. Otherwise DescribeTableRestoreStatus returns the status of the table specified by TableRestoreRequestId',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The Amazon Redshift cluster that the table is being restored to',
@@ -6522,6 +6702,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6534,6 +6715,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-tags',
       description: 'Returns a list of tags. You can return tags from a specific resource by specifying an ARN, or you can return all tags for a given type of resource, such as clusters, snapshots, and so on. The following are limitations for DescribeTags:    You cannot specify an ARN and a resource-type value together in the same request.   You cannot use the MaxRecords and Marker parameters together with the ARN parameter.   The MaxRecords parameter can be a range from 10 to 50 results to return in a request.   If you specify both tag keys and tag values in the same request, Amazon Redshift returns all resources that match any combination of the specified keys and values. For example, if you have owner and environment for tag keys, and admin and test for tag values, all resources that have any combination of those values are returned. If both tag keys and values are omitted from the request, resources are returned regardless of whether they have tag keys or values associated with them',
       options: [
+
         Option(
           name: '--resource-name',
           description: 'The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, arn:aws:redshift:us-east-2:123456789:cluster:t1',
@@ -6631,6 +6813,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6643,6 +6826,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'describe-usage-limits',
       description: 'Shows usage limits on a cluster. Results are filtered based on the combination of input usage limit identifier, cluster identifier, and feature type parameters:   If usage limit identifier, cluster identifier, and feature type are not provided, then all usage limit objects for the current account in the current region are returned.   If usage limit identifier is provided, then the corresponding usage limit object is returned.   If cluster identifier is provided, then all usage limit objects for the specified cluster are returned.   If cluster identifier and feature type are provided, then all usage limit objects for the combination of cluster and feature are returned',
       options: [
+
         Option(
           name: '--usage-limit-id',
           description: 'The identifier of the usage limit to describe',
@@ -6749,6 +6933,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6761,6 +6946,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'disable-logging',
       description: 'Stops logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster on which logging is to be stopped. Example: examplecluster',
@@ -6786,6 +6972,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6798,6 +6985,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'disable-snapshot-copy',
       description: 'Disables the automatic copying of snapshots from one region to another region for a specified cluster. If your cluster and its snapshots are encrypted using an encrypted symmetric key from Key Management Service, use DeleteSnapshotCopyGrant to delete the grant that grants Amazon Redshift permission to the key in the destination region',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region. Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled',
@@ -6823,6 +7011,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6835,6 +7024,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'disassociate-data-share-consumer',
       description: 'From a datashare consumer account, remove association for the specified datashare',
       options: [
+
         Option(
           name: '--data-share-arn',
           description: 'The Amazon Resource Name (ARN) of the datashare to remove association for',
@@ -6886,6 +7076,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6898,6 +7089,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'enable-logging',
       description: 'Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster on which logging is to be started. Example: examplecluster',
@@ -6959,6 +7151,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6971,6 +7164,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'enable-snapshot-copy',
       description: 'Enables the automatic copy of snapshots from one region to another region for a specified cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of the source cluster to copy snapshots from. Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled',
@@ -7032,6 +7226,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7044,6 +7239,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'failover-primary-compute',
       description: 'Fails over the primary compute unit of the specified Multi-AZ cluster to another Availability Zone',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of the cluster for which the primary compute unit will be failed over to another Availability Zone',
@@ -7069,6 +7265,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7081,6 +7278,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'get-cluster-credentials',
       description: 'Returns a database user name and temporary password with temporary authorization to log on to an Amazon Redshift database. The action returns the database user name prefixed with IAM: if AutoCreate is False or IAMA: if AutoCreate is True. You can optionally specify one or more database user groups that the user will join at log on. By default, the temporary credentials expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see Using IAM Authentication to Generate Database User Credentials in the Amazon Redshift Cluster Management Guide. The Identity and Access Management (IAM) user or role that runs GetClusterCredentials must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see Resource Policies for GetClusterCredentials in the Amazon Redshift Cluster Management Guide. If the DbGroups parameter is specified, the IAM policy must allow the redshift:JoinGroup action with access to the listed dbgroups.  In addition, if the AutoCreate parameter is set to True, then the policy must include the redshift:CreateClusterUser permission. If the DbName parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name',
       options: [
+
         Option(
           name: '--db-user',
           description: 'The name of a database user. If a user name matching DbUser exists in the database, the temporary user credentials have the same permissions as the existing user. If DbUser doesn\'t exist in the database and Autocreate is True, a new user is created using the value for DbUser with PUBLIC permissions. If a database user matching the value for DbUser doesn\'t exist and Autocreate is False, then the command succeeds but the connection attempt will fail because the user doesn\'t exist in the database. For more information, see CREATE USER in the Amazon Redshift Database Developer Guide.  Constraints:   Must be 1 to 64 alphanumeric characters or hyphens. The user name can\'t be PUBLIC.   Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.   First character must be a letter.   Must not contain a colon ( : ) or slash ( / ).    Cannot be a reserved word. A list of reserved words can be found in Reserved Words in the Amazon Redshift Database Developer Guide',
@@ -7159,6 +7357,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7171,6 +7370,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'get-cluster-credentials-with-iam',
       description: 'Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift database. The database user is mapped 1:1 to the source Identity and Access Management (IAM) identity. For more information about IAM identities, see IAM Identities (users, user groups, and roles) in the Amazon Web Services Identity and Access Management User Guide. The Identity and Access Management (IAM) identity that runs this operation must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see Using identity-based policies (IAM policies) in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--db-name',
           description: 'The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource dbname for the specified database name. If the database name is not specified, access to all databases is allowed',
@@ -7223,6 +7423,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7235,6 +7436,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'get-reserved-node-exchange-configuration-options',
       description: 'Gets the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node offering. Details include the node type, the price, the node count, and the offering type',
       options: [
+
         Option(
           name: '--action-type',
           description: 'The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize',
@@ -7323,6 +7525,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7335,6 +7538,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'get-reserved-node-exchange-offerings',
       description: 'Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given DC1 reserved node',
       options: [
+
         Option(
           name: '--reserved-node-id',
           description: 'A string representing the node identifier for the DC1 Reserved Node to be exchanged',
@@ -7405,6 +7609,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7417,6 +7622,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'get-resource-policy',
       description: 'Get the resource policy for a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource of which its resource policy is fetched',
@@ -7442,6 +7648,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7454,6 +7661,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'list-recommendations',
       description: 'List the Amazon Redshift Advisor recommendations for one or multiple Amazon Redshift clusters in an Amazon Web Services account',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of the Amazon Redshift cluster for which the list of Advisor recommendations is returned. If the neither the cluster identifier and the cluster namespace ARN parameters are specified, then recommendations for all clusters in the account are returned',
@@ -7533,6 +7741,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7545,6 +7754,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-aqua-configuration',
       description: 'This operation is retired. Calling this operation does not change AQUA configuration. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator)',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster to be modified',
@@ -7579,6 +7789,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7591,6 +7802,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-authentication-profile',
       description: 'Modifies an authentication profile',
       options: [
+
         Option(
           name: '--authentication-profile-name',
           description: 'The name of the authentication profile to replace',
@@ -7625,6 +7837,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7637,6 +7850,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-cluster',
       description: 'Modifies the settings for a cluster. You can also change node type and the number of nodes to scale up or down the cluster. When resizing a cluster, you must specify both the number of nodes and the node type even if one of the parameters does not change. You can add another security or parameter group, or change the admin user password. Resetting a cluster password or modifying the security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a reboot for parameters to take effect. For more information about managing clusters, go to Amazon Redshift Clusters in the Amazon Redshift Cluster Management Guide. VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that you own in a Region from reaching or being reached from the internet through internet gateways and egress-only internet gateways. If a subnet group for a provisioned cluster is in an account with VPC BPA turned on, the following capabilities are blocked:   Creating a public cluster   Restoring a public cluster   Modifying a private cluster to be public   Adding a subnet with VPC BPA turned on to the subnet group when there\'s at least one public cluster within the group   For more information about VPC BPA, see Block public access to VPCs and subnets in the Amazon VPC User Guide',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of the cluster to be modified. Example: examplecluster',
@@ -7907,6 +8121,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7919,6 +8134,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-cluster-db-revision',
       description: 'Modifies the database revision of a cluster. The database revision is a unique revision of the database running in a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of a cluster whose database revision you want to modify.  Example: examplecluster',
@@ -7953,6 +8169,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7965,6 +8182,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-cluster-iam-roles',
       description: 'Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to Quotas and limits in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of the cluster for which you want to associate or disassociate IAM roles',
@@ -8017,6 +8235,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8029,6 +8248,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-cluster-maintenance',
       description: 'Modifies the maintenance settings of a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'A unique identifier for the cluster',
@@ -8098,6 +8318,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8110,6 +8331,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-cluster-parameter-group',
       description: 'Modifies the parameters of a parameter group. For the parameters parameter, it can\'t contain ASCII characters.  For more information about parameters and parameter groups, go to Amazon Redshift Parameter Groups in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--parameter-group-name',
           description: 'The name of the parameter group to be modified',
@@ -8144,6 +8366,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8156,6 +8379,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-cluster-snapshot',
       description: 'Modifies the settings for a snapshot. This exanmple modifies the manual retention period setting for a cluster snapshot',
       options: [
+
         Option(
           name: '--snapshot-identifier',
           description: 'The identifier of the snapshot whose setting you want to modify',
@@ -8198,6 +8422,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8210,6 +8435,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-cluster-snapshot-schedule',
       description: 'Modifies a snapshot schedule for a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'A unique identifier for the cluster whose snapshot schedule you want to modify',
@@ -8252,6 +8478,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8264,6 +8491,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-cluster-subnet-group',
       description: 'Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets with the new list of subnets. VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that you own in a Region from reaching or being reached from the internet through internet gateways and egress-only internet gateways. If a subnet group for a provisioned cluster is in an account with VPC BPA turned on, the following capabilities are blocked:   Creating a public cluster   Restoring a public cluster   Modifying a private cluster to be public   Adding a subnet with VPC BPA turned on to the subnet group when there\'s at least one public cluster within the group   For more information about VPC BPA, see Block public access to VPCs and subnets in the Amazon VPC User Guide',
       options: [
+
         Option(
           name: '--cluster-subnet-group-name',
           description: 'The name of the subnet group to be modified',
@@ -8307,6 +8535,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8319,6 +8548,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-custom-domain-association',
       description: 'Contains information for changing a custom domain association',
       options: [
+
         Option(
           name: '--custom-domain-name',
           description: 'The custom domain name for a changed custom domain association',
@@ -8362,6 +8592,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8374,6 +8605,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-endpoint-access',
       description: 'Modifies a Redshift-managed VPC endpoint',
       options: [
+
         Option(
           name: '--endpoint-name',
           description: 'The endpoint to be modified',
@@ -8408,6 +8640,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8420,6 +8653,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-event-subscription',
       description: 'Modifies an existing Amazon Redshift event notification subscription',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the modified Amazon Redshift event notification subscription',
@@ -8498,6 +8732,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8510,6 +8745,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-integration',
       description: 'Modifies a zero-ETL integration or S3 event integration with Amazon Redshift',
       options: [
+
         Option(
           name: '--integration-arn',
           description: 'The unique identifier of the integration to modify',
@@ -8553,6 +8789,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8565,6 +8802,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-redshift-idc-application',
       description: 'Changes an existing Amazon Redshift IAM Identity Center application',
       options: [
+
         Option(
           name: '--redshift-idc-application-arn',
           description: 'The ARN for the Redshift application that integrates with IAM Identity Center',
@@ -8635,6 +8873,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8647,6 +8886,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-scheduled-action',
       description: 'Modifies a scheduled action',
       options: [
+
         Option(
           name: '--scheduled-action-name',
           description: 'The name of the scheduled action to modify',
@@ -8734,6 +8974,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8746,6 +8987,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-snapshot-copy-retention-period',
       description: 'Modifies the number of days to retain snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. By default, this operation only changes the retention period of copied automated snapshots. The retention periods for both new and existing copied automated snapshots are updated with the new retention period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set this option, only newly copied manual snapshots have the new retention period',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region. Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled',
@@ -8788,6 +9030,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8800,6 +9043,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-snapshot-schedule',
       description: 'Modifies a snapshot schedule. Any schedule associated with a cluster is modified asynchronously',
       options: [
+
         Option(
           name: '--schedule-identifier',
           description: 'A unique alphanumeric identifier of the schedule to modify',
@@ -8834,6 +9078,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8846,6 +9091,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'modify-usage-limit',
       description: 'Modifies a usage limit in a cluster. You can\'t modify the feature type or period of a usage limit',
       options: [
+
         Option(
           name: '--usage-limit-id',
           description: 'The identifier of the usage limit to modify',
@@ -8889,6 +9135,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8901,6 +9148,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'pause-cluster',
       description: 'Pauses a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster to be paused',
@@ -8926,6 +9174,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8938,6 +9187,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'purchase-reserved-node-offering',
       description: 'Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You can purchase one or more of the offerings. You can call the DescribeReservedNodeOfferings API to obtain the available reserved node offerings. You can call this API by providing a specific reserved node offering and the number of nodes you want to reserve.   For more information about reserved node offerings, go to Purchasing Reserved Nodes in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--reserved-node-offering-id',
           description: 'The unique identifier of the reserved node offering you want to purchase',
@@ -8972,6 +9222,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8984,6 +9235,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Updates the resource policy for a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource of which its resource policy is updated',
@@ -9018,6 +9270,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9030,6 +9283,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'reboot-cluster',
       description: 'Reboots a cluster. This action is taken as soon as possible. It results in a momentary outage to the cluster, during which the cluster status is set to rebooting. A cluster event is created when the reboot is completed. Any pending cluster modifications (see ModifyCluster) are applied at this reboot. For more information about managing clusters, go to Amazon Redshift Clusters in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The cluster identifier',
@@ -9055,6 +9309,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9067,6 +9322,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'register-namespace',
       description: 'Registers a cluster or serverless namespace to the Amazon Web Services Glue Data Catalog',
       options: [
+
         Option(
           name: '--namespace-identifier',
           description: 'The unique identifier of the cluster or serverless namespace that you want to register',
@@ -9101,6 +9357,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9113,6 +9370,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'reject-data-share',
       description: 'From a datashare consumer account, rejects the specified datashare',
       options: [
+
         Option(
           name: '--data-share-arn',
           description: 'The Amazon Resource Name (ARN) of the datashare to reject',
@@ -9138,6 +9396,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9150,6 +9409,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'reset-cluster-parameter-group',
       description: 'Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to "engine-default". To reset the entire parameter group specify the ResetAllParameters parameter. For parameter changes to take effect you must reboot any associated clusters',
       options: [
+
         Option(
           name: '--parameter-group-name',
           description: 'The name of the cluster parameter group to be reset',
@@ -9192,6 +9452,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9204,6 +9465,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'resize-cluster',
       description: 'Changes the size of the cluster. You can change the cluster\'s type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read and write operations more quickly than with the classic resize method.  Elastic resize operations have the following restrictions:   You can only resize clusters of the following types:   dc2.large   dc2.8xlarge   ra3.large   ra3.xlplus   ra3.4xlarge   ra3.16xlarge     The type of nodes that you add must match the node type for the cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier for the cluster to resize',
@@ -9282,6 +9544,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9294,6 +9557,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'restore-from-cluster-snapshot',
       description: 'Creates a new cluster from a snapshot. By default, Amazon Redshift creates the resulting cluster with the same configuration as the original cluster from which the snapshot was created, except that the new cluster is created with the default cluster security and parameter groups. After Amazon Redshift creates the cluster, you can use the ModifyCluster API to associate a different security group and different parameter group with the restored cluster. If you are using a DS node type, you can also choose to change to another DS node type of the same size during restore. If you restore a cluster into a VPC, you must provide a cluster subnet group where you want the cluster restored. VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that you own in a Region from reaching or being reached from the internet through internet gateways and egress-only internet gateways. If a subnet group for a provisioned cluster is in an account with VPC BPA turned on, the following capabilities are blocked:   Creating a public cluster   Restoring a public cluster   Modifying a private cluster to be public   Adding a subnet with VPC BPA turned on to the subnet group when there\'s at least one public cluster within the group   For more information about VPC BPA, see Block public access to VPCs and subnets in the Amazon VPC User Guide.  For more information about working with snapshots, go to Amazon Redshift Snapshots in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster that will be created from restoring the snapshot. Constraints:   Must contain from 1 to 63 alphanumeric characters or hyphens.   Alphabetic characters must be lowercase.   First character must be a letter.   Cannot end with a hyphen or contain two consecutive hyphens.   Must be unique for all clusters within an Amazon Web Services account',
@@ -9636,6 +9900,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9648,6 +9913,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'restore-table-from-cluster-snapshot',
       description: 'Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from. You cannot use RestoreTableFromClusterSnapshot to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call RestoreTableFromClusterSnapshot. When you have renamed your original table, then you can pass the original name of the table as the NewTableName parameter value in the call to RestoreTableFromClusterSnapshot. This way, you can replace the original table with the table created from the snapshot. You can\'t use this operation to restore tables with interleaved sort keys',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the Amazon Redshift cluster to restore the table to',
@@ -9744,6 +10010,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9756,6 +10023,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'resume-cluster',
       description: 'Resumes a paused cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The identifier of the cluster to be resumed',
@@ -9781,6 +10049,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9793,6 +10062,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'revoke-cluster-security-group-ingress',
       description: 'Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To add an ingress rule, see AuthorizeClusterSecurityGroupIngress. For information about managing security groups, go to Amazon Redshift Cluster Security Groups in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--cluster-security-group-name',
           description: 'The name of the security Group from which to revoke the ingress rule',
@@ -9845,6 +10115,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9857,6 +10128,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'revoke-endpoint-access',
       description: 'Revokes access to a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The cluster to revoke access from',
@@ -9908,6 +10180,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9920,6 +10193,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'revoke-snapshot-access',
       description: 'Removes the ability of the specified Amazon Web Services account to restore the specified snapshot. If the account is currently restoring the snapshot, the restore will run to completion.  For more information about working with snapshots, go to Amazon Redshift Snapshots in the Amazon Redshift Cluster Management Guide',
       options: [
+
         Option(
           name: '--snapshot-identifier',
           description: 'The identifier of the snapshot that the account can no longer access',
@@ -9972,6 +10246,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9984,6 +10259,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'rotate-encryption-key',
       description: 'Rotates the encryption keys for a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The unique identifier of the cluster that you want to rotate the encryption keys for. Constraints: Must be the name of valid cluster that has encryption enabled',
@@ -10009,6 +10285,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10021,6 +10298,7 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'update-partner-status',
       description: 'Updates the status of a partner integration',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The Amazon Web Services account ID that owns the cluster',
@@ -10091,6 +10369,7 @@ final FigSpec redshiftSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10103,10 +10382,12 @@ final FigSpec redshiftSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'cluster-available',
           description: 'Wait until JMESPath query Clusters[].ClusterStatus returns available for all elements when polling with ``describe-clusters``. It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 30 failed checks',
           options: [
+
             Option(
               name: '--cluster-identifier',
               description: 'The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive. The default is that all clusters defined for an account are returned',
@@ -10195,6 +10476,7 @@ final FigSpec redshiftSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -10207,6 +10489,7 @@ final FigSpec redshiftSpec = FigSpec(
           name: 'cluster-deleted',
           description: 'Wait until ClusterNotFound is thrown when polling with ``describe-clusters``. It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 30 failed checks',
           options: [
+
             Option(
               name: '--cluster-identifier',
               description: 'The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive. The default is that all clusters defined for an account are returned',
@@ -10295,6 +10578,7 @@ final FigSpec redshiftSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -10307,6 +10591,7 @@ final FigSpec redshiftSpec = FigSpec(
           name: 'cluster-restored',
           description: 'Wait until JMESPath query Clusters[].RestoreStatus.Status returns completed for all elements when polling with ``describe-clusters``. It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 30 failed checks',
           options: [
+
             Option(
               name: '--cluster-identifier',
               description: 'The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive. The default is that all clusters defined for an account are returned',
@@ -10395,6 +10680,7 @@ final FigSpec redshiftSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -10407,6 +10693,7 @@ final FigSpec redshiftSpec = FigSpec(
           name: 'snapshot-available',
           description: 'Wait until JMESPath query Snapshots[].Status returns available for all elements when polling with ``describe-cluster-snapshots``. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--cluster-identifier',
               description: 'The identifier of the cluster which generated the requested snapshots',
@@ -10565,6 +10852,7 @@ final FigSpec redshiftSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

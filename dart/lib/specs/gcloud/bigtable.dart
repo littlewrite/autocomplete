@@ -9,14 +9,17 @@ final FigSpec bigtableSpec = FigSpec(
   name: 'bigtable',
   description: 'Manage your Cloud Bigtable storage',
   subcommands: [
+
     Subcommand(
       name: 'app-profiles',
       description: 'Manage Cloud Bigtable app profiles',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new Bigtable app profile',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -186,6 +189,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -208,6 +212,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Bigtable app profile',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -346,6 +351,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -368,6 +374,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'describe',
           description: 'Describe an existing Bigtable app profile',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -502,6 +509,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -524,6 +532,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'list',
           description: 'List Bigtable app profiles',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -707,6 +716,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -723,6 +733,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'update',
           description: 'Update a Bigtable app profile',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -896,6 +907,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -916,6 +928,7 @@ final FigSpec bigtableSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1039,6 +1052,7 @@ final FigSpec bigtableSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1055,10 +1069,12 @@ final FigSpec bigtableSpec = FigSpec(
       name: 'backups',
       description: 'Manage Cloud Bigtable backups',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add an IAM policy binding to a Cloud Bigtable Backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1250,6 +1266,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1272,6 +1289,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'create',
           description: 'Creates a backup of a Cloud Bigtable table',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1455,6 +1473,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1477,6 +1496,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'delete',
           description: 'Delete an existing backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1622,6 +1642,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1644,6 +1665,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'describe',
           description: 'Retrieves information about a backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1789,6 +1811,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1811,6 +1834,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get an IAM policy on a Cloud Bigtable Backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2000,6 +2024,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2022,6 +2047,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'list',
           description: 'List existing Bigtable backups',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2217,6 +2243,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2233,6 +2260,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove an IAM policy binding from a Cloud Bigtable Backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2428,6 +2456,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2450,6 +2479,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set an IAM policy on a Cloud Bigtable Backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2595,6 +2625,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2607,6 +2638,7 @@ final FigSpec bigtableSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'BACKUP',
               description: 'ID of the backup or fully qualified identifier for the backup'
@@ -2621,6 +2653,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'update',
           description: 'Update a backup, only supported for the following fields: --expiration-date and --retention-period',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2788,6 +2821,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2808,6 +2842,7 @@ final FigSpec bigtableSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2931,6 +2966,7 @@ final FigSpec bigtableSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2947,10 +2983,12 @@ final FigSpec bigtableSpec = FigSpec(
       name: 'clusters',
       description: 'Manage Cloud Bigtable clusters',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a bigtable cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3100,6 +3138,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3134,6 +3173,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'delete',
           description: 'Delete a bigtable cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3268,6 +3308,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3290,6 +3331,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'describe',
           description: 'Describe an existing Bigtable cluster',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3424,6 +3466,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3446,6 +3489,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'list',
           description: 'List existing Bigtable clusters',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3629,6 +3673,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3645,6 +3690,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'update',
           description: 'Update a Bigtable cluster\'s number of nodes',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3795,6 +3841,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3815,6 +3862,7 @@ final FigSpec bigtableSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3938,6 +3986,7 @@ final FigSpec bigtableSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3954,10 +4003,12 @@ final FigSpec bigtableSpec = FigSpec(
       name: 'instances',
       description: 'Manage Cloud Bigtable instances',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add an IAM policy binding to a Cloud Bigtable instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4105,6 +4156,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4127,6 +4179,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'create',
           description: 'Create a new Bigtable instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4184,6 +4237,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'CLUSTER_STORAGE_TYPE',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'hdd'),
                   FigSuggestion(name: 'ssd')
                 ]
@@ -4281,6 +4335,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'INSTANCE_TYPE',
                 description: 'Googlecloudsdk.command_lib.bigtable.arguments:<lambda>',
                 suggestions: [
+
                   FigSuggestion(name: 'DEVELOPMENT'),
                   FigSuggestion(name: 'PRODUCTION')
                 ]
@@ -4329,6 +4384,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4351,6 +4407,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'delete',
           description: 'Delete an existing Bigtable instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4474,6 +4531,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4497,6 +4555,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'describe',
           description: 'Describe an existing Bigtable instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4620,6 +4679,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4642,6 +4702,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a Cloud Bigtable instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4809,6 +4870,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4831,6 +4893,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'list',
           description: 'List existing Bigtable instances',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5002,6 +5065,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5018,6 +5082,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove an IAM policy binding from a Cloud Bigtable instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5165,6 +5230,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5187,6 +5253,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for an instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5310,6 +5377,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5322,6 +5390,7 @@ final FigSpec bigtableSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INSTANCE',
               description: 'ID of the instance or fully qualified identifier for the instance'
@@ -5336,10 +5405,12 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'tables',
           description: 'Query Cloud Bigtable tables',
           subcommands: [
+
             Subcommand(
               name: 'add-iam-policy-binding',
               description: 'Add an IAM policy binding to a Cloud Bigtable table',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5520,6 +5591,7 @@ final FigSpec bigtableSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5542,6 +5614,7 @@ final FigSpec bigtableSpec = FigSpec(
               name: 'get-iam-policy',
               description: 'Get an IAM policy on a Cloud Bigtable table',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5720,6 +5793,7 @@ final FigSpec bigtableSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5742,6 +5816,7 @@ final FigSpec bigtableSpec = FigSpec(
               name: 'list',
               description: 'List existing Bigtable instance tables',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5925,6 +6000,7 @@ final FigSpec bigtableSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5941,6 +6017,7 @@ final FigSpec bigtableSpec = FigSpec(
               name: 'remove-iam-policy-binding',
               description: 'Remove an IAM policy binding from a Cloud Bigtable table',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6125,6 +6202,7 @@ final FigSpec bigtableSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6147,6 +6225,7 @@ final FigSpec bigtableSpec = FigSpec(
               name: 'restore',
               description: 'Restore a Cloud Bigtable backup to a new table',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6331,6 +6410,7 @@ final FigSpec bigtableSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6347,6 +6427,7 @@ final FigSpec bigtableSpec = FigSpec(
               name: 'set-iam-policy',
               description: 'Set an IAM policy on a Cloud Bigtable table',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6481,6 +6562,7 @@ final FigSpec bigtableSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6493,6 +6575,7 @@ final FigSpec bigtableSpec = FigSpec(
                 )
               ],
               args: [
+
                 Arg(
                   name: 'TABLE',
                   description: 'ID of the table or fully qualified identifier for the table'
@@ -6505,6 +6588,7 @@ final FigSpec bigtableSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6628,6 +6712,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6644,6 +6729,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'update',
           description: 'Modify an existing Bigtable instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6778,6 +6864,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6800,6 +6887,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'upgrade',
           description: 'Upgrade an existing instance\'s type from development to production',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6927,6 +7015,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6947,6 +7036,7 @@ final FigSpec bigtableSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7070,6 +7160,7 @@ final FigSpec bigtableSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7086,10 +7177,12 @@ final FigSpec bigtableSpec = FigSpec(
       name: 'operations',
       description: 'Manage Cloud Bigtable operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a Cloud Bigtable operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7213,6 +7306,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7235,6 +7329,7 @@ final FigSpec bigtableSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Bigtable operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7418,6 +7513,7 @@ final FigSpec bigtableSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7432,6 +7528,7 @@ final FigSpec bigtableSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7555,6 +7652,7 @@ final FigSpec bigtableSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7569,6 +7667,7 @@ final FigSpec bigtableSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7692,6 +7791,7 @@ final FigSpec bigtableSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

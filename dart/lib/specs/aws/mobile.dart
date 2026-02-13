@@ -9,10 +9,12 @@ final FigSpec mobileSpec = FigSpec(
   name: 'mobile',
   description: 'AWS Mobile Service provides mobile app and website developers with capabilities required to configure AWS resources and bootstrap their developer desktop projects with the necessary SDKs, constants, tools and samples to make use of those resources',
   subcommands: [
+
     Subcommand(
       name: 'create-project',
       description: 'Creates an AWS Mobile Hub project',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the project',
@@ -65,6 +67,7 @@ final FigSpec mobileSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec mobileSpec = FigSpec(
       name: 'delete-project',
       description: 'Delets a project in AWS Mobile Hub',
       options: [
+
         Option(
           name: '--project-id',
           description: 'Unique project identifier',
@@ -102,6 +106,7 @@ final FigSpec mobileSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec mobileSpec = FigSpec(
       name: 'describe-bundle',
       description: 'Get the bundle details for the requested bundle id',
       options: [
+
         Option(
           name: '--bundle-id',
           description: 'Unique bundle identifier',
@@ -139,6 +145,7 @@ final FigSpec mobileSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -151,6 +158,7 @@ final FigSpec mobileSpec = FigSpec(
       name: 'describe-project',
       description: 'Gets details about a project in AWS Mobile Hub',
       options: [
+
         Option(
           name: '--project-id',
           description: 'Unique project identifier',
@@ -184,6 +192,7 @@ final FigSpec mobileSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +205,7 @@ final FigSpec mobileSpec = FigSpec(
       name: 'export-bundle',
       description: 'Generates customized software development kit (SDK) and or tool packages used to integrate mobile web or mobile app clients with backend AWS resources',
       options: [
+
         Option(
           name: '--bundle-id',
           description: 'Unique bundle identifier',
@@ -239,6 +249,7 @@ final FigSpec mobileSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +262,7 @@ final FigSpec mobileSpec = FigSpec(
       name: 'export-project',
       description: 'Exports project configuration to a snapshot which can be downloaded and shared. Note that mobile app push credentials are encrypted in exported projects, so they can only be shared successfully within the same AWS account',
       options: [
+
         Option(
           name: '--project-id',
           description: 'Unique project identifier',
@@ -276,6 +288,7 @@ final FigSpec mobileSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -288,6 +301,7 @@ final FigSpec mobileSpec = FigSpec(
       name: 'list-bundles',
       description: 'List all available bundles',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of records to list in a single response',
@@ -349,6 +363,7 @@ final FigSpec mobileSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -361,6 +376,7 @@ final FigSpec mobileSpec = FigSpec(
       name: 'list-projects',
       description: 'Lists projects in AWS Mobile Hub',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of records to list in a single response',
@@ -422,6 +438,7 @@ final FigSpec mobileSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -434,6 +451,7 @@ final FigSpec mobileSpec = FigSpec(
       name: 'update-project',
       description: 'Update an existing project',
       options: [
+
         Option(
           name: '--contents',
           description: 'ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation',
@@ -468,6 +486,7 @@ final FigSpec mobileSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

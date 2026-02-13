@@ -9,14 +9,17 @@ final FigSpec debugSpec = FigSpec(
   name: 'debug',
   description: 'Commands for interacting with the Cloud Debugger',
   subcommands: [
+
     Subcommand(
       name: 'logpoints',
       description: 'Commands for interacting with Cloud Debugger logpoints',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Add debug logpoints to a Cloud Debugger debug target (debuggee)',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -121,6 +124,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'LOG_LEVEL',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
                   FigSuggestion(name: 'error')
@@ -177,6 +181,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -200,6 +205,7 @@ final FigSpec debugSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'LOCATION',
               description: 'The logpoint location. Locations are of\nthe form FILE:LINE, where FILE can be simply the file name, or the\nfile name preceded by enough path components to differentiate it\nfrom other files with the same name. It is an error to provide a\nfile name that is not unique in the debug target'
@@ -214,6 +220,7 @@ final FigSpec debugSpec = FigSpec(
           name: 'delete',
           description: 'Delete debug logpoints for a Cloud Debugger debug target (debuggee)',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -368,6 +375,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -390,6 +398,7 @@ final FigSpec debugSpec = FigSpec(
           name: 'list',
           description: 'List the debug logpoints for a Cloud Debugger debug target (debuggee)',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -584,6 +593,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -604,6 +614,7 @@ final FigSpec debugSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -738,6 +749,7 @@ final FigSpec debugSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -754,10 +766,12 @@ final FigSpec debugSpec = FigSpec(
       name: 'snapshots',
       description: 'Commands for interacting with Cloud Debugger snapshots',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create debug snapshots for a Cloud Debugger debug target (debuggee)',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -915,6 +929,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -948,6 +963,7 @@ final FigSpec debugSpec = FigSpec(
           name: 'delete',
           description: 'Delete debug snapshots for a Cloud Debugger debug target (debuggee)',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1102,6 +1118,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1124,6 +1141,7 @@ final FigSpec debugSpec = FigSpec(
           name: 'describe',
           description: 'Describe the debug snapshots for a Cloud Debugger debug target         (debuggee)',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1270,6 +1288,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1292,6 +1311,7 @@ final FigSpec debugSpec = FigSpec(
           name: 'list',
           description: 'List the debug snapshots for a Cloud Debugger debug target (debuggee)',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1486,6 +1506,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1508,6 +1529,7 @@ final FigSpec debugSpec = FigSpec(
           name: 'wait',
           description: 'Wait for debug snapshots on a Cloud Debugger debug target (debuggee) to         complete',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1706,6 +1728,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1726,6 +1749,7 @@ final FigSpec debugSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1860,6 +1884,7 @@ final FigSpec debugSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1876,10 +1901,12 @@ final FigSpec debugSpec = FigSpec(
       name: 'source',
       description: 'Commands to manage source information for Cloud Debugger',
       subcommands: [
+
         Subcommand(
           name: 'gen-repo-info-file',
           description: 'Generates repository information files for the Cloud Debugger',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2025,6 +2052,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2039,6 +2067,7 @@ final FigSpec debugSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2162,6 +2191,7 @@ final FigSpec debugSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2178,10 +2208,12 @@ final FigSpec debugSpec = FigSpec(
       name: 'targets',
       description: 'Commands for interacting with Cloud Debugger debug targets',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List the debug targets (debuggees) registered with the Cloud Debugger',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2357,6 +2389,7 @@ final FigSpec debugSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2371,6 +2404,7 @@ final FigSpec debugSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2494,6 +2528,7 @@ final FigSpec debugSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2508,6 +2543,7 @@ final FigSpec debugSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2631,6 +2667,7 @@ final FigSpec debugSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

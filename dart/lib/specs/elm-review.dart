@@ -9,10 +9,12 @@ final FigSpec elmReviewSpec = FigSpec(
   name: 'elm-review',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Initialize Elm Review in this directory',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Show help for elm-review init'
@@ -52,6 +54,7 @@ final FigSpec elmReviewSpec = FigSpec(
       name: 'suppress',
       description: 'Generate suppression files for rules that report many errors',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Show help for elm-review suppress'
@@ -80,6 +83,7 @@ final FigSpec elmReviewSpec = FigSpec(
       name: 'new-package',
       description: 'Creates an new project aimed to contain rules and to be published later',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Show help for elm-review new-package'
@@ -100,6 +104,7 @@ final FigSpec elmReviewSpec = FigSpec(
       name: 'new-rule',
       description: 'Adds a new rule to your review configuration or review package',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Show help for elm-review new-package'
@@ -114,6 +119,7 @@ final FigSpec elmReviewSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for elm-review'

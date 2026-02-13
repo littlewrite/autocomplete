@@ -9,6 +9,7 @@ final FigSpec elmFormatSpec = FigSpec(
   name: 'elm-format',
   description: 'Format your code in the Elm idiomatic way',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for elm-format'

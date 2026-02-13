@@ -9,10 +9,12 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
   name: 'servicecatalog-appregistry',
   description: 'Amazon Web Services Service Catalog AppRegistry enables organizations to understand the application context of their Amazon Web Services resources. AppRegistry provides a repository of your applications, their resources, and the application metadata that you use within your enterprise',
   subcommands: [
+
     Subcommand(
       name: 'associate-attribute-group',
       description: 'Associates an attribute group with an application to augment the application\'s metadata with the group\'s attributes. This feature enables applications to be described with user-defined details that are machine-readable, such as third-party integrations',
       options: [
+
         Option(
           name: '--application',
           description: 'The name, ID, or ARN of the application',
@@ -47,6 +49,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'associate-resource',
       description: 'Associates a resource with an application. The resource can be specified by its ARN or name. The application can be specified by ARN, ID, or name.   Minimum permissions   You must have the following permissions to associate a resource using the OPTIONS parameter set to APPLY_APPLICATION_TAG.     tag:GetResources     tag:TagResources     You must also have these additional permissions if you don\'t use the AWSServiceCatalogAppRegistryFullAccess policy. For more information, see AWSServiceCatalogAppRegistryFullAccess in the AppRegistry Administrator Guide.     resource-groups:AssociateResource     cloudformation:UpdateStack     cloudformation:DescribeStacks      In addition, you must have the tagging permission defined by the Amazon Web Services service that creates the resource. For more information, see TagResources in the Resource Groups Tagging API Reference',
       options: [
+
         Option(
           name: '--application',
           description: 'The name, ID, or ARN of the application',
@@ -111,6 +115,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'create-application',
       description: 'Creates a new application that is the top-level node in a hierarchy of related cloud resource abstractions',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the application. The name must be unique in the region in which you are creating the application',
@@ -175,6 +181,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'create-attribute-group',
       description: 'Creates a new attribute group as a container for user-defined attributes. This feature enables users to have full control over their cloud application\'s metadata in a rich machine-readable format to facilitate integration with automated workflows and third-party tools',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the attribute group',
@@ -248,6 +256,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -260,6 +269,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'delete-application',
       description: 'Deletes an application that is specified either by its application ID, name, or ARN. All associated attribute groups and resources must be disassociated from it before deleting an application',
       options: [
+
         Option(
           name: '--application',
           description: 'The name, ID, or ARN of the application',
@@ -285,6 +295,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -297,6 +308,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'delete-attribute-group',
       description: 'Deletes an attribute group, specified either by its attribute group ID, name, or ARN',
       options: [
+
         Option(
           name: '--attribute-group',
           description: 'The name, ID, or ARN of the attribute group that holds the attributes to describe the application',
@@ -322,6 +334,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -334,6 +347,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'disassociate-attribute-group',
       description: 'Disassociates an attribute group from an application to remove the extra attributes contained in the attribute group from the application\'s metadata. This operation reverts AssociateAttributeGroup',
       options: [
+
         Option(
           name: '--application',
           description: 'The name, ID, or ARN of the application',
@@ -368,6 +382,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -380,6 +395,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'disassociate-resource',
       description: 'Disassociates a resource from application. Both the resource and the application can be specified either by ID or name.   Minimum permissions   You must have the following permissions to remove a resource that\'s been associated with an application using the APPLY_APPLICATION_TAG option for AssociateResource.     tag:GetResources     tag:UntagResources     You must also have the following permissions if you don\'t use the AWSServiceCatalogAppRegistryFullAccess policy. For more information, see AWSServiceCatalogAppRegistryFullAccess in the AppRegistry Administrator Guide.     resource-groups:DisassociateResource     cloudformation:UpdateStack     cloudformation:DescribeStacks      In addition, you must have the tagging permission defined by the Amazon Web Services service that creates the resource. For more information, see UntagResources in the Resource Groups Tagging API Reference',
       options: [
+
         Option(
           name: '--application',
           description: 'The name or ID of the application',
@@ -423,6 +439,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -435,6 +452,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'get-application',
       description: 'Retrieves metadata information about one of your applications. The application can be specified by its ARN, ID, or name (which is unique within one account in one region at a given point in time). Specify by ARN or ID in automated workflows if you want to make sure that the exact same application is returned or a ResourceNotFoundException is thrown, avoiding the ABA addressing problem',
       options: [
+
         Option(
           name: '--application',
           description: 'The name, ID, or ARN of the application',
@@ -460,6 +478,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -472,6 +491,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'get-associated-resource',
       description: 'Gets the resource associated with the application',
       options: [
+
         Option(
           name: '--application',
           description: 'The name, ID, or ARN of the application',
@@ -542,6 +562,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -554,6 +575,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'get-attribute-group',
       description: 'Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or name',
       options: [
+
         Option(
           name: '--attribute-group',
           description: 'The name, ID, or ARN of the attribute group that holds the attributes to describe the application',
@@ -579,6 +601,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -591,6 +614,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'get-configuration',
       description: 'Retrieves a TagKey configuration from an account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -607,6 +631,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -619,6 +644,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'list-applications',
       description: 'Retrieves a list of all of your applications. Results are paginated',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to use to get the next page of results after a previous API call',
@@ -680,6 +706,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -692,6 +719,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'list-associated-attribute-groups',
       description: 'Lists all attribute groups that are associated with specified application. Results are paginated',
       options: [
+
         Option(
           name: '--application',
           description: 'The name or ID of the application',
@@ -762,6 +790,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -774,6 +803,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'list-associated-resources',
       description: 'Lists all of the resources that are associated with the specified application. Results are paginated.    If you share an application, and a consumer account associates a tag query to the application, all of the users who can access the application can also view the tag values in all accounts that are associated with it using this API',
       options: [
+
         Option(
           name: '--application',
           description: 'The name, ID, or ARN of the application',
@@ -844,6 +874,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -856,6 +887,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'list-attribute-groups',
       description: 'Lists all attribute groups which you have access to. Results are paginated',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to use to get the next page of results after a previous API call',
@@ -917,6 +949,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -929,6 +962,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'list-attribute-groups-for-application',
       description: 'Lists the details of all attribute groups associated with a specific application. The results display in pages',
       options: [
+
         Option(
           name: '--application',
           description: 'The name or ID of the application',
@@ -999,6 +1033,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1011,6 +1046,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all of the tags on the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon resource name (ARN) that specifies the resource',
@@ -1036,6 +1072,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1048,6 +1085,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'put-configuration',
       description: 'Associates a TagKey configuration to an account',
       options: [
+
         Option(
           name: '--configuration',
           description: 'Associates a TagKey configuration to an account',
@@ -1073,6 +1111,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1085,6 +1124,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'sync-resource',
       description: 'Syncs the resource with current AppRegistry records. Specifically, the resource’s AppRegistry system tags sync with its associated application. We remove the resource\'s AppRegistry system tags if it does not associate with the application. The caller must have permissions to read and update the resource',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'The type of resource of which the application will be associated',
@@ -1119,6 +1159,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1131,6 +1172,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns one or more tags (key-value pairs) to the specified resource. Each tag consists of a key and an optional value. If a tag with the same key is already associated with the resource, this action updates its value. This operation returns an empty response if the call was successful',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon resource name (ARN) that specifies the resource',
@@ -1165,6 +1207,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1177,6 +1220,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a resource. This operation returns an empty response if the call was successful',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon resource name (ARN) that specifies the resource',
@@ -1211,6 +1255,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1223,6 +1268,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'update-application',
       description: 'Updates an existing application with new attributes',
       options: [
+
         Option(
           name: '--application',
           description: 'The name, ID, or ARN of the application that will be updated',
@@ -1266,6 +1312,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1278,6 +1325,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
       name: 'update-attribute-group',
       description: 'Updates an existing attribute group with new details',
       options: [
+
         Option(
           name: '--attribute-group',
           description: 'The name, ID, or ARN of the attribute group that holds the attributes to describe the application',
@@ -1330,6 +1378,7 @@ final FigSpec servicecatalogAppregistrySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

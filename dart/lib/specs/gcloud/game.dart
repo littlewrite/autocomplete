@@ -9,14 +9,17 @@ final FigSpec gameSpec = FigSpec(
   name: 'game',
   description: 'Managed Cloud Game Services',
   subcommands: [
+
     Subcommand(
       name: 'locations',
       description: 'Query Cloud Game Services Locations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a Location',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -140,6 +143,7 @@ final FigSpec gameSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -162,6 +166,7 @@ final FigSpec gameSpec = FigSpec(
           name: 'list',
           description: 'List Locations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -333,6 +338,7 @@ final FigSpec gameSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -347,6 +353,7 @@ final FigSpec gameSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -470,6 +477,7 @@ final FigSpec gameSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -486,10 +494,12 @@ final FigSpec gameSpec = FigSpec(
       name: 'operations',
       description: 'Deploy and manage Cloud Game Services Operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe an Operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -624,6 +634,7 @@ final FigSpec gameSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -646,6 +657,7 @@ final FigSpec gameSpec = FigSpec(
           name: 'list',
           description: 'List Operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -828,6 +840,7 @@ final FigSpec gameSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -842,6 +855,7 @@ final FigSpec gameSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -965,6 +979,7 @@ final FigSpec gameSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -981,14 +996,17 @@ final FigSpec gameSpec = FigSpec(
       name: 'servers',
       description: 'Managed Cloud Game Servers',
       subcommands: [
+
         Subcommand(
           name: 'clusters',
           description: 'Deploy and manage Cloud Game Server Clusters',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Game Server Cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1196,6 +1214,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1218,6 +1237,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'delete',
               description: 'Delete a Game Server Cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1379,6 +1399,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1401,6 +1422,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'describe',
               description: 'Describe a Game Server Cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1546,6 +1568,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1568,6 +1591,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'list',
               description: 'List Game Server Clusters',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1761,6 +1785,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1777,6 +1802,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'update',
               description: 'Update a Game Server Cluster',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1975,6 +2001,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1995,6 +2022,7 @@ final FigSpec gameSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2118,6 +2146,7 @@ final FigSpec gameSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2134,10 +2163,12 @@ final FigSpec gameSpec = FigSpec(
           name: 'configs',
           description: 'Deploy and manage Cloud Game Server Configs',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Game Server Config',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2332,6 +2363,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2354,6 +2386,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'delete',
               description: 'Delete a Game Server Config',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2503,6 +2536,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2525,6 +2559,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'describe',
               description: 'Describe a Game Server Config',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2670,6 +2705,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2692,6 +2728,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'list',
               description: 'List Configs',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2885,6 +2922,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2899,6 +2937,7 @@ final FigSpec gameSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3022,6 +3061,7 @@ final FigSpec gameSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3038,10 +3078,12 @@ final FigSpec gameSpec = FigSpec(
           name: 'deployments',
           description: 'Deploy and manage Cloud Game Server Deployments',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Deployment',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3202,6 +3244,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3224,6 +3267,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'delete',
               description: 'Delete a Deployment',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3362,6 +3406,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3384,6 +3429,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'describe',
               description: 'Describe a Deployment',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3518,6 +3564,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3540,6 +3587,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'describe-rollout',
               description: 'Describe a Rollout',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3674,6 +3722,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3696,6 +3745,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'fetch-state',
               description: 'Fetches the state of a Deployment',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3830,6 +3880,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3852,6 +3903,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'list',
               description: 'List Deployments',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4034,6 +4086,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4050,6 +4103,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'update',
               description: 'Update a Deployment',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4225,6 +4279,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4247,6 +4302,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'update-rollout',
               description: 'Update a Deployment Rollout',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4427,6 +4483,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4447,6 +4504,7 @@ final FigSpec gameSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4570,6 +4628,7 @@ final FigSpec gameSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4586,10 +4645,12 @@ final FigSpec gameSpec = FigSpec(
           name: 'realms',
           description: 'Deploy and manage Cloud Game Server Realms',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Realm',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4762,6 +4823,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4784,6 +4846,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'delete',
               description: 'Delete a Realm',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4922,6 +4985,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4944,6 +5008,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'describe',
               description: 'Describe a Realm',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5078,6 +5143,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5100,6 +5166,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'list',
               description: 'List Realms',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5282,6 +5349,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5298,6 +5366,7 @@ final FigSpec gameSpec = FigSpec(
               name: 'update',
               description: 'Update a Realm',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5496,6 +5565,7 @@ final FigSpec gameSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5516,6 +5586,7 @@ final FigSpec gameSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5639,6 +5710,7 @@ final FigSpec gameSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5653,6 +5725,7 @@ final FigSpec gameSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5776,6 +5849,7 @@ final FigSpec gameSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -5790,6 +5864,7 @@ final FigSpec gameSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5913,6 +5988,7 @@ final FigSpec gameSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

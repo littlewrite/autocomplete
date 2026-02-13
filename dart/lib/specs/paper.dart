@@ -9,10 +9,12 @@ final FigSpec paperSpec = FigSpec(
   name: 'paper',
   description: 'The Paper CLI',
   subcommands: [
+
     Subcommand(
       name: 'bench',
       description: 'Benchmark a Paper query',
       options: [
+
         Option(
           name: '--benchmem',
           description: 'Report memory allocations with benchmark results'
@@ -151,6 +153,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'build',
       description: 'Build an Paper bundle',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Load paths as bundle files or root directories'
@@ -291,6 +294,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'check',
       description: 'Check Paper source files',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Load paths as bundle files or root directories'
@@ -356,10 +360,12 @@ final FigSpec paperSpec = FigSpec(
       name: 'completion',
       description: 'Generate the autocompletion script for the specified shell',
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Generate the autocompletion script for bash',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -374,6 +380,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'fish',
           description: 'Generate the autocompletion script for fish',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -388,6 +395,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'powershell',
           description: 'Generate the autocompletion script for powershell',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -402,6 +410,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'zsh',
           description: 'Generate the autocompletion script for zsh',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -414,6 +423,7 @@ final FigSpec paperSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Help for completion'
@@ -424,6 +434,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'deps',
       description: 'Analyze Paper query dependencies',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Set bundle file(s) or directory path(s). This flag can be repeated',
@@ -471,6 +482,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'eval',
       description: 'Evaluate a Paper query',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Set bundle file(s) or directory path(s). This flag can be repeated',
@@ -705,6 +717,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'exec',
       description: 'Execute against input files',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Set bundle file(s) or directory path(s). This flag can be repeated',
@@ -792,6 +805,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'fmt',
       description: 'Format Paper source files',
       options: [
+
         Option(
           name: ['--diff', '-d'],
           description: 'Only display a diff of the changes'
@@ -818,6 +832,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'inspect',
       description: 'Inspect Paper bundle(s)',
       options: [
+
         Option(
           name: ['--format', '-f'],
           description: 'Set output format',
@@ -838,6 +853,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'parse',
       description: 'Parse Paper source file',
       options: [
+
         Option(
           name: ['--format', '-f'],
           description: 'Set output format',
@@ -858,6 +874,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'run',
       description: 'Start Paper in interactive or server mode',
       options: [
+
         Option(
           name: ['--addr', '-a'],
           description: 'Set listening address of the server (e.g., [ip]:<port> for TCP, unix://<path> for UNIX domain socket)',
@@ -1143,6 +1160,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'sign',
       description: 'Generate an Paper bundle signature',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Load paths as bundle files or root directories'
@@ -1186,6 +1204,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'test',
       description: 'Execute Paper test cases',
       options: [
+
         Option(
           name: '--bench',
           description: 'Benchmark the unit tests'
@@ -1312,6 +1331,7 @@ final FigSpec paperSpec = FigSpec(
       name: 'version',
       description: 'Print the version of Paper',
       options: [
+
         Option(
           name: ['--check', '-c'],
           description: 'Check for latest Paper release'
@@ -1326,10 +1346,12 @@ final FigSpec paperSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'bench',
           description: 'Benchmark a Paper query',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for bench'
@@ -1340,6 +1362,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'build',
           description: 'Build an Paper bundle',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for build'
@@ -1350,6 +1373,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'check',
           description: 'Check Paper source files',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for check'
@@ -1360,10 +1384,12 @@ final FigSpec paperSpec = FigSpec(
           name: 'completion',
           description: 'Generate the autocompletion script for the specified shell',
           subcommands: [
+
             Subcommand(
               name: 'bash',
               description: 'Generate the autocompletion script for bash',
               options: [
+
                 Option(
                   name: '--no-descriptions',
                   description: 'Disable completion descriptions'
@@ -1378,6 +1404,7 @@ final FigSpec paperSpec = FigSpec(
               name: 'fish',
               description: 'Generate the autocompletion script for fish',
               options: [
+
                 Option(
                   name: '--no-descriptions',
                   description: 'Disable completion descriptions'
@@ -1392,6 +1419,7 @@ final FigSpec paperSpec = FigSpec(
               name: 'powershell',
               description: 'Generate the autocompletion script for powershell',
               options: [
+
                 Option(
                   name: '--no-descriptions',
                   description: 'Disable completion descriptions'
@@ -1406,6 +1434,7 @@ final FigSpec paperSpec = FigSpec(
               name: 'zsh',
               description: 'Generate the autocompletion script for zsh',
               options: [
+
                 Option(
                   name: '--no-descriptions',
                   description: 'Disable completion descriptions'
@@ -1418,6 +1447,7 @@ final FigSpec paperSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for completion'
@@ -1428,6 +1458,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'deps',
           description: 'Analyze Paper query dependencies',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for deps'
@@ -1438,6 +1469,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'eval',
           description: 'Evaluate a Paper query',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for eval'
@@ -1448,6 +1480,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'exec',
           description: 'Execute against input files',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for exec'
@@ -1458,6 +1491,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'fmt',
           description: 'Format Paper source files',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for fmt'
@@ -1468,6 +1502,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'inspect',
           description: 'Inspect Paper bundle(s)',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for inspect'
@@ -1478,6 +1513,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'parse',
           description: 'Parse Paper source file',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for parse'
@@ -1488,6 +1524,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'run',
           description: 'Start Paper in interactive or server mode',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for run'
@@ -1498,6 +1535,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'sign',
           description: 'Generate an Paper bundle signature',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for sign'
@@ -1508,6 +1546,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'test',
           description: 'Execute Paper test cases',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for test'
@@ -1518,6 +1557,7 @@ final FigSpec paperSpec = FigSpec(
           name: 'version',
           description: 'Print the version of Paper',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for version'
@@ -1526,6 +1566,7 @@ final FigSpec paperSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Help for help'
@@ -1534,6 +1575,7 @@ final FigSpec paperSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Help for Paper'

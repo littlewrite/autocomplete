@@ -9,10 +9,12 @@ final FigSpec smsVoiceSpec = FigSpec(
   name: 'sms-voice',
   description: 'Pinpoint SMS and Voice Messaging public facing APIs',
   subcommands: [
+
     Subcommand(
       name: 'create-configuration-set',
       description: 'Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name that you want to give the configuration set',
@@ -38,6 +40,7 @@ final FigSpec smsVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec smsVoiceSpec = FigSpec(
       name: 'create-configuration-set-event-destination',
       description: 'Create a new event destination in a configuration set',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'ConfigurationSetName',
@@ -93,6 +97,7 @@ final FigSpec smsVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec smsVoiceSpec = FigSpec(
       name: 'delete-configuration-set',
       description: 'Deletes an existing configuration set',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'ConfigurationSetName',
@@ -130,6 +136,7 @@ final FigSpec smsVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -142,6 +149,7 @@ final FigSpec smsVoiceSpec = FigSpec(
       name: 'delete-configuration-set-event-destination',
       description: 'Deletes an event destination in a configuration set',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'ConfigurationSetName',
@@ -176,6 +184,7 @@ final FigSpec smsVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +197,7 @@ final FigSpec smsVoiceSpec = FigSpec(
       name: 'get-configuration-set-event-destinations',
       description: 'Obtain information about an event destination, including the types of events it reports, the Amazon Resource Name (ARN) of the destination, and the name of the event destination',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'ConfigurationSetName',
@@ -213,6 +223,7 @@ final FigSpec smsVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -225,6 +236,7 @@ final FigSpec smsVoiceSpec = FigSpec(
       name: 'list-configuration-sets',
       description: 'List all of the configuration sets associated with your Amazon Pinpoint account in the current region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token returned from a previous call to the API that indicates the position in the list of results',
@@ -259,6 +271,7 @@ final FigSpec smsVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -271,6 +284,7 @@ final FigSpec smsVoiceSpec = FigSpec(
       name: 'send-voice-message',
       description: 'Create a new voice message and send it to a recipient\'s phone number',
       options: [
+
         Option(
           name: '--caller-id',
           description: 'The phone number that appears on recipients\' devices when they receive the message',
@@ -332,6 +346,7 @@ final FigSpec smsVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -344,6 +359,7 @@ final FigSpec smsVoiceSpec = FigSpec(
       name: 'update-configuration-set-event-destination',
       description: 'Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'ConfigurationSetName',
@@ -387,6 +403,7 @@ final FigSpec smsVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

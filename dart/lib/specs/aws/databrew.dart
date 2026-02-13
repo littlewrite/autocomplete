@@ -9,10 +9,12 @@ final FigSpec databrewSpec = FigSpec(
   name: 'databrew',
   description: 'Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required',
   subcommands: [
+
     Subcommand(
       name: 'batch-delete-recipe-version',
       description: 'Deletes one or more versions of a recipe at a time. The entire request will be rejected if:   The recipe does not exist.   There is an invalid version identifier in the list of versions.   The version list is empty.   The version list size exceeds 50.   The version list contains duplicate entries.   The request will complete successfully, but with partial failures, if:   A version does not exist.   A version is being used by a job.   You specify LATEST_WORKING, but it\'s being used by a project.   The version fails to be deleted.   The LATEST_WORKING version will only be deleted if the recipe has no other versions. If you try to delete LATEST_WORKING while other versions exist (or if they can\'t be deleted), then LATEST_WORKING will be listed as partial failure in the response',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the recipe whose versions are to be deleted',
@@ -47,6 +49,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'create-dataset',
       description: 'Creates a new DataBrew dataset',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space',
@@ -129,6 +133,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'create-profile-job',
       description: 'Creates a new job to analyze a dataset and create its data profile',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset that this job is to act upon',
@@ -283,6 +289,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -295,6 +302,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'create-project',
       description: 'Creates a new DataBrew project',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of an existing dataset to associate this project with',
@@ -365,6 +373,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -377,6 +386,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'create-recipe',
       description: 'Creates a new DataBrew recipe',
       options: [
+
         Option(
           name: '--description',
           description: 'A description for the recipe',
@@ -429,6 +439,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -441,6 +452,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'create-recipe-job',
       description: 'Creates a new job to transform input data, using steps defined in an existing Glue DataBrew recipe',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset that this job processes',
@@ -592,6 +604,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -604,6 +617,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'create-ruleset',
       description: 'Creates a new ruleset that can be used in a profile job to validate the data quality of a dataset',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space',
@@ -665,6 +679,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -677,6 +692,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'create-schedule',
       description: 'Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific date and time, or at regular intervals',
       options: [
+
         Option(
           name: '--job-names',
           description: 'The name or names of one or more jobs to be run',
@@ -729,6 +745,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -741,6 +758,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'delete-dataset',
       description: 'Deletes a dataset from DataBrew',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the dataset to be deleted',
@@ -766,6 +784,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -778,6 +797,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'delete-job',
       description: 'Deletes the specified DataBrew job',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the job to be deleted',
@@ -803,6 +823,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -815,6 +836,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'delete-project',
       description: 'Deletes an existing DataBrew project',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the project to be deleted',
@@ -840,6 +862,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -852,6 +875,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'delete-recipe-version',
       description: 'Deletes a single version of a DataBrew recipe',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the recipe',
@@ -886,6 +910,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -898,6 +923,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'delete-ruleset',
       description: 'Deletes a ruleset',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ruleset to be deleted',
@@ -923,6 +949,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -935,6 +962,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'delete-schedule',
       description: 'Deletes the specified DataBrew schedule',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the schedule to be deleted',
@@ -960,6 +988,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -972,6 +1001,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'describe-dataset',
       description: 'Returns the definition of a specific DataBrew dataset',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the dataset to be described',
@@ -997,6 +1027,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1009,6 +1040,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'describe-job',
       description: 'Returns the definition of a specific DataBrew job',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the job to be described',
@@ -1034,6 +1066,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1046,6 +1079,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'describe-job-run',
       description: 'Represents one run of a DataBrew job',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the job being processed during this run',
@@ -1080,6 +1114,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1092,6 +1127,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'describe-project',
       description: 'Returns the definition of a specific DataBrew project',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the project to be described',
@@ -1117,6 +1153,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1129,6 +1166,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'describe-recipe',
       description: 'Returns the definition of a specific DataBrew recipe corresponding to a particular version',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the recipe to be described',
@@ -1163,6 +1201,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1175,6 +1214,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'describe-ruleset',
       description: 'Retrieves detailed information about the ruleset',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ruleset to be described',
@@ -1200,6 +1240,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1212,6 +1253,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'describe-schedule',
       description: 'Returns the definition of a specific DataBrew schedule',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the schedule to be described',
@@ -1237,6 +1279,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1249,6 +1292,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'list-datasets',
       description: 'Lists all of the DataBrew datasets',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in this request',
@@ -1310,6 +1354,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1322,6 +1367,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'list-job-runs',
       description: 'Lists all of the previous runs of a particular DataBrew job',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the job',
@@ -1392,6 +1438,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1404,6 +1451,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'list-jobs',
       description: 'Lists all of the DataBrew jobs that are defined',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset',
@@ -1483,6 +1531,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1495,6 +1544,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'list-projects',
       description: 'Lists all of the DataBrew projects that are defined',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token returned by a previous call to retrieve the next set of results',
@@ -1556,6 +1606,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1568,6 +1619,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'list-recipe-versions',
       description: 'Lists the versions of a particular DataBrew recipe, except for LATEST_WORKING',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in this request',
@@ -1638,6 +1690,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1650,6 +1703,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'list-recipes',
       description: 'Lists all of the DataBrew recipes that are defined',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in this request',
@@ -1720,6 +1774,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1732,6 +1787,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'list-rulesets',
       description: 'List all rulesets available in the current account or rulesets associated with a specific resource (dataset)',
       options: [
+
         Option(
           name: '--target-arn',
           description: 'The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource',
@@ -1802,6 +1858,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1814,6 +1871,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'list-schedules',
       description: 'Lists the DataBrew schedules that are defined',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the job that these schedules apply to',
@@ -1884,6 +1942,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1896,6 +1955,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all the tags for a DataBrew resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource',
@@ -1921,6 +1981,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1933,6 +1994,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'publish-recipe',
       description: 'Publishes a new version of a DataBrew recipe',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the recipe to be published, for this version of the recipe',
@@ -1967,6 +2029,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1979,6 +2042,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'send-project-session-action',
       description: 'Performs a recipe step within an interactive DataBrew session that\'s currently open',
       options: [
+
         Option(
           name: '--preview',
           description: 'If true, the result of the recipe step will be returned, but not applied'
@@ -2048,6 +2112,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2060,6 +2125,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'start-job-run',
       description: 'Runs a DataBrew job',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the job to be run',
@@ -2085,6 +2151,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2097,6 +2164,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'start-project-session',
       description: 'Creates an interactive session, enabling you to manipulate data in a DataBrew project',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the project to act upon',
@@ -2130,6 +2198,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2142,6 +2211,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'stop-job-run',
       description: 'Stops a particular run of a job',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the job to be stopped',
@@ -2176,6 +2246,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2188,6 +2259,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or schedule',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe',
@@ -2222,6 +2294,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2234,6 +2307,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes metadata tags from a DataBrew resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN)',
@@ -2268,6 +2342,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2280,6 +2355,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'update-dataset',
       description: 'Modifies the definition of an existing DataBrew dataset',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the dataset to be updated',
@@ -2341,6 +2417,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2353,6 +2430,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'update-profile-job',
       description: 'Modifies the definition of an existing profile job',
       options: [
+
         Option(
           name: '--configuration',
           description: 'Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings',
@@ -2477,6 +2555,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2489,6 +2568,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'update-project',
       description: 'Modifies the definition of an existing DataBrew project',
       options: [
+
         Option(
           name: '--sample',
           description: 'Represents the sample size and sampling type for DataBrew to use for interactive data analysis',
@@ -2532,6 +2612,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2544,6 +2625,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'update-recipe',
       description: 'Modifies the definition of the LATEST_WORKING version of a DataBrew recipe',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the recipe',
@@ -2587,6 +2669,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2599,6 +2682,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'update-recipe-job',
       description: 'Modifies the definition of an existing DataBrew recipe job',
       options: [
+
         Option(
           name: '--encryption-key-arn',
           description: 'The Amazon Resource Name (ARN) of an encryption key that is used to protect the job',
@@ -2714,6 +2798,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2726,6 +2811,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'update-ruleset',
       description: 'Updates specified ruleset',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ruleset to be updated',
@@ -2769,6 +2855,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2781,6 +2868,7 @@ final FigSpec databrewSpec = FigSpec(
       name: 'update-schedule',
       description: 'Modifies the definition of an existing DataBrew schedule',
       options: [
+
         Option(
           name: '--job-names',
           description: 'The name or names of one or more jobs to be run for this schedule',
@@ -2824,6 +2912,7 @@ final FigSpec databrewSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

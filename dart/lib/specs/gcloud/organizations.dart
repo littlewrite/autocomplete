@@ -9,10 +9,12 @@ final FigSpec organizationsSpec = FigSpec(
   name: 'organizations',
   description: 'Create and manage Google Cloud Platform Organizations',
   subcommands: [
+
     Subcommand(
       name: 'add-iam-policy-binding',
       description: 'Add IAM policy binding for an organization',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -182,6 +184,7 @@ final FigSpec organizationsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -204,6 +207,7 @@ final FigSpec organizationsSpec = FigSpec(
       name: 'describe',
       description: 'Show metadata for an organization',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -327,6 +331,7 @@ final FigSpec organizationsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -349,6 +354,7 @@ final FigSpec organizationsSpec = FigSpec(
       name: 'get-iam-policy',
       description: 'Get IAM policy for an organization',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -516,6 +522,7 @@ final FigSpec organizationsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -538,6 +545,7 @@ final FigSpec organizationsSpec = FigSpec(
       name: 'list',
       description: 'List organizations accessible by the active account',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -709,6 +717,7 @@ final FigSpec organizationsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -725,6 +734,7 @@ final FigSpec organizationsSpec = FigSpec(
       name: 'remove-iam-policy-binding',
       description: 'Remove IAM policy binding for an organization',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -898,6 +908,7 @@ final FigSpec organizationsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -920,6 +931,7 @@ final FigSpec organizationsSpec = FigSpec(
       name: 'set-iam-policy',
       description: 'Set IAM policy for an organization',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1043,6 +1055,7 @@ final FigSpec organizationsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1055,6 +1068,7 @@ final FigSpec organizationsSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'ORGANIZATION_ID',
           description: 'ID or domain for the organization whose IAM policy you want to set'
@@ -1067,6 +1081,7 @@ final FigSpec organizationsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1190,6 +1205,7 @@ final FigSpec organizationsSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

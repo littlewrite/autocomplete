@@ -8,6 +8,7 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec bwsSpec = FigSpec(
   name: 'bws',
   subcommands: [
+
     Subcommand(
       name: 'config',
       description: 'Specify server settings for the Secrets Manager CLI',
@@ -16,6 +17,7 @@ final FigSpec bwsSpec = FigSpec(
         name: 'Setting',
         description: 'Server setting to specify',
         suggestions: [
+
           FigSuggestion(
             name: 'server-base',
             description: 'Base server URL'
@@ -36,6 +38,7 @@ final FigSpec bwsSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--profile',
           description: 'Save specified value(s) to an alternate profile',
@@ -71,6 +74,7 @@ final FigSpec bwsSpec = FigSpec(
         name: 'SHELL',
         description: 'Shell to generate completions for',
         suggestions: [
+
           FigSuggestion(
             name: 'bash',
             description: 'Generate shell completions for bash'
@@ -95,6 +99,7 @@ final FigSpec bwsSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for logout command',
@@ -106,6 +111,7 @@ final FigSpec bwsSpec = FigSpec(
       name: 'project',
       description: 'Access, manipulate and create projects',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new project',
@@ -130,6 +136,7 @@ final FigSpec bwsSpec = FigSpec(
           name: 'edit',
           description: 'Change the name of an existing project',
           args: [
+
             Arg(
               name: '--name',
               description: 'New project name'
@@ -156,6 +163,7 @@ final FigSpec bwsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Access, manipulate and create projects',
@@ -167,10 +175,12 @@ final FigSpec bwsSpec = FigSpec(
       name: 'secret',
       description: 'Access, manipulate and create secrets',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new secret',
           args: [
+
             Arg(
               name: 'KEY',
               description: 'Secret Key'
@@ -185,6 +195,7 @@ final FigSpec bwsSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--note',
               description: 'Optional notes about this secret',
@@ -212,6 +223,7 @@ final FigSpec bwsSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: 'key',
               description: 'Edit the Secret Key',
@@ -257,6 +269,7 @@ final FigSpec bwsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for unlock command',
@@ -270,6 +283,7 @@ final FigSpec bwsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-o', '--output'],
       description: 'Output format [default: json]',
@@ -278,6 +292,7 @@ final FigSpec bwsSpec = FigSpec(
         name: 'Format',
         description: 'Select output format',
         suggestions: [
+
           FigSuggestion(
             name: 'json',
             description: 'Produce json output'
@@ -316,6 +331,7 @@ final FigSpec bwsSpec = FigSpec(
         name: 'Color',
         description: 'Select output coloration scheme',
         suggestions: [
+
           FigSuggestion(
             name: 'no',
             description: 'Do not color output'

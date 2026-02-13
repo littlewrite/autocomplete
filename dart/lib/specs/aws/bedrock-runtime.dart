@@ -9,10 +9,12 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
   name: 'bedrock-runtime',
   description: 'Describes the API operations for running inference using Amazon Bedrock models',
   subcommands: [
+
     Subcommand(
       name: 'apply-guardrail',
       description: 'The action to apply a guardrail. For troubleshooting some of the common errors you might encounter when using the ApplyGuardrail API, see Troubleshooting Amazon Bedrock API Error Codes in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--guardrail-identifier',
           description: 'The guardrail identifier used in the request to apply the guardrail',
@@ -65,6 +67,7 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
       name: 'converse',
       description: 'Sends messages to the specified Amazon Bedrock model. Converse provides a consistent interface that works with all models that support messages. This allows you to write code once and use it with different models. If a model has unique inference parameters, you can also pass those unique parameters to the model. Amazon Bedrock doesn\'t store any text, images, or documents that you provide as content. The data is only used to generate the response. You can submit a prompt by including it in the messages field, specifying the modelId of a foundation model or inference profile to run inference on it, and including any other fields that are relevant to your use case. You can also submit a prompt from Prompt management by specifying the ARN of the prompt version and including a map of variables to values in the promptVariables field. You can append more messages to the prompt by using the messages field. If you use a prompt from Prompt management, you can\'t include the following fields in the request: additionalModelRequestFields, inferenceConfig, system, or toolConfig. Instead, these fields must be defined through Prompt management. For more information, see Use a prompt from Prompt management. For information about the Converse API, see Use the Converse API in the Amazon Bedrock User Guide. To use a guardrail, see Use a guardrail with the Converse API in the Amazon Bedrock User Guide. To use a tool with a model, see Tool use (Function calling) in the Amazon Bedrock User Guide  For example code, see Converse API examples in the Amazon Bedrock User Guide.  This operation requires permission for the bedrock:InvokeModel action.   To deny all inference access to resources that you specify in the modelId field, you need to deny access to the bedrock:InvokeModel and bedrock:InvokeModelWithResponseStream actions. Doing this also denies access to the resource through the base inference actions (InvokeModel and InvokeModelWithResponseStream). For more information see Deny access for inference on specific models.   For troubleshooting some of the common errors you might encounter when using the Converse API, see Troubleshooting Amazon Bedrock API Error Codes in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--model-id',
           description: 'Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:   If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see Amazon Bedrock base model IDs (on-demand throughput) in the Amazon Bedrock User Guide.   If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see Supported Regions and models for cross-region inference in the Amazon Bedrock User Guide.   If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see Run inference using a Provisioned Throughput in the Amazon Bedrock User Guide.   If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see Use a custom model in Amazon Bedrock in the Amazon Bedrock User Guide.   To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.   The Converse API doesn\'t support imported models',
@@ -192,6 +196,7 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -204,6 +209,7 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
       name: 'get-async-invoke',
       description: 'Retrieve information about an asynchronous invocation',
       options: [
+
         Option(
           name: '--invocation-arn',
           description: 'The invocation\'s ARN',
@@ -229,6 +235,7 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -241,6 +248,7 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
       name: 'invoke-model',
       description: 'Invokes the specified Amazon Bedrock model to run inference using the prompt and inference parameters provided in the request body. You use model inference to generate text, images, and embeddings. For example code, see Invoke model code examples in the Amazon Bedrock User Guide.  This operation requires permission for the bedrock:InvokeModel action.  To deny all inference access to resources that you specify in the modelId field, you need to deny access to the bedrock:InvokeModel and bedrock:InvokeModelWithResponseStream actions. Doing this also denies access to the resource through the Converse API actions (Converse and ConverseStream). For more information see Deny access for inference on specific models.   For troubleshooting some of the common errors you might encounter when using the InvokeModel API, see Troubleshooting Amazon Bedrock API Error Codes in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--body',
           description: 'The prompt and inference parameters in the format specified in the contentType in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to Inference parameters. For more information, see Run inference in the Bedrock User Guide',
@@ -328,6 +336,7 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
       name: 'list-async-invokes',
       description: 'Lists asynchronous invocations',
       options: [
+
         Option(
           name: '--submit-time-after',
           description: 'Include invocations submitted after this time',
@@ -434,6 +443,7 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -446,6 +456,7 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
       name: 'start-async-invoke',
       description: 'Starts an asynchronous invocation. This operation requires permission for the bedrock:InvokeModel action.  To deny all inference access to resources that you specify in the modelId field, you need to deny access to the bedrock:InvokeModel and bedrock:InvokeModelWithResponseStream actions. Doing this also denies access to the resource through the Converse API actions (Converse and ConverseStream). For more information see Deny access for inference on specific models',
       options: [
+
         Option(
           name: '--client-request-token',
           description: 'Specify idempotency token to ensure that requests are not duplicated',
@@ -507,6 +518,7 @@ final FigSpec bedrockRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

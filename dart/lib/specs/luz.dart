@@ -9,10 +9,12 @@ final FigSpec luzSpec = FigSpec(
   name: 'luz',
   description: 'A next-generation build system for Apple Darwin-based systems',
   subcommands: [
+
     Subcommand(
       name: 'build',
       description: 'Build the target in the current directory',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Show help for the build command'
@@ -27,6 +29,7 @@ final FigSpec luzSpec = FigSpec(
       name: 'gen',
       description: 'Generate a new project',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Show help for the gen command'
@@ -38,6 +41,7 @@ final FigSpec luzSpec = FigSpec(
             Arg(
             name: 'type',
             suggestions: [
+
               FigSuggestion(
                 name: 'tool',
                 description: 'A command-line tool',
@@ -56,6 +60,7 @@ final FigSpec luzSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for Luz'

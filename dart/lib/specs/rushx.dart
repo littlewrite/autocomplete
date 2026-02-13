@@ -16,6 +16,7 @@ final FigSpec rushxSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Show this help message and exit'

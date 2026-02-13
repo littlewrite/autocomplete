@@ -8,6 +8,7 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec kittySpec = FigSpec(
   name: 'kitty',
   options: [
+
     Option(
       name: ['-T', '--title'],
       description: 'Set the OS window title',
@@ -50,6 +51,7 @@ final FigSpec kittySpec = FigSpec(
         name: 'SESSION',
         template: 'filepaths',
         suggestions: [
+
           FigSuggestion(
             name: '-',
             description: 'Read from stdin'
@@ -97,6 +99,7 @@ final FigSpec kittySpec = FigSpec(
         Arg(
         name: 'START_AS',
         suggestions: [
+
           FigSuggestion(name: 'normal'),
           FigSuggestion(name: 'fullscreen'),
           FigSuggestion(name: 'maximized'),
@@ -115,9 +118,11 @@ final FigSpec kittySpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: '@',
       options: [
+
         Option(
           name: '--to',
           description: 'An address for the kitty instance to control',
@@ -129,10 +134,12 @@ final FigSpec kittySpec = FigSpec(
         )
       ],
       subcommands: [
+
         Subcommand(
           name: 'close-tab',
           description: 'Close the specified tab(s)',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The tab to match',
@@ -161,6 +168,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'close-window',
           description: 'Close the specified window(s)',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The window to match',
@@ -179,6 +187,7 @@ final FigSpec kittySpec = FigSpec(
         Subcommand(
           name: 'create-marker',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The window to match',
@@ -194,6 +203,7 @@ final FigSpec kittySpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'MARKER'
             ),
@@ -206,6 +216,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'detach-tab',
           description: 'Detach the specified tab',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The tab to match',
@@ -234,6 +245,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'detach-window',
           description: 'Detach the specified window',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The window to match',
@@ -262,6 +274,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'disable-ligatures',
           description: 'Control ligature rendering for the specified windows/tabs',
           options: [
+
             Option(
               name: ['-a', '--all'],
               description: 'Disable in all windows'
@@ -284,6 +297,7 @@ final FigSpec kittySpec = FigSpec(
             Arg(
             name: 'STRATEGY',
             suggestions: [
+
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always'),
               FigSuggestion(name: 'cursor')
@@ -305,6 +319,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'focus-tab',
           description: 'The active window in the specified tab will be focused',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The tab to match',
@@ -324,6 +339,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'focus-window',
           description: 'Focus the specified window, if no window is specified, focus the window this command is run inside',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The window to match',
@@ -343,6 +359,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'get-colors',
           description: 'Get the terminal colors for the specified window',
           options: [
+
             Option(
               name: ['-c', '--configured'],
               description: 'Instead of outputting the colors for the specified window, output the currently configured colors'
@@ -415,6 +432,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'set-tab-color',
           description: 'The foreground and background colors when active and inactive can be overridden using this command',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The tab to match',
@@ -434,6 +452,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'set-tab-title',
           description: 'Set the title for the specified tab(s)',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The tab to match'
@@ -447,6 +466,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'set-window-title',
           description: 'Set the title of the specified window(s)',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The window to match'
@@ -461,6 +481,7 @@ final FigSpec kittySpec = FigSpec(
           name: 'signal-child',
           description: 'Send one or more signals to the foreground process in the specified window(s)',
           options: [
+
             Option(
               name: ['-m', '--match'],
               description: 'The window to match'

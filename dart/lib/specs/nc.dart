@@ -12,6 +12,7 @@ final FigSpec ncSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   options: [
+
     Option(
       name: '-4',
       description: 'Forces nc to use IPv4 addresses only',
@@ -323,6 +324,7 @@ final FigSpec ncSpec = FigSpec(
         Arg(
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'default'),
           FigSuggestion(name: 'enable'),
           FigSuggestion(name: 'disable')
@@ -333,6 +335,7 @@ final FigSpec ncSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'hostname',
       description: 'Hostname or IP address to listen on or connect to',

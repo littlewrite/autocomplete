@@ -9,10 +9,12 @@ final FigSpec iotsitewiseSpec = FigSpec(
   name: 'iotsitewise',
   description: 'Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects Industrial Internet of Things (IIoT) devices to the power of the Amazon Web Services Cloud. For more information, see the IoT SiteWise User Guide. For information about IoT SiteWise quotas, see Quotas in the IoT SiteWise User Guide',
   subcommands: [
+
     Subcommand(
       name: 'associate-assets',
       description: 'Associates a child asset with the given parent asset through a hierarchy defined in the parent asset\'s model. For more information, see Associating assets in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the parent asset. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -65,6 +67,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'associate-time-series-to-asset-property',
       description: 'Associates a time series (data stream) with an asset property',
       options: [
+
         Option(
           name: '--alias',
           description: 'The alias that identifies the time series',
@@ -129,6 +133,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'batch-associate-project-assets',
       description: 'Associates a group (batch) of assets with an IoT SiteWise Monitor project',
       options: [
+
         Option(
           name: '--project-id',
           description: 'The ID of the project to which to associate the assets',
@@ -184,6 +190,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'batch-disassociate-project-assets',
       description: 'Disassociates a group (batch) of assets from an IoT SiteWise Monitor project',
       options: [
+
         Option(
           name: '--project-id',
           description: 'The ID of the project from which to disassociate the assets',
@@ -239,6 +247,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +260,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'batch-get-asset-property-aggregates',
       description: 'Gets aggregated values (for example, average, minimum, and maximum) for one or more asset properties. For more information, see Querying aggregates in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--entries',
           description: 'The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request',
@@ -294,6 +304,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -306,6 +317,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'batch-get-asset-property-value',
       description: 'Gets the current value for one or more asset properties. For more information, see Querying current values in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--entries',
           description: 'The list of asset property value entries for the batch get request. You can specify up to 128 entries per request',
@@ -340,6 +352,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -352,6 +365,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'batch-get-asset-property-value-history',
       description: 'Gets the historical values for one or more asset properties. For more information, see Querying historical values in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--entries',
           description: 'The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request',
@@ -395,6 +409,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -407,6 +422,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'batch-put-asset-property-value',
       description: 'Sends a list of asset property values to IoT SiteWise. Each value is a timestamp-quality-value (TQV) data point. For more information, see Ingesting data using the API in the IoT SiteWise User Guide. To identify an asset property, you must specify one of the following:   The assetId and propertyId of an asset property.   A propertyAlias, which is a data stream alias (for example, /company/windfarm/3/turbine/7/temperature). To define an asset property\'s alias, see UpdateAssetProperty.    With respect to Unix epoch time, IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days in the past and no more than 10 minutes in the future. IoT SiteWise rejects timestamps outside of the inclusive range of [-7 days, +10 minutes] and returns a TimestampOutOfRangeException error. For each asset property, IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a different quality. For example, if you store a TQV {T1, GOOD, V1}, then storing {T1, GOOD, V2} replaces the existing TQV.  IoT SiteWise authorizes access to each BatchPutAssetPropertyValue entry individually. For more information, see BatchPutAssetPropertyValue authorization in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--entries',
           description: 'The list of asset property value entries for the batch put request. You can specify up to 10 entries per request',
@@ -432,6 +448,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -444,6 +461,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'create-access-policy',
       description: 'Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource',
       options: [
+
         Option(
           name: '--access-policy-identity',
           description: 'The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user',
@@ -505,6 +523,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -517,6 +536,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'create-asset',
       description: 'Creates an asset from an existing asset model. For more information, see Creating assets in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--asset-name',
           description: 'A friendly name for the asset',
@@ -596,6 +616,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -608,6 +629,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'create-asset-model',
       description: 'Creates an asset model from specified property and hierarchy definitions. You create assets from asset models. With asset models, you can easily create assets of the same type that have standardized definitions. Each asset created from a model inherits the asset model\'s property and hierarchy definitions. For more information, see Defining asset models in the IoT SiteWise User Guide. You can create two types of asset models, ASSET_MODEL or COMPONENT_MODEL.    ASSET_MODEL – (default) An asset model that you can use to create assets. Can\'t be included as a component in another asset model.    COMPONENT_MODEL – A reusable component that you can include in the composite models of other asset models. You can\'t create assets directly from this type of asset model',
       options: [
+
         Option(
           name: '--asset-model-name',
           description: 'A unique name for the asset model',
@@ -714,6 +736,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -726,6 +749,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'create-asset-model-composite-model',
       description: 'Creates a custom composite model from specified property and hierarchy definitions. There are two types of custom composite models, inline and component-model-based.  Use component-model-based custom composite models to define standard, reusable components. A component-model-based custom composite model consists of a name, a description, and the ID of the component model it references. A component-model-based custom composite model has no properties of its own; its referenced component model provides its associated properties to any created assets. For more information, see Custom composite models (Components) in the IoT SiteWise User Guide. Use inline custom composite models to organize the properties of an asset model. The properties of inline custom composite models are local to the asset model where they are included and can\'t be used to create multiple assets. To create a component-model-based model, specify the composedAssetModelId of an existing asset model with assetModelType of COMPONENT_MODEL. To create an inline model, specify the assetModelCompositeModelProperties and don\'t include an composedAssetModelId',
       options: [
+
         Option(
           name: '--asset-model-id',
           description: 'The ID of the asset model this composite model is a part of',
@@ -859,6 +883,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -871,6 +896,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'create-bulk-import-job',
       description: 'Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see Create a bulk import job (CLI) in the Amazon Simple Storage Service User Guide.  Before you create a bulk import job, you must enable IoT SiteWise warm tier or IoT SiteWise cold tier. For more information about how to configure storage settings, see PutStorageConfiguration. Bulk import is designed to store historical data to IoT SiteWise. It does not trigger computations or notifications on IoT SiteWise warm or cold tier storage',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The unique name that helps identify the job request',
@@ -948,6 +974,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -960,6 +987,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'create-dashboard',
       description: 'Creates a dashboard in an IoT SiteWise Monitor project',
       options: [
+
         Option(
           name: '--project-id',
           description: 'The ID of the project in which to create the dashboard',
@@ -1030,6 +1058,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1042,6 +1071,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'create-dataset',
       description: 'Creates a dataset to connect an external datasource',
       options: [
+
         Option(
           name: '--dataset-id',
           description: 'The ID of the dataset',
@@ -1112,6 +1142,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1124,6 +1155,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'create-gateway',
       description: 'Creates a gateway, which is a virtual or edge device that delivers industrial data streams from local servers to IoT SiteWise. For more information, see Ingesting data using a gateway in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--gateway-name',
           description: 'A unique name for the gateway',
@@ -1167,6 +1199,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1179,6 +1212,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'create-portal',
       description: 'Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.  Before you can sign in to a new portal, you must add at least one identity to that portal. For more information, see Adding or removing portal administrators in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--portal-name',
           description: 'A friendly name for the portal',
@@ -1303,6 +1337,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1315,6 +1350,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'create-project',
       description: 'Creates a project in the specified portal.  Make sure that the project name and description don\'t contain confidential information',
       options: [
+
         Option(
           name: '--portal-id',
           description: 'The ID of the portal in which to create the project',
@@ -1376,6 +1412,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1388,6 +1425,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'delete-access-policy',
       description: 'Deletes an access policy that grants the specified identity access to the specified IoT SiteWise Monitor resource. You can use this operation to revoke access to an IoT SiteWise Monitor resource',
       options: [
+
         Option(
           name: '--access-policy-id',
           description: 'The ID of the access policy to be deleted',
@@ -1422,6 +1460,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1434,6 +1473,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'delete-asset',
       description: 'Deletes an asset. This action can\'t be undone. For more information, see Deleting assets and models in the IoT SiteWise User Guide.  You can\'t delete an asset that\'s associated to another asset. For more information, see DisassociateAssets',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset to delete. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -1468,6 +1508,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1480,6 +1521,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'delete-asset-model',
       description: 'Deletes an asset model. This action can\'t be undone. You must delete all assets created from an asset model before you can delete the model. Also, you can\'t delete an asset model if a parent asset model exists that contains a property formula expression that depends on the asset model that you want to delete. For more information, see Deleting assets and models in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--asset-model-id',
           description: 'The ID of the asset model to delete. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -1541,6 +1583,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1553,6 +1596,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'delete-asset-model-composite-model',
       description: 'Deletes a composite model. This action can\'t be undone. You must delete all assets created from a composite model before you can delete the model. Also, you can\'t delete a composite model if a parent asset model exists that contains a property formula expression that depends on the asset model that you want to delete. For more information, see Deleting assets and models in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--asset-model-id',
           description: 'The ID of the asset model, in UUID format',
@@ -1623,6 +1667,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1635,6 +1680,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'delete-dashboard',
       description: 'Deletes a dashboard from IoT SiteWise Monitor',
       options: [
+
         Option(
           name: '--dashboard-id',
           description: 'The ID of the dashboard to delete',
@@ -1669,6 +1715,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1681,6 +1728,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'delete-dataset',
       description: 'Deletes a dataset. This cannot be undone',
       options: [
+
         Option(
           name: '--dataset-id',
           description: 'The ID of the dataset',
@@ -1715,6 +1763,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1727,6 +1776,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'delete-gateway',
       description: 'Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway\'s files remain in your gateway\'s file system',
       options: [
+
         Option(
           name: '--gateway-id',
           description: 'The ID of the gateway to delete',
@@ -1752,6 +1802,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1764,6 +1815,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'delete-portal',
       description: 'Deletes a portal from IoT SiteWise Monitor',
       options: [
+
         Option(
           name: '--portal-id',
           description: 'The ID of the portal to delete',
@@ -1798,6 +1850,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1810,6 +1863,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'delete-project',
       description: 'Deletes a project from IoT SiteWise Monitor',
       options: [
+
         Option(
           name: '--project-id',
           description: 'The ID of the project',
@@ -1844,6 +1898,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1856,6 +1911,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'delete-time-series',
       description: 'Deletes a time series (data stream). If you delete a time series that\'s associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property. To identify a time series, do one of the following:   If the time series isn\'t associated with an asset property, specify the alias of the time series.   If the time series is associated with an asset property, specify one of the following:    The alias of the time series.   The assetId and propertyId that identifies the asset property',
       options: [
+
         Option(
           name: '--alias',
           description: 'The alias that identifies the time series',
@@ -1908,6 +1964,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1920,6 +1977,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-access-policy',
       description: 'Describes an access policy, which specifies an identity\'s access to an IoT SiteWise Monitor portal or project',
       options: [
+
         Option(
           name: '--access-policy-id',
           description: 'The ID of the access policy',
@@ -1945,6 +2003,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1957,6 +2016,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-action',
       description: 'Retrieves information about an action',
       options: [
+
         Option(
           name: '--action-id',
           description: 'The ID of the action',
@@ -1982,6 +2042,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1994,6 +2055,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-asset',
       description: 'Retrieves information about an asset',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -2027,6 +2089,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2039,6 +2102,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-asset-composite-model',
       description: 'Retrieves information about an asset composite model (also known as an asset component). An AssetCompositeModel is an instance of an AssetModelCompositeModel. If you want to see information about the model this is based on, call DescribeAssetModelCompositeModel',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -2073,6 +2137,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2085,6 +2150,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-asset-model',
       description: 'Retrieves information about an asset model',
       options: [
+
         Option(
           name: '--asset-model-id',
           description: 'The ID of the asset model. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -2127,6 +2193,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2139,6 +2206,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-asset-model-composite-model',
       description: 'Retrieves information about an asset model composite model (also known as an asset model component). For more information, see Custom composite models (Components) in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--asset-model-id',
           description: 'The ID of the asset model. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -2182,6 +2250,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2194,6 +2263,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-asset-property',
       description: 'Retrieves information about an asset property.  When you call this operation for an attribute property, this response includes the default attribute value that you define in the asset model. If you update the default value in the model, this operation\'s response includes the new default value.  This operation doesn\'t return the value of the asset property. To get the value of an asset property, use GetAssetPropertyValue',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -2228,6 +2298,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2240,6 +2311,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-bulk-import-job',
       description: 'Retrieves information about a bulk import job request. For more information, see Describe a bulk import job (CLI) in the Amazon Simple Storage Service User Guide',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID of the job',
@@ -2265,6 +2337,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2277,6 +2350,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-dashboard',
       description: 'Retrieves information about a dashboard',
       options: [
+
         Option(
           name: '--dashboard-id',
           description: 'The ID of the dashboard',
@@ -2302,6 +2376,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2314,6 +2389,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-dataset',
       description: 'Retrieves information about a dataset',
       options: [
+
         Option(
           name: '--dataset-id',
           description: 'The ID of the dataset',
@@ -2339,6 +2415,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2351,6 +2428,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-default-encryption-configuration',
       description: 'Retrieves information about the default encryption configuration for the Amazon Web Services account in the default or specified Region. For more information, see Key management in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2367,6 +2445,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2379,6 +2458,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-gateway',
       description: 'Retrieves information about a gateway',
       options: [
+
         Option(
           name: '--gateway-id',
           description: 'The ID of the gateway device',
@@ -2404,6 +2484,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2416,6 +2497,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-gateway-capability-configuration',
       description: 'Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use DescribeGateway',
       options: [
+
         Option(
           name: '--gateway-id',
           description: 'The ID of the gateway that defines the capability configuration',
@@ -2450,6 +2532,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2462,6 +2545,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-logging-options',
       description: 'Retrieves the current IoT SiteWise logging options',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2478,6 +2562,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2490,6 +2575,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-portal',
       description: 'Retrieves information about a portal',
       options: [
+
         Option(
           name: '--portal-id',
           description: 'The ID of the portal',
@@ -2515,6 +2601,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2527,6 +2614,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-project',
       description: 'Retrieves information about a project',
       options: [
+
         Option(
           name: '--project-id',
           description: 'The ID of the project',
@@ -2552,6 +2640,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2564,6 +2653,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-storage-configuration',
       description: 'Retrieves information about the storage configuration for IoT SiteWise',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2580,6 +2670,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2592,6 +2683,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'describe-time-series',
       description: 'Retrieves information about a time series (data stream). To identify a time series, do one of the following:   If the time series isn\'t associated with an asset property, specify the alias of the time series.   If the time series is associated with an asset property, specify one of the following:    The alias of the time series.   The assetId and propertyId that identifies the asset property',
       options: [
+
         Option(
           name: '--alias',
           description: 'The alias that identifies the time series',
@@ -2635,6 +2727,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2647,6 +2740,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'disassociate-assets',
       description: 'Disassociates a child asset from the given parent asset through a hierarchy defined in the parent asset\'s model',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the parent asset from which to disassociate the child asset. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -2699,6 +2793,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2711,6 +2806,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'disassociate-time-series-from-asset-property',
       description: 'Disassociates a time series (data stream) from an asset property',
       options: [
+
         Option(
           name: '--alias',
           description: 'The alias that identifies the time series',
@@ -2763,6 +2859,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2775,6 +2872,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'execute-action',
       description: 'Executes an action on a target resource',
       options: [
+
         Option(
           name: '--target-resource',
           description: 'The resource the action will be taken on',
@@ -2827,6 +2925,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2839,6 +2938,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'execute-query',
       description: 'Run SQL queries to retrieve metadata and time-series data from asset models, assets, measurements, metrics, transforms, and aggregates',
       options: [
+
         Option(
           name: '--query-statement',
           description: 'The IoT SiteWise query statement',
@@ -2918,6 +3018,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2930,6 +3031,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'get-asset-property-aggregates',
       description: 'Gets aggregated values for an asset property. For more information, see Querying aggregates in the IoT SiteWise User Guide. To identify an asset property, you must specify one of the following:   The assetId and propertyId of an asset property.   A propertyAlias, which is a data stream alias (for example, /company/windfarm/3/turbine/7/temperature). To define an asset property\'s alias, see UpdateAssetProperty',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset, in UUID format',
@@ -3072,6 +3174,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3084,6 +3187,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'get-asset-property-value',
       description: 'Gets an asset property\'s current value. For more information, see Querying current values in the IoT SiteWise User Guide. To identify an asset property, you must specify one of the following:   The assetId and propertyId of an asset property.   A propertyAlias, which is a data stream alias (for example, /company/windfarm/3/turbine/7/temperature). To define an asset property\'s alias, see UpdateAssetProperty',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset, in UUID format',
@@ -3127,6 +3231,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3139,6 +3244,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'get-asset-property-value-history',
       description: 'Gets the history of an asset property\'s values. For more information, see Querying historical values in the IoT SiteWise User Guide. To identify an asset property, you must specify one of the following:   The assetId and propertyId of an asset property.   A propertyAlias, which is a data stream alias (for example, /company/windfarm/3/turbine/7/temperature). To define an asset property\'s alias, see UpdateAssetProperty',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset, in UUID format',
@@ -3263,6 +3369,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3275,6 +3382,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'get-interpolated-asset-property-values',
       description: 'Get interpolated values for an asset property for a specified time interval, during a period of time. If your time series is missing data points during the specified time interval, you can use interpolation to estimate the missing data. For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. To identify an asset property, you must specify one of the following:   The assetId and propertyId of an asset property.   A propertyAlias, which is a data stream alias (for example, /company/windfarm/3/turbine/7/temperature). To define an asset property\'s alias, see UpdateAssetProperty',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset, in UUID format',
@@ -3435,6 +3543,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3447,6 +3556,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-access-policies',
       description: 'Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project)',
       options: [
+
         Option(
           name: '--identity-type',
           description: 'The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify identityId',
@@ -3553,6 +3663,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3565,6 +3676,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-actions',
       description: 'Retrieves a paginated list of actions for a specific target resource',
       options: [
+
         Option(
           name: '--target-resource-type',
           description: 'The type of resource',
@@ -3644,6 +3756,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3656,6 +3769,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-asset-model-composite-models',
       description: 'Retrieves a paginated list of composite models associated with the asset model',
       options: [
+
         Option(
           name: '--asset-model-id',
           description: 'The ID of the asset model. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -3735,6 +3849,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3747,6 +3862,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-asset-model-properties',
       description: 'Retrieves a paginated list of properties associated with an asset model. If you update properties associated with the model before you finish listing all the properties, you need to start all over again',
       options: [
+
         Option(
           name: '--asset-model-id',
           description: 'The ID of the asset model. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -3835,6 +3951,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3847,6 +3964,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-asset-models',
       description: 'Retrieves a paginated list of summaries of all asset models',
       options: [
+
         Option(
           name: '--asset-model-types',
           description: 'The type of asset model. If you don\'t provide an assetModelTypes, all types of asset models are returned.    ASSET_MODEL – An asset model that you can use to create assets. Can\'t be included as a component in another asset model.    COMPONENT_MODEL – A reusable component that you can include in the composite models of other asset models. You can\'t create assets directly from this type of asset model',
@@ -3926,6 +4044,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3938,6 +4057,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-asset-properties',
       description: 'Retrieves a paginated list of properties associated with an asset. If you update properties associated with the model before you finish listing all the properties, you need to start all over again',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -4017,6 +4137,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4029,6 +4150,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-asset-relationships',
       description: 'Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset\'s root asset and all associated assets between that asset and its root',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -4108,6 +4230,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4120,6 +4243,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-assets',
       description: 'Retrieves a paginated list of asset summaries. You can use this operation to do the following:   List assets based on a specific asset model.   List top-level assets.   You can\'t use this operation to list all assets. To retrieve summaries for all of your assets, use ListAssetModels to get all of your asset model IDs. Then, use ListAssets to get all assets for each asset model',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to be used for the next set of paginated results',
@@ -4199,6 +4323,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4211,6 +4336,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-associated-assets',
       description: 'Retrieves a paginated list of associated assets. You can use this operation to do the following:    CHILD - List all child assets associated to the asset.    PARENT - List the asset\'s parent asset',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset to query. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -4299,6 +4425,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4311,6 +4438,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-bulk-import-jobs',
       description: 'Retrieves a paginated list of bulk import job requests. For more information, see List bulk import jobs (CLI) in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to be used for the next set of paginated results',
@@ -4381,6 +4509,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4393,6 +4522,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-composition-relationships',
       description: 'Retrieves a paginated list of composition relationships for an asset model of type COMPONENT_MODEL',
       options: [
+
         Option(
           name: '--asset-model-id',
           description: 'The ID of the asset model. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -4463,6 +4593,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4475,6 +4606,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-dashboards',
       description: 'Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project',
       options: [
+
         Option(
           name: '--project-id',
           description: 'The ID of the project',
@@ -4545,6 +4677,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4557,6 +4690,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-datasets',
       description: 'Retrieves a paginated list of datasets for a specific target resource',
       options: [
+
         Option(
           name: '--source-type',
           description: 'The type of data source for the dataset',
@@ -4627,6 +4761,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4639,6 +4774,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-gateways',
       description: 'Retrieves a paginated list of gateways',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to be used for the next set of paginated results',
@@ -4700,6 +4836,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4712,6 +4849,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-portals',
       description: 'Retrieves a paginated list of IoT SiteWise Monitor portals',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to be used for the next set of paginated results',
@@ -4773,6 +4911,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4785,6 +4924,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-project-assets',
       description: 'Retrieves a paginated list of assets associated with an IoT SiteWise Monitor project',
       options: [
+
         Option(
           name: '--project-id',
           description: 'The ID of the project',
@@ -4855,6 +4995,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4867,6 +5008,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-projects',
       description: 'Retrieves a paginated list of projects for an IoT SiteWise Monitor portal',
       options: [
+
         Option(
           name: '--portal-id',
           description: 'The ID of the portal',
@@ -4937,6 +5079,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4949,6 +5092,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves the list of tags for an IoT SiteWise resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -4974,6 +5118,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4986,6 +5131,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'list-time-series',
       description: 'Retrieves a paginated list of time series (data streams)',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to be used for the next set of paginated results',
@@ -5074,6 +5220,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5086,6 +5233,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'put-default-encryption-configuration',
       description: 'Sets the default encryption configuration for the Amazon Web Services account. For more information, see Key management in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--encryption-type',
           description: 'The type of encryption used for the encryption configuration',
@@ -5120,6 +5268,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5132,6 +5281,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'put-logging-options',
       description: 'Sets logging options for IoT SiteWise',
       options: [
+
         Option(
           name: '--logging-options',
           description: 'The logging options to set',
@@ -5157,6 +5307,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5169,6 +5320,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'put-storage-configuration',
       description: 'Configures storage settings for IoT SiteWise',
       options: [
+
         Option(
           name: '--storage-type',
           description: 'The storage tier that you specified for your data. The storageType parameter can be one of the following values:    SITEWISE_DEFAULT_STORAGE – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.    MULTI_LAYER_STORAGE – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket',
@@ -5239,6 +5391,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5251,6 +5404,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation updates the tag\'s value',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to tag',
@@ -5285,6 +5439,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5297,6 +5452,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from an IoT SiteWise resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to untag',
@@ -5331,6 +5487,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5343,6 +5500,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-access-policy',
       description: 'Updates an existing access policy that specifies an identity\'s access to an IoT SiteWise Monitor portal or project resource',
       options: [
+
         Option(
           name: '--access-policy-id',
           description: 'The ID of the access policy',
@@ -5404,6 +5562,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5416,6 +5575,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-asset',
       description: 'Updates an asset\'s name. For more information, see Updating assets and models in the IoT SiteWise User Guide',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset to update. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -5477,6 +5637,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5489,6 +5650,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-asset-model',
       description: 'Updates an asset model and all of the assets that were created from the model. Each asset created from the model inherits the updated asset model\'s property and hierarchy definitions. For more information, see Updating assets and models in the IoT SiteWise User Guide.  If you remove a property from an asset model, IoT SiteWise deletes all previous data for that property. You can’t change the type or data type of an existing property. To replace an existing asset model property with a new one with the same name, do the following:   Submit an UpdateAssetModel request with the entire existing property removed.   Submit a second UpdateAssetModel request that includes the new property. The new asset property will have the same name as the previous one and IoT SiteWise will generate a new unique id',
       options: [
+
         Option(
           name: '--asset-model-id',
           description: 'The ID of the asset model to update. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -5604,6 +5766,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5616,6 +5779,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-asset-model-composite-model',
       description: 'Updates a composite model and all of the assets that were created from the model. Each asset created from the model inherits the updated asset model\'s property and hierarchy definitions. For more information, see Updating assets and models in the IoT SiteWise User Guide.  If you remove a property from a composite asset model, IoT SiteWise deletes all previous data for that property. You can’t change the type or data type of an existing property. To replace an existing composite asset model property with a new one with the same name, do the following:   Submit an UpdateAssetModelCompositeModel request with the entire existing property removed.   Submit a second UpdateAssetModelCompositeModel request that includes the new property. The new asset property will have the same name as the previous one and IoT SiteWise will generate a new unique id',
       options: [
+
         Option(
           name: '--asset-model-id',
           description: 'The ID of the asset model, in UUID format',
@@ -5722,6 +5886,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5734,6 +5899,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-asset-property',
       description: 'Updates an asset property\'s alias and notification state.  This operation overwrites the property\'s existing alias and notification state. To keep your existing property\'s alias or notification state, you must include the existing values in the UpdateAssetProperty request. For more information, see DescribeAssetProperty',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The ID of the asset to be updated. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -5804,6 +5970,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5816,6 +5983,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-dashboard',
       description: 'Updates an IoT SiteWise Monitor dashboard',
       options: [
+
         Option(
           name: '--dashboard-id',
           description: 'The ID of the dashboard to update',
@@ -5877,6 +6045,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5889,6 +6058,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-dataset',
       description: 'Updates a dataset',
       options: [
+
         Option(
           name: '--dataset-id',
           description: 'The ID of the dataset',
@@ -5950,6 +6120,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5962,6 +6133,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-gateway',
       description: 'Updates a gateway\'s name',
       options: [
+
         Option(
           name: '--gateway-id',
           description: 'The ID of the gateway to update',
@@ -5996,6 +6168,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6008,6 +6181,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-gateway-capability-configuration',
       description: 'Updates a gateway capability configuration or defines a new capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use DescribeGateway',
       options: [
+
         Option(
           name: '--gateway-id',
           description: 'The ID of the gateway to be updated',
@@ -6051,6 +6225,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6063,6 +6238,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-portal',
       description: 'Updates an IoT SiteWise Monitor portal',
       options: [
+
         Option(
           name: '--portal-id',
           description: 'The ID of the portal to update',
@@ -6178,6 +6354,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6190,6 +6367,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'update-project',
       description: 'Updates an IoT SiteWise Monitor project',
       options: [
+
         Option(
           name: '--project-id',
           description: 'The ID of the project to update',
@@ -6242,6 +6420,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6254,10 +6433,12 @@ final FigSpec iotsitewiseSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'asset-active',
           description: 'Wait until JMESPath query assetStatus.state returns ACTIVE when polling with ``describe-asset``. It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--asset-id',
               description: 'The ID of the asset. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -6291,6 +6472,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6303,6 +6485,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
           name: 'asset-model-active',
           description: 'Wait until JMESPath query assetModelStatus.state returns ACTIVE when polling with ``describe-asset-model``. It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--asset-model-id',
               description: 'The ID of the asset model. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -6345,6 +6528,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6357,6 +6541,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
           name: 'asset-model-not-exists',
           description: 'Wait until ResourceNotFoundException is thrown when polling with ``describe-asset-model``. It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--asset-model-id',
               description: 'The ID of the asset model. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -6399,6 +6584,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6411,6 +6597,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
           name: 'asset-not-exists',
           description: 'Wait until ResourceNotFoundException is thrown when polling with ``describe-asset``. It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--asset-id',
               description: 'The ID of the asset. This can be either the actual ID in UUID format, or else externalId: followed by the external ID, if it has one. For more information, see Referencing objects with external IDs in the IoT SiteWise User Guide',
@@ -6444,6 +6631,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6456,6 +6644,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
           name: 'portal-active',
           description: 'Wait until JMESPath query portalStatus.state returns ACTIVE when polling with ``describe-portal``. It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--portal-id',
               description: 'The ID of the portal',
@@ -6481,6 +6670,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6493,6 +6683,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
           name: 'portal-not-exists',
           description: 'Wait until ResourceNotFoundException is thrown when polling with ``describe-portal``. It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--portal-id',
               description: 'The ID of the portal',
@@ -6518,6 +6709,7 @@ final FigSpec iotsitewiseSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

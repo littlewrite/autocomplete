@@ -9,10 +9,12 @@ final FigSpec iamSpec = FigSpec(
   name: 'iam',
   description: 'Manage IAM service accounts and keys',
   subcommands: [
+
     Subcommand(
       name: 'list-grantable-roles',
       description: 'List IAM grantable roles for a resource',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -158,6 +160,7 @@ final FigSpec iamSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -180,6 +183,7 @@ final FigSpec iamSpec = FigSpec(
       name: 'list-testable-permissions',
       description: 'List IAM testable permissions for a resource',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -314,6 +318,7 @@ final FigSpec iamSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -336,10 +341,12 @@ final FigSpec iamSpec = FigSpec(
       name: 'roles',
       description: 'Create and manipulate roles',
       subcommands: [
+
         Subcommand(
           name: 'copy',
           description: 'Create a role from an existing role',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -529,6 +536,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -545,6 +553,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'create',
           description: 'Create a custom role for a project or an organization',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -723,6 +732,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -745,6 +755,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'delete',
           description: 'Delete a custom role from an organization or a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -868,6 +879,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -890,6 +902,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'describe',
           description: 'Show metadata for a role',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1013,6 +1026,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1035,6 +1049,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'list',
           description: 'List the roles defined at a parent organization or a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1195,6 +1210,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1211,6 +1227,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'undelete',
           description: 'Undelete a custom role from an organization or a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1334,6 +1351,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1356,6 +1374,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'update',
           description: 'Update an IAM custom role',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1556,6 +1575,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1576,6 +1596,7 @@ final FigSpec iamSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1699,6 +1720,7 @@ final FigSpec iamSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1715,10 +1737,12 @@ final FigSpec iamSpec = FigSpec(
       name: 'service-accounts',
       description: 'Create and manipulate service accounts',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add an IAM policy binding to an IAM service account',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1888,6 +1912,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1910,6 +1935,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'create',
           description: 'Create a service account for a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2055,6 +2081,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2077,6 +2104,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'delete',
           description: 'Delete a service account from a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2200,6 +2228,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2222,6 +2251,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'describe',
           description: 'Show metadata for a service account from a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2345,6 +2375,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2367,6 +2398,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'disable',
           description: 'Disable an IAM service account',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2490,6 +2522,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2512,6 +2545,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'enable',
           description: 'Enable an IAM service account',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2635,6 +2669,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2657,6 +2692,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a service account',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2824,6 +2860,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2846,10 +2883,12 @@ final FigSpec iamSpec = FigSpec(
           name: 'keys',
           description: 'Manage service account keys',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a private key for a service account',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2951,6 +2990,7 @@ final FigSpec iamSpec = FigSpec(
                     name: 'KEY_FILE_TYPE',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'p12')
                     ]
@@ -2999,6 +3039,7 @@ final FigSpec iamSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3021,6 +3062,7 @@ final FigSpec iamSpec = FigSpec(
               name: 'delete',
               description: 'Delete a user-managed key from a service account',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3156,6 +3198,7 @@ final FigSpec iamSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3178,6 +3221,7 @@ final FigSpec iamSpec = FigSpec(
               name: 'list',
               description: 'List the keys for a service account',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3316,6 +3360,7 @@ final FigSpec iamSpec = FigSpec(
                     name: 'MANAGED_BY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'user'),
                       FigSuggestion(name: 'system'),
                       FigSuggestion(name: 'any')
@@ -3383,6 +3428,7 @@ final FigSpec iamSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3399,6 +3445,7 @@ final FigSpec iamSpec = FigSpec(
               name: 'upload',
               description: 'Upload a public key for an IAM service account',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3534,6 +3581,7 @@ final FigSpec iamSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3554,6 +3602,7 @@ final FigSpec iamSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3677,6 +3726,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3693,6 +3743,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'list',
           description: 'List all of a project\'s service accounts',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3853,6 +3904,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3869,6 +3921,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding from a service account',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4042,6 +4095,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4064,6 +4118,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for a service account',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4187,6 +4242,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4199,6 +4255,7 @@ final FigSpec iamSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SERVICE_ACCOUNT',
               description: 'The service account whose policy to set. The account should be formatted either as a numeric service account ID or as an email, like this: 123456789876543212345 or my-iam-account@somedomain.com'
@@ -4213,6 +4270,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'sign-blob',
           description: 'Sign a blob with a managed service account key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4348,6 +4406,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4360,6 +4419,7 @@ final FigSpec iamSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INPUT-FILE',
               description: 'A path to the blob file to be signed'
@@ -4374,6 +4434,7 @@ final FigSpec iamSpec = FigSpec(
           name: 'update',
           description: 'Update an IAM service account',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4519,6 +4580,7 @@ final FigSpec iamSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4539,6 +4601,7 @@ final FigSpec iamSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4662,6 +4725,7 @@ final FigSpec iamSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4676,6 +4740,7 @@ final FigSpec iamSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4799,6 +4864,7 @@ final FigSpec iamSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

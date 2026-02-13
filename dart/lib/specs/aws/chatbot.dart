@@ -9,10 +9,12 @@ final FigSpec chatbotSpec = FigSpec(
   name: 'chatbot',
   description: 'The AWS Chatbot API Reference provides descriptions, API request parameters, and the XML response for each of the AWS Chatbot API actions. AWS Chatbot APIs are currently available in the following Regions:   US East (Ohio) - us-east-2    US West (Oregon) - us-west-2    Asia Pacific (Singapore) - ap-southeast-1    Europe (Ireland) - eu-west-1    The AWS Chatbot console can only be used in US East (Ohio). Your configuration data however, is stored in each of the relevant available Regions.  Your AWS CloudTrail events are logged in whatever Region you call from, not US East (N. Virginia) by default',
   subcommands: [
+
     Subcommand(
       name: 'associate-to-configuration',
       description: 'Links a resource (for example, a custom action) to a channel configuration',
       options: [
+
         Option(
           name: '--resource',
           description: 'The resource Amazon Resource Name (ARN) to link',
@@ -47,6 +49,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'create-chime-webhook-configuration',
       description: 'Creates an AWS Chatbot configuration for Amazon Chime',
       options: [
+
         Option(
           name: '--webhook-description',
           description: 'A description of the webhook. We recommend using the convention RoomName/WebhookName. For more information, see Tutorial: Get started with Amazon Chime in the  AWS Chatbot Administrator Guide',
@@ -138,6 +142,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'create-custom-action',
       description: 'Creates a custom action that can be invoked as an alias or as a button on a notification',
       options: [
+
         Option(
           name: '--definition',
           description: 'The definition of the command to run when invoked as an alias or as an action button',
@@ -220,6 +226,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -232,6 +239,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'create-microsoft-teams-channel-configuration',
       description: 'Creates an AWS Chatbot configuration for Microsoft Teams',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'The ID of the Microsoft Teams channel',
@@ -355,6 +363,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -367,6 +376,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'create-slack-channel-configuration',
       description: 'Creates an AWS Chatbot confugration for Slack',
       options: [
+
         Option(
           name: '--slack-team-id',
           description: 'The ID of the Slack workspace authorized with AWS Chatbot',
@@ -472,6 +482,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -484,6 +495,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'delete-chime-webhook-configuration',
       description: 'Deletes a Amazon Chime webhook configuration for AWS Chatbot',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to delete',
@@ -509,6 +521,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -521,6 +534,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'delete-custom-action',
       description: 'Deletes a custom action',
       options: [
+
         Option(
           name: '--custom-action-arn',
           description: 'The fully defined ARN of the custom action',
@@ -546,6 +560,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -558,6 +573,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'delete-microsoft-teams-channel-configuration',
       description: 'Deletes a Microsoft Teams channel configuration for AWS Chatbot',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete',
@@ -583,6 +599,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -595,6 +612,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'delete-microsoft-teams-configured-team',
       description: 'Deletes the Microsoft Teams team authorization allowing for channels to be configured in that Microsoft Teams team. Note that the Microsoft Teams team must have no channels configured to remove it',
       options: [
+
         Option(
           name: '--team-id',
           description: 'The ID of the Microsoft Teams team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more information, see Step 1: Configure a Microsoft Teams client in the  AWS Chatbot Administrator Guide',
@@ -620,6 +638,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -632,6 +651,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'delete-microsoft-teams-user-identity',
       description: 'Identifes a user level permission for a channel configuration',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete',
@@ -666,6 +686,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -678,6 +699,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'delete-slack-channel-configuration',
       description: 'Deletes a Slack channel configuration for AWS Chatbot',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the SlackChannelConfiguration to delete',
@@ -703,6 +725,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -715,6 +738,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'delete-slack-user-identity',
       description: 'Deletes a user level permission for a Slack channel configuration',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The ARN of the SlackChannelConfiguration associated with the user identity to delete',
@@ -758,6 +782,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -770,6 +795,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'delete-slack-workspace-authorization',
       description: 'Deletes the Slack workspace authorization that allows channels to be configured in that workspace. This requires all configured channels in the workspace to be deleted',
       options: [
+
         Option(
           name: '--slack-team-id',
           description: 'The ID of the Slack workspace authorized with AWS Chatbot',
@@ -795,6 +821,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -807,6 +834,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'describe-chime-webhook-configurations',
       description: 'Lists Amazon Chime webhook configurations optionally filtered by ChatConfigurationArn',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved',
@@ -877,6 +905,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -889,6 +918,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'describe-slack-channel-configurations',
       description: 'Lists Slack channel configurations optionally filtered by ChatConfigurationArn',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved',
@@ -959,6 +989,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -971,6 +1002,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'describe-slack-user-identities',
       description: 'Lists all Slack user identities with a mapped role',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the user identities to describe',
@@ -1041,6 +1073,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1053,6 +1086,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'describe-slack-workspaces',
       description: 'List all authorized Slack workspaces connected to the AWS Account onboarded with AWS Chatbot',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved',
@@ -1114,6 +1148,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1126,6 +1161,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'disassociate-from-configuration',
       description: 'Unlink a resource, for example a custom action, from a channel configuration',
       options: [
+
         Option(
           name: '--resource',
           description: 'The resource (for example, a custom action) Amazon Resource Name (ARN) to unlink',
@@ -1160,6 +1196,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1172,6 +1209,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'get-account-preferences',
       description: 'Returns AWS Chatbot account preferences',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1188,6 +1226,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1200,6 +1239,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'get-custom-action',
       description: 'Returns a custom action',
       options: [
+
         Option(
           name: '--custom-action-arn',
           description: 'Returns the fully defined Amazon Resource Name (ARN) of the custom action',
@@ -1225,6 +1265,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1237,6 +1278,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'get-microsoft-teams-channel-configuration',
       description: 'Returns a Microsoft Teams channel configuration in an AWS account',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve',
@@ -1262,6 +1304,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1274,6 +1317,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'list-associations',
       description: 'Lists resources associated with a channel configuration',
       options: [
+
         Option(
           name: '--chat-configuration',
           description: 'The channel configuration to list associations for',
@@ -1344,6 +1388,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1356,6 +1401,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'list-custom-actions',
       description: 'Lists custom actions defined in this account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved',
@@ -1417,6 +1463,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1429,6 +1476,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'list-microsoft-teams-channel-configurations',
       description: 'Lists all AWS Chatbot Microsoft Teams channel configurations in an AWS account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved',
@@ -1499,6 +1547,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1511,6 +1560,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'list-microsoft-teams-configured-teams',
       description: 'Lists all authorized Microsoft Teams for an AWS Account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved',
@@ -1572,6 +1622,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1584,6 +1635,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'list-microsoft-teams-user-identities',
       description: 'A list all Microsoft Teams user identities with a mapped role',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration associated with the user identities to list',
@@ -1654,6 +1706,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1666,6 +1719,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify. The resource can be a user, server, or role',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to list tags for',
@@ -1691,6 +1745,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1703,6 +1758,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'tag-resource',
       description: 'Attaches a key-value pair to a resource, as identified by its Amazon Resource Name (ARN). Resources are users, servers, roles, and other entities',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the configuration',
@@ -1737,6 +1793,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1749,6 +1806,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'untag-resource',
       description: 'Detaches a key-value pair from a resource, as identified by its Amazon Resource Name (ARN). Resources are users, servers, roles, and other entities',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific AWS resource, such as a server, user, or role',
@@ -1783,6 +1841,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1795,6 +1854,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'update-account-preferences',
       description: 'Updates AWS Chatbot account preferences',
       options: [
+
         Option(
           name: '--user-authorization-required',
           description: 'Enables use of a user role requirement in your chat configuration'
@@ -1827,6 +1887,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1839,6 +1900,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'update-chime-webhook-configuration',
       description: 'Updates a Amazon Chime webhook configuration',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to update',
@@ -1909,6 +1971,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1921,6 +1984,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'update-custom-action',
       description: 'Updates a custom action',
       options: [
+
         Option(
           name: '--custom-action-arn',
           description: 'The fully defined Amazon Resource Name (ARN) of the custom action',
@@ -1973,6 +2037,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1985,6 +2050,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'update-microsoft-teams-channel-configuration',
       description: 'Updates an Microsoft Teams channel configuration',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the TeamsChannelConfiguration to update',
@@ -2072,6 +2138,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2084,6 +2151,7 @@ final FigSpec chatbotSpec = FigSpec(
       name: 'update-slack-channel-configuration',
       description: 'Updates a Slack channel configuration',
       options: [
+
         Option(
           name: '--chat-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the SlackChannelConfiguration to update',
@@ -2171,6 +2239,7 @@ final FigSpec chatbotSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

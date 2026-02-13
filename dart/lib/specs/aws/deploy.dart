@@ -9,10 +9,12 @@ final FigSpec deploySpec = FigSpec(
   name: 'deploy',
   description: 'CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service. You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy. CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.  CodeDeploy Components  Use the information in this guide to help you work with the following CodeDeploy components:    Application: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.    Deployment group: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.    Deployment configuration: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.    Deployment: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances.     Application revisions: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.   This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.  CodeDeploy Information Resources     CodeDeploy User Guide     CodeDeploy API Reference Guide     CLI Reference for CodeDeploy     CodeDeploy Developer Forum',
   subcommands: [
+
     Subcommand(
       name: 'add-tags-to-on-premises-instances',
       description: 'Adds tags to on-premises instances',
       options: [
+
         Option(
           name: '--tags',
           description: 'The tag key-value pairs to add to the on-premises instances. Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed',
@@ -47,6 +49,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'batch-get-application-revisions',
       description: 'Gets information about one or more application revisions. The maximum number of application revisions that can be returned is 25',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application about which to get revision information',
@@ -93,6 +97,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'batch-get-applications',
       description: 'Gets information about one or more applications. The maximum number of applications that can be returned is 100',
       options: [
+
         Option(
           name: '--application-names',
           description: 'A list of application names separated by spaces. The maximum number of application names you can specify is 100',
@@ -130,6 +136,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -142,6 +149,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'batch-get-deployment-groups',
       description: 'Gets information about one or more deployment groups',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the applicable user or Amazon Web Services account',
@@ -176,6 +184,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +197,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'batch-get-deployment-instances',
       description: 'This method works, but is deprecated. Use BatchGetDeploymentTargets instead.    Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises and Lambda compute platforms. The newer BatchGetDeploymentTargets works with all compute platforms. The maximum number of instances that can be returned is 25',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a deployment',
@@ -222,6 +232,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -234,6 +245,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'batch-get-deployment-targets',
       description: 'Returns an array of one or more targets associated with a deployment. This method works with all compute types and should be used instead of the deprecated BatchGetDeploymentInstances. The maximum number of targets that can be returned is 25.  The type of targets returned depends on the deployment\'s compute platform or deployment method:     EC2/On-premises: Information about Amazon EC2 instance targets.     Lambda: Information about Lambda functions targets.     Amazon ECS: Information about Amazon ECS service targets.     CloudFormation: Information about targets of blue/green deployments initiated by a CloudFormation stack update',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a deployment',
@@ -268,6 +280,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -280,6 +293,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'batch-get-deployments',
       description: 'Gets information about one or more deployments. The maximum number of deployments that can be returned is 25',
       options: [
+
         Option(
           name: '--deployment-ids',
           description: 'A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25',
@@ -305,6 +319,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -317,6 +332,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'batch-get-on-premises-instances',
       description: 'Gets information about one or more on-premises instances. The maximum number of on-premises instances that can be returned is 25',
       options: [
+
         Option(
           name: '--instance-names',
           description: 'The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25',
@@ -342,6 +358,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -354,6 +371,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'continue-deployment',
       description: 'For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.)',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment',
@@ -388,6 +406,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -400,6 +419,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'create-application',
       description: 'Creates an application',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of the application. This name must be unique with the applicable user or Amazon Web Services account',
@@ -443,6 +463,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -455,6 +476,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'create-deployment',
       description: 'Deploys an application revision through the specified deployment group',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the user or Amazon Web Services account',
@@ -586,6 +608,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -598,6 +621,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'create-deployment-config',
       description: 'Creates a deployment configuration',
       options: [
+
         Option(
           name: '--deployment-config-name',
           description: 'The name of the deployment configuration to create',
@@ -659,6 +683,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -671,6 +696,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'create-deployment-group',
       description: 'Creates a deployment group to which application revisions are deployed',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the user or Amazon Web Services account',
@@ -866,6 +892,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -878,6 +905,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'delete-application',
       description: 'Deletes an application',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the user or Amazon Web Services account',
@@ -903,6 +931,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -915,6 +944,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'delete-deployment-config',
       description: 'Deletes a deployment configuration.  A deployment configuration cannot be deleted if it is currently in use. Predefined configurations cannot be deleted',
       options: [
+
         Option(
           name: '--deployment-config-name',
           description: 'The name of a deployment configuration associated with the user or Amazon Web Services account',
@@ -940,6 +970,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -952,6 +983,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'delete-deployment-group',
       description: 'Deletes a deployment group',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the user or Amazon Web Services account',
@@ -986,6 +1018,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -998,6 +1031,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'delete-git-hub-account-token',
       description: 'Deletes a GitHub account connection',
       options: [
+
         Option(
           name: '--token-name',
           description: 'The name of the GitHub account connection to delete',
@@ -1023,6 +1057,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1035,6 +1070,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'delete-resources-by-external-id',
       description: 'Deletes resources linked to an external ID. This action only applies if you have configured blue/green deployments through CloudFormation.   It is not necessary to call this action directly. CloudFormation calls it on your behalf when it needs to delete stack resources. This action is offered publicly in case you need to delete resources to comply with General Data Protection Regulation (GDPR) requirements',
       options: [
+
         Option(
           name: '--external-id',
           description: 'The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources',
@@ -1060,6 +1096,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1072,6 +1109,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'deregister-on-premises-instance',
       description: 'Deregisters an on-premises instance',
       options: [
+
         Option(
           name: '--instance-name',
           description: 'The name of the on-premises instance to deregister',
@@ -1097,6 +1135,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1109,6 +1148,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'get-application',
       description: 'Gets information about an application',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the user or Amazon Web Services account',
@@ -1134,6 +1174,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1146,6 +1187,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'get-application-revision',
       description: 'Gets information about an application revision',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of the application that corresponds to the revision',
@@ -1198,6 +1240,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1210,6 +1253,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'get-deployment',
       description: 'Gets information about a deployment.   The content property of the appSpecContent object in the returned revision is always null. Use GetApplicationRevision and the sha256 property of the returned appSpecContent object to get the content of the deployment’s AppSpec file',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a deployment associated with the user or Amazon Web Services account',
@@ -1235,6 +1279,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1247,6 +1292,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'get-deployment-config',
       description: 'Gets information about a deployment configuration',
       options: [
+
         Option(
           name: '--deployment-config-name',
           description: 'The name of a deployment configuration associated with the user or Amazon Web Services account',
@@ -1272,6 +1318,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1284,6 +1331,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'get-deployment-group',
       description: 'Gets information about a deployment group',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the user or Amazon Web Services account',
@@ -1318,6 +1366,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1330,6 +1379,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'get-deployment-instance',
       description: 'Gets information about an instance as part of a deployment',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a deployment',
@@ -1364,6 +1414,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1376,6 +1427,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'get-deployment-target',
       description: 'Returns information about a deployment target',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a deployment',
@@ -1410,6 +1462,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1422,6 +1475,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'get-on-premises-instance',
       description: 'Gets information about an on-premises instance',
       options: [
+
         Option(
           name: '--instance-name',
           description: 'The name of the on-premises instance about which to get information',
@@ -1447,6 +1501,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1459,6 +1514,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'list-application-revisions',
       description: 'Lists information about revisions for an application',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the user or Amazon Web Services account',
@@ -1574,6 +1630,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1586,6 +1643,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'list-applications',
       description: 'Lists the applications registered with the user or Amazon Web Services account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list',
@@ -1629,6 +1687,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1641,6 +1700,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'list-deployment-configs',
       description: 'Lists the deployment configurations with the user or Amazon Web Services account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An identifier returned from the previous ListDeploymentConfigs call. It can be used to return the next set of deployment configurations in the list',
@@ -1684,6 +1744,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1696,6 +1757,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'list-deployment-groups',
       description: 'Lists the deployment groups for an application registered with the Amazon Web Services user or Amazon Web Services account',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the user or Amazon Web Services account',
@@ -1748,6 +1810,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1760,6 +1823,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'list-deployment-instances',
       description: 'The newer BatchGetDeploymentTargets should be used instead because it works with all compute types. ListDeploymentInstances throws an exception if it is used with a compute platform other than EC2/On-premises or Lambda.    Lists the instance for a deployment associated with the user or Amazon Web Services account',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a deployment',
@@ -1830,6 +1894,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1842,6 +1907,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'list-deployment-targets',
       description: 'Returns an array of target IDs that are associated a deployment',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a deployment',
@@ -1903,6 +1969,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1915,6 +1982,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'list-deployments',
       description: 'Lists the deployments in a deployment group for an application registered with the user or Amazon Web Services account',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the user or Amazon Web Services account.  If applicationName is specified, then deploymentGroupName must be specified. If it is not specified, then deploymentGroupName must not be specified',
@@ -2003,6 +2071,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2015,6 +2084,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'list-git-hub-account-token-names',
       description: 'Lists the names of stored connections to GitHub accounts',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list',
@@ -2058,6 +2128,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2070,6 +2141,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'list-on-premises-instances',
       description: 'Gets a list of names for one or more on-premises instances. Unless otherwise specified, both registered and deregistered on-premises instance names are listed. To list only registered or deregistered on-premises instance names, use the registration status parameter',
       options: [
+
         Option(
           name: '--registration-status',
           description: 'The registration status of the on-premises instances:    Deregistered: Include deregistered on-premises instances in the resulting list.    Registered: Include registered on-premises instances in the resulting list',
@@ -2131,6 +2203,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2143,6 +2216,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags for the resource identified by a specified Amazon Resource Name (ARN). Tags are used to organize and categorize your CodeDeploy resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of a CodeDeploy resource. ListTagsForResource returns all the tags associated with the resource that is identified by the ResourceArn',
@@ -2177,6 +2251,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2189,6 +2264,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'put-lifecycle-event-hook-execution-status',
       description: 'Sets the result of a Lambda validation function. The function validates lifecycle hooks during a deployment that uses the Lambda or Amazon ECS compute platform. For Lambda deployments, the available lifecycle hooks are BeforeAllowTraffic and AfterAllowTraffic. For Amazon ECS deployments, the available lifecycle hooks are BeforeInstall, AfterInstall, AfterAllowTestTraffic, BeforeAllowTraffic, and AfterAllowTraffic. Lambda validation functions return Succeeded or Failed. For more information, see AppSpec \'hooks\' Section for an Lambda Deployment  and AppSpec \'hooks\' Section for an Amazon ECS Deployment',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event',
@@ -2232,6 +2308,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2244,6 +2321,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'register-application-revision',
       description: 'Registers with CodeDeploy a revision for the specified application',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of an CodeDeploy application associated with the user or Amazon Web Services account',
@@ -2305,6 +2383,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2317,6 +2396,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'register-on-premises-instance',
       description: 'Registers an on-premises instance.  Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both',
       options: [
+
         Option(
           name: '--instance-name',
           description: 'The name of the on-premises instance to register',
@@ -2360,6 +2440,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2372,6 +2453,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'remove-tags-from-on-premises-instances',
       description: 'Removes one or more tags from one or more on-premises instances',
       options: [
+
         Option(
           name: '--tags',
           description: 'The tag key-value pairs to remove from the on-premises instances',
@@ -2406,6 +2488,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2418,6 +2501,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'skip-wait-time-for-instance-termination',
       description: 'In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is complete',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a blue/green deployment for which you want to skip the instance termination wait time',
@@ -2443,6 +2527,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2455,6 +2540,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'stop-deployment',
       description: 'Attempts to stop an ongoing deployment',
       options: [
+
         Option(
           name: '--deployment-id',
           description: 'The unique ID of a deployment',
@@ -2488,6 +2574,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2500,6 +2587,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates the list of tags in the input Tags parameter with the resource identified by the ResourceArn input parameter',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of a resource, such as a CodeDeploy application or deployment group',
@@ -2534,6 +2622,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2546,6 +2635,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'untag-resource',
       description: 'Disassociates a resource from a list of tags. The resource is identified by the ResourceArn input parameter. The tags are identified by the list of keys in the TagKeys input parameter',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the TagKeys input parameter',
@@ -2580,6 +2670,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2592,6 +2683,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'update-application',
       description: 'Changes the name of an application',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The current name of the application you want to change',
@@ -2626,6 +2718,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2638,6 +2731,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'update-deployment-group',
       description: 'Changes information about a deployment group',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The application name that corresponds to the deployment group to update',
@@ -2833,6 +2927,7 @@ final FigSpec deploySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2845,6 +2940,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'push',
       description: 'Bundles and uploads to Amazon Simple Storage Service (Amazon S3) an application revision, which is a zip archive file that contains deployable content and an accompanying Application Specification file (AppSpec file). If the upload is successful, a message is returned that describes how to call the create-deployment command to deploy the application revision from Amazon S3 to target Amazon Elastic Compute Cloud (Amazon EC2) instances',
       options: [
+
         Option(
           name: '--application-name',
           description: 'Required. The name of the AWS CodeDeploy application to be associated with the application revision',
@@ -2894,6 +2990,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'register',
       description: 'Creates an IAM user for the on-premises instance, if not provided, and saves the user\'s credentials to an on-premises instance configuration file; registers the on-premises instance with AWS CodeDeploy; and optionally adds tags to the on-premises instance',
       options: [
+
         Option(
           name: '--instance-name',
           description: 'Required. The name of the on-premises instance',
@@ -2928,6 +3025,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'deregister',
       description: 'Removes any tags from the on-premises instance; deregisters the on-premises instance from AWS CodeDeploy; and, unless requested otherwise, deletes the IAM user for the on-premises instance',
       options: [
+
         Option(
           name: '--instance-name',
           description: 'Required. The name of the on-premises instance',
@@ -2947,6 +3045,7 @@ final FigSpec deploySpec = FigSpec(
       name: 'install',
       description: 'Configures and installs the AWS CodeDeploy Agent on the on-premises instance',
       options: [
+
         Option(
           name: '--config-file',
           description: 'Required. The path to the on-premises instance configuration file',
@@ -2979,10 +3078,12 @@ final FigSpec deploySpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'deployment-successful',
           description: 'Wait until JMESPath query deploymentInfo.status returns Succeeded when polling with ``get-deployment``. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 120 failed checks',
           options: [
+
             Option(
               name: '--deployment-id',
               description: 'The unique ID of a deployment associated with the user or Amazon Web Services account',
@@ -3008,6 +3109,7 @@ final FigSpec deploySpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

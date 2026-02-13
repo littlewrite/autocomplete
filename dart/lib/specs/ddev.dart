@@ -9,14 +9,17 @@ final FigSpec ddevSpec = FigSpec(
   name: 'ddev',
   description: 'DDEV-Local local development environment',
   subcommands: [
+
     Subcommand(
       name: 'auth',
       description: 'A collection of authentication commands',
       subcommands: [
+
         Subcommand(
           name: 'ssh',
           description: 'Add ssh key authentication to the ddev-ssh-auth container',
           options: [
+
             Option(
               name: ['--ssh-key-path', '-d'],
               description: 'Full path to ssh key directory',
@@ -34,6 +37,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'clean',
       description: 'Removes items ddev has created',
       options: [
+
         Option(
           name: ['--all', '-a'],
           description: 'Clean all ddev projects'
@@ -48,10 +52,12 @@ final FigSpec ddevSpec = FigSpec(
       name: 'composer',
       description: 'Executes a composer command within the web container',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Executes \'composer create-project\' within the web container with the arguments and flags provided',
           options: [
+
             Option(
               name: ['--yes', '-y'],
               description: 'Yes - skip confirmation prompt'
@@ -68,10 +74,12 @@ final FigSpec ddevSpec = FigSpec(
       name: 'config',
       description: 'Create or modify a ddev project configuration in the current directory',
       subcommands: [
+
         Subcommand(
           name: 'global',
           description: 'Change global configuration',
           options: [
+
             Option(
               name: '--auto-restart-containers',
               description: 'If true, automatically restart containers after a reboot or docker restart'
@@ -188,6 +196,7 @@ final FigSpec ddevSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--additional-fqdns',
           description: 'A comma-delimited list of FQDNs for the project',
@@ -645,6 +654,7 @@ final FigSpec ddevSpec = FigSpec(
       name: ['d', 'dbg', 'debug'],
       description: 'A collection of debugging commands',
       subcommands: [
+
         Subcommand(
           name: 'capabilities',
           description: 'Show capabilities of this version of ddev'
@@ -707,10 +717,12 @@ final FigSpec ddevSpec = FigSpec(
       name: 'delete',
       description: 'Remove all project information (including database) for an existing project',
       subcommands: [
+
         Subcommand(
           name: 'images',
           description: 'Deletes drud/ddev-* docker images not in use by current ddev version',
           options: [
+
             Option(
               name: ['--all', '-a'],
               description: 'If set, deletes all Docker images created by ddev'
@@ -723,6 +735,7 @@ final FigSpec ddevSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['--all', '-a'],
           description: 'Delete all projects'
@@ -749,6 +762,7 @@ final FigSpec ddevSpec = FigSpec(
       name: ['.', 'exec'],
       description: 'Execute a shell command in the container for a service. Uses the web service by default',
       options: [
+
         Option(
           name: ['--dir', '-d'],
           description: 'Defines the execution directory within the container',
@@ -778,6 +792,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'export-db',
       description: 'Dump a database to a file or to stdout',
       options: [
+
         Option(
           name: '--bzip2',
           description: 'Use bzip2 compression'
@@ -815,6 +830,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'get',
       description: 'Get/Download a 3rd party add-on (service, provider, etc.)',
       options: [
+
         Option(
           name: '--all',
           description: 'List unofficial add-ons for \'ddev get\' in addition to the official ones'
@@ -829,6 +845,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'hostname',
       description: 'Manage your hostfile entries',
       options: [
+
         Option(
           name: '--fire-bazooka',
           description: 'Alias of --remove-inactive'
@@ -847,6 +864,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'import-db',
       description: 'Import a sql file into the project',
       options: [
+
         Option(
           name: '--extract-path',
           description: 'If provided asset is an archive, provide the path to extract within the archive',
@@ -889,6 +907,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'import-files',
       description: 'Pull the uploaded files directory of an existing project to the default public upload directory of your project',
       options: [
+
         Option(
           name: '--extract-path',
           description: 'If provided asset is an archive, optionally provide the path to extract within the archive',
@@ -913,6 +932,7 @@ final FigSpec ddevSpec = FigSpec(
       name: ['l', 'ls', 'list'],
       description: 'List projects',
       options: [
+
         Option(
           name: ['--active-only', '-A'],
           description: 'If set, only currently active projects will be displayed'
@@ -941,6 +961,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'logs',
       description: 'Get the logs from your running services',
       options: [
+
         Option(
           name: ['--follow', '-f'],
           description: 'Follow the logs in real time'
@@ -974,6 +995,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'mutagen',
       description: 'Commands for mutagen status and sync, etc',
       subcommands: [
+
         Subcommand(
           name: 'monitor',
           description: 'Monitor mutagen status'
@@ -986,6 +1008,7 @@ final FigSpec ddevSpec = FigSpec(
           name: ['st', 'status'],
           description: 'Shows mutagen sync status',
           options: [
+
             Option(
               name: ['--verbose', '-l'],
               description: 'Extended/verbose output for mutagen status'
@@ -996,6 +1019,7 @@ final FigSpec ddevSpec = FigSpec(
           name: 'sync',
           description: 'Explicit sync for mutagen',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Extended/verbose output for mutagen status'
@@ -1008,6 +1032,7 @@ final FigSpec ddevSpec = FigSpec(
       name: ['sc', 'stop-containers', 'pause'],
       description: 'Uses \'docker stop\' to pause/stop the containers belonging to a project',
       options: [
+
         Option(
           name: ['--all', '-a'],
           description: 'Pause all running projects'
@@ -1030,6 +1055,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'restart',
       description: 'Restart a project or several projects',
       options: [
+
         Option(
           name: ['--all', '-a'],
           description: 'Restart all projects'
@@ -1040,6 +1066,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'service',
       description: 'Add or remove, enable or disable extra services',
       subcommands: [
+
         Subcommand(
           name: 'disable',
           description: 'Disable a 3rd party service'
@@ -1054,6 +1081,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'share',
       description: 'Share project on the internet via ngrok',
       options: [
+
         Option(
           name: '--subdomain',
           description: 'Ngrok --subdomain argument, as in "ngrok --subdomain my-subdomain:, requires paid ngrok.com account"',
@@ -1069,6 +1097,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'snapshot',
       description: 'Create a database snapshot for one or more projects',
       options: [
+
         Option(
           name: ['--all', '-a'],
           description: 'Snapshot all projects. Will start the project if it is stopped or paused'
@@ -1100,6 +1129,7 @@ final FigSpec ddevSpec = FigSpec(
       name: 'ssh',
       description: 'Starts a shell session in the container for a service. Uses web service by default',
       options: [
+
         Option(
           name: ['--dir', '-d'],
           description: 'Defines the destination directory within the container',
@@ -1125,6 +1155,7 @@ final FigSpec ddevSpec = FigSpec(
       name: ['add', 'start'],
       description: 'Start a ddev project',
       options: [
+
         Option(
           name: ['--all', '-a'],
           description: 'Start all projects'
@@ -1143,6 +1174,7 @@ final FigSpec ddevSpec = FigSpec(
       name: ['remove', 'rm', 'stop'],
       description: 'Stop and remove the containers of a project. Does not lose or harm anything unless you add --remove-data',
       options: [
+
         Option(
           name: ['--all', '-a'],
           description: 'Stop and remove all running or container-stopped projects and remove from global projects list'
@@ -1181,10 +1213,12 @@ final FigSpec ddevSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'auth',
           description: 'A collection of authentication commands',
           subcommands: [
+
             Subcommand(
               name: 'ssh',
               description: 'Add ssh key authentication to the ddev-ssh-auth container'
@@ -1199,6 +1233,7 @@ final FigSpec ddevSpec = FigSpec(
           name: 'composer',
           description: 'Executes a composer command within the web container',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Executes \'composer create-project\' within the web container with the arguments and flags provided'
@@ -1213,6 +1248,7 @@ final FigSpec ddevSpec = FigSpec(
           name: 'config',
           description: 'Create or modify a ddev project configuration in the current directory',
           subcommands: [
+
             Subcommand(
               name: 'global',
               description: 'Change global configuration'
@@ -1223,6 +1259,7 @@ final FigSpec ddevSpec = FigSpec(
           name: ['d', 'dbg', 'debug'],
           description: 'A collection of debugging commands',
           subcommands: [
+
             Subcommand(
               name: 'capabilities',
               description: 'Show capabilities of this version of ddev'
@@ -1285,6 +1322,7 @@ final FigSpec ddevSpec = FigSpec(
           name: 'delete',
           description: 'Remove all project information (including database) for an existing project',
           subcommands: [
+
             Subcommand(
               name: 'images',
               description: 'Deletes drud/ddev-* docker images not in use by current ddev version'
@@ -1331,6 +1369,7 @@ final FigSpec ddevSpec = FigSpec(
           name: 'mutagen',
           description: 'Commands for mutagen status and sync, etc',
           subcommands: [
+
             Subcommand(
               name: 'monitor',
               description: 'Monitor mutagen status'
@@ -1373,6 +1412,7 @@ final FigSpec ddevSpec = FigSpec(
           name: 'service',
           description: 'Add or remove, enable or disable extra services',
           subcommands: [
+
             Subcommand(
               name: 'disable',
               description: 'Disable a 3rd party service'
@@ -1411,6 +1451,7 @@ final FigSpec ddevSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--json-output', '-j'],
       description: 'If true, user-oriented output will be in JSON format',

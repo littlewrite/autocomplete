@@ -15,6 +15,7 @@ final FigSpec tailSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-f',
       description: 'Wait for additional data to be appended'

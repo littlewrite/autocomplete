@@ -9,10 +9,12 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
   name: '@withfig/autocomplete-tools',
   description: 'Dev tools for fig\'s autocomplete',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Initialize fig custom spec boilerplate in current directory',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -24,6 +26,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
       name: 'create-spec',
       description: 'Create spec with given name',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -40,6 +43,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
       name: 'compile',
       description: 'Compile specs in the current directory',
       options: [
+
         Option(
           name: ['-w', '--watch'],
           description: 'Watch files and re-compile on change'
@@ -55,6 +59,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
       name: 'dev',
       description: 'Watch for changes and compile specs',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -66,6 +71,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
       name: 'merge',
       description: 'Deep merge new spec into old spec',
       options: [
+
         Option(
           name: ['-n', '--new-file'],
           description: 'Create a new spec file instead of updating the old one',
@@ -123,6 +129,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
             Arg(
             name: 'name',
             suggestions: [
+
               FigSuggestion(name: 'commander'),
               FigSuggestion(name: 'oclif'),
               FigSuggestion(name: 'cobra'),
@@ -149,6 +156,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'oldspec',
           template: 'filepaths'
@@ -162,10 +170,12 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
     Subcommand(
       name: 'version',
       subcommands: [
+
         Subcommand(
           name: 'add-diff',
           description: 'Generate version diff from new spec and add into old spec',
           options: [
+
             Option(
               name: ['-n', '--new-path'],
               description: 'The root folder where the updated spec will be saved. Note: this must NOT include the folder spec name',
@@ -196,6 +206,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'specName'
             ),
@@ -211,6 +222,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
           name: 'init-spec',
           description: 'Generate versioned spec in folder specified by path',
           options: [
+
             Option(
               name: '--cwd',
               description: 'Generate the spec relative to this directory',
@@ -237,6 +249,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
           name: 'precompute-specs',
           description: '[Unimplemented] Precompute versioned specs before publishing the specs repo (unimplemented)',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -263,6 +276,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -284,6 +298,7 @@ final FigSpec withfigAutocompleteToolsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-V', '--version'],
       description: 'Output the version number'

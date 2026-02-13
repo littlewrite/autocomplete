@@ -12,6 +12,7 @@ final FigSpec fileSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   options: [
+
     Option(
       name: '--help'
     ),
@@ -42,6 +43,7 @@ final FigSpec fileSpec = FigSpec(
         Arg(
         name: 'testname',
         suggestions: [
+
           FigSuggestion(name: 'apptype'),
           FigSuggestion(name: 'ascii'),
           FigSuggestion(name: 'encoding'),
@@ -69,6 +71,7 @@ final FigSpec fileSpec = FigSpec(
         Arg(
         name: 'separator',
         suggestions: [
+
           FigSuggestion(name: '.')
         ],
         defaultValue: '.'

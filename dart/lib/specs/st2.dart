@@ -10,6 +10,7 @@ final FigSpec st2Spec = FigSpec(
   description: 'CLI for StackStorm event-driven automation platform',
   subcommands: [],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show this help message and exit',

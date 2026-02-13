@@ -9,6 +9,7 @@ final FigSpec htopSpec = FigSpec(
   name: 'htop',
   description: 'Improved top (interactive process viewer)',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for htop'
@@ -24,6 +25,7 @@ final FigSpec htopSpec = FigSpec(
         Arg(
         name: 'delay',
         suggestions: [
+
           FigSuggestion(name: '10'),
           FigSuggestion(name: '1'),
           FigSuggestion(name: '60')
@@ -48,6 +50,7 @@ final FigSpec htopSpec = FigSpec(
         name: 'delay',
         description: 'Delay between updates of highlights, in tenths of sec',
         suggestions: [
+
           FigSuggestion(name: '10'),
           FigSuggestion(name: '1'),
           FigSuggestion(name: '60')
@@ -91,6 +94,7 @@ final FigSpec htopSpec = FigSpec(
         name: 'user',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: '\$USER')
         ]
       )

@@ -9,10 +9,12 @@ final FigSpec b2biSpec = FigSpec(
   name: 'b2bi',
   description: 'This is the Amazon Web Services B2B Data Interchange API Reference. It provides descriptions, API request parameters, and the XML response for each of the B2BI API actions. B2BI enables automated exchange of EDI (electronic data interchange) based business-critical transactions at cloud scale, with elasticity and pay-as-you-go pricing. Businesses use EDI documents to exchange transactional data with trading partners, such as suppliers and end customers, using standardized formats such as X12.  Rather than actually running a command, you can use the --generate-cli-skeleton parameter with any API call to generate and display a parameter template. You can then use the generated template to customize and use as input on a later command. For details, see Generate and use a parameter skeleton file',
   subcommands: [
+
     Subcommand(
       name: 'create-capability',
       description: 'Instantiates a capability based on the specified parameters. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs',
       options: [
+
         Option(
           name: '--name',
           description: 'Specifies the name of the capability, used to identify it',
@@ -83,6 +85,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'create-partnership',
       description: 'Creates a partnership between a customer and a trading partner, based on the supplied parameters. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'Specifies the unique, system-generated identifier for the profile connected to this partnership',
@@ -183,6 +187,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -195,6 +200,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'create-profile',
       description: 'Creates a customer profile. You can have up to five customer profiles, each representing a distinct private network. A profile is the mechanism used to create the concept of a private network',
       options: [
+
         Option(
           name: '--name',
           description: 'Specifies the name of the profile',
@@ -274,6 +280,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -286,6 +293,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'create-starter-mapping-template',
       description: 'Amazon Web Services B2B Data Interchange uses a mapping template in JSONata or XSLT format to transform a customer input file into a JSON or XML file that can be converted to EDI. If you provide a sample EDI file with the same structure as the EDI files that you wish to generate, then the service can generate a mapping template. The starter template contains placeholder values which you can replace with JSONata or XSLT expressions to take data from your input file and insert it into the JSON or XML file that is used to generate the EDI. If you do not provide a sample EDI file, then the service can generate a mapping template based on the EDI settings in the templateDetails parameter.   Currently, we only support generating a template that can generate the input to produce an Outbound X12 EDI file',
       options: [
+
         Option(
           name: '--output-sample-location',
           description: 'Specify the location of the sample EDI file that is used to generate the mapping template',
@@ -329,6 +337,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -341,6 +350,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'create-transformer',
       description: 'Creates a transformer. Amazon Web Services B2B Data Interchange currently supports two scenarios:    Inbound EDI: the Amazon Web Services customer receives an EDI file from their trading partner. Amazon Web Services B2B Data Interchange converts this EDI file into a JSON or XML file with a service-defined structure. A mapping template provided by the customer, in JSONata or XSLT format, is optionally applied to this file to produce a JSON or XML file with the structure the customer requires.    Outbound EDI: the Amazon Web Services customer has a JSON or XML file containing data that they wish to use in an EDI file. A mapping template, provided by the customer (in either JSONata or XSLT format) is applied to this file to generate a JSON or XML file in the service-defined structure. This file is then converted to an EDI file.    The following fields are provided for backwards compatibility only: fileFormat, mappingTemplate, ediType, and sampleDocument.   Use the mapping data type in place of mappingTemplate and fileFormat    Use the sampleDocuments data type in place of sampleDocument    Use either the inputConversion or outputConversion in place of ediType',
       options: [
+
         Option(
           name: '--name',
           description: 'Specifies the name of the transformer, used to identify it',
@@ -456,6 +466,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -468,6 +479,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'delete-capability',
       description: 'Deletes the specified capability. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs',
       options: [
+
         Option(
           name: '--capability-id',
           description: 'Specifies a system-assigned unique identifier for the capability',
@@ -493,6 +505,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -505,6 +518,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'delete-partnership',
       description: 'Deletes the specified partnership. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities',
       options: [
+
         Option(
           name: '--partnership-id',
           description: 'Specifies the unique, system-generated identifier for a partnership',
@@ -530,6 +544,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -542,6 +557,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'delete-profile',
       description: 'Deletes the specified profile. A profile is the mechanism used to create the concept of a private network',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'Specifies the unique, system-generated identifier for the profile',
@@ -567,6 +583,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -579,6 +596,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'delete-transformer',
       description: 'Deletes the specified transformer. A transformer can take an EDI file as input and transform it into a JSON-or XML-formatted document. Alternatively, a transformer can take a JSON-or XML-formatted document as input and transform it into an EDI file',
       options: [
+
         Option(
           name: '--transformer-id',
           description: 'Specifies the system-assigned unique identifier for the transformer',
@@ -604,6 +622,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -616,6 +635,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'generate-mapping',
       description: 'Takes sample input and output documents and uses Amazon Bedrock to generate a mapping automatically. Depending on the accuracy and other factors, you can then edit the mapping for your needs.  Before you can use the AI-assisted feature for Amazon Web Services B2B Data Interchange you must enable models in Amazon Bedrock. For details, see AI-assisted template mapping prerequisites in the Amazon Web Services B2B Data Interchange User guide',
       options: [
+
         Option(
           name: '--input-file-content',
           description: 'Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML file (for outbound EDI) to use as a starting point for the mapping',
@@ -659,6 +679,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -671,6 +692,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'get-capability',
       description: 'Retrieves the details for the specified capability. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs',
       options: [
+
         Option(
           name: '--capability-id',
           description: 'Specifies a system-assigned unique identifier for the capability',
@@ -696,6 +718,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -708,6 +731,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'get-partnership',
       description: 'Retrieves the details for a partnership, based on the partner and profile IDs specified. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities',
       options: [
+
         Option(
           name: '--partnership-id',
           description: 'Specifies the unique, system-generated identifier for a partnership',
@@ -733,6 +757,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -745,6 +770,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'get-profile',
       description: 'Retrieves the details for the profile specified by the profile ID. A profile is the mechanism used to create the concept of a private network',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'Specifies the unique, system-generated identifier for the profile',
@@ -770,6 +796,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -782,6 +809,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'get-transformer',
       description: 'Retrieves the details for the transformer specified by the transformer ID. A transformer can take an EDI file as input and transform it into a JSON-or XML-formatted document. Alternatively, a transformer can take a JSON-or XML-formatted document as input and transform it into an EDI file',
       options: [
+
         Option(
           name: '--transformer-id',
           description: 'Specifies the system-assigned unique identifier for the transformer',
@@ -807,6 +835,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -819,6 +848,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'get-transformer-job',
       description: 'Returns the details of the transformer run, based on the Transformer job ID',
       options: [
+
         Option(
           name: '--transformer-job-id',
           description: 'Specifies the unique, system-generated identifier for a transformer run',
@@ -853,6 +883,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -865,6 +896,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'list-capabilities',
       description: 'Lists the capabilities associated with your Amazon Web Services account for your current or specified region. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs',
       options: [
+
         Option(
           name: '--next-token',
           description: 'When additional results are obtained from the command, a NextToken parameter is returned in the output. You can then pass the NextToken parameter in a subsequent command to continue listing additional resources',
@@ -926,6 +958,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -938,6 +971,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'list-partnerships',
       description: 'Lists the partnerships associated with your Amazon Web Services account for your current or specified region. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'Specifies the unique, system-generated identifier for the profile connected to this partnership',
@@ -1008,6 +1042,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1020,6 +1055,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'list-profiles',
       description: 'Lists the profiles associated with your Amazon Web Services account for your current or specified region. A profile is the mechanism used to create the concept of a private network',
       options: [
+
         Option(
           name: '--next-token',
           description: 'When additional results are obtained from the command, a NextToken parameter is returned in the output. You can then pass the NextToken parameter in a subsequent command to continue listing additional resources',
@@ -1081,6 +1117,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1093,6 +1130,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify. The resource can be a capability, partnership, profile, or transformer',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer',
@@ -1118,6 +1156,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1130,6 +1169,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'list-transformers',
       description: 'Lists the available transformers. A transformer can take an EDI file as input and transform it into a JSON-or XML-formatted document. Alternatively, a transformer can take a JSON-or XML-formatted document as input and transform it into an EDI file',
       options: [
+
         Option(
           name: '--next-token',
           description: 'When additional results are obtained from the command, a NextToken parameter is returned in the output. You can then pass the NextToken parameter in a subsequent command to continue listing additional resources',
@@ -1191,6 +1231,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1203,6 +1244,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'start-transformer-job',
       description: 'Runs a job, using a transformer, to parse input EDI (electronic data interchange) file into the output structures used by Amazon Web Services B2B Data Interchange. If you only want to transform EDI (electronic data interchange) documents, you don\'t need to create profiles, partnerships or capabilities. Just create and configure a transformer, and then run the StartTransformerJob API to process your files',
       options: [
+
         Option(
           name: '--input-file',
           description: 'Specifies the location of the input file for the transformation. The location consists of an Amazon S3 bucket and prefix',
@@ -1255,6 +1297,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1267,6 +1310,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'tag-resource',
       description: 'Attaches a key-value pair to a resource, as identified by its Amazon Resource Name (ARN). Resources are capability, partnership, profile, transformers and other entities. There is no response returned from this call',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Specifies an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer',
@@ -1301,6 +1345,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1313,6 +1358,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'test-conversion',
       description: 'This operation mimics the latter half of a typical Outbound EDI request. It takes an input JSON/XML in the B2Bi shape as input, converts it to an X12 EDI string, and return that string',
       options: [
+
         Option(
           name: '--source',
           description: 'Specify the source file for an outbound EDI request',
@@ -1347,6 +1393,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1359,6 +1406,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'test-mapping',
       description: 'Maps the input file according to the provided template file. The API call downloads the file contents from the Amazon S3 location, and passes the contents in as a string, to the inputFileContent parameter',
       options: [
+
         Option(
           name: '--input-file-content',
           description: 'Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform',
@@ -1402,6 +1450,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1414,6 +1463,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'test-parsing',
       description: 'Parses the input EDI (electronic data interchange) file. The input file has a file size limit of 250 KB',
       options: [
+
         Option(
           name: '--input-file',
           description: 'Specifies an S3Location object, which contains the Amazon S3 bucket and prefix for the location of the input file',
@@ -1457,6 +1507,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1469,6 +1520,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'untag-resource',
       description: 'Detaches a key-value pair from the specified resource, as identified by its Amazon Resource Name (ARN). Resources are capability, partnership, profile, transformers and other entities',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Specifies an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer',
@@ -1503,6 +1555,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1515,6 +1568,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'update-capability',
       description: 'Updates some of the parameters for a capability, based on the specified parameters. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs',
       options: [
+
         Option(
           name: '--capability-id',
           description: 'Specifies a system-assigned unique identifier for the capability',
@@ -1567,6 +1621,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1579,6 +1634,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'update-partnership',
       description: 'Updates some of the parameters for a partnership between a customer and trading partner. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities',
       options: [
+
         Option(
           name: '--partnership-id',
           description: 'Specifies the unique, system-generated identifier for a partnership',
@@ -1631,6 +1687,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1643,6 +1700,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'update-profile',
       description: 'Updates the specified parameters for a profile. A profile is the mechanism used to create the concept of a private network',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'Specifies the unique, system-generated identifier for the profile',
@@ -1704,6 +1762,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1716,6 +1775,7 @@ final FigSpec b2biSpec = FigSpec(
       name: 'update-transformer',
       description: 'Updates the specified parameters for a transformer. A transformer can take an EDI file as input and transform it into a JSON-or XML-formatted document. Alternatively, a transformer can take a JSON-or XML-formatted document as input and transform it into an EDI file',
       options: [
+
         Option(
           name: '--transformer-id',
           description: 'Specifies the system-assigned unique identifier for the transformer',
@@ -1831,6 +1891,7 @@ final FigSpec b2biSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

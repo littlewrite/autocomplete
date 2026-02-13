@@ -9,6 +9,7 @@ final FigSpec mypySpec = FigSpec(
   name: 'mypy',
   description: 'Mypy is a static type checker for Python',
   options: [
+
     Option(
       name: '--module',
       description: 'Asks mypy to type check the provided module'

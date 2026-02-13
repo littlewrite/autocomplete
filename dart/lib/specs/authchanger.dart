@@ -12,6 +12,7 @@ final FigSpec authchangerSpec = FigSpec(
   ),
   description: 'Authchanger is a utility included with Jamf Connect to help you manage the authorization database used by macOS to determine how the login process progresses',
   options: [
+
     Option(
       name: ['-help', '-h'],
       description: 'Show help for authchanger'

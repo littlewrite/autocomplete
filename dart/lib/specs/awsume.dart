@@ -12,6 +12,7 @@ final FigSpec awsumeSpec = FigSpec(
     flagsArePosixNoncompliant: true
   ),
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for awsume'

@@ -9,6 +9,7 @@ final FigSpec pwdSpec = FigSpec(
   name: 'pwd',
   description: 'Return working directory name',
   options: [
+
     Option(
       name: '-L',
       description: 'Display the logical current working directory'

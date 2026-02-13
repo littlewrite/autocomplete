@@ -9,14 +9,17 @@ final FigSpec dataCatalogSpec = FigSpec(
   name: 'data-catalog',
   description: 'Manage Cloud Data Catalog resources',
   subcommands: [
+
     Subcommand(
       name: 'entries',
       description: 'Manage entries in Cloud Data Catalog',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Cloud Data Catalog entry',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -246,6 +249,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'data-stream'),
                   FigSuggestion(name: 'entry-type-unspecified'),
                   FigSuggestion(name: 'fileset'),
@@ -292,6 +296,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -314,6 +319,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Data Catalog entry',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -459,6 +465,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -481,6 +488,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Data Catalog entry',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -626,6 +634,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -648,6 +657,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'list',
           description: 'List all entries in a Cloud Data Catalog entry group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -842,6 +852,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -858,6 +869,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'lookup',
           description: 'Lookup a Cloud Data Catalog entry by its target name',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -981,6 +993,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1003,6 +1016,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Data Catalog entry',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1262,6 +1276,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1282,6 +1297,7 @@ final FigSpec dataCatalogSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1405,6 +1421,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1421,10 +1438,12 @@ final FigSpec dataCatalogSpec = FigSpec(
       name: 'entry-groups',
       description: 'Manage entry groups in Cloud Data Catalog',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add an IAM policy binding to a Cloud Data Catalog entry group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1583,6 +1602,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1605,6 +1625,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'create',
           description: 'Create a Cloud Data Catalog entry group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1761,6 +1782,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1783,6 +1805,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Data Catalog entry group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1917,6 +1940,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1939,6 +1963,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Data Catalog entry group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2073,6 +2098,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2095,6 +2121,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a Cloud Data Catalog entry group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2273,6 +2300,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2295,6 +2323,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'list',
           description: 'List all entry groups in a Cloud Data Catalog location',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2478,6 +2507,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2494,6 +2524,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove an IAM policy binding from a Cloud Data Catalog entry group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2652,6 +2683,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2674,6 +2706,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Cloud Data Catalog entry group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2808,6 +2841,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2820,6 +2854,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'ENTRY_GROUP',
               description: 'ID of the entry group or fully qualified identifier for the entry group'
@@ -2834,6 +2869,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Data Catalog entry group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2990,6 +3026,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3010,6 +3047,7 @@ final FigSpec dataCatalogSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3133,6 +3171,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3149,6 +3188,7 @@ final FigSpec dataCatalogSpec = FigSpec(
       name: 'search',
       description: 'Search Cloud Data Catalog for resources that match a query',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3342,6 +3382,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3364,10 +3405,12 @@ final FigSpec dataCatalogSpec = FigSpec(
       name: 'tag-templates',
       description: 'Manage tag templates in Cloud Data Catalog',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding to a Cloud Data Catalog tag template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3526,6 +3569,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3548,6 +3592,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'create',
           description: 'Create a Cloud Data Catalog tag template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3705,6 +3750,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3727,6 +3773,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Data Catalog tag template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3865,6 +3912,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3887,6 +3935,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Data Catalog tag template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4021,6 +4070,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4043,10 +4093,12 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'fields',
           description: 'Manage tag template fields in Cloud Data Catalog',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Cloud Data Catalog tag template field',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4215,6 +4267,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4237,6 +4290,7 @@ final FigSpec dataCatalogSpec = FigSpec(
               name: 'delete',
               description: 'Delete a Cloud Data Catalog tag template field',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4386,6 +4440,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4408,10 +4463,12 @@ final FigSpec dataCatalogSpec = FigSpec(
               name: 'enum-values',
               description: 'Manage tag template enum values in Cloud Data Catalog',
               subcommands: [
+
                 Subcommand(
                   name: 'rename',
                   description: 'Rename an enum value in Data Catalog tag template enum field',
                   options: [
+
                     Option(
                       name: '--account',
                       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4580,6 +4637,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                         name: 'VERBOSITY',
                         description: 'String',
                         suggestions: [
+
                           FigSuggestion(name: 'debug'),
                           FigSuggestion(name: 'info'),
                           FigSuggestion(name: 'warning'),
@@ -4600,6 +4658,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4723,6 +4782,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4739,6 +4799,7 @@ final FigSpec dataCatalogSpec = FigSpec(
               name: 'rename',
               description: 'Rename a Cloud Data Catalog tag template field',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4896,6 +4957,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4918,6 +4980,7 @@ final FigSpec dataCatalogSpec = FigSpec(
               name: 'update',
               description: 'Update a Cloud Data Catalog tag template field',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5089,6 +5152,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5109,6 +5173,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5232,6 +5297,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5248,6 +5314,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a Cloud Data Catalog tag template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5426,6 +5493,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5448,6 +5516,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding from a Cloud Data Catalog tag template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5606,6 +5675,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5628,6 +5698,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Cloud Data Catalog tag template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5762,6 +5833,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5774,6 +5846,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'TAG_TEMPLATE',
               description: 'ID of the tag template or fully qualified identifier for the tag template'
@@ -5788,6 +5861,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Data Catalog tag template',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5933,6 +6007,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5953,6 +6028,7 @@ final FigSpec dataCatalogSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6076,6 +6152,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -6092,10 +6169,12 @@ final FigSpec dataCatalogSpec = FigSpec(
       name: 'tags',
       description: 'Manage tags in Cloud Data Catalog',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Cloud Data Catalog entry tag',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6310,6 +6389,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6326,6 +6406,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Data Catalog entry tag',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6482,6 +6563,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6504,6 +6586,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Data Catalog entry tags',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6709,6 +6792,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6725,6 +6809,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Data Catalog entry tag',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6927,6 +7012,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6947,6 +7033,7 @@ final FigSpec dataCatalogSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7070,6 +7157,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7086,10 +7174,12 @@ final FigSpec dataCatalogSpec = FigSpec(
       name: 'taxonomies',
       description: 'Manage taxonomies in Cloud Data Catalog',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add an IAM policy binding to a Policy Tag Taxonomy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7248,6 +7338,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7270,6 +7361,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Policy Tag Taxonomy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7404,6 +7496,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7426,6 +7519,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'export',
           description: 'Export a list of taxonomies from a certain project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7561,6 +7655,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7583,6 +7678,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a Policy Tag Taxonomy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7761,6 +7857,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7783,6 +7880,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'import',
           description: 'Export a file with serialized taxonomies to a certain project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7918,6 +8016,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7940,6 +8039,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Policy Tag Taxonomies',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8123,6 +8223,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8139,10 +8240,12 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'policy-tags',
           description: 'Manage policy tags in Cloud Data Catalog',
           subcommands: [
+
             Subcommand(
               name: 'add-iam-policy-binding',
               description: 'Add an IAM policy binding to a Cloud Data Catalog policy tag',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8312,6 +8415,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8334,6 +8438,7 @@ final FigSpec dataCatalogSpec = FigSpec(
               name: 'describe',
               description: 'Describe a Policy Tag Manager Policy tag',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8479,6 +8584,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8501,6 +8607,7 @@ final FigSpec dataCatalogSpec = FigSpec(
               name: 'get-iam-policy',
               description: 'Get the IAM policy for a Cloud Data Catalog Policy Tag',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8690,6 +8797,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8712,6 +8820,7 @@ final FigSpec dataCatalogSpec = FigSpec(
               name: 'list',
               description: 'List Cloud Policy Tag Manager policy tags',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8906,6 +9015,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8922,6 +9032,7 @@ final FigSpec dataCatalogSpec = FigSpec(
               name: 'remove-iam-policy-binding',
               description: 'Remove an IAM policy binding from a Cloud Data Catalog policy tag',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9091,6 +9202,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -9113,6 +9225,7 @@ final FigSpec dataCatalogSpec = FigSpec(
               name: 'set-iam-policy',
               description: 'Set the IAM policy for a Cloud Data Catalog Policy Tag',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9258,6 +9371,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -9270,6 +9384,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 )
               ],
               args: [
+
                 Arg(
                   name: 'POLICY_TAG',
                   description: 'ID of the policy tag or fully qualified identifier for the policy tag'
@@ -9282,6 +9397,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9405,6 +9521,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9421,6 +9538,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove an IAM policy binding from a policy tag taxonomy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9579,6 +9697,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9601,6 +9720,7 @@ final FigSpec dataCatalogSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Policy Tag taxonomy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9735,6 +9855,7 @@ final FigSpec dataCatalogSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9747,6 +9868,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'TAXONOMY',
               description: 'ID of the taxonomy or fully qualified identifier for the taxonomy'
@@ -9759,6 +9881,7 @@ final FigSpec dataCatalogSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9882,6 +10005,7 @@ final FigSpec dataCatalogSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -9896,6 +10020,7 @@ final FigSpec dataCatalogSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10019,6 +10144,7 @@ final FigSpec dataCatalogSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

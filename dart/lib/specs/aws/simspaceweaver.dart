@@ -9,10 +9,12 @@ final FigSpec simspaceweaverSpec = FigSpec(
   name: 'simspaceweaver',
   description: 'SimSpace Weaver (SimSpace Weaver) is a service that you can use to build and run large-scale spatial simulations in the Amazon Web Services Cloud. For example, you can create crowd simulations, large real-world environments, and immersive and interactive experiences. For more information about SimSpace Weaver, see the  SimSpace Weaver User Guide . This API reference describes the API operations and data types that you can use to communicate directly with SimSpace Weaver. SimSpace Weaver also provides the SimSpace Weaver app SDK, which you use for app development. The SimSpace Weaver app SDK API reference is included in the SimSpace Weaver app SDK documentation. This documentation is part of the SimSpace Weaver app SDK distributable package',
   subcommands: [
+
     Subcommand(
       name: 'create-snapshot',
       description: 'Creates a snapshot of the specified simulation. A snapshot is a file that contains simulation state data at a specific time. The state data saved in a snapshot includes entity data from the State Fabric, the simulation configuration specified in the schema, and the clock tick number. You can use the snapshot to initialize a new simulation. For more information about snapshots, see Snapshots in the SimSpace Weaver User Guide.  You specify a Destination when you create a snapshot. The Destination is the name of an Amazon S3 bucket and an optional ObjectKeyPrefix. The ObjectKeyPrefix is usually the name of a folder in the bucket. SimSpace Weaver creates a snapshot folder inside the Destination and places the snapshot file there. The snapshot file is an Amazon S3 object. It has an object key with the form:  object-key-prefix/snapshot/simulation-name-YYMMdd-HHmm-ss.zip, where:      YY  is the 2-digit year     MM  is the 2-digit month     dd  is the 2-digit day of the month     HH  is the 2-digit hour (24-hour clock)     mm  is the 2-digit minutes     ss  is the 2-digit seconds',
       options: [
+
         Option(
           name: '--destination',
           description: 'The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file. The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation',
@@ -47,6 +49,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'delete-app',
       description: 'Deletes the instance of the given custom app',
       options: [
+
         Option(
           name: '--app',
           description: 'The name of the app',
@@ -102,6 +106,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'delete-simulation',
       description: 'Deletes all SimSpace Weaver resources assigned to the given simulation.  Your simulation uses resources in other Amazon Web Services. This API operation doesn\'t delete resources in other Amazon Web Services',
       options: [
+
         Option(
           name: '--simulation',
           description: 'The name of the simulation',
@@ -139,6 +145,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -151,6 +158,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'describe-app',
       description: 'Returns the state of the given custom app',
       options: [
+
         Option(
           name: '--app',
           description: 'The name of the app',
@@ -194,6 +202,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -206,6 +215,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'describe-simulation',
       description: 'Returns the current state of the given simulation',
       options: [
+
         Option(
           name: '--simulation',
           description: 'The name of the simulation',
@@ -231,6 +241,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -243,6 +254,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'list-apps',
       description: 'Lists all custom apps or service apps for the given simulation and domain',
       options: [
+
         Option(
           name: '--domain',
           description: 'The name of the domain that you want to list apps for',
@@ -295,6 +307,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'list-simulations',
       description: 'Lists the SimSpace Weaver simulations in the Amazon Web Services account used to make the API call',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of simulations to list',
@@ -341,6 +355,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -353,6 +368,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags on a SimSpace Weaver resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. For more information about ARNs, see Amazon Resource Names (ARNs) in the Amazon Web Services General Reference',
@@ -378,6 +394,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -390,6 +407,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'start-app',
       description: 'Starts a custom app with the configuration specified in the simulation schema',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A ClientToken is also known as an idempotency token. A ClientToken expires after 24 hours',
@@ -460,6 +478,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -472,6 +491,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'start-clock',
       description: 'Starts the simulation clock',
       options: [
+
         Option(
           name: '--simulation',
           description: 'The name of the simulation',
@@ -497,6 +517,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -509,6 +530,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'start-simulation',
       description: 'Starts a simulation with the given name. You must choose to start your simulation from a schema or from a snapshot. For more information about the schema, see the schema reference in the SimSpace Weaver User Guide. For more information about snapshots, see Snapshots in the SimSpace Weaver User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A ClientToken is also known as an idempotency token. A ClientToken expires after 24 hours',
@@ -597,6 +619,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -609,6 +632,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'stop-app',
       description: 'Stops the given custom app and shuts down all of its allocated compute resources',
       options: [
+
         Option(
           name: '--app',
           description: 'The name of the app',
@@ -652,6 +676,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -664,6 +689,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'stop-clock',
       description: 'Stops the simulation clock',
       options: [
+
         Option(
           name: '--simulation',
           description: 'The name of the simulation',
@@ -689,6 +715,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -701,6 +728,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'stop-simulation',
       description: 'Stops the given simulation.  You can\'t restart a simulation after you stop it. If you want to restart a simulation, then you must stop it, delete it, and start a new instance of it',
       options: [
+
         Option(
           name: '--simulation',
           description: 'The name of the simulation',
@@ -726,6 +754,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -738,6 +767,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to a SimSpace Weaver resource. For more information about tags, see Tagging Amazon Web Services resources in the Amazon Web Services General Reference',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to add tags to. For more information about ARNs, see Amazon Resource Names (ARNs) in the Amazon Web Services General Reference',
@@ -772,6 +802,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -784,6 +815,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a SimSpace Weaver resource. For more information about tags, see Tagging Amazon Web Services resources in the Amazon Web Services General Reference',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to remove tags from. For more information about ARNs, see Amazon Resource Names (ARNs) in the Amazon Web Services General Reference',
@@ -818,6 +850,7 @@ final FigSpec simspaceweaverSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

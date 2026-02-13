@@ -14,6 +14,7 @@ final FigSpec dfSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-a',
       description: 'Show all mount points'

@@ -9,10 +9,12 @@ final FigSpec codeguruReviewerSpec = FigSpec(
   name: 'codeguru-reviewer',
   description: 'This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java and Python code. By proactively detecting and providing recommendations for addressing code defects and implementing best practices, CodeGuru Reviewer improves the overall quality and maintainability of your code base during the code review stage. For more information about CodeGuru Reviewer, see the  Amazon CodeGuru Reviewer User Guide.  To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC and CodeGuru Reviewer by creating an interface VPC endpoint. For more information, see CodeGuru Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink) in the Amazon CodeGuru Reviewer User Guide',
   subcommands: [
+
     Subcommand(
       name: 'associate-repository',
       description: 'Use to associate an Amazon Web Services CodeCommit repository or a repository managed by Amazon Web Services CodeStar Connections with Amazon CodeGuru Reviewer. When you associate a repository, CodeGuru Reviewer reviews source code changes in the repository\'s pull requests and provides automatic recommendations. You can view recommendations using the CodeGuru Reviewer console. For more information, see Recommendations in Amazon CodeGuru Reviewer in the Amazon CodeGuru Reviewer User Guide.  If you associate a CodeCommit or S3 repository, it must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured. Bitbucket and GitHub Enterprise Server repositories are managed by Amazon Web Services CodeStar Connections to connect to CodeGuru Reviewer. For more information, see Associate a repository in the Amazon CodeGuru Reviewer User Guide.   You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI to associate a GitHub repository with Amazon CodeGuru Reviewer. To associate a GitHub repository, use the console. For more information, see Getting started with CodeGuru Reviewer in the CodeGuru Reviewer User Guide',
       options: [
+
         Option(
           name: '--repository',
           description: 'The repository to associate',
@@ -65,6 +67,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'create-code-review',
       description: 'Use to create a code review with a CodeReviewType of RepositoryAnalysis. This type of code review analyzes all code under a specified branch in an associated repository. PullRequest code reviews are automatically triggered by a pull request',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the code review. The name of each code review in your Amazon Web Services account must be unique',
@@ -129,6 +133,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'describe-code-review',
       description: 'Returns the metadata associated with the code review along with its status',
       options: [
+
         Option(
           name: '--code-review-arn',
           description: 'The Amazon Resource Name (ARN) of the CodeReview object',
@@ -166,6 +172,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'describe-recommendation-feedback',
       description: 'Describes the customer feedback for a CodeGuru Reviewer recommendation',
       options: [
+
         Option(
           name: '--code-review-arn',
           description: 'The Amazon Resource Name (ARN) of the CodeReview object',
@@ -221,6 +229,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'describe-repository-association',
       description: 'Returns a RepositoryAssociation object that contains information about the requested repository association',
       options: [
+
         Option(
           name: '--association-arn',
           description: 'The Amazon Resource Name (ARN) of the RepositoryAssociation object. You can retrieve this ARN by calling ListRepositoryAssociations',
@@ -258,6 +268,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'disassociate-repository',
       description: 'Removes the association between Amazon CodeGuru Reviewer and a repository',
       options: [
+
         Option(
           name: '--association-arn',
           description: 'The Amazon Resource Name (ARN) of the RepositoryAssociation object. You can retrieve this ARN by calling ListRepositoryAssociations',
@@ -295,6 +307,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'list-code-reviews',
       description: 'Lists all the code reviews that the customer has created in the past 90 days',
       options: [
+
         Option(
           name: '--provider-types',
           description: 'List of provider types for filtering that needs to be applied before displaying the result. For example, providerTypes=[GitHub] lists code reviews from GitHub',
@@ -377,6 +391,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -389,6 +404,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'list-recommendation-feedback',
       description: 'Returns a list of RecommendationFeedbackSummary objects that contain customer recommendation feedback for all CodeGuru Reviewer users',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged',
@@ -450,6 +466,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -462,6 +479,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'list-recommendations',
       description: 'Returns the list of all recommendations for a completed code review',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Pagination token',
@@ -505,6 +523,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -517,6 +536,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'list-repository-associations',
       description: 'Returns a list of RepositoryAssociationSummary objects that contain summary information about a repository association. You can filter the returned list by ProviderType, Name, State, and Owner',
       options: [
+
         Option(
           name: '--provider-types',
           description: 'List of provider types to use as a filter',
@@ -614,6 +634,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -626,6 +647,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns the list of tags associated with an associated repository resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the RepositoryAssociation object. You can retrieve this ARN by calling ListRepositoryAssociations',
@@ -651,6 +673,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -663,6 +686,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'put-recommendation-feedback',
       description: 'Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is called again with different reactions the previous feedback is overwritten',
       options: [
+
         Option(
           name: '--code-review-arn',
           description: 'The Amazon Resource Name (ARN) of the CodeReview object',
@@ -706,6 +730,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -718,6 +743,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to an associated repository',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the RepositoryAssociation object. You can retrieve this ARN by calling ListRepositoryAssociations',
@@ -752,6 +778,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -764,6 +791,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from an associated repository',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the RepositoryAssociation object. You can retrieve this ARN by calling ListRepositoryAssociations',
@@ -798,6 +826,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -810,10 +839,12 @@ final FigSpec codeguruReviewerSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'code-review-completed',
           description: 'Wait until a code review is complete. It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 180 failed checks',
           options: [
+
             Option(
               name: '--code-review-arn',
               description: 'The Amazon Resource Name (ARN) of the CodeReview object',
@@ -839,6 +870,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -851,6 +883,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
           name: 'repository-association-succeeded',
           description: 'Wait until a repository association is complete. It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 30 failed checks',
           options: [
+
             Option(
               name: '--association-arn',
               description: 'The Amazon Resource Name (ARN) of the RepositoryAssociation object. You can retrieve this ARN by calling ListRepositoryAssociations',
@@ -876,6 +909,7 @@ final FigSpec codeguruReviewerSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

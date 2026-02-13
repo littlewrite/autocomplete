@@ -9,14 +9,17 @@ final FigSpec monitoringSpec = FigSpec(
   name: 'monitoring',
   description: 'Manage Cloud Monitoring dashboards',
   subcommands: [
+
     Subcommand(
       name: 'dashboards',
       description: 'Manage Cloud Monitoring dashboards',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new Cloud Monitoring dashboard',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -162,6 +165,7 @@ final FigSpec monitoringSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -178,6 +182,7 @@ final FigSpec monitoringSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Monitoring dashboard',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -301,6 +306,7 @@ final FigSpec monitoringSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -323,6 +329,7 @@ final FigSpec monitoringSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Monitoring dashboard',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -446,6 +453,7 @@ final FigSpec monitoringSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -468,6 +476,7 @@ final FigSpec monitoringSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Monitoring dashboards',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -639,6 +648,7 @@ final FigSpec monitoringSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -655,6 +665,7 @@ final FigSpec monitoringSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Monitoring dashboard',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -800,6 +811,7 @@ final FigSpec monitoringSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -820,6 +832,7 @@ final FigSpec monitoringSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -943,6 +956,7 @@ final FigSpec monitoringSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -957,6 +971,7 @@ final FigSpec monitoringSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1080,6 +1095,7 @@ final FigSpec monitoringSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

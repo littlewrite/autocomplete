@@ -12,6 +12,7 @@ final FigSpec dos2unixSpec = FigSpec(
     flagsArePosixNoncompliant: true
   ),
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Show help for dos2unix'
@@ -71,6 +72,7 @@ final FigSpec dos2unixSpec = FigSpec(
         Arg(
         name: 'CONVMODE',
         suggestions: [
+
           FigSuggestion(name: 'ascii'),
           FigSuggestion(name: '7bit'),
           FigSuggestion(name: 'iso'),
@@ -86,6 +88,7 @@ final FigSpec dos2unixSpec = FigSpec(
         Arg(
         name: 'ENCODING',
         suggestions: [
+
           FigSuggestion(name: 'ansi'),
           FigSuggestion(name: 'unicode'),
           FigSuggestion(name: 'unicodebom'),
@@ -144,6 +147,7 @@ final FigSpec dos2unixSpec = FigSpec(
       name: '--newfile',
       description: 'New file mode. Convert file INFILE and write output to file OUTFILE. File names must be given in pairs and wildcard names should not be used or you will lose your files',
       args: [
+
         Arg(
           name: 'INFILE',
           template: 'filepaths'

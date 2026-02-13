@@ -9,10 +9,12 @@ final FigSpec hopSpec = FigSpec(
   name: 'hop',
   description: 'Interact with Hop in your terminal',
   subcommands: [
+
     Subcommand(
       name: 'auth',
       description: 'Authenticate with Hop',
       subcommands: [
+
         Subcommand(
           name: 'help',
           description: 'Prints this message or the help of the given subcommand(s)'
@@ -38,6 +40,7 @@ final FigSpec hopSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--type', '-t'],
           description: 'Type of the container, defaults to `ephemeral`',
@@ -45,6 +48,7 @@ final FigSpec hopSpec = FigSpec(
             Arg(
             name: 'container type',
             suggestions: [
+
               FigSuggestion(name: 'ephemeral'),
               FigSuggestion(name: 'persistent')
             ]
@@ -58,6 +62,7 @@ final FigSpec hopSpec = FigSpec(
             Arg(
             name: 'container amount',
             suggestions: [
+
               FigSuggestion(name: '1'),
               FigSuggestion(name: '2'),
               FigSuggestion(name: '4'),
@@ -74,6 +79,7 @@ final FigSpec hopSpec = FigSpec(
             Arg(
             name: 'cpu amount',
             suggestions: [
+
               FigSuggestion(name: '1'),
               FigSuggestion(name: '2'),
               FigSuggestion(name: '4'),
@@ -89,6 +95,7 @@ final FigSpec hopSpec = FigSpec(
             Arg(
             name: 'environment variable',
             suggestions: [
+
               FigSuggestion(name: 'port=')
             ]
           )
@@ -120,6 +127,7 @@ final FigSpec hopSpec = FigSpec(
             Arg(
             name: 'ram amount',
             suggestions: [
+
               FigSuggestion(name: '128MB'),
               FigSuggestion(name: '256MB'),
               FigSuggestion(name: '512MB'),
@@ -137,6 +145,7 @@ final FigSpec hopSpec = FigSpec(
             Arg(
             name: 'scaling strategy',
             suggestions: [
+
               FigSuggestion(name: 'manual'),
               FigSuggestion(name: 'autoscale')
             ]
@@ -159,10 +168,12 @@ final FigSpec hopSpec = FigSpec(
       name: 'ignite',
       description: 'Interact with Ignite containers',
       subcommands: [
+
         Subcommand(
           name: 'ls',
           description: 'List all deployments',
           options: [
+
             Option(
               name: ['--project', '-p'],
               description: 'Namespace or ID of the project to use'
@@ -173,6 +184,7 @@ final FigSpec hopSpec = FigSpec(
           name: 'rm',
           description: 'Delete a deployment',
           options: [
+
             Option(
               name: ['--project', '-p'],
               description: 'Namespace or ID of the project to use'
@@ -189,6 +201,7 @@ final FigSpec hopSpec = FigSpec(
       name: 'projects',
       description: 'Interact with projects',
       subcommands: [
+
         Subcommand(
           name: 'info',
           description: 'Get information about a project'
@@ -217,6 +230,7 @@ final FigSpec hopSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Prints help information'

@@ -9,6 +9,7 @@ final FigSpec ansibleLintSpec = FigSpec(
   name: 'ansible-lint',
   description: 'Ansible static code analysis',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for ansible-lint'
@@ -72,6 +73,7 @@ final FigSpec ansibleLintSpec = FigSpec(
         name: 'WRITE_LIST',
         description: 'Limit the effective rule transforms by passing a keywords \'all\' or \'none\' or a comma separated list of rule ids or rule tags',
         suggestions: [
+
           FigSuggestion(name: 'all'),
           FigSuggestion(name: 'none'),
           FigSuggestion(name: 'rule1,rule2,...')

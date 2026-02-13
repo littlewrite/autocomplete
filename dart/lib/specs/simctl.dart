@@ -9,10 +9,12 @@ final FigSpec simctlSpec = FigSpec(
   name: 'simctl',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'addmedia',
       description: 'Add photos, live photos, videos, or contacts to the library of a device',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -31,6 +33,7 @@ final FigSpec simctlSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--arch',
           description: 'Specify the architecture to use when booting the simulator (eg: \'arm64\' or \'x86_64\')',
@@ -52,6 +55,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'clone',
       description: 'Clone an existing device',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -68,6 +72,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'create',
       description: 'Create a new device',
       args: [
+
         Arg(
           name: 'name'
         ),
@@ -86,6 +91,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'delete',
       description: 'Delete specified devices, unavailable devices, or all devices',
       args: [
+
         Arg(
           name: 'device',
           isVariadic: true
@@ -103,6 +109,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'diagnose',
       description: 'Collect diagnostic information and logs',
       options: [
+
         Option(
           name: '-b',
           description: 'Do NOT show the resulting archive in a Finder window upon completion'
@@ -143,6 +150,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'erase',
       description: 'Erase a device\'s contents and settings',
       args: [
+
         Arg(
           name: 'device',
           isVariadic: true
@@ -157,6 +165,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'get_app_container',
       description: 'Print the path of the installed app\'s container',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -169,6 +178,7 @@ final FigSpec simctlSpec = FigSpec(
           isOptional: true,
           defaultValue: 'app',
           suggestions: [
+
             FigSuggestion(
               name: 'app',
               description: 'The .app bundle'
@@ -193,6 +203,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'getenv',
       description: 'Print an environment variable from a running device',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -219,6 +230,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'install',
       description: 'Install an app on a device',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -231,6 +243,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'install_app_data',
       description: 'Install an xcappdata package to a device, replacing the current contents of the container',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -248,10 +261,12 @@ final FigSpec simctlSpec = FigSpec(
       )
       ],
       subcommands: [
+
         Subcommand(
           name: 'enumerate',
           description: 'Lists all available IO ports and descriptor states',
           options: [
+
             Option(
               name: '--poll',
               description: 'Poll after enumeration'
@@ -271,6 +286,7 @@ final FigSpec simctlSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--codec',
               description: 'Specifies the codec type: \'h264\' or \'hevc\'. Default is \'hevc\''
@@ -298,6 +314,7 @@ final FigSpec simctlSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--type',
               description: 'Can be \'png\', \'tiff\', \'bmp\', \'gif\', \'jpeg\'. Default is png'
@@ -318,6 +335,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'keychain',
       description: 'Manipulate a device\'s keychain',
       subcommands: [
+
         Subcommand(
           name: 'add-root-cert',
           description: 'Add a certificate to the trusted root store',
@@ -346,6 +364,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'launch',
       description: 'Launch an application by identifier on a device',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -358,6 +377,7 @@ final FigSpec simctlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-w', '--wait-for-debugger']
         ),
@@ -401,9 +421,11 @@ final FigSpec simctlSpec = FigSpec(
       name: 'list',
       description: 'List available devices, device types, runtimes, or device pairs',
       args: [
+
         Arg(
           name: 'type',
           suggestions: [
+
             FigSuggestion(name: 'devices'),
             FigSuggestion(name: 'deviceTypes'),
             FigSuggestion(name: 'runtimes'),
@@ -413,11 +435,13 @@ final FigSpec simctlSpec = FigSpec(
         Arg(
           name: 'search term',
           suggestions: [
+
             FigSuggestion(name: 'available')
           ]
         )
       ],
       options: [
+
         Option(
           name: ['-j', '--json'],
           description: 'Print as JSON'
@@ -436,6 +460,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'location',
       description: 'Control a device\'s simulated location',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -444,6 +469,7 @@ final FigSpec simctlSpec = FigSpec(
         )
       ],
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List available simulation scenarios'
@@ -480,6 +506,7 @@ final FigSpec simctlSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: 'speed'
             ),
@@ -497,6 +524,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'logverbose',
       description: 'Enable or disable verbose logging for a device.\nNOTE: You may need to reboot the affected device before logging changes will be effective',
       args: [
+
         Arg(
           name: 'device',
           description: 'The device. If not provided all booted devices are affected'
@@ -505,6 +533,7 @@ final FigSpec simctlSpec = FigSpec(
           name: 'enable/disable',
           description: 'Enable or Disable verbose logging',
           suggestions: [
+
             FigSuggestion(name: 'enable'),
             FigSuggestion(name: 'disable')
           ]
@@ -515,6 +544,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'openurl',
       description: 'Open a URL in a device',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -527,6 +557,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'pair',
       description: 'Create a new watch and phone pair',
       args: [
+
         Arg(
           name: 'watch device'
         ),
@@ -553,6 +584,7 @@ final FigSpec simctlSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '-v'
         )
@@ -567,6 +599,7 @@ final FigSpec simctlSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '-v'
         )
@@ -576,6 +609,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'pbsync',
       description: 'Sync the pasteboard content from one pasteboard to another',
       args: [
+
         Arg(
           name: 'source device or \'host\''
         ),
@@ -584,6 +618,7 @@ final FigSpec simctlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '-p',
           description: 'Causes simctl to use promise data for secondary types.  simctl will continue to run to provide that promise data until something else replaces it on the pasteboard'
@@ -597,6 +632,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'privacy',
       description: 'Grant, revoke, or reset privacy and permissions',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -604,6 +640,7 @@ final FigSpec simctlSpec = FigSpec(
           name: 'action',
           description: '',
           suggestions: [
+
             FigSuggestion(name: 'grant'),
             FigSuggestion(name: 'revoke'),
             FigSuggestion(name: 'reset')
@@ -613,6 +650,7 @@ final FigSpec simctlSpec = FigSpec(
           name: 'service',
           description: '',
           suggestions: [
+
             FigSuggestion(name: 'all'),
             FigSuggestion(name: 'calendar'),
             FigSuggestion(name: 'contacts-limited'),
@@ -638,6 +676,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'push',
       description: 'Send a simulated push notification',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -649,6 +688,7 @@ final FigSpec simctlSpec = FigSpec(
           name: 'json file',
           description: 'Path to a JSON payload or \'-\' to read from stdin. The payload must:\n- Contain an object at the top level.\n- Contain an \'aps\' key with valid Apple Push Notification values.\n- Be 4096 bytes or less',
           suggestions: [
+
             FigSuggestion(name: '-')
           ]
         )
@@ -658,6 +698,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'rename',
       description: 'Rename a device',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -670,6 +711,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'runtime',
       description: 'Perform operations on runtimes',
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Add a runtime disk image to the secure storage area. The image will be staged, verified, and mounted. When possible the image file will be cloned so no additional disk space will be used. If stdout is a terminal and a copy is required then progress will be reported',
@@ -679,6 +721,7 @@ final FigSpec simctlSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-m', '--move'],
               description: 'Remove the original file if the image is added successfully. If the image cannot be staged or the add fails the original is not removed'
@@ -698,6 +741,7 @@ final FigSpec simctlSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-d', '--notUsedSinceDays'],
               description: 'Delete images not used within the past <days> days'
@@ -722,6 +766,7 @@ final FigSpec simctlSpec = FigSpec(
           name: 'list',
           description: '',
           options: [
+
             Option(
               name: '-v',
               description: 'Print more verbose output'
@@ -736,6 +781,7 @@ final FigSpec simctlSpec = FigSpec(
           name: 'match list',
           description: 'List the SDK build to runtime build mapping rules for the selected Xcode. Preferred means the runtime was either bundled with Xcode, exactly matched your SDK version, or the downloadable index indicated a better match for your SDK Manual overrides using \'match set\' have the highest priority',
           options: [
+
             Option(
               name: '-v',
               description: 'Verbose mode. Includes the full preferred build map, user override map, and known SDK names'
@@ -750,6 +796,7 @@ final FigSpec simctlSpec = FigSpec(
           name: 'match set',
           description: 'Override the SDK to runtime build mapping. This controls which build of a given runtime Xcode will prefer for building and running when using that SDK. This matters most often during Beta releases when there are multiple builds for a given OS version. If --sdkBuild is not specified it is assumed you mean the SDK build for the currently selected Xcode.\n\nNote: Remember this is about build numbers, not semantic versions. When using the iOS 16.0 SDK Xcwill always prefer an iOS 16.0 runtime. Matching policy controls what to do when there are multiiOS 16.0 runtimes availabeg if the iOS 16.0 SDK is 20A245 and the available runtimes are (20A248, 20A252, 20A254) which should Xcode use for building, SwiftUI Previews, and when launching iOS 16.0 Simulators? They are all iOS 16.0 runtimes so a policy must decide which one is selected',
           args: [
+
             Arg(
               name: 'sdk canonical name'
             ),
@@ -758,6 +805,7 @@ final FigSpec simctlSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--default',
               description: 'Clear the override for the given SDK and revert to default behavior',
@@ -775,12 +823,14 @@ final FigSpec simctlSpec = FigSpec(
       name: 'shutdown',
       description: 'Shutdown a device',
       args: [
+
         Arg(
           name: 'device'
         ),
         Arg(
           name: 'all',
           suggestions: [
+
             FigSuggestion(name: 'all')
           ]
         )
@@ -790,6 +840,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'spawn',
       description: 'Spawn a process by executing a given executable on a device',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -802,6 +853,7 @@ final FigSpec simctlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-w', '--wait-for-debugger']
         ),
@@ -822,6 +874,7 @@ final FigSpec simctlSpec = FigSpec(
       )
       ],
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List existing overrides'
@@ -834,6 +887,7 @@ final FigSpec simctlSpec = FigSpec(
           name: 'override',
           description: 'Set status bar override values, according to these flags. You may specify any combination of these flags (at least one is required)',
           options: [
+
             Option(
               name: '--time',
               description: 'Set the date or time to a fixed value. If the string is a valid ISO date string it will also set the date on relevant devices'
@@ -878,6 +932,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'terminate',
       description: 'Terminate an application by identifier on a device',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -895,10 +950,12 @@ final FigSpec simctlSpec = FigSpec(
       )
       ],
       subcommands: [
+
         Subcommand(
           name: 'appearance',
           description: 'When invoked without arguments prints the current user interface appearance style:\nlight\nThe Light appearance style.\ndark\nThe Dark appearance style.\nunsupported\nThe platform or runtime version do not support appearance styles.\nunknown\nThe current style is unknown or there was an error detecting it',
           additionalSuggestions: [
+
             FigSuggestion(name: 'light'),
             FigSuggestion(name: 'dark')
           ]
@@ -907,6 +964,7 @@ final FigSpec simctlSpec = FigSpec(
           name: 'increase_contrast',
           description: 'When invoked without arguments prints whether the Increase Contrast mode is currently enabled:\nenabled\nIncrease Contrast is enabled.\ndisabled\nIncrease Contrast is disabled.\nunsupported\nThe platform or runtime version do not support the Increase Contrast setting.\nunknown\nThe current setting is unknown or there was an error detecting it',
           additionalSuggestions: [
+
             FigSuggestion(name: 'enabled'),
             FigSuggestion(name: 'disabled')
           ]
@@ -915,6 +973,7 @@ final FigSpec simctlSpec = FigSpec(
           name: 'content_size',
           description: 'When invoked without arguments prints the current preferred content size category, from the following possible values:',
           additionalSuggestions: [
+
             FigSuggestion(name: 'extra-small'),
             FigSuggestion(name: 'small'),
             FigSuggestion(name: 'medium'),
@@ -937,6 +996,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'uninstall',
       description: 'Uninstall an app from a device',
       args: [
+
         Arg(
           name: 'device'
         ),
@@ -958,6 +1018,7 @@ final FigSpec simctlSpec = FigSpec(
       name: 'upgrade',
       description: 'Upgrade a device to a newer runtime',
       args: [
+
         Arg(
           name: 'device'
         ),

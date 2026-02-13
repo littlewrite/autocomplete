@@ -9,6 +9,7 @@ final FigSpec stackSpec = FigSpec(
   name: 'stack',
   description: 'The Haskell Tool Stack',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for stack'
@@ -94,6 +95,7 @@ final FigSpec stackSpec = FigSpec(
         Arg(
         name: 'WHEN',
         suggestions: [
+
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'never'),
           FigSuggestion(name: 'auto')
@@ -161,10 +163,12 @@ final FigSpec stackSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'build',
       description: 'Build the package(s) in the current directory/configuration',
       options: [
+
         Option(
           name: '--resolver',
           description: 'Override resolver in project file',
@@ -374,6 +378,7 @@ final FigSpec stackSpec = FigSpec(
       name: 'exec',
       description: 'Execute a command. If the command is absent, the first of any arguments is taken as the command',
       options: [
+
         Option(
           name: '--snapshot-location-base',
           description: 'The base location of LTS/Nightly snapshots',

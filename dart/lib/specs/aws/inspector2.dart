@@ -9,10 +9,12 @@ final FigSpec inspector2Spec = FigSpec(
   name: 'inspector2',
   description: 'Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2, Amazon ECR, and Amazon Web Services Lambda environments',
   subcommands: [
+
     Subcommand(
       name: 'associate-member',
       description: 'Associates an Amazon Web Services account with an Amazon Inspector delegated administrator. An HTTP 200 response indicates the association was started but doesn’t indicate whether it completed. You can check if the association completed using ListMembers for multiple accounts or GetMembers for a single account. An HTTP 402 response indicates the association failed because the organization size exceeded its limit. For information on limits, see Amazon Inspector quotas',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The Amazon Web Services account ID of the member account to be associated',
@@ -38,6 +40,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'batch-get-account-status',
       description: 'Retrieves the Amazon Inspector status of multiple Amazon Web Services accounts within your environment',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for',
@@ -75,6 +79,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'batch-get-code-snippet',
       description: 'Retrieves code snippets from findings that Amazon Inspector detected code vulnerabilities in',
       options: [
+
         Option(
           name: '--finding-arns',
           description: 'An array of finding ARNs for the findings you want to retrieve code snippets from',
@@ -112,6 +118,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'batch-get-finding-details',
       description: 'Gets vulnerability details for findings',
       options: [
+
         Option(
           name: '--finding-arns',
           description: 'A list of finding ARNs',
@@ -149,6 +157,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -161,6 +170,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'batch-get-free-trial-info',
       description: 'Gets free trial status for multiple Amazon Web Services accounts',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The account IDs to get free trial status for',
@@ -186,6 +196,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -198,6 +209,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'batch-get-member-ec2-deep-inspection-status',
       description: 'Retrieves Amazon Inspector deep inspection activation status of multiple member accounts within your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector deep inspection activation status for.  </p>',
@@ -223,6 +235,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -235,6 +248,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'batch-update-member-ec2-deep-inspection-status',
       description: 'Activates or deactivates Amazon Inspector deep inspection for the provided member accounts in your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for',
@@ -260,6 +274,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -272,6 +287,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'cancel-findings-report',
       description: 'Cancels the given findings report',
       options: [
+
         Option(
           name: '--report-id',
           description: 'The ID of the report to be canceled',
@@ -297,6 +313,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -309,6 +326,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'cancel-sbom-export',
       description: 'Cancels a software bill of materials (SBOM) report',
       options: [
+
         Option(
           name: '--report-id',
           description: 'The report ID of the SBOM export to cancel',
@@ -334,6 +352,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -346,6 +365,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'create-cis-scan-configuration',
       description: 'Creates a CIS scan configuration',
       options: [
+
         Option(
           name: '--scan-name',
           description: 'The scan name for the CIS scan configuration',
@@ -407,6 +427,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -419,6 +440,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'create-filter',
       description: 'Creates a filter resource using specified filter criteria. When the filter action is set to SUPPRESS this action creates a suppression rule',
       options: [
+
         Option(
           name: '--action',
           description: 'Defines the action that is to be applied to the findings that match the filter',
@@ -489,6 +511,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -501,6 +524,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'create-findings-report',
       description: 'Creates a finding report. By default only ACTIVE findings are returned in the report. To see SUPRESSED or CLOSED findings you must specify a value for the findingStatus filter criteria',
       options: [
+
         Option(
           name: '--filter-criteria',
           description: 'The filter criteria to apply to the results of the finding report',
@@ -544,6 +568,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -556,6 +581,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'create-sbom-export',
       description: 'Creates a software bill of materials (SBOM) report',
       options: [
+
         Option(
           name: '--report-format',
           description: 'The output format for the software bill of materials (SBOM) report',
@@ -599,6 +625,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -611,6 +638,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'delete-cis-scan-configuration',
       description: 'Deletes a CIS scan configuration',
       options: [
+
         Option(
           name: '--scan-configuration-arn',
           description: 'The ARN of the CIS scan configuration',
@@ -636,6 +664,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -648,6 +677,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'delete-filter',
       description: 'Deletes a filter resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Number (ARN) of the filter to be deleted',
@@ -673,6 +703,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -685,6 +716,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'describe-organization-configuration',
       description: 'Describe Amazon Inspector configuration settings for an Amazon Web Services organization',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -701,6 +733,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -713,6 +746,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'disable',
       description: 'Disables Amazon Inspector scans for one or more Amazon Web Services accounts. Disabling all scan types in an account disables the Amazon Inspector service',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'An array of account IDs you want to disable Amazon Inspector scans for',
@@ -747,6 +781,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -759,6 +794,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'disable-delegated-admin-account',
       description: 'Disables the Amazon Inspector delegated administrator for your organization',
       options: [
+
         Option(
           name: '--delegated-admin-account-id',
           description: 'The Amazon Web Services account ID of the current Amazon Inspector delegated administrator',
@@ -784,6 +820,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -796,6 +833,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'disassociate-member',
       description: 'Disassociates a member account from an Amazon Inspector delegated administrator',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The Amazon Web Services account ID of the member account to disassociate',
@@ -821,6 +859,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -833,6 +872,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'enable',
       description: 'Enables Amazon Inspector scans for one or more Amazon Web Services accounts',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'A list of account IDs you want to enable Amazon Inspector scans for',
@@ -876,6 +916,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -888,6 +929,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'enable-delegated-admin-account',
       description: 'Enables the Amazon Inspector delegated administrator for your Organizations organization',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The idempotency token for the request',
@@ -922,6 +964,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -934,6 +977,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'get-cis-scan-report',
       description: 'Retrieves a CIS scan report',
       options: [
+
         Option(
           name: '--report-format',
           description: 'The format of the report. Valid values are PDF and CSV. If no value is specified, the report format defaults to PDF',
@@ -977,6 +1021,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -989,6 +1034,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'get-cis-scan-result-details',
       description: 'Retrieves CIS scan result details',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The account ID',
@@ -1104,6 +1150,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1116,6 +1163,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'get-configuration',
       description: 'Retrieves setting configurations for Inspector scans',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1132,6 +1180,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1144,6 +1193,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'get-delegated-admin-account',
       description: 'Retrieves information about the Amazon Inspector delegated administrator for your organization',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1160,6 +1210,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1172,6 +1223,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'get-ec2-deep-inspection-configuration',
       description: 'Retrieves the activation status of Amazon Inspector deep inspection and custom paths associated with your account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1188,6 +1240,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1200,6 +1253,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'get-encryption-key',
       description: 'Gets an encryption key',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'The resource type the key encrypts',
@@ -1234,6 +1288,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1246,6 +1301,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'get-findings-report-status',
       description: 'Gets the status of a findings report',
       options: [
+
         Option(
           name: '--report-id',
           description: 'The ID of the report to retrieve the status of',
@@ -1271,6 +1327,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1283,6 +1340,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'get-member',
       description: 'Gets member information for your organization',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The Amazon Web Services account ID of the member account to retrieve information on',
@@ -1308,6 +1366,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1320,6 +1379,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'get-sbom-export',
       description: 'Gets details of a software bill of materials (SBOM) report',
       options: [
+
         Option(
           name: '--report-id',
           description: 'The report ID of the SBOM export to get details for',
@@ -1345,6 +1405,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1357,6 +1418,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-account-permissions',
       description: 'Lists the permissions an account has to configure Amazon Inspector',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results the response can return. If your request would return more than the maximum the response will return a nextToken value, use this value when you call the action again to get the remaining results',
@@ -1427,6 +1489,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1439,6 +1502,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-cis-scan-configurations',
       description: 'Lists CIS scan configurations',
       options: [
+
         Option(
           name: '--filter-criteria',
           description: 'The CIS scan configuration filter criteria',
@@ -1527,6 +1591,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1539,6 +1604,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-cis-scan-results-aggregated-by-checks',
       description: 'Lists scan results aggregated by checks',
       options: [
+
         Option(
           name: '--filter-criteria',
           description: 'The filter criteria',
@@ -1636,6 +1702,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1648,6 +1715,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-cis-scan-results-aggregated-by-target-resource',
       description: 'Lists scan results aggregated by a target resource',
       options: [
+
         Option(
           name: '--filter-criteria',
           description: 'The filter criteria',
@@ -1745,6 +1813,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1757,6 +1826,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-cis-scans',
       description: 'Returns a CIS scan list',
       options: [
+
         Option(
           name: '--detail-level',
           description: 'The detail applied to the CIS scan',
@@ -1854,6 +1924,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1866,6 +1937,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-coverage',
       description: 'Lists coverage details for your environment',
       options: [
+
         Option(
           name: '--filter-criteria',
           description: 'An object that contains details on the filters to apply to the coverage data for your environment',
@@ -1936,6 +2008,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1948,6 +2021,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-coverage-statistics',
       description: 'Lists Amazon Inspector coverage statistics for your environment',
       options: [
+
         Option(
           name: '--filter-criteria',
           description: 'An object that contains details on the filters to apply to the coverage data for your environment',
@@ -2009,6 +2083,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2021,6 +2096,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-delegated-admin-accounts',
       description: 'Lists information about the Amazon Inspector delegated administrator of your organization',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results the response can return. If your request would return more than the maximum the response will return a nextToken value, use this value when you call the action again to get the remaining results',
@@ -2082,6 +2158,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2094,6 +2171,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-filters',
       description: 'Lists the filters associated with your account',
       options: [
+
         Option(
           name: '--action',
           description: 'The action the filter applies to matched findings',
@@ -2173,6 +2251,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2185,6 +2264,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-finding-aggregations',
       description: 'Lists aggregated finding data for your environment based on specific criteria',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The Amazon Web Services account IDs to retrieve finding aggregation data for',
@@ -2273,6 +2353,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2285,6 +2366,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-findings',
       description: 'Lists findings for your environment',
       options: [
+
         Option(
           name: '--filter-criteria',
           description: 'Details on the filters to apply to your finding results',
@@ -2364,6 +2446,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2376,6 +2459,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-members',
       description: 'List members associated with the Amazon Inspector delegated administrator for your organization',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results the response can return. If your request would return more than the maximum the response will return a nextToken value, use this value when you call the action again to get the remaining results',
@@ -2445,6 +2529,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2457,6 +2542,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags attached to a given resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon resource number (ARN) of the resource to list tags of',
@@ -2482,6 +2568,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2494,6 +2581,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'list-usage-totals',
       description: 'Lists the Amazon Inspector usage totals over the last 30 days',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The Amazon Web Services account IDs to retrieve usage totals for',
@@ -2564,6 +2652,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2576,6 +2665,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'reset-encryption-key',
       description: 'Resets an encryption key. After the key is reset your resources will be encrypted by an Amazon Web Services owned key',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'The resource type the key encrypts',
@@ -2610,6 +2700,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2622,6 +2713,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'search-vulnerabilities',
       description: 'Lists Amazon Inspector coverage details for a specific vulnerability',
       options: [
+
         Option(
           name: '--filter-criteria',
           description: 'The criteria used to filter the results of a vulnerability search',
@@ -2674,6 +2766,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2686,6 +2779,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'send-cis-session-health',
       description: 'Sends a CIS session health. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by the service',
       options: [
+
         Option(
           name: '--scan-job-id',
           description: 'A unique identifier for the scan job',
@@ -2720,6 +2814,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2732,6 +2827,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'send-cis-session-telemetry',
       description: 'Sends a CIS session telemetry. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by the service',
       options: [
+
         Option(
           name: '--messages',
           description: 'The CIS session telemetry messages',
@@ -2775,6 +2871,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2787,6 +2884,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'start-cis-session',
       description: 'Starts a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by the service',
       options: [
+
         Option(
           name: '--message',
           description: 'The start CIS session message',
@@ -2821,6 +2919,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2833,6 +2932,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'stop-cis-session',
       description: 'Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API to stop a CIS scan session for the scan ID supplied by the service',
       options: [
+
         Option(
           name: '--message',
           description: 'The stop CIS session message',
@@ -2876,6 +2976,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2888,6 +2989,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to apply a tag to',
@@ -2922,6 +3024,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2934,6 +3037,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource to remove tags from',
@@ -2968,6 +3072,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2980,6 +3085,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'update-cis-scan-configuration',
       description: 'Updates a CIS scan configuration',
       options: [
+
         Option(
           name: '--scan-configuration-arn',
           description: 'The CIS scan configuration ARN',
@@ -3041,6 +3147,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3053,6 +3160,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'update-configuration',
       description: 'Updates setting configurations for your Amazon Inspector account. When you use this API as an Amazon Inspector delegated administrator this updates the setting for all accounts you manage. Member accounts in an organization cannot update this setting',
       options: [
+
         Option(
           name: '--ec2-configuration',
           description: 'Specifies how the Amazon EC2 automated scan will be updated for your environment',
@@ -3087,6 +3195,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3099,6 +3208,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'update-ec2-deep-inspection-configuration',
       description: 'Activates, deactivates Amazon Inspector deep inspection, or updates custom paths for your account',
       options: [
+
         Option(
           name: '--activate-deep-inspection',
           description: 'Specify TRUE to activate Amazon Inspector deep inspection in your account, or FALSE to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using BatchUpdateMemberEc2DeepInspectionStatus'
@@ -3132,6 +3242,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3144,6 +3255,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'update-encryption-key',
       description: 'Updates an encryption key. A ResourceNotFoundException means that an Amazon Web Services owned key is being used for encryption',
       options: [
+
         Option(
           name: '--kms-key-id',
           description: 'A KMS key ID for the encryption key',
@@ -3187,6 +3299,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3199,6 +3312,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'update-filter',
       description: 'Specifies the action that is to be applied to the findings that match the filter',
       options: [
+
         Option(
           name: '--action',
           description: 'Specifies the action that is to be applied to the findings that match the filter',
@@ -3269,6 +3383,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3281,6 +3396,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'update-org-ec2-deep-inspection-configuration',
       description: 'Updates the Amazon Inspector deep inspection custom paths for your organization. You must be an Amazon Inspector delegated administrator to use this API',
       options: [
+
         Option(
           name: '--org-package-paths',
           description: 'The Amazon Inspector deep inspection custom paths you are adding for your organization',
@@ -3306,6 +3422,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3318,6 +3435,7 @@ final FigSpec inspector2Spec = FigSpec(
       name: 'update-organization-configuration',
       description: 'Updates the configurations for your Amazon Inspector organization',
       options: [
+
         Option(
           name: '--auto-enable',
           description: 'Defines which scan types are enabled automatically for new members of your Amazon Inspector organization',
@@ -3343,6 +3461,7 @@ final FigSpec inspector2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

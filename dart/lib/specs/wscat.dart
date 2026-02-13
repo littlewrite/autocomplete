@@ -9,6 +9,7 @@ final FigSpec wscatSpec = FigSpec(
   name: 'wscat',
   description: 'Communicate over websocket',
   options: [
+
     Option(
       name: ['-c', '--connect'],
       args: [
@@ -165,6 +166,7 @@ final FigSpec wscatSpec = FigSpec(
         Arg(
         name: 'protocol',
         suggestions: [
+
           FigSuggestion(name: 'MBWS.huawei.com'),
           FigSuggestion(name: 'MBLWS.huawei.com'),
           FigSuggestion(name: 'soap'),

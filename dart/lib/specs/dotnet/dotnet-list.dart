@@ -15,10 +15,12 @@ final FigSpec listSpec = FigSpec(
   )
   ],
   subcommands: [
+
     Subcommand(
       name: 'package',
       description: 'The dotnet list package command provides a convenient option to list all NuGet package references for a specific project or a solution. You first need to build the project in order to have the assets needed for this command to process',
       options: [
+
         Option(
           name: '--config',
           description: 'The NuGet sources to use when searching for newer packages. Requires the --outdated option',
@@ -76,6 +78,7 @@ final FigSpec listSpec = FigSpec(
             Arg(
             name: 'verbosity',
             suggestions: [
+
               FigSuggestion(name: 'quiet'),
               FigSuggestion(name: 'minimal'),
               FigSuggestion(name: 'normal'),

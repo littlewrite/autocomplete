@@ -9,14 +9,17 @@ final FigSpec dataflowSpec = FigSpec(
   name: 'dataflow',
   description: 'Manage Google Cloud Dataflow resources',
   subcommands: [
+
     Subcommand(
       name: 'flex-template',
       description: 'A group of subcommands for working with Dataflow flex template',
       subcommands: [
+
         Subcommand(
           name: 'build',
           description: 'Builds a flex template file from the specified parameters',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -199,6 +202,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'SDK_LANGUAGE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'JAVA'),
                   FigSuggestion(name: 'PYTHON')
                 ]
@@ -229,6 +233,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -251,6 +256,7 @@ final FigSpec dataflowSpec = FigSpec(
           name: 'run',
           description: 'Runs a job from the specified path',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -515,6 +521,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -568,6 +575,7 @@ final FigSpec dataflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -691,6 +699,7 @@ final FigSpec dataflowSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -707,10 +716,12 @@ final FigSpec dataflowSpec = FigSpec(
       name: 'jobs',
       description: 'A group of subcommands for working with Dataflow jobs',
       subcommands: [
+
         Subcommand(
           name: 'cancel',
           description: 'Cancels all jobs that match the command line arguments',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -845,6 +856,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -868,6 +880,7 @@ final FigSpec dataflowSpec = FigSpec(
           name: 'describe',
           description: 'Outputs the Job object resulting from the Get API',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1006,6 +1019,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1028,6 +1042,7 @@ final FigSpec dataflowSpec = FigSpec(
           name: 'drain',
           description: 'Drains all jobs that match the command line arguments',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1162,6 +1177,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1185,6 +1201,7 @@ final FigSpec dataflowSpec = FigSpec(
           name: 'list',
           description: 'Lists all jobs in a particular project, optionally filtered by region',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1370,6 +1387,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'STATUS',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'active'),
                   FigSuggestion(name: 'all'),
                   FigSuggestion(name: 'terminated')
@@ -1404,6 +1422,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1420,6 +1439,7 @@ final FigSpec dataflowSpec = FigSpec(
           name: 'run',
           description: 'Runs a job from the specified path',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1658,6 +1678,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1724,6 +1745,7 @@ final FigSpec dataflowSpec = FigSpec(
           name: 'show',
           description: 'Shows a short description of the given job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1866,6 +1888,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1886,6 +1909,7 @@ final FigSpec dataflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2009,6 +2033,7 @@ final FigSpec dataflowSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2025,10 +2050,12 @@ final FigSpec dataflowSpec = FigSpec(
       name: 'sql',
       description: 'A group of subcommands for working with Dataflow SQL',
       subcommands: [
+
         Subcommand(
           name: 'query',
           description: 'Execute the user-specified SQL query on Dataflow',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2082,6 +2109,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'BIGQUERY_WRITE_DISPOSITION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'write-empty'),
                   FigSuggestion(name: 'write-truncate'),
                   FigSuggestion(name: 'write-append')
@@ -2268,6 +2296,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'PUBSUB_CREATE_DISPOSITION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'create-if-not-found'),
                   FigSuggestion(name: 'fail-if-not-found')
                 ]
@@ -2358,6 +2387,7 @@ final FigSpec dataflowSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2422,6 +2452,7 @@ final FigSpec dataflowSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2545,6 +2576,7 @@ final FigSpec dataflowSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2559,6 +2591,7 @@ final FigSpec dataflowSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2682,6 +2715,7 @@ final FigSpec dataflowSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

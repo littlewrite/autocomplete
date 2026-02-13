@@ -9,6 +9,7 @@ final FigSpec installSpec = FigSpec(
   name: 'install',
   description: 'The file(s) are copied to the target file or directory. If the destination is a directory, then the file is copied into directory with its original filename. If the target file already exists, it is either renamed to file.old if the -b option is given or overwritten if permissions allow. An alternate backup suffix may be specified via the -B option\'s argument',
   options: [
+
     Option(
       name: '-B',
       description: 'Use suffix as the backup suffix if -b is given',

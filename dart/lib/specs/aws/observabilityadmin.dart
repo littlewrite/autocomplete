@@ -9,10 +9,12 @@ final FigSpec observabilityadminSpec = FigSpec(
   name: 'observabilityadmin',
   description: 'Amazon CloudWatch Obsersavability Admin to control temletry config for your AWS Organization or account. Telemetry config conﬁg to discover and understand the state of telemetry conﬁguration for your AWS resources from a central view in the CloudWatch console. Telemetry conﬁg simpliﬁes the process of auditing your telemetry collection conﬁgurations across multiple resource types across your AWS Organization or account. For more information, see Auditing CloudWatch telemetry conﬁgurations in the CloudWatch User Guide. For information on the permissions you need to use this API, see Identity and access management for Amazon CloudWatch in the CloudWatch User Guide',
   subcommands: [
+
     Subcommand(
       name: 'get-telemetry-evaluation-status',
       description: 'Returns the current onboarding status of the telemetry config feature, including the status of the feature and reason the feature failed to start or stop',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -29,6 +31,7 @@ final FigSpec observabilityadminSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -41,6 +44,7 @@ final FigSpec observabilityadminSpec = FigSpec(
       name: 'get-telemetry-evaluation-status-for-organization',
       description: 'This returns the onboarding status of the telemetry configuration feature for the organization. It can only be called by a Management Account of an AWS Organization or an assigned Delegated Admin Account of AWS CloudWatch telemetry config',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -57,6 +61,7 @@ final FigSpec observabilityadminSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -69,6 +74,7 @@ final FigSpec observabilityadminSpec = FigSpec(
       name: 'list-resource-telemetry',
       description: 'Returns a list of telemetry configurations for AWS resources supported by telemetry config. For more information, see Auditing CloudWatch telemetry configurations',
       options: [
+
         Option(
           name: '--resource-identifier-prefix',
           description: 'A string used to filter resources which have a ResourceIdentifier starting with the ResourceIdentifierPrefix',
@@ -166,6 +172,7 @@ final FigSpec observabilityadminSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec observabilityadminSpec = FigSpec(
       name: 'list-resource-telemetry-for-organization',
       description: 'Returns a list of telemetry configurations for AWS resources supported by telemetry config in the organization',
       options: [
+
         Option(
           name: '--account-identifiers',
           description: 'A list of AWS account IDs used to filter the resources to those associated with the specified accounts',
@@ -284,6 +292,7 @@ final FigSpec observabilityadminSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -296,6 +305,7 @@ final FigSpec observabilityadminSpec = FigSpec(
       name: 'start-telemetry-evaluation',
       description: 'This action begins onboarding onboarding the caller AWS account to the telemetry config feature',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -312,6 +322,7 @@ final FigSpec observabilityadminSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -324,6 +335,7 @@ final FigSpec observabilityadminSpec = FigSpec(
       name: 'start-telemetry-evaluation-for-organization',
       description: 'This actions begins onboarding the organization and all member accounts to the telemetry config feature',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -340,6 +352,7 @@ final FigSpec observabilityadminSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -352,6 +365,7 @@ final FigSpec observabilityadminSpec = FigSpec(
       name: 'stop-telemetry-evaluation',
       description: 'This action begins offboarding the caller AWS account from the telemetry config feature',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -368,6 +382,7 @@ final FigSpec observabilityadminSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -380,6 +395,7 @@ final FigSpec observabilityadminSpec = FigSpec(
       name: 'stop-telemetry-evaluation-for-organization',
       description: 'This action offboards the Organization of the caller AWS account from thef telemetry config feature',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -396,6 +412,7 @@ final FigSpec observabilityadminSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

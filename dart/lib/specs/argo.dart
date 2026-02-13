@@ -9,10 +9,12 @@ final FigSpec argoSpec = FigSpec(
   name: 'argo',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'archive',
       description: 'Manage the workflow archive',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete a workflow in the archive'
@@ -21,6 +23,7 @@ final FigSpec argoSpec = FigSpec(
           name: 'get',
           description: 'Get a workflow in the archive',
           options: [
+
             Option(
               name: ['--output', '-o'],
               description: 'Output format. One of: json|yaml|wide (default "wide")',
@@ -36,6 +39,7 @@ final FigSpec argoSpec = FigSpec(
           name: 'list',
           description: 'List workflows in the archive',
           options: [
+
             Option(
               name: '--chunk-size',
               description: 'Return large lists in chunks rather than all at once. Pass 0 to disable',
@@ -77,6 +81,7 @@ final FigSpec argoSpec = FigSpec(
           name: 'list-label-values',
           description: 'Get workflow label values in the archive',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for list-label-values'
@@ -95,6 +100,7 @@ final FigSpec argoSpec = FigSpec(
           name: 'resubmit',
           description: 'Resubmit one or more workflows',
           options: [
+
             Option(
               name: '--field-selector',
               description: 'Selector (field query) to filter on supports \'=\' \'==\' and \'!=\'.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type',
@@ -166,6 +172,7 @@ final FigSpec argoSpec = FigSpec(
           name: 'retry',
           description: 'Retry zero or more workflows',
           options: [
+
             Option(
               name: '--field-selector',
               description: 'Selector (field query) to filter on, supports \'=\'',
@@ -239,6 +246,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'auth',
       description: 'Manage authentication settings',
       subcommands: [
+
         Subcommand(
           name: 'token',
           description: 'Print the auth token'
@@ -249,6 +257,7 @@ final FigSpec argoSpec = FigSpec(
       name: ['cluster-template', 'cwftmpl', 'cwft'],
       description: 'Manipulate cluster workflow templates',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a cluster workflow template',
@@ -258,6 +267,7 @@ final FigSpec argoSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for create'
@@ -286,6 +296,7 @@ final FigSpec argoSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'Delete all cluster workflow templates'
@@ -300,6 +311,7 @@ final FigSpec argoSpec = FigSpec(
           name: 'get',
           description: 'Display details about a cluster workflow template',
           args: [
+
             Arg(
               name: 'CLUSTER'
             ),
@@ -308,6 +320,7 @@ final FigSpec argoSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for get'
@@ -332,6 +345,7 @@ final FigSpec argoSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for lint'
@@ -355,6 +369,7 @@ final FigSpec argoSpec = FigSpec(
           name: 'list',
           description: 'List cluster workflow templates',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for list'
@@ -381,6 +396,7 @@ final FigSpec argoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Help for completion'
@@ -391,6 +407,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'cp',
       description: 'Copy artifacts from workflow',
       args: [
+
         Arg(
           name: 'my-wf'
         ),
@@ -399,6 +416,7 @@ final FigSpec argoSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--artifact-name',
           description: 'Name of output artifact in workflow',
@@ -445,12 +463,14 @@ final FigSpec argoSpec = FigSpec(
       name: 'cron',
       description: 'Manage cron workflows',
       options: [
+
         Option(
           name: '--help',
           description: 'Help for cron'
         )
       ],
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a cron workflow',
@@ -460,6 +480,7 @@ final FigSpec argoSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--entrypoint',
               description: 'Override entrypoint',
@@ -560,6 +581,7 @@ final FigSpec argoSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'Delete all cron workflows'
@@ -579,6 +601,7 @@ final FigSpec argoSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for get'
@@ -603,6 +626,7 @@ final FigSpec argoSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for lint'
@@ -626,6 +650,7 @@ final FigSpec argoSpec = FigSpec(
           name: 'list',
           description: 'List cron workflows',
           options: [
+
             Option(
               name: ['--all-namespaces', '-A'],
               description: 'Show workflows from all namespaces'
@@ -753,6 +778,7 @@ final FigSpec argoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--all',
           description: 'Delete all workflows'
@@ -823,6 +849,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'executor-plugin',
       description: 'Manage executor plugins',
       subcommands: [
+
         Subcommand(
           name: 'build',
           description: 'Build an executor plugin',
@@ -843,6 +870,7 @@ final FigSpec argoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Help for get'
@@ -897,6 +925,7 @@ final FigSpec argoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Help for lint'
@@ -933,6 +962,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'list',
       description: 'List workflows',
       options: [
+
         Option(
           name: ['--all-namespaces', '-A'],
           description: 'Show workflows from all namespaces'
@@ -1035,6 +1065,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'logs',
       description: 'View logs of a pod or workflow',
       args: [
+
         Arg(
           name: 'WORKFOW'
         ),
@@ -1044,6 +1075,7 @@ final FigSpec argoSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['--container', '-c'],
           description: 'Print the logs of this container (default "main")',
@@ -1124,6 +1156,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'node',
       description: 'Perform action on a node in a workflow',
       args: [
+
         Arg(
           name: 'ACTION'
         ),
@@ -1135,6 +1168,7 @@ final FigSpec argoSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Help for node'
@@ -1186,6 +1220,7 @@ final FigSpec argoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--field-selector',
           description: 'Selector (field query) to filter on: supports \'=\' \'==\' and \'!=\'.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type',
@@ -1257,6 +1292,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'resume',
       description: 'Resume zero or more workflows',
       args: [
+
         Arg(
           name: 'WORKFLOW1'
         ),
@@ -1265,6 +1301,7 @@ final FigSpec argoSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Help for resume'
@@ -1289,6 +1326,7 @@ final FigSpec argoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--field-selector',
           description: 'Selector (field query) to filter on, Supports \'=\'; \'==\'; and \'!=\'.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type',
@@ -1360,6 +1398,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'server',
       description: 'Start the Argo Server',
       options: [
+
         Option(
           name: '--access-control-allow-origin',
           description: 'Set Access-Control-Allow-Origin header in HTTP responses',
@@ -1503,6 +1542,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'stop',
       description: 'Stop zero or more workflows allowing all exit handlers to run',
       args: [
+
         Arg(
           name: 'WORKFLOW1'
         ),
@@ -1511,6 +1551,7 @@ final FigSpec argoSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--dry-run',
           description: 'If true, only stop the workflows that would be stopped, without stopping them'
@@ -1566,6 +1607,7 @@ final FigSpec argoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--dry-run',
           description: 'Modify the workflow on the client-side without creating it'
@@ -1717,6 +1759,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'suspend',
       description: 'Suspend zero or more workflow',
       args: [
+
         Arg(
           name: 'WORKFLOW1'
         ),
@@ -1725,6 +1768,7 @@ final FigSpec argoSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Help for suspend'
@@ -1735,16 +1779,19 @@ final FigSpec argoSpec = FigSpec(
       name: 'template',
       description: 'Manipulate workflow templates',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Help for template'
         )
       ],
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a workflow template',
           args: [
+
             Arg(
               name: 'FILE1'
             ),
@@ -1753,6 +1800,7 @@ final FigSpec argoSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for create'
@@ -1781,6 +1829,7 @@ final FigSpec argoSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--all',
               description: 'Delete all workflow templates'
@@ -1800,6 +1849,7 @@ final FigSpec argoSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Help for get'
@@ -1819,6 +1869,7 @@ final FigSpec argoSpec = FigSpec(
           name: 'lint',
           description: 'Validate a file or directory of workflow template manifests',
           args: [
+
             Arg(
               name: 'DIRECTORY'
             ),
@@ -1827,6 +1878,7 @@ final FigSpec argoSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for lint'
@@ -1850,6 +1902,7 @@ final FigSpec argoSpec = FigSpec(
           name: 'list',
           description: 'List workflow templates',
           options: [
+
             Option(
               name: ['--all-namespaces', '-A'],
               description: 'Show workflows from all namespaces'
@@ -1880,6 +1933,7 @@ final FigSpec argoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--dry-run',
           description: 'Do not terminate the workflow only print what would happen'
@@ -1912,6 +1966,7 @@ final FigSpec argoSpec = FigSpec(
       name: 'version',
       description: 'Print version information',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Help for version'
@@ -1931,6 +1986,7 @@ final FigSpec argoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Help for wait'
@@ -1950,6 +2006,7 @@ final FigSpec argoSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Help for watch'

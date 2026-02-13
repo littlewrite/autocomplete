@@ -10,11 +10,13 @@ final FigSpec splashCliSpec = FigSpec(
   displayName: 'Splash',
   description: 'Get stunning wallpapers from Unsplash',
   subcommands: [
+
     Subcommand(
       name: 'settings',
       description: 'Manage settings',
       icon: '⚙️',
       subcommands: [
+
         Subcommand(
           name: 'get',
           args: [
@@ -40,6 +42,7 @@ final FigSpec splashCliSpec = FigSpec(
       description: 'Manage aliases',
       icon: '🔗',
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Get an alias',
@@ -53,6 +56,7 @@ final FigSpec splashCliSpec = FigSpec(
           name: 'set',
           description: 'Set an alias',
           args: [
+
             Arg(
               name: 'key'
             ),
@@ -72,6 +76,7 @@ final FigSpec splashCliSpec = FigSpec(
       description: 'Manage collections',
       icon: '🗃',
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Get a collection',
@@ -113,6 +118,7 @@ final FigSpec splashCliSpec = FigSpec(
       description: 'Manage SplashCLI download directory',
       icon: '📁',
       subcommands: [
+
         Subcommand(
           name: 'get',
           icon: '📁',
@@ -147,6 +153,7 @@ final FigSpec splashCliSpec = FigSpec(
     Subcommand(
       name: 'user',
       subcommands: [
+
         Subcommand(
           name: 'login',
           description: 'Login with your Unsplash account'
@@ -183,6 +190,7 @@ final FigSpec splashCliSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Help Message'
@@ -199,6 +207,7 @@ final FigSpec splashCliSpec = FigSpec(
         name: 'scale',
         defaultValue: 'auto',
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'fill'),
           FigSuggestion(name: 'fit'),
@@ -216,6 +225,7 @@ final FigSpec splashCliSpec = FigSpec(
         name: 'screen',
         defaultValue: 'all',
         suggestions: [
+
           FigSuggestion(name: 'all'),
           FigSuggestion(name: 'main')
         ]
@@ -259,6 +269,7 @@ final FigSpec splashCliSpec = FigSpec(
         Arg(
         name: 'degrees',
         suggestions: [
+
           FigSuggestion(name: '90'),
           FigSuggestion(name: '180'),
           FigSuggestion(name: '270')
@@ -274,6 +285,7 @@ final FigSpec splashCliSpec = FigSpec(
         name: 'colorspace',
         defaultValue: 'srgb',
         suggestions: [
+
           FigSuggestion(name: 'srgb'),
           FigSuggestion(name: 'rgb'),
           FigSuggestion(name: 'cmyk'),
@@ -310,6 +322,7 @@ final FigSpec splashCliSpec = FigSpec(
         name: 'orientation',
         defaultValue: 'landscape',
         suggestions: [
+
           FigSuggestion(name: 'landscape'),
           FigSuggestion(name: 'portrait'),
           FigSuggestion(name: 'squarish')

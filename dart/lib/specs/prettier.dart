@@ -10,6 +10,7 @@ final FigSpec prettierSpec = FigSpec(
   description: 'Run Prettier from the command line',
   icon: 'https://prettier.io/icon.png',
   options: [
+
     Option(
       name: ['-c', '--check'],
       description: 'Check if your files are formatted',
@@ -38,6 +39,7 @@ final FigSpec prettierSpec = FigSpec(
         name: 'mode',
         defaultValue: 'always',
         suggestions: [
+
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'avoid')
         ]
@@ -56,6 +58,7 @@ final FigSpec prettierSpec = FigSpec(
         name: 'mode',
         defaultValue: 'auto',
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'off')
         ]
@@ -70,6 +73,7 @@ final FigSpec prettierSpec = FigSpec(
         name: 'choice',
         defaultValue: 'lf',
         suggestions: [
+
           FigSuggestion(name: 'lf'),
           FigSuggestion(name: 'crlf'),
           FigSuggestion(name: 'cr'),
@@ -86,6 +90,7 @@ final FigSpec prettierSpec = FigSpec(
         name: 'choice',
         defaultValue: 'css',
         suggestions: [
+
           FigSuggestion(name: 'css'),
           FigSuggestion(name: 'strict'),
           FigSuggestion(name: 'ignore')
@@ -108,6 +113,7 @@ final FigSpec prettierSpec = FigSpec(
         Arg(
         name: 'parser',
         suggestions: [
+
           FigSuggestion(name: 'flow'),
           FigSuggestion(name: 'babel'),
           FigSuggestion(name: 'babel-flow'),
@@ -150,6 +156,7 @@ final FigSpec prettierSpec = FigSpec(
         Arg(
         defaultValue: 'preserve',
         suggestions: [
+
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'never'),
           FigSuggestion(name: 'preserve')
@@ -165,6 +172,7 @@ final FigSpec prettierSpec = FigSpec(
         name: 'when',
         defaultValue: 'as-needed',
         suggestions: [
+
           FigSuggestion(name: 'as-needed'),
           FigSuggestion(name: 'consistent'),
           FigSuggestion(name: 'preserve')
@@ -198,6 +206,7 @@ final FigSpec prettierSpec = FigSpec(
         name: 'type',
         defaultValue: 'es5',
         suggestions: [
+
           FigSuggestion(name: 'es5'),
           FigSuggestion(name: 'none'),
           FigSuggestion(name: 'all')
@@ -237,6 +246,7 @@ final FigSpec prettierSpec = FigSpec(
         name: 'precedence',
         defaultValue: 'cli-override',
         suggestions: [
+
           FigSuggestion(name: 'cli-override'),
           FigSuggestion(name: 'file-override'),
           FigSuggestion(name: 'prefer-file')
@@ -366,6 +376,7 @@ final FigSpec prettierSpec = FigSpec(
         name: 'level',
         defaultValue: 'log',
         suggestions: [
+
           FigSuggestion(name: 'silent'),
           FigSuggestion(name: 'error'),
           FigSuggestion(name: 'warn'),

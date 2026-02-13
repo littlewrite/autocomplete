@@ -15,6 +15,7 @@ final FigSpec typosSpec = FigSpec(
     isVariadic: true,
     isOptional: true,
     suggestions: [
+
       FigSuggestion(
         name: '-',
         hidden: true,
@@ -24,6 +25,7 @@ final FigSpec typosSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-c', '--config'],
       args: [
@@ -65,6 +67,7 @@ final FigSpec typosSpec = FigSpec(
         name: 'path',
         template: 'filepaths',
         suggestions: [
+
           FigSuggestion(
             name: '-',
             hidden: true,
@@ -85,6 +88,7 @@ final FigSpec typosSpec = FigSpec(
         Arg(
         name: 'format',
         suggestions: [
+
           FigSuggestion(name: 'silent'),
           FigSuggestion(name: 'brief'),
           FigSuggestion(name: 'long'),
@@ -158,6 +162,7 @@ final FigSpec typosSpec = FigSpec(
         Arg(
         name: 'locale',
         suggestions: [
+
           FigSuggestion(name: 'en'),
           FigSuggestion(name: 'en-us'),
           FigSuggestion(name: 'en-gb'),
@@ -174,9 +179,10 @@ final FigSpec typosSpec = FigSpec(
         Arg(
         name: 'when',
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'always'),
-
+          FigSuggestion(name: 'never')
         ]
       )
       ],

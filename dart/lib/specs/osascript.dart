@@ -9,6 +9,7 @@ final FigSpec osascriptSpec = FigSpec(
   name: 'osascript',
   description: 'Execute OSA scripts (AppleScript, JavaScript, etc.)',
   options: [
+
     Option(
       name: '-e',
       description: 'Enter one line of a script',
@@ -39,6 +40,7 @@ final FigSpec osascriptSpec = FigSpec(
         name: 'flags',
         isVariadic: true,
         suggestions: [
+
           FigSuggestion(
             name: 'h',
             description: 'Print values in human-readable form (default)'

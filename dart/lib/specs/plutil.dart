@@ -8,7 +8,10 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec plutilSpec = FigSpec(
   name: 'plutil',
   description: 'Check the syntax of property list files, or convert a plist file from one format to another. Specifying - as an input file reads from stdin',
-  parserDirectives: ParserDirectives(),
+  parserDirectives: ParserDirectives(
+    flagsArePosixNoncompliant: true,
+    optionsMustPrecedeArguments: true
+  ),
   args: [
     Arg(
     name: 'file',
@@ -16,6 +19,7 @@ final FigSpec plutilSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-help',
       description: 'Show the usage information for the command and exit'
@@ -36,6 +40,7 @@ final FigSpec plutilSpec = FigSpec(
         name: 'format',
         description: 'Format to convert the named file to',
         suggestions: [
+
           FigSuggestion(
             name: 'xml1',
             description: 'For version 1 of the XML plist format'

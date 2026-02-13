@@ -15,6 +15,7 @@ final FigSpec catSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-b',
       description: 'Number the non-blank output lines, starting at 1'

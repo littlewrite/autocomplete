@@ -9,10 +9,12 @@ final FigSpec robomakerSpec = FigSpec(
   name: 'robomaker',
   description: 'This section provides documentation for the AWS RoboMaker API operations',
   subcommands: [
+
     Subcommand(
       name: 'batch-delete-worlds',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Deletes one or more worlds in a batch operation',
       options: [
+
         Option(
           name: '--worlds',
           description: 'A list of Amazon Resource Names (arns) that correspond to worlds to delete',
@@ -38,6 +40,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'batch-describe-simulation-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Describes one or more simulation jobs',
       options: [
+
         Option(
           name: '--jobs',
           description: 'A list of Amazon Resource Names (ARNs) of simulation jobs to describe',
@@ -75,6 +79,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'cancel-deployment-job',
       description: 'This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.  Cancels the specified deployment job',
       options: [
+
         Option(
           name: '--job',
           description: 'The deployment job ARN to cancel',
@@ -112,6 +118,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'cancel-simulation-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Cancels the specified simulation job',
       options: [
+
         Option(
           name: '--job',
           description: 'The simulation job ARN to cancel',
@@ -149,6 +157,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -161,6 +170,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'cancel-simulation-job-batch',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active simulation jobs created as part of the batch',
       options: [
+
         Option(
           name: '--batch',
           description: 'The id of the batch to cancel',
@@ -186,6 +196,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -198,6 +209,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'cancel-world-export-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Cancels the specified export job',
       options: [
+
         Option(
           name: '--job',
           description: 'The Amazon Resource Name (arn) of the world export job to cancel',
@@ -223,6 +235,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -235,6 +248,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'cancel-world-generation-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Cancels the specified world generator job',
       options: [
+
         Option(
           name: '--job',
           description: 'The Amazon Resource Name (arn) of the world generator job to cancel',
@@ -260,6 +274,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -272,6 +287,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-deployment-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported and will throw an error if used. For more information, see the January 31, 2022 update in the Support policy page.  Deploys a specific version of a robot application to robots in a fleet. The robot application must have a numbered applicationVersion for consistency reasons. To create a new version, use CreateRobotApplicationVersion or see Creating a Robot Application Version.   After 90 days, deployment jobs expire and will be deleted. They will no longer be accessible',
       options: [
+
         Option(
           name: '--deployment-config',
           description: 'The requested deployment configuration',
@@ -333,6 +349,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -345,6 +362,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-fleet',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported and will throw an error if used. For more information, see the January 31, 2022 update in the Support policy page.  Creates a fleet, a logical group of robots running the same robot application',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the fleet',
@@ -379,6 +397,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -391,6 +410,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-robot',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported and will throw an error if used. For more information, see the January 31, 2022 update in the Support policy page.  Creates a robot',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the robot',
@@ -443,6 +463,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -455,6 +476,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-robot-application',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Creates a robot application',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the robot application',
@@ -516,6 +538,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -528,6 +551,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-robot-application-version',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Creates a version of a robot application',
       options: [
+
         Option(
           name: '--application',
           description: 'The application information for the robot application',
@@ -580,6 +604,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -592,6 +617,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-simulation-application',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Creates a simulation application',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the simulation application',
@@ -671,6 +697,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -683,6 +710,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-simulation-application-version',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Creates a simulation application with a specific revision id',
       options: [
+
         Option(
           name: '--application',
           description: 'The application information for the simulation application',
@@ -735,6 +763,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -747,6 +776,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-simulation-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Creates a simulation job.  After 90 days, simulation jobs expire and will be deleted. They will no longer be accessible',
       options: [
+
         Option(
           name: '--client-request-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request',
@@ -871,6 +901,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -883,6 +914,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-world-export-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Creates a world export job',
       options: [
+
         Option(
           name: '--client-request-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request',
@@ -944,6 +976,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -956,6 +989,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-world-generation-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Creates worlds using the specified template',
       options: [
+
         Option(
           name: '--client-request-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request',
@@ -1017,6 +1051,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1029,6 +1064,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'create-world-template',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Creates a world template',
       options: [
+
         Option(
           name: '--client-request-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request',
@@ -1090,6 +1126,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1102,6 +1139,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'delete-fleet',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.  Deletes a fleet',
       options: [
+
         Option(
           name: '--fleet',
           description: 'The Amazon Resource Name (ARN) of the fleet',
@@ -1127,6 +1165,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1139,6 +1178,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'delete-robot',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.  Deletes a robot',
       options: [
+
         Option(
           name: '--robot',
           description: 'The Amazon Resource Name (ARN) of the robot',
@@ -1164,6 +1204,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1176,6 +1217,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'delete-robot-application',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Deletes a robot application',
       options: [
+
         Option(
           name: '--application',
           description: 'The Amazon Resource Name (ARN) of the the robot application',
@@ -1210,6 +1252,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1222,6 +1265,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'delete-simulation-application',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Deletes a simulation application',
       options: [
+
         Option(
           name: '--application',
           description: 'The application information for the simulation application to delete',
@@ -1256,6 +1300,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1268,6 +1313,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'delete-world-template',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Deletes a world template',
       options: [
+
         Option(
           name: '--template',
           description: 'The Amazon Resource Name (arn) of the world template you want to delete',
@@ -1293,6 +1339,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1305,6 +1352,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'deregister-robot',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.  Deregisters a robot',
       options: [
+
         Option(
           name: '--fleet',
           description: 'The Amazon Resource Name (ARN) of the fleet',
@@ -1339,6 +1387,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1351,6 +1400,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-deployment-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.  Describes a deployment job',
       options: [
+
         Option(
           name: '--job',
           description: 'The Amazon Resource Name (ARN) of the deployment job',
@@ -1376,6 +1426,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1388,6 +1439,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-fleet',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.  Describes a fleet',
       options: [
+
         Option(
           name: '--fleet',
           description: 'The Amazon Resource Name (ARN) of the fleet',
@@ -1413,6 +1465,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1425,6 +1478,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-robot',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.  Describes a robot',
       options: [
+
         Option(
           name: '--robot',
           description: 'The Amazon Resource Name (ARN) of the robot to be described',
@@ -1450,6 +1504,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1462,6 +1517,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-robot-application',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Describes a robot application',
       options: [
+
         Option(
           name: '--application',
           description: 'The Amazon Resource Name (ARN) of the robot application',
@@ -1496,6 +1552,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1508,6 +1565,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-simulation-application',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Describes a simulation application',
       options: [
+
         Option(
           name: '--application',
           description: 'The application information for the simulation application',
@@ -1542,6 +1600,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1554,6 +1613,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-simulation-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Describes a simulation job',
       options: [
+
         Option(
           name: '--job',
           description: 'The Amazon Resource Name (ARN) of the simulation job to be described',
@@ -1579,6 +1639,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1591,6 +1652,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-simulation-job-batch',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Describes a simulation job batch',
       options: [
+
         Option(
           name: '--batch',
           description: 'The id of the batch to describe',
@@ -1616,6 +1678,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1628,6 +1691,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-world',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Describes a world',
       options: [
+
         Option(
           name: '--world',
           description: 'The Amazon Resource Name (arn) of the world you want to describe',
@@ -1653,6 +1717,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1665,6 +1730,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-world-export-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Describes a world export job',
       options: [
+
         Option(
           name: '--job',
           description: 'The Amazon Resource Name (arn) of the world export job to describe',
@@ -1690,6 +1756,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1702,6 +1769,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-world-generation-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Describes a world generation job',
       options: [
+
         Option(
           name: '--job',
           description: 'The Amazon Resource Name (arn) of the world generation job to describe',
@@ -1727,6 +1795,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1739,6 +1808,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'describe-world-template',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Describes a world template',
       options: [
+
         Option(
           name: '--template',
           description: 'The Amazon Resource Name (arn) of the world template you want to describe',
@@ -1764,6 +1834,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1776,6 +1847,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'get-world-template-body',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Gets the world template body',
       options: [
+
         Option(
           name: '--template',
           description: 'The Amazon Resource Name (arn) of the world template',
@@ -1810,6 +1882,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1822,6 +1895,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-deployment-jobs',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.   Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs',
       options: [
+
         Option(
           name: '--filters',
           description: 'Optional filters to limit results. The filter names status and fleetName are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status InProgress or the status Pending',
@@ -1892,6 +1966,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1904,6 +1979,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-fleets',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.   Returns a list of fleets. You can optionally provide filters to retrieve specific fleets',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the previous paginated request did not return all of the remaining results, the response object\'s nextToken parameter value is set to a token. To retrieve the next set of results, call ListFleets again and assign that token to the request object\'s nextToken parameter. If there are no remaining results, the previous response object\'s NextToken parameter is set to null.   This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes',
@@ -1974,6 +2050,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1986,6 +2063,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-robot-applications',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Returns a list of robot application. You can optionally provide filters to retrieve specific robot applications',
       options: [
+
         Option(
           name: '--version-qualifier',
           description: 'The version qualifier of the robot application',
@@ -2065,6 +2143,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2077,6 +2156,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-robots',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.   Returns a list of robots. You can optionally provide filters to retrieve specific robots',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the previous paginated request did not return all of the remaining results, the response object\'s nextToken parameter value is set to a token. To retrieve the next set of results, call ListRobots again and assign that token to the request object\'s nextToken parameter. If there are no remaining results, the previous response object\'s NextToken parameter is set to null',
@@ -2147,6 +2227,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2159,6 +2240,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-simulation-applications',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Returns a list of simulation applications. You can optionally provide filters to retrieve specific simulation applications',
       options: [
+
         Option(
           name: '--version-qualifier',
           description: 'The version qualifier of the simulation application',
@@ -2238,6 +2320,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2250,6 +2333,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-simulation-job-batches',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Returns a list simulation job batches. You can optionally provide filters to retrieve specific simulation batch jobs',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the previous paginated request did not return all of the remaining results, the response object\'s nextToken parameter value is set to a token. To retrieve the next set of results, call ListSimulationJobBatches again and assign that token to the request object\'s nextToken parameter. If there are no remaining results, the previous response object\'s NextToken parameter is set to null',
@@ -2320,6 +2404,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2332,6 +2417,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-simulation-jobs',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Returns a list of simulation jobs. You can optionally provide filters to retrieve specific simulation jobs',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the previous paginated request did not return all of the remaining results, the response object\'s nextToken parameter value is set to a token. To retrieve the next set of results, call ListSimulationJobs again and assign that token to the request object\'s nextToken parameter. If there are no remaining results, the previous response object\'s NextToken parameter is set to null',
@@ -2402,6 +2488,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2414,6 +2501,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Lists all tags on a AWS RoboMaker resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed',
@@ -2439,6 +2527,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2451,6 +2540,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-world-export-jobs',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Lists world export jobs',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the previous paginated request did not return all of the remaining results, the response object\'s nextToken parameter value is set to a token. To retrieve the next set of results, call ListWorldExportJobs again and assign that token to the request object\'s nextToken parameter. If there are no remaining results, the previous response object\'s NextToken parameter is set to null',
@@ -2521,6 +2611,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2533,6 +2624,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-world-generation-jobs',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Lists world generator jobs',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the previous paginated request did not return all of the remaining results, the response object\'s nextToken parameter value is set to a token. To retrieve the next set of results, call ListWorldGenerationJobsRequest again and assign that token to the request object\'s nextToken parameter. If there are no remaining results, the previous response object\'s NextToken parameter is set to null',
@@ -2603,6 +2695,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2615,6 +2708,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-world-templates',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Lists world templates',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the previous paginated request did not return all of the remaining results, the response object\'s nextToken parameter value is set to a token. To retrieve the next set of results, call ListWorldTemplates again and assign that token to the request object\'s nextToken parameter. If there are no remaining results, the previous response object\'s NextToken parameter is set to null',
@@ -2676,6 +2770,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2688,6 +2783,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'list-worlds',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Lists worlds',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the previous paginated request did not return all of the remaining results, the response object\'s nextToken parameter value is set to a token. To retrieve the next set of results, call ListWorlds again and assign that token to the request object\'s nextToken parameter. If there are no remaining results, the previous response object\'s NextToken parameter is set to null',
@@ -2758,6 +2854,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2770,6 +2867,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'register-robot',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Registers a robot with a fleet.  This API is no longer supported and will throw an error if used. For more information, see the January 31, 2022 update in the Support policy page',
       options: [
+
         Option(
           name: '--fleet',
           description: 'The Amazon Resource Name (ARN) of the fleet',
@@ -2804,6 +2902,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2816,6 +2915,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'restart-simulation-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Restarts a running simulation job',
       options: [
+
         Option(
           name: '--job',
           description: 'The Amazon Resource Name (ARN) of the simulation job',
@@ -2841,6 +2941,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2853,6 +2954,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'start-simulation-job-batch',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Starts a new simulation job batch. The batch is defined using one or more SimulationJobRequest objects',
       options: [
+
         Option(
           name: '--client-request-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request',
@@ -2905,6 +3007,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2917,6 +3020,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'sync-deployment-job',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.    This API is no longer supported. For more information, see the May 2, 2022 update in the Support policy page.   Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment',
       options: [
+
         Option(
           name: '--client-request-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request',
@@ -2951,6 +3055,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2963,6 +3068,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'tag-resource',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Adds or edits tags for a AWS RoboMaker resource. Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty strings.  For information about the rules that apply to tag keys and tag values, see User-Defined Tag Restrictions in the AWS Billing and Cost Management User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging',
@@ -2997,6 +3103,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3009,6 +3116,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'untag-resource',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Removes the specified tags from the specified AWS RoboMaker resource. To remove a tag, specify the tag key. To change the tag value of an existing tag key, use  TagResource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags',
@@ -3043,6 +3151,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3055,6 +3164,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'update-robot-application',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Updates a robot application',
       options: [
+
         Option(
           name: '--application',
           description: 'The application information for the robot application',
@@ -3116,6 +3226,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3128,6 +3239,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'update-simulation-application',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Updates a simulation application',
       options: [
+
         Option(
           name: '--application',
           description: 'The application information for the simulation application',
@@ -3207,6 +3319,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3219,6 +3332,7 @@ final FigSpec robomakerSpec = FigSpec(
       name: 'update-world-template',
       description: 'End of support notice: On September 10, 2025, Amazon Web Services will discontinue support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer be able to access the Amazon Web Services RoboMaker console or Amazon Web Services RoboMaker resources. For more information on transitioning to Batch to help run containerized simulations, visit https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/.   Updates a world template',
       options: [
+
         Option(
           name: '--template',
           description: 'The Amazon Resource Name (arn) of the world template to update',
@@ -3271,6 +3385,7 @@ final FigSpec robomakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

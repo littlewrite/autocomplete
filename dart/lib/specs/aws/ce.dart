@@ -9,10 +9,12 @@ final FigSpec ceSpec = FigSpec(
   name: 'ce',
   description: 'You can use the Cost Explorer API to programmatically query your cost and usage data. You can query for aggregated data such as total monthly costs or total daily usage. You can also query for granular data. This might include the number of daily write operations for Amazon DynamoDB database tables in your production environment.  Service Endpoint The Cost Explorer API provides the following endpoint:    https://ce.us-east-1.amazonaws.com    For information about the costs that are associated with the Cost Explorer API, see Amazon Web Services Cost Management Pricing',
   subcommands: [
+
     Subcommand(
       name: 'create-anomaly-monitor',
       description: 'Creates a new cost anomaly detection monitor with the requested type and monitor specification',
       options: [
+
         Option(
           name: '--anomaly-monitor',
           description: 'The cost anomaly detection monitor object that you want to create',
@@ -47,6 +49,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'create-anomaly-subscription',
       description: 'Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with email or SNS notifications. Email subscribers can set an absolute or percentage threshold and a time frequency for receiving notifications',
       options: [
+
         Option(
           name: '--anomaly-subscription',
           description: 'The cost anomaly subscription object that you want to create',
@@ -93,6 +97,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'create-cost-category-definition',
       description: 'Creates a new Cost Category with the requested name and rules',
       options: [
+
         Option(
           name: '--name',
           description: 'The unique name of the Cost Category',
@@ -184,6 +190,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'delete-anomaly-monitor',
       description: 'Deletes a cost anomaly monitor',
       options: [
+
         Option(
           name: '--monitor-arn',
           description: 'The unique identifier of the cost anomaly monitor that you want to delete',
@@ -221,6 +229,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'delete-anomaly-subscription',
       description: 'Deletes a cost anomaly subscription',
       options: [
+
         Option(
           name: '--subscription-arn',
           description: 'The unique identifier of the cost anomaly subscription that you want to delete',
@@ -258,6 +268,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'delete-cost-category-definition',
       description: 'Deletes a Cost Category. Expenses from this month going forward will no longer be categorized with this Cost Category',
       options: [
+
         Option(
           name: '--cost-category-arn',
           description: 'The unique identifier for your Cost Category',
@@ -295,6 +307,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'describe-cost-category-definition',
       description: 'Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates of a Cost Category that\'s defined in the account. You have the option to use EffectiveOn to return a Cost Category that\'s active on a specific date. If there\'s no EffectiveOn specified, you see a Cost Category that\'s effective on the current date. If Cost Category is still effective, EffectiveEnd is omitted in the response',
       options: [
+
         Option(
           name: '--cost-category-arn',
           description: 'The unique identifier for your Cost Category',
@@ -341,6 +355,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -353,6 +368,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-anomalies',
       description: 'Retrieves all of the cost anomalies detected on your account during the time period that\'s specified by the DateInterval object. Anomalies are available for up to 90 days',
       options: [
+
         Option(
           name: '--monitor-arn',
           description: 'Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN)',
@@ -423,6 +439,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -435,6 +452,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-anomaly-monitors',
       description: 'Retrieves the cost anomaly monitor definitions for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs)',
       options: [
+
         Option(
           name: '--monitor-arn-list',
           description: 'A list of cost anomaly monitor ARNs',
@@ -478,6 +496,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -490,6 +509,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-anomaly-subscriptions',
       description: 'Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs)',
       options: [
+
         Option(
           name: '--subscription-arn-list',
           description: 'A list of cost anomaly subscription ARNs',
@@ -542,6 +562,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -554,6 +575,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-approximate-usage-records',
       description: 'Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity',
       options: [
+
         Option(
           name: '--granularity',
           description: 'How granular you want the data to be. You can enable data at hourly or daily granularity',
@@ -597,6 +619,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -609,6 +632,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-commitment-purchase-analysis',
       description: 'Retrieves a commitment purchase analysis result based on the AnalysisId',
       options: [
+
         Option(
           name: '--analysis-id',
           description: 'The analysis ID that\'s associated with the commitment purchase analysis',
@@ -634,6 +658,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -646,6 +671,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-cost-and-usage',
       description: 'Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric that you want the request to return. For example, you can specify BlendedCosts or UsageQuantity. You can also filter and group your data by various dimensions, such as SERVICE or AZ, in a specific time range. For a complete list of valid dimensions, see the GetDimensionValues operation. Management account in an organization in Organizations have access to all member accounts. For information about filter limitations, see Quotas and restrictions in the Billing and Cost Management User Guide',
       options: [
+
         Option(
           name: '--time-period',
           description: 'Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive, but the end date is exclusive. For example, if start is 2017-01-01 and end is 2017-05-01, then the cost and usage data is retrieved from 2017-01-01 up to and including 2017-04-30 but not including 2017-05-01',
@@ -716,6 +742,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -728,6 +755,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-cost-and-usage-with-resources',
       description: 'Retrieves cost and usage metrics with resources for your account. You can specify which cost and usage-related metric, such as BlendedCosts or UsageQuantity, that you want the request to return. You can also filter and group your data by various dimensions, such as SERVICE or AZ, in a specific time range. For a complete list of valid dimensions, see the GetDimensionValues operation. Management account in an organization in Organizations have access to all member accounts. Hourly granularity is only available for EC2-Instances (Elastic Compute Cloud) resource-level data. All other resource-level data is available at daily granularity.  This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information about how to access the Settings page, see Controlling Access for Cost Explorer in the Billing and Cost Management User Guide',
       options: [
+
         Option(
           name: '--time-period',
           description: 'Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive, but the end date is exclusive. For example, if start is 2017-01-01 and end is 2017-05-01, then the cost and usage data is retrieved from 2017-01-01 up to and including 2017-04-30 but not including 2017-05-01',
@@ -798,6 +826,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -810,6 +839,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-cost-categories',
       description: 'Retrieves an array of Cost Category names and values incurred cost.  If some Cost Category names and values are not associated with any cost, they will not be returned by this API',
       options: [
+
         Option(
           name: '--search-string',
           description: 'The value that you want to search the filter values for. If you don\'t specify a CostCategoryName, SearchString is used to filter Cost Category names that match the SearchString pattern. If you specify a CostCategoryName, SearchString is used to filter Cost Category values that match the SearchString pattern',
@@ -889,6 +919,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -901,6 +932,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-cost-forecast',
       description: 'Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period that you select, based on your past costs',
       options: [
+
         Option(
           name: '--time-period',
           description: 'The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error',
@@ -962,6 +994,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -974,6 +1007,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-dimension-values',
       description: 'Retrieves all available filter values for a specified filter over a period of time. You can search the dimension values for an arbitrary string',
       options: [
+
         Option(
           name: '--search-string',
           description: 'The value that you want to search the filter values for',
@@ -1062,6 +1096,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1074,6 +1109,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-reservation-coverage',
       description: 'Retrieves the reservation coverage for your account, which you can use to see how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a reservation. An organization\'s management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about reservation usage by the following dimensions:   AZ   CACHE_ENGINE   DATABASE_ENGINE   DEPLOYMENT_OPTION   INSTANCE_TYPE   LINKED_ACCOUNT   OPERATING_SYSTEM   PLATFORM   REGION   SERVICE   TAG   TENANCY   To determine valid values for a dimension, use the GetDimensionValues operation',
       options: [
+
         Option(
           name: '--time-period',
           description: 'The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if start is 2017-01-01 and end is 2017-05-01, then the cost and usage data is retrieved from 2017-01-01 up to and including 2017-04-30 but not including 2017-05-01',
@@ -1162,6 +1198,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1174,6 +1211,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-reservation-purchase-recommendation',
       description: 'Gets recommendations for reservation purchases. These recommendations might help you to reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing. Amazon Web Services generates your recommendations by identifying your On-Demand usage during a specific time period and collecting your usage into categories that are eligible for a reservation. After Amazon Web Services has these categories, it simulates every combination of reservations in each category of usage to identify the best number of each type of Reserved Instance (RI) to purchase to maximize your estimated savings.  For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web Services recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also shows the equal number of normalized units. This way, you can purchase any instance size that you want. For this example, your RI recommendation is for c4.large because that is the smallest size instance in the c4 instance family',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The account ID that\'s associated with the recommendation',
@@ -1280,6 +1318,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1292,6 +1331,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-reservation-utilization',
       description: 'Retrieves the reservation utilization for your account. Management account in an organization have access to member accounts. You can filter data by dimensions in a time period. You can use GetDimensionValues to determine the possible dimension values. Currently, you can group only by SUBSCRIPTION_ID',
       options: [
+
         Option(
           name: '--time-period',
           description: 'Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if start is 2017-01-01 and end is 2017-05-01, then the cost and usage data is retrieved from 2017-01-01 up to and including 2017-04-30 but not including 2017-05-01',
@@ -1371,6 +1411,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1383,6 +1424,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-rightsizing-recommendation',
       description: 'Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2 instances. Recommendations are generated to either downsize or terminate instances, along with providing savings detail and metrics. For more information about calculation and function, see Optimizing Your Cost with Rightsizing Recommendations in the Billing and Cost Management User Guide',
       options: [
+
         Option(
           name: '--filter',
           description: 'Use Expression to filter in various Cost Explorer APIs. Not all Expression types are supported in each API. Refer to the documentation for each specific API to see what is supported. There are two patterns:   Simple dimension values.   There are three types of simple dimension values: CostCategories, Tags, and Dimensions.   Specify the CostCategories field to define a filter that acts on Cost Categories.   Specify the Tags field to define a filter that acts on Cost Allocation Tags.   Specify the Dimensions field to define a filter that acts on the  DimensionValues .     For each filter type, you can set the dimension name and values for the filters that you plan to use.   For example, you can filter for REGION==us-east-1 OR REGION==us-west-1. For GetRightsizingRecommendation, the Region is a full name (for example, REGION==US East (N. Virginia).   The corresponding Expression for this example is as follows: { "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }    As shown in the previous example, lists of dimension values are combined with OR when applying the filter.     You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.   For example, you can filter for linked account names that start with "a".   The corresponding Expression for this example is as follows: { "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }        Compound Expression types with logical operations.   You can use multiple Expression types and the logical operators AND/OR/NOT to create a list of one or more Expression objects. By doing this, you can filter by more advanced options.   For example, you can filter by ((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer).   The corresponding Expression for this example is as follows: { "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] }      Because each Expression can have only one operator, the service returns an error if more than one is specified. The following example shows an Expression object that creates an error:  { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } }   The following is an example of the corresponding error message: "Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"      For the GetRightsizingRecommendation action, a combination of OR and NOT isn\'t supported. OR isn\'t supported between different dimensions, or dimensions and tags. NOT operators aren\'t supported. Dimensions are also limited to LINKED_ACCOUNT, REGION, or RIGHTSIZING_TYPE. For the GetReservationPurchaseRecommendation action, only NOT is supported. AND and OR aren\'t supported. Dimensions are limited to LINKED_ACCOUNT',
@@ -1444,6 +1486,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1456,6 +1499,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-savings-plan-purchase-recommendation-details',
       description: 'Retrieves the details for a Savings Plan recommendation. These details include the hourly data-points that construct the cost, coverage, and utilization charts',
       options: [
+
         Option(
           name: '--recommendation-detail-id',
           description: 'The ID that is associated with the Savings Plan recommendation',
@@ -1481,6 +1525,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1493,6 +1538,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-savings-plans-coverage',
       description: 'Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for Savings Plans usage with the following dimensions:    LINKED_ACCOUNT     REGION     SERVICE     INSTANCE_FAMILY    To determine valid values for a dimension, use the GetDimensionValues operation',
       options: [
+
         Option(
           name: '--time-period',
           description: 'The time period that you want the usage and costs for. The Start date must be within 13 months. The End date must be after the Start date, and before the current date. Future dates can\'t be used as an End date',
@@ -1581,6 +1627,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1593,6 +1640,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-savings-plans-purchase-recommendation',
       description: 'Retrieves the Savings Plans recommendations for your account. First use StartSavingsPlansPurchaseRecommendationGeneration to generate a new set of recommendations, and then use GetSavingsPlansPurchaseRecommendation to retrieve them',
       options: [
+
         Option(
           name: '--savings-plans-type',
           description: 'The Savings Plans recommendation type that\'s requested',
@@ -1681,6 +1729,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1693,6 +1742,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-savings-plans-utilization',
       description: 'Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity. Management account in an organization have access to member accounts. You can use GetDimensionValues in SAVINGS_PLANS to determine the possible dimension values.  You can\'t group by any dimension values for GetSavingsPlansUtilization',
       options: [
+
         Option(
           name: '--time-period',
           description: 'The time period that you want the usage and costs for. The Start date must be within 13 months. The End date must be after the Start date, and before the current date. Future dates can\'t be used as an End date',
@@ -1745,6 +1795,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1757,6 +1808,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-savings-plans-utilization-details',
       description: 'Retrieves attribute data along with aggregate utilization and savings data for a given time period. This doesn\'t support granular or grouped data (daily/monthly) in response. You can\'t retrieve data by dates in a single response similar to GetSavingsPlanUtilization, but you have the option to make multiple calls to GetSavingsPlanUtilizationDetails by providing individual dates. You can use GetDimensionValues in SAVINGS_PLANS to determine the possible dimension values.   GetSavingsPlanUtilizationDetails internally groups data by SavingsPlansArn',
       options: [
+
         Option(
           name: '--time-period',
           description: 'The time period that you want the usage and costs for. The Start date must be within 13 months. The End date must be after the Start date, and before the current date. Future dates can\'t be used as an End date',
@@ -1827,6 +1879,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1839,6 +1892,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-tags',
       description: 'Queries for available tag keys and tag values for a specified period. You can search the tag values for an arbitrary string',
       options: [
+
         Option(
           name: '--search-string',
           description: 'The value that you want to search for',
@@ -1918,6 +1972,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1930,6 +1985,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'get-usage-forecast',
       description: 'Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period that you select, based on your past usage',
       options: [
+
         Option(
           name: '--time-period',
           description: 'The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn\'t included in the period. For example, if start is 2017-01-01 and end is 2017-05-01, then the cost and usage data is retrieved from 2017-01-01 up to and including 2017-04-30 but not including 2017-05-01. The start date must be equal to or later than the current date to avoid a validation error',
@@ -1991,6 +2047,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2003,6 +2060,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'list-commitment-purchase-analyses',
       description: 'Lists the commitment purchase analyses for your account',
       options: [
+
         Option(
           name: '--analysis-status',
           description: 'The status of the analysis',
@@ -2055,6 +2113,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2067,6 +2126,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'list-cost-allocation-tag-backfill-history',
       description: 'Retrieves a list of your historical cost allocation tag backfill requests',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size',
@@ -2101,6 +2161,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2113,6 +2174,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'list-cost-allocation-tags',
       description: 'Get a list of cost allocation tags. All inputs in the API are optional and serve as filters. By default, all cost allocation tags are returned',
       options: [
+
         Option(
           name: '--status',
           description: 'The status of cost allocation tag keys that are returned for this request',
@@ -2174,6 +2236,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2186,6 +2249,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'list-cost-category-definitions',
       description: 'Returns the name, Amazon Resource Name (ARN), NumberOfRules and effective dates of all Cost Categories defined in the account. You have the option to use EffectiveOn to return a list of Cost Categories that were active on a specific date. If there is no EffectiveOn specified, you’ll see Cost Categories that are effective on the current date. If Cost Category is still effective, EffectiveEnd is omitted in the response. ListCostCategoryDefinitions supports pagination. The request can have a MaxResults range up to 100',
       options: [
+
         Option(
           name: '--effective-on',
           description: 'The date when the Cost Category was effective',
@@ -2229,6 +2293,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2241,6 +2306,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'list-savings-plans-purchase-recommendation-generation',
       description: 'Retrieves a list of your historical recommendation generations within the past 30 days',
       options: [
+
         Option(
           name: '--generation-status',
           description: 'The status of the recommendation generation',
@@ -2293,6 +2359,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2305,6 +2372,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of resource tags associated with the resource specified by the Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see ResourceTag',
@@ -2330,6 +2398,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2342,6 +2411,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'provide-anomaly-feedback',
       description: 'Modifies the feedback property of a given cost anomaly',
       options: [
+
         Option(
           name: '--anomaly-id',
           description: 'A cost anomaly ID',
@@ -2376,6 +2446,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2388,6 +2459,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'start-commitment-purchase-analysis',
       description: 'Specifies the parameters of a planned commitment purchase and starts the generation of the analysis. This enables you to estimate the cost, coverage, and utilization impact of your planned commitment purchases',
       options: [
+
         Option(
           name: '--commitment-purchase-analysis-configuration',
           description: 'The configuration for the commitment purchase analysis',
@@ -2413,6 +2485,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2425,6 +2498,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'start-cost-allocation-tag-backfill',
       description: 'Request a cost allocation tag backfill. This will backfill the activation status (either active or inactive) for all tag keys from para:BackfillFrom up to the when this request is made. You can request a backfill once every 24 hours',
       options: [
+
         Option(
           name: '--backfill-from',
           description: 'The date you want the backfill to start from. The date can only be a first day of the month (a billing start date). Dates can\'t precede the previous twelve months, or in the future',
@@ -2450,6 +2524,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2462,6 +2537,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'start-savings-plans-purchase-recommendation-generation',
       description: 'Requests a Savings Plans recommendation generation. This enables you to calculate a fresh set of Savings Plans recommendations that takes your latest usage data and current Savings Plans inventory into account. You can refresh Savings Plans recommendations up to three times daily for a consolidated billing family.   StartSavingsPlansPurchaseRecommendationGeneration has no request syntax because no input parameters are needed to support this operation',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2478,6 +2554,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2490,6 +2567,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'tag-resource',
       description: 'An API operation for adding one or more tags (key-value pairs) to a resource. You can use the TagResource operation with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value you specify replaces the previous value for that tag. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see ResourceTag',
@@ -2524,6 +2602,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2536,6 +2615,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from a resource. Specify only tag keys in your request. Don\'t specify the value',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see ResourceTag',
@@ -2570,6 +2650,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2582,6 +2663,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'update-anomaly-monitor',
       description: 'Updates an existing cost anomaly monitor. The changes made are applied going forward, and doesn\'t change anomalies detected in the past',
       options: [
+
         Option(
           name: '--monitor-arn',
           description: 'Cost anomaly monitor Amazon Resource Names (ARNs)',
@@ -2616,6 +2698,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2628,6 +2711,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'update-anomaly-subscription',
       description: 'Updates an existing cost anomaly subscription. Specify the fields that you want to update. Omitted fields are unchanged.  The JSON below describes the generic construct for each type. See Request Parameters for possible values as they apply to AnomalySubscription',
       options: [
+
         Option(
           name: '--subscription-arn',
           description: 'A cost anomaly subscription Amazon Resource Name (ARN)',
@@ -2707,6 +2791,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2719,6 +2804,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'update-cost-allocation-tags-status',
       description: 'Updates status for cost allocation tags in bulk, with maximum batch size of 20. If the tag status that\'s updated is the same as the existing tag status, the request doesn\'t fail. Instead, it doesn\'t have any effect on the tag status (for example, activating the active tag)',
       options: [
+
         Option(
           name: '--cost-allocation-tags-status',
           description: 'The list of CostAllocationTagStatusEntry objects that are used to update cost allocation tags status for this request',
@@ -2744,6 +2830,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2756,6 +2843,7 @@ final FigSpec ceSpec = FigSpec(
       name: 'update-cost-category-definition',
       description: 'Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current month’s expenses and future expenses. This won’t change categorization for the previous months',
       options: [
+
         Option(
           name: '--cost-category-arn',
           description: 'The unique identifier for your Cost Category',
@@ -2826,6 +2914,7 @@ final FigSpec ceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

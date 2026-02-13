@@ -9,6 +9,7 @@ final FigSpec gcloudSpec = FigSpec(
   name: 'gcloud',
   description: 'Manage Google Cloud Platform resources and developer workflow',
   subcommands: [
+
     Subcommand(
       name: 'access-context-manager',
       description: 'Manage Access Context Manager resources',

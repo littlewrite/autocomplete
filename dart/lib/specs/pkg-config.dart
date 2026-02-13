@@ -15,6 +15,7 @@ final FigSpec pkgConfigSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--mod-version',
       description: 'Display the version information of the libraries specified on the command line'

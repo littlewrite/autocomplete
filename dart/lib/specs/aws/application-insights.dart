@@ -9,10 +9,12 @@ final FigSpec applicationInsightsSpec = FigSpec(
   name: 'application-insights',
   description: 'Amazon CloudWatch Application Insights  Amazon CloudWatch Application Insights is a service that helps you detect common problems with your applications. It enables you to pinpoint the source of issues in your applications (built with technologies such as Microsoft IIS, .NET, and Microsoft SQL Server), by providing key insights into detected problems. After you onboard your application, CloudWatch Application Insights identifies, recommends, and sets up metrics and logs. It continuously analyzes and correlates your metrics and logs for unusual behavior to surface actionable problems with your application. For example, if your application is slow and unresponsive and leading to HTTP 500 errors in your Application Load Balancer (ALB), Application Insights informs you that a memory pressure problem with your SQL Server database is occurring. It bases this analysis on impactful metrics and log errors',
   subcommands: [
+
     Subcommand(
       name: 'add-workload',
       description: 'Adds a workload to a component. Each component can have at most five workloads',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -56,6 +58,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'create-application',
       description: 'Adds an application that is created from a resource group',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -169,6 +173,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -181,6 +186,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'create-component',
       description: 'Creates a custom component by grouping similar standalone instances to monitor',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -224,6 +230,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -236,6 +243,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'create-log-pattern',
       description: 'Adds an log pattern to a LogPatternSet',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -297,6 +305,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -309,6 +318,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'delete-application',
       description: 'Removes the specified application from monitoring. Does not delete the application',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -334,6 +344,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -346,6 +357,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'delete-component',
       description: 'Ungroups a custom component. When you ungroup custom components, all applicable monitors that are set up for the component are removed and the instances revert to their standalone status',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -380,6 +392,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -392,6 +405,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'delete-log-pattern',
       description: 'Removes the specified log pattern from a LogPatternSet',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -435,6 +449,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -447,6 +462,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'describe-application',
       description: 'Describes the application',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -481,6 +497,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -493,6 +510,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'describe-component',
       description: 'Describes a component and lists the resources that are grouped together in a component',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -536,6 +554,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -548,6 +567,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'describe-component-configuration',
       description: 'Describes the monitoring configuration of the component',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -591,6 +611,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -603,6 +624,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'describe-component-configuration-recommendation',
       description: 'Describes the recommended monitoring configuration of the component',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -664,6 +686,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -676,6 +699,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'describe-log-pattern',
       description: 'Describe a specific log pattern from a LogPatternSet',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -728,6 +752,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -740,6 +765,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'describe-observation',
       description: 'Describes an anomaly or error with the application',
       options: [
+
         Option(
           name: '--observation-id',
           description: 'The ID of the observation',
@@ -774,6 +800,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -786,6 +813,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'describe-problem',
       description: 'Describes an application problem',
       options: [
+
         Option(
           name: '--problem-id',
           description: 'The ID of the problem',
@@ -820,6 +848,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -832,6 +861,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'describe-problem-observations',
       description: 'Describes the anomalies or errors associated with the problem',
       options: [
+
         Option(
           name: '--problem-id',
           description: 'The ID of the problem',
@@ -866,6 +896,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -878,6 +909,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'describe-workload',
       description: 'Describes a workload and its configuration',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -930,6 +962,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -942,6 +975,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'list-applications',
       description: 'Lists the IDs of the applications that you are monitoring',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned NextToken value',
@@ -985,6 +1019,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -997,6 +1032,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'list-components',
       description: 'Lists the auto-grouped, standalone, and custom components of the application',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -1049,6 +1085,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1061,6 +1098,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'list-configuration-history',
       description: 'Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights. Examples of events represented are:    INFO: creating a new alarm or updating an alarm threshold.   WARN: alarm not created due to insufficient data points used to predict thresholds.   ERROR: alarm not created due to permission errors or exceeding quotas',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'Resource group to which the application belongs',
@@ -1140,6 +1178,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1152,6 +1191,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'list-log-pattern-sets',
       description: 'Lists the log pattern sets in the specific application',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -1204,6 +1244,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1216,6 +1257,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'list-log-patterns',
       description: 'Lists the log patterns in the specific log LogPatternSet',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -1277,6 +1319,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1289,6 +1332,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'list-problems',
       description: 'Lists the problems with your application',
       options: [
+
         Option(
           name: '--account-id',
           description: 'The Amazon Web Services account ID for the resource group owner',
@@ -1377,6 +1421,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1389,6 +1434,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieve a list of the tags (keys and values) that are associated with a specified application. A tag is a label that you optionally define and associate with an application. Each tag consists of a required tag key and an optional associated tag value. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for',
@@ -1414,6 +1460,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1426,6 +1473,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'list-workloads',
       description: 'Lists the workloads that are configured on a given component',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -1487,6 +1535,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1499,6 +1548,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'remove-workload',
       description: 'Remove workload from a component',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -1542,6 +1592,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1554,6 +1605,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Add one or more tags (keys and values) to a specified application. A tag is a label that you optionally define and associate with an application. Tags can help you categorize and manage application in different ways, such as by purpose, owner, environment, or other criteria.  Each tag consists of a required tag key and an associated tag value, both of which you define. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the application that you want to add one or more tags to',
@@ -1588,6 +1640,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1600,6 +1653,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Remove one or more tags (keys and values) from a specified application',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the application that you want to remove one or more tags from',
@@ -1634,6 +1688,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1646,6 +1701,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'update-application',
       description: 'Updates the application',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -1729,6 +1785,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1741,6 +1798,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'update-component',
       description: 'Updates the custom component name and/or the list of resources that make up the component',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -1793,6 +1851,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1805,6 +1864,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'update-component-configuration',
       description: 'Updates the monitoring configurations for the component. The configuration input parameter is an escaped JSON of the configuration and should match the schema of what is returned by DescribeComponentConfigurationRecommendation',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -1873,6 +1933,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1885,6 +1946,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'update-log-pattern',
       description: 'Adds a log pattern to a LogPatternSet',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -1946,6 +2008,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1958,6 +2021,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'update-problem',
       description: 'Updates the visibility of the problem or specifies the problem as RESOLVED',
       options: [
+
         Option(
           name: '--problem-id',
           description: 'The ID of the problem',
@@ -2001,6 +2065,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2013,6 +2078,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
       name: 'update-workload',
       description: 'Adds a workload to a component. Each component can have at most five workloads',
       options: [
+
         Option(
           name: '--resource-group-name',
           description: 'The name of the resource group',
@@ -2065,6 +2131,7 @@ final FigSpec applicationInsightsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

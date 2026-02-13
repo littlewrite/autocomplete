@@ -16,6 +16,7 @@ final FigSpec limaSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Help for lima'

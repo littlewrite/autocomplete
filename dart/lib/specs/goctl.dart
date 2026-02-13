@@ -9,14 +9,17 @@ final FigSpec goctlSpec = FigSpec(
   name: 'goctl',
   description: 'A cli tool to generate go-zero code',
   subcommands: [
+
     Subcommand(
       name: 'api',
       description: 'Generate api related files',
       subcommands: [
+
         Subcommand(
           name: 'dart',
           description: 'Generate dart files for provided api in api file',
           options: [
+
             Option(
               name: '--api',
               description: 'The api file',
@@ -54,6 +57,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'doc',
           description: 'Generate doc files',
           options: [
+
             Option(
               name: '--dir',
               description: 'The target dir',
@@ -78,6 +82,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'format',
           description: 'Format api files',
           options: [
+
             Option(
               name: '--declare',
               description: 'Use to skip check api types already declare'
@@ -105,6 +110,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'go',
           description: 'Generate go files for provided api in yaml file',
           options: [
+
             Option(
               name: '--api',
               description: 'The api file',
@@ -167,6 +173,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'java',
           description: 'Generate java files for provided api in api file',
           options: [
+
             Option(
               name: '--api',
               description: 'The api file',
@@ -191,6 +198,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'kt',
           description: 'Generate kotlin code for provided api file',
           options: [
+
             Option(
               name: '--api',
               description: 'The api file',
@@ -224,6 +232,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'new',
           description: 'Fast create api service',
           options: [
+
             Option(
               name: '--branch',
               description: 'The branch of the remote repo, it does work with --remote',
@@ -268,6 +277,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'plugin',
           description: 'Custom file generator',
           options: [
+
             Option(
               name: '--api',
               description: 'The api file',
@@ -310,6 +320,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'ts',
           description: 'Generate ts files for provided api in api file',
           options: [
+
             Option(
               name: '--api',
               description: 'The api file',
@@ -356,6 +367,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'validate',
           description: 'Validate api file',
           options: [
+
             Option(
               name: '--api',
               description: 'Validate target api file',
@@ -369,6 +381,7 @@ final FigSpec goctlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--branch',
           description: 'The branch of the remote repo, it does work with --remote',
@@ -416,10 +429,12 @@ final FigSpec goctlSpec = FigSpec(
       name: 'completion',
       description: 'Generate the autocompletion script for the specified shell',
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Generate the autocompletion script for bash',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -430,6 +445,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'fish',
           description: 'Generate the autocompletion script for fish',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -440,6 +456,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'powershell',
           description: 'Generate the autocompletion script for powershell',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -450,6 +467,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'zsh',
           description: 'Generate the autocompletion script for zsh',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -462,6 +480,7 @@ final FigSpec goctlSpec = FigSpec(
       name: 'docker',
       description: 'Generate Dockerfile',
       options: [
+
         Option(
           name: '--base',
           description: 'The base image to build the docker image, default scratch',
@@ -544,10 +563,12 @@ final FigSpec goctlSpec = FigSpec(
       name: 'env',
       description: 'Check or edit goctl environment',
       subcommands: [
+
         Subcommand(
           name: 'check',
           description: 'Detect goctl env and dependency tools',
           options: [
+
             Option(
               name: ['--install', '-i'],
               description: 'Install dependencies if not found'
@@ -560,6 +581,7 @@ final FigSpec goctlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['--write', '-w'],
           description: 'Edit goctl environment',
@@ -585,10 +607,12 @@ final FigSpec goctlSpec = FigSpec(
       name: 'kube',
       description: 'Generate kubernetes files',
       subcommands: [
+
         Subcommand(
           name: 'deploy',
           description: 'Generate deployment yaml file',
           options: [
+
             Option(
               name: '--branch',
               description: 'The branch of the remote repo, it does work with --remote',
@@ -778,6 +802,7 @@ final FigSpec goctlSpec = FigSpec(
       name: 'migrate',
       description: 'Migrate from tal-tech to zeromicro',
       options: [
+
         Option(
           name: ['--verbose', '-v'],
           description: 'Verbose enables extra logging'
@@ -798,10 +823,12 @@ final FigSpec goctlSpec = FigSpec(
       name: 'model',
       description: 'Generate model code',
       subcommands: [
+
         Subcommand(
           name: 'mongo',
           description: 'Generate mongo model',
           options: [
+
             Option(
               name: '--branch',
               description: 'The branch of the remote repo, it does work with --remote',
@@ -866,10 +893,12 @@ final FigSpec goctlSpec = FigSpec(
           name: 'mysql',
           description: 'Generate mysql model',
           subcommands: [
+
             Subcommand(
               name: 'datasource',
               description: 'Generate model from datasource',
               options: [
+
                 Option(
                   name: '--branch',
                   description: 'The branch of the remote repo, it does work with --remote',
@@ -947,6 +976,7 @@ final FigSpec goctlSpec = FigSpec(
               name: 'ddl',
               description: 'Generate mysql model from ddl',
               options: [
+
                 Option(
                   name: '--branch',
                   description: 'The branch of the remote repo, it does work with --remote',
@@ -1024,6 +1054,7 @@ final FigSpec goctlSpec = FigSpec(
               name: 'pg',
               description: 'Generate postgresql model',
               options: [
+
                 Option(
                   name: '--branch',
                   description: 'The branch of the remote repo, it does work with --remote',
@@ -1115,6 +1146,7 @@ final FigSpec goctlSpec = FigSpec(
       name: 'quickstart',
       description: 'Quickly start a project',
       options: [
+
         Option(
           name: ['--service-type', '-t'],
           description: 'Specify the service type, supported values: [mono, micro]',
@@ -1131,10 +1163,12 @@ final FigSpec goctlSpec = FigSpec(
       name: 'rpc',
       description: 'Generate rpc code',
       subcommands: [
+
         Subcommand(
           name: 'new',
           description: 'Generate rpc demo service',
           options: [
+
             Option(
               name: '--branch',
               description: 'The branch of the remote repo, it does work with --remote',
@@ -1204,6 +1238,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'protoc',
           description: 'Generate grpc code',
           options: [
+
             Option(
               name: '--branch',
               description: 'The branch of the remote repo, it does work with --remote',
@@ -1318,6 +1353,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'template',
           description: 'Generate proto template',
           options: [
+
             Option(
               name: '--branch',
               description: 'The branch of the remote repo, it does work with --remote',
@@ -1358,6 +1394,7 @@ final FigSpec goctlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--branch',
           description: 'The branch of the remote repo, it does work with --remote',
@@ -1400,10 +1437,12 @@ final FigSpec goctlSpec = FigSpec(
       name: 'template',
       description: 'Template operation',
       subcommands: [
+
         Subcommand(
           name: 'clean',
           description: 'Clean the all cache templates',
           options: [
+
             Option(
               name: '--home',
               description: 'The goctl home path of the template',
@@ -1419,6 +1458,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'init',
           description: 'Initialize the all templates(force update)',
           options: [
+
             Option(
               name: '--home',
               description: 'The goctl home path of the template',
@@ -1434,6 +1474,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'revert',
           description: 'Revert the target template to the latest',
           options: [
+
             Option(
               name: ['--category', '-c'],
               description: 'The category of template, enum [api,rpc,model,docker,kube]',
@@ -1467,6 +1508,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'update',
           description: 'Update template of the target category to the latest',
           options: [
+
             Option(
               name: ['--category', '-c'],
               description: 'The category of template, enum [api,rpc,model,docker,kube]',
@@ -1497,10 +1539,12 @@ final FigSpec goctlSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'api',
           description: 'Generate api related files',
           subcommands: [
+
             Subcommand(
               name: 'dart',
               description: 'Generate dart files for provided api in api file'
@@ -1551,6 +1595,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'completion',
           description: 'Generate the autocompletion script for the specified shell',
           subcommands: [
+
             Subcommand(
               name: 'bash',
               description: 'Generate the autocompletion script for bash'
@@ -1577,6 +1622,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'env',
           description: 'Check or edit goctl environment',
           subcommands: [
+
             Subcommand(
               name: 'check',
               description: 'Detect goctl env and dependency tools'
@@ -1591,6 +1637,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'kube',
           description: 'Generate kubernetes files',
           subcommands: [
+
             Subcommand(
               name: 'deploy',
               description: 'Generate deployment yaml file'
@@ -1605,6 +1652,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'model',
           description: 'Generate model code',
           subcommands: [
+
             Subcommand(
               name: 'mongo',
               description: 'Generate mongo model'
@@ -1613,6 +1661,7 @@ final FigSpec goctlSpec = FigSpec(
               name: 'mysql',
               description: 'Generate mysql model',
               subcommands: [
+
                 Subcommand(
                   name: 'datasource',
                   description: 'Generate model from datasource'
@@ -1637,6 +1686,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'rpc',
           description: 'Generate rpc code',
           subcommands: [
+
             Subcommand(
               name: 'new',
               description: 'Generate rpc demo service'
@@ -1655,6 +1705,7 @@ final FigSpec goctlSpec = FigSpec(
           name: 'template',
           description: 'Template operation',
           subcommands: [
+
             Subcommand(
               name: 'clean',
               description: 'Clean the all cache templates'
@@ -1681,6 +1732,7 @@ final FigSpec goctlSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Display help',

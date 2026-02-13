@@ -8,10 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec planterSpec = FigSpec(
   name: 'planter',
   subcommands: [
+
     Subcommand(
       name: 'create',
       description: 'Create a new project using a planter or public repo',
       options: [
+
         Option(
           name: ['-f', '--force'],
           description: 'Force the created directory to overwrite an existing one'
@@ -23,6 +25,7 @@ final FigSpec planterSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'source',
           description: 'The name of a planter or a public repo',
@@ -39,6 +42,7 @@ final FigSpec planterSpec = FigSpec(
       name: 'list',
       description: 'List available planters',
       options: [
+
         Option(
           name: ['-a', '--alphanumeric'],
           description: 'Sorts list of planters alphanumerically'
@@ -54,6 +58,7 @@ final FigSpec planterSpec = FigSpec(
       name: 'add',
       description: 'Add a planter to your list',
       options: [
+
         Option(
           name: ['-L', '--local'],
           description: 'Treat the location as a local repo instead of a remote repo'
@@ -65,6 +70,7 @@ final FigSpec planterSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'name',
           description: 'Name of the planter to use as a reference'
@@ -79,6 +85,7 @@ final FigSpec planterSpec = FigSpec(
       name: 'edit',
       description: 'Edit a planter in your list',
       options: [
+
         Option(
           name: ['-n', '--name'],
           description: 'Edit the name of a planter',
@@ -130,6 +137,7 @@ final FigSpec planterSpec = FigSpec(
       name: 'pin',
       description: 'Pins a planter to the top of your list',
       options: [
+
         Option(
           name: ['-u', '--unpin'],
           description: 'Removes position from the planter'
@@ -141,6 +149,7 @@ final FigSpec planterSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'name',
           description: 'Name of the planter to pin'
@@ -156,6 +165,7 @@ final FigSpec planterSpec = FigSpec(
       name: 'info',
       description: 'Prints all info about a planter in your list',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -183,6 +193,7 @@ final FigSpec planterSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-V', '--version'],
       description: 'Output the version number'

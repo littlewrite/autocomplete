@@ -19,6 +19,7 @@ final FigSpec hxSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Show help'
@@ -49,6 +50,7 @@ final FigSpec hxSpec = FigSpec(
         Arg(
         name: 'action',
         suggestions: [
+
           FigSuggestion(
             name: 'fetch',
             icon: 'fig://icon?type=command'

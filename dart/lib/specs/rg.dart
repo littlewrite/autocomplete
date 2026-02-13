@@ -9,6 +9,7 @@ final FigSpec rgSpec = FigSpec(
   name: 'rg',
   description: 'Recursively searches current directory for lines matching a pattern',
   options: [
+
     Option(
       name: ['-A', '--after-context'],
       description: 'Shows NUM lines after each match',
@@ -54,6 +55,7 @@ final FigSpec rgSpec = FigSpec(
         Arg(
         name: 'when',
         suggestions: [
+
           FigSuggestion(
             name: 'never',
             description: 'Colors will never be used'
@@ -127,6 +129,7 @@ final FigSpec rgSpec = FigSpec(
       name: '--dfa-size-limit',
       description: 'The upper size limit of the regex DFA',
       args: [
+
         Arg(
           name: 'NUM'
         ),
@@ -153,6 +156,7 @@ final FigSpec rgSpec = FigSpec(
         name: 'Engine',
         defaultValue: 'default',
         suggestions: [
+
           FigSuggestion(name: 'default'),
           FigSuggestion(name: 'pcre2'),
           FigSuggestion(name: 'auto')
@@ -303,6 +307,7 @@ final FigSpec rgSpec = FigSpec(
       name: '--max-filesize',
       description: 'Ignores files larger than NUM in size',
       args: [
+
         Arg(
           name: 'NUM'
         ),
@@ -467,6 +472,7 @@ final FigSpec rgSpec = FigSpec(
       name: '--regex-size-limit',
       description: 'Sets the upper size limit of the compiled regex',
       args: [
+
         Arg(
           name: 'NUM'
         ),
@@ -593,6 +599,7 @@ final FigSpec rgSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'Pattern',
       description: 'A regular expression used for searching'

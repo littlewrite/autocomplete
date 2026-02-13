@@ -9,6 +9,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
   name: 'oh-my-posh',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Initialize oh-my-posh for your shell',
@@ -16,6 +17,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
         Arg(
         name: 'SHELL',
         suggestions: [
+
           FigSuggestion(
             name: 'zsh'
           ),
@@ -41,6 +43,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--print', '-p'],
           description: 'Print the init script'
@@ -54,6 +57,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
         Arg(
         name: 'VALUE',
         suggestions: [
+
           FigSuggestion(
             name: 'millis',
             description: 'Get the current timestamp in milliseconds, example usage: \'oh-my-posh get millis\''
@@ -75,6 +79,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
       name: 'config',
       description: 'Interact with the oh-my-posh configuration',
       subcommands: [
+
         Subcommand(
           name: 'edit',
           description: 'Edit the config file, example usage: \'oh-my-posh config edit\''
@@ -83,6 +88,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
           name: 'migrate',
           description: 'Migrate the config file, example usage: \'oh-my-posh config migrate --config ~/.config.omp.json\'',
           options: [
+
             Option(
               name: ['--write', '-w'],
               description: 'Write the migrated config to the configuration file, example usage: \'oh-my-posh config migrate --write\''
@@ -93,6 +99,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
           name: 'export',
           description: 'Export the config file, example usage: \'oh-my-posh config export --config ~/.config.omp.toml\'',
           options: [
+
             Option(
               name: ['--output', '-o'],
               description: 'The file to output the migrated config to, example usage: \'oh-my-posh config export --output ~/.config.omp.json\'',
@@ -116,6 +123,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
         Arg(
         name: 'PROMPT',
         suggestions: [
+
           FigSuggestion(
             name: 'primary'
           ),
@@ -141,6 +149,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--terminal-width', '-w'],
           description: 'The terminal width, example usage: \'oh-my-posh print primary --terminal-width 200\'',
@@ -222,6 +231,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
             name: 'SHELL',
             description: 'The shell used',
             suggestions: [
+
               FigSuggestion(name: 'zsh'),
               FigSuggestion(name: 'fish'),
               FigSuggestion(name: 'pwsh'),
@@ -252,6 +262,7 @@ final FigSpec ohMyPoshSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for oh-my-posh',

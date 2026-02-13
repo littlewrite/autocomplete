@@ -4,15 +4,94 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> submitOptions = [
+
+  Option(
+    name: '--always',
+    description: 'Always push updates, even if the branch has not changed. Can be helpful for fixing an inconsistent Graphite stack view on Web/GitHub resulting from downtime/a bug'
+  ),
+  Option(
+    name: '--branch',
+    description: 'Which branch to run this command from. Defaults to the current branch',
+    args: [
+      Arg(
+      name: 'branch',
+      description: 'Name of branch'
+    )
+    ]
+  ),
+  Option(
+    name: ['--confirm', '-c'],
+    description: 'Reports the PRs that would be submitted and asks for confirmation before pushing branches and opening/updating PRs. If either of --no-interactive or --dry-run is passed, this flag is ignored'
+  ),
+  Option(
+    name: ['--draft', '-d'],
+    description: 'If set, marks PR as draft. If --no-interactive is true, new PRs will be created in draft mode'
+  ),
+  Option(
+    name: '--dry-run',
+    description: 'Reports the PRs that would be submitted and terminates. No branches are pushed and no PRs are opened or updated'
+  ),
+  Option(
+    name: ['--edit', '-e'],
+    description: 'Input metadata for all PRs interactively. If neither --edit nor --no-edit is passed, only prompts for new PRs'
+  ),
+  Option(
+    name: ['--force', '-f'],
+    description: 'Force push: overwrites the remote branch with your local branch. Otherwise defaults to --force-with-lease'
+  ),
+  Option(
+    name: ['--merge-when-ready', '-m'],
+    description: 'If set, marks all PRs being submitted as merge when ready, which will let them automatically merge as soon as all merge requirements are met'
+  ),
+  Option(
+    name: ['--no-edit', '-n'],
+    description: 'Don\'t edit PR fields inline. Takes precedence over --edit'
+  ),
+  Option(
+    name: ['--publish', '-p'],
+    description: 'If set, publishes PR. If --no-interactive is true, new PRs will be created in draft mode'
+  ),
+  Option(
+    name: '--rerequest-review',
+    description: 'Rerequest review from current reviewers'
+  ),
+  Option(
+    name: '--restack',
+    description: 'Restack branches before submitting. If there are conflicts, output the branch names that could not be restacked'
+  ),
+  Option(
+    name: ['--reviewers', '-r'],
+    description: 'If set without an argument, prompt to manually set reviewers. Alternatively, accepts a comma separated string of reviewers',
+    args: [
+      Arg(
+      name: 'reviewers',
+      description: 'Comma separated string of reviewers',
+      isOptional: true
+    )
+    ]
+  ),
+  Option(
+    name: ['--stack', '-s'],
+    description: 'Submit descendants of the current branch in addition to its ancestors'
+  ),
+  Option(
+    name: ['--update-only', '-u'],
+    description: 'Only update the PRs that have been already been submitted'
+  )
+];
+
 /// Completion spec for `gt` CLI
 final FigSpec gtSpec = FigSpec(
   name: 'gt',
   description: 'Graphite.dev CLI',
   subcommands: [
+
     Subcommand(
       name: 'aliases',
       description: 'Edit your command aliases',
       options: [
+
         Option(
           name: '--reset',
           description: 'Reset your alias configuration'
@@ -24,6 +103,7 @@ final FigSpec gtSpec = FigSpec(
       description: 'Add your auth token to enable Graphite CLI to create and update your PRs on GitHub',
       priority: 50,
       options: [
+
         Option(
           name: ['--token', '-t'],
           description: 'Auth token. Get it from: https://app.graphite.dev/activate',
@@ -56,6 +136,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--show-untracked', '-u'],
           description: 'Include untracked branched in interactive selection'
@@ -78,6 +159,7 @@ final FigSpec gtSpec = FigSpec(
       name: ['continue', 'cont'],
       description: 'Continues the most recent Graphite command halted by a merge conflict',
       options: [
+
         Option(
           name: ['--all', '-a'],
           description: 'Stage all changes before continuing'
@@ -95,6 +177,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--message', '-m'],
           description: 'Commit staged changes on the new branch with this message',
@@ -133,6 +216,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--force', '-f'],
           description: 'Delete the branch even if it is not merged or closed'
@@ -155,6 +239,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--steps', '-n'],
           description: 'The number of levels to traverse downstack',
@@ -178,6 +263,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--print-debug-context',
           description: 'Print a debug summary of your repository. Useful for creating bug report details'
@@ -196,6 +282,7 @@ final FigSpec gtSpec = FigSpec(
       name: ['fold', 'f'],
       description: 'Fold a branch\'s changes into its parent, update dependencies of descendants of the new combined branch, and restack',
       options: [
+
         Option(
           name: ['--keep', '-k'],
           description: 'Keeps the name of the current branch instead of using the name of its parent'
@@ -213,6 +300,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--force', '-f'],
           description: 'Overwrite all fetched branches with remote source of truth'
@@ -223,6 +311,7 @@ final FigSpec gtSpec = FigSpec(
       name: ['info', 'i'],
       description: 'Display information about the current branch',
       options: [
+
         Option(
           name: ['--patch', '-p'],
           description: 'Show the changes made by each commit'
@@ -245,6 +334,7 @@ final FigSpec gtSpec = FigSpec(
       name: 'init',
       description: 'Initialize Graphite in this repository by selecting a trunk branch. Can also be used to change the trunk branch of the repository',
       options: [
+
         Option(
           name: '--reset',
           description: 'Untrack all branches'
@@ -266,6 +356,7 @@ final FigSpec gtSpec = FigSpec(
       name: ['log', 'l'],
       description: 'Commands that log your stacks',
       options: [
+
         Option(
           name: '--classic',
           description: 'Use the old short logging style, which runs out of screen real estate more quickly. Other options will not work in classic mode'
@@ -294,6 +385,7 @@ final FigSpec gtSpec = FigSpec(
         )
       ],
       subcommands: [
+
         Subcommand(
           name: '',
           description: 'Log all branches tracked by Graphite, showing dependencies and info for each'
@@ -312,6 +404,7 @@ final FigSpec gtSpec = FigSpec(
       name: 'merge',
       description: 'Merge the pull requests associated with all branches from trunk to the current branch via Graphite',
       options: [
+
         Option(
           name: ['--confirm', '-c'],
           description: 'Asks for confirmation before merging branches. Prompts for confirmation if the local branches differ from remote, regardless of the value of this flag'
@@ -326,6 +419,7 @@ final FigSpec gtSpec = FigSpec(
       name: ['modify', 'm'],
       description: 'Modify the current branch by amending its commit or creating a new commit. Automatically restacks descendants. If you have any unstaged changes, you will be asked whether you\'d like to stage them',
       options: [
+
         Option(
           name: ['--all', '-a'],
           description: 'Stage all changes before committing'
@@ -362,6 +456,7 @@ final FigSpec gtSpec = FigSpec(
       name: 'move',
       description: 'Rebase the current branch onto the target branch and restack all of its descendants. If no branch is passed in, opens an interactive selector',
       options: [
+
         Option(
           name: ['--onto', '-o'],
           description: 'Branch to move the current branch onto',
@@ -412,6 +507,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--force', '-f'],
           description: 'Allow renaming a branch that is already associated with an open GitHub pull request'
@@ -426,6 +522,7 @@ final FigSpec gtSpec = FigSpec(
       name: ['restack', 'r'],
       description: 'Ensure the current branch is based on its parent, rebasing if necessary. If conflicts are encountered, you will be prompted to resolve them via an interactive Git rebase',
       options: [
+
         Option(
           name: '--branch',
           description: 'Which branch to run this command from. Defaults to the current branch',
@@ -460,6 +557,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--edit', '-e'],
           description: 'Edit the commit message'
@@ -470,6 +568,7 @@ final FigSpec gtSpec = FigSpec(
       name: ['split', 'sp'],
       description: 'Split the current branch into multiple single-commit branches',
       options: [
+
         Option(
           name: ['--by-commit', '--commit', '-c'],
           description: 'Split by commit - slice up the history of this branch'
@@ -484,6 +583,7 @@ final FigSpec gtSpec = FigSpec(
       name: ['squash', 'sq'],
       description: 'Squash all commits in the current branch and restack upstack branches',
       options: [
+
         Option(
           name: ['--message', '-m'],
           description: 'The updated message for the commit',
@@ -506,12 +606,14 @@ final FigSpec gtSpec = FigSpec(
     ),
     Subcommand(
       name: ['submit', 's'],
-      description: 'Idempotently force push the current branch to GitHub, creating or updating a pull request.  Opens an interactive prompt that allows you to input pull request metadata. \'gt ss\' is a default alias for \'gt submit --stack\''
+      description: 'Idempotently force push the current branch to GitHub, creating or updating a pull request.  Opens an interactive prompt that allows you to input pull request metadata. \'gt ss\' is a default alias for \'gt submit --stack\'',
+      options: submitOptions
     ),
     Subcommand(
       name: 'sync',
       description: 'Pull the trunk branch from remote and prompt to delete any branches that have been merged. Restacks all branches in your repository that can be restacked without conflicts. If trunk cannot be fast-forwarded to match remote, overwrites trunk with the remote version',
       options: [
+
         Option(
           name: '--delete',
           description: 'Delete merged branches (true by default; skip with --no-delete)'
@@ -548,6 +650,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--parent', '-p'],
           description: 'The tracked branch\'s parent. If unset, prompts for a parent branch',
@@ -578,6 +681,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--force', '-f'],
           description: 'Will not prompt for confirmation before untracking a branch with children'
@@ -596,6 +700,7 @@ final FigSpec gtSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--steps', '-n'],
           description: 'The number of levels to traverse upstack',
@@ -610,6 +715,7 @@ final FigSpec gtSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--version',
       description: 'Show Graphite CLI version',

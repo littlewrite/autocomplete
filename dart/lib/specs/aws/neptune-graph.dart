@@ -9,10 +9,12 @@ final FigSpec neptuneGraphSpec = FigSpec(
   name: 'neptune-graph',
   description: 'Neptune Analytics is a new analytics database engine for Amazon Neptune that helps customers get to insights faster by quickly processing large amounts of graph data, invoking popular graph analytic algorithms in low-latency queries, and getting analytics results in seconds',
   subcommands: [
+
     Subcommand(
       name: 'cancel-export-task',
       description: 'Cancel the specified export task',
       options: [
+
         Option(
           name: '--task-identifier',
           description: 'The unique identifier of the export task',
@@ -38,6 +40,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'cancel-import-task',
       description: 'Deletes the specified import task',
       options: [
+
         Option(
           name: '--task-identifier',
           description: 'The unique identifier of the import task',
@@ -75,6 +79,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'cancel-query',
       description: 'Cancels a specified query',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -121,6 +127,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -133,6 +140,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'create-graph',
       description: 'Creates a new Neptune Analytics graph',
       options: [
+
         Option(
           name: '--graph-name',
           description: 'A name for the new Neptune Analytics graph to be created. The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens',
@@ -219,6 +227,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -231,6 +240,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'create-graph-snapshot',
       description: 'Creates a snapshot of the specific graph',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -274,6 +284,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -286,6 +297,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'create-graph-using-import-task',
       description: 'Creates a new Neptune Analytics graph and imports data into it, either from Amazon Simple Storage Service (S3) or from a Neptune database or a Neptune database snapshot. The data can be loaded from files in S3 that in either the Gremlin CSV format or the openCypher load format',
       options: [
+
         Option(
           name: '--graph-name',
           description: 'A name for the new Neptune Analytics graph to be created. The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens',
@@ -443,6 +455,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -455,6 +468,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'create-private-graph-endpoint',
       description: 'Create a private graph endpoint to allow private access from to the graph from within a VPC. You can attach security groups to the private graph endpoint.  VPC endpoint charges apply',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -507,6 +521,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -519,6 +534,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'delete-graph',
       description: 'Deletes the specified graph. Graphs cannot be deleted if delete-protection is enabled',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -552,6 +568,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -564,6 +581,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'delete-graph-snapshot',
       description: 'Deletes the specifed graph snapshot',
       options: [
+
         Option(
           name: '--snapshot-identifier',
           description: 'ID of the graph snapshot to be deleted',
@@ -589,6 +607,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -601,6 +620,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'delete-private-graph-endpoint',
       description: 'Deletes a private graph endpoint',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -635,6 +655,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -647,6 +668,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'execute-query',
       description: 'Execute an openCypher query.  When invoking this operation in a Neptune Analytics cluster, the IAM user or role making the request must have a policy attached that allows one of the following IAM actions in that cluster, depending on the query:    neptune-graph:ReadDataViaQuery   neptune-graph:WriteDataViaQuery   neptune-graph:DeleteDataViaQuery',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -725,6 +747,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'get-export-task',
       description: 'Retrieves a specified export task',
       options: [
+
         Option(
           name: '--task-identifier',
           description: 'The unique identifier of the export task',
@@ -750,6 +773,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -762,6 +786,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'get-graph',
       description: 'Gets information about a specified graph',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -787,6 +812,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -799,6 +825,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'get-graph-snapshot',
       description: 'Retrieves a specified graph snapshot',
       options: [
+
         Option(
           name: '--snapshot-identifier',
           description: 'The ID of the snapshot to retrieve',
@@ -824,6 +851,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -836,6 +864,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'get-graph-summary',
       description: 'Gets a graph summary for a property graph',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -870,6 +899,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -882,6 +912,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'get-import-task',
       description: 'Retrieves a specified import task',
       options: [
+
         Option(
           name: '--task-identifier',
           description: 'The unique identifier of the import task',
@@ -907,6 +938,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -919,6 +951,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'get-private-graph-endpoint',
       description: 'Retrieves information about a specified private endpoint',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -953,6 +986,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -965,6 +999,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'get-query',
       description: 'Retrieves the status of a specified query.   When invoking this operation in a Neptune Analytics cluster, the IAM user or role making the request must have the neptune-graph:GetQueryStatus IAM action attached',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -999,6 +1034,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1011,6 +1047,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'list-export-tasks',
       description: 'Retrieves a list of export tasks',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Pagination token used to paginate input',
@@ -1072,6 +1109,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1084,6 +1122,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'list-graph-snapshots',
       description: 'Lists available snapshots of a specified Neptune Analytics graph',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -1154,6 +1193,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1166,6 +1206,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'list-graphs',
       description: 'Lists available Neptune Analytics graphs',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Pagination token used to paginate output. When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve',
@@ -1227,6 +1268,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1239,6 +1281,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'list-import-tasks',
       description: 'Lists import tasks',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Pagination token used to paginate output. When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve',
@@ -1300,6 +1343,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1312,6 +1356,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'list-private-graph-endpoints',
       description: 'Lists private endpoints for a specified Neptune Analytics graph',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -1382,6 +1427,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1394,6 +1440,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'list-queries',
       description: 'Lists active openCypher queries',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -1437,6 +1484,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1449,6 +1497,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists tags associated with a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -1474,6 +1523,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1486,6 +1536,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'reset-graph',
       description: 'Empties the data from a specified Neptune Analytics graph',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'ID of the graph to reset',
@@ -1519,6 +1570,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1531,6 +1583,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'restore-graph-from-snapshot',
       description: 'Restores a graph from a snapshot',
       options: [
+
         Option(
           name: '--snapshot-identifier',
           description: 'The ID of the snapshot in question',
@@ -1608,6 +1661,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1620,6 +1674,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'start-export-task',
       description: 'Export data from an existing Neptune Analytics graph to Amazon S3. The graph state should be AVAILABLE',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The source graph identifier of the export task',
@@ -1708,6 +1763,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1720,6 +1776,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'start-import-task',
       description: 'Import data into existing Neptune Analytics graph from Amazon Simple Storage Service (S3). The graph needs to be empty and in the AVAILABLE state',
       options: [
+
         Option(
           name: '--import-options',
           description: 'Options for how to perform an import',
@@ -1807,6 +1864,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1819,6 +1877,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'ARN of the resource for which tags need to be added',
@@ -1853,6 +1912,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1865,6 +1925,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'ARN of the resource whose tag needs to be removed',
@@ -1899,6 +1960,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1911,6 +1973,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'update-graph',
       description: 'Updates the configuration of a specified Neptune Analytics graph',
       options: [
+
         Option(
           name: '--graph-identifier',
           description: 'The unique identifier of the Neptune Analytics graph',
@@ -1961,6 +2024,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1973,10 +2037,12 @@ final FigSpec neptuneGraphSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'export-task-cancelled',
           description: 'Wait until Export Task is Cancelled It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--task-identifier',
               description: 'The unique identifier of the export task',
@@ -2002,6 +2068,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -2014,6 +2081,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
           name: 'export-task-successful',
           description: 'Wait until Export Task is Successful It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 480 failed checks',
           options: [
+
             Option(
               name: '--task-identifier',
               description: 'The unique identifier of the export task',
@@ -2039,6 +2107,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -2051,6 +2120,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
           name: 'graph-available',
           description: 'Wait until Graph is Available It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 480 failed checks',
           options: [
+
             Option(
               name: '--graph-identifier',
               description: 'The unique identifier of the Neptune Analytics graph',
@@ -2076,6 +2146,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -2088,6 +2159,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
           name: 'graph-deleted',
           description: 'Wait until Graph is Deleted It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--graph-identifier',
               description: 'The unique identifier of the Neptune Analytics graph',
@@ -2113,6 +2185,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -2125,6 +2198,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
           name: 'graph-snapshot-available',
           description: 'Wait until GraphSnapshot is Available It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 120 failed checks',
           options: [
+
             Option(
               name: '--snapshot-identifier',
               description: 'The ID of the snapshot to retrieve',
@@ -2150,6 +2224,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -2162,6 +2237,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
           name: 'graph-snapshot-deleted',
           description: 'Wait until GraphSnapshot is Deleted It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--snapshot-identifier',
               description: 'The ID of the snapshot to retrieve',
@@ -2187,6 +2263,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -2199,6 +2276,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
           name: 'import-task-cancelled',
           description: 'Wait until Import Task is Cancelled It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--task-identifier',
               description: 'The unique identifier of the import task',
@@ -2224,6 +2302,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -2236,6 +2315,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
           name: 'import-task-successful',
           description: 'Wait until Import Task is Successful It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 480 failed checks',
           options: [
+
             Option(
               name: '--task-identifier',
               description: 'The unique identifier of the import task',
@@ -2261,6 +2341,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -2273,6 +2354,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
           name: 'private-graph-endpoint-available',
           description: 'Wait until PrivateGraphEndpoint is Available It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 180 failed checks',
           options: [
+
             Option(
               name: '--graph-identifier',
               description: 'The unique identifier of the Neptune Analytics graph',
@@ -2307,6 +2389,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -2319,6 +2402,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
           name: 'private-graph-endpoint-deleted',
           description: 'Wait until PrivateGraphEndpoint is Deleted It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 180 failed checks',
           options: [
+
             Option(
               name: '--graph-identifier',
               description: 'The unique identifier of the Neptune Analytics graph',
@@ -2353,6 +2437,7 @@ final FigSpec neptuneGraphSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

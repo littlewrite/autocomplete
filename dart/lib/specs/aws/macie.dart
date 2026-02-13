@@ -9,10 +9,12 @@ final FigSpec macieSpec = FigSpec(
   name: 'macie',
   description: 'Amazon Macie Classic Amazon Macie Classic is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. Macie Classic recognizes sensitive data such as personally identifiable information (PII) or intellectual property, and provides you with dashboards and alerts that give visibility into how this data is being accessed or moved. For more information, see the Amazon Macie Classic User Guide',
   subcommands: [
+
     Subcommand(
       name: 'associate-member-account',
       description: 'Associates a specified AWS account with Amazon Macie Classic as a member account',
       options: [
+
         Option(
           name: '--member-account-id',
           description: 'The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account',
@@ -38,6 +40,7 @@ final FigSpec macieSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec macieSpec = FigSpec(
       name: 'associate-s3-resources',
       description: 'Associates specified S3 resources with Amazon Macie Classic for monitoring and data classification. If memberAccountId isn\'t specified, the action associates specified S3 resources with Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified, the action associates specified S3 resources with Macie Classic for the specified member account',
       options: [
+
         Option(
           name: '--member-account-id',
           description: 'The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic',
@@ -84,6 +88,7 @@ final FigSpec macieSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec macieSpec = FigSpec(
       name: 'disassociate-member-account',
       description: 'Removes the specified member account from Amazon Macie Classic',
       options: [
+
         Option(
           name: '--member-account-id',
           description: 'The ID of the member account that you want to remove from Amazon Macie Classic',
@@ -121,6 +127,7 @@ final FigSpec macieSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -133,6 +140,7 @@ final FigSpec macieSpec = FigSpec(
       name: 'disassociate-s3-resources',
       description: 'Removes specified S3 resources from being monitored by Amazon Macie Classic. If memberAccountId isn\'t specified, the action removes specified S3 resources from Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified, the action removes specified S3 resources from Macie Classic for the specified member account',
       options: [
+
         Option(
           name: '--member-account-id',
           description: 'The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic',
@@ -167,6 +175,7 @@ final FigSpec macieSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -179,6 +188,7 @@ final FigSpec macieSpec = FigSpec(
       name: 'list-member-accounts',
       description: 'Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data',
@@ -240,6 +250,7 @@ final FigSpec macieSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -252,6 +263,7 @@ final FigSpec macieSpec = FigSpec(
       name: 'list-s3-resources',
       description: 'Lists all the S3 resources associated with Amazon Macie Classic. If memberAccountId isn\'t specified, the action lists the S3 resources associated with Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified, the action lists the S3 resources associated with Macie Classic for the specified member account',
       options: [
+
         Option(
           name: '--member-account-id',
           description: 'The Amazon Macie Classic member account ID whose associated S3 resources you want to list',
@@ -322,6 +334,7 @@ final FigSpec macieSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -334,6 +347,7 @@ final FigSpec macieSpec = FigSpec(
       name: 'update-s3-resources',
       description: 'Updates the classification types for the specified S3 resources. If memberAccountId isn\'t specified, the action updates the classification types of the S3 resources associated with Amazon Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified, the action updates the classification types of the S3 resources associated with Macie Classic for the specified member account',
       options: [
+
         Option(
           name: '--member-account-id',
           description: 'The AWS ID of the Amazon Macie Classic member account whose S3 resources\' classification types you want to update',
@@ -368,6 +382,7 @@ final FigSpec macieSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

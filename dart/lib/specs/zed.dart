@@ -9,6 +9,7 @@ final FigSpec zedSpec = FigSpec(
   name: 'zed',
   description: 'A lightning-fast, collaborative code editor written in Rust',
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Print help information'

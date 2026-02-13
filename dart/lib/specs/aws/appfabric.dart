@@ -9,10 +9,12 @@ final FigSpec appfabricSpec = FigSpec(
   name: 'appfabric',
   description: 'Amazon Web Services AppFabric quickly connects software as a service (SaaS) applications across your organization. This allows IT and security teams to easily manage and secure applications using a standard schema, and employees can complete everyday tasks faster using generative artificial intelligence (AI). You can use these APIs to complete AppFabric tasks, such as setting up audit log ingestions or viewing user access. For more information about AppFabric, including the required permissions to use the service, see the Amazon Web Services AppFabric Administration Guide. For more information about using the Command Line Interface (CLI) to manage your AppFabric resources, see the AppFabric section of the CLI Reference',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-user-access-tasks',
       description: 'Gets user access details in a batch request. This action polls data from the tasks that are kicked off by the StartUserAccessTasks action',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -47,6 +49,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'connect-app-authorization',
       description: 'Establishes a connection between Amazon Web Services AppFabric and an application, which allows AppFabric to call the APIs of the application',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request',
@@ -102,6 +106,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'create-app-authorization',
       description: 'Creates an app authorization within an app bundle, which allows AppFabric to connect to an application',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -193,6 +199,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'create-app-bundle',
       description: 'Creates an app bundle to collect data from an application using AppFabric',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a UUID type of value. If you don\'t provide this value, then Amazon Web Services generates a random one for you. If you retry the operation with the same ClientToken, but with different parameters, the retry fails with an IdempotentParameterMismatch error',
@@ -248,6 +256,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -260,6 +269,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'create-ingestion',
       description: 'Creates a data ingestion for an application',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -330,6 +340,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -342,6 +353,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'create-ingestion-destination',
       description: 'Creates an ingestion destination, which specifies how an application\'s ingested data is processed by Amazon Web Services AppFabric and where it\'s delivered',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -412,6 +424,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -424,6 +437,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'delete-app-authorization',
       description: 'Deletes an app authorization. You must delete the associated ingestion before you can delete an app authorization',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -458,6 +472,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -470,6 +485,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'delete-app-bundle',
       description: 'Deletes an app bundle. You must delete all associated app authorizations before you can delete an app bundle',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted',
@@ -495,6 +511,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -507,6 +524,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'delete-ingestion',
       description: 'Deletes an ingestion. You must stop (disable) the ingestion and you must delete all associated ingestion destinations before you can delete an app ingestion',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -541,6 +559,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -553,6 +572,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'delete-ingestion-destination',
       description: 'Deletes an ingestion destination. This deletes the association between an ingestion and it\'s destination. It doesn\'t delete previously ingested data or the storage destination, such as the Amazon S3 bucket where the data is delivered. If the ingestion destination is deleted while the associated ingestion is enabled, the ingestion will fail and is eventually disabled',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -596,6 +616,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -608,6 +629,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'get-app-authorization',
       description: 'Returns information about an app authorization',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -642,6 +664,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -654,6 +677,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'get-app-bundle',
       description: 'Returns information about an app bundle',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -679,6 +703,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -691,6 +716,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'get-ingestion',
       description: 'Returns information about an ingestion',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -725,6 +751,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -737,6 +764,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'get-ingestion-destination',
       description: 'Returns information about an ingestion destination',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -780,6 +808,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -792,6 +821,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'list-app-authorizations',
       description: 'Returns a list of all app authorizations configured for an app bundle',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -862,6 +892,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -874,6 +905,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'list-app-bundles',
       description: 'Returns a list of app bundles',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results that are returned per call. You can use nextToken to obtain further pages of results. This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum',
@@ -935,6 +967,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -947,6 +980,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'list-ingestion-destinations',
       description: 'Returns a list of all ingestion destinations configured for an ingestion',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -1026,6 +1060,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1038,6 +1073,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'list-ingestions',
       description: 'Returns a list of all ingestions configured for an app bundle',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -1108,6 +1144,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1120,6 +1157,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which you want to retrieve tags',
@@ -1145,6 +1183,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1157,6 +1196,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'start-ingestion',
       description: 'Starts (enables) an ingestion, which collects data from an application',
       options: [
+
         Option(
           name: '--ingestion-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request',
@@ -1191,6 +1231,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1203,6 +1244,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'start-user-access-tasks',
       description: 'Starts the tasks to search user access status for a specific email address. The tasks are stopped when the user access status data is found. The tasks are terminated when the API calls to the application time out',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -1237,6 +1279,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1249,6 +1292,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'stop-ingestion',
       description: 'Stops (disables) an ingestion',
       options: [
+
         Option(
           name: '--ingestion-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request',
@@ -1283,6 +1327,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1295,6 +1340,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns one or more tags (key-value pairs) to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to tag',
@@ -1329,6 +1375,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1341,6 +1388,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag or tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to untag',
@@ -1375,6 +1423,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1387,6 +1436,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'update-app-authorization',
       description: 'Updates an app authorization within an app bundle, which allows AppFabric to connect to an application. If the app authorization was in a connected state, updating the app authorization will set it back to a PendingConnect state',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -1439,6 +1489,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1451,6 +1502,7 @@ final FigSpec appfabricSpec = FigSpec(
       name: 'update-ingestion-destination',
       description: 'Updates an ingestion destination, which specifies how an application\'s ingested data is processed by Amazon Web Services AppFabric and where it\'s delivered',
       options: [
+
         Option(
           name: '--app-bundle-identifier',
           description: 'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request',
@@ -1503,6 +1555,7 @@ final FigSpec appfabricSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

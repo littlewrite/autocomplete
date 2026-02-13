@@ -9,14 +9,17 @@ final FigSpec aiPlatformSpec = FigSpec(
   name: 'ai-platform',
   description: 'Manage AI Platform jobs and models',
   subcommands: [
+
     Subcommand(
       name: 'jobs',
       description: 'AI Platform Jobs commands',
       subcommands: [
+
         Subcommand(
           name: 'cancel',
           description: 'Cancel a running AI Platform job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -140,6 +143,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -162,6 +166,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'describe',
           description: 'Describe an AI Platform job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -289,6 +294,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -311,6 +317,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'list',
           description: 'List existing AI Platform jobs',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -482,6 +489,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -498,6 +506,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'stream-logs',
           description: 'Show logs from a running AI Platform job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -647,6 +656,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -669,10 +679,12 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'submit',
           description: 'AI Platform Jobs submit commands',
           subcommands: [
+
             Subcommand(
               name: 'prediction',
               description: 'Start an AI Platform batch prediction job',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -725,6 +737,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                     name: 'DATA_FORMAT',
                     description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                     suggestions: [
+
                       FigSuggestion(name: 'text'),
                       FigSuggestion(name: 'tf-record'),
                       FigSuggestion(name: 'tf-record-gzip')
@@ -925,6 +938,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -947,6 +961,7 @@ final FigSpec aiPlatformSpec = FigSpec(
               name: 'training',
               description: 'Submit an AI Platform training job',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1282,6 +1297,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                     name: 'SCALE_TIER',
                     description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                     suggestions: [
+
                       FigSuggestion(name: 'basic'),
                       FigSuggestion(name: 'basic-gpu'),
                       FigSuggestion(name: 'basic-tpu'),
@@ -1352,6 +1368,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1410,6 +1427,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 )
               ],
               args: [
+
                 Arg(
                   name: 'JOB',
                   description: 'Name of the job'
@@ -1422,6 +1440,7 @@ final FigSpec aiPlatformSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1545,6 +1564,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1561,6 +1581,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'update',
           description: 'Update an AI Platform job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1710,6 +1731,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1730,6 +1752,7 @@ final FigSpec aiPlatformSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1853,6 +1876,7 @@ final FigSpec aiPlatformSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1869,10 +1893,12 @@ final FigSpec aiPlatformSpec = FigSpec(
       name: 'local',
       description: 'AI Platform Local commands',
       subcommands: [
+
         Subcommand(
           name: 'predict',
           description: 'Run prediction locally',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1947,6 +1973,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'FRAMEWORK',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'scikit-learn'),
                   FigSuggestion(name: 'tensorflow'),
                   FigSuggestion(name: 'xgboost')
@@ -2067,6 +2094,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2083,6 +2111,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'train',
           description: 'Run an AI Platform training job locally',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2277,6 +2306,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2308,6 +2338,7 @@ final FigSpec aiPlatformSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2431,6 +2462,7 @@ final FigSpec aiPlatformSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2447,10 +2479,12 @@ final FigSpec aiPlatformSpec = FigSpec(
       name: 'models',
       description: 'AI Platform Models commands',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding for a model',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2571,6 +2605,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -2623,6 +2658,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2645,6 +2681,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'create',
           description: 'Create a new AI Platform model',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2816,6 +2853,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2838,6 +2876,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'delete',
           description: 'Delete an existing AI Platform model',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2946,6 +2985,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -2986,6 +3026,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3008,6 +3049,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'describe',
           description: 'Describe an existing AI Platform model',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3116,6 +3158,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -3156,6 +3199,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3178,6 +3222,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a model',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3319,6 +3364,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -3370,6 +3416,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3392,6 +3439,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'list',
           description: 'List existing AI Platform models',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3533,6 +3581,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -3588,6 +3637,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3604,6 +3654,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding for a model',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3724,6 +3775,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -3776,6 +3828,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3798,6 +3851,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a model',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3906,6 +3960,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -3946,6 +4001,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3958,6 +4014,7 @@ final FigSpec aiPlatformSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'MODEL',
               description: 'ID of the model or fully qualified identifier for the model'
@@ -3972,6 +4029,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'update',
           description: 'Update an existing AI Platform model',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4095,6 +4153,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -4157,6 +4216,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4177,6 +4237,7 @@ final FigSpec aiPlatformSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4300,6 +4361,7 @@ final FigSpec aiPlatformSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4316,10 +4378,12 @@ final FigSpec aiPlatformSpec = FigSpec(
       name: 'operations',
       description: 'Manage AI Platform operations',
       subcommands: [
+
         Subcommand(
           name: 'cancel',
           description: 'Cancel an AI Platform operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4428,6 +4492,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -4468,6 +4533,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4490,6 +4556,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'describe',
           description: 'Describe an AI Platform operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4598,6 +4665,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -4638,6 +4706,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4660,6 +4729,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'list',
           description: 'List existing AI Platform jobs',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4801,6 +4871,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -4856,6 +4927,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4872,6 +4944,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'wait',
           description: 'Wait for an AI Platform operation to complete',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4980,6 +5053,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -5020,6 +5094,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5040,6 +5115,7 @@ final FigSpec aiPlatformSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5163,6 +5239,7 @@ final FigSpec aiPlatformSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -5179,6 +5256,7 @@ final FigSpec aiPlatformSpec = FigSpec(
       name: 'predict',
       description: 'Run AI Platform online prediction',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5321,6 +5399,7 @@ final FigSpec aiPlatformSpec = FigSpec(
             name: 'REGION',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'asia-east1'),
               FigSuggestion(name: 'asia-northeast1'),
               FigSuggestion(name: 'asia-southeast1'),
@@ -5383,6 +5462,7 @@ final FigSpec aiPlatformSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -5399,10 +5479,12 @@ final FigSpec aiPlatformSpec = FigSpec(
       name: 'versions',
       description: 'AI Platform Versions commands',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new AI Platform version',
           options: [
+
             Option(
               name: '--accelerator',
               description: 'Manage the accelerator config for GPU serving. When deploying a model with\nCompute Engine Machine Types, a GPU accelerator may also\nbe selected.\n+\n*type*::: The type of the accelerator. Choices are \'nvidia-tesla-a100\', \'nvidia-tesla-k80\', \'nvidia-tesla-p100\', \'nvidia-tesla-p4\', \'nvidia-tesla-t4\', \'nvidia-tesla-v100\'.\n+\n*count*::: The number of accelerators to attach to each machine running the job.\n If not specified, the default value is 1. Your model must be specially designed\nto accommodate more than 1 accelerator per machine. To configure how many\nreplicas your model has, set the `manualScaling` or `autoScaling`\nparameters',
@@ -5514,6 +5596,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'FRAMEWORK',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'scikit-learn'),
                   FigSuggestion(name: 'tensorflow'),
                   FigSuggestion(name: 'xgboost')
@@ -5619,6 +5702,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -5681,6 +5765,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5703,6 +5788,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'delete',
           description: 'Delete an existing AI Platform version',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5823,6 +5909,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -5863,6 +5950,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5885,6 +5973,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'describe',
           description: 'Describe an existing AI Platform version',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6005,6 +6094,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -6045,6 +6135,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6067,6 +6158,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'list',
           description: 'List existing AI Platform versions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6220,6 +6312,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -6275,6 +6368,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6291,6 +6385,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'set-default',
           description: 'Sets an existing AI Platform version as the default for its model',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6411,6 +6506,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -6451,6 +6547,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6473,6 +6570,7 @@ final FigSpec aiPlatformSpec = FigSpec(
           name: 'update',
           description: 'Update an AI Platform version',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6618,6 +6716,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'asia-northeast1'),
                   FigSuggestion(name: 'asia-southeast1'),
@@ -6680,6 +6779,7 @@ final FigSpec aiPlatformSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6700,6 +6800,7 @@ final FigSpec aiPlatformSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6823,6 +6924,7 @@ final FigSpec aiPlatformSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -6837,6 +6939,7 @@ final FigSpec aiPlatformSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6960,6 +7063,7 @@ final FigSpec aiPlatformSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

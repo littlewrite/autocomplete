@@ -9,10 +9,12 @@ final FigSpec route53profilesSpec = FigSpec(
   name: 'route53profiles',
   description: 'With Amazon Route 53 Profiles you can share Route 53 configurations with VPCs and AWS accounts',
   subcommands: [
+
     Subcommand(
       name: 'associate-profile',
       description: 'Associates a Route 53 Profiles profile with a VPC. A VPC can have only one Profile associated with it, but a Profile can be associated with 1000 of VPCs (and you can request a higher quota). For more information, see https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the association',
@@ -65,6 +67,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'associate-resource-to-profile',
       description: 'Associates a DNS reource configuration to a Route 53 Profile',
       options: [
+
         Option(
           name: '--name',
           description: 'Name for the resource association',
@@ -129,6 +133,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'create-profile',
       description: 'Creates an empty Route 53 Profile',
       options: [
+
         Option(
           name: '--client-token',
           description: 'ClientToken is an idempotency token that ensures a call to CreateProfile completes only once. You choose the value to pass. For example, an issue might prevent you from getting a response from CreateProfile. In this case, safely retry your call to CreateProfile by using the same CreateProfile parameter value',
@@ -184,6 +190,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'delete-profile',
       description: 'Deletes the specified Route 53 Profile. Before you can delete a profile, you must first disassociate it from all VPCs',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'The ID of the Profile that you want to delete',
@@ -221,6 +229,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'disassociate-profile',
       description: 'Dissociates a specified Route 53 Profile from the specified VPC',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'ID of the Profile',
@@ -267,6 +277,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'disassociate-resource-from-profile',
       description: 'Dissoaciated a specified resource, from the Route 53 Profile',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'The ID of the Profile',
@@ -313,6 +325,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -325,6 +338,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'get-profile',
       description: 'Returns information about a specified Route 53 Profile, such as whether whether the Profile is shared, and the current status of the Profile',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'ID of the Profile',
@@ -350,6 +364,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -362,6 +377,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'get-profile-association',
       description: 'Retrieves a Route 53 Profile association for a VPC. A VPC can have only one Profile association, but a Profile can be associated with up to 5000 VPCs',
       options: [
+
         Option(
           name: '--profile-association-id',
           description: 'The identifier of the association you want to get information about',
@@ -387,6 +403,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -399,6 +416,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'get-profile-resource-association',
       description: 'Returns information about a specified Route 53 Profile resource association',
       options: [
+
         Option(
           name: '--profile-resource-association-id',
           description: 'The ID of the profile resource association that you want to get information about',
@@ -424,6 +442,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -436,6 +455,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'list-profile-associations',
       description: 'Lists all the VPCs that the specified Route 53 Profile is associated with',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that you want to return for this request. If more objects are available, in the response, a NextToken value, which you can use in a subsequent call to get the next batch of objects, is provided.  If you don\'t specify a value for MaxResults, up to 100 objects are returned',
@@ -515,6 +535,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -527,6 +548,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'list-profile-resource-associations',
       description: 'Lists all the resource associations for the specified Route 53 Profile',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that you want to return for this request. If more objects are available, in the response, a NextToken value, which you can use in a subsequent call to get the next batch of objects, is provided.  If you don\'t specify a value for MaxResults, up to 100 objects are returned',
@@ -606,6 +628,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -618,6 +641,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'list-profiles',
       description: 'Lists all the Route 53 Profiles associated with your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that you want to return for this request. If more objects are available, in the response, a NextToken value, which you can use in a subsequent call to get the next batch of objects, is provided.  If you don\'t specify a value for MaxResults, up to 100 objects are returned',
@@ -679,6 +703,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -691,6 +716,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags that you associated with the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource that you want to list the tags for',
@@ -716,6 +742,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -728,6 +755,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource that you want to add tags to',
@@ -762,6 +790,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -774,6 +803,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource that you want to remove tags from',
@@ -808,6 +838,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -820,6 +851,7 @@ final FigSpec route53profilesSpec = FigSpec(
       name: 'update-profile-resource-association',
       description: 'Updates the specified Route 53 Profile resourse association',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the resource association',
@@ -863,6 +895,7 @@ final FigSpec route53profilesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

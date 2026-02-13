@@ -9,10 +9,12 @@ final FigSpec mediapackagev2Spec = FigSpec(
   name: 'mediapackagev2',
   description: 'This guide is intended for creating AWS Elemental MediaPackage resources in MediaPackage Version 2 (v2) starting from May 2023. To get started with MediaPackage v2, create your MediaPackage resources. There isn\'t an automated process to migrate your resources from MediaPackage v1 to MediaPackage v2.  The names of the entities that you use to access this API, like URLs and ARNs, all have the versioning information added, like "v2", to distinguish from the prior version. If you used MediaPackage prior to this release, you can\'t use the MediaPackage v2 CLI or the MediaPackage v2 API to access any MediaPackage v1 resources. If you created resources in MediaPackage v1, use video on demand (VOD) workflows, and aren\'t looking to migrate to MediaPackage v2 yet, see the MediaPackage v1 Live API Reference.  This is the AWS Elemental MediaPackage v2 Live REST API Reference. It describes all the MediaPackage API operations for live content in detail, and provides sample requests, responses, and errors for the supported web services protocols. We assume that you have the IAM permissions that you need to use MediaPackage via the REST API. We also assume that you are familiar with the features and operations of MediaPackage, as described in the AWS Elemental MediaPackage User Guide',
   subcommands: [
+
     Subcommand(
       name: 'cancel-harvest-job',
       description: 'Cancels an in-progress harvest job',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name of the channel group containing the channel from which the harvest job is running',
@@ -74,6 +76,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'create-channel',
       description: 'Create a channel to start receiving content streams. The channel represents the input to MediaPackage for incoming live content from an encoder such as AWS Elemental MediaLive. The channel receives content, and after packaging it, outputs it through an origin endpoint to downstream devices (such as video players or CDNs) that request the content. You can create only one channel with each request. We recommend that you spread out channels between channel groups, such as putting redundant channels in the same AWS Region in different channel groups',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -174,6 +178,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -186,6 +191,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'create-channel-group',
       description: 'Create a channel group to group your channels and origin endpoints. A channel group is the top-level resource that consists of channels and origin endpoints that are associated with it and that provides predictable URLs for stream delivery. All channels and origin endpoints within the channel group are guaranteed to share the DNS. You can create only one channel group with each request',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region. You can\'t use spaces in the name. You can\'t change the name after you create the channel group',
@@ -238,6 +244,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -250,6 +257,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'create-harvest-job',
       description: 'Creates a new harvest job to export content from a MediaPackage v2 channel to an S3 bucket',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name of the channel group containing the channel from which to harvest content',
@@ -356,6 +364,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -368,6 +377,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'create-origin-endpoint',
       description: 'The endpoint is attached to a channel, and represents the output of the live content. You can associate multiple endpoints to a single channel. Each endpoint gives players and downstream CDNs (such as Amazon CloudFront) access to the content for playback. Content can\'t be served from a channel until it has an endpoint. You can create only one endpoint with each request',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -501,6 +511,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -513,6 +524,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'delete-channel',
       description: 'Delete a channel to stop AWS Elemental MediaPackage from receiving further content. You must delete the channel\'s origin endpoints before you can delete the channel',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -547,6 +559,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -559,6 +572,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'delete-channel-group',
       description: 'Delete a channel group. You must delete the channel group\'s channels and origin endpoints before you can delete the channel group. If you delete a channel group, you\'ll lose access to the egress domain and will have to create a new channel group to replace it',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -584,6 +598,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -596,6 +611,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'delete-channel-policy',
       description: 'Delete a channel policy',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -630,6 +646,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -642,6 +659,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'delete-origin-endpoint',
       description: 'Origin endpoints can serve content until they\'re deleted. Delete the endpoint if it should no longer respond to playback requests. You must delete all endpoints from a channel before you can delete the channel',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -685,6 +703,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -697,6 +716,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'delete-origin-endpoint-policy',
       description: 'Delete an origin endpoint policy',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -740,6 +760,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -752,6 +773,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'get-channel',
       description: 'Retrieves the specified channel that\'s configured in AWS Elemental MediaPackage, including the origin endpoints that are associated with it',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -786,6 +808,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -798,6 +821,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'get-channel-group',
       description: 'Retrieves the specified channel group that\'s configured in AWS Elemental MediaPackage, including the channels and origin endpoints that are associated with it',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -823,6 +847,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -835,6 +860,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'get-channel-policy',
       description: 'Retrieves the specified channel policy that\'s configured in AWS Elemental MediaPackage. With policies, you can specify who has access to AWS resources and what actions they can perform on those resources',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -869,6 +895,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -881,6 +908,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'get-harvest-job',
       description: 'Retrieves the details of a specific harvest job',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name of the channel group containing the channel associated with the harvest job',
@@ -933,6 +961,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -945,6 +974,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'get-origin-endpoint',
       description: 'Retrieves the specified origin endpoint that\'s configured in AWS Elemental MediaPackage to obtain its playback URL and to view the packaging settings that it\'s currently using',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -988,6 +1018,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1000,6 +1031,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'get-origin-endpoint-policy',
       description: 'Retrieves the specified origin endpoint policy that\'s configured in AWS Elemental MediaPackage',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -1043,6 +1075,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1055,6 +1088,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'list-channel-groups',
       description: 'Retrieves all channel groups that are configured in AWS Elemental MediaPackage, including the channels and origin endpoints that are associated with it',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the response',
@@ -1116,6 +1150,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1128,6 +1163,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'list-channels',
       description: 'Retrieves all channels in a specific channel group that are configured in AWS Elemental MediaPackage, including the origin endpoints that are associated with it',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -1198,6 +1234,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1210,6 +1247,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'list-harvest-jobs',
       description: 'Retrieves a list of harvest jobs that match the specified criteria',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name of the channel group to filter the harvest jobs by. If specified, only harvest jobs associated with channels in this group will be returned',
@@ -1307,6 +1345,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1319,6 +1358,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'list-origin-endpoints',
       description: 'Retrieves all origin endpoints in a specific channel that are configured in AWS Elemental MediaPackage',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -1398,6 +1438,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1410,6 +1451,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags assigned to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the CloudWatch resource that you want to view tags for',
@@ -1435,6 +1477,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1447,6 +1490,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'put-channel-policy',
       description: 'Attaches an IAM policy to the specified channel. With policies, you can specify who has access to AWS resources and what actions they can perform on those resources. You can attach only one policy with each request',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -1490,6 +1534,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1502,6 +1547,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'put-origin-endpoint-policy',
       description: 'Attaches an IAM policy to the specified origin endpoint. You can attach only one policy with each request',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -1554,6 +1600,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1566,6 +1613,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns one of more tags (key-value pairs) to the specified MediaPackage resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values. You can use the TagResource operation with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the MediaPackage resource that you\'re adding tags to',
@@ -1600,6 +1648,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1612,6 +1661,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the MediaPackage resource that you\'re removing tags from',
@@ -1646,6 +1696,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1658,6 +1709,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'update-channel',
       description: 'Update the specified channel. You can edit if MediaPackage sends ingest or egress access logs to the CloudWatch log group, if content will be encrypted, the description on a channel, and your channel\'s policy settings. You can\'t edit the name of the channel or CloudFront distribution details. Any edits you make that impact the video output may not be reflected for a few minutes',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -1728,6 +1780,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1740,6 +1793,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'update-channel-group',
       description: 'Update the specified channel group. You can edit the description on a channel group for easier identification later from the AWS Elemental MediaPackage console. You can\'t edit the name of the channel group. Any edits you make that impact the video output may not be reflected for a few minutes',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -1783,6 +1837,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1795,6 +1850,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'update-origin-endpoint',
       description: 'Update the specified origin endpoint. Edit the packaging preferences on an endpoint to optimize the viewing experience. You can\'t edit the name of the endpoint. Any edits you make that impact the video output may not be reflected for a few minutes',
       options: [
+
         Option(
           name: '--channel-group-name',
           description: 'The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region',
@@ -1919,6 +1975,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1931,10 +1988,12 @@ final FigSpec mediapackagev2Spec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'harvest-job-finished',
           description: 'Wait until JMESPath query Status returns COMPLETED when polling with ``get-harvest-job``. It will poll every 2 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--channel-group-name',
               description: 'The name of the channel group containing the channel associated with the harvest job',
@@ -1987,6 +2046,7 @@ final FigSpec mediapackagev2Spec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

@@ -9,6 +9,7 @@ final FigSpec stowSpec = FigSpec(
   name: 'stow',
   description: 'Manage farms of symbolic links',
   options: [
+
     Option(
       name: ['-n', '--no'],
       description: 'Do not perform any operations that modify the filesystem; merely show what would happen'
@@ -40,6 +41,7 @@ final FigSpec stowSpec = FigSpec(
         Arg(
         name: 'level',
         suggestions: [
+
           FigSuggestion(name: '0'),
           FigSuggestion(name: '1'),
           FigSuggestion(name: '2'),

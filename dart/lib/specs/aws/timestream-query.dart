@@ -9,10 +9,12 @@ final FigSpec timestreamQuerySpec = FigSpec(
   name: 'timestream-query',
   description: 'Amazon Timestream Query',
   subcommands: [
+
     Subcommand(
       name: 'cancel-query',
       description: 'Cancels a query that has been issued. Cancellation is provided only if the query has not completed running before the cancellation request was issued. Because cancellation is an idempotent operation, subsequent cancellation requests will return a CancellationMessage, indicating that the query has already been canceled. See code sample for details',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The ID of the query that needs to be cancelled. QueryID is returned as part of the query result',
@@ -38,6 +40,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'create-scheduled-query',
       description: 'Create a scheduled query that will be run on your behalf at the configured schedule. Timestream assumes the execution role provided as part of the ScheduledQueryExecutionRoleArn parameter to run the query. You can use the NotificationConfiguration parameter to configure notification for your scheduled query operations',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of the scheduled query',
@@ -156,6 +160,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +173,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'delete-scheduled-query',
       description: 'Deletes a given scheduled query. This is an irreversible operation',
       options: [
+
         Option(
           name: '--scheduled-query-arn',
           description: 'The ARN of the scheduled query',
@@ -193,6 +199,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'describe-account-settings',
       description: 'Describes the settings for your account that include the query pricing model and the configured maximum TCUs the service can use for your query workload. You\'re charged only for the duration of compute units used for your workloads',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -221,6 +229,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'describe-endpoints',
       description: 'DescribeEndpoints returns a list of available endpoints to make Timestream API calls against. This API is available through both Write and Query. Because the Timestream SDKs are designed to transparently work with the service’s architecture, including the management and mapping of the service endpoints, it is not recommended that you use this API unless:   You are using VPC endpoints (Amazon Web Services PrivateLink) with Timestream     Your application uses a programming language that does not yet have SDK support   You require better control over the client-side implementation   For detailed information on how and when to use and implement DescribeEndpoints, see The Endpoint Discovery Pattern',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -249,6 +259,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'describe-scheduled-query',
       description: 'Provides detailed information about a scheduled query',
       options: [
+
         Option(
           name: '--scheduled-query-arn',
           description: 'The ARN of the scheduled query',
@@ -286,6 +298,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -298,6 +311,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'execute-scheduled-query',
       description: 'You can use this API to run a scheduled query manually.  If you enabled QueryInsights, this API also returns insights and metrics related to the query that you executed as part of an Amazon SNS notification. QueryInsights helps with performance tuning of your query. For more information about QueryInsights, see Using query insights to optimize queries in Amazon Timestream',
       options: [
+
         Option(
           name: '--scheduled-query-arn',
           description: 'ARN of the scheduled query',
@@ -350,6 +364,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -362,6 +377,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'list-scheduled-queries',
       description: 'Gets a list of all scheduled queries in the caller\'s Amazon account and Region. ListScheduledQueries is eventually consistent',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as the argument to the subsequent call to ListScheduledQueriesRequest',
@@ -423,6 +439,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -435,6 +452,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List all tags on a Timestream query resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Timestream resource with tags to be listed. This value is an Amazon Resource Name (ARN)',
@@ -505,6 +523,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -517,6 +536,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'prepare-query',
       description: 'A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later running. Timestream only supports using this operation with ValidateOnly set to true',
       options: [
+
         Option(
           name: '--query-string',
           description: 'The Timestream query string that you want to use as a prepared statement. Parameter names can be specified in the query string @ character followed by an identifier',
@@ -550,6 +570,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -562,6 +583,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'query',
       description: 'Query is a synchronous operation that enables you to run a query against your Amazon Timestream data. If you enabled QueryInsights, this API also returns insights and metrics related to the query that you executed. QueryInsights helps with performance tuning of your query. For more information about QueryInsights, see Using query insights to optimize queries in Amazon Timestream.  The maximum number of Query API requests you\'re allowed to make with QueryInsights enabled is 1 query per second (QPS). If you exceed this query rate, it might result in throttling.   Query will time out after 60 seconds. You must update the default timeout in the SDK to support a timeout of 60 seconds. See the code sample for details.  Your query request will fail in the following cases:    If you submit a Query request with the same client token outside of the 5-minute idempotency window.     If you submit a Query request with the same client token, but change other parameters, within the 5-minute idempotency window.     If the size of the row (including the query metadata) exceeds 1 MB, then the query will fail with the following error message:   Query aborted as max page response size has been exceeded by the output result row     If the IAM principal of the query initiator and the result reader are not the same and/or the query initiator and the result reader do not have the same query string in the query requests, the query will fail with an Invalid pagination token error',
       options: [
+
         Option(
           name: '--query-string',
           description: 'The query to be run by Timestream',
@@ -650,6 +672,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -662,6 +685,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'tag-resource',
       description: 'Associate a set of tags with a Timestream resource. You can then activate these user-defined tags so that they appear on the Billing and Cost Management console for cost allocation tracking',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN)',
@@ -696,6 +720,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -708,6 +733,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the association of tags from a Timestream query resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Timestream resource that the tags will be removed from. This value is an Amazon Resource Name (ARN)',
@@ -742,6 +768,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -754,6 +781,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'update-account-settings',
       description: 'Transitions your account to use TCUs for query pricing and modifies the maximum query compute units that you\'ve configured. If you reduce the value of MaxQueryTCU to a desired configuration, the new value can take up to 24 hours to be effective.  After you\'ve transitioned your account to use TCUs for query pricing, you can\'t transition to using bytes scanned for query pricing',
       options: [
+
         Option(
           name: '--max-query-tcu',
           description: 'The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. The maximum value supported for MaxQueryTCU is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see Default quotas. This configuration is applicable only for on-demand usage of Timestream Compute Units (TCUs). The maximum value supported for MaxQueryTCU is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see Default quotas',
@@ -797,6 +825,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -809,6 +838,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
       name: 'update-scheduled-query',
       description: 'Update a scheduled query',
       options: [
+
         Option(
           name: '--scheduled-query-arn',
           description: 'ARN of the scheuled query',
@@ -843,6 +873,7 @@ final FigSpec timestreamQuerySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

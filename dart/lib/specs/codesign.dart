@@ -9,6 +9,7 @@ final FigSpec codesignSpec = FigSpec(
   name: 'codesign',
   description: 'Create and manipulate code signatures',
   options: [
+
     Option(
       name: '--all-architectures',
       description: 'When verifying a code signature on code that has a universal (\'fat\') Mach-O binary, separately verify each architecture contained. This is the default unless overridden with the -a (--architecture) option'

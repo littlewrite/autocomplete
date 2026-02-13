@@ -9,6 +9,7 @@ final FigSpec aftmanSpec = FigSpec(
   name: 'aftman',
   description: 'A toolchain manager, enabling project-specific command line tools',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Creates a new aftman.toml file in the given directory',
@@ -24,12 +25,14 @@ final FigSpec aftmanSpec = FigSpec(
       name: 'add',
       description: 'Adds a new tool to Aftman and installs it',
       options: [
+
         Option(
           name: '--global',
           description: 'Install this tool globally'
         )
       ],
       args: [
+
         Arg(
           name: 'tool',
           description: 'What tool and version to install'
@@ -45,6 +48,7 @@ final FigSpec aftmanSpec = FigSpec(
       name: 'install',
       description: 'Install all tools listed in aftman.toml files based on your current directory',
       options: [
+
         Option(
           name: '--no-trust-check',
           description: 'All tools will be installed, regardless of whether they are known'
@@ -66,6 +70,7 @@ final FigSpec aftmanSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for aftman'

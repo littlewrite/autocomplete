@@ -8,13 +8,18 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec screenSpec = FigSpec(
   name: 'screen',
   description: 'Screen manager with VT100/ANSI terminal emulation',
-  parserDirectives: ParserDirectives(),
+  parserDirectives: ParserDirectives(
+    optionsMustPrecedeArguments: true,
+    flagsArePosixNoncompliant: true
+  ),
   subcommands: [
+
     Subcommand(
       name: '-d',
       description: 'Does not start screen, but detaches the elsewhere running screen session',
       icon: 'fig://icon?type=option',
       subcommands: [
+
         Subcommand(
           name: '-r',
           description: 'Reattach a session and if necessary detach it first',
@@ -37,6 +42,7 @@ final FigSpec screenSpec = FigSpec(
       description: 'Does not start screen, but detaches the elsewhere running screen session',
       icon: 'fig://icon?type=option',
       subcommands: [
+
         Subcommand(
           name: '-r',
           description: 'Reattach a session. If necessary detach and logout remotely first',
@@ -77,6 +83,7 @@ final FigSpec screenSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '-a',
       description: 'Force all capabilities into each window\'s termcap'
@@ -213,6 +220,7 @@ final FigSpec screenSpec = FigSpec(
         description: 'Screen session to match',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'sessionowner/[pid.tty.host]')
         ]
       )
@@ -228,6 +236,7 @@ final FigSpec screenSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'cmd',
       description: 'Command to invoke'

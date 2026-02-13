@@ -9,6 +9,7 @@ final FigSpec tscSpec = FigSpec(
   name: 'tsc',
   description: 'CLI tool for TypeScript compiler',
   options: [
+
     Option(
       name: '--all',
       description: 'Show all compiler options'
@@ -100,6 +101,7 @@ final FigSpec tscSpec = FigSpec(
         Arg(
         name: 'approach',
         suggestions: [
+
           FigSuggestion(name: 'fixedPollingInterval'),
           FigSuggestion(name: 'priorityPollingInterval'),
           FigSuggestion(name: 'dynamicPriorityPolling')
@@ -122,6 +124,7 @@ final FigSpec tscSpec = FigSpec(
         Arg(
         name: 'approach',
         suggestions: [
+
           FigSuggestion(name: 'fixedPollingInterval'),
           FigSuggestion(name: 'dynamicPriorityPolling'),
           FigSuggestion(name: 'useFsEvents')
@@ -136,6 +139,7 @@ final FigSpec tscSpec = FigSpec(
         Arg(
         name: 'approach',
         suggestions: [
+
           FigSuggestion(name: 'fixedPollingInterval'),
           FigSuggestion(name: 'priorityPollingInterval'),
           FigSuggestion(name: 'dynamicPriorityPolling'),
@@ -284,6 +288,7 @@ final FigSpec tscSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(name: 'remove'),
           FigSuggestion(name: 'preserve'),
           FigSuggestion(name: 'error')
@@ -314,6 +319,7 @@ final FigSpec tscSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(name: 'react'),
           FigSuggestion(name: 'react-jsx'),
           FigSuggestion(name: 'react-jsxdev'),
@@ -404,6 +410,7 @@ final FigSpec tscSpec = FigSpec(
         name: 'module',
         defaultValue: 'CommonJS',
         suggestions: [
+
           FigSuggestion(name: 'ES6'),
           FigSuggestion(name: 'ES2015'),
           FigSuggestion(name: 'ES2020'),
@@ -658,6 +665,7 @@ final FigSpec tscSpec = FigSpec(
         Arg(
         defaultValue: 'ES3',
         suggestions: [
+
           FigSuggestion(name: 'ES3'),
           FigSuggestion(name: 'ES5'),
           FigSuggestion(name: 'ES6'),

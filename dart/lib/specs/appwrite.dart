@@ -9,6 +9,7 @@ final FigSpec indexSpec = FigSpec(
   name: 'index',
   description: 'Appwrite - Open-Source End-to-End Backend Server',
   subcommands: [
+
     Subcommand(
       name: 'login',
       description: 'The login command allows you to authenticate and manage a user account'
@@ -17,6 +18,7 @@ final FigSpec indexSpec = FigSpec(
       name: 'init',
       description: 'The init command helps you initialize your Appwrite project, functions and collections',
       subcommands: [
+
         Subcommand(
           name: 'project',
           description: 'Initialise your Appwrite project'
@@ -29,6 +31,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'collection',
           description: 'Initialise your Appwrite collections',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -50,10 +53,12 @@ final FigSpec indexSpec = FigSpec(
       name: 'deploy',
       description: 'The deploy command provides a convenient wrapper for deploying your functions and collections',
       subcommands: [
+
         Subcommand(
           name: 'function',
           description: 'Deploy functions in the current directory',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -73,6 +78,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'collection',
           description: 'Deploy collections in the current project',
           options: [
+
             Option(
               name: '--all',
               description: 'Flag to deploy all functions'
@@ -89,6 +95,7 @@ final FigSpec indexSpec = FigSpec(
       name: 'account',
       description: 'The account command allows you to authenticate and manage a user account',
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Get currently logged in user data as JSON object'
@@ -97,6 +104,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'create',
           description: 'Use this endpoint to allow a new user to register a new account in your project. After the user registration completes successfully, you can use the [/account/verfication](/docs/client/account#accountCreateVerification) route to start verifying the user email address. To allow the new user to login to their new account, you need to create a new [account session](/docs/client/account#accountCreateSession)',
           options: [
+
             Option(
               name: '--userId',
               description: 'Unique Id. Choose your own unique ID or pass the string "unique()" to auto generate it. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can\'t start with a special char. Max length is 36 chars',
@@ -139,6 +147,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateEmail',
           description: 'Update currently logged in user account email address. After changing user address, the user confirmation status will get reset. A new confirmation email is not sent automatically however you can use the send confirmation email endpoint again to send the confirmation email. For security measures, user password is required to complete this request. This endpoint can also be used to convert an anonymous account to a normal one, by passing an email address and a new password',
           options: [
+
             Option(
               name: '--email',
               description: 'User email',
@@ -167,6 +176,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getLogs',
           description: 'Get currently logged in user list of latest security activity logs. Each log returns user IP address, location and date and time of log',
           options: [
+
             Option(
               name: '--limit',
               description: 'Maximum number of logs to return in response. By default will return maximum 25 results. Maximum of 100 results allowed per request',
@@ -191,6 +201,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateName',
           description: 'Update currently logged in user account name',
           options: [
+
             Option(
               name: '--name',
               description: 'User name. Max length: 128 chars',
@@ -206,6 +217,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updatePassword',
           description: 'Update currently logged in user password. For validation, user is required to pass in the new password, and the old password. For users created with OAuth, Team Invites and Magic URL, oldPassword is optional',
           options: [
+
             Option(
               name: '--password',
               description: 'New user password. Must be at least 8 chars',
@@ -230,6 +242,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updatePhone',
           description: 'Update the currently logged in user\'s phone number. After updating the phone number, the phone verification status will be reset. A confirmation SMS is not sent automatically, however you can use the [POST /account/verification/phone](/docs/client/account#accountCreatePhoneVerification) endpoint to send a confirmation SMS',
           options: [
+
             Option(
               name: '--number',
               description: 'Phone number. Format this number with a leading \'+\' and a country code, e.g., +16175551212',
@@ -258,6 +271,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updatePrefs',
           description: 'Update currently logged in user account preferences. The object you pass is stored as is, and replaces any previous value. The maximum allowed prefs size is 64kB and throws error if exceeded',
           options: [
+
             Option(
               name: '--prefs',
               description: 'Prefs key-value JSON object',
@@ -273,6 +287,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createRecovery',
           description: 'Sends the user an email with a temporary secret key for password reset. When the user clicks the confirmation link he is redirected back to your app password reset URL with the secret key and email address values attached to the URL query string. Use the query string params to submit a request to the [PUT /account/recovery](/docs/client/account#accountUpdateRecovery) endpoint to complete the process. The verification link sent to the user\'s email address is valid for 1 hour',
           options: [
+
             Option(
               name: '--email',
               description: 'User email',
@@ -297,6 +312,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateRecovery',
           description: 'Use this endpoint to complete the user account password reset. Both the **userId** and **secret** arguments will be passed as query parameters to the redirect URL you have provided when sending your request to the [POST /account/recovery](/docs/client/account#accountCreateRecovery) endpoint.  Please note that in order to avoid a [Redirect Attack](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md) the only valid redirect URLs are the ones from domains you have set when adding your platforms in the console interface',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -351,6 +367,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createEmailSession',
           description: 'Allow the user to login into their account by providing a valid email and password combination. This route will create a new session for the user',
           options: [
+
             Option(
               name: '--email',
               description: 'User email',
@@ -375,6 +392,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createMagicURLSession',
           description: 'Sends the user an email with a secret key for creating a session. When the user clicks the link in the email, the user is redirected back to the URL you provided with the secret key and userId values attached to the URL query string. Use the query string parameters to submit a request to the [PUT /account/sessions/magic-url](/docs/client/account#accountUpdateMagicURLSession) endpoint to complete the login process. The link sent to the user\'s email address is valid for 1 hour. If you are on a mobile device you can leave the URL parameter empty, so that the login completion will be handled by your Appwrite instance by default',
           options: [
+
             Option(
               name: '--userId',
               description: 'Unique Id. Choose your own unique ID or pass the string "unique()" to auto generate it. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can\'t start with a special char. Max length is 36 chars',
@@ -408,6 +426,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateMagicURLSession',
           description: 'Use this endpoint to complete creating the session with the Magic URL. Both the **userId** and **secret** arguments will be passed as query parameters to the redirect URL you have provided when sending your request to the [POST /account/sessions/magic-url](/docs/client/account#accountCreateMagicURLSession) endpoint.  Please note that in order to avoid a [Redirect Attack](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md) the only valid redirect URLs are the ones from domains you have set when adding your platforms in the console interface',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -432,6 +451,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createOAuth2Session',
           description: 'Allow the user to login to their account using the OAuth2 provider of their choice. Each OAuth2 provider should be enabled from the Appwrite console first. Use the success and failure arguments to provide a redirect URL\'s back to your app when login is completed.  If there is already an active session, the new session will be attached to the logged-in account. If there are no active sessions, the server will attempt to look for a user with the same email address as the email received from the OAuth2 provider and attach the new session to the existing user. If no matching user is found - the server will create a new user',
           options: [
+
             Option(
               name: '--provider',
               description: 'OAuth2 Provider. Currently, supported providers are: amazon, apple, auth0, autodesk, bitbucket, bitly, box, dailymotion, discord, dropbox, facebook, github, gitlab, google, linkedin, microsoft, notion, okta, paypal, paypalSandbox, salesforce, slack, spotify, stripe, tradeshift, tradeshiftBox, twitch, wordpress, yahoo, yammer, yandex, zoom',
@@ -474,6 +494,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createPhoneSession',
           description: 'Sends the user an SMS with a secret key for creating a session. Use the returned user ID and secret and submit a request to the [PUT /account/sessions/phone](/docs/client/account#accountUpdatePhoneSession) endpoint to complete the login process. The secret sent to the user\'s phone is valid for 15 minutes',
           options: [
+
             Option(
               name: '--userId',
               description: 'Unique Id. Choose your own unique ID or pass the string "unique()" to auto generate it. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can\'t start with a special char. Max length is 36 chars',
@@ -498,6 +519,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updatePhoneSession',
           description: 'Use this endpoint to complete creating a session with SMS. Use the **userId** from the [createPhoneSession](/docs/client/account#accountCreatePhoneSession) endpoint and the **secret** received via SMS to successfully update and confirm the phone session',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -522,6 +544,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getSession',
           description: 'Use this endpoint to get a logged in user\'s session using a Session ID. Inputting \'current\' will return the current session being used',
           options: [
+
             Option(
               name: '--sessionId',
               description: 'Session ID. Use the string \'current\' to get the current device session',
@@ -537,6 +560,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateSession',
           description: 'Access tokens have limited lifespan and expire to mitigate security risks. If session was created using an OAuth provider, this route can be used to "refresh" the access token',
           options: [
+
             Option(
               name: '--sessionId',
               description: 'Session ID. Use the string \'current\' to update the current device session',
@@ -552,6 +576,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'deleteSession',
           description: 'Use this endpoint to log out the currently logged in user from all their account sessions across all of their different devices. When using the Session ID argument, only the unique session ID provided is deleted',
           options: [
+
             Option(
               name: '--sessionId',
               description: 'Session ID. Use the string \'current\' to delete the current device session',
@@ -571,6 +596,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createVerification',
           description: 'Use this endpoint to send a verification message to your user email address to confirm they are the valid owners of that address. Both the **userId** and **secret** arguments will be passed as query parameters to the URL you have provided to be attached to the verification email. The provided URL should redirect the user back to your app and allow you to complete the verification process by verifying both the **userId** and **secret** parameters. Learn more about how to [complete the verification process](/docs/client/account#accountUpdateEmailVerification). The verification link sent to the user\'s email address is valid for 7 days.  Please note that in order to avoid a [Redirect Attack](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md), the only valid redirect URLs are the ones from domains you have set when adding your platforms in the console interface',
           options: [
+
             Option(
               name: '--url',
               description: 'URL to redirect the user back to your app from the verification email. Only URLs from hostnames in your project platform list are allowed. This requirement helps to prevent an [open redirect](https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html) attack against your project API',
@@ -586,6 +612,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateVerification',
           description: 'Use this endpoint to complete the user email verification process. Use both the **userId** and **secret** parameters that were attached to your app URL to verify the user email ownership. If confirmed this route will return a 200 status code',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -614,6 +641,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updatePhoneVerification',
           description: 'Use this endpoint to complete the user phone verification process. Use the **userId** and **secret** that were sent to your user\'s phone number to verify the user email ownership. If confirmed this route will return a 200 status code',
           options: [
+
             Option(
               name: '--secret',
               description: 'Valid verification token',
@@ -631,10 +659,12 @@ final FigSpec indexSpec = FigSpec(
       name: 'avatars',
       description: 'The avatars command aims to help you complete everyday tasks related to your app image, icons, and avatars',
       subcommands: [
+
         Subcommand(
           name: 'getBrowser',
           description: 'You can use this endpoint to show different browser icons to your users. The code argument receives the browser code as it appears in your user [GET /account/sessions](/docs/client/account#accountGetSessions) endpoint. Use width, height and quality arguments to change the output settings.  When one dimension is specified and the other is 0, the image is scaled with preserved aspect ratio. If both dimensions are 0, the API provides an image at source quality. If dimensions are not specified, the default size of image returned is 100x100px',
           options: [
+
             Option(
               name: '--code',
               description: 'Browser Code',
@@ -686,6 +716,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getCreditCard',
           description: 'The credit card endpoint will return you the icon of the credit card provider you need. Use width, height and quality arguments to change the output settings.  When one dimension is specified and the other is 0, the image is scaled with preserved aspect ratio. If both dimensions are 0, the API provides an image at source quality. If dimensions are not specified, the default size of image returned is 100x100px',
           options: [
+
             Option(
               name: '--code',
               description: 'Credit Card Code. Possible values: amex, argencard, cabal, censosud, diners, discover, elo, hipercard, jcb, mastercard, naranja, targeta-shopping, union-china-pay, visa, mir, maestro',
@@ -737,6 +768,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getFavicon',
           description: 'Use this endpoint to fetch the favorite icon (AKA favicon) of any remote website URL',
           options: [
+
             Option(
               name: '--url',
               description: 'Website URL which you want to fetch the favicon from',
@@ -761,6 +793,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getFlag',
           description: 'You can use this endpoint to show different country flags icons to your users. The code argument receives the 2 letter country code. Use width, height and quality arguments to change the output settings.  When one dimension is specified and the other is 0, the image is scaled with preserved aspect ratio. If both dimensions are 0, the API provides an image at source quality. If dimensions are not specified, the default size of image returned is 100x100px',
           options: [
+
             Option(
               name: '--code',
               description: 'Country Code. ISO Alpha-2 country code format',
@@ -812,6 +845,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getImage',
           description: 'Use this endpoint to fetch a remote image URL and crop it to any image size you want. This endpoint is very useful if you need to crop and display remote images in your app or in case you want to make sure a 3rd party image is properly served using a TLS protocol.  When one dimension is specified and the other is 0, the image is scaled with preserved aspect ratio. If both dimensions are 0, the API provides an image at source quality. If dimensions are not specified, the default size of image returned is 400x400px',
           options: [
+
             Option(
               name: '--url',
               description: 'Image URL which you want to crop',
@@ -854,6 +888,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getInitials',
           description: 'Use this endpoint to show your user initials avatar icon on your website or app. By default, this route will try to print your logged-in user name or email initials. You can also overwrite the user name if you pass the \'name\' parameter. If no name is given and no user is logged, an empty avatar will be returned.  You can use the color and background params to change the avatar colors. By default, a random theme will be selected. The random theme will persist for the user\'s initials when reloading the same theme will always return for the same initials.  When one dimension is specified and the other is 0, the image is scaled with preserved aspect ratio. If both dimensions are 0, the API provides an image at source quality. If dimensions are not specified, the default size of image returned is 100x100px',
           options: [
+
             Option(
               name: '--name',
               description: 'Full Name. When empty, current user name or email will be used. Max length: 128 chars',
@@ -914,6 +949,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getQR',
           description: 'Converts a given plain text to a QR code image. You can use the query parameters to change the size and style of the resulting image',
           options: [
+
             Option(
               name: '--text',
               description: 'Plain text to be converted to QR code image',
@@ -967,9 +1003,11 @@ final FigSpec indexSpec = FigSpec(
       name: 'databases',
       description: 'The databases command allows you to create structured collections of documents, query and filter lists of documents',
       subcommands: [
+
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: '--search',
               description: 'Search term to filter your list results. Max length: 256 chars',
@@ -1029,6 +1067,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'create',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Unique Id. Choose your own unique ID or pass the string "unique()" to auto generate it. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can\'t start with a special char. Max length is 36 chars',
@@ -1052,6 +1091,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getUsage',
           options: [
+
             Option(
               name: '--range',
               description: '\'Date range',
@@ -1066,6 +1106,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'get',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1080,6 +1121,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'update',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1103,6 +1145,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'delete',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1117,6 +1160,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listCollections',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1185,6 +1229,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createCollection',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1244,6 +1289,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getCollection',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1267,6 +1313,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updateCollection',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1335,6 +1382,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'deleteCollection',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1358,6 +1406,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listAttributes',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1381,6 +1430,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createBooleanAttribute',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1440,6 +1490,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createEmailAttribute',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1499,6 +1550,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createEnumAttribute',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1567,6 +1619,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createFloatAttribute',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1644,6 +1697,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createIntegerAttribute',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1721,6 +1775,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createIpAttribute',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1780,6 +1835,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createStringAttribute',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1848,6 +1904,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createUrlAttribute',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1907,6 +1964,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getAttribute',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1939,6 +1997,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'deleteAttribute',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -1971,6 +2030,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listDocuments',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2057,6 +2117,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createDocument',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2116,6 +2177,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getDocument',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2148,6 +2210,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updateDocument',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2207,6 +2270,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'deleteDocument',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2239,6 +2303,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listDocumentLogs',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2289,6 +2354,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listIndexes',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2312,6 +2378,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createIndex',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2371,6 +2438,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getIndex',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2403,6 +2471,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'deleteIndex',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2435,6 +2504,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listCollectionLogs',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2476,6 +2546,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getCollectionUsage',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2508,6 +2579,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listLogs',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2540,6 +2612,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getDatabaseUsage',
           options: [
+
             Option(
               name: '--databaseId',
               description: 'Database ID',
@@ -2566,10 +2639,12 @@ final FigSpec indexSpec = FigSpec(
       name: 'functions',
       description: 'The functions command allows you view, create and manage your Cloud Functions',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'Get a list of all the project\'s functions. You can use the query params to filter your results',
           options: [
+
             Option(
               name: '--search',
               description: 'Search term to filter your list results. Max length: 256 chars',
@@ -2630,6 +2705,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'create',
           description: 'Create a new function. You can pass a list of [permissions](/docs/permissions) to allow different project users or team with access to execute the function using the client API',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID. Choose your own unique ID or pass the string "unique()" to auto generate it. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can\'t start with a special char. Max length is 36 chars',
@@ -2712,6 +2788,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'get',
           description: 'Get a function by its unique ID',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -2727,6 +2804,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'update',
           description: 'Update function by its unique ID',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -2796,6 +2874,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'delete',
           description: 'Delete a function by its unique ID',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -2811,6 +2890,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'listDeployments',
           description: 'Get a list of all the project\'s code deployments. You can use the query params to filter your results',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -2880,6 +2960,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createDeployment',
           description: 'Create a new function code deployment. Use this endpoint to upload a new version of your code function. To execute your newly uploaded code, you\'ll need to update the function\'s deployment to use your new deployment UID.  This endpoint accepts a tar.gz file compressed with your code. Make sure to include any dependencies your code has within the compressed file. You can learn more about code packaging in the [Appwrite Cloud Functions tutorial](/docs/functions).  Use the "command" param to set the entry point used to execute your code',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -2922,6 +3003,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getDeployment',
           description: 'Get a code deployment by its unique ID',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -2946,6 +3028,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateDeployment',
           description: 'Update the function code deployment ID using the unique function ID. Use this endpoint to switch the code deployment that should be executed by the execution endpoint',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -2970,6 +3053,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'deleteDeployment',
           description: 'Delete a code deployment by its unique ID',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -2993,6 +3077,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'retryBuild',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -3026,6 +3111,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'listExecutions',
           description: 'Get a list of all the current user function execution logs. You can use the query params to filter your results. On admin mode, this endpoint will return a list of all of the project\'s executions. [Learn more about different API modes](/docs/admin)',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -3086,6 +3172,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createExecution',
           description: 'Trigger a function execution. The returned object will return you the current execution status. You can ping the \'Get Execution\' endpoint to get updates on the current execution status. Once this endpoint is called, your function execution process will start asynchronously',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -3119,6 +3206,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getExecution',
           description: 'Get a function execution log by its unique ID',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -3142,6 +3230,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getUsage',
           options: [
+
             Option(
               name: '--functionId',
               description: 'Function ID',
@@ -3168,6 +3257,7 @@ final FigSpec indexSpec = FigSpec(
       name: 'health',
       description: 'The health command allows you to both validate and monitor your Appwrite server\'s health',
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Check the Appwrite HTTP server is up and responsive'
@@ -3213,6 +3303,7 @@ final FigSpec indexSpec = FigSpec(
       name: 'locale',
       description: 'The locale command allows you to customize your app based on your users\' location',
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Get the current user location based on IP. Returns an object with user country code, country name, continent name, continent code, ip address and suggested currency. You can use the locale header to get the data in a supported language.  ([IP Geolocation by DB-IP](https://db-ip.com))'
@@ -3247,9 +3338,11 @@ final FigSpec indexSpec = FigSpec(
       name: 'projects',
       description: 'The projects command allows you to view, create and manage your Appwrite projects',
       subcommands: [
+
         Subcommand(
           name: 'list',
           options: [
+
             Option(
               name: '--search',
               description: 'Search term to filter your list results. Max length: 256 chars',
@@ -3309,6 +3402,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'create',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Unique Id. Choose your own unique ID or pass the string "unique()" to auto generate it. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can\'t start with a special char. Max length is 36 chars',
@@ -3422,6 +3516,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'get',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3436,6 +3531,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'update',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3540,6 +3636,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'delete',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3563,6 +3660,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updateAuthLimit',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3586,6 +3684,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updateAuthStatus',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3618,6 +3717,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listDomains',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3632,6 +3732,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createDomain',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3655,6 +3756,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getDomain',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3678,6 +3780,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'deleteDomain',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3701,6 +3804,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updateDomainVerification',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3724,6 +3828,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listKeys',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3738,6 +3843,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createKey',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3779,6 +3885,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getKey',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3802,6 +3909,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updateKey',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3852,6 +3960,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'deleteKey',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3875,6 +3984,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updateOAuth2',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3916,6 +4026,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listPlatforms',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3930,6 +4041,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createPlatform',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -3989,6 +4101,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getPlatform',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4012,6 +4125,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updatePlatform',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4071,6 +4185,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'deletePlatform',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4094,6 +4209,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updateServiceStatus',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4126,6 +4242,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getUsage',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4149,6 +4266,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'listWebhooks',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4163,6 +4281,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'createWebhook',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4231,6 +4350,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getWebhook',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4254,6 +4374,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updateWebhook',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4331,6 +4452,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'deleteWebhook',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4354,6 +4476,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'updateWebhookSignature',
           options: [
+
             Option(
               name: '--projectId',
               description: 'Project unique ID',
@@ -4380,10 +4503,12 @@ final FigSpec indexSpec = FigSpec(
       name: 'storage',
       description: 'The storage command allows you to manage your project files',
       subcommands: [
+
         Subcommand(
           name: 'listBuckets',
           description: 'Get a list of all the storage buckets. You can use the query params to filter your results',
           options: [
+
             Option(
               name: '--search',
               description: 'Search term to filter your list results. Max length: 256 chars',
@@ -4444,6 +4569,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createBucket',
           description: 'Create a new storage bucket',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Unique Id. Choose your own unique ID or pass the string \'unique()\' to auto generate it. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can\'t start with a special char. Max length is 36 chars',
@@ -4540,6 +4666,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getBucket',
           description: 'Get a storage bucket by its unique ID. This endpoint response returns a JSON object with the storage bucket metadata',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Bucket unique ID',
@@ -4555,6 +4682,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateBucket',
           description: 'Update a storage bucket by its unique ID',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Bucket unique ID',
@@ -4651,6 +4779,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'deleteBucket',
           description: 'Delete a storage bucket by its unique ID',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Bucket unique ID',
@@ -4666,6 +4795,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'listFiles',
           description: 'Get a list of all the user files. You can use the query params to filter your results. On admin mode, this endpoint will return a list of all of the project\'s files. [Learn more about different API modes](/docs/admin)',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Storage bucket unique ID. You can create a new storage bucket using the Storage service [server integration](/docs/server/storage#createBucket)',
@@ -4735,6 +4865,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createFile',
           description: 'Create a new file. Before using this route, you should create a new bucket resource using either a [server integration](/docs/server/database#storageCreateBucket) API or directly from your Appwrite console.  Larger files should be uploaded using multiple requests with the [content-range](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Range) header to send a partial request with a maximum supported chunk of \'5MB\'. The \'content-range\' header values should always be in bytes.  When the first request is sent, the server will return the **File** object, and the subsequent part request must include the file\'s **id** in \'x-appwrite-id\' header to allow the server to know that the partial upload is for the existing file and not for a new one.  If you\'re creating a new file using one of the Appwrite SDKs, all the chunking logic will be managed by the SDK internally',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Storage bucket unique ID. You can create a new storage bucket using the Storage service [server integration](/docs/server/storage#createBucket)',
@@ -4786,6 +4917,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getFile',
           description: 'Get a file by its unique ID. This endpoint response returns a JSON object with the file metadata',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Storage bucket unique ID. You can create a new storage bucket using the Storage service [server integration](/docs/server/storage#createBucket)',
@@ -4810,6 +4942,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateFile',
           description: 'Update a file by its unique ID. Only users with write permissions have access to update this resource',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Storage bucket unique ID. You can create a new storage bucket using the Storage service [server integration](/docs/server/storage#createBucket)',
@@ -4852,6 +4985,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'deleteFile',
           description: 'Delete a file by its unique ID. Only users with write permissions have access to delete this resource',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Storage bucket unique ID. You can create a new storage bucket using the Storage service [server integration](/docs/server/storage#createBucket)',
@@ -4876,6 +5010,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getFileDownload',
           description: 'Get a file content by its unique ID. The endpoint response return with a \'Content-Disposition: attachment\' header that tells the browser to start downloading the file to user downloads directory',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Storage bucket ID. You can create a new storage bucket using the Storage service [server integration](/docs/server/storage#createBucket)',
@@ -4909,6 +5044,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getFilePreview',
           description: 'Get a file preview image. Currently, this method supports preview for image files (jpg, png, and gif), other supported formats, like pdf, docs, slides, and spreadsheets, will return the file icon image. You can also pass query string arguments for cutting and resizing your preview image. Preview is supported only for image files smaller than 10MB',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Storage bucket unique ID. You can create a new storage bucket using the Storage service [server integration](/docs/server/storage#createBucket)',
@@ -5041,6 +5177,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getFileView',
           description: 'Get a file content by its unique ID. This endpoint is similar to the download method but returns with no  \'Content-Disposition: attachment\' header',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Storage bucket unique ID. You can create a new storage bucket using the Storage service [server integration](/docs/server/storage#createBucket)',
@@ -5073,6 +5210,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getUsage',
           options: [
+
             Option(
               name: '--range',
               description: 'Date range',
@@ -5087,6 +5225,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getBucketUsage',
           options: [
+
             Option(
               name: '--bucketId',
               description: 'Bucket ID',
@@ -5113,10 +5252,12 @@ final FigSpec indexSpec = FigSpec(
       name: 'teams',
       description: 'The teams command allows you to group users of your project and to enable them to share read and write access to your project resources',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'Get a list of all the teams in which the current user is a member. You can use the parameters to filter your results.\n \n In admin mode, this endpoint returns a list of all the teams in the current project. [Learn more about different API modes](/docs/admin)',
           options: [
+
             Option(
               name: '--search',
               description: 'Search term to filter your list results. Max length: 256 chars',
@@ -5177,6 +5318,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'create',
           description: 'Create a new team. The user who creates the team will automatically be assigned as the owner of the team. Only the users with the owner role can invite new members, add new owners and delete or update the team',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID. Choose your own unique ID or pass the string "unique()" to auto generate it. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can\'t start with a special char. Max length is 36 chars',
@@ -5210,6 +5352,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'get',
           description: 'Get a team by its ID. All team members have read access for this resource',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID',
@@ -5225,6 +5368,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'update',
           description: 'Update a team using its ID. Only members with the owner role can update the team',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID',
@@ -5249,6 +5393,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'delete',
           description: 'Delete a team using its ID. Only team members with the owner role can delete the team',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID',
@@ -5264,6 +5409,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'listLogs',
           description: 'Get the team activity logs list by its unique ID',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID',
@@ -5297,6 +5443,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getMemberships',
           description: 'Use this endpoint to list a team\'s members using the team\'s ID. All team members have read access to this endpoint',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID',
@@ -5366,6 +5513,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'createMembership',
           description: 'Invite a new member to join your team. If initiated from the client SDK, an email with a link to join the team will be sent to the member\'s email address and an account will be created for them should they not be signed up already. If initiated from server-side SDKs, the new member will automatically be added to the team.  Use the \'url\' parameter to redirect the user from the invitation email back to your app. When the user is redirected, use the [Update Team Membership Status](/docs/client/teams#teamsUpdateMembershipStatus) endpoint to allow the user to accept the invitation to the team.   Please note that to avoid a [Redirect Attack](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md) the only valid redirect URL\'s are the once from domains you have set when adding your platforms in the console interface',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID',
@@ -5417,6 +5565,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getMembership',
           description: 'Get a team member by the membership unique id. All team members have read access for this resource',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID',
@@ -5441,6 +5590,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateMembershipRoles',
           description: 'Modify the roles of a team member. Only team members with the owner role have access to this endpoint. Learn more about [roles and permissions](/docs/permissions)',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID',
@@ -5474,6 +5624,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'deleteMembership',
           description: 'This endpoint allows a user to leave a team or for a team owner to delete the membership of any other team member. You can also use this endpoint to delete a user membership even if it is not accepted',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID',
@@ -5498,6 +5649,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateMembershipStatus',
           description: 'Use this endpoint to allow a user to accept an invitation to join a team after being redirected back to your app from the invitation email received by the user.  If the request is successful, a session for the user is automatically created',
           options: [
+
             Option(
               name: '--teamId',
               description: 'Team ID',
@@ -5533,10 +5685,12 @@ final FigSpec indexSpec = FigSpec(
       name: 'users',
       description: 'The users command allows you to manage your project users',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'Get a list of all the project\'s users. You can use the query params to filter your results',
           options: [
+
             Option(
               name: '--search',
               description: 'Search term to filter your list results. Max length: 256 chars',
@@ -5597,6 +5751,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'create',
           description: 'Create a new user',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID. Choose your own unique ID or pass the string "unique()" to auto generate it. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can\'t start with a special char. Max length is 36 chars',
@@ -5638,6 +5793,7 @@ final FigSpec indexSpec = FigSpec(
         Subcommand(
           name: 'getUsage',
           options: [
+
             Option(
               name: '--range',
               description: 'Date range',
@@ -5670,6 +5826,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateEmail',
           description: 'Update the user email by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5694,6 +5851,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getLogs',
           description: 'Get the user activity logs list by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5727,6 +5885,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getMemberships',
           description: 'Get the user membership list by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5742,6 +5901,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateName',
           description: 'Update the user name by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5766,6 +5926,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updatePassword',
           description: 'Update the user password by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5790,6 +5951,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updatePhone',
           description: 'Update the user phone by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5814,6 +5976,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getPrefs',
           description: 'Get the user preferences by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5829,6 +5992,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updatePrefs',
           description: 'Update the user preferences by its unique ID. The object you pass is stored as is, and replaces any previous value. The maximum allowed prefs size is 64kB and throws error if exceeded',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5853,6 +6017,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'getSessions',
           description: 'Get the user sessions list by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5868,6 +6033,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'deleteSessions',
           description: 'Delete all user\'s sessions by using the user\'s unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5883,6 +6049,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'deleteSession',
           description: 'Delete a user sessions by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5907,6 +6074,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateStatus',
           description: 'Update the user status by its unique ID. Use this endpoint as an alternative to deleting a user if you want to keep user\'s ID reserved',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5931,6 +6099,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updateEmailVerification',
           description: 'Update the user email verification status by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5955,6 +6124,7 @@ final FigSpec indexSpec = FigSpec(
           name: 'updatePhoneVerification',
           description: 'Update the user phone verification status by its unique ID',
           options: [
+
             Option(
               name: '--userId',
               description: 'User ID',
@@ -5981,6 +6151,7 @@ final FigSpec indexSpec = FigSpec(
       name: 'client',
       description: 'The client command allows you to configure your CLI',
       options: [
+
         Option(
           name: '--selfSigned',
           description: 'Configure the CLI to use a self-signed certificate ( true or false )',
@@ -6029,6 +6200,7 @@ final FigSpec indexSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-v', '--version'],
       description: 'Output the version number'

@@ -9,6 +9,7 @@ final FigSpec moreSpec = FigSpec(
   name: 'more',
   description: 'Opposite of less',
   options: [
+
     Option(
       name: ['-d', '--silent'],
       description: 'Prompt with \'[Press space to continue, \'q\' to quit.]\', and display \'[Press \'h\' for instructions.]\' instead of ringing the bell when an illegal key is pressed'

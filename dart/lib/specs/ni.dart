@@ -9,6 +9,7 @@ final FigSpec niSpec = FigSpec(
   name: 'ni',
   description: 'Use the right package manager - install',
   options: [
+
     Option(
       name: '-g',
       description: 'Operates in \'global\' mode, so that packages are installed into the prefix folder instead of the current working directory'
@@ -33,6 +34,7 @@ final FigSpec niSpec = FigSpec(
       name: '-C',
       description: 'Change directory',
       args: [
+
         Arg(
           name: 'directory',
           description: 'The directory to move',

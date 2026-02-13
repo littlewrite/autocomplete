@@ -9,6 +9,7 @@ final FigSpec vaporSpec = FigSpec(
   name: 'vapor',
   description: 'Vapor Toolbox (Server-side Swift web framework)',
   subcommands: [
+
     Subcommand(
       name: 'build',
       description: 'Builds an app in the console'
@@ -23,6 +24,7 @@ final FigSpec vaporSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--template', '-T'],
           description: 'The URL of a Git repository to use as a template'
@@ -45,6 +47,7 @@ final FigSpec vaporSpec = FigSpec(
       name: 'clean',
       description: 'Cleans temporary files',
       options: [
+
         Option(
           name: ['--update', '-u'],
           description: 'Delete Package.resolved file if it exists'
@@ -63,6 +66,7 @@ final FigSpec vaporSpec = FigSpec(
       name: 'heroku',
       description: 'Commands for working with Heroku',
       subcommands: [
+
         Subcommand(
           name: 'init',
           description: 'Configures app for deployment to Heroku'
@@ -81,6 +85,7 @@ final FigSpec vaporSpec = FigSpec(
       name: 'supervisor',
       description: 'Commands for working with Supervisord',
       subcommands: [
+
         Subcommand(
           name: 'init',
           description: 'Creates a Supervisor entry for the current project'
@@ -101,6 +106,7 @@ final FigSpec vaporSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for vapor',

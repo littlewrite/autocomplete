@@ -9,6 +9,7 @@ final FigSpec createCompletionSpecSpec = FigSpec(
   name: 'create-completion-spec',
   description: 'Setup fig folder and create spec with the given name',
   subcommands: [
+
     Subcommand(
       name: 'help',
       description: 'Display help for command',
@@ -21,6 +22,7 @@ final FigSpec createCompletionSpecSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--here',
       description: 'Set if the spec should be created in the current folder'

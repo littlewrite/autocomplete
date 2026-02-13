@@ -9,6 +9,7 @@ final FigSpec velaSpec = FigSpec(
   name: 'vela',
   description: 'A Highly Extensible Platform Engine based on Kubernetes and Open Application Model',
   subcommands: [
+
     Subcommand(
       name: 'show',
       description: 'Show the reference doc for component, trait or workflow types',
@@ -19,6 +20,7 @@ final FigSpec velaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-e', '--env'],
           description: 'Specify environment name for application',
@@ -47,6 +49,7 @@ final FigSpec velaSpec = FigSpec(
       name: 'env',
       description: 'Manage environments for vela applications to run',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete an environment',
@@ -67,6 +70,7 @@ final FigSpec velaSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--namespace',
               description: 'Specify K8s namespace for env',
@@ -104,6 +108,7 @@ final FigSpec velaSpec = FigSpec(
       name: 'init',
       description: 'Create scaffold for vela application',
       options: [
+
         Option(
           name: ['--env', '-e'],
           description: 'Specify environment name for application',
@@ -138,6 +143,7 @@ final FigSpec velaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--env', '-e'],
           description: 'The environment name for the CLI request',
@@ -190,6 +196,7 @@ final FigSpec velaSpec = FigSpec(
       name: 'cluster',
       description: 'Manage Kubernetes Clusters for Continuous Delivery',
       subcommands: [
+
         Subcommand(
           name: 'alias',
           description: 'Alias a named cluster'
@@ -198,6 +205,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'detach',
           description: 'Detach managed cluster',
           options: [
+
             Option(
               name: ['--kubeconfig-path', '-p'],
               description: 'Specify the kubeconfig path of managed cluster. If you use ocm to manage your cluster, you must set the kubeconfig-path',
@@ -214,6 +222,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'join',
           description: 'Join managed cluster by kubeconfig',
           options: [
+
             Option(
               name: '--create-namespace',
               description: 'Specifies the namespace need to create in managedCluster (default "vela-system")',
@@ -238,6 +247,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'labels',
           description: 'Manage Kubernetes Cluster Labels',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add labels to managed cluster'
@@ -266,10 +276,12 @@ final FigSpec velaSpec = FigSpec(
       name: 'workflow',
       description: 'Operate the Workflow during Application Delivery',
       subcommands: [
+
         Subcommand(
           name: 'restart',
           description: 'Restart an application workflow',
           options: [
+
             Option(
               name: ['--env', '-e'],
               description: 'Specify environment name for application',
@@ -294,6 +306,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'resume',
           description: 'Resume a suspend application workflow',
           options: [
+
             Option(
               name: ['--env', '-e'],
               description: 'Specify environment name for application',
@@ -318,6 +331,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'rollback',
           description: 'Rollback an application workflow to the latest revision',
           options: [
+
             Option(
               name: ['--env', '-e'],
               description: 'Specify environment name for application',
@@ -342,6 +356,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'suspend',
           description: 'Suspend an application workflow',
           options: [
+
             Option(
               name: ['--env', '-e'],
               description: 'Specify environment name for application',
@@ -366,6 +381,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'terminate',
           description: 'Terminate an application workflow',
           options: [
+
             Option(
               name: ['--env', '-e'],
               description: 'Specify environment name for application',
@@ -392,10 +408,12 @@ final FigSpec velaSpec = FigSpec(
       name: 'addon',
       description: 'Manage addons for extension',
       subcommands: [
+
         Subcommand(
           name: 'disable',
           description: 'Disable an addon',
           options: [
+
             Option(
               name: ['--force', '-f'],
               description: 'Skip checking if applications are still using this addon'
@@ -406,6 +424,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'enable',
           description: 'Enable an addon',
           options: [
+
             Option(
               name: ['--clusters', '-c'],
               description: 'Specify the runtime-clusters to enable',
@@ -425,10 +444,12 @@ final FigSpec velaSpec = FigSpec(
           name: 'registry',
           description: 'Manage addon registry',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add an addon registry',
               options: [
+
                 Option(
                   name: '--bucket',
                   description: 'Specify the OSS bucket name',
@@ -492,6 +513,7 @@ final FigSpec velaSpec = FigSpec(
               name: 'update',
               description: 'Update an addon registry',
               options: [
+
                 Option(
                   name: '--bucket',
                   description: 'Specify the OSS bucket name',
@@ -555,6 +577,7 @@ final FigSpec velaSpec = FigSpec(
       name: ['uischema', 'ui'],
       description: 'Manage UI schema for addons',
       subcommands: [
+
         Subcommand(
           name: 'apply',
           description: 'Apply UI schema from a file or dir'
@@ -565,6 +588,7 @@ final FigSpec velaSpec = FigSpec(
       name: 'def',
       description: 'Manage X-Definition for addons',
       subcommands: [
+
         Subcommand(
           name: 'apply',
           description: 'Apply X-Definition',
@@ -575,6 +599,7 @@ final FigSpec velaSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--dry-run',
               description: 'Only build definition from CUE into CRB object without applying it to kubernetes clusters'
@@ -600,6 +625,7 @@ final FigSpec velaSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--namespace', '-n'],
               description: 'Specify which namespace to apply. (default "vela-system")',
@@ -624,6 +650,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'doc-gen',
           description: 'Generate documentation of definitions (Only Terraform typed definitions are supported)',
           options: [
+
             Option(
               name: ['--type', '-t'],
               description: 'Specify the definition type of target. Valid types: workflow-step, component, trait, policy, workload, scope',
@@ -639,6 +666,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'edit',
           description: 'Edit X-Definition',
           options: [
+
             Option(
               name: ['--namespace', '-n'],
               description: 'Specify which namespace to apply. (default "vela-system")',
@@ -663,6 +691,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'get',
           description: 'Get X-Definition',
           options: [
+
             Option(
               name: ['--namespace', '-n'],
               description: 'Specify which namespace to apply. (default "vela-system")',
@@ -687,6 +716,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'init',
           description: 'Init a new definition',
           options: [
+
             Option(
               name: ['--desc', '-d'],
               description: 'Specify the description of the new definition',
@@ -770,6 +800,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'list',
           description: 'List X-Definition',
           options: [
+
             Option(
               name: ['--namespace', '-n'],
               description: 'Specify which namespace to apply. (default "vela-system")',
@@ -794,6 +825,7 @@ final FigSpec velaSpec = FigSpec(
           name: 'render',
           description: 'Render X-Definition',
           options: [
+
             Option(
               name: '--message',
               description: 'Specify the header message of the generated YAML file. For example, declaring author information',
@@ -831,10 +863,12 @@ final FigSpec velaSpec = FigSpec(
       name: 'registry',
       description: 'Manage Registry of X-Definitions for extension',
       subcommands: [
+
         Subcommand(
           name: 'config',
           description: 'Configure (add if not exist) a registry, default is local (built-in capabilities)',
           options: [
+
             Option(
               name: ['--token', '-t'],
               description: 'Github Repo token',
@@ -860,10 +894,12 @@ final FigSpec velaSpec = FigSpec(
       name: ['component', 'comp', 'components'],
       description: 'List component types installed and discover more registry',
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Get component from type',
           options: [
+
             Option(
               name: '--registry',
               description: 'Specify the registry name (default "default")',
@@ -895,6 +931,7 @@ final FigSpec velaSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--discover',
           description: 'Discover more registry',
@@ -946,10 +983,12 @@ final FigSpec velaSpec = FigSpec(
       name: ['trait', 'traits'],
       description: 'List trait types installed and discover more in registry',
       subcommands: [
+
         Subcommand(
           name: 'get',
           description: 'Get trait from registry',
           options: [
+
             Option(
               name: '--registry',
               description: 'Specify the registry name (default "default")',
@@ -981,6 +1020,7 @@ final FigSpec velaSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--discover',
           description: 'Discover traits in registries'
@@ -1018,6 +1058,7 @@ final FigSpec velaSpec = FigSpec(
       name: 'uninstall',
       description: 'Uninstalls KubeVela from a Kubernetes cluster',
       options: [
+
         Option(
           name: ['--force', '-f'],
           description: 'Force uninstall whole vela include all addons'
@@ -1041,6 +1082,7 @@ final FigSpec velaSpec = FigSpec(
       name: 'install',
       description: 'Installs KubeVela into a Kubernetes cluster',
       options: [
+
         Option(
           name: ['--file', '-f'],
           description: 'Custom the chart path of KubeVela control plane',
@@ -1088,6 +1130,7 @@ final FigSpec velaSpec = FigSpec(
       name: 'completion',
       description: 'Output shell completion code for the specified shell (bash or zsh). The shell code must be evaluated to provide interactive completion of vela commands',
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Output bash completion code'
@@ -1102,6 +1145,7 @@ final FigSpec velaSpec = FigSpec(
       name: 'export',
       description: 'Export deploy manifests from appfile or application',
       options: [
+
         Option(
           name: ['--file', '-f'],
           description: 'Specify the appfile path',
@@ -1136,6 +1180,7 @@ final FigSpec velaSpec = FigSpec(
       name: 'version',
       description: 'Prints the version',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List all available versions'
@@ -1144,6 +1189,7 @@ final FigSpec velaSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for vela'

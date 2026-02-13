@@ -9,6 +9,7 @@ final FigSpec cheatSheetSpec = FigSpec(
   name: 'cheat-sheet',
   description: 'Display gcloud cheat sheet',
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -132,6 +133,7 @@ final FigSpec cheatSheetSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

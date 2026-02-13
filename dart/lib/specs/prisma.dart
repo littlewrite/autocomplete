@@ -4,16 +4,30 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> skipOptions = [
+
+  Option(
+    name: '--skip-seed',
+    description: 'Skip triggering seed'
+  ),
+  Option(
+    name: '--skip-generate',
+    description: 'Skip triggering generators (e.g. Prisma Client)'
+  )
+];
+
 /// Completion spec for `prisma` CLI
 final FigSpec prismaSpec = FigSpec(
   name: 'prisma',
   description: 'Prisma is a modern DB toolkit to query, migrate and model your database',
   icon: 'https://raw.githubusercontent.com/prisma/docs/main/src/images/favicon-16x16.png',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Setup Prisma for your app',
       options: [
+
         Option(
           name: '--datasource-provider',
           description: 'Define the datasource provider to use',
@@ -21,6 +35,7 @@ final FigSpec prismaSpec = FigSpec(
             Arg(
             description: 'Choose provider',
             suggestions: [
+
               FigSuggestion(name: 'PostgreSQL'),
               FigSuggestion(name: 'MySQL'),
               FigSuggestion(name: 'SQLite'),
@@ -48,6 +63,7 @@ final FigSpec prismaSpec = FigSpec(
       name: 'generate',
       description: 'Generate artifacts (e.g. Prisma Client)',
       options: [
+
         Option(
           name: '--data-proxy',
           description: 'Enable the Data Proxy in the Prisma Client'
@@ -74,6 +90,7 @@ final FigSpec prismaSpec = FigSpec(
       name: 'studio',
       description: 'Open Prisma Studio',
       options: [
+
         Option(
           name: ['-p', '--port'],
           description: 'Port to start Studio on',
@@ -90,6 +107,7 @@ final FigSpec prismaSpec = FigSpec(
             Arg(
             name: 'Browser choice',
             suggestions: [
+
               FigSuggestion(name: 'firefox'),
               FigSuggestion(name: 'chrome'),
               FigSuggestion(name: 'safari'),
@@ -118,11 +136,14 @@ final FigSpec prismaSpec = FigSpec(
       name: 'migrate',
       description: 'Migrate your database',
       subcommands: [
+
         Subcommand(
           name: 'dev',
           icon: '💻',
           description: 'The migrate dev command updates your database using migrations files during development',
           options: [
+
+            ...skipOptions,
             Option(
               name: '--create-only',
               description: 'Create a new migration but do not apply it. The migration will be empty if there are no changes in Prisma schema'
@@ -144,6 +165,8 @@ final FigSpec prismaSpec = FigSpec(
           icon: '🔃',
           description: 'Reset your database and apply all migrations, all data will be lost',
           options: [
+
+            ...skipOptions,
             Option(
               name: ['-f', '--force'],
               description: 'Skip the confirmation prompt',
@@ -161,6 +184,7 @@ final FigSpec prismaSpec = FigSpec(
           name: 'resolve',
           description: 'Resolve issues with database migrations in deployment databases',
           options: [
+
             Option(
               name: '--applied',
               description: 'Record a specific migration as applied',
@@ -192,6 +216,7 @@ final FigSpec prismaSpec = FigSpec(
           name: 'diff',
           description: 'Compares the database schema from two arbitrary sources, and outputs the differences either as a human-readable summary (by default) or an executable script',
           options: [
+
             Option(
               name: '--from-url',
               description: 'A datasource url',
@@ -312,9 +337,11 @@ final FigSpec prismaSpec = FigSpec(
       name: 'db',
       description: 'Manage your database schema and lifecycle (Preview)',
       subcommands: [
+
         Subcommand(
           name: 'pull',
           options: [
+
             Option(
               name: '--force',
               description: 'Ignore current Prisma schema file',
@@ -349,6 +376,7 @@ final FigSpec prismaSpec = FigSpec(
           name: 'push',
           description: 'This command pushes the state of your Prisma schema file to the database without using migrations files',
           options: [
+
             Option(
               name: '--skip-generate',
               description: 'Skip generation of artifacts such as Prisma Client'
@@ -374,6 +402,7 @@ final FigSpec prismaSpec = FigSpec(
           name: 'execute',
           description: 'Execute native commands to your database',
           options: [
+
             Option(
               name: '--url',
               description: 'The datasource url',
@@ -406,6 +435,7 @@ final FigSpec prismaSpec = FigSpec(
       name: ['version', '-v'],
       description: 'Print current version of Prisma components',
       subcommands: [
+
         Subcommand(
           name: '--json',
           description: 'Output JSON'

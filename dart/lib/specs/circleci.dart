@@ -9,10 +9,12 @@ final FigSpec circleciSpec = FigSpec(
   name: 'circleci',
   description: 'CircleCI CLI',
   subcommands: [
+
     Subcommand(
       name: 'completion',
       description: 'Generate shell completion scripts',
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Generate bash completion scripts'
@@ -27,6 +29,7 @@ final FigSpec circleciSpec = FigSpec(
       name: 'config',
       description: 'Operate on build config files',
       subcommands: [
+
         Subcommand(
           name: 'pack',
           description: 'Pack CircleCI config files into a single file'
@@ -45,14 +48,17 @@ final FigSpec circleciSpec = FigSpec(
       name: 'context',
       description: 'Secure and share environment variables across projects',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new context',
           args: [
+
             Arg(
               name: 'vcs-type',
               description: 'Your VCS provider, can be either \'github\' or \'bitbucket\'',
               suggestions: [
+
                 FigSuggestion(name: 'github'),
                 FigSuggestion(name: 'bitbucket')
               ],
@@ -73,10 +79,12 @@ final FigSpec circleciSpec = FigSpec(
           name: 'delete',
           description: 'Delete the named context',
           args: [
+
             Arg(
               name: 'vcs-type',
               description: 'Your VCS provider, can be either \'github\' or \'bitbucket\'',
               suggestions: [
+
                 FigSuggestion(name: 'github'),
                 FigSuggestion(name: 'bitbucket')
               ]
@@ -95,10 +103,12 @@ final FigSpec circleciSpec = FigSpec(
           name: 'list',
           description: 'List all contexts',
           args: [
+
             Arg(
               name: 'vcs-type',
               description: 'Your VCS provider, can be either \'github\' or \'bitbucket\'',
               suggestions: [
+
                 FigSuggestion(name: 'github'),
                 FigSuggestion(name: 'bitbucket')
               ]
@@ -113,10 +123,12 @@ final FigSpec circleciSpec = FigSpec(
           name: 'remove-secret',
           description: 'Remove environment variable from a context',
           args: [
+
             Arg(
               name: 'vcs-type',
               description: 'Your VCS provider, can be either \'github\' or \'bitbucket\'',
               suggestions: [
+
                 FigSuggestion(name: 'github'),
                 FigSuggestion(name: 'bitbucket')
               ]
@@ -139,10 +151,12 @@ final FigSpec circleciSpec = FigSpec(
           name: 'show',
           description: 'Show a context',
           args: [
+
             Arg(
               name: 'vcs-type',
               description: 'Your VCS provider, can be either \'github\' or \'bitbucket\'',
               suggestions: [
+
                 FigSuggestion(name: 'github'),
                 FigSuggestion(name: 'bitbucket')
               ]
@@ -161,10 +175,12 @@ final FigSpec circleciSpec = FigSpec(
           name: 'store-secret',
           description: 'Store environment variables',
           args: [
+
             Arg(
               name: 'vcs-type',
               description: 'Your VCS provider, can be either \'github\' or \'bitbucket\'',
               suggestions: [
+
                 FigSuggestion(name: 'github'),
                 FigSuggestion(name: 'bitbucket')
               ]
@@ -201,6 +217,7 @@ final FigSpec circleciSpec = FigSpec(
       name: 'local',
       description: 'Debug jobs on the local machine',
       subcommands: [
+
         Subcommand(
           name: 'execute',
           description: 'Run a job in a container on the local machine'
@@ -211,6 +228,7 @@ final FigSpec circleciSpec = FigSpec(
       name: 'namespace',
       description: 'Operate on namespaces',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a namespace'
@@ -225,10 +243,12 @@ final FigSpec circleciSpec = FigSpec(
       name: 'orb',
       description: 'Operate on orbs',
       subcommands: [
+
         Subcommand(
           name: 'add-to-category',
           description: 'Add an orb to a category',
           args: [
+
             Arg(
               name: 'namespace/orb',
               description: 'The namespace and orb to add to a category'
@@ -249,6 +269,7 @@ final FigSpec circleciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--private',
               description: 'Specify that this orb is for private use within your org, unlisted from the public registry'
@@ -275,6 +296,7 @@ final FigSpec circleciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--private',
               description: 'Specify that this orb is for private use within your org, unlisted from the public registry'
@@ -291,6 +313,7 @@ final FigSpec circleciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--private',
               description: 'Specify that this orb is for private use within your org, unlisted from the public registry'
@@ -301,6 +324,7 @@ final FigSpec circleciSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(name: 'builds'),
                   FigSuggestion(name: 'projects'),
                   FigSuggestion(name: 'orgs')
@@ -342,6 +366,7 @@ final FigSpec circleciSpec = FigSpec(
           name: 'publish',
           description: 'Publish an orb to the registry',
           args: [
+
             Arg(
               name: 'path',
               description: 'The /path/to/myProject-orb'
@@ -356,6 +381,7 @@ final FigSpec circleciSpec = FigSpec(
           name: 'remove-from-category',
           description: 'Remove an orb from a category',
           args: [
+
             Arg(
               name: 'namespace/orb',
               description: 'The namespace and orb to add to a category'
@@ -380,6 +406,7 @@ final FigSpec circleciSpec = FigSpec(
           name: 'unlist',
           description: 'Disable/enable an orb\'s listing in the registry',
           args: [
+
             Arg(
               name: 'namespace/orb',
               description: 'The namespace and orb to unlist/list from the registry'
@@ -388,6 +415,7 @@ final FigSpec circleciSpec = FigSpec(
               name: 'condition',
               description: 'Use either true|false',
               suggestions: [
+
                 FigSuggestion(name: 'true'),
                 FigSuggestion(name: 'false')
               ]
@@ -410,6 +438,7 @@ final FigSpec circleciSpec = FigSpec(
       name: 'policy',
       description: 'Manage security policies',
       subcommands: [
+
         Subcommand(
           name: 'decide',
           description: 'Make a decision',
@@ -420,6 +449,7 @@ final FigSpec circleciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--input',
               description: 'Path to input file, i.e. ./.circleci/config.yml',
@@ -472,6 +502,7 @@ final FigSpec circleciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--context',
               description: 'Policy context for decision, default is \'config\'',
@@ -502,6 +533,7 @@ final FigSpec circleciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--input',
               description: 'Path to input file, i.e. ./.circleci/config.yml',
@@ -541,6 +573,7 @@ final FigSpec circleciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--context',
               description: 'Policy context for decision, default is \'config\'',
@@ -566,6 +599,7 @@ final FigSpec circleciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--after',
               description: 'Filter decision logs triggered AFTER this datetime',
@@ -654,6 +688,7 @@ final FigSpec circleciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--context',
               description: 'Policy context for decision, default is \'config\'',
@@ -682,6 +717,7 @@ final FigSpec circleciSpec = FigSpec(
           name: 'settings',
           description: 'Get/set policy decision settings (To read settings: run command without any settings flags)',
           options: [
+
             Option(
               name: '--context',
               description: 'Policy context for decision, default is \'config\''
@@ -694,6 +730,7 @@ final FigSpec circleciSpec = FigSpec(
                 name: 'boolean',
                 isOptional: true,
                 suggestions: [
+
                   FigSuggestion(name: 'true'),
                   FigSuggestion(name: 'false')
                 ]
@@ -717,6 +754,7 @@ final FigSpec circleciSpec = FigSpec(
       name: 'runner',
       description: 'Operate on runners',
       subcommands: [
+
         Subcommand(
           name: 'instance',
           description: 'Operate on runner instances'
@@ -739,6 +777,7 @@ final FigSpec circleciSpec = FigSpec(
       name: 'update',
       description: 'Update and switch to new CLI version',
       subcommands: [
+
         Subcommand(
           name: 'check',
           description: 'Check for new CLI version'
@@ -755,6 +794,7 @@ final FigSpec circleciSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for CircleCI',

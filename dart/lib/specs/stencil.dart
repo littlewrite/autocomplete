@@ -10,10 +10,12 @@ final FigSpec stencilSpec = FigSpec(
   description: 'CLI to build Stencil projects and generate components',
   icon: 'https://stenciljs.com/assets/icon/favicon.ico',
   subcommands: [
+
     Subcommand(
       name: 'build',
       description: 'Build components for development or production',
       options: [
+
         Option(
           name: '--ci',
           description: 'Run a build using recommended settings for a Continuous Integration (CI) environment'
@@ -109,6 +111,7 @@ final FigSpec stencilSpec = FigSpec(
       name: 'test',
       description: 'Run unit and end-to-end tests',
       options: [
+
         Option(
           name: '--spec',
           description: 'Run unit tests with Jest'
@@ -142,6 +145,7 @@ final FigSpec stencilSpec = FigSpec(
         Arg(
         name: 'state',
         suggestions: [
+
           FigSuggestion(
             name: 'off',
             description: 'Disable sharing anonymous usage data'
@@ -156,6 +160,7 @@ final FigSpec stencilSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Display the help output explaining the different flags'

@@ -9,10 +9,12 @@ final FigSpec ssmSpec = FigSpec(
   name: 'ssm',
   description: 'Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and a secure end-to-end management solution for hybrid cloud environments that enables safe and secure operations at scale. This reference is intended to be used with the Amazon Web Services Systems Manager User Guide. To get started, see Setting up Amazon Web Services Systems Manager.  Related resources    For information about each of the capabilities that comprise Systems Manager, see Systems Manager capabilities in the Amazon Web Services Systems Manager User Guide.   For details about predefined runbooks for Automation, a capability of Amazon Web Services Systems Manager, see the  Systems Manager Automation runbook reference .   For information about AppConfig, a capability of Systems Manager, see the  AppConfig User Guide  and the  AppConfig API Reference .   For information about Incident Manager, a capability of Systems Manager, see the  Systems Manager Incident Manager User Guide  and the  Systems Manager Incident Manager API Reference',
   subcommands: [
+
     Subcommand(
       name: 'add-tags-to-resource',
       description: 'Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your automations, documents, managed nodes, maintenance windows, Parameter Store parameters, and patch baselines. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account\'s managed nodes that helps you track each node\'s owner and stack level. For example:    Key=Owner,Value=DbAdmin     Key=Owner,Value=SysAdmin     Key=Owner,Value=Dev     Key=Stack,Value=Production     Key=Stack,Value=Pre-Production     Key=Stack,Value=Test    Most resources can have a maximum of 50 tags. Automations can have a maximum of 5 tags. We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based on the tags you add. Tags don\'t have any semantic meaning to and are interpreted strictly as a string of characters. For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see Tag your Amazon EC2 resources in the Amazon EC2 User Guide',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'Specifies the type of resource you are tagging.  The ManagedInstance type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: mi-ID_number . For example, mi-1a2b3c4d5e6f',
@@ -56,6 +58,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'associate-ops-item-related-item',
       description: 'Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services Systems Manager',
       options: [
+
         Option(
           name: '--ops-item-id',
           description: 'The ID of the OpsItem to which you want to associate a resource as a related item',
@@ -120,6 +124,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'cancel-command',
       description: 'Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be terminated and the underlying process stopped',
       options: [
+
         Option(
           name: '--command-id',
           description: 'The ID of the command you want to cancel',
@@ -166,6 +172,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'cancel-maintenance-window-execution',
       description: 'Stops a maintenance window execution that is already in progress and cancels any tasks in the window that haven\'t already starting running. Tasks already in progress will continue to completion',
       options: [
+
         Option(
           name: '--window-execution-id',
           description: 'The ID of the maintenance window execution to stop',
@@ -203,6 +211,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -215,6 +224,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'create-activation',
       description: 'Generates an activation code and activation ID you can use to register your on-premises servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with Systems Manager makes it possible to manage them using Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your hybrid environment. For more information about requirements for managing on-premises machines using Systems Manager, see Using Amazon Web Services Systems Manager in hybrid and multicloud environments in the Amazon Web Services Systems Manager User Guide.   Amazon Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises servers and VMs that are configured for Systems Manager are all called managed nodes',
       options: [
+
         Option(
           name: '--description',
           description: 'A user-defined description of the resource that you want to register with Systems Manager.   Don\'t enter personally identifiable information in this field',
@@ -294,6 +304,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -306,6 +317,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'create-association',
       description: 'A State Manager association defines the state that you want to maintain on your managed nodes. For example, an association can specify that anti-virus software must be installed and running on your managed nodes, or that certain ports must be closed. For static targets, the association specifies a schedule for when the configuration is reapplied. For dynamic targets, such as an Amazon Web Services resource group or an Amazon Web Services autoscaling group, State Manager, a capability of Amazon Web Services Systems Manager applies the configuration when new managed nodes are added to the group. The association also specifies actions to take when applying the configuration. For example, an association for anti-virus software might run once a day. If the software isn\'t installed, then State Manager installs it. If the software is installed, but the service isn\'t running, then the association might instruct State Manager to start the service',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another Amazon Web Services account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  arn:partition:ssm:region:account-id:document/document-name   For example:  arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, AWS-ApplyPatchBaseline or My-Document',
@@ -510,6 +522,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -522,6 +535,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'create-association-batch',
       description: 'Associates the specified Amazon Web Services Systems Manager document (SSM document) with the specified managed nodes or targets. When you associate a document with one or more managed nodes using IDs or tags, Amazon Web Services Systems Manager Agent (SSM Agent) running on the managed node processes the document and configures the node as specified. If you associate a document with a managed node that already has an associated document, the system returns the AssociationAlreadyExists exception',
       options: [
+
         Option(
           name: '--entries',
           description: 'One or more associations',
@@ -547,6 +561,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -559,6 +574,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'create-document',
       description: 'Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines the actions that Systems Manager performs on your managed nodes. For more information about SSM documents, including information about supported schemas, features, and syntax, see Amazon Web Services Systems Manager Documents in the Amazon Web Services Systems Manager User Guide',
       options: [
+
         Option(
           name: '--content',
           description: 'The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the Amazon Web Services Systems Manager User Guide.    Create an SSM document (console)     Create an SSM document (command line)     Create an SSM document (API)',
@@ -665,6 +681,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -677,6 +694,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'create-maintenance-window',
       description: 'Creates a new maintenance window.  The value you specify for Duration determines the specific end time for the maintenance window based on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the number of hours you specify for Cutoff. For example, if the maintenance window starts at 3 PM, the duration is three hours, and the value you specify for Cutoff is one hour, no maintenance window tasks can start after 5 PM',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the maintenance window',
@@ -800,6 +818,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -812,6 +831,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'create-ops-item',
       description: 'Creates a new OpsItem. You must have permission in Identity and Access Management (IAM) to create a new OpsItem. For more information, see Set up OpsCenter in the Amazon Web Services Systems Manager User Guide. Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see Amazon Web Services Systems Manager OpsCenter in the Amazon Web Services Systems Manager User Guide',
       options: [
+
         Option(
           name: '--description',
           description: 'User-defined text that contains information about the OpsItem, in Markdown format.   Provide enough information so that users viewing this OpsItem for the first time understand the issue',
@@ -972,6 +992,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -984,6 +1005,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'create-ops-metadata',
       description: 'If you create a new application in Application Manager, Amazon Web Services Systems Manager calls this API operation to specify information about the new application, including the application type',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'A resource ID for a new Application Manager application',
@@ -1027,6 +1049,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1039,6 +1062,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'create-patch-baseline',
       description: 'Creates a patch baseline.  For information about valid key-value pairs in PatchFilters for each supported operating system type, see PatchFilter',
       options: [
+
         Option(
           name: '--operating-system',
           description: 'Defines the operating system the patch baseline applies to. The default value is WINDOWS',
@@ -1171,6 +1195,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1183,6 +1208,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'create-resource-data-sync',
       description: 'A resource data sync helps you view data from multiple sources in a single location. Amazon Web Services Systems Manager offers two types of resource data sync: SyncToDestination and SyncFromSource. You can configure Systems Manager Inventory to use the SyncToDestination type to synchronize Inventory data from multiple Amazon Web Services Regions to a single Amazon Simple Storage Service (Amazon S3) bucket. For more information, see Creating a resource data sync for Inventory in the Amazon Web Services Systems Manager User Guide. You can configure Systems Manager Explorer to use the SyncFromSource type to synchronize operational work items (OpsItems) and operational data (OpsData) from multiple Amazon Web Services Regions to a single Amazon S3 bucket. This type can synchronize OpsItems and OpsData from multiple Amazon Web Services accounts and Amazon Web Services Regions or EntireOrganization by using Organizations. For more information, see Setting up Systems Manager Explorer to display data from multiple accounts and Regions in the Amazon Web Services Systems Manager User Guide. A resource data sync is an asynchronous operation that returns immediately. After a successful initial sync is completed, the system continuously syncs data. To check the status of a sync, use the ListResourceDataSync.  By default, data isn\'t encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a restrictive bucket policy',
       options: [
+
         Option(
           name: '--sync-name',
           description: 'A name for the configuration',
@@ -1235,6 +1261,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1247,6 +1274,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-activation',
       description: 'Deletes an activation. You aren\'t required to delete an activation. If you delete an activation, you can no longer use it to register additional managed nodes. Deleting an activation doesn\'t de-register managed nodes. You must manually de-register managed nodes',
       options: [
+
         Option(
           name: '--activation-id',
           description: 'The ID of the activation that you want to delete',
@@ -1272,6 +1300,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1284,6 +1313,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-association',
       description: 'Disassociates the specified Amazon Web Services Systems Manager document (SSM document) from the specified managed node. If you created the association by using the Targets parameter, then you must delete the association by using the association ID. When you disassociate a document from a managed node, it doesn\'t change the configuration of the node. To change the configuration state of a managed node after you disassociate a document, you must create a new document with the desired configuration and associate it with the node',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the SSM document',
@@ -1327,6 +1357,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1339,6 +1370,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-document',
       description: 'Deletes the Amazon Web Services Systems Manager document (SSM document) and all managed node associations to the document. Before you delete the document, we recommend that you use DeleteAssociation to disassociate all managed nodes that are associated with the document',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the document',
@@ -1390,6 +1422,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1402,6 +1435,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-inventory',
       description: 'Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory type is also referred to as deleting a custom inventory schema',
       options: [
+
         Option(
           name: '--type-name',
           description: 'The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself',
@@ -1453,6 +1487,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1465,6 +1500,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-maintenance-window',
       description: 'Deletes a maintenance window',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window to delete',
@@ -1490,6 +1526,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1502,6 +1539,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-ops-item',
       description: 'Delete an OpsItem. You must have permission in Identity and Access Management (IAM) to delete an OpsItem.   Note the following important information about this operation.   Deleting an OpsItem is irreversible. You can\'t restore a deleted OpsItem.   This operation uses an eventual consistency model, which means the system can take a few minutes to complete this operation. If you delete an OpsItem and immediately call, for example, GetOpsItem, the deleted OpsItem might still appear in the response.    This operation is idempotent. The system doesn\'t throw an exception if you repeatedly call this operation for the same OpsItem. If the first call is successful, all additional calls return the same successful response as the first call.   This operation doesn\'t support cross-account calls. A delegated administrator or management account can\'t delete OpsItems in other accounts, even if OpsCenter has been set up for cross-account administration. For more information about cross-account administration, see Setting up OpsCenter to centrally manage OpsItems across accounts in the Systems Manager User Guide',
       options: [
+
         Option(
           name: '--ops-item-id',
           description: 'The ID of the OpsItem that you want to delete',
@@ -1527,6 +1565,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1539,6 +1578,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-ops-metadata',
       description: 'Delete OpsMetadata related to an application',
       options: [
+
         Option(
           name: '--ops-metadata-arn',
           description: 'The Amazon Resource Name (ARN) of an OpsMetadata Object to delete',
@@ -1564,6 +1604,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1576,6 +1617,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-parameter',
       description: 'Delete a parameter from the system. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the parameter to delete.  You can\'t enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself',
@@ -1601,6 +1643,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1613,6 +1656,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-parameters',
       description: 'Delete a list of parameters. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name',
       options: [
+
         Option(
           name: '--names',
           description: 'The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.  You can\'t enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself',
@@ -1638,6 +1682,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1650,6 +1695,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-patch-baseline',
       description: 'Deletes a patch baseline',
       options: [
+
         Option(
           name: '--baseline-id',
           description: 'The ID of the patch baseline to delete',
@@ -1675,6 +1721,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1687,6 +1734,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-resource-data-sync',
       description: 'Deletes a resource data sync configuration. After the configuration is deleted, changes to data on managed nodes are no longer synced to or from the target. Deleting a sync configuration doesn\'t delete data',
       options: [
+
         Option(
           name: '--sync-name',
           description: 'The name of the configuration to delete',
@@ -1721,6 +1769,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1733,6 +1782,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. The following resources support Systems Manager resource policies.    OpsItemGroup - The resource policy for OpsItemGroup enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).    Parameter - The resource policy is used to share a parameter with other accounts using Resource Access Manager (RAM). For more information about cross-account sharing of parameters, see Working with shared parameters in the Amazon Web Services Systems Manager User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the resource to which the policies are attached',
@@ -1776,6 +1826,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1788,6 +1839,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'deregister-managed-instance',
       description: 'Removes the server or virtual machine from the list of registered servers. You can reregister the node again at any time. If you don\'t plan to use Run Command on the server, we suggest uninstalling SSM Agent first',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The ID assigned to the managed node when you registered it using the activation process',
@@ -1813,6 +1865,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1825,6 +1878,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'deregister-patch-baseline-for-patch-group',
       description: 'Removes a patch group from a patch baseline',
       options: [
+
         Option(
           name: '--baseline-id',
           description: 'The ID of the patch baseline to deregister the patch group from',
@@ -1859,6 +1913,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1871,6 +1926,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'deregister-target-from-maintenance-window',
       description: 'Removes a target from a maintenance window',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window the target should be removed from',
@@ -1913,6 +1969,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1925,6 +1982,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'deregister-task-from-maintenance-window',
       description: 'Removes a task from a maintenance window',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window the task should be removed from',
@@ -1959,6 +2017,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1971,6 +2030,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-activations',
       description: 'Describes details about the activation, such as the date and time the activation was created, its expiration date, the Identity and Access Management (IAM) role assigned to the managed nodes in the activation, and the number of nodes registered by using this activation',
       options: [
+
         Option(
           name: '--filters',
           description: 'A filter to view information about your activations',
@@ -2041,6 +2101,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2053,6 +2114,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-association',
       description: 'Describes the association for the specified target or managed node. If you created the association by using the Targets parameter, then you must retrieve the association by using the association ID',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the SSM document',
@@ -2105,6 +2167,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2117,6 +2180,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-association-execution-targets',
       description: 'Views information about a specific execution of a specific association',
       options: [
+
         Option(
           name: '--association-id',
           description: 'The association ID that includes the execution for which you want to view details',
@@ -2205,6 +2269,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2217,6 +2282,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-association-executions',
       description: 'Views all executions for a specific association ID',
       options: [
+
         Option(
           name: '--association-id',
           description: 'The association ID for which you want to view execution history details',
@@ -2296,6 +2362,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2308,6 +2375,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-automation-executions',
       description: 'Provides details about all active and terminated Automation executions',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters used to limit the scope of executions that are requested',
@@ -2378,6 +2446,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2390,6 +2459,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-automation-step-executions',
       description: 'Information about all active and terminated step executions in an Automation workflow',
       options: [
+
         Option(
           name: '--automation-execution-id',
           description: 'The Automation execution ID for which you want step execution descriptions',
@@ -2477,6 +2547,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2489,6 +2560,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-available-patches',
       description: 'Lists all patches eligible to be included in a patch baseline.  Currently, DescribeAvailablePatches supports only the Amazon Linux 1, Amazon Linux 2, and Windows Server operating systems',
       options: [
+
         Option(
           name: '--filters',
           description: 'Each element in the array is a structure containing a key-value pair.  Windows Server  Supported keys for Windows Server managed node patches include the following:     PATCH_SET   Sample values: OS | APPLICATION      PRODUCT   Sample values: WindowsServer2012 | Office 2010 | MicrosoftDefenderAntivirus      PRODUCT_FAMILY   Sample values: Windows | Office      MSRC_SEVERITY   Sample values: ServicePacks | Important | Moderate      CLASSIFICATION   Sample values: ServicePacks | SecurityUpdates | DefinitionUpdates      PATCH_ID   Sample values: KB123456 | KB4516046     Linux   When specifying filters for Linux patches, you must specify a key-pair for PRODUCT. For example, using the Command Line Interface (CLI), the following command fails:  aws ssm describe-available-patches --filters Key=CVE_ID,Values=CVE-2018-3615  However, the following command succeeds:  aws ssm describe-available-patches --filters Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615   Supported keys for Linux managed node patches include the following:     PRODUCT   Sample values: AmazonLinux2018.03 | AmazonLinux2.0      NAME   Sample values: kernel-headers | samba-python | php      SEVERITY   Sample values: Critical | Important | Medium | Low      EPOCH   Sample values: 0 | 1      VERSION   Sample values: 78.6.1 | 4.10.16      RELEASE   Sample values: 9.56.amzn1 | 1.amzn2      ARCH   Sample values: i686 | x86_64      REPOSITORY   Sample values: Core | Updates      ADVISORY_ID   Sample values: ALAS-2018-1058 | ALAS2-2021-1594      CVE_ID   Sample values: CVE-2018-3615 | CVE-2020-1472      BUGZILLA_ID   Sample values: 1463241',
@@ -2559,6 +2631,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2571,6 +2644,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-document',
       description: 'Describes the specified Amazon Web Services Systems Manager document (SSM document)',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the SSM document',
@@ -2614,6 +2688,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2626,6 +2701,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-document-permission',
       description: 'Describes the permissions for a Amazon Web Services Systems Manager document (SSM document). If you created the document, you are the owner. If a document is shared, it can either be shared privately (by specifying a user\'s Amazon Web Services account ID) or publicly (All)',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the document for which you are the owner',
@@ -2678,6 +2754,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2690,6 +2767,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-effective-instance-associations',
       description: 'All associations for the managed nodes',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The managed node ID for which you want to view all associations',
@@ -2760,6 +2838,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2772,6 +2851,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-effective-patches-for-patch-baseline',
       description: 'Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline. Applies to patch baselines for Windows only',
       options: [
+
         Option(
           name: '--baseline-id',
           description: 'The ID of the patch baseline to retrieve the effective patches for',
@@ -2842,6 +2922,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2854,6 +2935,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-instance-associations-status',
       description: 'The status of the associations for the managed nodes',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The managed node IDs for which you want association status information',
@@ -2924,6 +3006,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2936,6 +3019,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-instance-information',
       description: 'Provides information about one or more of your managed nodes, including the operating system platform, SSM Agent version, association status, and IP address. This operation does not return information for nodes that are either Stopped or Terminated. If you specify one or more node IDs, the operation returns information for those managed nodes. If you don\'t specify node IDs, it returns information for all your managed nodes. If you specify a node ID that isn\'t valid or a node that you don\'t own, you receive an error.  The IamRole field returned for this API operation is the role assigned to an Amazon EC2 instance configured with a Systems Manager Quick Setup host management configuration or the role assigned to an on-premises managed node',
       options: [
+
         Option(
           name: '--instance-information-filter-list',
           description: 'This is a legacy method. We recommend that you don\'t use this method. Instead, use the Filters data type. Filters enables you to return node information by filtering based on tags applied to managed nodes.  Attempting to use InstanceInformationFilterList and Filters leads to an exception error',
@@ -3015,6 +3099,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3027,6 +3112,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-instance-patch-states',
       description: 'Retrieves the high-level patch state of one or more managed nodes',
       options: [
+
         Option(
           name: '--instance-ids',
           description: 'The ID of the managed node for which patch state information should be retrieved',
@@ -3097,6 +3183,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3109,6 +3196,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-instance-patch-states-for-patch-group',
       description: 'Retrieves the high-level patch state for the managed nodes in the specified patch group',
       options: [
+
         Option(
           name: '--patch-group',
           description: 'The name of the patch group for which the patch state information should be retrieved',
@@ -3188,6 +3276,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3200,6 +3289,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-instance-patches',
       description: 'Retrieves information about the patches on the specified managed node and their state relative to the patch baseline being used for the node',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The ID of the managed node whose patch state information should be retrieved',
@@ -3279,6 +3369,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3291,6 +3382,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-instance-properties',
       description: 'An API operation used by the Systems Manager console to display information about Systems Manager managed nodes',
       options: [
+
         Option(
           name: '--instance-property-filter-list',
           description: 'An array of instance property filters',
@@ -3370,6 +3462,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3382,6 +3475,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-inventory-deletions',
       description: 'Describes a specific delete inventory operation',
       options: [
+
         Option(
           name: '--deletion-id',
           description: 'Specify the delete inventory ID for which you want information. This ID was returned by the DeleteInventory operation',
@@ -3452,6 +3546,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3464,6 +3559,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-maintenance-window-execution-task-invocations',
       description: 'Retrieves the individual task executions (one per target) for a particular task run as part of a maintenance window execution',
       options: [
+
         Option(
           name: '--window-execution-id',
           description: 'The ID of the maintenance window execution the task is part of',
@@ -3552,6 +3648,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3564,6 +3661,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-maintenance-window-execution-tasks',
       description: 'For a given maintenance window execution, lists the tasks that were run',
       options: [
+
         Option(
           name: '--window-execution-id',
           description: 'The ID of the maintenance window execution whose task executions should be retrieved',
@@ -3643,6 +3741,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3655,6 +3754,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-maintenance-window-executions',
       description: 'Lists the executions of a maintenance window. This includes information about when the maintenance window was scheduled to be active, and information about tasks registered and run with the maintenance window',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window whose executions should be retrieved',
@@ -3734,6 +3834,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3746,6 +3847,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-maintenance-window-schedule',
       description: 'Retrieves information about upcoming executions of a maintenance window',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window to retrieve information about',
@@ -3843,6 +3945,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3855,6 +3958,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-maintenance-window-targets',
       description: 'Lists the targets registered with the maintenance window',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window whose targets should be retrieved',
@@ -3934,6 +4038,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3946,6 +4051,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-maintenance-window-tasks',
       description: 'Lists the tasks in a maintenance window.  For maintenance window tasks without a specified target, you can\'t supply values for --max-errors and --max-concurrency. Instead, the system inserts a placeholder value of 1, which may be reported in the response to this command. These values don\'t affect the running of your task and can be ignored',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window whose tasks should be retrieved',
@@ -4025,6 +4131,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4037,6 +4144,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-maintenance-windows',
       description: 'Retrieves the maintenance windows in an Amazon Web Services account',
       options: [
+
         Option(
           name: '--filters',
           description: 'Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are Name and Enabled. For example, Name=MyMaintenanceWindow and Enabled=True',
@@ -4107,6 +4215,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4119,6 +4228,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-maintenance-windows-for-target',
       description: 'Retrieves information about the maintenance window targets or tasks that a managed node is associated with',
       options: [
+
         Option(
           name: '--targets',
           description: 'The managed node ID or key-value pair to retrieve information about',
@@ -4198,6 +4308,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4210,6 +4321,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-ops-items',
       description: 'Query a set of OpsItems. You must have permission in Identity and Access Management (IAM) to query a list of OpsItems. For more information, see Set up OpsCenter in the Amazon Web Services Systems Manager User Guide. Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see Amazon Web Services Systems Manager OpsCenter in the Amazon Web Services Systems Manager User Guide',
       options: [
+
         Option(
           name: '--ops-item-filters',
           description: 'One or more filters to limit the response.   Key: CreatedTime Operations: GreaterThan, LessThan   Key: LastModifiedBy Operations: Contains, Equals   Key: LastModifiedTime Operations: GreaterThan, LessThan   Key: Priority Operations: Equals   Key: Source Operations: Contains, Equals   Key: Status Operations: Equals   Key: Title* Operations: Equals,Contains   Key: OperationalData** Operations: Equals   Key: OperationalDataKey Operations: Equals   Key: OperationalDataValue Operations: Equals, Contains   Key: OpsItemId Operations: Equals   Key: ResourceId Operations: Contains   Key: AutomationId Operations: Equals   Key: AccountId Operations: Equals   *The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit. **If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}',
@@ -4280,6 +4392,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4292,6 +4405,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-parameters',
       description: 'Lists the parameters in your Amazon Web Services account or the parameters shared with you when you enable the Shared option. Request results are returned on a best-effort basis. If you specify MaxResults in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of MaxResults. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a NextToken. You can specify the NextToken in a subsequent call to get the next set of results.  If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must also update the key alias the parameter uses to reference KMS. Otherwise, DescribeParameters retrieves whatever the original key alias was referencing',
       options: [
+
         Option(
           name: '--filters',
           description: 'This data type is deprecated. Instead, use ParameterFilters',
@@ -4379,6 +4493,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4391,6 +4506,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-patch-baselines',
       description: 'Lists the patch baselines in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--filters',
           description: 'Each element in the array is a structure containing a key-value pair. Supported keys for DescribePatchBaselines include the following:     NAME_PREFIX   Sample values: AWS- | My-      OWNER   Sample values: AWS | Self      OPERATING_SYSTEM   Sample values: AMAZON_LINUX | SUSE | WINDOWS',
@@ -4461,6 +4577,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4473,6 +4590,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-patch-group-state',
       description: 'Returns high-level aggregated patch compliance state information for a patch group',
       options: [
+
         Option(
           name: '--patch-group',
           description: 'The name of the patch group whose patch snapshot should be retrieved',
@@ -4498,6 +4616,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4510,6 +4629,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-patch-groups',
       description: 'Lists all patch groups that have been registered with patch baselines',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of patch groups to return (per page)',
@@ -4580,6 +4700,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4592,6 +4713,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-patch-properties',
       description: 'Lists the properties of available patches organized by product, product family, classification, severity, and other properties of available patches. You can use the reported properties in the filters you specify in requests for operations such as CreatePatchBaseline, UpdatePatchBaseline, DescribeAvailablePatches, and DescribePatchBaselines. The following section lists the properties that can be used in filters for each major operating system type:  AMAZON_LINUX  Valid properties: PRODUCT | CLASSIFICATION | SEVERITY   AMAZON_LINUX_2  Valid properties: PRODUCT | CLASSIFICATION | SEVERITY   AMAZON_LINUX_2023  Valid properties: PRODUCT | CLASSIFICATION | SEVERITY   CENTOS  Valid properties: PRODUCT | CLASSIFICATION | SEVERITY   DEBIAN  Valid properties: PRODUCT | PRIORITY   MACOS  Valid properties: PRODUCT | CLASSIFICATION   ORACLE_LINUX  Valid properties: PRODUCT | CLASSIFICATION | SEVERITY   REDHAT_ENTERPRISE_LINUX  Valid properties: PRODUCT | CLASSIFICATION | SEVERITY   SUSE  Valid properties: PRODUCT | CLASSIFICATION | SEVERITY   UBUNTU  Valid properties: PRODUCT | PRIORITY   WINDOWS  Valid properties: PRODUCT | PRODUCT_FAMILY | CLASSIFICATION | MSRC_SEVERITY',
       options: [
+
         Option(
           name: '--operating-system',
           description: 'The operating system type for which to list patches',
@@ -4680,6 +4802,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4692,6 +4815,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'describe-sessions',
       description: 'Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30 days',
       options: [
+
         Option(
           name: '--state',
           description: 'The session status to retrieve a list of sessions for. For example, "Active"',
@@ -4771,6 +4895,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4783,6 +4908,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'disassociate-ops-item-related-item',
       description: 'Deletes the association between an OpsItem and a related item. For example, this API operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of Amazon Web Services Systems Manager',
       options: [
+
         Option(
           name: '--ops-item-id',
           description: 'The ID of the OpsItem for which you want to delete an association between the OpsItem and a related item',
@@ -4817,6 +4943,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4829,6 +4956,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-automation-execution',
       description: 'Get detailed information about a particular Automation execution',
       options: [
+
         Option(
           name: '--automation-execution-id',
           description: 'The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated',
@@ -4854,6 +4982,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4866,6 +4995,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-calendar-state',
       description: 'Gets the state of a Amazon Web Services Systems Manager change calendar at the current time or a specified time. If you specify a time, GetCalendarState returns the state of the calendar at that specific time, and returns the next time that the change calendar state will transition. If you don\'t specify a time, GetCalendarState uses the current time. Change Calendar entries have two possible states: OPEN or CLOSED. If you specify more than one calendar in a request, the command returns the status of OPEN only if all calendars in the request are open. If one or more calendars in the request are closed, the status returned is CLOSED. For more information about Change Calendar, a capability of Amazon Web Services Systems Manager, see Amazon Web Services Systems Manager Change Calendar in the Amazon Web Services Systems Manager User Guide',
       options: [
+
         Option(
           name: '--calendar-names',
           description: 'The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state',
@@ -4900,6 +5030,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4912,6 +5043,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-command-invocation',
       description: 'Returns detailed information about command execution for an invocation or plugin. The Run Command API follows an eventual consistency model, due to the distributed nature of the system supporting the API. This means that the result of an API command you run that affects your resources might not be immediately visible to all subsequent commands you run. You should keep this in mind when you carry out an API command that immediately follows a previous API command.  GetCommandInvocation only gives the execution status of a plugin in a document. To get the command execution status on a specific managed node, use ListCommandInvocations. To get the command execution status across managed nodes, use ListCommands',
       options: [
+
         Option(
           name: '--command-id',
           description: '(Required) The parent command ID of the invocation plugin',
@@ -4955,6 +5087,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4967,6 +5100,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-connection-status',
       description: 'Retrieves the Session Manager connection status for a managed node to determine whether it is running and ready to receive Session Manager connections',
       options: [
+
         Option(
           name: '--target',
           description: 'The managed node ID',
@@ -4992,6 +5126,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5004,6 +5139,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-default-patch-baseline',
       description: 'Retrieves the default patch baseline. Amazon Web Services Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system. If you don\'t specify an operating system value, the default patch baseline for Windows is returned',
       options: [
+
         Option(
           name: '--operating-system',
           description: 'Returns the default patch baseline for the specified operating system',
@@ -5029,6 +5165,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5041,6 +5178,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-deployable-patch-snapshot-for-instance',
       description: 'Retrieves the current snapshot for the patch baseline the managed node uses. This API is primarily used by the AWS-RunPatchBaseline Systems Manager document (SSM document).  If you run the command locally, such as with the Command Line Interface (CLI), the system attempts to use your local Amazon Web Services credentials and the operation fails. To avoid this, you can run the command in the Amazon Web Services Systems Manager console. Use Run Command, a capability of Amazon Web Services Systems Manager, with an SSM document that enables you to target a managed node with a script or command. For example, run the command using the AWS-RunShellScript document or the AWS-RunPowerShellScript document',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The ID of the managed node for which the appropriate patch snapshot should be retrieved',
@@ -5084,6 +5222,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5096,6 +5235,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-document',
       description: 'Gets the contents of the specified Amazon Web Services Systems Manager document (SSM document)',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the SSM document',
@@ -5148,6 +5288,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5160,6 +5301,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-execution-preview',
       description: 'Initiates the process of retrieving an existing preview that shows the effects that running a specified Automation runbook would have on the targeted resources',
       options: [
+
         Option(
           name: '--execution-preview-id',
           description: 'The ID of the existing execution preview',
@@ -5185,6 +5327,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5197,6 +5340,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-inventory',
       description: 'Query inventory information. This includes managed node status, such as Stopped or Terminated',
       options: [
+
         Option(
           name: '--filters',
           description: 'One or more filters. Use a filter to return a more specific list of results',
@@ -5285,6 +5429,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5297,6 +5442,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-inventory-schema',
       description: 'Return a list of inventory type names for the account, or return a list of attribute names for a specific Inventory item type',
       options: [
+
         Option(
           name: '--type-name',
           description: 'The type of inventory item to return',
@@ -5383,6 +5529,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5395,6 +5542,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-maintenance-window',
       description: 'Retrieves a maintenance window',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window for which you want to retrieve information',
@@ -5420,6 +5568,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5432,6 +5581,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-maintenance-window-execution',
       description: 'Retrieves details about a specific a maintenance window execution',
       options: [
+
         Option(
           name: '--window-execution-id',
           description: 'The ID of the maintenance window execution that includes the task',
@@ -5457,6 +5607,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5469,6 +5620,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-maintenance-window-execution-task',
       description: 'Retrieves the details about a specific task run as part of a maintenance window execution',
       options: [
+
         Option(
           name: '--window-execution-id',
           description: 'The ID of the maintenance window execution that includes the task',
@@ -5503,6 +5655,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5515,6 +5668,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-maintenance-window-execution-task-invocation',
       description: 'Retrieves information about a specific task running on a specific target',
       options: [
+
         Option(
           name: '--window-execution-id',
           description: 'The ID of the maintenance window execution for which the task is a part',
@@ -5558,6 +5712,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5570,6 +5725,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-maintenance-window-task',
       description: 'Retrieves the details of a maintenance window task.  For maintenance window tasks without a specified target, you can\'t supply values for --max-errors and --max-concurrency. Instead, the system inserts a placeholder value of 1, which may be reported in the response to this command. These values don\'t affect the running of your task and can be ignored.  To retrieve a list of tasks in a maintenance window, instead use the DescribeMaintenanceWindowTasks command',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The maintenance window ID that includes the task to retrieve',
@@ -5604,6 +5760,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5616,6 +5773,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-ops-item',
       description: 'Get information about an OpsItem by using the ID. You must have permission in Identity and Access Management (IAM) to view information about an OpsItem. For more information, see Set up OpsCenter in the Amazon Web Services Systems Manager User Guide. Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see Amazon Web Services Systems Manager OpsCenter in the Amazon Web Services Systems Manager User Guide',
       options: [
+
         Option(
           name: '--ops-item-id',
           description: 'The ID of the OpsItem that you want to get',
@@ -5650,6 +5808,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5662,6 +5821,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-ops-metadata',
       description: 'View operational metadata related to an application in Application Manager',
       options: [
+
         Option(
           name: '--ops-metadata-arn',
           description: 'The Amazon Resource Name (ARN) of an OpsMetadata Object to view',
@@ -5705,6 +5865,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5717,6 +5878,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-ops-summary',
       description: 'View a summary of operations metadata (OpsData) based on specified filters and aggregators. OpsData can include information about Amazon Web Services Systems Manager OpsCenter operational workitems (OpsItems) as well as information about any Amazon Web Services resource or service configured to report OpsData to Amazon Web Services Systems Manager Explorer',
       options: [
+
         Option(
           name: '--sync-name',
           description: 'Specify the name of a resource data sync to get',
@@ -5814,6 +5976,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5826,6 +5989,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-parameter',
       description: 'Get information about a single parameter by specifying the parameter name.  To get information about more than one parameter at a time, use the GetParameters operation',
       options: [
+
         Option(
           name: '--name',
           description: 'The name or Amazon Resource Name (ARN) of the parameter that you want to query. For parameters shared with you from another account, you must use the full ARN. To query by parameter label, use "Name": "name:label". To query by parameter version, use "Name": "name:version". For more information about shared parameters, see Working with shared parameters in the Amazon Web Services Systems Manager User Guide',
@@ -5859,6 +6023,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5871,6 +6036,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-parameter-history',
       description: 'Retrieves the history of all changes to a parameter.  If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must also update the key alias the parameter uses to reference KMS. Otherwise, GetParameterHistory retrieves whatever the original key alias was referencing',
       options: [
+
         Option(
           name: '--name',
           description: 'The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For parameters shared with you from another account, you must use the full ARN',
@@ -5949,6 +6115,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5961,6 +6128,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-parameters',
       description: 'Get information about one or more parameters by specifying multiple parameter names.  To get information about a single parameter, you can use the GetParameter operation instead',
       options: [
+
         Option(
           name: '--names',
           description: 'The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared with you from another account, you must use the full ARNs. To query by parameter label, use "Name": "name:label". To query by parameter version, use "Name": "name:version".  The results for GetParameters requests are listed in alphabetical order in query responses.  For information about shared parameters, see Working with shared parameters in the Amazon Web Services Systems Manager User Guide',
@@ -5994,6 +6162,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6006,6 +6175,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-parameters-by-path',
       description: 'Retrieve information about one or more parameters in a specific hierarchy.  Request results are returned on a best-effort basis. If you specify MaxResults in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of MaxResults. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a NextToken. You can specify the NextToken in a subsequent call to get the next set of results',
       options: [
+
         Option(
           name: '--path',
           description: 'The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can\'t be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: /Finance/Prod/IAD/WinServ2016/license33',
@@ -6101,6 +6271,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6113,6 +6284,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-patch-baseline',
       description: 'Retrieves information about a patch baseline',
       options: [
+
         Option(
           name: '--baseline-id',
           description: 'The ID of the patch baseline to retrieve.  To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon Resource Name (ARN) of the baseline. For example, for the baseline AWS-AmazonLinuxDefaultPatchBaseline, specify arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7 instead of pb-0e392de35e7c563b7',
@@ -6138,6 +6310,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6150,6 +6323,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-patch-baseline-for-patch-group',
       description: 'Retrieves the patch baseline that should be used for the specified patch group',
       options: [
+
         Option(
           name: '--patch-group',
           description: 'The name of the patch group whose patch baseline should be retrieved',
@@ -6184,6 +6358,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6196,6 +6371,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-resource-policies',
       description: 'Returns an array of the Policy object',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the resource to which the policies are attached',
@@ -6266,6 +6442,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6278,6 +6455,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'get-service-setting',
       description: 'ServiceSetting is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of false. This means the user can\'t use this feature unless they change the setting to true and intentionally opt in for a paid feature. Services map a SettingId object to a setting value. Amazon Web Services services teams define the default value for a SettingId. You can\'t create a new SettingId, but you can overwrite the default value if you have the ssm:UpdateServiceSetting permission for the setting. Use the UpdateServiceSetting API operation to change the default setting. Or use the ResetServiceSetting to change the value back to the original value defined by the Amazon Web Services service team. Query the current service setting for the Amazon Web Services account',
       options: [
+
         Option(
           name: '--setting-id',
           description: 'The ID of the service setting to get. The setting ID can be one of the following.    /ssm/appmanager/appmanager-enabled     /ssm/automation/customer-script-log-destination     /ssm/automation/customer-script-log-group-name    /ssm/automation/enable-adaptive-concurrency    /ssm/documents/console/public-sharing-permission     /ssm/managed-instance/activation-tier     /ssm/managed-instance/default-ec2-instance-management-role     /ssm/opsinsights/opscenter     /ssm/parameter-store/default-parameter-tier     /ssm/parameter-store/high-throughput-enabled',
@@ -6303,6 +6481,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6315,6 +6494,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'label-parameter-version',
       description: 'A parameter label is a user-defined alias to help you manage different versions of a parameter. When you modify a parameter, Amazon Web Services Systems Manager automatically saves a new version and increments the version number by one. A label can help you remember the purpose of a parameter when there are multiple versions.  Parameter labels have the following requirements and restrictions.   A version of a parameter can have a maximum of 10 labels.   You can\'t attach the same label to different versions of the same parameter. For example, if version 1 has the label Production, then you can\'t attach Production to version 2.   You can move a label from one version of a parameter to another.   You can\'t create a label when you create a new parameter. You must attach a label to a specific version of a parameter.   If you no longer want to use a parameter label, then you can either delete it or move it to a different version of a parameter.   A label can have a maximum of 100 characters.   Labels can contain letters (case sensitive), numbers, periods (.), hyphens (-), or underscores (_).   Labels can\'t begin with a number, "aws" or "ssm" (not case sensitive). If a label fails to meet these requirements, then the label isn\'t associated with a parameter and the system displays it in the list of InvalidLabels',
       options: [
+
         Option(
           name: '--name',
           description: 'The parameter name on which you want to attach one or more labels.  You can\'t enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself',
@@ -6358,6 +6538,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6370,6 +6551,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-association-versions',
       description: 'Retrieves all versions of an association for a specific association ID',
       options: [
+
         Option(
           name: '--association-id',
           description: 'The association ID for which you want to view all versions',
@@ -6440,6 +6622,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6452,6 +6635,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-associations',
       description: 'Returns all State Manager associations in the current Amazon Web Services account and Amazon Web Services Region. You can limit the results to a specific State Manager association document or managed node by specifying a filter. State Manager is a capability of Amazon Web Services Systems Manager',
       options: [
+
         Option(
           name: '--association-filter-list',
           description: 'One or more filters. Use a filter to return a more specific list of results.  Filtering associations using the InstanceID attribute only returns legacy associations created using the InstanceID attribute. Associations targeting the managed node that are part of the Target Attributes ResourceGroup or Tags aren\'t returned',
@@ -6522,6 +6706,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6534,6 +6719,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-command-invocations',
       description: 'An invocation is copy of a command sent to a specific managed node. A command can apply to one or more managed nodes. A command invocation applies to one managed node. For example, if a user runs SendCommand against three managed nodes, then a command invocation is created for each requested managed node ID. ListCommandInvocations provide status about command execution',
       options: [
+
         Option(
           name: '--command-id',
           description: '(Optional) The invocations for a specific command ID',
@@ -6630,6 +6816,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6642,6 +6829,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-commands',
       description: 'Lists the commands requested by users of the Amazon Web Services account',
       options: [
+
         Option(
           name: '--command-id',
           description: '(Optional) If provided, lists only the specified command',
@@ -6730,6 +6918,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6742,6 +6931,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-compliance-items',
       description: 'For a specified resource ID, this API operation returns a list of compliance statuses for different resource types. Currently, you can only specify one resource ID per call. List results depend on the criteria specified in the filter',
       options: [
+
         Option(
           name: '--filters',
           description: 'One or more compliance filters. Use a filter to return a more specific list of results',
@@ -6830,6 +7020,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6842,6 +7033,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-compliance-summaries',
       description: 'Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call can return State Manager associations, patches, or custom compliance types according to the filter criteria that you specify',
       options: [
+
         Option(
           name: '--filters',
           description: 'One or more compliance or inventory filters. Use a filter to return a more specific list of results',
@@ -6912,6 +7104,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6924,6 +7117,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-document-metadata-history',
       description: 'Information about approval reviews for a version of a change template in Change Manager',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the change template',
@@ -6985,6 +7179,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6997,6 +7192,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-document-versions',
       description: 'List all versions for a document',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the document. You can specify an Amazon Resource Name (ARN)',
@@ -7067,6 +7263,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7079,6 +7276,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-documents',
       description: 'Returns all Systems Manager (SSM) documents in the current Amazon Web Services account and Amazon Web Services Region. You can limit the results of this request by using a filter',
       options: [
+
         Option(
           name: '--document-filter-list',
           description: 'This data type is deprecated. Instead, use Filters',
@@ -7158,6 +7356,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7170,6 +7369,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-inventory-entries',
       description: 'A list of inventory items returned by the request',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The managed node ID for which you want inventory information',
@@ -7231,6 +7431,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7243,6 +7444,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-nodes',
       description: 'Takes in filters and returns a list of managed nodes matching the filter criteria',
       options: [
+
         Option(
           name: '--sync-name',
           description: 'The name of the resource data sync to retrieve information about. Required for cross-account/cross-Region configurations. Optional for single account/single-Region configurations',
@@ -7322,6 +7524,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7334,6 +7537,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-nodes-summary',
       description: 'Generates a summary of managed instance/node metadata based on the filters and aggregators you specify. Results are grouped by the input aggregator you specify',
       options: [
+
         Option(
           name: '--sync-name',
           description: 'The name of the resource data sync to retrieve information about. Required for cross-account/cross-Region configuration. Optional for single account/single-Region configurations',
@@ -7422,6 +7626,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7434,6 +7639,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-ops-item-events',
       description: 'Returns a list of all OpsItem events in the current Amazon Web Services Region and Amazon Web Services account. You can limit the results to events associated with specific OpsItems by specifying a filter',
       options: [
+
         Option(
           name: '--filters',
           description: 'One or more OpsItem filters. Use a filter to return a more specific list of results',
@@ -7504,6 +7710,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7516,6 +7723,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-ops-item-related-items',
       description: 'Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a capability of Amazon Web Services Systems Manager',
       options: [
+
         Option(
           name: '--ops-item-id',
           description: 'The ID of the OpsItem for which you want to list all related-item resources',
@@ -7595,6 +7803,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7607,6 +7816,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-ops-metadata',
       description: 'Amazon Web Services Systems Manager calls this API operation when displaying all Application Manager OpsMetadata objects or blobs',
       options: [
+
         Option(
           name: '--filters',
           description: 'One or more filters to limit the number of OpsMetadata objects returned by the call',
@@ -7677,6 +7887,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7689,6 +7900,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-resource-compliance-summaries',
       description: 'Returns a resource-level summary count. The summary includes information about compliant and non-compliant statuses and detailed compliance-item severity counts, according to the filter criteria you specify',
       options: [
+
         Option(
           name: '--filters',
           description: 'One or more filters. Use a filter to return a more specific list of results',
@@ -7759,6 +7971,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7771,6 +7984,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-resource-data-sync',
       description: 'Lists your resource data sync configurations. Includes information about the last time a sync attempted to start, the last sync status, and the last time a sync successfully completed. The number of sync configurations might be too large to return using a single call to ListResourceDataSync. You can limit the number of sync configurations returned by using the MaxResults parameter. To determine whether there are more sync configurations to list, check the value of NextToken in the output. If there are more sync configurations to list, you can request them by specifying the NextToken returned in the call to the parameter of a subsequent call',
       options: [
+
         Option(
           name: '--sync-type',
           description: 'View a list of resource data syncs according to the sync type. Specify SyncToDestination to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify SyncFromSource to view resource data syncs from Organizations or from multiple Amazon Web Services Regions',
@@ -7841,6 +8055,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7853,6 +8068,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of the tags assigned to the specified resource. For information about the ID format for each supported resource type, see AddTagsToResource',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'Returns a list of tags for a specific resource type',
@@ -7887,6 +8103,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7899,6 +8116,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'modify-document-permission',
       description: 'Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a document privately, you must specify the Amazon Web Services user IDs for those people who can use the document. If you share a document publicly, you must specify All as the account ID',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the document that you want to share',
@@ -7960,6 +8178,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7972,6 +8191,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'put-compliance-items',
       description: 'Registers a compliance type and other compliance details on a designated resource. This operation lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request. ComplianceType can be one of the following:   ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.   ExecutionType: Specify patch, association, or Custom:string.   ExecutionTime. The time the patch, association, or custom compliance item was applied to the managed node.   Id: The patch, association, or custom compliance ID.   Title: A title.   Status: The status of the compliance item. For example, approved for patches, or Failed for associations.   Severity: A patch severity. For example, Critical.   DocumentName: An SSM document name. For example, AWS-RunPatchBaseline.   DocumentVersion: An SSM document version number. For example, 4.   Classification: A patch classification. For example, security updates.   PatchBaselineId: A patch baseline ID.   PatchSeverity: A patch severity. For example, Critical.   PatchState: A patch state. For example, InstancesWithFailedPatches.   PatchGroup: The name of a patch group.   InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd\'T\'HH:mm:ss\'Z\'',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'Specify an ID for this resource. For a managed node, this is the node ID',
@@ -8051,6 +8271,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8063,6 +8284,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'put-inventory',
       description: 'Bulk update custom inventory items on one or more managed nodes. The request adds an inventory item, if it doesn\'t already exist, or updates an inventory item, if it does exist',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'An managed node ID where you want to add or update inventory items',
@@ -8097,6 +8319,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8109,6 +8332,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'put-parameter',
       description: 'Add a parameter to the system',
       options: [
+
         Option(
           name: '--name',
           description: 'The fully qualified name of the parameter that you want to add to the system.  You can\'t enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.  The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: /Dev/DBServer/MySQL/db-string13  Naming Constraints:   Parameter names are case sensitive.   A parameter name must be unique within an Amazon Web Services Region   A parameter name can\'t be prefixed with "aws" or "ssm" (case-insensitive).   Parameter names can include only the following symbols and letters: a-zA-Z0-9_.-  In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: /Dev/Production/East/Project-ABC/MyParameter    A parameter name can\'t include spaces.   Parameter hierarchies are limited to a maximum depth of fifteen levels.   For additional information about valid values for parameter names, see Creating Systems Manager parameters in the Amazon Web Services Systems Manager User Guide.  The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as arn:aws:ssm:us-east-2:111122223333:parameter/',
@@ -8223,6 +8447,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8235,6 +8460,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Creates or updates a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. The following resources support Systems Manager resource policies.    OpsItemGroup - The resource policy for OpsItemGroup enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).    Parameter - The resource policy is used to share a parameter with other accounts using Resource Access Manager (RAM).  To share a parameter, it must be in the advanced parameter tier. For information about parameter tiers, see Managing parameter tiers. For information about changing an existing standard parameter to an advanced parameter, see Changing a standard parameter to an advanced parameter. To share a SecureString parameter, it must be encrypted with a customer managed key, and you must share the key separately through Key Management Service. Amazon Web Services managed keys cannot be shared. Parameters encrypted with the default Amazon Web Services managed key can be updated to use a customer managed key instead. For KMS key definitions, see KMS concepts in the Key Management Service Developer Guide.  While you can share a parameter using the Systems Manager PutResourcePolicy operation, we recommend using Resource Access Manager (RAM) instead. This is because using PutResourcePolicy requires the extra step of promoting the parameter to a standard RAM Resource Share using the RAM PromoteResourceShareCreatedFromPolicy API operation. Otherwise, the parameter won\'t be returned by the Systems Manager DescribeParameters API operation using the --shared option. For more information, see Sharing a parameter in the Amazon Web Services Systems Manager User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the resource to which you want to attach a policy',
@@ -8287,6 +8513,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8299,6 +8526,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'register-default-patch-baseline',
       description: 'Defines the default patch baseline for the relevant operating system. To reset the Amazon Web Services-predefined patch baseline as the default, specify the full patch baseline Amazon Resource Name (ARN) as the baseline ID value. For example, for CentOS, specify arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed instead of pb-0574b43a65ea646ed',
       options: [
+
         Option(
           name: '--baseline-id',
           description: 'The ID of the patch baseline that should be the default patch baseline',
@@ -8324,6 +8552,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8336,6 +8565,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'register-patch-baseline-for-patch-group',
       description: 'Registers a patch baseline for a patch group',
       options: [
+
         Option(
           name: '--baseline-id',
           description: 'The ID of the patch baseline to register with the patch group',
@@ -8370,6 +8600,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8382,6 +8613,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'register-target-with-maintenance-window',
       description: 'Registers a target with a maintenance window',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window the target should be registered with',
@@ -8461,6 +8693,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8473,6 +8706,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'register-task-with-maintenance-window',
       description: 'Adds a new task to a maintenance window',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window the task should be added to',
@@ -8633,6 +8867,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8645,6 +8880,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'remove-tags-from-resource',
       description: 'Removes tag keys from the specified resource',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'The type of resource from which you want to remove a tag.  The ManagedInstance type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: mi-ID_number . For example, mi-1a2b3c4d5e6f',
@@ -8688,6 +8924,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8700,6 +8937,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'reset-service-setting',
       description: 'ServiceSetting is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of "false". This means the user can\'t use this feature unless they change the setting to "true" and intentionally opt in for a paid feature. Services map a SettingId object to a setting value. Amazon Web Services services teams define the default value for a SettingId. You can\'t create a new SettingId, but you can overwrite the default value if you have the ssm:UpdateServiceSetting permission for the setting. Use the GetServiceSetting API operation to view the current value. Use the UpdateServiceSetting API operation to change the default setting.  Reset the service setting for the account to the default value as provisioned by the Amazon Web Services service team',
       options: [
+
         Option(
           name: '--setting-id',
           description: 'The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.    /ssm/appmanager/appmanager-enabled     /ssm/automation/customer-script-log-destination     /ssm/automation/customer-script-log-group-name    /ssm/automation/enable-adaptive-concurrency    /ssm/documents/console/public-sharing-permission     /ssm/managed-instance/activation-tier     /ssm/managed-instance/default-ec2-instance-management-role     /ssm/opsinsights/opscenter     /ssm/parameter-store/default-parameter-tier     /ssm/parameter-store/high-throughput-enabled',
@@ -8725,6 +8963,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8737,6 +8976,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'resume-session',
       description: 'Reconnects a session to a managed node after it has been disconnected. Connections can be resumed for disconnected sessions, but not terminated sessions.  This command is primarily for use by client machines to automatically reconnect during intermittent network issues. It isn\'t intended for any other use',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The ID of the disconnected session to resume',
@@ -8762,6 +9002,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8774,6 +9015,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'send-automation-signal',
       description: 'Sends a signal to an Automation execution to change the current behavior or status of the execution',
       options: [
+
         Option(
           name: '--automation-execution-id',
           description: 'The unique identifier for an existing Automation execution that you want to send the signal to',
@@ -8817,6 +9059,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8829,6 +9072,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'send-command',
       description: 'Runs commands on one or more managed nodes',
       options: [
+
         Option(
           name: '--instance-ids',
           description: 'The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs. To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the Targets option instead. Using Targets, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once. For more information about how to use targets, see Run commands at scale in the Amazon Web Services Systems Manager User Guide',
@@ -9007,6 +9251,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9019,6 +9264,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'start-associations-once',
       description: 'Runs an association immediately and only one time. This operation can be helpful when troubleshooting associations',
       options: [
+
         Option(
           name: '--association-ids',
           description: 'The association IDs that you want to run immediately and only one time',
@@ -9044,6 +9290,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9056,6 +9303,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'start-automation-execution',
       description: 'Initiates execution of an Automation runbook',
       options: [
+
         Option(
           name: '--document-name',
           description: 'The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see Sharing SSM documents in the Amazon Web Services Systems Manager User Guide',
@@ -9198,6 +9446,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9210,6 +9459,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'start-change-request-execution',
       description: 'Creates a change request for Change Manager. The Automation runbooks specified in the change request run only after all required approvals for the change request have been received',
       options: [
+
         Option(
           name: '--scheduled-time',
           description: 'The date and time specified in the change request to run the Automation runbooks.  The Automation runbooks specified for the runbook workflow can\'t run until all required approvals for the change request have been received',
@@ -9324,6 +9574,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9336,6 +9587,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'start-execution-preview',
       description: 'Initiates the process of creating a preview showing the effects that running a specified Automation runbook would have on the targeted resources',
       options: [
+
         Option(
           name: '--document-name',
           description: 'The name of the Automation runbook to run. The result of the execution preview indicates what the impact would be of running this runbook',
@@ -9379,6 +9631,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9391,6 +9644,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'start-session',
       description: 'Initiates a connection to a target (for example, a managed node) for a Session Manager session. Returns a URL and token that can be used to open a WebSocket connection for sending input and receiving outputs.  Amazon Web Services CLI usage: start-session is an interactive command that requires the Session Manager plugin to be installed on the client machine making the call. For information, see Install the Session Manager plugin for the Amazon Web Services CLI in the Amazon Web Services Systems Manager User Guide. Amazon Web Services Tools for PowerShell usage: Start-SSMSession isn\'t currently supported by Amazon Web Services Tools for PowerShell on Windows local machines',
       options: [
+
         Option(
           name: '--target',
           description: 'The managed node to connect to for the session',
@@ -9443,6 +9697,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9455,6 +9710,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'stop-automation-execution',
       description: 'Stop an Automation that is currently running',
       options: [
+
         Option(
           name: '--automation-execution-id',
           description: 'The execution ID of the Automation to stop',
@@ -9489,6 +9745,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9501,6 +9758,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'terminate-session',
       description: 'Permanently ends a session and closes the data connection between the Session Manager client and SSM Agent on the managed node. A terminated session can\'t be resumed',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The ID of the session to terminate',
@@ -9526,6 +9784,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9538,6 +9797,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'unlabel-parameter-version',
       description: 'Remove a label or labels from a parameter',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the parameter from which you want to delete one or more labels.  You can\'t enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself',
@@ -9581,6 +9841,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9593,6 +9854,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-association',
       description: 'Updates an association. You can update the association name and version, the document version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output. When you call UpdateAssociation, the system removes all optional parameters from the request and overwrites the association with null values for those parameters. This is by design. You must specify all optional parameters in the call, even if you are not changing the parameters. This includes the Name parameter. Before calling this API action, we recommend that you call the DescribeAssociation API operation and make a note of all optional parameters required for your UpdateAssociation call. In order to call this API operation, a user, group, or role must be granted permission to call the DescribeAssociation API operation. If you don\'t have permission to call DescribeAssociation, then you receive the following error: An error occurred (AccessDeniedException) when calling the UpdateAssociation operation: User: <user_arn> isn\'t authorized to perform: ssm:DescribeAssociation on resource: <resource_arn>   When you update an association, the association immediately runs against the specified targets. You can add the ApplyOnlyAtCronInterval parameter to run the association during the next schedule run',
       options: [
+
         Option(
           name: '--association-id',
           description: 'The ID of the association you want to update',
@@ -9797,6 +10059,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9809,6 +10072,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-association-status',
       description: 'Updates the status of the Amazon Web Services Systems Manager document (SSM document) associated with the specified managed node.  UpdateAssociationStatus is primarily used by the Amazon Web Services Systems Manager Agent (SSM Agent) to report status updates about your associations and is only used for associations created with the InstanceId legacy parameter',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the SSM document',
@@ -9852,6 +10116,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9864,6 +10129,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-document',
       description: 'Updates one or more values for an SSM document',
       options: [
+
         Option(
           name: '--content',
           description: 'A valid JSON or YAML string',
@@ -9952,6 +10218,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9964,6 +10231,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-document-default-version',
       description: 'Set the default version of a document.   If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the apply-only-at-cron-interval parameter',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of a custom document that you want to set as the default version',
@@ -9998,6 +10266,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10010,6 +10279,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-document-metadata',
       description: 'Updates information related to approval reviews for a specific version of a change template in Change Manager',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the change template for which a version\'s metadata is to be updated',
@@ -10053,6 +10323,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10065,6 +10336,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-maintenance-window',
       description: 'Updates an existing maintenance window. Only specified parameters are modified.  The value you specify for Duration determines the specific end time for the maintenance window based on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the number of hours you specify for Cutoff. For example, if the maintenance window starts at 3 PM, the duration is three hours, and the value you specify for Cutoff is one hour, no maintenance window tasks can start after 5 PM',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The ID of the maintenance window to update',
@@ -10195,6 +10467,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10207,6 +10480,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-maintenance-window-target',
       description: 'Modifies the target of an existing maintenance window. You can change the following:   Name   Description   Owner   IDs for an ID target   Tags for a Tag target   From any supported tag type to another. The three supported tag types are ID target, Tag target, and resource group. For more information, see Target.    If a parameter is null, then the corresponding field isn\'t modified',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The maintenance window ID with which to modify the target',
@@ -10285,6 +10559,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10297,6 +10572,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-maintenance-window-task',
       description: 'Modifies a task assigned to a maintenance window. You can\'t change the task type, but you can change the following values:    TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.    ServiceRoleArn     TaskInvocationParameters     Priority     MaxConcurrency     MaxErrors     One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don\'t specify targets, see Registering maintenance window tasks without targets in the Amazon Web Services Systems Manager User Guide.  If the value for a parameter in UpdateMaintenanceWindowTask is null, then the corresponding field isn\'t modified. If you set Replace to true, then all fields required by the RegisterTaskWithMaintenanceWindow operation are required for this request. Optional fields that aren\'t specified are set to null.  When you update a maintenance window task that has options specified in TaskInvocationParameters, you must provide again all the TaskInvocationParameters values that you want to retain. The values you don\'t specify again are removed. For example, suppose that when you registered a Run Command task, you specified TaskInvocationParameters values for Comment, NotificationConfig, and OutputS3BucketName. If you update the maintenance window task and specify only a different OutputS3BucketName value, the values for Comment and NotificationConfig are removed',
       options: [
+
         Option(
           name: '--window-id',
           description: 'The maintenance window ID that contains the task to modify',
@@ -10456,6 +10732,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10468,6 +10745,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-managed-instance-role',
       description: 'Changes the Identity and Access Management (IAM) role that is assigned to the on-premises server, edge device, or virtual machines (VM). IAM roles are first assigned to these hybrid nodes during the activation process. For more information, see CreateActivation',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The ID of the managed node where you want to update the role',
@@ -10502,6 +10780,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10514,6 +10793,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-ops-item',
       description: 'Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem. For more information, see Set up OpsCenter in the Amazon Web Services Systems Manager User Guide. Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see Amazon Web Services Systems Manager OpsCenter in the Amazon Web Services Systems Manager User Guide',
       options: [
+
         Option(
           name: '--description',
           description: 'User-defined text that contains information about the OpsItem, in Markdown format',
@@ -10674,6 +10954,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10686,6 +10967,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-ops-metadata',
       description: 'Amazon Web Services Systems Manager calls this API operation when you edit OpsMetadata in Application Manager',
       options: [
+
         Option(
           name: '--ops-metadata-arn',
           description: 'The Amazon Resource Name (ARN) of the OpsMetadata Object to update',
@@ -10729,6 +11011,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10741,6 +11024,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-patch-baseline',
       description: 'Modifies an existing patch baseline. Fields not specified in the request are left unchanged.  For information about valid key-value pairs in PatchFilters for each supported operating system type, see PatchFilter',
       options: [
+
         Option(
           name: '--baseline-id',
           description: 'The ID of the patch baseline to update',
@@ -10863,6 +11147,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10875,6 +11160,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-resource-data-sync',
       description: 'Update a resource data sync. After you create a resource data sync for a Region, you can\'t change the account options for that sync. For example, if you create a sync in the us-east-2 (Ohio) Region and you choose the Include only the current account option, you can\'t edit that sync later and choose the Include all accounts from my Organizations configuration option. Instead, you must delete the first resource data sync, and create a new one.  This API operation only supports a resource data sync that was created with a SyncFromSource SyncType',
       options: [
+
         Option(
           name: '--sync-name',
           description: 'The name of the resource data sync you want to update',
@@ -10918,6 +11204,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10930,6 +11217,7 @@ final FigSpec ssmSpec = FigSpec(
       name: 'update-service-setting',
       description: 'ServiceSetting is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of "false". This means the user can\'t use this feature unless they change the setting to "true" and intentionally opt in for a paid feature. Services map a SettingId object to a setting value. Amazon Web Services services teams define the default value for a SettingId. You can\'t create a new SettingId, but you can overwrite the default value if you have the ssm:UpdateServiceSetting permission for the setting. Use the GetServiceSetting API operation to view the current value. Or, use the ResetServiceSetting to change the value back to the original value defined by the Amazon Web Services service team. Update the service setting for the account',
       options: [
+
         Option(
           name: '--setting-id',
           description: 'The Amazon Resource Name (ARN) of the service setting to update. For example, arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled. The setting ID can be one of the following.    /ssm/appmanager/appmanager-enabled     /ssm/automation/customer-script-log-destination     /ssm/automation/customer-script-log-group-name    /ssm/automation/enable-adaptive-concurrency    /ssm/documents/console/public-sharing-permission     /ssm/managed-instance/activation-tier     /ssm/managed-instance/default-ec2-instance-management-role     /ssm/opsinsights/opscenter     /ssm/parameter-store/default-parameter-tier     /ssm/parameter-store/high-throughput-enabled     Permissions to update the /ssm/managed-instance/default-ec2-instance-management-role setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration',
@@ -10964,6 +11252,7 @@ final FigSpec ssmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10976,10 +11265,12 @@ final FigSpec ssmSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'command-executed',
           description: 'Wait until JMESPath query Status returns Success when polling with ``get-command-invocation``. It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--command-id',
               description: '(Required) The parent command ID of the invocation plugin',
@@ -11023,6 +11314,7 @@ final FigSpec ssmSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

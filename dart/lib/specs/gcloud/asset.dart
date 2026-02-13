@@ -9,10 +9,12 @@ final FigSpec assetSpec = FigSpec(
   name: 'asset',
   description: 'Manage the Cloud Asset Inventory',
   subcommands: [
+
     Subcommand(
       name: 'analyze-iam-policy',
       description: 'Analyzes IAM policies that match a request',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -230,6 +232,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -246,6 +249,7 @@ final FigSpec assetSpec = FigSpec(
       name: 'analyze-iam-policy-longrunning',
       description: 'Analyzes IAM policies that match a request asynchronously and writes the analysis results to Google Cloud Storage or BigQuery destination',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -281,6 +285,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'BIGQUERY_PARTITION_KEY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'PARTITION_KEY_UNSPECIFIED'),
               FigSuggestion(name: 'REQUEST_TIME')
             ]
@@ -508,6 +513,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -524,6 +530,7 @@ final FigSpec assetSpec = FigSpec(
       name: 'export',
       description: 'Export the cloud assets to Google Cloud Storage',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -599,6 +606,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'CONTENT_TYPE',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'resource'),
               FigSuggestion(name: 'iam-policy'),
               FigSuggestion(name: 'org-policy'),
@@ -716,6 +724,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'PARTITION_KEY',
             description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
             suggestions: [
+
               FigSuggestion(name: 'read-time'),
               FigSuggestion(name: 'request-time')
             ]
@@ -764,6 +773,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -780,10 +790,12 @@ final FigSpec assetSpec = FigSpec(
       name: 'feeds',
       description: 'Manage Cloud Asset Inventory feeds',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Cloud Asset Inventory Feed',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -880,6 +892,7 @@ final FigSpec assetSpec = FigSpec(
                 name: 'CONTENT_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'resource'),
                   FigSuggestion(name: 'iam-policy'),
                   FigSuggestion(name: 'org-policy'),
@@ -1002,6 +1015,7 @@ final FigSpec assetSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1024,6 +1038,7 @@ final FigSpec assetSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Asset Inventory Feed',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1158,6 +1173,7 @@ final FigSpec assetSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1180,6 +1196,7 @@ final FigSpec assetSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Asset Inventory Feed',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1314,6 +1331,7 @@ final FigSpec assetSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1336,6 +1354,7 @@ final FigSpec assetSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Asset Inventory Feeds',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1470,6 +1489,7 @@ final FigSpec assetSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1486,6 +1506,7 @@ final FigSpec assetSpec = FigSpec(
           name: 'update',
           description: 'Update an existing Cloud Asset Inventory Feed',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1606,6 +1627,7 @@ final FigSpec assetSpec = FigSpec(
                 name: 'CONTENT_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'resource'),
                   FigSuggestion(name: 'iam-policy'),
                   FigSuggestion(name: 'org-policy'),
@@ -1749,6 +1771,7 @@ final FigSpec assetSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1769,6 +1792,7 @@ final FigSpec assetSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1892,6 +1916,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1908,6 +1933,7 @@ final FigSpec assetSpec = FigSpec(
       name: 'get-history',
       description: 'Get the update history of assets that overlaps a time window',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1961,6 +1987,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'CONTENT_TYPE',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'resource'),
               FigSuggestion(name: 'iam-policy'),
               FigSuggestion(name: 'org-policy'),
@@ -2084,6 +2111,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2100,10 +2128,12 @@ final FigSpec assetSpec = FigSpec(
       name: 'operations',
       description: 'Manage Cloud Asset Inventory operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a Cloud Asset Inventory operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2227,6 +2257,7 @@ final FigSpec assetSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2247,6 +2278,7 @@ final FigSpec assetSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2370,6 +2402,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2386,6 +2419,7 @@ final FigSpec assetSpec = FigSpec(
       name: 'search-all-iam-policies',
       description: 'Searches all IAM policies within the specified accessible scope, such as a project, folder or organization',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2575,6 +2609,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2591,6 +2626,7 @@ final FigSpec assetSpec = FigSpec(
       name: 'search-all-resources',
       description: 'Searches all Cloud resources within the specified accessible scope, such as a project, folder or organization',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2802,6 +2838,7 @@ final FigSpec assetSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2816,6 +2853,7 @@ final FigSpec assetSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2939,6 +2977,7 @@ final FigSpec assetSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

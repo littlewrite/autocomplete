@@ -9,10 +9,12 @@ final FigSpec iotDataSpec = FigSpec(
   name: 'iot-data',
   description: 'IoT data IoT data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete shadows. A shadow is a persistent representation of your things and their state in the Amazon Web Services cloud. Find the endpoint address for actions in IoT data by running this CLI command:  aws iot describe-endpoint --endpoint-type iot:Data-ATS  The service name used by Amazon Web ServicesSignature Version 4 to sign requests is: iotdevicegateway',
   subcommands: [
+
     Subcommand(
       name: 'delete-thing-shadow',
       description: 'Deletes the shadow for the specified thing. Requires permission to access the DeleteThingShadow action. For more information, see DeleteThingShadow in the IoT Developer Guide',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing',
@@ -46,6 +48,7 @@ final FigSpec iotDataSpec = FigSpec(
       name: 'get-retained-message',
       description: 'Gets the details of a single retained message for the specified topic. This action returns the message payload of the retained message, which can incur messaging costs. To list only the topic names of the retained messages, call ListRetainedMessages. Requires permission to access the GetRetainedMessage action. For more information about messaging costs, see Amazon Web Services IoT Core pricing - Messaging',
       options: [
+
         Option(
           name: '--topic',
           description: 'The topic name of the retained message to retrieve',
@@ -71,6 +74,7 @@ final FigSpec iotDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -83,6 +87,7 @@ final FigSpec iotDataSpec = FigSpec(
       name: 'get-thing-shadow',
       description: 'Gets the shadow for the specified thing. Requires permission to access the GetThingShadow action. For more information, see GetThingShadow in the IoT Developer Guide',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing',
@@ -116,6 +121,7 @@ final FigSpec iotDataSpec = FigSpec(
       name: 'list-named-shadows-for-thing',
       description: 'Lists the shadows for the specified thing. Requires permission to access the ListNamedShadowsForThing action',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing',
@@ -159,6 +165,7 @@ final FigSpec iotDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -171,6 +178,7 @@ final FigSpec iotDataSpec = FigSpec(
       name: 'list-retained-messages',
       description: 'Lists summary information about the retained messages stored for the account. This action returns only the topic names of the retained messages. It doesn\'t return any message payloads. Although this action doesn\'t return a message payload, it can still incur messaging costs. To get the message payload of a retained message, call GetRetainedMessage with the topic name of the retained message. Requires permission to access the ListRetainedMessages action. For more information about messaging costs, see Amazon Web Services IoT Core pricing - Messaging',
       options: [
+
         Option(
           name: '--next-token',
           description: 'To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results',
@@ -232,6 +240,7 @@ final FigSpec iotDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -244,6 +253,7 @@ final FigSpec iotDataSpec = FigSpec(
       name: 'publish',
       description: 'Publishes an MQTT message. Requires permission to access the Publish action. For more information about MQTT messages, see MQTT Protocol in the IoT Developer Guide. For more information about messaging costs, see Amazon Web Services IoT Core pricing - Messaging',
       options: [
+
         Option(
           name: '--topic',
           description: 'The name of the MQTT topic',
@@ -349,6 +359,7 @@ final FigSpec iotDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -361,6 +372,7 @@ final FigSpec iotDataSpec = FigSpec(
       name: 'update-thing-shadow',
       description: 'Updates the shadow for the specified thing. Requires permission to access the UpdateThingShadow action. For more information, see UpdateThingShadow in the IoT Developer Guide',
       options: [
+
         Option(
           name: '--thing-name',
           description: 'The name of the thing',

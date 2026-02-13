@@ -9,6 +9,7 @@ final FigSpec hostnameSpec = FigSpec(
   name: 'hostname',
   description: 'Set or print name of current host system',
   options: [
+
     Option(
       name: '-f',
       description: 'Include domain information in the printed name'

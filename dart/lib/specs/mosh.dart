@@ -11,10 +11,17 @@ final FigSpec moshSpec = FigSpec(
   args: [
     Arg(
     name: 'user@hostname',
-    description: 'Address of remote machine to log into'
+    description: 'Address of remote machine to log into',
+    generators: [
+
+      Generator(
+        template: 'history'
+      )
+    ]
   )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for mosh'
@@ -33,6 +40,7 @@ final FigSpec moshSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'adaptive',
             description: 'Local echo for slower links [default]'
@@ -67,6 +75,7 @@ final FigSpec moshSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'inet',
             description: 'Use IPv4 only'
@@ -131,6 +140,7 @@ final FigSpec moshSpec = FigSpec(
         Arg(
         name: 'method',
         suggestions: [
+
           FigSuggestion(name: 'local'),
           FigSuggestion(name: 'remote'),
           FigSuggestion(name: 'proxy')

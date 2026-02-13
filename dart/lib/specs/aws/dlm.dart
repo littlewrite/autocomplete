@@ -9,10 +9,12 @@ final FigSpec dlmSpec = FigSpec(
   name: 'dlm',
   description: 'Amazon Data Lifecycle Manager With Amazon Data Lifecycle Manager, you can manage the lifecycle of your Amazon Web Services resources. You create lifecycle policies, which are used to automate operations on the specified resources. Amazon Data Lifecycle Manager supports Amazon EBS volumes and snapshots. For information about using Amazon Data Lifecycle Manager with Amazon EBS, see  Amazon Data Lifecycle Manager in the Amazon EC2 User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-lifecycle-policy',
       description: 'Creates an Amazon Data Lifecycle Manager lifecycle policy. Amazon Data Lifecycle Manager supports the following policy types:   Custom EBS snapshot policy   Custom EBS-backed AMI policy   Cross-account copy event policy   Default policy for EBS snapshots   Default policy for EBS-backed AMIs   For more information, see  Default policies vs custom policies.  If you create a default policy, you can specify the request parameters either in the request body, or in the PolicyDetails request structure, but not both',
       options: [
+
         Option(
           name: '--execution-role-arn',
           description: 'The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy',
@@ -135,6 +137,7 @@ final FigSpec dlmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -147,6 +150,7 @@ final FigSpec dlmSpec = FigSpec(
       name: 'delete-lifecycle-policy',
       description: 'Deletes the specified lifecycle policy and halts the automated operations that the policy specified. For more information about deleting a policy, see Delete lifecycle policies',
       options: [
+
         Option(
           name: '--policy-id',
           description: 'The identifier of the lifecycle policy',
@@ -172,6 +176,7 @@ final FigSpec dlmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -184,6 +189,7 @@ final FigSpec dlmSpec = FigSpec(
       name: 'get-lifecycle-policies',
       description: 'Gets summary information about all or the specified data lifecycle policies. To get complete information about a policy, use GetLifecyclePolicy',
       options: [
+
         Option(
           name: '--policy-ids',
           description: 'The identifiers of the data lifecycle policies',
@@ -254,6 +260,7 @@ final FigSpec dlmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -266,6 +273,7 @@ final FigSpec dlmSpec = FigSpec(
       name: 'get-lifecycle-policy',
       description: 'Gets detailed information about the specified lifecycle policy',
       options: [
+
         Option(
           name: '--policy-id',
           description: 'The identifier of the lifecycle policy',
@@ -291,6 +299,7 @@ final FigSpec dlmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -303,6 +312,7 @@ final FigSpec dlmSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -328,6 +338,7 @@ final FigSpec dlmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -340,6 +351,7 @@ final FigSpec dlmSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -374,6 +386,7 @@ final FigSpec dlmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -386,6 +399,7 @@ final FigSpec dlmSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -420,6 +434,7 @@ final FigSpec dlmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -432,6 +447,7 @@ final FigSpec dlmSpec = FigSpec(
       name: 'update-lifecycle-policy',
       description: 'Updates the specified lifecycle policy. For more information about updating a policy, see Modify lifecycle policies',
       options: [
+
         Option(
           name: '--policy-id',
           description: 'The identifier of the lifecycle policy',
@@ -545,6 +561,7 @@ final FigSpec dlmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -557,6 +574,7 @@ final FigSpec dlmSpec = FigSpec(
       name: 'create-default-role',
       description: 'Creates the default IAM role  which will be used by Lifecycle service.\nIf the role does not exist, create-default-role will automatically create it and set its policy. If the role has been already created, create-default-role will not update its policy',
       options: [
+
         Option(
           name: '--iam-endpoint',
           description: 'The IAM endpoint to call for creating the roles. This is optional and should only be specified when a custom endpoint should be called for IAM operations',
@@ -573,6 +591,7 @@ final FigSpec dlmSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'snapshot'),
               FigSuggestion(name: 'image')
             ]

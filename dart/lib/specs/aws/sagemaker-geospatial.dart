@@ -9,10 +9,12 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
   name: 'sagemaker-geospatial',
   description: 'Provides APIs for creating and managing SageMaker geospatial resources',
   subcommands: [
+
     Subcommand(
       name: 'delete-earth-observation-job',
       description: 'Use this operation to delete an Earth Observation job',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Earth Observation job being deleted',
@@ -38,6 +40,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'delete-vector-enrichment-job',
       description: 'Use this operation to delete a Vector Enrichment job',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Vector Enrichment job being deleted',
@@ -75,6 +79,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'export-earth-observation-job',
       description: 'Use this operation to export results of an Earth Observation job and optionally source images used as input to the EOJ to an Amazon S3 location',
       options: [
+
         Option(
           name: '--arn',
           description: 'The input Amazon Resource Name (ARN) of the Earth Observation job being exported',
@@ -147,6 +153,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -159,6 +166,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'export-vector-enrichment-job',
       description: 'Use this operation to copy results of a Vector Enrichment job to an Amazon S3 location',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Vector Enrichment job',
@@ -211,6 +219,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -223,6 +232,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'get-earth-observation-job',
       description: 'Get the details for a previously initiated Earth Observation job',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Earth Observation job',
@@ -248,6 +258,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -260,6 +271,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'get-raster-data-collection',
       description: 'Use this operation to get details of a specific raster data collection',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the raster data collection',
@@ -285,6 +297,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -297,6 +310,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'get-tile',
       description: 'Gets a web mercator tile for the given Earth Observation job',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the tile operation',
@@ -419,6 +433,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'get-vector-enrichment-job',
       description: 'Retrieves details of a Vector Enrichment Job for a given job Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Vector Enrichment job',
@@ -444,6 +459,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -456,6 +472,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'list-earth-observation-jobs',
       description: 'Use this operation to get a list of the Earth Observation jobs associated with the calling Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The total number of items to return',
@@ -544,6 +561,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -556,6 +574,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'list-raster-data-collections',
       description: 'Use this operation to get raster data collections',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The total number of items to return',
@@ -617,6 +636,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -629,6 +649,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags attached to the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource you want to tag',
@@ -654,6 +675,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -666,6 +688,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'list-vector-enrichment-jobs',
       description: 'Retrieves a list of vector enrichment jobs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return',
@@ -754,6 +777,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -766,6 +790,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'search-raster-data-collection',
       description: 'Allows you run image query on a specific raster data collection to get a list of the satellite imagery matching the selected filters',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the raster data collection',
@@ -809,6 +834,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -821,6 +847,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'start-earth-observation-job',
       description: 'Use this operation to create an Earth observation job',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique token that guarantees that the call to this API is idempotent',
@@ -900,6 +927,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -912,6 +940,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'start-vector-enrichment-job',
       description: 'Creates a Vector Enrichment job for the supplied job type. Currently, there are two supported job types: reverse geocoding and map matching',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique token that guarantees that the call to this API is idempotent',
@@ -991,6 +1020,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1003,6 +1033,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'stop-earth-observation-job',
       description: 'Use this operation to stop an existing earth observation job',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Earth Observation job being stopped',
@@ -1028,6 +1059,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1040,6 +1072,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'stop-vector-enrichment-job',
       description: 'Stops the Vector Enrichment job for a given job ARN',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the Vector Enrichment job',
@@ -1065,6 +1098,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1077,6 +1111,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'tag-resource',
       description: 'The resource you want to tag',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource you want to tag',
@@ -1111,6 +1146,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1123,6 +1159,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
       name: 'untag-resource',
       description: 'The resource you want to untag',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource you want to untag',
@@ -1157,6 +1194,7 @@ final FigSpec sagemakerGeospatialSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

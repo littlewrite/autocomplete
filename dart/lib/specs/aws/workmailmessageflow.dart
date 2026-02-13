@@ -9,10 +9,12 @@ final FigSpec workmailmessageflowSpec = FigSpec(
   name: 'workmailmessageflow',
   description: 'The WorkMail Message Flow API provides access to email messages as they are being sent and received by a WorkMail organization',
   subcommands: [
+
     Subcommand(
       name: 'get-raw-message-content',
       description: 'Retrieves the raw content of an in-transit email message, in MIME format',
       options: [
+
         Option(
           name: '--message-id',
           description: 'The identifier of the email message to retrieve',
@@ -37,6 +39,7 @@ final FigSpec workmailmessageflowSpec = FigSpec(
       name: 'put-raw-message-content',
       description: 'Updates the raw content of an in-transit email message, in MIME format. This example describes how to update in-transit email message. For more information and examples for using this API, see  Updating message content with AWS Lambda.  Updates to an in-transit message only appear when you call PutRawMessageContent from an AWS Lambda function configured with a synchronous  Run Lambda rule. If you call PutRawMessageContent on a delivered or sent message, the message remains unchanged, even though GetRawMessageContent returns an updated message',
       options: [
+
         Option(
           name: '--message-id',
           description: 'The identifier of the email message being updated',
@@ -71,6 +74,7 @@ final FigSpec workmailmessageflowSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec iotanalyticsSpec = FigSpec(
   name: 'iotanalytics',
   description: 'IoT Analytics allows you to collect large amounts of device data, process messages, and store them. You can then query the data and run sophisticated analytics on it. IoT Analytics enables advanced data exploration through integration with Jupyter Notebooks and data visualization through integration with Amazon QuickSight. Traditional analytics and business intelligence tools are designed to process structured data. IoT data often comes from devices that record noisy processes (such as temperature, motion, or sound). As a result the data from these devices can have significant gaps, corrupted messages, and false readings that must be cleaned up before analysis can occur. Also, IoT data is often only meaningful in the context of other data from external sources.  IoT Analytics automates the steps required to analyze data from IoT devices. IoT Analytics filters, transforms, and enriches IoT data before storing it in a time-series data store for analysis. You can set up the service to collect only the data you need from your devices, apply mathematical transforms to process the data, and enrich the data with device-specific metadata such as device type and location before storing it. Then, you can analyze your data by running queries using the built-in SQL query engine, or perform more complex analytics and machine learning inference. IoT Analytics includes pre-built models for common IoT use cases so you can answer questions like which devices are about to fail or which customers are at risk of abandoning their wearable devices',
   subcommands: [
+
     Subcommand(
       name: 'batch-put-message',
       description: 'Sends messages to a channel',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel where the messages are sent',
@@ -47,6 +49,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'cancel-pipeline-reprocessing',
       description: 'Cancels the reprocessing of data through the pipeline',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of pipeline for which data reprocessing is canceled',
@@ -93,6 +97,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'create-channel',
       description: 'Used to create a channel. A channel collects data from an MQTT topic and archives the raw, unprocessed messages before publishing the data to a pipeline',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel',
@@ -157,6 +163,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'create-dataset',
       description: 'Used to create a dataset. A dataset stores data retrieved from a data store by applying a queryAction (a SQL query) or a containerAction (executing a containerized application). This operation creates the skeleton of a dataset. The dataset can be populated manually by calling CreateDatasetContent or automatically according to a trigger you specify',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset',
@@ -257,6 +265,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -269,6 +278,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'create-dataset-content',
       description: 'Creates the content of a dataset by applying a queryAction (a SQL query) or a containerAction (executing a containerized application)',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset',
@@ -303,6 +313,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -315,6 +326,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'create-datastore',
       description: 'Creates a data store, which is a repository for messages',
       options: [
+
         Option(
           name: '--datastore-name',
           description: 'The name of the data store',
@@ -385,6 +397,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -397,6 +410,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'create-pipeline',
       description: 'Creates a pipeline. A pipeline consumes messages from a channel and allows you to process the messages before storing them in a data store. You must specify both a channel and a datastore activity and, optionally, as many as 23 additional activities in the pipelineActivities array',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline',
@@ -440,6 +454,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -452,6 +467,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'delete-channel',
       description: 'Deletes the specified channel',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel to delete',
@@ -477,6 +493,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -489,6 +506,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'delete-dataset',
       description: 'Deletes the specified dataset. You do not have to delete the content of the dataset before you perform this operation',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset to delete',
@@ -514,6 +532,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -526,6 +545,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'delete-dataset-content',
       description: 'Deletes the content of the specified dataset',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset whose content is deleted',
@@ -560,6 +580,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -572,6 +593,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'delete-datastore',
       description: 'Deletes the specified data store',
       options: [
+
         Option(
           name: '--datastore-name',
           description: 'The name of the data store to delete',
@@ -597,6 +619,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -609,6 +632,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'delete-pipeline',
       description: 'Deletes the specified pipeline',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline to delete',
@@ -634,6 +658,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -646,6 +671,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'describe-channel',
       description: 'Retrieves information about a channel',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel whose information is retrieved',
@@ -679,6 +705,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -691,6 +718,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'describe-dataset',
       description: 'Retrieves information about a dataset',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset whose information is retrieved',
@@ -716,6 +744,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -728,6 +757,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'describe-datastore',
       description: 'Retrieves information about a data store',
       options: [
+
         Option(
           name: '--datastore-name',
           description: 'The name of the data store',
@@ -761,6 +791,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -773,6 +804,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'describe-logging-options',
       description: 'Retrieves the current settings of the IoT Analytics logging options',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -789,6 +821,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -801,6 +834,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'describe-pipeline',
       description: 'Retrieves information about a pipeline',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline whose information is retrieved',
@@ -826,6 +860,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -838,6 +873,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'get-dataset-content',
       description: 'Retrieves the contents of a dataset as presigned URIs',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset whose contents are retrieved',
@@ -872,6 +908,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -884,6 +921,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'list-channels',
       description: 'Retrieves a list of channels',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -945,6 +983,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -957,6 +996,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'list-dataset-contents',
       description: 'Lists information about dataset contents that have been created',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset whose contents information you want to list',
@@ -1045,6 +1085,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1057,6 +1098,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'list-datasets',
       description: 'Retrieves information about datasets',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -1118,6 +1160,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1130,6 +1173,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'list-datastores',
       description: 'Retrieves a list of data stores',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -1191,6 +1235,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1203,6 +1248,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'list-pipelines',
       description: 'Retrieves a list of pipelines',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results',
@@ -1264,6 +1310,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1276,6 +1323,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags (metadata) that you have assigned to the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource whose tags you want to list',
@@ -1301,6 +1349,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1313,6 +1362,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'put-logging-options',
       description: 'Sets or updates the IoT Analytics logging options. If you update the value of any loggingOptions field, it takes up to one minute for the change to take effect. Also, if you change the policy attached to the role you specified in the roleArn field (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect',
       options: [
+
         Option(
           name: '--logging-options',
           description: 'The new values of the IoT Analytics logging options',
@@ -1338,6 +1388,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1350,6 +1401,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'run-pipeline-activity',
       description: 'Simulates the results of running a pipeline activity on a message payload',
       options: [
+
         Option(
           name: '--pipeline-activity',
           description: 'The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used',
@@ -1384,6 +1436,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1396,6 +1449,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'sample-channel-data',
       description: 'Retrieves a sample of messages from the specified channel ingested during the specified timeframe. Up to 10 messages can be retrieved',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel whose message samples are retrieved',
@@ -1448,6 +1502,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1460,6 +1515,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'start-pipeline-reprocessing',
       description: 'Starts the reprocessing of raw message data through the pipeline',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline on which to start reprocessing',
@@ -1512,6 +1568,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1524,6 +1581,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource whose tags you want to modify',
@@ -1558,6 +1616,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1570,6 +1629,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the given tags (metadata) from the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource whose tags you want to remove',
@@ -1604,6 +1664,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1616,6 +1677,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'update-channel',
       description: 'Used to update the settings of a channel',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel to be updated',
@@ -1659,6 +1721,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1671,6 +1734,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'update-dataset',
       description: 'Updates the settings of a dataset',
       options: [
+
         Option(
           name: '--dataset-name',
           description: 'The name of the dataset to update',
@@ -1750,6 +1814,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1762,6 +1827,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'update-datastore',
       description: 'Used to update the settings of a data store',
       options: [
+
         Option(
           name: '--datastore-name',
           description: 'The name of the data store to be updated',
@@ -1814,6 +1880,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1826,6 +1893,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
       name: 'update-pipeline',
       description: 'Updates the settings of a pipeline. You must specify both a channel and a datastore activity and, optionally, as many as 23 additional activities in the pipelineActivities array',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline to update',
@@ -1860,6 +1928,7 @@ final FigSpec iotanalyticsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

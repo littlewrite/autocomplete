@@ -9,10 +9,12 @@ final FigSpec docdbSpec = FigSpec(
   name: 'docdb',
   description: 'Amazon DocumentDB is a fast, reliable, and fully managed database service. Amazon DocumentDB makes it easy to set up, operate, and scale MongoDB-compatible databases in the cloud. With Amazon DocumentDB, you can run the same application code and use the same drivers and tools that you use with MongoDB',
   subcommands: [
+
     Subcommand(
       name: 'add-source-identifier-to-subscription',
       description: 'Adds a source identifier to an existing event notification subscription',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the Amazon DocumentDB event notification subscription that you want to add a source identifier to',
@@ -47,6 +49,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'add-tags-to-resource',
       description: 'Adds metadata tags to an Amazon DocumentDB resource. You can use these tags with cost allocation reporting to track costs that are associated with Amazon DocumentDB resources or in a Condition statement in an Identity and Access Management (IAM) policy for Amazon DocumentDB',
       options: [
+
         Option(
           name: '--resource-name',
           description: 'The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name',
@@ -93,6 +97,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'apply-pending-maintenance-action',
       description: 'Applies a pending maintenance action to a resource (for example, to an Amazon DocumentDB instance)',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to',
@@ -148,6 +154,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'copy-db-cluster-parameter-group',
       description: 'Copies the specified cluster parameter group',
       options: [
+
         Option(
           name: '--source-db-cluster-parameter-group-identifier',
           description: 'The identifier or Amazon Resource Name (ARN) for the source cluster parameter group. Constraints:   Must specify a valid cluster parameter group.   If the source cluster parameter group is in the same Amazon Web Services Region as the copy, specify a valid parameter group identifier; for example, my-db-cluster-param-group, or a valid ARN.   If the source parameter group is in a different Amazon Web Services Region than the copy, specify a valid cluster parameter group ARN; for example, arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group',
@@ -212,6 +220,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'copy-db-cluster-snapshot',
       description: 'Copies a snapshot of a cluster. To copy a cluster snapshot from a shared manual cluster snapshot, SourceDBClusterSnapshotIdentifier must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can only copy a shared DB cluster snapshot, whether encrypted or not, in the same Amazon Web Services Region. To cancel the copy operation after it is in progress, delete the target cluster snapshot identified by TargetDBClusterSnapshotIdentifier while that cluster snapshot is in the copying status',
       options: [
+
         Option(
           name: '--source-db-cluster-snapshot-identifier',
           description: 'The identifier of the cluster snapshot to copy. This parameter is not case sensitive. Constraints:   Must specify a valid system snapshot in the available state.   If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.   If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.   Example: my-cluster-snapshot1',
@@ -302,6 +312,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -314,6 +325,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'create-db-cluster',
       description: 'Creates a new Amazon DocumentDB cluster',
       options: [
+
         Option(
           name: '--availability-zones',
           description: 'A list of Amazon EC2 Availability Zones that instances in the cluster can be created in',
@@ -526,6 +538,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -538,6 +551,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'create-db-cluster-parameter-group',
       description: 'Creates a new cluster parameter group. Parameters in a cluster parameter group apply to all of the instances in a cluster. A cluster parameter group is initially created with the default parameters for the database engine used by instances in the cluster. In Amazon DocumentDB, you cannot make modifications directly to the default.docdb3.6 cluster parameter group. If your Amazon DocumentDB cluster is using the default cluster parameter group and you want to modify a value in it, you must first  create a new parameter group or  copy an existing parameter group, modify it, and then apply the modified parameter group to your cluster. For the new cluster parameter group and associated settings to take effect, you must then reboot the instances in the cluster without failover. For more information, see  Modifying Amazon DocumentDB Cluster Parameter Groups',
       options: [
+
         Option(
           name: '--db-cluster-parameter-group-name',
           description: 'The name of the cluster parameter group. Constraints:   Must not match the name of an existing DBClusterParameterGroup.    This value is stored as a lowercase string',
@@ -590,6 +604,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -602,6 +617,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'create-db-cluster-snapshot',
       description: 'Creates a snapshot of a cluster',
       options: [
+
         Option(
           name: '--db-cluster-snapshot-identifier',
           description: 'The identifier of the cluster snapshot. This parameter is stored as a lowercase string. Constraints:   Must contain from 1 to 63 letters, numbers, or hyphens.   The first character must be a letter.   Cannot end with a hyphen or contain two consecutive hyphens.    Example: my-cluster-snapshot1',
@@ -645,6 +661,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -657,6 +674,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'create-db-instance',
       description: 'Creates a new instance',
       options: [
+
         Option(
           name: '--db-instance-identifier',
           description: 'The instance identifier. This parameter is stored as a lowercase string. Constraints:   Must contain from 1 to 63 letters, numbers, or hyphens.   The first character must be a letter.   Cannot end with a hyphen or contain two consecutive hyphens.   Example: mydbinstance',
@@ -787,6 +805,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -799,6 +818,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'create-db-subnet-group',
       description: 'Creates a new subnet group. subnet groups must contain at least one subnet in at least two Availability Zones in the Amazon Web Services Region',
       options: [
+
         Option(
           name: '--db-subnet-group-name',
           description: 'The name for the subnet group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default. Example: mySubnetgroup',
@@ -851,6 +871,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -863,6 +884,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'create-event-subscription',
       description: 'Creates an Amazon DocumentDB event notification subscription. This action requires a topic Amazon Resource Name (ARN) created by using the Amazon DocumentDB console, the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the Amazon SNS console. You can specify the type of source (SourceType) that you want to be notified of. You can also provide a list of Amazon DocumentDB sources (SourceIds) that trigger the events, and you can provide a list of event categories (EventCategories) for events that you want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and EventCategories = Availability, Backup. If you specify both the SourceType and SourceIds (such as SourceType = db-instance and SourceIdentifier = myDBInstance1), you are notified of all the db-instance events for the specified source. If you specify a SourceType but do not specify a SourceIdentifier, you receive notice of the events for that source type for all your Amazon DocumentDB sources. If you do not specify either the SourceType or the SourceIdentifier, you are notified of events generated from all Amazon DocumentDB sources belonging to your customer account',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the subscription. Constraints: The name must be fewer than 255 characters',
@@ -941,6 +963,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -953,6 +976,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'create-global-cluster',
       description: 'Creates an Amazon DocumentDB global cluster that can span multiple multiple Amazon Web Services Regions. The global cluster contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated infrastructure with no impact to your workload’s performance.  You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can specify an existing cluster during the create operation, and this cluster becomes the primary of the global cluster.   This action only applies to Amazon DocumentDB clusters',
       options: [
+
         Option(
           name: '--global-cluster-identifier',
           description: 'The cluster identifier of the new global cluster',
@@ -1030,6 +1054,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1042,6 +1067,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'delete-db-cluster',
       description: 'Deletes a previously provisioned cluster. When you delete a cluster, all automated backups for that cluster are deleted and can\'t be recovered. Manual DB cluster snapshots of the specified cluster are not deleted',
       options: [
+
         Option(
           name: '--db-cluster-identifier',
           description: 'The cluster identifier for the cluster to be deleted. This parameter isn\'t case sensitive. Constraints:   Must match an existing DBClusterIdentifier',
@@ -1084,6 +1110,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1096,6 +1123,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'delete-db-cluster-parameter-group',
       description: 'Deletes a specified cluster parameter group. The cluster parameter group to be deleted can\'t be associated with any clusters',
       options: [
+
         Option(
           name: '--db-cluster-parameter-group-name',
           description: 'The name of the cluster parameter group. Constraints:   Must be the name of an existing cluster parameter group.   You can\'t delete a default cluster parameter group.   Cannot be associated with any clusters',
@@ -1121,6 +1149,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1133,6 +1162,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'delete-db-cluster-snapshot',
       description: 'Deletes a cluster snapshot. If the snapshot is being copied, the copy operation is terminated.  The cluster snapshot must be in the available state to be deleted',
       options: [
+
         Option(
           name: '--db-cluster-snapshot-identifier',
           description: 'The identifier of the cluster snapshot to delete. Constraints: Must be the name of an existing cluster snapshot in the available state',
@@ -1158,6 +1188,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1170,6 +1201,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'delete-db-instance',
       description: 'Deletes a previously provisioned instance',
       options: [
+
         Option(
           name: '--db-instance-identifier',
           description: 'The instance identifier for the instance to be deleted. This parameter isn\'t case sensitive. Constraints:   Must match the name of an existing instance',
@@ -1195,6 +1227,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1207,6 +1240,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'delete-db-subnet-group',
       description: 'Deletes a subnet group.  The specified database subnet group must not be associated with any DB instances',
       options: [
+
         Option(
           name: '--db-subnet-group-name',
           description: 'The name of the database subnet group to delete.  You can\'t delete the default subnet group.  Constraints: Must match the name of an existing DBSubnetGroup. Must not be default. Example: mySubnetgroup',
@@ -1232,6 +1266,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1244,6 +1279,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'delete-event-subscription',
       description: 'Deletes an Amazon DocumentDB event notification subscription',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the Amazon DocumentDB event notification subscription that you want to delete',
@@ -1269,6 +1305,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1281,6 +1318,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'delete-global-cluster',
       description: 'Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before attempting to delete a global cluster.  This action only applies to Amazon DocumentDB clusters',
       options: [
+
         Option(
           name: '--global-cluster-identifier',
           description: 'The cluster identifier of the global cluster being deleted',
@@ -1306,6 +1344,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1318,6 +1357,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-certificates',
       description: 'Returns a list of certificate authority (CA) certificates provided by Amazon DocumentDB for this Amazon Web Services account',
       options: [
+
         Option(
           name: '--certificate-identifier',
           description: 'The user-supplied certificate identifier. If this parameter is specified, information for only the specified certificate is returned. If this parameter is omitted, a list of up to MaxRecords certificates is returned. This parameter is not case sensitive. Constraints   Must match an existing CertificateIdentifier',
@@ -1397,6 +1437,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1409,6 +1450,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-db-cluster-parameter-groups',
       description: 'Returns a list of DBClusterParameterGroup descriptions. If a DBClusterParameterGroupName parameter is specified, the list contains only the description of the specified cluster parameter group',
       options: [
+
         Option(
           name: '--db-cluster-parameter-group-name',
           description: 'The name of a specific cluster parameter group to return details for. Constraints:   If provided, must match the name of an existing DBClusterParameterGroup',
@@ -1488,6 +1530,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1500,6 +1543,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-db-cluster-parameters',
       description: 'Returns the detailed parameter list for a particular cluster parameter group',
       options: [
+
         Option(
           name: '--db-cluster-parameter-group-name',
           description: 'The name of a specific cluster parameter group to return parameter details for. Constraints:   If provided, must match the name of an existing DBClusterParameterGroup',
@@ -1588,6 +1632,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1600,6 +1645,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-db-cluster-snapshot-attributes',
       description: 'Returns a list of cluster snapshot attribute names and values for a manual DB cluster snapshot. When you share snapshots with other Amazon Web Services accounts, DescribeDBClusterSnapshotAttributes returns the restore attribute and a list of IDs for the Amazon Web Services accounts that are authorized to copy or restore the manual cluster snapshot. If all is included in the list of values for the restore attribute, then the manual cluster snapshot is public and can be copied or restored by all Amazon Web Services accounts',
       options: [
+
         Option(
           name: '--db-cluster-snapshot-identifier',
           description: 'The identifier for the cluster snapshot to describe the attributes for',
@@ -1625,6 +1671,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1637,6 +1684,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-db-cluster-snapshots',
       description: 'Returns information about cluster snapshots. This API operation supports pagination',
       options: [
+
         Option(
           name: '--db-cluster-identifier',
           description: 'The ID of the cluster to retrieve the list of cluster snapshots for. This parameter can\'t be used with the DBClusterSnapshotIdentifier parameter. This parameter is not case sensitive.  Constraints:   If provided, must match the identifier of an existing DBCluster',
@@ -1750,6 +1798,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1762,6 +1811,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-db-clusters',
       description: 'Returns information about provisioned Amazon DocumentDB clusters. This API operation supports pagination. For certain management features such as cluster and instance lifecycle management, Amazon DocumentDB leverages operational technology that is shared with Amazon RDS and Amazon Neptune. Use the filterName=engine,Values=docdb filter parameter to return only Amazon DocumentDB clusters',
       options: [
+
         Option(
           name: '--db-cluster-identifier',
           description: 'The user-provided cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn\'t case sensitive. Constraints:   If provided, must match an existing DBClusterIdentifier',
@@ -1841,6 +1891,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1853,6 +1904,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-db-engine-versions',
       description: 'Returns a list of the available engines',
       options: [
+
         Option(
           name: '--engine',
           description: 'The database engine to return',
@@ -1974,6 +2026,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1986,6 +2039,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-db-instances',
       description: 'Returns information about provisioned Amazon DocumentDB instances. This API supports pagination',
       options: [
+
         Option(
           name: '--db-instance-identifier',
           description: 'The user-provided instance identifier. If this parameter is specified, information from only the specific instance is returned. This parameter isn\'t case sensitive. Constraints:   If provided, must match the identifier of an existing DBInstance',
@@ -2065,6 +2119,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2077,6 +2132,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-db-subnet-groups',
       description: 'Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup',
       options: [
+
         Option(
           name: '--db-subnet-group-name',
           description: 'The name of the subnet group to return details for',
@@ -2156,6 +2212,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2168,6 +2225,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-engine-default-cluster-parameters',
       description: 'Returns the default engine and system parameter information for the cluster database engine',
       options: [
+
         Option(
           name: '--db-parameter-group-family',
           description: 'The name of the cluster parameter group family to return the engine parameter information for',
@@ -2220,6 +2278,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2232,6 +2291,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-event-categories',
       description: 'Displays a list of categories for all event source types, or, if specified, for a specified source type',
       options: [
+
         Option(
           name: '--source-type',
           description: 'The type of source that is generating the events. Valid values: db-instance, db-parameter-group, db-security-group',
@@ -2266,6 +2326,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2278,6 +2339,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-event-subscriptions',
       description: 'Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. If you specify a SubscriptionName, lists the description for that subscription',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the Amazon DocumentDB event notification subscription that you want to describe',
@@ -2357,6 +2419,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2369,6 +2432,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-events',
       description: 'Returns events related to instances, security groups, snapshots, and DB parameter groups for the past 14 days. You can obtain events specific to a particular DB instance, security group, snapshot, or parameter group by providing the name as a parameter. By default, the events of the past hour are returned',
       options: [
+
         Option(
           name: '--source-identifier',
           description: 'The identifier of the event source for which events are returned. If not specified, then all sources are included in the response. Constraints:   If SourceIdentifier is provided, SourceType must also be provided.   If the source type is DBInstance, a DBInstanceIdentifier must be provided.   If the source type is DBSecurityGroup, a DBSecurityGroupName must be provided.   If the source type is DBParameterGroup, a DBParameterGroupName must be provided.   If the source type is DBSnapshot, a DBSnapshotIdentifier must be provided.   Cannot end with a hyphen or contain two consecutive hyphens',
@@ -2493,6 +2557,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2505,6 +2570,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-global-clusters',
       description: 'Returns information about Amazon DocumentDB global clusters. This API supports pagination.  This action only applies to Amazon DocumentDB clusters',
       options: [
+
         Option(
           name: '--global-cluster-identifier',
           description: 'The user-supplied cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn\'t case-sensitive',
@@ -2584,6 +2650,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2596,6 +2663,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-orderable-db-instance-options',
       description: 'Returns a list of orderable instance options for the specified engine',
       options: [
+
         Option(
           name: '--engine',
           description: 'The name of the engine to retrieve instance options for',
@@ -2710,6 +2778,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2722,6 +2791,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'describe-pending-maintenance-actions',
       description: 'Returns a list of resources (for example, instances) that have at least one pending maintenance action',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'The ARN of a resource to return pending maintenance actions for',
@@ -2801,6 +2871,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2813,6 +2884,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'failover-db-cluster',
       description: 'Forces a failover for a cluster. A failover for a cluster promotes one of the Amazon DocumentDB replicas (read-only instances) in the cluster to be the primary instance (the cluster writer). If the primary instance fails, Amazon DocumentDB automatically fails over to an Amazon DocumentDB replica, if one exists. You can force a failover when you want to simulate a failure of a primary instance for testing',
       options: [
+
         Option(
           name: '--db-cluster-identifier',
           description: 'A cluster identifier to force a failover for. This parameter is not case sensitive. Constraints:   Must match the identifier of an existing DBCluster',
@@ -2847,6 +2919,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2859,6 +2932,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'failover-global-cluster',
       description: 'Promotes the specified secondary DB cluster to be the primary DB cluster in the global cluster when failing over a global cluster occurs. Use this operation to respond to an unplanned event, such as a regional disaster in the primary region. Failing over can result in a loss of write transaction data that wasn\'t replicated to the chosen secondary before the failover event occurred. However, the recovery process that promotes a DB instance on the chosen seconday DB cluster to be the primary writer DB instance guarantees that the data is in a transactionally consistent state',
       options: [
+
         Option(
           name: '--global-cluster-identifier',
           description: 'The identifier of the Amazon DocumentDB global cluster to apply this operation. The identifier is the unique key assigned by the user when the cluster is created. In other words, it\'s the name of the global cluster. Constraints:   Must match the identifier of an existing global cluster.   Minimum length of 1. Maximum length of 255.   Pattern: [A-Za-z][0-9A-Za-z-:._]*',
@@ -2909,6 +2983,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2921,6 +2996,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags on an Amazon DocumentDB resource',
       options: [
+
         Option(
           name: '--resource-name',
           description: 'The Amazon DocumentDB resource with tags to be listed. This value is an Amazon Resource Name (ARN)',
@@ -2955,6 +3031,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2967,6 +3044,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'modify-db-cluster',
       description: 'Modifies a setting for an Amazon DocumentDB cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request',
       options: [
+
         Option(
           name: '--db-cluster-identifier',
           description: 'The cluster identifier for the cluster that is being modified. This parameter is not case sensitive. Constraints:   Must match the identifier of an existing DBCluster',
@@ -3115,6 +3193,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3127,6 +3206,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'modify-db-cluster-parameter-group',
       description: 'Modifies the parameters of a cluster parameter group. To modify more than one parameter, submit a list of the following: ParameterName, ParameterValue, and ApplyMethod. A maximum of 20 parameters can be modified in a single request.   Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot or maintenance window before the change can take effect.   After you create a cluster parameter group, you should wait at least 5 minutes before creating your first cluster that uses that cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully complete the create action before the parameter group is used as the default for a new cluster. This step is especially important for parameters that are critical when creating the default database for a cluster, such as the character set for the default database defined by the character_set_database parameter',
       options: [
+
         Option(
           name: '--db-cluster-parameter-group-name',
           description: 'The name of the cluster parameter group to modify',
@@ -3161,6 +3241,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3173,6 +3254,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'modify-db-cluster-snapshot-attribute',
       description: 'Adds an attribute and values to, or removes an attribute and values from, a manual cluster snapshot. To share a manual cluster snapshot with other Amazon Web Services accounts, specify restore as the AttributeName, and use the ValuesToAdd parameter to add a list of IDs of the Amazon Web Services accounts that are authorized to restore the manual cluster snapshot. Use the value all to make the manual cluster snapshot public, which means that it can be copied or restored by all Amazon Web Services accounts. Do not add the all value for any manual cluster snapshots that contain private information that you don\'t want available to all Amazon Web Services accounts. If a manual cluster snapshot is encrypted, it can be shared, but only by specifying a list of authorized Amazon Web Services account IDs for the ValuesToAdd parameter. You can\'t use all as a value for that parameter in this case',
       options: [
+
         Option(
           name: '--db-cluster-snapshot-identifier',
           description: 'The identifier for the cluster snapshot to modify the attributes for',
@@ -3225,6 +3307,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3237,6 +3320,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'modify-db-instance',
       description: 'Modifies settings for an instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request',
       options: [
+
         Option(
           name: '--db-instance-identifier',
           description: 'The instance identifier. This value is stored as a lowercase string. Constraints:   Must match the identifier of an existing DBInstance',
@@ -3356,6 +3440,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3368,6 +3453,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'modify-db-subnet-group',
       description: 'Modifies an existing subnet group. subnet groups must contain at least one subnet in at least two Availability Zones in the Amazon Web Services Region',
       options: [
+
         Option(
           name: '--db-subnet-group-name',
           description: 'The name for the subnet group. This value is stored as a lowercase string. You can\'t modify the default subnet group.  Constraints: Must match the name of an existing DBSubnetGroup. Must not be default. Example: mySubnetgroup',
@@ -3411,6 +3497,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3423,6 +3510,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'modify-event-subscription',
       description: 'Modifies an existing Amazon DocumentDB event notification subscription',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the Amazon DocumentDB event notification subscription',
@@ -3483,6 +3571,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3495,6 +3584,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'modify-global-cluster',
       description: 'Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new values in the request.  This action only applies to Amazon DocumentDB clusters',
       options: [
+
         Option(
           name: '--global-cluster-identifier',
           description: 'The identifier for the global cluster being modified. This parameter isn\'t case-sensitive. Constraints:   Must match the identifier of an existing global cluster',
@@ -3537,6 +3627,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3549,6 +3640,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'reboot-db-instance',
       description: 'You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the instance for the changes to take effect.  Rebooting an instance restarts the database engine service. Rebooting an instance results in a momentary outage, during which the instance status is set to rebooting',
       options: [
+
         Option(
           name: '--db-instance-identifier',
           description: 'The instance identifier. This parameter is stored as a lowercase string. Constraints:   Must match the identifier of an existing DBInstance',
@@ -3582,6 +3674,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3594,6 +3687,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'remove-from-global-cluster',
       description: 'Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster with read-write capability instead of being read-only and receiving data from a primary in a different region.   This action only applies to Amazon DocumentDB clusters',
       options: [
+
         Option(
           name: '--global-cluster-identifier',
           description: 'The cluster identifier to detach from the Amazon DocumentDB global cluster',
@@ -3628,6 +3722,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3640,6 +3735,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'remove-source-identifier-from-subscription',
       description: 'Removes a source identifier from an existing Amazon DocumentDB event notification subscription',
       options: [
+
         Option(
           name: '--subscription-name',
           description: 'The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from',
@@ -3674,6 +3770,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3686,6 +3783,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'remove-tags-from-resource',
       description: 'Removes metadata tags from an Amazon DocumentDB resource',
       options: [
+
         Option(
           name: '--resource-name',
           description: 'The Amazon DocumentDB resource that the tags are removed from. This value is an Amazon Resource Name (ARN)',
@@ -3720,6 +3818,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3732,6 +3831,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'reset-db-cluster-parameter-group',
       description: 'Modifies the parameters of a cluster parameter group to the default value. To reset specific parameters, submit a list of the following: ParameterName and ApplyMethod. To reset the entire cluster parameter group, specify the DBClusterParameterGroupName and ResetAllParameters parameters.   When you reset the entire group, dynamic parameters are updated immediately and static parameters are set to pending-reboot to take effect on the next DB instance reboot',
       options: [
+
         Option(
           name: '--db-cluster-parameter-group-name',
           description: 'The name of the cluster parameter group to reset',
@@ -3774,6 +3874,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3786,6 +3887,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'restore-db-cluster-from-snapshot',
       description: 'Creates a new cluster from a snapshot or cluster snapshot. If a snapshot is specified, the target cluster is created from the source DB snapshot with a default configuration and default security group. If a cluster snapshot is specified, the target cluster is created from the source cluster restore point with the same configuration as the original source DB cluster, except that the new cluster is created with the default security group',
       options: [
+
         Option(
           name: '--availability-zones',
           description: 'Provides the list of Amazon EC2 Availability Zones that instances in the restored DB cluster can be created in',
@@ -3927,6 +4029,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3939,6 +4042,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'restore-db-cluster-to-point-in-time',
       description: 'Restores a cluster to an arbitrary point in time. Users can restore to any point in time before LatestRestorableTime for up to BackupRetentionPeriod days. The target cluster is created from the source cluster with the same configuration as the original cluster, except that the new cluster is created with the default security group',
       options: [
+
         Option(
           name: '--db-cluster-identifier',
           description: 'The name of the new cluster to be created. Constraints:   Must contain from 1 to 63 letters, numbers, or hyphens.   The first character must be a letter.   Cannot end with a hyphen or contain two consecutive hyphens',
@@ -4070,6 +4174,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4082,6 +4187,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'start-db-cluster',
       description: 'Restarts the stopped cluster that is specified by DBClusterIdentifier. For more information, see Stopping and Starting an Amazon DocumentDB Cluster',
       options: [
+
         Option(
           name: '--db-cluster-identifier',
           description: 'The identifier of the cluster to restart. Example: docdb-2019-05-28-15-24-52',
@@ -4107,6 +4213,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4119,6 +4226,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'stop-db-cluster',
       description: 'Stops the running cluster that is specified by DBClusterIdentifier. The cluster must be in the available state. For more information, see Stopping and Starting an Amazon DocumentDB Cluster',
       options: [
+
         Option(
           name: '--db-cluster-identifier',
           description: 'The identifier of the cluster to stop. Example: docdb-2019-05-28-15-24-52',
@@ -4144,6 +4252,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4156,6 +4265,7 @@ final FigSpec docdbSpec = FigSpec(
       name: 'switchover-global-cluster',
       description: 'Switches over the specified secondary Amazon DocumentDB cluster to be the new primary Amazon DocumentDB cluster in the global database cluster',
       options: [
+
         Option(
           name: '--global-cluster-identifier',
           description: 'The identifier of the Amazon DocumentDB global database cluster to switch over. The identifier is the unique key assigned by the user when the cluster is created. In other words, it\'s the name of the global cluster. This parameter isn’t case-sensitive. Constraints:   Must match the identifier of an existing global cluster (Amazon DocumentDB global database).   Minimum length of 1. Maximum length of 255.   Pattern: [A-Za-z][0-9A-Za-z-:._]*',
@@ -4190,6 +4300,7 @@ final FigSpec docdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4202,10 +4313,12 @@ final FigSpec docdbSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'db-instance-available',
           description: 'Wait until JMESPath query DBInstances[].DBInstanceStatus returns available for all elements when polling with ``describe-db-instances``. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--db-instance-identifier',
               description: 'The user-provided instance identifier. If this parameter is specified, information from only the specific instance is returned. This parameter isn\'t case sensitive. Constraints:   If provided, must match the identifier of an existing DBInstance',
@@ -4285,6 +4398,7 @@ final FigSpec docdbSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -4297,6 +4411,7 @@ final FigSpec docdbSpec = FigSpec(
           name: 'db-instance-deleted',
           description: 'Wait until JMESPath query DBInstances[].DBInstanceStatus returns deleted for all elements when polling with ``describe-db-instances``. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--db-instance-identifier',
               description: 'The user-provided instance identifier. If this parameter is specified, information from only the specific instance is returned. This parameter isn\'t case sensitive. Constraints:   If provided, must match the identifier of an existing DBInstance',
@@ -4376,6 +4491,7 @@ final FigSpec docdbSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

@@ -9,6 +9,7 @@ final FigSpec unameSpec = FigSpec(
   name: 'uname',
   description: 'Print operating system name',
   options: [
+
     Option(
       name: '-a',
       description: 'Print all available system information'

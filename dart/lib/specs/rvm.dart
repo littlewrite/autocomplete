@@ -9,6 +9,7 @@ final FigSpec rvmSpec = FigSpec(
   name: 'rvm',
   description: 'Ruby version manager',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for rvm',
@@ -16,6 +17,7 @@ final FigSpec rvmSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'use',
       description: 'Setup current shell to use a specific ruby version'

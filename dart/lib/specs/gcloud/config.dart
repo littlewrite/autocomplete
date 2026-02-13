@@ -9,10 +9,12 @@ final FigSpec configSpec = FigSpec(
   name: 'config',
   description: 'View and edit Cloud SDK properties',
   subcommands: [
+
     Subcommand(
       name: 'config-helper',
       description: 'A helper for providing auth and config data to external tools',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -151,6 +153,7 @@ final FigSpec configSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -167,10 +170,12 @@ final FigSpec configSpec = FigSpec(
       name: 'configurations',
       description: 'Manage the set of gcloud named configurations',
       subcommands: [
+
         Subcommand(
           name: 'activate',
           description: 'Activates an existing named configuration',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -294,6 +299,7 @@ final FigSpec configSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -316,6 +322,7 @@ final FigSpec configSpec = FigSpec(
           name: 'create',
           description: 'Creates a new named configuration',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -443,6 +450,7 @@ final FigSpec configSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -465,6 +473,7 @@ final FigSpec configSpec = FigSpec(
           name: 'delete',
           description: 'Deletes a named configuration',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -588,6 +597,7 @@ final FigSpec configSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -611,6 +621,7 @@ final FigSpec configSpec = FigSpec(
           name: 'describe',
           description: 'Describes a named configuration by listing its properties',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -738,6 +749,7 @@ final FigSpec configSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -760,6 +772,7 @@ final FigSpec configSpec = FigSpec(
           name: 'list',
           description: 'Lists existing named configurations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -916,6 +929,7 @@ final FigSpec configSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -930,6 +944,7 @@ final FigSpec configSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1053,6 +1068,7 @@ final FigSpec configSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1069,6 +1085,7 @@ final FigSpec configSpec = FigSpec(
       name: 'get-value',
       description: 'Print the value of a Cloud SDK property',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1192,6 +1209,7 @@ final FigSpec configSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1214,6 +1232,7 @@ final FigSpec configSpec = FigSpec(
       name: 'list',
       description: 'List Cloud SDK properties for the currently active configuration',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1374,6 +1393,7 @@ final FigSpec configSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1396,6 +1416,7 @@ final FigSpec configSpec = FigSpec(
       name: 'set',
       description: 'Set a Cloud SDK property',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1523,6 +1544,7 @@ final FigSpec configSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1535,6 +1557,7 @@ final FigSpec configSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'SECTION/PROPERTY',
           description: 'Property to be set. Note that SECTION/ is optional while referring to properties in the core section, i.e., using either `core/project` or `project` is a valid way of setting a project. Using section names is required for setting other properties like `compute/region`. Consult the Available Properties section below for a comprehensive list of properties'
@@ -1549,6 +1572,7 @@ final FigSpec configSpec = FigSpec(
       name: 'unset',
       description: 'Unset a Cloud SDK property',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1676,6 +1700,7 @@ final FigSpec configSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1696,6 +1721,7 @@ final FigSpec configSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1819,6 +1845,7 @@ final FigSpec configSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

@@ -4,20 +4,28 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> globalOptions = [];
+
 /// Completion spec for `poetry` CLI
 final FigSpec poetrySpec = FigSpec(
   name: 'poetry',
   description: 'Poetry is a tool for dependency management and packaging in Python',
   subcommands: [
+
     Subcommand(
       name: 'about',
       description: 'Shows information about poetry',
-      options: []
+      options: [
+
+        ...globalOptions
+      ]
     ),
     Subcommand(
       name: 'add',
       description: 'Adds a new dependency to pyproject.toml',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--group',
           description: 'The group to add the dependency to'
@@ -74,6 +82,8 @@ final FigSpec poetrySpec = FigSpec(
       name: 'build',
       description: 'Builds a package, as a tarball and a wheel by default',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--format',
           description: 'Limit the format to either sdist or wheel'
@@ -84,10 +94,13 @@ final FigSpec poetrySpec = FigSpec(
       name: 'cache',
       description: 'The cache command regroups sub commands to interact with poetry\'s cache',
       subcommands: [
+
         Subcommand(
           name: 'clear',
           description: 'Clears a poetry cache by name',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--all',
               description: 'Clear all entries in the cache'
@@ -103,19 +116,27 @@ final FigSpec poetrySpec = FigSpec(
         Subcommand(
           name: 'list',
           description: 'List poetry\'s caches',
-          options: []
+          options: [
+
+            ...globalOptions
+          ]
         )
       ]
     ),
     Subcommand(
       name: 'check',
       description: 'Checks the validity of the pyproject.toml file',
-      options: []
+      options: [
+
+        ...globalOptions
+      ]
     ),
     Subcommand(
       name: 'config',
       description: 'Manages configuration settings',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--list',
           description: 'List configuration settings'
@@ -130,6 +151,7 @@ final FigSpec poetrySpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'key',
           description: 'Setting key'
@@ -144,15 +166,21 @@ final FigSpec poetrySpec = FigSpec(
       name: 'debug',
       description: 'The debug command regroups sub commands to interact with debug session',
       subcommands: [
+
         Subcommand(
           name: 'info',
           description: 'Shows debug information',
-          options: []
+          options: [
+
+            ...globalOptions
+          ]
         ),
         Subcommand(
           name: 'resolve',
           description: 'Debugs dependency resolution',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--extras',
               description: 'Extras to activate for the dependency'
@@ -183,10 +211,13 @@ final FigSpec poetrySpec = FigSpec(
       name: 'env',
       description: 'The env command regroups sub commands to interact with the virtualenvs associated with a specific project',
       subcommands: [
+
         Subcommand(
           name: 'info',
           description: 'Displays information about the current environment',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--path',
               description: 'Only display the environment\'s path'
@@ -201,6 +232,8 @@ final FigSpec poetrySpec = FigSpec(
           name: 'list',
           description: 'Lists all virtualenvs associated with the current project',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--full-path',
               description: 'Output the full paths of the virtualenvs'
@@ -211,6 +244,8 @@ final FigSpec poetrySpec = FigSpec(
           name: 'remove',
           description: 'Remove virtual environments associated with the project',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--all',
               description: 'Remove all managed virtual environments associated with the project'
@@ -226,7 +261,10 @@ final FigSpec poetrySpec = FigSpec(
         Subcommand(
           name: 'use',
           description: 'Activates or creates a new virtualenv for the current project',
-          options: [],
+          options: [
+
+            ...globalOptions
+          ],
           args: [
             Arg(
             name: 'python',
@@ -240,6 +278,8 @@ final FigSpec poetrySpec = FigSpec(
       name: 'init',
       description: 'Creates a basic pyproject.toml file in the current directory',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--name',
           description: 'Name of the package'
@@ -274,6 +314,8 @@ final FigSpec poetrySpec = FigSpec(
       name: 'install',
       description: 'Installs the project dependencies',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--without',
           description: 'The dependency groups to ignore'
@@ -332,6 +374,8 @@ final FigSpec poetrySpec = FigSpec(
       name: 'lock',
       description: 'Locks the project dependencies',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--no-update',
           description: 'Do not update locked versions, only refresh lock file'
@@ -346,6 +390,8 @@ final FigSpec poetrySpec = FigSpec(
       name: 'new',
       description: 'Creates a new Python project at <path>',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--name',
           description: 'Set the resulting package name'
@@ -370,6 +416,8 @@ final FigSpec poetrySpec = FigSpec(
       name: 'publish',
       description: 'Publishes a package to a remote repository',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--repository',
           description: 'The repository to publish the package to'
@@ -408,6 +456,8 @@ final FigSpec poetrySpec = FigSpec(
       name: 'remove',
       description: 'Removes a package from the project dependencies',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--group',
           description: 'The group to remove the dependency from'
@@ -435,7 +485,10 @@ final FigSpec poetrySpec = FigSpec(
     Subcommand(
       name: 'run',
       description: 'Runs a command in the appropriate environment',
-      options: [],
+      options: [
+
+        ...globalOptions
+      ],
       args: [
         Arg(
         name: 'args',
@@ -446,7 +499,10 @@ final FigSpec poetrySpec = FigSpec(
     Subcommand(
       name: 'search',
       description: 'Searches for packages on remote repositories',
-      options: [],
+      options: [
+
+        ...globalOptions
+      ],
       args: [
         Arg(
         name: 'tokens',
@@ -458,10 +514,13 @@ final FigSpec poetrySpec = FigSpec(
       name: 'self',
       description: 'The self namespace regroups sub commands to manage the poetry installation itself',
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Add additional packages to poetry\'s runtime environment',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--editable',
               description: 'Add vcs/path dependencies as editable'
@@ -494,6 +553,8 @@ final FigSpec poetrySpec = FigSpec(
           name: 'install',
           description: 'Install locked packages (incl. addons) required by this poetry installation',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--sync',
               description: 'Synchronize the environment with the locked packages and the specified groups'
@@ -508,6 +569,8 @@ final FigSpec poetrySpec = FigSpec(
           name: 'lock',
           description: 'Lock the poetry installation\'s system requirements',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--no-update',
               description: 'Do not update locked versions, only refresh lock file'
@@ -522,6 +585,8 @@ final FigSpec poetrySpec = FigSpec(
           name: 'remove',
           description: 'Remove additional packages from poetry\'s runtime environment',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--dry-run',
               description: 'Output the operations but do not execute anything (implicitly enables --verbose)'
@@ -538,6 +603,8 @@ final FigSpec poetrySpec = FigSpec(
           name: 'show',
           description: 'Show packages from poetry\'s runtime environment',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--addons',
               description: 'List only add-on packages installed'
@@ -566,6 +633,8 @@ final FigSpec poetrySpec = FigSpec(
           name: 'update',
           description: 'Updates poetry to the latest version',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--preview',
               description: 'Allow the installation of pre-release versions'
@@ -587,12 +656,17 @@ final FigSpec poetrySpec = FigSpec(
     Subcommand(
       name: 'shell',
       description: 'Spawns a shell within the virtual environment',
-      options: []
+      options: [
+
+        ...globalOptions
+      ]
     ),
     Subcommand(
       name: 'show',
       description: 'Shows information about packages',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--without',
           description: 'The dependency groups to ignore'
@@ -645,10 +719,13 @@ final FigSpec poetrySpec = FigSpec(
       name: 'source',
       description: 'The source namespace regroups sub commands to manage repository sources for a poetry project',
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Add source configuration for project',
           options: [
+
+            ...globalOptions,
             Option(
               name: '--default',
               description: 'Set this source as the default (disable PyPI). A default source will also be the fallback source if you add other sources. (Deprecated, use --priority)'
@@ -663,6 +740,7 @@ final FigSpec poetrySpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'name',
               description: 'Source repository name'
@@ -676,7 +754,10 @@ final FigSpec poetrySpec = FigSpec(
         Subcommand(
           name: 'remove',
           description: 'Remove source configured for the project',
-          options: [],
+          options: [
+
+            ...globalOptions
+          ],
           args: [
             Arg(
             name: 'name',
@@ -687,7 +768,10 @@ final FigSpec poetrySpec = FigSpec(
         Subcommand(
           name: 'show',
           description: 'Show information about sources configured for the project',
-          options: [],
+          options: [
+
+            ...globalOptions
+          ],
           args: [
             Arg(
             name: 'source',
@@ -701,6 +785,8 @@ final FigSpec poetrySpec = FigSpec(
       name: 'update',
       description: 'Update the dependencies as according to the pyproject.toml file',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--without',
           description: 'The dependency groups to ignore'
@@ -737,6 +823,8 @@ final FigSpec poetrySpec = FigSpec(
       name: 'version',
       description: 'Shows the version of the project or bumps it when a valid bump rule is provided',
       options: [
+
+        ...globalOptions,
         Option(
           name: '--short',
           description: 'Output the version number only'
@@ -754,5 +842,8 @@ final FigSpec poetrySpec = FigSpec(
       ]
     )
   ],
-  options: []
+  options: [
+
+    ...globalOptions
+  ]
 );

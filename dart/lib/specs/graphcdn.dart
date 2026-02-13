@@ -9,10 +9,12 @@ final FigSpec graphcdnSpec = FigSpec(
   name: 'graphcdn',
   description: 'GraphCDN CLI',
   subcommands: [
+
     Subcommand(
       name: 'login',
       description: 'Authenticate the CLI',
       options: [
+
         Option(
           name: '--token',
           args: [
@@ -27,6 +29,7 @@ final FigSpec graphcdnSpec = FigSpec(
       name: 'init',
       description: 'Create a new GraphCDN service',
       options: [
+
         Option(
           name: ['-y', '--yes'],
           description: 'Skip all the questions and just init'
@@ -37,6 +40,7 @@ final FigSpec graphcdnSpec = FigSpec(
       name: 'pull',
       description: 'Pull the latest service configuration',
       options: [
+
         Option(
           name: '--service',
           description: 'Name of the service to pull from (only required without graphcdn.yml)',
@@ -61,6 +65,7 @@ final FigSpec graphcdnSpec = FigSpec(
       name: 'push',
       description: 'Push and deploy the latest app configuration',
       options: [
+
         Option(
           name: '--env',
           args: [
@@ -75,6 +80,7 @@ final FigSpec graphcdnSpec = FigSpec(
         name: 'field',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'schema'),
           FigSuggestion(name: 'rules')
         ]

@@ -9,6 +9,7 @@ final FigSpec splitSpec = FigSpec(
   name: 'split',
   description: 'The split utility reads the given file and breaks it up into files of 1000 lines each (if no options are specified), leaving the file unchanged. If file is a single dash (\'-\') or absent, split reads from the standard input',
   options: [
+
     Option(
       name: '-a',
       description: 'Use suffix_length letters to form the suffix of the file name',
@@ -55,6 +56,7 @@ final FigSpec splitSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'file',
       description: 'The file to split',
@@ -65,6 +67,7 @@ final FigSpec splitSpec = FigSpec(
       name: 'prefix',
       description: 'Prefix for the names of the files into which the file is split',
       suggestions: [
+
         FigSuggestion(name: 'x')
       ],
       defaultValue: 'x',

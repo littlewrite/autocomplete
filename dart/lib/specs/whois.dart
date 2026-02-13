@@ -15,6 +15,7 @@ final FigSpec whoisSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-a',
       description: 'Use the American Registry for Internet Numbers (ARIN) database'

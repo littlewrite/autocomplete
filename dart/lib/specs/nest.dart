@@ -4,11 +4,54 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> options = [
+
+  Option(
+    name: ['-d', '--dry-run'],
+    description: 'Report actions that would be taken without writing out results'
+  ),
+  Option(
+    name: ['-p', '--project'],
+    description: 'Project in which to generate files',
+    args: [
+      Arg(
+      name: 'project',
+      description: 'Project in which to generate files'
+    )
+    ]
+  ),
+  Option(
+    name: '--flat',
+    description: 'Enforce flat structure of generated element'
+  ),
+  Option(
+    name: '--spec',
+    description: 'Enforce spec files generation (default: true)',
+    exclusiveOn: ['--no-spec']
+  ),
+  Option(
+    name: '--no-spec',
+    description: 'Disable spec files generation',
+    exclusiveOn: ['--spec']
+  ),
+  Option(
+    name: ['-c', '--collection'],
+    description: 'Schematics collection to use',
+    args: [
+      Arg(
+      name: 'collection',
+      description: 'The collection name'
+    )
+    ]
+  )
+];
+
 /// Completion spec for `nest` CLI
 final FigSpec nestSpec = FigSpec(
   name: 'nest',
   description: 'Nest CLI',
   subcommands: [
+
     Subcommand(
       name: ['new', 'n'],
       description: 'Creates a new nest project',
@@ -23,6 +66,7 @@ final FigSpec nestSpec = FigSpec(
       name: ['generate', 'g'],
       description: 'Generate and/or modifies files based on a schematic',
       subcommands: [
+
         Subcommand(
           name: 'application',
           description: 'Generate a new application workspace',
@@ -31,7 +75,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'application',
             description: 'The name of the application'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['class', 'cl'],
@@ -41,7 +86,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'class',
             description: 'The name of the class'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['configuration', 'config'],
@@ -51,7 +97,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'configuration',
             description: 'The name of the configuration'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['controller', 'co'],
@@ -61,7 +108,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'controller',
             description: 'The name of the controller'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['decorator', 'd'],
@@ -71,7 +119,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'decorator',
             description: 'The name of the decorator'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['filter', 'f'],
@@ -81,7 +130,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'filter',
             description: 'The name of the filter'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['gateway', 'ga'],
@@ -91,7 +141,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'gateway',
             description: 'The name of the gateway'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['guard', 'gu'],
@@ -101,7 +152,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'guard',
             description: 'The name of the guard'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['interceptor', 'in'],
@@ -111,7 +163,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'interceptor',
             description: 'The name of the interceptor'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: 'interface',
@@ -121,7 +174,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'interface',
             description: 'The name of the interface'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['middleware', 'mi'],
@@ -131,7 +185,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'middleware',
             description: 'The name of the middleware'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['module', 'mo'],
@@ -141,7 +196,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'module',
             description: 'The name of the module'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['pipe', 'p'],
@@ -151,7 +207,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'pipe',
             description: 'The name of the pipe'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['provider', 'pr'],
@@ -161,7 +218,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'provider',
             description: 'The name of the provider'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['resolver', 'r'],
@@ -171,7 +229,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'resolver',
             description: 'The name of the resolver'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['service', 's'],
@@ -181,7 +240,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'service',
             description: 'The name of the service'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['library', 'lib'],
@@ -191,7 +251,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'library',
             description: 'The name of the library'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['sub-app', 'app'],
@@ -201,7 +262,8 @@ final FigSpec nestSpec = FigSpec(
             name: 'sub-app',
             description: 'The name of the sub-app'
           )
-          ]
+          ],
+          options: options
         ),
         Subcommand(
           name: ['resource', 'res'],
@@ -211,13 +273,15 @@ final FigSpec nestSpec = FigSpec(
             name: 'resource',
             description: 'The name of the resource'
           )
-          ]
+          ],
+          options: options
         )
       ]
     ),
     Subcommand(
       name: 'build',
       description: 'Builds Nest application',
+      options: options,
       args: [
         Arg(
         name: 'app',
@@ -229,6 +293,7 @@ final FigSpec nestSpec = FigSpec(
     Subcommand(
       name: 'start',
       description: 'Run Nest application',
+      options: options,
       args: [
         Arg(
         name: 'app',
@@ -243,10 +308,12 @@ final FigSpec nestSpec = FigSpec(
     ),
     Subcommand(
       name: ['update', 'u'],
-      description: 'Update Nest dependencies'
+      description: 'Update Nest dependencies',
+      options: options
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for nest'

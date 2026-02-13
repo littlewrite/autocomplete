@@ -10,10 +10,12 @@ final FigSpec swaggerTypescriptApiSpec = FigSpec(
   description: 'Generate api via swagger scheme',
   icon: 'https://static1.smartbear.co/swagger/media/assets/swagger_fav.png',
   subcommands: [
+
     Subcommand(
       name: 'generate-templates',
       description: 'Generate ".ejs" templates needed for generate api',
       options: [
+
         Option(
           name: ['--output', '-o'],
           description: 'Output path of generated templates',
@@ -35,6 +37,7 @@ final FigSpec swaggerTypescriptApiSpec = FigSpec(
             Arg(
             name: 'Http client',
             suggestions: [
+
               FigSuggestion(name: 'fetch'),
               FigSuggestion(name: 'axios')
             ],
@@ -55,6 +58,7 @@ final FigSpec swaggerTypescriptApiSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--version', '-v'],
       description: 'Output the current version'

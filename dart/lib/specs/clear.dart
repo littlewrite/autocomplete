@@ -9,6 +9,7 @@ final FigSpec clearSpec = FigSpec(
   name: 'clear',
   description: 'Clear the terminal screen',
   options: [
+
     Option(
       name: '-T',
       description: 'Indicates the type of terminal',

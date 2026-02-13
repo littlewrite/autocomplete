@@ -9,14 +9,17 @@ final FigSpec mlSpec = FigSpec(
   name: 'ml',
   description: 'Use Google Cloud machine learning capabilities',
   subcommands: [
+
     Subcommand(
       name: 'language',
       description: 'Use the Google Cloud Natural Language API to analyze text',
       subcommands: [
+
         Subcommand(
           name: 'analyze-entities',
           description: 'Use Google Cloud Natural Language API to identify entities in text',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -80,6 +83,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'CONTENT_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'html'),
                   FigSuggestion(name: 'plain-text')
                 ]
@@ -94,6 +98,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'ENCODING_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'none'),
                   FigSuggestion(name: 'utf16'),
                   FigSuggestion(name: 'utf32'),
@@ -203,6 +208,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -219,6 +225,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'analyze-entity-sentiment',
           description: 'Use Google Cloud Natural Language API to identify entity-level sentiment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -282,6 +289,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'CONTENT_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'html'),
                   FigSuggestion(name: 'plain-text')
                 ]
@@ -296,6 +304,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'ENCODING_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'none'),
                   FigSuggestion(name: 'utf16'),
                   FigSuggestion(name: 'utf32'),
@@ -405,6 +414,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -421,6 +431,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'analyze-sentiment',
           description: 'Use Google Cloud Natural Language API to identify sentiments in a text',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -484,6 +495,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'CONTENT_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'html'),
                   FigSuggestion(name: 'plain-text')
                 ]
@@ -498,6 +510,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'ENCODING_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'none'),
                   FigSuggestion(name: 'utf16'),
                   FigSuggestion(name: 'utf32'),
@@ -607,6 +620,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -623,6 +637,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'analyze-syntax',
           description: 'Use Google Cloud Natural Language API to identify linguistic information',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -686,6 +701,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'CONTENT_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'html'),
                   FigSuggestion(name: 'plain-text')
                 ]
@@ -700,6 +716,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'ENCODING_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'none'),
                   FigSuggestion(name: 'utf16'),
                   FigSuggestion(name: 'utf32'),
@@ -809,6 +826,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -825,6 +843,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'classify-text',
           description: 'Classifies input document into categories',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -888,6 +907,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'CONTENT_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'html'),
                   FigSuggestion(name: 'plain-text')
                 ]
@@ -995,6 +1015,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1009,6 +1030,7 @@ final FigSpec mlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1132,6 +1154,7 @@ final FigSpec mlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1148,14 +1171,17 @@ final FigSpec mlSpec = FigSpec(
       name: 'speech',
       description: 'Use Google Cloud Speech to get transcripts of audio',
       subcommands: [
+
         Subcommand(
           name: 'operations',
           description: 'Interact with Google Cloud Speech operations',
           subcommands: [
+
             Subcommand(
               name: 'describe',
               description: 'Get description of a long-running speech recognition operation',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1279,6 +1305,7 @@ final FigSpec mlSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1301,6 +1328,7 @@ final FigSpec mlSpec = FigSpec(
               name: 'wait',
               description: 'Poll long-running speech recognition operation until it completes',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1424,6 +1452,7 @@ final FigSpec mlSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1444,6 +1473,7 @@ final FigSpec mlSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1567,6 +1597,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1583,6 +1614,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'recognize',
           description: 'Get transcripts of short (less than 60 seconds) audio from an audio file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1624,6 +1656,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'ENCODING',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'amr'),
                   FigSuggestion(name: 'amr-wb'),
                   FigSuggestion(name: 'encoding-unspecified'),
@@ -1778,6 +1811,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1800,6 +1834,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'recognize-long-running',
           description: 'Get transcripts of longer audio from an audio file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1845,6 +1880,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'ENCODING',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'amr'),
                   FigSuggestion(name: 'amr-wb'),
                   FigSuggestion(name: 'encoding-unspecified'),
@@ -1999,6 +2035,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2019,6 +2056,7 @@ final FigSpec mlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2142,6 +2180,7 @@ final FigSpec mlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2158,10 +2197,12 @@ final FigSpec mlSpec = FigSpec(
       name: 'video',
       description: 'Cloud ML Video-Intelligence command groups',
       subcommands: [
+
         Subcommand(
           name: 'detect-explicit-content',
           description: 'Detect explicit content in videos',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2285,6 +2326,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'europe-west1'),
                   FigSuggestion(name: 'us-east1'),
@@ -2327,6 +2369,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2349,6 +2392,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-labels',
           description: 'Detect general labels for videos',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2394,6 +2438,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'DETECTION_MODE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'frame'),
                   FigSuggestion(name: 'shot'),
                   FigSuggestion(name: 'shot-and-frame')
@@ -2487,6 +2532,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'europe-west1'),
                   FigSuggestion(name: 'us-east1'),
@@ -2529,6 +2575,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2551,6 +2598,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-shot-changes',
           description: 'Detect shot changes in videos',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2674,6 +2722,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'REGION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asia-east1'),
                   FigSuggestion(name: 'europe-west1'),
                   FigSuggestion(name: 'us-east1'),
@@ -2716,6 +2765,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2738,10 +2788,12 @@ final FigSpec mlSpec = FigSpec(
           name: 'operations',
           description: 'Command group for working with Cloud Video Intelligence operations',
           subcommands: [
+
             Subcommand(
               name: 'describe',
               description: 'Get description of a long-running video analysis operation',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2876,6 +2928,7 @@ final FigSpec mlSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2898,6 +2951,7 @@ final FigSpec mlSpec = FigSpec(
               name: 'wait',
               description: 'Poll long-running video analysis operation until it completes',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3032,6 +3086,7 @@ final FigSpec mlSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3052,6 +3107,7 @@ final FigSpec mlSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3175,6 +3231,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3189,6 +3246,7 @@ final FigSpec mlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3312,6 +3370,7 @@ final FigSpec mlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3328,10 +3387,12 @@ final FigSpec mlSpec = FigSpec(
       name: 'vision',
       description: 'Use Google Cloud Vision to analyze images',
       subcommands: [
+
         Subcommand(
           name: 'detect-document',
           description: 'Detect dense text in an image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3466,6 +3527,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3488,6 +3550,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-faces',
           description: 'Detect faces within an image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3622,6 +3685,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3644,6 +3708,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-image-properties',
           description: 'Detect general attributes of an image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3767,6 +3832,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3789,6 +3855,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-labels',
           description: 'Detect broad sets of categories within an image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3923,6 +3990,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3945,6 +4013,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-landmarks',
           description: 'Detect popular natural and man-made structures within an image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4079,6 +4148,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4101,6 +4171,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-logos',
           description: 'Detect popular product logos within an image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4235,6 +4306,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4257,6 +4329,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-objects',
           description: 'Detect and extract multiple objects in an image with object localization',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4380,6 +4453,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4402,6 +4476,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-safe-search',
           description: 'Detect explicit content in an image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4525,6 +4600,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4547,6 +4623,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-text',
           description: 'Detect and extract text within an image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4681,6 +4758,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4703,6 +4781,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-text-pdf',
           description: 'Detect and transcribe text from PDF files stored in Google Cloud Storage',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4837,6 +4916,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4849,6 +4929,7 @@ final FigSpec mlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INPUT_FILE',
               description: 'Google Cloud Storage location to read the input from. It must be in\nGoogle Cloud Storage format (gs://bucket/object)'
@@ -4863,6 +4944,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-text-tiff',
           description: 'Detect and transcribe text from TIFF files stored in Google Cloud Storage',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4997,6 +5079,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5009,6 +5092,7 @@ final FigSpec mlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INPUT_FILE',
               description: 'Google Cloud Storage location to read the input from. It must be in\nGoogle Cloud Storage format (gs://bucket/object)'
@@ -5023,6 +5107,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'detect-web',
           description: 'Detect entities in an image from similar images on the web',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5157,6 +5242,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5179,6 +5265,7 @@ final FigSpec mlSpec = FigSpec(
           name: 'suggest-crop',
           description: 'Suggest a bounding box in an image',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5313,6 +5400,7 @@ final FigSpec mlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5333,6 +5421,7 @@ final FigSpec mlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5456,6 +5545,7 @@ final FigSpec mlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -5470,6 +5560,7 @@ final FigSpec mlSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5593,6 +5684,7 @@ final FigSpec mlSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

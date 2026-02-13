@@ -9,10 +9,12 @@ final FigSpec httpSpec = FigSpec(
   name: 'http',
   description: 'HTTPie: command-line HTTP client for the API era',
   args: [
+
     Arg(
       name: 'METHOD',
       isOptional: true,
       suggestions: [
+
         FigSuggestion(name: 'GET'),
         FigSuggestion(name: 'POST'),
         FigSuggestion(name: 'PUT'),
@@ -34,6 +36,7 @@ final FigSpec httpSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--json', '-j'],
       exclusiveOn: ['--form', '-f', '--multipart', '--boundary'],
@@ -62,6 +65,7 @@ final FigSpec httpSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(name: 'all'),
           FigSuggestion(name: 'colors'),
           FigSuggestion(name: 'format'),
@@ -76,6 +80,7 @@ final FigSpec httpSpec = FigSpec(
         Arg(
         name: 'STYLE',
         suggestions: [
+
           FigSuggestion(name: 'abap'),
           FigSuggestion(name: 'algol'),
           FigSuggestion(name: 'algol_nu'),
@@ -135,6 +140,7 @@ final FigSpec httpSpec = FigSpec(
         Arg(
         name: 'FORMAT_OPTIONS',
         suggestions: [
+
           FigSuggestion(name: 'headers.sort:true'),
           FigSuggestion(name: 'json.format:true'),
           FigSuggestion(name: 'json.indent:4'),
@@ -151,6 +157,7 @@ final FigSpec httpSpec = FigSpec(
         Arg(
         name: 'WHAT',
         suggestions: [
+
           FigSuggestion(
             name: 'H',
             description: 'Request headers'
@@ -193,6 +200,7 @@ final FigSpec httpSpec = FigSpec(
         Arg(
         name: 'WHAT',
         suggestions: [
+
           FigSuggestion(
             name: 'H',
             description: 'Request headers'
@@ -270,6 +278,7 @@ final FigSpec httpSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'basic',
             description: 'Basic HTTP auth'
@@ -346,6 +355,7 @@ final FigSpec httpSpec = FigSpec(
         Arg(
         name: 'VERIFY',
         suggestions: [
+
           FigSuggestion(name: 'no'),
           FigSuggestion(name: 'yes')
         ],
@@ -358,6 +368,7 @@ final FigSpec httpSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(name: 'ssl2.3'),
           FigSuggestion(name: 'tls1'),
           FigSuggestion(name: 'tls1.1'),

@@ -4,11 +4,285 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> globalOptions = [
+
+  Option(
+    name: '--api-key',
+    description: 'Sets your API key to use for the command',
+    args: [
+      Arg(
+      name: 'stripe api key'
+    )
+    ]
+  ),
+  Option(
+    name: '--color',
+    description: 'Enables or disables color output',
+    args: [
+      Arg(
+      name: 'setting',
+      suggestions: [
+
+        FigSuggestion(name: 'on'),
+        FigSuggestion(name: 'off'),
+        FigSuggestion(name: 'auto')
+      ]
+    )
+    ]
+  ),
+  Option(
+    name: '--config',
+    description: 'Sets your config file',
+    args: [
+      Arg(
+      name: 'config filepath',
+      template: 'filepaths'
+    )
+    ]
+  ),
+  Option(
+    name: '--device-name',
+    description: 'Runs command on behlaf of another device',
+    args: [
+      Arg(
+      name: 'name'
+    )
+    ]
+  ),
+  Option(
+    name: ['-h', '--help'],
+    description: 'Provides the help documentation for commands, flags, and arguments'
+  ),
+  Option(
+    name: '--log-level',
+    description: 'Set the level of detail for log messages',
+    args: [
+      Arg(
+      name: 'level',
+      suggestions: [
+
+        FigSuggestion(name: 'info'),
+        FigSuggestion(name: 'debug'),
+        FigSuggestion(name: 'warn'),
+        FigSuggestion(name: 'error')
+      ]
+    )
+    ]
+  ),
+  Option(
+    name: ['-v', '--version'],
+    description: 'Prints the version of the Stripe CLI'
+  )
+];
+
+final List<Option> sharedOptions = [
+
+  Option(
+    name: ['-s', '--show-headers'],
+    description: 'Shows response HTTP headers'
+  ),
+  Option(
+    name: ['-c', '--confirm'],
+    description: 'Skips the warning prompt and automatically confirms the command being entered',
+    isDangerous: true
+  ),
+  Option(
+    name: '--dark-style',
+    description: 'Uses a darker color scheme'
+  ),
+  Option(
+    name: ['-d', '--data'],
+    description: 'Additional data to send with an API request',
+    args: [
+      Arg(
+      name: 'value'
+    )
+    ]
+  ),
+  Option(
+    name: ['-e', '--expand'],
+    description: 'Response attributes to expand inline',
+    args: [
+      Arg(
+      name: 'value'
+    )
+    ]
+  ),
+  Option(
+    name: ['-i', '--idempotency'],
+    description: 'Sets an idempotency key for the request, preventing the same request from replaying within 24 hours',
+    args: [
+      Arg(
+      name: 'key'
+    )
+    ]
+  ),
+  Option(
+    name: '--live',
+    description: 'Makes a live request'
+  ),
+  Option(
+    name: '--stripe-account',
+    description: 'Specify the Stripe account to use for this request',
+    args: [
+      Arg(
+      name: 'account id'
+    )
+    ]
+  ),
+  Option(
+    name: ['-v', '--stripe-version'],
+    description: 'Specify the Stripe API version to use for this request',
+    args: [
+      Arg(
+      name: 'version'
+    )
+    ]
+  )
+];
+
+final List<FigSuggestion> webhookSuggestions = [
+
+  FigSuggestion(
+    name: 'balance.available',
+    description: 'Occurs whenever your Stripe balance has been updated (e.g., when a charge is available to be paid out). By default, Stripe automatically transfers funds in your balance to your bank account on a daily basis'
+  ),
+  FigSuggestion(
+    name: 'charge.captured',
+    description: 'Occurs whenever a previously uncaptured charge is captured'
+  ),
+  FigSuggestion(
+    name: 'charge.dispute.created',
+    description: 'Occurs whenever a customer disputes a charge with their bank'
+  ),
+  FigSuggestion(
+    name: 'charge.failed',
+    description: 'Occurs whenever a failed charge attempt occurs'
+  ),
+  FigSuggestion(
+    name: 'charge.refunded',
+    description: 'Occurs whenever a charge is refunded, including partial refunds'
+  ),
+  FigSuggestion(
+    name: 'charge.succeeded',
+    description: 'Occurs whenever a new charge is created and is successful'
+  ),
+  FigSuggestion(
+    name: 'checkout.session.completed',
+    description: 'Occurs when a Checkout Session has been successfully completed'
+  ),
+  FigSuggestion(
+    name: 'customer.created',
+    description: 'Occurs whenever a new customer is created'
+  ),
+  FigSuggestion(
+    name: 'customer.deleted',
+    description: 'Occurs whenever a customer is deleted'
+  ),
+  FigSuggestion(
+    name: 'customer.source.created',
+    description: 'Occurs whenever a new source is created for a customer'
+  ),
+  FigSuggestion(
+    name: 'customer.source.updated',
+    description: 'Occurs whenever a source\'s details are changed'
+  ),
+  FigSuggestion(
+    name: 'customer.subscription.created',
+    description: 'Occurs whenever a customer is signed up for a new plan'
+  ),
+  FigSuggestion(
+    name: 'customer.subscription.deleted',
+    description: 'Occurs whenever a customer\'s subscription ends'
+  ),
+  FigSuggestion(
+    name: 'customer.subscription.updated',
+    description: 'Occurs whenever a subscription changes (e.g., switching from one plan to another, or changing the status from trial to active)'
+  ),
+  FigSuggestion(
+    name: 'customer.updated',
+    description: 'Occurs whenever any property of a customer changes'
+  ),
+  FigSuggestion(
+    name: 'invoice.created',
+    description: 'Occurs whenever a new invoice is created'
+  ),
+  FigSuggestion(
+    name: 'invoice.finalized',
+    description: 'Occurs whenever a draft invoice is finalized and updated to be an open invoice'
+  ),
+  FigSuggestion(
+    name: 'invoice.payment_failed',
+    description: 'Occurs whenever an invoice payment attempt fails, due either to a declined payment or to the lack of a stored payment method'
+  ),
+  FigSuggestion(
+    name: 'invoice.payment_succeeded',
+    description: 'Occurs whenever an invoice payment attempt succeeds'
+  ),
+  FigSuggestion(
+    name: 'invoice.updated',
+    description: 'Occurs whenever an invoice changes (e.g., the invoice amount)'
+  ),
+  FigSuggestion(
+    name: 'issuing_authorization.request',
+    description: 'Represents a synchronous request for authorization'
+  ),
+  FigSuggestion(
+    name: 'issuing_card.created',
+    description: 'Occurs whenever a card is created'
+  ),
+  FigSuggestion(
+    name: 'issuing_cardholder.created',
+    description: 'Occurs whenever a cardholder is created'
+  ),
+  FigSuggestion(
+    name: 'payment_intent.amount_capturable_updated',
+    description: 'Occurs when a PaymentIntent has funds to be captured'
+  ),
+  FigSuggestion(
+    name: 'payment_intent.canceled',
+    description: 'Occurs when a PaymentIntent is canceled'
+  ),
+  FigSuggestion(
+    name: 'payment_intent.created',
+    description: 'Occurs when a new PaymentIntent is created'
+  ),
+  FigSuggestion(
+    name: 'payment_intent.payment_failed',
+    description: 'Occurs when a PaymentIntent has failed the attempt to create a payment method or a payment'
+  ),
+  FigSuggestion(
+    name: 'payment_intent.succeeded',
+    description: 'Occurs when a PaymentIntent has successfully completed payment'
+  ),
+  FigSuggestion(
+    name: 'payment_method.attached',
+    description: 'Occurs whenever a new payment method is attached to a customer'
+  ),
+  FigSuggestion(
+    name: 'setup_intent.canceled',
+    description: 'Occurs when a SetupIntent is canceled'
+  ),
+  FigSuggestion(
+    name: 'setup_intent.created',
+    description: 'Occurs when a new SetupIntent is created'
+  ),
+  FigSuggestion(
+    name: 'setup_intent.setup_failed',
+    description: 'Occurs when a SetupIntent has failed the attempt to setup a payment method'
+  ),
+  FigSuggestion(
+    name: 'setup_intent.succeeded',
+    description: 'Occurs when an SetupIntent has successfully setup a payment method'
+  )
+];
+
 /// Completion spec for `stripe` CLI
 final FigSpec stripeSpec = FigSpec(
   name: 'stripe',
   description: 'CLI interface for Stripe.com',
   subcommands: [
+
     Subcommand(
       name: 'login',
       description: 'Connects to your Stripe account',
@@ -19,16 +293,19 @@ final FigSpec stripeSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-i', '--interactive'],
           description: 'Manually provide an API key if you can\'t access a browser'
-        )
+        ),
+        ...globalOptions
       ]
     ),
     Subcommand(
       name: 'config',
       description: 'Installs a tool in your toolchain',
       options: [
+
         Option(
           name: ['-e', '--edit'],
           description: 'Opens the configuration file in your default editor'
@@ -41,6 +318,7 @@ final FigSpec stripeSpec = FigSpec(
           name: '--set',
           description: 'Set a value for the specified configuration option',
           args: [
+
             Arg(
               name: 'option',
               description: 'Config option'
@@ -60,13 +338,15 @@ final FigSpec stripeSpec = FigSpec(
             description: 'Config option'
           )
           ]
-        )
+        ),
+        ...globalOptions
       ]
     ),
     Subcommand(
       name: 'completion',
       description: 'Generates shell autocompletions',
       options: [
+
         Option(
           name: '--shell',
           description: 'Opens the configuration file in your default editor',
@@ -75,18 +355,21 @@ final FigSpec stripeSpec = FigSpec(
             name: 'platform',
             description: 'The shell to generate completion commands for',
             suggestions: [
+
               FigSuggestion(name: 'zsh'),
               FigSuggestion(name: 'bash')
             ]
           )
           ]
-        )
+        ),
+        ...globalOptions
       ]
     ),
     Subcommand(
       name: 'logs tail',
       description: 'Logs from your Stripe requests',
       options: [
+
         Option(
           name: '--filter-account',
           description: 'Filters request logs by the source and destination account',
@@ -95,6 +378,7 @@ final FigSpec stripeSpec = FigSpec(
             name: 'values',
             isVariadic: true,
             suggestions: [
+
               FigSuggestion(
                 name: 'connect_in',
                 description: 'Incoming Connect requests'
@@ -119,6 +403,7 @@ final FigSpec stripeSpec = FigSpec(
             isVariadic: true,
             name: 'values',
             suggestions: [
+
               FigSuggestion(
                 name: 'GET',
                 description: 'HTTP GET requests'
@@ -163,6 +448,7 @@ final FigSpec stripeSpec = FigSpec(
             isVariadic: true,
             name: 'values',
             suggestions: [
+
               FigSuggestion(
                 name: 'SUCCEEDED',
                 description: 'Requests that succeeded'
@@ -183,6 +469,7 @@ final FigSpec stripeSpec = FigSpec(
             isVariadic: true,
             name: 'values',
             suggestions: [
+
               FigSuggestion(
                 name: 'API',
                 description: 'Requests created with the Stripe API'
@@ -213,6 +500,7 @@ final FigSpec stripeSpec = FigSpec(
             isVariadic: true,
             name: 'values',
             suggestions: [
+
               FigSuggestion(
                 name: '2XX',
                 description: 'HTTP 2xx status codes'
@@ -236,6 +524,7 @@ final FigSpec stripeSpec = FigSpec(
             Arg(
             name: 'value',
             suggestions: [
+
               FigSuggestion(
                 name: 'JSON',
                 description: 'Output logs in JSON format'
@@ -243,13 +532,15 @@ final FigSpec stripeSpec = FigSpec(
             ]
           )
           ]
-        )
+        ),
+        ...globalOptions
       ]
     ),
     Subcommand(
       name: 'status',
       description: 'Displays Stripe\'s system status and service availability',
       options: [
+
         Option(
           name: '--format',
           description: 'Formats used to display status',
@@ -257,6 +548,7 @@ final FigSpec stripeSpec = FigSpec(
             Arg(
             name: 'value',
             suggestions: [
+
               FigSuggestion(
                 name: 'default',
                 description: 'Render the status using standard output'
@@ -290,7 +582,8 @@ final FigSpec stripeSpec = FigSpec(
         Option(
           name: '--verbose',
           description: 'Shows the status of all Stripe systems'
-        )
+        ),
+        ...globalOptions
       ]
     ),
     Subcommand(
@@ -300,6 +593,7 @@ final FigSpec stripeSpec = FigSpec(
         Arg(
         name: 'shortcut',
         suggestions: [
+
           FigSuggestion(name: 'api'),
           FigSuggestion(name: 'apiref'),
           FigSuggestion(name: 'cliref'),
@@ -341,6 +635,7 @@ final FigSpec stripeSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--list',
           description: 'Lists all supported shortcuts'
@@ -348,13 +643,15 @@ final FigSpec stripeSpec = FigSpec(
         Option(
           name: '--live',
           description: 'Opens the Dashboard for your live integrations'
-        )
+        ),
+        ...globalOptions
       ]
     ),
     Subcommand(
       name: 'listen',
       description: 'Receives webhook events from Stripe locally',
       options: [
+
         Option(
           name: '--connect-headers',
           description: 'A comma-separated list of custom HTTP headers to any connected accounts',
@@ -374,6 +671,7 @@ final FigSpec stripeSpec = FigSpec(
             isVariadic: true,
             name: 'events types',
             suggestions: [
+
               FigSuggestion(
                 name: 'account.updated',
                 description: 'Occurs whenever an account status or property has changed'
@@ -929,7 +1227,8 @@ final FigSpec stripeSpec = FigSpec(
               FigSuggestion(
                 name: 'transfer.updated',
                 description: 'Occurs whenever a transfer\'s description or metadata is updated'
-              )
+              ),
+              ...webhookSuggestions
             ]
           )
           ]
@@ -983,7 +1282,8 @@ final FigSpec stripeSpec = FigSpec(
           name: '--skip-verify',
           description: 'Skip certificate verification when forwarding to HTTPS endpoints',
           isDangerous: true
-        )
+        ),
+        ...globalOptions
       ]
     ),
     Subcommand(
@@ -993,14 +1293,19 @@ final FigSpec stripeSpec = FigSpec(
         Arg(
         name: 'event',
         description: 'Webhook events',
-        suggestions: []
+        suggestions: [
+
+          ...webhookSuggestions
+        ]
       )
       ],
       options: [
+
         Option(
           name: '--stripe-account',
           description: 'Sets a header identifying the connected account'
-        )
+        ),
+        ...globalOptions
       ]
     ),
     Subcommand(
@@ -1013,6 +1318,7 @@ final FigSpec stripeSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Resend the event to the given Stripe account',
@@ -1039,7 +1345,9 @@ final FigSpec stripeSpec = FigSpec(
             name: 'endpoint id'
           )
           ]
-        )
+        ),
+        ...sharedOptions,
+        ...globalOptions
       ]
     ),
     Subcommand(
@@ -1052,6 +1360,7 @@ final FigSpec stripeSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-b', '--ending-before'],
           description: 'Retrieves the previous page in the list',
@@ -1079,7 +1388,9 @@ final FigSpec stripeSpec = FigSpec(
             name: 'object id'
           )
           ]
-        )
+        ),
+        ...sharedOptions,
+        ...globalOptions
       ]
     ),
     Subcommand(
@@ -1091,7 +1402,11 @@ final FigSpec stripeSpec = FigSpec(
         description: 'URL path of the API object to create or update'
       )
       ],
-      options: []
+      options: [
+
+        ...sharedOptions,
+        ...globalOptions
+      ]
     ),
     Subcommand(
       name: 'delete',
@@ -1102,15 +1417,21 @@ final FigSpec stripeSpec = FigSpec(
         description: 'URL path of the API object to delete'
       )
       ],
-      options: []
+      options: [
+
+        ...sharedOptions,
+        ...globalOptions
+      ]
     ),
     Subcommand(
       name: 'samples',
       description: 'Creates a local copy of a sample',
       subcommands: [
+
         Subcommand(
           name: 'create',
           args: [
+
             Arg(
               name: 'sample',
               description: 'Name of the sample used to create a local copy'
@@ -1122,24 +1443,31 @@ final FigSpec stripeSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--force-refresh',
               description: 'Force a refresh of the chaced list of Stripe Samples'
-            )
+            ),
+            ...globalOptions
           ]
         ),
         Subcommand(
           name: 'list',
           description: 'Lists available Stripe Samples',
           options: [
+
             Option(
               name: '--force-refresh',
               description: 'Force a refresh of the chaced list of Stripe Samples'
-            )
+            ),
+            ...globalOptions
           ]
         )
       ],
-      options: []
+      options: [
+
+        ...globalOptions
+      ]
     ),
     Subcommand(
       name: 'serve',
@@ -1151,6 +1479,7 @@ final FigSpec stripeSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--port',
           description: 'Port the HTTP server should use',
@@ -1159,13 +1488,15 @@ final FigSpec stripeSpec = FigSpec(
             name: 'port number'
           )
           ]
-        )
+        ),
+        ...globalOptions
       ]
     ),
     Subcommand(
       name: 'terminal quickstart',
       description: 'Starts up Stripe Terminal',
       options: [
+
         Option(
           name: '--api-key',
           args: [
@@ -1180,16 +1511,21 @@ final FigSpec stripeSpec = FigSpec(
       name: 'logout',
       description: 'Removes all credentials',
       options: [
+
         Option(
           name: ['-a', '--all'],
           description: 'Removes credentials for all projects listed in your config'
-        )
+        ),
+        ...globalOptions
       ]
     ),
     Subcommand(
       name: 'feedback',
       description: 'Prints info about how to provide feedback',
-      options: []
+      options: [
+
+        ...globalOptions
+      ]
     ),
     Subcommand(
       name: 'help',
@@ -1212,5 +1548,8 @@ final FigSpec stripeSpec = FigSpec(
       ]
     )
   ],
-  options: []
+  options: [
+
+    ...globalOptions
+  ]
 );

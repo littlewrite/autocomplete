@@ -9,10 +9,12 @@ final FigSpec neptunedataSpec = FigSpec(
   name: 'neptunedata',
   description: 'Neptune Data API The Amazon Neptune data API provides SDK support for more than 40 of Neptune\'s data operations, including data loading, query execution, data inquiry, and machine learning. It supports the Gremlin and openCypher query languages, and is available in all SDK languages. It automatically signs API requests and greatly simplifies integrating Neptune into your applications',
   subcommands: [
+
     Subcommand(
       name: 'cancel-gremlin-query',
       description: 'Cancels a Gremlin query. See Gremlin query cancellation for more information. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:CancelQuery IAM action in that cluster',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The unique identifier that identifies the query to be canceled',
@@ -38,6 +40,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'cancel-loader-job',
       description: 'Cancels a specified load job. This is an HTTP DELETE request. See Neptune Loader Get-Status API for more information. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:CancelLoaderJob IAM action in that cluster',
       options: [
+
         Option(
           name: '--load-id',
           description: 'The ID of the load job to be deleted',
@@ -75,6 +79,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'cancel-ml-data-processing-job',
       description: 'Cancels a Neptune ML data processing job. See The dataprocessing command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:CancelMLDataProcessingJob IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique identifier of the data-processing job',
@@ -129,6 +135,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +148,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'cancel-ml-model-training-job',
       description: 'Cancels a Neptune ML model training job. See Model training using the modeltraining command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:CancelMLModelTrainingJob IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique identifier of the model-training job to be canceled',
@@ -183,6 +191,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -195,6 +204,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'cancel-ml-model-transform-job',
       description: 'Cancels a specified model transform job. See Use a trained model to generate new model artifacts. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:CancelMLModelTransformJob IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique ID of the model transform job to be canceled',
@@ -237,6 +247,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -249,6 +260,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'cancel-open-cypher-query',
       description: 'Cancels a specified openCypher query. See Neptune openCypher status endpoint for more information. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:CancelQuery IAM action in that cluster',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The unique ID of the openCypher query to cancel',
@@ -282,6 +294,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -294,6 +307,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'create-ml-endpoint',
       description: 'Creates a new Neptune ML inference endpoint that lets you query one specific model that the model-training process constructed. See Managing inference endpoints using the endpoints command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:CreateMLEndpoint IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'A unique identifier for the new inference endpoint. The default is an autogenerated timestamped name',
@@ -390,6 +404,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -402,6 +417,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'delete-ml-endpoint',
       description: 'Cancels the creation of a Neptune ML inference endpoint. See Managing inference endpoints using the endpoints command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:DeleteMLEndpoint IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique identifier of the inference endpoint',
@@ -444,6 +460,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -456,6 +473,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'delete-propertygraph-statistics',
       description: 'Deletes statistics for Gremlin and openCypher (property graph) data. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:DeleteStatistics IAM action in that cluster',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -472,6 +490,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -484,6 +503,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'delete-sparql-statistics',
       description: 'Deletes SPARQL statistics When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:DeleteStatistics IAM action in that cluster',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -500,6 +520,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -512,6 +533,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'execute-fast-reset',
       description: 'The fast reset REST API lets you reset a Neptune graph quicky and easily, removing all of its data. Neptune fast reset is a two-step process. First you call ExecuteFastReset with action set to initiateDatabaseReset. This returns a UUID token which you then include when calling ExecuteFastReset again with action set to performDatabaseReset. See Empty an Amazon Neptune DB cluster using the fast reset API. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:ResetDatabase IAM action in that cluster',
       options: [
+
         Option(
           name: '--action',
           description: 'The fast reset action. One of the following values:     initiateDatabaseReset    –   This action generates a unique token needed to actually perform the fast reset.     performDatabaseReset    –   This action uses the token generated by the initiateDatabaseReset action to actually perform the fast reset',
@@ -546,6 +568,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -558,6 +581,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'execute-gremlin-explain-query',
       description: 'Executes a Gremlin Explain query. Amazon Neptune has added a Gremlin feature named explain that provides is a self-service tool for understanding the execution approach being taken by the Neptune engine for the query. You invoke it by adding an explain parameter to an HTTP call that submits a Gremlin query. The explain feature provides information about the logical structure of query execution plans. You can use this information to identify potential evaluation and execution bottlenecks and to tune your query, as explained in Tuning Gremlin queries. You can also use query hints to improve query execution plans. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows one of the following IAM actions in that cluster, depending on the query:    neptune-db:ReadDataViaQuery     neptune-db:WriteDataViaQuery     neptune-db:DeleteDataViaQuery    Note that the neptune-db:QueryLanguage:Gremlin IAM condition key can be used in the policy document to restrict the use of Gremlin queries (see Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--gremlin-query',
           description: 'The Gremlin explain query string',
@@ -582,6 +606,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'execute-gremlin-profile-query',
       description: 'Executes a Gremlin Profile query, which runs a specified traversal, collects various metrics about the run, and produces a profile report as output. See Gremlin profile API in Neptune for details. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:ReadDataViaQuery IAM action in that cluster. Note that the neptune-db:QueryLanguage:Gremlin IAM condition key can be used in the policy document to restrict the use of Gremlin queries (see Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--gremlin-query',
           description: 'The Gremlin query string to profile',
@@ -640,6 +665,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'execute-gremlin-query',
       description: 'This commands executes a Gremlin query. Amazon Neptune is compatible with Apache TinkerPop3 and Gremlin, so you can use the Gremlin traversal language to query the graph, as described under The Graph in the Apache TinkerPop3 documentation. More details can also be found in Accessing a Neptune graph with Gremlin. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that enables one of the following IAM actions in that cluster, depending on the query:    neptune-db:ReadDataViaQuery     neptune-db:WriteDataViaQuery     neptune-db:DeleteDataViaQuery    Note that the neptune-db:QueryLanguage:Gremlin IAM condition key can be used in the policy document to restrict the use of Gremlin queries (see Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--gremlin-query',
           description: 'Using this API, you can run Gremlin queries in string format much as you can using the HTTP endpoint. The interface is compatible with whatever Gremlin version your DB cluster is using (see the Tinkerpop client section to determine which Gremlin releases your engine version supports)',
@@ -674,6 +700,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -686,6 +713,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'execute-open-cypher-explain-query',
       description: 'Executes an openCypher explain request. See The openCypher explain feature for more information. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:ReadDataViaQuery IAM action in that cluster. Note that the neptune-db:QueryLanguage:OpenCypher IAM condition key can be used in the policy document to restrict the use of openCypher queries (see Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--open-cypher-query',
           description: 'The openCypher query string',
@@ -728,6 +756,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'execute-open-cypher-query',
       description: 'Executes an openCypher query. See Accessing the Neptune Graph with openCypher for more information. Neptune supports building graph applications using openCypher, which is currently one of the most popular query languages among developers working with graph databases. Developers, business analysts, and data scientists like openCypher\'s declarative, SQL-inspired syntax because it provides a familiar structure in which to querying property graphs. The openCypher language was originally developed by Neo4j, then open-sourced in 2015 and contributed to the openCypher project under an Apache 2 open-source license. Note that when invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows one of the following IAM actions in that cluster, depending on the query:    neptune-db:ReadDataViaQuery     neptune-db:WriteDataViaQuery     neptune-db:DeleteDataViaQuery    Note also that the neptune-db:QueryLanguage:OpenCypher IAM condition key can be used in the policy document to restrict the use of openCypher queries (see Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--open-cypher-query',
           description: 'The openCypher query string to be executed',
@@ -762,6 +791,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -774,6 +804,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-engine-status',
       description: 'Retrieves the status of the graph database on the host. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetEngineStatus IAM action in that cluster',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -790,6 +821,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -802,6 +834,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-gremlin-query-status',
       description: 'Gets the status of a specified Gremlin query. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetQueryStatus IAM action in that cluster. Note that the neptune-db:QueryLanguage:Gremlin IAM condition key can be used in the policy document to restrict the use of Gremlin queries (see Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The unique identifier that identifies the Gremlin query',
@@ -827,6 +860,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -839,6 +873,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-loader-job-status',
       description: 'Gets status information about a specified load job. Neptune keeps track of the most recent 1,024 bulk load jobs, and stores the last 10,000 error details per job. See Neptune Loader Get-Status API for more information. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetLoaderJobStatus IAM action in that cluster',
       options: [
+
         Option(
           name: '--load-id',
           description: 'The load ID of the load job to get the status of',
@@ -898,6 +933,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -910,6 +946,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-ml-data-processing-job',
       description: 'Retrieves information about a specified data processing job. See The dataprocessing command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:neptune-db:GetMLDataProcessingJobStatus IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique identifier of the data-processing job to be retrieved',
@@ -944,6 +981,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -956,6 +994,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-ml-endpoint',
       description: 'Retrieves details about an inference endpoint. See Managing inference endpoints using the endpoints command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetMLEndpointStatus IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique identifier of the inference endpoint',
@@ -990,6 +1029,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1002,6 +1042,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-ml-model-training-job',
       description: 'Retrieves information about a Neptune ML model training job. See Model training using the modeltraining command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetMLModelTrainingJobStatus IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique identifier of the model-training job to retrieve',
@@ -1036,6 +1077,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1048,6 +1090,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-ml-model-transform-job',
       description: 'Gets information about a specified model transform job. See Use a trained model to generate new model artifacts. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetMLModelTransformJobStatus IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'The unique identifier of the model-transform job to be reetrieved',
@@ -1082,6 +1125,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1094,6 +1138,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-open-cypher-query-status',
       description: 'Retrieves the status of a specified openCypher query. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetQueryStatus IAM action in that cluster. Note that the neptune-db:QueryLanguage:OpenCypher IAM condition key can be used in the policy document to restrict the use of openCypher queries (see Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The unique ID of the openCypher query for which to retrieve the query status',
@@ -1119,6 +1164,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1131,6 +1177,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-propertygraph-statistics',
       description: 'Gets property graph statistics (Gremlin and openCypher). When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetStatisticsStatus IAM action in that cluster',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1147,6 +1194,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1159,6 +1207,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-propertygraph-stream',
       description: 'Gets a stream for a property graph. With the Neptune Streams feature, you can generate a complete sequence of change-log entries that record every change made to your graph data as it happens. GetPropertygraphStream lets you collect these change-log entries for a property graph. The Neptune streams feature needs to be enabled on your Neptune DBcluster. To enable streams, set the neptune_streams DB cluster parameter to 1. See Capturing graph changes in real time using Neptune streams. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetStreamRecords IAM action in that cluster. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that enables one of the following IAM actions, depending on the query: Note that you can restrict property-graph queries using the following IAM context keys:    neptune-db:QueryLanguage:Gremlin     neptune-db:QueryLanguage:OpenCypher    See Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--limit',
           description: 'Specifies the maximum number of records to return. There is also a size limit of 10 MB on the response that can\'t be modified and that takes precedence over the number of records specified in the limit parameter. The response does include a threshold-breaching record if the 10 MB limit was reached. The range for limit is 1 to 100,000, with a default of 10',
@@ -1220,6 +1269,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1232,6 +1282,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-propertygraph-summary',
       description: 'Gets a graph summary for a property graph. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetGraphSummary IAM action in that cluster',
       options: [
+
         Option(
           name: '--mode',
           description: 'Mode can take one of two values: BASIC (the default), and DETAILED',
@@ -1257,6 +1308,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1269,6 +1321,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-rdf-graph-summary',
       description: 'Gets a graph summary for an RDF graph. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetGraphSummary IAM action in that cluster',
       options: [
+
         Option(
           name: '--mode',
           description: 'Mode can take one of two values: BASIC (the default), and DETAILED',
@@ -1294,6 +1347,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1306,6 +1360,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-sparql-statistics',
       description: 'Gets RDF statistics (SPARQL)',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1322,6 +1377,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1334,6 +1390,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'get-sparql-stream',
       description: 'Gets a stream for an RDF graph. With the Neptune Streams feature, you can generate a complete sequence of change-log entries that record every change made to your graph data as it happens. GetSparqlStream lets you collect these change-log entries for an RDF graph. The Neptune streams feature needs to be enabled on your Neptune DBcluster. To enable streams, set the neptune_streams DB cluster parameter to 1. See Capturing graph changes in real time using Neptune streams. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetStreamRecords IAM action in that cluster. Note that the neptune-db:QueryLanguage:Sparql IAM condition key can be used in the policy document to restrict the use of SPARQL queries (see Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--limit',
           description: 'Specifies the maximum number of records to return. There is also a size limit of 10 MB on the response that can\'t be modified and that takes precedence over the number of records specified in the limit parameter. The response does include a threshold-breaching record if the 10 MB limit was reached. The range for limit is 1 to 100,000, with a default of 10',
@@ -1395,6 +1452,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1407,6 +1465,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'list-gremlin-queries',
       description: 'Lists active Gremlin queries. See Gremlin query status API for details about the output. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetQueryStatus IAM action in that cluster. Note that the neptune-db:QueryLanguage:Gremlin IAM condition key can be used in the policy document to restrict the use of Gremlin queries (see Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--include-waiting',
           description: 'If set to TRUE, the list returned includes waiting queries. The default is FALSE;'
@@ -1431,6 +1490,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1443,6 +1503,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'list-loader-jobs',
       description: 'Retrieves a list of the loadIds for all active loader jobs. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:ListLoaderJobs IAM action in that cluster',
       options: [
+
         Option(
           name: '--limit',
           description: 'The number of load IDs to list. Must be a positive integer greater than zero and not more than 100 (which is the default)',
@@ -1476,6 +1537,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1488,6 +1550,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'list-ml-data-processing-jobs',
       description: 'Returns a list of Neptune ML data processing jobs. See Listing active data-processing jobs using the Neptune ML dataprocessing command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:ListMLDataProcessingJobs IAM action in that cluster',
       options: [
+
         Option(
           name: '--max-items',
           description: 'The maximum number of items to return (from 1 to 1024; the default is 10)',
@@ -1522,6 +1585,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1534,6 +1598,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'list-ml-endpoints',
       description: 'Lists existing inference endpoints. See Managing inference endpoints using the endpoints command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:ListMLEndpoints IAM action in that cluster',
       options: [
+
         Option(
           name: '--max-items',
           description: 'The maximum number of items to return (from 1 to 1024; the default is 10',
@@ -1568,6 +1633,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1580,6 +1646,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'list-ml-model-training-jobs',
       description: 'Lists Neptune ML model-training jobs. See Model training using the modeltraining command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:neptune-db:ListMLModelTrainingJobs IAM action in that cluster',
       options: [
+
         Option(
           name: '--max-items',
           description: 'The maximum number of items to return (from 1 to 1024; the default is 10)',
@@ -1614,6 +1681,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1626,6 +1694,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'list-ml-model-transform-jobs',
       description: 'Returns a list of model transform job IDs. See Use a trained model to generate new model artifacts. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:ListMLModelTransformJobs IAM action in that cluster',
       options: [
+
         Option(
           name: '--max-items',
           description: 'The maximum number of items to return (from 1 to 1024; the default is 10)',
@@ -1660,6 +1729,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1672,6 +1742,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'list-open-cypher-queries',
       description: 'Lists active openCypher queries. See Neptune openCypher status endpoint for more information. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:GetQueryStatus IAM action in that cluster. Note that the neptune-db:QueryLanguage:OpenCypher IAM condition key can be used in the policy document to restrict the use of openCypher queries (see Condition keys available in Neptune IAM data-access policy statements)',
       options: [
+
         Option(
           name: '--include-waiting',
           description: 'When set to TRUE and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries'
@@ -1696,6 +1767,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1708,6 +1780,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'manage-propertygraph-statistics',
       description: 'Manages the generation and use of property graph statistics. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:ManageStatistics IAM action in that cluster',
       options: [
+
         Option(
           name: '--mode',
           description: 'The statistics generation mode. One of: DISABLE_AUTOCOMPUTE, ENABLE_AUTOCOMPUTE, or REFRESH, the last of which manually triggers DFE statistics generation',
@@ -1733,6 +1806,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1745,6 +1819,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'manage-sparql-statistics',
       description: 'Manages the generation and use of RDF graph statistics. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:ManageStatistics IAM action in that cluster',
       options: [
+
         Option(
           name: '--mode',
           description: 'The statistics generation mode. One of: DISABLE_AUTOCOMPUTE, ENABLE_AUTOCOMPUTE, or REFRESH, the last of which manually triggers DFE statistics generation',
@@ -1770,6 +1845,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1782,6 +1858,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'start-loader-job',
       description: 'Starts a Neptune bulk loader job to load data from an Amazon S3 bucket into a Neptune DB instance. See Using the Amazon Neptune Bulk Loader to Ingest Data. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:StartLoaderJob IAM action in that cluster',
       options: [
+
         Option(
           name: '--source',
           description: 'The source parameter accepts an S3 URI that identifies a single file, multiple files, a folder, or multiple folders. Neptune loads every data file in any folder that is specified. The URI can be in any of the following formats.    s3://(bucket_name)/(object-key-name)     https://s3.amazonaws.com/(bucket_name)/(object-key-name)     https://s3.us-east-1.amazonaws.com/(bucket_name)/(object-key-name)    The object-key-name element of the URI is equivalent to the prefix parameter in an S3 ListObjects API call. It identifies all the objects in the specified S3 bucket whose names begin with that prefix. That can be a single file or folder, or multiple files and/or folders. The specified folder or folders can contain multiple vertex files and multiple edge files',
@@ -1902,6 +1979,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1914,6 +1992,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'start-ml-data-processing-job',
       description: 'Creates a new Neptune ML data processing job for processing the graph data exported from Neptune for training. See The dataprocessing command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:StartMLModelDataProcessingJob IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'A unique identifier for the new job. The default is an autogenerated UUID',
@@ -2065,6 +2144,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2077,6 +2157,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'start-ml-model-training-job',
       description: 'Creates a new Neptune ML model training job. See Model training using the modeltraining command. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:StartMLModelTrainingJob IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'A unique identifier for the new job. The default is An autogenerated UUID',
@@ -2254,6 +2335,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2266,6 +2348,7 @@ final FigSpec neptunedataSpec = FigSpec(
       name: 'start-ml-model-transform-job',
       description: 'Creates a new model transform job. See Use a trained model to generate new model artifacts. When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the neptune-db:StartMLModelTransformJob IAM action in that cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'A unique identifier for the new job. The default is an autogenerated UUID',
@@ -2408,6 +2491,7 @@ final FigSpec neptunedataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

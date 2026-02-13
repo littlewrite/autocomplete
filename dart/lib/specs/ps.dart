@@ -9,6 +9,7 @@ final FigSpec psSpec = FigSpec(
   name: 'ps',
   description: 'Report a snapshot of the current processes',
   options: [
+
     Option(
       name: ['-A', '-e'],
       description: 'Select all processes'

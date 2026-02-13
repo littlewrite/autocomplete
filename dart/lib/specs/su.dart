@@ -9,6 +9,7 @@ final FigSpec suSpec = FigSpec(
   name: 'su',
   description: '',
   options: [
+
     Option(
       name: '-f',
       description: 'If the invoked shell is csh(1), this option prevents it from reading the .cshrc file'
@@ -27,6 +28,7 @@ final FigSpec suSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'login',
       isOptional: true

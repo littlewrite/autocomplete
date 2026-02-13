@@ -9,10 +9,12 @@ final FigSpec ghqSpec = FigSpec(
   name: 'ghq',
   description: '\'ghq\' provides a way to organize remote repository clones, like go get does. When you clone a remote repository by ghq get, ghq makes a directory under a specific root directory (by default ~/ghq) using the remote repository URL’s host and path',
   subcommands: [
+
     Subcommand(
       name: 'get',
       description: 'Clone/sync with a remote repository',
       options: [
+
         Option(
           name: ['-u', '--update'],
           description: 'Update local repository if cloned already (default: false)'
@@ -74,6 +76,7 @@ final FigSpec ghqSpec = FigSpec(
       name: 'list',
       description: 'List local repositories',
       options: [
+
         Option(
           name: ['-e', '--exact'],
           description: 'Perform an exact match (default: false)'
@@ -109,6 +112,7 @@ final FigSpec ghqSpec = FigSpec(
       name: 'root',
       description: 'Show repositories\' root',
       options: [
+
         Option(
           name: '--all',
           description: 'Show all roots (default: false)'
@@ -119,6 +123,7 @@ final FigSpec ghqSpec = FigSpec(
       name: 'create',
       description: 'Create a new repository',
       options: [
+
         Option(
           name: '--vcs',
           description: 'Specify vcs backend explicitly',
@@ -137,6 +142,7 @@ final FigSpec ghqSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-h', '--help', 'h', 'help'],
       description: 'Show help',

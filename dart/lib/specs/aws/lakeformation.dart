@@ -9,10 +9,12 @@ final FigSpec lakeformationSpec = FigSpec(
   name: 'lakeformation',
   description: 'Lake Formation Defines the public endpoint for the Lake Formation service',
   subcommands: [
+
     Subcommand(
       name: 'add-lf-tags-to-resource',
       description: 'Attaches one or more LF-tags to an existing resource',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -56,6 +58,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'assume-decorated-role-with-saml',
       description: 'Allows a caller to assume an IAM role decorated as the SAML user specified in the SAML assertion included in the request. This decoration allows Lake Formation to enforce access policies against the SAML users and groups. This API operation requires SAML federation setup in the caller’s account as it can only be called with valid SAML assertions. Lake Formation does not scope down the permission of the assumed role. All permissions attached to the role via the SAML federation setup will be included in the role session.   This decorated role is expected to access data in Amazon S3 by getting temporary access from Lake Formation which is authorized via the virtual API GetDataAccess. Therefore, all SAML roles that can be assumed via AssumeDecoratedRoleWithSAML must at a minimum include lakeformation:GetDataAccess in their role policies. A typical IAM policy attached to such a role would look as follows:',
       options: [
+
         Option(
           name: '--saml-assertion',
           description: 'A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded',
@@ -120,6 +124,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'batch-grant-permissions',
       description: 'Batch operation to grant permissions to the principal',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -166,6 +172,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'batch-revoke-permissions',
       description: 'Batch operation to revoke permissions from the principal',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -212,6 +220,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'cancel-transaction',
       description: 'Attempts to cancel the specified transaction. Returns an exception if the transaction was previously committed',
       options: [
+
         Option(
           name: '--transaction-id',
           description: 'The transaction to cancel',
@@ -249,6 +259,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'commit-transaction',
       description: 'Attempts to commit the specified transaction. Returns an exception if the transaction was previously aborted. This API action is idempotent if called multiple times for the same transaction',
       options: [
+
         Option(
           name: '--transaction-id',
           description: 'The transaction to commit',
@@ -286,6 +298,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -298,6 +311,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'create-data-cells-filter',
       description: 'Creates a data cell filter to allow one to grant access to certain columns on certain rows',
       options: [
+
         Option(
           name: '--table-data',
           description: 'A DataCellsFilter structure containing information about the data cells filter',
@@ -323,6 +337,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -335,6 +350,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'create-lf-tag',
       description: 'Creates an LF-tag with the specified name and values',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -378,6 +394,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -390,6 +407,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'create-lf-tag-expression',
       description: 'Creates a new LF-Tag expression with the provided name, description, catalog ID, and expression body. This call fails if a LF-Tag expression with the same name already exists in the caller’s account or if the underlying LF-Tags don\'t exist. To call this API operation, caller needs the following Lake Formation permissions:  CREATE_LF_TAG_EXPRESSION on the root catalog resource.  GRANT_WITH_LF_TAG_EXPRESSION on all underlying LF-Tag key:value pairs included in the expression',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the expression',
@@ -442,6 +460,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -454,6 +473,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'create-lake-formation-identity-center-configuration',
       description: 'Creates an IAM Identity Center connection with Lake Formation to allow IAM Identity Center users and groups to access Data Catalog resources',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment',
@@ -506,6 +526,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -518,6 +539,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'create-lake-formation-opt-in',
       description: 'Enforce Lake Formation permissions for the given databases, tables, and principals',
       options: [
+
         Option(
           name: '--principal',
           description: 'The Lake Formation principal. Supported principals are IAM users or IAM roles',
@@ -552,6 +574,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -564,6 +587,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'delete-data-cells-filter',
       description: 'Deletes a data cell filter',
       options: [
+
         Option(
           name: '--table-catalog-id',
           description: 'The ID of the catalog to which the table belongs',
@@ -616,6 +640,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -628,6 +653,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'delete-lf-tag',
       description: 'Deletes the specified LF-tag given a key name. If the input parameter tag key was not found, then the operation will throw an exception. When you delete an LF-tag, the LFTagPolicy attached to the LF-tag becomes invalid. If the deleted LF-tag was still assigned to any resource, the tag policy attach to the deleted LF-tag will no longer be applied to the resource',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -662,6 +688,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -674,6 +701,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'delete-lf-tag-expression',
       description: 'Deletes the LF-Tag expression. The caller must be a data lake admin or have DROP permissions on the LF-Tag expression. Deleting a LF-Tag expression will also delete all LFTagPolicy permissions referencing the LF-Tag expression',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the LF-Tag expression',
@@ -708,6 +736,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -720,6 +749,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'delete-lake-formation-identity-center-configuration',
       description: 'Deletes an IAM Identity Center connection with Lake Formation',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definition, and other control information to manage your Lake Formation environment',
@@ -745,6 +775,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -757,6 +788,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'delete-lake-formation-opt-in',
       description: 'Remove the Lake Formation permissions enforcement of the given databases, tables, and principals',
       options: [
+
         Option(
           name: '--principal',
           description: 'The Lake Formation principal. Supported principals are IAM users or IAM roles',
@@ -791,6 +823,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -803,6 +836,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'delete-objects-on-cancel',
       description: 'For a specific governed table, provides a list of Amazon S3 objects that will be written during the current transaction and that can be automatically deleted if the transaction is canceled. Without this call, no Amazon S3 objects are automatically deleted when a transaction cancels.   The Glue ETL library function write_dynamic_frame.from_catalog() includes an option to automatically call DeleteObjectsOnCancel before writes. For more information, see Rolling Back Amazon S3 Writes',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The Glue data catalog that contains the governed table. Defaults to the current account ID',
@@ -864,6 +898,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -876,6 +911,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'deregister-resource',
       description: 'Deregisters the resource as managed by the Data Catalog. When you deregister a path, Lake Formation removes the path from the inline policy attached to your service-linked role',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to deregister',
@@ -901,6 +937,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -913,6 +950,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'describe-lake-formation-identity-center-configuration',
       description: 'Retrieves the instance ARN and application ARN for the connection',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -938,6 +976,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -950,6 +989,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'describe-resource',
       description: 'Retrieves the current data access role for the given resource registered in Lake Formation',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN',
@@ -975,6 +1015,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -987,6 +1028,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'describe-transaction',
       description: 'Returns the details of a single transaction',
       options: [
+
         Option(
           name: '--transaction-id',
           description: 'The transaction for which to return status',
@@ -1012,6 +1054,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1024,6 +1067,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'extend-transaction',
       description: 'Indicates to the service that the specified transaction is still active and should not be treated as idle and aborted. Write transactions that remain idle for a long period are automatically aborted unless explicitly extended',
       options: [
+
         Option(
           name: '--transaction-id',
           description: 'The transaction to extend',
@@ -1049,6 +1093,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1061,6 +1106,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-data-cells-filter',
       description: 'Returns a data cells filter',
       options: [
+
         Option(
           name: '--table-catalog-id',
           description: 'The ID of the catalog to which the table belongs',
@@ -1113,6 +1159,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1125,6 +1172,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-data-lake-principal',
       description: 'Returns the identity of the invoking principal',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1141,6 +1189,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1153,6 +1202,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-data-lake-settings',
       description: 'Retrieves the list of the data lake administrators of a Lake Formation-managed data lake',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -1178,6 +1228,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1190,6 +1241,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-effective-permissions-for-path',
       description: 'Returns the Lake Formation permissions for a specified table or database resource located at a path in Amazon S3. GetEffectivePermissionsForPath will not return databases and tables if the catalog is encrypted',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -1242,6 +1294,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1254,6 +1307,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-lf-tag',
       description: 'Returns an LF-tag definition',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -1288,6 +1342,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1300,6 +1355,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-lf-tag-expression',
       description: 'Returns the details about the LF-Tag expression. The caller must be a data lake admin or must have DESCRIBE permission on the LF-Tag expression resource',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the LF-Tag expression',
@@ -1334,6 +1390,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1346,6 +1403,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-query-state',
       description: 'Returns the state of a query previously submitted. Clients are expected to poll GetQueryState to monitor the current state of the planning before retrieving the work units. A query state is only visible to the principal that made the initial call to StartQueryPlanning',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The ID of the plan query operation',
@@ -1371,6 +1429,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1383,6 +1442,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-query-statistics',
       description: 'Retrieves statistics on the planning and execution of a query',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The ID of the plan query operation',
@@ -1408,6 +1468,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1420,6 +1481,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-resource-lf-tags',
       description: 'Returns the LF-tags applied to a resource',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -1462,6 +1524,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1474,6 +1537,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-table-objects',
       description: 'Returns the set of Amazon S3 objects that make up the specified governed table. A transaction ID or timestamp can be specified for time-travel queries',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The catalog containing the governed table. Defaults to the caller’s account',
@@ -1562,6 +1626,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1574,6 +1639,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-temporary-glue-partition-credentials',
       description: 'This API is identical to GetTemporaryTableCredentials except that this is used when the target Data Catalog resource is of type Partition. Lake Formation restricts the permission of the vended credentials with the same scope down policy which restricts access to a single Amazon S3 prefix',
       options: [
+
         Option(
           name: '--table-arn',
           description: 'The ARN of the partitions\' table',
@@ -1644,6 +1710,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1656,6 +1723,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-temporary-glue-table-credentials',
       description: 'Allows a caller in a secure environment to assume a role with permission to access Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated with a registered location, for example an Amazon S3 bucket, with a scope down policy which restricts the access to a single prefix. To call this API, the role that the service assumes must have lakeformation:GetDataAccess permission on the resource',
       options: [
+
         Option(
           name: '--table-arn',
           description: 'The ARN identifying a table in the Data Catalog for the temporary credentials request',
@@ -1735,6 +1803,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1747,6 +1816,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-work-unit-results',
       description: 'Returns the work units resulting from the query. Work units can be executed in any order and in parallel',
       options: [
+
         Option(
           name: '--query-id',
           description: 'The ID of the plan query operation for which to get results',
@@ -1789,6 +1859,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'get-work-units',
       description: 'Retrieves the work units generated by the StartQueryPlanning operation',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is a continuation call',
@@ -1850,6 +1921,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1862,6 +1934,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'grant-permissions',
       description: 'Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. For information about permissions, see Security and Access Control to Metadata and Data',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -1923,6 +1996,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1935,6 +2009,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'list-data-cells-filter',
       description: 'Lists all the data cell filters on a table',
       options: [
+
         Option(
           name: '--table',
           description: 'A table in the Glue Data Catalog',
@@ -2005,6 +2080,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2017,6 +2093,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'list-lf-tag-expressions',
       description: 'Returns the LF-Tag expressions in caller’s account filtered based on caller\'s permissions. Data Lake and read only admins implicitly can see all tag expressions in their account, else caller needs DESCRIBE permissions on tag expression',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID',
@@ -2087,6 +2164,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2099,6 +2177,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'list-lf-tags',
       description: 'Lists LF-tags that the requester has permission to view',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -2178,6 +2257,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2190,6 +2270,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'list-lake-formation-opt-ins',
       description: 'Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions',
       options: [
+
         Option(
           name: '--principal',
           description: 'The Lake Formation principal. Supported principals are IAM users or IAM roles',
@@ -2242,6 +2323,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2254,6 +2336,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'list-permissions',
       description: 'Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER. This operation returns only those permissions that have been explicitly granted. For information about permissions, see Security and Access Control to Metadata and Data',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -2333,6 +2416,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2345,6 +2429,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'list-resources',
       description: 'Lists the resources registered to be managed by the Data Catalog',
       options: [
+
         Option(
           name: '--filter-condition-list',
           description: 'Any applicable row-level and/or column-level filtering conditions for the resources',
@@ -2388,6 +2473,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2400,6 +2486,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'list-table-storage-optimizers',
       description: 'Returns the configuration of all storage optimizers associated with a specified table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The Catalog ID of the table',
@@ -2470,6 +2557,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2482,6 +2570,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'list-transactions',
       description: 'Returns metadata about transactions and their status. To prevent the response from growing indefinitely, only uncommitted transactions and those available for time-travel queries are returned. This operation can help you identify uncommitted transactions or to get information about transactions',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The catalog for which to list transactions. Defaults to the account ID of the caller',
@@ -2534,6 +2623,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2546,6 +2636,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'put-data-lake-settings',
       description: 'Sets the list of data lake administrators who have admin privileges on all resources managed by Lake Formation. For more information on admin privileges, see Granting Lake Formation Permissions. This API replaces the current list of data lake admins with the new list being passed. To add an admin, fetch the current list and add the new admin to that list and pass that list in this API',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -2580,6 +2671,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2592,6 +2684,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'register-resource',
       description: 'Registers the resource as managed by the Data Catalog. To add or update data, Lake Formation needs read/write access to the chosen Amazon S3 path. Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess service-linked role. When you register the first Amazon S3 path, the service-linked role and a new inline policy are created on your behalf. Lake Formation adds the first path to the inline policy and attaches it to the service-linked role. When you register subsequent paths, Lake Formation adds the path to the existing policy. The following request registers a new location and gives Lake Formation permission to use the service-linked role to access that location.  ResourceArn = arn:aws:s3:::my-bucket/ UseServiceLinkedRole = true  If UseServiceLinkedRole is not set to true, you must provide or set the RoleArn:  arn:aws:iam::12345:role/my-data-access-role',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to register',
@@ -2650,6 +2743,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2662,6 +2756,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'remove-lf-tags-from-resource',
       description: 'Removes an LF-tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns, use the column inclusion list in tableWithColumns to specify column input',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -2705,6 +2800,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2717,6 +2813,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'revoke-permissions',
       description: 'Revokes permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -2778,6 +2875,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2790,6 +2888,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'search-databases-by-lf-tags',
       description: 'This operation allows a search on DATABASE resources by TagCondition. This operation is used by admins who want to grant user permissions on certain TagConditions. Before making a grant, the admin can use SearchDatabasesByTags to find all resources where the given TagConditions are valid to verify whether the returned resources can be shared',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is not the first call to retrieve this list',
@@ -2869,6 +2968,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2881,6 +2981,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'search-tables-by-lf-tags',
       description: 'This operation allows a search on TABLE resources by LFTags. This will be used by admins who want to grant user permissions on certain LF-tags. Before making a grant, the admin can use SearchTablesByLFTags to find all resources where the given LFTags are valid to verify whether the returned resources can be shared',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A continuation token, if this is not the first call to retrieve this list',
@@ -2960,6 +3061,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2972,6 +3074,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'start-query-planning',
       description: 'Submits a request to process a query statement. This operation generates work units that can be retrieved with the GetWorkUnits operation as soon as the query state is WORKUNITS_AVAILABLE or FINISHED',
       options: [
+
         Option(
           name: '--query-planning-context',
           description: 'A structure containing information about the query plan',
@@ -3006,6 +3109,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3018,6 +3122,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'start-transaction',
       description: 'Starts a new transaction and returns its transaction ID. Transaction IDs are opaque objects that you can use to identify a transaction',
       options: [
+
         Option(
           name: '--transaction-type',
           description: 'Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed',
@@ -3043,6 +3148,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3055,6 +3161,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'update-data-cells-filter',
       description: 'Updates a data cell filter',
       options: [
+
         Option(
           name: '--table-data',
           description: 'A DataCellsFilter structure containing information about the data cells filter',
@@ -3080,6 +3187,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3092,6 +3200,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'update-lf-tag',
       description: 'Updates the list of possible values for the specified LF-tag key. If the LF-tag does not exist, the operation throws an EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any value in the delete key values is attached to a resource, then API errors out with a 400 Exception - "Update not allowed". Untag the attribute before deleting the LF-tag key\'s value',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment',
@@ -3144,6 +3253,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3156,6 +3266,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'update-lf-tag-expression',
       description: 'Updates the name of the LF-Tag expression to the new description and expression body provided. Updating a LF-Tag expression immediately changes the permission boundaries of all existing LFTagPolicy permission grants that reference the given LF-Tag expression',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the LF-Tag expression',
@@ -3208,6 +3319,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3220,6 +3332,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'update-lake-formation-identity-center-configuration',
       description: 'Updates the IAM Identity Center connection parameters',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment',
@@ -3272,6 +3385,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3284,6 +3398,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'update-resource',
       description: 'Updates the data access role used for vending access to the given (registered) resource in Lake Formation',
       options: [
+
         Option(
           name: '--role-arn',
           description: 'The new role to use for the given resource registered in Lake Formation',
@@ -3334,6 +3449,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3346,6 +3462,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'update-table-objects',
       description: 'Updates the manifest of Amazon S3 objects that make up the specified governed table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The catalog containing the governed table to update. Defaults to the caller’s account ID',
@@ -3407,6 +3524,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3419,6 +3537,7 @@ final FigSpec lakeformationSpec = FigSpec(
       name: 'update-table-storage-optimizer',
       description: 'Updates the configuration of the storage optimizers for a table',
       options: [
+
         Option(
           name: '--catalog-id',
           description: 'The Catalog ID of the table',
@@ -3471,6 +3590,7 @@ final FigSpec lakeformationSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

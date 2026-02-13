@@ -9,6 +9,7 @@ final FigSpec createNxWorkspaceSpec = FigSpec(
   name: 'create-nx-workspace',
   description: 'Create a new Nx workspace',
   options: [
+
     Option(
       name: '--name',
       description: 'Workspace name (e.g., org name)'
@@ -20,6 +21,7 @@ final FigSpec createNxWorkspaceSpec = FigSpec(
         Arg(
         name: 'preset',
         suggestions: [
+
           FigSuggestion(
             name: 'empty',
             description: 'Empty [an empty workspace with a layout that works best for building apps]'
@@ -89,6 +91,7 @@ final FigSpec createNxWorkspaceSpec = FigSpec(
         Arg(
         name: 'cli',
         suggestions: [
+
           FigSuggestion(
             name: 'nx'
           ),
@@ -106,6 +109,7 @@ final FigSpec createNxWorkspaceSpec = FigSpec(
         Arg(
         name: 'style',
         suggestions: [
+
           FigSuggestion(
             name: 'css',
             description: 'CSS'
@@ -149,6 +153,7 @@ final FigSpec createNxWorkspaceSpec = FigSpec(
         Arg(
         name: 'packageManager',
         suggestions: [
+
           FigSuggestion(
             name: 'npm'
           ),

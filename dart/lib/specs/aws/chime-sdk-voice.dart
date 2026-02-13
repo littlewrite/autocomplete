@@ -9,10 +9,12 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
   name: 'chime-sdk-voice',
   description: 'The Amazon Chime SDK telephony APIs in this section enable developers to create PSTN calling solutions that use Amazon Chime SDK Voice Connectors, and Amazon Chime SDK SIP media applications. Developers can also order and manage phone numbers, create and manage Voice Connectors and SIP media applications, and run voice analytics',
   subcommands: [
+
     Subcommand(
       name: 'associate-phone-numbers-with-voice-connector',
       description: 'Associates phone numbers with the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -55,6 +57,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -67,6 +70,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'associate-phone-numbers-with-voice-connector-group',
       description: 'Associates phone numbers with the specified Amazon Chime SDK Voice Connector group',
       options: [
+
         Option(
           name: '--voice-connector-group-id',
           description: 'The Amazon Chime SDK Voice Connector group ID',
@@ -109,6 +113,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -121,6 +126,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'batch-delete-phone-number',
       description: 'Moves phone numbers into the Deletion queue. Phone numbers must be disassociated from any users or Amazon Chime SDK Voice Connectors before they can be deleted.   Phone numbers remain in the Deletion queue for 7 days before they are deleted permanently',
       options: [
+
         Option(
           name: '--phone-number-ids',
           description: 'List of phone number IDs',
@@ -146,6 +152,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -158,6 +165,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'batch-update-phone-number',
       description: 'Updates phone number product types, calling names, or phone number names. You can update one attribute at a time for each UpdatePhoneNumberRequestItem. For example, you can update the product type, the calling name, or phone name.   You cannot have a duplicate phoneNumberId in a request',
       options: [
+
         Option(
           name: '--update-phone-number-request-items',
           description: 'Lists the phone numbers in the update request',
@@ -183,6 +191,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -195,6 +204,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'create-phone-number-order',
       description: 'Creates an order for phone numbers to be provisioned. For numbers outside the U.S., you must use the Amazon Chime SDK SIP media application dial-in product type',
       options: [
+
         Option(
           name: '--product-type',
           description: 'The phone number product type',
@@ -238,6 +248,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -250,6 +261,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'create-proxy-session',
       description: 'Creates a proxy session for the specified Amazon Chime SDK Voice Connector for the specified participant phone numbers',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -338,6 +350,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -350,6 +363,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'create-sip-media-application',
       description: 'Creates a SIP media application. For more information about SIP media applications, see Managing SIP media applications and rules in the Amazon Chime SDK Administrator Guide',
       options: [
+
         Option(
           name: '--aws-region',
           description: 'The AWS Region assigned to the SIP media application',
@@ -402,6 +416,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -414,6 +429,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'create-sip-media-application-call',
       description: 'Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the endpoint of the specified sipMediaApplicationId',
       options: [
+
         Option(
           name: '--from-phone-number',
           description: 'The phone number that a user calls from. This is a phone number in your Amazon Chime SDK phone number inventory',
@@ -475,6 +491,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -487,6 +504,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'create-sip-rule',
       description: 'Creates a SIP rule, which can be used to run a SIP media application as a target for a specific trigger type. For more information about SIP rules, see Managing SIP media applications and rules in the Amazon Chime SDK Administrator Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the SIP rule',
@@ -547,6 +565,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -559,6 +578,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'create-voice-connector',
       description: 'Creates an Amazon Chime SDK Voice Connector. For more information about Voice Connectors, see Managing Amazon Chime SDK Voice Connector groups in the Amazon Chime SDK Administrator Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the Voice Connector',
@@ -619,6 +639,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -631,6 +652,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'create-voice-connector-group',
       description: 'Creates an Amazon Chime SDK Voice Connector group under the administrator\'s AWS account. You can associate Amazon Chime SDK Voice Connectors with the Voice Connector group by including VoiceConnectorItems in the request.  You can include Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the Voice Connector group',
@@ -665,6 +687,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -677,6 +700,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'create-voice-profile',
       description: 'Creates a voice profile, which consists of an enrolled user and their latest voice print.  Before creating any voice profiles, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the AWS service terms for the Amazon Chime SDK.  For more information about voice profiles and voice analytics, see Using Amazon Chime SDK Voice Analytics in the Amazon Chime SDK Developer Guide',
       options: [
+
         Option(
           name: '--speaker-search-task-id',
           description: 'The ID of the speaker search task',
@@ -702,6 +726,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -714,6 +739,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'create-voice-profile-domain',
       description: 'Creates a voice profile domain, a collection of voice profiles, their voice prints, and encrypted enrollment audio.  Before creating any voice profiles, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the AWS service terms for the Amazon Chime SDK.  For more information about voice profile domains, see Using Amazon Chime SDK Voice Analytics in the Amazon Chime SDK Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the voice profile domain',
@@ -775,6 +801,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -787,6 +814,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-phone-number',
       description: 'Moves the specified phone number into the Deletion queue. A phone number must be disassociated from any users or Amazon Chime SDK Voice Connectors before it can be deleted. Deleted phone numbers remain in the Deletion queue queue for 7 days before they are deleted permanently',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'The phone number ID',
@@ -812,6 +840,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -824,6 +853,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-proxy-session',
       description: 'Deletes the specified proxy session from the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -858,6 +888,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -870,6 +901,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-sip-media-application',
       description: 'Deletes a SIP media application',
       options: [
+
         Option(
           name: '--sip-media-application-id',
           description: 'The SIP media application ID',
@@ -895,6 +927,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -907,6 +940,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-sip-rule',
       description: 'Deletes a SIP rule',
       options: [
+
         Option(
           name: '--sip-rule-id',
           description: 'The SIP rule ID',
@@ -932,6 +966,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -944,6 +979,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-connector',
       description: 'Deletes an Amazon Chime SDK Voice Connector. Any phone numbers associated with the Amazon Chime SDK Voice Connector must be disassociated from it before it can be deleted',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -969,6 +1005,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -981,6 +1018,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-connector-emergency-calling-configuration',
       description: 'Deletes the emergency calling details from the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1006,6 +1044,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1018,6 +1057,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-connector-external-systems-configuration',
       description: 'Deletes the external systems configuration for a Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The ID of the Voice Connector for which to delete the external system configuration',
@@ -1043,6 +1083,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1055,6 +1096,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-connector-group',
       description: 'Deletes an Amazon Chime SDK Voice Connector group. Any VoiceConnectorItems and phone numbers associated with the group must be removed before it can be deleted',
       options: [
+
         Option(
           name: '--voice-connector-group-id',
           description: 'The Voice Connector Group ID',
@@ -1080,6 +1122,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1092,6 +1135,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-connector-origination',
       description: 'Deletes the origination settings for the specified Amazon Chime SDK Voice Connector.   If emergency calling is configured for the Voice Connector, it must be deleted prior to deleting the origination settings',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1117,6 +1161,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1129,6 +1174,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-connector-proxy',
       description: 'Deletes the proxy configuration from the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1154,6 +1200,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1166,6 +1213,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-connector-streaming-configuration',
       description: 'Deletes a Voice Connector\'s streaming configuration',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1191,6 +1239,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1203,6 +1252,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-connector-termination',
       description: 'Deletes the termination settings for the specified Amazon Chime SDK Voice Connector.  If emergency calling is configured for the Voice Connector, it must be deleted prior to deleting the termination settings',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1228,6 +1278,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1240,6 +1291,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-connector-termination-credentials',
       description: 'Deletes the specified SIP credentials used by your equipment to authenticate during call termination',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1274,6 +1326,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1286,6 +1339,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-profile',
       description: 'Deletes a voice profile, including its voice print and enrollment data. WARNING: This action is not reversible',
       options: [
+
         Option(
           name: '--voice-profile-id',
           description: 'The voice profile ID',
@@ -1311,6 +1365,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1323,6 +1378,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'delete-voice-profile-domain',
       description: 'Deletes all voice profiles in the domain. WARNING: This action is not reversible',
       options: [
+
         Option(
           name: '--voice-profile-domain-id',
           description: 'The voice profile domain ID',
@@ -1348,6 +1404,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1360,6 +1417,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'disassociate-phone-numbers-from-voice-connector',
       description: 'Disassociates the specified phone numbers from the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1394,6 +1452,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1406,6 +1465,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'disassociate-phone-numbers-from-voice-connector-group',
       description: 'Disassociates the specified phone numbers from the specified Amazon Chime SDK Voice Connector group',
       options: [
+
         Option(
           name: '--voice-connector-group-id',
           description: 'The Voice Connector group ID',
@@ -1440,6 +1500,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1452,6 +1513,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-global-settings',
       description: 'Retrieves the global settings for the Amazon Chime SDK Voice Connectors in an AWS account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1468,6 +1530,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1480,6 +1543,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-phone-number',
       description: 'Retrieves details for the specified phone number ID, such as associations, capabilities, and product type',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'The phone number ID',
@@ -1505,6 +1569,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1517,6 +1582,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-phone-number-order',
       description: 'Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in E.164 format, product type, and order status',
       options: [
+
         Option(
           name: '--phone-number-order-id',
           description: 'The ID of the phone number order',
@@ -1542,6 +1608,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1554,6 +1621,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-phone-number-settings',
       description: 'Retrieves the phone number settings for the administrator\'s AWS account, such as the default outbound calling name',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1570,6 +1638,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1582,6 +1651,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-proxy-session',
       description: 'Retrieves the specified proxy session details for the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1616,6 +1686,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1628,6 +1699,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-sip-media-application',
       description: 'Retrieves the information for a SIP media application, including name, AWS Region, and endpoints',
       options: [
+
         Option(
           name: '--sip-media-application-id',
           description: 'The SIP media application ID',
@@ -1653,6 +1725,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1665,6 +1738,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-sip-media-application-alexa-skill-configuration',
       description: 'Gets the Alexa Skill configuration for the SIP media application.  Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page',
       options: [
+
         Option(
           name: '--sip-media-application-id',
           description: 'The SIP media application ID',
@@ -1690,6 +1764,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1702,6 +1777,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-sip-media-application-logging-configuration',
       description: 'Retrieves the logging configuration for the specified SIP media application',
       options: [
+
         Option(
           name: '--sip-media-application-id',
           description: 'The SIP media application ID',
@@ -1727,6 +1803,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1739,6 +1816,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-sip-rule',
       description: 'Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and target endpoints',
       options: [
+
         Option(
           name: '--sip-rule-id',
           description: 'The SIP rule ID',
@@ -1764,6 +1842,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1776,6 +1855,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-speaker-search-task',
       description: 'Retrieves the details of the specified speaker search task',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1810,6 +1890,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1822,6 +1903,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-connector',
       description: 'Retrieves details for the specified Amazon Chime SDK Voice Connector, such as timestamps,name, outbound host, and encryption requirements',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1847,6 +1929,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1859,6 +1942,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-connector-emergency-calling-configuration',
       description: 'Retrieves the emergency calling configuration details for the specified Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1884,6 +1968,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1896,6 +1981,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-connector-external-systems-configuration',
       description: 'Gets information about an external systems configuration for a Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The ID of the Voice Connector for which to return information about the external system configuration',
@@ -1921,6 +2007,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1933,6 +2020,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-connector-group',
       description: 'Retrieves details for the specified Amazon Chime SDK Voice Connector group, such as timestamps,name, and associated VoiceConnectorItems',
       options: [
+
         Option(
           name: '--voice-connector-group-id',
           description: 'The Voice Connector group ID',
@@ -1958,6 +2046,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1970,6 +2059,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-connector-logging-configuration',
       description: 'Retrieves the logging configuration settings for the specified Voice Connector. Shows whether SIP message logs are enabled for sending to Amazon CloudWatch Logs',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -1995,6 +2085,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2007,6 +2098,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-connector-origination',
       description: 'Retrieves the origination settings for the specified Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -2032,6 +2124,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2044,6 +2137,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-connector-proxy',
       description: 'Retrieves the proxy configuration details for the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -2069,6 +2163,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2081,6 +2176,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-connector-streaming-configuration',
       description: 'Retrieves the streaming configuration details for the specified Amazon Chime SDK Voice Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis. It also shows the retention period, in hours, for the Amazon Kinesis data',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -2106,6 +2202,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2118,6 +2215,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-connector-termination',
       description: 'Retrieves the termination setting details for the specified Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -2143,6 +2241,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2155,6 +2254,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-connector-termination-health',
       description: 'Retrieves information about the last time a SIP OPTIONS ping was received from your SIP infrastructure for the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -2180,6 +2280,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2192,6 +2293,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-profile',
       description: 'Retrieves the details of the specified voice profile',
       options: [
+
         Option(
           name: '--voice-profile-id',
           description: 'The voice profile ID',
@@ -2217,6 +2319,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2229,6 +2332,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-profile-domain',
       description: 'Retrieves the details of the specified voice profile domain',
       options: [
+
         Option(
           name: '--voice-profile-domain-id',
           description: 'The voice profile domain ID',
@@ -2254,6 +2358,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2266,6 +2371,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'get-voice-tone-analysis-task',
       description: 'Retrieves the details of a voice tone analysis task',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -2308,6 +2414,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2320,6 +2427,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-available-voice-connector-regions',
       description: 'Lists the available AWS Regions in which you can create an Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2336,6 +2444,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2348,6 +2457,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-phone-number-orders',
       description: 'Lists the phone numbers for an administrator\'s Amazon Chime SDK account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to retrieve the next page of results',
@@ -2382,6 +2492,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2394,6 +2505,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-phone-numbers',
       description: 'Lists the phone numbers for the specified Amazon Chime SDK account, Amazon Chime SDK user, Amazon Chime SDK Voice Connector, or Amazon Chime SDK Voice Connector group',
       options: [
+
         Option(
           name: '--status',
           description: 'The status of your organization\'s phone numbers',
@@ -2464,6 +2576,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2476,6 +2589,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-proxy-sessions',
       description: 'Lists the proxy sessions for the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -2528,6 +2642,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2540,6 +2655,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-sip-media-applications',
       description: 'Lists the SIP media applications under the administrator\'s AWS account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in a single call. Defaults to 100',
@@ -2601,6 +2717,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2613,6 +2730,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-sip-rules',
       description: 'Lists the SIP rules under the administrator\'s AWS account',
       options: [
+
         Option(
           name: '--sip-media-application-id',
           description: 'The SIP media application ID',
@@ -2683,6 +2801,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2695,6 +2814,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-supported-phone-number-countries',
       description: 'Lists the countries that you can order phone numbers from',
       options: [
+
         Option(
           name: '--product-type',
           description: 'The phone number product type',
@@ -2720,6 +2840,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2732,6 +2853,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of the tags in a given resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN',
@@ -2757,6 +2879,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2769,6 +2892,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-voice-connector-groups',
       description: 'Lists the Amazon Chime SDK Voice Connector groups in the administrator\'s AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to return the next page of results',
@@ -2803,6 +2927,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2815,6 +2940,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-voice-connector-termination-credentials',
       description: 'Lists the SIP credentials for the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -2840,6 +2966,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2852,6 +2979,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-voice-connectors',
       description: 'Lists the Amazon Chime SDK Voice Connectors in the administrators AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to return the next page of results',
@@ -2886,6 +3014,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2898,6 +3027,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-voice-profile-domains',
       description: 'Lists the specified voice profile domains in the administrator\'s AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to return the next page of results',
@@ -2932,6 +3062,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2944,6 +3075,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'list-voice-profiles',
       description: 'Lists the voice profiles in a voice profile domain',
       options: [
+
         Option(
           name: '--voice-profile-domain-id',
           description: 'The ID of the voice profile domain',
@@ -2987,6 +3119,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2999,6 +3132,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'put-sip-media-application-alexa-skill-configuration',
       description: 'Updates the Alexa Skill configuration for the SIP media application.  Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page',
       options: [
+
         Option(
           name: '--sip-media-application-id',
           description: 'The SIP media application ID',
@@ -3033,6 +3167,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3045,6 +3180,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'put-sip-media-application-logging-configuration',
       description: 'Updates the logging configuration for the specified SIP media application',
       options: [
+
         Option(
           name: '--sip-media-application-id',
           description: 'The SIP media application ID',
@@ -3079,6 +3215,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3091,6 +3228,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'put-voice-connector-emergency-calling-configuration',
       description: 'Updates a Voice Connector\'s emergency calling configuration',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3125,6 +3263,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3137,6 +3276,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'put-voice-connector-external-systems-configuration',
       description: 'Adds an external systems configuration to a Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The ID of the Voice Connector for which to add the external system configuration',
@@ -3180,6 +3320,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3192,6 +3333,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'put-voice-connector-logging-configuration',
       description: 'Updates a Voice Connector\'s logging configuration',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3226,6 +3368,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3238,6 +3381,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'put-voice-connector-origination',
       description: 'Updates a Voice Connector\'s origination settings',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3272,6 +3416,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3284,6 +3429,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'put-voice-connector-proxy',
       description: 'Puts the specified proxy configuration to the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3344,6 +3490,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3356,6 +3503,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'put-voice-connector-streaming-configuration',
       description: 'Updates a Voice Connector\'s streaming configuration settings',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3390,6 +3538,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3402,6 +3551,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'put-voice-connector-termination',
       description: 'Updates a Voice Connector\'s termination settings',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3436,6 +3586,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3448,6 +3599,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'put-voice-connector-termination-credentials',
       description: 'Updates a Voice Connector\'s termination credentials',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3482,6 +3634,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3494,6 +3647,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'restore-phone-number',
       description: 'Restores a deleted phone number',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'The ID of the phone number being restored',
@@ -3519,6 +3673,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3531,6 +3686,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'search-available-phone-numbers',
       description: 'Searches the provisioned phone numbers in an organization',
       options: [
+
         Option(
           name: '--area-code',
           description: 'Confines a search to just the phone numbers associated with the specified area code',
@@ -3619,6 +3775,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3631,6 +3788,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'start-speaker-search-task',
       description: 'Starts a speaker search task.  Before starting any speaker search tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the AWS service terms for the Amazon Chime SDK',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3692,6 +3850,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3704,6 +3863,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'start-voice-tone-analysis-task',
       description: 'Starts a voice tone analysis task. For more information about voice tone analysis, see Using Amazon Chime SDK voice analytics in the Amazon Chime SDK Developer Guide.  Before starting any voice tone analysis tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the AWS service terms for the Amazon Chime SDK',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3756,6 +3916,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3768,6 +3929,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'stop-speaker-search-task',
       description: 'Stops a speaker search task',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3802,6 +3964,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3814,6 +3977,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'stop-voice-tone-analysis-task',
       description: 'Stops a voice tone analysis task',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -3848,6 +4012,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3860,6 +4025,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a tag to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource being tagged',
@@ -3894,6 +4060,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3906,6 +4073,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource having its tags removed',
@@ -3940,6 +4108,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3952,6 +4121,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-global-settings',
       description: 'Updates global settings for the Amazon Chime SDK Voice Connectors in an AWS account',
       options: [
+
         Option(
           name: '--voice-connector',
           description: 'The Voice Connector settings',
@@ -3977,6 +4147,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3989,6 +4160,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-phone-number',
       description: 'Updates phone number details, such as product type, calling name, or phone number name for the specified phone number ID. You can update one phone number detail at a time. For example, you can update either the product type, calling name, or phone number name in one action. For numbers outside the U.S., you must use the Amazon Chime SDK SIP Media Application Dial-In product type. Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must be complete before you can request another update',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'The phone number ID',
@@ -4041,6 +4213,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4053,6 +4226,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-phone-number-settings',
       description: 'Updates the phone number settings for the administrator\'s AWS account, such as the default outbound calling name. You can update the default outbound calling name once every seven days. Outbound calling names can take up to 72 hours to update',
       options: [
+
         Option(
           name: '--calling-name',
           description: 'The default outbound calling name for the account',
@@ -4078,6 +4252,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4090,6 +4265,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-proxy-session',
       description: 'Updates the specified proxy session details, such as voice or SMS capabilities',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -4142,6 +4318,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4154,6 +4331,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-sip-media-application',
       description: 'Updates the details of the specified SIP media application',
       options: [
+
         Option(
           name: '--sip-media-application-id',
           description: 'The SIP media application ID',
@@ -4197,6 +4375,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4209,6 +4388,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-sip-media-application-call',
       description: 'Invokes the AWS Lambda function associated with the SIP media application and transaction ID in an update request. The Lambda function can then return a new set of actions',
       options: [
+
         Option(
           name: '--sip-media-application-id',
           description: 'The ID of the SIP media application handling the call',
@@ -4252,6 +4432,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4264,6 +4445,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-sip-rule',
       description: 'Updates the details of the specified SIP rule',
       options: [
+
         Option(
           name: '--sip-rule-id',
           description: 'The SIP rule ID',
@@ -4315,6 +4497,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4327,6 +4510,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-voice-connector',
       description: 'Updates the details for the specified Amazon Chime SDK Voice Connector',
       options: [
+
         Option(
           name: '--voice-connector-id',
           description: 'The Voice Connector ID',
@@ -4369,6 +4553,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4381,6 +4566,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-voice-connector-group',
       description: 'Updates the settings for the specified Amazon Chime SDK Voice Connector group',
       options: [
+
         Option(
           name: '--voice-connector-group-id',
           description: 'The Voice Connector ID',
@@ -4424,6 +4610,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4436,6 +4623,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-voice-profile',
       description: 'Updates the specified voice profile’s voice print and refreshes its expiration timestamp.  As a condition of using this feature, you acknowledge that the collection, use, storage, and retention of your caller’s biometric identifiers and biometric information (“biometric data”) in the form of a digital voiceprint requires the caller’s informed consent via a written release. Such consent is required under various state laws, including biometrics laws in Illinois, Texas, Washington and other state privacy laws. You must provide a written release to each caller through a process that clearly reflects each caller’s informed consent before using Amazon Chime SDK Voice Insights service, as required under the terms of your agreement with AWS governing your use of the service',
       options: [
+
         Option(
           name: '--voice-profile-id',
           description: 'The profile ID',
@@ -4470,6 +4658,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4482,6 +4671,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'update-voice-profile-domain',
       description: 'Updates the settings for the specified voice profile domain',
       options: [
+
         Option(
           name: '--voice-profile-domain-id',
           description: 'The domain ID',
@@ -4525,6 +4715,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4537,6 +4728,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
       name: 'validate-e911-address',
       description: 'Validates an address to be used for 911 calls made with Amazon Chime SDK Voice Connectors. You can use validated addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps ensure that addresses are routed to the appropriate Public Safety Answering Point',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The AWS account ID',
@@ -4616,6 +4808,7 @@ final FigSpec chimeSdkVoiceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

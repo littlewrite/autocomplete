@@ -9,10 +9,12 @@ final FigSpec connectSpec = FigSpec(
   name: 'connect',
   description: 'Amazon Connect actions     Amazon Connect data types    Amazon Connect is a cloud-based contact center solution that you use to set up and manage a customer contact center and provide reliable customer engagement at any scale. Amazon Connect provides metrics and real-time reporting that enable you to optimize contact routing. You can also resolve customer issues more efficiently by getting customers in touch with the appropriate agents. There are limits to the number of Amazon Connect resources that you can create. There are also limits to the number of requests that you can make per second. For more information, see Amazon Connect Service Quotas in the Amazon Connect Administrator Guide. You can use an endpoint to connect programmatically to an Amazon Web Services service. For a list of Amazon Connect endpoints, see Amazon Connect Endpoints',
   subcommands: [
+
     Subcommand(
       name: 'activate-evaluation-form',
       description: 'Activates an evaluation form in the specified Amazon Connect instance. After the evaluation form is activated, it is available to start new evaluations based on the form',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -56,6 +58,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-analytics-data-set',
       description: 'Associates the specified dataset for a Amazon Connect instance with the target account. You can associate only one dataset in a single call',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -111,6 +115,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-approved-origin',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Associates an approved origin to an Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -157,6 +163,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-bot',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Allows the specified Amazon Connect instance to access the specified Amazon Lex or Amazon Lex V2 bot',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -212,6 +220,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-default-vocabulary',
       description: 'Associates an existing vocabulary as the default. Contact Lens for Amazon Connect uses the vocabulary in post-call and real-time analysis sessions for the given language',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -267,6 +277,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-flow',
       description: 'Associates a connect resource to a flow',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -331,6 +343,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -343,6 +356,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-instance-storage-config',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Associates a storage resource type for the first time. You can only associate one type of storage configuration in a single call. This means, for example, that you can\'t define an instance with multiple S3 buckets for storing chat transcripts. This API does not create a resource that doesn\'t exist. It only associates it to the instance. Ensure that the resource being specified in the storage configuration, like an S3 bucket, exists when being used for association',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -386,6 +400,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -398,6 +413,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-lambda-function',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Allows the specified Amazon Connect instance to access the specified Lambda function',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -432,6 +448,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -444,6 +461,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-lex-bot',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Allows the specified Amazon Connect instance to access the specified Amazon Lex V1 bot. This API only supports the association of Amazon Lex V1 bots',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -478,6 +496,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -490,6 +509,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-phone-number-contact-flow',
       description: 'Associates a flow with a phone number claimed to your Amazon Connect instance.  If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone number ARN or UUID value for the PhoneNumberId URI request parameter. However, if the number is claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a ResourceNotFoundException',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'A unique identifier for the phone number',
@@ -533,6 +553,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -545,6 +566,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-queue-quick-connects',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Associates a set of quick connects with a queue',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -588,6 +610,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -600,6 +623,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-routing-profile-queues',
       description: 'Associates a set of queues with a routing profile',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -643,6 +667,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -655,6 +680,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-security-key',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Associates a security key to the instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -689,6 +715,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -701,6 +728,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-traffic-distribution-group-user',
       description: 'Associates an agent with a traffic distribution group. This API can be called only in the Region where the traffic distribution group is created',
       options: [
+
         Option(
           name: '--traffic-distribution-group-id',
           description: 'The identifier of the traffic distribution group. This can be the ID or the ARN of the traffic distribution group',
@@ -744,6 +772,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -756,6 +785,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'associate-user-proficiencies',
       description: '>Associates a set of proficiencies with a user',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN of the instance)',
@@ -799,6 +829,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -811,6 +842,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'batch-associate-analytics-data-set',
       description: 'Associates a list of analytics datasets for a given Amazon Connect instance to a target account. You can associate multiple datasets in a single call',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -854,6 +886,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -866,6 +899,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'batch-disassociate-analytics-data-set',
       description: 'Removes a list of analytics datasets associated with a given Amazon Connect instance. You can disassociate multiple datasets in a single call',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -909,6 +943,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -921,6 +956,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'batch-get-attached-file-metadata',
       description: 'Allows you to retrieve metadata about multiple attached files on an associated resource. Each attached file provided in the input list must be associated with the input AssociatedResourceArn',
       options: [
+
         Option(
           name: '--file-ids',
           description: 'The unique identifiers of the attached file resource',
@@ -964,6 +1000,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -976,6 +1013,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'batch-get-flow-association',
       description: 'Retrieve the flow associations for the given resources',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -1019,6 +1057,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1031,6 +1070,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'batch-put-contact',
       description: 'Only the Amazon Connect outbound campaigns service principal is allowed to assume a role in your account and call this API.  Allows you to create a batch of contacts in Amazon Connect. The outbound campaigns capability ingests dial requests via the PutDialRequestBatch API. It then uses BatchPutContact to create contacts corresponding to those dial requests. If agents are available, the dial requests are dialed out, which results in a voice call. The resulting voice call uses the same contactId that was created by BatchPutContact',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -1074,6 +1114,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1086,6 +1127,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'claim-phone-number',
       description: 'Claims an available phone number to your Amazon Connect instance or traffic distribution group. You can call this API only in the same Amazon Web Services Region where the Amazon Connect instance or traffic distribution group was created. For more information about how to use this operation, see Claim a phone number in your country and Claim phone numbers to traffic distribution groups in the Amazon Connect Administrator Guide.   You can call the SearchAvailablePhoneNumbers API for available phone numbers that you can claim. Call the DescribePhoneNumber API to verify the status of a previous ClaimPhoneNumber operation.  If you plan to claim and release numbers frequently, contact us for a service quota exception. Otherwise, it is possible you will be blocked from claiming and releasing any more numbers until up to 180 days past the oldest number released has expired. By default you can claim and release up to 200% of your maximum number of active phone numbers. If you claim and release phone numbers using the UI or API during a rolling 180 day cycle that exceeds 200% of your phone number service level quota, you will be blocked from claiming any more numbers until 180 days past the oldest number released has expired.  For example, if you already have 99 claimed numbers and a service level quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and then release 99, you will have exceeded the 200% limit. At that point you are blocked from claiming any more numbers until you open an Amazon Web Services support ticket',
       options: [
+
         Option(
           name: '--target-arn',
           description: 'The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through. You must enter InstanceId or TargetArn',
@@ -1156,6 +1198,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1168,6 +1211,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'complete-attached-file-upload',
       description: 'Allows you to confirm that the attached file has been uploaded using the pre-signed URL provided in the StartAttachedFileUpload API',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The unique identifier of the Amazon Connect instance',
@@ -1211,6 +1255,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1223,6 +1268,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-agent-status',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Creates an agent status for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -1293,6 +1339,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1305,6 +1352,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-contact',
       description: 'Creates a new contact',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -1438,6 +1486,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1450,6 +1499,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-contact-flow',
       description: 'Creates a flow for the specified Amazon Connect instance. You can also create and update flows using the Amazon Connect Flow language',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance',
@@ -1529,6 +1579,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1541,6 +1592,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-contact-flow-module',
       description: 'Creates a flow module for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -1611,6 +1663,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1623,6 +1676,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-contact-flow-version',
       description: 'Publishes a new version of the flow provided. Versions are immutable and monotonically increasing. If a version of the same flow content already exists, no new version is created and instead the existing version number is returned. If the FlowContentSha256 provided is different from the FlowContentSha256 of the \$LATEST published flow content, then an error is returned. This API only supports creating versions for flows of type Campaign',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance',
@@ -1693,6 +1747,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1705,6 +1760,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-email-address',
       description: 'Create new email address in the specified Amazon Connect instance. For more information about email addresses, see Create email addresses in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the email address',
@@ -1775,6 +1831,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1787,6 +1844,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-evaluation-form',
       description: 'Creates an evaluation form in the specified Amazon Connect instance. The form can be used to define questions related to agent performance, and create sections to organize such questions. Question and section identifiers cannot be duplicated within the same evaluation form',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -1857,6 +1915,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1869,6 +1928,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-hours-of-operation',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Creates hours of operation',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -1939,6 +1999,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1951,6 +2012,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-instance',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or Amazon Kinesis. It also does not allow for any configurations on features, such as Contact Lens for Amazon Connect.  For more information, see Create an Amazon Connect instance in the Amazon Connect Administrator Guide. Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days. If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances. You must wait 30 days before you can restart creating and deleting instances in your account',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The idempotency token',
@@ -2028,6 +2090,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2040,6 +2103,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-integration-association',
       description: 'Creates an Amazon Web Services resource association with an Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -2119,6 +2183,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2131,6 +2196,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-participant',
       description: 'Adds a new participant into an on-going chat contact. For more information, see Customize chat flow experiences by integrating custom participants',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -2183,6 +2249,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2195,6 +2262,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-persistent-contact-association',
       description: 'Enables rehydration of chats for the lifespan of a contact. For more information about chat rehydration, see Enable persistent chat in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -2256,6 +2324,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2268,6 +2337,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-predefined-attribute',
       description: 'Creates a new predefined attribute for the specified Amazon Connect instance. Predefined attributes are attributes in an Amazon Connect instance that can be used to route contacts to an agent or pools of agents within a queue. For more information, see Create predefined attributes for routing contacts to agents',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -2311,6 +2381,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2323,6 +2394,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-prompt',
       description: 'Creates a prompt. For more information about prompts, such as supported file types and maximum length, see Create prompts in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -2384,6 +2456,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2396,6 +2469,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-push-notification-registration',
       description: 'Creates registration for a device token and a chat contact to receive real-time push notifications. For more information about push notifications, see Set up push notifications in Amazon Connect for mobile chat in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -2466,6 +2540,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2478,6 +2553,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-queue',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Creates a new queue for the specified Amazon Connect instance.    If the phone number is claimed to a traffic distribution group that was created in the same Region as the Amazon Connect instance where you are calling this API, then you can use a full phone number ARN or a UUID for OutboundCallerIdNumberId. However, if the phone number is claimed to a traffic distribution group that is in one Region, and you are calling this API from an instance in another Amazon Web Services Region that is associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a ResourceNotFoundException.   Only use the phone number ARN format that doesn\'t contain instance in the path, for example, arn:aws:connect:us-east-1:1234567890:phone-number/uuid. This is the same ARN format that is returned when you call the ListPhoneNumbersV2 API.   If you plan to use IAM policies to allow/deny access to this API for phone number resources claimed to a traffic distribution group, see Allow or Deny queue API actions for phone numbers in a replica Region',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -2575,6 +2651,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2587,6 +2664,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-quick-connect',
       description: 'Creates a quick connect for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -2648,6 +2726,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2660,6 +2739,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-routing-profile',
       description: 'Creates a new routing profile',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -2748,6 +2828,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2760,6 +2841,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-rule',
       description: 'Creates a rule for the specified Amazon Connect instance. Use the Rules Function language to code conditions for the rule',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -2839,6 +2921,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2851,6 +2934,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-security-profile',
       description: 'Creates a security profile. For information about security profiles, see Security Profiles in the Amazon Connect Administrator Guide. For a mapping of the API name and user interface name of the security profile permissions, see List of security profile permissions',
       options: [
+
         Option(
           name: '--security-profile-name',
           description: 'The name of the security profile',
@@ -2957,6 +3041,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2969,6 +3054,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-task-template',
       description: 'Creates a new task template in the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -3075,6 +3161,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3087,6 +3174,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-traffic-distribution-group',
       description: 'Creates a traffic distribution group given an Amazon Connect instance that has been replicated.  The SignInConfig distribution is available only on a default TrafficDistributionGroup (see the IsDefault parameter in the TrafficDistributionGroup data type). If you call UpdateTrafficDistribution with a modified SignInConfig and a non-default TrafficDistributionGroup, an InvalidRequestException is returned.  For more information about creating traffic distribution groups, see Set up traffic distribution groups in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for the traffic distribution group',
@@ -3148,6 +3236,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3160,6 +3249,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-use-case',
       description: 'Creates a use case for an integration association',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -3212,6 +3302,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3224,6 +3315,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-user',
       description: 'Creates a user account for the specified Amazon Connect instance.  Certain UserIdentityInfo parameters are required in some situations. For example, Email is required if you are using SAML for identity management. FirstName and LastName are required if you are using Amazon Connect or SAML for identity management.  For information about how to create users using the Amazon Connect admin website, see Add Users in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--username',
           description: 'The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\\@]+. Username can include @ only if used in an email format. For example:   Correct: testuser   Correct: testuser@example.com   Incorrect: testuser@example',
@@ -3330,6 +3422,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3342,6 +3435,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-user-hierarchy-group',
       description: 'Creates a new user hierarchy group',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the user hierarchy group. Must not be more than 100 characters',
@@ -3394,6 +3488,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3406,6 +3501,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-view',
       description: 'Creates a new view with the possible status of SAVED or PUBLISHED. The views will have a unique name for each connect instance. It performs basic content validation if the status is SAVED or full content validation if the status is set to PUBLISHED. An error is returned if validation fails. It associates either the \$SAVED qualifier or both of the \$SAVED and \$LATEST qualifiers with the provided view content based on the status. The view is idempotent if ClientToken is provided',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -3485,6 +3581,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3497,6 +3594,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-view-version',
       description: 'Publishes a new version of the view identifier. Versions are immutable and monotonically increasing. It returns the highest version if there is no change in content compared to that version. An error is displayed if the supplied ViewContentSha256 is different from the ViewContentSha256 of the \$LATEST alias',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -3549,6 +3647,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3561,6 +3660,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'create-vocabulary',
       description: 'Creates a custom vocabulary associated with your Amazon Connect instance. You can set a custom vocabulary to be your default vocabulary for a given language. Contact Lens for Amazon Connect uses the default vocabulary in post-call and real-time contact analysis sessions for that language',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again',
@@ -3631,6 +3731,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3643,6 +3744,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'deactivate-evaluation-form',
       description: 'Deactivates an evaluation form in the specified Amazon Connect instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -3686,6 +3788,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3698,6 +3801,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-attached-file',
       description: 'Deletes an attached file along with the underlying S3 Object.  The attached file is permanently deleted if S3 bucket versioning is not enabled',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The unique identifier of the Connect instance',
@@ -3741,6 +3845,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3753,6 +3858,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-contact-evaluation',
       description: 'Deletes a contact evaluation in the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -3787,6 +3893,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3799,6 +3906,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-contact-flow',
       description: 'Deletes a flow for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -3833,6 +3941,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3845,6 +3954,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-contact-flow-module',
       description: 'Deletes the specified flow module',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -3879,6 +3989,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3891,6 +4002,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-email-address',
       description: 'Deletes email address from the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -3925,6 +4037,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3937,6 +4050,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-evaluation-form',
       description: 'Deletes an evaluation form in the specified Amazon Connect instance.    If the version property is provided, only the specified version of the evaluation form is deleted.   If no version is provided, then the full form (all versions) is deleted',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -3980,6 +4094,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3992,6 +4107,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-hours-of-operation',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Deletes an hours of operation',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4026,6 +4142,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4038,6 +4155,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-instance',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Deletes the Amazon Connect instance. For more information, see Delete your Amazon Connect instance in the Amazon Connect Administrator Guide. Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days. If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances. You must wait 30 days before you can restart creating and deleting instances in your account',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4063,6 +4181,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4075,6 +4194,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-integration-association',
       description: 'Deletes an Amazon Web Services resource association from an Amazon Connect instance. The association must not have any use cases associated with it',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4109,6 +4229,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4121,6 +4242,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-predefined-attribute',
       description: 'Deletes a predefined attribute from the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4155,6 +4277,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4167,6 +4290,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-prompt',
       description: 'Deletes a prompt',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4201,6 +4325,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4213,6 +4338,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-push-notification-registration',
       description: 'Deletes registration for a device token and a chat contact',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4256,6 +4382,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4268,6 +4395,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-queue',
       description: 'Deletes a queue. It isn\'t possible to delete a queue by using the Amazon Connect admin website',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4302,6 +4430,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4314,6 +4443,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-quick-connect',
       description: 'Deletes a quick connect.   After calling DeleteUser, it\'s important to call DeleteQuickConnect to delete any records related to the deleted users. This will help you:   Avoid dangling resources that impact your service quotas.   Remove deleted users so they don\'t appear to agents as transfer options.   Avoid the disruption of other Amazon Connect processes, such as instance replication and syncing if you\'re using Amazon Connect Global Resiliency',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4348,6 +4478,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4360,6 +4491,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-routing-profile',
       description: 'Deletes a routing profile',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4394,6 +4526,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4406,6 +4539,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-rule',
       description: 'Deletes a rule for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4440,6 +4574,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4452,6 +4587,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-security-profile',
       description: 'Deletes a security profile',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4486,6 +4622,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4498,6 +4635,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-task-template',
       description: 'Deletes the task template',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4532,6 +4670,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4544,6 +4683,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-traffic-distribution-group',
       description: 'Deletes a traffic distribution group. This API can be called only in the Region where the traffic distribution group is created. For more information about deleting traffic distribution groups, see Delete traffic distribution groups in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--traffic-distribution-group-id',
           description: 'The identifier of the traffic distribution group. This can be the ID or the ARN of the traffic distribution group',
@@ -4569,6 +4709,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4581,6 +4722,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-use-case',
       description: 'Deletes a use case from an integration association',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4624,6 +4766,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4636,6 +4779,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-user',
       description: 'Deletes a user account from the specified Amazon Connect instance. For information about what happens to a user\'s data when their account is deleted, see Delete Users from Your Amazon Connect Instance in the Amazon Connect Administrator Guide.  After calling DeleteUser, call DeleteQuickConnect to delete any records related to the deleted users. This will help you:   Avoid dangling resources that impact your service quotas.   Remove deleted users so they don\'t appear to agents as transfer options.   Avoid the disruption of other Amazon Connect processes, such as instance replication and syncing if you\'re using Amazon Connect Global Resiliency',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4670,6 +4814,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4682,6 +4827,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-user-hierarchy-group',
       description: 'Deletes an existing user hierarchy group. It must not be associated with any agents or have any active child groups',
       options: [
+
         Option(
           name: '--hierarchy-group-id',
           description: 'The identifier of the hierarchy group',
@@ -4716,6 +4862,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4728,6 +4875,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-view',
       description: 'Deletes the view entirely. It deletes the view and all associated qualifiers (versions and aliases)',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -4762,6 +4910,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4774,6 +4923,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-view-version',
       description: 'Deletes the particular version specified in ViewVersion identifier',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -4817,6 +4967,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4829,6 +4980,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'delete-vocabulary',
       description: 'Deletes the vocabulary that has the given identifier',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4863,6 +5015,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4875,6 +5028,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-agent-status',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Describes an agent status',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -4909,6 +5063,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4921,6 +5076,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-authentication-profile',
       description: 'This API is in preview release for Amazon Connect and is subject to change. To request access to this API, contact Amazon Web Services Support. Describes the target authentication profile',
       options: [
+
         Option(
           name: '--authentication-profile-id',
           description: 'A unique identifier for the authentication profile',
@@ -4955,6 +5111,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4967,6 +5124,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-contact',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Describes the specified contact.   Contact information remains available in Amazon Connect for 24 months from the InitiationTimestamp, and then it is deleted. Only contact information that is available in Amazon Connect is returned by this API',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5001,6 +5159,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5013,6 +5172,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-contact-evaluation',
       description: 'Describes a contact evaluation in the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5047,6 +5207,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5059,6 +5220,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-contact-flow',
       description: 'Describes the specified flow. You can also create and update flows using the Amazon Connect Flow language. Use the \$SAVED alias in the request to describe the SAVED content of a Flow. For example, arn:aws:.../contact-flow/{id}:\$SAVED. After a flow is published, \$SAVED needs to be supplied to view saved content that has not been published. In the response, Status indicates the flow status as either SAVED or PUBLISHED. The PUBLISHED status will initiate validation on the content. SAVED does not initiate validation of the content. SAVED | PUBLISHED',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance',
@@ -5093,6 +5255,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5105,6 +5268,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-contact-flow-module',
       description: 'Describes the specified flow module. Use the \$SAVED alias in the request to describe the SAVED content of a Flow. For example, arn:aws:.../contact-flow/{id}:\$SAVED. After a flow is published, \$SAVED needs to be supplied to view saved content that has not been published',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5139,6 +5303,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5151,6 +5316,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-email-address',
       description: 'Describe email address form the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5185,6 +5351,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5197,6 +5364,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-evaluation-form',
       description: 'Describes an evaluation form in the specified Amazon Connect instance. If the version property is not provided, the latest version of the evaluation form is described',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5240,6 +5408,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5252,6 +5421,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-hours-of-operation',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Describes the hours of operation',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5286,6 +5456,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5298,6 +5469,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-instance',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Returns the current state of the specified instance identifier. It tracks the instance while it is being created and returns an error status, if applicable.  If an instance is not created successfully, the instance status reason field returns details relevant to the reason. The instance in a failed state is returned only for 24 hours after the CreateInstance API was invoked',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5323,6 +5495,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5335,6 +5508,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-instance-attribute',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Describes the specified instance attribute',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5369,6 +5543,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5381,6 +5556,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-instance-storage-config',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Retrieves the current storage configurations for the specified resource type, association ID, and instance ID',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5424,6 +5600,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5436,6 +5613,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-phone-number',
       description: 'Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution group.  If the number is claimed to a traffic distribution group, and you are calling in the Amazon Web Services Region where the traffic distribution group was created, you can use either a phone number ARN or UUID value for the PhoneNumberId URI request parameter. However, if the number is claimed to a traffic distribution group and you are calling this API in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you receive a ResourceNotFoundException',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'A unique identifier for the phone number',
@@ -5461,6 +5639,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5473,6 +5652,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-predefined-attribute',
       description: 'Describes a predefined attribute for the specified Amazon Connect instance. Predefined attributes are attributes in an Amazon Connect instance that can be used to route contacts to an agent or pools of agents within a queue. For more information, see Create predefined attributes for routing contacts to agents',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5507,6 +5687,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5519,6 +5700,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-prompt',
       description: 'Describes the prompt',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5553,6 +5735,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5565,6 +5748,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-queue',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Describes the specified queue',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5599,6 +5783,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5611,6 +5796,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-quick-connect',
       description: 'Describes the quick connect',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5645,6 +5831,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5657,6 +5844,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-routing-profile',
       description: 'Describes the specified routing profile',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5691,6 +5879,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5703,6 +5892,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-rule',
       description: 'Describes a rule for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5737,6 +5927,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5749,6 +5940,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-security-profile',
       description: 'Gets basic information about the security profile. For information about security profiles, see Security Profiles in the Amazon Connect Administrator Guide. For a mapping of the API name and user interface name of the security profile permissions, see List of security profile permissions',
       options: [
+
         Option(
           name: '--security-profile-id',
           description: 'The identifier for the security profle',
@@ -5783,6 +5975,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5795,6 +5988,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-traffic-distribution-group',
       description: 'Gets details and status of a traffic distribution group',
       options: [
+
         Option(
           name: '--traffic-distribution-group-id',
           description: 'The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region',
@@ -5820,6 +6014,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5832,6 +6027,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-user',
       description: 'Describes the specified user. You can find the instance ID in the Amazon Connect console (it’s the final part of the ARN). The console does not display the user IDs. Instead, list the users and note the IDs provided in the output',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The identifier of the user account',
@@ -5866,6 +6062,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5878,6 +6075,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-user-hierarchy-group',
       description: 'Describes the specified hierarchy group',
       options: [
+
         Option(
           name: '--hierarchy-group-id',
           description: 'The identifier of the hierarchy group',
@@ -5912,6 +6110,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5924,6 +6123,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-user-hierarchy-structure',
       description: 'Describes the hierarchy structure of the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -5949,6 +6149,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5961,6 +6162,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-view',
       description: 'Retrieves the view for the specified Amazon Connect instance and view identifier. The view identifier can be supplied as a ViewId or ARN.  \$SAVED needs to be supplied if a view is unpublished. The view identifier can contain an optional qualifier, for example, <view-id>:\$SAVED, which is either an actual version number or an Amazon Connect managed qualifier \$SAVED | \$LATEST. If it is not supplied, then \$LATEST is assumed for customer managed views and an error is returned if there is no published content available. Version 1 is assumed for Amazon Web Services managed views',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -5995,6 +6197,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6007,6 +6210,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'describe-vocabulary',
       description: 'Describes the specified vocabulary',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6041,6 +6245,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6053,6 +6258,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-analytics-data-set',
       description: 'Removes the dataset ID associated with a given Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6096,6 +6302,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6108,6 +6315,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-approved-origin',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Revokes access to integrated applications from Amazon Connect',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6142,6 +6350,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6154,6 +6363,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-bot',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2 bot',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6197,6 +6407,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6209,6 +6420,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-flow',
       description: 'Disassociates a connect resource from a flow',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6252,6 +6464,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6264,6 +6477,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-instance-storage-config',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Removes the storage type configurations for the specified resource type and association ID',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6307,6 +6521,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6319,6 +6534,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-lambda-function',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Remove the Lambda function from the dropdown options available in the relevant flow blocks',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6353,6 +6569,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6365,6 +6582,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-lex-bot',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Revokes authorization from the specified instance to access the specified Amazon Lex bot',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6408,6 +6626,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6420,6 +6639,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-phone-number-contact-flow',
       description: 'Removes the flow association from a phone number claimed to your Amazon Connect instance.  If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone number ARN or UUID value for the PhoneNumberId URI request parameter. However, if the number is claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a ResourceNotFoundException',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'A unique identifier for the phone number',
@@ -6454,6 +6674,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6466,6 +6687,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-queue-quick-connects',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Disassociates a set of quick connects from a queue',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6509,6 +6731,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6521,6 +6744,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-routing-profile-queues',
       description: 'Disassociates a set of queues from a routing profile',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6564,6 +6788,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6576,6 +6801,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-security-key',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Deletes the specified security key',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6610,6 +6836,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6622,6 +6849,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-traffic-distribution-group-user',
       description: 'Disassociates an agent from a traffic distribution group. This API can be called only in the Region where the traffic distribution group is created',
       options: [
+
         Option(
           name: '--traffic-distribution-group-id',
           description: 'The identifier of the traffic distribution group. This can be the ID or the ARN of the traffic distribution group',
@@ -6665,6 +6893,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6677,6 +6906,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'disassociate-user-proficiencies',
       description: 'Disassociates a set of proficiencies from a user',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6720,6 +6950,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6732,6 +6963,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'dismiss-user-contact',
       description: 'Dismisses contacts from an agent’s CCP and returns the agent to an available state, which allows the agent to receive a new routed contact. Contacts can only be dismissed if they are in a MISSED, ERROR, ENDED, or REJECTED state in the Agent Event Stream',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The identifier of the user account',
@@ -6775,6 +7007,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6787,6 +7020,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-attached-file',
       description: 'Provides a pre-signed URL for download of an approved attached file. This API also returns metadata about the attached file. It will only return a downloadURL if the status of the attached file is APPROVED',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The unique identifier of the Amazon Connect instance',
@@ -6839,6 +7073,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6851,6 +7086,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-contact-attributes',
       description: 'Retrieves the contact attributes for the specified contact',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance',
@@ -6885,6 +7121,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6897,6 +7134,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-current-metric-data',
       description: 'Gets the real-time metric data from the specified Amazon Connect instance. For a description of each metric, see Real-time Metrics Definitions in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -6976,6 +7214,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6988,6 +7227,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-current-user-data',
       description: 'Gets the real-time active user data from the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7040,6 +7280,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7052,6 +7293,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-federation-token',
       description: 'Supports SAML sign-in for Amazon Connect. Retrieves a token for federation. The token is for the Amazon Connect user which corresponds to the IAM credentials that were used to invoke this action.  For more information about how SAML sign-in works in Amazon Connect, see Configure SAML with IAM for Amazon Connect in the Amazon Connect Administrator Guide.   This API doesn\'t support root users. If you try to invoke GetFederationToken with root credentials, an error message similar to the following one appears:   Provided identity: Principal: .... User: .... cannot be used for federation with Amazon Connect',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7077,6 +7319,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7089,6 +7332,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-flow-association',
       description: 'Retrieves the flow associated for a given resource',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7132,6 +7376,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7144,6 +7389,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-metric-data',
       description: 'Gets historical metric data from the specified Amazon Connect instance. For a description of each historical metric, see Historical Metrics Definitions in the Amazon Connect Administrator Guide.  We recommend using the GetMetricDataV2 API. It provides more flexibility, features, and the ability to query longer time ranges than GetMetricData. Use it to retrieve historical agent and contact metrics for the last 3 months, at varying intervals. You can also use it to build custom dashboards to measure historical queue and agent performance. For example, you can track the number of incoming contacts for the last 7 days, with data split by day, to see how contact volume changed per day of the week',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7259,6 +7505,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7271,6 +7518,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-metric-data-v2',
       description: 'Gets metric data from the specified Amazon Connect instance.   GetMetricDataV2 offers more features than GetMetricData, the previous version of this API. It has new metrics, offers filtering at a metric level, and offers the ability to filter and group data by channels, queues, routing profiles, agents, and agent hierarchy levels. It can retrieve historical data for the last 3 months, at varying intervals. It does not support agent queues. For a description of the historical metrics that are supported by GetMetricDataV2 and GetMetricData, see Historical metrics definitions in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. This includes the instanceId an Amazon Connect instance',
@@ -7368,6 +7616,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7380,6 +7629,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-prompt-file',
       description: 'Gets the prompt file',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7414,6 +7664,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7426,6 +7677,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-task-template',
       description: 'Gets details about a specific task template in the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7469,6 +7721,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7481,6 +7734,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'get-traffic-distribution',
       description: 'Retrieves the current traffic distribution for a given traffic distribution group',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region',
@@ -7506,6 +7760,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7518,6 +7773,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'import-phone-number',
       description: 'Imports a claimed phone number from an external service, such as Amazon Web Services End User Messaging, into an Amazon Connect instance. You can call this API only in the same Amazon Web Services Region where the Amazon Connect instance was created.  Call the DescribePhoneNumber API to verify the status of a previous ImportPhoneNumber operation.   If you plan to claim or import numbers and then release numbers frequently, contact us for a service quota exception. Otherwise, it is possible you will be blocked from claiming and releasing any more numbers until up to 180 days past the oldest number released has expired.   By default you can claim or import and then release up to 200% of your maximum number of active phone numbers. If you claim or import and then release phone numbers using the UI or API during a rolling 180 day cycle that exceeds 200% of your phone number service level quota, you will be blocked from claiming or importing any more numbers until 180 days past the oldest number released has expired.  For example, if you already have 99 claimed or imported numbers and a service level quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and then release 99, you will have exceeded the 200% limit. At that point you are blocked from claiming any more numbers until you open an Amazon Web Services Support ticket',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7579,6 +7835,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7591,6 +7848,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-agent-statuses',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Lists agent statuses',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7670,6 +7928,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7682,6 +7941,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-analytics-data-associations',
       description: 'Lists the association status of requested dataset ID for a given Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7734,6 +7994,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7746,6 +8007,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-approved-origins',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Returns a paginated list of all approved origins associated with the instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7816,6 +8078,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7828,6 +8091,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-associated-contacts',
       description: 'Provides information about contact tree, a list of associated contacts with a unique identifier',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7880,6 +8144,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7892,6 +8157,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-authentication-profiles',
       description: 'This API is in preview release for Amazon Connect and is subject to change. To request access to this API, contact Amazon Web Services Support. Provides summary information about the authentication profiles in a specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -7962,6 +8228,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7974,6 +8241,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-bots',
       description: 'This API is in preview release for Amazon Connect and is subject to change. For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated with the instance. Use this API to returns both Amazon Lex V1 and V2 bots',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -8053,6 +8321,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8065,6 +8334,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-contact-evaluations',
       description: 'Lists contact evaluations in the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -8126,6 +8396,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8138,6 +8409,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-contact-flow-modules',
       description: 'Provides information about the flow modules for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -8217,6 +8489,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8229,6 +8502,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-contact-flow-versions',
       description: 'Returns all the available versions for the specified Amazon Connect instance and flow identifier',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance',
@@ -8308,6 +8582,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8320,6 +8595,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-contact-flows',
       description: 'Provides information about the flows for the specified Amazon Connect instance. You can also create and update flows using the Amazon Connect Flow language. For more information about flows, see Flows in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -8399,6 +8675,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8411,6 +8688,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-contact-references',
       description: 'This API is in preview release for Amazon Connect and is subject to change. For the specified referenceTypes, returns a list of references associated with the contact. References are links to documents that are related to a contact, such as emails, attachments, or URLs',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -8481,6 +8759,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8493,6 +8772,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-default-vocabularies',
       description: 'Lists the default vocabularies for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -8572,6 +8852,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8584,6 +8865,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-evaluation-form-versions',
       description: 'Lists versions of an evaluation form in the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -8663,6 +8945,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8675,6 +8958,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-evaluation-forms',
       description: 'Lists evaluation forms in the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -8745,6 +9029,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8757,6 +9042,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-flow-associations',
       description: 'List the flow association based on the filters',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -8836,6 +9122,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8848,6 +9135,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-hours-of-operations',
       description: 'Provides information about the hours of operation for the specified Amazon Connect instance. For more information about hours of operation, see Set the Hours of Operation for a Queue in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -8918,6 +9206,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8930,6 +9219,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-instance-attributes',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Returns a paginated list of all attribute types for the given instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -9000,6 +9290,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9012,6 +9303,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-instance-storage-configs',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Returns a paginated list of storage configs for the identified instance and resource type',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -9091,6 +9383,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9103,6 +9396,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-instances',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Return a list of instances which are in active state, creation-in-progress state, and failed state. Instances that aren\'t successfully created (they are in a failed state) are returned only for 24 hours after the CreateInstance API was invoked',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results',
@@ -9164,6 +9458,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9176,6 +9471,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-integration-associations',
       description: 'Provides summary information about the Amazon Web Services resource associations for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -9264,6 +9560,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9276,6 +9573,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-lambda-functions',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Returns a paginated list of all Lambda functions that display in the dropdown options in the relevant flow blocks',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -9346,6 +9644,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9358,6 +9657,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-lex-bots',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Returns a paginated list of all the Amazon Lex V1 bots currently associated with the instance. To return both Amazon Lex V1 and V2 bots, use the ListBots API',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -9428,6 +9728,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9440,6 +9741,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-phone-numbers',
       description: 'Provides information about the phone numbers for the specified Amazon Connect instance.  For more information about phone numbers, see Set Up Phone Numbers for Your Contact Center in the Amazon Connect Administrator Guide.    We recommend using ListPhoneNumbersV2 to return phone number types. ListPhoneNumbers doesn\'t support number types UIFN, SHARED, THIRD_PARTY_TF, and THIRD_PARTY_DID. While it returns numbers of those types, it incorrectly lists them as TOLL_FREE or DID.    The phone number Arn value that is returned from each of the items in the PhoneNumberSummaryList cannot be used to tag phone number resources. It will fail with a ResourceNotFoundException. Instead, use the ListPhoneNumbersV2 API. It returns the new phone number ARN that can be used to tag phone number resources',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -9528,6 +9830,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9540,6 +9843,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-phone-numbers-v2',
       description: 'Lists phone numbers claimed to your Amazon Connect instance or traffic distribution group. If the provided TargetArn is a traffic distribution group, you can call this API in both Amazon Web Services Regions associated with traffic distribution group. For more information about phone numbers, see Set Up Phone Numbers for Your Contact Center in the Amazon Connect Administrator Guide.    When given an instance ARN, ListPhoneNumbersV2 returns only the phone numbers claimed to the instance.   When given a traffic distribution group ARN ListPhoneNumbersV2 returns only the phone numbers claimed to the traffic distribution group',
       options: [
+
         Option(
           name: '--target-arn',
           description: 'The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through. If both TargetArn and InstanceId input are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request',
@@ -9646,6 +9950,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9658,6 +9963,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-predefined-attributes',
       description: 'Lists predefined attributes for the specified Amazon Connect instance. Predefined attributes are attributes in an Amazon Connect instance that can be used to route contacts to an agent or pools of agents within a queue. For more information, see Create predefined attributes for routing contacts to agents',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -9728,6 +10034,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9740,6 +10047,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-prompts',
       description: 'Provides information about the prompts for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance',
@@ -9810,6 +10118,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9822,6 +10131,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-queue-quick-connects',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Lists the quick connects associated with a queue',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -9901,6 +10211,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9913,6 +10224,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-queues',
       description: 'Provides information about the queues for the specified Amazon Connect instance. If you do not specify a QueueTypes parameter, both standard and agent queues are returned. This might cause an unexpected truncation of results if you have more than 1000 agents and you limit the number of results of the API call in code. For more information about queues, see Queues: Standard and Agent in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -9992,6 +10304,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10004,6 +10317,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-quick-connects',
       description: 'Provides information about the quick connects for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -10083,6 +10397,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10095,6 +10410,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-realtime-contact-analysis-segments-v2',
       description: 'Provides a list of analysis segments for a real-time analysis session',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -10165,6 +10481,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10177,6 +10494,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-routing-profile-queues',
       description: 'Lists the queues associated with a routing profile',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -10256,6 +10574,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10268,6 +10587,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-routing-profiles',
       description: 'Provides summary information about the routing profiles for the specified Amazon Connect instance. For more information about routing profiles, see Routing Profiles and Create a Routing Profile in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -10338,6 +10658,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10350,6 +10671,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-rules',
       description: 'List all rules for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -10438,6 +10760,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10450,6 +10773,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-security-keys',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Returns a paginated list of all security keys associated with the instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -10520,6 +10844,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10532,6 +10857,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-security-profile-applications',
       description: 'Returns a list of third-party applications in a specific security profile',
       options: [
+
         Option(
           name: '--security-profile-id',
           description: 'The identifier for the security profle',
@@ -10611,6 +10937,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10623,6 +10950,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-security-profile-permissions',
       description: 'Lists the permissions granted to a security profile. For information about security profiles, see Security Profiles in the Amazon Connect Administrator Guide. For a mapping of the API name and user interface name of the security profile permissions, see List of security profile permissions',
       options: [
+
         Option(
           name: '--security-profile-id',
           description: 'The identifier for the security profle',
@@ -10702,6 +11030,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10714,6 +11043,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-security-profiles',
       description: 'Provides summary information about the security profiles for the specified Amazon Connect instance. For more information about security profiles, see Security Profiles in the Amazon Connect Administrator Guide. For a mapping of the API name and user interface name of the security profile permissions, see List of security profile permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -10784,6 +11114,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10796,6 +11127,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified resource. For sample policies that use tags, see Amazon Connect Identity-Based Policy Examples in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource. All Amazon Connect resources (instances, queues, flows, routing profiles, etc) have an ARN. To locate the ARN for an instance, for example, see Find your Amazon Connect instance ID/ARN',
@@ -10821,6 +11153,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10833,6 +11166,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-task-templates',
       description: 'Lists task templates for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -10921,6 +11255,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10933,6 +11268,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-traffic-distribution-group-users',
       description: 'Lists traffic distribution group users',
       options: [
+
         Option(
           name: '--traffic-distribution-group-id',
           description: 'The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region',
@@ -11003,6 +11339,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11015,6 +11352,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-traffic-distribution-groups',
       description: 'Lists traffic distribution groups',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per page',
@@ -11085,6 +11423,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11097,6 +11436,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-use-cases',
       description: 'Lists the use cases for the integration association',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -11176,6 +11516,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11188,6 +11529,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-user-hierarchy-groups',
       description: 'Provides summary information about the hierarchy groups for the specified Amazon Connect instance. For more information about agent hierarchies, see Set Up Agent Hierarchies in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -11258,6 +11600,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11270,6 +11613,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-user-proficiencies',
       description: 'Lists proficiencies associated with a user',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -11349,6 +11693,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11361,6 +11706,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-users',
       description: 'Provides summary information about the users for the specified Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -11431,6 +11777,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11443,6 +11790,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-view-versions',
       description: 'Returns all the available versions for the specified Amazon Connect instance and view identifier. Results will be sorted from highest to lowest',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -11522,6 +11870,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11534,6 +11883,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'list-views',
       description: 'Returns views in the given instance. Results are sorted primarily by type, and secondarily by name',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -11613,6 +11963,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11625,6 +11976,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'monitor-contact',
       description: 'Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user specified by userId will be set to silent monitoring mode on the contact',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -11686,6 +12038,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11698,6 +12051,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'pause-contact',
       description: 'Allows pausing an ongoing task contact',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The identifier of the contact',
@@ -11741,6 +12095,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11753,6 +12108,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'put-user-status',
       description: 'Changes the current status of a user or agent in Amazon Connect. If the agent is currently handling a contact, this sets the agent\'s next status. For more information, see Agent status and Set your next status in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The identifier of the user',
@@ -11796,6 +12152,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11808,6 +12165,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'release-phone-number',
       description: 'Releases a phone number previously claimed to an Amazon Connect instance or traffic distribution group. You can call this API only in the Amazon Web Services Region where the number was claimed.  To release phone numbers from a traffic distribution group, use the ReleasePhoneNumber API, not the Amazon Connect admin website. After releasing a phone number, the phone number enters into a cooldown period for up to 180 days. It cannot be searched for or claimed again until the period has ended. If you accidentally release a phone number, contact Amazon Web Services Support.  If you plan to claim and release numbers frequently, contact us for a service quota exception. Otherwise, it is possible you will be blocked from claiming and releasing any more numbers until up to 180 days past the oldest number released has expired. By default you can claim and release up to 200% of your maximum number of active phone numbers. If you claim and release phone numbers using the UI or API during a rolling 180 day cycle that exceeds 200% of your phone number service level quota, you will be blocked from claiming any more numbers until 180 days past the oldest number released has expired.  For example, if you already have 99 claimed numbers and a service level quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and then release 99, you will have exceeded the 200% limit. At that point you are blocked from claiming any more numbers until you open an Amazon Web Services support ticket',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'A unique identifier for the phone number',
@@ -11842,6 +12200,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11854,6 +12213,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'replicate-instance',
       description: 'Replicates an Amazon Connect instance in the specified Amazon Web Services Region and copies configuration information for Amazon Connect resources across Amazon Web Services Regions.  For more information about replicating an Amazon Connect instance, see Create a replica of your existing Amazon Connect instance in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance. You can provide the InstanceId, or the entire ARN',
@@ -11906,6 +12266,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11918,6 +12279,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'resume-contact',
       description: 'Allows resuming a task contact in a paused state',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The identifier of the contact',
@@ -11961,6 +12323,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11973,6 +12336,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'resume-contact-recording',
       description: 'When a contact is being recorded, and the recording has been suspended using SuspendContactRecording, this API resumes recording whatever recording is selected in the flow configuration: call, screen, or both. If only call recording or only screen recording is enabled, then it would resume. Voice and screen recordings are supported',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -12025,6 +12389,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12037,6 +12402,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-agent-statuses',
       description: 'Searches AgentStatuses in an Amazon Connect instance, with optional filtering',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -12125,6 +12491,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12137,6 +12504,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-available-phone-numbers',
       description: 'Searches for available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group. If the provided TargetArn is a traffic distribution group, you can call this API in both Amazon Web Services Regions associated with the traffic distribution group',
       options: [
+
         Option(
           name: '--target-arn',
           description: 'The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through. You must enter InstanceId or TargetArn',
@@ -12243,6 +12611,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12255,6 +12624,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-contact-flow-modules',
       description: 'Searches the flow modules in an Amazon Connect instance, with optional filtering',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -12343,6 +12713,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12355,6 +12726,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-contact-flows',
       description: 'Searches the flows in an Amazon Connect instance, with optional filtering',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -12443,6 +12815,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12455,6 +12828,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-contacts',
       description: 'Searches contacts in an Amazon Connect instance',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -12552,6 +12926,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12564,6 +12939,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-email-addresses',
       description: 'Searches email address in an instance, with optional filtering',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -12625,6 +13001,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12637,6 +13014,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-hours-of-operations',
       description: 'Searches the hours of operation in an Amazon Connect instance, with optional filtering',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -12725,6 +13103,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12737,6 +13116,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-predefined-attributes',
       description: 'Searches predefined attributes that meet certain criteria. Predefined attributes are attributes in an Amazon Connect instance that can be used to route contacts to an agent or pools of agents within a queue. For more information, see Create predefined attributes for routing contacts to agents',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -12816,6 +13196,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12828,6 +13209,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-prompts',
       description: 'Searches prompts in an Amazon Connect instance, with optional filtering',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -12916,6 +13298,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12928,6 +13311,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-queues',
       description: 'Searches queues in an Amazon Connect instance, with optional filtering',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -13016,6 +13400,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13028,6 +13413,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-quick-connects',
       description: 'Searches quick connects in an Amazon Connect instance, with optional filtering',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -13116,6 +13502,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13128,6 +13515,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-resource-tags',
       description: 'Searches tags used in an Amazon Connect instance using optional search criteria',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance',
@@ -13216,6 +13604,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13228,6 +13617,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-routing-profiles',
       description: 'Searches routing profiles in an Amazon Connect instance, with optional filtering',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -13316,6 +13706,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13328,6 +13719,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-security-profiles',
       description: 'Searches security profiles in an Amazon Connect instance, with optional filtering. For information about security profiles, see Security Profiles in the Amazon Connect Administrator Guide. For a mapping of the API name and user interface name of the security profile permissions, see List of security profile permissions',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -13416,6 +13808,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13428,6 +13821,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-user-hierarchy-groups',
       description: 'Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.  The UserHierarchyGroup with "LevelId": "0" is the foundation for building levels on top of an instance. It is not user-definable, nor is it visible in the UI',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -13516,6 +13910,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13528,6 +13923,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-users',
       description: 'Searches users in an Amazon Connect instance, with optional filtering.    AfterContactWorkTimeLimit is returned in milliseconds',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.  InstanceID is a required field. The "Required: No" below is incorrect',
@@ -13616,6 +14012,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13628,6 +14025,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'search-vocabularies',
       description: 'Searches for vocabularies within a specific Amazon Connect instance using State, NameStartsWith, and LanguageCode',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -13725,6 +14123,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13737,6 +14136,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'send-chat-integration-event',
       description: 'Processes chat integration events from Amazon Web Services or external integrations to Amazon Connect. A chat integration event includes:   SourceId, DestinationId, and Subtype: a set of identifiers, uniquely representing a chat    ChatEvent: details of the chat action to perform such as sending a message, event, or disconnecting from a chat   When a chat integration event is sent with chat identifiers that do not map to an active chat contact, a new chat contact is also created before handling chat action.  Access to this API is currently restricted to Amazon Web Services End User Messaging for supporting SMS integration',
       options: [
+
         Option(
           name: '--source-id',
           description: 'External identifier of chat customer participant, used in part to uniquely identify a chat. For SMS, this is the E164 phone number of the chat customer participant',
@@ -13798,6 +14198,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13810,6 +14211,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'send-outbound-email',
       description: 'Send outbound email for outbound campaigns. For more information about outbound campaigns, see Set up Amazon Connect outbound campaigns.  Only the Amazon Connect outbound campaigns service principal is allowed to assume a role in your account and call this API',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -13898,6 +14300,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -13910,6 +14313,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-attached-file-upload',
       description: 'Provides a pre-signed Amazon S3 URL in response for uploading your content.  You may only use this API to upload attachments to an Amazon Connect Case or Amazon Connect Email',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -14007,6 +14411,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14019,6 +14424,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-chat-contact',
       description: 'Initiates a flow to start a new chat for the customer. Response of this API provides a token required to obtain credentials from the CreateParticipantConnection API in the Amazon Connect Participant Service. When a new chat contact is successfully created, clients must subscribe to the participant’s connection for the created chat within 5 minutes. This is achieved by invoking CreateParticipantConnection with WEBSOCKET and CONNECTION_CREDENTIALS.  A 429 error occurs in the following situations:   API rate limit is exceeded. API TPS throttling returns a TooManyRequests exception.   The quota for concurrent active chats is exceeded. Active chat throttling returns a LimitExceededException.   If you use the ChatDurationInMinutes parameter and receive a 400 error, your account may not support the ability to configure custom chat durations. For more information, contact Amazon Web Services Support.  For more information about chat, see the following topics in the Amazon Connect Administrator Guide:     Concepts: Web and mobile messaging capabilities in Amazon Connect     Amazon Connect Chat security best practices',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -14134,6 +14540,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14146,6 +14553,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-contact-evaluation',
       description: 'Starts an empty evaluation in the specified Amazon Connect instance, using the given evaluation form for the particular contact. The evaluation form version used for the contact evaluation corresponds to the currently activated version. If no version is activated for the evaluation form, the contact evaluation cannot be started.   Evaluations created through the public API do not contain answer values suggested from automation',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -14198,6 +14606,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14210,6 +14619,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-contact-recording',
       description: 'Starts recording the contact:    If the API is called before the agent joins the call, recording starts when the agent joins the call.   If the API is called after the agent joins the call, recording starts at the time of the API call.   StartContactRecording is a one-time action. For example, if you use StopContactRecording to stop recording an ongoing call, you can\'t use StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend and resume it, such as when collecting sensitive information (for example, a credit card number), use SuspendContactRecording and ResumeContactRecording. You can use this API to override the recording behavior configured in the Set recording behavior block. Only voice recordings are supported at this time',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -14262,6 +14672,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14274,6 +14685,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-contact-streaming',
       description: 'Initiates real-time message streaming for a new chat contact.  For more information about message streaming, see Enable real-time chat message streaming in the Amazon Connect Administrator Guide. For more information about chat, see the following topics in the Amazon Connect Administrator Guide:     Concepts: Web and mobile messaging capabilities in Amazon Connect     Amazon Connect Chat security best practices',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -14326,6 +14738,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14338,6 +14751,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-email-contact',
       description: 'Creates an inbound email contact and initiates a flow to start the email contact for the customer. Response of this API provides the ContactId of the email contact created',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -14480,6 +14894,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14492,6 +14907,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-outbound-chat-contact',
       description: 'Initiates a new outbound SMS contact to a customer. Response of this API provides the ContactId of the outbound SMS contact created.  SourceEndpoint only supports Endpoints with CONNECT_PHONENUMBER_ARN as Type and DestinationEndpoint only supports Endpoints with TELEPHONE_NUMBER as Type. ContactFlowId initiates the flow to manage the new SMS contact created. This API can be used to initiate outbound SMS contacts for an agent, or it can also deflect an ongoing contact to an outbound SMS contact by using the StartOutboundChatContact Flow Action. For more information about using SMS in Amazon Connect, see the following topics in the Amazon Connect Administrator Guide:    Set up SMS messaging     Request an SMS-enabled phone number through AWS End User Messaging SMS',
       options: [
+
         Option(
           name: '--source-endpoint',
           description: 'Information about the endpoint',
@@ -14616,6 +15032,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14628,6 +15045,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-outbound-email-contact',
       description: 'Initiates a flow to send an agent reply or outbound email contact (created from the CreateContact API) to a customer',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -14707,6 +15125,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14719,6 +15138,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-outbound-voice-contact',
       description: 'Places an outbound call to a contact, and then initiates the flow. It performs the actions in the flow that\'s specified (in ContactFlowId). Agents do not initiate the outbound API, which means that they do not dial the contact. If the flow places an outbound call to a contact, and then puts the contact in queue, the call is then routed to the agent, like any other inbound case. There is a 60-second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.  UK numbers with a 447 prefix are not allowed by default. Before you can dial these UK mobile numbers, you must submit a service quota increase request. For more information, see Amazon Connect Service Quotas in the Amazon Connect Administrator Guide.    Campaign calls are not allowed by default. Before you can make a call with TrafficType = CAMPAIGN, you must submit a service quota increase request to the quota Amazon Connect campaigns',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of a voice contact that is shown to an agent in the Contact Control Panel (CCP)',
@@ -14861,6 +15281,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14873,6 +15294,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-screen-sharing',
       description: 'Starts screen sharing for a contact. For more information about screen sharing, see Set up in-app, web, video calling, and screen sharing capabilities in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -14916,6 +15338,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -14928,6 +15351,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-task-contact',
       description: 'Initiates a flow to start a new task contact. For more information about task contacts, see Concepts: Tasks in Amazon Connect in the Amazon Connect Administrator Guide.  When using PreviousContactId and RelatedContactId input parameters, note the following:    PreviousContactId    Any updates to user-defined task contact attributes on any contact linked through the same PreviousContactId will affect every contact in the chain.   There can be a maximum of 12 linked task contacts in a chain. That is, 12 task contacts can be created that share the same PreviousContactId.      RelatedContactId    Copies contact attributes from the related task contact to the new contact.   Any update on attributes in a new task contact does not update attributes on previous contact.   There’s no limit on the number of task contacts that can be created that use the same RelatedContactId.     In addition, when calling StartTaskContact include only one of these parameters: ContactFlowID, QuickConnectID, or TaskTemplateID. Only one parameter is required as long as the task template has a flow configured to run it. If more than one parameter is specified, or only the TaskTemplateID is specified but it does not have a flow configured, the request returns an error because Amazon Connect cannot identify the unique flow to run when the task is created. A ServiceQuotaExceededException occurs when the number of open tasks exceeds the active tasks quota or there are already 12 tasks referencing the same PreviousContactId. For more information about service quotas for task contacts, see Amazon Connect service quotas in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -15061,6 +15485,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15073,6 +15498,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'start-web-rtc-contact',
       description: 'Places an inbound in-app, web, or video call to a contact, and then initiates the flow. It performs the actions in the flow that are specified (in ContactFlowId) and present in the Amazon Connect instance (specified as InstanceId)',
       options: [
+
         Option(
           name: '--attributes',
           description: 'A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes. There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, -, and _ characters',
@@ -15170,6 +15596,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15182,6 +15609,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'stop-contact',
       description: 'Ends the specified contact. Use this API to stop queued callbacks. It does not work for voice contacts that use the following initiation methods:   DISCONNECT   TRANSFER   QUEUE_TRANSFER   EXTERNAL_OUTBOUND   MONITOR   Chat and task contacts can be terminated in any state, regardless of initiation method',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The ID of the contact',
@@ -15225,6 +15653,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15237,6 +15666,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'stop-contact-recording',
       description: 'Stops recording a call when a contact is being recorded. StopContactRecording is a one-time action. If you use StopContactRecording to stop recording an ongoing call, you can\'t use StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend it for sensitive information (for example, to collect a credit card number), and then restart it, use SuspendContactRecording and ResumeContactRecording. Only voice recordings are supported at this time',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -15289,6 +15719,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15301,6 +15732,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'stop-contact-streaming',
       description: 'Ends message streaming on a specified contact. To restart message streaming on that contact, call the StartContactStreaming API',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -15344,6 +15776,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15356,6 +15789,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'submit-contact-evaluation',
       description: 'Submits a contact evaluation in the specified Amazon Connect instance. Answers included in the request are merged with existing answers for the given evaluation. If no answers or notes are passed, the evaluation is submitted with the existing answers and notes. You can delete an answer or note by passing an empty object ({}) to the question identifier.  If a contact evaluation is already in submitted state, this operation will trigger a resubmission',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -15408,6 +15842,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15420,6 +15855,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'suspend-contact-recording',
       description: 'When a contact is being recorded, this API suspends recording whatever is selected in the flow configuration: call, screen, or both. If only call recording or only screen recording is enabled, then it would be suspended. For example, you might suspend the screen recording while collecting sensitive information, such as a credit card number. Then use ResumeContactRecording to restart recording the screen. The period of time that the recording is suspended is filled with silence in the final recording. Voice and screen recordings are supported',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -15472,6 +15908,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15484,6 +15921,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'tag-contact',
       description: 'Adds the specified tags to the contact resource. For more information about this API is used, see Set up granular billing for a detailed view of your Amazon Connect usage',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The identifier of the contact in this instance of Amazon Connect',
@@ -15527,6 +15965,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15539,6 +15978,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tags to the specified resource. Some of the supported resource types are agents, routing profiles, queues, quick connects, flows, agent statuses, hours of operation, phone numbers, security profiles, and task templates. For a complete list, see Tagging resources in Amazon Connect. For sample policies that use tags, see Amazon Connect Identity-Based Policy Examples in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -15573,6 +16013,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15585,6 +16026,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'transfer-contact',
       description: 'Transfers contacts from one agent or queue to another agent or queue at any point after a contact is created. You can transfer a contact to another queue by providing the flow which orchestrates the contact to the destination queue. This gives you more control over contact handling and helps you adhere to the service level agreement (SLA) guaranteed to your customers. Note the following requirements:   Transfer is supported for only TASK contacts.   Do not use both QueueId and UserId in the same call.   The following flow types are supported: Inbound flow, Transfer to agent flow, and Transfer to queue flow.   The TransferContact API can be called only on active contacts.   A contact cannot be transferred more than 11 times',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -15655,6 +16097,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15667,6 +16110,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'untag-contact',
       description: 'Removes the specified tags from the contact resource. For more information about this API is used, see Set up granular billing for a detailed view of your Amazon Connect usage',
       options: [
+
         Option(
           name: '--contact-id',
           description: 'The identifier of the contact in this instance of Amazon Connect',
@@ -15710,6 +16154,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15722,6 +16167,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -15756,6 +16202,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15768,6 +16215,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-agent-status',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Updates agent status',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -15846,6 +16294,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15858,6 +16307,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-authentication-profile',
       description: 'This API is in preview release for Amazon Connect and is subject to change. To request access to this API, contact Amazon Web Services Support. Updates the selected authentication profile',
       options: [
+
         Option(
           name: '--authentication-profile-id',
           description: 'A unique identifier for the authentication profile',
@@ -15937,6 +16387,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -15949,6 +16400,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-contact',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Adds or updates user-defined contact information associated with the specified contact. At least one field to be updated must be present in the request.  You can add or update user-defined contact information for both ongoing and completed contacts',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16055,6 +16507,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16067,6 +16520,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-contact-attributes',
       description: 'Creates or updates user-defined contact attributes associated with the specified contact. You can create or update user-defined attributes for both ongoing and completed contacts. For example, while the call is active, you can update the customer\'s name or the reason the customer called. You can add notes about steps that the agent took during the call that display to the next agent that takes the call. You can also update attributes for a contact using data from your CRM application and save the data with the contact in Amazon Connect. You could also flag calls for additional analysis, such as legal review or to identify abusive callers. Contact attributes are available in Amazon Connect for 24 months, and are then deleted. For information about contact record retention and the maximum size of the contact record attributes section, see Feature specifications in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--initial-contact-id',
           description: 'The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center',
@@ -16110,6 +16564,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16122,6 +16577,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-contact-evaluation',
       description: 'Updates details about a contact evaluation in the specified Amazon Connect instance. A contact evaluation must be in draft state. Answers included in the request are merged with existing answers for the given evaluation. An answer or note can be deleted by passing an empty object ({}) to the question identifier',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16174,6 +16630,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16186,6 +16643,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-contact-flow-content',
       description: 'Updates the specified flow. You can also create and update flows using the Amazon Connect Flow language. Use the \$SAVED alias in the request to describe the SAVED content of a Flow. For example, arn:aws:.../contact-flow/{id}:\$SAVED. After a flow is published, \$SAVED needs to be supplied to view saved content that has not been published',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance',
@@ -16229,6 +16687,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16241,6 +16700,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-contact-flow-metadata',
       description: 'Updates metadata about specified flow',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16302,6 +16762,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16314,6 +16775,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-contact-flow-module-content',
       description: 'Updates specified flow module for the specified Amazon Connect instance.  Use the \$SAVED alias in the request to describe the SAVED content of a Flow. For example, arn:aws:.../contact-flow/{id}:\$SAVED. After a flow is published, \$SAVED needs to be supplied to view saved content that has not been published',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16357,6 +16819,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16369,6 +16832,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-contact-flow-module-metadata',
       description: 'Updates metadata about specified flow module',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16430,6 +16894,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16442,6 +16907,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-contact-flow-name',
       description: 'The name of the flow. You can also create and update flows using the Amazon Connect Flow language',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance',
@@ -16494,6 +16960,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16506,6 +16973,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-contact-routing-data',
       description: 'Updates routing priority and age on the contact (QueuePriority and QueueTimeAdjustmentInSeconds). These properties can be used to change a customer\'s position in the queue. For example, you can move a contact to the back of the queue by setting a lower routing priority relative to other contacts in queue; or you can move a contact to the front of the queue by increasing the routing age which will make the contact look artificially older and therefore higher up in the first-in-first-out routing order. Note that adjusting the routing age of a contact affects only its position in queue, and not its actual queue wait time as reported through metrics. These properties can also be updated by using the Set routing priority / age flow block.  Either QueuePriority or QueueTimeAdjustmentInSeconds should be provided within the request body, but not both',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16567,6 +17035,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16579,6 +17048,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-contact-schedule',
       description: 'Updates the scheduled time of a task contact that is already scheduled',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16622,6 +17092,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16634,6 +17105,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-email-address-metadata',
       description: 'Updates an email address metadata. For more information about email addresses, see Create email addresses in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16695,6 +17167,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16707,6 +17180,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-evaluation-form',
       description: 'Updates details about a specific evaluation form version in the specified Amazon Connect instance. Question and section identifiers cannot be duplicated within the same evaluation form. This operation does not support partial updates. Instead it does a full update of evaluation form content',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16803,6 +17277,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16815,6 +17290,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-hours-of-operation',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Updates the hours of operation',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16885,6 +17361,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16897,6 +17374,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-instance-attribute',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Updates the value for the specified attribute type',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -16940,6 +17418,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -16952,6 +17431,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-instance-storage-config',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Updates an existing configuration for a resource type. This API is idempotent',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17004,6 +17484,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17016,6 +17497,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-participant-role-config',
       description: 'Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically disconnected from a chat due to idleness. You can set four timers:   Customer idle timeout   Customer auto-disconnect timeout   Agent idle timeout   Agent auto-disconnect timeout   For more information about how chat timeouts work, see Set up chat timeouts for human participants',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17059,6 +17541,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17071,6 +17554,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-phone-number',
       description: 'Updates your claimed phone number from its current Amazon Connect instance or traffic distribution group to another Amazon Connect instance or traffic distribution group in the same Amazon Web Services Region.  After using this API, you must verify that the phone number is attached to the correct flow in the target instance or traffic distribution group. You need to do this because the API switches only the phone number to a new instance or traffic distribution group. It doesn\'t migrate the flow configuration of the phone number, too. You can call DescribePhoneNumber API to verify the status of a previous UpdatePhoneNumber operation',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'A unique identifier for the phone number',
@@ -17123,6 +17607,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17135,6 +17620,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-phone-number-metadata',
       description: 'Updates a phone number’s metadata.  To verify the status of a previous UpdatePhoneNumberMetadata operation, call the DescribePhoneNumber API',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'The Amazon Resource Name (ARN) or resource ID of the phone number',
@@ -17178,6 +17664,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17190,6 +17677,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-predefined-attribute',
       description: 'Updates a predefined attribute for the specified Amazon Connect instance. Predefined attributes are attributes in an Amazon Connect instance that can be used to route contacts to an agent or pools of agents within a queue. For more information, see Create predefined attributes for routing contacts to agents',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17233,6 +17721,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17245,6 +17734,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-prompt',
       description: 'Updates a prompt',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17306,6 +17796,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17318,6 +17809,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-queue-hours-of-operation',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Updates the hours of operation for the specified queue',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17361,6 +17853,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17373,6 +17866,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-queue-max-contacts',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Updates the maximum number of contacts allowed in a queue before it is considered full',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17416,6 +17910,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17428,6 +17923,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-queue-name',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Updates the name and description of a queue. At least Name or Description must be provided',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17480,6 +17976,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17492,6 +17989,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-queue-outbound-caller-config',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.    If the phone number is claimed to a traffic distribution group that was created in the same Region as the Amazon Connect instance where you are calling this API, then you can use a full phone number ARN or a UUID for OutboundCallerIdNumberId. However, if the phone number is claimed to a traffic distribution group that is in one Region, and you are calling this API from an instance in another Amazon Web Services Region that is associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a ResourceNotFoundException.   Only use the phone number ARN format that doesn\'t contain instance in the path, for example, arn:aws:connect:us-east-1:1234567890:phone-number/uuid. This is the same ARN format that is returned when you call the ListPhoneNumbersV2 API.   If you plan to use IAM policies to allow/deny access to this API for phone number resources claimed to a traffic distribution group, see Allow or Deny queue API actions for phone numbers in a replica Region',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17535,6 +18033,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17547,6 +18046,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-queue-outbound-email-config',
       description: 'Updates the outbound email address Id for a specified queue',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17590,6 +18090,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17602,6 +18103,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-queue-status',
       description: 'This API is in preview release for Amazon Connect and is subject to change. Updates the status of the queue',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17645,6 +18147,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17657,6 +18160,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-quick-connect-config',
       description: 'Updates the configuration settings for the specified quick connect',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17700,6 +18204,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17712,6 +18217,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-quick-connect-name',
       description: 'Updates the name and description of a quick connect. The request accepts the following data in JSON format. At least Name or Description must be provided',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17764,6 +18270,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17776,6 +18283,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-routing-profile-agent-availability-timer',
       description: 'Whether agents with this routing profile will have their routing order calculated based on time since their last inbound contact or longest idle time',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17819,6 +18327,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17831,6 +18340,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-routing-profile-concurrency',
       description: 'Updates the channels that agents can handle in the Contact Control Panel (CCP) for a routing profile',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17874,6 +18384,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17886,6 +18397,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-routing-profile-default-outbound-queue',
       description: 'Updates the default outbound queue of a routing profile',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17929,6 +18441,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -17941,6 +18454,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-routing-profile-name',
       description: 'Updates the name and description of a routing profile. The request accepts the following data in JSON format. At least Name or Description must be provided',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -17993,6 +18507,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18005,6 +18520,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-routing-profile-queues',
       description: 'Updates the properties associated with a set of queues for a routing profile',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -18048,6 +18564,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18060,6 +18577,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-rule',
       description: 'Updates a rule for the specified Amazon Connect instance. Use the Rules Function language to code conditions for the rule',
       options: [
+
         Option(
           name: '--rule-id',
           description: 'A unique identifier for the rule',
@@ -18130,6 +18648,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18142,6 +18661,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-security-profile',
       description: 'Updates a security profile. For information about security profiles, see Security Profiles in the Amazon Connect Administrator Guide. For a mapping of the API name and user interface name of the security profile permissions, see List of security profile permissions',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the security profile',
@@ -18239,6 +18759,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18251,6 +18772,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-task-template',
       description: 'Updates details about a specific task template in the specified Amazon Connect instance. This operation does not support partial updates. Instead it does a full update of template content',
       options: [
+
         Option(
           name: '--task-template-id',
           description: 'A unique identifier for the task template',
@@ -18357,6 +18879,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18369,6 +18892,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-traffic-distribution',
       description: 'Updates the traffic distribution for a given traffic distribution group.   The SignInConfig distribution is available only on a default TrafficDistributionGroup (see the IsDefault parameter in the TrafficDistributionGroup data type). If you call UpdateTrafficDistribution with a modified SignInConfig and a non-default TrafficDistributionGroup, an InvalidRequestException is returned.  For more information about updating a traffic distribution group, see Update telephony traffic distribution across Amazon Web Services Regions  in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region',
@@ -18421,6 +18945,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18433,6 +18958,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-user-hierarchy',
       description: 'Assigns the specified hierarchy group to the specified user',
       options: [
+
         Option(
           name: '--hierarchy-group-id',
           description: 'The identifier of the hierarchy group',
@@ -18476,6 +19002,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18488,6 +19015,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-user-hierarchy-group-name',
       description: 'Updates the name of the user hierarchy group',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the hierarchy group. Must not be more than 100 characters',
@@ -18531,6 +19059,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18543,6 +19072,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-user-hierarchy-structure',
       description: 'Updates the user hierarchy structure: add, remove, and rename user hierarchy levels',
       options: [
+
         Option(
           name: '--hierarchy-structure',
           description: 'The hierarchy levels to update',
@@ -18577,6 +19107,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18589,6 +19120,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-user-identity-info',
       description: 'Updates the identity information for the specified user.  We strongly recommend limiting who has the ability to invoke UpdateUserIdentityInfo. Someone with that ability can change the login credentials of other users by changing their email address. This poses a security risk to your organization. They can change the email address of a user to the attacker\'s email address, and then reset the password through email. For more information, see Best Practices for Security Profiles in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--identity-info',
           description: 'The identity information for the user',
@@ -18632,6 +19164,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18644,6 +19177,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-user-phone-config',
       description: 'Updates the phone configuration settings for the specified user',
       options: [
+
         Option(
           name: '--phone-config',
           description: 'Information about phone configuration settings for the user',
@@ -18687,6 +19221,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18699,6 +19234,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-user-proficiencies',
       description: 'Updates the properties associated with the proficiencies of a user',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance',
@@ -18742,6 +19278,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18754,6 +19291,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-user-routing-profile',
       description: 'Assigns the specified routing profile to the specified user',
       options: [
+
         Option(
           name: '--routing-profile-id',
           description: 'The identifier of the routing profile for the user',
@@ -18797,6 +19335,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18809,6 +19348,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-user-security-profiles',
       description: 'Assigns the specified security profiles to the specified user',
       options: [
+
         Option(
           name: '--security-profile-ids',
           description: 'The identifiers of the security profiles for the user',
@@ -18852,6 +19392,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18864,6 +19405,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-view-content',
       description: 'Updates the view content of the given view identifier in the specified Amazon Connect instance. It performs content validation if Status is set to SAVED and performs full content validation if Status is PUBLISHED. Note that the \$SAVED alias\' content will always be updated, but the \$LATEST alias\' content will only be updated if Status is PUBLISHED',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -18916,6 +19458,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -18928,6 +19471,7 @@ final FigSpec connectSpec = FigSpec(
       name: 'update-view-metadata',
       description: 'Updates the view metadata. Note that either Name or Description must be provided',
       options: [
+
         Option(
           name: '--instance-id',
           description: 'The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance',
@@ -18980,6 +19524,7 @@ final FigSpec connectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

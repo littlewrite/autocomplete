@@ -9,6 +9,7 @@ final FigSpec doggoSpec = FigSpec(
   name: 'doggo',
   description: 'DNS Client for Humans',
   options: [
+
     Option(
       name: '--version',
       description: 'Output version'
@@ -124,6 +125,7 @@ final FigSpec doggoSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'domain',
       description: 'Hostname to query the DNS records for (e.g., example.com)'

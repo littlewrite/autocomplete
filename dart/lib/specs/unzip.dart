@@ -15,6 +15,7 @@ final FigSpec unzipSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-l',
       description: 'List the contents of a zip file without extracting',
@@ -38,6 +39,7 @@ final FigSpec unzipSpec = FigSpec(
       name: '-0',
       description: 'Extract a zip file created in windows, containing files with non-ascii (chinese) filenames',
       args: [
+
         Arg(
           name: 'gbk'
         ),

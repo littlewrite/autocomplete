@@ -9,10 +9,12 @@ final FigSpec geoMapsSpec = FigSpec(
   name: 'geo-maps',
   description: 'Integrate high-quality base map data into your applications using MapLibre. Capabilities include:    Access to comprehensive base map data, allowing you to tailor the map display to your specific needs.   Multiple pre-designed map styles suited for various application types, such as navigation, logistics, or data visualization.   Generation of static map images for scenarios where interactive maps aren\'t suitable, such as:   Embedding in emails or documents   Displaying in low-bandwidth environments   Creating printable maps   Enhancing application performance by reducing client-side rendering',
   subcommands: [
+
     Subcommand(
       name: 'get-glyphs',
       description: 'Returns the map\'s glyphs',
       options: [
+
         Option(
           name: '--font-stack',
           description: 'Name of the FontStack to retrieve.  Example: Amazon Ember Bold,Noto Sans Bold. The supported font stacks are as follows:   Amazon Ember Bold   Amazon Ember Bold Italic   Amazon Ember Bold,Noto Sans Bold   Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold   Amazon Ember Condensed RC BdItalic   Amazon Ember Condensed RC Bold   Amazon Ember Condensed RC Bold Italic   Amazon Ember Condensed RC Bold,Noto Sans Bold   Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold   Amazon Ember Condensed RC Light   Amazon Ember Condensed RC Light Italic   Amazon Ember Condensed RC LtItalic   Amazon Ember Condensed RC Regular   Amazon Ember Condensed RC Regular Italic   Amazon Ember Condensed RC Regular,Noto Sans Regular   Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular   Amazon Ember Condensed RC RgItalic   Amazon Ember Condensed RC ThItalic   Amazon Ember Condensed RC Thin   Amazon Ember Condensed RC Thin Italic   Amazon Ember Heavy   Amazon Ember Heavy Italic   Amazon Ember Light   Amazon Ember Light Italic   Amazon Ember Medium   Amazon Ember Medium Italic   Amazon Ember Medium,Noto Sans Medium   Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium   Amazon Ember Regular   Amazon Ember Regular Italic   Amazon Ember Regular Italic,Noto Sans Italic   Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular   Amazon Ember Regular,Noto Sans Regular   Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular   Amazon Ember Thin   Amazon Ember Thin Italic   AmazonEmberCdRC_Bd   AmazonEmberCdRC_BdIt   AmazonEmberCdRC_Lt   AmazonEmberCdRC_LtIt   AmazonEmberCdRC_Rg   AmazonEmberCdRC_RgIt   AmazonEmberCdRC_Th   AmazonEmberCdRC_ThIt   AmazonEmber_Bd   AmazonEmber_BdIt   AmazonEmber_He   AmazonEmber_HeIt   AmazonEmber_Lt   AmazonEmber_LtIt   AmazonEmber_Md   AmazonEmber_MdIt   AmazonEmber_Rg   AmazonEmber_RgIt   AmazonEmber_Th   AmazonEmber_ThIt   Noto Sans Black   Noto Sans Black Italic   Noto Sans Bold   Noto Sans Bold Italic   Noto Sans Extra Bold   Noto Sans Extra Bold Italic   Noto Sans Extra Light   Noto Sans Extra Light Italic   Noto Sans Italic   Noto Sans Light   Noto Sans Light Italic   Noto Sans Medium   Noto Sans Medium Italic   Noto Sans Regular   Noto Sans Semi Bold   Noto Sans Semi Bold Italic   Noto Sans Thin   Noto Sans Thin Italic   NotoSans-Bold   NotoSans-Italic   NotoSans-Medium   NotoSans-Regular   Open Sans Regular,Arial Unicode MS Regular',
@@ -46,6 +48,7 @@ final FigSpec geoMapsSpec = FigSpec(
       name: 'get-sprites',
       description: 'Returns the map\'s sprites',
       options: [
+
         Option(
           name: '--file-name',
           description: 'Sprites API: The name of the sprite ﬁle to retrieve, following pattern sprites(@2x)?\\.(png|json). Example: sprites.png',
@@ -97,6 +100,7 @@ final FigSpec geoMapsSpec = FigSpec(
       name: 'get-static-map',
       description: 'Provides high-quality static map images with customizable options. You can modify the map\'s appearance and overlay additional information. It\'s an ideal solution for applications requiring tailored static map snapshots',
       options: [
+
         Option(
           name: '--bounding-box',
           description: 'Takes in two pairs of coordinates, [Lon, Lat], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.  Example: -123.17075,49.26959,-123.08125,49.31429',
@@ -238,6 +242,7 @@ final FigSpec geoMapsSpec = FigSpec(
       name: 'get-style-descriptor',
       description: 'Returns information about the style',
       options: [
+
         Option(
           name: '--style',
           description: 'Style specifies the desired map style',
@@ -289,6 +294,7 @@ final FigSpec geoMapsSpec = FigSpec(
       name: 'get-tile',
       description: 'Returns a tile. Map tiles are used by clients to render a map. they\'re addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level',
       options: [
+
         Option(
           name: '--tileset',
           description: 'Specifies the desired tile set. Valid Values: raster.satellite | vector.basemap',

@@ -9,14 +9,17 @@ final FigSpec clilolSpec = FigSpec(
   name: 'clilol',
   description: 'A cli for omg.lol',
   subcommands: [
+
     Subcommand(
       name: 'create',
       description: 'Create things',
       subcommands: [
+
         Subcommand(
           name: 'dns',
           description: 'Create a DNS record',
           args: [
+
             Arg(
               name: 'name',
               description: 'Name of the DNS record'
@@ -31,6 +34,7 @@ final FigSpec clilolSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['--priority', '-p'],
               description: 'Priority of the DNS record',
@@ -63,6 +67,7 @@ final FigSpec clilolSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--filename', '-f'],
               description: 'File to read paste from (default stdin)',
@@ -89,6 +94,7 @@ final FigSpec clilolSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--description', '-d'],
               description: 'Description of the picture (default empty/unlisted)'
@@ -99,6 +105,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'purl',
           description: 'Create a PURL',
           args: [
+
             Arg(
               name: 'name',
               description: 'Name of the PURL'
@@ -109,6 +116,7 @@ final FigSpec clilolSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['--listed', '-l'],
               description: 'Create as listed (default false)'
@@ -125,6 +133,7 @@ final FigSpec clilolSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--emoji', '-e'],
               description: 'Emoji to add to status (default sparkles)',
@@ -144,6 +153,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'weblog',
           description: 'Create a weblog entry',
           options: [
+
             Option(
               name: ['--filename', '-f'],
               description: 'File to read entry from (default stdin)',
@@ -162,10 +172,12 @@ final FigSpec clilolSpec = FigSpec(
       name: 'delete',
       description: 'Delete things',
       subcommands: [
+
         Subcommand(
           name: 'account',
           description: 'Delete information about your account',
           subcommands: [
+
             Subcommand(
               name: 'session',
               description: 'Delete a session',
@@ -251,10 +263,12 @@ final FigSpec clilolSpec = FigSpec(
       name: 'get',
       description: 'Get things',
       subcommands: [
+
         Subcommand(
           name: 'account',
           description: 'Get information about your account',
           subcommands: [
+
             Subcommand(
               name: 'info',
               description: 'Get info about your account'
@@ -273,6 +287,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'address',
           description: 'Get information about an address',
           subcommands: [
+
             Subcommand(
               name: 'availability',
               description: 'Get address availability',
@@ -297,6 +312,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'info',
               description: 'Get information about an address',
               subcommands: [
+
                 Subcommand(
                   name: 'private',
                   description: 'Get private information about an address',
@@ -329,6 +345,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'now',
           description: 'Get a Now page',
           options: [
+
             Option(
               name: ['--address', '-a'],
               description: 'Address whose Now page to get',
@@ -360,6 +377,7 @@ final FigSpec clilolSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--address', '-a'],
               description: 'Address whose paste to get',
@@ -391,6 +409,7 @@ final FigSpec clilolSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--address', '-a'],
               description: 'Address whose PURL to get',
@@ -416,6 +435,7 @@ final FigSpec clilolSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--address', '-a'],
               description: 'Address whose status to get',
@@ -431,6 +451,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'status-bio',
           description: 'Get status bio',
           options: [
+
             Option(
               name: ['--address', '-a'],
               description: 'Address whose status bio to get',
@@ -452,6 +473,7 @@ final FigSpec clilolSpec = FigSpec(
           )
           ],
           subcommands: [
+
             Subcommand(
               name: 'preview',
               description: 'Get theme preview',
@@ -462,6 +484,7 @@ final FigSpec clilolSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: ['--filename', '-f'],
                   description: 'File to write preview to (default stdout)',
@@ -480,6 +503,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'web',
           description: 'Get your webpage content',
           options: [
+
             Option(
               name: ['--filename', '-f'],
               description: 'File to write webpage to (default stdout)',
@@ -502,10 +526,12 @@ final FigSpec clilolSpec = FigSpec(
           )
           ],
           subcommands: [
+
             Subcommand(
               name: 'config',
               description: 'Get your weblog config',
               options: [
+
                 Option(
                   name: ['--filename', '-f'],
                   description: 'File to write configuration to (default stdout)',
@@ -526,6 +552,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'template',
               description: 'Get your weblog template',
               options: [
+
                 Option(
                   name: ['--filename', '-f'],
                   description: 'File to write template to (default stdout)',
@@ -546,10 +573,12 @@ final FigSpec clilolSpec = FigSpec(
       name: 'list',
       description: 'List things',
       subcommands: [
+
         Subcommand(
           name: 'account',
           description: 'List information about your account',
           subcommands: [
+
             Subcommand(
               name: 'addresses',
               description: 'List your addresses'
@@ -576,6 +605,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'paste',
           description: 'List pastes',
           options: [
+
             Option(
               name: ['--address', '-a'],
               description: 'Address whose pastes to list',
@@ -595,6 +625,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'purl',
           description: 'List all PURLs',
           options: [
+
             Option(
               name: ['--address', '-a'],
               description: 'Address whose PURLs to get',
@@ -610,6 +641,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'status',
           description: 'List statuses',
           options: [
+
             Option(
               name: ['--address', '-a'],
               description: 'Address whose status(es) to get',
@@ -635,6 +667,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'statuslog',
           description: 'List the statuslog',
           options: [
+
             Option(
               name: ['--all', '-A'],
               description: 'Get the entire statuslog (default is latest statuses only)'
@@ -655,10 +688,12 @@ final FigSpec clilolSpec = FigSpec(
       name: 'update',
       description: 'Update things',
       subcommands: [
+
         Subcommand(
           name: 'account',
           description: 'Update information about your account',
           subcommands: [
+
             Subcommand(
               name: 'name',
               description: 'Set the name on your account'
@@ -667,6 +702,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'settings',
               description: 'Set the settings on your account',
               options: [
+
                 Option(
                   name: ['--communication', '-c'],
                   description: 'Communication preference',
@@ -702,6 +738,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'dns',
           description: 'Update a DNS record',
           options: [
+
             Option(
               name: ['--priority', '-p'],
               description: 'Updated priority',
@@ -728,6 +765,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'email',
           description: 'Set email forwarding address(es)',
           options: [
+
             Option(
               name: ['--destination', '-d'],
               description: 'Address(es) to forward to',
@@ -747,6 +785,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'set',
           description: 'Set Now page content',
           options: [
+
             Option(
               name: ['--filename', '-f'],
               description: 'File to read Now page from (default stdin)',
@@ -767,6 +806,7 @@ final FigSpec clilolSpec = FigSpec(
           name: 'status',
           description: 'Update a status',
           options: [
+
             Option(
               name: ['--emoji', '-e'],
               description: 'Emoji to add to status (default sparkles)',
@@ -786,12 +826,14 @@ final FigSpec clilolSpec = FigSpec(
           name: 'web',
           description: 'Set webpage content',
           subcommands: [
+
             Subcommand(
               name: 'pfp',
               description: 'Set your profile picture'
             )
           ],
           options: [
+
             Option(
               name: ['--filename', '-f'],
               description: 'File to read webpage from (default stdin)',
@@ -812,10 +854,12 @@ final FigSpec clilolSpec = FigSpec(
           name: 'weblog',
           description: 'Set your weblog config',
           subcommands: [
+
             Subcommand(
               name: 'config',
               description: 'Set your weblog config',
               options: [
+
                 Option(
                   name: ['--filename', '-f'],
                   description: 'File to read config from (default stdin)',
@@ -832,6 +876,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'template',
               description: 'Set your weblog template',
               options: [
+
                 Option(
                   name: ['--filename', '-f'],
                   description: 'File to read template from (default stdin)',
@@ -852,10 +897,12 @@ final FigSpec clilolSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create things',
           subcommands: [
+
             Subcommand(
               name: 'dns',
               description: 'Create a DNS record'
@@ -882,10 +929,12 @@ final FigSpec clilolSpec = FigSpec(
           name: 'delete',
           description: 'Delete things',
           subcommands: [
+
             Subcommand(
               name: 'account',
               description: 'Delete information about your account',
               subcommands: [
+
                 Subcommand(
                   name: 'session',
                   description: 'Delete a session'
@@ -914,10 +963,12 @@ final FigSpec clilolSpec = FigSpec(
           name: 'get',
           description: 'Get things',
           subcommands: [
+
             Subcommand(
               name: 'account',
               description: 'Get information about your account',
               subcommands: [
+
                 Subcommand(
                   name: 'info',
                   description: 'Get info about your account'
@@ -936,6 +987,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'address',
               description: 'Get information about an address',
               subcommands: [
+
                 Subcommand(
                   name: 'availability',
                   description: 'Get address availability'
@@ -948,6 +1000,7 @@ final FigSpec clilolSpec = FigSpec(
                   name: 'info',
                   description: 'Get information about an address',
                   subcommands: [
+
                     Subcommand(
                       name: 'private',
                       description: 'Get private information about an address'
@@ -992,6 +1045,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'theme',
               description: 'Get theme information',
               subcommands: [
+
                 Subcommand(
                   name: 'preview',
                   description: 'Get theme preview'
@@ -1006,6 +1060,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'weblog',
               description: 'Get a weblog entry',
               subcommands: [
+
                 Subcommand(
                   name: 'config',
                   description: 'Get your weblog config'
@@ -1026,10 +1081,12 @@ final FigSpec clilolSpec = FigSpec(
           name: 'list',
           description: 'List things',
           subcommands: [
+
             Subcommand(
               name: 'account',
               description: 'List information about your account',
               subcommands: [
+
                 Subcommand(
                   name: 'addresses',
                   description: 'List your addresses'
@@ -1082,10 +1139,12 @@ final FigSpec clilolSpec = FigSpec(
           name: 'update',
           description: 'Update things',
           subcommands: [
+
             Subcommand(
               name: 'account',
               description: 'Update information about your account',
               subcommands: [
+
                 Subcommand(
                   name: 'name',
                   description: 'Set the name on your account',
@@ -1106,6 +1165,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'dns',
               description: 'Update a DNS record',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the record to update'
@@ -1138,6 +1198,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'preference',
               description: 'Set a preference',
               args: [
+
                 Arg(
                   name: 'item',
                   description: 'Preferences item to set'
@@ -1156,6 +1217,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'status',
               description: 'Update a status',
               args: [
+
                 Arg(
                   name: 'id',
                   description: 'The ID of the status to update'
@@ -1180,6 +1242,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'web',
               description: 'Set webpage content',
               subcommands: [
+
                 Subcommand(
                   name: 'pfp',
                   description: 'Set your profile picture',
@@ -1197,6 +1260,7 @@ final FigSpec clilolSpec = FigSpec(
               name: 'weblog',
               description: 'Set your weblog config',
               subcommands: [
+
                 Subcommand(
                   name: 'config',
                   description: 'Set your weblog config'
@@ -1213,6 +1277,7 @@ final FigSpec clilolSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Display help',

@@ -9,6 +9,7 @@ final FigSpec gSpec = FigSpec(
   name: 'g++',
   description: 'The default C++ compiler for most linux distributions',
   options: [
+
     Option(
       name: '-std',
       description: 'Language standard to compile for',

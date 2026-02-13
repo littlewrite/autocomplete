@@ -9,10 +9,12 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
   name: 'timestream-influxdb',
   description: 'Amazon Timestream for InfluxDB is a managed time-series database engine that makes it easy for application developers and DevOps teams to run InfluxDB databases on AWS for near real-time time-series applications using open-source APIs. With Amazon Timestream for InfluxDB, it is easy to set up, operate, and scale time-series workloads that can answer queries with single-digit millisecond query response time',
   subcommands: [
+
     Subcommand(
       name: 'create-db-instance',
       description: 'Creates a new Timestream for InfluxDB DB instance',
       options: [
+
         Option(
           name: '--name',
           description: 'The name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands. This name will also be a prefix included in the endpoint. DB instance names must be unique per customer and per region',
@@ -172,6 +174,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -184,6 +187,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
       name: 'create-db-parameter-group',
       description: 'Creates a new Timestream for InfluxDB DB parameter group to associate with DB instances',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the DB parameter group. The name must be unique per customer and per region',
@@ -236,6 +240,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -248,6 +253,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
       name: 'delete-db-instance',
       description: 'Deletes a Timestream for InfluxDB DB instance',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The id of the DB instance',
@@ -273,6 +279,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -285,6 +292,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
       name: 'get-db-instance',
       description: 'Returns a Timestream for InfluxDB DB instance',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The id of the DB instance',
@@ -310,6 +318,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -322,6 +331,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
       name: 'get-db-parameter-group',
       description: 'Returns a Timestream for InfluxDB DB parameter group',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The id of the DB parameter group',
@@ -347,6 +357,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -359,6 +370,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
       name: 'list-db-instances',
       description: 'Returns a list of Timestream for InfluxDB DB instances',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token. To resume pagination, provide the NextToken value as argument of a subsequent API invocation',
@@ -420,6 +432,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -432,6 +445,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
       name: 'list-db-parameter-groups',
       description: 'Returns a list of Timestream for InfluxDB DB parameter groups',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token. To resume pagination, provide the NextToken value as argument of a subsequent API invocation',
@@ -493,6 +507,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -505,6 +520,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'A list of tags applied to the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the tagged resource',
@@ -530,6 +546,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -542,6 +559,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags are composed of a Key/Value pairs. You can use tags to categorize and track your Timestream for InfluxDB resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the tagged resource',
@@ -576,6 +594,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -588,6 +607,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the tag from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the tagged resource',
@@ -622,6 +642,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -634,6 +655,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
       name: 'update-db-instance',
       description: 'Updates a Timestream for InfluxDB DB instance',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The id of the DB instance',
@@ -704,6 +726,7 @@ final FigSpec timestreamInfluxdbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

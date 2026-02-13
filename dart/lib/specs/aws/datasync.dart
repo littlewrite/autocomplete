@@ -9,10 +9,12 @@ final FigSpec datasyncSpec = FigSpec(
   name: 'datasync',
   description: 'DataSync DataSync is an online data movement and discovery service that simplifies data migration and helps you quickly, easily, and securely transfer your file or object data to, from, and between Amazon Web Services storage services. This API interface reference includes documentation for using DataSync programmatically. For complete information, see the  DataSync User Guide',
   subcommands: [
+
     Subcommand(
       name: 'add-storage-system',
       description: 'Creates an Amazon Web Services resource for an on-premises storage system that you want DataSync Discovery to collect information about',
       options: [
+
         Option(
           name: '--server-configuration',
           description: 'Specifies the server name and network port required to connect with the management interface of your on-premises storage system',
@@ -101,6 +103,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -113,6 +116,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'cancel-task-execution',
       description: 'Stops an DataSync task execution that\'s in progress. The transfer of some files are abruptly interrupted. File contents that\'re transferred to the destination might be incomplete or inconsistent with the source files. However, if you start a new task execution using the same task and allow it to finish, file content on the destination will be complete and consistent. This applies to other unexpected failures that interrupt a task execution. In all of these cases, DataSync successfully completes the transfer when you start the next task execution',
       options: [
+
         Option(
           name: '--task-execution-arn',
           description: 'The Amazon Resource Name (ARN) of the task execution to stop',
@@ -138,6 +142,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-agent',
       description: 'Activates an DataSync agent that you deploy in your storage environment. The activation process associates the agent with your Amazon Web Services account. If you haven\'t deployed an agent yet, see Do I need a DataSync agent?',
       options: [
+
         Option(
           name: '--activation-key',
           description: 'Specifies your DataSync agent\'s activation key. If you don\'t have an activation key, see Activating your agent',
@@ -220,6 +226,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -232,6 +239,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-azure-blob',
       description: 'Creates a transfer location for a Microsoft Azure Blob Storage container. DataSync can use this location as a transfer source or destination. Before you begin, make sure you know how DataSync accesses Azure Blob Storage and works with access tiers and blob types. You also need a DataSync agent that can connect to your container',
       options: [
+
         Option(
           name: '--container-url',
           description: 'Specifies the URL of the Azure Blob Storage container involved in your transfer',
@@ -320,6 +328,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -332,6 +341,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-efs',
       description: 'Creates a transfer location for an Amazon EFS file system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses Amazon EFS file systems',
       options: [
+
         Option(
           name: '--subdirectory',
           description: 'Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location) on your file system. By default, DataSync uses the root directory (or access point if you provide one by using AccessPointArn). You can also include subdirectories using forward slashes (for example, /path/to/folder)',
@@ -411,6 +421,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -423,6 +434,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-fsx-lustre',
       description: 'Creates a transfer location for an Amazon FSx for Lustre file system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses FSx for Lustre file systems',
       options: [
+
         Option(
           name: '--fsx-filesystem-arn',
           description: 'The Amazon Resource Name (ARN) for the FSx for Lustre file system',
@@ -475,6 +487,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -487,6 +500,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-fsx-ontap',
       description: 'Creates a transfer location for an Amazon FSx for NetApp ONTAP file system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses FSx for ONTAP file systems',
       options: [
+
         Option(
           name: '--protocol',
           description: 'Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system',
@@ -548,6 +562,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -560,6 +575,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-fsx-open-zfs',
       description: 'Creates a transfer location for an Amazon FSx for OpenZFS file system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses FSx for OpenZFS file systems.  Request parameters related to SMB aren\'t supported with the CreateLocationFsxOpenZfs operation',
       options: [
+
         Option(
           name: '--fsx-filesystem-arn',
           description: 'The Amazon Resource Name (ARN) of the FSx for OpenZFS file system',
@@ -621,6 +637,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -633,6 +650,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-fsx-windows',
       description: 'Creates a transfer location for an Amazon FSx for Windows File Server file system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses FSx for Windows File Server file systems',
       options: [
+
         Option(
           name: '--subdirectory',
           description: 'Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location)',
@@ -712,6 +730,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -724,6 +743,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-hdfs',
       description: 'Creates a transfer location for a Hadoop Distributed File System (HDFS). DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses HDFS clusters',
       options: [
+
         Option(
           name: '--subdirectory',
           description: 'A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn\'t specified, it will default to /',
@@ -857,6 +877,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -869,6 +890,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-nfs',
       description: 'Creates a transfer location for a Network File System (NFS) file server. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses NFS file servers.  If you\'re copying data to or from an Snowcone device, you can also use CreateLocationNfs to create your transfer location. For more information, see Configuring transfers with Snowcone',
       options: [
+
         Option(
           name: '--subdirectory',
           description: 'Specifies the export path in your NFS file server that you want DataSync to mount. This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see Accessing NFS file servers',
@@ -930,6 +952,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -942,6 +965,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-object-storage',
       description: 'Creates a transfer location for an object storage system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand the prerequisites for DataSync to work with object storage systems',
       options: [
+
         Option(
           name: '--server-hostname',
           description: 'Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network',
@@ -1048,6 +1072,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1060,6 +1085,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-s3',
       description: 'Creates a transfer location for an Amazon S3 bucket. DataSync can use this location as a source or destination for transferring data.  Before you begin, make sure that you read the following topics:    Storage class considerations with Amazon S3 locations     Evaluating S3 request costs when using DataSync      For more information, see Configuring transfers with Amazon S3',
       options: [
+
         Option(
           name: '--subdirectory',
           description: 'Specifies a prefix in the S3 bucket that DataSync reads from or writes to (depending on whether the bucket is a source or destination location).  DataSync can\'t transfer objects with a prefix that begins with a slash (/) or includes //, /./, or /../ patterns. For example:    /photos     photos//2006/January     photos/./2006/February     photos/../2006/March',
@@ -1130,6 +1156,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1142,6 +1169,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-location-smb',
       description: 'Creates a transfer location for a Server Message Block (SMB) file server. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses SMB file servers',
       options: [
+
         Option(
           name: '--subdirectory',
           description: 'Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, /path/to/subdirectory). Make sure that other SMB clients in your network can also mount this path. To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see required permissions for SMB locations',
@@ -1230,6 +1258,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1242,6 +1271,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'create-task',
       description: 'Configures a task, which defines where and how DataSync transfers your data. A task includes a source location, destination location, and transfer options (such as bandwidth limits, scheduling, and more).  If you\'re planning to transfer data to or from an Amazon S3 location, review how DataSync can affect your S3 request charges and the DataSync pricing page before you begin',
       options: [
+
         Option(
           name: '--source-location-arn',
           description: 'Specifies the ARN of your transfer\'s source location',
@@ -1366,6 +1396,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1378,6 +1409,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'delete-agent',
       description: 'Removes an DataSync agent resource from your Amazon Web Services account. Keep in mind that this operation (which can\'t be undone) doesn\'t remove the agent\'s virtual machine (VM) or Amazon EC2 instance from your storage environment. For next steps, you can delete the VM or instance from your storage environment or reuse it to activate a new agent',
       options: [
+
         Option(
           name: '--agent-arn',
           description: 'The Amazon Resource Name (ARN) of the agent to delete. Use the ListAgents operation to return a list of agents for your account and Amazon Web Services Region',
@@ -1403,6 +1435,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1415,6 +1448,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'delete-location',
       description: 'Deletes a transfer location resource from DataSync',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'The Amazon Resource Name (ARN) of the location to delete',
@@ -1440,6 +1474,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1452,6 +1487,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'delete-task',
       description: 'Deletes a transfer task resource from DataSync',
       options: [
+
         Option(
           name: '--task-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the task that you want to delete',
@@ -1477,6 +1513,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1489,6 +1526,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-agent',
       description: 'Returns information about an DataSync agent, such as its name, service endpoint type, and status',
       options: [
+
         Option(
           name: '--agent-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want information about',
@@ -1514,6 +1552,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1526,6 +1565,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-discovery-job',
       description: 'Returns information about a DataSync discovery job',
       options: [
+
         Option(
           name: '--discovery-job-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the discovery job that you want information about',
@@ -1551,6 +1591,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1563,6 +1604,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-azure-blob',
       description: 'Provides details about how an DataSync transfer location for Microsoft Azure Blob Storage is configured',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of your Azure Blob Storage transfer location',
@@ -1588,6 +1630,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1600,6 +1643,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-efs',
       description: 'Provides details about how an DataSync transfer location for an Amazon EFS file system is configured',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about',
@@ -1625,6 +1669,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1637,6 +1682,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-fsx-lustre',
       description: 'Provides details about how an DataSync transfer location for an Amazon FSx for Lustre file system is configured',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'The Amazon Resource Name (ARN) of the FSx for Lustre location to describe',
@@ -1662,6 +1708,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1674,6 +1721,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-fsx-ontap',
       description: 'Provides details about how an DataSync transfer location for an Amazon FSx for NetApp ONTAP file system is configured.  If your location uses SMB, the DescribeLocationFsxOntap operation doesn\'t actually return a Password',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about',
@@ -1699,6 +1747,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1711,6 +1760,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-fsx-open-zfs',
       description: 'Provides details about how an DataSync transfer location for an Amazon FSx for OpenZFS file system is configured.  Response elements related to SMB aren\'t supported with the DescribeLocationFsxOpenZfs operation',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe',
@@ -1736,6 +1786,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1748,6 +1799,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-fsx-windows',
       description: 'Provides details about how an DataSync transfer location for an Amazon FSx for Windows File Server file system is configured',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server location',
@@ -1773,6 +1825,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1785,6 +1838,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-hdfs',
       description: 'Provides details about how an DataSync transfer location for a Hadoop Distributed File System (HDFS) is configured',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the HDFS location',
@@ -1810,6 +1864,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1822,6 +1877,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-nfs',
       description: 'Provides details about how an DataSync transfer location for a Network File System (NFS) file server is configured',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about',
@@ -1847,6 +1903,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1859,6 +1916,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-object-storage',
       description: 'Provides details about how an DataSync transfer location for an object storage system is configured',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the object storage system location',
@@ -1884,6 +1942,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1896,6 +1955,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-s3',
       description: 'Provides details about how an DataSync transfer location for an S3 bucket is configured',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the Amazon S3 location',
@@ -1921,6 +1981,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1933,6 +1994,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-location-smb',
       description: 'Provides details about how an DataSync transfer location for a Server Message Block (SMB) file server is configured',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the SMB location that you want information about',
@@ -1958,6 +2020,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1970,6 +2033,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-storage-system',
       description: 'Returns information about an on-premises storage system that you\'re using with DataSync Discovery',
       options: [
+
         Option(
           name: '--storage-system-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you\'re using with DataSync Discovery',
@@ -1995,6 +2059,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2007,6 +2072,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-storage-system-resource-metrics',
       description: 'Returns information, including performance data and capacity usage, which DataSync Discovery collects about a specific resource in your-premises storage system',
       options: [
+
         Option(
           name: '--discovery-job-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system',
@@ -2113,6 +2179,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2125,6 +2192,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-storage-system-resources',
       description: 'Returns information that DataSync Discovery collects about resources in your on-premises storage system',
       options: [
+
         Option(
           name: '--discovery-job-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the discovery job that\'s collecting data from your on-premises storage system',
@@ -2195,6 +2263,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2207,6 +2276,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-task',
       description: 'Provides information about a task, which defines where and how DataSync transfers your data',
       options: [
+
         Option(
           name: '--task-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the transfer task that you want information about',
@@ -2232,6 +2302,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2244,6 +2315,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'describe-task-execution',
       description: 'Provides information about an execution of your DataSync task. You can use this operation to help monitor the progress of an ongoing data transfer or check the results of the transfer.  Some DescribeTaskExecution response elements are only relevant to a specific task mode. For information, see Understanding task mode differences and Understanding data transfer performance counters',
       options: [
+
         Option(
           name: '--task-execution-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the task execution that you want information about',
@@ -2269,6 +2341,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2281,6 +2354,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'generate-recommendations',
       description: 'Creates recommendations about where to migrate your data to in Amazon Web Services. Recommendations are generated based on information that DataSync Discovery collects about your on-premises storage system\'s resources. For more information, see Recommendations provided by DataSync Discovery. Once generated, you can view your recommendations by using the DescribeStorageSystemResources operation',
       options: [
+
         Option(
           name: '--discovery-job-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system',
@@ -2324,6 +2398,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2336,6 +2411,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'list-agents',
       description: 'Returns a list of DataSync agents that belong to an Amazon Web Services account in the Amazon Web Services Region specified in the request. With pagination, you can reduce the number of agents returned in a response. If you get a truncated list of agents in a response, the response contains a marker that you can specify in your next request to fetch the next page of agents.  ListAgents is eventually consistent. This means the result of running the operation might not reflect that you just created or deleted an agent. For example, if you create an agent with CreateAgent and then immediately run ListAgents, that agent might not show up in the list right away. In situations like this, you can always confirm whether an agent has been created (or deleted) by using DescribeAgent',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Specifies the maximum number of DataSync agents to list in a response. By default, a response shows a maximum of 100 agents',
@@ -2397,6 +2473,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2409,6 +2486,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'list-discovery-jobs',
       description: 'Provides a list of the existing discovery jobs in the Amazon Web Services Region and Amazon Web Services account where you\'re using DataSync Discovery',
       options: [
+
         Option(
           name: '--storage-system-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system',
@@ -2479,6 +2557,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2491,6 +2570,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'list-locations',
       description: 'Returns a list of source and destination locations. If you have more locations than are returned in a response (that is, the response returns only a truncated list of your agents), the response contains a token that you can specify in your next request to fetch the next page of locations',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of locations to return',
@@ -2561,6 +2641,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2573,6 +2654,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'list-storage-systems',
       description: 'Lists the on-premises storage systems that you\'re using with DataSync Discovery',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Specifies how many results you want in the response',
@@ -2634,6 +2716,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2646,6 +2729,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns all the tags associated with an Amazon Web Services resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on',
@@ -2716,6 +2800,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2728,6 +2813,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'list-task-executions',
       description: 'Returns a list of executions for an DataSync transfer task',
       options: [
+
         Option(
           name: '--task-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the task that you want execution information about',
@@ -2798,6 +2884,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2810,6 +2897,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'list-tasks',
       description: 'Returns a list of the DataSync tasks you created',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of tasks to return',
@@ -2880,6 +2968,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2892,6 +2981,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'remove-storage-system',
       description: 'Permanently removes a storage system resource from DataSync Discovery, including the associated discovery jobs, collected data, and recommendations',
       options: [
+
         Option(
           name: '--storage-system-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery',
@@ -2917,6 +3007,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2929,6 +3020,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'start-discovery-job',
       description: 'Runs a DataSync discovery job on your on-premises storage system. If you haven\'t added the storage system to DataSync Discovery yet, do this first by using the AddStorageSystem operation',
       options: [
+
         Option(
           name: '--storage-system-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on',
@@ -2981,6 +3073,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2993,6 +3086,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'start-task-execution',
       description: 'Starts an DataSync transfer task. For each task, you can only run one task execution at a time. There are several steps to a task execution. For more information, see Task execution statuses.  If you\'re planning to transfer data to or from an Amazon S3 location, review how DataSync can affect your S3 request charges and the DataSync pricing page before you begin',
       options: [
+
         Option(
           name: '--task-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the task that you want to start',
@@ -3072,6 +3166,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3084,6 +3179,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'stop-discovery-job',
       description: 'Stops a running DataSync discovery job. You can stop a discovery job anytime. A job that\'s stopped before it\'s scheduled to end likely will provide you some information about your on-premises storage system resources. To get recommendations for a stopped job, you must use the GenerateRecommendations operation',
       options: [
+
         Option(
           name: '--discovery-job-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop',
@@ -3109,6 +3205,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3121,6 +3218,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'tag-resource',
       description: 'Applies a tag to an Amazon Web Services resource. Tags are key-value pairs that can help you manage, filter, and search for your resources. These include DataSync resources, such as locations, tasks, and task executions',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to',
@@ -3155,6 +3253,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3167,6 +3266,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from an Amazon Web Services resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from',
@@ -3201,6 +3301,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3213,6 +3314,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'update-agent',
       description: 'Updates the name of an DataSync agent',
       options: [
+
         Option(
           name: '--agent-arn',
           description: 'The Amazon Resource Name (ARN) of the agent to update',
@@ -3247,6 +3349,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3259,6 +3362,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'update-discovery-job',
       description: 'Edits a DataSync discovery job configuration',
       options: [
+
         Option(
           name: '--discovery-job-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the discovery job that you want to update',
@@ -3293,6 +3397,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3305,6 +3410,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'update-location-azure-blob',
       description: 'Modifies some configurations of the Microsoft Azure Blob Storage transfer location that you\'re using with DataSync',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the ARN of the Azure Blob Storage transfer location that you\'re updating',
@@ -3384,6 +3490,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3396,6 +3503,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'update-location-hdfs',
       description: 'Updates some parameters of a previously created location for a Hadoop Distributed File System cluster',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'The Amazon Resource Name (ARN) of the source HDFS cluster location',
@@ -3529,6 +3637,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3541,6 +3650,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'update-location-nfs',
       description: 'Modifies some configurations of the Network File System (NFS) transfer location that you\'re using with DataSync. For more information, see Configuring transfers to or from an NFS file server',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update',
@@ -3593,6 +3703,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3605,6 +3716,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'update-location-object-storage',
       description: 'Updates some parameters of an existing DataSync location for an object storage system',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the ARN of the object storage system location that you\'re updating',
@@ -3693,6 +3805,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3705,6 +3818,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'update-location-smb',
       description: 'Updates some of the parameters of a Server Message Block (SMB) file server location that you can use for DataSync transfers',
       options: [
+
         Option(
           name: '--location-arn',
           description: 'Specifies the ARN of the SMB location that you want to update',
@@ -3784,6 +3898,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3796,6 +3911,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'update-storage-system',
       description: 'Modifies some configurations of an on-premises storage system resource that you\'re using with DataSync Discovery',
       options: [
+
         Option(
           name: '--storage-system-arn',
           description: 'Specifies the ARN of the on-premises storage system that you want reconfigure',
@@ -3866,6 +3982,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3878,6 +3995,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'update-task',
       description: 'Updates the configuration of a task, which defines where and how DataSync transfers your data',
       options: [
+
         Option(
           name: '--task-arn',
           description: 'Specifies the ARN of the task that you want to update',
@@ -3975,6 +4093,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3987,6 +4106,7 @@ final FigSpec datasyncSpec = FigSpec(
       name: 'update-task-execution',
       description: 'Updates the configuration of a running DataSync task execution.  Currently, the only Option that you can modify with UpdateTaskExecution is  BytesPerSecond , which throttles bandwidth for a running or queued task execution',
       options: [
+
         Option(
           name: '--task-execution-arn',
           description: 'Specifies the Amazon Resource Name (ARN) of the task execution that you\'re updating',
@@ -4021,6 +4141,7 @@ final FigSpec datasyncSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

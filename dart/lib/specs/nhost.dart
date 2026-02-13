@@ -9,6 +9,7 @@ final FigSpec nhostSpec = FigSpec(
   name: 'nhost',
   description: 'Nhost\'s command-line',
   subcommands: [
+
     Subcommand(
       name: 'deploy',
       description: 'Deploy local migrations and metadata changes to Nhost production'
@@ -45,6 +46,7 @@ final FigSpec nhostSpec = FigSpec(
       name: 'login',
       description: 'Login to your Nhost account',
       options: [
+
         Option(
           name: ['--email', '-e'],
           description: 'Email address',

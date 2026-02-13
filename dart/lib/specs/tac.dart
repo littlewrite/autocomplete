@@ -12,6 +12,7 @@ final FigSpec tacSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   options: [
+
     Option(
       name: '--help',
       description: 'Display this help and exit'

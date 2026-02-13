@@ -9,6 +9,7 @@ final FigSpec helpSpec = FigSpec(
   name: 'help',
   description: 'Search gcloud help text',
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -176,6 +177,7 @@ final FigSpec helpSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),
@@ -188,6 +190,7 @@ final FigSpec helpSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'COMMAND',
       description: 'Sequence of names representing a gcloud group or command name.\n+\nIf the arguments provide the name of a gcloud command, the full help\ntext of that command will be displayed. Otherwise, all arguments will\nbe considered search terms and used to search through all of gcloud\'s\nhelp text'

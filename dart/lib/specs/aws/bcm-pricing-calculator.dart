@@ -9,10 +9,12 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
   name: 'bcm-pricing-calculator',
   description: 'You can use the Pricing Calculator API to programmatically create estimates for your planned cloud use. You can model usage and commitments such as Savings Plans and Reserved Instances, and generate estimated costs using your discounts and benefit sharing preferences.  The Pricing Calculator API provides the following endpoint:    https://bcm-pricing-calculator.us-east-1.api.aws',
   subcommands: [
+
     Subcommand(
       name: 'batch-create-bill-scenario-commitment-modification',
       description: 'Create Compute Savings Plans, EC2 Instance Savings Plans, or EC2 Reserved Instances commitments that you want to model in a Bill Scenario',
       options: [
+
         Option(
           name: '--bill-scenario-id',
           description: 'The ID of the Bill Scenario for which you want to create the modeled commitment',
@@ -56,6 +58,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'batch-create-bill-scenario-usage-modification',
       description: 'Create Amazon Web Services service usage that you want to model in a Bill Scenario',
       options: [
+
         Option(
           name: '--bill-scenario-id',
           description: 'The ID of the Bill Scenario for which you want to create the modeled usage',
@@ -111,6 +115,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'batch-create-workload-estimate-usage',
       description: 'Create Amazon Web Services service usage that you want to model in a Workload Estimate',
       options: [
+
         Option(
           name: '--workload-estimate-id',
           description: 'The ID of the Workload estimate for which you want to create the modeled usage',
@@ -166,6 +172,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'batch-delete-bill-scenario-commitment-modification',
       description: 'Delete commitment that you have created in a Bill Scenario. You can only delete a commitment that you had added and cannot model deletion (or removal) of a existing commitment. If you want model deletion of an existing commitment, see the negate  BillScenarioCommitmentModificationAction of  BatchCreateBillScenarioCommitmentModification operation',
       options: [
+
         Option(
           name: '--bill-scenario-id',
           description: 'The ID of the Bill Scenario for which you want to delete the modeled commitment',
@@ -212,6 +220,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'batch-delete-bill-scenario-usage-modification',
       description: 'Delete usage that you have created in a Bill Scenario. You can only delete usage that you had added and cannot model deletion (or removal) of a existing usage. If you want model removal of an existing usage, see  BatchUpdateBillScenarioUsageModification',
       options: [
+
         Option(
           name: '--bill-scenario-id',
           description: 'The ID of the Bill Scenario for which you want to delete the modeled usage',
@@ -258,6 +268,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'batch-delete-workload-estimate-usage',
       description: 'Delete usage that you have created in a Workload estimate. You can only delete usage that you had added and cannot model deletion (or removal) of a existing usage. If you want model removal of an existing usage, see  BatchUpdateWorkloadEstimateUsage',
       options: [
+
         Option(
           name: '--workload-estimate-id',
           description: 'The ID of the Workload estimate for which you want to delete the modeled usage',
@@ -304,6 +316,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -316,6 +329,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'batch-update-bill-scenario-commitment-modification',
       description: 'Update a newly added or existing commitment. You can update the commitment group based on a commitment ID and a Bill scenario ID',
       options: [
+
         Option(
           name: '--bill-scenario-id',
           description: 'The ID of the Bill Scenario for which you want to modify the commitment group of a modeled commitment',
@@ -350,6 +364,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -362,6 +377,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'batch-update-bill-scenario-usage-modification',
       description: 'Update a newly added or existing usage lines. You can update the usage amounts, usage hour, and usage group based on a usage ID and a Bill scenario ID',
       options: [
+
         Option(
           name: '--bill-scenario-id',
           description: 'The ID of the Bill Scenario for which you want to modify the usage lines',
@@ -396,6 +412,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -408,6 +425,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'batch-update-workload-estimate-usage',
       description: 'Update a newly added or existing usage lines. You can update the usage amounts and usage group based on a usage ID and a Workload estimate ID',
       options: [
+
         Option(
           name: '--workload-estimate-id',
           description: 'The ID of the Workload estimate for which you want to modify the usage lines',
@@ -442,6 +460,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -454,6 +473,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'create-bill-estimate',
       description: 'Create a Bill estimate from a Bill scenario. In the Bill scenario you can model usage addition, usage changes, and usage removal. You can also model commitment addition and commitment removal. After all changes in a Bill scenario is made satisfactorily, you can call this API with a Bill scenario ID to generate the Bill estimate. Bill estimate calculates the pre-tax cost for your consolidated billing family, incorporating all modeled usage and commitments alongside existing usage and commitments from your most recent completed anniversary bill, with any applicable discounts applied',
       options: [
+
         Option(
           name: '--bill-scenario-id',
           description: 'The ID of the Bill Scenario for which you want to create a Bill estimate',
@@ -506,6 +526,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -518,6 +539,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'create-bill-scenario',
       description: 'Creates a new bill scenario to model potential changes to Amazon Web Services usage and costs',
       options: [
+
         Option(
           name: '--name',
           description: 'A descriptive name for the bill scenario',
@@ -561,6 +583,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -573,6 +596,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'create-workload-estimate',
       description: 'Creates a new workload estimate to model costs for a specific workload',
       options: [
+
         Option(
           name: '--name',
           description: 'A descriptive name for the workload estimate',
@@ -625,6 +649,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -637,6 +662,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'delete-bill-estimate',
       description: 'Deletes an existing bill estimate',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the bill estimate to delete',
@@ -662,6 +688,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -674,6 +701,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'delete-bill-scenario',
       description: 'Deletes an existing bill scenario',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the bill scenario to delete',
@@ -699,6 +727,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -711,6 +740,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'delete-workload-estimate',
       description: 'Deletes an existing workload estimate',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the workload estimate to delete',
@@ -736,6 +766,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -748,6 +779,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'get-bill-estimate',
       description: 'Retrieves details of a specific bill estimate',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the bill estimate to retrieve',
@@ -773,6 +805,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -785,6 +818,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'get-bill-scenario',
       description: 'Retrieves details of a specific bill scenario',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the bill scenario to retrieve',
@@ -810,6 +844,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -822,6 +857,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'get-preferences',
       description: 'Retrieves the current preferences for the Amazon Web Services Cost Explorer service',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -838,6 +874,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -850,6 +887,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'get-workload-estimate',
       description: 'Retrieves details of a specific workload estimate',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the workload estimate to retrieve',
@@ -875,6 +913,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -887,6 +926,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-bill-estimate-commitments',
       description: 'Lists the commitments associated with a bill estimate',
       options: [
+
         Option(
           name: '--bill-estimate-id',
           description: 'The unique identifier of the bill estimate to list commitments for',
@@ -957,6 +997,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -969,6 +1010,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-bill-estimate-input-commitment-modifications',
       description: 'Lists the input commitment modifications associated with a bill estimate',
       options: [
+
         Option(
           name: '--bill-estimate-id',
           description: 'The unique identifier of the bill estimate to list input commitment modifications for',
@@ -1039,6 +1081,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1051,6 +1094,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-bill-estimate-input-usage-modifications',
       description: 'Lists the input usage modifications associated with a bill estimate',
       options: [
+
         Option(
           name: '--bill-estimate-id',
           description: 'The unique identifier of the bill estimate to list input usage modifications for',
@@ -1130,6 +1174,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1142,6 +1187,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-bill-estimate-line-items',
       description: 'Lists the line items associated with a bill estimate',
       options: [
+
         Option(
           name: '--bill-estimate-id',
           description: 'The unique identifier of the bill estimate to list line items for',
@@ -1221,6 +1267,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1233,6 +1280,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-bill-estimates',
       description: 'Lists all bill estimates for the account',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters to apply to the list of bill estimates',
@@ -1321,6 +1369,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1333,6 +1382,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-bill-scenario-commitment-modifications',
       description: 'Lists the commitment modifications associated with a bill scenario',
       options: [
+
         Option(
           name: '--bill-scenario-id',
           description: 'The unique identifier of the bill scenario to list commitment modifications for',
@@ -1403,6 +1453,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1415,6 +1466,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-bill-scenario-usage-modifications',
       description: 'Lists the usage modifications associated with a bill scenario',
       options: [
+
         Option(
           name: '--bill-scenario-id',
           description: 'The unique identifier of the bill scenario to list usage modifications for',
@@ -1494,6 +1546,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1506,6 +1559,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-bill-scenarios',
       description: 'Lists all bill scenarios for the account',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters to apply to the list of bill scenarios',
@@ -1594,6 +1648,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1606,6 +1661,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags associated with a specified resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource to list tags for',
@@ -1631,6 +1687,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1643,6 +1700,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-workload-estimate-usage',
       description: 'Lists the usage associated with a workload estimate',
       options: [
+
         Option(
           name: '--workload-estimate-id',
           description: 'The unique identifier of the workload estimate to list usage for',
@@ -1722,6 +1780,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1734,6 +1793,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'list-workload-estimates',
       description: 'Lists all workload estimates for the account',
       options: [
+
         Option(
           name: '--created-at-filter',
           description: 'Filter workload estimates based on their creation date',
@@ -1822,6 +1882,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1834,6 +1895,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to a specified resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource to add tags to',
@@ -1868,6 +1930,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1880,6 +1943,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from a specified resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the resource to remove tags from',
@@ -1914,6 +1978,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1926,6 +1991,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'update-bill-estimate',
       description: 'Updates an existing bill estimate',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the bill estimate to update',
@@ -1969,6 +2035,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1981,6 +2048,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'update-bill-scenario',
       description: 'Updates an existing bill scenario',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the bill scenario to update',
@@ -2024,6 +2092,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2036,6 +2105,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'update-preferences',
       description: 'Updates the preferences for the Amazon Web Services Cost Explorer service',
       options: [
+
         Option(
           name: '--management-account-rate-type-selections',
           description: 'The updated preferred rate types for the management account',
@@ -2070,6 +2140,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2082,6 +2153,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
       name: 'update-workload-estimate',
       description: 'Updates an existing workload estimate',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique identifier of the workload estimate to update',
@@ -2125,6 +2197,7 @@ final FigSpec bcmPricingCalculatorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

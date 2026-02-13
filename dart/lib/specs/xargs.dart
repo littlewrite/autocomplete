@@ -9,6 +9,7 @@ final FigSpec xargsSpec = FigSpec(
   name: 'xargs',
   description: 'Execute a command with whitespace-delimited strings (from stdin) as arguments',
   options: [
+
     Option(
       name: '-0',
       description: 'Use NUL (0x00) as a separator, instead of whitespace'

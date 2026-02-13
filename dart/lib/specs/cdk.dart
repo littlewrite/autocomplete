@@ -9,6 +9,7 @@ final FigSpec cdkSpec = FigSpec(
   name: 'cdk',
   description: 'AWS CDK CLI',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Create a new, empty CDK project from a template'
@@ -71,6 +72,7 @@ final FigSpec cdkSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--version',
       description: 'The current version'

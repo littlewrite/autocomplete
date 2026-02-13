@@ -9,16 +9,19 @@ final FigSpec fastlaneSpec = FigSpec(
   name: 'fastlane',
   description: 'Fastlane is an open source platform aimed at simplifying Android and iOS deployment',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Helps you with your initial fastlane setup',
       subcommands: [
+
         Subcommand(
           name: 'swift',
           description: 'Fastlane configuration written in Swift (Beta). Swift setup is still in beta'
         )
       ],
       options: [
+
         Option(
           name: ['-u', '--user'],
           description: 'Only iOS projects Your Apple ID',
@@ -57,6 +60,7 @@ final FigSpec fastlaneSpec = FigSpec(
       name: 'docs',
       description: 'Generate a markdown based documentation based on the Fastfile',
       options: [
+
         Option(
           name: ['-f', '--force'],
           description: 'Overwrite the existing README.md in the ./fastlane folder'
@@ -67,6 +71,7 @@ final FigSpec fastlaneSpec = FigSpec(
       name: 'enable_auto_complete',
       description: 'Enable tab auto completion',
       options: [
+
         Option(
           name: ['-c', '--custom'],
           description: 'Add custom command(s) for which tab auto complete should be enabled too',
@@ -98,6 +103,7 @@ final FigSpec fastlaneSpec = FigSpec(
       name: 'list',
       description: 'Lists all available lanes without description',
       options: [
+
         Option(
           name: ['-j', '--json'],
           description: 'Output the lanes in JSON instead of text'
@@ -108,6 +114,7 @@ final FigSpec fastlaneSpec = FigSpec(
       name: 'new_action',
       description: 'Create a new custom action for fastlane',
       options: [
+
         Option(
           name: '--name',
           description: 'Name of your new action',
@@ -152,6 +159,7 @@ final FigSpec fastlaneSpec = FigSpec(
       name: 'socket_server',
       description: 'Starts local socket server and enables only a single local connection',
       options: [
+
         Option(
           name: ['-s', '--stay_alive'],
           description: 'Keeps socket server up even after error or disconnects, requires CTRL-C to kill'
@@ -182,6 +190,7 @@ final FigSpec fastlaneSpec = FigSpec(
       name: 'trigger',
       description: 'Run a specific lane. Pass the lane name and optionally the platform first',
       options: [
+
         Option(
           name: '--disable_runner_upgrades',
           description: 'Prevents fastlane from attempting to update FastlaneRunner swift project'
@@ -214,6 +223,7 @@ final FigSpec fastlaneSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--platform',
       description: 'Only show actions available on the given platform',
@@ -224,6 +234,7 @@ final FigSpec fastlaneSpec = FigSpec(
         name: 'platform',
         description: 'One of android, ios or mac',
         suggestions: [
+
           FigSuggestion(name: 'ios'),
           FigSuggestion(name: 'android'),
           FigSuggestion(name: 'mac')

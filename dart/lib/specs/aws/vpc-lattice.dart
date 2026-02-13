@@ -9,10 +9,12 @@ final FigSpec vpcLatticeSpec = FigSpec(
   name: 'vpc-lattice',
   description: 'Amazon VPC Lattice is a fully managed application networking service that you use to connect, secure, and monitor all of your services across multiple accounts and virtual private clouds (VPCs). Amazon VPC Lattice interconnects your microservices and legacy services within a logical boundary, so that you can discover and manage them more efficiently. For more information, see the Amazon VPC Lattice User Guide',
   subcommands: [
+
     Subcommand(
       name: 'batch-update-rule',
       description: 'Updates the listener rules in a batch. You can use this operation to change the priority of listener rules. This can be useful when bulk updating or swapping rule priority.  Required permissions: vpc-lattice:UpdateRule  For more information, see How Amazon VPC Lattice works with IAM in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--listener-identifier',
           description: 'The ID or ARN of the listener',
@@ -56,6 +58,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-access-log-subscription',
       description: 'Enables access logs to be sent to Amazon CloudWatch, Amazon S3, and Amazon Kinesis Data Firehose. The service network owner can use the access logs to audit the services in the network. The service network owner can only see access logs from clients and services that are associated with their service network. Access log entries represent traffic originated from VPCs associated with that network. For more information, see Access logs in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren\'t identical, the retry fails',
@@ -129,6 +133,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-listener',
       description: 'Creates a listener for a service. Before you start using your Amazon VPC Lattice service, you must add one or more listeners. A listener is a process that checks for connection requests to your services. For more information, see Listeners in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren\'t identical, the retry fails',
@@ -220,6 +226,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -232,6 +239,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-resource-configuration',
       description: 'Creates a resource configuration. A resource configuration defines a specific resource. You can associate a resource configuration with a service network or a VPC endpoint',
       options: [
+
         Option(
           name: '--allow-association-to-shareable-service-network',
           description: '(SINGLE, GROUP, ARN) Specifies whether the resource configuration can be associated with a sharable service network. The default is false'
@@ -337,6 +345,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -349,6 +358,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-resource-gateway',
       description: 'Creates a resource gateway',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren\'t identical, the retry fails',
@@ -428,6 +438,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -440,6 +451,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-rule',
       description: 'Creates a listener rule. Each listener has a default rule for checking connection requests, but you can define additional rules. Each rule consists of a priority, one or more actions, and one or more conditions. For more information, see Listener rules in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--action',
           description: 'The action for the default rule',
@@ -528,6 +540,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -540,6 +553,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-service',
       description: 'Creates a service. A service is any software application that can run on instances containers, or serverless functions within an account or virtual private cloud (VPC). For more information, see Services in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--auth-type',
           description: 'The type of IAM policy.    NONE: The resource does not use an IAM policy. This is the default.    AWS_IAM: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required',
@@ -610,6 +624,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -622,6 +637,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-service-network',
       description: 'Creates a service network. A service network is a logical boundary for a collection of services. You can associate services and VPCs with a service network. For more information, see Service networks in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--auth-type',
           description: 'The type of IAM policy.    NONE: The resource does not use an IAM policy. This is the default.    AWS_IAM: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required',
@@ -683,6 +699,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -695,6 +712,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-service-network-resource-association',
       description: 'Associates the specified service network with the specified resource configuration. This allows the resource configuration to receive connections through the service network, including through a service network VPC endpoint',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren\'t identical, the retry fails',
@@ -747,6 +765,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -759,6 +778,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-service-network-service-association',
       description: 'Associates the specified service with the specified service network. For more information, see Manage service associations in the Amazon VPC Lattice User Guide. You can\'t use this operation if the service and service network are already associated or if there is a disassociation or deletion in progress. If the association fails, you can retry the operation by deleting the association and recreating it. You cannot associate a service and service network that are shared with a caller. The caller must own either the service or the service network. As a result of this operation, the association is created in the service network account and the association owner account',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren\'t identical, the retry fails',
@@ -811,6 +831,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -823,6 +844,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-service-network-vpc-association',
       description: 'Associates a VPC with a service network. When you associate a VPC with the service network, it enables all the resources within that VPC to be clients and communicate with other services in the service network. For more information, see Manage VPC associations in the Amazon VPC Lattice User Guide. You can\'t use this operation if there is a disassociation in progress. If the association fails, retry by deleting the association and recreating it. As a result of this operation, the association gets created in the service network account and the VPC owner account. If you add a security group to the service network and VPC association, the association must continue to always have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and recreate it without security groups',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren\'t identical, the retry fails',
@@ -884,6 +906,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -896,6 +919,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'create-target-group',
       description: 'Creates a target group. A target group is a collection of targets, or compute resources, that run your application or service. A target group can only be used by a single service. For more information, see Target groups in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren\'t identical, the retry fails',
@@ -957,6 +981,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -969,6 +994,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-access-log-subscription',
       description: 'Deletes the specified access log subscription',
       options: [
+
         Option(
           name: '--access-log-subscription-identifier',
           description: 'The ID or ARN of the access log subscription',
@@ -994,6 +1020,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1006,6 +1033,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-auth-policy',
       description: 'Deletes the specified auth policy. If an auth is set to AWS_IAM and the auth policy is deleted, all requests are denied. If you are trying to remove the auth policy completely, you must set the auth type to NONE. If auth is enabled on the resource, but no auth policy is set, all requests are denied',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'The ID or ARN of the resource',
@@ -1031,6 +1059,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1043,6 +1072,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-listener',
       description: 'Deletes the specified listener',
       options: [
+
         Option(
           name: '--listener-identifier',
           description: 'The ID or ARN of the listener',
@@ -1077,6 +1107,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1089,6 +1120,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-resource-configuration',
       description: 'Deletes the specified resource configuration',
       options: [
+
         Option(
           name: '--resource-configuration-identifier',
           description: 'The ID or ARN of the resource configuration',
@@ -1114,6 +1146,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1126,6 +1159,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-resource-endpoint-association',
       description: 'Disassociates the resource configuration from the resource VPC endpoint',
       options: [
+
         Option(
           name: '--resource-endpoint-association-identifier',
           description: 'The ID or ARN of the association',
@@ -1151,6 +1185,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1163,6 +1198,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-resource-gateway',
       description: 'Deletes the specified resource gateway',
       options: [
+
         Option(
           name: '--resource-gateway-identifier',
           description: 'The ID or ARN of the resource gateway',
@@ -1188,6 +1224,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1200,6 +1237,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes the specified resource policy',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1225,6 +1263,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1237,6 +1276,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-rule',
       description: 'Deletes a listener rule. Each listener has a default rule for checking connection requests, but you can define additional rules. Each rule consists of a priority, one or more actions, and one or more conditions. You can delete additional listener rules, but you cannot delete the default rule. For more information, see Listener rules in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--listener-identifier',
           description: 'The ID or ARN of the listener',
@@ -1280,6 +1320,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1292,6 +1333,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-service',
       description: 'Deletes a service. A service can\'t be deleted if it\'s associated with a service network. If you delete a service, all resources related to the service, such as the resource policy, auth policy, listeners, listener rules, and access log subscriptions, are also deleted. For more information, see Delete a service in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--service-identifier',
           description: 'The ID or ARN of the service',
@@ -1317,6 +1359,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1329,6 +1372,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-service-network',
       description: 'Deletes a service network. You can only delete the service network if there is no service or VPC associated with it. If you delete a service network, all resources related to the service network, such as the resource policy, auth policy, and access log subscriptions, are also deleted. For more information, see Delete a service network in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--service-network-identifier',
           description: 'The ID or ARN of the service network',
@@ -1354,6 +1398,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1366,6 +1411,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-service-network-resource-association',
       description: 'Deletes the association between a service network and a resource configuration',
       options: [
+
         Option(
           name: '--service-network-resource-association-identifier',
           description: 'The ID of the association',
@@ -1391,6 +1437,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1403,6 +1450,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-service-network-service-association',
       description: 'Deletes the association between a service and a service network. This operation fails if an association is still in progress',
       options: [
+
         Option(
           name: '--service-network-service-association-identifier',
           description: 'The ID or ARN of the association',
@@ -1428,6 +1476,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1440,6 +1489,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-service-network-vpc-association',
       description: 'Disassociates the VPC from the service network. You can\'t disassociate the VPC if there is a create or update association in progress',
       options: [
+
         Option(
           name: '--service-network-vpc-association-identifier',
           description: 'The ID or ARN of the association',
@@ -1465,6 +1515,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1477,6 +1528,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'delete-target-group',
       description: 'Deletes a target group. You can\'t delete a target group if it is used in a listener rule or if the target group creation is in progress',
       options: [
+
         Option(
           name: '--target-group-identifier',
           description: 'The ID or ARN of the target group',
@@ -1502,6 +1554,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1514,6 +1567,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'deregister-targets',
       description: 'Deregisters the specified targets from the specified target group',
       options: [
+
         Option(
           name: '--target-group-identifier',
           description: 'The ID or ARN of the target group',
@@ -1548,6 +1602,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1560,6 +1615,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-access-log-subscription',
       description: 'Retrieves information about the specified access log subscription',
       options: [
+
         Option(
           name: '--access-log-subscription-identifier',
           description: 'The ID or ARN of the access log subscription',
@@ -1585,6 +1641,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1597,6 +1654,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-auth-policy',
       description: 'Retrieves information about the auth policy for the specified service or service network',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'The ID or ARN of the service network or service',
@@ -1622,6 +1680,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1634,6 +1693,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-listener',
       description: 'Retrieves information about the specified listener for the specified service',
       options: [
+
         Option(
           name: '--listener-identifier',
           description: 'The ID or ARN of the listener',
@@ -1668,6 +1728,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1680,6 +1741,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-resource-configuration',
       description: 'Retrieves information about the specified resource configuration',
       options: [
+
         Option(
           name: '--resource-configuration-identifier',
           description: 'The ID of the resource configuration',
@@ -1705,6 +1767,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1717,6 +1780,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-resource-gateway',
       description: 'Retrieves information about the specified resource gateway',
       options: [
+
         Option(
           name: '--resource-gateway-identifier',
           description: 'The ID of the resource gateway',
@@ -1742,6 +1806,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1754,6 +1819,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-resource-policy',
       description: 'Retrieves information about the specified resource policy. The resource policy is an IAM policy created on behalf of the resource owner when they share a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the service network or service',
@@ -1779,6 +1845,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1791,6 +1858,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-rule',
       description: 'Retrieves information about the specified listener rules. You can also retrieve information about the default listener rule. For more information, see Listener rules in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--listener-identifier',
           description: 'The ID or ARN of the listener',
@@ -1834,6 +1902,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1846,6 +1915,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-service',
       description: 'Retrieves information about the specified service',
       options: [
+
         Option(
           name: '--service-identifier',
           description: 'The ID or ARN of the service',
@@ -1871,6 +1941,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1883,6 +1954,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-service-network',
       description: 'Retrieves information about the specified service network',
       options: [
+
         Option(
           name: '--service-network-identifier',
           description: 'The ID or ARN of the service network',
@@ -1908,6 +1980,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1920,6 +1993,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-service-network-resource-association',
       description: 'Retrieves information about the specified association between a service network and a resource configuration',
       options: [
+
         Option(
           name: '--service-network-resource-association-identifier',
           description: 'The ID of the association',
@@ -1945,6 +2019,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1957,6 +2032,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-service-network-service-association',
       description: 'Retrieves information about the specified association between a service network and a service',
       options: [
+
         Option(
           name: '--service-network-service-association-identifier',
           description: 'The ID or ARN of the association',
@@ -1982,6 +2058,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1994,6 +2071,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-service-network-vpc-association',
       description: 'Retrieves information about the specified association between a service network and a VPC',
       options: [
+
         Option(
           name: '--service-network-vpc-association-identifier',
           description: 'The ID or ARN of the association',
@@ -2019,6 +2097,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2031,6 +2110,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'get-target-group',
       description: 'Retrieves information about the specified target group',
       options: [
+
         Option(
           name: '--target-group-identifier',
           description: 'The ID or ARN of the target group',
@@ -2056,6 +2136,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2068,6 +2149,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-access-log-subscriptions',
       description: 'Lists the access log subscriptions for the specified service network or service',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -2138,6 +2220,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2150,6 +2233,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-listeners',
       description: 'Lists the listeners for the specified service',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -2220,6 +2304,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2232,6 +2317,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-resource-configurations',
       description: 'Lists the resource configurations owned by or shared with this account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum page size',
@@ -2311,6 +2397,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2323,6 +2410,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-resource-endpoint-associations',
       description: 'Lists the associations for the specified VPC endpoint',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum page size',
@@ -2420,6 +2508,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2432,6 +2521,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-resource-gateways',
       description: 'Lists the resource gateways that you own or that were shared with you',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum page size',
@@ -2493,6 +2583,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2505,6 +2596,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-rules',
       description: 'Lists the rules for the specified listener',
       options: [
+
         Option(
           name: '--listener-identifier',
           description: 'The ID or ARN of the listener',
@@ -2584,6 +2676,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2596,6 +2689,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-service-network-resource-associations',
       description: 'Lists the associations between a service network and a resource configuration',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum page size',
@@ -2675,6 +2769,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2687,6 +2782,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-service-network-service-associations',
       description: 'Lists the associations between a service network and a service. You can filter the list either by service or service network. You must provide either the service network identifier or the service identifier. Every association in Amazon VPC Lattice has a unique Amazon Resource Name (ARN), such as when a service network is associated with a VPC or when a service is associated with a service network. If the association is for a resource is shared with another account, the association includes the local account ID as the prefix in the ARN',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -2766,6 +2862,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2778,6 +2875,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-service-network-vpc-associations',
       description: 'Lists the associations between a service network and a VPC. You can filter the list either by VPC or service network. You must provide either the ID of the service network identifier or the ID of the VPC',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -2857,6 +2955,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2869,6 +2968,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-service-network-vpc-endpoint-associations',
       description: 'Lists the associations between a service network and a VPC endpoint',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum page size',
@@ -2939,6 +3039,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2951,6 +3052,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-service-networks',
       description: 'Lists the service networks owned by or shared with this account. The account ID in the ARN shows which account owns the service network',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -3012,6 +3114,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3024,6 +3127,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-services',
       description: 'Lists the services owned by the caller account or shared with the caller account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -3085,6 +3189,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3097,6 +3202,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -3122,6 +3228,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3134,6 +3241,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-target-groups',
       description: 'Lists your target groups. You can narrow your search by using the filters below in your request',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -3213,6 +3321,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3225,6 +3334,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'list-targets',
       description: 'Lists the targets for the target group. By default, all targets are included. You can use this API to check the health status of targets. You can also ﬁlter the results by target',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -3304,6 +3414,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3316,6 +3427,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'put-auth-policy',
       description: 'Creates or updates the auth policy. The policy string in JSON must not contain newlines or blank lines. For more information, see Auth policies in the Amazon VPC Lattice User Guide',
       options: [
+
         Option(
           name: '--policy',
           description: 'The auth policy. The policy string in JSON must not contain newlines or blank lines',
@@ -3350,6 +3462,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3362,6 +3475,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Attaches a resource-based permission policy to a service or service network. The policy must contain the same actions and condition statements as the Amazon Web Services Resource Access Manager permission for sharing services and service networks',
       options: [
+
         Option(
           name: '--policy',
           description: 'An IAM policy. The policy string in JSON must not contain newlines or blank lines',
@@ -3396,6 +3510,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3408,6 +3523,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'register-targets',
       description: 'Registers the targets with the target group. If it\'s a Lambda target, you can only have one target in a target group',
       options: [
+
         Option(
           name: '--target-group-identifier',
           description: 'The ID or ARN of the target group',
@@ -3442,6 +3558,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3454,6 +3571,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -3488,6 +3606,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3500,6 +3619,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -3534,6 +3654,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3546,6 +3667,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'update-access-log-subscription',
       description: 'Updates the specified access log subscription',
       options: [
+
         Option(
           name: '--access-log-subscription-identifier',
           description: 'The ID or ARN of the access log subscription',
@@ -3580,6 +3702,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3592,6 +3715,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'update-listener',
       description: 'Updates the specified listener for the specified service',
       options: [
+
         Option(
           name: '--default-action',
           description: 'The action for the default rule',
@@ -3635,6 +3759,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3647,6 +3772,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'update-resource-configuration',
       description: 'Updates the specified resource configuration',
       options: [
+
         Option(
           name: '--allow-association-to-shareable-service-network',
           description: 'Indicates whether to add the resource configuration to service networks that are shared with other accounts'
@@ -3698,6 +3824,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3710,6 +3837,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'update-resource-gateway',
       description: 'Updates the specified resource gateway',
       options: [
+
         Option(
           name: '--resource-gateway-identifier',
           description: 'The ID or ARN of the resource gateway',
@@ -3744,6 +3872,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3756,6 +3885,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'update-rule',
       description: 'Updates a specified rule for the listener. You can\'t modify a default listener rule. To modify a default listener rule, use UpdateListener',
       options: [
+
         Option(
           name: '--action',
           description: 'Information about the action for the specified listener rule',
@@ -3826,6 +3956,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3838,6 +3969,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'update-service',
       description: 'Updates the specified service',
       options: [
+
         Option(
           name: '--auth-type',
           description: 'The type of IAM policy.    NONE: The resource does not use an IAM policy. This is the default.    AWS_IAM: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required',
@@ -3881,6 +4013,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3893,6 +4026,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'update-service-network',
       description: 'Updates the specified service network',
       options: [
+
         Option(
           name: '--auth-type',
           description: 'The type of IAM policy.    NONE: The resource does not use an IAM policy. This is the default.    AWS_IAM: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required',
@@ -3927,6 +4061,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3939,6 +4074,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'update-service-network-vpc-association',
       description: 'Updates the service network and VPC association. If you add a security group to the service network and VPC association, the association must continue to have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and then recreate it without security groups',
       options: [
+
         Option(
           name: '--security-group-ids',
           description: 'The IDs of the security groups',
@@ -3973,6 +4109,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3985,6 +4122,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
       name: 'update-target-group',
       description: 'Updates the specified target group',
       options: [
+
         Option(
           name: '--health-check',
           description: 'The health check configuration',
@@ -4019,6 +4157,7 @@ final FigSpec vpcLatticeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

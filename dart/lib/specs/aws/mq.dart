@@ -9,10 +9,12 @@ final FigSpec mqSpec = FigSpec(
   name: 'mq',
   description: 'Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers in the cloud. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols',
   subcommands: [
+
     Subcommand(
       name: 'create-broker',
       description: 'Creates a broker. Note: This API is asynchronous. To create a broker, you must either use the AmazonMQFullAccess IAM policy or include the following EC2 permissions in your IAM policy. ec2:CreateNetworkInterface This permission is required to allow Amazon MQ to create an elastic network interface (ENI) on behalf of your account. ec2:CreateNetworkInterfacePermission This permission is required to attach the ENI to the broker instance. ec2:DeleteNetworkInterface ec2:DeleteNetworkInterfacePermission ec2:DetachNetworkInterface ec2:DescribeInternetGateways ec2:DescribeNetworkInterfaces ec2:DescribeNetworkInterfacePermissions ec2:DescribeRouteTables ec2:DescribeSecurityGroups ec2:DescribeSubnets ec2:DescribeVpcs For more information, see Create an IAM User and Get Your Amazon Web Services Credentials and Never Modify or Delete the Amazon MQ Elastic Network Interface in the Amazon MQ Developer Guide',
       options: [
+
         Option(
           name: '--authentication-strategy',
           description: 'Optional. The authentication strategy used to secure the broker. The default is SIMPLE',
@@ -216,6 +218,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -228,6 +231,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'create-configuration',
       description: 'Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version)',
       options: [
+
         Option(
           name: '--authentication-strategy',
           description: 'Optional. The authentication strategy associated with the configuration. The default is SIMPLE',
@@ -289,6 +293,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -301,6 +306,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'create-tags',
       description: 'Add a tag to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource tag',
@@ -335,6 +341,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -347,6 +354,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'create-user',
       description: 'Creates an ActiveMQ user. Do not add personally identifiable information (PII) or other confidential or sensitive information in broker usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data',
       options: [
+
         Option(
           name: '--broker-id',
           description: 'The unique ID that Amazon MQ generates for the broker',
@@ -415,6 +423,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -427,6 +436,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'delete-broker',
       description: 'Deletes a broker. Note: This API is asynchronous',
       options: [
+
         Option(
           name: '--broker-id',
           description: 'The unique ID that Amazon MQ generates for the broker',
@@ -452,6 +462,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -464,6 +475,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'delete-tags',
       description: 'Removes a tag from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource tag',
@@ -498,6 +510,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -510,6 +523,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'delete-user',
       description: 'Deletes an ActiveMQ user',
       options: [
+
         Option(
           name: '--broker-id',
           description: 'The unique ID that Amazon MQ generates for the broker',
@@ -544,6 +558,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -556,6 +571,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'describe-broker',
       description: 'Returns information about the specified broker',
       options: [
+
         Option(
           name: '--broker-id',
           description: 'The unique ID that Amazon MQ generates for the broker',
@@ -581,6 +597,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -593,6 +610,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'describe-broker-engine-types',
       description: 'Describe available engine types and versions',
       options: [
+
         Option(
           name: '--engine-type',
           description: 'Filter response by engine type',
@@ -636,6 +654,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -648,6 +667,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'describe-broker-instance-options',
       description: 'Describe available broker instance options',
       options: [
+
         Option(
           name: '--engine-type',
           description: 'Filter response by engine type',
@@ -709,6 +729,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -721,6 +742,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'describe-configuration',
       description: 'Returns information about the specified configuration',
       options: [
+
         Option(
           name: '--configuration-id',
           description: 'The unique ID that Amazon MQ generates for the configuration',
@@ -746,6 +768,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -758,6 +781,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'describe-configuration-revision',
       description: 'Returns the specified configuration revision for the specified configuration',
       options: [
+
         Option(
           name: '--configuration-id',
           description: 'The unique ID that Amazon MQ generates for the configuration',
@@ -792,6 +816,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -804,6 +829,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'describe-user',
       description: 'Returns information about an ActiveMQ user',
       options: [
+
         Option(
           name: '--broker-id',
           description: 'The unique ID that Amazon MQ generates for the broker',
@@ -838,6 +864,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -850,6 +877,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'list-brokers',
       description: 'Returns a list of all brokers',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100',
@@ -911,6 +939,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -923,6 +952,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'list-configuration-revisions',
       description: 'Returns a list of all revisions for the specified configuration',
       options: [
+
         Option(
           name: '--configuration-id',
           description: 'The unique ID that Amazon MQ generates for the configuration',
@@ -966,6 +996,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -978,6 +1009,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'list-configurations',
       description: 'Returns a list of all configurations',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100',
@@ -1012,6 +1044,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1024,6 +1057,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'list-tags',
       description: 'Lists tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource tag',
@@ -1049,6 +1083,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1061,6 +1096,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'list-users',
       description: 'Returns a list of all ActiveMQ users',
       options: [
+
         Option(
           name: '--broker-id',
           description: 'The unique ID that Amazon MQ generates for the broker',
@@ -1104,6 +1140,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1116,6 +1153,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'promote',
       description: 'Promotes a data replication replica broker to the primary broker role',
       options: [
+
         Option(
           name: '--broker-id',
           description: 'The unique ID that Amazon MQ generates for the broker',
@@ -1150,6 +1188,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1162,6 +1201,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'reboot-broker',
       description: 'Reboots a broker. Note: This API is asynchronous',
       options: [
+
         Option(
           name: '--broker-id',
           description: 'The unique ID that Amazon MQ generates for the broker',
@@ -1187,6 +1227,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1199,6 +1240,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'update-broker',
       description: 'Adds a pending configuration change to a broker',
       options: [
+
         Option(
           name: '--authentication-strategy',
           description: 'Optional. The authentication strategy used to secure the broker. The default is SIMPLE',
@@ -1313,6 +1355,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1325,6 +1368,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'update-configuration',
       description: 'Updates the specified configuration',
       options: [
+
         Option(
           name: '--configuration-id',
           description: 'The unique ID that Amazon MQ generates for the configuration',
@@ -1368,6 +1412,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1380,6 +1425,7 @@ final FigSpec mqSpec = FigSpec(
       name: 'update-user',
       description: 'Updates the information for an ActiveMQ user',
       options: [
+
         Option(
           name: '--broker-id',
           description: 'The unique ID that Amazon MQ generates for the broker',
@@ -1448,6 +1494,7 @@ final FigSpec mqSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

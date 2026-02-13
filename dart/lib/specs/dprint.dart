@@ -4,12 +4,52 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> configurableCommandOptions = [
+
+  Option(
+    name: '--excludes',
+    description: 'List of file patterns or directories in quotes to exclude when formatting. This overrides what is specified in the config file',
+    args: [
+      Arg(
+      name: 'pattern',
+      template: ['filepaths', 'folders']
+    )
+    ],
+    isRepeatable: true
+  ),
+  Option(
+    name: '--allow-node-modules',
+    description: 'Allows traversing node module directories (unstable - This flag will be renamed to be non-node specific in the future)'
+  )
+];
+
+final List<Option> checkCommandOptions = [
+
+  Option(
+    name: '--incremental',
+    description: 'Only format files when they change. This may alternatively be specified in the configuration file',
+    args: [
+      Arg(
+      name: 'incremental',
+      suggestions: [
+
+        FigSuggestion(name: 'true'),
+        FigSuggestion(name: 'false')
+      ],
+      isOptional: true
+    )
+    ]
+  ),
+  ...configurableCommandOptions
+];
+
 /// Completion spec for `dprint` CLI
 final FigSpec dprintSpec = FigSpec(
   name: 'dprint',
   description: 'A pluggable and configurable code formatting platform written in Rust',
   requiresSubcommand: true,
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Initializes a configuration file in the current directory',
@@ -22,6 +62,7 @@ final FigSpec dprintSpec = FigSpec(
       icon: '🛠',
       priority: 76,
       options: [
+
         Option(
           name: '--diff',
           description: 'Outputs a check-like diff of every formatted file'
@@ -35,13 +76,15 @@ final FigSpec dprintSpec = FigSpec(
             template: 'filepaths'
           )
           ]
-        )
+        ),
+        ...checkCommandOptions
       ]
     ),
     Subcommand(
       name: 'check',
       description: 'Checks for any files that haven\'t been formatted',
       icon: '💬',
+      options: checkCommandOptions,
       priority: 60
     ),
     Subcommand(
@@ -50,6 +93,7 @@ final FigSpec dprintSpec = FigSpec(
       icon: '⚙️',
       priority: 60,
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Adds a plugin to the configuration file',
@@ -68,6 +112,7 @@ final FigSpec dprintSpec = FigSpec(
           description: 'Updates the plugins in the configuration file',
           icon: '⤴️',
           options: [
+
             Option(
               name: ['-y', '--yes'],
               description: 'Upgrade process plugins without prompting to confirm checksums'
@@ -79,7 +124,8 @@ final FigSpec dprintSpec = FigSpec(
     ),
     Subcommand(
       name: 'output-file-paths',
-      description: 'Prints the resolved file paths for the plugins based on the args and configuration'
+      description: 'Prints the resolved file paths for the plugins based on the args and configuration',
+      options: configurableCommandOptions
     ),
     Subcommand(
       name: 'output-resolved-config',
@@ -87,7 +133,8 @@ final FigSpec dprintSpec = FigSpec(
     ),
     Subcommand(
       name: 'output-format-times',
-      description: 'Prints the amount of time it takes to format each file. Use this for debugging'
+      description: 'Prints the amount of time it takes to format each file. Use this for debugging',
+      options: checkCommandOptions
     ),
     Subcommand(
       name: 'clear-cache',
@@ -105,6 +152,7 @@ final FigSpec dprintSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-c', '--config'],
       description: 'Path or url to JSON configuration file. Defaults to dprint.json or .dprint.json in current or ancestor directory when not provided',

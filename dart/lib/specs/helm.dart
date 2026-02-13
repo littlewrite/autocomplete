@@ -9,14 +9,17 @@ final FigSpec helmSpec = FigSpec(
   name: 'helm',
   description: 'The Helm package manager for Kubernetes',
   subcommands: [
+
     Subcommand(
       name: 'completion',
       description: 'Generate autocompletion scripts for the specified shell',
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Generate autocompletion script for bash',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -27,6 +30,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'fish',
           description: 'Generate autocompletion script for fish',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -37,6 +41,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'powershell',
           description: 'Generate autocompletion script for powershell',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -47,6 +52,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'zsh',
           description: 'Generate autocompletion script for zsh',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -59,6 +65,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'create',
       description: 'Create a new chart with the given name',
       options: [
+
         Option(
           name: ['--starter', '-p'],
           description: 'The name or absolute path to Helm starter scaffold',
@@ -74,10 +81,12 @@ final FigSpec helmSpec = FigSpec(
       name: ['dep', 'dependencies', 'dependency'],
       description: 'Manage a chart\'s dependencies',
       subcommands: [
+
         Subcommand(
           name: 'build',
           description: 'Rebuild the charts/ directory based on the Chart.lock file',
           options: [
+
             Option(
               name: '--keyring',
               description: 'Keyring containing public keys',
@@ -103,6 +112,7 @@ final FigSpec helmSpec = FigSpec(
           name: ['ls', 'list'],
           description: 'List the dependencies for the given chart',
           options: [
+
             Option(
               name: '--max-col-width',
               description: 'Maximum column width for output table',
@@ -119,6 +129,7 @@ final FigSpec helmSpec = FigSpec(
           name: ['up', 'update'],
           description: 'Update charts/ based on the contents of Chart.yaml',
           options: [
+
             Option(
               name: '--keyring',
               description: 'Keyring containing public keys',
@@ -150,10 +161,12 @@ final FigSpec helmSpec = FigSpec(
       name: 'get',
       description: 'Download extended information of a named release',
       subcommands: [
+
         Subcommand(
           name: 'all',
           description: 'Download all information for a named release',
           options: [
+
             Option(
               name: '--revision',
               description: 'Get the named release with revision',
@@ -179,6 +192,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'hooks',
           description: 'Download all hooks for a named release',
           options: [
+
             Option(
               name: '--revision',
               description: 'Get the named release with revision',
@@ -195,6 +209,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'manifest',
           description: 'Download the manifest for a named release',
           options: [
+
             Option(
               name: '--revision',
               description: 'Get the named release with revision',
@@ -211,6 +226,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'notes',
           description: 'Download the notes for a named release',
           options: [
+
             Option(
               name: '--revision',
               description: 'Get the named release with revision',
@@ -227,6 +243,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'values',
           description: 'Download the values file for a named release',
           options: [
+
             Option(
               name: ['--all', '-a'],
               description: 'Dump all (computed) values'
@@ -259,6 +276,7 @@ final FigSpec helmSpec = FigSpec(
       name: ['hist', 'history'],
       description: 'Fetch release history',
       options: [
+
         Option(
           name: '--max',
           description: 'Maximum number of revision to include in history',
@@ -285,6 +303,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'install',
       description: 'Install a chart',
       options: [
+
         Option(
           name: '--atomic',
           description: 'If set, the installation process deletes the installation on failure. The --wait flag will be set automatically if --atomic is used'
@@ -531,6 +550,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'lint',
       description: 'Examine a chart for possible issues',
       options: [
+
         Option(
           name: '--quiet',
           description: 'Print only warnings and errors'
@@ -591,6 +611,7 @@ final FigSpec helmSpec = FigSpec(
       name: ['ls', 'list'],
       description: 'List releases',
       options: [
+
         Option(
           name: ['--all', '-a'],
           description: 'Show all releases without any filter applied'
@@ -702,6 +723,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'package',
       description: 'Package a chart directory into a chart archive',
       options: [
+
         Option(
           name: '--app-version',
           description: 'Set the appVersion on the chart to this version',
@@ -774,10 +796,12 @@ final FigSpec helmSpec = FigSpec(
       name: 'plugin',
       description: 'Install, list, or uninstall Helm plugins',
       subcommands: [
+
         Subcommand(
           name: ['add', 'install'],
           description: 'Install one or more Helm plugins',
           options: [
+
             Option(
               name: '--version',
               description: 'Specify a version constraint. If this is not specified, the latest version is installed',
@@ -807,6 +831,7 @@ final FigSpec helmSpec = FigSpec(
       name: ['fetch', 'pull'],
       description: 'Download a chart from a repository and (optionally) unpack it in local directory',
       options: [
+
         Option(
           name: '--ca-file',
           description: 'Verify certificates of HTTPS-enabled servers using this CA bundle',
@@ -939,10 +964,12 @@ final FigSpec helmSpec = FigSpec(
       name: 'registry',
       description: 'Login to or logout from a registry',
       subcommands: [
+
         Subcommand(
           name: 'login',
           description: 'Login to a registry',
           options: [
+
             Option(
               name: '--insecure',
               description: 'Allow connections to TLS registry without certs'
@@ -981,10 +1008,12 @@ final FigSpec helmSpec = FigSpec(
       name: 'repo',
       description: 'Add, list, remove, update, and index chart repositories',
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Add a chart repository',
           options: [
+
             Option(
               name: '--allow-deprecated-repos',
               description: 'By default, this command will not allow adding official repos that have been permanently deleted. This disables that behavior'
@@ -1063,6 +1092,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'index',
           description: 'Generate an index file given a directory containing packaged charts',
           options: [
+
             Option(
               name: '--merge',
               description: 'Merge the generated index into the given index',
@@ -1087,6 +1117,7 @@ final FigSpec helmSpec = FigSpec(
           name: ['ls', 'list'],
           description: 'List chart repositories',
           options: [
+
             Option(
               name: ['--output', '-o'],
               description: 'Prints the output in the specified format. Allowed values: table, json, yaml',
@@ -1107,6 +1138,7 @@ final FigSpec helmSpec = FigSpec(
           name: ['up', 'update'],
           description: 'Update information of available charts locally from chart repositories',
           options: [
+
             Option(
               name: '--fail-on-repo-update-fail',
               description: 'Update fails if any of the repository updates fail'
@@ -1119,6 +1151,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'rollback',
       description: 'Roll back a release to a previous revision',
       options: [
+
         Option(
           name: '--cleanup-on-fail',
           description: 'Allow deletion of new resources created in this rollback when rollback fails'
@@ -1177,10 +1210,12 @@ final FigSpec helmSpec = FigSpec(
       name: 'search',
       description: 'Search for a keyword in charts',
       subcommands: [
+
         Subcommand(
           name: 'hub',
           description: 'Search for charts in the Artifact Hub or your own hub instance',
           options: [
+
             Option(
               name: '--endpoint',
               description: 'Hub instance to query for charts',
@@ -1221,6 +1256,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'repo',
           description: 'Search repositories for a keyword in charts',
           options: [
+
             Option(
               name: '--devel',
               description: 'Use development versions (alpha, beta, and release candidate releases), too. Equivalent to version \'>0.0.0-0\'. If --version is set, this is ignored'
@@ -1270,10 +1306,12 @@ final FigSpec helmSpec = FigSpec(
       name: ['inspect', 'show'],
       description: 'Show information of a chart',
       subcommands: [
+
         Subcommand(
           name: 'all',
           description: 'Show all information of the chart',
           options: [
+
             Option(
               name: '--ca-file',
               description: 'Verify certificates of HTTPS-enabled servers using this CA bundle',
@@ -1373,6 +1411,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'chart',
           description: 'Show the chart\'s definition',
           options: [
+
             Option(
               name: '--ca-file',
               description: 'Verify certificates of HTTPS-enabled servers using this CA bundle',
@@ -1471,6 +1510,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'crds',
           description: 'Show the chart\'s CRDs',
           options: [
+
             Option(
               name: '--ca-file',
               description: 'Verify certificates of HTTPS-enabled servers using this CA bundle',
@@ -1570,6 +1610,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'readme',
           description: 'Show the chart\'s README',
           options: [
+
             Option(
               name: '--ca-file',
               description: 'Verify certificates of HTTPS-enabled servers using this CA bundle',
@@ -1667,6 +1708,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'values',
           description: 'Show the chart\'s values',
           options: [
+
             Option(
               name: '--ca-file',
               description: 'Verify certificates of HTTPS-enabled servers using this CA bundle',
@@ -1777,6 +1819,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'status',
       description: 'Display the status of the named release',
       options: [
+
         Option(
           name: ['--output', '-o'],
           description: 'Prints the output in the specified format. Allowed values: table, json, yaml',
@@ -1807,6 +1850,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'template',
       description: 'Locally render templates',
       options: [
+
         Option(
           name: ['--api-versions', '-a'],
           description: 'Kubernetes api versions used for Capabilities.APIVersions',
@@ -2102,6 +2146,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'test',
       description: 'Run tests for a release',
       options: [
+
         Option(
           name: '--filter',
           description: 'Specify tests by attribute (currently "name") using attribute=value syntax or \'!attribute=value\' to exclude a test (can specify multiple or separate values with commas: name=test1,name=test2)',
@@ -2132,6 +2177,7 @@ final FigSpec helmSpec = FigSpec(
       name: ['del', 'delete', 'un', 'uninstall'],
       description: 'Uninstall a release',
       options: [
+
         Option(
           name: '--description',
           description: 'Add a custom description',
@@ -2177,6 +2223,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'upgrade',
       description: 'Upgrade a release',
       options: [
+
         Option(
           name: '--atomic',
           description: 'If set, upgrade process rolls back changes made in case of failed upgrade. The --wait flag will be set automatically if --atomic is used'
@@ -2440,6 +2487,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'verify',
       description: 'Verify that a chart at the given path has been signed and is valid',
       options: [
+
         Option(
           name: '--keyring',
           description: 'Keyring containing public keys',
@@ -2457,6 +2505,7 @@ final FigSpec helmSpec = FigSpec(
       name: 'version',
       description: 'Print the client version information',
       options: [
+
         Option(
           name: ['--client', '-c'],
           description: 'Display client version information'
@@ -2480,10 +2529,12 @@ final FigSpec helmSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'completion',
           description: 'Generate autocompletion scripts for the specified shell',
           subcommands: [
+
             Subcommand(
               name: 'bash',
               description: 'Generate autocompletion script for bash'
@@ -2510,6 +2561,7 @@ final FigSpec helmSpec = FigSpec(
           name: ['dep', 'dependencies', 'dependency'],
           description: 'Manage a chart\'s dependencies',
           subcommands: [
+
             Subcommand(
               name: 'build',
               description: 'Rebuild the charts/ directory based on the Chart.lock file'
@@ -2532,6 +2584,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'get',
           description: 'Download extended information of a named release',
           subcommands: [
+
             Subcommand(
               name: 'all',
               description: 'Download all information for a named release'
@@ -2578,6 +2631,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'plugin',
           description: 'Install, list, or uninstall Helm plugins',
           subcommands: [
+
             Subcommand(
               name: ['add', 'install'],
               description: 'Install one or more Helm plugins'
@@ -2608,6 +2662,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'registry',
           description: 'Login to or logout from a registry',
           subcommands: [
+
             Subcommand(
               name: 'login',
               description: 'Login to a registry'
@@ -2622,6 +2677,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'repo',
           description: 'Add, list, remove, update, and index chart repositories',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add a chart repository'
@@ -2656,6 +2712,7 @@ final FigSpec helmSpec = FigSpec(
           name: 'search',
           description: 'Search for a keyword in charts',
           subcommands: [
+
             Subcommand(
               name: 'hub',
               description: 'Search for charts in the Artifact Hub or your own hub instance'
@@ -2670,6 +2727,7 @@ final FigSpec helmSpec = FigSpec(
           name: ['inspect', 'show'],
           description: 'Show information of a chart',
           subcommands: [
+
             Subcommand(
               name: 'all',
               description: 'Show all information of the chart'
@@ -2728,6 +2786,7 @@ final FigSpec helmSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--add-dir-header',
       description: 'If true, adds the file directory to the header of the log messages',

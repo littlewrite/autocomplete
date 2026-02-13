@@ -9,6 +9,7 @@ final FigSpec jmeterSpec = FigSpec(
   name: 'jmeter',
   description: 'Apache JMeter - 100% Java Load Testing Tool',
   options: [
+
     Option(
       name: ['-v', '--version'],
       description: 'Print the JMeter version information and exit'
@@ -202,6 +203,7 @@ final FigSpec jmeterSpec = FigSpec(
         Arg(
         name: 'loglevel',
         suggestions: [
+
           FigSuggestion(name: 'OFF'),
           FigSuggestion(name: 'FATAL'),
           FigSuggestion(name: 'WARN'),

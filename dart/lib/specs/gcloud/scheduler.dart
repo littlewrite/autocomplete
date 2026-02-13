@@ -9,18 +9,22 @@ final FigSpec schedulerSpec = FigSpec(
   name: 'scheduler',
   description: 'Manage Cloud Scheduler jobs and schedules',
   subcommands: [
+
     Subcommand(
       name: 'jobs',
       description: 'Manage Cloud Scheduler jobs',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create Cloud Scheduler jobs for various types of targets',
           subcommands: [
+
             Subcommand(
               name: 'app-engine',
               description: 'Create a Cloud Scheduler job with an App Engine target',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -132,6 +136,7 @@ final FigSpec schedulerSpec = FigSpec(
                     name: 'HTTP_METHOD',
                     description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                     suggestions: [
+
                       FigSuggestion(name: 'delete'),
                       FigSuggestion(name: 'get'),
                       FigSuggestion(name: 'head'),
@@ -316,6 +321,7 @@ final FigSpec schedulerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -338,6 +344,7 @@ final FigSpec schedulerSpec = FigSpec(
               name: 'http',
               description: 'Create a Cloud Scheduler job that triggers an action via HTTP',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -449,6 +456,7 @@ final FigSpec schedulerSpec = FigSpec(
                     name: 'HTTP_METHOD',
                     description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                     suggestions: [
+
                       FigSuggestion(name: 'delete'),
                       FigSuggestion(name: 'get'),
                       FigSuggestion(name: 'head'),
@@ -669,6 +677,7 @@ final FigSpec schedulerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -691,6 +700,7 @@ final FigSpec schedulerSpec = FigSpec(
               name: 'pubsub',
               description: 'Create a Cloud Scheduler job with a Pub/Sub target',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -948,6 +958,7 @@ final FigSpec schedulerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -968,6 +979,7 @@ final FigSpec schedulerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1091,6 +1103,7 @@ final FigSpec schedulerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1107,6 +1120,7 @@ final FigSpec schedulerSpec = FigSpec(
           name: 'delete',
           description: 'Delete a job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1230,6 +1244,7 @@ final FigSpec schedulerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1252,6 +1267,7 @@ final FigSpec schedulerSpec = FigSpec(
           name: 'describe',
           description: 'Show details about a job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1375,6 +1391,7 @@ final FigSpec schedulerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1397,6 +1414,7 @@ final FigSpec schedulerSpec = FigSpec(
           name: 'list',
           description: 'List jobs',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1568,6 +1586,7 @@ final FigSpec schedulerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1584,6 +1603,7 @@ final FigSpec schedulerSpec = FigSpec(
           name: 'pause',
           description: 'Pause the execution of a job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1707,6 +1727,7 @@ final FigSpec schedulerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1729,6 +1750,7 @@ final FigSpec schedulerSpec = FigSpec(
           name: 'resume',
           description: 'Resume execution of a paused job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1852,6 +1874,7 @@ final FigSpec schedulerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1874,6 +1897,7 @@ final FigSpec schedulerSpec = FigSpec(
           name: 'run',
           description: 'Trigger an on-demand execution of a job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1997,6 +2021,7 @@ final FigSpec schedulerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2019,10 +2044,12 @@ final FigSpec schedulerSpec = FigSpec(
           name: 'update',
           description: 'Update Cloud Scheduler jobs for various types of targets',
           subcommands: [
+
             Subcommand(
               name: 'app-engine',
               description: 'Update a Cloud Scheduler job with an App Engine target',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2163,6 +2190,7 @@ final FigSpec schedulerSpec = FigSpec(
                     name: 'HTTP_METHOD',
                     description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                     suggestions: [
+
                       FigSuggestion(name: 'delete'),
                       FigSuggestion(name: 'get'),
                       FigSuggestion(name: 'head'),
@@ -2368,6 +2396,7 @@ final FigSpec schedulerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2390,6 +2419,7 @@ final FigSpec schedulerSpec = FigSpec(
               name: 'http',
               description: 'Update a Cloud Scheduler job that triggers an action via HTTP',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2526,6 +2556,7 @@ final FigSpec schedulerSpec = FigSpec(
                     name: 'HTTP_METHOD',
                     description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                     suggestions: [
+
                       FigSuggestion(name: 'delete'),
                       FigSuggestion(name: 'get'),
                       FigSuggestion(name: 'head'),
@@ -2766,6 +2797,7 @@ final FigSpec schedulerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2788,6 +2820,7 @@ final FigSpec schedulerSpec = FigSpec(
               name: 'pubsub',
               description: 'Update a Cloud Scheduler job with a Pub/Sub target',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3082,6 +3115,7 @@ final FigSpec schedulerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3102,6 +3136,7 @@ final FigSpec schedulerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3225,6 +3260,7 @@ final FigSpec schedulerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3239,6 +3275,7 @@ final FigSpec schedulerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3362,6 +3399,7 @@ final FigSpec schedulerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3376,6 +3414,7 @@ final FigSpec schedulerSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3499,6 +3538,7 @@ final FigSpec schedulerSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

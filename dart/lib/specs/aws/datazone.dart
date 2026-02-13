@@ -9,10 +9,12 @@ final FigSpec datazoneSpec = FigSpec(
   name: 'datazone',
   description: 'Amazon DataZone is a data management service that enables you to catalog, discover, govern, share, and analyze your data. With Amazon DataZone, you can share and access your data across accounts and supported regions. Amazon DataZone simplifies your experience across Amazon Web Services services, including, but not limited to, Amazon Redshift, Amazon Athena, Amazon Web Services Glue, and Amazon Web Services Lake Formation',
   subcommands: [
+
     Subcommand(
       name: 'accept-predictions',
       description: 'Accepts automatically generated business-friendly metadata for your Amazon DataZone assets',
       options: [
+
         Option(
           name: '--accept-choices',
           description: 'Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted',
@@ -83,6 +85,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'accept-subscription-request',
       description: 'Accepts a subscription request to a specific asset',
       options: [
+
         Option(
           name: '--asset-scopes',
           description: 'The asset scopes of the accept subscription request',
@@ -147,6 +151,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -159,6 +164,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'add-entity-owner',
       description: 'Adds the owner of an entity (a domain unit)',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -220,6 +226,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -232,6 +239,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'add-policy-grant',
       description: 'Adds a policy grant (an authorization policy) to a specified entity, including domain units, environment blueprint configurations, or environment profiles',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -311,6 +319,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -323,6 +332,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'associate-environment-role',
       description: 'Associates the environment role in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the environment role is associated',
@@ -366,6 +376,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -378,6 +389,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'cancel-metadata-generation-run',
       description: 'Cancels the metadata generation run',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the metadata generation run is to be cancelled',
@@ -412,6 +424,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -424,6 +437,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'cancel-subscription',
       description: 'Cancels the subscription to the specified asset',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The unique identifier of the Amazon DataZone domain where the subscription request is being cancelled',
@@ -458,6 +472,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -470,6 +485,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-asset',
       description: 'Creates an asset in Amazon DataZone catalog',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -585,6 +601,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -597,6 +614,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-asset-filter',
       description: 'Creates a data asset filter',
       options: [
+
         Option(
           name: '--asset-identifier',
           description: 'The ID of the data asset',
@@ -667,6 +685,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -679,6 +698,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-asset-revision',
       description: 'Creates a revision of the asset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -776,6 +796,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -788,6 +809,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-asset-type',
       description: 'Creates a custom asset type',
       options: [
+
         Option(
           name: '--description',
           description: 'The descripton of the custom asset type',
@@ -849,6 +871,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -861,6 +884,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-connection',
       description: 'Creates a new connection. In Amazon DataZone, a connection enables you to connect your resources (domains, projects, and environments) to external resources and services',
       options: [
+
         Option(
           name: '--aws-location',
           description: 'The location where the connection is created',
@@ -940,6 +964,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -952,6 +977,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-data-product',
       description: 'Creates a data product',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -1040,6 +1066,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1052,6 +1079,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-data-product-revision',
       description: 'Creates a data product revision',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -1140,6 +1168,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1152,6 +1181,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-data-source',
       description: 'Creates an Amazon DataZone data source',
       options: [
+
         Option(
           name: '--asset-forms-input',
           description: 'The metadata forms that are to be attached to the assets that this data source works with',
@@ -1293,6 +1323,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1305,6 +1336,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-domain',
       description: 'Creates an Amazon DataZone domain',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -1402,6 +1434,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1414,6 +1447,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-domain-unit',
       description: 'Creates a domain unit in Amazon DataZone',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -1475,6 +1509,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1487,6 +1522,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-environment',
       description: 'Create an Amazon DataZone environment',
       options: [
+
         Option(
           name: '--deployment-order',
           description: 'The deployment order of the environment',
@@ -1611,6 +1647,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1623,6 +1660,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-environment-action',
       description: 'Creates an action for the environment, for example, creates a console link for an analytics tool that is available in this environment',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the environment action that is being created in the environment',
@@ -1684,6 +1722,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1696,6 +1735,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-environment-profile',
       description: 'Creates an Amazon DataZone environment profile',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account in which the Amazon DataZone environment is created',
@@ -1784,6 +1824,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1796,6 +1837,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-form-type',
       description: 'Creates a metadata form type',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of this Amazon DataZone metadata form type',
@@ -1866,6 +1908,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1878,6 +1921,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-glossary',
       description: 'Creates an Amazon DataZone business glossary',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -1948,6 +1992,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1960,6 +2005,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-glossary-term',
       description: 'Creates a business glossary term',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -2048,6 +2094,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2060,6 +2107,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-group-profile',
       description: 'Creates a group profile in Amazon DataZone',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -2103,6 +2151,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2115,6 +2164,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-listing-change-set',
       description: 'Publishes a listing (a record of an asset at a given time) or removes a listing from the catalog',
       options: [
+
         Option(
           name: '--action',
           description: 'Specifies whether to publish or unpublish a listing',
@@ -2185,6 +2235,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2197,6 +2248,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-project',
       description: 'Creates an Amazon DataZone project',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the Amazon DataZone project',
@@ -2276,6 +2328,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2288,6 +2341,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-project-membership',
       description: 'Creates a project membership in Amazon DataZone',
       options: [
+
         Option(
           name: '--designation',
           description: 'The designation of the project membership',
@@ -2340,6 +2394,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2352,6 +2407,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-project-profile',
       description: 'Creates a project profile',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of a project profile',
@@ -2422,6 +2478,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2434,6 +2491,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-rule',
       description: 'Creates a rule in Amazon DataZone. A rule is a formal agreement that enforces specific requirements across user workflows (e.g., publishing assets to the catalog, requesting subscriptions, creating projects) within the Amazon DataZone data portal. These rules help maintain consistency, ensure compliance, and uphold governance standards in data management processes. For instance, a metadata enforcement rule can specify the required information for creating a subscription request or publishing a data asset to the catalog, ensuring alignment with organizational standards',
       options: [
+
         Option(
           name: '--action',
           description: 'The action of the rule',
@@ -2522,6 +2580,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2534,6 +2593,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-subscription-grant',
       description: 'Creates a subsscription grant in Amazon DataZone',
       options: [
+
         Option(
           name: '--asset-target-names',
           description: 'The names of the assets for which the subscription grant is created',
@@ -2604,6 +2664,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2616,6 +2677,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-subscription-request',
       description: 'Creates a subscription request in Amazon DataZone',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -2686,6 +2748,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2698,6 +2761,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-subscription-target',
       description: 'Creates a subscription target in Amazon DataZone',
       options: [
+
         Option(
           name: '--applicable-asset-types',
           description: 'The asset types that can be included in the subscription target',
@@ -2804,6 +2868,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2816,6 +2881,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'create-user-profile',
       description: 'Creates a user profile in Amazon DataZone',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -2868,6 +2934,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2880,6 +2947,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-asset',
       description: 'Deletes an asset in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the asset is deleted',
@@ -2914,6 +2982,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2926,6 +2995,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-asset-filter',
       description: 'Deletes an asset filter',
       options: [
+
         Option(
           name: '--asset-identifier',
           description: 'The ID of the data asset',
@@ -2969,6 +3039,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2981,6 +3052,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-asset-type',
       description: 'Deletes an asset type in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the asset type is deleted',
@@ -3015,6 +3087,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3027,6 +3100,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-connection',
       description: 'Deletes and connection. In Amazon DataZone, a connection enables you to connect your resources (domains, projects, and environments) to external resources and services',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where the connection is deleted',
@@ -3061,6 +3135,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3073,6 +3148,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-data-product',
       description: 'Deletes a data product in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the data product is deleted',
@@ -3107,6 +3183,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3119,6 +3196,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-data-source',
       description: 'Deletes a data source in Amazon DataZone',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -3170,6 +3248,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3182,6 +3261,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-domain',
       description: 'Deletes a Amazon DataZone domain',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -3224,6 +3304,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3236,6 +3317,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-domain-unit',
       description: 'Deletes a domain unit',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where you want to delete a domain unit',
@@ -3270,6 +3352,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3282,6 +3365,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-environment',
       description: 'Deletes an environment in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the environment is deleted',
@@ -3316,6 +3400,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3328,6 +3413,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-environment-action',
       description: 'Deletes an action for the environment, for example, deletes a console link for an analytics tool that is available in this environment',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which an environment action is deleted',
@@ -3371,6 +3457,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3383,6 +3470,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-environment-blueprint-configuration',
       description: 'Deletes the blueprint configuration in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the blueprint configuration is deleted',
@@ -3417,6 +3505,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3429,6 +3518,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-environment-profile',
       description: 'Deletes an environment profile in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the environment profile is deleted',
@@ -3463,6 +3553,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3475,6 +3566,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-form-type',
       description: 'Delets and metadata form type in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the metadata form type is deleted',
@@ -3509,6 +3601,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3521,6 +3614,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-glossary',
       description: 'Deletes a business glossary in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the business glossary is deleted',
@@ -3555,6 +3649,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3567,6 +3662,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-glossary-term',
       description: 'Deletes a business glossary term in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the business glossary term is deleted',
@@ -3601,6 +3697,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3613,6 +3710,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-listing',
       description: 'Deletes a listing (a record of an asset at a given time)',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain',
@@ -3647,6 +3745,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3659,6 +3758,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-project',
       description: 'Deletes a project in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the project is deleted',
@@ -3701,6 +3801,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3713,6 +3814,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-project-membership',
       description: 'Deletes project membership in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain where project membership is deleted',
@@ -3756,6 +3858,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3768,6 +3871,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-project-profile',
       description: 'Deletes a project profile',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where a project profile is deleted',
@@ -3802,6 +3906,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3814,6 +3919,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-rule',
       description: 'Deletes a rule in Amazon DataZone. A rule is a formal agreement that enforces specific requirements across user workflows (e.g., publishing assets to the catalog, requesting subscriptions, creating projects) within the Amazon DataZone data portal. These rules help maintain consistency, ensure compliance, and uphold governance standards in data management processes. For instance, a metadata enforcement rule can specify the required information for creating a subscription request or publishing a data asset to the catalog, ensuring alignment with organizational standards',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain that where the rule is to be deleted',
@@ -3848,6 +3954,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3860,6 +3967,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-subscription-grant',
       description: 'Deletes and subscription grant in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain where the subscription grant is deleted',
@@ -3894,6 +4002,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3906,6 +4015,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-subscription-request',
       description: 'Deletes a subscription request in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the subscription request is deleted',
@@ -3940,6 +4050,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3952,6 +4063,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-subscription-target',
       description: 'Deletes a subscription target in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the subscription target is deleted',
@@ -3995,6 +4107,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4007,6 +4120,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'delete-time-series-data-points',
       description: 'Deletes the specified time series form for the specified asset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided',
@@ -4068,6 +4182,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4080,6 +4195,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'disassociate-environment-role',
       description: 'Disassociates the environment role in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which an environment role is disassociated',
@@ -4123,6 +4239,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4135,6 +4252,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-asset',
       description: 'Gets an Amazon DataZone asset',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain to which the asset belongs',
@@ -4178,6 +4296,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4190,6 +4309,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-asset-filter',
       description: 'Gets an asset filter',
       options: [
+
         Option(
           name: '--asset-identifier',
           description: 'The ID of the data asset',
@@ -4233,6 +4353,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4245,6 +4366,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-asset-type',
       description: 'Gets an Amazon DataZone asset type',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the asset type exists',
@@ -4288,6 +4410,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4300,6 +4423,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-connection',
       description: 'Gets a connection. In Amazon DataZone, a connection enables you to connect your resources (domains, projects, and environments) to external resources and services',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where we get the connection',
@@ -4342,6 +4466,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4354,6 +4479,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-data-product',
       description: 'Gets the data product',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where the data product lives',
@@ -4397,6 +4523,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4409,6 +4536,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-data-source',
       description: 'Gets an Amazon DataZone data source',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the data source exists',
@@ -4443,6 +4571,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4455,6 +4584,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-data-source-run',
       description: 'Gets an Amazon DataZone data source run',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain in which this data source run was performed',
@@ -4489,6 +4619,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4501,6 +4632,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-domain',
       description: 'Gets an Amazon DataZone domain',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The identifier of the specified Amazon DataZone domain',
@@ -4526,6 +4658,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4538,6 +4671,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-domain-unit',
       description: 'Gets the details of the specified domain unit',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where you want to get a domain unit',
@@ -4572,6 +4706,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4584,6 +4719,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-environment',
       description: 'Gets an Amazon DataZone environment',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain where the environment exists',
@@ -4618,6 +4754,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4630,6 +4767,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-environment-action',
       description: 'Gets the specified environment action',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the GetEnvironmentAction API is invoked',
@@ -4673,6 +4811,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4685,6 +4824,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-environment-blueprint',
       description: 'Gets an Amazon DataZone blueprint',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the domain in which this blueprint exists',
@@ -4719,6 +4859,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4731,6 +4872,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-environment-blueprint-configuration',
       description: 'Gets the blueprint configuration in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain where this blueprint exists',
@@ -4765,6 +4907,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4777,6 +4920,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-environment-credentials',
       description: 'Gets the credentials of an environment in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which this environment and its credentials exist',
@@ -4811,6 +4955,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4823,6 +4968,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-environment-profile',
       description: 'Gets an evinronment profile in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which this environment profile exists',
@@ -4857,6 +5003,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4869,6 +5016,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-form-type',
       description: 'Gets a metadata form type in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which this metadata form type exists',
@@ -4912,6 +5060,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4924,6 +5073,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-glossary',
       description: 'Gets a business glossary in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which this business glossary exists',
@@ -4958,6 +5108,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4970,6 +5121,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-glossary-term',
       description: 'Gets a business glossary term in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which this business glossary term exists',
@@ -5004,6 +5156,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5016,6 +5169,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-group-profile',
       description: 'Gets a group profile in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which the group profile exists',
@@ -5050,6 +5204,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5062,6 +5217,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-iam-portal-login-url',
       description: 'Gets the data portal URL for the specified Amazon DataZone domain',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain the data portal of which you want to get',
@@ -5087,6 +5243,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5099,6 +5256,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-job-run',
       description: 'The details of the job run',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain',
@@ -5133,6 +5291,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5145,6 +5304,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-lineage-event',
       description: 'Describes the lineage event',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain',
@@ -5178,6 +5338,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-lineage-node',
       description: 'Gets the data lineage node',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain in which you want to get the data lineage node',
@@ -5221,6 +5382,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5233,6 +5395,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-listing',
       description: 'Gets a listing (a record of an asset at a given time). If you specify a listing version, only details that are specific to that version are returned',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain',
@@ -5276,6 +5439,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5288,6 +5452,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-metadata-generation-run',
       description: 'Gets a metadata generation run in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain the metadata generation run of which you want to get',
@@ -5322,6 +5487,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5334,6 +5500,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-project',
       description: 'Gets a project in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the project exists',
@@ -5368,6 +5535,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5380,6 +5548,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-project-profile',
       description: 'The details of the project profile',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain',
@@ -5414,6 +5583,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5426,6 +5596,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-rule',
       description: 'Gets the details of a rule in Amazon DataZone. A rule is a formal agreement that enforces specific requirements across user workflows (e.g., publishing assets to the catalog, requesting subscriptions, creating projects) within the Amazon DataZone data portal. These rules help maintain consistency, ensure compliance, and uphold governance standards in data management processes. For instance, a metadata enforcement rule can specify the required information for creating a subscription request or publishing a data asset to the catalog, ensuring alignment with organizational standards',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where the GetRule action is to be invoked',
@@ -5469,6 +5640,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5481,6 +5653,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-subscription',
       description: 'Gets a subscription in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the subscription exists',
@@ -5515,6 +5688,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5527,6 +5701,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-subscription-grant',
       description: 'Gets the subscription grant in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the subscription grant exists',
@@ -5561,6 +5736,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5573,6 +5749,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-subscription-request-details',
       description: 'Gets the details of the specified subscription request',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which to get the subscription request details',
@@ -5607,6 +5784,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5619,6 +5797,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-subscription-target',
       description: 'Gets the subscription target in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the subscription target exists',
@@ -5662,6 +5841,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5674,6 +5854,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-time-series-data-point',
       description: 'Gets the existing data point for the asset',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain that houses the asset for which you want to get the data point',
@@ -5735,6 +5916,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5747,6 +5929,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'get-user-profile',
       description: 'Gets a user profile in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain the data portal of which you want to get',
@@ -5790,6 +5973,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5802,6 +5986,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-asset-filters',
       description: 'Lists asset filters',
       options: [
+
         Option(
           name: '--asset-identifier',
           description: 'The ID of the data asset',
@@ -5890,6 +6075,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5902,6 +6088,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-asset-revisions',
       description: 'Lists the revisions for the asset',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the domain',
@@ -5981,6 +6168,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5993,6 +6181,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-connections',
       description: 'Lists connections. In Amazon DataZone, a connection enables you to connect your resources (domains, projects, and environments) to external resources and services',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where you want to list connections',
@@ -6117,6 +6306,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6129,6 +6319,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-data-product-revisions',
       description: 'Lists data product revisions',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain of the data product revisions that you want to list',
@@ -6208,6 +6399,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6220,6 +6412,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-data-source-run-activities',
       description: 'Lists data source run activities',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which to list data source run activities',
@@ -6308,6 +6501,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6320,6 +6514,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-data-source-runs',
       description: 'Lists data source runs in Amazon DataZone',
       options: [
+
         Option(
           name: '--data-source-identifier',
           description: 'The identifier of the data source',
@@ -6408,6 +6603,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6420,6 +6616,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-data-sources',
       description: 'Lists data sources in Amazon DataZone',
       options: [
+
         Option(
           name: '--connection-identifier',
           description: 'The ID of the connection',
@@ -6544,6 +6741,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6556,6 +6754,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-domain-units-for-parent',
       description: 'Lists child domain units for the specified parent domain unit',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain in which you want to list domain units for a parent domain unit',
@@ -6635,6 +6834,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6647,6 +6847,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-domains',
       description: 'Lists Amazon DataZone domains',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of domains to return in a single call to ListDomains. When the number of domains to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListDomains to list the next set of domains',
@@ -6717,6 +6918,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6729,6 +6931,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-entity-owners',
       description: 'Lists the entity (domain units) owners',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where you want to list entity owners',
@@ -6817,6 +7020,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6829,6 +7033,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-environment-actions',
       description: 'Lists existing environment actions',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain in which the environment actions are listed',
@@ -6908,6 +7113,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6920,6 +7126,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-environment-blueprint-configurations',
       description: 'Lists blueprint configurations for a Amazon DataZone environment',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain',
@@ -6990,6 +7197,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7002,6 +7210,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-environment-blueprints',
       description: 'Lists blueprints in an Amazon DataZone environment',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain',
@@ -7089,6 +7298,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7101,6 +7311,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-environment-profiles',
       description: 'Lists Amazon DataZone environment profiles',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The identifier of the Amazon Web Services account where you want to list environment profiles',
@@ -7215,6 +7426,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7227,6 +7439,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-environments',
       description: 'Lists Amazon DataZone environments',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The identifier of the Amazon Web Services account where you want to list environments',
@@ -7369,6 +7582,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7381,6 +7595,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-job-runs',
       description: 'Lists job runs',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where you want to list job runs',
@@ -7478,6 +7693,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7490,6 +7706,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-lineage-events',
       description: 'Lists lineage events',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where you want to list lineage events',
@@ -7596,6 +7813,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7608,6 +7826,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-lineage-node-history',
       description: 'Lists the history of the specified data lineage node',
       options: [
+
         Option(
           name: '--direction',
           description: 'The direction of the data lineage node refers to the lineage node having neighbors in that direction. For example, if direction is UPSTREAM, the ListLineageNodeHistory API responds with historical versions with upstream neighbors only',
@@ -7723,6 +7942,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7735,6 +7955,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-metadata-generation-runs',
       description: 'Lists all metadata generation runs',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain where you want to list metadata generation runs',
@@ -7823,6 +8044,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7835,6 +8057,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-notifications',
       description: 'Lists all Amazon DataZone notifications',
       options: [
+
         Option(
           name: '--after-timestamp',
           description: 'The time after which you want to list notifications',
@@ -7950,6 +8173,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7962,6 +8186,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-policy-grants',
       description: 'Lists policy grants',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where you want to list policy grants',
@@ -8059,6 +8284,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8071,6 +8297,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-project-memberships',
       description: 'Lists all members of the specified project',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which you want to list project memberships',
@@ -8168,6 +8395,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8180,6 +8408,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-project-profiles',
       description: 'Lists project profiles',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the domain where you want to list project profiles',
@@ -8277,6 +8506,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8289,6 +8519,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-projects',
       description: 'Lists Amazon DataZone projects',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain',
@@ -8386,6 +8617,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8398,6 +8630,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-rules',
       description: 'Lists existing rules. In Amazon DataZone, a rule is a formal agreement that enforces specific requirements across user workflows (e.g., publishing assets to the catalog, requesting subscriptions, creating projects) within the Amazon DataZone data portal. These rules help maintain consistency, ensure compliance, and uphold governance standards in data management processes. For instance, a metadata enforcement rule can specify the required information for creating a subscription request or publishing a data asset to the catalog, ensuring alignment with organizational standards',
       options: [
+
         Option(
           name: '--action',
           description: 'The action of the rule',
@@ -8538,6 +8771,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8550,6 +8784,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-subscription-grants',
       description: 'Lists subscription grants',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain',
@@ -8683,6 +8918,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8695,6 +8931,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-subscription-requests',
       description: 'Lists Amazon DataZone subscription requests',
       options: [
+
         Option(
           name: '--approver-project-id',
           description: 'The identifier of the subscription request approver\'s project',
@@ -8819,6 +9056,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8831,6 +9069,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-subscription-targets',
       description: 'Lists subscription targets in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain where you want to list subscription targets',
@@ -8928,6 +9167,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -8940,6 +9180,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-subscriptions',
       description: 'Lists subscriptions in Amazon DataZone',
       options: [
+
         Option(
           name: '--approver-project-id',
           description: 'The identifier of the project for the subscription\'s approver',
@@ -9073,6 +9314,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9085,6 +9327,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists tags for the specified resource in Amazon DataZone',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource whose tags you want to list',
@@ -9110,6 +9353,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9122,6 +9366,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'list-time-series-data-points',
       description: 'Lists time series data points',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The ID of the Amazon DataZone domain that houses the assets for which you want to list time series data points',
@@ -9237,6 +9482,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9249,6 +9495,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'post-lineage-event',
       description: 'Posts a data lineage event',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -9292,6 +9539,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9304,6 +9552,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'post-time-series-data-points',
       description: 'Posts time series data points to Amazon DataZone for the specified asset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -9365,6 +9614,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9377,6 +9627,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'put-environment-blueprint-configuration',
       description: 'Writes the configuration for the specified environment blueprint in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain',
@@ -9465,6 +9716,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9477,6 +9729,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'reject-predictions',
       description: 'Rejects automatically generated business-friendly metadata for your Amazon DataZone assets',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -9547,6 +9800,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9559,6 +9813,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'reject-subscription-request',
       description: 'Rejects the specified subscription request',
       options: [
+
         Option(
           name: '--decision-comment',
           description: 'The decision comment of the rejected subscription request',
@@ -9602,6 +9857,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9614,6 +9870,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'remove-entity-owner',
       description: 'Removes an owner from an entity',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -9675,6 +9932,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9687,6 +9945,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'remove-policy-grant',
       description: 'Removes a policy grant',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -9757,6 +10016,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9769,6 +10029,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'revoke-subscription',
       description: 'Revokes a specified subscription in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain where you want to revoke a subscription',
@@ -9811,6 +10072,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9823,6 +10085,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'search',
       description: 'Searches for assets in Amazon DataZone',
       options: [
+
         Option(
           name: '--additional-attributes',
           description: 'Specifies additional attributes for the Search action',
@@ -9956,6 +10219,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -9968,6 +10232,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'search-group-profiles',
       description: 'Searches group profiles in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which you want to search group profiles',
@@ -10056,6 +10321,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10068,6 +10334,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'search-listings',
       description: 'Searches listings (records of an asset at a given time) in Amazon DataZone',
       options: [
+
         Option(
           name: '--additional-attributes',
           description: 'Specifies additional attributes for the search',
@@ -10183,6 +10450,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10195,6 +10463,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'search-types',
       description: 'Searches for types in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which to invoke the SearchTypes action',
@@ -10318,6 +10587,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10330,6 +10600,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'search-user-profiles',
       description: 'Searches user profiles in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which you want to search user profiles',
@@ -10418,6 +10689,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10430,6 +10702,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'start-data-source-run',
       description: 'Start the run of the specified data source in Amazon DataZone',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -10473,6 +10746,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10485,6 +10759,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'start-metadata-generation-run',
       description: 'Starts the metadata generation run',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided',
@@ -10546,6 +10821,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10558,6 +10834,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags a resource in Amazon DataZone',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to be tagged in Amazon DataZone',
@@ -10592,6 +10869,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10604,6 +10882,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'untag-resource',
       description: 'Untags a resource in Amazon DataZone',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to be untagged in Amazon DataZone',
@@ -10638,6 +10917,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10650,6 +10930,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-asset-filter',
       description: 'Updates an asset filter',
       options: [
+
         Option(
           name: '--asset-identifier',
           description: 'The ID of the data asset',
@@ -10720,6 +11001,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10732,6 +11014,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-connection',
       description: 'Updates a connection. In Amazon DataZone, a connection enables you to connect your resources (domains, projects, and environments) to external resources and services',
       options: [
+
         Option(
           name: '--aws-location',
           description: 'The location where a connection is to be updated',
@@ -10793,6 +11076,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10805,6 +11089,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-data-source',
       description: 'Updates the specified data source in Amazon DataZone',
       options: [
+
         Option(
           name: '--asset-forms-input',
           description: 'The asset forms to be updated as part of the UpdateDataSource action',
@@ -10918,6 +11203,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -10930,6 +11216,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-domain',
       description: 'Updates a Amazon DataZone domain',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -11009,6 +11296,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11021,6 +11309,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-domain-unit',
       description: 'Updates the domain unit',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the domain unit that you want to update',
@@ -11073,6 +11362,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11085,6 +11375,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-environment',
       description: 'Updates the specified environment in Amazon DataZone',
       options: [
+
         Option(
           name: '--description',
           description: 'The description to be updated as part of the UpdateEnvironment action',
@@ -11146,6 +11437,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11158,6 +11450,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-environment-action',
       description: 'Updates an environment action',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the environment action',
@@ -11228,6 +11521,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11240,6 +11534,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-environment-profile',
       description: 'Updates the specified environment profile in Amazon DataZone',
       options: [
+
         Option(
           name: '--aws-account-id',
           description: 'The Amazon Web Services account in which a specified environment profile is to be udpated',
@@ -11319,6 +11614,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11331,6 +11627,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-glossary',
       description: 'Updates the business glossary in Amazon DataZone',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that is provided to ensure the idempotency of the request',
@@ -11401,6 +11698,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11413,6 +11711,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-glossary-term',
       description: 'Updates a business glossary term in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which a business glossary term is to be updated',
@@ -11501,6 +11800,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11513,6 +11813,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-group-profile',
       description: 'Updates the specified group profile in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which a group profile is updated',
@@ -11556,6 +11857,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11568,6 +11870,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-project',
       description: 'Updates the specified project in Amazon DataZone',
       options: [
+
         Option(
           name: '--description',
           description: 'The description to be updated as part of the UpdateProject action',
@@ -11638,6 +11941,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11650,6 +11954,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-project-profile',
       description: 'Updates a project profile',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of a project profile',
@@ -11729,6 +12034,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11741,6 +12047,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-rule',
       description: 'Updates a rule. In Amazon DataZone, a rule is a formal agreement that enforces specific requirements across user workflows (e.g., publishing assets to the catalog, requesting subscriptions, creating projects) within the Amazon DataZone data portal. These rules help maintain consistency, ensure compliance, and uphold governance standards in data management processes. For instance, a metadata enforcement rule can specify the required information for creating a subscription request or publishing a data asset to the catalog, ensuring alignment with organizational standards',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the rule',
@@ -11819,6 +12126,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11831,6 +12139,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-subscription-grant-status',
       description: 'Updates the status of the specified subscription grant status in Amazon DataZone',
       options: [
+
         Option(
           name: '--asset-identifier',
           description: 'The identifier of the asset the subscription grant status of which is to be updated',
@@ -11901,6 +12210,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11913,6 +12223,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-subscription-request',
       description: 'Updates a specified subscription request in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which a subscription request is to be updated',
@@ -11956,6 +12267,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -11968,6 +12280,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-subscription-target',
       description: 'Updates the specified subscription target in Amazon DataZone',
       options: [
+
         Option(
           name: '--applicable-asset-types',
           description: 'The applicable asset types to be updated as part of the UpdateSubscriptionTarget action',
@@ -12065,6 +12378,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -12077,6 +12391,7 @@ final FigSpec datazoneSpec = FigSpec(
       name: 'update-user-profile',
       description: 'Updates the specified user profile in Amazon DataZone',
       options: [
+
         Option(
           name: '--domain-identifier',
           description: 'The identifier of the Amazon DataZone domain in which a user profile is updated',
@@ -12129,6 +12444,7 @@ final FigSpec datazoneSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

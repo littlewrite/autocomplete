@@ -9,10 +9,12 @@ final FigSpec historySpec = FigSpec(
   name: 'history',
   description: 'Commands to interact with the history of AWS CLI commands ran over time. To record the history of AWS CLI commands set ``cli_history`` to ``enabled`` in the ``~/.aws/config`` file. This can be done by running:\n\n``\$ aws configure set cli_history enabled``',
   subcommands: [
+
     Subcommand(
       name: 'show',
       description: 'Shows the various events related to running a specific CLI command. If this command is ran without any positional arguments, it will display the events for the last CLI command ran',
       options: [
+
         Option(
           name: '--include',
           description: 'Specifies which events to **only** include when showing the CLI command. This argument is mutually exclusive with ``--exclude``',
@@ -40,6 +42,7 @@ final FigSpec historySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'detailed')
             ]
           )

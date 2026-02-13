@@ -9,6 +9,7 @@ final FigSpec statSpec = FigSpec(
   name: 'stat',
   description: 'Display file status',
   options: [
+
     Option(
       name: '-F',
       description: 'As in ls(1), display a slash (\'/\') immediately after each pathname that is a directory, an asterisk (\'*\') after each that is executable, an at sign (\'@\') after each symbolic link, a percent sign (\'%\') after each whiteout, an equal sign (\'=\') after each socket, and a vertical bar (\'|\') after each that is a FIFO.  The use of -F implies -l'

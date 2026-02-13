@@ -1,14 +1,11 @@
-// Auto-generated from survey.ts
+// Auto-generated from TypeScript source: survey.ts
 // Generated at: 2026-02-12
+// WARNING: Manual changes may be overwritten!
 
 import 'package:autocomplete/src/spec.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// const completion: Fig.Spec = {
-//   name: "survey",
-//   description: "Take Azure CLI survey",
-// };
-// 
-// export default completion;
-// 
+/// Completion spec for `survey` CLI
+final FigSpec surveySpec = FigSpec(
+  name: 'survey',
+  description: 'Take Azure CLI survey'
+);

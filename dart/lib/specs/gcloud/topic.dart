@@ -9,10 +9,12 @@ final FigSpec topicSpec = FigSpec(
   name: 'topic',
   description: 'Gcloud supplementary help',
   subcommands: [
+
     Subcommand(
       name: 'accessibility',
       description: 'Reference for `Accessibility` features',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -136,6 +138,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -152,6 +155,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'arg-files',
       description: 'Supplementary help for arg-files to be used with *gcloud firebase test*',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -275,6 +279,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -291,6 +296,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'cli-trees',
       description: 'CLI trees supplementary help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -414,6 +420,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -430,6 +437,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'client-certificate',
       description: 'Client certificate authorization supplementary help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -553,6 +561,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -569,6 +578,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'command-conventions',
       description: 'Gcloud command conventions supplementary help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -692,6 +702,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -708,6 +719,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'configurations',
       description: 'Supplementary help for named configurations',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -831,6 +843,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -847,6 +860,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'datetimes',
       description: 'Date/time input format supplementary help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -970,6 +984,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -986,6 +1001,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'escaping',
       description: 'List/dictionary-type argument escaping supplementary help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1109,6 +1125,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1125,6 +1142,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'filters',
       description: 'Resource filters supplementary help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1248,6 +1266,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1264,6 +1283,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'flags-file',
       description: '--flags-file=YAML_FILE supplementary help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1387,6 +1407,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1403,6 +1424,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'formats',
       description: 'Resource formats supplementary help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1526,6 +1548,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1542,6 +1565,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'gcloudignore',
       description: 'Reference for `.gcloudignore` files',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1665,6 +1689,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1681,6 +1706,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'offline-help',
       description: 'Setting up gcloud command offline help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1804,6 +1830,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1820,6 +1847,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'projections',
       description: 'Resource projections supplementary help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1943,6 +1971,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1959,6 +1988,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'resource-keys',
       description: 'Resource keys supplementary help',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2082,6 +2112,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2098,6 +2129,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'startup',
       description: 'Supplementary help for gcloud startup options',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2221,6 +2253,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2237,6 +2270,7 @@ final FigSpec topicSpec = FigSpec(
       name: 'uninstall',
       description: 'Supplementary help for uninstalling Cloud SDK',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2360,6 +2394,7 @@ final FigSpec topicSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2374,6 +2409,7 @@ final FigSpec topicSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2497,6 +2533,7 @@ final FigSpec topicSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

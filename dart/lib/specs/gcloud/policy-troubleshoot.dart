@@ -9,10 +9,12 @@ final FigSpec policyTroubleshootSpec = FigSpec(
   name: 'policy-troubleshoot',
   description: 'Troubleshoot Google Cloud Platform policies',
   subcommands: [
+
     Subcommand(
       name: 'iam',
       description: 'Troubleshoot the IAM Policy',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -160,6 +162,7 @@ final FigSpec policyTroubleshootSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -180,6 +183,7 @@ final FigSpec policyTroubleshootSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -303,6 +307,7 @@ final FigSpec policyTroubleshootSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

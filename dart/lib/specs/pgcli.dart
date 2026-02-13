@@ -13,6 +13,7 @@ final FigSpec pgcliSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-h', '--host'],
       description: 'Host address of the postgres database',
@@ -143,6 +144,7 @@ final FigSpec pgcliSpec = FigSpec(
         Arg(
         name: 'choice',
         suggestions: [
+
           FigSuggestion(name: 'all'),
           FigSuggestion(name: 'moderate'),
           FigSuggestion(name: 'off')

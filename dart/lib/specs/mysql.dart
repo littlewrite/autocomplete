@@ -13,6 +13,7 @@ final FigSpec mysqlSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--auto-rehash',
       description: 'Enable automatic rehashing'
@@ -76,6 +77,7 @@ final FigSpec mysqlSpec = FigSpec(
         Arg(
         name: 'value',
         suggestions: [
+
           FigSuggestion(
             name: 'zlib'
           ),
@@ -269,6 +271,7 @@ final FigSpec mysqlSpec = FigSpec(
         Arg(
         name: 'is-local-inflie',
         suggestions: [
+
           FigSuggestion(
             name: '0',
             description: 'Disable'
@@ -407,6 +410,7 @@ final FigSpec mysqlSpec = FigSpec(
         Arg(
         name: 'format_str',
         suggestions: [
+
           FigSuggestion(
             name: 'TCP'
           ),
@@ -574,6 +578,7 @@ final FigSpec mysqlSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(
             name: 'OFF'
           ),

@@ -9,10 +9,12 @@ final FigSpec exercismSpec = FigSpec(
   name: 'exercism',
   description: 'Solve coding exercises in your chosen programming languages',
   subcommands: [
+
     Subcommand(
       name: ['configure', 'c'],
       description: 'Configure the command-line client',
       options: [
+
         Option(
           name: ['-a', '--api'],
           description: 'API base url',
@@ -55,6 +57,7 @@ final FigSpec exercismSpec = FigSpec(
       name: ['download', 'd'],
       description: 'Download an exercise',
       options: [
+
         Option(
           name: ['-e', '--exercise'],
           description: 'The exercise slug',
@@ -127,6 +130,7 @@ final FigSpec exercismSpec = FigSpec(
       name: ['troubleshoot', 't', 'debug'],
       description: 'Troubleshoot does a diagnostic self-check',
       options: [
+
         Option(
           name: ['-f', '--full-api-key'],
           description: 'Display the user\'s full API key'
@@ -147,6 +151,7 @@ final FigSpec exercismSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Help for this command',

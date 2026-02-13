@@ -9,6 +9,7 @@ final FigSpec publishSpec = FigSpec(
   name: 'publish',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'new',
       description: 'Set up a new website in the current folder'
@@ -16,7 +17,11 @@ final FigSpec publishSpec = FigSpec(
     Subcommand(
       name: 'run',
       description: 'Generate and run a localhost server on default port 8000 for the website in the current folder',
+      parserDirectives: ParserDirectives(
+        flagsArePosixNoncompliant: true
+      ),
       options: [
+
         Option(
           name: ['-p', '--port'],
           description: 'Customize the port',
@@ -39,6 +44,7 @@ final FigSpec publishSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for publish'

@@ -19,6 +19,7 @@ final FigSpec mdlsSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['--name', '-name'],
       description: 'Print only the matching metadata attribute value.  Can be used multiple times',
@@ -29,6 +30,7 @@ final FigSpec mdlsSpec = FigSpec(
         name: 'attributeName',
         description: 'Metadata attribute name',
         suggestions: [
+
           FigSuggestion(name: '_kMDItemDisplayNameWithExtensions'),
           FigSuggestion(name: 'kMDItemContentCreationDate'),
           FigSuggestion(name: 'kMDItemContentCreationDate_Ranking'),
@@ -86,11 +88,13 @@ final FigSpec mdlsSpec = FigSpec(
         '-name',
       ],
       args: [
+
         Arg(
           name: 'stdout or file',
           description: 'XML output location',
           template: 'filepaths',
           suggestions: [
+
             FigSuggestion(
               name: '-',
               description: 'Writes to stdout',

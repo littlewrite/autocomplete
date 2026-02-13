@@ -9,6 +9,7 @@ final FigSpec grexSpec = FigSpec(
   name: 'grex',
   description: 'Command-line tool for generating regular expressions from user-provided test cases',
   options: [
+
     Option(
       name: ['-d', '--digits'],
       description: 'Converts any Unicode decimal digit to \\d'
@@ -81,6 +82,7 @@ final FigSpec grexSpec = FigSpec(
         Arg(
         name: 'QUANTITY',
         suggestions: [
+
           FigSuggestion(
             name: '1',
             icon: '🔢'
@@ -132,6 +134,7 @@ final FigSpec grexSpec = FigSpec(
         Arg(
         name: 'LENGTH',
         suggestions: [
+
           FigSuggestion(
             name: '1',
             icon: '🔢'

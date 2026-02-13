@@ -9,14 +9,17 @@ final FigSpec deploymentManagerSpec = FigSpec(
   name: 'deployment-manager',
   description: 'Manage deployments of cloud resources',
   subcommands: [
+
     Subcommand(
       name: 'deployments',
       description: 'Commands for Deployment Manager deployments',
       subcommands: [
+
         Subcommand(
           name: 'cancel-preview',
           description: 'Cancel a pending or running deployment preview',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -155,6 +158,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -177,6 +181,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
           name: 'create',
           description: 'Create a deployment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -378,6 +383,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -400,6 +406,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
           name: 'delete',
           description: 'Delete a deployment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -445,6 +452,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'DELETE_POLICY',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'abandon'),
                   FigSuggestion(name: 'delete')
                 ]
@@ -541,6 +549,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -564,6 +573,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
           name: 'describe',
           description: 'Provide information about a deployment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -687,6 +697,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -709,6 +720,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
           name: 'list',
           description: 'List deployments in a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -884,6 +896,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -900,6 +913,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
           name: 'stop',
           description: 'Stop a pending or running deployment update or creation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1038,6 +1052,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1060,6 +1075,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
           name: 'update',
           description: 'Update a deployment based on a provided config file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1127,6 +1143,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'CREATE_POLICY',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'acquire'),
                   FigSuggestion(name: 'create-or-acquire')
                 ]
@@ -1141,6 +1158,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'DELETE_POLICY',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'abandon'),
                   FigSuggestion(name: 'delete')
                 ]
@@ -1307,6 +1325,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1327,6 +1346,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1450,6 +1470,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1466,10 +1487,12 @@ final FigSpec deploymentManagerSpec = FigSpec(
       name: 'manifests',
       description: 'Commands for Deployment Manager manifests',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Provide information about a manifest',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1605,6 +1628,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1627,6 +1651,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
           name: 'list',
           description: 'List manifests in a deployment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1814,6 +1839,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1828,6 +1854,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1951,6 +1978,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1967,10 +1995,12 @@ final FigSpec deploymentManagerSpec = FigSpec(
       name: 'operations',
       description: 'Commands for Deployment Manager operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Provide information about an operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2094,6 +2124,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2116,6 +2147,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
           name: 'list',
           description: 'List operations in a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2291,6 +2323,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2307,6 +2340,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
           name: 'wait',
           description: 'Wait for all operations specified to complete before returning',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2430,6 +2464,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2451,6 +2486,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2574,6 +2610,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2590,10 +2627,12 @@ final FigSpec deploymentManagerSpec = FigSpec(
       name: 'resources',
       description: 'Commands for Deployment Manager resources',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Provide information about a resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2728,6 +2767,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2750,6 +2790,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
           name: 'list',
           description: 'List resources in a deployment',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2936,6 +2977,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2950,6 +2992,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3084,6 +3127,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3100,10 +3144,12 @@ final FigSpec deploymentManagerSpec = FigSpec(
       name: 'types',
       description: 'Commands for Deployment Manager types',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List types in a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3260,6 +3306,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3274,6 +3321,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3397,6 +3445,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3411,6 +3460,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3534,6 +3584,7 @@ final FigSpec deploymentManagerSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

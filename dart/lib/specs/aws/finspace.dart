@@ -9,10 +9,12 @@ final FigSpec finspaceSpec = FigSpec(
   name: 'finspace',
   description: 'The FinSpace management service provides the APIs for managing FinSpace environments',
   subcommands: [
+
     Subcommand(
       name: 'create-environment',
       description: 'Create a new FinSpace environment',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the FinSpace environment to be created',
@@ -101,6 +103,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -113,6 +116,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'create-kx-changeset',
       description: 'Creates a changeset for a kdb database. A changeset allows you to add and delete existing files by using an ordered list of change requests',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier of the kdb environment',
@@ -165,6 +169,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -177,6 +182,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'create-kx-cluster',
       description: 'Creates a new kdb cluster',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures idempotency. This token expires in 10 minutes',
@@ -382,6 +388,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -394,6 +401,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'create-kx-database',
       description: 'Creates a new kdb database in the environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -455,6 +463,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -467,6 +476,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'create-kx-dataview',
       description: 'Creates a snapshot of kdb database with tiered storage capabilities and a pre-warmed cache, ready for mounting on kdb clusters. Dataviews are only available for clusters running on a scaling group. They are not supported on dedicated clusters',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment, where you want to create the dataview',
@@ -589,6 +599,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -601,6 +612,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'create-kx-environment',
       description: 'Creates a managed kdb environment for the account',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the kdb environment that you want to create',
@@ -662,6 +674,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -674,6 +687,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'create-kx-scaling-group',
       description: 'Creates a new scaling group',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures idempotency. This token expires in 10 minutes',
@@ -744,6 +758,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -756,6 +771,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'create-kx-user',
       description: 'Creates a user in FinSpace kdb environment with an associated IAM role',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment where you want to create a user',
@@ -817,6 +833,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -829,6 +846,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'create-kx-volume',
       description: 'Creates a new volume with a specific amount of throughput and storage capacity',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A token that ensures idempotency. This token expires in 10 minutes',
@@ -926,6 +944,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -938,6 +957,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'delete-environment',
       description: 'Delete an FinSpace environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The identifier for the FinSpace environment',
@@ -963,6 +983,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -975,6 +996,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'delete-kx-cluster',
       description: 'Deletes a kdb cluster',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -1018,6 +1040,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1030,6 +1053,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'delete-kx-cluster-node',
       description: 'Deletes the specified nodes from a cluster',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -1073,6 +1097,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1085,6 +1110,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'delete-kx-database',
       description: 'Deletes the specified database and all of its associated data. This action is irreversible. You must copy any data out of the database before deleting it if the data is to be retained',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -1128,6 +1154,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1140,6 +1167,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'delete-kx-dataview',
       description: 'Deletes the specified dataview. Before deleting a dataview, make sure that it is not in use by any cluster',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment, from where you want to delete the dataview',
@@ -1192,6 +1220,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1204,6 +1233,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'delete-kx-environment',
       description: 'Deletes the kdb environment. This action is irreversible. Deleting a kdb environment will remove all the associated data and any services running in it',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -1238,6 +1268,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1250,6 +1281,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'delete-kx-scaling-group',
       description: 'Deletes the specified scaling group. This action is irreversible. You cannot delete a scaling group until all the clusters running on it have been deleted',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment, from where you want to delete the dataview',
@@ -1293,6 +1325,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1305,6 +1338,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'delete-kx-user',
       description: 'Deletes a user in the specified kdb environment',
       options: [
+
         Option(
           name: '--user-name',
           description: 'A unique identifier for the user that you want to delete',
@@ -1348,6 +1382,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1360,6 +1395,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'delete-kx-volume',
       description: 'Deletes a volume. You can only delete a volume if it\'s not attached to a cluster or a dataview. When a volume is deleted, any data on the volume is lost. This action is irreversible',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment, whose clusters can attach to the volume',
@@ -1403,6 +1439,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1415,6 +1452,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'get-environment',
       description: 'Returns the FinSpace environment object',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The identifier of the FinSpace environment',
@@ -1440,6 +1478,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1452,6 +1491,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'get-kx-changeset',
       description: 'Returns information about a kdb changeset',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -1495,6 +1535,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1507,6 +1548,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'get-kx-cluster',
       description: 'Retrieves information about a kdb cluster',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -1541,6 +1583,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1553,6 +1596,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'get-kx-connection-string',
       description: 'Retrieves a connection string for a user to connect to a kdb cluster. You must call this API using the same role that you have defined while creating a user',
       options: [
+
         Option(
           name: '--user-arn',
           description: 'The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see IAM Identifiers in the IAM User Guide',
@@ -1596,6 +1640,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1608,6 +1653,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'get-kx-database',
       description: 'Returns database information for the specified environment ID',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -1642,6 +1688,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1654,6 +1701,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'get-kx-dataview',
       description: 'Retrieves details of the dataview',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment, from where you want to retrieve the dataview details',
@@ -1697,6 +1745,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1709,6 +1758,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'get-kx-environment',
       description: 'Retrieves all the information for the specified kdb environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -1734,6 +1784,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1746,6 +1797,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'get-kx-scaling-group',
       description: 'Retrieves details of a scaling group',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -1780,6 +1832,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1792,6 +1845,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'get-kx-user',
       description: 'Retrieves information about the specified kdb user',
       options: [
+
         Option(
           name: '--user-name',
           description: 'A unique identifier for the user',
@@ -1826,6 +1880,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1838,6 +1893,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'get-kx-volume',
       description: 'Retrieves the information about the volume',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment, whose clusters can attach to the volume',
@@ -1872,6 +1928,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1884,6 +1941,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-environments',
       description: 'A list of all of your FinSpace environments',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextTokennextToken value from the response object of the previous page call',
@@ -1918,6 +1976,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1930,6 +1989,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-kx-changesets',
       description: 'Returns a list of all the changesets for a database',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -1982,6 +2042,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1994,6 +2055,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-kx-cluster-nodes',
       description: 'Lists all the nodes in a kdb cluster',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -2046,6 +2108,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2058,6 +2121,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-kx-clusters',
       description: 'Returns a list of clusters',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -2110,6 +2174,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2122,6 +2187,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-kx-databases',
       description: 'Returns a list of all the databases in the kdb environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -2165,6 +2231,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2177,6 +2244,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-kx-dataviews',
       description: 'Returns a list of all the dataviews in the database',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment, for which you want to retrieve a list of dataviews',
@@ -2229,6 +2297,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2241,6 +2310,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-kx-environments',
       description: 'Returns a list of kdb environments created in an account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates where a results page should begin',
@@ -2302,6 +2372,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2314,6 +2385,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-kx-scaling-groups',
       description: 'Returns a list of scaling groups in a kdb environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment, for which you want to retrieve a list of scaling groups',
@@ -2357,6 +2429,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2369,6 +2442,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-kx-users',
       description: 'Lists all the users in a kdb environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -2412,6 +2486,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2424,6 +2499,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-kx-volumes',
       description: 'Lists all the volumes in a kdb environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment, whose clusters can attach to the volume',
@@ -2476,6 +2552,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2488,6 +2565,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'A list of all tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name of the resource',
@@ -2513,6 +2591,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2525,6 +2604,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds metadata tags to a FinSpace resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for the resource',
@@ -2559,6 +2639,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2571,6 +2652,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes metadata tags from a FinSpace resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN)',
@@ -2605,6 +2687,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2617,6 +2700,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'update-environment',
       description: 'Update your FinSpace environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The identifier of the FinSpace environment',
@@ -2678,6 +2762,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2690,6 +2775,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'update-kx-cluster-code-configuration',
       description: 'Allows you to update code configuration on a running cluster. By using this API you can update the code, the initialization script path, and the command line arguments for a specific cluster. The configuration that you want to update will override any existing configurations on the cluster',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier of the kdb environment',
@@ -2769,6 +2855,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2781,6 +2868,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'update-kx-cluster-databases',
       description: 'Updates the databases mounted on a kdb cluster, which includes the changesetId and all the dbPaths to be cached. This API does not allow you to change a database name or add a database if you created a cluster without one.  Using this API you can point a cluster to a different changeset and modify a list of partitions being cached',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The unique identifier of a kdb environment',
@@ -2842,6 +2930,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2854,6 +2943,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'update-kx-database',
       description: 'Updates information for the given kdb database',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -2906,6 +2996,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2918,6 +3009,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'update-kx-dataview',
       description: 'Updates the specified dataview. The dataviews get automatically updated when any new changesets are ingested. Each update of the dataview creates a new version, including changeset details and cache configurations',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment, where you want to update the dataview',
@@ -2997,6 +3089,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3009,6 +3102,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'update-kx-environment',
       description: 'Updates information for the given kdb environment',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -3061,6 +3155,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3073,6 +3168,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'update-kx-environment-network',
       description: 'Updates environment network to connect to your internal network by using a transit gateway. This API supports request to create a transit gateway attachment from FinSpace VPC to your transit gateway ID and create a custom Route-53 outbound resolvers. Once you send a request to update a network, you cannot change it again. Network update might require termination of any clusters that are running in the existing network',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -3125,6 +3221,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3137,6 +3234,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'update-kx-user',
       description: 'Updates the user details. You can only update the IAM role associated with a user',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment',
@@ -3189,6 +3287,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3201,6 +3300,7 @@ final FigSpec finspaceSpec = FigSpec(
       name: 'update-kx-volume',
       description: 'Updates the throughput or capacity of a volume. During the update process, the filesystem might be unavailable for a few minutes. You can retry any operations after the update is complete',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'A unique identifier for the kdb environment where you created the storage volume',
@@ -3262,6 +3362,7 @@ final FigSpec finspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

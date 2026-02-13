@@ -9,10 +9,12 @@ final FigSpec comprehendmedicalSpec = FigSpec(
   name: 'comprehendmedical',
   description: 'Amazon Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain insight in your documents. Amazon Comprehend Medical only detects entities in English language texts. Amazon Comprehend Medical places limits on the sizes of files allowed for different API operations. To learn more, see Guidelines and quotas in the Amazon Comprehend Medical Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'describe-entities-detection-v2-job',
       description: 'Gets the properties associated with a medical entities detection job. Use this operation to get the status of a detection job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The identifier that Amazon Comprehend Medical generated for the job. The StartEntitiesDetectionV2Job operation returns this identifier in its response',
@@ -38,6 +40,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'describe-icd10-cm-inference-job',
       description: 'Gets the properties associated with an InferICD10CM job. Use this operation to get the status of an inference job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The identifier that Amazon Comprehend Medical generated for the job. The StartICD10CMInferenceJob operation returns this identifier in its response',
@@ -75,6 +79,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'describe-phi-detection-job',
       description: 'Gets the properties associated with a protected health information (PHI) detection job. Use this operation to get the status of a detection job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The identifier that Amazon Comprehend Medical generated for the job. The StartPHIDetectionJob operation returns this identifier in its response',
@@ -112,6 +118,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'describe-rx-norm-inference-job',
       description: 'Gets the properties associated with an InferRxNorm job. Use this operation to get the status of an inference job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response',
@@ -149,6 +157,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -161,6 +170,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'describe-snomedct-inference-job',
       description: 'Gets the properties associated with an InferSNOMEDCT job. Use this operation to get the status of an inference job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response',
@@ -186,6 +196,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -198,6 +209,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'detect-entities',
       description: 'The DetectEntities operation is deprecated. You should use the DetectEntitiesV2 operation instead. Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information',
       options: [
+
         Option(
           name: '--text',
           description: 'A UTF-8 text string containing the clinical content being examined for entities',
@@ -223,6 +235,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -235,6 +248,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'detect-entities-v2',
       description: 'Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information. Amazon Comprehend Medical only detects medical entities in English language texts. The DetectEntitiesV2 operation replaces the DetectEntities operation. This new action uses a different model for determining the entities in your medical text and changes the way that some entities are returned in the output. You should use the DetectEntitiesV2 operation in all new applications. The DetectEntitiesV2 operation returns the Acuity and Direction entities as attributes instead of types',
       options: [
+
         Option(
           name: '--text',
           description: 'A UTF-8 string containing the clinical content being examined for entities',
@@ -260,6 +274,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -272,6 +287,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'detect-phi',
       description: 'Inspects the clinical text for protected health information (PHI) entities and returns the entity category, location, and confidence score for each entity. Amazon Comprehend Medical only detects entities in English language texts',
       options: [
+
         Option(
           name: '--text',
           description: 'A UTF-8 text string containing the clinical content being examined for PHI entities',
@@ -297,6 +313,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -309,6 +326,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'infer-icd10-cm',
       description: 'InferICD10CM detects medical conditions as entities listed in a patient record and links those entities to normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend Medical only detects medical entities in English language texts',
       options: [
+
         Option(
           name: '--text',
           description: 'The input text used for analysis',
@@ -334,6 +352,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -346,6 +365,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'infer-rx-norm',
       description: 'InferRxNorm detects medications as entities listed in a patient record and links to the normalized concept identifiers in the RxNorm database from the National Library of Medicine. Amazon Comprehend Medical only detects medical entities in English language texts',
       options: [
+
         Option(
           name: '--text',
           description: 'The input text used for analysis',
@@ -371,6 +391,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -383,6 +404,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'infer-snomedct',
       description: 'InferSNOMEDCT detects possible medical concepts as entities and links them to codes from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology',
       options: [
+
         Option(
           name: '--text',
           description: 'The input text to be analyzed using InferSNOMEDCT',
@@ -408,6 +430,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -420,6 +443,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'list-entities-detection-v2-jobs',
       description: 'Gets a list of medical entity detection jobs that you have submitted',
       options: [
+
         Option(
           name: '--filter',
           description: 'Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time',
@@ -463,6 +487,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -475,6 +500,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'list-icd10-cm-inference-jobs',
       description: 'Gets a list of InferICD10CM jobs that you have submitted',
       options: [
+
         Option(
           name: '--filter',
           description: 'Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time',
@@ -518,6 +544,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -530,6 +557,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'list-phi-detection-jobs',
       description: 'Gets a list of protected health information (PHI) detection jobs you have submitted',
       options: [
+
         Option(
           name: '--filter',
           description: 'Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time',
@@ -573,6 +601,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -585,6 +614,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'list-rx-norm-inference-jobs',
       description: 'Gets a list of InferRxNorm jobs that you have submitted',
       options: [
+
         Option(
           name: '--filter',
           description: 'Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time',
@@ -628,6 +658,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -640,6 +671,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'list-snomedct-inference-jobs',
       description: 'Gets a list of InferSNOMEDCT jobs a user has submitted',
       options: [
+
         Option(
           name: '--filter',
           description: 'Provides information for filtering a list of detection jobs',
@@ -683,6 +715,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -695,6 +728,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'start-entities-detection-v2-job',
       description: 'Starts an asynchronous medical entity detection job for a collection of documents. Use the DescribeEntitiesDetectionV2Job operation to track the status of a job',
       options: [
+
         Option(
           name: '--input-data-config',
           description: 'The input configuration that specifies the format and location of the input data for the job',
@@ -774,6 +808,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -786,6 +821,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'start-icd10-cm-inference-job',
       description: 'Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology. Use the DescribeICD10CMInferenceJob operation to track the status of a job',
       options: [
+
         Option(
           name: '--input-data-config',
           description: 'Specifies the format and location of the input data for the job',
@@ -865,6 +901,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -877,6 +914,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'start-phi-detection-job',
       description: 'Starts an asynchronous job to detect protected health information (PHI). Use the DescribePHIDetectionJob operation to track the status of a job',
       options: [
+
         Option(
           name: '--input-data-config',
           description: 'Specifies the format and location of the input data for the job',
@@ -956,6 +994,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -968,6 +1007,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'start-rx-norm-inference-job',
       description: 'Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology. Use the DescribeRxNormInferenceJob operation to track the status of a job',
       options: [
+
         Option(
           name: '--input-data-config',
           description: 'Specifies the format and location of the input data for the job',
@@ -1047,6 +1087,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1059,6 +1100,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'start-snomedct-inference-job',
       description: 'Starts an asynchronous job to detect medical concepts and link them to the SNOMED-CT ontology. Use the DescribeSNOMEDCTInferenceJob operation to track the status of a job',
       options: [
+
         Option(
           name: '--input-data-config',
           description: 'The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed',
@@ -1138,6 +1180,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1150,6 +1193,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'stop-entities-detection-v2-job',
       description: 'Stops a medical entities detection job in progress',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The identifier of the medical entities job to stop',
@@ -1175,6 +1219,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1187,6 +1232,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'stop-icd10-cm-inference-job',
       description: 'Stops an InferICD10CM inference job in progress',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The identifier of the job',
@@ -1212,6 +1258,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1224,6 +1271,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'stop-phi-detection-job',
       description: 'Stops a protected health information (PHI) detection job in progress',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The identifier of the PHI detection job to stop',
@@ -1249,6 +1297,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1261,6 +1310,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'stop-rx-norm-inference-job',
       description: 'Stops an InferRxNorm inference job in progress',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The identifier of the job',
@@ -1286,6 +1336,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1298,6 +1349,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
       name: 'stop-snomedct-inference-job',
       description: 'Stops an InferSNOMEDCT inference job in progress',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job id of the asynchronous InferSNOMEDCT job to be stopped',
@@ -1323,6 +1375,7 @@ final FigSpec comprehendmedicalSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

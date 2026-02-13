@@ -9,10 +9,12 @@ final FigSpec geoRoutesSpec = FigSpec(
   name: 'geo-routes',
   description: 'With the Amazon Location Routes API you can calculate routes and estimate travel time based on up-to-date road network and live traffic information. Calculate optimal travel routes and estimate travel times using up-to-date road network and traffic data. Key features include:   Point-to-point routing with estimated travel time, distance, and turn-by-turn directions   Multi-point route optimization to minimize travel time or distance   Route matrices for efficient multi-destination planning   Isoline calculations to determine reachable areas within specified time or distance thresholds   Map-matching to align GPS traces with the road network',
   subcommands: [
+
     Subcommand(
       name: 'calculate-isolines',
       description: 'Use the CalculateIsolines action to find service areas that can be reached in a given threshold of time, distance',
       options: [
+
         Option(
           name: '--allow',
           description: 'Features that are allowed while calculating. a route',
@@ -190,6 +192,7 @@ final FigSpec geoRoutesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -202,6 +205,7 @@ final FigSpec geoRoutesSpec = FigSpec(
       name: 'calculate-route-matrix',
       description: 'Calculates route matrix containing the results for all pairs of Origins to Destinations. Each row corresponds to one entry in Origins. Each entry in the row corresponds to the route from that entry in Origins to an entry in Destinations positions',
       options: [
+
         Option(
           name: '--allow',
           description: 'Features that are allowed while calculating. a route',
@@ -334,6 +338,7 @@ final FigSpec geoRoutesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -346,6 +351,7 @@ final FigSpec geoRoutesSpec = FigSpec(
       name: 'calculate-routes',
       description: 'Calculates a route given the following required parameters: Origin and Destination',
       options: [
+
         Option(
           name: '--allow',
           description: 'Features that are allowed while calculating. a route',
@@ -586,6 +592,7 @@ final FigSpec geoRoutesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -598,6 +605,7 @@ final FigSpec geoRoutesSpec = FigSpec(
       name: 'optimize-waypoints',
       description: 'Calculates the optimal order to travel between a set of waypoints to minimize either the travel time or the distance travelled during the journey, based on road network restrictions and the traffic pattern data',
       options: [
+
         Option(
           name: '--avoid',
           description: 'Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can\'t be satisfied for a particular case, this setting is ignored',
@@ -740,6 +748,7 @@ final FigSpec geoRoutesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -752,6 +761,7 @@ final FigSpec geoRoutesSpec = FigSpec(
       name: 'snap-to-roads',
       description: 'The SnapToRoads action matches GPS trace to roads most likely traveled on',
       options: [
+
         Option(
           name: '--key',
           description: 'Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request',
@@ -822,6 +832,7 @@ final FigSpec geoRoutesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

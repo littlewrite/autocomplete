@@ -9,6 +9,7 @@ final FigSpec zipSpec = FigSpec(
   name: 'zip',
   description: 'Package and compress (archive) files into zip file',
   args: [
+
     Arg(
       name: 'name',
       description: 'Name of archive'
@@ -19,6 +20,7 @@ final FigSpec zipSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '-r',
       description: 'Package and compress a directory and its contents, recursively'

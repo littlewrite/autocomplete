@@ -9,6 +9,7 @@ final FigSpec readlinkSpec = FigSpec(
   name: 'readlink',
   description: 'Display file status',
   options: [
+
     Option(
       name: '-f',
       description: 'Display information using the specified format; similar to printf(3) formats in that they start with %, are then followed by a sequence of formatting characters, and end in a character that selects the field of the struct stat which is to be formatted',

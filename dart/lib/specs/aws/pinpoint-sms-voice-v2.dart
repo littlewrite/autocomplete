@@ -9,10 +9,12 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
   name: 'pinpoint-sms-voice-v2',
   description: 'Welcome to the AWS End User Messaging SMS and Voice, version 2 API Reference. This guide provides information about AWS End User Messaging SMS and Voice, version 2 API resources, including supported HTTP methods, parameters, and schemas. Amazon Pinpoint is an Amazon Web Services service that you can use to engage with your recipients across multiple messaging channels. The AWS End User Messaging SMS and Voice, version 2 API provides programmatic access to options that are unique to the SMS and voice channels. AWS End User Messaging SMS and Voice, version 2 resources such as phone numbers, sender IDs, and opt-out lists can be used by the Amazon Pinpoint API. If you\'re new to AWS End User Messaging SMS and Voice, it\'s also helpful to review the  AWS End User Messaging SMS User Guide. The AWS End User Messaging SMS User Guide  provides tutorials, code samples, and procedures that demonstrate how to use AWS End User Messaging SMS and Voice features programmatically and how to integrate functionality into mobile apps and other types of applications. The guide also provides key information, such as AWS End User Messaging SMS and Voice integration with other Amazon Web Services services, and the quotas that apply to use of the service.  Regional availability  The AWS End User Messaging SMS and Voice version 2 API Reference is available in several Amazon Web Services Regions and it provides an endpoint for each of these Regions. For a list of all the Regions and endpoints where the API is currently available, see Amazon Web Services Service Endpoints and Amazon Pinpoint endpoints and quotas in the Amazon Web Services General Reference. To learn more about Amazon Web Services Regions, see Managing Amazon Web Services Regions in the Amazon Web Services General Reference. In each Region, Amazon Web Services maintains multiple Availability Zones. These Availability Zones are physically isolated from each other, but are united by private, low-latency, high-throughput, and highly redundant network connections. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency. To learn more about the number of Availability Zones that are available in each Region, see Amazon Web Services Global Infrastructure',
   subcommands: [
+
     Subcommand(
       name: 'associate-origination-identity',
       description: 'Associates the specified origination identity with a pool. If the origination identity is a phone number and is already associated with another pool, an error is returned. A sender ID can be associated with multiple pools. If the origination identity configuration doesn\'t match the pool\'s configuration, an error is returned',
       options: [
+
         Option(
           name: '--pool-id',
           description: 'The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using DescribePools.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -65,6 +67,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'associate-protect-configuration',
       description: 'Associate a protect configuration with a configuration set. This replaces the configuration sets current protect configuration. A configuration set can only be associated with one protect configuration at a time. A protect configuration can be associated with multiple configuration sets',
       options: [
+
         Option(
           name: '--protect-configuration-id',
           description: 'The unique identifier for the protect configuration',
@@ -111,6 +115,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'create-configuration-set',
       description: 'Creates a new configuration set. After you create the configuration set, you can add one or more event destinations to it. A configuration set is a set of rules that you apply to the SMS and voice messages that you send. When you send a message, you can optionally specify a single configuration set',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name to use for the new configuration set',
@@ -166,6 +172,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'create-event-destination',
       description: 'Creates a new event destination in a configuration set. An event destination is a location where you send message events. The event options are Amazon CloudWatch, Amazon Data Firehose, or Amazon SNS. For example, when a message is delivered successfully, you can send information about that event to an event destination, or send notifications to endpoints that are subscribed to an Amazon SNS topic. Each configuration set can contain between 0 and 5 event destinations. Each event destination can contain a reference to a single destination, such as a CloudWatch or Firehose destination',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the DescribeConfigurationSets action',
@@ -257,6 +265,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -269,6 +278,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'create-opt-out-list',
       description: 'Creates a new opt-out list. If the opt-out list name already exists, an error is returned. An opt-out list is a list of phone numbers that are opted out, meaning you can\'t send SMS or voice messages to them. If end user replies with the keyword "STOP," an entry for the phone number is added to the opt-out list. In addition to STOP, your recipients can use any supported opt-out keyword, such as CANCEL or OPTOUT. For a list of supported opt-out keywords, see  SMS opt out  in the AWS End User Messaging SMS User Guide',
       options: [
+
         Option(
           name: '--opt-out-list-name',
           description: 'The name of the new OptOutList',
@@ -312,6 +322,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -324,6 +335,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'create-pool',
       description: 'Creates a new pool and associates the specified origination identity to the pool. A pool can include one or more phone numbers and SenderIds that are associated with your Amazon Web Services account. The new pool inherits its configuration from the specified origination identity. This includes keywords, message type, opt-out list, two-way configuration, and self-managed opt-out configuration. Deletion protection isn\'t inherited from the origination identity and defaults to false. If the origination identity is a phone number and is already associated with another pool, an error is returned. A sender ID can be associated with multiple pools',
       options: [
+
         Option(
           name: '--origination-identity',
           description: 'The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use DescribePhoneNumbers to find the values for PhoneNumberId and PhoneNumberArn while DescribeSenderIds can be used to get the values for SenderId and SenderIdArn. After the pool is created you can add more origination identities to the pool by using AssociateOriginationIdentity.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -393,6 +405,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -405,6 +418,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'create-protect-configuration',
       description: 'Create a new protect configuration. By default all country rule sets for each capability are set to ALLOW. Update the country rule sets using UpdateProtectConfigurationCountryRuleSet. A protect configurations name is stored as a Tag with the key set to Name and value as the name of the protect configuration',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don\'t specify a client token, a randomly generated token is used for the request to ensure idempotency',
@@ -447,6 +461,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -459,6 +474,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'create-registration',
       description: 'Creates a new registration based on the RegistrationType field',
       options: [
+
         Option(
           name: '--registration-type',
           description: 'The type of registration form to create. The list of RegistrationTypes can be found using the DescribeRegistrationTypeDefinitions action',
@@ -502,6 +518,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -514,6 +531,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'create-registration-association',
       description: 'Associate the registration with an origination identity such as a phone number or sender ID',
       options: [
+
         Option(
           name: '--registration-id',
           description: 'The unique identifier for the registration',
@@ -548,6 +566,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -560,6 +579,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'create-registration-attachment',
       description: 'Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed “letter of authorization” (LOA) to be submitted. Use either AttachmentUrl or AttachmentBody to upload your attachment. If both are specified then an exception is returned',
       options: [
+
         Option(
           name: '--attachment-body',
           description: 'The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG',
@@ -612,6 +632,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -624,6 +645,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'create-registration-version',
       description: 'Create a new version of the registration and increase the VersionNumber. The previous version of the registration becomes read-only',
       options: [
+
         Option(
           name: '--registration-id',
           description: 'The unique identifier for the registration',
@@ -649,6 +671,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -661,6 +684,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'create-verified-destination-number',
       description: 'You can only send messages to verified destination numbers when your account is in the sandbox. You can add up to 10 verified destination numbers',
       options: [
+
         Option(
           name: '--destination-phone-number',
           description: 'The verified destination phone number, in E.164 format',
@@ -704,6 +728,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -716,6 +741,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-account-default-protect-configuration',
       description: 'Removes the current account default protect configuration',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -732,6 +758,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -744,6 +771,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-configuration-set',
       description: 'Deletes an existing configuration set. A configuration set is a set of rules that you apply to voice and SMS messages that you send. In a configuration set, you can specify a destination for specific types of events related to voice and SMS messages',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set or the configuration set ARN that you want to delete. The ConfigurationSetName and ConfigurationSetArn can be found using the DescribeConfigurationSets action',
@@ -769,6 +797,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -781,6 +810,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-default-message-type',
       description: 'Deletes an existing default message type on a configuration set.  A message type is a type of messages that you plan to send. If you send account-related messages or time-sensitive messages such as one-time passcodes, choose Transactional. If you plan to send messages that contain marketing material or other promotional content, choose Promotional. This setting applies to your entire Amazon Web Services account',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the DescribeConfigurationSets action',
@@ -806,6 +836,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -818,6 +849,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-default-sender-id',
       description: 'Deletes an existing default sender ID on a configuration set. A default sender ID is the identity that appears on recipients\' devices when they receive SMS messages. Support for sender ID capabilities varies by country or region',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default sender ID from. The ConfigurationSetName and ConfigurationSetArn can be found using the DescribeConfigurationSets action',
@@ -843,6 +875,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -855,6 +888,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-event-destination',
       description: 'Deletes an existing event destination. An event destination is a location where you send response information about the messages that you send. For example, when a message is delivered successfully, you can send information about that event to an Amazon CloudWatch destination, or send notifications to endpoints that are subscribed to an Amazon SNS topic',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set or the configuration set\'s Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the DescribeConfigurationSets action',
@@ -889,6 +923,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -901,6 +936,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-keyword',
       description: 'Deletes an existing keyword from an origination phone number or pool. A keyword is a word that you can search for on a particular phone number or pool. It is also a specific word or phrase that an end user can send to your number to elicit a response, such as an informational message or a special offer. When your number receives a message that begins with a keyword, AWS End User Messaging SMS and Voice responds with a customizable message. Keywords "HELP" and "STOP" can\'t be deleted or modified',
       options: [
+
         Option(
           name: '--origination-identity',
           description: 'The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use DescribePhoneNumbers to find the values for PhoneNumberId and PhoneNumberArn and DescribePools to find the values of PoolId and PoolArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -935,6 +971,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -947,6 +984,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-media-message-spend-limit-override',
       description: 'Deletes an account-level monthly spending limit override for sending multimedia messages (MMS). Deleting a spend limit override will set the EnforcedLimit to equal the MaxLimit, which is controlled by Amazon Web Services. For more information on spend limits (quotas) see Quotas for Server Migration Service in the Server Migration Service User Guide',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -963,6 +1001,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -975,6 +1014,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-opt-out-list',
       description: 'Deletes an existing opt-out list. All opted out phone numbers in the opt-out list are deleted. If the specified opt-out list name doesn\'t exist or is in-use by an origination phone number or pool, an error is returned',
       options: [
+
         Option(
           name: '--opt-out-list-name',
           description: 'The OptOutListName or OptOutListArn of the OptOutList to delete. You can use DescribeOptOutLists to find the values for OptOutListName and OptOutListArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -1000,6 +1040,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1012,6 +1053,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-opted-out-number',
       description: 'Deletes an existing opted out destination phone number from the specified opt-out list. Each destination phone number can only be deleted once every 30 days. If the specified destination phone number doesn\'t exist or if the opt-out list doesn\'t exist, an error is returned',
       options: [
+
         Option(
           name: '--opt-out-list-name',
           description: 'The OptOutListName or OptOutListArn to remove the phone number from.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -1046,6 +1088,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1058,6 +1101,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-pool',
       description: 'Deletes an existing pool. Deleting a pool disassociates all origination identities from that pool. If the pool status isn\'t active or if deletion protection is enabled, an error is returned. A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds that are associated with your Amazon Web Services account',
       options: [
+
         Option(
           name: '--pool-id',
           description: 'The PoolId or PoolArn of the pool to delete. You can use DescribePools to find the values for PoolId and PoolArn .  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -1083,6 +1127,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1095,6 +1140,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-protect-configuration',
       description: 'Permanently delete the protect configuration. The protect configuration must have deletion protection disabled and must not be associated as the account default protect configuration or associated with a configuration set',
       options: [
+
         Option(
           name: '--protect-configuration-id',
           description: 'The unique identifier for the protect configuration',
@@ -1120,6 +1166,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1132,6 +1179,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-protect-configuration-rule-set-number-override',
       description: 'Permanently delete the protect configuration rule set number override',
       options: [
+
         Option(
           name: '--protect-configuration-id',
           description: 'The unique identifier for the protect configuration',
@@ -1166,6 +1214,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1178,6 +1227,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-registration',
       description: 'Permanently delete an existing registration from your account',
       options: [
+
         Option(
           name: '--registration-id',
           description: 'The unique identifier for the registration',
@@ -1203,6 +1253,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1215,6 +1266,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-registration-attachment',
       description: 'Permanently delete the specified registration attachment',
       options: [
+
         Option(
           name: '--registration-attachment-id',
           description: 'The unique identifier for the registration attachment',
@@ -1240,6 +1292,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1252,6 +1305,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-registration-field-value',
       description: 'Delete the value in a registration form field',
       options: [
+
         Option(
           name: '--registration-id',
           description: 'The unique identifier for the registration',
@@ -1286,6 +1340,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1298,6 +1353,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes the resource-based policy document attached to the AWS End User Messaging SMS and Voice resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource you\'re deleting the resource-based policy from',
@@ -1323,6 +1379,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1335,6 +1392,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-text-message-spend-limit-override',
       description: 'Deletes an account-level monthly spending limit override for sending text messages. Deleting a spend limit override will set the EnforcedLimit to equal the MaxLimit, which is controlled by Amazon Web Services. For more information on spend limits (quotas) see Quotas  in the AWS End User Messaging SMS User Guide',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1351,6 +1409,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1363,6 +1422,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-verified-destination-number',
       description: 'Delete a verified destination phone number',
       options: [
+
         Option(
           name: '--verified-destination-number-id',
           description: 'The unique identifier for the verified destination phone number',
@@ -1388,6 +1448,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1400,6 +1461,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'delete-voice-message-spend-limit-override',
       description: 'Deletes an account level monthly spend limit override for sending voice messages. Deleting a spend limit override sets the EnforcedLimit equal to the MaxLimit, which is controlled by Amazon Web Services. For more information on spending limits (quotas) see Quotas  in the AWS End User Messaging SMS User Guide',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1416,6 +1478,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1428,6 +1491,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-account-attributes',
       description: 'Describes attributes of your Amazon Web Services account. The supported account attributes include account tier, which indicates whether your account is in the sandbox or production environment. When you\'re ready to move your account out of the sandbox, create an Amazon Web Services Support case for a service limit increase request. New accounts are placed into an SMS or voice sandbox. The sandbox protects both Amazon Web Services end recipients and SMS or voice recipients from fraud and abuse',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to be used for the next set of paginated results. You don\'t need to supply a value for this field in the initial request',
@@ -1489,6 +1553,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1501,6 +1566,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-account-limits',
       description: 'Describes the current AWS End User Messaging SMS and Voice SMS Voice V2 resource quotas for your account. The description for a quota includes the quota name, current usage toward that quota, and the quota\'s maximum value. When you establish an Amazon Web Services account, the account has initial quotas on the maximum number of configuration sets, opt-out lists, phone numbers, and pools that you can create in a given Region. For more information see Quotas  in the AWS End User Messaging SMS User Guide',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to be used for the next set of paginated results. You don\'t need to supply a value for this field in the initial request',
@@ -1562,6 +1628,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1574,6 +1641,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-configuration-sets',
       description: 'Describes the specified configuration sets or all in your account. If you specify configuration set names, the output includes information for only the specified configuration sets. If you specify filters, the output includes information for only those configuration sets that meet the filter criteria. If you don\'t specify configuration set names or filters, the output includes information for all configuration sets. If you specify a configuration set name that isn\'t valid, an error is returned',
       options: [
+
         Option(
           name: '--configuration-set-names',
           description: 'An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn',
@@ -1653,6 +1721,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1665,6 +1734,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-keywords',
       description: 'Describes the specified keywords or all keywords on your origination phone number or pool. A keyword is a word that you can search for on a particular phone number or pool. It is also a specific word or phrase that an end user can send to your number to elicit a response, such as an informational message or a special offer. When your number receives a message that begins with a keyword, AWS End User Messaging SMS and Voice responds with a customizable message. If you specify a keyword that isn\'t valid, an error is returned',
       options: [
+
         Option(
           name: '--origination-identity',
           description: 'The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use DescribePhoneNumbers to find the values for PhoneNumberId and PhoneNumberArn while DescribeSenderIds can be used to get the values for SenderId and SenderIdArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -1753,6 +1823,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1765,6 +1836,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-opt-out-lists',
       description: 'Describes the specified opt-out list or all opt-out lists in your account. If you specify opt-out list names, the output includes information for only the specified opt-out lists. Opt-out lists include only those that meet the filter criteria. If you don\'t specify opt-out list names or filters, the output includes information for all opt-out lists. If you specify an opt-out list name that isn\'t valid, an error is returned',
       options: [
+
         Option(
           name: '--opt-out-list-names',
           description: 'The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -1844,6 +1916,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1856,6 +1929,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-opted-out-numbers',
       description: 'Describes the specified opted out destination numbers or all opted out destination numbers in an opt-out list. If you specify opted out numbers, the output includes information for only the specified opted out numbers. If you specify filters, the output includes information for only those opted out numbers that meet the filter criteria. If you don\'t specify opted out numbers or filters, the output includes information for all opted out destination numbers in your opt-out list. If you specify an opted out number that isn\'t valid, an exception is returned',
       options: [
+
         Option(
           name: '--opt-out-list-name',
           description: 'The OptOutListName or OptOutListArn of the OptOutList. You can use DescribeOptOutLists to find the values for OptOutListName and OptOutListArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -1944,6 +2018,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1956,6 +2031,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-phone-numbers',
       description: 'Describes the specified origination phone number, or all the phone numbers in your account. If you specify phone number IDs, the output includes information for only the specified phone numbers. If you specify filters, the output includes information for only those phone numbers that meet the filter criteria. If you don\'t specify phone number IDs or filters, the output includes information for all phone numbers. If you specify a phone number ID that isn\'t valid, an error is returned',
       options: [
+
         Option(
           name: '--phone-number-ids',
           description: 'The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -2044,6 +2120,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2056,6 +2133,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-pools',
       description: 'Retrieves the specified pools or all pools associated with your Amazon Web Services account. If you specify pool IDs, the output includes information for only the specified pools. If you specify filters, the output includes information for only those pools that meet the filter criteria. If you don\'t specify pool IDs or filters, the output includes information for all pools. If you specify a pool ID that isn\'t valid, an error is returned. A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds that are associated with your Amazon Web Services account',
       options: [
+
         Option(
           name: '--pool-ids',
           description: 'The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -2144,6 +2222,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2156,6 +2235,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-protect-configurations',
       description: 'Retrieves the protect configurations that match any of filters. If a filter isn’t provided then all protect configurations are returned',
       options: [
+
         Option(
           name: '--protect-configuration-ids',
           description: 'An array of protect configuration identifiers to search for',
@@ -2235,6 +2315,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2247,6 +2328,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-registration-attachments',
       description: 'Retrieves the specified registration attachments or all registration attachments associated with your Amazon Web Services account',
       options: [
+
         Option(
           name: '--registration-attachment-ids',
           description: 'The unique identifier of registration attachments to find. This is an array of RegistrationAttachmentId',
@@ -2326,6 +2408,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2338,6 +2421,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-registration-field-definitions',
       description: 'Retrieves the specified registration type field definitions. You can use DescribeRegistrationFieldDefinitions to view the requirements for creating, filling out, and submitting each registration type',
       options: [
+
         Option(
           name: '--registration-type',
           description: 'The type of registration form. The list of RegistrationTypes can be found using the DescribeRegistrationTypeDefinitions action',
@@ -2426,6 +2510,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2438,6 +2523,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-registration-field-values',
       description: 'Retrieves the specified registration field values',
       options: [
+
         Option(
           name: '--registration-id',
           description: 'The unique identifier for the registration',
@@ -2535,6 +2621,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2547,6 +2634,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-registration-section-definitions',
       description: 'Retrieves the specified registration section definitions. You can use DescribeRegistrationSectionDefinitions to view the requirements for creating, filling out, and submitting each registration type',
       options: [
+
         Option(
           name: '--registration-type',
           description: 'The type of registration form. The list of RegistrationTypes can be found using the DescribeRegistrationTypeDefinitions action',
@@ -2626,6 +2714,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2638,6 +2727,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-registration-type-definitions',
       description: 'Retrieves the specified registration type definitions. You can use DescribeRegistrationTypeDefinitions to view the requirements for creating, filling out, and submitting each registration type',
       options: [
+
         Option(
           name: '--registration-types',
           description: 'The type of registration form. The list of RegistrationTypes can be found using the DescribeRegistrationTypeDefinitions action',
@@ -2717,6 +2807,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2729,6 +2820,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-registration-versions',
       description: 'Retrieves the specified registration version',
       options: [
+
         Option(
           name: '--registration-id',
           description: 'The unique identifier for the registration',
@@ -2817,6 +2909,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2829,6 +2922,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-registrations',
       description: 'Retrieves the specified registrations',
       options: [
+
         Option(
           name: '--registration-ids',
           description: 'An array of unique identifiers for each registration',
@@ -2908,6 +3002,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2920,6 +3015,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-sender-ids',
       description: 'Describes the specified SenderIds or all SenderIds associated with your Amazon Web Services account. If you specify SenderIds, the output includes information for only the specified SenderIds. If you specify filters, the output includes information for only those SenderIds that meet the filter criteria. If you don\'t specify SenderIds or filters, the output includes information for all SenderIds. f you specify a sender ID that isn\'t valid, an error is returned',
       options: [
+
         Option(
           name: '--sender-ids',
           description: 'An array of SenderIdAndCountry objects to search for.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -3008,6 +3104,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3020,6 +3117,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-spend-limits',
       description: 'Describes the current monthly spend limits for sending voice and text messages. When you establish an Amazon Web Services account, the account has initial monthly spend limit in a given Region. For more information on increasing your monthly spend limit, see  Requesting increases to your monthly SMS, MMS, or Voice spending quota  in the AWS End User Messaging SMS User Guide',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to be used for the next set of paginated results. You don\'t need to supply a value for this field in the initial request',
@@ -3081,6 +3179,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3093,6 +3192,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'describe-verified-destination-numbers',
       description: 'Retrieves the specified verified destination numbers',
       options: [
+
         Option(
           name: '--verified-destination-number-ids',
           description: 'An array of VerifiedDestinationNumberid to retrieve',
@@ -3181,6 +3281,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3193,6 +3294,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'disassociate-origination-identity',
       description: 'Removes the specified origination identity from an existing pool. If the origination identity isn\'t associated with the specified pool, an error is returned',
       options: [
+
         Option(
           name: '--pool-id',
           description: 'The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -3245,6 +3347,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3257,6 +3360,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'disassociate-protect-configuration',
       description: 'Disassociate a protect configuration from a configuration set',
       options: [
+
         Option(
           name: '--protect-configuration-id',
           description: 'The unique identifier for the protect configuration',
@@ -3291,6 +3395,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3303,6 +3408,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'discard-registration-version',
       description: 'Discard the current version of the registration',
       options: [
+
         Option(
           name: '--registration-id',
           description: 'The unique identifier for the registration',
@@ -3328,6 +3434,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3340,6 +3447,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'get-protect-configuration-country-rule-set',
       description: 'Retrieve the CountryRuleSet for the specified NumberCapability from a protect configuration',
       options: [
+
         Option(
           name: '--protect-configuration-id',
           description: 'The unique identifier for the protect configuration',
@@ -3374,6 +3482,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3386,6 +3495,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'get-resource-policy',
       description: 'Retrieves the JSON text of the resource-based policy document attached to the AWS End User Messaging SMS and Voice resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource attached to the resource-based policy',
@@ -3411,6 +3521,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3423,6 +3534,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'list-pool-origination-identities',
       description: 'Lists all associated origination identities in your pool. If you specify filters, the output includes information for only those origination identities that meet the filter criteria',
       options: [
+
         Option(
           name: '--pool-id',
           description: 'The unique identifier for the pool. This value can be either the PoolId or PoolArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -3502,6 +3614,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3514,6 +3627,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'list-protect-configuration-rule-set-number-overrides',
       description: 'Retrieve all of the protect configuration rule set number overrides that match the filters',
       options: [
+
         Option(
           name: '--protect-configuration-id',
           description: 'The unique identifier for the protect configuration',
@@ -3593,6 +3707,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3605,6 +3720,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'list-registration-associations',
       description: 'Retrieve all of the origination identities that are associated with a registration',
       options: [
+
         Option(
           name: '--registration-id',
           description: 'The unique identifier for the registration',
@@ -3684,6 +3800,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3696,6 +3813,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List all tags associated with a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to query for',
@@ -3721,6 +3839,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3733,6 +3852,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'put-keyword',
       description: 'Creates or updates a keyword configuration on an origination phone number or pool.  A keyword is a word that you can search for on a particular phone number or pool. It is also a specific word or phrase that an end user can send to your number to elicit a response, such as an informational message or a special offer. When your number receives a message that begins with a keyword, AWS End User Messaging SMS and Voice responds with a customizable message. If you specify a keyword that isn\'t valid, an error is returned',
       options: [
+
         Option(
           name: '--origination-identity',
           description: 'The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use DescribePhoneNumbers get the values for PhoneNumberId and PhoneNumberArn while DescribeSenderIds can be used to get the values for SenderId and SenderIdArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -3785,6 +3905,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3797,6 +3918,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'put-message-feedback',
       description: 'Set the MessageFeedbackStatus as RECEIVED or FAILED for the passed in MessageId.  If you use message feedback then you must update message feedback record. When you receive a signal that a user has received the message you must use PutMessageFeedback to set the message feedback record as RECEIVED; Otherwise, an hour after the message feedback record is set to FAILED',
       options: [
+
         Option(
           name: '--message-id',
           description: 'The unique identifier for the message',
@@ -3831,6 +3953,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3843,6 +3966,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'put-opted-out-number',
       description: 'Creates an opted out destination phone number in the opt-out list. If the destination phone number isn\'t valid or if the specified opt-out list doesn\'t exist, an error is returned',
       options: [
+
         Option(
           name: '--opt-out-list-name',
           description: 'The OptOutListName or OptOutListArn to add the phone number to.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -3877,6 +4001,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3889,6 +4014,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'put-protect-configuration-rule-set-number-override',
       description: 'Create or update a RuleSetNumberOverride and associate it with a protect configuration',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don\'t specify a client token, a randomly generated token is used for the request to ensure idempotency',
@@ -3950,6 +4076,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3962,6 +4089,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'put-registration-field-value',
       description: 'Creates or updates a field value for a registration',
       options: [
+
         Option(
           name: '--registration-id',
           description: 'The unique identifier for the registration',
@@ -4023,6 +4151,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4035,6 +4164,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'put-resource-policy',
       description: 'Attaches a resource-based policy to a AWS End User Messaging SMS and Voice resource(phone number, sender Id, phone poll, or opt-out list) that is used for sharing the resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number. For more information about resource-based policies, see Working with shared resources in the AWS End User Messaging SMS User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource to attach the resource-based policy to',
@@ -4069,6 +4199,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4081,6 +4212,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'release-phone-number',
       description: 'Releases an existing origination phone number in your account. Once released, a phone number is no longer available for sending messages. If the origination phone number has deletion protection enabled or is associated with a pool, an error is returned',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use DescribePhoneNumbers to get the values for PhoneNumberId and PhoneNumberArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -4106,6 +4238,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4118,6 +4251,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'release-sender-id',
       description: 'Releases an existing sender ID in your account',
       options: [
+
         Option(
           name: '--sender-id',
           description: 'The sender ID to release',
@@ -4152,6 +4286,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4164,6 +4299,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'request-phone-number',
       description: 'Request an origination phone number for use in your account. For more information on phone number request see Request a phone number in the AWS End User Messaging SMS User Guide',
       options: [
+
         Option(
           name: '--iso-country-code',
           description: 'The two-character code, in ISO 3166-1 alpha-2 format, for the country or region',
@@ -4269,6 +4405,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4281,6 +4418,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'request-sender-id',
       description: 'Request a new sender ID that doesn\'t require registration',
       options: [
+
         Option(
           name: '--sender-id',
           description: 'The sender ID string to request',
@@ -4350,6 +4488,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4362,6 +4501,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'send-destination-number-verification-code',
       description: 'Before you can send test messages to a verified destination phone number you need to opt-in the verified destination phone number. Creates a new text message with a verification code and send it to a verified destination phone number. Once you have the verification code use VerifyDestinationNumber to opt-in the verified destination phone number to receive messages',
       options: [
+
         Option(
           name: '--verified-destination-number-id',
           description: 'The unique identifier for the verified destination phone number',
@@ -4441,6 +4581,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4453,6 +4594,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'send-media-message',
       description: 'Creates a new multimedia message (MMS) and sends it to a recipient\'s phone number',
       options: [
+
         Option(
           name: '--destination-phone-number',
           description: 'The destination phone number in E.164 format',
@@ -4566,6 +4708,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4578,6 +4721,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'send-text-message',
       description: 'Creates a new text message and sends it to a recipient\'s phone number. SendTextMessage only sends an SMS message to one recipient each time it is invoked. SMS throughput limits are measured in Message Parts per Second (MPS). Your MPS limit depends on the destination country of your messages, as well as the type of phone number (origination number) that you use to send the message. For more information about MPS, see Message Parts per Second (MPS) limits in the AWS End User Messaging SMS User Guide',
       options: [
+
         Option(
           name: '--destination-phone-number',
           description: 'The destination phone number in E.164 format',
@@ -4709,6 +4853,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4721,6 +4866,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'send-voice-message',
       description: 'Allows you to send a request that sends a voice message. This operation uses Amazon Polly to convert a text script into a voice message',
       options: [
+
         Option(
           name: '--destination-phone-number',
           description: 'The destination phone number in E.164 format',
@@ -4843,6 +4989,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4855,6 +5002,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'set-account-default-protect-configuration',
       description: 'Set a protect configuration as your account default. You can only have one account default protect configuration at a time. The current account default protect configuration is replaced with the provided protect configuration',
       options: [
+
         Option(
           name: '--protect-configuration-id',
           description: 'The unique identifier for the protect configuration',
@@ -4880,6 +5028,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4892,6 +5041,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'set-default-message-feedback-enabled',
       description: 'Sets a configuration set\'s default for message feedback',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn',
@@ -4925,6 +5075,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4937,6 +5088,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'set-default-message-type',
       description: 'Sets the default message type on a configuration set. Choose the category of SMS messages that you plan to send from this account. If you send account-related messages or time-sensitive messages such as one-time passcodes, choose Transactional. If you plan to send messages that contain marketing material or other promotional content, choose Promotional. This setting applies to your entire Amazon Web Services account',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn',
@@ -4971,6 +5123,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4983,6 +5136,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'set-default-sender-id',
       description: 'Sets default sender ID on a configuration set. When sending a text message to a destination country that supports sender IDs, the default sender ID on the configuration set specified will be used if no dedicated origination phone numbers or registered sender IDs are available in your account',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn',
@@ -5017,6 +5171,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5029,6 +5184,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'set-media-message-spend-limit-override',
       description: 'Sets an account level monthly spend limit override for sending MMS messages. The requested spend limit must be less than or equal to the MaxLimit, which is set by Amazon Web Services',
       options: [
+
         Option(
           name: '--monthly-limit',
           description: 'The new monthly limit to enforce on text messages',
@@ -5054,6 +5210,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5066,6 +5223,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'set-text-message-spend-limit-override',
       description: 'Sets an account level monthly spend limit override for sending text messages. The requested spend limit must be less than or equal to the MaxLimit, which is set by Amazon Web Services',
       options: [
+
         Option(
           name: '--monthly-limit',
           description: 'The new monthly limit to enforce on text messages',
@@ -5091,6 +5249,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5103,6 +5262,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'set-voice-message-spend-limit-override',
       description: 'Sets an account level monthly spend limit override for sending voice messages. The requested spend limit must be less than or equal to the MaxLimit, which is set by Amazon Web Services',
       options: [
+
         Option(
           name: '--monthly-limit',
           description: 'The new monthly limit to enforce on voice messages',
@@ -5128,6 +5288,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5140,6 +5301,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'submit-registration-version',
       description: 'Submit the specified registration for review and approval',
       options: [
+
         Option(
           name: '--registration-id',
           description: 'The unique identifier for the registration',
@@ -5165,6 +5327,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5177,6 +5340,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or overwrites only the specified tags for the specified resource. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information about tags, see Tags  in the AWS End User Messaging SMS User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -5211,6 +5375,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5223,6 +5388,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the association of the specified tags from a resource. For more information on tags see Tags  in the AWS End User Messaging SMS User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -5257,6 +5423,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5269,6 +5436,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'update-event-destination',
       description: 'Updates an existing event destination in a configuration set. You can update the IAM role ARN for CloudWatch Logs and Firehose. You can also enable or disable the event destination. You may want to update an event destination to change its matching event types or updating the destination resource ARN. You can\'t change an event destination\'s type between CloudWatch Logs, Firehose, and Amazon SNS',
       options: [
+
         Option(
           name: '--configuration-set-name',
           description: 'The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn',
@@ -5347,6 +5515,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5359,6 +5528,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'update-phone-number',
       description: 'Updates the configuration of an existing origination phone number. You can update the opt-out list, enable or disable two-way messaging, change the TwoWayChannelArn, enable or disable self-managed opt-outs, and enable or disable deletion protection. If the origination phone number is associated with a pool, an error is returned',
       options: [
+
         Option(
           name: '--phone-number-id',
           description: 'The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -5435,6 +5605,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5447,6 +5618,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'update-pool',
       description: 'Updates the configuration of an existing pool. You can update the opt-out list, enable or disable two-way messaging, change the TwoWayChannelArn, enable or disable self-managed opt-outs, enable or disable deletion protection, and enable or disable shared routes',
       options: [
+
         Option(
           name: '--pool-id',
           description: 'The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.  If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN)',
@@ -5531,6 +5703,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5543,6 +5716,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'update-protect-configuration',
       description: 'Update the setting for an existing protect configuration',
       options: [
+
         Option(
           name: '--protect-configuration-id',
           description: 'The unique identifier for the protect configuration',
@@ -5576,6 +5750,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5588,6 +5763,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'update-protect-configuration-country-rule-set',
       description: 'Update a country rule set to ALLOW or BLOCK messages to be sent to the specified destination counties. You can update one or multiple countries at a time. The updates are only applied to the specified NumberCapability type',
       options: [
+
         Option(
           name: '--protect-configuration-id',
           description: 'The unique identifier for the protect configuration',
@@ -5631,6 +5807,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5643,6 +5820,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'update-sender-id',
       description: 'Updates the configuration of an existing sender ID',
       options: [
+
         Option(
           name: '--sender-id',
           description: 'The sender ID to update',
@@ -5685,6 +5863,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5697,6 +5876,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
       name: 'verify-destination-number',
       description: 'Use the verification code that was received by the verified destination phone number to opt-in the verified destination phone number to receive more messages',
       options: [
+
         Option(
           name: '--verified-destination-number-id',
           description: 'The unique identifier for the verififed destination phone number',
@@ -5731,6 +5911,7 @@ final FigSpec pinpointSmsVoiceV2Spec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

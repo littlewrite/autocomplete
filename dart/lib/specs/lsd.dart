@@ -16,6 +16,7 @@ final FigSpec lsdSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-1', '--oneline'],
       description: 'Display one entry per line'
@@ -111,6 +112,7 @@ final FigSpec lsdSpec = FigSpec(
         Arg(
         name: 'blocks',
         suggestions: [
+
           FigSuggestion(name: 'permission'),
           FigSuggestion(name: 'user'),
           FigSuggestion(name: 'group'),
@@ -130,6 +132,7 @@ final FigSpec lsdSpec = FigSpec(
         Arg(
         name: 'color',
         suggestions: [
+
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'never')
@@ -145,6 +148,7 @@ final FigSpec lsdSpec = FigSpec(
         Arg(
         name: 'date',
         suggestions: [
+
           FigSuggestion(name: 'date'),
           FigSuggestion(name: 'relative'),
           FigSuggestion(name: '+date-time-format')
@@ -169,6 +173,7 @@ final FigSpec lsdSpec = FigSpec(
         Arg(
         name: 'group-dirs',
         suggestions: [
+
           FigSuggestion(name: 'none'),
           FigSuggestion(name: 'first'),
           FigSuggestion(name: 'last')
@@ -183,6 +188,7 @@ final FigSpec lsdSpec = FigSpec(
         Arg(
         name: 'icon',
         suggestions: [
+
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'never')
@@ -198,6 +204,7 @@ final FigSpec lsdSpec = FigSpec(
         Arg(
         name: 'icon-theme',
         suggestions: [
+
           FigSuggestion(name: 'fancy'),
           FigSuggestion(name: 'unicode')
         ],
@@ -221,6 +228,7 @@ final FigSpec lsdSpec = FigSpec(
         Arg(
         name: 'size',
         suggestions: [
+
           FigSuggestion(name: 'default'),
           FigSuggestion(name: 'short'),
           FigSuggestion(name: 'bytes')
@@ -236,6 +244,7 @@ final FigSpec lsdSpec = FigSpec(
         Arg(
         name: 'WORD',
         suggestions: [
+
           FigSuggestion(name: 'size'),
           FigSuggestion(name: 'time'),
           FigSuggestion(name: 'version'),

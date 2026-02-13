@@ -9,6 +9,7 @@ final FigSpec wasmBindgenSpec = FigSpec(
   name: 'wasm-bindgen',
   description: 'Generate bindings between WebAssembly and JavaScript',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for wasm-bindgen'
@@ -46,6 +47,7 @@ final FigSpec wasmBindgenSpec = FigSpec(
         Arg(
         name: 'target',
         suggestions: [
+
           FigSuggestion(
             name: 'web',
             description: 'Directly loadable in a web browser'
@@ -126,6 +128,7 @@ final FigSpec wasmBindgenSpec = FigSpec(
         Arg(
         name: 'option',
         suggestions: [
+
           FigSuggestion(
             name: 'test'
           ),

@@ -4,6 +4,26 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<FigSuggestion> monthSuggestions = [
+
+  FigSuggestion(name: 'january'),
+  FigSuggestion(name: 'february'),
+  FigSuggestion(name: 'march'),
+  FigSuggestion(name: 'april'),
+  FigSuggestion(name: 'may'),
+  FigSuggestion(name: 'june'),
+  FigSuggestion(name: 'july'),
+  FigSuggestion(name: 'august'),
+  FigSuggestion(name: 'september'),
+  FigSuggestion(name: 'october'),
+  FigSuggestion(name: 'november'),
+  FigSuggestion(name: 'december')
+];
+
+final List<FigSuggestion> countryCodeSuggestion = [
+
+];
+
 /// Completion spec for `ncal` CLI
 final FigSpec ncalSpec = FigSpec(
   name: 'ncal',
@@ -12,6 +32,7 @@ final FigSpec ncalSpec = FigSpec(
   ),
   description: 'Displays a calendar and the date of Easter',
   options: [
+
     Option(
       name: '-h',
       description: 'Turns off highlighting of today'
@@ -35,7 +56,8 @@ final FigSpec ncalSpec = FigSpec(
       args: [
         Arg(
         name: 'month',
-        description: 'Display the specified month.  If month is specified as a decimal number, it may be followed by the letter ‘f’ or ‘p’ to indicate the following or preceding month of that number, respectively'
+        description: 'Display the specified month.  If month is specified as a decimal number, it may be followed by the letter ‘f’ or ‘p’ to indicate the following or preceding month of that number, respectively',
+        suggestions: monthSuggestions
       )
       ]
     ),
@@ -61,7 +83,8 @@ final FigSpec ncalSpec = FigSpec(
       description: 'Assume the switch from Julian to Gregorian Calendar at the date associated with the country_code.  If not specified, ncal tries to guess the switch date from the local environment or falls back to September 2, 1752.  This was when Great Britain and her colonies switched to the Gregorian Calendar',
       args: [
         Arg(
-        name: 'country_code'
+        name: 'country_code',
+        suggestions: countryCodeSuggestion
       )
       ]
     ),

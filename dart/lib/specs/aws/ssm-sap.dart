@@ -9,10 +9,12 @@ final FigSpec ssmSapSpec = FigSpec(
   name: 'ssm-sap',
   description: 'This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS Systems Manager for SAP. The topic for each action shows the API request parameters and responses',
   subcommands: [
+
     Subcommand(
       name: 'delete-resource-permission',
       description: 'Removes permissions associated with the target database',
       options: [
+
         Option(
           name: '--action-type',
           description: 'Delete or restore the permissions on the target database',
@@ -56,6 +58,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'deregister-application',
       description: 'Deregister an SAP application with AWS Systems Manager for SAP. This action does not aﬀect the existing setup of your SAP workloads on Amazon EC2',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -93,6 +97,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'get-application',
       description: 'Gets an application registered with AWS Systems Manager for SAP. It also returns the components of the application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -148,6 +154,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'get-component',
       description: 'Gets the component of an application registered with AWS Systems Manager for SAP',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -194,6 +202,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -206,6 +215,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'get-database',
       description: 'Gets the SAP HANA database of an application registered with AWS Systems Manager for SAP',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -258,6 +268,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'get-operation',
       description: 'Gets the details of an operation by specifying the operation ID',
       options: [
+
         Option(
           name: '--operation-id',
           description: 'The ID of the operation',
@@ -295,6 +307,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'get-resource-permission',
       description: 'Gets permissions associated with the target database',
       options: [
+
         Option(
           name: '--action-type',
           args: [
@@ -340,6 +354,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -352,6 +367,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'list-applications',
       description: 'Lists all the applications registered with AWS Systems Manager for SAP',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next page of results',
@@ -422,6 +438,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -434,6 +451,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'list-components',
       description: 'Lists all the components registered with AWS Systems Manager for SAP',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -504,6 +522,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -516,6 +535,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'list-databases',
       description: 'Lists the SAP HANA databases of an application registered with AWS Systems Manager for SAP',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -595,6 +615,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -607,6 +628,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'list-operation-events',
       description: 'Returns a list of operations events. Available parameters include OperationID, as well as optional parameters MaxResults, NextToken, and Filters',
       options: [
+
         Option(
           name: '--operation-id',
           description: 'The ID of the operation',
@@ -686,6 +708,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -698,6 +721,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'list-operations',
       description: 'Lists the operations performed by AWS Systems Manager for SAP',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -777,6 +801,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -789,6 +814,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags on an SAP HANA application and/or database registered with AWS Systems Manager for SAP',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -814,6 +840,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -826,6 +853,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'put-resource-permission',
       description: 'Adds permissions to the target database',
       options: [
+
         Option(
           name: '--action-type',
           args: [
@@ -866,6 +894,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -878,6 +907,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'register-application',
       description: 'Register an SAP application with AWS Systems Manager for SAP. You must meet the following requirements before registering.  The SAP application you want to register with AWS Systems Manager for SAP is running on Amazon EC2. AWS Systems Manager Agent must be setup on an Amazon EC2 instance along with the required IAM permissions. Amazon EC2 instance(s) must have access to the secrets created in AWS Secrets Manager to manage SAP applications and components',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -966,6 +996,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -978,6 +1009,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'start-application',
       description: 'Request is an operation which starts an application. Parameter ApplicationId is required',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -1003,6 +1035,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1015,6 +1048,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'start-application-refresh',
       description: 'Refreshes a registered application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -1040,6 +1074,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1052,6 +1087,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'stop-application',
       description: 'Request is an operation to stop an application. Parameter ApplicationId is required. Parameters StopConnectedEntity and IncludeEc2InstanceShutdown are optional',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -1094,6 +1130,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1106,6 +1143,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'tag-resource',
       description: 'Creates tag for a resource by specifying the ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1140,6 +1178,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1152,6 +1191,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'untag-resource',
       description: 'Delete the tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1186,6 +1226,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1198,6 +1239,7 @@ final FigSpec ssmSapSpec = FigSpec(
       name: 'update-application-settings',
       description: 'Updates the settings of an application registered with AWS Systems Manager for SAP',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -1259,6 +1301,7 @@ final FigSpec ssmSapSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

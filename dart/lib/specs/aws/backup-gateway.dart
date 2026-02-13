@@ -9,10 +9,12 @@ final FigSpec backupGatewaySpec = FigSpec(
   name: 'backup-gateway',
   description: 'Backup gateway Backup gateway connects Backup to your hypervisor, so you can create, store, and restore backups of your virtual machines (VMs) anywhere, whether on-premises or in the VMware Cloud (VMC) on Amazon Web Services. Add on-premises resources by connecting to a hypervisor through a gateway. Backup will automatically discover the resources in your hypervisor. Use Backup to assign virtual or on-premises resources to a backup plan, or run on-demand backups. Once you have backed up your resources, you can view them and restore them like any resource supported by Backup. To download the Amazon Web Services software to get started, navigate to the Backup console, choose Gateways, then choose Create gateway',
   subcommands: [
+
     Subcommand(
       name: 'associate-gateway-to-server',
       description: 'Associates a backup gateway with your server. After you complete the association process, you can back up and restore your VMs through the gateway',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The Amazon Resource Name (ARN) of the gateway. Use the ListGateways operation to return a list of gateways for your account and Amazon Web Services Region',
@@ -47,6 +49,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'create-gateway',
       description: 'Creates a backup gateway. After you create a gateway, you can associate it with a server using the AssociateGatewayToServer operation',
       options: [
+
         Option(
           name: '--activation-key',
           description: 'The activation key of the created gateway',
@@ -111,6 +115,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'delete-gateway',
       description: 'Deletes a backup gateway',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The Amazon Resource Name (ARN) of the gateway to delete',
@@ -148,6 +154,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'delete-hypervisor',
       description: 'Deletes a hypervisor',
       options: [
+
         Option(
           name: '--hypervisor-arn',
           description: 'The Amazon Resource Name (ARN) of the hypervisor to delete',
@@ -185,6 +193,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -197,6 +206,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'disassociate-gateway-from-server',
       description: 'Disassociates a backup gateway from the specified server. After the disassociation process finishes, the gateway can no longer access the virtual machines on the server',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The Amazon Resource Name (ARN) of the gateway to disassociate',
@@ -222,6 +232,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -234,6 +245,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'get-bandwidth-rate-limit-schedule',
       description: 'Retrieves the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to get a gateway\'s bandwidth rate limit schedule',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The Amazon Resource Name (ARN) of the gateway. Use the  ListGateways  operation to return a list of gateways for your account and Amazon Web Services Region',
@@ -259,6 +271,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -271,6 +284,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'get-gateway',
       description: 'By providing the ARN (Amazon Resource Name), this API returns the gateway',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The Amazon Resource Name (ARN) of the gateway',
@@ -296,6 +310,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -308,6 +323,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'get-hypervisor',
       description: 'This action requests information about the specified hypervisor to which the gateway will connect. A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them',
       options: [
+
         Option(
           name: '--hypervisor-arn',
           description: 'The Amazon Resource Name (ARN) of the hypervisor',
@@ -333,6 +349,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -345,6 +362,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'get-hypervisor-property-mappings',
       description: 'This action retrieves the property mappings for the specified hypervisor. A hypervisor property mapping displays the relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon Web Services',
       options: [
+
         Option(
           name: '--hypervisor-arn',
           description: 'The Amazon Resource Name (ARN) of the hypervisor',
@@ -370,6 +388,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -382,6 +401,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'get-virtual-machine',
       description: 'By providing the ARN (Amazon Resource Name), this API returns the virtual machine',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the virtual machine',
@@ -407,6 +427,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -419,6 +440,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'import-hypervisor-configuration',
       description: 'Connect to a hypervisor by importing its configuration',
       options: [
+
         Option(
           name: '--host',
           description: 'The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN)',
@@ -489,6 +511,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -501,6 +524,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'list-gateways',
       description: 'Lists backup gateways owned by an Amazon Web Services account in an Amazon Web Services Region. The returned list is ordered by gateway Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of gateways to list',
@@ -562,6 +586,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -574,6 +599,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'list-hypervisors',
       description: 'Lists your hypervisors',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of hypervisors to list',
@@ -635,6 +661,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -647,6 +674,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags applied to the resource identified by its Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource\'s tags to list',
@@ -672,6 +700,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -684,6 +713,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'list-virtual-machines',
       description: 'Lists your virtual machines',
       options: [
+
         Option(
           name: '--hypervisor-arn',
           description: 'The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine',
@@ -754,6 +784,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -766,6 +797,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'put-bandwidth-rate-limit-schedule',
       description: 'This action sets the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have a bandwidth rate limit schedule, which means no bandwidth rate limiting is in effect. Use this to initiate a gateway\'s bandwidth rate limit schedule',
       options: [
+
         Option(
           name: '--bandwidth-rate-limit-intervals',
           description: 'An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty',
@@ -800,6 +832,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -812,6 +845,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'put-hypervisor-property-mappings',
       description: 'This action sets the property mappings for the specified hypervisor. A hypervisor property mapping displays the relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon Web Services',
       options: [
+
         Option(
           name: '--hypervisor-arn',
           description: 'The Amazon Resource Name (ARN) of the hypervisor',
@@ -855,6 +889,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -867,6 +902,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'put-maintenance-start-time',
       description: 'Set the maintenance start time for a gateway',
       options: [
+
         Option(
           name: '--day-of-month',
           description: 'The day of the month start maintenance on a gateway. Valid values range from Sunday to Saturday',
@@ -928,6 +964,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -940,6 +977,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'start-virtual-machines-metadata-sync',
       description: 'This action sends a request to sync metadata across the specified virtual machines',
       options: [
+
         Option(
           name: '--hypervisor-arn',
           description: 'The Amazon Resource Name (ARN) of the hypervisor',
@@ -965,6 +1003,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -977,6 +1016,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'tag-resource',
       description: 'Tag the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to tag',
@@ -1011,6 +1051,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1023,6 +1064,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'test-hypervisor-configuration',
       description: 'Tests your hypervisor configuration to validate that backup gateway can connect with the hypervisor and its resources',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The Amazon Resource Name (ARN) of the gateway to the hypervisor to test',
@@ -1075,6 +1117,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1087,6 +1130,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource from which to remove tags',
@@ -1121,6 +1165,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1133,6 +1178,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'update-gateway-information',
       description: 'Updates a gateway\'s name. Specify which gateway to update using the Amazon Resource Name (ARN) of the gateway in your request',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The Amazon Resource Name (ARN) of the gateway to update',
@@ -1167,6 +1213,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1179,6 +1226,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'update-gateway-software-now',
       description: 'Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.  When you make this request, you get a 200 OK success response immediately. However, it might take some time for the update to complete',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The Amazon Resource Name (ARN) of the gateway to be updated',
@@ -1204,6 +1252,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1216,6 +1265,7 @@ final FigSpec backupGatewaySpec = FigSpec(
       name: 'update-hypervisor',
       description: 'Updates a hypervisor metadata, including its host, username, and password. Specify which hypervisor to update using the Amazon Resource Name (ARN) of the hypervisor in your request',
       options: [
+
         Option(
           name: '--host',
           description: 'The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN)',
@@ -1286,6 +1336,7 @@ final FigSpec backupGatewaySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

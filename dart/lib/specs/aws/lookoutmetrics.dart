@@ -9,10 +9,12 @@ final FigSpec lookoutmetricsSpec = FigSpec(
   name: 'lookoutmetrics',
   description: 'This is the Amazon Lookout for Metrics API Reference. For an introduction to the service with tutorials for getting started, visit Amazon Lookout for Metrics Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'activate-anomaly-detector',
       description: 'Activates an anomaly detector',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The ARN of the anomaly detector',
@@ -38,6 +40,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'back-test-anomaly-detector',
       description: 'Runs a backtest for anomaly detection for the specified resource',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The Amazon Resource Name (ARN) of the anomaly detector',
@@ -75,6 +79,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'create-alert',
       description: 'Creates an alert for an anomaly detector',
       options: [
+
         Option(
           name: '--alert-name',
           description: 'The name of the alert',
@@ -166,6 +172,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'create-anomaly-detector',
       description: 'Creates an anomaly detector',
       options: [
+
         Option(
           name: '--anomaly-detector-name',
           description: 'The name of the detector',
@@ -239,6 +247,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +260,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'create-metric-set',
       description: 'Creates a dataset',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The ARN of the anomaly detector that will use the dataset',
@@ -375,6 +385,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -387,6 +398,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'deactivate-anomaly-detector',
       description: 'Deactivates an anomaly detector',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The Amazon Resource Name (ARN) of the anomaly detector',
@@ -412,6 +424,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -424,6 +437,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'delete-alert',
       description: 'Deletes an alert',
       options: [
+
         Option(
           name: '--alert-arn',
           description: 'The ARN of the alert to delete',
@@ -449,6 +463,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -461,6 +476,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'delete-anomaly-detector',
       description: 'Deletes a detector. Deleting an anomaly detector will delete all of its corresponding resources including any configured datasets and alerts',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The ARN of the detector to delete',
@@ -486,6 +502,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -498,6 +515,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'describe-alert',
       description: 'Describes an alert. Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete',
       options: [
+
         Option(
           name: '--alert-arn',
           description: 'The ARN of the alert to describe',
@@ -523,6 +541,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -535,6 +554,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'describe-anomaly-detection-executions',
       description: 'Returns information about the status of the specified anomaly detection jobs',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The Amazon Resource Name (ARN) of the anomaly detector',
@@ -587,6 +607,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -599,6 +620,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'describe-anomaly-detector',
       description: 'Describes a detector. Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The ARN of the detector to describe',
@@ -624,6 +646,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -636,6 +659,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'describe-metric-set',
       description: 'Describes a dataset. Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete',
       options: [
+
         Option(
           name: '--metric-set-arn',
           description: 'The ARN of the dataset',
@@ -661,6 +685,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -673,6 +698,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'detect-metric-set-config',
       description: 'Detects an Amazon S3 dataset\'s file format, interval, and offset',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'An anomaly detector ARN',
@@ -707,6 +733,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -719,6 +746,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'get-anomaly-group',
       description: 'Returns details about a group of anomalous metrics',
       options: [
+
         Option(
           name: '--anomaly-group-id',
           description: 'The ID of the anomaly group',
@@ -753,6 +781,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -765,6 +794,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'get-data-quality-metrics',
       description: 'Returns details about the requested data quality metrics',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate',
@@ -799,6 +829,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -811,6 +842,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'get-feedback',
       description: 'Get feedback for an anomaly group',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The Amazon Resource Name (ARN) of the anomaly detector',
@@ -863,6 +895,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -875,6 +908,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'get-sample-data',
       description: 'Returns a selection of sample records from an Amazon S3 datasource',
       options: [
+
         Option(
           name: '--s3-source-config',
           description: 'A datasource bucket in Amazon S3',
@@ -900,6 +934,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -912,6 +947,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'list-alerts',
       description: 'Lists the alerts attached to a detector. Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The ARN of the alert\'s detector',
@@ -955,6 +991,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -967,6 +1004,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'list-anomaly-detectors',
       description: 'Lists the detectors in the current AWS Region. Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -1001,6 +1039,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1013,6 +1052,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'list-anomaly-group-related-metrics',
       description: 'Returns a list of measures that are potential causes or effects of an anomaly group',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The Amazon Resource Name (ARN) of the anomaly detector',
@@ -1074,6 +1114,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1086,6 +1127,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'list-anomaly-group-summaries',
       description: 'Returns a list of anomaly groups',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The Amazon Resource Name (ARN) of the anomaly detector',
@@ -1138,6 +1180,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1150,6 +1193,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'list-anomaly-group-time-series',
       description: 'Gets a list of anomalous metrics for a measure in an anomaly group',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The Amazon Resource Name (ARN) of the anomaly detector',
@@ -1211,6 +1255,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1223,6 +1268,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'list-metric-sets',
       description: 'Lists the datasets in the current AWS Region. Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The ARN of the anomaly detector containing the metrics sets to list',
@@ -1266,6 +1312,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1278,6 +1325,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets a list of tags for a detector, dataset, or alert',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s Amazon Resource Name (ARN)',
@@ -1303,6 +1351,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1315,6 +1364,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'put-feedback',
       description: 'Add feedback for an anomalous metric',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The Amazon Resource Name (ARN) of the anomaly detector',
@@ -1349,6 +1399,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1361,6 +1412,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to a detector, dataset, or alert',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s Amazon Resource Name (ARN)',
@@ -1395,6 +1447,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1407,6 +1460,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a detector, dataset, or alert',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s Amazon Resource Name (ARN)',
@@ -1441,6 +1495,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1453,6 +1508,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'update-alert',
       description: 'Make changes to an existing alert',
       options: [
+
         Option(
           name: '--alert-arn',
           description: 'The ARN of the alert to update',
@@ -1514,6 +1570,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1526,6 +1583,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'update-anomaly-detector',
       description: 'Updates a detector. After activation, you can only change a detector\'s ingestion delay and description',
       options: [
+
         Option(
           name: '--anomaly-detector-arn',
           description: 'The ARN of the detector to update',
@@ -1578,6 +1636,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1590,6 +1649,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
       name: 'update-metric-set',
       description: 'Updates a dataset',
       options: [
+
         Option(
           name: '--metric-set-arn',
           description: 'The ARN of the dataset to update',
@@ -1687,6 +1747,7 @@ final FigSpec lookoutmetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

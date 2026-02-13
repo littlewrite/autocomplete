@@ -9,6 +9,7 @@ final FigSpec sapphireSpec = FigSpec(
   name: 'sapphire',
   description: 'CLI for the Sapphire Framework',
   subcommands: [
+
     Subcommand(
       name: ['new', 'n'],
       priority: 100,
@@ -21,6 +22,7 @@ final FigSpec sapphireSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-v', '--verbose'],
           description: 'Enable verbose logging'
@@ -32,6 +34,7 @@ final FigSpec sapphireSpec = FigSpec(
       priority: 90,
       description: 'Generates a component/piece',
       args: [
+
         Arg(
           name: 'component',
           description: 'Component/piece name'
@@ -63,6 +66,7 @@ final FigSpec sapphireSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       priority: 10,

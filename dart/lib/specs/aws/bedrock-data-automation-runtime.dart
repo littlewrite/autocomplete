@@ -9,10 +9,12 @@ final FigSpec bedrockDataAutomationRuntimeSpec = FigSpec(
   name: 'bedrock-data-automation-runtime',
   description: 'Amazon Bedrock Keystone Runtime',
   subcommands: [
+
     Subcommand(
       name: 'get-data-automation-status',
       description: 'API used to get data automation status',
       options: [
+
         Option(
           name: '--invocation-arn',
           description: 'Invocation arn',
@@ -38,6 +40,7 @@ final FigSpec bedrockDataAutomationRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec bedrockDataAutomationRuntimeSpec = FigSpec(
       name: 'invoke-data-automation-async',
       description: 'Async API: Invoke data automation',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Idempotency token',
@@ -129,6 +133,7 @@ final FigSpec bedrockDataAutomationRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

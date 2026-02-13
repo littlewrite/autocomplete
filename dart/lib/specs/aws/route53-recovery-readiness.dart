@@ -9,10 +9,12 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
   name: 'route53-recovery-readiness',
   description: 'Recovery readiness',
   subcommands: [
+
     Subcommand(
       name: 'create-cell',
       description: 'Creates a cell in an account',
       options: [
+
         Option(
           name: '--cell-name',
           description: 'The name of the cell to create',
@@ -56,6 +58,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'create-cross-account-authorization',
       description: 'Creates a cross-account readiness authorization. This lets you authorize another account to work with Route 53 Application Recovery Controller, for example, to check the readiness status of resources in a separate account',
       options: [
+
         Option(
           name: '--cross-account-authorization',
           description: 'The cross-account authorization',
@@ -93,6 +97,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'create-readiness-check',
       description: 'Creates a readiness check in an account. A readiness check monitors a resource set in your application, such as a set of Amazon Aurora instances, that Application Recovery Controller is auditing recovery readiness for. The audits run once every minute on every resource that\'s associated with a readiness check',
       options: [
+
         Option(
           name: '--readiness-check-name',
           description: 'The name of the readiness check to create',
@@ -148,6 +154,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'create-recovery-group',
       description: 'Creates a recovery group in an account. A recovery group corresponds to an application and includes a list of the cells that make up the application',
       options: [
+
         Option(
           name: '--cells',
           description: 'A list of the cell Amazon Resource Names (ARNs) in the recovery group',
@@ -203,6 +211,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -215,6 +224,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'create-resource-set',
       description: 'Creates a resource set. A resource set is a set of resources of one type that span multiple cells. You can associate a resource set with a readiness check to monitor the resources for failover readiness',
       options: [
+
         Option(
           name: '--resource-set-name',
           description: 'The name of the resource set to create',
@@ -267,6 +277,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'delete-cell',
       description: 'Delete a cell. When successful, the response code is 204, with no response body',
       options: [
+
         Option(
           name: '--cell-name',
           description: 'The name of the cell',
@@ -304,6 +316,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -316,6 +329,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'delete-cross-account-authorization',
       description: 'Deletes cross account readiness authorization',
       options: [
+
         Option(
           name: '--cross-account-authorization',
           description: 'The cross-account authorization',
@@ -341,6 +355,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -353,6 +368,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'delete-readiness-check',
       description: 'Deletes a readiness check',
       options: [
+
         Option(
           name: '--readiness-check-name',
           description: 'Name of a readiness check',
@@ -378,6 +394,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -390,6 +407,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'delete-recovery-group',
       description: 'Deletes a recovery group',
       options: [
+
         Option(
           name: '--recovery-group-name',
           description: 'The name of a recovery group',
@@ -415,6 +433,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -427,6 +446,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'delete-resource-set',
       description: 'Deletes a resource set',
       options: [
+
         Option(
           name: '--resource-set-name',
           description: 'Name of a resource set',
@@ -452,6 +472,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -464,6 +485,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'get-architecture-recommendations',
       description: 'Gets recommendations about architecture designs for improving resiliency for an application, based on a recovery group',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of objects that you want to return with this call',
@@ -507,6 +529,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -519,6 +542,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'get-cell',
       description: 'Gets information about a cell including cell name, cell Amazon Resource Name (ARN), ARNs of nested cells for this cell, and a list of those cell ARNs with their associated recovery group ARNs',
       options: [
+
         Option(
           name: '--cell-name',
           description: 'The name of the cell',
@@ -544,6 +568,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -556,6 +581,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'get-cell-readiness-summary',
       description: 'Gets readiness for a cell. Aggregates the readiness of all the resources that are associated with the cell into a single value',
       options: [
+
         Option(
           name: '--cell-name',
           description: 'The name of the cell',
@@ -626,6 +652,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -638,6 +665,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'get-readiness-check',
       description: 'Gets details about a readiness check',
       options: [
+
         Option(
           name: '--readiness-check-name',
           description: 'Name of a readiness check',
@@ -663,6 +691,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -675,6 +704,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'get-readiness-check-resource-status',
       description: 'Gets individual readiness status for a readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in the recovery group, use GetRecoveryGroupReadinessSummary',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of objects that you want to return with this call',
@@ -754,6 +784,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -766,6 +797,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'get-readiness-check-status',
       description: 'Gets the readiness status for an individual readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in a recovery group, use GetRecoveryGroupReadinessSummary',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of objects that you want to return with this call',
@@ -836,6 +868,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -848,6 +881,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'get-recovery-group',
       description: 'Gets details about a recovery group, including a list of the cells that are included in it',
       options: [
+
         Option(
           name: '--recovery-group-name',
           description: 'The name of a recovery group',
@@ -873,6 +907,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -885,6 +920,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'get-recovery-group-readiness-summary',
       description: 'Displays a summary of information about a recovery group\'s readiness status. Includes the readiness checks for resources in the recovery group and the readiness status of each one',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of objects that you want to return with this call',
@@ -955,6 +991,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -967,6 +1004,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'get-resource-set',
       description: 'Displays the details about a resource set, including a list of the resources in the set',
       options: [
+
         Option(
           name: '--resource-set-name',
           description: 'Name of a resource set',
@@ -992,6 +1030,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1004,6 +1043,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'list-cells',
       description: 'Lists the cells for an account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of objects that you want to return with this call',
@@ -1065,6 +1105,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1077,6 +1118,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'list-cross-account-authorizations',
       description: 'Lists the cross-account readiness authorizations that are in place for an account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of objects that you want to return with this call',
@@ -1138,6 +1180,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1150,6 +1193,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'list-readiness-checks',
       description: 'Lists the readiness checks for an account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of objects that you want to return with this call',
@@ -1211,6 +1255,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1223,6 +1268,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'list-recovery-groups',
       description: 'Lists the recovery groups in an account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of objects that you want to return with this call',
@@ -1284,6 +1330,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1296,6 +1343,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'list-resource-sets',
       description: 'Lists the resource sets in an account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of objects that you want to return with this call',
@@ -1357,6 +1405,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1369,6 +1418,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'list-rules',
       description: 'Lists all readiness rules, or lists the readiness rules for a specific resource type',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of objects that you want to return with this call',
@@ -1439,6 +1489,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1451,6 +1502,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'list-tags-for-resources',
       description: 'Lists the tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for a resource',
@@ -1476,6 +1528,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1488,6 +1541,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a tag to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for a resource',
@@ -1521,6 +1575,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1533,6 +1588,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for a resource',
@@ -1567,6 +1623,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1579,6 +1636,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'update-cell',
       description: 'Updates a cell to replace the list of nested cells with a new list of nested cells',
       options: [
+
         Option(
           name: '--cell-name',
           description: 'The name of the cell',
@@ -1613,6 +1671,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1625,6 +1684,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'update-readiness-check',
       description: 'Updates a readiness check',
       options: [
+
         Option(
           name: '--readiness-check-name',
           description: 'Name of a readiness check',
@@ -1659,6 +1719,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1671,6 +1732,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'update-recovery-group',
       description: 'Updates a recovery group',
       options: [
+
         Option(
           name: '--cells',
           description: 'A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list',
@@ -1705,6 +1767,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1717,6 +1780,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
       name: 'update-resource-set',
       description: 'Updates a resource set',
       options: [
+
         Option(
           name: '--resource-set-name',
           description: 'Name of a resource set',
@@ -1760,6 +1824,7 @@ final FigSpec route53RecoveryReadinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,14 +9,17 @@ final FigSpec runSpec = FigSpec(
   name: 'run',
   description: 'Manage your Cloud Run applications',
   subcommands: [
+
     Subcommand(
       name: 'configurations',
       description: 'View and manage your Cloud Run configurations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Obtain details about a given configuration',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -165,6 +168,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -221,6 +225,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -243,6 +248,7 @@ final FigSpec runSpec = FigSpec(
           name: 'list',
           description: 'List available Configurations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -424,6 +430,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -495,6 +502,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -509,6 +517,7 @@ final FigSpec runSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -646,6 +655,7 @@ final FigSpec runSpec = FigSpec(
             name: 'PLATFORM',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'gke'),
               FigSuggestion(name: 'kubernetes'),
               FigSuggestion(name: 'managed')
@@ -702,6 +712,7 @@ final FigSpec runSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -718,6 +729,7 @@ final FigSpec runSpec = FigSpec(
       name: 'deploy',
       description: 'Deploy a container to Cloud Run',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -857,6 +869,7 @@ final FigSpec runSpec = FigSpec(
             name: 'CONNECTIVITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'external'),
               FigSuggestion(name: 'internal')
             ]
@@ -1027,6 +1040,7 @@ final FigSpec runSpec = FigSpec(
             name: 'PLATFORM',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'gke'),
               FigSuggestion(name: 'kubernetes'),
               FigSuggestion(name: 'managed')
@@ -1274,6 +1288,7 @@ final FigSpec runSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1307,10 +1322,12 @@ final FigSpec runSpec = FigSpec(
       name: 'domain-mappings',
       description: 'View and manage your Cloud Run for Anthos domain mappings',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create domain mappings for Cloud Run for Anthos',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1475,6 +1492,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -1543,6 +1561,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1559,6 +1578,7 @@ final FigSpec runSpec = FigSpec(
           name: 'delete',
           description: 'Delete domain mappings for Cloud Run for Anthos',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1719,6 +1739,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -1775,6 +1796,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1791,6 +1813,7 @@ final FigSpec runSpec = FigSpec(
           name: 'describe',
           description: 'Describe domain mappings for Cloud Run for Anthos',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1951,6 +1974,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -2007,6 +2031,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2023,6 +2048,7 @@ final FigSpec runSpec = FigSpec(
           name: 'list',
           description: 'Lists domain mappings for Cloud Run for Anthos',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2204,6 +2230,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -2275,6 +2302,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2289,6 +2317,7 @@ final FigSpec runSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2426,6 +2455,7 @@ final FigSpec runSpec = FigSpec(
             name: 'PLATFORM',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'gke'),
               FigSuggestion(name: 'kubernetes'),
               FigSuggestion(name: 'managed')
@@ -2482,6 +2512,7 @@ final FigSpec runSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2498,10 +2529,12 @@ final FigSpec runSpec = FigSpec(
       name: 'regions',
       description: 'View available Cloud Run (fully managed) regions',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List available Cloud Run (fully managed) regions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2672,6 +2705,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -2743,6 +2777,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2757,6 +2792,7 @@ final FigSpec runSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2894,6 +2930,7 @@ final FigSpec runSpec = FigSpec(
             name: 'PLATFORM',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'gke'),
               FigSuggestion(name: 'kubernetes'),
               FigSuggestion(name: 'managed')
@@ -2950,6 +2987,7 @@ final FigSpec runSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2966,10 +3004,12 @@ final FigSpec runSpec = FigSpec(
       name: 'revisions',
       description: 'View and manage your Cloud Run revisions',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete a revision',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3118,6 +3158,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -3174,6 +3215,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3196,6 +3238,7 @@ final FigSpec runSpec = FigSpec(
           name: 'describe',
           description: 'Obtain details about revisions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3344,6 +3387,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -3400,6 +3444,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3422,6 +3467,7 @@ final FigSpec runSpec = FigSpec(
           name: 'list',
           description: 'List available revisions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3603,6 +3649,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -3685,6 +3732,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3699,6 +3747,7 @@ final FigSpec runSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3836,6 +3885,7 @@ final FigSpec runSpec = FigSpec(
             name: 'PLATFORM',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'gke'),
               FigSuggestion(name: 'kubernetes'),
               FigSuggestion(name: 'managed')
@@ -3892,6 +3942,7 @@ final FigSpec runSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3908,10 +3959,12 @@ final FigSpec runSpec = FigSpec(
       name: 'routes',
       description: 'View your Cloud Run routes',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Obtain details about a given route',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4060,6 +4113,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -4116,6 +4170,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4138,6 +4193,7 @@ final FigSpec runSpec = FigSpec(
           name: 'list',
           description: 'List available Routes',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4319,6 +4375,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -4390,6 +4447,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4404,6 +4462,7 @@ final FigSpec runSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4541,6 +4600,7 @@ final FigSpec runSpec = FigSpec(
             name: 'PLATFORM',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'gke'),
               FigSuggestion(name: 'kubernetes'),
               FigSuggestion(name: 'managed')
@@ -4597,6 +4657,7 @@ final FigSpec runSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4613,10 +4674,12 @@ final FigSpec runSpec = FigSpec(
       name: 'services',
       description: 'View and manage your Cloud Run services',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding to a Cloud Run service',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4788,6 +4851,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -4856,6 +4920,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4878,6 +4943,7 @@ final FigSpec runSpec = FigSpec(
           name: 'delete',
           description: 'Delete a service',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5026,6 +5092,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -5082,6 +5149,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5104,6 +5172,7 @@ final FigSpec runSpec = FigSpec(
           name: 'describe',
           description: 'Obtain details about a given service',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5252,6 +5321,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -5308,6 +5378,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5330,6 +5401,7 @@ final FigSpec runSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a Cloud Run service',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5500,6 +5572,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -5567,6 +5640,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5589,6 +5663,7 @@ final FigSpec runSpec = FigSpec(
           name: 'list',
           description: 'List available services',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5770,6 +5845,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -5841,6 +5917,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5857,6 +5934,7 @@ final FigSpec runSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding of a Cloud Run service',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6032,6 +6110,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -6100,6 +6179,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6122,6 +6202,7 @@ final FigSpec runSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a service',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6259,6 +6340,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -6315,6 +6397,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6327,6 +6410,7 @@ final FigSpec runSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SERVICE',
               description: 'ID of the service or fully qualified identifier for the service'
@@ -6341,6 +6425,7 @@ final FigSpec runSpec = FigSpec(
           name: 'update',
           description: 'Update Cloud Run environment variables and other configuration settings',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6476,6 +6561,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'CONNECTIVITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'external'),
                   FigSuggestion(name: 'internal')
                 ]
@@ -6645,6 +6731,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -6892,6 +6979,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6925,6 +7013,7 @@ final FigSpec runSpec = FigSpec(
           name: 'update-traffic',
           description: 'Adjust the traffic assignments for a Cloud Run service',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7077,6 +7166,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'PLATFORM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'gke'),
                   FigSuggestion(name: 'kubernetes'),
                   FigSuggestion(name: 'managed')
@@ -7148,6 +7238,7 @@ final FigSpec runSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7168,6 +7259,7 @@ final FigSpec runSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7305,6 +7397,7 @@ final FigSpec runSpec = FigSpec(
             name: 'PLATFORM',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'gke'),
               FigSuggestion(name: 'kubernetes'),
               FigSuggestion(name: 'managed')
@@ -7361,6 +7454,7 @@ final FigSpec runSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7375,6 +7469,7 @@ final FigSpec runSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7512,6 +7607,7 @@ final FigSpec runSpec = FigSpec(
         name: 'PLATFORM',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'gke'),
           FigSuggestion(name: 'kubernetes'),
           FigSuggestion(name: 'managed')
@@ -7568,6 +7664,7 @@ final FigSpec runSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

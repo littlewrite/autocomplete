@@ -9,10 +9,12 @@ final FigSpec trustedadvisorSpec = FigSpec(
   name: 'trustedadvisor',
   description: 'TrustedAdvisor Public API',
   subcommands: [
+
     Subcommand(
       name: 'batch-update-recommendation-resource-exclusion',
       description: 'Update one or more exclusion status for a list of recommendation resources',
       options: [
+
         Option(
           name: '--recommendation-resource-exclusions',
           description: 'A list of recommendation resource ARNs and exclusion status to update',
@@ -38,6 +40,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
       name: 'get-organization-recommendation',
       description: 'Get a specific recommendation within an AWS Organizations organization. This API supports only prioritized recommendations',
       options: [
+
         Option(
           name: '--organization-recommendation-identifier',
           description: 'The Recommendation identifier',
@@ -75,6 +79,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
       name: 'get-recommendation',
       description: 'Get a specific Recommendation',
       options: [
+
         Option(
           name: '--recommendation-identifier',
           description: 'The Recommendation identifier',
@@ -112,6 +118,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
       name: 'list-checks',
       description: 'List a filterable set of Checks',
       options: [
+
         Option(
           name: '--aws-service',
           description: 'The aws service associated with the check',
@@ -221,6 +229,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
       name: 'list-organization-recommendation-accounts',
       description: 'Lists the accounts that own the resources for an organization aggregate recommendation. This API only supports prioritized recommendations',
       options: [
+
         Option(
           name: '--affected-account-id',
           description: 'An account affected by this organization recommendation',
@@ -312,6 +322,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -324,6 +335,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
       name: 'list-organization-recommendation-resources',
       description: 'List Resources of a Recommendation within an Organization. This API only supports prioritized recommendations',
       options: [
+
         Option(
           name: '--affected-account-id',
           description: 'An account affected by this organization recommendation',
@@ -430,6 +442,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -442,6 +455,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
       name: 'list-organization-recommendations',
       description: 'List a filterable set of Recommendations within an Organization. This API only supports prioritized recommendations',
       options: [
+
         Option(
           name: '--after-last-updated-at',
           description: 'After the last update of the Recommendation',
@@ -575,6 +589,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -587,6 +602,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
       name: 'list-recommendation-resources',
       description: 'List Resources of a Recommendation',
       options: [
+
         Option(
           name: '--exclusion-status',
           description: 'The exclusion status of the resource',
@@ -684,6 +700,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -696,6 +713,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
       name: 'list-recommendations',
       description: 'List a filterable set of Recommendations',
       options: [
+
         Option(
           name: '--after-last-updated-at',
           description: 'After the last update of the Recommendation',
@@ -829,6 +847,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -841,6 +860,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
       name: 'update-organization-recommendation-lifecycle',
       description: 'Update the lifecycle of a Recommendation within an Organization. This API only supports prioritized recommendations',
       options: [
+
         Option(
           name: '--lifecycle-stage',
           description: 'The new lifecycle stage',
@@ -893,6 +913,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -905,6 +926,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
       name: 'update-recommendation-lifecycle',
       description: 'Update the lifecyle of a Recommendation. This API only supports prioritized recommendations',
       options: [
+
         Option(
           name: '--lifecycle-stage',
           description: 'The new lifecycle stage',
@@ -957,6 +979,7 @@ final FigSpec trustedadvisorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

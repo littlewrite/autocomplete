@@ -16,6 +16,7 @@ final FigSpec autocannonSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-c', '--connections'],
       description: 'The number of concurrent connections to use',
@@ -90,6 +91,7 @@ final FigSpec autocannonSpec = FigSpec(
       name: ['-W', '--warmup'],
       description: 'Use a warm up interval before starting sampling. This enables startup processes to finish and traffic to normalize before sampling begins',
       args: [
+
         Arg(
           name: '-c',
           defaultValue: '1'
@@ -117,6 +119,7 @@ final FigSpec autocannonSpec = FigSpec(
         name: 'METHOD',
         defaultValue: 'GET',
         suggestions: [
+
           FigSuggestion(name: 'GET'),
           FigSuggestion(name: 'POST'),
           FigSuggestion(name: 'PUT'),
@@ -172,7 +175,10 @@ final FigSpec autocannonSpec = FigSpec(
       dependsOn: ['-H', '--headers'],
       args: [
         Arg(
-        name: 'FILE'
+        name: 'FILE',
+        generators: Generator(
+          template: 'filepaths'
+        )
       )
       ]
     ),

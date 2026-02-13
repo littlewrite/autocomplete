@@ -9,10 +9,12 @@ final FigSpec workdocsSpec = FigSpec(
   name: 'workdocs',
   description: 'The Amazon WorkDocs API is designed for the following use cases:   File Migration: File migration applications are supported for users who want to migrate their files from an on-premises or off-premises file system or service. Users can insert files into a user directory structure, as well as allow for basic metadata changes, such as modifications to the permissions of files.   Security: Support security applications are supported for users who have additional security needs, such as antivirus or data loss prevention. The API actions, along with CloudTrail, allow these applications to detect when changes occur in Amazon WorkDocs. Then, the application can take the necessary actions and replace the target file. If the target file violates the policy, the application can also choose to email the user.   eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery and analytics. These applications can choose to mimic or record the actions in an Amazon WorkDocs site, along with CloudTrail, to replicate data for eDiscovery, backup, or analytical applications.   All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They not only require the use of the Amazon Web Services SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is not limited to, the ability to modify file permissions and upload any file to any user. This allows developers to perform the three use cases above, as well as give users the ability to grant access on a selective basis using the IAM model.  The pricing for Amazon WorkDocs APIs varies depending on the API call type for these actions:    READ (Get*)     WRITE (Activate*, Add*, Create*, Deactivate*, Initiate*, Update*)     LIST (Describe*)     DELETE*, CANCEL    For information about Amazon WorkDocs API pricing, see Amazon WorkDocs Pricing',
   subcommands: [
+
     Subcommand(
       name: 'abort-document-version-upload',
       description: 'Aborts the upload of the specified document version that was previously initiated by InitiateDocumentVersionUpload. The client should make this call only when it no longer intends to upload the document version, or fails to do so',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -56,6 +58,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'activate-user',
       description: 'Activates the specified user. Only active users can access Amazon WorkDocs',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The ID of the user',
@@ -102,6 +106,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'add-resource-permissions',
       description: 'Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -166,6 +172,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'create-comment',
       description: 'Adds a new comment to the specified document version',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -265,6 +273,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -277,6 +286,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'create-custom-metadata',
       description: 'Adds one or more custom properties to the specified resource (a folder, document, or version)',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -329,6 +339,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -341,6 +352,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'create-folder',
       description: 'Creates a folder with the specified name and parent folder',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -384,6 +396,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -396,6 +409,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'create-labels',
       description: 'Adds the specified list of labels to the given resource (a document or folder)',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The ID of the resource',
@@ -439,6 +453,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -451,6 +466,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'create-notification-subscription',
       description: 'Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription. For more information, see Setting up notifications for an IAM user or role in the Amazon WorkDocs Developer Guide',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The ID of the organization',
@@ -503,6 +519,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -515,6 +532,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'create-user',
       description: 'Creates a user in a Simple AD or Microsoft AD directory. The status of a newly created user is "ACTIVE". New users can access Amazon WorkDocs',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The ID of the organization',
@@ -612,6 +630,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -624,6 +643,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'deactivate-user',
       description: 'Deactivates the specified user, which revokes the user\'s access to Amazon WorkDocs',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The ID of the user',
@@ -658,6 +678,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -670,6 +691,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'delete-comment',
       description: 'Deletes the specified comment from the document version',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -722,6 +744,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -734,6 +757,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'delete-custom-metadata',
       description: 'Deletes custom metadata from the specified resource',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -794,6 +818,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -806,6 +831,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'delete-document',
       description: 'Permanently deletes the specified document and its associated metadata',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -840,6 +866,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -852,6 +879,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'delete-document-version',
       description: 'Deletes a specific version of a document',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -903,6 +931,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -915,6 +944,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'delete-folder',
       description: 'Permanently deletes the specified folder and its contents',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -949,6 +979,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -961,6 +992,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'delete-folder-contents',
       description: 'Deletes the contents of the specified folder',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -995,6 +1027,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1007,6 +1040,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'delete-labels',
       description: 'Deletes the specified list of labels from a resource',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'The ID of the resource',
@@ -1058,6 +1092,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1070,6 +1105,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'delete-notification-subscription',
       description: 'Deletes the specified subscription from the specified organization',
       options: [
+
         Option(
           name: '--subscription-id',
           description: 'The ID of the subscription',
@@ -1104,6 +1140,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1116,6 +1153,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'delete-user',
       description: 'Deletes the specified user from a Simple AD or Microsoft AD directory.  Deleting a user immediately and permanently deletes all content in that user\'s folder structure. Site retention policies do NOT apply to this type of deletion',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials',
@@ -1150,6 +1188,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1162,6 +1201,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'describe-activities',
       description: 'Describes the user activities in a specified time period',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -1294,6 +1334,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1306,6 +1347,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'describe-comments',
       description: 'List all the comments for the specified document version',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -1394,6 +1436,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1406,6 +1449,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'describe-document-versions',
       description: 'Retrieves the document versions for the specified document. By default, only active versions are returned',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -1503,6 +1547,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1515,6 +1560,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'describe-folder-contents',
       description: 'Describes the contents of the specified folder, including its documents and subfolders. By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -1630,6 +1676,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1642,6 +1689,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'describe-groups',
       description: 'Describes the groups specified by the query. Groups are defined by the underlying Active Directory',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -1730,6 +1778,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1742,6 +1791,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'describe-notification-subscriptions',
       description: 'Lists the specified notification subscriptions',
       options: [
+
         Option(
           name: '--organization-id',
           description: 'The ID of the organization',
@@ -1812,6 +1862,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1824,6 +1875,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'describe-resource-permissions',
       description: 'Describes the permissions of a specified resource',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -1912,6 +1964,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1924,6 +1977,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'describe-root-folders',
       description: 'Describes the current user\'s special folders; the RootFolder and the RecycleBin. RootFolder is the root of user\'s files and folders and RecycleBin is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients. This action requires an authentication token. To get an authentication token, register an application with Amazon WorkDocs. For more information, see Authentication and Access Control for User Applications in the Amazon WorkDocs Developer Guide',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token',
@@ -1994,6 +2048,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2006,6 +2061,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'describe-users',
       description: 'Describes the specified users. You can describe all users or filter the results (for example, by status or organization). By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2139,6 +2195,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2151,6 +2208,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'get-current-user',
       description: 'Retrieves details of the current user for whom the authentication token was generated. This is not a valid action for SigV4 (administrative API) clients. This action requires an authentication token. To get an authentication token, register an application with Amazon WorkDocs. For more information, see Authentication and Access Control for User Applications in the Amazon WorkDocs Developer Guide',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token',
@@ -2176,6 +2234,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2188,6 +2247,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'get-document',
       description: 'Retrieves details of a document',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2230,6 +2290,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2242,6 +2303,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'get-document-path',
       description: 'Retrieves the path information (the hierarchy from the root folder) for the requested document. By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the names of the parent folders',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2303,6 +2365,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2315,6 +2378,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'get-document-version',
       description: 'Retrieves version metadata for the specified document',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2375,6 +2439,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2387,6 +2452,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'get-folder',
       description: 'Retrieves the metadata of the specified folder',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2429,6 +2495,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2441,6 +2508,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'get-folder-path',
       description: 'Retrieves the path information (the hierarchy from the root folder) for the specified folder. By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2502,6 +2570,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2514,6 +2583,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'get-resources',
       description: 'Retrieves a collection of resources, including folders and documents. The only CollectionType supported is SHARED_WITH_ME',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2575,6 +2645,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2587,6 +2658,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'initiate-document-version-upload',
       description: 'Creates a new document object and version object. The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call UpdateDocumentVersion. To cancel the document upload, call AbortDocumentVersionUpload',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2675,6 +2747,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2687,6 +2760,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'remove-all-resource-permissions',
       description: 'Removes all the permissions from the specified resource',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2721,6 +2795,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2733,6 +2808,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'remove-resource-permission',
       description: 'Removes the permission for the specified principal from the specified resource',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2785,6 +2861,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2797,6 +2874,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'restore-document-versions',
       description: 'Recovers a deleted version of an Amazon WorkDocs document',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2831,6 +2909,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2843,6 +2922,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'search-resources',
       description: 'Searches metadata and the content of folders, documents, document versions, and comments',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -2967,6 +3047,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2979,6 +3060,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'update-document',
       description: 'Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -3040,6 +3122,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3052,6 +3135,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'update-document-version',
       description: 'Changes the status of the document version to ACTIVE.  Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by InitiateDocumentVersionUpload',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -3104,6 +3188,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3116,6 +3201,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'update-folder',
       description: 'Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -3177,6 +3263,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3189,6 +3276,7 @@ final FigSpec workdocsSpec = FigSpec(
       name: 'update-user',
       description: 'Updates the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site',
       options: [
+
         Option(
           name: '--authentication-token',
           description: 'Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API',
@@ -3286,6 +3374,7 @@ final FigSpec workdocsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

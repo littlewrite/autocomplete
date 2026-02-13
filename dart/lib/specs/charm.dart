@@ -9,6 +9,7 @@ final FigSpec charmSpec = FigSpec(
   name: 'charm',
   description: 'Do Charm stuff; run without arguments for a TUI or use the sub-commands like a pro',
   subcommands: [
+
     Subcommand(
       name: 'backup-keys',
       description: 'Backup your Charm account keys'
@@ -21,6 +22,7 @@ final FigSpec charmSpec = FigSpec(
       name: 'crypt',
       description: 'Use charm encryption',
       subcommands: [
+
         Subcommand(
           name: 'decrypt',
           description: 'Decrypt stdin with your Charm account encryption key'
@@ -43,6 +45,7 @@ final FigSpec charmSpec = FigSpec(
       name: 'fs',
       description: 'Use the Charm file systems',
       subcommands: [
+
         Subcommand(
           name: 'cat',
           description: 'Output the content of the file at path',
@@ -56,6 +59,7 @@ final FigSpec charmSpec = FigSpec(
           name: 'cp',
           description: 'Copy a file, preface source or destination with "charm:" to specify a remote path',
           args: [
+
             Arg(
               name: '[charm:]PATH'
             ),
@@ -64,6 +68,7 @@ final FigSpec charmSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['--recursive', '-r'],
               description: 'Copy directories recursively'
@@ -83,6 +88,7 @@ final FigSpec charmSpec = FigSpec(
           name: 'mv',
           description: 'Move a file, preface source or destination with "charm" to specify a remote  path',
           args: [
+
             Arg(
               name: '[charm:]PATH'
             ),
@@ -126,12 +132,14 @@ final FigSpec charmSpec = FigSpec(
         Arg(
         name: 'BACKUP.tar',
         suggestions: [
+
           FigSuggestion(name: 'BACKUP.tar')
         ],
         template: 'filepaths'
       )
       ],
       options: [
+
         Option(
           name: ['--force-overwrite', '-f'],
           description: 'Overwrite if keys exist; don\'t prompt for input'
@@ -146,6 +154,7 @@ final FigSpec charmSpec = FigSpec(
       name: 'keys',
       description: 'Browse or print linked SSH keys',
       options: [
+
         Option(
           name: ['--randomart', '-r'],
           description: 'Print SSH 5.1 randomart for each key (the Drunken Bishop algorithm)'
@@ -160,6 +169,7 @@ final FigSpec charmSpec = FigSpec(
       name: 'kv',
       description: 'Use the Charm key value store',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete a key with an optional @ db',
@@ -202,6 +212,7 @@ final FigSpec charmSpec = FigSpec(
           name: 'set',
           description: 'Set a value for a key with an optional @ db',
           args: [
+
             Arg(
               name: 'KEY[@DB]'
             ),
@@ -245,6 +256,7 @@ final FigSpec charmSpec = FigSpec(
       name: 'serve',
       description: 'Start a self-hosted Charm Cloud server',
       options: [
+
         Option(
           name: '--data-dir',
           description: 'Directory to store SQLite db, SSH keys and file data',
@@ -262,6 +274,7 @@ final FigSpec charmSpec = FigSpec(
             Arg(
             name: 'HEALTH_PORT',
             suggestions: [
+
               FigSuggestion(name: '35356')
             ]
           )
@@ -274,6 +287,7 @@ final FigSpec charmSpec = FigSpec(
             Arg(
             name: 'HTTP_PORT',
             suggestions: [
+
               FigSuggestion(name: '35354')
             ]
           )
@@ -286,6 +300,7 @@ final FigSpec charmSpec = FigSpec(
             Arg(
             name: 'SSH_PORT',
             suggestions: [
+
               FigSuggestion(name: '35353')
             ]
           )
@@ -298,6 +313,7 @@ final FigSpec charmSpec = FigSpec(
             Arg(
             name: 'STATS_PORT',
             suggestions: [
+
               FigSuggestion(name: '35355')
             ]
           )
@@ -307,6 +323,7 @@ final FigSpec charmSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Help for charm'

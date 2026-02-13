@@ -9,10 +9,12 @@ final FigSpec iotfleethubSpec = FigSpec(
   name: 'iotfleethub',
   description: 'With Fleet Hub for IoT Device Management you can build stand-alone web applications for monitoring the health of your device fleets',
   subcommands: [
+
     Subcommand(
       name: 'create-application',
       description: 'Creates a Fleet Hub for IoT Device Management web application. When creating a Fleet Hub application, you must create an organization instance of IAM Identity Center if you don\'t already have one. The Fleet Hub application you create must also be in the same Amazon Web Services Region of the organization instance of IAM Identity Center. For more information see Enabling IAM Identity Center and Organization instances of IAM Identity Center',
       options: [
+
         Option(
           name: '--application-name',
           description: 'The name of the web application',
@@ -74,6 +76,7 @@ final FigSpec iotfleethubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec iotfleethubSpec = FigSpec(
       name: 'delete-application',
       description: 'Deletes a Fleet Hub for IoT Device Management web application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique Id of the web application',
@@ -120,6 +124,7 @@ final FigSpec iotfleethubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec iotfleethubSpec = FigSpec(
       name: 'describe-application',
       description: 'Gets information about a Fleet Hub for IoT Device Management web application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique Id of the web application',
@@ -157,6 +163,7 @@ final FigSpec iotfleethubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec iotfleethubSpec = FigSpec(
       name: 'list-applications',
       description: 'Gets a list of Fleet Hub for IoT Device Management web applications for the current account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token used to get the next set of results',
@@ -212,6 +220,7 @@ final FigSpec iotfleethubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec iotfleethubSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -249,6 +259,7 @@ final FigSpec iotfleethubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec iotfleethubSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds to or modifies the tags of the specified resource. Tags are metadata which can be used to manage a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -295,6 +307,7 @@ final FigSpec iotfleethubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec iotfleethubSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags (metadata) from the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -341,6 +355,7 @@ final FigSpec iotfleethubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -353,6 +368,7 @@ final FigSpec iotfleethubSpec = FigSpec(
       name: 'update-application',
       description: 'Updates information about a Fleet Hub for IoT Device Management web application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique Id of the web application',
@@ -405,6 +421,7 @@ final FigSpec iotfleethubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

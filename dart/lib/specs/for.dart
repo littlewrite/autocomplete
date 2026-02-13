@@ -9,11 +9,13 @@ final FigSpec forSpec = FigSpec(
   name: 'for',
   description: 'Perform a set of commands multiple times',
   args: [
+
     Arg(
       name: 'var'
     ),
     Arg(
       suggestions: [
+
         FigSuggestion(name: 'in')
       ]
     ),

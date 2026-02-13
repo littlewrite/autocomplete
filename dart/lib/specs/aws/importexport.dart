@@ -9,10 +9,12 @@ final FigSpec importexportSpec = FigSpec(
   name: 'importexport',
   description: 'AWS Import/Export Service AWS Import/Export accelerates transferring large amounts of data between the AWS cloud and portable storage devices that you mail to us. AWS Import/Export transfers data directly onto and off of your storage devices using Amazon\'s high-speed internal network and bypassing the Internet. For large data sets, AWS Import/Export is often faster than Internet transfer and more cost effective than upgrading your connectivity',
   subcommands: [
+
     Subcommand(
       name: 'cancel-job',
       description: 'This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is complete',
       options: [
+
         Option(
           name: '--job-id',
           description: 'A unique identifier which refers to a particular job',
@@ -47,6 +49,7 @@ final FigSpec importexportSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec importexportSpec = FigSpec(
       name: 'create-job',
       description: 'This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature that you use to identify your storage device, and the address where you should ship your storage device',
       options: [
+
         Option(
           name: '--job-type',
           description: 'Specifies whether the job to initiate is an import or export job',
@@ -119,6 +123,7 @@ final FigSpec importexportSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -131,6 +136,7 @@ final FigSpec importexportSpec = FigSpec(
       name: 'get-shipping-label',
       description: 'This operation generates a pre-paid UPS shipping label that you will use to ship your device to AWS for processing',
       options: [
+
         Option(
           name: '--job-ids',
           args: [
@@ -281,6 +287,7 @@ final FigSpec importexportSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -293,6 +300,7 @@ final FigSpec importexportSpec = FigSpec(
       name: 'get-status',
       description: 'This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and the signature value associated with the job. You can only return information about jobs you own',
       options: [
+
         Option(
           name: '--job-id',
           description: 'A unique identifier which refers to a particular job',
@@ -327,6 +335,7 @@ final FigSpec importexportSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -339,6 +348,7 @@ final FigSpec importexportSpec = FigSpec(
       name: 'list-jobs',
       description: 'This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return Test2 followed by Test1',
       options: [
+
         Option(
           name: '--max-jobs',
           description: 'Sets the maximum number of jobs returned in the response. If there are additional jobs that were not returned because MaxJobs was exceeded, the response contains <IsTruncated>true</IsTruncated>. To return the additional jobs, see Marker',
@@ -409,6 +419,7 @@ final FigSpec importexportSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -421,6 +432,7 @@ final FigSpec importexportSpec = FigSpec(
       name: 'update-job',
       description: 'You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but before the data transfer starts and you can only use it on jobs you own',
       options: [
+
         Option(
           name: '--job-id',
           description: 'A unique identifier which refers to a particular job',
@@ -481,6 +493,7 @@ final FigSpec importexportSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

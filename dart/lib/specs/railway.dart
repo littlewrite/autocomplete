@@ -9,6 +9,7 @@ final FigSpec railwaySpec = FigSpec(
   name: 'railway',
   description: 'CLI for managing Railway Apps',
   subcommands: [
+
     Subcommand(
       name: 'add',
       description: 'Add a plugin to your project'
@@ -21,6 +22,7 @@ final FigSpec railwaySpec = FigSpec(
         name: 'shell',
         description: 'The shell to generate completions for',
         suggestions: [
+
           FigSuggestion(name: 'bash'),
           FigSuggestion(name: 'zsh'),
           FigSuggestion(name: 'fish'),
@@ -38,6 +40,7 @@ final FigSpec railwaySpec = FigSpec(
         description: 'The plugin to connect to',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'postgresql'),
           FigSuggestion(name: 'mysql'),
           FigSuggestion(name: 'redis'),
@@ -65,6 +68,7 @@ final FigSpec railwaySpec = FigSpec(
       name: 'down',
       description: 'Remove the most recent deployment',
       options: [
+
         Option(
           name: ['-e', '--environment'],
           description: 'Environment to delete from',
@@ -84,6 +88,7 @@ final FigSpec railwaySpec = FigSpec(
         description: 'The environment to change to',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'production'),
           FigSuggestion(name: 'preview')
         ]
@@ -124,6 +129,7 @@ final FigSpec railwaySpec = FigSpec(
       name: 'login',
       description: 'Login to railway',
       options: [
+
         Option(
           name: '--browserless',
           description: 'Login without opening a browser'
@@ -138,6 +144,7 @@ final FigSpec railwaySpec = FigSpec(
       name: 'logs',
       description: 'Show logs for the most-recent deployment',
       options: [
+
         Option(
           name: ['-n', '--lines'],
           description: 'Output a specific number of lines',
@@ -154,6 +161,7 @@ final FigSpec railwaySpec = FigSpec(
       name: 'open',
       description: 'Open the project',
       subcommands: [
+
         Subcommand(
           name: 'live',
           description: 'Open the live project'
@@ -172,6 +180,7 @@ final FigSpec railwaySpec = FigSpec(
       name: 'run',
       description: 'Run a local command using variables from the active environment',
       options: [
+
         Option(
           name: ['-e', '--environment'],
           description: 'Environment to run in',
@@ -195,6 +204,7 @@ final FigSpec railwaySpec = FigSpec(
       name: 'shell',
       description: 'Open a subshell with Railway variables available',
       options: [
+
         Option(
           name: ['-s', '--service'],
           description: 'Deploy app to specific service',
@@ -226,6 +236,7 @@ final FigSpec railwaySpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-d', '--detach'],
           description: 'Detach from build logs'
@@ -249,6 +260,7 @@ final FigSpec railwaySpec = FigSpec(
       name: 'variables',
       description: 'Work with environment variables',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete variable',
@@ -273,6 +285,7 @@ final FigSpec railwaySpec = FigSpec(
           name: 'set',
           description: 'Set variable value',
           args: [
+
             Arg(
               name: 'variable',
               description: 'The name of the variable you want to set'
@@ -285,6 +298,7 @@ final FigSpec railwaySpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-e', '--environment'],
           description: 'Environment'
@@ -310,6 +324,7 @@ final FigSpec railwaySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for railway'

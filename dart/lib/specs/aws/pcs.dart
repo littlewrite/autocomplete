@@ -9,10 +9,12 @@ final FigSpec pcsSpec = FigSpec(
   name: 'pcs',
   description: 'Amazon Web Services Parallel Computing Service (Amazon Web Services PCS) is a managed service that makes it easier for you to run and scale your high performance computing (HPC) workloads, and build scientific and engineering models on Amazon Web Services using Slurm. For more information, see the Amazon Web Services Parallel Computing Service User Guide. This reference describes the actions and data types of the service management API. You can use the Amazon Web Services SDKs to call the API actions in software, or use the Command Line Interface (CLI) to call the API actions manually. These API actions manage the service through an Amazon Web Services account. The API actions operate on Amazon Web Services PCS resources. A resource is an entity in Amazon Web Services that you can work with. Amazon Web Services services create resources when you use the features of the service. Examples of Amazon Web Services PCS resources include clusters, compute node groups, and queues. For more information about resources in Amazon Web Services, see Resource in the Resource Explorer User Guide.  An Amazon Web Services PCS compute node is an Amazon EC2 instance. You don\'t launch compute nodes directly. Amazon Web Services PCS uses configuration information that you provide to launch compute nodes in your Amazon Web Services account. You receive billing charges for your running compute nodes. Amazon Web Services PCS automatically terminates your compute nodes when you delete the Amazon Web Services PCS resources related to those compute nodes',
   subcommands: [
+
     Subcommand(
       name: 'create-cluster',
       description: 'Creates a cluster in your account. Amazon Web Services PCS creates the cluster controller in a service-owned account. The cluster controller communicates with the cluster resources in your account. The subnets and security groups for the cluster must already exist before you use this API action.  It takes time for Amazon Web Services PCS to create the cluster. The cluster is in a Creating state until it is ready to use. There can only be 1 cluster in a Creating state per Amazon Web Services Region per Amazon Web Services account. CreateCluster fails with a ServiceQuotaExceededException if there is already a cluster in a Creating state',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'A name to identify the cluster. Example: MyCluster',
@@ -92,6 +94,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -104,6 +107,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'create-compute-node-group',
       description: 'Creates a managed set of compute nodes. You associate a compute node group with a cluster through 1 or more Amazon Web Services PCS queues or as part of the login fleet. A compute node group includes the definition of the compute properties and lifecycle management. Amazon Web Services PCS uses the information you provide to this API action to launch compute nodes in your account. You can only specify subnets in the same Amazon VPC as your cluster. You receive billing charges for the compute nodes that Amazon Web Services PCS launches in your account. You must already have a launch template before you call this API. For more information, see Launch an instance from a launch template in the Amazon Elastic Compute Cloud User Guide for Linux Instances',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster to create a compute node group in',
@@ -237,6 +241,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -249,6 +254,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'create-queue',
       description: 'Creates a job queue. You must associate 1 or more compute node groups with the queue. You can associate 1 compute node group with multiple queues',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster for which to create a queue',
@@ -310,6 +316,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -322,6 +329,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'delete-cluster',
       description: 'Deletes a cluster and all its linked resources. You must delete all queues and compute node groups associated with the cluster before you can delete the cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster to delete',
@@ -356,6 +364,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -368,6 +377,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'delete-compute-node-group',
       description: 'Deletes a compute node group. You must delete all queues associated with the compute node group first',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster of the compute node group',
@@ -411,6 +421,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -423,6 +434,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'delete-queue',
       description: 'Deletes a job queue. If the compute node group associated with this queue isn\'t associated with any other queues, Amazon Web Services PCS terminates all the compute nodes for this queue',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster of the queue',
@@ -466,6 +478,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -478,6 +491,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'get-cluster',
       description: 'Returns detailed information about a running cluster in your account. This API action provides networking information, endpoint information for communication with the scheduler, and provisioning status',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster of the queue',
@@ -503,6 +517,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -515,6 +530,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'get-compute-node-group',
       description: 'Returns detailed information about a compute node group. This API action provides networking information, EC2 instance type, compute node group status, and scheduler (such as Slurm) configuration',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster',
@@ -549,6 +565,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -561,6 +578,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'get-queue',
       description: 'Returns detailed information about a queue. The information includes the compute node groups that the queue uses to schedule jobs',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster of the queue',
@@ -595,6 +613,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -607,6 +626,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'list-clusters',
       description: 'Returns a list of running clusters in your account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The value of nextToken is a unique pagination token for each page of results returned. If nextToken is returned, there are more results available. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token returns an HTTP 400 InvalidToken error',
@@ -668,6 +688,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -680,6 +701,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'list-compute-node-groups',
       description: 'Returns a list of all compute node groups associated with a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster to list compute node groups for',
@@ -750,6 +772,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -762,6 +785,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'list-queues',
       description: 'Returns a list of all queues associated with a cluster',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster to list queues for',
@@ -832,6 +856,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -844,6 +869,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of all tags on an Amazon Web Services PCS resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which to list tags',
@@ -869,6 +895,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -881,6 +908,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'register-compute-node-group-instance',
       description: 'This API action isn\'t intended for you to use.  Amazon Web Services PCS uses this API action to register the compute nodes it launches in your account',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster to register the compute node group instance in',
@@ -915,6 +943,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -927,6 +956,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or edits tags on an Amazon Web Services PCS resource. Each tag consists of a tag key and a tag value. The tag key and tag value are case-sensitive strings. The tag value can be an empty (null) string. To add a tag, specify a new tag key and a tag value. To edit a tag, specify an existing tag key and a new tag value',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -961,6 +991,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -973,6 +1004,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes tags from an Amazon Web Services PCS resource. To delete a tag, specify the tag key and the Amazon Resource Name (ARN) of the Amazon Web Services PCS resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1007,6 +1039,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1019,6 +1052,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'update-compute-node-group',
       description: 'Updates a compute node group. You can update many of the fields related to your compute node group including the configurations for networking, compute nodes, and settings specific to your scheduler (such as Slurm)',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster of the compute node group',
@@ -1134,6 +1168,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1146,6 +1181,7 @@ final FigSpec pcsSpec = FigSpec(
       name: 'update-queue',
       description: 'Updates the compute node group configuration of a queue. Use this API to change the compute node groups that the queue can send jobs to',
       options: [
+
         Option(
           name: '--cluster-identifier',
           description: 'The name or ID of the cluster of the queue',
@@ -1198,6 +1234,7 @@ final FigSpec pcsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

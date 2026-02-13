@@ -9,10 +9,12 @@ final FigSpec ansibleConfigSpec = FigSpec(
   name: 'ansible-config',
   description: 'View ansible configuration',
   subcommands: [
+
     Subcommand(
       name: 'list',
       description: 'List and output available configs',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Show help and exit'
@@ -47,6 +49,7 @@ final FigSpec ansibleConfigSpec = FigSpec(
             name: 'TYPE',
             description: 'Plugin type',
             suggestions: [
+
               FigSuggestion(name: 'all'),
               FigSuggestion(name: 'base'),
               FigSuggestion(name: 'become'),
@@ -79,6 +82,7 @@ final FigSpec ansibleConfigSpec = FigSpec(
       name: 'dump',
       description: 'Shows the current settings, merges ansible.cfg if specified',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Show help and exit'
@@ -117,6 +121,7 @@ final FigSpec ansibleConfigSpec = FigSpec(
             name: 'TYPE',
             description: 'Plugin type',
             suggestions: [
+
               FigSuggestion(name: 'all'),
               FigSuggestion(name: 'base'),
               FigSuggestion(name: 'become'),
@@ -149,6 +154,7 @@ final FigSpec ansibleConfigSpec = FigSpec(
       name: 'view',
       description: 'Displays the current config file',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Show help and exit'
@@ -183,6 +189,7 @@ final FigSpec ansibleConfigSpec = FigSpec(
             name: 'TYPE',
             description: 'Plugin type',
             suggestions: [
+
               FigSuggestion(name: 'all'),
               FigSuggestion(name: 'base'),
               FigSuggestion(name: 'become'),
@@ -215,6 +222,7 @@ final FigSpec ansibleConfigSpec = FigSpec(
       name: 'init',
       description: 'Initializes a new config file (to stdout)',
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Show help and exit'
@@ -243,6 +251,7 @@ final FigSpec ansibleConfigSpec = FigSpec(
             description: 'Output format',
             isOptional: true,
             suggestions: [
+
               FigSuggestion(name: 'ini'),
               FigSuggestion(name: 'env'),
               FigSuggestion(name: 'vars')
@@ -270,6 +279,7 @@ final FigSpec ansibleConfigSpec = FigSpec(
             name: 'TYPE',
             description: 'Plugin type',
             suggestions: [
+
               FigSuggestion(name: 'all'),
               FigSuggestion(name: 'base'),
               FigSuggestion(name: 'become'),
@@ -300,6 +310,7 @@ final FigSpec ansibleConfigSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--version',
       description: 'Shows version number, config file location, module search path, module location, executable location and exit'

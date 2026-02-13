@@ -9,10 +9,12 @@ final FigSpec iottwinmakerSpec = FigSpec(
   name: 'iottwinmaker',
   description: 'IoT TwinMaker is a service with which you can build operational digital twins of physical systems. IoT TwinMaker overlays measurements and analysis from real-world sensors, cameras, and enterprise applications so you can create data visualizations to monitor your physical factory, building, or industrial plant. You can use this real-world data to monitor operations and diagnose and repair errors',
   subcommands: [
+
     Subcommand(
       name: 'batch-put-property-values',
       description: 'Sets values for multiple time series properties',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the properties to set',
@@ -47,6 +49,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'cancel-metadata-transfer-job',
       description: 'Cancels the metadata transfer job',
       options: [
+
         Option(
           name: '--metadata-transfer-job-id',
           description: 'The metadata transfer job Id',
@@ -84,6 +88,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'create-component-type',
       description: 'Creates a component type',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the component type',
@@ -209,6 +215,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -221,6 +228,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'create-entity',
       description: 'Creates an entity',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the entity',
@@ -309,6 +317,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -321,6 +330,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'create-metadata-transfer-job',
       description: 'Creates a new metadata transfer job',
       options: [
+
         Option(
           name: '--metadata-transfer-job-id',
           description: 'The metadata transfer job Id',
@@ -373,6 +383,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -385,6 +396,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'create-scene',
       description: 'Creates a scene',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the scene',
@@ -464,6 +476,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -476,6 +489,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'create-sync-job',
       description: 'This action creates a SyncJob',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The workspace ID',
@@ -528,6 +542,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -540,6 +555,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'create-workspace',
       description: 'Creates a workplace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace',
@@ -601,6 +617,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -613,6 +630,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'delete-component-type',
       description: 'Deletes a component type',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the component type',
@@ -647,6 +665,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -659,6 +678,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'delete-entity',
       description: 'Deletes an entity',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the entity to delete',
@@ -701,6 +721,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -713,6 +734,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'delete-scene',
       description: 'Deletes a scene',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace',
@@ -747,6 +769,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -759,6 +782,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'delete-sync-job',
       description: 'Delete the SyncJob',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The workspace ID',
@@ -793,6 +817,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -805,6 +830,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'delete-workspace',
       description: 'Deletes a workspace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace to delete',
@@ -830,6 +856,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -842,6 +869,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'execute-query',
       description: 'Run queries to access information from your knowledge graph of entities within individual workspaces.  The ExecuteQuery action only works with Amazon Web Services Java SDK2. ExecuteQuery will not work with any Amazon Web Services Java SDK version < 2.x',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace',
@@ -894,6 +922,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -906,6 +935,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'get-component-type',
       description: 'Retrieves information about a component type',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the component type',
@@ -940,6 +970,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -952,6 +983,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'get-entity',
       description: 'Retrieves information about an entity',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace',
@@ -986,6 +1018,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -998,6 +1031,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'get-metadata-transfer-job',
       description: 'Gets a nmetadata transfer job',
       options: [
+
         Option(
           name: '--metadata-transfer-job-id',
           description: 'The metadata transfer job Id',
@@ -1023,6 +1057,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1035,6 +1070,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'get-pricing-plan',
       description: 'Gets the pricing plan',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1051,6 +1087,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1063,6 +1100,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'get-property-value',
       description: 'Gets the property values for a component, component type, entity, or workspace. You must specify a value for either componentName, componentTypeId, entityId, or workspaceId',
       options: [
+
         Option(
           name: '--component-name',
           description: 'The name of the component whose property values the operation returns',
@@ -1169,6 +1207,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1181,6 +1220,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'get-property-value-history',
       description: 'Retrieves information about the history of a time series property value for a component, component type, entity, or workspace. You must specify a value for workspaceId. For entity-specific queries, specify values for componentName and entityId. For cross-entity quries, specify a value for componentTypeId',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace',
@@ -1332,6 +1372,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1344,6 +1385,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'get-scene',
       description: 'Retrieves information about a scene',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the scene',
@@ -1378,6 +1420,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1390,6 +1433,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'get-sync-job',
       description: 'Gets the SyncJob',
       options: [
+
         Option(
           name: '--sync-source',
           description: 'The sync source.  Currently the only supported syncSource is SITEWISE',
@@ -1424,6 +1468,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1436,6 +1481,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'get-workspace',
       description: 'Retrieves information about a workspace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace',
@@ -1461,6 +1507,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1473,6 +1520,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'list-component-types',
       description: 'Lists all component types in a workspace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace',
@@ -1525,6 +1573,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1537,6 +1586,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'list-components',
       description: 'This API lists the components of an entity',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The workspace ID',
@@ -1598,6 +1648,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1610,6 +1661,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'list-entities',
       description: 'Lists all entities in a workspace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace',
@@ -1662,6 +1714,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1674,6 +1727,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'list-metadata-transfer-jobs',
       description: 'Lists the metadata transfer jobs',
       options: [
+
         Option(
           name: '--source-type',
           description: 'The metadata transfer job\'s source type',
@@ -1735,6 +1789,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1747,6 +1802,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'list-properties',
       description: 'This API lists the properties of a component',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The workspace ID',
@@ -1817,6 +1873,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1829,6 +1886,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'list-scenes',
       description: 'Lists all scenes in a workspace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the scenes',
@@ -1872,6 +1930,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1884,6 +1943,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'list-sync-jobs',
       description: 'List all SyncJobs',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the sync job',
@@ -1927,6 +1987,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1939,6 +2000,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'list-sync-resources',
       description: 'Lists the sync resources',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the sync job',
@@ -2000,6 +2062,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2012,6 +2075,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags associated with a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -2055,6 +2119,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2067,6 +2132,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'list-workspaces',
       description: 'Retrieves information about workspaces in the current account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return at one time. The default is 25. Valid Range: Minimum value of 1. Maximum value of 250',
@@ -2101,6 +2167,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2113,6 +2180,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -2147,6 +2215,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2159,6 +2228,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -2193,6 +2263,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2205,6 +2276,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'update-component-type',
       description: 'Updates information in a component type',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace',
@@ -2310,6 +2382,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2322,6 +2395,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'update-entity',
       description: 'Updates an entity',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the entity',
@@ -2401,6 +2475,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2413,6 +2488,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'update-pricing-plan',
       description: 'Update the pricing plan',
       options: [
+
         Option(
           name: '--pricing-mode',
           description: 'The pricing mode',
@@ -2447,6 +2523,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2459,6 +2536,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'update-scene',
       description: 'Updates a scene',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace that contains the scene',
@@ -2529,6 +2607,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2541,6 +2620,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
       name: 'update-workspace',
       description: 'Updates a workspace',
       options: [
+
         Option(
           name: '--workspace-id',
           description: 'The ID of the workspace',
@@ -2593,6 +2673,7 @@ final FigSpec iottwinmakerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

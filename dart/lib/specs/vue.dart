@@ -9,6 +9,7 @@ final FigSpec vueSpec = FigSpec(
   name: 'vue',
   description: 'Vue cli tools',
   subcommands: [
+
     Subcommand(
       name: 'create',
       description: 'Create a new project powered by vue-cli-service',
@@ -18,6 +19,7 @@ final FigSpec vueSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-p', '--preset'],
           description: 'Skip prompts and use saved or remote preset',
@@ -115,6 +117,7 @@ final FigSpec vueSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--registry',
           description: 'Use specified npm registry when installing dependencies (only for npm)',
@@ -139,6 +142,7 @@ final FigSpec vueSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--registry',
           description: 'Use specified npm registry when installing dependencies (only for npm)',
@@ -162,6 +166,7 @@ final FigSpec vueSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--mode',
           args: [
@@ -215,6 +220,7 @@ final FigSpec vueSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-o', '--open'],
           description: 'Open browser'
@@ -247,6 +253,7 @@ final FigSpec vueSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-t', '--target'],
           description: 'Build target (app | lib | wc | wc-async, default: app)',
@@ -284,6 +291,7 @@ final FigSpec vueSpec = FigSpec(
       name: 'ui',
       description: 'Start and open the vue-cli ui',
       options: [
+
         Option(
           name: ['-H', '--host'],
           description: 'Host used for the UI server (default: localhost)',
@@ -324,6 +332,7 @@ final FigSpec vueSpec = FigSpec(
       name: 'init',
       description: 'Generate a project from a remote template (legacy API, requires @vue/cli-init)',
       args: [
+
         Arg(
           name: 'template'
         ),
@@ -332,6 +341,7 @@ final FigSpec vueSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-c', '--clone'],
           description: 'Use git clone when fetching remote template'
@@ -355,6 +365,7 @@ final FigSpec vueSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-g', '--get'],
           description: 'Get value from option',
@@ -400,6 +411,7 @@ final FigSpec vueSpec = FigSpec(
       name: 'outdated',
       description: '(experimental) check for outdated vue cli service / plugins',
       options: [
+
         Option(
           name: '--next',
           description: 'Also check for alpha / beta / rc versions when upgrading'
@@ -419,6 +431,7 @@ final FigSpec vueSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-t', '--to'],
           description: 'Upgrade <package-name> to a version that is not latest',
@@ -469,6 +482,7 @@ final FigSpec vueSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-f', '--from'],
           description: 'The base version for the migrator to migrate from',
@@ -488,6 +502,7 @@ final FigSpec vueSpec = FigSpec(
       name: 'info',
       description: 'Print debugging information about your environment',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Output usage information'
@@ -496,6 +511,7 @@ final FigSpec vueSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-V', '--version'],
       description: 'Output the version number'

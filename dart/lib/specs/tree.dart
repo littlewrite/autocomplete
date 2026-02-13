@@ -14,6 +14,7 @@ final FigSpec treeSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-a',
       description: 'All files are listed'
@@ -202,6 +203,7 @@ final FigSpec treeSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(name: 'name'),
           FigSuggestion(name: 'version'),
           FigSuggestion(name: 'size'),

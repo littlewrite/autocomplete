@@ -4,19 +4,102 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<FigSuggestion> settings = [
+
+  FigSuggestion(
+    name: ['displaysleep', 'dim'],
+    description: 'Display sleep timer (value in minutes, or 0 to disable)'
+  ),
+  FigSuggestion(
+    name: ['disksleep', 'spindown'],
+    description: 'Disk spindown timer (value in minutes, or 0 to disable)'
+  ),
+  FigSuggestion(
+    name: 'sleep',
+    description: 'System sleep timer (value in minutes, or 0 to disable)'
+  ),
+  FigSuggestion(
+    name: 'womp',
+    description: 'Wake on ethernet magic packet (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'ring',
+    description: 'Wake on modem ring (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'autorestart',
+    description: 'Automatic restart on power loss (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'dps',
+    description: 'Dynamically change processor speed based on load (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'reduce',
+    description: 'Reduce processor speed (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'powerbutton',
+    description: 'Sleep the machine when power button is pressed (value=0/1)'
+  ),
+  FigSuggestion(
+    name: 'lidwake',
+    description: 'Wake the machine when the laptop lid (or clamshell) is opened (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'acwake',
+    description: 'Wake the machine when power source (AC/battery) is changed (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'lessbright',
+    description: 'Slightly turn down display brightness when switching to this power source (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'halfdim',
+    description: 'Display sleep will use an intermediate half-brightness state between full brightness and fully off  (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'sms',
+    description: 'Use Sudden Motion Sensor to park disk heads on sudden changes in G force (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'hibernatemode',
+    description: 'Change hibernation mode. 0 = normal sleep, 1 = hibernate mode, 3 = safe sleep, 25 = hibernate mode for post-2005 portable Macs'
+  ),
+  FigSuggestion(
+    name: 'hibernatefile',
+    description: 'Change hibernation image file location. (value = path)'
+  ),
+  FigSuggestion(
+    name: 'ttyskeepawake',
+    description: 'Prevent idle system sleep when any tty (e.g. remote login session) is \'active\'. (value = 0/1)'
+  ),
+  FigSuggestion(
+    name: 'networkoversleep',
+    description: 'This setting affects how macOS networking presents shared network services during system sleep'
+  ),
+  FigSuggestion(
+    name: 'destroyfvkeyonstandby',
+    description: 'Destroy File Vault Key when going to standby mode. (value: 1 - Destroy, 0 - Retain)'
+  )
+];
+
 /// Completion spec for `pmset` CLI
 final FigSpec pmsetSpec = FigSpec(
   name: 'pmset',
   description: 'Power management settings',
   subcommands: [
+
     Subcommand(
       name: '-g',
       description: 'GETTING',
       args: [
+
         Arg(
           isOptional: true,
           defaultValue: 'live',
           suggestions: [
+
             FigSuggestion(
               name: 'live',
               description: 'Display the settings currently in use. (default if no argument given)'
@@ -122,11 +205,13 @@ final FigSpec pmsetSpec = FigSpec(
       name: 'schedule',
       description: 'For setting up one-time power events',
       options: [
+
         Option(
           name: 'cancel'
         )
       ],
       args: [
+
         Arg(
           name: 'type'
         ),
@@ -140,11 +225,13 @@ final FigSpec pmsetSpec = FigSpec(
       name: 'repeat',
       description: 'For setting up daily/weekly power on and power off events',
       subcommands: [
+
         Subcommand(
           name: 'cancel'
         )
       ],
       args: [
+
         Arg(
           name: 'type'
         ),
@@ -164,6 +251,7 @@ final FigSpec pmsetSpec = FigSpec(
     description: 'Override settings and sleep now',
     isOptional: true,
     suggestions: [
+
       FigSuggestion(name: 'sleepnow'),
       FigSuggestion(name: 'noidle'),
       FigSuggestion(name: 'lock'),
@@ -172,12 +260,15 @@ final FigSpec pmsetSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-a',
       description: 'Settings for all',
       args: [
+
         Arg(
-          name: 'setting'
+          name: 'setting',
+          suggestions: settings
         ),
         Arg(
           name: 'value'
@@ -188,8 +279,10 @@ final FigSpec pmsetSpec = FigSpec(
       name: '-b',
       description: 'Settings for battery',
       args: [
+
         Arg(
-          name: 'setting'
+          name: 'setting',
+          suggestions: settings
         ),
         Arg(
           name: 'value'
@@ -200,8 +293,10 @@ final FigSpec pmsetSpec = FigSpec(
       name: '-c',
       description: 'Settings for charger',
       args: [
+
         Arg(
-          name: 'setting'
+          name: 'setting',
+          suggestions: settings
         ),
         Arg(
           name: 'value'
@@ -212,8 +307,10 @@ final FigSpec pmsetSpec = FigSpec(
       name: '-u',
       description: 'Settings for UPS',
       args: [
+
         Arg(
-          name: 'setting'
+          name: 'setting',
+          suggestions: settings
         ),
         Arg(
           name: 'value'

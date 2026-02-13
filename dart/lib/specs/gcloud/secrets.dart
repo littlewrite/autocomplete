@@ -9,10 +9,12 @@ final FigSpec secretsSpec = FigSpec(
   name: 'secrets',
   description: 'Manage secrets on Google Cloud',
   subcommands: [
+
     Subcommand(
       name: 'add-iam-policy-binding',
       description: 'Add IAM policy binding to a secret',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -182,6 +184,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -204,6 +207,7 @@ final FigSpec secretsSpec = FigSpec(
       name: 'create',
       description: 'Create a new secret',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -371,6 +375,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -393,6 +398,7 @@ final FigSpec secretsSpec = FigSpec(
       name: 'delete',
       description: 'Delete a secret',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -516,6 +522,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -538,6 +545,7 @@ final FigSpec secretsSpec = FigSpec(
       name: 'describe',
       description: 'Describe a secret\'s metadata',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -661,6 +669,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -683,6 +692,7 @@ final FigSpec secretsSpec = FigSpec(
       name: 'get-iam-policy',
       description: 'Get the IAM policy for the secret',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -850,6 +860,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -872,6 +883,7 @@ final FigSpec secretsSpec = FigSpec(
       name: 'list',
       description: 'List all secret names',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1043,6 +1055,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1059,10 +1072,12 @@ final FigSpec secretsSpec = FigSpec(
       name: 'locations',
       description: 'Manage locations of users\' secrets',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a location',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1186,6 +1201,7 @@ final FigSpec secretsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1208,6 +1224,7 @@ final FigSpec secretsSpec = FigSpec(
           name: 'list',
           description: 'List all available locations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1379,6 +1396,7 @@ final FigSpec secretsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1393,6 +1411,7 @@ final FigSpec secretsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1516,6 +1535,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1532,6 +1552,7 @@ final FigSpec secretsSpec = FigSpec(
       name: 'remove-iam-policy-binding',
       description: 'Remove IAM policy binding for a secret',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1705,6 +1726,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1727,6 +1749,7 @@ final FigSpec secretsSpec = FigSpec(
       name: 'set-iam-policy',
       description: 'Set the IAM policy binding for a secret',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1850,6 +1873,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1862,6 +1886,7 @@ final FigSpec secretsSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'SECRET',
           description: 'ID of the secret or fully qualified identifier for the secret'
@@ -1876,6 +1901,7 @@ final FigSpec secretsSpec = FigSpec(
       name: 'update',
       description: 'Update a secret\'s metadata',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2025,6 +2051,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2047,10 +2074,12 @@ final FigSpec secretsSpec = FigSpec(
       name: 'versions',
       description: 'Manage secret versions',
       subcommands: [
+
         Subcommand(
           name: 'access',
           description: 'Access a secret version\'s data',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2185,6 +2214,7 @@ final FigSpec secretsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2207,6 +2237,7 @@ final FigSpec secretsSpec = FigSpec(
           name: 'add',
           description: 'Create a new version of an existing secret',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2342,6 +2373,7 @@ final FigSpec secretsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2364,6 +2396,7 @@ final FigSpec secretsSpec = FigSpec(
           name: 'describe',
           description: 'Describe metadata about the secret version',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2498,6 +2531,7 @@ final FigSpec secretsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2520,6 +2554,7 @@ final FigSpec secretsSpec = FigSpec(
           name: 'destroy',
           description: 'Destroy a secret version\'s metadata and secret data',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2654,6 +2689,7 @@ final FigSpec secretsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2676,6 +2712,7 @@ final FigSpec secretsSpec = FigSpec(
           name: 'disable',
           description: 'Disable the version of the provided secret',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2810,6 +2847,7 @@ final FigSpec secretsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2832,6 +2870,7 @@ final FigSpec secretsSpec = FigSpec(
           name: 'enable',
           description: 'Enable the version of the provided secret',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2966,6 +3005,7 @@ final FigSpec secretsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2988,6 +3028,7 @@ final FigSpec secretsSpec = FigSpec(
           name: 'list',
           description: 'List all versions for a secret',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3159,6 +3200,7 @@ final FigSpec secretsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3179,6 +3221,7 @@ final FigSpec secretsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3302,6 +3345,7 @@ final FigSpec secretsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3316,6 +3360,7 @@ final FigSpec secretsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3439,6 +3484,7 @@ final FigSpec secretsSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

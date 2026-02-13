@@ -15,6 +15,7 @@ final FigSpec rmdirSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-p',
       description: 'Remove each directory of path',

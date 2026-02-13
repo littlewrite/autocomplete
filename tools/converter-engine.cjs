@@ -68,6 +68,27 @@ const GENERATOR_ALLOWED_KEYS = new Set([
   "splitOn",
   "scriptTimeout",
 ]);
+/** Root Fig.Spec: only keys that exist on Dart FigSpec (no isPersistent; that belongs on Option in TS) */
+const FIG_SPEC_ALLOWED_KEYS = new Set([
+  "name",
+  "displayName",
+  "description",
+  "subcommands",
+  "options",
+  "args",
+  "icon",
+  "filterStrategy",
+  "hidden",
+  "insertValue",
+  "replaceValue",
+  "priority",
+  "deprecated",
+  "parserDirectives",
+  "requiresSubcommand",
+  "additionalSuggestions",
+  "generateSpec",
+  "loadSpec",
+]);
 
 /**
  * TypeScript Fig.Spec 转换器
@@ -82,6 +103,16 @@ class TsToDartConverter {
     this.imports = new Set();
     this.complexityWarnings = []; // 收集复杂类型警告
     this.hasComplexTypes = false; // 标记是否包含复杂类型
+    /** Top-level Option[] / Suggestion[] / Subcommand[] variable names → TS array source (for resolution in spec) */
+    this.optionListVarNames = new Set();
+    this.suggestionListVarNames = new Set();
+    this.subcommandListVarNames = new Set();
+    /** Same names → converted Dart list literal (for emitting variable declarations) */
+    this.optionListDart = {};
+    this.suggestionListDart = {};
+    this.subcommandListDart = {};
+    /** Fig.Generator blocks: TS source to emit as commented block for later manual/AI conversion */
+    this.generatorBlocks = [];
   }
 
   /**
@@ -108,6 +139,12 @@ class TsToDartConverter {
 
     // 2. 提取并转换 imports
     dartCode += this.convertImports();
+
+    // 2.5 提取并转换顶层 Option[] / Suggestion[] 变量（供 spec 内 options: [...x] 等引用）
+    this.extractAndConvertListVariables();
+
+    // 2.6 提取 Fig.Generator 块（以注释形式写入，供后续人工/AI 转换）
+    this.extractGeneratorBlocks();
 
     // 3. 提取并转换主要内容
     dartCode += this.convertMainContent();
@@ -190,28 +227,24 @@ class TsToDartConverter {
   }
 
   /**
-   * 用括号平衡提取 spec 对象，避免用「第一个 };」截断导致 args: { name: "config" } 等被截成 "confi"
+   * 从 code 的 startIndex（指向 [ 的位置）起，按括号平衡提取到匹配的 ]，返回 [...] 的完整字符串
    */
-  extractSpecObjectByBalancedBraces() {
-    const prefix = /const\s+completionSpec:\s*Fig\.Spec\s*=\s*/.exec(this.tsCode);
-    if (!prefix) return null;
-    let i = prefix.index + prefix[0].length;
-    if (this.tsCode[i] !== "{") return null;
+  extractBalancedBracketArray(code, startIndex) {
+    if (code[startIndex] !== "[") return null;
     let depth = 0;
     let inString = false;
     let stringChar = "";
-    const start = i;
-    for (; i < this.tsCode.length; i++) {
-      const c = this.tsCode[i];
-      const prev = i > 0 ? this.tsCode[i - 1] : "";
+    for (let i = startIndex; i < code.length; i++) {
+      const c = code[i];
+      const prev = i > 0 ? code[i - 1] : "";
       if (!inString) {
         if ((c === '"' || c === "'" || c === "`") && prev !== "\\") {
           inString = true;
           stringChar = c;
-        } else if (c === "{") depth++;
-        else if (c === "}") {
+        } else if (c === "[") depth++;
+        else if (c === "]") {
           depth--;
-          if (depth === 0) return this.tsCode.slice(start, i + 1);
+          if (depth === 0) return code.slice(startIndex, i + 1);
         }
       } else if (c === stringChar && prev !== "\\") inString = false;
     }
@@ -219,16 +252,194 @@ class TsToDartConverter {
   }
 
   /**
+   * 从 code 的 startIndex（指向 { 的位置）起，按括号平衡提取到匹配的 }，返回 { ... } 的完整字符串（含首尾花括号）
+   */
+  extractBalancedBraceObject(code, startIndex) {
+    if (code[startIndex] !== "{") return null;
+    let depth = 0;
+    let inString = false;
+    let stringChar = "";
+    for (let i = startIndex; i < code.length; i++) {
+      const c = code[i];
+      const prev = i > 0 ? code[i - 1] : "";
+      if (!inString) {
+        if ((c === '"' || c === "'" || c === "`") && prev !== "\\") {
+          inString = true;
+          stringChar = c;
+        } else if (c === "{") depth++;
+        else if (c === "}") {
+          depth--;
+          if (depth === 0) return code.slice(startIndex, i + 1);
+        }
+      } else if (c === stringChar && prev !== "\\") inString = false;
+    }
+    return null;
+  }
+
+  /**
+   * 提取顶层 Fig.Generator 单变量与 Record<string, Fig.Generator>，将 TS 源码存入 generatorBlocks，供以注释形式写入 Dart
+   */
+  extractGeneratorBlocks() {
+    const code = this.tsCode;
+    const blocks = [];
+
+    // 单变量: const name: Fig.Generator = {
+    const singleRegex = /const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*Fig\.Generator\s*=\s*\{/g;
+    let m;
+    while ((m = singleRegex.exec(code)) !== null) {
+      const varName = m[1];
+      const braceStart = m.index + m[0].length - 1;
+      const objSrc = this.extractBalancedBraceObject(code, braceStart);
+      if (!objSrc) continue;
+      let end = braceStart + objSrc.length;
+      while (end < code.length && /[\s;]/.test(code[end])) end++;
+      const tsSource = code.slice(m.index, end).trim();
+      blocks.push({ varName, tsSource });
+    }
+
+    // Record: (export )?const name: Record<string, Fig.Generator> = {
+    const recordRegex = /(?:export\s+)?const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*Record\s*<\s*string\s*,\s*Fig\.Generator\s*>\s*=\s*\{/g;
+    while ((m = recordRegex.exec(code)) !== null) {
+      const varName = m[1];
+      const braceStart = m.index + m[0].length - 1;
+      const objSrc = this.extractBalancedBraceObject(code, braceStart);
+      if (!objSrc) continue;
+      let end = braceStart + objSrc.length;
+      while (end < code.length && /[\s;]/.test(code[end])) end++;
+      const tsSource = code.slice(m.index, end).trim();
+      if (!blocks.some((b) => b.varName === varName)) blocks.push({ varName, tsSource });
+    }
+
+    this.generatorBlocks = blocks;
+  }
+
+  /**
+   * 将 Generator 的 TS 源码格式化为 Dart 行注释块，便于 grep / 人工或 AI 后续转换
+   * 约定: // TS_GENERATOR_BLOCK_START (varName) ... // TS_GENERATOR_BLOCK_END
+   */
+  formatGeneratorBlockAsComment(varName, tsSource) {
+    const prefix = `// TS_GENERATOR_BLOCK_START (${varName})\n`;
+    const safe = String(tsSource)
+      .replace(/\*\//g, "* /")
+      .split("\n")
+      .map((line) => "// " + line)
+      .join("\n");
+    return prefix + safe + "\n// TS_GENERATOR_BLOCK_END\n";
+  }
+
+  /**
+   * 提取顶层 const name: Fig.Option[] = [ ... ] 和 Fig.Suggestion[] = [ ... ]，填充 optionListVarNames / suggestionListVarNames 及对应 Dart
+   */
+  extractAndConvertListVariables() {
+    const code = this.tsCode;
+    // Fig.Option[] = [
+    const optionRegex = /const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*Fig\.Option\[\]\s*=\s*\[/g;
+    let m;
+    while ((m = optionRegex.exec(code)) !== null) {
+      const varName = m[1];
+      const startBracket = m.index + m[0].length - 1; // position of [
+      const arrSrc = this.extractBalancedBracketArray(code, startBracket);
+      if (!arrSrc) continue;
+      this.optionListVarNames.add(varName);
+      const dartArr = this.convertArray(arrSrc, 0, "options");
+      this.optionListDart[varName] = dartArr;
+    }
+    // Fig.Suggestion[] = [
+    const suggestionRegex = /const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*Fig\.Suggestion\[\]\s*=\s*\[/g;
+    while ((m = suggestionRegex.exec(code)) !== null) {
+      const varName = m[1];
+      const startBracket = m.index + m[0].length - 1;
+      const arrSrc = this.extractBalancedBracketArray(code, startBracket);
+      if (!arrSrc) continue;
+      this.suggestionListVarNames.add(varName);
+      const dartArr = this.convertArray(arrSrc, 0, "suggestions");
+      this.suggestionListDart[varName] = dartArr;
+    }
+    // Fig.Subcommand[] = [
+    const subcommandRegex = /const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*Fig\.Subcommand\[\]\s*=\s*\[/g;
+    while ((m = subcommandRegex.exec(code)) !== null) {
+      const varName = m[1];
+      const startBracket = m.index + m[0].length - 1;
+      const arrSrc = this.extractBalancedBracketArray(code, startBracket);
+      if (!arrSrc) continue;
+      this.subcommandListVarNames.add(varName);
+      const dartArr = this.convertArray(arrSrc, 0, "subcommands");
+      this.subcommandListDart[varName] = dartArr;
+    }
+  }
+
+  /**
+   * 从 code 的 startIndex（指向 { 的位置）起，用括号平衡提取完整对象，返回 { ... } 字符串
+   */
+  extractSpecObjectFromPosition(code, startIndex) {
+    if (code[startIndex] !== "{") return null;
+    let depth = 0;
+    let inString = false;
+    let stringChar = "";
+    for (let i = startIndex; i < code.length; i++) {
+      const c = code[i];
+      const prev = i > 0 ? code[i - 1] : "";
+      if (!inString) {
+        if ((c === '"' || c === "'" || c === "`") && prev !== "\\") {
+          inString = true;
+          stringChar = c;
+        } else if (c === "{") depth++;
+        else if (c === "}") {
+          depth--;
+          if (depth === 0) return code.slice(startIndex, i + 1);
+        }
+      } else if (c === stringChar && prev !== "\\") inString = false;
+    }
+    return null;
+  }
+
+  /**
+   * 用括号平衡提取 spec 对象。若有多个 Fig.Spec 声明（如 clangBase + completionSpec），
+   * 优先返回「含字面量 name 且内容多」的那个，避免只拿到薄包装 { ...base, options: [...] } 导致得到 unknown + 空 options。
+   */
+  extractSpecObjectByBalancedBraces() {
+    const code = this.tsCode;
+    const regex = /(?:export\s+)?const\s+\w+\s*:\s*Fig\.Spec\s*=\s*\{/g;
+    const candidates = [];
+    let m;
+    while ((m = regex.exec(code)) !== null) {
+      const braceStart = m.index + m[0].length - 1;
+      const obj = this.extractSpecObjectFromPosition(code, braceStart);
+      if (!obj) continue;
+      candidates.push({ index: m.index, obj });
+    }
+    if (candidates.length === 0) return null;
+    if (candidates.length === 1) return candidates[0].obj;
+    // 优先：含字面量 name 的；其次按对象长度（内容多的优先）
+    const hasLiteralName = (objStr) => /name:\s*["'][^"']*["']/.test(objStr);
+    const withName = candidates.filter((c) => hasLiteralName(c.obj));
+    if (withName.length > 0) {
+      withName.sort((a, b) => b.obj.length - a.obj.length);
+      return withName[0].obj;
+    }
+    candidates.sort((a, b) => b.obj.length - a.obj.length);
+    return candidates[0].obj;
+  }
+
+  /**
    * 转换主要内容
    */
   convertMainContent() {
-    // 提取 completionSpec 对象（优先用括号平衡，避免截断）
+    // 提取 spec 对象（优先用括号平衡，支持 const completion / completionSpec 等任意变量名）
     let specObject = this.extractSpecObjectByBalancedBraces();
+    if (!specObject) {
+      // 再试一次：单次匹配 const <name>: Fig.Spec = { 并用括号平衡提取（避免全局 regex 状态问题）
+      const altMatch = this.tsCode.match(/const\s+\w+\s*:\s*Fig\.Spec\s*=\s*\{/);
+      if (altMatch) {
+        const braceStart = altMatch.index + altMatch[0].length - 1;
+        specObject = this.extractSpecObjectFromPosition(this.tsCode, braceStart);
+      }
+    }
     if (!specObject) {
       const specMatch = this.tsCode.match(
         /const\s+completionSpec:\s*Fig\.Spec\s*=\s*({[\s\S]*?});?\s*export\s+default/
       );
-      if (!specMatch) throw new Error("Could not find completionSpec definition");
+      if (!specMatch) throw new Error("Could not find Fig.Spec definition (expected const completionSpec or const <name>: Fig.Spec = { ... })");
       specObject = specMatch[1];
     }
     // 移除 TS 注释，避免生成无效 Dart（如 asr 中的 // Only uncomment...）
@@ -239,14 +450,42 @@ class TsToDartConverter {
     const specName = nameMatch ? nameMatch[1] : "unknown";
     const variableName = this.sanitizeVariableName(specName);
 
-    // 转换对象为 Dart
-    const dartSpec = this.convertObject(specObject, 0);
+    // 转换对象为 Dart（仅保留 FigSpec 支持的键，避免 isPersistent 等 TS 写法落入根 spec）
+    const dartSpec = this.convertObject(specObject, 0, FIG_SPEC_ALLOWED_KEYS);
 
     const safeVarName =
       variableName && /^[a-zA-Z_][a-zA-Z0-9_]*$/.test(variableName)
         ? variableName
         : "completionSpec";
-    return `/// Completion spec for \`${specName}\` CLI\nfinal FigSpec ${safeVarName} = FigSpec${dartSpec};\n`;
+
+    let out = "";
+    const indent = "  ";
+    if (Object.keys(this.optionListDart).length > 0) {
+      for (const [name, dartList] of Object.entries(this.optionListDart)) {
+        out += `final List<Option> ${name} = ${dartList};\n\n`;
+      }
+    }
+    if (Object.keys(this.suggestionListDart).length > 0) {
+      for (const [name, dartList] of Object.entries(this.suggestionListDart)) {
+        out += `final List<FigSuggestion> ${name} = ${dartList};\n\n`;
+      }
+    }
+    if (Object.keys(this.subcommandListDart).length > 0) {
+      for (const [name, dartList] of Object.entries(this.subcommandListDart)) {
+        out += `final List<FigSubcommand> ${name} = ${dartList};\n\n`;
+      }
+    }
+    out += `/// Completion spec for \`${specName}\` CLI\nfinal FigSpec ${safeVarName} = FigSpec${dartSpec};\n`;
+
+    if (this.generatorBlocks.length > 0) {
+      out += "\n// === TS Generator blocks: convert manually or with AI (grep TS_GENERATOR_BLOCK_START) ===\n\n";
+      this.generatorBlocks.forEach(({ varName, tsSource }) => {
+        out += this.formatGeneratorBlockAsComment(varName, tsSource);
+        out += "\n";
+      });
+    }
+
+    return out;
   }
 
   /**
@@ -650,6 +889,16 @@ class TsToDartConverter {
       return value;
     }
 
+    // 顶层 Option[] / Suggestion[] 变量引用：options: installOptions 或 suggestions: mySuggestions
+    const idMatch = value.match(/^([a-zA-Z_][a-zA-Z0-9_]*)$/);
+    if (idMatch) {
+      const id = idMatch[1];
+      const isOptionsProp = ["options", "suggestions", "additionalSuggestions"].includes(this.cleanKey(propertyName));
+      if (isOptionsProp && this.optionListVarNames.has(id)) return id;
+      if (isOptionsProp && this.suggestionListVarNames.has(id)) return id;
+      if (this.cleanKey(propertyName) === "subcommands" && this.subcommandListVarNames.has(id)) return id;
+    }
+
     // generators 引用: gitGenerators.xxx → gitGenerators['xxx']（便于后续实现 Map）
     const gitGenMatch = value.match(/^gitGenerators\.([a-zA-Z_][a-zA-Z0-9_]*)$/);
     if (gitGenMatch && (propertyName === "generators" || this.cleanKey(propertyName) === "generators")) {
@@ -659,6 +908,13 @@ class TsToDartConverter {
     // 数组（若 value 尾部落入外层对象的 "}" 会被 parseProperties 吃进，先剥掉再转，避免 template: ["filepaths"] 变成 ["filepaths"] } 少 ]）
     if (value.startsWith("[")) {
       value = value.replace(/\}\s*$/, "").trim();
+      // 若解析时漏掉了末尾的 ]（如嵌套在 args 内时），补全以保证 convertArray 收到合法数组串
+      let bracketDepth = 0;
+      for (const c of value) {
+        if (c === "[") bracketDepth++;
+        else if (c === "]") bracketDepth--;
+      }
+      if (bracketDepth > 0) value = value + "]".repeat(bracketDepth);
       return this.convertArray(value, indentLevel, propertyName);
     }
 
@@ -738,35 +994,42 @@ class TsToDartConverter {
 
     const items = this.splitArrayItems(inner)
       .map((it) => it.trim())
-      .filter((it) => it && !it.startsWith("..."));
+      .filter((it) => it);
 
-    // suggestions / additionalSuggestions 在 Dart 里统一为 List<FigSuggestion>?：字符串 → FigSuggestion(name: 'x')，对象 → FigSuggestion(...)
+    // suggestions / additionalSuggestions 在 Dart 里统一为 List<FigSuggestion>?：字符串 → FigSuggestion(name: 'x')，对象 → FigSuggestion(...)，...varName → spread
     if (
       (propertyName === "suggestions" || propertyName === "additionalSuggestions") &&
       items.length > 0
     ) {
-      let out = "[\n";
-      items.forEach((item, idx) => {
-        if (this.isStringLiteral(item)) {
-          const rawContent = item.slice(1, -1);
-          const content = this.unescapeJsStringContent(rawContent);
-          const escaped = this.escapeDartSingleQuoted(content);
-          out += nextIndent + "FigSuggestion(name: '" + escaped + "')";
-        } else if (item.startsWith("{")) {
-          out +=
-            nextIndent +
-            this.detectObjectType(item, indentLevel + 1, "suggestions");
-        }
-        if (idx < items.length - 1) out += ",";
-        out += "\n";
-      });
-      out += indent + "]";
-      return out;
+      const hasSpread = items.some((it) => it.trim().startsWith("..."));
+      if (!hasSpread) {
+        let out = "[\n";
+        let needComma = false;
+        items.forEach((item) => {
+          let line = "";
+          if (this.isStringLiteral(item)) {
+            const rawContent = item.slice(1, -1);
+            const content = this.unescapeJsStringContent(rawContent);
+            const escaped = this.escapeDartSingleQuoted(content);
+            line = nextIndent + "FigSuggestion(name: '" + escaped + "')";
+          } else if (item.startsWith("{")) {
+            line = nextIndent + this.detectObjectType(item, indentLevel + 1, "suggestions");
+          }
+          if (!line) return;
+          if (needComma) out += ",";
+          out += "\n" + line;
+          needComma = true;
+        });
+        out += "\n" + indent + "]";
+        return out;
+      }
     }
 
     // 简单数组（字符串，非 suggestions）
     if ((inner.includes('"') || inner.includes("'")) && !inner.includes("{")) {
-      return arrStr.replace(/"/g, "'");
+      let out = arrStr.replace(/"/g, "'");
+      if (!out.trimEnd().endsWith("]")) out = out.trimEnd() + "]";
+      return out;
     }
 
     // description 数组：TS 中常为多行 .join("\n")，输出为 Dart 单字符串（或保留列表由类型 dynamic 接受）
@@ -793,13 +1056,32 @@ class TsToDartConverter {
     // args 数组元素：用 argsItem 避免每个元素被再包一层 []
     const childKey = propertyName === "args" ? "argsItem" : propertyName;
 
-    // 过滤掉复杂类型（注释回退模式下保留并输出 TS 注释 + null）
+    const isSpreadOfKnownOptionVar = (it) => {
+      const t = it.trim();
+      if (!t.startsWith("...")) return false;
+      const name = t.slice(3).trim();
+      return this.optionListVarNames.has(name);
+    };
+    const isSpreadOfKnownSuggestionVar = (it) => {
+      const t = it.trim();
+      if (!t.startsWith("...")) return false;
+      const name = t.slice(3).trim();
+      return this.suggestionListVarNames.has(name);
+    };
+    const isSpreadOfKnownSubcommandVar = (it) => {
+      const t = it.trim();
+      if (!t.startsWith("...")) return false;
+      const name = t.slice(3).trim();
+      return this.subcommandListVarNames.has(name);
+    };
+
+    // 过滤掉复杂类型（注释回退模式下保留并输出 TS 注释 + null）；...varName 若为已知 Option/Suggestion/Subcommand 列表变量则保留
     const validItems = items.filter((item) => {
-      const converted = this.convertValue(
-        item.trim(),
-        indentLevel + 1,
-        childKey
-      );
+      const t = item.trim();
+      if (propertyName === "options" && isSpreadOfKnownOptionVar(t)) return true;
+      if ((propertyName === "suggestions" || propertyName === "additionalSuggestions") && isSpreadOfKnownSuggestionVar(t)) return true;
+      if (propertyName === "subcommands" && isSpreadOfKnownSubcommandVar(t)) return true;
+      const converted = this.convertValue(t, indentLevel + 1, childKey);
       if (converted && typeof converted === "object" && converted.__commentFallback) return true;
       return typeof converted !== "string" || !converted.includes("/* TODO: Complex type */");
     });
@@ -810,21 +1092,31 @@ class TsToDartConverter {
     }
 
     let result = "[\n";
+    let needComma = false;
     validItems.forEach((item, index) => {
-      const converted = this.convertValue(item.trim(), indentLevel + 1, childKey);
-      if (converted && typeof converted === "object" && converted.__commentFallback) {
-        result += nextIndent + converted.comment + "\n";
-        result += nextIndent + converted.dart;
+      const t = item.trim();
+      let line = "";
+      if (propertyName === "options" && isSpreadOfKnownOptionVar(t)) {
+        line = nextIndent + t;
+      } else if ((propertyName === "suggestions" || propertyName === "additionalSuggestions") && isSpreadOfKnownSuggestionVar(t)) {
+        line = nextIndent + t;
+      } else if (propertyName === "subcommands" && isSpreadOfKnownSubcommandVar(t)) {
+        line = nextIndent + t;
       } else {
-        result += nextIndent;
-        result += converted;
+        const converted = this.convertValue(t, indentLevel + 1, childKey);
+        if (converted && typeof converted === "object" && converted.__commentFallback) {
+          line = nextIndent + converted.comment + "\n" + nextIndent + converted.dart;
+        } else if (typeof converted === "string" && converted.trim() === "") {
+          return;
+        } else {
+          line = nextIndent + converted;
+        }
       }
-      if (index < validItems.length - 1) {
-        result += ",";
-      }
-      result += "\n";
+      if (needComma) result += ",";
+      result += "\n" + line;
+      needComma = true;
     });
-    result += indent + "]";
+    result += "\n" + indent + "]";
 
     return result;
   }
@@ -931,9 +1223,8 @@ class TsToDartConverter {
 
         if (char === "," && depth === 0) {
           const trimmed = current.trim();
-          // 跳过扩展运算符（...xxx）
-          if (trimmed && !trimmed.startsWith("...")) {
-            items.push(current);
+          if (trimmed) {
+            items.push(trimmed);
           }
           current = "";
           continue;
@@ -944,9 +1235,8 @@ class TsToDartConverter {
     }
 
     const trimmed = current.trim();
-    // 跳过扩展运算符（...xxx）
-    if (trimmed && !trimmed.startsWith("...")) {
-      items.push(current);
+    if (trimmed) {
+      items.push(trimmed);
     }
 
     return items;

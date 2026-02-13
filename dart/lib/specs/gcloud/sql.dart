@@ -9,14 +9,17 @@ final FigSpec sqlSpec = FigSpec(
   name: 'sql',
   description: 'Create and manage Google Cloud SQL databases',
   subcommands: [
+
     Subcommand(
       name: 'backups',
       description: 'Provide commands for working with backups of Cloud SQL instances',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates a backup of a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -178,6 +181,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -194,6 +198,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'delete',
           description: 'Delete a backup of a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -333,6 +338,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -355,6 +361,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'describe',
           description: 'Retrieves information about a backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -490,6 +497,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -512,6 +520,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'list',
           description: 'Lists all backups associated with a given instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -695,6 +704,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -711,6 +721,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'restore',
           description: 'Restores a backup of a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -861,6 +872,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -881,6 +893,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1004,6 +1017,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1020,6 +1034,7 @@ final FigSpec sqlSpec = FigSpec(
       name: 'connect',
       description: 'Connects to a Cloud SQL instance',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1165,6 +1180,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1187,10 +1203,12 @@ final FigSpec sqlSpec = FigSpec(
       name: 'databases',
       description: 'Provide commands for managing databases of Cloud SQL instances',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates a database for a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1352,6 +1370,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1374,6 +1393,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'delete',
           description: 'Deletes a Cloud SQL database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1509,6 +1529,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1531,6 +1552,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'describe',
           description: 'Displays configuration and metadata about a Cloud SQL database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1666,6 +1688,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1688,6 +1711,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'list',
           description: 'Lists databases for a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1871,6 +1895,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1887,6 +1912,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'patch',
           description: 'Patches the settings of a Cloud SQL database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2048,6 +2074,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2068,6 +2095,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2191,6 +2219,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2207,10 +2236,12 @@ final FigSpec sqlSpec = FigSpec(
       name: 'export',
       description: 'Provide commands to export Cloud SQL instances',
       subcommands: [
+
         Subcommand(
           name: 'bak',
           description: 'Export data from a Cloud SQL instance to a BAK file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2349,6 +2380,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2361,6 +2393,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INSTANCE',
               description: 'Cloud SQL instance ID'
@@ -2375,6 +2408,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'csv',
           description: 'Exports data from a Cloud SQL instance to a CSV file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2529,6 +2563,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2541,6 +2576,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INSTANCE',
               description: 'Cloud SQL instance ID'
@@ -2555,6 +2591,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'sql',
           description: 'Exports data from a Cloud SQL instance to a SQL file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2708,6 +2745,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2720,6 +2758,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INSTANCE',
               description: 'Cloud SQL instance ID'
@@ -2732,6 +2771,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2855,6 +2895,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2871,10 +2912,12 @@ final FigSpec sqlSpec = FigSpec(
       name: 'flags',
       description: 'Provide a command to list flags',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List customizable flags for Google Cloud SQL instances',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2916,6 +2959,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'DATABASE_VERSION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'MYSQL_5_6'),
                   FigSuggestion(name: 'MYSQL_5_7'),
                   FigSuggestion(name: 'MYSQL_8_0'),
@@ -3070,6 +3114,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3084,6 +3129,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3207,6 +3253,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3223,10 +3270,12 @@ final FigSpec sqlSpec = FigSpec(
       name: 'import',
       description: 'Provides commands to import Cloud SQL instances',
       subcommands: [
+
         Subcommand(
           name: 'bak',
           description: 'Import data into a Cloud SQL instance from a BAK file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3405,6 +3454,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3417,6 +3467,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INSTANCE',
               description: 'Cloud SQL instance ID'
@@ -3431,6 +3482,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'csv',
           description: 'Imports data into a Cloud SQL instance from a CSV file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3604,6 +3656,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3616,6 +3669,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INSTANCE',
               description: 'Cloud SQL instance ID'
@@ -3630,6 +3684,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'sql',
           description: 'Imports data into a Cloud SQL instance from a SQL dump file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3779,6 +3834,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3791,6 +3847,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INSTANCE',
               description: 'Cloud SQL instance ID'
@@ -3803,6 +3860,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3926,6 +3984,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3942,10 +4001,12 @@ final FigSpec sqlSpec = FigSpec(
       name: 'instances',
       description: 'Provide commands for managing Cloud SQL instances',
       subcommands: [
+
         Subcommand(
           name: 'clone',
           description: 'Clones a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4108,6 +4169,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4120,6 +4182,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SOURCE',
               description: 'Cloud SQL instance ID of the source'
@@ -4134,6 +4197,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'create',
           description: 'Creates a new Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4153,6 +4217,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'ACTIVATION_POLICY',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'always'),
                   FigSuggestion(name: 'never'),
                   FigSuggestion(name: 'on-demand')
@@ -4187,6 +4252,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'AVAILABILITY_TYPE',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'regional'),
                   FigSuggestion(name: 'zonal')
                 ]
@@ -4282,6 +4348,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'DATABASE_VERSION',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'MYSQL_5_6'),
                   FigSuggestion(name: 'MYSQL_5_7'),
                   FigSuggestion(name: 'MYSQL_8_0'),
@@ -4489,6 +4556,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'MAINTENANCE_RELEASE_CHANNEL',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'preview'),
                   FigSuggestion(name: 'production')
                 ]
@@ -4503,6 +4571,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'MAINTENANCE_WINDOW_DAY',
                 description: 'Googlecloudsdk.calliope.arg_parsers:Parse',
                 suggestions: [
+
                   FigSuggestion(name: 'SUN'),
                   FigSuggestion(name: 'MON'),
                   FigSuggestion(name: 'TUE'),
@@ -4581,6 +4650,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'REPLICA_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'READ'),
                   FigSuggestion(name: 'FAILOVER')
                 ]
@@ -4595,6 +4665,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'REPLICATION',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'synchronous'),
                   FigSuggestion(name: 'asynchronous')
                 ]
@@ -4661,6 +4732,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'STORAGE_TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'SSD'),
                   FigSuggestion(name: 'HDD')
                 ]
@@ -4701,6 +4773,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4734,6 +4807,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'delete',
           description: 'Deletes a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4861,6 +4935,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4883,6 +4958,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'describe',
           description: 'Displays configuration and metadata about a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5006,6 +5082,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5028,6 +5105,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'export',
           description: '*(DEPRECATED)*  Exports data from a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5177,6 +5255,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5189,6 +5268,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INSTANCE',
               description: 'Cloud SQL instance ID'
@@ -5203,6 +5283,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'failover',
           description: 'Causes a high-availability Cloud SQL instance to failover',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5330,6 +5411,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5352,6 +5434,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'import',
           description: '*(DEPRECATED)*  Imports data into a Cloud SQL instance from Google Cloud Storage',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5490,6 +5573,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5502,6 +5586,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INSTANCE',
               description: 'Cloud SQL instance ID'
@@ -5516,6 +5601,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'list',
           description: 'Lists Cloud SQL instances in a given project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5687,6 +5773,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5703,6 +5790,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'patch',
           description: 'Updates the settings of a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5722,6 +5810,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'ACTIVATION_POLICY',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'always'),
                   FigSuggestion(name: 'never'),
                   FigSuggestion(name: 'on-demand')
@@ -5767,6 +5856,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'AVAILABILITY_TYPE',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'regional'),
                   FigSuggestion(name: 'zonal')
                 ]
@@ -6005,6 +6095,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'MAINTENANCE_RELEASE_CHANNEL',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'preview'),
                   FigSuggestion(name: 'production')
                 ]
@@ -6023,6 +6114,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'MAINTENANCE_WINDOW_DAY',
                 description: 'Googlecloudsdk.calliope.arg_parsers:Parse',
                 suggestions: [
+
                   FigSuggestion(name: 'SUN'),
                   FigSuggestion(name: 'MON'),
                   FigSuggestion(name: 'TUE'),
@@ -6068,6 +6160,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'PRICING_PLAN',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'PER_USE'),
                   FigSuggestion(name: 'PACKAGE')
                 ]
@@ -6101,6 +6194,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'REPLICATION',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'synchronous'),
                   FigSuggestion(name: 'asynchronous')
                 ]
@@ -6182,6 +6276,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6215,6 +6310,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'promote-replica',
           description: 'Promotes Cloud SQL read replica to a stand-alone instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6342,6 +6438,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6364,6 +6461,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'reset-ssl-config',
           description: 'Deletes all client certificates and generates a new server certificate',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6491,6 +6589,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6513,6 +6612,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'restart',
           description: 'Restarts a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6640,6 +6740,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6662,6 +6763,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'restore-backup',
           description: 'Restores a backup of a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6811,6 +6913,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6831,6 +6934,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6954,6 +7058,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -6970,10 +7075,12 @@ final FigSpec sqlSpec = FigSpec(
       name: 'operations',
       description: 'Provide commands for working with Cloud SQL instance operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Retrieves information about a Cloud SQL instance operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7097,6 +7204,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7119,6 +7227,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'list',
           description: 'Lists all instance operations for the given Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7302,6 +7411,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7318,6 +7428,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'wait',
           description: 'Waits for one or more operations to complete',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7452,6 +7563,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7473,6 +7585,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7596,6 +7709,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7612,6 +7726,7 @@ final FigSpec sqlSpec = FigSpec(
       name: 'reschedule-maintenance',
       description: 'Reschedule a Cloud SQL instance\'s maintenance',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7720,6 +7835,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'RESCHEDULE_TYPE',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'IMMEDIATE'),
               FigSuggestion(name: 'NEXT_AVAILABLE_WINDOW'),
               FigSuggestion(name: 'SPECIFIC_TIME')
@@ -7762,6 +7878,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7784,14 +7901,17 @@ final FigSpec sqlSpec = FigSpec(
       name: 'ssl',
       description: 'Provide commands for managing SSL certificates of Cloud SQL instances',
       subcommands: [
+
         Subcommand(
           name: 'client-certs',
           description: 'Provide commands for managing client certificates of Cloud SQL instances',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a client certificate for a Cloud SQL instance',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7927,6 +8047,7 @@ final FigSpec sqlSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -7939,6 +8060,7 @@ final FigSpec sqlSpec = FigSpec(
                 )
               ],
               args: [
+
                 Arg(
                   name: 'COMMON_NAME',
                   description: 'User supplied name. Constrained to ```[a-zA-Z.-_ ]+```'
@@ -7953,6 +8075,7 @@ final FigSpec sqlSpec = FigSpec(
               name: 'delete',
               description: 'Delete a client certificate for a Cloud SQL instance',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8092,6 +8215,7 @@ final FigSpec sqlSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8114,6 +8238,7 @@ final FigSpec sqlSpec = FigSpec(
               name: 'describe',
               description: 'Retrieve information about a client cert for a Cloud SQL instance',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8249,6 +8374,7 @@ final FigSpec sqlSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8271,6 +8397,7 @@ final FigSpec sqlSpec = FigSpec(
               name: 'list',
               description: 'List all client certs for a Cloud SQL instance',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8454,6 +8581,7 @@ final FigSpec sqlSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -8468,6 +8596,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8591,6 +8720,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8605,6 +8735,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8728,6 +8859,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -8744,10 +8876,12 @@ final FigSpec sqlSpec = FigSpec(
       name: 'ssl-certs',
       description: '*(DEPRECATED)*  Provide commands for managing SSL certificates of Cloud SQL instances',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: '*(DEPRECATED)*  Creates an SSL certificate for a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8883,6 +9017,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8895,6 +9030,7 @@ final FigSpec sqlSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'COMMON_NAME',
               description: 'User supplied name. Constrained to ```[a-zA-Z.-_ ]+```'
@@ -8909,6 +9045,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'delete',
           description: '*(DEPRECATED)*  Deletes an SSL certificate for a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9048,6 +9185,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9070,6 +9208,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'describe',
           description: '*(DEPRECATED)*  Retrieves information about an SSL cert for a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9205,6 +9344,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9227,6 +9367,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'list',
           description: '*(DEPRECATED)*  Lists all SSL certs for a Cloud SQL instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9410,6 +9551,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9424,6 +9566,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9547,6 +9690,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -9563,10 +9707,12 @@ final FigSpec sqlSpec = FigSpec(
       name: 'tiers',
       description: 'Provide a command to list tiers',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'Lists all available service tiers for Google Cloud SQL',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9738,6 +9884,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -9752,6 +9899,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -9875,6 +10023,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -9891,10 +10040,12 @@ final FigSpec sqlSpec = FigSpec(
       name: 'users',
       description: 'Provide commands for managing Cloud SQL users',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates a user in a given instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10056,6 +10207,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -10078,6 +10230,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'delete',
           description: 'Deletes a Cloud SQL user in a given instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10228,6 +10381,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -10250,6 +10404,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'list',
           description: 'Lists Cloud SQL users in a given instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10433,6 +10588,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -10449,6 +10605,7 @@ final FigSpec sqlSpec = FigSpec(
           name: 'set-password',
           description: 'Changes a user\'s password in a given instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10614,6 +10771,7 @@ final FigSpec sqlSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -10634,6 +10792,7 @@ final FigSpec sqlSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10757,6 +10916,7 @@ final FigSpec sqlSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -10771,6 +10931,7 @@ final FigSpec sqlSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -10894,6 +11055,7 @@ final FigSpec sqlSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

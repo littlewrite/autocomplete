@@ -10,10 +10,12 @@ final FigSpec astroSpec = FigSpec(
   description: 'CLI provided by Astro to develop, build, and preview your project from a terminal window',
   icon: 'https://astro.build/favicon.svg',
   subcommands: [
+
     Subcommand(
       name: 'add',
       description: 'Add an integration',
       options: [
+
         Option(
           name: '--yes',
           description: 'Accept all prompts'
@@ -29,6 +31,7 @@ final FigSpec astroSpec = FigSpec(
       name: 'build',
       description: 'Build your project and write it to disk',
       options: [
+
         Option(
           name: '--drafts',
           description: 'Include Markdown draft pages in the build'
@@ -39,6 +42,7 @@ final FigSpec astroSpec = FigSpec(
       name: 'check',
       description: 'Check your project for errors',
       options: [
+
         Option(
           name: '--watch',
           description: 'Watch Astro files for changes and re-run checks'
@@ -49,6 +53,7 @@ final FigSpec astroSpec = FigSpec(
       name: 'dev',
       description: 'Starts the development server',
       options: [
+
         Option(
           name: '--port',
           description: 'Specify a port to listen on',
@@ -83,6 +88,7 @@ final FigSpec astroSpec = FigSpec(
       name: 'preview',
       description: 'Preview your build locally',
       options: [
+
         Option(
           name: '--open',
           description: 'Automatically open the app in the browser on server start'
@@ -97,6 +103,7 @@ final FigSpec astroSpec = FigSpec(
       name: 'telemetry',
       description: 'Configure telemetry settings',
       subcommands: [
+
         Subcommand(
           name: 'enable',
           description: 'Enable anonymous data collection'
@@ -113,6 +120,7 @@ final FigSpec astroSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--config',
       description: 'Specify your config file',

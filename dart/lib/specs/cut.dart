@@ -16,6 +16,7 @@ final FigSpec cutSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-b',
       description: 'Byte positions as a comma or - separated list of numbers',

@@ -9,10 +9,12 @@ final FigSpec securityhubSpec = FigSpec(
   name: 'securityhub',
   description: 'Security Hub provides you with a comprehensive view of your security state in Amazon Web Services and helps you assess your Amazon Web Services environment against security industry standards and best practices. Security Hub collects security data across Amazon Web Services accounts, Amazon Web Services services, and supported third-party products and helps you analyze your security trends and identify the highest priority security issues. To help you manage the security state of your organization, Security Hub supports multiple security standards. These include the Amazon Web Services Foundational Security Best Practices (FSBP) standard developed by Amazon Web Services, and external compliance frameworks such as the Center for Internet Security (CIS), the Payment Card Industry Data Security Standard (PCI DSS), and the National Institute of Standards and Technology (NIST). Each standard includes several security controls, each of which represents a security best practice. Security Hub runs checks against security controls and generates control findings to help you assess your compliance against security best practices. In addition to generating control findings, Security Hub also receives findings from other Amazon Web Services services, such as Amazon GuardDuty and Amazon Inspector, and supported third-party products. This gives you a single pane of glass into a variety of security-related issues. You can also send Security Hub findings to other Amazon Web Services services and supported third-party products. Security Hub offers automation features that help you triage and remediate security issues. For example, you can use automation rules to automatically update critical findings when a security check fails. You can also leverage the integration with Amazon EventBridge to trigger automatic responses to specific findings. This guide, the Security Hub API Reference, provides information about the Security Hub API. This includes supported resources, HTTP methods, parameters, and schemas. If you\'re new to Security Hub, you might find it helpful to also review the  Security Hub User Guide . The user guide explains key concepts and provides procedures that demonstrate how to use Security Hub features. It also provides information about topics such as integrating Security Hub with other Amazon Web Services services. In addition to interacting with Security Hub by making calls to the Security Hub API, you can use a current version of an Amazon Web Services command line tool or SDK. Amazon Web Services provides tools and SDKs that consist of libraries and sample code for various languages and platforms, such as PowerShell, Java, Go, Python, C++, and .NET. These tools and SDKs provide convenient, programmatic access to Security Hub and other Amazon Web Services services . They also handle tasks such as signing requests, managing errors, and retrying requests automatically. For information about installing and using the Amazon Web Services tools and SDKs, see Tools to Build on Amazon Web Services. With the exception of operations that are related to central configuration, Security Hub API requests are executed only in the Amazon Web Services Region that is currently active or in the specific Amazon Web Services Region that you specify in your request. Any configuration or settings change that results from the operation is applied only to that Region. To make the same change in other Regions, call the same API operation in each Region in which you want to apply the change. When you use central configuration, API requests for enabling Security Hub, standards, and controls are executed in the home Region and all linked Regions. For a list of central configuration operations, see the Central configuration terms and concepts section of the Security Hub User Guide. The following throttling limits apply to Security Hub API operations.    BatchEnableStandards - RateLimit of 1 request per second. BurstLimit of 1 request per second.    GetFindings - RateLimit of 3 requests per second. BurstLimit of 6 requests per second.    BatchImportFindings - RateLimit of 10 requests per second. BurstLimit of 30 requests per second.    BatchUpdateFindings - RateLimit of 10 requests per second. BurstLimit of 30 requests per second.    UpdateStandardsControl - RateLimit of 1 request per second. BurstLimit of 5 requests per second.   All other operations - RateLimit of 10 requests per second. BurstLimit of 30 requests per second',
   subcommands: [
+
     Subcommand(
       name: 'accept-administrator-invitation',
       description: 'We recommend using Organizations instead of Security Hub invitations to manage your member accounts. For information, see Managing Security Hub administrator and member accounts with Organizations in the Security Hub User Guide.  Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the invitation was sent from. This operation is only used by member accounts that are not added through Organizations. When the member account accepts the invitation, permission is granted to the administrator account to view findings generated in the member account',
       options: [
+
         Option(
           name: '--administrator-id',
           description: 'The account ID of the Security Hub administrator account that sent the invitation',
@@ -47,6 +49,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'accept-invitation',
       description: 'This method is deprecated. Instead, use AcceptAdministratorInvitation. The Security Hub console continues to use AcceptInvitation. It will eventually change to use AcceptAdministratorInvitation. Any IAM policies that specifically control access to this function must continue to use AcceptInvitation. You should also add AcceptAdministratorInvitation to your policies to ensure that the correct permissions are in place after the console begins to use AcceptAdministratorInvitation. Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the invitation was sent from. This operation is only used by member accounts that are not added through Organizations. When the member account accepts the invitation, permission is granted to the administrator account to view findings generated in the member account',
       options: [
+
         Option(
           name: '--master-id',
           description: 'The account ID of the Security Hub administrator account that sent the invitation',
@@ -93,6 +97,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-delete-automation-rules',
       description: 'Deletes one or more automation rules',
       options: [
+
         Option(
           name: '--automation-rules-arns',
           description: 'A list of Amazon Resource Names (ARNs) for the rules that are to be deleted',
@@ -130,6 +136,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -142,6 +149,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-disable-standards',
       description: 'Disables the standards specified by the provided StandardsSubscriptionArns. For more information, see Security Standards section of the Security Hub User Guide',
       options: [
+
         Option(
           name: '--standards-subscription-arns',
           description: 'The ARNs of the standards subscriptions to disable',
@@ -167,6 +175,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -179,6 +188,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-enable-standards',
       description: 'Enables the standards specified by the provided StandardsArn. To obtain the ARN for a standard, use the DescribeStandards operation. For more information, see the Security Standards section of the Security Hub User Guide',
       options: [
+
         Option(
           name: '--standards-subscription-requests',
           description: 'The list of standards checks to enable',
@@ -204,6 +214,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -216,6 +227,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-get-automation-rules',
       description: 'Retrieves a list of details for automation rules based on rule Amazon Resource Names (ARNs)',
       options: [
+
         Option(
           name: '--automation-rules-arns',
           description: 'A list of rule ARNs to get details for',
@@ -241,6 +253,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -253,6 +266,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-get-configuration-policy-associations',
       description: 'Returns associations between an Security Hub configuration and a batch of target accounts, organizational units, or the root. Only the Security Hub delegated administrator can invoke this operation from the home Region. A configuration can refer to a configuration policy or to a self-managed configuration',
       options: [
+
         Option(
           name: '--configuration-policy-association-identifiers',
           description: 'Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for',
@@ -278,6 +292,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -290,6 +305,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-get-security-controls',
       description: 'Provides details about a batch of security controls for the current Amazon Web Services account and Amazon Web Services Region',
       options: [
+
         Option(
           name: '--security-control-ids',
           description: 'A list of security controls (identified with SecurityControlId, SecurityControlArn, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards',
@@ -315,6 +331,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -327,6 +344,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-get-standards-control-associations',
       description: 'For a batch of security controls and standards, identifies whether each control is currently enabled or disabled in a standard',
       options: [
+
         Option(
           name: '--standards-control-association-ids',
           description: 'An array with one or more objects that includes a security control (identified with SecurityControlId, SecurityControlArn, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards',
@@ -352,6 +370,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -364,6 +383,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-import-findings',
       description: 'Imports security findings generated by a finding provider into Security Hub. This action is requested by the finding provider to import its findings into Security Hub.  BatchImportFindings must be called by one of the following:   The Amazon Web Services account that is associated with a finding if you are using the default product ARN or are a partner sending findings from within a customer\'s Amazon Web Services account. In these cases, the identifier of the account that you are calling BatchImportFindings from needs to be the same as the AwsAccountId attribute for the finding.   An Amazon Web Services account that Security Hub has allow-listed for an official partner integration. In this case, you can call BatchImportFindings from the allow-listed account and send findings from different customer accounts in the same batch.   The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb. After a finding is created, BatchImportFindings cannot be used to update the following finding fields and objects, which Security Hub customers use to manage their investigation workflow.    Note     UserDefinedFields     VerificationState     Workflow    Finding providers also should not use BatchImportFindings to update the following attributes.    Confidence     Criticality     RelatedFindings     Severity     Types    Instead, finding providers use FindingProviderFields to provide values for these attributes',
       options: [
+
         Option(
           name: '--findings',
           description: 'A list of findings to import. To successfully import a finding, it must follow the Amazon Web Services Security Finding Format. Maximum of 100 findings per request',
@@ -389,6 +409,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -401,6 +422,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-update-automation-rules',
       description: 'Updates one or more automation rules based on rule Amazon Resource Names (ARNs) and input parameters',
       options: [
+
         Option(
           name: '--update-automation-rules-request-items',
           description: 'An array of ARNs for the rules that are to be updated. Optionally, you can also include RuleStatus and RuleOrder',
@@ -426,6 +448,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -438,6 +461,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-update-findings',
       description: 'Used by Security Hub customers to update information about their investigation into a finding. Requested by administrator accounts or member accounts. Administrator accounts can update findings for their account and their member accounts. Member accounts can update findings for their account. Updates from BatchUpdateFindings don\'t affect the value of UpdatedAt for a finding. Administrator and member accounts can use BatchUpdateFindings to update the following finding fields and objects.    Confidence     Criticality     Note     RelatedFindings     Severity     Types     UserDefinedFields     VerificationState     Workflow    You can configure IAM policies to restrict access to fields and field values. For example, you might not want member accounts to be able to suppress findings or change the finding severity. See Configuring access to BatchUpdateFindings in the Security Hub User Guide',
       options: [
+
         Option(
           name: '--finding-identifiers',
           description: 'The list of findings to update. BatchUpdateFindings can be used to update up to 100 findings at a time. For each finding, the list provides the finding identifier and the ARN of the finding provider',
@@ -544,6 +568,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -556,6 +581,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'batch-update-standards-control-associations',
       description: 'For a batch of security controls and standards, this operation updates the enablement status of a control in a standard',
       options: [
+
         Option(
           name: '--standards-control-association-updates',
           description: 'Updates the enablement status of a security control in a specified standard',
@@ -581,6 +607,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -593,6 +620,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'create-action-target',
       description: 'Creates a custom action target in Security Hub. You can use custom actions on findings and insights in Security Hub to trigger target actions in Amazon CloudWatch Events',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the custom action target. Can contain up to 20 characters',
@@ -636,6 +664,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -648,6 +677,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'create-automation-rule',
       description: 'Creates an automation rule based on input parameters',
       options: [
+
         Option(
           name: '--tags',
           description: 'User-defined tags associated with an automation rule',
@@ -735,6 +765,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -747,6 +778,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'create-configuration-policy',
       description: 'Creates a configuration policy with the defined configuration. Only the Security Hub delegated administrator can invoke this operation from the home Region',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: -, ., !, *, /',
@@ -799,6 +831,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -811,6 +844,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'create-finding-aggregator',
       description: 'The aggregation Region is now called the home Region.  Used to enable cross-Region aggregation. This operation can be invoked from the home Region only. For information about how cross-Region aggregation works, see Understanding cross-Region aggregation in Security Hub in the Security Hub User Guide',
       options: [
+
         Option(
           name: '--region-linking-mode',
           description: 'Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them. The selected option also determines how to use the Regions provided in the Regions list. The options are as follows:    ALL_REGIONS - Aggregates findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.     ALL_REGIONS_EXCEPT_SPECIFIED - Aggregates findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the Regions parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.     SPECIFIED_REGIONS - Aggregates findings only from the Regions listed in the Regions parameter. Security Hub does not automatically aggregate findings from new Regions.     NO_REGIONS - Aggregates no data because no Regions are selected as linked Regions',
@@ -845,6 +879,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -857,6 +892,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'create-insight',
       description: 'Creates a custom insight in Security Hub. An insight is a consolidation of findings that relate to a security issue that requires attention or remediation. To group the related findings in the insight, use the GroupByAttribute',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the custom insight to create',
@@ -900,6 +936,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -912,6 +949,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'create-members',
       description: 'Creates a member association in Security Hub between the specified accounts and the account used to make the request, which is the administrator account. If you are integrated with Organizations, then the administrator account is designated by the organization management account.  CreateMembers is always used to add accounts that are not organization members. For accounts that are managed using Organizations, CreateMembers is only used in the following cases:   Security Hub is not configured to automatically add new organization accounts.   The account was disassociated or deleted in Security Hub.   This action can only be used by an account that has Security Hub enabled. To enable Security Hub, you can use the EnableSecurityHub operation. For accounts that are not organization members, you create the account association and then send an invitation to the member account. To send the invitation, you use the InviteMembers operation. If the account owner accepts the invitation, the account becomes a member account in Security Hub. Accounts that are managed using Organizations don\'t receive an invitation. They automatically become a member account in Security Hub.   If the organization account does not have Security Hub enabled, then Security Hub and the default standards are automatically enabled. Note that Security Hub cannot be enabled automatically for the organization management account. The organization management account must enable Security Hub before the administrator account enables it as a member account.   For organization accounts that already have Security Hub enabled, Security Hub does not make any other changes to those accounts. It does not change their enabled standards or controls.   A permissions policy is added that permits the administrator account to view the findings generated in the member account. To remove the association between the administrator and member accounts, use the DisassociateFromMasterAccount or DisassociateMembers operation',
       options: [
+
         Option(
           name: '--account-details',
           description: 'The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address',
@@ -937,6 +975,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -949,6 +988,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'decline-invitations',
       description: 'We recommend using Organizations instead of Security Hub invitations to manage your member accounts. For information, see Managing Security Hub administrator and member accounts with Organizations in the Security Hub User Guide.  Declines invitations to become a Security Hub member account. A prospective member account uses this operation to decline an invitation to become a member. Only member accounts that aren\'t part of an Amazon Web Services organization should use this operation. Organization accounts don\'t receive invitations',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The list of prospective member account IDs for which to decline an invitation',
@@ -974,6 +1014,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -986,6 +1027,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'delete-action-target',
       description: 'Deletes a custom action target from Security Hub. Deleting a custom action target does not affect any findings or insights that were already sent to Amazon CloudWatch Events using the custom action',
       options: [
+
         Option(
           name: '--action-target-arn',
           description: 'The Amazon Resource Name (ARN) of the custom action target to delete',
@@ -1011,6 +1053,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1023,6 +1066,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'delete-configuration-policy',
       description: 'Deletes a configuration policy. Only the Security Hub delegated administrator can invoke this operation from the home Region. For the deletion to succeed, you must first disassociate a configuration policy from target accounts, organizational units, or the root by invoking the StartConfigurationPolicyDisassociation operation',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy',
@@ -1048,6 +1092,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1060,6 +1105,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'delete-finding-aggregator',
       description: 'The aggregation Region is now called the home Region.  Deletes a finding aggregator. When you delete the finding aggregator, you stop cross-Region aggregation. Finding replication stops occurring from the linked Regions to the home Region. When you stop cross-Region aggregation, findings that were already replicated and sent to the home Region are still visible from the home Region. However, new findings and finding updates are no longer replicated and sent to the home Region',
       options: [
+
         Option(
           name: '--finding-aggregator-arn',
           description: 'The ARN of the finding aggregator to delete. To obtain the ARN, use ListFindingAggregators',
@@ -1085,6 +1131,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1097,6 +1144,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'delete-insight',
       description: 'Deletes the insight specified by the InsightArn',
       options: [
+
         Option(
           name: '--insight-arn',
           description: 'The ARN of the insight to delete',
@@ -1122,6 +1170,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1134,6 +1183,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'delete-invitations',
       description: 'We recommend using Organizations instead of Security Hub invitations to manage your member accounts. For information, see Managing Security Hub administrator and member accounts with Organizations in the Security Hub User Guide.  Deletes invitations to become a Security Hub member account. A Security Hub administrator account can use this operation to delete invitations sent to one or more prospective member accounts. This operation is only used to delete invitations that are sent to prospective member accounts that aren\'t part of an Amazon Web Services organization. Organization accounts don\'t receive invitations',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The list of member account IDs that received the invitations you want to delete',
@@ -1159,6 +1209,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1171,6 +1222,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'delete-members',
       description: 'Deletes the specified member accounts from Security Hub. You can invoke this API only to delete accounts that became members through invitation. You can\'t invoke this API to delete accounts that belong to an Organizations organization',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The list of account IDs for the member accounts to delete',
@@ -1196,6 +1248,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1208,6 +1261,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'describe-action-targets',
       description: 'Returns a list of the custom action targets in Security Hub in your account',
       options: [
+
         Option(
           name: '--action-target-arns',
           description: 'A list of custom action target ARNs for the custom action targets to retrieve',
@@ -1278,6 +1332,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1290,6 +1345,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'describe-hub',
       description: 'Returns details about the Hub resource in your account, including the HubArn and the time when you enabled Security Hub',
       options: [
+
         Option(
           name: '--hub-arn',
           description: 'The ARN of the Hub resource to retrieve',
@@ -1315,6 +1371,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1327,6 +1384,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'describe-organization-configuration',
       description: 'Returns information about the way your organization is configured in Security Hub. Only the Security Hub administrator account can invoke this operation',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1343,6 +1401,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1355,6 +1414,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'describe-products',
       description: 'Returns information about product integrations in Security Hub. You can optionally provide an integration ARN. If you provide an integration ARN, then the results only include that integration. If you don\'t provide an integration ARN, then the results include all of the available product integrations',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token that is required for pagination. On your first call to the DescribeProducts operation, set the value of this parameter to NULL. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response',
@@ -1425,6 +1485,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1437,6 +1498,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'describe-standards',
       description: 'Returns a list of the available standards in Security Hub. For each standard, the results include the standard ARN, the name, and a description',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token that is required for pagination. On your first call to the DescribeStandards operation, set the value of this parameter to NULL. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response',
@@ -1498,6 +1560,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1510,6 +1573,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'describe-standards-controls',
       description: 'Returns a list of security standards controls. For each control, the results include information about whether it is currently enabled, the severity, and a link to remediation information',
       options: [
+
         Option(
           name: '--standards-subscription-arn',
           description: 'The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the GetEnabledStandards operation',
@@ -1580,6 +1644,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1592,6 +1657,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'disable-import-findings-for-product',
       description: 'Disables the integration of the specified product with Security Hub. After the integration is disabled, findings from that product are no longer sent to Security Hub',
       options: [
+
         Option(
           name: '--product-subscription-arn',
           description: 'The ARN of the integrated product to disable the integration for',
@@ -1617,6 +1683,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1629,6 +1696,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'disable-organization-admin-account',
       description: 'Disables a Security Hub administrator account. Can only be called by the organization management account',
       options: [
+
         Option(
           name: '--admin-account-id',
           description: 'The Amazon Web Services account identifier of the Security Hub administrator account',
@@ -1654,6 +1722,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1666,6 +1735,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'disable-security-hub',
       description: 'Disables Security Hub in your account only in the current Amazon Web Services Region. To disable Security Hub in all Regions, you must submit one request per Region where you have enabled Security Hub. You can\'t disable Security Hub in an account that is currently the Security Hub administrator. When you disable Security Hub, your existing findings and insights and any Security Hub configuration settings are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your administrator and member account associations are removed. If you want to save your existing findings, you must export them before you disable Security Hub',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1682,6 +1752,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1694,6 +1765,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'disassociate-from-administrator-account',
       description: 'Disassociates the current Security Hub member account from the associated administrator account. This operation is only used by accounts that are not part of an organization. For organization accounts, only the administrator account can disassociate a member account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1710,6 +1782,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1722,6 +1795,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'disassociate-from-master-account',
       description: 'This method is deprecated. Instead, use DisassociateFromAdministratorAccount. The Security Hub console continues to use DisassociateFromMasterAccount. It will eventually change to use DisassociateFromAdministratorAccount. Any IAM policies that specifically control access to this function must continue to use DisassociateFromMasterAccount. You should also add DisassociateFromAdministratorAccount to your policies to ensure that the correct permissions are in place after the console begins to use DisassociateFromAdministratorAccount. Disassociates the current Security Hub member account from the associated administrator account. This operation is only used by accounts that are not part of an organization. For organization accounts, only the administrator account can disassociate a member account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1738,6 +1812,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1750,6 +1825,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'disassociate-members',
       description: 'Disassociates the specified member accounts from the associated administrator account. Can be used to disassociate both accounts that are managed using Organizations and accounts that were invited manually',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The account IDs of the member accounts to disassociate from the administrator account',
@@ -1775,6 +1851,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1787,6 +1864,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'enable-import-findings-for-product',
       description: 'Enables the integration of a partner product with Security Hub. Integrated products send findings to Security Hub. When you enable a product integration, a permissions policy that grants permission for the product to send findings to Security Hub is applied',
       options: [
+
         Option(
           name: '--product-arn',
           description: 'The ARN of the product to enable the integration for',
@@ -1812,6 +1890,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1824,6 +1903,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'enable-organization-admin-account',
       description: 'Designates the Security Hub administrator account for an organization. Can only be called by the organization management account',
       options: [
+
         Option(
           name: '--admin-account-id',
           description: 'The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account',
@@ -1849,6 +1929,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1861,6 +1942,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'enable-security-hub',
       description: 'Enables Security Hub for your account in the current Region or the Region you specify in the request. When you enable Security Hub, you grant to Security Hub the permissions necessary to gather findings from other services that are integrated with Security Hub. When you use the EnableSecurityHub operation to enable Security Hub, you also automatically enable the following standards:   Center for Internet Security (CIS) Amazon Web Services Foundations Benchmark v1.2.0   Amazon Web Services Foundational Security Best Practices   Other standards are not automatically enabled.  To opt out of automatically enabled standards, set EnableDefaultStandards to false. After you enable Security Hub, to enable a standard, use the BatchEnableStandards operation. To disable a standard, use the BatchDisableStandards operation. To learn more, see the setup information in the Security Hub User Guide',
       options: [
+
         Option(
           name: '--tags',
           description: 'The tags to add to the hub resource when you enable Security Hub',
@@ -1903,6 +1985,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1915,6 +1998,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-administrator-account',
       description: 'Provides the details for the Security Hub administrator account for the current member account. Can be used by both member accounts that are managed using Organizations and accounts that were invited manually',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1931,6 +2015,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1943,6 +2028,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-configuration-policy',
       description: 'Provides information about a configuration policy. Only the Security Hub delegated administrator can invoke this operation from the home Region',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy',
@@ -1968,6 +2054,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1980,6 +2067,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-configuration-policy-association',
       description: 'Returns the association between a configuration and a target account, organizational unit, or the root. The configuration can be a configuration policy or self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region',
       options: [
+
         Option(
           name: '--target',
           description: 'The target account ID, organizational unit ID, or the root ID to retrieve the association for',
@@ -2005,6 +2093,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2017,6 +2106,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-enabled-standards',
       description: 'Returns a list of the standards that are currently enabled',
       options: [
+
         Option(
           name: '--standards-subscription-arns',
           description: 'The list of the standards subscription ARNs for the standards to retrieve',
@@ -2087,6 +2177,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2099,6 +2190,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-finding-aggregator',
       description: 'The aggregation Region is now called the home Region.  Returns the current configuration in the calling account for cross-Region aggregation. A finding aggregator is a resource that establishes the home Region and any linked Regions',
       options: [
+
         Option(
           name: '--finding-aggregator-arn',
           description: 'The ARN of the finding aggregator to return details for. To obtain the ARN, use ListFindingAggregators',
@@ -2124,6 +2216,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2136,6 +2229,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-finding-history',
       description: 'Returns history for a Security Hub finding in the last 90 days. The history includes changes made to any fields in the Amazon Web Services Security Finding Format (ASFF)',
       options: [
+
         Option(
           name: '--finding-identifier',
           description: 'Identifies which finding to get the finding history for',
@@ -2224,6 +2318,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2236,6 +2331,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-findings',
       description: 'Returns a list of findings that match the specified criteria. If cross-Region aggregation is enabled, then when you call GetFindings from the home Region, the results include all of the matching findings from both the home Region and linked Regions',
       options: [
+
         Option(
           name: '--filters',
           description: 'The finding attributes used to define a condition to filter the returned findings. You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values. Note that in the available filter fields, WorkflowState is deprecated. To search for a finding based on its workflow status, use WorkflowStatus',
@@ -2315,6 +2411,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2327,6 +2424,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-insight-results',
       description: 'Lists the results of the Security Hub insight specified by the insight ARN',
       options: [
+
         Option(
           name: '--insight-arn',
           description: 'The ARN of the insight for which to return results',
@@ -2352,6 +2450,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2364,6 +2463,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-insights',
       description: 'Lists and describes insights for the specified insight ARNs',
       options: [
+
         Option(
           name: '--insight-arns',
           description: 'The ARNs of the insights to describe. If you don\'t provide any insight ARNs, then GetInsights returns all of your custom insights. It does not return any managed insights',
@@ -2434,6 +2534,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2446,6 +2547,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-invitations-count',
       description: 'We recommend using Organizations instead of Security Hub invitations to manage your member accounts. For information, see Managing Security Hub administrator and member accounts with Organizations in the Security Hub User Guide.  Returns the count of all Security Hub membership invitations that were sent to the calling member account, not including the currently accepted invitation',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2462,6 +2564,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2474,6 +2577,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-master-account',
       description: 'This method is deprecated. Instead, use GetAdministratorAccount. The Security Hub console continues to use GetMasterAccount. It will eventually change to use GetAdministratorAccount. Any IAM policies that specifically control access to this function must continue to use GetMasterAccount. You should also add GetAdministratorAccount to your policies to ensure that the correct permissions are in place after the console begins to use GetAdministratorAccount. Provides the details for the Security Hub administrator account for the current member account. Can be used by both member accounts that are managed using Organizations and accounts that were invited manually',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2490,6 +2594,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2502,6 +2607,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-members',
       description: 'Returns the details for the Security Hub member accounts for the specified account IDs. An administrator account can be either the delegated Security Hub administrator account for an organization or an administrator account that enabled Security Hub manually. The results include both member accounts that are managed using Organizations and accounts that were invited manually',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The list of account IDs for the Security Hub member accounts to return the details for',
@@ -2527,6 +2633,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2539,6 +2646,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'get-security-control-definition',
       description: 'Retrieves the definition of a security control. The definition includes the control title, description, Region availability, parameter definitions, and other details',
       options: [
+
         Option(
           name: '--security-control-id',
           description: 'The ID of the security control to retrieve the definition for. This field doesn’t accept an Amazon Resource Name (ARN)',
@@ -2564,6 +2672,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2576,6 +2685,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'invite-members',
       description: 'We recommend using Organizations instead of Security Hub invitations to manage your member accounts. For information, see Managing Security Hub administrator and member accounts with Organizations in the Security Hub User Guide.  Invites other Amazon Web Services accounts to become member accounts for the Security Hub administrator account that the invitation is sent from. This operation is only used to invite accounts that don\'t belong to an Amazon Web Services organization. Organization accounts don\'t receive invitations. Before you can use this action to invite a member, you must first use the CreateMembers action to create the member account in Security Hub. When the account owner enables Security Hub and accepts the invitation to become a member account, the administrator account can view the findings generated in the member account',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members',
@@ -2601,6 +2711,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2613,6 +2724,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-automation-rules',
       description: 'A list of automation rules and their metadata for the calling account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token to specify where to start paginating the response. This is the NextToken from a previously truncated response. On your first call to the ListAutomationRules API, set the value of this parameter to NULL',
@@ -2647,6 +2759,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2659,6 +2772,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-configuration-policies',
       description: 'Lists the configuration policies that the Security Hub delegated administrator has created for your organization. Only the delegated administrator can invoke this operation from the home Region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The NextToken value that\'s returned from a previous paginated ListConfigurationPolicies request where MaxResults was used but the results exceeded the value of that parameter. Pagination continues from the MaxResults was used but the results exceeded the value of that parameter. Pagination continues from the end of the previous response that returned the NextToken value. This value is null when there are no more results to return',
@@ -2720,6 +2834,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2732,6 +2847,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-configuration-policy-associations',
       description: 'Provides information about the associations for your configuration policies and self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The NextToken value that\'s returned from a previous paginated ListConfigurationPolicyAssociations request where MaxResults was used but the results exceeded the value of that parameter. Pagination continues from the end of the previous response that returned the NextToken value. This value is null when there are no more results to return',
@@ -2802,6 +2918,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2814,6 +2931,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-enabled-products-for-import',
       description: 'Lists all findings-generating solutions (products) that you are subscribed to receive findings from in Security Hub',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token that is required for pagination. On your first call to the ListEnabledProductsForImport operation, set the value of this parameter to NULL. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response',
@@ -2875,6 +2993,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2887,6 +3006,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-finding-aggregators',
       description: 'If cross-Region aggregation is enabled, then ListFindingAggregators returns the Amazon Resource Name (ARN) of the finding aggregator. You can run this operation from any Amazon Web Services Region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token returned with the previous set of results. Identifies the next set of results to return',
@@ -2948,6 +3068,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2960,6 +3081,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-invitations',
       description: 'We recommend using Organizations instead of Security Hub invitations to manage your member accounts. For information, see Managing Security Hub administrator and member accounts with Organizations in the Security Hub User Guide.  Lists all Security Hub membership invitations that were sent to the calling account. Only accounts that are managed by invitation can use this operation. Accounts that are managed using the integration with Organizations don\'t receive invitations',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return in the response',
@@ -3021,6 +3143,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3033,6 +3156,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-members',
       description: 'Lists details about all member accounts for the current Security Hub administrator account. The results include both member accounts that belong to an organization and member accounts that were invited manually',
       options: [
+
         Option(
           name: '--only-associated',
           description: 'Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is TRUE. If OnlyAssociated is set to TRUE, the response includes member accounts whose relationship status with the administrator account is set to ENABLED. If OnlyAssociated is set to FALSE, the response includes all existing member accounts'
@@ -3102,6 +3226,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3114,6 +3239,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-organization-admin-accounts',
       description: 'Lists the Security Hub administrator accounts. Can only be called by the organization management account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return in the response',
@@ -3175,6 +3301,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3187,6 +3314,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-security-control-definitions',
       description: 'Lists all of the security controls that apply to a specified standard',
       options: [
+
         Option(
           name: '--standards-arn',
           description: 'The Amazon Resource Name (ARN) of the standard that you want to view controls for',
@@ -3257,6 +3385,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3269,6 +3398,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-standards-control-associations',
       description: 'Specifies whether a control is currently enabled or disabled in each enabled standard in the calling account',
       options: [
+
         Option(
           name: '--security-control-id',
           description: 'The identifier of the control (identified with SecurityControlId, SecurityControlArn, or a mix of both parameters) that you want to determine the enablement status of in each enabled standard',
@@ -3339,6 +3469,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3351,6 +3482,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags associated with a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to retrieve tags for',
@@ -3376,6 +3508,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3388,6 +3521,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'start-configuration-policy-association',
       description: 'Associates a target account, organizational unit, or the root with a specified configuration. The target can be associated with a configuration policy or self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region',
       options: [
+
         Option(
           name: '--configuration-policy-identifier',
           description: 'The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of SELF_MANAGED_SECURITY_HUB for a self-managed configuration',
@@ -3422,6 +3556,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3434,6 +3569,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'start-configuration-policy-disassociation',
       description: 'Disassociates a target account, organizational unit, or the root from a specified configuration. When you disassociate a configuration from its target, the target inherits the configuration of the closest parent. If there’s no configuration to inherit, the target retains its settings but becomes a self-managed account. A target can be disassociated from a configuration policy or self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region',
       options: [
+
         Option(
           name: '--target',
           description: 'The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration',
@@ -3468,6 +3604,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3480,6 +3617,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to apply the tags to',
@@ -3514,6 +3652,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3526,6 +3665,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to remove the tags from',
@@ -3560,6 +3700,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3572,6 +3713,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'update-action-target',
       description: 'Updates the name and description of a custom action target in Security Hub',
       options: [
+
         Option(
           name: '--action-target-arn',
           description: 'The ARN of the custom action target to update',
@@ -3615,6 +3757,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3627,6 +3770,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'update-configuration-policy',
       description: 'Updates a configuration policy. Only the Security Hub delegated administrator can invoke this operation from the home Region',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy',
@@ -3688,6 +3832,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3700,6 +3845,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'update-finding-aggregator',
       description: 'The aggregation Region is now called the home Region.  Updates cross-Region aggregation settings. You can use this operation to update the Region linking mode and the list of included or excluded Amazon Web Services Regions. However, you can\'t use this operation to change the home Region. You can invoke this operation from the current home Region only',
       options: [
+
         Option(
           name: '--finding-aggregator-arn',
           description: 'The ARN of the finding aggregator. To obtain the ARN, use ListFindingAggregators',
@@ -3743,6 +3889,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3755,6 +3902,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'update-findings',
       description: 'UpdateFindings is a deprecated operation. Instead of UpdateFindings, use the BatchUpdateFindings operation. The UpdateFindings operation updates the Note and RecordState of the Security Hub aggregated findings that the filter attributes specify. Any member account that can view the finding can also see the update to the finding. Finding updates made with UpdateFindings aren\'t persisted if the same finding is later updated by the finding provider through the BatchImportFindings operation. In addition, Security Hub doesn\'t record updates made with UpdateFindings in the finding history',
       options: [
+
         Option(
           name: '--filters',
           description: 'A collection of attributes that specify which findings you want to update',
@@ -3798,6 +3946,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3810,6 +3959,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'update-insight',
       description: 'Updates the Security Hub insight identified by the specified insight ARN',
       options: [
+
         Option(
           name: '--insight-arn',
           description: 'The ARN of the insight that you want to update',
@@ -3862,6 +4012,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3874,6 +4025,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'update-organization-configuration',
       description: 'Updates the configuration of your organization in Security Hub. Only the Security Hub administrator account can invoke this operation',
       options: [
+
         Option(
           name: '--auto-enable',
           description: 'Whether to automatically enable Security Hub in new member accounts when they join the organization. If set to true, then Security Hub is automatically enabled in new accounts. If set to false, then Security Hub isn\'t enabled in new accounts automatically. The default value is false. If the ConfigurationType of your organization is set to CENTRAL, then this field is set to false and can\'t be changed in the home Region and linked Regions. However, in that case, the delegated administrator can create a configuration policy in which Security Hub is enabled and associate the policy with new organization accounts'
@@ -3916,6 +4068,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3928,6 +4081,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'update-security-control',
       description: 'Updates the properties of a security control',
       options: [
+
         Option(
           name: '--security-control-id',
           description: 'The Amazon Resource Name (ARN) or ID of the control to update',
@@ -3971,6 +4125,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3983,6 +4138,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'update-security-hub-configuration',
       description: 'Updates configuration options for Security Hub',
       options: [
+
         Option(
           name: '--auto-enable-controls',
           description: 'Whether to automatically enable new controls when they are added to standards that are enabled. By default, this is set to true, and new controls are enabled automatically. To not automatically enable new controls, set this to false'
@@ -4016,6 +4172,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4028,6 +4185,7 @@ final FigSpec securityhubSpec = FigSpec(
       name: 'update-standards-control',
       description: 'Used to control whether an individual security standard control is enabled or disabled',
       options: [
+
         Option(
           name: '--standards-control-arn',
           description: 'The ARN of the security standard control to enable or disable',
@@ -4071,6 +4229,7 @@ final FigSpec securityhubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

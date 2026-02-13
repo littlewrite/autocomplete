@@ -9,10 +9,12 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
   name: 'marketplace-catalog',
   description: 'Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace.  You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace',
   subcommands: [
+
     Subcommand(
       name: 'batch-describe-entities',
       description: 'Returns metadata and content for multiple entities. This is the Batch version of the DescribeEntity API and uses the same IAM permission action as DescribeEntity API',
       options: [
+
         Option(
           name: '--entity-request-list',
           description: 'List of entity IDs and the catalogs the entities are present in',
@@ -38,6 +40,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'cancel-change-set',
       description: 'Used to cancel an open change request. Must be sent before the status of the request changes to APPLYING, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls',
       options: [
+
         Option(
           name: '--catalog',
           description: 'Required. The catalog related to the request. Fixed value: AWSMarketplace',
@@ -84,6 +88,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes a resource-based policy on an entity that is identified by its resource ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy',
@@ -121,6 +127,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -133,6 +140,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'describe-change-set',
       description: 'Provides information about a given change set',
       options: [
+
         Option(
           name: '--catalog',
           description: 'Required. The catalog related to the request. Fixed value: AWSMarketplace',
@@ -167,6 +175,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -179,6 +188,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'describe-entity',
       description: 'Returns the metadata and content of the entity',
       options: [
+
         Option(
           name: '--catalog',
           description: 'Required. The catalog related to the request. Fixed value: AWSMarketplace',
@@ -213,6 +223,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -225,6 +236,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'get-resource-policy',
       description: 'Gets a resource-based policy of an entity that is identified by its resource ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy',
@@ -250,6 +262,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -262,6 +275,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'list-change-sets',
       description: 'Returns the list of change sets owned by the account being used to make the call. You can filter this list by providing any combination of entityId, ChangeSetName, and status. If you provide more than one filter, the API operation applies a logical AND between the filters. You can describe a change during the 60-day request history retention period for API calls',
       options: [
+
         Option(
           name: '--catalog',
           description: 'The catalog related to the request. Fixed value: AWSMarketplace',
@@ -350,6 +364,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -362,6 +377,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'list-entities',
       description: 'Provides the list of entities of a given type',
       options: [
+
         Option(
           name: '--catalog',
           description: 'The catalog related to the request. Fixed value: AWSMarketplace',
@@ -486,6 +502,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -498,6 +515,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags that have been added to a resource (either an entity or change set)',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on',
@@ -523,6 +541,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -535,6 +554,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Attaches a resource-based policy to an entity. Examples of an entity include: AmiProduct and ContainerProduct',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy',
@@ -569,6 +589,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -581,6 +602,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'start-change-set',
       description: 'Allows you to request changes for your entities. Within a single ChangeSet, you can\'t start the same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the entities targeted by the different changes are locked until the change set has completed (either succeeded, cancelled, or failed). If you try to start a change set containing a change against an entity that is already locked, you will receive a ResourceInUseException error. For example, you can\'t start the ChangeSet described in the example later in this topic because it contains two changes to run the same change type (AddRevisions) against the same entity (entity-id@1). For more information about working with change sets, see  Working with change sets. For information about change types for single-AMI products, see Working with single-AMI products. Also, for more information about change types available for container-based products, see Working with container products',
       options: [
+
         Option(
           name: '--catalog',
           description: 'The catalog related to the request. Fixed value: AWSMarketplace',
@@ -651,6 +673,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -663,6 +686,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags a resource (either an entity or change set)',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Required. The Amazon Resource Name (ARN) associated with the resource you want to tag',
@@ -697,6 +721,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -709,6 +734,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag or list of tags from a resource (either an entity or change set)',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from',
@@ -743,6 +769,7 @@ final FigSpec marketplaceCatalogSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

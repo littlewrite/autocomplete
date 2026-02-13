@@ -8,10 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec kafkaconnectSpec = FigSpec(
   name: 'kafkaconnect',
   subcommands: [
+
     Subcommand(
       name: 'create-connector',
       description: 'Creates a connector using the specified properties',
       options: [
+
         Option(
           name: '--capacity',
           description: 'Information about the capacity allocated to the connector. Exactly one of the two properties must be specified',
@@ -145,6 +147,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -157,6 +160,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'create-custom-plugin',
       description: 'Creates a custom plugin using the specified properties',
       options: [
+
         Option(
           name: '--content-type',
           description: 'The type of the plugin file',
@@ -218,6 +222,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -230,6 +235,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'create-worker-configuration',
       description: 'Creates a worker configuration using the specified properties',
       options: [
+
         Option(
           name: '--description',
           description: 'A summary description of the worker configuration',
@@ -282,6 +288,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -294,6 +301,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'delete-connector',
       description: 'Deletes the specified connector',
       options: [
+
         Option(
           name: '--connector-arn',
           description: 'The Amazon Resource Name (ARN) of the connector that you want to delete',
@@ -328,6 +336,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -340,6 +349,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'delete-custom-plugin',
       description: 'Deletes a custom plugin',
       options: [
+
         Option(
           name: '--custom-plugin-arn',
           description: 'The Amazon Resource Name (ARN) of the custom plugin that you want to delete',
@@ -365,6 +375,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -377,6 +388,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'delete-worker-configuration',
       description: 'Deletes the specified worker configuration',
       options: [
+
         Option(
           name: '--worker-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the worker configuration that you want to delete',
@@ -402,6 +414,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -414,6 +427,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'describe-connector',
       description: 'Returns summary information about the connector',
       options: [
+
         Option(
           name: '--connector-arn',
           description: 'The Amazon Resource Name (ARN) of the connector that you want to describe',
@@ -439,6 +453,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -451,6 +466,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'describe-custom-plugin',
       description: 'A summary description of the custom plugin',
       options: [
+
         Option(
           name: '--custom-plugin-arn',
           description: 'Returns information about a custom plugin',
@@ -476,6 +492,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -488,6 +505,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'describe-worker-configuration',
       description: 'Returns information about a worker configuration',
       options: [
+
         Option(
           name: '--worker-configuration-arn',
           description: 'The Amazon Resource Name (ARN) of the worker configuration that you want to get information about',
@@ -513,6 +531,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -525,6 +544,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'list-connectors',
       description: 'Returns a list of all the connectors in this account and Region. The list is limited to connectors whose name starts with the specified prefix. The response also includes a description of each of the listed connectors',
       options: [
+
         Option(
           name: '--connector-name-prefix',
           description: 'The name prefix that you want to use to search for and list connectors',
@@ -595,6 +615,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -607,6 +628,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'list-custom-plugins',
       description: 'Returns a list of all of the custom plugins in this account and Region',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of custom plugins to list in one response',
@@ -677,6 +699,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -689,6 +712,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all the tags attached to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which you want to list all attached tags',
@@ -714,6 +738,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -726,6 +751,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'list-worker-configurations',
       description: 'Returns a list of all of the worker configurations in this account and Region',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of worker configurations to list in one response',
@@ -796,6 +822,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -808,6 +835,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'tag-resource',
       description: 'Attaches tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to which you want to attach tags',
@@ -842,6 +870,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -854,6 +883,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource from which you want to remove tags',
@@ -888,6 +918,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -900,6 +931,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
       name: 'update-connector',
       description: 'Updates the specified connector',
       options: [
+
         Option(
           name: '--capacity',
           description: 'The target capacity',
@@ -943,6 +975,7 @@ final FigSpec kafkaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

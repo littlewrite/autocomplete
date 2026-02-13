@@ -9,6 +9,7 @@ final FigSpec buildStorybookSpec = FigSpec(
   name: 'build-storybook',
   description: 'Storybook build CLI tools',
   options: [
+
     Option(
       name: ['-o', '--output-dir'],
       description: 'Directory where to store built files',
@@ -30,6 +31,7 @@ final FigSpec buildStorybookSpec = FigSpec(
         Arg(
         name: 'level',
         suggestions: [
+
           FigSuggestion(name: 'silly'),
           FigSuggestion(name: 'verbose'),
           FigSuggestion(name: 'info'),

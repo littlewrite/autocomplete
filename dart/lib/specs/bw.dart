@@ -8,10 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec bwSpec = FigSpec(
   name: 'bw',
   subcommands: [
+
     Subcommand(
       name: 'login',
       description: 'Log into a user account',
       options: [
+
         Option(
           name: '--method',
           description: 'Two-step login method',
@@ -21,6 +23,7 @@ final FigSpec bwSpec = FigSpec(
             name: 'method',
             description: 'Authenticator = 0, Email = 1, YubiKey = 3',
             suggestions: [
+
               FigSuggestion(
                 name: '0',
                 description: 'Authenticator'
@@ -121,6 +124,7 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'email',
           description: 'Email Address of Bitwarden Account',
@@ -137,6 +141,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'logout',
       description: 'Log out of the current user account',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for logout command',
@@ -148,6 +153,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'lock',
       description: 'Lock the vault and destroy active session keys',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for lock command',
@@ -159,6 +165,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'unlock',
       description: 'Unlock the vault and return a new session key',
       options: [
+
         Option(
           name: '--check',
           description: 'Check lock status',
@@ -206,6 +213,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'sync',
       description: 'Pull the latest vault data from server',
       options: [
+
         Option(
           name: ['-f', '--force'],
           description: 'Force a full sync',
@@ -227,11 +235,13 @@ final FigSpec bwSpec = FigSpec(
       name: 'generate',
       description: 'Generate a password/passphrase',
       subcommands: [
+
         Subcommand(
           name: ['-p', '--passphrase'],
           description: 'Generate a passphrase',
           priority: 55,
           options: [
+
             Option(
               name: '--words',
               description: 'Number of words to include in passphrase',
@@ -317,6 +327,7 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-u', '--uppercase'],
           description: 'Include uppercase characters',
@@ -427,6 +438,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'encode',
       description: 'Base 64 encode stdin',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for encode command',
@@ -438,6 +450,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'config',
       description: 'Configure CLI settings',
       options: [
+
         Option(
           name: '--web-vault',
           description: 'Provides a custom web vault URL that differs from the base URL',
@@ -515,10 +528,12 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'setting',
           description: 'Setting to configure',
           suggestions: [
+
             FigSuggestion(name: 'server')
           ]
         ),
@@ -532,6 +547,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'update',
       description: 'Check for updates',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for update command',
@@ -543,6 +559,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'completion',
       description: 'Generate shell completions',
       options: [
+
         Option(
           name: '--shell',
           description: 'Shell to generate completions for',
@@ -550,6 +567,7 @@ final FigSpec bwSpec = FigSpec(
             Arg(
             name: 'shell',
             suggestions: [
+
               FigSuggestion(name: 'zsh')
             ],
             description: 'Shell to generate completions for',
@@ -568,6 +586,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'status',
       description: 'Show server details, last sync time & date, user information, and vault status',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for status command',
@@ -579,6 +598,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'serve',
       description: 'Start a RESTful API webserver',
       options: [
+
         Option(
           name: '--hostname',
           description: 'The hostname to bind your API webserver to',
@@ -608,6 +628,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'list',
       description: 'Retrieves an array of objects (items, folders, collections, org-collections, org-members, organizations) from your Vault',
       options: [
+
         Option(
           name: '--search',
           description: 'Perform a search on the listed objects',
@@ -667,6 +688,7 @@ final FigSpec bwSpec = FigSpec(
         Arg(
         name: 'object',
         suggestions: [
+
           FigSuggestion(name: 'items'),
           FigSuggestion(name: 'folders'),
           FigSuggestion(name: 'collections'),
@@ -681,6 +703,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'get',
       description: 'Get an object from the vault',
       subcommands: [
+
         Subcommand(
           name: 'template',
           description: 'Type of template to get',
@@ -688,6 +711,7 @@ final FigSpec bwSpec = FigSpec(
             Arg(
             name: 'object',
             suggestions: [
+
               FigSuggestion(name: 'item'),
               FigSuggestion(name: 'item.field'),
               FigSuggestion(name: 'item.login'),
@@ -708,6 +732,7 @@ final FigSpec bwSpec = FigSpec(
         Subcommand(
           name: 'attachment',
           options: [
+
             Option(
               name: '--itemid',
               description: 'Vault Item ID containing attachment',
@@ -733,6 +758,7 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--id',
           description: 'Exact id of the object',
@@ -760,9 +786,11 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'object',
           suggestions: [
+
             FigSuggestion(name: 'item'),
             FigSuggestion(name: 'username'),
             FigSuggestion(name: 'password'),
@@ -784,6 +812,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'create',
       description: 'Create an object in the vault',
       options: [
+
         Option(
           name: '--file',
           description: 'Path to file for attachment',
@@ -822,10 +851,12 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'object',
           description: 'Object to be created',
           suggestions: [
+
             FigSuggestion(name: 'item'),
             FigSuggestion(name: 'attachment'),
             FigSuggestion(name: 'folder'),
@@ -842,6 +873,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'edit',
       description: 'Edit an object from the vault',
       options: [
+
         Option(
           name: '--organizationid',
           description: 'Organization id for an organization object',
@@ -859,10 +891,12 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'object',
           description: 'Type of Vault Object to edit',
           suggestions: [
+
             FigSuggestion(name: 'item'),
             FigSuggestion(name: 'item-collections'),
             FigSuggestion(name: 'folder'),
@@ -884,6 +918,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'delete',
       description: 'Delete an object from the vault',
       options: [
+
         Option(
           name: '--itemid',
           description: 'Attachment\'s item id',
@@ -919,10 +954,12 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'object',
           description: 'Object to delete',
           suggestions: [
+
             FigSuggestion(name: 'item'),
             FigSuggestion(name: 'attachment'),
             FigSuggestion(name: 'folder'),
@@ -939,6 +976,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'restore',
       description: 'Restores an object from the trash',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for the restore command',
@@ -946,6 +984,7 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'object'
         ),
@@ -958,6 +997,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'move',
       description: 'Transfers a Vault item to an Organization',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for the move command',
@@ -965,6 +1005,7 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'id'
         ),
@@ -981,6 +1022,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'confirm',
       description: 'Confirm an object to the organization',
       options: [
+
         Option(
           name: '--organizationid',
           description: 'Organization id for an organization object',
@@ -998,6 +1040,7 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'object',
           description: 'Valid objects are: org-member'
@@ -1012,6 +1055,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'import',
       description: 'Import vault data from a file',
       options: [
+
         Option(
           name: '--formats',
           description: 'List supported file formats'
@@ -1033,9 +1077,11 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'format',
           suggestions: [
+
             FigSuggestion(name: '1password1pif'),
             FigSuggestion(name: '1password1pux'),
             FigSuggestion(name: '1passwordmaccsv'),
@@ -1109,6 +1155,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'export',
       description: 'Export vault data to a CSV or JSON file',
       options: [
+
         Option(
           name: '--output',
           description: 'Set output directory or filename',
@@ -1127,6 +1174,7 @@ final FigSpec bwSpec = FigSpec(
             Arg(
             name: 'format',
             suggestions: [
+
               FigSuggestion(name: 'csv'),
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'encrypted_json')
@@ -1169,6 +1217,7 @@ final FigSpec bwSpec = FigSpec(
       description: '--DEPRECATED-- Move an item to an organization',
       icon: 'fig://icon?type=alert',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for the share command',
@@ -1176,6 +1225,7 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'id',
           description: 'Object\'s globally unique ID'
@@ -1195,10 +1245,12 @@ final FigSpec bwSpec = FigSpec(
       name: 'send',
       description: 'Work with Bitwarden Sends. A Send can be quickly created using this command or subcommands can be used to fine-tune the Send',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List all the Sends owned by you',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for the Send command'
@@ -1209,6 +1261,7 @@ final FigSpec bwSpec = FigSpec(
           name: 'template',
           description: 'Get json templates for Send objects',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for the template sub-command',
@@ -1220,6 +1273,7 @@ final FigSpec bwSpec = FigSpec(
             name: 'object',
             description: 'Json template to fetch',
             suggestions: [
+
               FigSuggestion(name: 'send.text'),
               FigSuggestion(name: 'send.file')
             ]
@@ -1230,6 +1284,7 @@ final FigSpec bwSpec = FigSpec(
           name: 'get',
           description: 'Get Sends owned by you',
           options: [
+
             Option(
               name: '--output',
               description: 'Output directory or filename for attachment',
@@ -1261,6 +1316,7 @@ final FigSpec bwSpec = FigSpec(
           name: 'receive',
           description: 'Access a Bitwarden Send from a url',
           options: [
+
             Option(
               name: '--password',
               description: 'Password needed to access the Send',
@@ -1327,6 +1383,7 @@ final FigSpec bwSpec = FigSpec(
           name: 'create',
           description: 'Create a Send',
           options: [
+
             Option(
               name: '--file',
               description: 'File to Send. Can also be specified in parent\'s JSON',
@@ -1382,6 +1439,7 @@ final FigSpec bwSpec = FigSpec(
           name: 'edit',
           description: 'Edit a Send',
           options: [
+
             Option(
               name: '--itemid',
               description: 'Overrides the itemId provided in [encodedJson]',
@@ -1409,6 +1467,7 @@ final FigSpec bwSpec = FigSpec(
           name: 'remove-password',
           description: 'Removes the saved password from a Send',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for the remove-password sub-command',
@@ -1426,6 +1485,7 @@ final FigSpec bwSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Send',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for the delete sub-command',
@@ -1451,6 +1511,7 @@ final FigSpec bwSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-f', '--file'],
           description: 'Specifies that <data> is a filepath'
@@ -1521,10 +1582,12 @@ final FigSpec bwSpec = FigSpec(
       name: 'device-approval',
       description: 'Manage device approval requests sent to organizations that use SSO with trusted devices',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List all pending requests for an organisation',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for the list sub-command',
@@ -1547,6 +1610,7 @@ final FigSpec bwSpec = FigSpec(
           name: 'approve',
           description: 'Approve a pending request',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for the approve sub-command',
@@ -1581,6 +1645,7 @@ final FigSpec bwSpec = FigSpec(
           description: 'Approve all pending requests for an organisation',
           icon: 'fig://icon?type=alert',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for the approve-all sub-command',
@@ -1603,6 +1668,7 @@ final FigSpec bwSpec = FigSpec(
           name: 'deny',
           description: 'Deny a pending request',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for the deny sub-command',
@@ -1636,6 +1702,7 @@ final FigSpec bwSpec = FigSpec(
           name: 'deny-all',
           description: 'Deny all pending requests for an organisation',
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for the deny-all sub-command',
@@ -1670,6 +1737,7 @@ final FigSpec bwSpec = FigSpec(
       name: 'receive',
       description: 'Access a Bitwarden Send from a url',
       options: [
+
         Option(
           name: '--password',
           description: 'Password needed to access the Send',
@@ -1741,6 +1809,7 @@ final FigSpec bwSpec = FigSpec(
         name: 'command',
         description: 'Subcommand to display help for',
         suggestions: [
+
           FigSuggestion(name: 'login'),
           FigSuggestion(name: 'logout'),
           FigSuggestion(name: 'lock'),
@@ -1774,6 +1843,7 @@ final FigSpec bwSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--pretty',
       description: 'Format output. JSON is tabbed with two spaces',

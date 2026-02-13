@@ -9,6 +9,7 @@ final FigSpec omzSpec = FigSpec(
   name: 'omz',
   description: 'Oh My Zsh',
   subcommands: [
+
     Subcommand(
       name: 'help',
       description: 'Print the help message'
@@ -21,6 +22,7 @@ final FigSpec omzSpec = FigSpec(
       name: 'plugin',
       description: 'Manage plugins',
       subcommands: [
+
         Subcommand(
           name: 'disable',
           description: 'Disable plugin(s)',
@@ -67,6 +69,7 @@ final FigSpec omzSpec = FigSpec(
       name: 'pr',
       description: 'Manage Oh My Zsh Pull Requests',
       subcommands: [
+
         Subcommand(
           name: 'clean',
           description: 'Delete all PR branches (ohmyzsh/pull-*)'
@@ -90,6 +93,7 @@ final FigSpec omzSpec = FigSpec(
       name: 'theme',
       description: 'Manage themes',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List all available Oh My Zsh themes'

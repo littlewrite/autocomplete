@@ -8,6 +8,7 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec commercelayerCliSpec = FigSpec(
   name: '@commercelayer/cli',
   subcommands: [
+
     Subcommand(
       name: [
         'applications',
@@ -19,6 +20,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       ],
       description: 'Show a list of all (logged in) available cli applications',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'Organization slug',
@@ -41,6 +43,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'integration'),
               FigSuggestion(name: 'sales_channel'),
               FigSuggestion(name: 'user')
@@ -54,6 +57,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'test'),
               FigSuggestion(name: 'live')
             ]
@@ -94,6 +98,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'core'),
               FigSuggestion(name: 'provisioning')
             ]
@@ -114,6 +119,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['applications:add', 'app:add'],
       description: '',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'Organization slug',
@@ -188,6 +194,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['applications:current', 'app:current'],
       description: 'Show the current application',
       options: [
+
         Option(
           name: '--info'
         ),
@@ -201,6 +208,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['applications:info', 'app:info'],
       description: 'Show application details',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'Organization slug',
@@ -223,6 +231,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'integration'),
               FigSuggestion(name: 'sales_channel'),
               FigSuggestion(name: 'user')
@@ -236,6 +245,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'test'),
               FigSuggestion(name: 'live')
             ]
@@ -276,6 +286,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'core'),
               FigSuggestion(name: 'provisioning')
             ]
@@ -292,6 +303,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['applications:login', 'app:login', 'login'],
       description: '',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'Organization slug',
@@ -372,6 +384,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       ],
       description: 'Remove an application from cli local configuration',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'Organization slug',
@@ -394,6 +407,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'integration'),
               FigSuggestion(name: 'sales_channel'),
               FigSuggestion(name: 'user')
@@ -407,6 +421,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'test'),
               FigSuggestion(name: 'live')
             ]
@@ -447,6 +462,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'core'),
               FigSuggestion(name: 'provisioning')
             ]
@@ -473,6 +489,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       ],
       description: 'Show all provisioning applications',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'Organization slug',
@@ -495,6 +512,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'integration'),
               FigSuggestion(name: 'sales_channel'),
               FigSuggestion(name: 'user')
@@ -508,6 +526,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'test'),
               FigSuggestion(name: 'live')
             ]
@@ -548,6 +567,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'core'),
               FigSuggestion(name: 'provisioning')
             ]
@@ -568,6 +588,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['applications:scope', 'app:scope'],
       description: 'Switch scope of current application',
       options: [
+
         Option(
           name: ['-a', '--alias'],
           description: 'The alias you want to associate to the application',
@@ -588,6 +609,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['applications:switch', 'app:switch'],
       description: 'Switch applications',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'Organization slug',
@@ -610,6 +632,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'integration'),
               FigSuggestion(name: 'sales_channel'),
               FigSuggestion(name: 'user')
@@ -623,6 +646,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'test'),
               FigSuggestion(name: 'live')
             ]
@@ -663,6 +687,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'core'),
               FigSuggestion(name: 'provisioning')
             ]
@@ -675,6 +700,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'app:token',
       description: 'Get a new access token from commerce layer api',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'Organization slug',
@@ -697,6 +723,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'integration'),
               FigSuggestion(name: 'sales_channel'),
               FigSuggestion(name: 'user')
@@ -710,6 +737,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'test'),
               FigSuggestion(name: 'live')
             ]
@@ -750,6 +778,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'core'),
               FigSuggestion(name: 'provisioning')
             ]
@@ -786,6 +815,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['cli:update', 'upgrade', 'latest'],
       description: 'Update commerce layer cli',
       options: [
+
         Option(
           name: ['-v', '--version'],
           description: 'Update cli to a specific version or tag',
@@ -800,6 +830,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['cli:version', 'version'],
       description: 'Show installed version of commerce layer cli',
       options: [
+
         Option(
           name: ['-p', '--plugins'],
           description: 'Show version of installed plugins'
@@ -810,6 +841,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'plugins:available',
       description: 'Show all available commerce layer cli plugins',
       options: [
+
         Option(
           name: ['-H', '--hidden'],
           description: 'Show also enabled but hidden plugins'
@@ -820,6 +852,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'plugins:latest',
       description: 'Show latest version of available plugins',
       options: [
+
         Option(
           name: ['-b', '--beta'],
           description: 'Retrieve latest version from beta channel'
@@ -837,6 +870,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'checkout',
       description: 'Create checkout urls',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -922,6 +956,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'checkout:order',
       description: 'Create checkout urls starting from an existing order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -965,6 +1000,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'imports',
       description: 'List all the created imports or show details of a single import',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -997,6 +1033,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'addresses'),
               FigSuggestion(name: 'bundles'),
               FigSuggestion(name: 'coupons'),
@@ -1036,6 +1073,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'in_progress'),
               FigSuggestion(name: 'pending'),
               FigSuggestion(name: 'completed'),
@@ -1073,6 +1111,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['imports:create', 'imp:create', 'import'],
       description: 'Create a new import',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -1102,6 +1141,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
             Arg(
             description: 'Addresses|bundles|coupons|customer_addresses|etc',
             suggestions: [
+
               FigSuggestion(name: 'addresses'),
               FigSuggestion(name: 'bundles'),
               FigSuggestion(name: 'coupons'),
@@ -1153,6 +1193,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: ','),
               FigSuggestion(name: ';'),
               FigSuggestion(name: '|'),
@@ -1175,6 +1216,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['imports:delete', 'imp:delete'],
       description: 'Delete an existing import',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -1209,6 +1251,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['imports:details', 'imp:details'],
       description: 'Show the details of an existing import',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -1259,6 +1302,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['imports:group', 'imp:group'],
       description: 'List all the imports related to an import group',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -1293,6 +1337,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['imports:list', 'imp:list'],
       description: 'List all the created imports',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -1325,6 +1370,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'addresses'),
               FigSuggestion(name: 'bundles'),
               FigSuggestion(name: 'coupons'),
@@ -1364,6 +1410,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'in_progress'),
               FigSuggestion(name: 'pending'),
               FigSuggestion(name: 'completed'),
@@ -1394,6 +1441,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['imports:types', 'imp:types'],
       description: 'Show online documentation for supported resources',
       options: [
+
         Option(
           name: ['-O', '--open'],
           description: 'Open online documentation page'
@@ -1404,6 +1452,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'microstore',
       description: 'Create microstore urls',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -1456,12 +1505,14 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'seeder:check',
       description: 'Execute a check on seeder data',
       options: [
+
         Option(
           name: ['-b', '--businessModel'],
           description: 'The kind of business model you want to import',
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'single_sku'),
               FigSuggestion(name: 'multi_market'),
               FigSuggestion(name: 'custom')
@@ -1501,12 +1552,14 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'seeder:clean',
       description: 'Clean previously imported seeder data',
       options: [
+
         Option(
           name: ['-b', '--businessModel'],
           description: 'The kind of business model you want to import',
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'single_sku'),
               FigSuggestion(name: 'multi_market'),
               FigSuggestion(name: 'custom')
@@ -1564,12 +1617,14 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['seeder:seed', 'seed'],
       description: 'Execute commerce layer seeder',
       options: [
+
         Option(
           name: ['-b', '--businessModel'],
           description: 'The kind of business model you want to import',
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'single_sku'),
               FigSuggestion(name: 'multi_market'),
               FigSuggestion(name: 'custom')
@@ -1649,6 +1704,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'token:generate',
       description: 'Start a wizard to generate a custom access token',
       options: [
+
         Option(
           name: ['-d', '--domain'],
           args: [
@@ -1674,6 +1730,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'token:get',
       description: 'Get a new access token',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -1743,6 +1800,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'token:revoke',
       description: 'Revoke a commerce layer access token',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -1798,6 +1856,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'resources',
       description: 'List all the available commerce layer api resources',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show cli help'
@@ -1808,6 +1867,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:all', 'all', 'ra', 'res:all'],
       description: 'Fetch all resources',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -1868,6 +1928,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -1960,6 +2021,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: ','),
               FigSuggestion(name: ';'),
               FigSuggestion(name: '|'),
@@ -2008,6 +2070,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:args', 'res:args'],
       description: 'Show all the saved command arguments',
       options: [
+
         Option(
           name: ['-a', '--alias'],
           description: 'The alias associated to saved command arguments',
@@ -2030,6 +2093,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'list'),
               FigSuggestion(name: 'retrieve'),
               FigSuggestion(name: 'create'),
@@ -2052,6 +2116,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:count', 'count', 'res:count', 'rs:count'],
       description: 'Count the number of existent resources',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -2094,6 +2159,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:create', 'create', 'rc', 'res:create', 'post'],
       description: 'Create a new resource',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -2154,6 +2220,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -2246,6 +2313,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         name: 'resource',
         description: 'The resource type',
         suggestions: [
+
           FigSuggestion(name: 'address'),
           FigSuggestion(name: 'adjustment'),
           FigSuggestion(name: 'adyen_gateway'),
@@ -2355,6 +2423,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:delete', 'delete', 'rd', 'res:delete'],
       description: 'Delete an existing resource',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -2415,6 +2484,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -2455,10 +2525,12 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type',
           suggestions: [
+
             FigSuggestion(name: 'address'),
             FigSuggestion(name: 'adjustment'),
             FigSuggestion(name: 'adyen_gateway'),
@@ -2573,12 +2645,14 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:doc', 'res:doc', 'doc'],
       description: 'Open the default browser and show the online documentation for the resource',
       options: [
+
         Option(
           name: ['-p', '--page'],
           description: 'The doc page you want to access',
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'object'),
               FigSuggestion(name: 'create'),
               FigSuggestion(name: 'retrieve'),
@@ -2601,6 +2675,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:fetch', 'fetch', 'res:fetch', 'rf'],
       description: 'Retrieve a resource or list a set of resources',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -2661,6 +2736,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -2761,6 +2837,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'path',
           description: 'Path (or url) of the resource(s) to fetch'
@@ -2780,6 +2857,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:get', 'get', 'res:get', 'rg'],
       description: 'Retrieve a resource or list a set of resources',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -2840,6 +2918,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -2940,6 +3019,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type'
@@ -2955,6 +3035,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:list', 'list', 'rl', 'res:list'],
       description: 'Fetch a collection of resources',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -3015,6 +3096,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -3119,6 +3201,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         name: 'resource',
         description: 'The resource type',
         suggestions: [
+
           FigSuggestion(name: 'addresses'),
           FigSuggestion(name: 'adjustments'),
           FigSuggestion(name: 'adyen_gateways'),
@@ -3249,6 +3332,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['relationship', 'resources:rel', 'res:rel', 'res:relationship'],
       description: 'Fetch a resource relationship',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -3309,6 +3393,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -3409,6 +3494,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type'
@@ -3427,6 +3513,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:retrieve', 'retrieve', 'rr', 'res:retrieve'],
       description: 'Fetch a single resource',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -3487,6 +3574,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -3551,10 +3639,12 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type',
           suggestions: [
+
             FigSuggestion(name: 'address'),
             FigSuggestion(name: 'adjustment'),
             FigSuggestion(name: 'adyen_gateway'),
@@ -3696,6 +3786,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['resources:update', 'update', 'ru', 'res:update', 'patch'],
       description: 'Update an existing resource',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -3756,6 +3847,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -3852,10 +3944,12 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type',
           suggestions: [
+
             FigSuggestion(name: 'address'),
             FigSuggestion(name: 'adjustment'),
             FigSuggestion(name: 'adyen_gateway'),
@@ -3969,6 +4063,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders',
       description: 'Execute an action on an order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4015,6 +4110,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:approve',
       description: 'Send this attribute if you want to approve a placed order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4061,6 +4157,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:approve_and_capture',
       description: 'Send this attribute if you want to approve and capture a placed order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4107,6 +4204,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:archive',
       description: 'Send this attribute if you want to archive the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4153,6 +4251,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:authorization_amount_cents',
       description: 'The authorization amount, in cents',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4199,6 +4298,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:authorize',
       description: 'Send this attribute if you want to authorize the order\'s payment source',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4245,6 +4345,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:billing_address_clone_id',
       description: 'The id of the address that you want to clone to create the order\'s billing addre',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4299,6 +4400,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:billing_address_same_as_shipping',
       description: 'Send this attribute if you want the billing address to be cloned from the order\'',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4345,6 +4447,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:cancel',
       description: 'Send this attribute if you want to cancel a placed order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4391,6 +4494,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:capture',
       description: 'Send this attribute if you want to capture an authorized order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4437,6 +4541,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:commit_invoice',
       description: 'Send this attribute if you want commit the sales tax invoice to the associated t',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4483,6 +4588,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:create_subscriptions',
       description: 'Send this attribute upon/after placing the order if you want to create order sub',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4529,6 +4635,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:customer_payment_source_id',
       description: 'The id of the customer payment source (i',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4583,6 +4690,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:nullify_payment_source',
       description: 'Send this attribute if you want to nullify the payment source for this order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4629,6 +4737,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:pending',
       description: 'Send this attribute if you want to move a draft or placing order to pending',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4675,6 +4784,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:place',
       description: 'Send this attribute if you want to place the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4721,6 +4831,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:refresh',
       description: 'Send this attribute if you want to manually refresh the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4767,6 +4878,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:refund',
       description: 'Send this attribute if you want to refund a captured order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4813,6 +4925,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:refund_invoice',
       description: 'Send this attribute if you want refund the sales tax invoice to the associated t',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4859,6 +4972,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:reset_circuit',
       description: 'Send this attribute if you want to reset the circuit breaker associated to this',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4905,6 +5019,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:save_billing_address_to_customer_address_book',
       description: 'Send this attribute if you want the order\'s billing address to be saved in the c',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4951,6 +5066,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:save_payment_source_to_customer_wallet',
       description: 'Send this attribute if you want the order\'s payment source to be saved in the cu',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -4997,6 +5113,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:save_shipping_address_to_customer_address_book',
       description: 'Send this attribute if you want the order\'s shipping address to be saved in the',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5043,6 +5160,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:shipping_address_clone_id',
       description: 'The id of the address that you want to clone to create the order\'s shipping addr',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5097,6 +5215,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:shipping_address_same_as_billing',
       description: 'Send this attribute if you want the shipping address to be cloned from the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5143,6 +5262,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:start_editing',
       description: 'Send this attribute if you want to edit the order after it is placed',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5189,6 +5309,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:stop_editing',
       description: 'Send this attribute to stop the editing for the order and return back to placed',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5235,6 +5356,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:unarchive',
       description: 'Send this attribute if you want to unarchive the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5281,6 +5403,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:update_taxes',
       description: 'Send this attribute if you want to force tax calculation for this order (a tax c',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5327,6 +5450,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'orders:validate',
       description: 'Send this attribute if you want to trigger the external validation for the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5373,6 +5497,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'webhooks',
       description: 'List all the registered webhooks or the details of a single webhook',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5401,6 +5526,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'open'),
               FigSuggestion(name: 'closed')
             ]
@@ -5436,6 +5562,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['webhooks:create', 'wh:create'],
       description: 'Create a new webhook',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5496,6 +5623,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['webhooks:destroy', 'webhooks:delete', 'wh:delete', 'wh:destroy'],
       description: 'Destroy an existing webhook',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5530,6 +5658,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['webhooks:details', 'wh:details'],
       description: 'Show the details of an existing webhook',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5572,6 +5701,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['webhooks:event', 'wh:event'],
       description: 'Show the details of a firedf webhook event',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5614,6 +5744,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['webhooks:events', 'wh:events'],
       description: 'List all the events associated to the webhook',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5660,6 +5791,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['webhooks:list', 'wh:list'],
       description: 'List all the registered webhooks',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5688,6 +5820,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'open'),
               FigSuggestion(name: 'closed')
             ]
@@ -5708,6 +5841,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['webhooks:listen', 'wh:listen'],
       description: 'Listen a webhook for outgoing callbacks',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5751,6 +5885,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['webhooks:payload', 'wh:payload'],
       description: 'Show the payload associated to an event callback',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5789,6 +5924,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['webhooks:reset', 'wh:reset'],
       description: 'Reset the circuit breaker associated to the webhook',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5827,6 +5963,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['webhooks:update', 'wh:update'],
       description: 'Update an existing webhook',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5893,6 +6030,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'adyen_payment',
       description: 'Execute an action on a resource of type adyen_payments',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5939,6 +6077,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'adyen_payment:details',
       description: 'Send this attribute if you want to send additional details the payment request',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -5985,6 +6124,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'authorization',
       description: 'Execute an action on a resource of type authorizations',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6031,6 +6171,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'authorization:capture',
       description: 'Send this attribute if you want to create a capture for this authorization',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6077,6 +6218,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'authorization:capture_amount_cents',
       description: 'The associated capture amount, in cents',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6123,6 +6265,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'authorization:void',
       description: 'Send this attribute if you want to create a void for this authorization',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6169,6 +6312,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'axerve_payment',
       description: 'Execute an action on a resource of type axerve_payments',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6215,6 +6359,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'axerve_payment:update',
       description: 'Send this attribute if you want to update the payment with fresh order data',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6261,6 +6406,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'bundle',
       description: 'Execute an action on a resource of type bundles',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6307,6 +6453,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'bundle:compute_compare_at_amount',
       description: 'Send this attribute if you want to compute the compare_at_amount_cents as the su',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6353,6 +6500,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'bundle:compute_price_amount',
       description: 'Send this attribute if you want to compute the price_amount_cents as the sum of',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6399,6 +6547,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'buy_x_pay_y_promotion',
       description: 'Execute an action on a resource of type buy_x_pay_y_promotions',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6445,6 +6594,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'buy_x_pay_y_promotion:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6491,6 +6641,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'buy_x_pay_y_promotion:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6537,6 +6688,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'capture',
       description: 'Execute an action on a resource of type captures',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6583,6 +6735,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'capture:refund',
       description: 'Send this attribute if you want to create a refund for this capture',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6629,6 +6782,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'capture:refund_amount_cents',
       description: 'The associated refund amount, in cents',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6675,6 +6829,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'checkout_com_payment',
       description: 'Execute an action on a resource of type checkout_com_payments',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6721,6 +6876,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'checkout_com_payment:details',
       description: 'Send this attribute if you want to send additional details the payment request (',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6767,6 +6923,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'checkout_com_payment:refresh',
       description: 'Send this attribute if you want to refresh all the pending transactions, can be',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6813,6 +6970,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'customer_password_reset',
       description: 'Execute an action on a resource of type customer_password_resets',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6859,6 +7017,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'customer_password_reset:reset_password_token',
       description: 'Send the \'reset_password_token\' that you got on create when updating the custome',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6905,6 +7064,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'external_gateway',
       description: 'Execute an action on a resource of type external_gateways',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6951,6 +7111,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'external_gateway:reset_circuit',
       description: 'Send this attribute if you want to reset the circuit breaker associated to this',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -6997,6 +7158,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'external_promotion',
       description: 'Execute an action on a resource of type external_promotions',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7043,6 +7205,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'external_promotion:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7089,6 +7252,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'external_promotion:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7135,6 +7299,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'external_promotion:reset_circuit',
       description: 'Send this attribute if you want to reset the circuit breaker associated to this',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7181,6 +7346,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'external_tax_calculator',
       description: 'Execute an action on a resource of type external_tax_calculators',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7227,6 +7393,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'external_tax_calculator:reset_circuit',
       description: 'Send this attribute if you want to reset the circuit breaker associated to this',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7273,6 +7440,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'fixed_amount_promotion',
       description: 'Execute an action on a resource of type fixed_amount_promotions',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7319,6 +7487,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'fixed_amount_promotion:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7365,6 +7534,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'fixed_amount_promotion:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7411,6 +7581,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'fixed_price_promotion',
       description: 'Execute an action on a resource of type fixed_price_promotions',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7457,6 +7628,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'fixed_price_promotion:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7503,6 +7675,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'fixed_price_promotion:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7549,6 +7722,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'free_gift_promotion',
       description: 'Execute an action on a resource of type free_gift_promotions',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7595,6 +7769,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'free_gift_promotion:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7641,6 +7816,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'free_gift_promotion:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7687,6 +7863,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'free_shipping_promotion',
       description: 'Execute an action on a resource of type free_shipping_promotions',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7733,6 +7910,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'free_shipping_promotion:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7779,6 +7957,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'free_shipping_promotion:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7825,6 +8004,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'gift_card',
       description: 'Execute an action on a resource of type gift_cards',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7871,6 +8051,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'gift_card:activate',
       description: 'Send this attribute if you want to activate a gift card',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7917,6 +8098,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'gift_card:balance_change_cents',
       description: 'The balance change, in cents',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -7963,6 +8145,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'gift_card:deactivate',
       description: 'Send this attribute if you want to deactivate a gift card',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8009,6 +8192,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'gift_card:purchase',
       description: 'Send this attribute if you want to confirm a draft gift card',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8055,6 +8239,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'in_stock_subscription',
       description: 'Execute an action on a resource of type in_stock_subscriptions',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8101,6 +8286,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'in_stock_subscription:activate',
       description: 'Send this attribute if you want to activate an inactive subscription',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8147,6 +8333,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'in_stock_subscription:deactivate',
       description: 'Send this attribute if you want to dactivate an active subscription',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8193,6 +8380,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'klarna_payment',
       description: 'Execute an action on a resource of type klarna_payments',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8239,6 +8427,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'klarna_payment:update',
       description: 'Send this attribute if you want to update the payment session with fresh order d',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8285,6 +8474,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'line_item',
       description: 'Execute an action on a resource of type line_items',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8331,6 +8521,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'line_item:external_price',
       description: 'When creating or updating a new line item, set this attribute to \'1\' if you want',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8377,6 +8568,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'line_item:reserve_stock',
       description: 'Send this attribute if you want to reserve the stock for the line item\'s skus qu',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8423,6 +8615,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'line_item:reset_circuit',
       description: 'Send this attribute if you want to reset the circuit breaker associated to this',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8469,6 +8662,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'market',
       description: 'Execute an action on a resource of type markets',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8515,6 +8709,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'market:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8561,6 +8756,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'market:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8607,6 +8803,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order',
       description: 'Execute an action on a resource of type orders',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8653,6 +8850,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order_subscription',
       description: 'Execute an action on a resource of type order_subscriptions',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8699,6 +8897,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order_subscription:activate',
       description: 'Send this attribute if you want to mark this subscription as active',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8745,6 +8944,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order_subscription:cancel',
       description: 'Send this attribute if you want to mark this subscription as cancelled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8791,6 +8991,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order_subscription:deactivate',
       description: 'Send this attribute if you want to mark this subscription as inactive',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8837,6 +9038,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:approve',
       description: 'Send this attribute if you want to approve a placed order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8883,6 +9085,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:approve_and_capture',
       description: 'Send this attribute if you want to approve and capture a placed order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8929,6 +9132,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:archive',
       description: 'Send this attribute if you want to archive the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -8975,6 +9179,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:authorization_amount_cents',
       description: 'The authorization amount, in cents',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9021,6 +9226,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:authorize',
       description: 'Send this attribute if you want to authorize the order\'s payment source',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9067,6 +9273,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:billing_address_clone_id',
       description: 'The id of the address that you want to clone to create the order\'s billing addre',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9121,6 +9328,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:billing_address_same_as_shipping',
       description: 'Send this attribute if you want the billing address to be cloned from the order\'',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9167,6 +9375,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:cancel',
       description: 'Send this attribute if you want to cancel a placed order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9213,6 +9422,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:capture',
       description: 'Send this attribute if you want to capture an authorized order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9259,6 +9469,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:commit_invoice',
       description: 'Send this attribute if you want commit the sales tax invoice to the associated t',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9305,6 +9516,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:create_subscriptions',
       description: 'Send this attribute upon/after placing the order if you want to create order sub',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9351,6 +9563,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:customer_payment_source_id',
       description: 'The id of the customer payment source (i',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9405,6 +9618,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:nullify_payment_source',
       description: 'Send this attribute if you want to nullify the payment source for this order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9451,6 +9665,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:pending',
       description: 'Send this attribute if you want to move a draft or placing order to pending',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9497,6 +9712,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:place',
       description: 'Send this attribute if you want to place the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9543,6 +9759,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:refresh',
       description: 'Send this attribute if you want to manually refresh the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9589,6 +9806,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:refund',
       description: 'Send this attribute if you want to refund a captured order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9635,6 +9853,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:refund_invoice',
       description: 'Send this attribute if you want refund the sales tax invoice to the associated t',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9681,6 +9900,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:reset_circuit',
       description: 'Send this attribute if you want to reset the circuit breaker associated to this',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9727,6 +9947,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:save_billing_address_to_customer_address_book',
       description: 'Send this attribute if you want the order\'s billing address to be saved in the c',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9773,6 +9994,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:save_payment_source_to_customer_wallet',
       description: 'Send this attribute if you want the order\'s payment source to be saved in the cu',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9819,6 +10041,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:save_shipping_address_to_customer_address_book',
       description: 'Send this attribute if you want the order\'s shipping address to be saved in the',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9865,6 +10088,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:shipping_address_clone_id',
       description: 'The id of the address that you want to clone to create the order\'s shipping addr',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9919,6 +10143,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:shipping_address_same_as_billing',
       description: 'Send this attribute if you want the shipping address to be cloned from the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -9965,6 +10190,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:start_editing',
       description: 'Send this attribute if you want to edit the order after it is placed',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10011,6 +10237,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:stop_editing',
       description: 'Send this attribute to stop the editing for the order and return back to placed',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10057,6 +10284,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:unarchive',
       description: 'Send this attribute if you want to unarchive the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10103,6 +10331,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:update_taxes',
       description: 'Send this attribute if you want to force tax calculation for this order (a tax c',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10149,6 +10378,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'order:validate',
       description: 'Send this attribute if you want to trigger the external validation for the order',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10195,6 +10425,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'payment_method',
       description: 'Execute an action on a resource of type payment_methods',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10241,6 +10472,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'payment_method:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10287,6 +10519,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'payment_method:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10333,6 +10566,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'percentage_discount_promotion',
       description: 'Execute an action on a resource of type percentage_discount_promotions',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10379,6 +10613,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'percentage_discount_promotion:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10425,6 +10660,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'percentage_discount_promotion:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10471,6 +10707,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return',
       description: 'Execute an action on a resource of type returns',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10517,6 +10754,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return_line_item',
       description: 'Execute an action on a resource of type return_line_items',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10563,6 +10801,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return_line_item:restock',
       description: 'Send this attribute if you want to restock the line item',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10609,6 +10848,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return:approve',
       description: 'Send this attribute if you want to mark this return as approved',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10655,6 +10895,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return:archive',
       description: 'Send this attribute if you want to archive the return',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10701,6 +10942,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return:cancel',
       description: 'Send this attribute if you want to mark this return as cancelled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10747,6 +10989,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return:receive',
       description: 'Send this attribute if you want to mark this return as received',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10793,6 +11036,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return:reject',
       description: 'Send this attribute if you want to mark this return as rejected',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10839,6 +11083,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return:request',
       description: 'Send this attribute if you want to activate this return',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10885,6 +11130,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return:restock',
       description: 'Send this attribute if you want to restock all of the return line items',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10931,6 +11177,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return:ship',
       description: 'Send this attribute if you want to mark this return as shipped',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -10977,6 +11224,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'return:unarchive',
       description: 'Send this attribute if you want to unarchive the return',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11023,6 +11271,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'satispay_payment',
       description: 'Execute an action on a resource of type satispay_payments',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11069,6 +11318,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'satispay_payment:refresh',
       description: 'Send this attribute if you want to refresh all the pending transactions, can be',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11115,6 +11365,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment',
       description: 'Execute an action on a resource of type shipments',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11161,6 +11412,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:decrement_stock',
       description: 'Send this attribute if you want to automatically decrement and release the stock',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11207,6 +11459,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:get_rates',
       description: 'Send this attribute if you want get the shipping rates from the associated carri',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11253,6 +11506,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:on_hold',
       description: 'Send this attribute if you want to put this shipment on hold',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11299,6 +11553,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:packing',
       description: 'Send this attribute if you want to start packing this shipment',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11345,6 +11600,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:picking',
       description: 'Send this attribute if you want to start picking this shipment',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11391,6 +11647,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:purchase',
       description: 'Send this attribute if you want to purchase this shipment with the selected rate',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11437,6 +11694,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:ready_to_ship',
       description: 'Send this attribute if you want to mark this shipment as ready to ship',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11483,6 +11741,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:release_stock',
       description: 'Send this attribute if you want to automatically destroy the stock reservations',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11529,6 +11788,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:reserve_stock',
       description: 'Send this attribute if you want to automatically reserve the stock for each of t',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11575,6 +11835,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:ship',
       description: 'Send this attribute if you want to mark this shipment as shipped',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11621,6 +11882,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipment:upcoming',
       description: 'Send this attribute if you want to mark this shipment as upcoming',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11667,6 +11929,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipping_method',
       description: 'Execute an action on a resource of type shipping_methods',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11713,6 +11976,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipping_method:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11759,6 +12023,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipping_method:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11805,6 +12070,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'shipping_method:reset_circuit',
       description: 'Send this attribute if you want to reset the circuit breaker associated to this',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11851,6 +12117,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_item',
       description: 'Execute an action on a resource of type stock_items',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11897,6 +12164,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_item:validate',
       description: 'Send this attribute if you want to validate the stock item quantity against the',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11943,6 +12211,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_line_item',
       description: 'Execute an action on a resource of type stock_line_items',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -11989,6 +12258,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_line_item:decrement_stock',
       description: 'Send this attribute if you want to automatically decrement and release the stock',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12035,6 +12305,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_line_item:release_stock',
       description: 'Send this attribute if you want to automatically destroy the stock reservation f',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12081,6 +12352,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_line_item:reserve_stock',
       description: 'Send this attribute if you want to automatically reserve the stock for this stoc',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12127,6 +12399,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_reservation',
       description: 'Execute an action on a resource of type stock_reservations',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12173,6 +12446,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_reservation:pending',
       description: 'Send this attribute if you want to mark this stock reservation as pending',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12219,6 +12493,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_transfer',
       description: 'Execute an action on a resource of type stock_transfers',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12265,6 +12540,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_transfer:cancel',
       description: 'Send this attribute if you want to cancel this stock transfer',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12311,6 +12587,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_transfer:complete',
       description: 'Send this attribute if you want to complete this stock transfer',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12357,6 +12634,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_transfer:in_transit',
       description: 'Send this attribute if you want to mark this stock transfer as in transit',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12403,6 +12681,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_transfer:on_hold',
       description: 'Send this attribute if you want to put this stock transfer on hold',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12449,6 +12728,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_transfer:picking',
       description: 'Send this attribute if you want to start picking this stock transfer',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12495,6 +12775,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stock_transfer:upcoming',
       description: 'Send this attribute if you want to mark this stock transfer as upcoming',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12541,6 +12822,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stripe_payment',
       description: 'Execute an action on a resource of type stripe_payments',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12587,6 +12869,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stripe_payment:refresh',
       description: 'Send this attribute if you want to refresh the payment status, can be used as we',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12633,6 +12916,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'stripe_payment:update',
       description: 'Send this attribute if you want to update the created payment intent with fresh',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12679,6 +12963,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'webhook',
       description: 'Execute an action on a resource of type webhooks',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12725,6 +13010,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'webhook:disable',
       description: 'Send this attribute if you want to mark this resource as disabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12771,6 +13057,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'webhook:enable',
       description: 'Send this attribute if you want to mark this resource as enabled',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12817,6 +13104,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'webhook:reset_circuit',
       description: 'Send this attribute if you want to reset the circuit breaker associated to this',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12863,6 +13151,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'exports',
       description: 'List all the created exports or show details of a single export',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12895,6 +13184,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'addresses'),
               FigSuggestion(name: 'authorizations'),
               FigSuggestion(name: 'bundles'),
@@ -12932,6 +13222,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'in_progress'),
               FigSuggestion(name: 'pending'),
               FigSuggestion(name: 'completed'),
@@ -12961,6 +13252,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['exports:all', 'exp:all', 'export'],
       description: 'Export all the records',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -12990,6 +13282,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
             Arg(
             description: 'Addresses|authorizations|bundles|captures|etc',
             suggestions: [
+
               FigSuggestion(name: 'addresses'),
               FigSuggestion(name: 'authorizations'),
               FigSuggestion(name: 'bundles'),
@@ -13047,6 +13340,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'csv'),
               FigSuggestion(name: 'json')
             ],
@@ -13104,6 +13398,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['exports:create', 'exp:create'],
       description: 'Create a new export',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -13133,6 +13428,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
             Arg(
             description: 'Addresses|authorizations|bundles|captures|etc',
             suggestions: [
+
               FigSuggestion(name: 'addresses'),
               FigSuggestion(name: 'authorizations'),
               FigSuggestion(name: 'bundles'),
@@ -13190,6 +13486,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'csv'),
               FigSuggestion(name: 'json')
             ],
@@ -13239,6 +13536,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['exports:details', 'exp:details'],
       description: 'Show the details of an existing export',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -13273,6 +13571,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['exports:group', 'exp:group'],
       description: 'List all the exports related to an export group',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -13307,6 +13606,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['exports:list', 'exp:list'],
       description: 'List all the created exports',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -13339,6 +13639,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'addresses'),
               FigSuggestion(name: 'authorizations'),
               FigSuggestion(name: 'bundles'),
@@ -13376,6 +13677,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'in_progress'),
               FigSuggestion(name: 'pending'),
               FigSuggestion(name: 'completed'),
@@ -13398,6 +13700,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['exports:types', 'exp:types'],
       description: 'Show online documentation for supported resources',
       options: [
+
         Option(
           name: ['-O', '--open'],
           description: 'Open online documentation page'
@@ -13408,6 +13711,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'cleanups',
       description: 'List all the created cleanups or show details of a single cleanup',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -13440,6 +13744,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'bundles'),
               FigSuggestion(name: 'gift_cards'),
               FigSuggestion(name: 'prices'),
@@ -13458,6 +13763,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'in_progress'),
               FigSuggestion(name: 'pending'),
               FigSuggestion(name: 'completed'),
@@ -13487,6 +13793,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['cleanups:create', 'clp:create', 'cleanup'],
       description: 'Create a new cleanup',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -13516,6 +13823,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
             Arg(
             description: 'Bundles|gift_cards|prices|promotions|etc',
             suggestions: [
+
               FigSuggestion(name: 'bundles'),
               FigSuggestion(name: 'gift_cards'),
               FigSuggestion(name: 'prices'),
@@ -13554,6 +13862,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['cleanups:details', 'clp:details'],
       description: 'Show the details of an existing cleanup',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -13592,6 +13901,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['cleanups:group', 'clp:group'],
       description: 'List all the cleanups related to a cleanup group',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -13626,6 +13936,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['cleanups:list', 'clp:list'],
       description: 'List all the created cleanups',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -13658,6 +13969,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'bundles'),
               FigSuggestion(name: 'gift_cards'),
               FigSuggestion(name: 'prices'),
@@ -13676,6 +13988,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'in_progress'),
               FigSuggestion(name: 'pending'),
               FigSuggestion(name: 'completed'),
@@ -13698,6 +14011,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['cleanups:types', 'clp:types'],
       description: 'Show online documentation for supported resources',
       options: [
+
         Option(
           name: ['-O', '--open'],
           description: 'Open online documentation page'
@@ -13708,6 +14022,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['provisioning:create', 'prov:create', 'pc', 'pcreate'],
       description: 'Create a new resource',
       options: [
+
         Option(
           name: ['-d', '--domain'],
           args: [
@@ -13760,6 +14075,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -13828,6 +14144,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         name: 'resource',
         description: 'The resource type',
         suggestions: [
+
           FigSuggestion(name: 'api_credential'),
           FigSuggestion(name: 'application_membership'),
           FigSuggestion(name: 'membership'),
@@ -13843,6 +14160,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['provisioning:delete', 'prov:delete', 'pd', 'pdelete', 'pdel'],
       description: 'Delete an existing resource',
       options: [
+
         Option(
           name: ['-d', '--domain'],
           args: [
@@ -13895,6 +14213,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -13919,10 +14238,12 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type',
           suggestions: [
+
             FigSuggestion(name: 'api_credential'),
             FigSuggestion(name: 'application_membership'),
             FigSuggestion(name: 'membership')
@@ -13939,6 +14260,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['provisioning:exec', 'prov:exec', 'pe', 'pexec'],
       description: 'Execute an action on a resource',
       options: [
+
         Option(
           name: ['-d', '--domain'],
           args: [
@@ -13963,6 +14285,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type'
@@ -13983,6 +14306,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['provisioning:fetch', 'prov:fetch', 'pf'],
       description: 'Retrieve a resource or list a set of resources',
       options: [
+
         Option(
           name: ['-d', '--domain'],
           args: [
@@ -14035,6 +14359,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -14103,6 +14428,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type'
@@ -14122,6 +14448,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['provisioning:get', 'prov:get', 'pg', 'pget'],
       description: 'Retrieve a resource or list a set of resources',
       options: [
+
         Option(
           name: ['-d', '--domain'],
           args: [
@@ -14174,6 +14501,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -14242,6 +14570,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type'
@@ -14257,6 +14586,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['provisioning:list', 'pl', 'prov:list', 'plist', 'pls'],
       description: 'Fetch a collection of resources',
       options: [
+
         Option(
           name: ['-d', '--domain'],
           args: [
@@ -14309,6 +14639,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -14381,6 +14712,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         name: 'resource',
         description: 'The resource type',
         suggestions: [
+
           FigSuggestion(name: 'api_credentials'),
           FigSuggestion(name: 'application_memberships'),
           FigSuggestion(name: 'memberships'),
@@ -14398,6 +14730,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['provisioning:rel', 'prov:rel', 'prov:relationship'],
       description: 'Fetch a resource relationship',
       options: [
+
         Option(
           name: ['-d', '--domain'],
           args: [
@@ -14450,6 +14783,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -14518,6 +14852,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type'
@@ -14536,6 +14871,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['provisioning:resources', 'prov:resources', 'pres'],
       description: 'List all the available provisioning api resources',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show cli help'
@@ -14546,6 +14882,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['provisioning:retrieve', 'prov:retrieve', 'pr', 'pretrieve'],
       description: 'Fetch a single resource',
       options: [
+
         Option(
           name: ['-d', '--domain'],
           args: [
@@ -14598,6 +14935,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -14630,10 +14968,12 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type',
           suggestions: [
+
             FigSuggestion(name: 'api_credential'),
             FigSuggestion(name: 'application_membership'),
             FigSuggestion(name: 'billing_profile'),
@@ -14658,6 +14998,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['provisioning:update', 'prov:update', 'pu', 'pupdate', 'pupd'],
       description: 'Update an existing resource',
       options: [
+
         Option(
           name: ['-d', '--domain'],
           args: [
@@ -14710,6 +15051,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'curl'),
               FigSuggestion(name: 'node')
             ]
@@ -14782,10 +15124,12 @@ final FigSpec commercelayerCliSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'resource',
           description: 'The resource type',
           suggestions: [
+
             FigSuggestion(name: 'api_credential'),
             FigSuggestion(name: 'application_membership'),
             FigSuggestion(name: 'membership'),
@@ -14806,6 +15150,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'tags',
       description: 'List all the created tags or show details of a single tag',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -14853,6 +15198,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['tags:add', 'tag'],
       description: 'Add one or more tags to a set of resources',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -14917,6 +15263,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'tags:count',
       description: 'Count resources tagged with a specific tag',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -14963,6 +15310,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'tags:create',
       description: 'Create one or more new tags',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -14999,6 +15347,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'tags:delete',
       description: 'Delete one or more existing tags',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -15035,6 +15384,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'tags:details',
       description: 'Show the details of an existing tag',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -15069,6 +15419,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'tags:list',
       description: 'List all the created tags',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -15109,6 +15460,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'tags:remove',
       description: 'Remove one or more tags to a set of resources',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -15165,6 +15517,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'tags:types',
       description: 'Show online documentation for supported resources',
       options: [
+
         Option(
           name: ['-O', '--open'],
           description: 'Open online documentation page'
@@ -15175,6 +15528,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'tags:update',
       description: 'Update an existing tag',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -15217,6 +15571,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'tags:which',
       description: 'Show all the resources with this tag',
       options: [
+
         Option(
           name: ['-o', '--organization'],
           description: 'The slug of your organization',
@@ -15271,6 +15626,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'autocomplete',
       description: 'Display autocomplete installation instructions',
       options: [
+
         Option(
           name: ['-r', '--refresh-cache'],
           description: 'Refresh cache (ignores displaying instructions)'
@@ -15281,6 +15637,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
         name: 'shell',
         description: 'Shell type',
         suggestions: [
+
           FigSuggestion(name: 'zsh'),
           FigSuggestion(name: 'bash'),
           FigSuggestion(name: 'powershell')
@@ -15293,6 +15650,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'help',
       description: 'Display help for <%= config.bin %>',
       options: [
+
         Option(
           name: ['-n', '--nested-commands'],
           description: 'Include all nested commands in the output'
@@ -15310,6 +15668,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'plugins',
       description: 'List installed plugins',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -15324,6 +15683,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'plugins:inspect',
       description: 'Displays installation properties of a plugin',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -15348,6 +15708,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['plugins:install', 'plugins:add'],
       description: 'Uses bundled npm executable to install plugins into <%= config',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -15383,6 +15744,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'plugins:link',
       description: 'Links a plugin into the cli for development',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show cli help'
@@ -15410,6 +15772,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
     Subcommand(
       name: 'plugins:reset',
       options: [
+
         Option(
           name: '--hard'
         ),
@@ -15422,6 +15785,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: ['plugins:uninstall', 'plugins:unlink', 'plugins:remove'],
       description: 'Removes a plugin from the cli',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show cli help'
@@ -15441,6 +15805,7 @@ final FigSpec commercelayerCliSpec = FigSpec(
       name: 'plugins:update',
       description: 'Update installed plugins',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show cli help'

@@ -9,10 +9,12 @@ final FigSpec qldbSpec = FigSpec(
   name: 'qldb',
   description: 'The resource management API for Amazon QLDB',
   subcommands: [
+
     Subcommand(
       name: 'cancel-journal-kinesis-stream',
       description: 'Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be ACTIVE. You can\'t restart a stream after you cancel it. Canceled QLDB stream resources are subject to a 7-day retention period, so they are automatically deleted after this limit expires',
       options: [
+
         Option(
           name: '--ledger-name',
           description: 'The name of the ledger',
@@ -47,6 +49,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'create-ledger',
       description: 'Creates a new ledger in your Amazon Web Services account in the current Region',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region. Naming constraints for ledger names are defined in Quotas in Amazon QLDB in the Amazon QLDB Developer Guide',
@@ -119,6 +123,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -131,6 +136,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'delete-ledger',
       description: 'Deletes a ledger and all of its contents. This action is irreversible. If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the UpdateLedger operation to set this parameter to false',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger that you want to delete',
@@ -156,6 +162,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +175,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'describe-journal-kinesis-stream',
       description: 'Returns detailed information about a given Amazon QLDB journal stream. The output includes the Amazon Resource Name (ARN), stream name, current status, creation time, and the parameters of the original stream creation request. This action does not return any expired journal streams. For more information, see Expiration for terminal streams in the Amazon QLDB Developer Guide',
       options: [
+
         Option(
           name: '--ledger-name',
           description: 'The name of the ledger',
@@ -202,6 +210,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -214,6 +223,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'describe-journal-s3-export',
       description: 'Returns information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request. This action does not return any expired export jobs. For more information, see Export job expiration in the Amazon QLDB Developer Guide. If the export job with the given ExportId doesn\'t exist, then throws ResourceNotFoundException. If the ledger with the given Name doesn\'t exist, then throws ResourceNotFoundException',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger',
@@ -248,6 +258,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -260,6 +271,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'describe-ledger',
       description: 'Returns information about a ledger, including its state, permissions mode, encryption at rest settings, and when it was created',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger that you want to describe',
@@ -285,6 +297,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -297,6 +310,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'export-journal-to-s3',
       description: 'Exports journal contents within a date and time range from a ledger into a specified Amazon Simple Storage Service (Amazon S3) bucket. A journal export job can write the data objects in either the text or binary representation of Amazon Ion format, or in JSON Lines text format. If the ledger with the given Name doesn\'t exist, then throws ResourceNotFoundException. If the ledger with the given Name is in CREATING status, then throws ResourcePreconditionNotMetException. You can initiate up to two concurrent journal export requests for each ledger. Beyond this limit, journal export requests throw LimitExceededException',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger',
@@ -367,6 +381,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -379,6 +394,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'get-block',
       description: 'Returns a block object at a specified address in a journal. Also returns a proof of the specified block for verification if DigestTipAddress is provided. For information about the data contents in a block, see Journal contents in the Amazon QLDB Developer Guide. If the specified ledger doesn\'t exist or is in DELETING status, then throws ResourceNotFoundException. If the specified ledger is in CREATING status, then throws ResourcePreconditionNotMetException. If no block exists with the specified address, then throws InvalidParameterException',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger',
@@ -422,6 +438,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -434,6 +451,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'get-digest',
       description: 'Returns the digest of a ledger at the latest committed block in the journal. The response includes a 256-bit hash value and a block address',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger',
@@ -459,6 +477,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -471,6 +490,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'get-revision',
       description: 'Returns a revision data object for a specified document ID and block address. Also returns a proof of the specified revision for verification if DigestTipAddress is provided',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger',
@@ -523,6 +543,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -535,6 +556,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'list-journal-kinesis-streams-for-ledger',
       description: 'Returns all Amazon QLDB journal streams for a given ledger. This action does not return any expired journal streams. For more information, see Expiration for terminal streams in the Amazon QLDB Developer Guide. This action returns a maximum of MaxResults items. It is paginated so that you can retrieve all the items by calling ListJournalKinesisStreamsForLedger multiple times',
       options: [
+
         Option(
           name: '--ledger-name',
           description: 'The name of the ledger',
@@ -578,6 +600,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -590,6 +613,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'list-journal-s3-exports',
       description: 'Returns all journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region. This action returns a maximum of MaxResults items, and is paginated so that you can retrieve all the items by calling ListJournalS3Exports multiple times. This action does not return any expired export jobs. For more information, see Export job expiration in the Amazon QLDB Developer Guide',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in a single ListJournalS3Exports request. (The actual number of results returned might be fewer.)',
@@ -624,6 +648,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -636,6 +661,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'list-journal-s3-exports-for-ledger',
       description: 'Returns all journal export jobs for a specified ledger. This action returns a maximum of MaxResults items, and is paginated so that you can retrieve all the items by calling ListJournalS3ExportsForLedger multiple times. This action does not return any expired export jobs. For more information, see Export job expiration in the Amazon QLDB Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger',
@@ -679,6 +705,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -691,6 +718,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'list-ledgers',
       description: 'Returns all ledgers that are associated with the current Amazon Web Services account and Region. This action returns a maximum of MaxResults items and is paginated so that you can retrieve all the items by calling ListLedgers multiple times',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in a single ListLedgers request. (The actual number of results returned might be fewer.)',
@@ -725,6 +753,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -737,6 +766,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns all tags for a specified Amazon QLDB resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for which to list the tags. For example:  arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger',
@@ -762,6 +792,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -774,6 +805,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'stream-journal-to-kinesis',
       description: 'Creates a journal stream for a given Amazon QLDB ledger. The stream captures every document revision that is committed to the ledger\'s journal and delivers the data to a specified Amazon Kinesis Data Streams resource',
       options: [
+
         Option(
           name: '--ledger-name',
           description: 'The name of the ledger',
@@ -853,6 +885,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -865,6 +898,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to a specified Amazon QLDB resource. A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and returns an error',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) to which you want to add the tags. For example:  arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger',
@@ -899,6 +933,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -911,6 +946,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from a specified Amazon QLDB resource. You can specify up to 50 tag keys to remove',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) from which to remove the tags. For example:  arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger',
@@ -945,6 +981,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -957,6 +994,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'update-ledger',
       description: 'Updates properties on a ledger',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger',
@@ -999,6 +1037,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1011,6 +1050,7 @@ final FigSpec qldbSpec = FigSpec(
       name: 'update-ledger-permissions-mode',
       description: 'Updates the permissions mode of a ledger.  Before you switch to the STANDARD permissions mode, you must first create all required IAM policies and table tags to avoid disruption to your users. To learn more, see Migrating to the standard permissions mode in the Amazon QLDB Developer Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the ledger',
@@ -1045,6 +1085,7 @@ final FigSpec qldbSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

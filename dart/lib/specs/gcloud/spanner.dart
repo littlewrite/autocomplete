@@ -9,14 +9,17 @@ final FigSpec spannerSpec = FigSpec(
   name: 'spanner',
   description: 'Command groups for Cloud Spanner',
   subcommands: [
+
     Subcommand(
       name: 'backups',
       description: 'Manage Cloud Spanner backups',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding to a Cloud Spanner backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -175,6 +178,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -197,6 +201,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'create',
           description: 'Creates a backup of a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -369,6 +374,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -391,6 +397,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'delete',
           description: 'Delete an existing backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -525,6 +532,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -547,6 +555,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'describe',
           description: 'Retrieves information about a backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -681,6 +690,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -703,6 +713,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a Cloud Spanner backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -881,6 +892,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -903,6 +915,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'list',
           description: 'List existing Cloud Spanner Cloud Spanner backups',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1092,6 +1105,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1108,6 +1122,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding of a Cloud Spanner backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1266,6 +1281,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1288,6 +1304,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Cloud Spanner backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1422,6 +1439,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1434,6 +1452,7 @@ final FigSpec spannerSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'BACKUP',
               description: 'ID of the backup or fully qualified identifier for the backup'
@@ -1448,6 +1467,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'update-metadata',
           description: 'Updates the metadata of a Cloud Spanner a backup',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1604,6 +1624,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1624,6 +1645,7 @@ final FigSpec spannerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1747,6 +1769,7 @@ final FigSpec spannerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1763,10 +1786,12 @@ final FigSpec spannerSpec = FigSpec(
       name: 'databases',
       description: 'Manage Cloud Spanner databases',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding to a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1925,6 +1950,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1947,6 +1973,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'create',
           description: 'Create a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2107,6 +2134,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2129,10 +2157,12 @@ final FigSpec spannerSpec = FigSpec(
           name: 'ddl',
           description: 'Manage the DDL for Cloud Spanner databases',
           subcommands: [
+
             Subcommand(
               name: 'describe',
               description: 'Describe the DDL for a Cloud Spanner database',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2315,6 +2345,7 @@ final FigSpec spannerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2337,6 +2368,7 @@ final FigSpec spannerSpec = FigSpec(
               name: 'update',
               description: 'Update the DDL for a Cloud Spanner database',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2497,6 +2529,7 @@ final FigSpec spannerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2517,6 +2550,7 @@ final FigSpec spannerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2640,6 +2674,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2656,6 +2691,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2790,6 +2826,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2812,6 +2849,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2946,6 +2984,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2968,6 +3007,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'execute-sql',
           description: 'Executes a SQL query against a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3087,6 +3127,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'QUERY_MODE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'NORMAL'),
                   FigSuggestion(name: 'PLAN'),
                   FigSuggestion(name: 'PROFILE')
@@ -3144,6 +3185,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3166,6 +3208,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3344,6 +3387,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3366,6 +3410,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'list',
           description: 'List the Cloud Spanner databases contained within the given instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3548,6 +3593,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3564,6 +3610,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding of a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3722,6 +3769,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3744,6 +3792,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'restore',
           description: 'Restore a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3917,6 +3966,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3933,10 +3983,12 @@ final FigSpec spannerSpec = FigSpec(
           name: 'sessions',
           description: 'Manage the sessions for Cloud Spanner databases',
           subcommands: [
+
             Subcommand(
               name: 'delete',
               description: 'Delete a Cloud Spanner session',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4082,6 +4134,7 @@ final FigSpec spannerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4104,6 +4157,7 @@ final FigSpec spannerSpec = FigSpec(
               name: 'list',
               description: 'List the Cloud Spanner sessions contained within the given database',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4309,6 +4363,7 @@ final FigSpec spannerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4323,6 +4378,7 @@ final FigSpec spannerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4446,6 +4502,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4462,6 +4519,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4596,6 +4654,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4608,6 +4667,7 @@ final FigSpec spannerSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'DATABASE',
               description: 'ID of the database or fully qualified identifier for the database'
@@ -4620,6 +4680,7 @@ final FigSpec spannerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4743,6 +4804,7 @@ final FigSpec spannerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4759,10 +4821,12 @@ final FigSpec spannerSpec = FigSpec(
       name: 'instance-configs',
       description: 'Manage Cloud Spanner instance configs',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a Cloud Spanner instance config',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4886,6 +4950,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4908,6 +4973,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'list',
           description: 'List the available Cloud Spanner instance configs',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5079,6 +5145,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5093,6 +5160,7 @@ final FigSpec spannerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5216,6 +5284,7 @@ final FigSpec spannerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -5232,10 +5301,12 @@ final FigSpec spannerSpec = FigSpec(
       name: 'instances',
       description: 'Manage Cloud Spanner instances',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding to a Cloud Spanner instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5383,6 +5454,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5405,6 +5477,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'create',
           description: 'Create a Cloud Spanner instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5568,6 +5641,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5590,6 +5664,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Spanner instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5713,6 +5788,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5735,6 +5811,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Spanner instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5858,6 +5935,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5880,6 +5958,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a Cloud Spanner instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6047,6 +6126,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6069,6 +6149,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'list',
           description: 'List the Cloud Spanner instances in this project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6240,6 +6321,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6256,6 +6338,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding of a Cloud Spanner instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6403,6 +6486,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6425,6 +6509,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Cloud Spanner instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6548,6 +6633,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6560,6 +6646,7 @@ final FigSpec spannerSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'INSTANCE',
               description: 'ID of the instance or fully qualified identifier for the instance'
@@ -6574,6 +6661,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Spanner instance',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6723,6 +6811,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6743,6 +6832,7 @@ final FigSpec spannerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6866,6 +6956,7 @@ final FigSpec spannerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -6882,10 +6973,12 @@ final FigSpec spannerSpec = FigSpec(
       name: 'operations',
       description: 'Manage Cloud Spanner operations',
       subcommands: [
+
         Subcommand(
           name: 'cancel',
           description: 'Cancel a Cloud Spanner operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7043,6 +7136,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7065,6 +7159,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Spanner operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7222,6 +7317,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7244,6 +7340,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'list',
           description: 'List the Cloud Spanner operations on the given instance or database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7441,6 +7538,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'TYPE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'BACKUP'),
                   FigSuggestion(name: 'DATABASE'),
                   FigSuggestion(name: 'DATABASE_CREATE'),
@@ -7467,6 +7565,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7481,6 +7580,7 @@ final FigSpec spannerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7604,6 +7704,7 @@ final FigSpec spannerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7620,10 +7721,12 @@ final FigSpec spannerSpec = FigSpec(
       name: 'rows',
       description: 'Manage the rows in Cloud Spanner databases',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete a row in a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7794,6 +7897,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7810,6 +7914,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'insert',
           description: 'Insert a row in a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7980,6 +8085,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7996,6 +8102,7 @@ final FigSpec spannerSpec = FigSpec(
           name: 'update',
           description: 'Update a row in a Cloud Spanner database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8166,6 +8273,7 @@ final FigSpec spannerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8180,6 +8288,7 @@ final FigSpec spannerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8303,6 +8412,7 @@ final FigSpec spannerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -8317,6 +8427,7 @@ final FigSpec spannerSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8440,6 +8551,7 @@ final FigSpec spannerSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

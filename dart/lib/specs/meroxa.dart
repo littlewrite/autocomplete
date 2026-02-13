@@ -9,14 +9,17 @@ final FigSpec meroxaSpec = FigSpec(
   name: 'meroxa',
   description: 'The Meroxa CLI',
   subcommands: [
+
     Subcommand(
       name: ['accounts', 'account'],
       description: 'Manage Meroxa Accounts',
       subcommands: [
+
         Subcommand(
           name: ['ls', 'list'],
           description: 'List Meroxa Accounts',
           options: [
+
             Option(
               name: '--no-headers',
               description: 'Display output without headers'
@@ -37,10 +40,12 @@ final FigSpec meroxaSpec = FigSpec(
       name: ['app', 'apps'],
       description: 'Manage Turbine Data Applications',
       subcommands: [
+
         Subcommand(
           name: 'deploy',
           description: 'Deploy a Turbine Data Application',
           options: [
+
             Option(
               name: '--docker-hub-access-token',
               description: 'DockerHub access token to use to build and deploy the app',
@@ -101,6 +106,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Turbine Data Application',
           options: [
+
             Option(
               name: '--path',
               description: 'Path to the app directory (default is local directory)',
@@ -117,6 +123,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: 'init',
           description: 'Initialize a Turbine Data Application',
           options: [
+
             Option(
               name: ['--lang', '-l'],
               description: 'Language to use (js|go|py) (required)',
@@ -124,9 +131,10 @@ final FigSpec meroxaSpec = FigSpec(
                 Arg(
                 name: 'lang',
                 suggestions: [
+
                   FigSuggestion(name: 'js'),
                   FigSuggestion(name: 'go'),
-
+                  FigSuggestion(name: 'py')
                 ]
               )
               ]
@@ -155,6 +163,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['ls', 'list'],
           description: 'List Turbine Data Applications',
           options: [
+
             Option(
               name: '--no-headers',
               description: 'Display output without headers'
@@ -165,6 +174,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['log', 'logs'],
           description: 'View relevant logs to the state of the given Turbine Data Application',
           options: [
+
             Option(
               name: '--path',
               description: 'Path to the app directory (default is local directory)',
@@ -181,6 +191,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: 'open',
           description: 'Open the link to a Turbine Data Application in the Dashboard',
           options: [
+
             Option(
               name: '--path',
               description: 'Path to the app directory (default is local directory)',
@@ -197,6 +208,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['rm', 'delete', 'remove'],
           description: 'Remove a Turbine Data Application',
           options: [
+
             Option(
               name: ['--force', '-f'],
               description: 'Skip confirmation'
@@ -217,6 +229,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: 'run',
           description: 'Execute a Turbine Data Application locally',
           options: [
+
             Option(
               name: '--path',
               description: 'Path of application to run',
@@ -233,6 +246,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: 'upgrade',
           description: 'Upgrade a Turbine Data Application',
           options: [
+
             Option(
               name: '--path',
               description: 'Path where application exists (current directory as default)',
@@ -251,6 +265,7 @@ final FigSpec meroxaSpec = FigSpec(
       name: 'auth',
       description: 'Authentication commands for Meroxa',
       subcommands: [
+
         Subcommand(
           name: 'login',
           description: 'Login or Sign up to the Meroxa Platform'
@@ -273,6 +288,7 @@ final FigSpec meroxaSpec = FigSpec(
       name: ['build', 'builds'],
       description: 'Inspect Process Builds on Meroxa',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a Meroxa Process Build'
@@ -291,6 +307,7 @@ final FigSpec meroxaSpec = FigSpec(
       name: ['cfg', 'config'],
       description: 'Manage your Meroxa CLI configuration',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Show Meroxa CLI configuration details'
@@ -305,10 +322,12 @@ final FigSpec meroxaSpec = FigSpec(
       name: ['env', 'environment', 'environments'],
       description: 'Manage environments on Meroxa',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create an environment',
           options: [
+
             Option(
               name: ['--config', '-c'],
               description: 'Environment configuration based on type and provider (e.g.: --config aws_access_key_id=my_access_key --config aws_secret_access_key=my_access_secret)',
@@ -360,6 +379,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['ls', 'list'],
           description: 'List environments',
           options: [
+
             Option(
               name: '--no-headers',
               description: 'Display output without headers'
@@ -370,6 +390,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['rm', 'delete', 'remove'],
           description: 'Remove environment',
           options: [
+
             Option(
               name: ['--force', '-f'],
               description: 'Skip confirmation'
@@ -388,6 +409,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: 'update',
           description: 'Update an environment',
           options: [
+
             Option(
               name: ['--config', '-c'],
               description: 'Updated environment configuration based on type and provider (e.g.: --config aws_access_key_id=my_access_key --config aws_secret_access_key=my_access_secret)',
@@ -427,6 +449,7 @@ final FigSpec meroxaSpec = FigSpec(
       name: 'open',
       description: 'Open in a web browser',
       subcommands: [
+
         Subcommand(
           name: 'billing',
           description: 'Open your billing page in a web browser'
@@ -437,10 +460,12 @@ final FigSpec meroxaSpec = FigSpec(
       name: ['resource', 'resources'],
       description: 'Manage resources on Meroxa',
       subcommands: [
+
         Subcommand(
           name: ['add', 'create'],
           description: 'Add a resource to your Meroxa resource catalog',
           options: [
+
             Option(
               name: '--ca-cert',
               description: 'Trusted certificates for verifying resource',
@@ -572,6 +597,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['ls', 'list'],
           description: 'List resources and resource types',
           options: [
+
             Option(
               name: '--no-headers',
               description: 'Display output without headers'
@@ -590,6 +616,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['rm', 'delete', 'remove'],
           description: 'Remove resource',
           options: [
+
             Option(
               name: ['--force', '-f'],
               description: 'Skip confirmation'
@@ -604,6 +631,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: 'rotate-tunnel-key',
           description: 'Rotate the tunnel key for a resource',
           options: [
+
             Option(
               name: ['--force', '-f'],
               description: 'Skip confirmation'
@@ -618,6 +646,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: 'update',
           description: 'Update a resource',
           options: [
+
             Option(
               name: '--ca-cert',
               description: 'Trusted certificates for verifying resource',
@@ -715,10 +744,12 @@ final FigSpec meroxaSpec = FigSpec(
       name: ['transform', 'transforms'],
       description: 'Manage transforms on Meroxa',
       subcommands: [
+
         Subcommand(
           name: ['ls', 'list'],
           description: 'List transforms',
           options: [
+
             Option(
               name: '--no-headers',
               description: 'Display output without headers'
@@ -739,10 +770,12 @@ final FigSpec meroxaSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: ['accounts', 'account'],
           description: 'Manage Meroxa Accounts',
           subcommands: [
+
             Subcommand(
               name: ['ls', 'list'],
               description: 'List Meroxa Accounts'
@@ -761,6 +794,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['app', 'apps'],
           description: 'Manage Turbine Data Applications',
           subcommands: [
+
             Subcommand(
               name: 'deploy',
               description: 'Deploy a Turbine Data Application'
@@ -803,6 +837,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: 'auth',
           description: 'Authentication commands for Meroxa',
           subcommands: [
+
             Subcommand(
               name: 'login',
               description: 'Login or Sign up to the Meroxa Platform'
@@ -825,6 +860,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['build', 'builds'],
           description: 'Inspect Process Builds on Meroxa',
           subcommands: [
+
             Subcommand(
               name: 'describe',
               description: 'Describe a Meroxa Process Build'
@@ -843,6 +879,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['cfg', 'config'],
           description: 'Manage your Meroxa CLI configuration',
           subcommands: [
+
             Subcommand(
               name: 'describe',
               description: 'Show Meroxa CLI configuration details'
@@ -857,6 +894,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['env', 'environment', 'environments'],
           description: 'Manage environments on Meroxa',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create an environment'
@@ -895,6 +933,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: 'open',
           description: 'Open in a web browser',
           subcommands: [
+
             Subcommand(
               name: 'billing',
               description: 'Open your billing page in a web browser'
@@ -905,6 +944,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['resource', 'resources'],
           description: 'Manage resources on Meroxa',
           subcommands: [
+
             Subcommand(
               name: ['add', 'create'],
               description: 'Add a resource to your Meroxa resource catalog'
@@ -939,6 +979,7 @@ final FigSpec meroxaSpec = FigSpec(
           name: ['transform', 'transforms'],
           description: 'Manage transforms on Meroxa',
           subcommands: [
+
             Subcommand(
               name: ['ls', 'list'],
               description: 'List transforms'
@@ -957,6 +998,7 @@ final FigSpec meroxaSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--api-url',
       description: 'API url',

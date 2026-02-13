@@ -9,10 +9,12 @@ final FigSpec resiliencehubSpec = FigSpec(
   name: 'resiliencehub',
   description: 'Resilience Hub helps you proactively prepare and protect your Amazon Web Services applications from disruptions. It offers continual resiliency assessment and validation that integrates into your software development lifecycle. This enables you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery point objective (RPO) targets for your applications are met, and resolve issues before they are released into production',
   subcommands: [
+
     Subcommand(
       name: 'accept-resource-grouping-recommendations',
       description: 'Accepts the resource grouping recommendations suggested by Resilience Hub for your application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -47,6 +49,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'add-draft-app-version-resource-mappings',
       description: 'Adds the source of resource-maps to the draft version of an application. During assessment, Resilience Hub will use these resource-maps to resolve the latest physical ID for each resource in the application template. For more information about different types of resources supported by Resilience Hub and how to add them in your application, see Step 2: How is your application managed? in the Resilience Hub User Guide',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -93,6 +97,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'batch-update-recommendation-status',
       description: 'Enables you to include or exclude one or more operational recommendations',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -139,6 +145,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -151,6 +158,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'create-app',
       description: 'Creates an Resilience Hub application. An Resilience Hub application is a collection of Amazon Web Services resources structured to prevent and recover Amazon Web Services application disruptions. To describe a Resilience Hub application, you provide an application name, resources from one or more CloudFormation stacks, Resource Groups, Terraform state files, AppRegistry applications, and an appropriate resiliency policy. In addition, you can also add resources that are located on Amazon Elastic Kubernetes Service (Amazon EKS) clusters as optional resources. For more information about the number of resources supported per application, see Service quotas. After you create an Resilience Hub application, you publish it so that you can run a resiliency assessment on it. You can then use recommendations from the assessment to improve resiliency by running another assessment, comparing results, and then iterating the process until you achieve your goals for recovery time objective (RTO) and recovery point objective (RPO)',
       options: [
+
         Option(
           name: '--assessment-schedule',
           description: 'Assessment execution schedule with \'Daily\' or \'Disabled\' values',
@@ -248,6 +256,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -260,6 +269,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'create-app-version-app-component',
       description: 'Creates a new Application Component in the Resilience Hub application.  This API updates the Resilience Hub application draft version. To use this Application Component for running assessments, you must publish the Resilience Hub application using the PublishAppVersion API',
       options: [
+
         Option(
           name: '--additional-info',
           description: 'Currently, there is no supported additional information for Application Components',
@@ -330,6 +340,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -342,6 +353,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'create-app-version-resource',
       description: 'Adds a resource to the Resilience Hub application and assigns it to the specified Application Components. If you specify a new Application Component, Resilience Hub will automatically create the Application Component.    This action has no effect outside Resilience Hub.   This API updates the Resilience Hub application draft version. To use this resource for running resiliency assessments, you must publish the Resilience Hub application using the PublishAppVersion API.   To update application version with new physicalResourceID, you must call ResolveAppVersionResources API',
       options: [
+
         Option(
           name: '--additional-info',
           description: 'Currently, there is no supported additional information for resources',
@@ -448,6 +460,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -460,6 +473,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'create-recommendation-template',
       description: 'Creates a new recommendation template for the Resilience Hub application',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -548,6 +562,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -560,6 +575,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'create-resiliency-policy',
       description: 'Creates a resiliency policy for an application.  Resilience Hub allows you to provide a value of zero for rtoInSecs and rpoInSecs of your resiliency policy. But, while assessing your application, the lowest possible assessment result is near zero. Hence, if you provide value zero for rtoInSecs and rpoInSecs, the estimated workload RTO and estimated workload RPO result will be near zero and the Compliance status for your application will be set to Policy breached',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests',
@@ -639,6 +655,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -651,6 +668,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'delete-app',
       description: 'Deletes an Resilience Hub application. This is a destructive action that can\'t be undone',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -693,6 +711,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -705,6 +724,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'delete-app-assessment',
       description: 'Deletes an Resilience Hub application assessment. This is a destructive action that can\'t be undone',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -739,6 +759,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -751,6 +772,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'delete-app-input-source',
       description: 'Deletes the input source and all of its imported resources from the Resilience Hub application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -812,6 +834,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -824,6 +847,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'delete-app-version-app-component',
       description: 'Deletes an Application Component from the Resilience Hub application.    This API updates the Resilience Hub application draft version. To use this Application Component for running assessments, you must publish the Resilience Hub application using the PublishAppVersion API.   You will not be able to delete an Application Component if it has resources associated with it',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -867,6 +891,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -879,6 +904,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'delete-app-version-resource',
       description: 'Deletes a resource from the Resilience Hub application.    You can only delete a manually added resource. To exclude non-manually added resources, use the UpdateAppVersionResource API.   This action has no effect outside Resilience Hub.   This API updates the Resilience Hub application draft version. To use this resource for running resiliency assessments, you must publish the Resilience Hub application using the PublishAppVersion API',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -958,6 +984,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -970,6 +997,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'delete-recommendation-template',
       description: 'Deletes a recommendation template. This is a destructive action that can\'t be undone',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests',
@@ -1004,6 +1032,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1016,6 +1045,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'delete-resiliency-policy',
       description: 'Deletes a resiliency policy. This is a destructive action that can\'t be undone',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests',
@@ -1050,6 +1080,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1062,6 +1093,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-app',
       description: 'Describes an Resilience Hub application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1087,6 +1119,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1099,6 +1132,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-app-assessment',
       description: 'Describes an assessment for an Resilience Hub application',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1124,6 +1158,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1136,6 +1171,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-app-version',
       description: 'Describes the Resilience Hub application version',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1170,6 +1206,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1182,6 +1219,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-app-version-app-component',
       description: 'Describes an Application Component in the Resilience Hub application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1225,6 +1263,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1237,6 +1276,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-app-version-resource',
       description: 'Describes a resource of the Resilience Hub application.  This API accepts only one of the following parameters to describe the resource:    resourceName     logicalResourceId     physicalResourceId (Along with physicalResourceId, you can also provide awsAccountId, and awsRegion)',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1316,6 +1356,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1328,6 +1369,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-app-version-resources-resolution-status',
       description: 'Returns the resolution status for the specified resolution identifier for an application version. If resolutionId is not specified, the current resolution status is returned',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1371,6 +1413,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1383,6 +1426,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-app-version-template',
       description: 'Describes details about an Resilience Hub application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1417,6 +1461,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1429,6 +1474,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-draft-app-version-resources-import-status',
       description: 'Describes the status of importing resources to an application version.  If you get a 404 error with ResourceImportStatusNotFoundAppMetadataException, you must call importResourcesToDraftAppVersion after creating the application and before calling describeDraftAppVersionResourcesImportStatus to obtain the status',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1454,6 +1500,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1466,6 +1513,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-metrics-export',
       description: 'Describes the metrics of the application configuration being exported',
       options: [
+
         Option(
           name: '--metrics-export-id',
           description: 'Identifier of the metrics export task',
@@ -1491,6 +1539,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1503,6 +1552,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-resiliency-policy',
       description: 'Describes a specified resiliency policy for an Resilience Hub application. The returned policy object includes creation time, data location constraints, the Amazon Resource Name (ARN) for the policy, tags, tier, and more',
       options: [
+
         Option(
           name: '--policy-arn',
           description: 'Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:partition:resiliencehub:region:account:resiliency-policy/policy-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1528,6 +1578,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1540,6 +1591,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'describe-resource-grouping-recommendation-task',
       description: 'Describes the resource grouping recommendation tasks run by Resilience Hub for your application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1574,6 +1626,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1586,6 +1639,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'import-resources-to-draft-app-version',
       description: 'Imports resources to Resilience Hub application draft version from different input sources. For more information about the input sources supported by Resilience Hub, see Discover the structure and describe your Resilience Hub application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1647,6 +1701,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1659,6 +1714,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-alarm-recommendations',
       description: 'Lists the alarm recommendations for an Resilience Hub application',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1702,6 +1758,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1714,6 +1771,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-app-assessment-compliance-drifts',
       description: 'List of compliance drifts that were detected while running an assessment',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1757,6 +1815,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1769,6 +1828,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-app-assessment-resource-drifts',
       description: 'List of resource drifts that were detected while running an assessment',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1839,6 +1899,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1851,6 +1912,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-app-assessments',
       description: 'Lists the assessments for an Resilience Hub application. You can use request parameters to refine the results for the response object',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1938,6 +2000,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1950,6 +2013,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-app-component-compliances',
       description: 'Lists the compliances for an Resilience Hub Application Component',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -1993,6 +2057,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2005,6 +2070,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-app-component-recommendations',
       description: 'Lists the recommendations for an Resilience Hub Application Component',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -2048,6 +2114,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2060,6 +2127,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-app-input-sources',
       description: 'Lists all the input sources of the Resilience Hub application. For more information about the input sources supported by Resilience Hub, see Discover the structure and describe your Resilience Hub application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -2112,6 +2180,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2124,6 +2193,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-app-version-app-components',
       description: 'Lists all the Application Components in the Resilience Hub application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -2176,6 +2246,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2188,6 +2259,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-app-version-resource-mappings',
       description: 'Lists how the resources in an application version are mapped/sourced from. Mappings can be physical resource identifiers, CloudFormation stacks, resource-groups, or an application registry app',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -2240,6 +2312,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2252,6 +2325,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-app-version-resources',
       description: 'Lists all the resources in an Resilience Hub application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -2313,6 +2387,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2325,6 +2400,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-app-versions',
       description: 'Lists the different versions for the Resilience Hub applications',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -2386,6 +2462,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2398,6 +2475,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-apps',
       description: 'Lists your Resilience Hub applications.  You can filter applications using only one filter at a time or without using any filter. If you try to filter applications using multiple filters, you will get the following error:  An error occurred (ValidationException) when calling the ListApps operation: Only one filter is supported for this operation',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -2485,6 +2563,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2497,6 +2576,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-metrics',
       description: 'Lists the metrics that can be exported',
       options: [
+
         Option(
           name: '--conditions',
           description: 'Indicates the list of all the conditions that were applied on the metrics',
@@ -2594,6 +2674,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2606,6 +2687,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-recommendation-templates',
       description: 'Lists the recommendation templates for the Resilience Hub applications',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -2684,6 +2766,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2696,6 +2779,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-resiliency-policies',
       description: 'Lists the resiliency policies for the Resilience Hub applications',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved',
@@ -2739,6 +2823,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2751,6 +2836,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-resource-grouping-recommendations',
       description: 'Lists the resource grouping recommendations suggested by Resilience Hub for your application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -2821,6 +2907,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2833,6 +2920,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-sop-recommendations',
       description: 'Lists the standard operating procedure (SOP) recommendations for the Resilience Hub applications',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -2876,6 +2964,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2888,6 +2977,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-suggested-resiliency-policies',
       description: 'Lists the suggested resiliency policies for the Resilience Hub applications',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved',
@@ -2922,6 +3012,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2934,6 +3025,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for your resources in your Resilience Hub applications',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub application',
@@ -2959,6 +3051,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2971,6 +3064,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-test-recommendations',
       description: 'Lists the test recommendations for the Resilience Hub application',
       options: [
+
         Option(
           name: '--assessment-arn',
           description: 'Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:partition:resiliencehub:region:account:app-assessment/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -3014,6 +3108,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3026,6 +3121,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'list-unsupported-app-version-resources',
       description: 'Lists the resources that are not currently supported in Resilience Hub. An unsupported resource is a resource that exists in the object that was used to create an app, but is not supported by Resilience Hub',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -3087,6 +3183,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3099,6 +3196,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'publish-app-version',
       description: 'Publishes a new version of a specific Resilience Hub application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -3133,6 +3231,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3145,6 +3244,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'put-draft-app-version-template',
       description: 'Adds or updates the app template for an Resilience Hub application draft version',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -3179,6 +3279,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3191,6 +3292,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'reject-resource-grouping-recommendations',
       description: 'Rejects resource grouping recommendations',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -3225,6 +3327,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3237,6 +3340,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'remove-draft-app-version-resource-mappings',
       description: 'Removes resource mappings from a draft application version',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -3316,6 +3420,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3328,6 +3433,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'resolve-app-version-resources',
       description: 'Resolves the resources for an application version',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -3362,6 +3468,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3374,6 +3481,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'start-app-assessment',
       description: 'Creates a new application assessment for an application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -3435,6 +3543,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3447,6 +3556,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'start-metrics-export',
       description: 'Initiates the export task of metrics',
       options: [
+
         Option(
           name: '--bucket-name',
           description: '(Optional) Specifies the name of the Amazon Simple Storage Service bucket where the exported metrics will be stored',
@@ -3481,6 +3591,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3493,6 +3604,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'start-resource-grouping-recommendation-task',
       description: 'Starts grouping recommendation task',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -3518,6 +3630,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3530,6 +3643,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'tag-resource',
       description: 'Applies one or more tags to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the resource',
@@ -3564,6 +3678,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3576,6 +3691,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Amazon Resource Name (ARN) of the resource',
@@ -3610,6 +3726,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3622,6 +3739,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'update-app',
       description: 'Updates an application',
       options: [
+
         Option(
           name: '--app-arn',
           description: 'Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:partition:resiliencehub:region:account:app/app-id. For more information about ARNs, see  Amazon Resource Names (ARNs) in the Amazon Web Services General Reference guide',
@@ -3700,6 +3818,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3712,6 +3831,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'update-app-version',
       description: 'Updates the Resilience Hub application version.  This API updates the Resilience Hub application draft version. To use this information for running resiliency assessments, you must publish the Resilience Hub application using the PublishAppVersion API',
       options: [
+
         Option(
           name: '--additional-info',
           description: 'Additional configuration parameters for an Resilience Hub application. If you want to implement additionalInfo through the Resilience Hub console rather than using an API call, see Configure the application configuration parameters.  Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account. Key: "failover-regions"  Value: "[{"region":"<REGION>", "accounts":[{"id":"<ACCOUNT_ID>"}]}]"',
@@ -3746,6 +3866,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3758,6 +3879,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'update-app-version-app-component',
       description: 'Updates an existing Application Component in the Resilience Hub application.  This API updates the Resilience Hub application draft version. To use this Application Component for running assessments, you must publish the Resilience Hub application using the PublishAppVersion API',
       options: [
+
         Option(
           name: '--additional-info',
           description: 'Currently, there is no supported additional information for Application Components',
@@ -3819,6 +3941,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3831,6 +3954,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'update-app-version-resource',
       description: 'Updates the resource details in the Resilience Hub application.    This action has no effect outside Resilience Hub.   This API updates the Resilience Hub application draft version. To use this resource for running resiliency assessments, you must publish the Resilience Hub application using the PublishAppVersion API.   To update application version with new physicalResourceID, you must call ResolveAppVersionResources API',
       options: [
+
         Option(
           name: '--additional-info',
           description: 'Currently, there is no supported additional information for resources',
@@ -3936,6 +4060,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3948,6 +4073,7 @@ final FigSpec resiliencehubSpec = FigSpec(
       name: 'update-resiliency-policy',
       description: 'Updates a resiliency policy.  Resilience Hub allows you to provide a value of zero for rtoInSecs and rpoInSecs of your resiliency policy. But, while assessing your application, the lowest possible assessment result is near zero. Hence, if you provide value zero for rtoInSecs and rpoInSecs, the estimated workload RTO and estimated workload RPO result will be near zero and the Compliance status for your application will be set to Policy breached',
       options: [
+
         Option(
           name: '--data-location-constraint',
           description: 'Specifies a high-level geographical location constraint for where your resilience policy data can be stored',
@@ -4018,6 +4144,7 @@ final FigSpec resiliencehubSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -4,15 +4,106 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> checkAndFormatSharedOptions = [
+
+  Option(
+    name: ['-a', '--all'],
+    description: 'Run on all files instead of only changed files'
+  ),
+  Option(
+    name: ['-n', '--no-fix'],
+    description: 'Don\'t automatically apply fixes'
+  ),
+  Option(
+    name: '--include-existing-autofixes',
+    description: 'Show autofixes for existing issues'
+  ),
+  Option(
+    name: '--force',
+    description: 'Run on all files, even if ignored'
+  ),
+  Option(
+    name: '--diff',
+    description: 'Diff printing mode',
+    args: [
+      Arg(
+      name: 'mode',
+      suggestions: [
+
+        FigSuggestion(name: 'none'),
+        FigSuggestion(name: 'compact'),
+        FigSuggestion(name: 'full')
+      ]
+    )
+    ]
+  ),
+  Option(
+    name: '--filter',
+    description: 'Filter the set of executed linters and/or the returned codes; use a leading \'-\' to exclude a linter or code',
+    args: [
+      Arg(
+      name: 'linter or code',
+      isVariadic: true
+    )
+    ]
+  ),
+  Option(
+    name: '--exclude',
+    description: 'Shorthand for an inverse --filter',
+    args: [
+      Arg(
+      name: 'linter or code',
+      isVariadic: true
+    )
+    ]
+  ),
+  Option(
+    name: ['-j', '--jobs'],
+    description: 'Number of concurrent jobs (does not affect background linting)',
+    args: [
+      Arg(
+      name: 'number'
+    )
+    ]
+  ),
+  Option(
+    name: '--sample',
+    description: 'Run each linter on N files (implies --no-fix and --all if no paths are given)',
+    args: [
+
+      Arg(
+        name: 'N'
+      ),
+      Arg(
+        name: 'paths',
+        isOptional: true,
+        isVariadic: true,
+        template: 'filepaths'
+      )
+    ]
+  ),
+  Option(
+    name: '--upstream',
+    description: 'Upstream branch used to compute changed files (autodetected by default)',
+    args: [
+      Arg(
+      name: 'branch'
+    )
+    ]
+  )
+];
+
 /// Completion spec for `trunk` CLI
 final FigSpec trunkSpec = FigSpec(
   name: 'trunk',
   description: 'An all-in-one tool for scalably checking, formatting, and monitoring code',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Setup trunk in this repo',
       options: [
+
         Option(
           name: '--lock',
           description: 'Add sha256s to trunk.yaml for additional verification'
@@ -37,12 +128,15 @@ final FigSpec trunkSpec = FigSpec(
       name: 'check',
       description: 'Universal code checker',
       options: [
+
         Option(
           name: ['-y', '--fix'],
           description: 'Automatically apply all fixes without prompting'
-        )
+        ),
+        ...checkAndFormatSharedOptions
       ],
       subcommands: [
+
         Subcommand(
           name: 'upgrade',
           description: 'Upgrade all linters to latest versions',
@@ -100,6 +194,7 @@ final FigSpec trunkSpec = FigSpec(
     Subcommand(
       name: 'fmt',
       description: 'Universal code formatter',
+      options: checkAndFormatSharedOptions,
       args: [
         Arg(
         name: 'paths',
@@ -117,6 +212,7 @@ final FigSpec trunkSpec = FigSpec(
       name: 'git-hooks',
       description: 'Git hooks',
       subcommands: [
+
         Subcommand(
           name: 'install',
           description: 'Install trunk git hooks'
@@ -127,10 +223,12 @@ final FigSpec trunkSpec = FigSpec(
       name: 'cache',
       description: 'Cache management',
       subcommands: [
+
         Subcommand(
           name: 'clean',
           description: 'Clean the cache',
           options: [
+
             Option(
               name: '--all',
               description: 'Delete all files (including results cache)'
@@ -151,6 +249,7 @@ final FigSpec trunkSpec = FigSpec(
       name: 'daemon',
       description: 'Daemon management',
       subcommands: [
+
         Subcommand(
           name: 'launch',
           description: 'Start the trunk daemon if its not already running'
@@ -167,6 +266,7 @@ final FigSpec trunkSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Usage information',
@@ -185,6 +285,7 @@ final FigSpec trunkSpec = FigSpec(
         Arg(
         name: 'value',
         suggestions: [
+
           FigSuggestion(name: 'true'),
           FigSuggestion(name: 'false')
         ]
@@ -204,6 +305,7 @@ final FigSpec trunkSpec = FigSpec(
         Arg(
         name: 'format',
         suggestions: [
+
           FigSuggestion(name: 'text'),
           FigSuggestion(name: 'json')
         ]

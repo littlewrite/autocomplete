@@ -9,6 +9,7 @@ final FigSpec commandSpec = FigSpec(
   name: 'command',
   description: 'Run an external command',
   options: [
+
     Option(
       name: '-v',
       description: 'Print the location of the command'

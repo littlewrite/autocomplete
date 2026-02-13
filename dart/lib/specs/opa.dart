@@ -9,10 +9,12 @@ final FigSpec opaSpec = FigSpec(
   name: 'opa',
   description: 'Open Policy Agent (OPA)',
   subcommands: [
+
     Subcommand(
       name: 'bench',
       description: 'Benchmark a Rego query',
       options: [
+
         Option(
           name: '--benchmem',
           description: 'Report memory allocations with benchmark results'
@@ -151,6 +153,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'build',
       description: 'Build an OPA bundle',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Load paths as bundle files or root directories'
@@ -309,6 +312,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'check',
       description: 'Check Rego source files',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Load paths as bundle files or root directories'
@@ -374,10 +378,12 @@ final FigSpec opaSpec = FigSpec(
       name: 'completion',
       description: 'Generate the autocompletion script for the specified shell',
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Generate the autocompletion script for bash',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -392,6 +398,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'fish',
           description: 'Generate the autocompletion script for fish',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -406,6 +413,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'powershell',
           description: 'Generate the autocompletion script for powershell',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -420,6 +428,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'zsh',
           description: 'Generate the autocompletion script for zsh',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -432,6 +441,7 @@ final FigSpec opaSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Help for completion'
@@ -442,6 +452,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'deps',
       description: 'Analyze Rego query dependencies',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Set bundle file(s) or directory path(s). This flag can be repeated',
@@ -489,6 +500,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'eval',
       description: 'Evaluate a Rego query',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Set bundle file(s) or directory path(s). This flag can be repeated',
@@ -723,6 +735,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'exec',
       description: 'Execute against input files',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Set bundle file(s) or directory path(s). This flag can be repeated',
@@ -810,6 +823,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'fmt',
       description: 'Format Rego source files',
       options: [
+
         Option(
           name: ['--diff', '-d'],
           description: 'Only display a diff of the changes'
@@ -836,6 +850,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'inspect',
       description: 'Inspect OPA bundle(s)',
       options: [
+
         Option(
           name: ['--format', '-f'],
           description: 'Set output format',
@@ -856,6 +871,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'parse',
       description: 'Parse Rego source file',
       options: [
+
         Option(
           name: ['--format', '-f'],
           description: 'Set output format',
@@ -876,6 +892,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'run',
       description: 'Start OPA in interactive or server mode',
       options: [
+
         Option(
           name: ['--addr', '-a'],
           description: 'Set listening address of the server (e.g., [ip]:<port> for TCP, unix://<path> for UNIX domain socket)',
@@ -1165,6 +1182,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'sign',
       description: 'Generate an OPA bundle signature',
       options: [
+
         Option(
           name: ['--bundle', '-b'],
           description: 'Load paths as bundle files or root directories'
@@ -1226,6 +1244,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'test',
       description: 'Execute Rego test cases',
       options: [
+
         Option(
           name: '--bench',
           description: 'Benchmark the unit tests'
@@ -1352,6 +1371,7 @@ final FigSpec opaSpec = FigSpec(
       name: 'version',
       description: 'Print the version of OPA',
       options: [
+
         Option(
           name: ['--check', '-c'],
           description: 'Check for latest OPA release'
@@ -1366,10 +1386,12 @@ final FigSpec opaSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'bench',
           description: 'Benchmark a Rego query',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for bench'
@@ -1380,6 +1402,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'build',
           description: 'Build an OPA bundle',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for build'
@@ -1390,6 +1413,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'check',
           description: 'Check Rego source files',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for check'
@@ -1400,10 +1424,12 @@ final FigSpec opaSpec = FigSpec(
           name: 'completion',
           description: 'Generate the autocompletion script for the specified shell',
           subcommands: [
+
             Subcommand(
               name: 'bash',
               description: 'Generate the autocompletion script for bash',
               options: [
+
                 Option(
                   name: '--no-descriptions',
                   description: 'Disable completion descriptions'
@@ -1418,6 +1444,7 @@ final FigSpec opaSpec = FigSpec(
               name: 'fish',
               description: 'Generate the autocompletion script for fish',
               options: [
+
                 Option(
                   name: '--no-descriptions',
                   description: 'Disable completion descriptions'
@@ -1432,6 +1459,7 @@ final FigSpec opaSpec = FigSpec(
               name: 'powershell',
               description: 'Generate the autocompletion script for powershell',
               options: [
+
                 Option(
                   name: '--no-descriptions',
                   description: 'Disable completion descriptions'
@@ -1446,6 +1474,7 @@ final FigSpec opaSpec = FigSpec(
               name: 'zsh',
               description: 'Generate the autocompletion script for zsh',
               options: [
+
                 Option(
                   name: '--no-descriptions',
                   description: 'Disable completion descriptions'
@@ -1458,6 +1487,7 @@ final FigSpec opaSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for completion'
@@ -1468,6 +1498,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'deps',
           description: 'Analyze Rego query dependencies',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for deps'
@@ -1478,6 +1509,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'eval',
           description: 'Evaluate a Rego query',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for eval'
@@ -1488,6 +1520,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'exec',
           description: 'Execute against input files',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for exec'
@@ -1498,6 +1531,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'fmt',
           description: 'Format Rego source files',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for fmt'
@@ -1508,6 +1542,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'inspect',
           description: 'Inspect OPA bundle(s)',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for inspect'
@@ -1518,6 +1553,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'parse',
           description: 'Parse Rego source file',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for parse'
@@ -1528,6 +1564,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'run',
           description: 'Start OPA in interactive or server mode',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for run'
@@ -1538,6 +1575,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'sign',
           description: 'Generate an OPA bundle signature',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for sign'
@@ -1548,6 +1586,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'test',
           description: 'Execute Rego test cases',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for test'
@@ -1558,6 +1597,7 @@ final FigSpec opaSpec = FigSpec(
           name: 'version',
           description: 'Print the version of OPA',
           options: [
+
             Option(
               name: ['--help', '-h'],
               description: 'Help for version'
@@ -1566,6 +1606,7 @@ final FigSpec opaSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['--help', '-h'],
           description: 'Help for help'
@@ -1574,6 +1615,7 @@ final FigSpec opaSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Help for opa'

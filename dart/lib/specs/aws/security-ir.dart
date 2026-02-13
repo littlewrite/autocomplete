@@ -9,10 +9,12 @@ final FigSpec securityIrSpec = FigSpec(
   name: 'security-ir',
   description: 'This guide provides documents the action and response elements for customer use of the service',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-member-account-details',
       description: 'Grants permission to view an existing membership',
       options: [
+
         Option(
           name: '--membership-id',
           description: 'Required element used in combination with BatchGetMemberAccountDetails to identify the membership ID to query',
@@ -47,6 +49,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'cancel-membership',
       description: 'Grants permissions to cancel an existing membership',
       options: [
+
         Option(
           name: '--membership-id',
           description: 'Required element used in combination with CancelMembershipRequest to identify the membership ID to cancel',
@@ -84,6 +88,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'close-case',
       description: 'Grants permission to close an existing case',
       options: [
+
         Option(
           name: '--case-id',
           description: 'Required element used in combination with CloseCase to identify the case ID to close',
@@ -121,6 +127,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -133,6 +140,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'create-case',
       description: 'Grants permission to create a new case',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Required element used in combination with CreateCase',
@@ -257,6 +265,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -269,6 +278,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'create-case-comment',
       description: 'Grants permission to add a comment to an existing case',
       options: [
+
         Option(
           name: '--case-id',
           description: 'Required element used in combination with CreateCaseComment to specify a case ID',
@@ -312,6 +322,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -324,6 +335,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'create-membership',
       description: 'Grants permissions to create a new membership',
       options: [
+
         Option(
           name: '--client-token',
           description: 'An optional element used in combination with CreateMembership',
@@ -385,6 +397,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -397,6 +410,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'get-case',
       description: 'Grant permission to view a designated case',
       options: [
+
         Option(
           name: '--case-id',
           description: 'Required element for GetCase to identify the requested case ID',
@@ -422,6 +436,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -434,6 +449,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'get-case-attachment-download-url',
       description: 'Grants permission to obtain an Amazon S3 presigned URL to download an attachment',
       options: [
+
         Option(
           name: '--case-id',
           description: 'Required element for GetCaseAttachmentDownloadUrl to identify the case ID for downloading an attachment from',
@@ -468,6 +484,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -480,6 +497,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'get-case-attachment-upload-url',
       description: 'Grants permission to upload an attachment to a case',
       options: [
+
         Option(
           name: '--case-id',
           description: 'Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment to',
@@ -532,6 +550,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -544,6 +563,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'get-membership',
       description: 'Grants permission to get details of a designated service membership',
       options: [
+
         Option(
           name: '--membership-id',
           description: 'Required element for GetMembership to identify the membership ID to query',
@@ -569,6 +589,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -581,6 +602,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'list-case-edits',
       description: 'Grants permissions to view the aidt log for edits made to a designated case',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Optional element for a customer provided token',
@@ -651,6 +673,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -663,6 +686,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'list-cases',
       description: 'Grants permission to list all cases the requester has access to',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Optional element',
@@ -724,6 +748,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -736,6 +761,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'list-comments',
       description: 'Grants permissions to list and view comments for a designated case',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Optional element',
@@ -806,6 +832,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -818,6 +845,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'list-memberships',
       description: 'Grants permission to query the memberships a principal has access to',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Optional element',
@@ -879,6 +907,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -891,6 +920,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Grants permission to view currently configured tags on a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Required element for ListTagsForResource to provide the ARN to identify a specific resource',
@@ -916,6 +946,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -928,6 +959,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'tag-resource',
       description: 'Grants permission to add a tag(s) to a designated resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Required element for TagResource to identify the ARN for the resource to add a tag to',
@@ -962,6 +994,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -974,6 +1007,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'untag-resource',
       description: 'Grants permission to remove a tag(s) from a designate resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Required element for UnTagResource to identify the ARN for the resource to remove a tag from',
@@ -1008,6 +1042,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1020,6 +1055,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'update-case',
       description: 'Grants permission to update an existing case',
       options: [
+
         Option(
           name: '--case-id',
           description: 'Required element for UpdateCase to identify the case ID for updates',
@@ -1180,6 +1216,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1192,6 +1229,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'update-case-comment',
       description: 'Grants permission to update an existing case comment',
       options: [
+
         Option(
           name: '--case-id',
           description: 'Required element for UpdateCaseComment to identify the case ID containing the comment to be updated',
@@ -1235,6 +1273,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1247,6 +1286,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'update-case-status',
       description: 'Grants permission to update the status for a designated cases. Options include Submitted | Detection and Analysis | Eradication, Containment and Recovery | Post-Incident Activities | Closed',
       options: [
+
         Option(
           name: '--case-id',
           description: 'Required element for UpdateCaseStatus to identify the case to update',
@@ -1281,6 +1321,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1293,6 +1334,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'update-membership',
       description: 'Grants access to UpdateMembership to change membership configuration',
       options: [
+
         Option(
           name: '--membership-id',
           description: 'Required element for UpdateMembership to identify the membership to update',
@@ -1345,6 +1387,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1357,6 +1400,7 @@ final FigSpec securityIrSpec = FigSpec(
       name: 'update-resolver-type',
       description: 'Grants permission to update the resolver type for a case.  This is a one-way action and cannot be reversed.  Options include self-supported > AWS-supported',
       options: [
+
         Option(
           name: '--case-id',
           description: 'Required element for UpdateResolverType to identify the case to update',
@@ -1391,6 +1435,7 @@ final FigSpec securityIrSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

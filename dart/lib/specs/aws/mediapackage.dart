@@ -9,10 +9,12 @@ final FigSpec mediapackageSpec = FigSpec(
   name: 'mediapackage',
   description: 'AWS Elemental MediaPackage',
   subcommands: [
+
     Subcommand(
       name: 'configure-logs',
       description: 'Changes the Channel\'s properities to configure log subscription',
       options: [
+
         Option(
           name: '--egress-access-logs',
           description: 'Configure egress access logging',
@@ -56,6 +58,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'create-channel',
       description: 'Creates a new Channel',
       options: [
+
         Option(
           name: '--description',
           description: 'A short text description of the Channel',
@@ -111,6 +115,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'create-harvest-job',
       description: 'Creates a new HarvestJob record',
       options: [
+
         Option(
           name: '--end-time',
           description: 'The end of the time-window which will be harvested',
@@ -184,6 +190,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'create-origin-endpoint',
       description: 'Creates a new OriginEndpoint record',
       options: [
+
         Option(
           name: '--authorization',
           description: 'CDN Authorization credentials',
@@ -338,6 +346,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -350,6 +359,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'delete-channel',
       description: 'Deletes an existing Channel',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the Channel to delete',
@@ -375,6 +385,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -387,6 +398,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'delete-origin-endpoint',
       description: 'Deletes an existing OriginEndpoint',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the OriginEndpoint to delete',
@@ -412,6 +424,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -424,6 +437,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'describe-channel',
       description: 'Gets details about a Channel',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of a Channel',
@@ -449,6 +463,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -461,6 +476,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'describe-harvest-job',
       description: 'Gets details about an existing HarvestJob',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the HarvestJob',
@@ -486,6 +502,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -498,6 +515,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'describe-origin-endpoint',
       description: 'Gets details about an existing OriginEndpoint',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the OriginEndpoint',
@@ -523,6 +541,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -535,6 +554,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'list-channels',
       description: 'Returns a collection of Channels',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Upper bound on number of records to return',
@@ -596,6 +616,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -608,6 +629,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'list-harvest-jobs',
       description: 'Returns a collection of HarvestJob records',
       options: [
+
         Option(
           name: '--include-channel-id',
           description: 'When specified, the request will return only HarvestJobs associated with the given Channel ID',
@@ -687,6 +709,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -699,6 +722,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'list-origin-endpoints',
       description: 'Returns a collection of OriginEndpoint records',
       options: [
+
         Option(
           name: '--channel-id',
           description: 'When specified, the request will return only OriginEndpoints associated with the given Channel ID',
@@ -769,6 +793,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -780,6 +805,7 @@ final FigSpec mediapackageSpec = FigSpec(
     Subcommand(
       name: 'list-tags-for-resource',
       options: [
+
         Option(
           name: '--resource-arn',
           args: [
@@ -804,6 +830,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -816,6 +843,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'rotate-channel-credentials',
       description: 'Changes the Channel\'s first IngestEndpoint\'s username and password. WARNING - This API is deprecated. Please use RotateIngestEndpointCredentials instead',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the channel to update',
@@ -841,6 +869,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -853,6 +882,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'rotate-ingest-endpoint-credentials',
       description: 'Rotate the IngestEndpoint\'s username and password, as specified by the IngestEndpoint\'s id',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the channel the IngestEndpoint is on',
@@ -887,6 +917,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -898,6 +929,7 @@ final FigSpec mediapackageSpec = FigSpec(
     Subcommand(
       name: 'tag-resource',
       options: [
+
         Option(
           name: '--resource-arn',
           args: [
@@ -930,6 +962,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -941,6 +974,7 @@ final FigSpec mediapackageSpec = FigSpec(
     Subcommand(
       name: 'untag-resource',
       options: [
+
         Option(
           name: '--resource-arn',
           args: [
@@ -974,6 +1008,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -986,6 +1021,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'update-channel',
       description: 'Updates an existing Channel',
       options: [
+
         Option(
           name: '--description',
           description: 'A short text description of the Channel',
@@ -1020,6 +1056,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1032,6 +1069,7 @@ final FigSpec mediapackageSpec = FigSpec(
       name: 'update-origin-endpoint',
       description: 'Updates an existing OriginEndpoint',
       options: [
+
         Option(
           name: '--authorization',
           description: 'CDN Authorization credentials',
@@ -1156,6 +1194,7 @@ final FigSpec mediapackageSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

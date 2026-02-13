@@ -9,6 +9,7 @@ final FigSpec dotenvVaultSpec = FigSpec(
   name: 'dotenv-vault',
   description: 'CLI for dotenv-vault',
   options: [
+
     Option(
       name: '--help',
       description: 'Get documentation for the command',
@@ -16,6 +17,7 @@ final FigSpec dotenvVaultSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'new',
       description: 'Create your project',

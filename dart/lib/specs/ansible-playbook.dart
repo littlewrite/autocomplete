@@ -16,6 +16,7 @@ final FigSpec ansiblePlaybookSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '--ask-vault-pass',
       description: 'Ask for vault password'
@@ -175,6 +176,7 @@ final FigSpec ansiblePlaybookSpec = FigSpec(
         Arg(
         name: 'become method',
         suggestions: [
+
           FigSuggestion(name: 'sudo'),
           FigSuggestion(name: 'su'),
           FigSuggestion(name: 'pbrun'),

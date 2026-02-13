@@ -9,10 +9,12 @@ final FigSpec codebuildSpec = FigSpec(
   name: 'codebuild',
   description: 'CodeBuild CodeBuild is a fully managed build service in the cloud. CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy. CodeBuild eliminates the need to provision, manage, and scale your own build servers. It provides prepackaged build environments for the most popular programming languages and build tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in CodeBuild to use your own build tools. CodeBuild scales automatically to meet peak build requests. You pay only for the build time you consume. For more information about CodeBuild, see the  CodeBuild User Guide',
   subcommands: [
+
     Subcommand(
       name: 'batch-delete-builds',
       description: 'Deletes one or more builds',
       options: [
+
         Option(
           name: '--ids',
           description: 'The IDs of the builds to delete',
@@ -38,6 +40,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'batch-get-build-batches',
       description: 'Retrieves information about one or more batch builds',
       options: [
+
         Option(
           name: '--ids',
           description: 'An array that contains the batch build identifiers to retrieve',
@@ -75,6 +79,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'batch-get-builds',
       description: 'Gets information about one or more builds',
       options: [
+
         Option(
           name: '--ids',
           description: 'The IDs of the builds',
@@ -112,6 +118,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'batch-get-fleets',
       description: 'Gets information about one or more compute fleets',
       options: [
+
         Option(
           name: '--names',
           description: 'The names or ARNs of the compute fleets',
@@ -149,6 +157,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -161,6 +170,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'batch-get-projects',
       description: 'Gets information about one or more build projects',
       options: [
+
         Option(
           name: '--names',
           description: 'The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name',
@@ -186,6 +196,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -198,6 +209,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'batch-get-report-groups',
       description: 'Returns an array of report groups',
       options: [
+
         Option(
           name: '--report-group-arns',
           description: 'An array of report group ARNs that identify the report groups to return',
@@ -223,6 +235,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -235,6 +248,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'batch-get-reports',
       description: 'Returns an array of reports',
       options: [
+
         Option(
           name: '--report-arns',
           description: 'An array of ARNs that identify the Report objects to return',
@@ -260,6 +274,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -272,6 +287,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'create-fleet',
       description: 'Creates a compute fleet',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the compute fleet',
@@ -396,6 +412,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -408,6 +425,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'create-project',
       description: 'Creates a build project',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the build project',
@@ -621,6 +639,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -633,6 +652,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'create-report-group',
       description: 'Creates a report group. A report group contains a collection of reports',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the report group',
@@ -685,6 +705,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -697,6 +718,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'create-webhook',
       description: 'For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.  If you enable webhooks for an CodeBuild project, and the project is used as a build step in CodePipeline, then two identical builds are created for each commit. One build is triggered through webhooks, and one through CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are using CodePipeline, we recommend that you disable webhooks in CodeBuild. In the CodeBuild console, clear the Webhook box. For more information, see step 5 in Change a Build Project\'s Settings',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the CodeBuild project',
@@ -766,6 +788,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -778,6 +801,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'delete-build-batch',
       description: 'Deletes a batch build',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the batch build to delete',
@@ -803,6 +827,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -815,6 +840,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'delete-fleet',
       description: 'Deletes a compute fleet. When you delete a compute fleet, its builds are not deleted',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the compute fleet',
@@ -840,6 +866,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -852,6 +879,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'delete-project',
       description: 'Deletes a build project. When you delete a project, its builds are not deleted',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the build project',
@@ -877,6 +905,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -889,6 +918,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'delete-report',
       description: 'Deletes a report',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the report to delete',
@@ -914,6 +944,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -926,6 +957,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'delete-report-group',
       description: 'Deletes a report group. Before you delete a report group, you must delete its reports',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the report group to delete',
@@ -959,6 +991,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -971,6 +1004,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'delete-resource-policy',
       description: 'Deletes a resource policy that is identified by its resource ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource that is associated with the resource policy',
@@ -996,6 +1030,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1008,6 +1043,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'delete-source-credentials',
       description: 'Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the token',
@@ -1033,6 +1069,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1045,6 +1082,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'delete-webhook',
       description: 'For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, stops CodeBuild from rebuilding the source code every time a code change is pushed to the repository',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the CodeBuild project',
@@ -1070,6 +1108,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1082,6 +1121,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'describe-code-coverages',
       description: 'Retrieves one or more code coverage reports',
       options: [
+
         Option(
           name: '--report-arn',
           description: 'The ARN of the report for which test cases are returned',
@@ -1188,6 +1228,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1200,6 +1241,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'describe-test-cases',
       description: 'Returns a list of details about test cases for a report',
       options: [
+
         Option(
           name: '--report-arn',
           description: 'The ARN of the report for which test cases are returned',
@@ -1279,6 +1321,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1291,6 +1334,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'get-report-group-trend',
       description: 'Analyzes and accumulates test report values for the specified test reports',
       options: [
+
         Option(
           name: '--report-group-arn',
           description: 'The ARN of the report group that contains the reports to analyze',
@@ -1334,6 +1378,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1346,6 +1391,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'get-resource-policy',
       description: 'Gets a resource policy that is identified by its resource ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource that is associated with the resource policy',
@@ -1371,6 +1417,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1383,6 +1430,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'import-source-credentials',
       description: 'Imports the source repository credentials for an CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket repository',
       options: [
+
         Option(
           name: '--username',
           description: 'The Bitbucket username when the authType is BASIC_AUTH. This parameter is not valid for other types of source providers or connections',
@@ -1443,6 +1491,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1455,6 +1504,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'invalidate-project-cache',
       description: 'Resets the cache for a project',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the CodeBuild build project that the cache is reset for',
@@ -1480,6 +1530,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1492,6 +1543,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-build-batches',
       description: 'Retrieves the identifiers of your build batches in the current region',
       options: [
+
         Option(
           name: '--filter',
           description: 'A BuildBatchFilter object that specifies the filters for the search',
@@ -1571,6 +1623,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1583,6 +1636,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-build-batches-for-project',
       description: 'Retrieves the identifiers of the build batches for a specific project',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the project',
@@ -1671,6 +1725,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1683,6 +1738,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-builds',
       description: 'Gets a list of build IDs, with each build ID representing a single build',
       options: [
+
         Option(
           name: '--sort-order',
           description: 'The order to list build IDs. Valid values include:    ASCENDING: List the build IDs in ascending order by build ID.    DESCENDING: List the build IDs in descending order by build ID',
@@ -1735,6 +1791,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1747,6 +1804,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-builds-for-project',
       description: 'Gets a list of build identifiers for the specified build project, with each build identifier representing a single build',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the CodeBuild project',
@@ -1808,6 +1866,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1820,6 +1879,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-curated-environment-images',
       description: 'Gets information about Docker images that are managed by CodeBuild',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1836,6 +1896,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1848,6 +1909,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-fleets',
       description: 'Gets a list of compute fleet names with each compute fleet name representing a single compute fleet',
       options: [
+
         Option(
           name: '--next-token',
           description: 'During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a nextToken. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned',
@@ -1900,6 +1962,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1912,6 +1975,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-projects',
       description: 'Gets a list of build project names, with each build project name representing a single build project',
       options: [
+
         Option(
           name: '--sort-by',
           description: 'The criterion to be used to list build project names. Valid values include:    CREATED_TIME: List based on when each build project was created.    LAST_MODIFIED_TIME: List based on when information about each build project was last changed.    NAME: List based on each build project\'s name.   Use sortOrder to specify in what order to list the build project names based on the preceding criteria',
@@ -1973,6 +2037,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1985,6 +2050,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-report-groups',
       description: 'Gets a list ARNs for the report groups in the current Amazon Web Services account',
       options: [
+
         Option(
           name: '--sort-order',
           description: 'Used to specify the order to sort the list of returned report groups. Valid values are ASCENDING and DESCENDING',
@@ -2064,6 +2130,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2076,6 +2143,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-reports',
       description: 'Returns a list of ARNs for the reports in the current Amazon Web Services account',
       options: [
+
         Option(
           name: '--sort-order',
           description: 'Specifies the sort order for the list of returned reports. Valid values are:     ASCENDING: return reports in chronological order based on their creation date.     DESCENDING: return reports in the reverse chronological order based on their creation date',
@@ -2155,6 +2223,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2167,6 +2236,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-reports-for-report-group',
       description: 'Returns a list of ARNs for the reports that belong to a ReportGroup',
       options: [
+
         Option(
           name: '--report-group-arn',
           description: 'The ARN of the report group for which you want to return report ARNs',
@@ -2255,6 +2325,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2267,6 +2338,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-shared-projects',
       description: 'Gets a list of projects that are shared with other Amazon Web Services accounts or users',
       options: [
+
         Option(
           name: '--sort-by',
           description: 'The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:     ARN: List based on the ARN.     MODIFIED_TIME: List based on when information about the shared project was last changed',
@@ -2346,6 +2418,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2358,6 +2431,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-shared-report-groups',
       description: 'Gets a list of report groups that are shared with other Amazon Web Services accounts or users',
       options: [
+
         Option(
           name: '--sort-order',
           description: 'The order in which to list shared report groups. Valid values include:    ASCENDING: List in ascending order.    DESCENDING: List in descending order',
@@ -2437,6 +2511,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2449,6 +2524,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'list-source-credentials',
       description: 'Returns a list of SourceCredentialsInfo objects',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2465,6 +2541,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2477,6 +2554,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'put-resource-policy',
       description: 'Stores a resource policy for the ARN of a Project or ReportGroup object',
       options: [
+
         Option(
           name: '--policy',
           description: 'A JSON-formatted resource policy. For more information, see Sharing a Project and Sharing a Report Group in the CodeBuild User Guide',
@@ -2511,6 +2589,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2523,6 +2602,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'retry-build',
       description: 'Restarts a build',
       options: [
+
         Option(
           name: '--id',
           description: 'Specifies the identifier of the build to restart',
@@ -2557,6 +2637,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2569,6 +2650,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'retry-build-batch',
       description: 'Restarts a failed batch build. Only batch builds that have failed can be retried',
       options: [
+
         Option(
           name: '--id',
           description: 'Specifies the identifier of the batch build to restart',
@@ -2612,6 +2694,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2624,6 +2707,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'start-build',
       description: 'Starts running a build with the settings defined in the project. These setting include: how to run a build, where to get the source code, which build environment to use, which build commands to run, and where to store the build output. You can also start a build run by overriding some of the build settings in the project. The overrides only apply for that specific start build request. The settings in the project are unaltered',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the CodeBuild build project to start running a build',
@@ -2933,6 +3017,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2945,6 +3030,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'start-build-batch',
       description: 'Starts a batch build for a project',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the project',
@@ -3236,6 +3322,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3248,6 +3335,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'stop-build',
       description: 'Attempts to stop running a build',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the build',
@@ -3273,6 +3361,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3285,6 +3374,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'stop-build-batch',
       description: 'Stops a running batch build',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the batch build to stop',
@@ -3310,6 +3400,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3322,6 +3413,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'update-fleet',
       description: 'Updates a compute fleet',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the compute fleet',
@@ -3446,6 +3538,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3458,6 +3551,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'update-project',
       description: 'Changes the settings of a build project',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the build project.  You cannot change a build project\'s name',
@@ -3671,6 +3765,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3683,6 +3778,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'update-project-visibility',
       description: 'Changes the public visibility for a project. The project\'s build results, logs, and artifacts are available to the general public. For more information, see Public build projects in the CodeBuild User Guide.  The following should be kept in mind when making your projects public:   All of a project\'s build results, logs, and artifacts, including builds that were run when the project was private, are available to the general public.   All build logs and artifacts are available to the public. Environment variables, source code, and other sensitive information may have been output to the build logs and artifacts. You must be careful about what information is output to the build logs. Some best practice are:   Do not store sensitive values in environment variables. We recommend that you use an Amazon EC2 Systems Manager Parameter Store or Secrets Manager to store sensitive values.   Follow Best practices for using webhooks in the CodeBuild User Guide to limit which entities can trigger a build, and do not store the buildspec in the project itself, to ensure that your webhooks are as secure as possible.     A malicious user can use public builds to distribute malicious artifacts. We recommend that you review all pull requests to verify that the pull request is a legitimate change. We also recommend that you validate any artifacts with their checksums to make sure that the correct artifacts are being downloaded',
       options: [
+
         Option(
           name: '--project-arn',
           description: 'The Amazon Resource Name (ARN) of the build project',
@@ -3726,6 +3822,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3738,6 +3835,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'update-report-group',
       description: 'Updates a report group',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the report group to update',
@@ -3781,6 +3879,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3793,6 +3892,7 @@ final FigSpec codebuildSpec = FigSpec(
       name: 'update-webhook',
       description: 'Updates the webhook associated with an CodeBuild build project.    If you use Bitbucket for your repository, rotateSecret is ignored',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the CodeBuild project',
@@ -3853,6 +3953,7 @@ final FigSpec codebuildSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

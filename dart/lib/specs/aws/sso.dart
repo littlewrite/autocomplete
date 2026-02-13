@@ -9,10 +9,12 @@ final FigSpec ssoSpec = FigSpec(
   name: 'sso',
   description: 'AWS IAM Identity Center (successor to AWS Single Sign-On) Portal is a web service that makes it easy for you to assign user access to IAM Identity Center resources such as the AWS access portal. Users can get AWS account applications and roles assigned to them and get federated into the application.  Although AWS Single Sign-On was renamed, the sso and identitystore API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see IAM Identity Center rename.  This reference guide describes the IAM Identity Center Portal operations that you can call programatically and includes detailed information on data types and errors.  AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms, such as Java, Ruby, .Net, iOS, or Android. The SDKs provide a convenient way to create programmatic access to IAM Identity Center and other AWS services. For more information about the AWS SDKs, including how to download and install them, see Tools for Amazon Web Services',
   subcommands: [
+
     Subcommand(
       name: 'get-role-credentials',
       description: 'Returns the STS short-term credentials for a given role name that is assigned to the user',
       options: [
+
         Option(
           name: '--role-name',
           description: 'The friendly name of the role that is assigned to the user',
@@ -56,6 +58,7 @@ final FigSpec ssoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec ssoSpec = FigSpec(
       name: 'list-account-roles',
       description: 'Lists all roles that are assigned to the user for a given AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The page token from the previous response output when you request subsequent pages',
@@ -147,6 +151,7 @@ final FigSpec ssoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -159,6 +164,7 @@ final FigSpec ssoSpec = FigSpec(
       name: 'list-accounts',
       description: 'Lists all AWS accounts assigned to the user. These AWS accounts are assigned by the administrator of the account. For more information, see Assign User Access in the IAM Identity Center User Guide. This operation returns a paginated response',
       options: [
+
         Option(
           name: '--next-token',
           description: '(Optional) When requesting subsequent pages, this is the page token from the previous response output',
@@ -229,6 +235,7 @@ final FigSpec ssoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -241,6 +248,7 @@ final FigSpec ssoSpec = FigSpec(
       name: 'logout',
       description: 'Removes the locally stored SSO tokens from the client-side cache and sends an API call to the IAM Identity Center service to invalidate the corresponding server-side IAM Identity Center sign in session.  If a user uses IAM Identity Center to access the AWS CLI, the user’s IAM Identity Center sign in session is used to obtain an IAM session, as specified in the corresponding IAM Identity Center permission set. More specifically, IAM Identity Center assumes an IAM role in the target account on behalf of the user, and the corresponding temporary AWS credentials are returned to the client. After user logout, any existing IAM role sessions that were created by using IAM Identity Center permission sets continue based on the duration configured in the permission set. For more information, see User authentications in the IAM Identity Center User Guide',
       options: [
+
         Option(
           name: '--access-token',
           description: 'The token issued by the CreateToken API call. For more information, see CreateToken in the IAM Identity Center OIDC API Reference Guide',
@@ -266,6 +274,7 @@ final FigSpec ssoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

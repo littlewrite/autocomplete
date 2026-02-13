@@ -9,6 +9,7 @@ final FigSpec btopSpec = FigSpec(
   name: 'btop',
   description: 'Beautifuler htop (interactive process viewer)',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Shows help for btop'
@@ -34,6 +35,7 @@ final FigSpec btopSpec = FigSpec(
         Arg(
         name: 'id',
         suggestions: [
+
           FigSuggestion(name: '0'),
           FigSuggestion(name: '1'),
           FigSuggestion(name: '2'),

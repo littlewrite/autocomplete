@@ -9,14 +9,17 @@ final FigSpec cosignSpec = FigSpec(
   name: 'cosign',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'attach',
       description: 'Provides utilities for attaching artifacts to other artifacts in a registry',
       subcommands: [
+
         Subcommand(
           name: 'attestation',
           description: 'Attach attestation to the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -76,6 +79,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'sbom',
           description: 'Attach sbom to the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -145,6 +149,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'signature',
           description: 'Attach signatures to the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -211,6 +216,7 @@ final FigSpec cosignSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -244,6 +250,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'attest',
       description: 'Attest the supplied container image',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -422,6 +429,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'clean',
       description: 'Remove all signatures from an image',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -486,6 +494,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'completion',
       description: 'Generate completion script',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -519,6 +528,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'copy',
       description: 'Copy the supplied container image and signatures',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -577,10 +587,12 @@ final FigSpec cosignSpec = FigSpec(
       name: 'dockerfile',
       description: 'Provides utilities for discovering images in and performing operations on Dockerfiles',
       subcommands: [
+
         Subcommand(
           name: 'verify',
           description: 'Verify a signature on the base image specified in the Dockerfile',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -747,6 +759,7 @@ final FigSpec cosignSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -780,10 +793,12 @@ final FigSpec cosignSpec = FigSpec(
       name: 'download',
       description: 'Provides utilities for downloading artifacts and attached artifacts in a registry',
       subcommands: [
+
         Subcommand(
           name: 'attestation',
           description: 'Download in-toto attestations from the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -834,6 +849,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'sbom',
           description: 'Download SBOMs from the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -884,6 +900,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'signature',
           description: 'Download signatures from the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -932,6 +949,7 @@ final FigSpec cosignSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -965,6 +983,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'generate',
       description: 'Generates (unsigned) signature payloads from the supplied container image',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1024,6 +1043,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'generate-key-pair',
       description: 'Generates a key-pair',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1066,6 +1086,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'import-key-pair',
       description: 'Imports a PEM-encoded RSA or EC private key',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1108,6 +1129,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'initialize',
       description: 'Initializes SigStore root to retrieve trusted certificate and key targets for verification',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1160,6 +1182,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'load',
       description: 'Load a signed image on disk to a remote registry',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1202,6 +1225,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'login',
       description: 'Log in to a registry',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1257,10 +1281,12 @@ final FigSpec cosignSpec = FigSpec(
       name: 'manifest',
       description: 'Provides utilities for discovering images in and performing operations on Kubernetes manifests',
       subcommands: [
+
         Subcommand(
           name: 'verify',
           description: 'Verify all signatures of images specified in the manifest',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -1423,6 +1449,7 @@ final FigSpec cosignSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1456,6 +1483,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'piv-tool',
       description: 'This cosign was not built with piv-tool support!',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1489,6 +1517,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'pkcs11-tool',
       description: 'This cosign was not built with pkcs11-tool support!',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1522,10 +1551,12 @@ final FigSpec cosignSpec = FigSpec(
       name: 'policy',
       description: 'Subcommand to manage a keyless policy',
       subcommands: [
+
         Subcommand(
           name: 'init',
           description: 'Generate a new keyless policy',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -1634,6 +1665,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'sign',
           description: 'Sign a keyless policy',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -1764,6 +1796,7 @@ final FigSpec cosignSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1797,6 +1830,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'public-key',
       description: 'Gets a public key from the key-pair',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1861,6 +1895,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'save',
       description: 'Save the container image and associated signatures to disk at the specified directory',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -1903,6 +1938,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'sign',
       description: 'Sign the supplied container image',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -2103,6 +2139,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'sign-blob',
       description: 'Sign the supplied blob, outputting the base64-encoded signature to stdout',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -2277,6 +2314,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'tree',
       description: 'Display supply chain security related artifacts for an image such as signatures, SBOMs and attestations',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -2327,6 +2365,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'triangulate',
       description: 'Outputs the located cosign image reference. This is the location cosign stores the specified artifact type',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -2387,10 +2426,12 @@ final FigSpec cosignSpec = FigSpec(
       name: 'upload',
       description: 'Provides utilities for uploading artifacts to a registry',
       subcommands: [
+
         Subcommand(
           name: 'blob',
           description: 'Upload one or more blobs to the supplied container image address',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -2459,6 +2500,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'wasm',
           description: 'Upload a wasm module to the supplied container image reference',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -2516,6 +2558,7 @@ final FigSpec cosignSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -2549,6 +2592,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'verify',
       description: 'Verify a signature on the supplied container image',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -2713,6 +2757,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'verify-attestation',
       description: 'Verify an attestation on the supplied container image',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -2859,6 +2904,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'verify-blob',
       description: 'Verify a signature on the supplied blob',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -2986,6 +3032,7 @@ final FigSpec cosignSpec = FigSpec(
       name: 'version',
       description: 'Prints the version',
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -3023,14 +3070,17 @@ final FigSpec cosignSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'attach',
           description: 'Provides utilities for attaching artifacts to other artifacts in a registry',
           subcommands: [
+
             Subcommand(
               name: 'attestation',
               description: 'Attach attestation to the supplied container image',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -3090,6 +3140,7 @@ final FigSpec cosignSpec = FigSpec(
               name: 'sbom',
               description: 'Attach sbom to the supplied container image',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -3159,6 +3210,7 @@ final FigSpec cosignSpec = FigSpec(
               name: 'signature',
               description: 'Attach signatures to the supplied container image',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -3225,6 +3277,7 @@ final FigSpec cosignSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3258,6 +3311,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'attest',
           description: 'Attest the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3291,6 +3345,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'clean',
           description: 'Remove all signatures from an image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3324,6 +3379,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'completion',
           description: 'Generate completion script',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3357,6 +3413,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'copy',
           description: 'Copy the supplied container image and signatures',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3390,10 +3447,12 @@ final FigSpec cosignSpec = FigSpec(
           name: 'dockerfile',
           description: 'Provides utilities for discovering images in and performing operations on Dockerfiles',
           subcommands: [
+
             Subcommand(
               name: 'verify',
               description: 'Verify a signature on the base image specified in the Dockerfile',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -3560,6 +3619,7 @@ final FigSpec cosignSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3593,10 +3653,12 @@ final FigSpec cosignSpec = FigSpec(
           name: 'download',
           description: 'Provides utilities for downloading artifacts and attached artifacts in a registry',
           subcommands: [
+
             Subcommand(
               name: 'attestation',
               description: 'Download in-toto attestations from the supplied container image',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -3647,6 +3709,7 @@ final FigSpec cosignSpec = FigSpec(
               name: 'sbom',
               description: 'Download SBOMs from the supplied container image',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -3697,6 +3760,7 @@ final FigSpec cosignSpec = FigSpec(
               name: 'signature',
               description: 'Download signatures from the supplied container image',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -3745,6 +3809,7 @@ final FigSpec cosignSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3778,6 +3843,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'generate',
           description: 'Generates (unsigned) signature payloads from the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3811,6 +3877,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'generate-key-pair',
           description: 'Generates a key-pair',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3844,6 +3911,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'import-key-pair',
           description: 'Imports a PEM-encoded RSA or EC private key',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3877,6 +3945,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'initialize',
           description: 'Initializes SigStore root to retrieve trusted certificate and key targets for verification',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3910,6 +3979,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'load',
           description: 'Load a signed image on disk to a remote registry',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3943,6 +4013,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'login',
           description: 'Log in to a registry',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -3976,10 +4047,12 @@ final FigSpec cosignSpec = FigSpec(
           name: 'manifest',
           description: 'Provides utilities for discovering images in and performing operations on Kubernetes manifests',
           subcommands: [
+
             Subcommand(
               name: 'verify',
               description: 'Verify all signatures of images specified in the manifest',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -4142,6 +4215,7 @@ final FigSpec cosignSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4175,6 +4249,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'piv-tool',
           description: 'This cosign was not built with piv-tool support!',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4208,6 +4283,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'pkcs11-tool',
           description: 'This cosign was not built with pkcs11-tool support!',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4241,10 +4317,12 @@ final FigSpec cosignSpec = FigSpec(
           name: 'policy',
           description: 'Subcommand to manage a keyless policy',
           subcommands: [
+
             Subcommand(
               name: 'init',
               description: 'Generate a new keyless policy',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -4353,6 +4431,7 @@ final FigSpec cosignSpec = FigSpec(
               name: 'sign',
               description: 'Sign a keyless policy',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -4483,6 +4562,7 @@ final FigSpec cosignSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4516,6 +4596,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'public-key',
           description: 'Gets a public key from the key-pair',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4549,6 +4630,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'save',
           description: 'Save the container image and associated signatures to disk at the specified directory',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4582,6 +4664,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'sign',
           description: 'Sign the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4615,6 +4698,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'sign-blob',
           description: 'Sign the supplied blob, outputting the base64-encoded signature to stdout',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4648,6 +4732,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'tree',
           description: 'Display supply chain security related artifacts for an image such as signatures, SBOMs and attestations',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4681,6 +4766,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'triangulate',
           description: 'Outputs the located cosign image reference. This is the location cosign stores the specified artifact type',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4714,10 +4800,12 @@ final FigSpec cosignSpec = FigSpec(
           name: 'upload',
           description: 'Provides utilities for uploading artifacts to a registry',
           subcommands: [
+
             Subcommand(
               name: 'blob',
               description: 'Upload one or more blobs to the supplied container image address',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -4786,6 +4874,7 @@ final FigSpec cosignSpec = FigSpec(
               name: 'wasm',
               description: 'Upload a wasm module to the supplied container image reference',
               options: [
+
                 Option(
                   name: '--output-file',
                   description: 'Log output to a file',
@@ -4843,6 +4932,7 @@ final FigSpec cosignSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4876,6 +4966,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'verify',
           description: 'Verify a signature on the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4909,6 +5000,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'verify-attestation',
           description: 'Verify an attestation on the supplied container image',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4942,6 +5034,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'verify-blob',
           description: 'Verify a signature on the supplied blob',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -4975,6 +5068,7 @@ final FigSpec cosignSpec = FigSpec(
           name: 'version',
           description: 'Prints the version',
           options: [
+
             Option(
               name: '--output-file',
               description: 'Log output to a file',
@@ -5006,6 +5100,7 @@ final FigSpec cosignSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--output-file',
           description: 'Log output to a file',
@@ -5037,6 +5132,7 @@ final FigSpec cosignSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--output-file',
       description: 'Log output to a file',

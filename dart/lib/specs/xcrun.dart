@@ -9,10 +9,12 @@ final FigSpec xcrunSpec = FigSpec(
   name: 'xcrun',
   description: 'Find and execute the named command line tool from the active xCode developer directory',
   subcommands: [
+
     Subcommand(
       name: 'scntool',
       description: 'SceneKit CLI utilities',
       options: [
+
         Option(
           name: '--convert',
           description: 'File to convert',
@@ -29,6 +31,7 @@ final FigSpec xcrunSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'scn'),
               FigSuggestion(name: 'dae'),
               FigSuggestion(name: 'c3d')
@@ -75,6 +78,7 @@ final FigSpec xcrunSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Help message'

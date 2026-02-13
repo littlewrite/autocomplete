@@ -9,6 +9,7 @@ final FigSpec progresslineSpec = FigSpec(
   name: 'progressline',
   description: '⏳Track commands progress in a compact one-line format',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for progressline'
@@ -33,6 +34,7 @@ final FigSpec progresslineSpec = FigSpec(
         name: 'style',
         defaultValue: 'dots',
         suggestions: [
+
           FigSuggestion(name: 'dots'),
           FigSuggestion(name: 'kitt'),
           FigSuggestion(name: 'snake')

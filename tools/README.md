@@ -7,46 +7,112 @@
 | 文件 | 职责 |
 |------|------|
 | `converter-engine.cjs` | 单文件转换引擎（规则/解析 + 类型识别 + 复杂度检测） |
-| `ts-to-dart-converter.cjs` | 批量扫描与转换（断点续传、进度统计、错误/needsManual 列表） |
+| `ts-to-dart-converter.cjs` | 批量扫描与转换（断点续传、多进程、进度统计、错误/needsManual 列表） |
+| `converter-worker.cjs` | 多进程模式下的子进程 worker（从 stdin 读任务，向 stdout 写结果） |
+| `converter-worker-redis.cjs` | Redis 模式下的 worker（从 Redis 队列取任务、写结果，需 `--redis`） |
 | `run-conversion.sh` | 一键入口（环境检查 + 调用 `ts-to-dart-converter.cjs`） |
 | `test-converter.cjs` | 小样本自检（覆盖可自动转换与 needsManual） |
 | `generate-all-specs.cjs` | 独立脚本：生成 `dart/lib/specs/all_specs.dart`（与 TS→Dart 转换解耦） |
 
 ## 快速开始
 
+**重要：请在项目根目录执行命令**（不要 `cd tools` 后再写 `node tools/...`，否则会报 `tools/tools/...` 找不到）。
+
 ```bash
-cd tools
+# 在项目根目录（autocomplete/）
+cd /path/to/autocomplete
 
 # 可选：先跑小样本自检
-node test-converter.cjs
+node tools/test-converter.cjs
 
-# 批量转换（推荐：带环境检查）
-./run-conversion.sh
+# 批量转换（单进程，适合调试）
+node tools/ts-to-dart-converter.cjs
 
-# 或直接跑 Node 主程序
-node ts-to-dart-converter.cjs
+# 多进程加速（推荐，大文件如 az/2.53.0/network.ts 不会卡住其它任务）
+node tools/ts-to-dart-converter.cjs -j4
+
+# 带环境检查的一键脚本（需在 tools 目录下执行，单进程）
+cd tools && ./run-conversion.sh
+```
+
+## 命令参数
+
+| 参数 | 说明 |
+|------|------|
+| 无参数 | 单进程顺序转换 |
+| `-j N` 或 `--jobs N` | 使用 N 个子进程并行转换（例如 `-j4`），每个文件只被一个进程处理，无重复、无冲突 |
+| `--redis` | 使用 Redis 队列分发任务与收集结果（需安装 `redis` 包并启动 Redis 服务，见下文） |
+
+示例：
+
+```bash
+node tools/ts-to-dart-converter.cjs -j4
+node tools/ts-to-dart-converter.cjs -j8 --jobs 8
 ```
 
 转换完建议做一次静态检查：
 
 ```bash
-cd ../dart
+cd dart
 dart analyze lib/specs/
 ```
 
+## 多进程如何通信？不用 Redis 可以吗？
+
+**可以不用 Redis，默认多进程模式已经能完成并行转换，且任务之间不会冲突、不会重复。**
+
+- **不用 Redis 时（默认）**  
+  - 主进程在内存里维护一个**任务队列**（待转换文件列表）。  
+  - 主进程 **spawn N 个子进程**（每个运行 `converter-worker.cjs`），通过 **stdin / stdout 管道**与每个子进程通信。  
+  - 主进程向某个子进程的 stdin 写入一行 JSON（`{"tsFilePath": "绝对路径"}`），该子进程转换完后向 stdout 写一行 JSON 结果；主进程收到后把**下一个**任务从队列里取出再发给这个子进程，直到队列空再发 `{"exit": true}`。  
+  - 每个文件只会被派给一个子进程，队列由主进程单线程分配，因此**不会重复、不会冲突**。  
+
+- **用 Redis 时（`--redis`）**  
+  - 主进程把待转换文件路径 **LPUSH** 到 Redis 列表（如 `ts2dart:queue`），然后 **BRPOP** 另一个列表（如 `ts2dart:results`）收结果。  
+  - 子进程（`converter-worker-redis.cjs`）从 Redis **BRPOP** 取任务，转换后 **LPUSH** 结果到 `ts2dart:results`。  
+  - **好处**：可把 worker 放到其它机器、多机共用同一队列；主进程崩溃后队列仍在 Redis，可重新拉取继续跑；可用 redis-cli 查看队列长度、结果等。  
+  - 单机、本仓库批量转换一般用 **默认多进程（不装 Redis）** 即可。
+
 ## 全量转换（记录日志）
 
-从零开始跑一遍转换并把输出写到日志里：
+在项目根目录执行，并把输出写到日志：
 
 ```bash
-cd tools && rm -f conversion-progress.json && node ts-to-dart-converter.cjs > conversion-full-run.log 2>&1
+rm -f tools/conversion-progress.json && node tools/ts-to-dart-converter.cjs -j4 > tools/conversion-full-run.log 2>&1
 ```
 
 如果需要只看错误/警告（避免大量 info 输出）：
 
 ```bash
-grep -E '^(error|warning) •' conversion-full-run.log
+grep -E '^(error|warning)|❌|🔧' tools/conversion-full-run.log
 ```
+
+## 常见问题
+
+### 报错：`Cannot find module '.../tools/tools/ts-to-dart-converter.cjs'`
+
+路径里多了一个 `tools`，说明是在 **tools 目录下** 执行了 `node tools/ts-to-dart-converter.cjs`。  
+**解决**：回到**项目根目录**再执行，例如：
+
+```bash
+cd /Users/th/Dart/autocomplete
+node tools/ts-to-dart-converter.cjs -j4
+```
+
+### 转换大文件（如 az/2.53.0/network.ts）时卡住
+
+使用多进程即可：大文件只占用其中一个子进程，其它进程继续处理小文件。例如：
+
+```bash
+node tools/ts-to-dart-converter.cjs -j4
+```
+
+### 想用 Redis 模式（`--redis`）
+
+1. 安装依赖：`pnpm add redis`（或 `npm i redis`）。  
+2. 确保本机已启动 Redis（或设置 `REDIS_URL`，如 `redis://host:6379`）。  
+3. 执行：`node tools/ts-to-dart-converter.cjs -j4 --redis`。  
+4. 使用方式与默认多进程一致，只是任务与结果通过 Redis 交换。
 
 ## 输出与断点续传
 
@@ -55,6 +121,26 @@ grep -E '^(error|warning) •' conversion-full-run.log
 - `../dart/lib/specs/**/*.dart`：生成的 Dart specs
 
 重复运行会自动跳过已完成项（除非你删除 `conversion-progress.json` 或删除已生成的 `.dart` 文件）。
+
+## 不覆盖 AI/人工编辑的 Dart 文件
+
+- **`// Auto-generated`** 开头：由 ts→dart 脚本生成，重复运行时会**重新生成并覆盖**。
+- **`// AI-generated`** 开头：表示该文件由 AI 或人工编辑过，脚本**不会覆盖**，只会跳过并标记为已完成。
+
+转换结束后会自动执行 **`dart format dart/lib/specs/`** 对生成的 Dart 代码做批量格式化。
+
+## Option / Suggestion / Subcommand 变量支持
+
+- 顶层 `const name: Fig.Option[] = [ ... ]`、`const name: Fig.Suggestion[] = [ ... ]` 和 `const name: Fig.Subcommand[] = [ ... ]` 会被识别并转换为 Dart 的 `final List<Option> name = ...` / `final List<FigSuggestion> name = ...` / `final List<FigSubcommand> name = ...`，并写在 spec 前。
+- spec 内 `options: [...commonOptions, ...otherOptions]`、`options: installOptions`、`subcommands: subCommands` 或 `subcommands: [...subCommands]` 会正确输出为 Dart 的 spread / 变量引用。
+- 仅支持**顶层**声明的 Option[] / Suggestion[] / Subcommand[] 变量；spec 内对其它变量（如 `args: folderPathArg`）的引用暂未自动解析，可能被标为复杂类型或需手动处理。
+
+## Fig.Generator 块（注释形式保留）
+
+- 顶层 `const name: Fig.Generator = { ... }` 与 `(export )?const name: Record<string, Fig.Generator> = { ... }` 的 **TS 源码**会被提取，并以**注释块**形式追加到生成的 Dart 文件末尾，便于后续人工或 AI 转换。
+- 约定：`// TS_GENERATOR_BLOCK_START (变量名)` 与 `// TS_GENERATOR_BLOCK_END` 之间为原始 TS 代码（每行前加 `// `）。
+- 查找方式：`grep -n 'TS_GENERATOR_BLOCK_START'` 可定位所有需转换的 Generator 块。
+- 仅当该文件能成功完成整体转换时才会写入 Dart（含注释块）；若因 postProcess/script 等被标为 needsManual，则不会生成 Dart 文件。可用 `commentFallback: true` 仍生成 Dart 并在 spec 中复杂处写 `null`，同时保留 Generator 注释块。
 
 ## 复杂文件（needsManual）
 
@@ -77,3 +163,4 @@ node generate-all-specs.cjs
 
 - 当前 `ts-to-dart-converter.cjs` 的 `USE_AI_API=true` 分支未实现，会直接报错；默认使用离线规则转换即可。
 - 生成代码以 `FigSpec` 为主；`generate-all-specs.cjs` 同时兼容 `FigSpec` 与 `CompletionSpec` 两种声明方式。
+- 多进程时**不需要安装 Redis**；默认通过主进程内存队列 + 子进程 stdin/stdout 通信即可保证任务不重复、不冲突。

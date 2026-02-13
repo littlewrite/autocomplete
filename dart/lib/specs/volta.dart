@@ -4,11 +4,28 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> defaultOptions = [
+
+  Option(
+    name: '--verbose',
+    description: 'Enables verbose diagnostics'
+  ),
+  Option(
+    name: '--quiet',
+    description: 'Prevents unnecessary output'
+  ),
+  Option(
+    name: ['-h', '--help'],
+    description: 'Prints help information'
+  )
+];
+
 /// Completion spec for `volta` CLI
 final FigSpec voltaSpec = FigSpec(
   name: 'volta',
   description: 'The JavaScript Launcher',
   subcommands: [
+
     Subcommand(
       name: 'fetch',
       description: 'Fetches a tool to the local machine',
@@ -18,7 +35,10 @@ final FigSpec voltaSpec = FigSpec(
         name: 'tool | tool@version'
       )
       ],
-      options: []
+      options: [
+
+        ...defaultOptions
+      ]
     ),
     Subcommand(
       name: 'install',
@@ -27,7 +47,10 @@ final FigSpec voltaSpec = FigSpec(
         Arg(
       )
       ],
-      options: []
+      options: [
+
+        ...defaultOptions
+      ]
     ),
     Subcommand(
       name: 'uninstall',
@@ -37,7 +60,10 @@ final FigSpec voltaSpec = FigSpec(
         name: 'tool'
       )
       ],
-      options: []
+      options: [
+
+        ...defaultOptions
+      ]
     ),
     Subcommand(
       name: 'pin',
@@ -46,7 +72,10 @@ final FigSpec voltaSpec = FigSpec(
         Arg(
       )
       ],
-      options: []
+      options: [
+
+        ...defaultOptions
+      ]
     ),
     Subcommand(
       name: 'list',
@@ -57,6 +86,7 @@ final FigSpec voltaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-c', '--current'],
           description: 'Show the currently-active tool(s)'
@@ -65,6 +95,7 @@ final FigSpec voltaSpec = FigSpec(
           name: ['-d', '--default'],
           description: 'Show your default tool(s)'
         ),
+        ...defaultOptions,
         Option(
           name: '--format',
           description: 'Specify output format',
@@ -72,6 +103,7 @@ final FigSpec voltaSpec = FigSpec(
             Arg(
             name: 'output format',
             suggestions: [
+
               FigSuggestion(name: 'human'),
               FigSuggestion(name: 'plain')
             ]
@@ -88,6 +120,7 @@ final FigSpec voltaSpec = FigSpec(
         name: 'shell',
         description: 'Shell to generate completions for',
         suggestions: [
+
           FigSuggestion(name: 'zsh'),
           FigSuggestion(name: 'bash'),
           FigSuggestion(name: 'fish'),
@@ -97,10 +130,12 @@ final FigSpec voltaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-f', '--force'],
           description: 'Write over an existing file, if any'
         ),
+        ...defaultOptions,
         Option(
           name: ['-o', '--output'],
           description: 'File to write generated completions to',
@@ -122,12 +157,18 @@ final FigSpec voltaSpec = FigSpec(
         template: 'filepaths'
       )
       ],
-      options: []
+      options: [
+
+        ...defaultOptions
+      ]
     ),
     Subcommand(
       name: 'setup',
       description: 'Enables Volta for the current user',
-      options: []
+      options: [
+
+        ...defaultOptions
+      ]
     ),
     Subcommand(
       name: 'run',
@@ -138,6 +179,7 @@ final FigSpec voltaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--bundle',
           description: 'Forces npm to be the version bundled with Node'
@@ -204,6 +246,8 @@ final FigSpec voltaSpec = FigSpec(
     )
   ],
   options: [
+
+    ...defaultOptions,
     Option(
       name: ['-v', '--version'],
       description: 'Prints the current version of Volta'

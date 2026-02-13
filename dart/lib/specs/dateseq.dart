@@ -9,6 +9,7 @@ final FigSpec dateseqSpec = FigSpec(
   name: 'dateseq',
   description: 'Nifty command line date and time utilities; fast date calculations and conversion in the shell',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Print help and exit'
@@ -86,6 +87,7 @@ final FigSpec dateseqSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'FIRST',
       description: 'Date/time'

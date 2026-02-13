@@ -9,6 +9,7 @@ final FigSpec infoSpec = FigSpec(
   name: 'info',
   description: 'Display information about the current gcloud environment',
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -144,6 +145,7 @@ final FigSpec infoSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

@@ -9,10 +9,12 @@ final FigSpec worklinkSpec = FigSpec(
   name: 'worklink',
   description: 'Amazon WorkLink is a cloud-based service that provides secure access to internal websites and web apps from iOS and Android phones. In a single step, your users, such as employees, can access internal websites as efficiently as they access any other public website. They enter a URL in their web browser, or choose a link to an internal website in an email. Amazon WorkLink authenticates the user\'s access and securely renders authorized internal web content in a secure rendering service in the AWS cloud. Amazon WorkLink doesn\'t download or store any internal web content on mobile devices',
   subcommands: [
+
     Subcommand(
       name: 'associate-domain',
       description: 'Specifies a domain to be associated to Amazon WorkLink',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The Amazon Resource Name (ARN) of the fleet',
@@ -65,6 +67,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'associate-website-authorization-provider',
       description: 'Associates a website authorization provider with a specified fleet. This is used to authorize users against associated websites in the company network',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -120,6 +124,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'associate-website-certificate-authority',
       description: 'Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated websites within the company network',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -175,6 +181,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'create-fleet',
       description: 'Creates a fleet. A fleet consists of resources and the configuration that delivers associated websites to authorized users who download and set up the Amazon WorkLink app',
       options: [
+
         Option(
           name: '--fleet-name',
           description: 'A unique name for the fleet',
@@ -238,6 +246,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -250,6 +259,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'delete-fleet',
       description: 'Deletes a fleet. Prevents users from accessing previously associated websites',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -275,6 +285,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -287,6 +298,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'describe-audit-stream-configuration',
       description: 'Describes the configuration for delivering audit streams to the customer account',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -312,6 +324,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -324,6 +337,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'describe-company-network-configuration',
       description: 'Describes the networking configuration to access the internal websites associated with the specified fleet',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -349,6 +363,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -361,6 +376,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'describe-device',
       description: 'Provides information about a user\'s device',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -395,6 +411,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -407,6 +424,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'describe-device-policy-configuration',
       description: 'Describes the device policy configuration for the specified fleet',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -432,6 +450,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -444,6 +463,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'describe-domain',
       description: 'Provides information about the domain',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -478,6 +498,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -490,6 +511,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'describe-fleet-metadata',
       description: 'Provides basic information for the specified fleet, excluding identity provider, networking, and device configuration details',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The Amazon Resource Name (ARN) of the fleet',
@@ -515,6 +537,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -527,6 +550,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'describe-identity-provider-configuration',
       description: 'Describes the identity provider configuration of the specified fleet',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -552,6 +576,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -564,6 +589,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'describe-website-certificate-authority',
       description: 'Provides information about the certificate authority',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -598,6 +624,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -610,6 +637,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'disassociate-domain',
       description: 'Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon WorkLink',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -644,6 +672,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -656,6 +685,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'disassociate-website-authorization-provider',
       description: 'Disassociates a website authorization provider from a specified fleet. After the disassociation, users can\'t load any associated websites that require this authorization provider',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -690,6 +720,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -702,6 +733,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'disassociate-website-certificate-authority',
       description: 'Removes a certificate authority (CA)',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -736,6 +768,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -748,6 +781,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'list-devices',
       description: 'Retrieves a list of devices registered with the specified fleet',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -791,6 +825,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -803,6 +838,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'list-domains',
       description: 'Retrieves a list of domains associated to a specified fleet',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -846,6 +882,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -858,6 +895,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'list-fleets',
       description: 'Retrieves a list of fleets for the current account and Region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page',
@@ -892,6 +930,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -904,6 +943,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves a list of tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the fleet',
@@ -929,6 +969,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -941,6 +982,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'list-website-authorization-providers',
       description: 'Retrieves a list of website authorization providers associated with a specified fleet',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -984,6 +1026,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -996,6 +1039,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'list-website-certificate-authorities',
       description: 'Retrieves a list of certificate authorities added for the current account and Region',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -1039,6 +1083,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1051,6 +1096,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'restore-domain-access',
       description: 'Moves a domain to ACTIVE status if it was in the INACTIVE status',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -1085,6 +1131,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1097,6 +1144,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'revoke-domain-access',
       description: 'Moves a domain to INACTIVE status if it was in the ACTIVE status',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -1131,6 +1179,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1143,6 +1192,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'sign-out-user',
       description: 'Signs the user out from all of their devices. The user can sign in again if they have valid credentials',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -1177,6 +1227,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1189,6 +1240,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or overwrites one or more tags for the specified resource, such as a fleet. Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the fleet',
@@ -1223,6 +1275,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1235,6 +1288,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the fleet',
@@ -1269,6 +1323,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1281,6 +1336,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'update-audit-stream-configuration',
       description: 'Updates the audit stream configuration for the fleet',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -1315,6 +1371,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1327,6 +1384,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'update-company-network-configuration',
       description: 'Updates the company network configuration for the fleet',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -1379,6 +1437,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1391,6 +1450,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'update-device-policy-configuration',
       description: 'Updates the device policy configuration for the fleet',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -1425,6 +1485,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1437,6 +1498,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'update-domain-metadata',
       description: 'Updates domain metadata, such as DisplayName',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -1480,6 +1542,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1492,6 +1555,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'update-fleet-metadata',
       description: 'Updates fleet metadata, such as DisplayName',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -1534,6 +1598,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1546,6 +1611,7 @@ final FigSpec worklinkSpec = FigSpec(
       name: 'update-identity-provider-configuration',
       description: 'Updates the identity provider configuration for the fleet',
       options: [
+
         Option(
           name: '--fleet-arn',
           description: 'The ARN of the fleet',
@@ -1589,6 +1655,7 @@ final FigSpec worklinkSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,14 +9,17 @@ final FigSpec firestoreSpec = FigSpec(
   name: 'firestore',
   description: 'Manage your Cloud Firestore resources',
   subcommands: [
+
     Subcommand(
       name: 'databases',
       description: 'Manage Creation of Cloud Firestore in Native mode Database',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Google Cloud Firestore Native database',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -151,6 +154,7 @@ final FigSpec firestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -165,6 +169,7 @@ final FigSpec firestoreSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -288,6 +293,7 @@ final FigSpec firestoreSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -304,6 +310,7 @@ final FigSpec firestoreSpec = FigSpec(
       name: 'export',
       description: 'Export Cloud Firestore documents to Google Cloud Storage',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -442,6 +449,7 @@ final FigSpec firestoreSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -464,6 +472,7 @@ final FigSpec firestoreSpec = FigSpec(
       name: 'import',
       description: 'Import Cloud Firestore documents from Google Cloud Storage',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -602,6 +611,7 @@ final FigSpec firestoreSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -624,14 +634,17 @@ final FigSpec firestoreSpec = FigSpec(
       name: 'indexes',
       description: 'Manage indexes for Cloud Firestore',
       subcommands: [
+
         Subcommand(
           name: 'composite',
           description: 'Manage composite indexes for Cloud Firestore',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new composite index',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -783,6 +796,7 @@ final FigSpec firestoreSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -799,6 +813,7 @@ final FigSpec firestoreSpec = FigSpec(
               name: 'delete',
               description: 'Delete the given composite index',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -922,6 +937,7 @@ final FigSpec firestoreSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -944,6 +960,7 @@ final FigSpec firestoreSpec = FigSpec(
               name: 'describe',
               description: 'Describe the given composite index',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1067,6 +1084,7 @@ final FigSpec firestoreSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1089,6 +1107,7 @@ final FigSpec firestoreSpec = FigSpec(
               name: 'list',
               description: 'List composite indexes',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1260,6 +1279,7 @@ final FigSpec firestoreSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1274,6 +1294,7 @@ final FigSpec firestoreSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1397,6 +1418,7 @@ final FigSpec firestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1413,10 +1435,12 @@ final FigSpec firestoreSpec = FigSpec(
           name: 'fields',
           description: 'Manage single-field indexes for Cloud Firestore',
           subcommands: [
+
             Subcommand(
               name: 'describe',
               description: 'Describe the index configuration of the given field',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1551,6 +1575,7 @@ final FigSpec firestoreSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1573,6 +1598,7 @@ final FigSpec firestoreSpec = FigSpec(
               name: 'list',
               description: 'List fields with non-default index settings',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1755,6 +1781,7 @@ final FigSpec firestoreSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1771,6 +1798,7 @@ final FigSpec firestoreSpec = FigSpec(
               name: 'update',
               description: 'Update the index configuration of the given field',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1928,6 +1956,7 @@ final FigSpec firestoreSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1948,6 +1977,7 @@ final FigSpec firestoreSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2071,6 +2101,7 @@ final FigSpec firestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2085,6 +2116,7 @@ final FigSpec firestoreSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2208,6 +2240,7 @@ final FigSpec firestoreSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2224,10 +2257,12 @@ final FigSpec firestoreSpec = FigSpec(
       name: 'operations',
       description: 'Manage Long Running Operations for Cloud Firestore',
       subcommands: [
+
         Subcommand(
           name: 'cancel',
           description: 'Cancel a currently-running Cloud Firestore admin operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2351,6 +2386,7 @@ final FigSpec firestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2373,6 +2409,7 @@ final FigSpec firestoreSpec = FigSpec(
           name: 'delete',
           description: 'Delete a completed Cloud Firestore admin operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2496,6 +2533,7 @@ final FigSpec firestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2518,6 +2556,7 @@ final FigSpec firestoreSpec = FigSpec(
           name: 'describe',
           description: 'Retrieves information about a Cloud Firestore admin operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2641,6 +2680,7 @@ final FigSpec firestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2663,6 +2703,7 @@ final FigSpec firestoreSpec = FigSpec(
           name: 'list',
           description: 'List pending Cloud Firestore admin operations and their status',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2834,6 +2875,7 @@ final FigSpec firestoreSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2848,6 +2890,7 @@ final FigSpec firestoreSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2971,6 +3014,7 @@ final FigSpec firestoreSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2985,6 +3029,7 @@ final FigSpec firestoreSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3108,6 +3153,7 @@ final FigSpec firestoreSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

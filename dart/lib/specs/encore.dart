@@ -9,10 +9,12 @@ final FigSpec encoreSpec = FigSpec(
   name: 'encore',
   description: 'Encore is the fastest way of developing backend applications',
   subcommands: [
+
     Subcommand(
       name: 'app',
       description: 'Commands to create and link Encore apps',
       subcommands: [
+
         Subcommand(
           name: 'clone',
           description: 'Clone an Encore app to your computer'
@@ -21,6 +23,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'create',
           description: 'Create a new Encore app',
           options: [
+
             Option(
               name: '--example',
               description: 'URL to example code to use',
@@ -36,6 +39,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'link',
           description: 'Link an Encore app with the server',
           options: [
+
             Option(
               name: ['--force', '-f'],
               description: 'Force link even if the app is already linked'
@@ -48,10 +52,12 @@ final FigSpec encoreSpec = FigSpec(
       name: 'auth',
       description: 'Commands to authenticate with Encore',
       subcommands: [
+
         Subcommand(
           name: 'login',
           description: 'Log in to Encore',
           options: [
+
             Option(
               name: ['--auth-key', '-k'],
               description: 'Auth Key to use for login',
@@ -81,6 +87,7 @@ final FigSpec encoreSpec = FigSpec(
       name: 'check',
       description: 'Checks your application for compile-time errors using Encore\'s compiler',
       options: [
+
         Option(
           name: '--codegen-debug',
           description: 'Dump generated code (for debugging Encore\'s code generation)'
@@ -91,12 +98,14 @@ final FigSpec encoreSpec = FigSpec(
       name: 'daemon',
       description: 'Starts the encore daemon',
       subcommands: [
+
         Subcommand(
           name: 'env',
           description: 'Prints Encore environment information'
         )
       ],
       options: [
+
         Option(
           name: ['--foreground', '-f'],
           description: 'Start the daemon in the foreground'
@@ -107,10 +116,12 @@ final FigSpec encoreSpec = FigSpec(
       name: 'db',
       description: 'Database management commands',
       subcommands: [
+
         Subcommand(
           name: 'conn-uri',
           description: 'Outputs the database connection string',
           options: [
+
             Option(
               name: ['--env', '-e'],
               description: 'Environment name to connect to (such as "prod")',
@@ -127,6 +138,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'proxy',
           description: 'Sets up a proxy tunnel to the database',
           options: [
+
             Option(
               name: ['--env', '-e'],
               description: 'Environment name to connect to (such as "prod")',
@@ -153,6 +165,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'reset',
           description: 'Resets the databases for the given services. Use --all to reset all databases',
           options: [
+
             Option(
               name: '--all',
               description: 'Reset all services in the application'
@@ -163,6 +176,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'shell',
           description: 'Connects to the database via psql shell',
           options: [
+
             Option(
               name: ['--env', '-e'],
               description: 'Environment name to connect to (such as "prod")',
@@ -181,10 +195,12 @@ final FigSpec encoreSpec = FigSpec(
       name: 'eject',
       description: 'Eject provides ways to eject your application to migrate away from using Encore',
       subcommands: [
+
         Subcommand(
           name: 'docker',
           description: 'Docker builds a portable docker image of your Encore application',
           options: [
+
             Option(
               name: '--base',
               description: 'Base image to build from',
@@ -207,10 +223,12 @@ final FigSpec encoreSpec = FigSpec(
       name: 'gen',
       description: 'Code generation commands',
       subcommands: [
+
         Subcommand(
           name: 'client',
           description: 'Generates an API client for your app',
           options: [
+
             Option(
               name: ['--env', '-e'],
               description: 'The environment to fetch the API for (defaults to the primary environment)',
@@ -251,6 +269,7 @@ final FigSpec encoreSpec = FigSpec(
       name: 'logs',
       description: 'Streams logs from your application',
       options: [
+
         Option(
           name: ['--env', '-e'],
           description: 'Environment name to stream logs from (defaults to the production environment)',
@@ -270,6 +289,7 @@ final FigSpec encoreSpec = FigSpec(
       name: 'run',
       description: 'Runs your application',
       options: [
+
         Option(
           name: '--debug',
           description: 'Compile for debugging (disables some optimizations)'
@@ -308,10 +328,12 @@ final FigSpec encoreSpec = FigSpec(
       name: 'secret',
       description: 'Secret management commands',
       subcommands: [
+
         Subcommand(
           name: 'set',
           description: 'Sets a secret value',
           options: [
+
             Option(
               name: ['--dev', '-d'],
               description: 'To set the secret for development use'
@@ -332,6 +354,7 @@ final FigSpec encoreSpec = FigSpec(
       name: 'version',
       description: 'Reports the current version of the encore application',
       subcommands: [
+
         Subcommand(
           name: 'update',
           description: 'Checks for an update of encore and, if one is available, runs the appropriate command to update it'
@@ -342,6 +365,7 @@ final FigSpec encoreSpec = FigSpec(
       name: 'vpn',
       description: 'VPN management commands',
       subcommands: [
+
         Subcommand(
           name: 'start',
           description: 'Sets up a secure connection to private environments'
@@ -360,10 +384,12 @@ final FigSpec encoreSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'app',
           description: 'Commands to create and link Encore apps',
           subcommands: [
+
             Subcommand(
               name: 'clone',
               description: 'Clone an Encore app to your computer'
@@ -382,6 +408,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'auth',
           description: 'Commands to authenticate with Encore',
           subcommands: [
+
             Subcommand(
               name: 'login',
               description: 'Log in to Encore'
@@ -408,6 +435,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'daemon',
           description: 'Starts the encore daemon',
           subcommands: [
+
             Subcommand(
               name: 'env',
               description: 'Prints Encore environment information'
@@ -418,6 +446,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'db',
           description: 'Database management commands',
           subcommands: [
+
             Subcommand(
               name: 'conn-uri',
               description: 'Outputs the database connection string'
@@ -440,6 +469,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'eject',
           description: 'Eject provides ways to eject your application to migrate away from using Encore',
           subcommands: [
+
             Subcommand(
               name: 'docker',
               description: 'Docker builds a portable docker image of your Encore application'
@@ -450,6 +480,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'gen',
           description: 'Code generation commands',
           subcommands: [
+
             Subcommand(
               name: 'client',
               description: 'Generates an API client for your app'
@@ -472,6 +503,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'secret',
           description: 'Secret management commands',
           subcommands: [
+
             Subcommand(
               name: 'set',
               description: 'Sets a secret value'
@@ -486,6 +518,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'version',
           description: 'Reports the current version of the encore application',
           subcommands: [
+
             Subcommand(
               name: 'update',
               description: 'Checks for an update of encore and, if one is available, runs the appropriate command to update it'
@@ -496,6 +529,7 @@ final FigSpec encoreSpec = FigSpec(
           name: 'vpn',
           description: 'VPN management commands',
           subcommands: [
+
             Subcommand(
               name: 'start',
               description: 'Sets up a secure connection to private environments'
@@ -514,6 +548,7 @@ final FigSpec encoreSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--verbose', '-v'],
       description: 'Verbose output',

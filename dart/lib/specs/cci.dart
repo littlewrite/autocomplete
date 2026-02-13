@@ -9,14 +9,17 @@ final FigSpec cciSpec = FigSpec(
   name: 'cci',
   description: 'CumulusCI command line interface',
   subcommands: [
+
     Subcommand(
       name: 'flow',
       description: 'Commands for finding and running flows for a project',
       subcommands: [
+
         Subcommand(
           name: 'doc',
           description: 'Exports RST format documentation for all flows',
           options: [
+
             Option(
               name: '--project',
               description: 'Include project-specific flows only'
@@ -37,6 +40,7 @@ final FigSpec cciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--help',
               description: 'Help for flow info'
@@ -47,6 +51,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'list',
           description: 'List available flows for the current context',
           options: [
+
             Option(
               name: '--plain',
               description: 'Print the table using plain ascii'
@@ -71,6 +76,7 @@ final FigSpec cciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--org',
               description: 'Specify the target org. By default, runs against the current default org',
@@ -115,6 +121,7 @@ final FigSpec cciSpec = FigSpec(
       name: 'org',
       description: 'Commands for connecting and interacting with Salesforce orgs',
       subcommands: [
+
         Subcommand(
           name: 'browser',
           description: 'Opens a browser window and logs into the org using the stored OAuth credentials',
@@ -126,6 +133,7 @@ final FigSpec cciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--org',
               description: 'Alternate way to specify the target org. By default, runs against the current default org',
@@ -167,6 +175,7 @@ final FigSpec cciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--org',
               description: 'Alternate way to specify the target org. One of ORGNAME (see above) or --org is required',
@@ -222,6 +231,7 @@ final FigSpec cciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--org',
               description: 'Alternate way to specify the target org. By default, runs against the current default org',
@@ -245,6 +255,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'import',
           description: 'Import an org from Salesforce DX',
           args: [
+
             Arg(
               name: 'USERNAME_OR_ALIAS'
             ),
@@ -254,6 +265,7 @@ final FigSpec cciSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--org',
               description: 'Alternate way to specify the target org. One of ORGNAME (see above) or --org is required',
@@ -279,6 +291,7 @@ final FigSpec cciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--org',
               description: 'Alternate way to specify the target org. By default, runs against the current default org',
@@ -302,6 +315,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'list',
           description: 'Lists all orgs in scope for the current project',
           options: [
+
             Option(
               name: '--plain',
               description: 'Print the table using plain ascii'
@@ -320,6 +334,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'prune',
           description: 'Removes all expired scratch orgs from the current project',
           options: [
+
             Option(
               name: '--include-active',
               description: 'Remove all scratch orgs, regardless of expiry'
@@ -340,6 +355,7 @@ final FigSpec cciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--org',
               description: 'Alternate way to specify the target org. One of ORGNAME (see above) or --org is required',
@@ -363,6 +379,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'scratch',
           description: 'Connects a Salesforce DX Scratch Org to the keychain',
           args: [
+
             Arg(
               name: 'CONFIG_NAME'
             ),
@@ -372,6 +389,7 @@ final FigSpec cciSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--org',
               description: 'Alternate way to specify the target org. One of ORGNAME (see above) or --org is required',
@@ -423,6 +441,7 @@ final FigSpec cciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--org',
               description: 'Alternate way to specify the target org. One of ORGNAME (see above) or --org is required',
@@ -448,6 +467,7 @@ final FigSpec cciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--org',
               description: 'Alternate way to specify the target org. By default, runs against the current default org',
@@ -487,6 +507,7 @@ final FigSpec cciSpec = FigSpec(
       name: 'plan',
       description: 'Commands for getting information about MetaDeploy plans',
       subcommands: [
+
         Subcommand(
           name: 'info',
           description: 'Displays information for a MetaDeploy plan',
@@ -497,6 +518,7 @@ final FigSpec cciSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--messages',
               description: 'Show only plan messages'
@@ -511,6 +533,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'list',
           description: 'List available plans for the current context',
           options: [
+
             Option(
               name: '--json',
               description: 'Return the list of plans in JSON format'
@@ -527,10 +550,12 @@ final FigSpec cciSpec = FigSpec(
       name: 'robot',
       description: 'Commands for working with Robot Framework',
       subcommands: [
+
         Subcommand(
           name: 'install_playwright',
           description: 'Install libraries necessary to use playwright with robot framework',
           options: [
+
             Option(
               name: ['-n', '--dry_run'],
               description: 'Dry run'
@@ -545,6 +570,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'uninstall_playwright',
           description: 'Uninstalls the robotframework-browser package and node modules',
           options: [
+
             Option(
               name: '--help',
               description: 'Help for uninstall_playwright'
@@ -557,10 +583,12 @@ final FigSpec cciSpec = FigSpec(
       name: 'service',
       description: 'Commands for connecting services to the keychain',
       subcommands: [
+
         Subcommand(
           name: 'connect',
           description: 'Connect an external service to CumulusCI',
           subcommands: [
+
             Subcommand(
               name: 'connected_app',
               description: 'Connect a Connected App service to CumulusCI',
@@ -571,6 +599,7 @@ final FigSpec cciSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--login_url',
                   description: 'Default Salesforce Login URL to be used with this Connected App',
@@ -627,6 +656,7 @@ final FigSpec cciSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--username',
                   description: 'Username or alias of the SFDX org to use as a Dev Hub',
@@ -656,6 +686,7 @@ final FigSpec cciSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--username',
                   description: 'The Github username to use for tasks',
@@ -703,6 +734,7 @@ final FigSpec cciSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--username',
                   description: 'The GitHub Enterprise username to use for tasks',
@@ -759,6 +791,7 @@ final FigSpec cciSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--oauth2_client',
                   description: 'The name of the oauth2_client service with which to establish a connection to Marketing Cloud',
@@ -788,6 +821,7 @@ final FigSpec cciSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--app_name',
                   description: 'The Heroku app name',
@@ -835,6 +869,7 @@ final FigSpec cciSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--url',
                   description: 'The main url for your MetaDeploy instance',
@@ -873,6 +908,7 @@ final FigSpec cciSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--client_id',
                   description: 'The client Id',
@@ -934,6 +970,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'default',
           description: 'Set the default service for a given service type',
           args: [
+
             Arg(
               name: 'SERVICE_TYPE'
             ),
@@ -942,6 +979,7 @@ final FigSpec cciSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--project',
               description: 'Sets the service as the default for the current project'
@@ -956,6 +994,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'info',
           description: 'Show the details of a connected service',
           args: [
+
             Arg(
               name: 'SERVICE_TYPE'
             ),
@@ -965,6 +1004,7 @@ final FigSpec cciSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--json',
               description: 'Print a json string'
@@ -979,6 +1019,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'list',
           description: 'List services available for configuration and use',
           options: [
+
             Option(
               name: '--plain',
               description: 'Print the table using plain ascii'
@@ -997,6 +1038,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'remove',
           description: 'Remove a service',
           args: [
+
             Arg(
               name: 'SERVICE_TYPE'
             ),
@@ -1005,6 +1047,7 @@ final FigSpec cciSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--help',
               description: 'Help for cci service remove'
@@ -1015,6 +1058,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'rename',
           description: 'Rename a service',
           args: [
+
             Arg(
               name: 'SERVICE_TYPE'
             ),
@@ -1026,6 +1070,7 @@ final FigSpec cciSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--help',
               description: 'Help for cci service remove'
@@ -1036,6 +1081,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'update',
           description: 'Allow users to update attribute values of a particular service',
           args: [
+
             Arg(
               name: 'SERVICE_TYPE'
             ),
@@ -1044,6 +1090,7 @@ final FigSpec cciSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-s', '--attribute'],
               description: 'Provide values to update the service with directly. Using `--attribute foo var` will set the \'foo\' attribute to a value of \'bar\' on the specified service',
@@ -1065,6 +1112,7 @@ final FigSpec cciSpec = FigSpec(
       name: 'shell',
       description: 'Drop into a Python shell',
       options: [
+
         Option(
           name: '--script',
           description: 'Path to a script to run',
@@ -1094,6 +1142,7 @@ final FigSpec cciSpec = FigSpec(
       name: 'task',
       description: 'Commands for finding and running tasks for a project',
       subcommands: [
+
         Subcommand(
           name: 'doc',
           description: 'Exports RST format documentation for all tasks'
@@ -1122,6 +1171,7 @@ final FigSpec cciSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--help',
           description: 'Show this message and exit'
@@ -1132,6 +1182,7 @@ final FigSpec cciSpec = FigSpec(
       name: 'version',
       description: 'Print the current version of CumulusCI',
       options: [
+
         Option(
           name: '--help',
           description: 'Show this message and exit'
@@ -1142,6 +1193,7 @@ final FigSpec cciSpec = FigSpec(
       name: 'error',
       description: 'Get or share information about an error',
       subcommands: [
+
         Subcommand(
           name: 'gist',
           description: 'Creates a GitHub gist from the latest logfile'
@@ -1152,6 +1204,7 @@ final FigSpec cciSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--help',
           description: 'Show this message and exit'
@@ -1162,10 +1215,12 @@ final FigSpec cciSpec = FigSpec(
       name: 'project',
       description: 'Commands for interacting with project repository configurations',
       subcommands: [
+
         Subcommand(
           name: 'dependencies',
           description: 'Displays the current dependencies for the project. If the dependencies section has references to other github repositories, the repositories are inspected and a static list of dependencies is created',
           options: [
+
             Option(
               name: '--resolution-strategy',
               description: 'The resolution strategy to use. Defaults to production',
@@ -1185,6 +1240,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'info',
           description: 'Display information about the current project\'s configuration',
           options: [
+
             Option(
               name: '--help',
               description: 'Show this message and exit'
@@ -1195,6 +1251,7 @@ final FigSpec cciSpec = FigSpec(
           name: 'init',
           description: 'Initialize a new project for use with the cumulusci toolbelt',
           options: [
+
             Option(
               name: '--help',
               description: 'Show this message and exit'
@@ -1205,6 +1262,7 @@ final FigSpec cciSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Help for cci'

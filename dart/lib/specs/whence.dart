@@ -15,6 +15,7 @@ final FigSpec whenceSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-v',
       description: 'Produce verbose output'

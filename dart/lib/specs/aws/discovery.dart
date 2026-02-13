@@ -9,10 +9,12 @@ final FigSpec discoverySpec = FigSpec(
   name: 'discovery',
   description: 'Amazon Web Services Application Discovery Service Amazon Web Services Application Discovery Service (Application Discovery Service) helps you plan application migration projects. It automatically identifies servers, virtual machines (VMs), and network dependencies in your on-premises data centers. For more information, see the Amazon Web Services Application Discovery Service FAQ.  Application Discovery Service offers three ways of performing discovery and collecting data about your on-premises servers:    Agentless discovery using Amazon Web Services Application Discovery Service Agentless Collector (Agentless Collector), which doesn\'t require you to install an agent on each host.   Agentless Collector gathers server information regardless of the operating systems, which minimizes the time required for initial on-premises infrastructure assessment.   Agentless Collector doesn\'t collect information about network dependencies, only agent-based discovery collects that information.         Agent-based discovery using the Amazon Web Services Application Discovery Agent (Application Discovery Agent) collects a richer set of data than agentless discovery, which you install on one or more hosts in your data center.    The agent captures infrastructure and application information, including an inventory of running processes, system performance information, resource utilization, and network dependencies.   The information collected by agents is secured at rest and in transit to the Application Discovery Service database in the Amazon Web Services cloud. For more information, see Amazon Web Services Application Discovery Agent.        Amazon Web Services Partner Network (APN) solutions integrate with Application Discovery Service, enabling you to import details of your on-premises environment directly into Amazon Web Services Migration Hub (Migration Hub) without using Agentless Collector or Application Discovery Agent.   Third-party application discovery tools can query Amazon Web Services Application Discovery Service, and they can write to the Application Discovery Service database using the public API.   In this way, you can import data into Migration Hub and view it, so that you can associate applications with servers and track migrations.      Working With This Guide  This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for Application Discovery Service. The topic for each action shows the API request parameters and the response. Alternatively, you can use one of the Amazon Web Services SDKs to access an API that is tailored to the programming language or platform that you\'re using. For more information, see Amazon Web Services SDKs.    Remember that you must set your Migration Hub home Region before you call any of these APIs.   You must make API calls for write actions (create, notify, associate, disassociate, import, or put) while in your home Region, or a HomeRegionNotSetException error is returned.   API calls for read actions (list, describe, stop, and delete) are permitted outside of your home Region.   Although it is unlikely, the Migration Hub home Region could change. If you call APIs outside the home Region, an InvalidInputException is returned.   You must call GetHomeRegion to obtain the latest Migration Hub home Region.    This guide is intended for use with the Amazon Web Services Application Discovery Service User Guide.  All data is handled according to the Amazon Web Services Privacy Policy. You can operate Application Discovery Service offline to inspect collected data before it is shared with the service',
   subcommands: [
+
     Subcommand(
       name: 'associate-configuration-items-to-application',
       description: 'Associates one or more configuration items with an application',
       options: [
+
         Option(
           name: '--application-configuration-id',
           description: 'The configuration ID of an application with which items are to be associated',
@@ -47,6 +49,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'batch-delete-agents',
       description: 'Deletes one or more agents or collectors as specified by ID. Deleting an agent or collector does not delete the previously discovered data. To delete the data collected, use StartBatchDeleteConfigurationTask',
       options: [
+
         Option(
           name: '--delete-agents',
           description: 'The list of agents to delete',
@@ -84,6 +88,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'batch-delete-import-data',
       description: 'Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications.  Amazon Web Services Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you\'ve previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted',
       options: [
+
         Option(
           name: '--import-task-ids',
           description: 'The IDs for the import tasks that you want to delete',
@@ -129,6 +135,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +148,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'create-application',
       description: 'Creates an application with the given name and description',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the application to be created',
@@ -184,6 +192,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +205,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'create-tags',
       description: 'Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.  Do not store sensitive information (like personal data) in tags',
       options: [
+
         Option(
           name: '--configuration-ids',
           description: 'A list of configuration items that you want to tag',
@@ -230,6 +240,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +253,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'delete-applications',
       description: 'Deletes a list of applications and their associations with configuration items',
       options: [
+
         Option(
           name: '--configuration-ids',
           description: 'Configuration ID of an application to be deleted',
@@ -267,6 +279,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +292,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'delete-tags',
       description: 'Deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items',
       options: [
+
         Option(
           name: '--configuration-ids',
           description: 'A list of configuration items with tags that you want to delete',
@@ -313,6 +327,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -325,6 +340,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'describe-agents',
       description: 'Lists agents or collectors as specified by ID or other filters. All agents/collectors associated with your user can be listed if you call DescribeAgents as is without passing any parameters',
       options: [
+
         Option(
           name: '--agent-ids',
           description: 'The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user',
@@ -404,6 +420,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +433,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'describe-batch-delete-configuration-task',
       description: 'Takes a unique deletion task identifier as input and returns metadata about a configuration deletion task',
       options: [
+
         Option(
           name: '--task-id',
           description: 'The ID of the task to delete',
@@ -441,6 +459,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -453,6 +472,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'describe-configurations',
       description: 'Retrieves attributes for a list of configuration item IDs.  All of the supplied IDs must be for the same asset type from one of the following:   server   application   process   connection   Output fields are specific to the asset type specified. For example, the output for a server configuration item includes a list of attributes about the server, such as host name, operating system, number of network cards, etc. For a complete list of outputs for each asset type, see Using the DescribeConfigurations Action in the Amazon Web Services Application Discovery Service User Guide',
       options: [
+
         Option(
           name: '--configuration-ids',
           description: 'One or more configuration IDs',
@@ -478,6 +498,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -490,6 +511,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'describe-continuous-exports',
       description: 'Lists exports as specified by ID. All continuous exports associated with your user can be listed if you call DescribeContinuousExports as is without passing any parameters',
       options: [
+
         Option(
           name: '--export-ids',
           description: 'The unique IDs assigned to the exports',
@@ -560,6 +582,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -572,6 +595,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'describe-export-configurations',
       description: 'DescribeExportConfigurations is deprecated. Use DescribeExportTasks, instead',
       options: [
+
         Option(
           name: '--export-ids',
           description: 'A list of continuous export IDs to search for',
@@ -642,6 +666,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -654,6 +679,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'describe-export-tasks',
       description: 'Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks',
       options: [
+
         Option(
           name: '--export-ids',
           description: 'One or more unique identifiers used to query the status of an export request',
@@ -733,6 +759,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -745,6 +772,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'describe-import-tasks',
       description: 'Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more',
       options: [
+
         Option(
           name: '--filters',
           description: 'An array of name-value pairs that you provide to filter the results for the DescribeImportTask request to a specific subset of results. Currently, wildcard values aren\'t supported for filters',
@@ -815,6 +843,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -827,6 +856,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'describe-tags',
       description: 'Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter filters. There are three valid tag filter names:   tagKey   tagValue   configurationId   Also, all configuration items associated with your user that have tags can be listed if you call DescribeTags as is without passing any parameters',
       options: [
+
         Option(
           name: '--filters',
           description: 'You can filter the list using a key-value format. You can separate these items by using logical operators. Allowed filters include tagKey, tagValue, and configurationId',
@@ -897,6 +927,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -909,6 +940,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'disassociate-configuration-items-from-application',
       description: 'Disassociates one or more configuration items from an application',
       options: [
+
         Option(
           name: '--application-configuration-id',
           description: 'Configuration ID of an application from which each item is disassociated',
@@ -943,6 +975,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -955,6 +988,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'export-configurations',
       description: 'Deprecated. Use StartExportTask instead. Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID that you can query using the DescribeExportConfigurations API. The system imposes a limit of two configuration exports in six hours',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -971,6 +1005,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -983,6 +1018,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'get-discovery-summary',
       description: 'Retrieves a short summary of discovered assets. This API operation takes no request parameters and is called as is at the command prompt as shown in the example',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -999,6 +1035,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1011,6 +1048,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'list-configurations',
       description: 'Retrieves a list of configuration items as specified by the value passed to the required parameter configurationType. Optional filtering may be applied to refine search results',
       options: [
+
         Option(
           name: '--configuration-type',
           description: 'A valid configuration identified by Application Discovery Service',
@@ -1099,6 +1137,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1111,6 +1150,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'list-server-neighbors',
       description: 'Retrieves a list of servers that are one network hop away from a specified server',
       options: [
+
         Option(
           name: '--configuration-id',
           description: 'Configuration ID of the server for which neighbors are being listed',
@@ -1171,6 +1211,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1183,6 +1224,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'start-batch-delete-configuration-task',
       description: 'Takes a list of configurationId as input and starts an asynchronous deletion task to remove the configurationItems. Returns a unique deletion task identifier',
       options: [
+
         Option(
           name: '--configuration-type',
           description: 'The type of configuration item to delete. Supported types are: SERVER',
@@ -1217,6 +1259,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1229,6 +1272,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'start-continuous-export',
       description: 'Start the continuous flow of agent\'s discovered data into Amazon Athena',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1245,6 +1289,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1257,6 +1302,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'start-data-collection-by-agent-ids',
       description: 'Instructs the specified agents to start collecting data',
       options: [
+
         Option(
           name: '--agent-ids',
           description: 'The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the Description field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows Failed in the Description field',
@@ -1282,6 +1328,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1294,6 +1341,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'start-export-task',
       description: 'Begins the export of a discovered data report to an Amazon S3 bucket managed by Amazon Web Services.  Exports might provide an estimate of fees and savings based on certain information that you provide. Fee estimates do not include any taxes that might apply. Your actual fees and savings depend on a variety of factors, including your actual usage of Amazon Web Services services, which might vary from the estimates provided in this report.  If you do not specify preferences or agentIds in the filter, a summary of all servers, applications, tags, and performance is generated. This data is an aggregation of all server data collected through on-premises tooling, file import, application grouping and applying tags. If you specify agentIds in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using startTime and endTime. Export of detailed agent data is limited to five concurrently running exports. Export of detailed agent data is limited to two exports per day. If you enable ec2RecommendationsPreferences in preferences , an Amazon EC2 instance matching the characteristics of each server in Application Discovery Service is generated. Changing the attributes of the ec2RecommendationsPreferences changes the criteria of the recommendation',
       options: [
+
         Option(
           name: '--export-data-format',
           description: 'The file format for the returned export data. Default value is CSV. Note: The GRAPHML option has been deprecated',
@@ -1355,6 +1403,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1367,6 +1416,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'start-import-task',
       description: 'Starts an import task, which allows you to import details of your on-premises environment directly into Amazon Web Services Migration Hub without having to use the Amazon Web Services Application Discovery Service (Application Discovery Service) tools such as the Amazon Web Services Application Discovery Service Agentless Collector or Application Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data, including the ability to group your devices as applications and track their migration status. To start an import request, do this:   Download the specially formatted comma separated value (CSV) import template, which you can find here: https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv.   Fill out the template with your server and application data.   Upload your import file to an Amazon S3 bucket, and make a note of it\'s Object URL. Your import file must be in the CSV format.   Use the console or the StartImportTask command with the Amazon Web Services CLI or one of the Amazon Web Services SDKs to import the records from your file.   For more information, including step-by-step procedures, see Migration Hub Import in the Amazon Web Services Application Discovery Service User Guide.  There are limits to the number of import tasks you can create (and delete) in an Amazon Web Services account. For more information, see Amazon Web Services Application Discovery Service Limits in the Amazon Web Services Application Discovery Service User Guide',
       options: [
+
         Option(
           name: '--client-request-token',
           description: 'Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don\'t provide a token, a token is automatically generated. Sending more than one StartImportTask request with the same client request token will return information about the original import task with that client request token',
@@ -1410,6 +1460,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1422,6 +1473,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'stop-continuous-export',
       description: 'Stop the continuous flow of agent\'s discovered data into Amazon Athena',
       options: [
+
         Option(
           name: '--export-id',
           description: 'The unique ID assigned to this export',
@@ -1447,6 +1499,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1459,6 +1512,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'stop-data-collection-by-agent-ids',
       description: 'Instructs the specified agents to stop collecting data',
       options: [
+
         Option(
           name: '--agent-ids',
           description: 'The IDs of the agents from which to stop collecting data',
@@ -1484,6 +1538,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1496,6 +1551,7 @@ final FigSpec discoverySpec = FigSpec(
       name: 'update-application',
       description: 'Updates metadata about an application',
       options: [
+
         Option(
           name: '--configuration-id',
           description: 'Configuration ID of the application to be updated',
@@ -1548,6 +1604,7 @@ final FigSpec discoverySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

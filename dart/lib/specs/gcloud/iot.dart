@@ -9,18 +9,22 @@ final FigSpec iotSpec = FigSpec(
   name: 'iot',
   description: 'Manage Cloud IoT resources',
   subcommands: [
+
     Subcommand(
       name: 'devices',
       description: 'Manage Cloud IoT Devices',
       subcommands: [
+
         Subcommand(
           name: 'commands',
           description: 'Manage commands for Cloud IoT devices',
           subcommands: [
+
             Subcommand(
               name: 'send',
               description: 'Sends a command to a device',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -211,6 +215,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -225,6 +230,7 @@ final FigSpec iotSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -348,6 +354,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -364,10 +371,12 @@ final FigSpec iotSpec = FigSpec(
           name: 'configs',
           description: 'Manage configurations for Cloud IoT devices',
           subcommands: [
+
             Subcommand(
               name: 'describe',
               description: 'Show details about the latest configuration for a device',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -525,6 +534,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -541,6 +551,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'get-value',
               description: 'Show the binary data of a device\'s latest configuration',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -698,6 +709,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -714,6 +726,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'list',
               description: 'List configs for a device',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -904,6 +917,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -920,6 +934,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'update',
               description: 'Update a specific device configuration',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1099,6 +1114,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1124,6 +1140,7 @@ final FigSpec iotSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1247,6 +1264,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1263,6 +1281,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'create',
           description: 'Create a new device',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1282,6 +1301,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'AUTH_METHOD',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'association-and-device-auth-token'),
                   FigSuggestion(name: 'association-only'),
                   FigSuggestion(name: 'device-auth-token-only')
@@ -1323,6 +1343,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'DEVICE_TYPE',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'gateway'),
                   FigSuggestion(name: 'non-gateway')
                 ]
@@ -1389,6 +1410,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'LOG_LEVEL',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'error'),
                   FigSuggestion(name: 'info'),
@@ -1491,6 +1513,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1513,10 +1536,12 @@ final FigSpec iotSpec = FigSpec(
           name: 'credentials',
           description: 'Manage credentials for Cloud IoT devices',
           subcommands: [
+
             Subcommand(
               name: 'clear',
               description: 'Delete all credentials from a device',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1674,6 +1699,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1690,6 +1716,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'create',
               description: 'Add a new credential to a device',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1866,6 +1893,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'TYPE',
                     description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                     suggestions: [
+
                       FigSuggestion(name: 'es256'),
                       FigSuggestion(name: 'es256-pem'),
                       FigSuggestion(name: 'es256-x509-pem'),
@@ -1889,6 +1917,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1905,6 +1934,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'delete',
               description: 'Delete a credential from a device',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2062,6 +2092,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2084,6 +2115,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'describe',
               description: 'Show details about a specific device credential',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2241,6 +2273,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2263,6 +2296,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'list',
               description: 'List credentials for a device',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2453,6 +2487,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2469,6 +2504,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'update',
               description: 'Update a specific device credential',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2637,6 +2673,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -2657,6 +2694,7 @@ final FigSpec iotSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2780,6 +2818,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2796,6 +2835,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'delete',
           description: 'Delete a device',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2941,6 +2981,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2963,6 +3004,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'describe',
           description: 'Show details about a device',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3108,6 +3150,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3130,10 +3173,12 @@ final FigSpec iotSpec = FigSpec(
           name: 'gateways',
           description: 'Manage Cloud IoT Core Gateway Associations',
           subcommands: [
+
             Subcommand(
               name: 'bind',
               description: 'Associate a device with a gateway',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3325,6 +3370,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3341,6 +3387,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'list-bound-devices',
               description: 'Lists all of the devices bound to the gateway',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3543,6 +3590,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3559,6 +3607,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'unbind',
               description: 'Remove the association between a device and a gateway',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3750,6 +3799,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3764,6 +3814,7 @@ final FigSpec iotSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3887,6 +3938,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3903,6 +3955,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'list',
           description: 'List devices',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3966,6 +4019,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'DEVICE_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'gateway'),
                   FigSuggestion(name: 'non-gateway')
                 ]
@@ -4133,6 +4187,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4149,10 +4204,12 @@ final FigSpec iotSpec = FigSpec(
           name: 'states',
           description: 'Manage states for Cloud IoT devices',
           subcommands: [
+
             Subcommand(
               name: 'list',
               description: 'List states for a device',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4343,6 +4400,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4357,6 +4415,7 @@ final FigSpec iotSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4480,6 +4539,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4496,6 +4556,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'update',
           description: 'Update an existing device',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4593,6 +4654,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'LOG_LEVEL',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'error'),
                   FigSuggestion(name: 'info'),
@@ -4683,6 +4745,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4703,6 +4766,7 @@ final FigSpec iotSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4826,6 +4890,7 @@ final FigSpec iotSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4842,10 +4907,12 @@ final FigSpec iotSpec = FigSpec(
       name: 'registries',
       description: 'Manage Cloud IoT Registries',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new device registry',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4959,6 +5026,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'LOG_LEVEL',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'error'),
                   FigSuggestion(name: 'info'),
@@ -5038,6 +5106,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5060,10 +5129,12 @@ final FigSpec iotSpec = FigSpec(
           name: 'credentials',
           description: 'Manage credentials for Cloud IoT devices',
           subcommands: [
+
             Subcommand(
               name: 'clear',
               description: 'Delete all credentials from a registry',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5210,6 +5281,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5226,6 +5298,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'create',
               description: 'Add a new credential to a registry',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5384,6 +5457,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5400,6 +5474,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'delete',
               description: 'Delete a credential from a registry',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5546,6 +5621,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5568,6 +5644,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'describe',
               description: 'Show details about a specific registry credential',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5714,6 +5791,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5736,6 +5814,7 @@ final FigSpec iotSpec = FigSpec(
               name: 'list',
               description: 'List credentials for a registry',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5915,6 +5994,7 @@ final FigSpec iotSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5929,6 +6009,7 @@ final FigSpec iotSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6052,6 +6133,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6068,6 +6150,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'delete',
           description: 'Delete a device registry',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6202,6 +6285,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6224,6 +6308,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'describe',
           description: 'Show details about a device registry',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6358,6 +6443,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6380,6 +6466,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a device registry',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6558,6 +6645,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6580,6 +6668,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'list',
           description: 'List device registries',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6763,6 +6852,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6779,6 +6869,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for a device registry',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6913,6 +7004,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6925,6 +7017,7 @@ final FigSpec iotSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'REGISTRY',
               description: 'ID of the registry or fully qualified identifier for the registry'
@@ -6939,6 +7032,7 @@ final FigSpec iotSpec = FigSpec(
           name: 'update',
           description: 'Update a device registry',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7052,6 +7146,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'LOG_LEVEL',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'error'),
                   FigSuggestion(name: 'info'),
@@ -7120,6 +7215,7 @@ final FigSpec iotSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7140,6 +7236,7 @@ final FigSpec iotSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7263,6 +7360,7 @@ final FigSpec iotSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -7277,6 +7375,7 @@ final FigSpec iotSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7400,6 +7499,7 @@ final FigSpec iotSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

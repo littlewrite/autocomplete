@@ -9,6 +9,7 @@ final FigSpec masSpec = FigSpec(
   name: 'mas',
   description: 'A simple command line interface for the Mac App Store',
   subcommands: [
+
     Subcommand(
       name: 'account',
       description: 'Prints the primary account Apple ID'

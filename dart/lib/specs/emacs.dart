@@ -14,6 +14,7 @@ final FigSpec emacsSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       description: 'Do not do interactive display; implies -q',
       name: '--batch',

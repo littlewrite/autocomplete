@@ -9,10 +9,12 @@ final FigSpec alexaforbusinessSpec = FigSpec(
   name: 'alexaforbusiness',
   description: 'Alexa for Business has been retired and is no longer supported',
   subcommands: [
+
     Subcommand(
       name: 'approve-skill',
       description: 'Associates a skill with the organization under the customer\'s AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement',
       options: [
+
         Option(
           name: '--skill-id',
           description: 'The unique identifier of the skill',
@@ -38,6 +40,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'associate-contact-with-address-book',
       description: 'Associates a contact with a given address book',
       options: [
+
         Option(
           name: '--contact-arn',
           description: 'The ARN of the contact to associate with an address book',
@@ -84,6 +88,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'associate-device-with-network-profile',
       description: 'Associates a device with the specified network profile',
       options: [
+
         Option(
           name: '--device-arn',
           description: 'The device ARN',
@@ -130,6 +136,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -142,6 +149,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'associate-device-with-room',
       description: 'Associates a device with a given room. This applies all the settings from the room profile to the device, and all the skills in any skill groups added to that room. This operation requires the device to be online, or else a manual sync is required',
       options: [
+
         Option(
           name: '--device-arn',
           description: 'The ARN of the device to associate to a room. Required',
@@ -176,6 +184,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +197,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'associate-skill-group-with-room',
       description: 'Associates a skill group with a given room. This enables all skills in the associated skill group on all devices in the room',
       options: [
+
         Option(
           name: '--skill-group-arn',
           description: 'The ARN of the skill group to associate with a room. Required',
@@ -222,6 +232,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -234,6 +245,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'associate-skill-with-skill-group',
       description: 'Associates a skill with a skill group',
       options: [
+
         Option(
           name: '--skill-group-arn',
           description: 'The ARN of the skill group to associate the skill to. Required',
@@ -268,6 +280,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -280,6 +293,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'associate-skill-with-users',
       description: 'Makes a private skill available for enrolled users to enable on their devices',
       options: [
+
         Option(
           name: '--skill-id',
           description: 'The private skill ID you want to make available to enrolled users',
@@ -305,6 +319,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -317,6 +332,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'create-address-book',
       description: 'Creates an address book with the specified details',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the address book',
@@ -369,6 +385,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -381,6 +398,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'create-business-report-schedule',
       description: 'Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval',
       options: [
+
         Option(
           name: '--schedule-name',
           description: 'The name identifier of the schedule',
@@ -469,6 +487,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -481,6 +500,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'create-conference-provider',
       description: 'Adds a new conference provider under the user\'s AWS account',
       options: [
+
         Option(
           name: '--conference-provider-name',
           description: 'The name of the conference provider',
@@ -560,6 +580,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -572,6 +593,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'create-contact',
       description: 'Creates a contact with the specified details',
       options: [
+
         Option(
           name: '--display-name',
           description: 'The name of the contact to display on the console',
@@ -660,6 +682,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -672,6 +695,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'create-gateway-group',
       description: 'Creates a gateway group with the specified details',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the gateway group',
@@ -724,6 +748,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -736,6 +761,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'create-network-profile',
       description: 'Creates a network profile with the specified details',
       options: [
+
         Option(
           name: '--network-profile-name',
           description: 'The name of the network profile associated with a device',
@@ -851,6 +877,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -863,6 +890,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'create-profile',
       description: 'Creates a new room profile with the specified details',
       options: [
+
         Option(
           name: '--profile-name',
           description: 'The name of a room profile',
@@ -1002,6 +1030,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1014,6 +1043,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'create-room',
       description: 'Creates a room with the specified details',
       options: [
+
         Option(
           name: '--room-name',
           description: 'The name for the room',
@@ -1084,6 +1114,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1096,6 +1127,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'create-skill-group',
       description: 'Creates a skill group with a specified name and description',
       options: [
+
         Option(
           name: '--skill-group-name',
           description: 'The name for the skill group',
@@ -1148,6 +1180,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1160,6 +1193,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'create-user',
       description: 'Creates a user',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The ARN for the user',
@@ -1230,6 +1264,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1242,6 +1277,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-address-book',
       description: 'Deletes an address book by the address book ARN',
       options: [
+
         Option(
           name: '--address-book-arn',
           description: 'The ARN of the address book to delete',
@@ -1267,6 +1303,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1279,6 +1316,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-business-report-schedule',
       description: 'Deletes the recurring report delivery schedule with the specified schedule ARN',
       options: [
+
         Option(
           name: '--schedule-arn',
           description: 'The ARN of the business report schedule',
@@ -1304,6 +1342,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1316,6 +1355,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-conference-provider',
       description: 'Deletes a conference provider',
       options: [
+
         Option(
           name: '--conference-provider-arn',
           description: 'The ARN of the conference provider',
@@ -1341,6 +1381,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1353,6 +1394,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-contact',
       description: 'Deletes a contact by the contact ARN',
       options: [
+
         Option(
           name: '--contact-arn',
           description: 'The ARN of the contact to delete',
@@ -1378,6 +1420,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1390,6 +1433,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-device',
       description: 'Removes a device from Alexa For Business',
       options: [
+
         Option(
           name: '--device-arn',
           description: 'The ARN of the device for which to request details',
@@ -1415,6 +1459,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1427,6 +1472,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-device-usage-data',
       description: 'When this action is called for a specified shared device, it allows authorized users to delete the device\'s entire previous history of voice input data and associated response data. This action can be called once every 24 hours for a specific shared device',
       options: [
+
         Option(
           name: '--device-arn',
           description: 'The ARN of the device',
@@ -1461,6 +1507,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1473,6 +1520,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-gateway-group',
       description: 'Deletes a gateway group',
       options: [
+
         Option(
           name: '--gateway-group-arn',
           description: 'The ARN of the gateway group to delete',
@@ -1498,6 +1546,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1510,6 +1559,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-network-profile',
       description: 'Deletes a network profile by the network profile ARN',
       options: [
+
         Option(
           name: '--network-profile-arn',
           description: 'The ARN of the network profile associated with a device',
@@ -1535,6 +1585,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1547,6 +1598,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-profile',
       description: 'Deletes a room profile by the profile ARN',
       options: [
+
         Option(
           name: '--profile-arn',
           description: 'The ARN of the room profile to delete. Required',
@@ -1572,6 +1624,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1584,6 +1637,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-room',
       description: 'Deletes a room by the room ARN',
       options: [
+
         Option(
           name: '--room-arn',
           description: 'The ARN of the room to delete. Required',
@@ -1609,6 +1663,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1621,6 +1676,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-room-skill-parameter',
       description: 'Deletes room skill parameter details by room, skill, and parameter key ID',
       options: [
+
         Option(
           name: '--room-arn',
           description: 'The ARN of the room from which to remove the room skill parameter details',
@@ -1664,6 +1720,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1676,6 +1733,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-skill-authorization',
       description: 'Unlinks a third-party account from a skill',
       options: [
+
         Option(
           name: '--skill-id',
           description: 'The unique identifier of a skill',
@@ -1710,6 +1768,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1722,6 +1781,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-skill-group',
       description: 'Deletes a skill group by skill group ARN',
       options: [
+
         Option(
           name: '--skill-group-arn',
           description: 'The ARN of the skill group to delete. Required',
@@ -1747,6 +1807,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1759,6 +1820,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'delete-user',
       description: 'Deletes a specified user by user ARN and enrollment ARN',
       options: [
+
         Option(
           name: '--user-arn',
           description: 'The ARN of the user to delete in the organization. Required',
@@ -1793,6 +1855,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1805,6 +1868,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'disassociate-contact-from-address-book',
       description: 'Disassociates a contact from a given address book',
       options: [
+
         Option(
           name: '--contact-arn',
           description: 'The ARN of the contact to disassociate from an address book',
@@ -1839,6 +1903,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1851,6 +1916,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'disassociate-device-from-room',
       description: 'Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is still registered to the account. The device settings and skills are removed from the room',
       options: [
+
         Option(
           name: '--device-arn',
           description: 'The ARN of the device to disassociate from a room. Required',
@@ -1876,6 +1942,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1888,6 +1955,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'disassociate-skill-from-skill-group',
       description: 'Disassociates a skill from a skill group',
       options: [
+
         Option(
           name: '--skill-group-arn',
           description: 'The unique identifier of a skill. Required',
@@ -1922,6 +1990,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1934,6 +2003,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'disassociate-skill-from-users',
       description: 'Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices',
       options: [
+
         Option(
           name: '--skill-id',
           description: 'The private skill ID you want to make unavailable for enrolled users',
@@ -1959,6 +2029,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1971,6 +2042,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'disassociate-skill-group-from-room',
       description: 'Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in the room',
       options: [
+
         Option(
           name: '--skill-group-arn',
           description: 'The ARN of the skill group to disassociate from a room. Required',
@@ -2005,6 +2077,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2017,6 +2090,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'forget-smart-home-appliances',
       description: 'Forgets smart home appliances associated to a room',
       options: [
+
         Option(
           name: '--room-arn',
           description: 'The room that the appliances are associated with',
@@ -2042,6 +2116,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2054,6 +2129,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-address-book',
       description: 'Gets address the book details by the address book ARN',
       options: [
+
         Option(
           name: '--address-book-arn',
           description: 'The ARN of the address book for which to request details',
@@ -2079,6 +2155,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2091,6 +2168,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-conference-preference',
       description: 'Retrieves the existing conference preferences',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2107,6 +2185,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2119,6 +2198,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-conference-provider',
       description: 'Gets details about a specific conference provider',
       options: [
+
         Option(
           name: '--conference-provider-arn',
           description: 'The ARN of the newly created conference provider',
@@ -2144,6 +2224,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2156,6 +2237,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-contact',
       description: 'Gets the contact details by the contact ARN',
       options: [
+
         Option(
           name: '--contact-arn',
           description: 'The ARN of the contact for which to request details',
@@ -2181,6 +2263,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2193,6 +2276,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-device',
       description: 'Gets the details of a device by device ARN',
       options: [
+
         Option(
           name: '--device-arn',
           description: 'The ARN of the device for which to request details. Required',
@@ -2218,6 +2302,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2230,6 +2315,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-gateway',
       description: 'Retrieves the details of a gateway',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The ARN of the gateway to get',
@@ -2255,6 +2341,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2267,6 +2354,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-gateway-group',
       description: 'Retrieves the details of a gateway group',
       options: [
+
         Option(
           name: '--gateway-group-arn',
           description: 'The ARN of the gateway group to get',
@@ -2292,6 +2380,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2304,6 +2393,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-invitation-configuration',
       description: 'Retrieves the configured values for the user enrollment invitation email template',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2320,6 +2410,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2332,6 +2423,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-network-profile',
       description: 'Gets the network profile details by the network profile ARN',
       options: [
+
         Option(
           name: '--network-profile-arn',
           description: 'The ARN of the network profile associated with a device',
@@ -2357,6 +2449,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2369,6 +2462,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-profile',
       description: 'Gets the details of a room profile by profile ARN',
       options: [
+
         Option(
           name: '--profile-arn',
           description: 'The ARN of the room profile for which to request details. Required',
@@ -2394,6 +2488,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2406,6 +2501,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-room',
       description: 'Gets room details by room ARN',
       options: [
+
         Option(
           name: '--room-arn',
           description: 'The ARN of the room for which to request details. Required',
@@ -2431,6 +2527,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2443,6 +2540,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-room-skill-parameter',
       description: 'Gets room skill parameter details by room, skill, and parameter key ARN',
       options: [
+
         Option(
           name: '--room-arn',
           description: 'The ARN of the room from which to get the room skill parameter details',
@@ -2486,6 +2584,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2498,6 +2597,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'get-skill-group',
       description: 'Gets skill group details by skill group ARN',
       options: [
+
         Option(
           name: '--skill-group-arn',
           description: 'The ARN of the skill group for which to get details. Required',
@@ -2523,6 +2623,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2535,6 +2636,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'list-business-report-schedules',
       description: 'Lists the details of the schedules that a user configured. A download URL of the report associated with each schedule is returned every time this action is called. A new download URL is returned each time, and is valid for 24 hours',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to list the remaining schedules from the previous API call',
@@ -2596,6 +2698,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2608,6 +2711,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'list-conference-providers',
       description: 'Lists conference providers under a specific AWS account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The tokens used for pagination',
@@ -2669,6 +2773,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2681,6 +2786,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'list-device-events',
       description: 'Lists the device event history, including device connection status, for up to 30 days',
       options: [
+
         Option(
           name: '--device-arn',
           description: 'The ARN of a device',
@@ -2760,6 +2866,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2772,6 +2879,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'list-gateway-groups',
       description: 'Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details of a specific gateway group',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token used to paginate though multiple pages of gateway group summaries',
@@ -2806,6 +2914,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2818,6 +2927,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'list-gateways',
       description: 'Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific gateway. An optional gateway group ARN can be provided to only retrieve gateway summaries of gateways that are associated with that gateway group ARN',
       options: [
+
         Option(
           name: '--gateway-group-arn',
           description: 'The gateway group ARN for which to list gateways',
@@ -2861,6 +2971,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2873,6 +2984,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'list-skills',
       description: 'Lists all enabled skills in a specific skill group',
       options: [
+
         Option(
           name: '--skill-group-arn',
           description: 'The ARN of the skill group for which to list enabled skills',
@@ -2961,6 +3073,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2973,6 +3086,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'list-skills-store-categories',
       description: 'Lists all categories in the Alexa skill store',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The tokens used for pagination',
@@ -3034,6 +3148,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3046,6 +3161,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'list-skills-store-skills-by-category',
       description: 'Lists all skills in the Alexa skill store by category',
       options: [
+
         Option(
           name: '--category-id',
           description: 'The category ID for which the skills are being retrieved from the skill store',
@@ -3116,6 +3232,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3128,6 +3245,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'list-smart-home-appliances',
       description: 'Lists all of the smart home appliances associated with a room',
       options: [
+
         Option(
           name: '--room-arn',
           description: 'The room that the appliances are associated with',
@@ -3198,6 +3316,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3210,6 +3329,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'list-tags',
       description: 'Lists all tags for the specified resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the specified resource for which to list tags',
@@ -3280,6 +3400,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3292,6 +3413,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'put-conference-preference',
       description: 'Sets the conference preferences on a specific conference provider at the account level',
       options: [
+
         Option(
           name: '--conference-preference',
           description: 'The conference preference of a specific conference provider',
@@ -3317,6 +3439,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3329,6 +3452,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'put-invitation-configuration',
       description: 'Configures the email template for the user enrollment invitation with the specified attributes',
       options: [
+
         Option(
           name: '--organization-name',
           description: 'The name of the organization sending the enrollment invite to a user',
@@ -3372,6 +3496,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3384,6 +3509,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'put-room-skill-parameter',
       description: 'Updates room skill parameter details by room, skill, and parameter key ID. Not all skills have a room skill parameter',
       options: [
+
         Option(
           name: '--room-arn',
           description: 'The ARN of the room associated with the room skill parameter. Required',
@@ -3427,6 +3553,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3439,6 +3566,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'put-skill-authorization',
       description: 'Links a user\'s account to a third-party skill provider. If this API operation is called by an assumed IAM role, the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the IAM role',
       options: [
+
         Option(
           name: '--authorization-result',
           description: 'The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization',
@@ -3482,6 +3610,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3494,6 +3623,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'register-avs-device',
       description: 'Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS)',
       options: [
+
         Option(
           name: '--client-id',
           description: 'The client ID of the OEM used for code-based linking authorization on an AVS device',
@@ -3573,6 +3703,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3585,6 +3716,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'reject-skill',
       description: 'Disassociates a skill from the organization under a user\'s AWS account. If the skill is a private skill, it moves to an AcceptStatus of PENDING. Any private or public skill that is rejected can be added later by calling the ApproveSkill API',
       options: [
+
         Option(
           name: '--skill-id',
           description: 'The unique identifier of the skill',
@@ -3610,6 +3742,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3622,6 +3755,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'resolve-room',
       description: 'Determines the details for the room from which a skill request was invoked. This operation is used by skill developers. To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS Lambda function, the skill is automatically authorized when you publish your skill as a private skill to your AWS account. Skills that are hosted using a custom web service must be manually authorized. To get your skill authorized, contact AWS Support with your AWS account ID that queries the ResolveRoom API and skill ID',
       options: [
+
         Option(
           name: '--user-id',
           description: 'The ARN of the user. Required',
@@ -3656,6 +3790,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3668,6 +3803,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'revoke-invitation',
       description: 'Revokes an invitation and invalidates the enrollment URL',
       options: [
+
         Option(
           name: '--user-arn',
           description: 'The ARN of the user for whom to revoke an enrollment invitation. Required',
@@ -3702,6 +3838,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3714,6 +3851,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'search-address-books',
       description: 'Searches address books and lists the ones that meet a set of filter and sort criteria',
       options: [
+
         Option(
           name: '--filters',
           description: 'The filters to use to list a specified set of address books. The supported filter key is AddressBookName',
@@ -3766,6 +3904,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3778,6 +3917,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'search-contacts',
       description: 'Searches contacts and lists the ones that meet a set of filter and sort criteria',
       options: [
+
         Option(
           name: '--filters',
           description: 'The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns',
@@ -3830,6 +3970,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3842,6 +3983,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'search-devices',
       description: 'Searches devices and lists the ones that meet a set of filter criteria',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults',
@@ -3921,6 +4063,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3933,6 +4076,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'search-network-profiles',
       description: 'Searches network profiles and lists the ones that meet a set of filter and sort criteria',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults',
@@ -3985,6 +4129,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3997,6 +4142,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'search-profiles',
       description: 'Searches room profiles and lists the ones that meet a set of filter criteria',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults',
@@ -4076,6 +4222,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4088,6 +4235,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'search-rooms',
       description: 'Searches rooms and lists the ones that meet a set of filter and sort criteria',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults',
@@ -4167,6 +4315,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4179,6 +4328,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'search-skill-groups',
       description: 'Searches skill groups and lists the ones that meet a set of filter and sort criteria',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. Required',
@@ -4258,6 +4408,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4270,6 +4421,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'search-users',
       description: 'Searches users and lists the ones that meet a set of filter and sort criteria',
       options: [
+
         Option(
           name: '--next-token',
           description: 'An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. Required',
@@ -4349,6 +4501,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4361,6 +4514,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'send-announcement',
       description: 'Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search or filter',
       options: [
+
         Option(
           name: '--room-filters',
           description: 'The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list',
@@ -4413,6 +4567,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4425,6 +4580,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'send-invitation',
       description: 'Sends an enrollment invitation email with a URL to a user. The URL is valid for 30 days or until you call this operation again, whichever comes first',
       options: [
+
         Option(
           name: '--user-arn',
           description: 'The ARN of the user to whom to send an invitation. Required',
@@ -4450,6 +4606,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4462,6 +4619,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'start-device-sync',
       description: 'Resets a device and its account to the known default settings. This clears all information and settings set by previous users in the following ways:   Bluetooth - This unpairs all bluetooth devices paired with your echo device.   Volume - This resets the echo device\'s volume to the default value.   Notifications - This clears all notifications from your echo device.   Lists - This clears all to-do items from your echo device.   Settings - This internally syncs the room\'s profile (if the device is assigned to a room), contacts, address books, delegation access for account linking, and communications (if enabled on the room profile)',
       options: [
+
         Option(
           name: '--room-arn',
           description: 'The ARN of the room with which the device to sync is associated. Required',
@@ -4505,6 +4663,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4517,6 +4676,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'start-smart-home-appliance-discovery',
       description: 'Initiates the discovery of any smart home appliances associated with the room',
       options: [
+
         Option(
           name: '--room-arn',
           description: 'The room where smart home appliance discovery was initiated',
@@ -4542,6 +4702,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4554,6 +4715,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds metadata tags to a specified resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the resource to which to add metadata tags. Required',
@@ -4588,6 +4750,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4600,6 +4763,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes metadata tags from a specified resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The ARN of the resource from which to remove metadata tags. Required',
@@ -4634,6 +4798,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4646,6 +4811,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-address-book',
       description: 'Updates address book details by the address book ARN',
       options: [
+
         Option(
           name: '--address-book-arn',
           description: 'The ARN of the room to update',
@@ -4689,6 +4855,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4701,6 +4868,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-business-report-schedule',
       description: 'Updates the configuration of the report delivery schedule with the specified schedule ARN',
       options: [
+
         Option(
           name: '--schedule-arn',
           description: 'The ARN of the business report schedule',
@@ -4771,6 +4939,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4783,6 +4952,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-conference-provider',
       description: 'Updates an existing conference provider\'s settings',
       options: [
+
         Option(
           name: '--conference-provider-arn',
           description: 'The ARN of the conference provider',
@@ -4844,6 +5014,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4856,6 +5027,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-contact',
       description: 'Updates the contact details by the contact ARN',
       options: [
+
         Option(
           name: '--contact-arn',
           description: 'The ARN of the contact to update',
@@ -4935,6 +5107,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4947,6 +5120,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-device',
       description: 'Updates the device name by device ARN',
       options: [
+
         Option(
           name: '--device-arn',
           description: 'The ARN of the device to update. Required',
@@ -4981,6 +5155,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4993,6 +5168,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-gateway',
       description: 'Updates the details of a gateway. If any optional field is not provided, the existing corresponding value is left unmodified',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The ARN of the gateway to update',
@@ -5045,6 +5221,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5057,6 +5234,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-gateway-group',
       description: 'Updates the details of a gateway group. If any optional field is not provided, the existing corresponding value is left unmodified',
       options: [
+
         Option(
           name: '--gateway-group-arn',
           description: 'The ARN of the gateway group to update',
@@ -5100,6 +5278,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5112,6 +5291,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-network-profile',
       description: 'Updates a network profile by the network profile ARN',
       options: [
+
         Option(
           name: '--network-profile-arn',
           description: 'The ARN of the network profile associated with a device',
@@ -5191,6 +5371,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5203,6 +5384,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-profile',
       description: 'Updates an existing room profile by room profile ARN',
       options: [
+
         Option(
           name: '--profile-arn',
           description: 'The ARN of the room profile to update. Required',
@@ -5341,6 +5523,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5353,6 +5536,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-room',
       description: 'Updates room details by room ARN',
       options: [
+
         Option(
           name: '--room-arn',
           description: 'The ARN of the room to update',
@@ -5414,6 +5598,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5426,6 +5611,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
       name: 'update-skill-group',
       description: 'Updates skill group details by skill group ARN',
       options: [
+
         Option(
           name: '--skill-group-arn',
           description: 'The ARN of the skill group to update',
@@ -5469,6 +5655,7 @@ final FigSpec alexaforbusinessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec devopsGuruSpec = FigSpec(
   name: 'devops-guru',
   description: 'Amazon DevOps Guru is a fully managed service that helps you identify anomalous behavior in business critical operational applications. You specify the Amazon Web Services resources that you want DevOps Guru to cover, then the Amazon CloudWatch metrics and Amazon Web Services CloudTrail events related to those resources are analyzed. When anomalous behavior is detected, DevOps Guru creates an insight that includes recommendations, related events, and related metrics that can help you improve your operational applications. For more information, see What is Amazon DevOps Guru.   You can specify 1 or 2 Amazon Simple Notification Service topics so you are notified every time a new insight is created. You can also enable DevOps Guru to generate an OpsItem in Amazon Web Services Systems Manager for each insight to help you manage and track your work addressing insights.   To learn about the DevOps Guru workflow, see How DevOps Guru works. To learn about DevOps Guru concepts, see Concepts in DevOps Guru',
   subcommands: [
+
     Subcommand(
       name: 'add-notification-channel',
       description: 'Adds a notification channel to DevOps Guru. A notification channel is used to notify you about important DevOps Guru events, such as when an insight is generated.  If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to send it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see Permissions for Amazon SNS topics. If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics',
       options: [
+
         Option(
           name: '--config',
           description: 'A NotificationChannelConfig object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS)',
@@ -38,6 +40,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'delete-insight',
       description: 'Deletes the insight along with the associated anomalies, events and recommendations',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the insight',
@@ -75,6 +79,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-account-health',
       description: 'Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the health of operations in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -103,6 +109,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -115,6 +122,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-account-overview',
       description: 'For the time range passed in, returns the number of open reactive insight that were created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights',
       options: [
+
         Option(
           name: '--from-time',
           description: 'The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day',
@@ -149,6 +157,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -161,6 +170,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-anomaly',
       description: 'Returns details about an anomaly that you specify using its ID',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the anomaly',
@@ -195,6 +205,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -207,6 +218,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-event-sources-config',
       description: 'Returns the integration status of services that are integrated with DevOps Guru as Consumer via EventBridge. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -223,6 +235,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -235,6 +248,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-feedback',
       description: 'Returns the most recent feedback submitted in the current Amazon Web Services account and Region',
       options: [
+
         Option(
           name: '--insight-id',
           description: 'The ID of the insight for which the feedback was provided',
@@ -260,6 +274,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -272,6 +287,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-insight',
       description: 'Returns details about an insight that you specify using its ID',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the insight',
@@ -306,6 +322,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -318,6 +335,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-organization-health',
       description: 'Returns active insights, predictive insights, and resource hours analyzed in last hour',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The ID of the Amazon Web Services account',
@@ -352,6 +370,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -364,6 +383,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-organization-overview',
       description: 'Returns an overview of your organization\'s history based on the specified time range. The overview includes the total reactive and proactive insights',
       options: [
+
         Option(
           name: '--from-time',
           description: 'The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day',
@@ -416,6 +436,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -428,6 +449,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-organization-resource-collection-health',
       description: 'Provides an overview of your system\'s health. If additional member accounts are part of your organization, you can filter those accounts using the AccountIds field',
       options: [
+
         Option(
           name: '--organization-resource-collection-type',
           description: 'An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag key. You can specify up to 500 Amazon Web Services CloudFormation stacks',
@@ -507,6 +529,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -519,6 +542,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-resource-collection-health',
       description: 'Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for all closed insights in resource collections in your account. You specify the type of Amazon Web Services resources collection. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag key. You can specify up to 500 Amazon Web Services CloudFormation stacks',
       options: [
+
         Option(
           name: '--resource-collection-type',
           description: 'An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag key. You can specify up to 500 Amazon Web Services CloudFormation stacks',
@@ -571,6 +595,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -583,6 +608,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'describe-service-integration',
       description: 'Returns the integration status of services that are integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -599,6 +625,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -611,6 +638,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'get-cost-estimation',
       description: 'Returns an estimate of the monthly cost for DevOps Guru to analyze your Amazon Web Services resources. For more information, see Estimate your Amazon DevOps Guru costs and Amazon DevOps Guru pricing',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page',
@@ -654,6 +682,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -666,6 +695,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'get-resource-collection',
       description: 'Returns lists Amazon Web Services resources that are of the specified resource collection type. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag key. You can specify up to 500 Amazon Web Services CloudFormation stacks',
       options: [
+
         Option(
           name: '--resource-collection-type',
           description: 'The type of Amazon Web Services resource collections to return. The one valid value is CLOUD_FORMATION for Amazon Web Services CloudFormation stacks',
@@ -718,6 +748,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -730,6 +761,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'list-anomalies-for-insight',
       description: 'Returns a list of the anomalies that belong to an insight that you specify using its ID',
       options: [
+
         Option(
           name: '--insight-id',
           description: 'The ID of the insight. The returned anomalies belong to this insight',
@@ -827,6 +859,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -839,6 +872,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'list-anomalous-log-groups',
       description: 'Returns the list of log groups that contain log anomalies',
       options: [
+
         Option(
           name: '--insight-id',
           description: 'The ID of the insight containing the log groups',
@@ -909,6 +943,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -921,6 +956,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'list-events',
       description: 'Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to specify which events are returned',
       options: [
+
         Option(
           name: '--filters',
           description: 'A ListEventsFilters object used to specify which events to return',
@@ -1000,6 +1036,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1012,6 +1049,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'list-insights',
       description: 'Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time and status (ONGOING, CLOSED, or ANY)',
       options: [
+
         Option(
           name: '--status-filter',
           description: 'A filter used to filter the returned insights by their status. You can specify one status filter',
@@ -1082,6 +1120,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1094,6 +1133,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'list-monitored-resources',
       description: 'Returns the list of all log groups that are being monitored and tagged by DevOps Guru',
       options: [
+
         Option(
           name: '--filters',
           description: 'Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status',
@@ -1164,6 +1204,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1176,6 +1217,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'list-notification-channels',
       description: 'Returns a list of notification channels configured for DevOps Guru. Each notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS)',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page',
@@ -1219,6 +1261,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1231,6 +1274,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'list-organization-insights',
       description: 'Returns a list of insights associated with the account or OU Id',
       options: [
+
         Option(
           name: '--status-filter',
           description: 'A filter used by ListInsights to specify which insights to return',
@@ -1319,6 +1363,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1331,6 +1376,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'list-recommendations',
       description: 'Returns a list of a specified insight\'s recommendations. Each recommendation includes a list of related metrics and a list of related events',
       options: [
+
         Option(
           name: '--insight-id',
           description: 'The ID of the requested insight',
@@ -1401,6 +1447,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1413,6 +1460,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'put-feedback',
       description: 'Collects customer feedback about the specified insight',
       options: [
+
         Option(
           name: '--insight-feedback',
           description: 'The feedback from customers is about the recommendations in this insight',
@@ -1438,6 +1486,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1450,6 +1499,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'remove-notification-channel',
       description: 'Removes a notification channel from DevOps Guru. A notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the notification channel to be removed',
@@ -1475,6 +1525,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1487,6 +1538,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'search-insights',
       description: 'Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time, one or more statuses (ONGOING or CLOSED), one or more severities (LOW, MEDIUM, and HIGH), and type (REACTIVE or PROACTIVE).   Use the Filters parameter to specify status and severity search parameters. Use the Type parameter to specify REACTIVE or PROACTIVE in your search',
       options: [
+
         Option(
           name: '--start-time-range',
           description: 'The start of the time range passed in. Returned insights occurred after this time',
@@ -1575,6 +1627,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1587,6 +1640,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'search-organization-insights',
       description: 'Returns a list of insights in your organization. You can specify which insights are returned by their start time, one or more statuses (ONGOING, CLOSED, and CLOSED), one or more severities (LOW, MEDIUM, and HIGH), and type (REACTIVE or PROACTIVE).   Use the Filters parameter to specify status and severity search parameters. Use the Type parameter to specify REACTIVE or PROACTIVE in your search',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The ID of the Amazon Web Services account',
@@ -1684,6 +1738,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1696,6 +1751,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'start-cost-estimation',
       description: 'Starts the creation of an estimate of the monthly cost to analyze your Amazon Web Services resources',
       options: [
+
         Option(
           name: '--resource-collection',
           description: 'The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate',
@@ -1730,6 +1786,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1742,6 +1799,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'update-event-sources-config',
       description: 'Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru',
       options: [
+
         Option(
           name: '--event-sources',
           description: 'Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service',
@@ -1767,6 +1825,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1779,6 +1838,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'update-resource-collection',
       description: 'Updates the collection of resources that DevOps Guru analyzes. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag key. You can specify up to 500 Amazon Web Services CloudFormation stacks. This method also creates the IAM role required for you to use DevOps Guru',
       options: [
+
         Option(
           name: '--action',
           description: 'Specifies if the resource collection in the request is added or deleted to the resource collection',
@@ -1813,6 +1873,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1825,6 +1886,7 @@ final FigSpec devopsGuruSpec = FigSpec(
       name: 'update-service-integration',
       description: 'Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight',
       options: [
+
         Option(
           name: '--service-integration',
           description: 'An IntegratedServiceConfig object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled',
@@ -1850,6 +1912,7 @@ final FigSpec devopsGuruSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

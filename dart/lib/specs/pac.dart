@@ -4,19 +4,566 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<FigSuggestion> backupRetentionPeriodDays = [
+
+  FigSuggestion(
+    name: '7',
+    description: '7'
+  ),
+  FigSuggestion(
+    name: '14',
+    description: '14'
+  ),
+  FigSuggestion(
+    name: '21',
+    description: '21'
+  ),
+  FigSuggestion(
+    name: '28',
+    description: '28'
+  )
+];
+
+final List<FigSuggestion> solutionTypes = [
+
+  FigSuggestion(
+    name: 'Unmanaged',
+    description: 'Unmanaged'
+  ),
+  FigSuggestion(
+    name: 'Managed',
+    description: 'Managed'
+  ),
+  FigSuggestion(
+    name: 'Both',
+    description: 'Both'
+  )
+];
+
+final List<FigSuggestion> envCopyTypes = [
+
+  FigSuggestion(
+    name: 'MinimalCopy',
+    description: 'MinimalCopy'
+  ),
+  FigSuggestion(
+    name: 'FullCopy',
+    description: 'FullCopy'
+  )
+];
+
+final List<FigSuggestion> teamTypes = [
+
+  FigSuggestion(
+    name: 'Owner',
+    description: 'Owner'
+  ),
+  FigSuggestion(
+    name: 'Access',
+    description: 'Access'
+  ),
+  FigSuggestion(
+    name: 'AadSecurityGroup',
+    description: 'AadSecurityGroup'
+  ),
+  FigSuggestion(
+    name: 'AadOfficeGroup',
+    description: 'AadOfficeGroup'
+  )
+];
+
+final List<FigSuggestion> membershipTypes = [
+
+  FigSuggestion(
+    name: 'MembersAndGuests',
+    description: 'MembersAndGuests'
+  ),
+  FigSuggestion(
+    name: 'Members',
+    description: 'Members'
+  ),
+  FigSuggestion(
+    name: 'Owners',
+    description: 'Owners'
+  ),
+  FigSuggestion(
+    name: 'Guests',
+    description: 'Guests'
+  )
+];
+
+final List<FigSuggestion> solutionCheckerMode = [
+
+  FigSuggestion(
+    name: 'none',
+    description: 'None'
+  ),
+  FigSuggestion(
+    name: 'warn',
+    description: 'Warn'
+  ),
+  FigSuggestion(
+    name: 'block',
+    description: 'Block'
+  )
+];
+
+final List<FigSuggestion> cloudTypes = [
+
+  FigSuggestion(
+    name: 'Public',
+    description: 'Public'
+  ),
+  FigSuggestion(
+    name: 'Preprod',
+    description: 'Preprod'
+  ),
+  FigSuggestion(
+    name: 'Test',
+    description: 'Test'
+  ),
+  FigSuggestion(
+    name: 'UsGov',
+    description: 'UsGov'
+  ),
+  FigSuggestion(
+    name: 'UsGovHigh',
+    description: 'UsGovHigh'
+  ),
+  FigSuggestion(
+    name: 'UsGovDod',
+    description: 'UsGovDod'
+  ),
+  FigSuggestion(
+    name: 'China',
+    description: 'China'
+  )
+];
+
+final List<FigSuggestion> connectionTemplates = [
+
+  FigSuggestion(
+    name: 'NoAuth',
+    description: 'NoAuth'
+  ),
+  FigSuggestion(
+    name: 'BasicAuth',
+    description: 'BasicAuth'
+  ),
+  FigSuggestion(
+    name: 'ApiKey',
+    description: 'ApiKey'
+  ),
+  FigSuggestion(
+    name: 'OAuthGeneric',
+    description: 'OAuthGeneric'
+  ),
+  FigSuggestion(
+    name: 'OAuthAAD',
+    description: 'OAuthAAD'
+  )
+];
+
+final List<FigSuggestion> trueFalse = [
+
+  FigSuggestion(
+    name: 'true',
+    description: 'True'
+  ),
+  FigSuggestion(
+    name: 'false',
+    description: 'False'
+  )
+];
+
+final List<FigSuggestion> syncAsync = [
+
+  FigSuggestion(
+    name: 'sync',
+    description: 'Sync'
+  ),
+  FigSuggestion(
+    name: 'async',
+    description: 'Async'
+  )
+];
+
+final List<FigSuggestion> skipFault = [
+
+  FigSuggestion(
+    name: 'skip',
+    description: 'Skip'
+  ),
+  FigSuggestion(
+    name: 'fault',
+    description: 'Fault'
+  )
+];
+
+final List<FigSuggestion> pcfComponentTypes = [
+
+  FigSuggestion(
+    name: 'field',
+    description: 'Field'
+  ),
+  FigSuggestion(
+    name: 'dataset',
+    description: 'Dataset'
+  )
+];
+
+final List<FigSuggestion> pcfFrameworkTypes = [
+
+  FigSuggestion(
+    name: 'none',
+    description: 'None'
+  ),
+  FigSuggestion(
+    name: 'react',
+    description: 'React'
+  )
+];
+
+final List<FigSuggestion> pcfPatchStrategies = [
+
+  FigSuggestion(
+    name: 'None',
+    description: 'None'
+  ),
+  FigSuggestion(
+    name: 'GitTags',
+    description: 'GitTags'
+  ),
+  FigSuggestion(
+    name: 'FileTracking',
+    description: 'FileTracking'
+  ),
+  FigSuggestion(
+    name: 'Manifest',
+    description: 'Manifest'
+  )
+];
+
+final List<FigSuggestion> msBuildVerbosityLevels = [
+
+  FigSuggestion(
+    name: 'minimal',
+    description: 'Minimal'
+  ),
+  FigSuggestion(
+    name: 'normal',
+    description: 'Normal'
+  ),
+  FigSuggestion(
+    name: 'detailed',
+    description: 'Detailed'
+  ),
+  FigSuggestion(
+    name: 'diagnostic',
+    description: 'Diagnostic'
+  )
+];
+
+final List<FigSuggestion> pcfPatchTargets = [
+
+  FigSuggestion(
+    name: 'build',
+    description: 'Build'
+  ),
+  FigSuggestion(
+    name: 'project',
+    description: 'Project'
+  )
+];
+
+final List<FigSuggestion> importPluginType = [
+
+  FigSuggestion(
+    name: 'Nuget',
+    description: 'Nuget'
+  ),
+  FigSuggestion(
+    name: 'Assembly',
+    description: 'Assembly'
+  )
+];
+
+final List<FigSuggestion> powerAppsCheckerRegions = [
+
+  FigSuggestion(
+    name: 'PreviewUnitedStates',
+    description: 'PreviewUnitedStates'
+  ),
+  FigSuggestion(
+    name: 'UnitedStates',
+    description: 'UnitedStates'
+  ),
+  FigSuggestion(
+    name: 'Europe',
+    description: 'Europe'
+  ),
+  FigSuggestion(
+    name: 'Asia',
+    description: 'Asia'
+  ),
+  FigSuggestion(
+    name: 'Australia',
+    description: 'Australia'
+  ),
+  FigSuggestion(
+    name: 'Japan',
+    description: 'Japan'
+  ),
+  FigSuggestion(
+    name: 'India',
+    description: 'India'
+  ),
+  FigSuggestion(
+    name: 'Canada',
+    description: 'Canada'
+  ),
+  FigSuggestion(
+    name: 'SouthAmerica',
+    description: 'SouthAmerica'
+  ),
+  FigSuggestion(
+    name: 'UnitedKingdom',
+    description: 'UnitedKingdom'
+  ),
+  FigSuggestion(
+    name: 'France',
+    description: 'France'
+  ),
+  FigSuggestion(
+    name: 'SouthAfrica',
+    description: 'SouthAfrica'
+  ),
+  FigSuggestion(
+    name: 'Germany',
+    description: 'Germany'
+  ),
+  FigSuggestion(
+    name: 'UnitedArabEmirates',
+    description: 'UnitedArabEmirates'
+  ),
+  FigSuggestion(
+    name: 'Switzerland',
+    description: 'Switzerland'
+  ),
+  FigSuggestion(
+    name: 'Norway',
+    description: 'Norway'
+  ),
+  FigSuggestion(
+    name: 'Singapore',
+    description: 'Singapore'
+  ),
+  FigSuggestion(
+    name: 'Korea',
+    description: 'Korea'
+  ),
+  FigSuggestion(
+    name: 'USGovernment',
+    description: 'USGovernment'
+  ),
+  FigSuggestion(
+    name: 'USGovernmentL4',
+    description: 'USGovernmentL4'
+  ),
+  FigSuggestion(
+    name: 'USGovernmentL5DoD',
+    description: 'USGovernmentL5DoD'
+  ),
+  FigSuggestion(
+    name: 'China',
+    description: 'China'
+  )
+];
+
+final List<FigSuggestion> applicationInstallStates = [
+
+  FigSuggestion(
+    name: 'NotInstalled',
+    description: 'NotInstalled'
+  ),
+  FigSuggestion(
+    name: 'Installed',
+    description: 'Installed'
+  ),
+  FigSuggestion(
+    name: 'All',
+    description: 'All'
+  )
+];
+
+final List<FigSuggestion> solutionPatchStrategies = [
+
+  FigSuggestion(
+    name: 'None',
+    description: 'None'
+  ),
+  FigSuggestion(
+    name: 'GitTags',
+    description: 'GitTags'
+  ),
+  FigSuggestion(
+    name: 'FileTracking',
+    description: 'FileTracking'
+  ),
+  FigSuggestion(
+    name: 'Solution',
+    description: 'Solution'
+  )
+];
+
+final List<FigSuggestion> logLevels = [
+
+  FigSuggestion(
+    name: 'Off',
+    description: 'Off'
+  ),
+  FigSuggestion(
+    name: 'Critical',
+    description: 'Critical'
+  ),
+  FigSuggestion(
+    name: 'Error',
+    description: 'Error'
+  ),
+  FigSuggestion(
+    name: 'Warning',
+    description: 'Warning'
+  ),
+  FigSuggestion(
+    name: 'Information',
+    description: 'Information'
+  ),
+  FigSuggestion(
+    name: 'Verbose',
+    description: 'Verbose'
+  ),
+  FigSuggestion(
+    name: 'ActivityTracing',
+    description: 'ActivityTracing'
+  ),
+  FigSuggestion(
+    name: 'All',
+    description: 'All'
+  )
+];
+
+final List<FigSuggestion> environmentTypes = [
+
+  FigSuggestion(
+    name: 'Trial',
+    description: 'Trial'
+  ),
+  FigSuggestion(
+    name: 'Sandbox',
+    description: 'Sandbox'
+  ),
+  FigSuggestion(
+    name: 'Production',
+    description: 'Production'
+  ),
+  FigSuggestion(
+    name: 'Developer',
+    description: 'Developer'
+  ),
+  FigSuggestion(
+    name: 'Teams',
+    description: 'Teams'
+  ),
+  FigSuggestion(
+    name: 'SubscriptionBasedTrial',
+    description: 'SubscriptionBasedTrial'
+  )
+];
+
+final List<FigSuggestion> azureLocations = [
+
+  FigSuggestion(
+    name: 'unitedstates',
+    description: 'Unitedstates'
+  ),
+  FigSuggestion(
+    name: 'unitedstatesfirstrelease',
+    description: 'Unitedstatesfirstrelease'
+  ),
+  FigSuggestion(
+    name: 'europe',
+    description: 'Europe'
+  ),
+  FigSuggestion(
+    name: 'asia',
+    description: 'Asia'
+  ),
+  FigSuggestion(
+    name: 'australia',
+    description: 'Australia'
+  ),
+  FigSuggestion(
+    name: 'india',
+    description: 'India'
+  ),
+  FigSuggestion(
+    name: 'japan',
+    description: 'Japan'
+  ),
+  FigSuggestion(
+    name: 'canada',
+    description: 'Canada'
+  ),
+  FigSuggestion(
+    name: 'unitedkingdom',
+    description: 'Unitedkingdom'
+  ),
+  FigSuggestion(
+    name: 'southamerica',
+    description: 'Southamerica'
+  ),
+  FigSuggestion(
+    name: 'france',
+    description: 'France'
+  ),
+  FigSuggestion(
+    name: 'unitedarabemirates',
+    description: 'Unitedarabemirates'
+  ),
+  FigSuggestion(
+    name: 'germany',
+    description: 'Germany'
+  ),
+  FigSuggestion(
+    name: 'switzerland',
+    description: 'Switzerland'
+  ),
+  FigSuggestion(
+    name: 'norway',
+    description: 'Norway'
+  ),
+  FigSuggestion(
+    name: 'korea',
+    description: 'Korea'
+  )
+];
+
 /// Completion spec for `pac` CLI
 final FigSpec pacSpec = FigSpec(
   name: 'pac',
   description: 'Power Platform CLI',
   subcommands: [
+
     Subcommand(
       name: 'admin',
       description: 'Work with your Power Platform Admin Account',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List all environments from your tenant',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'List all environments that contain given string in their name or ID',
@@ -31,7 +578,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'List all environments with the given type',
               args: [
                 Arg(
-                name: 'environmentTypes'
+                name: 'environmentTypes',
+                suggestions: environmentTypes
               )
               ]
             ),
@@ -68,6 +616,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'create',
           description: 'Creates a Dataverse instance in your tenant',
           options: [
+
             Option(
               name: ['--name', '-n'],
               description: 'Sets the name of the environment',
@@ -82,7 +631,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Sets the environment\'s region name. [defaults to unitedstates]',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: azureLocations
               )
               ]
             ),
@@ -91,7 +641,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Sets the environment Type',
               args: [
                 Arg(
-                name: 'environmentTypes'
+                name: 'environmentTypes',
+                suggestions: environmentTypes
               )
               ]
             ),
@@ -177,6 +728,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'backup',
           description: 'Takes a manual backup of your environment',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'Environment URL or ID of the Environment that requires backup',
@@ -210,6 +762,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'set-backup-retention-period',
           description: 'Takes a manual backup of your environment',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'Environment URL or ID of the Environment that requires backup',
@@ -224,7 +777,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Sets the backup retention period in days as provided. Valid values are: 7, 14, 21, 28',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: backupRetentionPeriodDays
               )
               ]
             ),
@@ -247,6 +801,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'delete',
           description: 'Deletes the environment from your tenant',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'Environment URL or ID of the Environment that needs to be deleted from your tenant',
@@ -275,6 +830,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'reset',
           description: 'Reset the environment from your tenant',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'URL or ID of the Environment that needs to be reset',
@@ -366,6 +922,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'list-backups',
           description: 'Lists all backups of your environment',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'List all environments that contain a given string in their Environment ID or URL',
@@ -381,6 +938,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'restore',
           description: 'Restores an environment to a given backup',
           options: [
+
             Option(
               name: ['--source-env', '-se'],
               description: 'Environment URL or ID of the source environment required for restore',
@@ -440,6 +998,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'copy',
           description: 'Copy Source Environment to Destination Environment',
           options: [
+
             Option(
               name: ['--source-env', '-se'],
               description: 'Environment URL or ID of the source environment that is being copied',
@@ -472,7 +1031,8 @@ final FigSpec pacSpec = FigSpec(
               description: '',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: envCopyTypes
               )
               ]
             ),
@@ -503,6 +1063,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'assign-user',
           description: 'Assign a user to a target Dataverse environment with specified security role',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'ID or URL of the environment to assign a user to',
@@ -553,6 +1114,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'assign-group',
           description: 'Assign group to target Dataverse environment with specified security role',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'ID or URL of the environment to assign a user to',
@@ -594,7 +1156,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Type of team',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: teamTypes
               )
               ]
             ),
@@ -603,7 +1166,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Team membership type',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: membershipTypes
               )
               ]
             ),
@@ -622,12 +1186,14 @@ final FigSpec pacSpec = FigSpec(
           name: 'list-app-templates',
           description: 'Lists all supported Dataverse templates of model-driven apps in Dynamics 365',
           options: [
+
             Option(
               name: ['--region', '-r'],
               description: 'Sets the environment\'s region name. [defaults to unitedstates]',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: azureLocations
               )
               ]
             )
@@ -637,6 +1203,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'create-service-principal',
           description: 'Add Microsoft Entra ID application and associated application user to the Dataverse environment',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'Environment (ID, org ID, url, unique name, or partial name)',
@@ -670,6 +1237,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'list-service-principal',
           description: 'List Microsoft Entra ID applications which have access to Dataverse',
           options: [
+
             Option(
               name: ['--filter', '-f'],
               description: 'Application name \'starts with\' filter',
@@ -694,6 +1262,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'set-governance-config',
           description: 'Enable, disable, and edit managed environments',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'URL or ID of the environment for which managed environments need to be enabled, disabled or edited',
@@ -747,7 +1316,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Solution checker validation mode',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: solutionCheckerMode
               )
               ]
             )
@@ -757,6 +1327,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'list-tenant-settings',
           description: 'List tenant settings',
           options: [
+
             Option(
               name: ['--settings-file', '-s'],
               description: 'The .json file to output tenant settings',
@@ -772,6 +1343,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'update-tenant-settings',
           description: 'Update tenant settings',
           options: [
+
             Option(
               name: ['--settings-file', '-s'],
               description: 'The .json file with tenant settings',
@@ -787,6 +1359,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'application',
           description: 'Work with Microsoft Entra ID applications',
           subcommands: [
+
             Subcommand(
               name: 'list',
               description: 'List Microsoft Entra ID applications registered under your tenant'
@@ -795,6 +1368,7 @@ final FigSpec pacSpec = FigSpec(
               name: 'register',
               description: 'Register Microsoft Entra ID application with your tenant',
               options: [
+
                 Option(
                   name: ['--application-id', '-a'],
                   description: 'Application Id',
@@ -810,6 +1384,7 @@ final FigSpec pacSpec = FigSpec(
               name: 'unregister',
               description: 'Unregister Microsoft Entra ID application from your tenant',
               options: [
+
                 Option(
                   name: ['--application-id', '-a'],
                   description: 'Application Id',
@@ -829,10 +1404,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'application',
       description: 'Commands for listing and installing available Dataverse applications from AppSource',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List available Dataverse applications from AppSource',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'List available Dataverse applications for given environment (by ID or url); if not specified, list all applications in the tenant',
@@ -856,7 +1433,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Filter by application install state',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: applicationInstallStates
               )
               ]
             )
@@ -866,6 +1444,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'install',
           description: 'Installs Dataverse application to given environment',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'List available Dataverse applications for given environment (by ID or url); if not specified, list all applications in the tenant',
@@ -901,10 +1480,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'auth',
       description: 'Manage how you authenticate to various services',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create and store authentication profiles on this computer',
           options: [
+
             Option(
               name: ['--name', '-n'],
               description: 'The name you want to give to this authentication profile (maximum 30 characters)',
@@ -1000,7 +1581,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Optional: The cloud instance to authenticate with',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: cloudTypes
               )
               ]
             ),
@@ -1031,6 +1613,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'select',
           description: 'Select which authentication profile should be active',
           options: [
+
             Option(
               name: ['--index', '-i'],
               description: 'The index of the profile to be active',
@@ -1055,6 +1638,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'delete',
           description: 'Delete a particular authentication profile',
           options: [
+
             Option(
               name: ['--index', '-i'],
               description: 'The index of the profile to be deleted',
@@ -1079,6 +1663,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'update',
           description: 'Update name or target environment of an existing authentication profile',
           options: [
+
             Option(
               name: ['--index', '-i'],
               description: 'The index of the profile to be named/renamed',
@@ -1112,6 +1697,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'name',
           description: 'Name or rename an existing authentication profile',
           options: [
+
             Option(
               name: ['--index', '-i'],
               description: 'The index of the profile to be named/renamed',
@@ -1142,10 +1728,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'canvas',
       description: 'Operating with Power Apps .msapp files',
       subcommands: [
+
         Subcommand(
           name: 'download',
           description: 'Download canvas app as .msapp file',
           options: [
+
             Option(
               name: ['--name', '-n'],
               description: 'Canvas app exact, partial name, or App ID',
@@ -1183,6 +1771,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'list',
           description: 'List canvas apps',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'Environment (ID, org ID, url, unique name, or partial name)',
@@ -1198,6 +1787,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'pack',
           description: '(Preview) Pack sources into an msapp file',
           options: [
+
             Option(
               name: '--sources',
               description: 'Directory to sources to be packed',
@@ -1222,6 +1812,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'unpack',
           description: '(Preview) Extract an msapp file into sources',
           options: [
+
             Option(
               name: '--sources',
               description: 'Directory to sources to be unpacked',
@@ -1246,6 +1837,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'create',
           description: 'Generate a canvas app from a custom connector',
           options: [
+
             Option(
               name: '--msapp',
               description: 'Path to .msapp file to be generated',
@@ -1290,10 +1882,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'catalog',
       description: 'Commands for working with Catalog in Power Platform',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List all published catalog items from the current Dataverse organization',
           options: [
+
             Option(
               name: ['--catalog-item-name', '-n'],
               description: 'Catalog item name to search for',
@@ -1322,6 +1916,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'submit',
           description: 'Submit catalog approval request',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'Path to catalog submission document',
@@ -1359,6 +1954,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'install',
           description: 'Install a catalog item to the target environment',
           options: [
+
             Option(
               name: ['--catalog-item-id', '-cid'],
               description: 'Catalog item to be installed on the target environment',
@@ -1405,6 +2001,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'status',
           description: 'Get status of the catalog install/submit request',
           options: [
+
             Option(
               name: ['--tracking-id', '-id'],
               description: 'Request tracking ID',
@@ -1429,6 +2026,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'update',
           description: 'Update settings for the catalog',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'Path to catalog settings document',
@@ -1444,6 +2042,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'create-submission',
           description: 'Create catalog submission document. Note: This command will be removed in a future release',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'Path to catalog submission document',
@@ -1461,10 +2060,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'connection',
       description: 'Commands for working with Dataverse connection',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create new Dataverse connection',
           options: [
+
             Option(
               name: ['--tenant-id', '-t'],
               description: 'Tenant Id',
@@ -1516,6 +2117,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'delete',
           description: 'Delete Dataverse connection',
           options: [
+
             Option(
               name: ['--connection-id', '-id'],
               description: 'Connection Id',
@@ -1540,6 +2142,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'list',
           description: 'List all Connections',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'Environment (ID, org ID, url, unique name, or partial name)',
@@ -1555,6 +2158,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'update',
           description: 'Update Dataverse connection',
           options: [
+
             Option(
               name: ['--tenant-id', '-t'],
               description: 'Tenant Id',
@@ -1608,10 +2212,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'connector',
       description: 'Commands for working with Power Platform Connectors',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List the Connectors registered in Dataverse',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'The target Environment ID or URL. The default value is the environment of your currently active Dataverse Auth Profile',
@@ -1627,12 +2233,14 @@ final FigSpec pacSpec = FigSpec(
           name: 'init',
           description: 'Initializes a new API Properties file for a Connector',
           options: [
+
             Option(
               name: ['--connection-template', '-ct'],
               description: 'Generate an initial Connection Parameters set with the specified template',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: connectionTemplates
               )
               ]
             ),
@@ -1659,6 +2267,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'create',
           description: 'Creates a new row in the Connector table in Dataverse',
           options: [
+
             Option(
               name: ['--api-definition-file', '-df'],
               description: 'The filename and path to read the Connector\'s OpenApiDefinition',
@@ -1728,6 +2337,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'download',
           description: 'Download a Connector\'s OpenApiDefinition and API Properties file',
           options: [
+
             Option(
               name: ['--connector-id', '-id'],
               description: 'The ID of the Connector',
@@ -1761,6 +2371,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'update',
           description: 'Updates a Connector Entity in Dataverse',
           options: [
+
             Option(
               name: ['--connector-id', '-id'],
               description: 'The ID of the Connector',
@@ -1841,6 +2452,7 @@ final FigSpec pacSpec = FigSpec(
       name: 'copilot',
       description: 'Tools and utilities for copilot scenarios',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'AI Builder models in the current environment'
@@ -1849,6 +2461,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'predict',
           description: 'Sends text or prompt to AI Model',
           options: [
+
             Option(
               name: ['--model-id', '-id'],
               description: 'AI Builder model Id',
@@ -1891,6 +2504,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'prepare-fetch',
           description: 'Takes the FetchXML file from the AI Large Language Model (LLM) and prepares it for execution against the current environment',
           options: [
+
             Option(
               name: ['--inputFile', '-i'],
               description: 'Input FetchXML file that usually comes from AI LLM',
@@ -1917,10 +2531,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'data',
       description: 'Import and export data from Dataverse',
       subcommands: [
+
         Subcommand(
           name: 'export',
           description: 'Export data',
           options: [
+
             Option(
               name: ['--schemaFile', '-sf'],
               description: 'Schema file name. It can be created using the Configuration Migration Tool',
@@ -1962,6 +2578,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'import',
           description: 'Import data',
           options: [
+
             Option(
               name: ['--dataDirectory', '-dd'],
               description: 'Directory name with data for import',
@@ -2014,10 +2631,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'modelbuilder',
       description: 'Code Generator for Dataverse APIs and Tables',
       subcommands: [
+
         Subcommand(
           name: 'build',
           description: 'Builds a code model for Dataverse APIs and Tables',
           options: [
+
             Option(
               name: ['--suppressGeneratedCodeAttribute', '-sgca'],
               description: 'When set, this suppress all generated objects being tagged with the code generation engine and version'
@@ -2160,7 +2779,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Log level. The default value is \'Off\'',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: logLevels
               )
               ]
             )
@@ -2172,6 +2792,7 @@ final FigSpec pacSpec = FigSpec(
       name: 'org',
       description: 'Work with your Dataverse organization',
       subcommands: [
+
         Subcommand(
           name: 'who',
           description: 'Displays information about the current Dataverse organization'
@@ -2180,6 +2801,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'list',
           description: 'Lists all of the Dataverse organizations the user has access to',
           options: [
+
             Option(
               name: ['--filter', '-f'],
               description: 'Show only environments containing filter criteria',
@@ -2195,6 +2817,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'fetch',
           description: 'Performs FetchXML query against Dataverse',
           options: [
+
             Option(
               name: ['--xml', '-x'],
               description: 'FetchXML query to run',
@@ -2219,6 +2842,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'list-settings',
           description: 'List environment settings',
           options: [
+
             Option(
               name: ['--filter', '-f'],
               description: 'Show only settings containing filter criteria',
@@ -2234,6 +2858,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'update-settings',
           description: 'Update environment settings',
           options: [
+
             Option(
               name: ['--name', '-n'],
               description: 'Name of the setting to update',
@@ -2258,6 +2883,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'select',
           description: 'Select default organization for current authentication profile',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'Default environment (ID, url, unique name, or partial name)',
@@ -2275,10 +2901,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'package',
       description: 'Commands for working with Dataverse package projects',
       subcommands: [
+
         Subcommand(
           name: 'init',
           description: 'Initializes a directory with a new Dataverse package project',
           options: [
+
             Option(
               name: ['--outputDirectory', '-o'],
               description: 'Output directory',
@@ -2303,6 +2931,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'add-external-package',
           description: 'Adds a package that is external to the Dataverse solution system to a Package Deployer Package project',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'Path to the external package',
@@ -2340,6 +2969,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'add-solution',
           description: 'Adds a prebuilt Dataverse solution file to a Package Deployer Package project',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'Path to the Dataverse solution file. The file must be a compressed ZIP file',
@@ -2367,7 +2997,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Explicitly indicates whether to publish the workflows and activate plug-ins when this solution is imported',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: trueFalse
               )
               ]
             ),
@@ -2376,7 +3007,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Explicitly indicates whether to overwrite unmanaged customizations when this solution is imported',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: trueFalse
               )
               ]
             ),
@@ -2385,7 +3017,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Explicitly specifies the required mode when importing this solution',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: trueFalse
               )
               ]
             ),
@@ -2394,7 +3027,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Specifies the behavior on import when a dependency of this solution is missing from the target environment',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: skipFault
               )
               ]
             ),
@@ -2413,6 +3047,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'add-reference',
           description: 'Adds reference to Dataverse solution project',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'The path to the referenced Dataverse solution project',
@@ -2436,7 +3071,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Explicitly indicates whether to publish the workflows and activate plug-ins when this solution is imported',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: trueFalse
               )
               ]
             ),
@@ -2445,7 +3081,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Explicitly indicates whether to overwrite unmanaged customizations when this solution is imported',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: trueFalse
               )
               ]
             ),
@@ -2454,7 +3091,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Explicitly specifies the required mode when importing this solution',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: syncAsync
               )
               ]
             ),
@@ -2463,7 +3101,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Specifies the behavior on import when a dependency of this solution is missing from the target environment',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: skipFault
               )
               ]
             ),
@@ -2482,6 +3121,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'deploy',
           description: 'Deploys package to Dataverse',
           options: [
+
             Option(
               name: ['--logFile', '-lf'],
               description: 'Log file path',
@@ -2523,6 +3163,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'show',
           description: 'Shows details of Dataverse package',
           options: [
+
             Option(
               name: ['--package', '-p'],
               description: 'Path to a package dll or zip file with a package',
@@ -2553,10 +3194,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'pcf',
       description: 'Commands for working with Power Apps component framework projects',
       subcommands: [
+
         Subcommand(
           name: 'init',
           description: 'Initializes a directory with a new Power Apps component framework project',
           options: [
+
             Option(
               name: ['--namespace', '-ns'],
               description: 'The namespace for the component',
@@ -2580,7 +3223,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Choose a template for the component',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: pcfComponentTypes
               )
               ]
             ),
@@ -2589,7 +3233,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'The rendering framework for control. The default value is \'none\', which means HTML',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: pcfFrameworkTypes
               )
               ]
             ),
@@ -2612,6 +3257,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'push',
           description: 'Import the Power Apps component framework project into the current Dataverse organization',
           options: [
+
             Option(
               name: ['--publisher-prefix', '-pp'],
               description: 'Customization prefix value for the Dataverse solution publisher',
@@ -2626,7 +3272,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Verbosity level for MSBuild when building the temporary solution wrapper',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: msBuildVerbosityLevels
               )
               ]
             ),
@@ -2648,12 +3295,14 @@ final FigSpec pacSpec = FigSpec(
           name: 'version',
           description: 'Patch version for controls',
           options: [
+
             Option(
               name: ['--strategy', '-s'],
               description: 'Updates patch version for \'ControlManifest.xml\' files using specified strategy. If using gittags, set a personal access token in the following environment variable \'PacCli.PAT\'',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: pcfPatchStrategies
               )
               ]
             ),
@@ -2684,7 +3333,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Specify which target manifest needs to be updated',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: pcfPatchTargets
               )
               ]
             ),
@@ -2705,10 +3355,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'pipeline',
       description: 'Work with Pipelines',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List Pipelines',
           options: [
+
             Option(
               name: ['--pipeline', '-p'],
               description: 'Pipeline name or ID for which show list of details such as deployment stages',
@@ -2724,6 +3376,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'deploy',
           description: 'Start pipeline deployment',
           options: [
+
             Option(
               name: ['--solutionName', '-sn'],
               description: 'Solution Name',
@@ -2781,10 +3434,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'plugin',
       description: 'Commands for working with Dataverse plug-in class library',
       subcommands: [
+
         Subcommand(
           name: 'init',
           description: 'Initializes a directory with a new Dataverse plug-in class library',
           options: [
+
             Option(
               name: ['--signing-key-file-path', '-sk'],
               description: 'Relative path to the Dataverse plug-in assembly originator key file for signing',
@@ -2822,6 +3477,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'push',
           description: 'Import plug-in into Dataverse',
           options: [
+
             Option(
               name: ['--pluginId', '-id'],
               description: 'ID of plug-in assembly or plug-in package',
@@ -2845,7 +3501,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Type of item if not specified explicitly through --pluginFile. The default value is: \'Nuget\'',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: importPluginType
               )
               ]
             ),
@@ -2866,6 +3523,7 @@ final FigSpec pacSpec = FigSpec(
       name: 'power-fx',
       description: '(Preview) Commands for working with Power Fx',
       subcommands: [
+
         Subcommand(
           name: 'repl',
           description: '(Preview) Launch interactive Power Fx Read-Eval-Print Loop'
@@ -2874,6 +3532,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'run',
           description: '(Preview) Run a file of Power Fx instructions',
           options: [
+
             Option(
               name: ['--file', '-f'],
               description: 'Path of file to execute',
@@ -2895,10 +3554,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'powerpages',
       description: 'Commands for working with Power Pages website',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List all Power Pages websites from the current Dataverse environment',
           options: [
+
             Option(
               name: ['--verbose', '-v'],
               description: 'Enables verbose mode to provide more details'
@@ -2909,6 +3570,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'download',
           description: 'Download Power Pages website content from the current Dataverse environment',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'Path where the Power Pages website content is downloaded',
@@ -2964,6 +3626,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'upload',
           description: 'Upload Power Pages website content to current Dataverse environment',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'Path from where the Power Pages website content is uploaded',
@@ -3001,6 +3664,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'bootstrap-migrate',
           description: 'Migrates HTML code from bootstrap V3 to V5',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'Path of website content',
@@ -3018,10 +3682,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'solution',
       description: 'Commands for working with Dataverse solution projects',
       subcommands: [
+
         Subcommand(
           name: 'init',
           description: 'Initializes a directory with a new Dataverse solution project',
           options: [
+
             Option(
               name: ['--publisher-name', '-pn'],
               description: 'Name of the Dataverse solution publisher',
@@ -3055,6 +3721,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'add-reference',
           description: 'Adds a reference from the project in the current directory to the project at \'path\'',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'The path to the referenced project',
@@ -3070,6 +3737,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'list',
           description: 'List all Solutions from the current Dataverse organization',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'The target Environment ID or URL. The default value is the environment of your currently active Dataverse Auth Profile',
@@ -3085,6 +3753,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'delete',
           description: 'Delete a solution from Dataverse in the current environment',
           options: [
+
             Option(
               name: ['--solution-name', '-sn'],
               description: 'Name of the solution',
@@ -3100,6 +3769,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'online-version',
           description: 'Sets version for solution loaded in Dataverse',
           options: [
+
             Option(
               name: ['--solution-name', '-sn'],
               description: 'Name of the solution',
@@ -3124,12 +3794,14 @@ final FigSpec pacSpec = FigSpec(
           name: 'version',
           description: 'Update build or revision version for the solution',
           options: [
+
             Option(
               name: ['--strategy', '-s'],
               description: 'Updates build version for \'Solution.xml\' file using specified strategy. If using gittags, set personal access token in the following environment variable \'PacCli.PAT\'',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: solutionPatchStrategies
               )
               ]
             ),
@@ -3184,6 +3856,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'import',
           description: 'Import the solution into Dataverse',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'Path to solution zip file. If not specified, assumes the current folder is a cdsproj project',
@@ -3254,6 +3927,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'export',
           description: 'Export a solution from Dataverse',
           options: [
+
             Option(
               name: ['--name', '-n'],
               description: 'The name of the solution to be exported',
@@ -3317,6 +3991,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'clone',
           description: 'Create a solution project based on an existing solution in your organization',
           options: [
+
             Option(
               name: ['--name', '-n'],
               description: 'The name of the solution to be exported',
@@ -3375,7 +4050,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Specifies the extraction type for the solution. Can be: \'Unmanaged\', \'Managed\' or \'Both\'. The default value is: \'Both\'',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: solutionTypes
               )
               ]
             ),
@@ -3389,6 +4065,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'publish',
           description: 'Publishes all customizations',
           options: [
+
             Option(
               name: ['--async', '-a'],
               description: 'Publishes all customizations asynchronously'
@@ -3408,6 +4085,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'upgrade',
           description: 'Apply solution upgrade',
           options: [
+
             Option(
               name: ['--solution-name', '-sn'],
               description: 'Name of the solution',
@@ -3436,6 +4114,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'add-license',
           description: 'Add license and plan info to the solution',
           options: [
+
             Option(
               name: ['--planDefinitionFile', '-pd'],
               description: 'License plan definition file in CSV format; expected columns: Service ID, Display name, More info URL',
@@ -3460,6 +4139,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'check',
           description: 'Upload a Dataverse solution project to run against the Power Apps Checker service',
           options: [
+
             Option(
               name: ['--path', '-p'],
               description: 'Path where one or more solution files to be checked exist. The path can contain glob/wildcard characters',
@@ -3492,7 +4172,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'Which geographical instance of the Power Apps Checker service to use',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: powerAppsCheckerRegions
               )
               ]
             ),
@@ -3542,6 +4223,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'create-settings',
           description: 'Create a settings file from solution zip or solution folder',
           options: [
+
             Option(
               name: ['--solution-zip', '-z'],
               description: 'Path to solution zip file',
@@ -3575,6 +4257,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'pack',
           description: 'Package solution components on local filesystem into solution.zip (SolutionPackager)',
           options: [
+
             Option(
               name: ['--zipfile', '-z'],
               description: 'The full path to the solution ZIP file',
@@ -3598,7 +4281,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'When unpacking or extracting, use to specify dual Managed and Unmanaged operation. When packing, use to specify Managed or Unmanaged from a previous unpack \'Both\'. Can be: \'Unmanaged\', \'Managed\' or \'Both\'. The default value is \'Unmanaged\'',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: solutionTypes
               )
               ]
             ),
@@ -3685,6 +4369,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'unpack',
           description: 'Extract solution components from solution.zip onto local filesystem (SolutionPackager)',
           options: [
+
             Option(
               name: ['--zipfile', '-z'],
               description: 'The full path to the solution ZIP file',
@@ -3708,7 +4393,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'When unpacking or extracting, use to specify dual Managed and Unmanaged operation. When packing, use to specify Managed or Unmanaged from a previous unpack \'Both\'. Can be: \'Unmanaged\', \'Managed\' or \'Both\'. The default value is \'Unmanaged\'',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: solutionTypes
               )
               ]
             ),
@@ -3795,6 +4481,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'add-solution-component',
           description: 'Add one or more solution components to the target unmanaged solution in Dataverse',
           options: [
+
             Option(
               name: ['--solutionUniqueName', '-sn'],
               description: 'Name of the solution',
@@ -3841,6 +4528,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'sync',
           description: 'Sync the current Dataverse solution project to the current state of the solution in your organization',
           options: [
+
             Option(
               name: ['--solution-folder', '-f'],
               description: 'Path to the local, unpacked solution folder: either the root of the \'Other/Solution.xml\' file or a folder with a .cdsproj file',
@@ -3881,7 +4569,8 @@ final FigSpec pacSpec = FigSpec(
               description: 'When unpacking or extracting, use to specify dual Managed and Unmanaged operation. When packing, use to specify Managed or Unmanaged from a previous unpack \'Both\'. Can be: \'Unmanaged\', \'Managed\' or \'Both\'. The default value is: \'Both\'',
               args: [
                 Arg(
-                name: 'string'
+                name: 'string',
+                suggestions: solutionTypes
               )
               ]
             ),
@@ -3897,6 +4586,7 @@ final FigSpec pacSpec = FigSpec(
       name: 'telemetry',
       description: 'Manage telemetry settings',
       subcommands: [
+
         Subcommand(
           name: 'enable',
           description: 'Choose to send usage information to help Microsoft improve this product'
@@ -3915,10 +4605,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'test',
       description: '(Preview) Execution of automated tests for a Power App',
       subcommands: [
+
         Subcommand(
           name: 'run',
           description: '(Preview) Execute tests defined in a Test Plan file',
           options: [
+
             Option(
               name: ['--test-plan-file', '-test'],
               description: 'Path to the Test Plan file',
@@ -3972,6 +4664,7 @@ final FigSpec pacSpec = FigSpec(
       name: 'tool',
       description: 'Power Platform tools that can be installed and launched',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List the launchable tools and their local install state and version'
@@ -3988,6 +4681,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'prt',
           description: 'Launch Plug-in Registration Tool (PRT)',
           options: [
+
             Option(
               name: ['--update', '-u'],
               description: 'Update tool to latest available version from nuget.org'
@@ -4002,6 +4696,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'cmt',
           description: 'Launch Configuration Migration Tool (CMT)',
           options: [
+
             Option(
               name: ['--update', '-u'],
               description: 'Update tool to latest available version from nuget.org'
@@ -4016,6 +4711,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'pd',
           description: 'Launch Package Deployer (PD)',
           options: [
+
             Option(
               name: ['--update', '-u'],
               description: 'Update tool to latest available version from nuget.org'
@@ -4032,10 +4728,12 @@ final FigSpec pacSpec = FigSpec(
       name: 'virtual-agent',
       description: 'Commands for working with Power Virtual Agent bots',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List of Virtual Agents in the current or target Dataverse environment',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'The target Environment ID or URL. The default value is the environment of your currently active Dataverse Auth Profile',
@@ -4051,6 +4749,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'status',
           description: 'Poll the deployment status of a specified Virtual Agent in the current or target Dataverse environment',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'The target Environment ID or URL. The default value is the environment of your currently active Dataverse Auth Profile',
@@ -4075,6 +4774,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'extract-translation',
           description: 'Extracts file containing localized content for one or more bots',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'The target Environment ID or URL. The default value is the environment of your currently active Dataverse Auth Profile',
@@ -4134,6 +4834,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'merge-translation',
           description: 'Merge files containing localized content for one or more bots',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'The target Environment ID or URL. The default value is the environment of your currently active Dataverse Auth Profile',
@@ -4184,6 +4885,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'extract-template',
           description: 'Extracts a template file from an existing bot in an environment',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'The target Environment ID or URL. The default value is the environment of your currently active Dataverse Auth Profile',
@@ -4221,6 +4923,7 @@ final FigSpec pacSpec = FigSpec(
           name: 'create',
           description: 'Creates a new bot using an existing template file as the reference',
           options: [
+
             Option(
               name: ['--environment', '-env'],
               description: 'The target Environment ID or URL. The default value is the environment of your currently active Dataverse Auth Profile',

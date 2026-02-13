@@ -9,10 +9,12 @@ final FigSpec onboardbaseSpec = FigSpec(
   name: 'onboardbase',
   description: 'Onboardbase manages app secrets and credentials securely with team work and contractors in mind',
   subcommands: [
+
     Subcommand(
       name: 'build',
       description: 'Run a command with secrets injected into the environment',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -73,6 +75,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'config:get-token',
       description: 'Get all tokens',
       options: [
+
         Option(
           name: ['-S', '--scope'],
           description: 'Scope',
@@ -88,6 +91,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'config:set',
       description: 'Update your onboardbase config',
       options: [
+
         Option(
           name: ['-s', '--scope'],
           description: 'Scope',
@@ -130,6 +134,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'config:set-token',
       description: 'Set up Configuration token manually',
       options: [
+
         Option(
           name: ['-S', '--scope'],
           description: 'Scope',
@@ -153,6 +158,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'environment:create',
       description: 'Create an environment under a project',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -180,6 +186,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'login',
       description: 'Describe the command here',
       options: [
+
         Option(
           name: '--overwrite'
         )
@@ -193,6 +200,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'project:create',
       description: 'Create a project',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -229,6 +237,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'recommendation:create',
       description: 'Create a recommendation',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -262,6 +271,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'secrets',
       description: 'Log secrets in JSON file',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -294,6 +304,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'secrets:delete',
       description: 'Update secrets on Onboardbase',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -326,6 +337,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'secrets:update',
       description: 'Update secrets on Onboardbase',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -358,6 +370,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'secrets:upload',
       description: 'Upload secrets',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -394,6 +407,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'share',
       description: 'Share your local onboardbase.yaml secrets with a teammate',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -413,6 +427,7 @@ final FigSpec onboardbaseSpec = FigSpec(
       name: 'help',
       description: 'Display help for <%= config.bin %>',
       options: [
+
         Option(
           name: '--all',
           description: 'See all commands in CLI'

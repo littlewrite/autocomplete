@@ -9,6 +9,7 @@ final FigSpec symfonySpec = FigSpec(
   name: 'symfony',
   description: 'Symfony Binary',
   subcommands: [
+
     Subcommand(
       name: ['book:check-requirements', 'book:check'],
       description: 'Check that you have all the pre-requisites locally to code while reading the "Symfony: The Fast Track" book'
@@ -649,6 +650,7 @@ final FigSpec symfonySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Show help'

@@ -9,10 +9,12 @@ final FigSpec connectcasesSpec = FigSpec(
   name: 'connectcases',
   description: 'With Amazon Connect Cases, your agents can track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the steps and interactions taken to resolve the issue, and the outcome. For more information, see Amazon Connect Cases in the Amazon Connect Administrator Guide',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-field',
       description: 'Returns the description for the list of fields in the request parameters',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -47,6 +49,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'batch-put-field-options',
       description: 'Creates and updates a set of field options for a single select field in a Cases domain',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -102,6 +106,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'create-case',
       description: 'If you provide a value for PerformedBy.UserArn you must also have connect:DescribeUser permission on the User ARN resource that you provide   <p>Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.</p> <p>The following fields are required when creating a case:</p> <ul> <li> <p> <code>customer_id</code> - You must provide the full customer profile ARN in this format: <code>arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID</code> </p> </li> <li> <p> <code>title</code> </p> </li> </ul>',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -175,6 +181,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'create-domain',
       description: 'Creates a domain, which is a container for all case data, such as cases, fields, templates and layouts. Each Amazon Connect instance can be associated with only one Cases domain.  This will not associate your connect instance to Cases domain. Instead, use the Amazon Connect CreateIntegrationAssociation API. You need specific IAM permissions to successfully associate the Cases domain. For more information, see Onboard to Cases.  </important>',
       options: [
+
         Option(
           name: '--name',
           description: 'The name for your Cases domain. It must be unique for your Amazon Web Services account',
@@ -212,6 +220,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'create-field',
       description: 'Creates a field in the Cases domain. This field is used to define the case object model (that is, defines what data can be captured on cases) in a Cases domain',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the field',
@@ -276,6 +286,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -288,6 +299,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'create-layout',
       description: 'Creates a layout in the Cases domain. Layouts define the following configuration in the top section and More Info tab of the Cases user interface:   Fields to display to the users   Field ordering    Title and Status fields cannot be part of layouts since they are not configurable',
       options: [
+
         Option(
           name: '--content',
           description: 'Information about which fields will be present in the layout, and information about the order of the fields',
@@ -331,6 +343,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -343,6 +356,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'create-related-item',
       description: 'Creates a related item (comments, tasks, and contacts) and associates it with a case.    A Related Item is a resource that is associated with a case. It may or may not have an external identifier linking it to an external resource (for example, a contactArn). All Related Items have their own internal identifier, the relatedItemArn. Examples of related items include comments and contacts.   If you provide a value for performedBy.userArn you must also have DescribeUser permission on the ARN of the user that you provide.    </note>',
       options: [
+
         Option(
           name: '--case-id',
           description: 'A unique identifier of the case',
@@ -404,6 +418,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +431,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'create-template',
       description: 'Creates a template in the Cases domain. This template is used to define the case object model (that is, to define what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within the same Template. A template can be either Active or Inactive, as indicated by its status. Inactive templates cannot be used to create cases',
       options: [
+
         Option(
           name: '--description',
           description: 'A brief description of the template',
@@ -486,6 +502,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -498,6 +515,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'delete-domain',
       description: 'Deletes a Cases domain.  <note> <p>After deleting your domain you must disassociate the deleted domain from your Amazon Connect instance with another API call before being able to use Cases again with this Amazon Connect instance. See <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html">DeleteIntegrationAssociation</a>.</p> </note>',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -523,6 +541,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -535,6 +554,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'delete-field',
       description: 'Deletes a field from a cases template. You can delete up to 100 fields per domain. After a field is deleted:   You can still retrieve the field by calling BatchGetField.   You cannot update a deleted field by calling UpdateField; it throws a ValidationException.   Deleted fields are not included in the ListFields response.   Calling CreateCase with a deleted field throws a ValidationException denoting which field IDs in the request have been deleted.   Calling GetCase with a deleted field ID returns the deleted field\'s value if one exists.   Calling UpdateCase with a deleted field ID throws a ValidationException if the case does not already contain a value for the deleted field. Otherwise it succeeds, allowing you to update or remove (using emptyValue: {}) the field\'s value from the case.    GetTemplate does not return field IDs for deleted fields.    GetLayout does not return field IDs for deleted fields.   Calling SearchCases with the deleted field ID as a filter returns any cases that have a value for the deleted field that matches the filter criteria.   Calling SearchCases with a searchTerm value that matches a deleted field\'s value on a case returns the case in the response.   Calling BatchPutFieldOptions with a deleted field ID throw a ValidationException.   Calling GetCaseEventConfiguration does not return field IDs for deleted fields',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -569,6 +589,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -581,6 +602,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'delete-layout',
       description: 'Deletes a layout from a cases template. You can delete up to 100 layouts per domain.  <p>After a layout is deleted:</p> <ul> <li> <p>You can still retrieve the layout by calling <code>GetLayout</code>.</p> </li> <li> <p>You cannot update a deleted layout by calling <code>UpdateLayout</code>; it throws a <code>ValidationException</code>.</p> </li> <li> <p>Deleted layouts are not included in the <code>ListLayouts</code> response.</p> </li> </ul>',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -615,6 +637,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -627,6 +650,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'delete-template',
       description: 'Deletes a cases template. You can delete up to 100 templates per domain.  <p>After a cases template is deleted:</p> <ul> <li> <p>You can still retrieve the template by calling <code>GetTemplate</code>.</p> </li> <li> <p>You cannot update the template. </p> </li> <li> <p>You cannot create a case by using the deleted template.</p> </li> <li> <p>Deleted templates are not included in the <code>ListTemplates</code> response.</p> </li> </ul>',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -661,6 +685,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -673,6 +698,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'get-case',
       description: 'Returns information about a specific case if it exists',
       options: [
+
         Option(
           name: '--case-id',
           description: 'A unique identifier of the case',
@@ -725,6 +751,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -737,6 +764,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'get-case-audit-events',
       description: 'Returns the audit history about a specific case if it exists',
       options: [
+
         Option(
           name: '--case-id',
           description: 'A unique identifier of the case',
@@ -789,6 +817,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -801,6 +830,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'get-case-event-configuration',
       description: 'Returns the case event publishing configuration',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -826,6 +856,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -838,6 +869,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'get-domain',
       description: 'Returns information about a specific domain if it exists',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -863,6 +895,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -875,6 +908,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'get-layout',
       description: 'Returns the details for the requested layout',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -909,6 +943,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -921,6 +956,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'get-template',
       description: 'Returns the details for the requested template',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -955,6 +991,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -967,6 +1004,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'list-cases-for-contact',
       description: 'Lists cases for a given contact',
       options: [
+
         Option(
           name: '--contact-arn',
           description: 'A unique identifier of a contact in Amazon Connect',
@@ -1019,6 +1057,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1031,6 +1070,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'list-domains',
       description: 'Lists all cases domains in the Amazon Web Services account. Each list item is a condensed summary object of the domain',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per page',
@@ -1065,6 +1105,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1077,6 +1118,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'list-field-options',
       description: 'Lists all of the field options for a field identifier in the domain',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -1138,6 +1180,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1150,6 +1193,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'list-fields',
       description: 'Lists all fields in a Cases domain',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -1193,6 +1237,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1205,6 +1250,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'list-layouts',
       description: 'Lists all layouts in the given cases domain. Each list item is a condensed summary object of the layout',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -1248,6 +1294,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1260,6 +1307,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists tags for a resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN)',
@@ -1285,6 +1333,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1297,6 +1346,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'list-templates',
       description: 'Lists all of the templates in a Cases domain. Each list item is a condensed summary object of the template',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -1349,6 +1399,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1361,6 +1412,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'put-case-event-configuration',
       description: 'Adds case event publishing configuration. For a complete list of fields you can add to the event message, see Create case fields in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -1395,6 +1447,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1407,6 +1460,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'search-cases',
       description: 'Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.  For customer_id you must provide the full customer profile ARN in this format:  arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID',
       options: [
+
         Option(
           name: '--domain-id',
           description: 'The unique identifier of the Cases domain',
@@ -1513,6 +1567,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1525,6 +1580,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'search-related-items',
       description: 'Searches for related items that are associated with a case.  If no filters are provided, this returns all related items associated with a case',
       options: [
+
         Option(
           name: '--case-id',
           description: 'A unique identifier of the case',
@@ -1613,6 +1669,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1625,6 +1682,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags to a resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN)',
@@ -1659,6 +1717,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1671,6 +1730,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'untag-resource',
       description: 'Untags a resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN)',
@@ -1705,6 +1765,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1717,6 +1778,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'update-case',
       description: 'If you provide a value for PerformedBy.UserArn you must also have connect:DescribeUser permission on the User ARN resource that you provide   <p>Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the <code>CreateCase</code> input .</p> <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>',
       options: [
+
         Option(
           name: '--case-id',
           description: 'A unique identifier of the case',
@@ -1769,6 +1831,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1781,6 +1844,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'update-field',
       description: 'Updates the properties of an existing field',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of a field',
@@ -1833,6 +1897,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1845,6 +1910,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'update-layout',
       description: 'Updates the attributes of an existing layout. If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body. A ValidationException is returned when you add non-existent fieldIds to a layout.  Title and Status fields cannot be part of layouts because they are not configurable',
       options: [
+
         Option(
           name: '--content',
           description: 'Information about which fields will be present in the layout, the order of the fields',
@@ -1897,6 +1963,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1909,6 +1976,7 @@ final FigSpec connectcasesSpec = FigSpec(
       name: 'update-template',
       description: 'Updates the attributes of an existing template. The template attributes that can be modified include name, description, layoutConfiguration, requiredFields, and status. At least one of these attributes must not be null. If a null value is provided for a given attribute, that attribute is ignored and its current value is preserved',
       options: [
+
         Option(
           name: '--description',
           description: 'A brief description of the template',
@@ -1988,6 +2056,7 @@ final FigSpec connectcasesSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,6 +9,7 @@ final FigSpec hbServiceSpec = FigSpec(
   name: 'hb-service',
   description: 'The hb-service command is provided by homebridge-config-ui-x',
   subcommands: [
+
     Subcommand(
       name: 'install',
       description: 'Install homebridge as a service'
@@ -33,6 +34,7 @@ final FigSpec hbServiceSpec = FigSpec(
       name: 'rebuild',
       description: 'Rebuild UI',
       options: [
+
         Option(
           name: '--all',
           description: 'Rebuild all npm modules (use after updating Node.js)'
@@ -59,6 +61,7 @@ final FigSpec hbServiceSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Display help for command'

@@ -16,6 +16,7 @@ final FigSpec glowSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-a', '--all'],
       description: 'Show system files and directories (TUI-mode only)'
@@ -51,6 +52,7 @@ final FigSpec glowSpec = FigSpec(
         Arg(
         name: 'name',
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'light'),
           FigSuggestion(name: 'dark'),
@@ -75,6 +77,7 @@ final FigSpec glowSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'config',
       description: 'Edit the glow config file'
@@ -100,6 +103,7 @@ final FigSpec glowSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-m', '--memo'],
           description: 'Memo/note for stashing',

@@ -9,6 +9,7 @@ final FigSpec findSpec = FigSpec(
   name: 'find',
   description: 'Walk a file hierarchy',
   args: [
+
     Arg(
       name: 'path',
       isOptional: true,
@@ -23,6 +24,7 @@ final FigSpec findSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '-E',
       description: 'Interpret regular expressions followed by -regex and -iregex primaries as extended'

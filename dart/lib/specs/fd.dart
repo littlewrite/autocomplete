@@ -9,6 +9,7 @@ final FigSpec fdSpec = FigSpec(
   name: 'fd',
   description: 'A simple, fast and user-friendly alternative to \'find\'',
   options: [
+
     Option(
       name: ['-H', '--hidden'],
       description: 'Search hidden files and directories'
@@ -74,6 +75,7 @@ final FigSpec fdSpec = FigSpec(
         Arg(
         name: 'filetype',
         suggestions: [
+
           FigSuggestion(
             name: 'f',
             description: 'File'
@@ -152,6 +154,7 @@ final FigSpec fdSpec = FigSpec(
         name: 'when',
         defaultValue: 'auto',
         suggestions: [
+
           FigSuggestion(name: 'never'),
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'always')
@@ -188,6 +191,7 @@ final FigSpec fdSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'pattern',
       description: 'The search pattern - a regular expression unless \'--glob\' is used (optional)'

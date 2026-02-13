@@ -9,10 +9,12 @@ final FigSpec bedrockAgentSpec = FigSpec(
   name: 'bedrock-agent',
   description: 'Describes the API operations for creating and managing Amazon Bedrock agents',
   subcommands: [
+
     Subcommand(
       name: 'associate-agent-collaborator',
       description: 'Makes an agent a collaborator for another agent',
       options: [
+
         Option(
           name: '--agent-descriptor',
           description: 'The alias of the collaborator agent',
@@ -92,6 +94,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -104,6 +107,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'associate-agent-knowledge-base',
       description: 'Associates a knowledge base with an agent. If a knowledge base is associated and its indexState is set to Enabled, the agent queries the knowledge base for information to augment its response to the user',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent with which you want to associate the knowledge base',
@@ -165,6 +169,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -177,6 +182,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'create-agent',
       description: 'Creates an agent that orchestrates interactions between foundation models, data sources, software applications, user conversations, and APIs to carry out tasks to help customers.   Specify the following fields for security purposes.    agentResourceRoleArn – The Amazon Resource Name (ARN) of the role with permissions to invoke API operations on an agent.   (Optional) customerEncryptionKeyArn – The Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the agent.   (Optional) idleSessionTTLinSeconds – Specify the number of seconds for which the agent should maintain session information. After this time expires, the subsequent InvokeAgent request begins a new session.     To enable your agent to retain conversational context across multiple sessions, include a memoryConfiguration object. For more information, see Configure memory.   To override the default prompt behavior for agent orchestration and to use advanced prompts, include a promptOverrideConfiguration object. For more information, see Advanced prompts.   If your agent fails to be created, the response returns a list of failureReasons alongside a list of recommendedActions for you to troubleshoot.   The agent instructions will not be honored if your agent has only one knowledge base, uses default prompts, has no action group, and user input is disabled',
       options: [
+
         Option(
           name: '--agent-collaboration',
           description: 'The agent\'s collaboration role',
@@ -328,6 +334,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -340,6 +347,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'create-agent-action-group',
       description: 'Creates an action group for an agent. An action group represents the actions that an agent can carry out for the customer by defining the APIs that an agent can call and the logic for calling them. To allow your agent to request the user for additional information when trying to complete a task, add an action group with the parentActionGroupSignature field set to AMAZON.UserInput.  To allow your agent to generate, run, and troubleshoot code when trying to complete a task, add an action group with the parentActionGroupSignature field set to AMAZON.CodeInterpreter.  You must leave the description, apiSchema, and actionGroupExecutor fields blank for this action group. During orchestration, if your agent determines that it needs to invoke an API in an action group, but doesn\'t have enough information to complete the API request, it will invoke this action group instead and return an Observation reprompting the user for more information',
       options: [
+
         Option(
           name: '--action-group-executor',
           description: 'The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action or the custom control method for handling the information elicited from the user',
@@ -446,6 +454,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -458,6 +467,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'create-agent-alias',
       description: 'Creates an alias of an agent that can be used to deploy the agent',
       options: [
+
         Option(
           name: '--agent-alias-name',
           description: 'The name of the alias',
@@ -528,6 +538,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -540,6 +551,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'create-data-source',
       description: 'Connects a knowledge base to a data source. You specify the configuration for the specific data source service in the dataSourceConfiguration field.  You can\'t change the chunkingConfiguration after you create the data source connector',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency',
@@ -628,6 +640,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -640,6 +653,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'create-flow',
       description: 'Creates a prompt flow that you can use to send an input through various steps to yield an output. Configure nodes, each of which corresponds to a step of the flow, and create connections between the nodes to create paths to different outputs. For more information, see How it works and Create a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency',
@@ -719,6 +733,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -731,6 +746,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'create-flow-alias',
       description: 'Creates an alias of a flow for deployment. For more information, see Deploy a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency',
@@ -801,6 +817,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -813,6 +830,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'create-flow-version',
       description: 'Creates a version of the flow that you can deploy. For more information, see Deploy a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency',
@@ -856,6 +874,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -868,6 +887,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'create-knowledge-base',
       description: 'Creates a knowledge base. A knowledge base contains your data sources so that Large Language Models (LLMs) can use your data. To create a knowledge base, you must first set up your data sources and configure a supported vector store. For more information, see Set up a knowledge base.  If you prefer to let Amazon Bedrock create and manage a vector store for you in Amazon OpenSearch Service, use the console. For more information, see Create a knowledge base.    Provide the name and an optional description.   Provide the Amazon Resource Name (ARN) with permissions to create a knowledge base in the roleArn field.   Provide the embedding model to use in the embeddingModelArn field in the knowledgeBaseConfiguration object.   Provide the configuration for your vector store in the storageConfiguration object.   For an Amazon OpenSearch Service database, use the opensearchServerlessConfiguration object. For more information, see Create a vector store in Amazon OpenSearch Service.   For an Amazon Aurora database, use the RdsConfiguration object. For more information, see Create a vector store in Amazon Aurora.   For a Pinecone database, use the pineconeConfiguration object. For more information, see Create a vector store in Pinecone.   For a Redis Enterprise Cloud database, use the redisEnterpriseCloudConfiguration object. For more information, see Create a vector store in Redis Enterprise Cloud',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency',
@@ -947,6 +967,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -959,6 +980,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'create-prompt',
       description: 'Creates a prompt in your prompt library that you can add to a flow. For more information, see Prompt management in Amazon Bedrock, Create a prompt using Prompt management and Prompt flows in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency',
@@ -1038,6 +1060,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1050,6 +1073,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'create-prompt-version',
       description: 'Creates a static snapshot of your prompt that can be deployed to production. For more information, see Deploy prompts using Prompt management by creating versions in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency',
@@ -1102,6 +1126,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1114,6 +1139,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-agent',
       description: 'Deletes an agent',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent to delete',
@@ -1147,6 +1173,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1159,6 +1186,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-agent-action-group',
       description: 'Deletes an action group in an agent',
       options: [
+
         Option(
           name: '--action-group-id',
           description: 'The unique identifier of the action group to delete',
@@ -1210,6 +1238,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1222,6 +1251,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-agent-alias',
       description: 'Deletes an alias of an agent',
       options: [
+
         Option(
           name: '--agent-alias-id',
           description: 'The unique identifier of the alias to delete',
@@ -1256,6 +1286,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1268,6 +1299,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-agent-version',
       description: 'Deletes a version of an agent',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent that the version belongs to',
@@ -1310,6 +1342,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1322,6 +1355,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-data-source',
       description: 'Deletes a data source from a knowledge base',
       options: [
+
         Option(
           name: '--data-source-id',
           description: 'The unique identifier of the data source to delete',
@@ -1356,6 +1390,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1368,6 +1403,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-flow',
       description: 'Deletes a flow',
       options: [
+
         Option(
           name: '--flow-identifier',
           description: 'The unique identifier of the flow',
@@ -1401,6 +1437,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1413,6 +1450,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-flow-alias',
       description: 'Deletes an alias of a flow',
       options: [
+
         Option(
           name: '--alias-identifier',
           description: 'The unique identifier of the alias to be deleted',
@@ -1447,6 +1485,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1459,6 +1498,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-flow-version',
       description: 'Deletes a version of a flow',
       options: [
+
         Option(
           name: '--flow-identifier',
           description: 'The unique identifier of the flow whose version that you want to delete',
@@ -1501,6 +1541,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1513,6 +1554,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-knowledge-base',
       description: 'Deletes a knowledge base. Before deleting a knowledge base, you should disassociate the knowledge base from any agents that it is associated with by making a DisassociateAgentKnowledgeBase request',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The unique identifier of the knowledge base to delete',
@@ -1538,6 +1580,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1550,6 +1593,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-knowledge-base-documents',
       description: 'Deletes documents from a data source and syncs the changes to the knowledge base that is connected to it. For more information, see Ingest documents into a knowledge base in real-time in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency',
@@ -1602,6 +1646,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1614,6 +1659,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'delete-prompt',
       description: 'Deletes a prompt or a version of it, depending on whether you include the promptVersion field or not. For more information, see Delete prompts from the Prompt management tool and Delete a version of a prompt from the Prompt management tool in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--prompt-identifier',
           description: 'The unique identifier of the prompt',
@@ -1648,6 +1694,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1660,6 +1707,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'disassociate-agent-collaborator',
       description: 'Disassociates an agent collaborator',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'An agent ID',
@@ -1703,6 +1751,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1715,6 +1764,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'disassociate-agent-knowledge-base',
       description: 'Disassociates a knowledge base from an agent',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent from which to disassociate the knowledge base',
@@ -1758,6 +1808,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1770,6 +1821,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-agent',
       description: 'Gets information about an agent',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent',
@@ -1795,6 +1847,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1807,6 +1860,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-agent-action-group',
       description: 'Gets information about an action group for an agent',
       options: [
+
         Option(
           name: '--action-group-id',
           description: 'The unique identifier of the action group for which to get information',
@@ -1850,6 +1904,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1862,6 +1917,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-agent-alias',
       description: 'Gets information about an alias of an agent',
       options: [
+
         Option(
           name: '--agent-alias-id',
           description: 'The unique identifier of the alias for which to get information',
@@ -1896,6 +1952,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1908,6 +1965,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-agent-collaborator',
       description: 'Retrieves information about an agent\'s collaborator',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The agent\'s ID',
@@ -1951,6 +2009,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1963,6 +2022,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-agent-knowledge-base',
       description: 'Gets information about a knowledge base associated with an agent',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent with which the knowledge base is associated',
@@ -2006,6 +2066,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2018,6 +2079,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-agent-version',
       description: 'Gets details about a version of an agent',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent',
@@ -2052,6 +2114,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2064,6 +2127,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-data-source',
       description: 'Gets information about a data source',
       options: [
+
         Option(
           name: '--data-source-id',
           description: 'The unique identifier of the data source',
@@ -2098,6 +2162,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2110,6 +2175,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-flow',
       description: 'Retrieves information about a flow. For more information, see Manage a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--flow-identifier',
           description: 'The unique identifier of the flow',
@@ -2135,6 +2201,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2147,6 +2214,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-flow-alias',
       description: 'Retrieves information about a flow. For more information, see Deploy a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--alias-identifier',
           description: 'The unique identifier of the alias for which to retrieve information',
@@ -2181,6 +2249,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2193,6 +2262,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-flow-version',
       description: 'Retrieves information about a version of a flow. For more information, see Deploy a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--flow-identifier',
           description: 'The unique identifier of the flow for which to get information',
@@ -2227,6 +2297,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2239,6 +2310,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-ingestion-job',
       description: 'Gets information about a data ingestion job. Data sources are ingested into your knowledge base so that Large Language Models (LLMs) can use your data',
       options: [
+
         Option(
           name: '--data-source-id',
           description: 'The unique identifier of the data source for the data ingestion job you want to get information on',
@@ -2282,6 +2354,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2294,6 +2367,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-knowledge-base',
       description: 'Gets information about a knoweldge base',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The unique identifier of the knowledge base you want to get information on',
@@ -2319,6 +2393,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2331,6 +2406,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-knowledge-base-documents',
       description: 'Retrieves specific documents from a data source that is connected to a knowledge base. For more information, see Ingest documents into a knowledge base in real-time in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--data-source-id',
           description: 'The unique identifier of the data source that contains the documents',
@@ -2374,6 +2450,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2386,6 +2463,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'get-prompt',
       description: 'Retrieves information about the working draft (DRAFT version) of a prompt or a version of it, depending on whether you include the promptVersion field or not. For more information, see View information about prompts using Prompt management and View information about a version of your prompt in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--prompt-identifier',
           description: 'The unique identifier of the prompt',
@@ -2420,6 +2498,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2432,6 +2511,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'ingest-knowledge-base-documents',
       description: 'Ingests documents directly into the knowledge base that is connected to the data source. The dataSourceType specified in the content for each document must match the type of the data source that you specify in the header. For more information, see Ingest documents into a knowledge base in real-time in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency',
@@ -2484,6 +2564,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2496,6 +2577,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-agent-action-groups',
       description: 'Lists the action groups for an agent and information about each one',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent',
@@ -2575,6 +2657,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2587,6 +2670,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-agent-aliases',
       description: 'Lists the aliases of an agent and information about each one',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent',
@@ -2657,6 +2741,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2669,6 +2754,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-agent-collaborators',
       description: 'Retrieve a list of an agent\'s collaborators',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The agent\'s ID',
@@ -2748,6 +2834,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2760,6 +2847,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-agent-knowledge-bases',
       description: 'Lists knowledge bases associated with an agent and information about each one',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent for which to return information about knowledge bases associated with it',
@@ -2839,6 +2927,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2851,6 +2940,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-agent-versions',
       description: 'Lists the versions of an agent and information about each version',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent',
@@ -2921,6 +3011,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2933,6 +3024,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-agents',
       description: 'Lists the agents belonging to an account and information about each agent',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the nextToken field when making another request to return the next batch of results',
@@ -2994,6 +3086,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3006,6 +3099,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-data-sources',
       description: 'Lists the data sources in a knowledge base and information about each one',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The unique identifier of the knowledge base for which to return a list of information',
@@ -3076,6 +3170,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3088,6 +3183,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-flow-aliases',
       description: 'Returns a list of aliases for a flow',
       options: [
+
         Option(
           name: '--flow-identifier',
           description: 'The unique identifier of the flow for which aliases are being returned',
@@ -3158,6 +3254,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3170,6 +3267,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-flow-versions',
       description: 'Returns a list of information about each flow. For more information, see Deploy a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--flow-identifier',
           description: 'The unique identifier of the flow',
@@ -3240,6 +3338,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3252,6 +3351,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-flows',
       description: 'Returns a list of flows and information about each flow. For more information, see Manage a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the nextToken field when making another request to return the next batch of results',
@@ -3313,6 +3413,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3325,6 +3426,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-ingestion-jobs',
       description: 'Lists the data ingestion jobs for a data source. The list also includes information about each job',
       options: [
+
         Option(
           name: '--data-source-id',
           description: 'The unique identifier of the data source for the list of data ingestion jobs',
@@ -3422,6 +3524,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3434,6 +3537,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-knowledge-base-documents',
       description: 'Retrieves all the documents contained in a data source that is connected to a knowledge base. For more information, see Ingest documents into a knowledge base in real-time in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--data-source-id',
           description: 'The unique identifier of the data source that contains the documents',
@@ -3513,6 +3617,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3525,6 +3630,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-knowledge-bases',
       description: 'Lists the knowledge bases in an account. The list also includesinformation about each knowledge base',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the nextToken field when making another request to return the next batch of results',
@@ -3586,6 +3692,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3598,6 +3705,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-prompts',
       description: 'Returns either information about the working draft (DRAFT version) of each prompt in an account, or information about of all versions of a prompt, depending on whether you include the promptIdentifier field or not. For more information, see View information about prompts using Prompt management in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the nextToken field when making another request to return the next batch of results',
@@ -3668,6 +3776,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3680,6 +3789,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List all the tags for the resource you specify',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which to list tags',
@@ -3705,6 +3815,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3717,6 +3828,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'prepare-agent',
       description: 'Creates a DRAFT version of the agent that can be used for internal testing',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent for which to create a DRAFT version',
@@ -3742,6 +3854,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3754,6 +3867,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'prepare-flow',
       description: 'Prepares the DRAFT version of a flow so that it can be invoked. For more information, see Test a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--flow-identifier',
           description: 'The unique identifier of the flow',
@@ -3779,6 +3893,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3791,6 +3906,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'start-ingestion-job',
       description: 'Begins a data ingestion job. Data sources are ingested into your knowledge base so that Large Language Models (LLMs) can use your data',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency',
@@ -3843,6 +3959,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3855,6 +3972,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'stop-ingestion-job',
       description: 'Stops a currently running data ingestion job. You can send a StartIngestionJob request again to ingest the rest of your data when you are ready',
       options: [
+
         Option(
           name: '--data-source-id',
           description: 'The unique identifier of the data source for the data ingestion job you want to stop',
@@ -3898,6 +4016,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3910,6 +4029,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associate tags with a resource. For more information, see Tagging resources in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to tag',
@@ -3944,6 +4064,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3956,6 +4077,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'untag-resource',
       description: 'Remove tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource from which to remove tags',
@@ -3990,6 +4112,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4002,6 +4125,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'update-agent',
       description: 'Updates the configuration of an agent',
       options: [
+
         Option(
           name: '--agent-collaboration',
           description: 'The agent\'s collaboration role',
@@ -4144,6 +4268,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4156,6 +4281,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'update-agent-action-group',
       description: 'Updates the configuration for an action group for an agent',
       options: [
+
         Option(
           name: '--action-group-executor',
           description: 'The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action',
@@ -4262,6 +4388,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4274,6 +4401,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'update-agent-alias',
       description: 'Updates configurations for an alias of an agent',
       options: [
+
         Option(
           name: '--agent-alias-id',
           description: 'The unique identifier of the alias',
@@ -4335,6 +4463,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4347,6 +4476,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'update-agent-collaborator',
       description: 'Updates an agent\'s collaborator',
       options: [
+
         Option(
           name: '--agent-descriptor',
           description: 'An agent descriptor for the agent collaborator',
@@ -4426,6 +4556,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4438,6 +4569,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'update-agent-knowledge-base',
       description: 'Updates the configuration for a knowledge base that has been associated with an agent',
       options: [
+
         Option(
           name: '--agent-id',
           description: 'The unique identifier of the agent associated with the knowledge base that you want to update',
@@ -4499,6 +4631,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4511,6 +4644,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'update-data-source',
       description: 'Updates the configurations for a data source connector.  You can\'t change the chunkingConfiguration after you create the data source connector. Specify the existing chunkingConfiguration',
       options: [
+
         Option(
           name: '--data-deletion-policy',
           description: 'The data deletion policy for the data source that you want to update',
@@ -4599,6 +4733,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4611,6 +4746,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'update-flow',
       description: 'Modifies a flow. Include both fields that you want to keep and fields that you want to change. For more information, see How it works and Create a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--customer-encryption-key-arn',
           description: 'The Amazon Resource Name (ARN) of the KMS key to encrypt the flow',
@@ -4681,6 +4817,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4693,6 +4830,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'update-flow-alias',
       description: 'Modifies the alias of a flow. Include both fields that you want to keep and ones that you want to change. For more information, see Deploy a flow in Amazon Bedrock in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--alias-identifier',
           description: 'The unique identifier of the alias',
@@ -4754,6 +4892,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4766,6 +4905,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'update-knowledge-base',
       description: 'Updates the configuration of a knowledge base with the fields that you specify. Because all fields will be overwritten, you must include the same values for fields that you want to keep the same. You can change the following fields:    name     description     roleArn    You can\'t change the knowledgeBaseConfiguration or storageConfiguration fields, so you must specify the same configurations as when you created the knowledge base. You can send a GetKnowledgeBase request and copy the same configurations',
       options: [
+
         Option(
           name: '--description',
           description: 'Specifies a new description for the knowledge base',
@@ -4836,6 +4976,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4848,6 +4989,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'update-prompt',
       description: 'Modifies a prompt in your prompt library. Include both fields that you want to keep and fields that you want to replace. For more information, see Prompt management in Amazon Bedrock and Edit prompts in your prompt library in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--customer-encryption-key-arn',
           description: 'The Amazon Resource Name (ARN) of the KMS key to encrypt the prompt',
@@ -4918,6 +5060,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4930,6 +5073,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
       name: 'validate-flow-definition',
       description: 'Validates the definition of a flow',
       options: [
+
         Option(
           name: '--definition',
           description: 'The definition of a flow to validate',
@@ -4955,6 +5099,7 @@ final FigSpec bedrockAgentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

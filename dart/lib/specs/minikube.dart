@@ -9,10 +9,12 @@ final FigSpec minikubeSpec = FigSpec(
   name: 'minikube',
   description: 'Minikube provisions and manages local Kubernetes clusters optimized for development workflows',
   subcommands: [
+
     Subcommand(
       name: 'start',
       description: 'Starts a local Kubernetes cluster',
       options: [
+
         Option(
           name: '--addons',
           description: 'Enable addons. see `minikube addons list` for a list of valid addon names'
@@ -39,6 +41,7 @@ final FigSpec minikubeSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false')
             ]
@@ -64,6 +67,7 @@ final FigSpec minikubeSpec = FigSpec(
             Arg(
             name: 'cni-plugin',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'bridge'),
               FigSuggestion(name: 'cilium'),
@@ -80,6 +84,7 @@ final FigSpec minikubeSpec = FigSpec(
             Arg(
             name: 'container-runtime',
             suggestions: [
+
               FigSuggestion(name: 'docker'),
               FigSuggestion(name: 'cri-o'),
               FigSuggestion(name: 'containerd')
@@ -94,6 +99,7 @@ final FigSpec minikubeSpec = FigSpec(
             Arg(
             name: 'cpu number',
             suggestions: [
+
               FigSuggestion(name: 'max')
             ]
           )
@@ -109,6 +115,7 @@ final FigSpec minikubeSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false')
             ]
@@ -150,6 +157,7 @@ final FigSpec minikubeSpec = FigSpec(
             Arg(
             name: 'driver',
             suggestions: [
+
               FigSuggestion(name: 'virtualbox'),
               FigSuggestion(name: 'parallels'),
               FigSuggestion(name: 'vmwarefusion'),
@@ -171,6 +179,7 @@ final FigSpec minikubeSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false')
             ]
@@ -199,6 +208,7 @@ final FigSpec minikubeSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false')
             ]
@@ -220,6 +230,7 @@ final FigSpec minikubeSpec = FigSpec(
             Arg(
             name: 'nic type',
             suggestions: [
+
               FigSuggestion(name: 'Am79C970A'),
               FigSuggestion(name: 'Am79C973'),
               FigSuggestion(name: '82540EM'),
@@ -268,6 +279,7 @@ final FigSpec minikubeSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false')
             ]
@@ -309,6 +321,7 @@ final FigSpec minikubeSpec = FigSpec(
             Arg(
             name: 'numa count',
             suggestions: [
+
               FigSuggestion(name: '1'),
               FigSuggestion(name: '2'),
               FigSuggestion(name: '3'),
@@ -391,6 +404,7 @@ final FigSpec minikubeSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false')
             ]
@@ -428,6 +442,7 @@ final FigSpec minikubeSpec = FigSpec(
             Arg(
             name: 'trace',
             suggestions: [
+
               FigSuggestion(name: 'gcp')
             ]
           )
@@ -455,6 +470,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'status',
       description: 'Gets the status of a local Kubernetes cluster',
       options: [
+
         Option(
           name: ['--format', '-f'],
           description: 'Go template format string for the status output'
@@ -477,6 +493,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'stop',
       description: 'Stops a running local Kubernetes cluster',
       options: [
+
         Option(
           name: '--all',
           description: 'Set flag to stop all profiles (clusters)'
@@ -499,6 +516,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'delete',
       description: 'Deletes a local Kubernetes cluster',
       options: [
+
         Option(
           name: '--all',
           description: 'Set flag to delete all profiles'
@@ -513,6 +531,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'unpause',
       description: 'Unpause Kubernetes',
       options: [
+
         Option(
           name: ['--all-namespaces', '-A'],
           description: 'If set, unpause all namespaces'
@@ -527,6 +546,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'docker-env',
       description: 'Configure environment to use minikube\'s Docker daemon',
       options: [
+
         Option(
           name: ['--no-proxy', '-A'],
           description: 'If set, unpause all namespaces'
@@ -546,6 +566,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'cache',
       description: 'Add, delete, or push a local image into minikube',
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Add an image to local cache'
@@ -568,6 +589,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'image',
       description: 'Manage images',
       subcommands: [
+
         Subcommand(
           name: 'build',
           description: 'Build a container image in minikube'
@@ -606,6 +628,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'addons',
       description: 'Enable or disable a minikube addon',
       subcommands: [
+
         Subcommand(
           name: 'configure',
           description: 'Configures the addon w/ADDON_NAME within minikube'
@@ -636,6 +659,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'config',
       description: 'Modify persistent configuration values',
       subcommands: [
+
         Subcommand(
           name: 'defaults',
           description: 'Lists all valid default values for PROPERTY_NAME'
@@ -662,6 +686,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'profile',
       description: 'Get or list the current profiles (clusters)',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'Lists all minikube profiles'
@@ -676,10 +701,12 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'service',
       description: 'Returns a URL to connect to a service',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'Lists the URLs for the services in your local cluster',
           options: [
+
             Option(
               name: ['--namespace', '-n'],
               description: 'The services namespace'
@@ -688,6 +715,7 @@ final FigSpec minikubeSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--https',
           description: 'Open the service URL with https instead of http'
@@ -714,6 +742,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'tunnel',
       description: 'Connect to LoadBalancer services',
       options: [
+
         Option(
           name: ['--cleanup', '-c'],
           description: 'Call with cleanup=true to remove old tunnels'
@@ -724,6 +753,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'mount',
       description: 'Mounts the specified directory into minikube',
       options: [
+
         Option(
           name: '--9p-version',
           description: 'Specify the 9p version that the mount should use'
@@ -770,6 +800,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'ssh',
       description: 'Log into the minikube environment (for debugging)',
       options: [
+
         Option(
           name: '--native-ssh',
           description: 'Use native Golang SSH client'
@@ -784,6 +815,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'kubectl',
       description: 'Run a kubectl binary matching the cluster version',
       options: [
+
         Option(
           name: '--ssh',
           description: 'Use SSH for running kubernetes client on the node'
@@ -794,6 +826,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'node',
       description: 'Add, remove, or list additional nodes',
       subcommands: [
+
         Subcommand(
           name: 'add',
           description: 'Adds a node to the given cluster'
@@ -829,6 +862,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'ssh-key',
       description: 'Retrieve the ssh identity key path of the specified node',
       options: [
+
         Option(
           name: ['--node', '-n'],
           description: 'The node to get ssh-key path'
@@ -839,6 +873,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'ssh-host',
       description: 'Retrieve the ssh host key of the specified node',
       options: [
+
         Option(
           name: '--append-known',
           description: 'Add host key to SSH known_hosts file'
@@ -853,6 +888,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'ip',
       description: 'Retrieves the IP address of the specified node',
       options: [
+
         Option(
           name: ['--node', '-n'],
           description: 'The node to get IP'
@@ -863,6 +899,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'logs',
       description: 'Returns logs to debug a local Kubernetes cluster',
       options: [
+
         Option(
           name: '--file',
           description: 'If present, writes to the provided file instead of stdout'
@@ -893,6 +930,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'version',
       description: 'Print the version of minikube',
       options: [
+
         Option(
           name: '--components',
           description: 'List versions of all components included with minikube'
@@ -903,6 +941,7 @@ final FigSpec minikubeSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false')
             ]
@@ -919,6 +958,7 @@ final FigSpec minikubeSpec = FigSpec(
       name: 'completion',
       description: 'Generate command completion for a shell',
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Bash completion'

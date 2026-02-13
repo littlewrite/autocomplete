@@ -9,6 +9,7 @@ final FigSpec xcodeSelectSpec = FigSpec(
   name: 'xcode-select',
   description: 'Active developer directory for Xcode tools',
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Help message'

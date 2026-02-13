@@ -4,15 +4,25 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<FigSuggestion> runtimes = [
+
+  FigSuggestion(name: 'node12'),
+  FigSuggestion(name: 'node14'),
+  FigSuggestion(name: 'python3.7'),
+  FigSuggestion(name: 'python3.9')
+];
+
 /// Completion spec for `deta` CLI
 final FigSpec detaSpec = FigSpec(
   name: 'deta',
   description: 'Deta CLI for managing Deta Micros',
   subcommands: [
+
     Subcommand(
       name: 'login',
       description: 'Trigger the login process for the Deta CLI',
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for login'
@@ -23,10 +33,12 @@ final FigSpec detaSpec = FigSpec(
       name: 'version',
       description: 'Print the Deta version',
       subcommands: [
+
         Subcommand(
           name: 'upgrade',
           description: 'Upgrade Deta CLI version',
           options: [
+
             Option(
               name: '-h',
               description: 'Show help for upgrade'
@@ -44,6 +56,7 @@ final FigSpec detaSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for version'
@@ -54,6 +67,7 @@ final FigSpec detaSpec = FigSpec(
       name: 'projects',
       description: 'List Deta projects',
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for projects'
@@ -71,6 +85,7 @@ final FigSpec detaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for new'
@@ -109,7 +124,8 @@ final FigSpec detaSpec = FigSpec(
           args: [
             Arg(
             name: 'runtime',
-            description: 'The selected runtime'
+            description: 'The selected runtime',
+            suggestions: runtimes
           )
           ]
         )
@@ -127,6 +143,7 @@ final FigSpec detaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for deploy'
@@ -145,6 +162,7 @@ final FigSpec detaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for details'
@@ -163,6 +181,7 @@ final FigSpec detaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for watch'
@@ -173,10 +192,12 @@ final FigSpec detaSpec = FigSpec(
       name: 'auth',
       description: 'Change auth settings for a Deta Micro',
       subcommands: [
+
         Subcommand(
           name: 'disable',
           description: 'Disable HTTP Auth for a Deta Micro',
           options: [
+
             Option(
               name: '-h',
               description: 'Show help for auth disable'
@@ -187,6 +208,7 @@ final FigSpec detaSpec = FigSpec(
           name: 'enable',
           description: 'Enable HTTP Auth for a Deta Micro',
           options: [
+
             Option(
               name: '-h',
               description: 'Show help for auth enable'
@@ -197,6 +219,7 @@ final FigSpec detaSpec = FigSpec(
           name: 'create-api-key',
           description: 'Create an API key for a Deta Micro',
           options: [
+
             Option(
               name: '-h',
               description: 'Show help for auth create-api-key'
@@ -238,6 +261,7 @@ final FigSpec detaSpec = FigSpec(
           name: 'delete-api-key',
           description: 'Delete an API key for a Deta Micro',
           options: [
+
             Option(
               name: '-h',
               description: 'Show help for auth delete-api-key'
@@ -256,6 +280,7 @@ final FigSpec detaSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for auth'
@@ -266,6 +291,7 @@ final FigSpec detaSpec = FigSpec(
       name: 'pull',
       description: 'Pull the latest deployed code of a Deta Micro to your local machine',
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for pull'
@@ -287,6 +313,7 @@ final FigSpec detaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for clone'
@@ -317,6 +344,7 @@ final FigSpec detaSpec = FigSpec(
       name: 'update',
       description: 'Update a Deta Micro\'s name or environment variables',
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for pull'
@@ -337,7 +365,8 @@ final FigSpec detaSpec = FigSpec(
           args: [
             Arg(
             name: 'runtime',
-            description: 'New runtime for the micro'
+            description: 'New runtime for the micro',
+            suggestions: runtimes
           )
           ]
         ),
@@ -358,10 +387,12 @@ final FigSpec detaSpec = FigSpec(
       name: 'visor',
       description: 'Change the Visor settings for a Deta Micro',
       subcommands: [
+
         Subcommand(
           name: 'open',
           description: 'Open Micro\'s visor page in the browser',
           options: [
+
             Option(
               name: '-h',
               description: 'Show help for visor open'
@@ -372,6 +403,7 @@ final FigSpec detaSpec = FigSpec(
           name: 'enable',
           description: 'Enable Visor for a Deta Micro',
           options: [
+
             Option(
               name: '-h',
               description: 'Show help for visor enable'
@@ -382,6 +414,7 @@ final FigSpec detaSpec = FigSpec(
           name: 'disable',
           description: 'Disable Visor for a Deta Micro',
           options: [
+
             Option(
               name: '-h',
               description: 'Show help for visor disable'
@@ -390,6 +423,7 @@ final FigSpec detaSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for visor'
@@ -406,6 +440,7 @@ final FigSpec detaSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for run'
@@ -420,6 +455,7 @@ final FigSpec detaSpec = FigSpec(
       name: 'cron',
       description: 'Change cron settings for a Deta Micro',
       subcommands: [
+
         Subcommand(
           name: 'set',
           description: 'Set Deta Micro to run on a schedule',
@@ -430,6 +466,7 @@ final FigSpec detaSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '-h',
               description: 'Show help for cron set'
@@ -446,6 +483,7 @@ final FigSpec detaSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '-h',
               description: 'Show help for cron remove'
@@ -454,6 +492,7 @@ final FigSpec detaSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '-h',
           description: 'Show help for cron'
@@ -462,6 +501,7 @@ final FigSpec detaSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '-h',
       description: 'Show help for deta'

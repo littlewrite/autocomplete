@@ -9,14 +9,17 @@ final FigSpec enapterSpec = FigSpec(
   name: 'enapter',
   description: 'Cross-platform device management command-line tool for Enapter Energy Management System Toolkit',
   subcommands: [
+
     Subcommand(
       name: 'devices',
       description: 'Device information and management commands',
       subcommands: [
+
         Subcommand(
           name: 'upload',
           description: 'Upload blueprint to a device',
           options: [
+
             Option(
               name: '--hardware-id',
               description: 'Hardware ID (UCM ID) of the device; can be obtained in cloud.enapter.com',
@@ -55,6 +58,7 @@ final FigSpec enapterSpec = FigSpec(
           name: 'logs',
           description: 'Stream logs from a device',
           options: [
+
             Option(
               name: '--hardware-id',
               description: 'Hardware ID (UCM ID) of the device; can be obtained in cloud.enapter.com',
@@ -74,6 +78,7 @@ final FigSpec enapterSpec = FigSpec(
           name: 'upload-logs',
           description: 'Show blueprint uploading logs',
           options: [
+
             Option(
               name: '--hardware-id',
               description: 'Hardware ID (UCM ID) of the device; can be obtained in cloud.enapter.com',
@@ -93,6 +98,7 @@ final FigSpec enapterSpec = FigSpec(
           name: 'execute',
           description: 'Execute command on device',
           options: [
+
             Option(
               name: '--hardware-id',
               description: 'Hardware ID (UCM ID) of the device; can be obtained in cloud.enapter.com',
@@ -140,10 +146,12 @@ final FigSpec enapterSpec = FigSpec(
       name: 'rules',
       description: 'Rules information and management commands',
       subcommands: [
+
         Subcommand(
           name: 'update',
           description: 'Update rule',
           options: [
+
             Option(
               name: '--rule-id',
               description: 'Rule ID; can be obtained in cloud.enapter.com',
@@ -202,6 +210,7 @@ final FigSpec enapterSpec = FigSpec(
           name: 'logs',
           description: 'Stream logs from a rule',
           options: [
+
             Option(
               name: '--rule-id',
               description: 'Rule ID; can be obtained in cloud.enapter.com',
@@ -230,6 +239,7 @@ final FigSpec enapterSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help'

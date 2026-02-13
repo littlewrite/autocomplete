@@ -9,14 +9,17 @@ final FigSpec dnsSpec = FigSpec(
   name: 'dns',
   description: 'Manage your Cloud DNS managed-zones and record-sets',
   subcommands: [
+
     Subcommand(
       name: 'dns-keys',
       description: 'Manage Cloud DNS DNSKEY records',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Show details about a DNS key resource',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -140,6 +143,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -173,6 +177,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'list',
           description: 'List DNS key resources',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -329,6 +334,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -354,6 +360,7 @@ final FigSpec dnsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -477,6 +484,7 @@ final FigSpec dnsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -493,10 +501,12 @@ final FigSpec dnsSpec = FigSpec(
       name: 'managed-zones',
       description: 'Manage your Cloud DNS managed-zones',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Cloud DNS managed-zone',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -538,6 +548,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'DENIAL_OF_EXISTENCE',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'nsec'),
                   FigSuggestion(name: 'nsec3')
                 ]
@@ -576,6 +587,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'DNSSEC_STATE',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'off'),
                   FigSuggestion(name: 'on'),
                   FigSuggestion(name: 'transfer')
@@ -650,6 +662,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'KSK_ALGORITHM',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'ecdsap256sha256'),
                   FigSuggestion(name: 'ecdsap384sha384'),
                   FigSuggestion(name: 'rsasha1'),
@@ -773,6 +786,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -791,6 +805,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VISIBILITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'public'),
                   FigSuggestion(name: 'private')
                 ]
@@ -805,6 +820,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'ZSK_ALGORITHM',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'ecdsap256sha256'),
                   FigSuggestion(name: 'ecdsap384sha384'),
                   FigSuggestion(name: 'rsasha1'),
@@ -837,6 +853,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'delete',
           description: 'Delete an empty Cloud DNS managed-zone',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -960,6 +977,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -982,6 +1000,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'describe',
           description: 'View the details of a Cloud DNS managed-zone',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1105,6 +1124,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1127,6 +1147,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'list',
           description: 'View the list of all your managed-zones',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1298,6 +1319,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1314,6 +1336,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'update',
           description: 'Update an existing Cloud DNS managed-zone',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1363,6 +1386,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'DENIAL_OF_EXISTENCE',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'nsec'),
                   FigSuggestion(name: 'nsec3')
                 ]
@@ -1388,6 +1412,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'DNSSEC_STATE',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'off'),
                   FigSuggestion(name: 'on'),
                   FigSuggestion(name: 'transfer')
@@ -1462,6 +1487,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'KSK_ALGORITHM',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'ecdsap256sha256'),
                   FigSuggestion(name: 'ecdsap384sha384'),
                   FigSuggestion(name: 'rsasha1'),
@@ -1596,6 +1622,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1614,6 +1641,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'ZSK_ALGORITHM',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'ecdsap256sha256'),
                   FigSuggestion(name: 'ecdsap384sha384'),
                   FigSuggestion(name: 'rsasha1'),
@@ -1644,6 +1672,7 @@ final FigSpec dnsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1767,6 +1796,7 @@ final FigSpec dnsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1783,10 +1813,12 @@ final FigSpec dnsSpec = FigSpec(
       name: 'operations',
       description: 'Manage your Cloud DNS operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe an operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1910,6 +1942,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1944,6 +1977,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'list',
           description: 'List Cloud DNS operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2100,6 +2134,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2126,6 +2161,7 @@ final FigSpec dnsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2249,6 +2285,7 @@ final FigSpec dnsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2265,10 +2302,12 @@ final FigSpec dnsSpec = FigSpec(
       name: 'policies',
       description: 'Manage your Cloud DNS policies',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates a new Cloud DNS policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2446,6 +2485,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2468,6 +2508,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'delete',
           description: 'Deletes a Cloud DNS policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2591,6 +2632,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2613,6 +2655,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'describe',
           description: 'Describes a Cloud DNS policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2736,6 +2779,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2758,6 +2802,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'list',
           description: 'View the list of all your Cloud DNS policies',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2929,6 +2974,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2945,6 +2991,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'update',
           description: 'Update an existing Cloud DNS policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3120,6 +3167,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3140,6 +3188,7 @@ final FigSpec dnsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3263,6 +3312,7 @@ final FigSpec dnsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3279,10 +3329,12 @@ final FigSpec dnsSpec = FigSpec(
       name: 'project-info',
       description: 'View Cloud DNS related information for a project',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'View Cloud DNS related information for a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3406,6 +3458,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3426,6 +3479,7 @@ final FigSpec dnsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3549,6 +3603,7 @@ final FigSpec dnsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3565,14 +3620,17 @@ final FigSpec dnsSpec = FigSpec(
       name: 'record-sets',
       description: 'Manage the record-sets within your managed-zones',
       subcommands: [
+
         Subcommand(
           name: 'changes',
           description: 'View details about changes to your Cloud DNS record-sets',
           subcommands: [
+
             Subcommand(
               name: 'describe',
               description: 'View the details of a change',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3696,6 +3754,7 @@ final FigSpec dnsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3730,6 +3789,7 @@ final FigSpec dnsSpec = FigSpec(
               name: 'list',
               description: 'View the list of changes that have been made to your record-sets',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3882,6 +3942,7 @@ final FigSpec dnsSpec = FigSpec(
                     name: 'SORT_ORDER',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'ascending'),
                       FigSuggestion(name: 'descending')
                     ]
@@ -3915,6 +3976,7 @@ final FigSpec dnsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3941,6 +4003,7 @@ final FigSpec dnsSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4064,6 +4127,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4080,6 +4144,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'export',
           description: 'Export your record-sets into a file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4203,6 +4268,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4241,6 +4307,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'import',
           description: 'Import record-sets into your managed-zone',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4372,6 +4439,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4410,6 +4478,7 @@ final FigSpec dnsSpec = FigSpec(
           name: 'list',
           description: 'View the list of record-sets in a managed-zone',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4604,6 +4673,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4632,10 +4702,12 @@ final FigSpec dnsSpec = FigSpec(
           name: 'transaction',
           description: 'Make scriptable and transactional changes to your record-sets',
           subcommands: [
+
             Subcommand(
               name: 'abort',
               description: 'Abort transaction',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4770,6 +4842,7 @@ final FigSpec dnsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4798,6 +4871,7 @@ final FigSpec dnsSpec = FigSpec(
               name: 'add',
               description: 'Append a record-set addition to the transaction',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4968,6 +5042,7 @@ final FigSpec dnsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5003,6 +5078,7 @@ final FigSpec dnsSpec = FigSpec(
               name: 'describe',
               description: 'Describe the transaction',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5137,6 +5213,7 @@ final FigSpec dnsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5165,6 +5242,7 @@ final FigSpec dnsSpec = FigSpec(
               name: 'execute',
               description: 'Execute the transaction on Cloud DNS',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5347,6 +5425,7 @@ final FigSpec dnsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5375,6 +5454,7 @@ final FigSpec dnsSpec = FigSpec(
               name: 'remove',
               description: 'Append a record-set deletion to the transaction',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5545,6 +5625,7 @@ final FigSpec dnsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5580,6 +5661,7 @@ final FigSpec dnsSpec = FigSpec(
               name: 'start',
               description: 'Start a transaction',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5714,6 +5796,7 @@ final FigSpec dnsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -5740,6 +5823,7 @@ final FigSpec dnsSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5874,6 +5958,7 @@ final FigSpec dnsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5888,6 +5973,7 @@ final FigSpec dnsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6011,6 +6097,7 @@ final FigSpec dnsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -6025,6 +6112,7 @@ final FigSpec dnsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6148,6 +6236,7 @@ final FigSpec dnsSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

@@ -9,10 +9,12 @@ final FigSpec healthlakeSpec = FigSpec(
   name: 'healthlake',
   description: 'AWS HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their FHIR-formatted data in a consistent fashion in the cloud',
   subcommands: [
+
     Subcommand(
       name: 'create-fhir-datastore',
       description: 'Creates a data store that can ingest and export FHIR formatted data',
       options: [
+
         Option(
           name: '--datastore-name',
           description: 'The user generated name for the data store',
@@ -92,6 +94,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -104,6 +107,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'delete-fhir-datastore',
       description: 'Deletes a data store',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The AWS-generated ID for the data store to be deleted',
@@ -129,6 +133,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'describe-fhir-datastore',
       description: 'Gets the properties associated with the FHIR data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store\'s endpoint',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The AWS-generated data store ID',
@@ -166,6 +172,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'describe-fhir-export-job',
       description: 'Displays the properties of a FHIR export job, including the ID, ARN, name, and the status of the job',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The AWS generated ID for the data store from which files are being exported from for an export job',
@@ -212,6 +220,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -224,6 +233,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'describe-fhir-import-job',
       description: 'Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'The AWS-generated ID of the data store',
@@ -258,6 +268,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'list-fhir-datastores',
       description: 'Lists all FHIR data stores that are in the user’s account, regardless of data store status',
       options: [
+
         Option(
           name: '--filter',
           description: 'Lists all filters associated with a FHIR data store request',
@@ -313,6 +325,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -325,6 +338,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'list-fhir-export-jobs',
       description: 'Lists all FHIR export jobs associated with an account and their statuses',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'This parameter limits the response to the export job with the specified data store ID',
@@ -404,6 +418,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +431,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'list-fhir-import-jobs',
       description: 'Lists all FHIR import jobs associated with an account and their statuses',
       options: [
+
         Option(
           name: '--datastore-id',
           description: 'This parameter limits the response to the import job with the specified data store ID',
@@ -495,6 +511,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -507,6 +524,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of all existing tags associated with a data store',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name(ARN) of the data store for which tags are being added',
@@ -532,6 +550,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -544,6 +563,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'start-fhir-export-job',
       description: 'Begins a FHIR export job',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The user generated name for an export job',
@@ -605,6 +625,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -617,6 +638,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'start-fhir-import-job',
       description: 'Begins a FHIR Import job',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the FHIR Import job in the StartFHIRImport job request',
@@ -687,6 +709,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -699,6 +722,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a user specified key and value tag to a data store',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which tags are being added to',
@@ -733,6 +757,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -745,6 +770,7 @@ final FigSpec healthlakeSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a data store',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name(ARN) of the data store for which tags are being removed',
@@ -779,6 +805,7 @@ final FigSpec healthlakeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

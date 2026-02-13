@@ -18,6 +18,7 @@ final FigSpec javaSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-jar',
       priority: 99,

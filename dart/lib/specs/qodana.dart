@@ -9,6 +9,7 @@ final FigSpec qodanaSpec = FigSpec(
   name: 'qodana',
   description: 'Run Qodana as fast as possible, with minimum effort required',
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Show help page for command',
@@ -21,11 +22,13 @@ final FigSpec qodanaSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Configure project for Qodana',
       priority: 100,
       options: [
+
         Option(
           name: ['-i', '--project-dir'],
           description: 'Root directory of the project to configure (default ".")',
@@ -43,6 +46,7 @@ final FigSpec qodanaSpec = FigSpec(
       description: 'Scan a project with Qodana',
       priority: 99,
       options: [
+
         Option(
           name: ['-a', '--analysis-id'],
           description: 'Unique report identifier (GUID) to be used by Qodana Cloud',
@@ -182,6 +186,7 @@ final FigSpec qodanaSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false')
             ]
@@ -260,6 +265,7 @@ final FigSpec qodanaSpec = FigSpec(
       description: 'Show Qodana report',
       priority: 98,
       options: [
+
         Option(
           name: ['-d', '--dir-only'],
           description: 'Open report directory only, don\'t serve it'
@@ -301,6 +307,7 @@ final FigSpec qodanaSpec = FigSpec(
       description: 'View SARIF files in CLI',
       priority: 97,
       options: [
+
         Option(
           name: ['-f', '--sarif-file'],
           description: 'Path to the SARIF file (default "./qodana.sarif.json")',

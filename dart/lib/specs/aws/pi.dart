@@ -9,10 +9,12 @@ final FigSpec piSpec = FigSpec(
   name: 'pi',
   description: 'Amazon RDS Performance Insights Amazon RDS Performance Insights enables you to monitor and explore different dimensions of database load based on data captured from a running DB instance. The guide provides detailed information about Performance Insights data types, parameters and errors. When Performance Insights is enabled, the Amazon RDS Performance Insights API provides visibility into the performance of your DB instance. Amazon CloudWatch provides the authoritative source for Amazon Web Services service-vended monitoring metrics. Performance Insights offers a domain-specific view of DB load. DB load is measured as average active sessions. Performance Insights provides the data to API consumers as a two-dimensional time-series dataset. The time dimension provides DB load data for each time point in the queried time range. Each time point decomposes overall load in relation to the requested dimensions, measured at that time point. Examples include SQL, Wait event, User, and Host.   To learn more about Performance Insights and Amazon Aurora DB instances, go to the   Amazon Aurora User Guide .    To learn more about Performance Insights and Amazon RDS DB instances, go to the   Amazon RDS User Guide .    To learn more about Performance Insights and Amazon DocumentDB clusters, go to the   Amazon DocumentDB Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-performance-analysis-report',
       description: 'Creates a new performance analysis report for a specific time period for the DB instance',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights will return metrics. Valid value is RDS',
@@ -74,6 +76,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec piSpec = FigSpec(
       name: 'delete-performance-analysis-report',
       description: 'Deletes a performance analysis report',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights will return metrics. Valid value is RDS',
@@ -129,6 +133,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec piSpec = FigSpec(
       name: 'describe-dimension-keys',
       description: 'For a specific time period, retrieve the top N dimension keys for a metric.   Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:    RDS     DOCDB',
@@ -265,6 +271,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -277,6 +284,7 @@ final FigSpec piSpec = FigSpec(
       name: 'get-dimension-key-details',
       description: 'Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify a SQL ID, GetDimensionKeyDetails retrieves the full text of the dimension db.sql.statement associated with this ID. This operation is useful because GetResourceMetrics and DescribeDimensionKeys don\'t support retrieval of large SQL statement text',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights returns data. The only valid value is RDS',
@@ -338,6 +346,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -350,6 +359,7 @@ final FigSpec piSpec = FigSpec(
       name: 'get-performance-analysis-report',
       description: 'Retrieves the report including the report ID, status, time details, and the insights with recommendations. The report status can be RUNNING, SUCCEEDED, or FAILED. The insights include the description and recommendation fields',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights will return metrics. Valid value is RDS',
@@ -411,6 +421,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -423,6 +434,7 @@ final FigSpec piSpec = FigSpec(
       name: 'get-resource-metadata',
       description: 'Retrieve the metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights returns metrics',
@@ -457,6 +469,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -469,6 +482,7 @@ final FigSpec piSpec = FigSpec(
       name: 'get-resource-metrics',
       description: 'Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific dimension groups and dimensions, and provide filtering criteria for each group. You must specify an aggregate function for each metric.  Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:    RDS     DOCDB',
@@ -566,6 +580,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -578,6 +593,7 @@ final FigSpec piSpec = FigSpec(
       name: 'list-available-resource-dimensions',
       description: 'Retrieve the dimensions that can be queried for each specified metric type on a specified DB instance',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights returns metrics',
@@ -648,6 +664,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -660,6 +677,7 @@ final FigSpec piSpec = FigSpec(
       name: 'list-available-resource-metrics',
       description: 'Retrieve metrics of the specified types that can be queried for a specified DB instance',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights returns metrics',
@@ -721,6 +739,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -733,6 +752,7 @@ final FigSpec piSpec = FigSpec(
       name: 'list-performance-analysis-reports',
       description: 'Lists all the analysis reports created for the DB instance. The reports are sorted based on the start time of each report',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights returns metrics. Valid value is RDS',
@@ -793,6 +813,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -805,6 +826,7 @@ final FigSpec piSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves all the metadata tags associated with Amazon RDS Performance Insights resource',
       options: [
+
         Option(
           name: '--service-type',
           description: 'List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid value is RDS',
@@ -839,6 +861,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -851,6 +874,7 @@ final FigSpec piSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds metadata tags to the Amazon RDS Performance Insights resource',
       options: [
+
         Option(
           name: '--service-type',
           description: 'The Amazon Web Services service for which Performance Insights returns metrics. Valid value is RDS',
@@ -894,6 +918,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -906,6 +931,7 @@ final FigSpec piSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes the metadata tags from the Amazon RDS Performance Insights resource',
       options: [
+
         Option(
           name: '--service-type',
           description: 'List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid value is RDS',
@@ -949,6 +975,7 @@ final FigSpec piSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

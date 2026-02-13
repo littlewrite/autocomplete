@@ -9,6 +9,7 @@ final FigSpec rubySpec = FigSpec(
   name: 'ruby',
   description: 'Interpreted object-oriented scripting language',
   options: [
+
     Option(
       name: '--copyright',
       description: 'Prints the copyright notice'

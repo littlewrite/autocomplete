@@ -9,6 +9,7 @@ final FigSpec dateSpec = FigSpec(
   name: 'date',
   description: 'Display or set date and time',
   options: [
+
     Option(
       name: '-d',
       description: 'Set the kernel\'s value for daylight saving time',
@@ -22,6 +23,7 @@ final FigSpec dateSpec = FigSpec(
       name: '-f',
       description: 'Use specified format for input instead of the default [[[mm]dd]HH]MM[[cc]yy][.ss] format',
       args: [
+
         Arg(
           name: 'input_fmt',
           description: 'The format with which to parse the new date value'

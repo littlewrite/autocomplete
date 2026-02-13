@@ -16,6 +16,7 @@ final FigSpec exaSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       description: 'Show list of command-line options',
       name: ['-?', '--help']
@@ -59,6 +60,7 @@ final FigSpec exaSpec = FigSpec(
         Arg(
         name: 'when',
         suggestions: [
+
           FigSuggestion(
             name: 'always'
           ),
@@ -104,6 +106,7 @@ final FigSpec exaSpec = FigSpec(
         Arg(
         name: 'sort field',
         suggestions: [
+
           FigSuggestion(
             name: 'name'
           ),
@@ -213,6 +216,7 @@ final FigSpec exaSpec = FigSpec(
         Arg(
         name: 'FIELD',
         suggestions: [
+
           FigSuggestion(
             name: 'modified'
           ),
@@ -241,6 +245,7 @@ final FigSpec exaSpec = FigSpec(
         Arg(
         name: 'style',
         suggestions: [
+
           FigSuggestion(
             name: 'default'
           ),

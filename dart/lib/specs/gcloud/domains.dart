@@ -9,10 +9,12 @@ final FigSpec domainsSpec = FigSpec(
   name: 'domains',
   description: 'Manage domains for your Google Cloud projects',
   subcommands: [
+
     Subcommand(
       name: 'list-user-verified',
       description: 'Lists the user\'s verified domains',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -136,6 +138,7 @@ final FigSpec domainsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -152,6 +155,7 @@ final FigSpec domainsSpec = FigSpec(
       name: 'verify',
       description: 'Verifies a domain via an in-browser workflow',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -275,6 +279,7 @@ final FigSpec domainsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -295,6 +300,7 @@ final FigSpec domainsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -418,6 +424,7 @@ final FigSpec domainsSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

@@ -9,10 +9,12 @@ final FigSpec elasticInferenceSpec = FigSpec(
   name: 'elastic-inference',
   description: 'Amazon Elastic Inference is no longer available.   Elastic Inference public APIs',
   subcommands: [
+
     Subcommand(
       name: 'describe-accelerator-offerings',
       description: 'Amazon Elastic Inference is no longer available.   Describes the locations in which a given accelerator type or set of types is present in a given region',
       options: [
+
         Option(
           name: '--location-type',
           description: 'The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id',
@@ -47,6 +49,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
       name: 'describe-accelerator-types',
       description: 'Amazon Elastic Inference is no longer available.   Describes the accelerator types available in a given region, as well as their characteristics, such as memory and throughput',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -75,6 +79,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
       name: 'describe-accelerators',
       description: 'Amazon Elastic Inference is no longer available.   Describes information over a provided set of accelerators belonging to an account',
       options: [
+
         Option(
           name: '--accelerator-ids',
           description: 'The IDs of the accelerators to describe',
@@ -166,6 +172,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Amazon Elastic Inference is no longer available.   Returns all tags of an Elastic Inference Accelerator',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the Elastic Inference Accelerator to list the tags for',
@@ -203,6 +211,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -215,6 +224,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
       name: 'tag-resource',
       description: 'Amazon Elastic Inference is no longer available.   Adds the specified tags to an Elastic Inference Accelerator',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the Elastic Inference Accelerator to tag',
@@ -249,6 +259,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
       name: 'untag-resource',
       description: 'Amazon Elastic Inference is no longer available.   Removes the specified tags from an Elastic Inference Accelerator',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the Elastic Inference Accelerator to untag',
@@ -295,6 +307,7 @@ final FigSpec elasticInferenceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

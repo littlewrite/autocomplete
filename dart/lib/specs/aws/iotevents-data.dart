@@ -9,10 +9,12 @@ final FigSpec ioteventsDataSpec = FigSpec(
   name: 'iotevents-data',
   description: 'IoT Events monitors your equipment or device fleets for failures or changes in operation, and triggers actions when such events occur. You can use IoT Events Data API commands to send inputs to detectors, list detectors, and view or update a detector\'s status.  For more information, see What is IoT Events? in the IoT Events Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'batch-acknowledge-alarm',
       description: 'Acknowledges one or more alarms. The alarms change to the ACKNOWLEDGED state after you acknowledge them',
       options: [
+
         Option(
           name: '--acknowledge-action-requests',
           description: 'The list of acknowledge action requests. You can specify up to 10 requests per operation',
@@ -38,6 +40,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'batch-delete-detector',
       description: 'Deletes one or more detectors that were created. When a detector is deleted, its state will be cleared and the detector will be removed from the list of detectors. The deleted detector will no longer appear if referenced in the ListDetectors API call',
       options: [
+
         Option(
           name: '--detectors',
           description: 'The list of one or more detectors to be deleted',
@@ -75,6 +79,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'batch-disable-alarm',
       description: 'Disables one or more alarms. The alarms change to the DISABLED state after you disable them',
       options: [
+
         Option(
           name: '--disable-action-requests',
           description: 'The list of disable action requests. You can specify up to 10 requests per operation',
@@ -112,6 +118,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'batch-enable-alarm',
       description: 'Enables one or more alarms. The alarms change to the NORMAL state after you enable them',
       options: [
+
         Option(
           name: '--enable-action-requests',
           description: 'The list of enable action requests. You can specify up to 10 requests per operation',
@@ -149,6 +157,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -161,6 +170,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'batch-put-message',
       description: 'Sends a set of messages to the IoT Events system. Each message payload is transformed into the input you specify ("inputName") and ingested into any detectors that monitor that input. If multiple messages are sent, the order in which the messages are processed isn\'t guaranteed. To guarantee ordering, you must send messages one at a time and wait for a successful response',
       options: [
+
         Option(
           name: '--messages',
           description: 'The list of messages to send. Each message has the following format: \'{ "messageId": "string", "inputName": "string", "payload": "string"}\'',
@@ -186,6 +196,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -198,6 +209,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'batch-reset-alarm',
       description: 'Resets one or more alarms. The alarms return to the NORMAL state after you reset them',
       options: [
+
         Option(
           name: '--reset-action-requests',
           description: 'The list of reset action requests. You can specify up to 10 requests per operation',
@@ -223,6 +235,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -235,6 +248,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'batch-snooze-alarm',
       description: 'Changes one or more alarms to the snooze mode. The alarms change to the SNOOZE_DISABLED state after you set them to the snooze mode',
       options: [
+
         Option(
           name: '--snooze-action-requests',
           description: 'The list of snooze action requests. You can specify up to 10 requests per operation',
@@ -260,6 +274,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -272,6 +287,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'batch-update-detector',
       description: 'Updates the state, variable values, and timer settings of one or more detectors (instances) of a specified detector model',
       options: [
+
         Option(
           name: '--detectors',
           description: 'The list of detectors (instances) to update, along with the values to update',
@@ -297,6 +313,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -309,6 +326,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'describe-alarm',
       description: 'Retrieves information about an alarm',
       options: [
+
         Option(
           name: '--alarm-model-name',
           description: 'The name of the alarm model',
@@ -343,6 +361,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -355,6 +374,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'describe-detector',
       description: 'Returns information about the specified detector (instance)',
       options: [
+
         Option(
           name: '--detector-model-name',
           description: 'The name of the detector model whose detectors (instances) you want information about',
@@ -389,6 +409,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -401,6 +422,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'list-alarms',
       description: 'Lists one or more alarms. The operation returns only the metadata associated with each alarm',
       options: [
+
         Option(
           name: '--alarm-model-name',
           description: 'The name of the alarm model',
@@ -444,6 +466,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -456,6 +479,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
       name: 'list-detectors',
       description: 'Lists detectors (the instances of a detector model)',
       options: [
+
         Option(
           name: '--detector-model-name',
           description: 'The name of the detector model whose detectors (instances) are listed',
@@ -508,6 +532,7 @@ final FigSpec ioteventsDataSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -16,6 +16,7 @@ final FigSpec trashSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: '-v',
       description: 'Print verbose output while moving items'

@@ -9,6 +9,7 @@ final FigSpec cliSpec = FigSpec(
   name: 'cli',
   description: 'Manage packages and bundle versions in Capgo Cloud',
   subcommands: [
+
     Subcommand(
       name: 'login',
       description: 'Save apikey to your machine or folder',
@@ -18,6 +19,7 @@ final FigSpec cliSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--local',
           description: 'Only save in local folder'
@@ -32,6 +34,7 @@ final FigSpec cliSpec = FigSpec(
       name: 'init',
       description: 'Init a new app',
       args: [
+
         Arg(
           name: 'apikey'
         ),
@@ -40,6 +43,7 @@ final FigSpec cliSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-n', '--name'],
           description: 'App name',
@@ -74,6 +78,7 @@ final FigSpec cliSpec = FigSpec(
       name: 'app',
       description: 'Manage app',
       subcommands: [
+
         Subcommand(
           name: ['add', 'a'],
           description: 'Add a new app in Capgo Cloud',
@@ -83,6 +88,7 @@ final FigSpec cliSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-n', '--name'],
               description: 'App name',
@@ -122,6 +128,7 @@ final FigSpec cliSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-a', '--apikey'],
               description: 'Apikey to link to your account',
@@ -137,6 +144,7 @@ final FigSpec cliSpec = FigSpec(
           name: ['list', 'l'],
           description: 'List apps in Capgo Cloud',
           options: [
+
             Option(
               name: ['-a', '--apikey'],
               description: 'Apikey to link to your account',
@@ -157,6 +165,7 @@ final FigSpec cliSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-a', '--apikey'],
               description: 'Apikey to link to your account',
@@ -186,6 +195,7 @@ final FigSpec cliSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-n', '--name'],
               description: 'App name',
@@ -231,10 +241,12 @@ final FigSpec cliSpec = FigSpec(
       name: 'bundle',
       description: 'Manage bundle',
       subcommands: [
+
         Subcommand(
           name: ['delete', 'd'],
           description: 'Delete a bundle in Capgo Cloud',
           args: [
+
             Arg(
               name: 'bundleId'
             ),
@@ -243,6 +255,7 @@ final FigSpec cliSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-a', '--apikey'],
               description: 'Apikey to link to your account',
@@ -258,6 +271,7 @@ final FigSpec cliSpec = FigSpec(
           name: ['decrypt', 'l'],
           description: 'Decrypt a signed zip bundle',
           args: [
+
             Arg(
               name: 'zipPath',
               template: 'filepaths'
@@ -267,6 +281,7 @@ final FigSpec cliSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--key',
               description: 'Custom path for private signing key',
@@ -298,6 +313,7 @@ final FigSpec cliSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--key',
               description: 'Custom path for private signing key',
@@ -328,6 +344,7 @@ final FigSpec cliSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-p', '--path'],
               description: 'Path of the folder to upload',
@@ -346,10 +363,12 @@ final FigSpec cliSpec = FigSpec(
       name: 'channel',
       description: 'Manage channel',
       subcommands: [
+
         Subcommand(
           name: ['add', 'a'],
           description: 'Create channel',
           args: [
+
             Arg(
               name: 'channelId'
             ),
@@ -358,6 +377,7 @@ final FigSpec cliSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-d', '--default'],
               description: 'Set the channel as default'
@@ -368,6 +388,7 @@ final FigSpec cliSpec = FigSpec(
           name: ['delete', 'd'],
           description: 'Delete channel',
           args: [
+
             Arg(
               name: 'channelId'
             ),
@@ -389,6 +410,7 @@ final FigSpec cliSpec = FigSpec(
           name: 'currentBundle',
           description: 'Get current bundle for specific channel in Capgo Cloud',
           args: [
+
             Arg(
               name: 'channel'
             ),
@@ -397,6 +419,7 @@ final FigSpec cliSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-c', '--channel'],
               description: 'Channel to get the current bundle from',
@@ -425,6 +448,7 @@ final FigSpec cliSpec = FigSpec(
           name: ['set', 's'],
           description: 'Set channel',
           args: [
+
             Arg(
               name: 'channelId'
             ),
@@ -439,10 +463,12 @@ final FigSpec cliSpec = FigSpec(
       name: 'key',
       description: 'Manage key',
       subcommands: [
+
         Subcommand(
           name: 'save',
           description: 'Save base64 signing key in capacitor config, useful for CI',
           options: [
+
             Option(
               name: ['-f', '--force'],
               description: 'Force generate a new one'
@@ -472,6 +498,7 @@ final FigSpec cliSpec = FigSpec(
           name: 'create',
           description: 'Create a new signing key',
           options: [
+
             Option(
               name: ['-f', '--force'],
               description: 'Force generate a new one'

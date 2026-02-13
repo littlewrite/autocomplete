@@ -9,6 +9,7 @@ final FigSpec doReleaseUpgradeSpec = FigSpec(
   name: 'do-release-upgrade',
   description: 'Upgrade Ubuntu to latest release',
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Show help message and exit'

@@ -9,10 +9,12 @@ final FigSpec deadlineSpec = FigSpec(
   name: 'deadline',
   description: 'The Amazon Web Services Deadline Cloud API provides infrastructure and centralized management for your projects. Use the Deadline Cloud API to onboard users, assign projects, and attach permissions specific to their job function. With Deadline Cloud, content production teams can deploy resources for their workforce securely in the cloud, reducing the costs of added physical infrastructure. Keep your content production operations secure, while allowing your contributors to access the tools they need, such as scalable high-speed storage, licenses, and cost management services',
   subcommands: [
+
     Subcommand(
       name: 'associate-member-to-farm',
       description: 'Assigns a farm membership level to a member',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The ID of the farm to associate with the member',
@@ -74,6 +76,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'associate-member-to-fleet',
       description: 'Assigns a fleet membership level to a member',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the fleet to associate with the member',
@@ -156,6 +160,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +173,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'associate-member-to-job',
       description: 'Assigns a job membership level to a member',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the job to associate with the member',
@@ -247,6 +253,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -259,6 +266,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'associate-member-to-queue',
       description: 'Assigns a queue membership level to a member',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the queue to associate with the member',
@@ -329,6 +337,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -341,6 +350,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'assume-fleet-role-for-read',
       description: 'Get Amazon Web Services credentials from the fleet role. The IAM permissions of the credentials are scoped down to have read-only access',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the fleet\'s farm',
@@ -375,6 +385,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -387,6 +398,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'assume-fleet-role-for-worker',
       description: 'Get credentials from the fleet role for a worker',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the fleet\'s farm',
@@ -430,6 +442,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -442,6 +455,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'assume-queue-role-for-read',
       description: 'Gets Amazon Web Services credentials from the queue role. The IAM permissions of the credentials are scoped down to have read-only access',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm containing the queue',
@@ -476,6 +490,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -488,6 +503,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'assume-queue-role-for-user',
       description: 'Allows a user to assume a role for a queue',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the queue that the user assumes the role for',
@@ -522,6 +538,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -534,6 +551,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'assume-queue-role-for-worker',
       description: 'Allows a worker to assume a queue role',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the worker assuming the queue role',
@@ -586,6 +604,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -598,6 +617,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'batch-get-job-entity',
       description: 'Get batched job details for a worker',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the worker that\'s fetching job details. The worker must have an assignment on a job to fetch job details',
@@ -650,6 +670,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -662,6 +683,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'copy-job-template',
       description: 'Copies a job template to an Amazon S3 bucket',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID to copy',
@@ -714,6 +736,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -726,6 +749,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-budget',
       description: 'Creates a budget to set spending thresholds for your rendering activity',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -814,6 +838,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -826,6 +851,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-farm',
       description: 'Creates a farm to allow space for queues and fleets. Farms are the space where the components of your renders gather and are pieced together in the cloud. Farms contain budgets and allow you to enforce permissions. Deadline Cloud farms are a useful container for large projects',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -887,6 +913,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -899,6 +926,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-fleet',
       description: 'Creates a fleet. Fleets gather information relating to compute, or capacity, for renders within your farms. You can choose to manage your own capacity or opt to have fleets fully managed by Deadline Cloud',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -996,6 +1024,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1008,6 +1037,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-job',
       description: 'Creates a job. A job is a set of instructions that AWS Deadline Cloud uses to schedule and run work on available workers. For more information, see Deadline Cloud jobs',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm to connect to the job',
@@ -1141,6 +1171,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1153,6 +1184,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-license-endpoint',
       description: 'Creates a license endpoint to integrate your various licensed software used for rendering on Deadline Cloud',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -1214,6 +1246,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1226,6 +1259,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-monitor',
       description: 'Creates an Amazon Web Services Deadline Cloud monitor that you can use to view your farms, queues, and fleets. After you submit a job, you can track the progress of the tasks and steps that make up the job, and then download the job\'s results',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -1287,6 +1321,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1299,6 +1334,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-queue',
       description: 'Creates a queue to coordinate the order in which jobs run on a farm. A queue can also specify where to pull resources and indicate where to output completed jobs',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -1414,6 +1450,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1426,6 +1463,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-queue-environment',
       description: 'Creates an environment for a queue that defines how jobs in the queue run',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -1496,6 +1534,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1508,6 +1547,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-queue-fleet-association',
       description: 'Creates an association between a queue and a fleet',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The ID of the farm that the queue and fleet belong to',
@@ -1551,6 +1591,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1563,6 +1604,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-storage-profile',
       description: 'Creates a storage profile that specifies the operating system, file type, and file location of resources used on a farm',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -1624,6 +1666,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1636,6 +1679,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'create-worker',
       description: 'Creates a worker. A worker tells your instance how much processing power (vCPU), and memory (GiB) you’ll need to assemble the digital assets held within a particular instance. You can specify certain instance types to use, or let the worker know which instances types to exclude',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm to connect to the worker',
@@ -1688,6 +1732,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1700,6 +1745,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-budget',
       description: 'Deletes a budget',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm to remove from the budget',
@@ -1734,6 +1780,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1746,6 +1793,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-farm',
       description: 'Deletes a farm',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm to delete',
@@ -1771,6 +1819,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1783,6 +1832,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-fleet',
       description: 'Deletes a fleet',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -1826,6 +1876,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1838,6 +1889,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-license-endpoint',
       description: 'Deletes a license endpoint',
       options: [
+
         Option(
           name: '--license-endpoint-id',
           description: 'The license endpoint ID of the license endpoint to delete',
@@ -1863,6 +1915,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1875,6 +1928,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-metered-product',
       description: 'Deletes a metered product',
       options: [
+
         Option(
           name: '--license-endpoint-id',
           description: 'The ID of the license endpoint from which to remove the metered product',
@@ -1909,6 +1963,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1921,6 +1976,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-monitor',
       description: 'Removes a Deadline Cloud monitor. After you delete a monitor, you can create a new one and attach farms to the monitor',
       options: [
+
         Option(
           name: '--monitor-id',
           description: 'The unique identifier of the monitor to delete. This ID is returned by the CreateMonitor operation, and is included in the response to the GetMonitor operation',
@@ -1946,6 +2002,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1958,6 +2015,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-queue',
       description: 'Deletes a queue.  You can\'t recover the jobs in a queue if you delete the queue. Deleting the queue also deletes the jobs in that queue',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The ID of the farm from which to remove the queue',
@@ -1992,6 +2050,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2004,6 +2063,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-queue-environment',
       description: 'Deletes a queue environment',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm from which to remove the queue environment',
@@ -2047,6 +2107,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2059,6 +2120,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-queue-fleet-association',
       description: 'Deletes a queue-fleet association',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm that holds the queue-fleet association',
@@ -2102,6 +2164,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2114,6 +2177,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-storage-profile',
       description: 'Deletes a storage profile',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm from which to remove the storage profile',
@@ -2148,6 +2212,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2160,6 +2225,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'delete-worker',
       description: 'Deletes a worker',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the worker to delete',
@@ -2203,6 +2269,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2215,6 +2282,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'disassociate-member-from-farm',
       description: 'Disassociates a member from a farm',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm to disassociate from the member',
@@ -2249,6 +2317,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2261,6 +2330,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'disassociate-member-from-fleet',
       description: 'Disassociates a member from a fleet',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the fleet to disassociate a member from',
@@ -2304,6 +2374,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2316,6 +2387,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'disassociate-member-from-job',
       description: 'Disassociates a member from a job',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the job to disassociate from the member',
@@ -2368,6 +2440,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2380,6 +2453,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'disassociate-member-from-queue',
       description: 'Disassociates a member from a queue',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the queue to disassociate from a member',
@@ -2423,6 +2497,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2435,6 +2510,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-budget',
       description: 'Get a budget',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm connected to the budget',
@@ -2469,6 +2545,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2481,6 +2558,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-farm',
       description: 'Get a farm',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm',
@@ -2506,6 +2584,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2518,6 +2597,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-fleet',
       description: 'Get a fleet',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm in the fleet',
@@ -2552,6 +2632,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2564,6 +2645,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-job',
       description: 'Gets a Deadline Cloud job',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm in the job',
@@ -2607,6 +2689,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2619,6 +2702,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-license-endpoint',
       description: 'Gets a licence endpoint',
       options: [
+
         Option(
           name: '--license-endpoint-id',
           description: 'The license endpoint ID',
@@ -2644,6 +2728,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2656,6 +2741,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-monitor',
       description: 'Gets information about the specified monitor',
       options: [
+
         Option(
           name: '--monitor-id',
           description: 'The unique identifier for the monitor. This ID is returned by the CreateMonitor operation',
@@ -2681,6 +2767,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2693,6 +2780,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-queue',
       description: 'Gets a queue',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm in the queue',
@@ -2727,6 +2815,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2739,6 +2828,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-queue-environment',
       description: 'Gets a queue environment',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the queue environment',
@@ -2782,6 +2872,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2794,6 +2885,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-queue-fleet-association',
       description: 'Gets a queue-fleet association',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm that contains the queue-fleet association',
@@ -2837,6 +2929,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2849,6 +2942,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-session',
       description: 'Gets a session',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the session',
@@ -2901,6 +2995,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2913,6 +3008,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-session-action',
       description: 'Gets a session action for the job',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the session action',
@@ -2965,6 +3061,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2977,6 +3074,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-sessions-statistics-aggregation',
       description: 'Gets a set of statistics for queues or farms. Before you can call the GetSessionStatisticsAggregation operation, you must first call the StartSessionsStatisticsAggregation operation. Statistics are available for 1 hour after you call the StartSessionsStatisticsAggregation operation',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The identifier of the farm to include in the statistics. This should be the same as the farm ID used in the call to the StartSessionsStatisticsAggregation operation',
@@ -3056,6 +3154,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3068,6 +3167,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-step',
       description: 'Gets a step',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the step',
@@ -3120,6 +3220,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3132,6 +3233,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-storage-profile',
       description: 'Gets a storage profile',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the storage profile',
@@ -3166,6 +3268,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3178,6 +3281,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-storage-profile-for-queue',
       description: 'Gets a storage profile for a queue',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the queue in storage profile',
@@ -3221,6 +3325,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3233,6 +3338,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-task',
       description: 'Gets a task',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the farm connected to the task',
@@ -3294,6 +3400,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3306,6 +3413,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'get-worker',
       description: 'Gets a worker',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the worker',
@@ -3349,6 +3457,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3361,6 +3470,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-available-metered-products',
       description: 'A list of the available metered products',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results, or null to start from the beginning',
@@ -3422,6 +3532,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3434,6 +3545,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-budgets',
       description: 'A list of budgets in a farm',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results, or null to start from the beginning',
@@ -3513,6 +3625,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3525,6 +3638,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-farm-members',
       description: 'Lists the members of a farm',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID',
@@ -3595,6 +3709,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3607,6 +3722,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-farms',
       description: 'Lists farms',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results, or null to start from the beginning',
@@ -3677,6 +3793,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3689,6 +3806,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-fleet-members',
       description: 'Lists fleet members',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the fleet',
@@ -3768,6 +3886,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3780,6 +3899,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-fleets',
       description: 'Lists fleets',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the fleets',
@@ -3877,6 +3997,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3889,6 +4010,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-job-members',
       description: 'Lists members on a job',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the job to list',
@@ -3977,6 +4099,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3989,6 +4112,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-job-parameter-definitions',
       description: 'Lists parameter definitions of a job',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the job to list',
@@ -4077,6 +4201,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4089,6 +4214,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-jobs',
       description: 'Lists jobs',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the jobs',
@@ -4177,6 +4303,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4189,6 +4316,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-license-endpoints',
       description: 'Lists license endpoints',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results, or null to start from the beginning',
@@ -4250,6 +4378,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4262,6 +4391,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-metered-products',
       description: 'Lists metered products',
       options: [
+
         Option(
           name: '--license-endpoint-id',
           description: 'The license endpoint ID to include on the list of metered products',
@@ -4332,6 +4462,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4344,6 +4475,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-monitors',
       description: 'Gets a list of your monitors in Deadline Cloud',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results, or null to start from the beginning',
@@ -4405,6 +4537,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4417,6 +4550,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-queue-environments',
       description: 'Lists queue environments',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the queue environment list',
@@ -4496,6 +4630,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4508,6 +4643,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-queue-fleet-associations',
       description: 'Lists queue-fleet associations',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the queue-fleet association list',
@@ -4596,6 +4732,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4608,6 +4745,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-queue-members',
       description: 'Lists the members in a queue',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the queue',
@@ -4687,6 +4825,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4699,6 +4838,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-queues',
       description: 'Lists queues',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the queue',
@@ -4787,6 +4927,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4799,6 +4940,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-session-actions',
       description: 'Lists session actions',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the session actions list',
@@ -4905,6 +5047,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4917,6 +5060,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-sessions',
       description: 'Lists sessions',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the list of sessions',
@@ -5005,6 +5149,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5017,6 +5162,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-sessions-for-worker',
       description: 'Lists sessions for a worker',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the session',
@@ -5105,6 +5251,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5117,6 +5264,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-step-consumers',
       description: 'Lists step consumers',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the list of step consumers',
@@ -5214,6 +5362,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5226,6 +5375,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-step-dependencies',
       description: 'Lists the dependencies for a step',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID for the step dependencies list',
@@ -5323,6 +5473,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5335,6 +5486,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-steps',
       description: 'Lists steps for a job',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID to include on the list of steps',
@@ -5423,6 +5575,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5435,6 +5588,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-storage-profiles',
       description: 'Lists storage profiles',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the storage profile',
@@ -5505,6 +5659,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5517,6 +5672,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-storage-profiles-for-queue',
       description: 'Lists storage profiles for a queue',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the queue\'s storage profile',
@@ -5596,6 +5752,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5608,6 +5765,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN to list tags for',
@@ -5633,6 +5791,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5645,6 +5804,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-tasks',
       description: 'Lists tasks for a job',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID connected to the tasks',
@@ -5742,6 +5902,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5754,6 +5915,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'list-workers',
       description: 'Lists workers',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID connected to the workers',
@@ -5833,6 +5995,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5845,6 +6008,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'put-metered-product',
       description: 'Adds a metered product',
       options: [
+
         Option(
           name: '--license-endpoint-id',
           description: 'The license endpoint ID to add to the metered product',
@@ -5879,6 +6043,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5891,6 +6056,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'search-jobs',
       description: 'Searches for jobs',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the job',
@@ -5961,6 +6127,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5973,6 +6140,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'search-steps',
       description: 'Searches for steps',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID to use for the step search',
@@ -6052,6 +6220,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6064,6 +6233,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'search-tasks',
       description: 'Searches for tasks',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID of the task',
@@ -6143,6 +6313,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6155,6 +6326,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'search-workers',
       description: 'Searches for workers',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID in the workers search',
@@ -6225,6 +6397,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6237,6 +6410,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'start-sessions-statistics-aggregation',
       description: 'Starts an asynchronous request for getting aggregated statistics about queues and farms. Get the statistics using the GetSessionsStatisticsAggregation operation. You can only have one running aggregation for your Deadline Cloud farm. Call the GetSessionsStatisticsAggregation operation and check the status field to see if an aggregation is running. Statistics are available for 1 hour after you call the StartSessionsStatisticsAggregation operation',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The identifier of the farm that contains queues or fleets to return statistics for',
@@ -6325,6 +6499,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6337,6 +6512,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags a resource using the resource\'s ARN and desired tags',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to apply tags to',
@@ -6371,6 +6547,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6383,6 +6560,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from a resource using the resource\'s ARN and tag to remove',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to remove the tag from',
@@ -6417,6 +6595,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6429,6 +6608,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-budget',
       description: 'Updates a budget that sets spending thresholds for rendering activity',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -6535,6 +6715,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6547,6 +6728,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-farm',
       description: 'Updates a farm',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID to update',
@@ -6590,6 +6772,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6602,6 +6785,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-fleet',
       description: 'Updates a fleet',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -6699,6 +6883,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6711,6 +6896,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-job',
       description: 'Updates a job.  When you change the status of the job to ARCHIVED, the job can\'t be scheduled or archived.  An archived jobs and its steps and tasks are deleted after 120 days. The job can\'t be recovered',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -6808,6 +6994,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6820,6 +7007,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-monitor',
       description: 'Modifies the settings for a Deadline Cloud monitor. You can modify one or all of the settings when you call UpdateMonitor',
       options: [
+
         Option(
           name: '--monitor-id',
           description: 'The unique identifier of the monitor to update',
@@ -6872,6 +7060,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6884,6 +7073,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-queue',
       description: 'Updates a queue',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The idempotency token to update in the queue',
@@ -7017,6 +7207,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7029,6 +7220,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-queue-environment',
       description: 'Updates the queue environment',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -7108,6 +7300,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7120,6 +7313,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-queue-fleet-association',
       description: 'Updates a queue-fleet association',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID to update',
@@ -7172,6 +7366,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7184,6 +7379,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-session',
       description: 'Updates a session',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -7254,6 +7450,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7266,6 +7463,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-step',
       description: 'Updates a step',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -7336,6 +7534,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7348,6 +7547,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-storage-profile',
       description: 'Updates a storage profile',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -7427,6 +7627,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7439,6 +7640,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-task',
       description: 'Updates a task',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The unique token which the server uses to recognize retries of the same request',
@@ -7518,6 +7720,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7530,6 +7733,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-worker',
       description: 'Updates a worker',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID to update',
@@ -7600,6 +7804,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7612,6 +7817,7 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'update-worker-schedule',
       description: 'Updates the schedule for a worker',
       options: [
+
         Option(
           name: '--farm-id',
           description: 'The farm ID to update',
@@ -7664,6 +7870,7 @@ final FigSpec deadlineSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -7676,10 +7883,12 @@ final FigSpec deadlineSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'fleet-active',
           description: 'Wait until a Fleet is activated. Use this after invoking CreateFleet or UpdateFleet. It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 180 failed checks',
           options: [
+
             Option(
               name: '--farm-id',
               description: 'The farm ID of the farm in the fleet',
@@ -7714,6 +7923,7 @@ final FigSpec deadlineSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7726,6 +7936,7 @@ final FigSpec deadlineSpec = FigSpec(
           name: 'job-create-complete',
           description: 'Wait until a Job is created. Use this after invoking CreateJob. It will poll every 1 seconds until a successful state has been reached. This will exit with a return code of 255 after 120 failed checks',
           options: [
+
             Option(
               name: '--farm-id',
               description: 'The farm ID of the farm in the job',
@@ -7769,6 +7980,7 @@ final FigSpec deadlineSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7781,6 +7993,7 @@ final FigSpec deadlineSpec = FigSpec(
           name: 'license-endpoint-deleted',
           description: 'Wait until a LicenseEndpoint is Deleted. Use this after invoking DeleteLicenseEndpoint. It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 234 failed checks',
           options: [
+
             Option(
               name: '--license-endpoint-id',
               description: 'The license endpoint ID',
@@ -7806,6 +8019,7 @@ final FigSpec deadlineSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7818,6 +8032,7 @@ final FigSpec deadlineSpec = FigSpec(
           name: 'license-endpoint-valid',
           description: 'Wait until a LicenseEndpoint is Ready. Use this after invoking CreateLicenseEndpoint. It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 114 failed checks',
           options: [
+
             Option(
               name: '--license-endpoint-id',
               description: 'The license endpoint ID',
@@ -7843,6 +8058,7 @@ final FigSpec deadlineSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7855,6 +8071,7 @@ final FigSpec deadlineSpec = FigSpec(
           name: 'queue-fleet-association-stopped',
           description: 'Wait until a QueueFleetAssociation is stopped. Use this after setting the status to STOP_SCHEDULING_AND_COMPLETE_TASKS or STOP_SCHEDULING_AND_CANCEL_TASKS to wait for a QueueFleetAssociation to reach STOPPED It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--farm-id',
               description: 'The farm ID of the farm that contains the queue-fleet association',
@@ -7898,6 +8115,7 @@ final FigSpec deadlineSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7910,6 +8128,7 @@ final FigSpec deadlineSpec = FigSpec(
           name: 'queue-scheduling',
           description: 'Wait until JMESPath query status returns SCHEDULING when polling with ``get-queue``. It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 70 failed checks',
           options: [
+
             Option(
               name: '--farm-id',
               description: 'The farm ID of the farm in the queue',
@@ -7944,6 +8163,7 @@ final FigSpec deadlineSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -7956,6 +8176,7 @@ final FigSpec deadlineSpec = FigSpec(
           name: 'queue-scheduling-blocked',
           description: 'Wait until JMESPath query status returns SCHEDULING_BLOCKED when polling with ``get-queue``. It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 30 failed checks',
           options: [
+
             Option(
               name: '--farm-id',
               description: 'The farm ID of the farm in the queue',
@@ -7990,6 +8211,7 @@ final FigSpec deadlineSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

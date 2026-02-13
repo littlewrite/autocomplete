@@ -9,10 +9,12 @@ final FigSpec forgeCliSpec = FigSpec(
   name: '@forge/cli',
   description: 'A command line interface for managing Atlassian-hosted apps',
   subcommands: [
+
     Subcommand(
       name: 'autocomplete',
       description: 'Configures autocomplete for the Forge CLI',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -27,6 +29,7 @@ final FigSpec forgeCliSpec = FigSpec(
         Arg(
         name: 'install|uninstall',
         suggestions: [
+
           FigSuggestion(name: 'install'),
           FigSuggestion(name: 'uninstall')
         ]
@@ -38,6 +41,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'create',
       description: 'Create an app',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -79,6 +83,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'deploy',
       description: 'Deploy your app to an environment',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -114,6 +119,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'feedback',
       description: 'Let us know what you think about Forge',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -130,10 +136,12 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'install',
       description: 'Manage app installations',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List app installations',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Enable verbose mode'
@@ -158,6 +166,7 @@ final FigSpec forgeCliSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -217,6 +226,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'lint',
       description: 'Check the source files for common errors',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -247,6 +257,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'login',
       description: 'Log in to your Atlassian account',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -285,6 +296,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'logout',
       description: 'Log out of your Atlassian account',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -301,6 +313,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'logs',
       description: 'View app logs',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -359,10 +372,12 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'providers',
       description: 'Manage external providers',
       subcommands: [
+
         Subcommand(
           name: 'configure',
           description: 'Configure provider credentials',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Enable verbose mode'
@@ -413,6 +428,7 @@ final FigSpec forgeCliSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -429,6 +445,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'register',
       description: 'Register an app you didn\'t create so you can run commands for it',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -451,10 +468,12 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'settings',
       description: 'Manage Forge CLI settings',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List Forge CLI settings',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Enable verbose mode'
@@ -470,6 +489,7 @@ final FigSpec forgeCliSpec = FigSpec(
           name: 'set',
           description: 'Update Forge CLI setting (choices: usage-analytics)',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Enable verbose mode'
@@ -481,6 +501,7 @@ final FigSpec forgeCliSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'setting'
             ),
@@ -502,6 +523,7 @@ final FigSpec forgeCliSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -518,6 +540,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'tunnel',
       description: 'Start a tunnel to connect your local code with the app running in the development environment',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -539,6 +562,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'uninstall',
       description: 'Uninstall the app from an Atlassian site',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -561,10 +585,12 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'variables',
       description: 'Manage app environment variables',
       subcommands: [
+
         Subcommand(
           name: 'set',
           description: 'Set an environment variable',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Enable verbose mode'
@@ -590,6 +616,7 @@ final FigSpec forgeCliSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'key',
               isOptional: true
@@ -604,6 +631,7 @@ final FigSpec forgeCliSpec = FigSpec(
           name: 'unset',
           description: 'Remove an environment variable',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Enable verbose mode'
@@ -634,6 +662,7 @@ final FigSpec forgeCliSpec = FigSpec(
           name: 'list',
           description: 'List the environment variables',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Enable verbose mode'
@@ -668,6 +697,7 @@ final FigSpec forgeCliSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -684,6 +714,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'webtrigger',
       description: 'Get a web trigger URL',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -716,6 +747,7 @@ final FigSpec forgeCliSpec = FigSpec(
       name: 'whoami',
       description: 'Display the account information of the logged in user',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Enable verbose mode'
@@ -742,6 +774,7 @@ final FigSpec forgeCliSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-V', '--version'],
       description: 'Output the version number'

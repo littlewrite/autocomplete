@@ -9,6 +9,7 @@ final FigSpec streamlitSpec = FigSpec(
   name: 'streamlit',
   description: 'Streamlit',
   subcommands: [
+
     Subcommand(
       name: 'activate',
       description: 'Activate Streamlit by entering your email',
@@ -19,6 +20,7 @@ final FigSpec streamlitSpec = FigSpec(
       description: 'Manage the Streamlit cache',
       icon: '🗂',
       subcommands: [
+
         Subcommand(
           name: 'clear',
           description: 'Clear st.cache, st.memo, and st.singleton caches',
@@ -31,6 +33,7 @@ final FigSpec streamlitSpec = FigSpec(
       description: 'Manage Streamlit\'s config settings',
       icon: '⚙️',
       subcommands: [
+
         Subcommand(
           name: 'show',
           description: 'Show all of Streamlit\'s config settings',
@@ -71,12 +74,14 @@ final FigSpec streamlitSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--log_level',
       description: 'Set the log level',
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'error',
             icon: '🔥'

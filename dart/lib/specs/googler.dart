@@ -9,6 +9,7 @@ final FigSpec googlerSpec = FigSpec(
   name: 'googler',
   description: 'Google from the command-line',
   options: [
+
     Option(
       name: ['-h', '--help'],
       description: 'Show this help message and exit'
@@ -80,6 +81,7 @@ final FigSpec googlerSpec = FigSpec(
         name: 'mode',
         defaultValue: 'auto',
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'never')

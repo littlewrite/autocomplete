@@ -9,10 +9,12 @@ final FigSpec emrServerlessSpec = FigSpec(
   name: 'emr-serverless',
   description: 'Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon EMR Serverless provides a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive. With Amazon EMR Serverless, you don’t have to configure, optimize, secure, or operate clusters to run applications with these frameworks. The API reference to Amazon EMR Serverless is emr-serverless. The emr-serverless prefix is used in the following scenarios:    It is the prefix in the CLI commands for Amazon EMR Serverless. For example, aws emr-serverless start-job-run.   It is the prefix before IAM policy actions for Amazon EMR Serverless. For example, "Action": ["emr-serverless:StartJobRun"]. For more information, see Policy actions for Amazon EMR Serverless.   It is the prefix used in Amazon EMR Serverless service endpoints. For example, emr-serverless.us-east-2.amazonaws.com',
   subcommands: [
+
     Subcommand(
       name: 'cancel-job-run',
       description: 'Cancels a job run',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application on which the job run will be canceled',
@@ -47,6 +49,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'create-application',
       description: 'Creates an application',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the application',
@@ -228,6 +232,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -240,6 +245,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'delete-application',
       description: 'Deletes an application. An application has to be in a stopped or created state in order to be deleted',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application that will be deleted',
@@ -265,6 +271,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -277,6 +284,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'get-application',
       description: 'Displays detailed information about a specified application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application that will be described',
@@ -302,6 +310,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -314,6 +323,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'get-dashboard-for-job-run',
       description: 'Creates and returns a URL that you can use to access the application UIs for a job run. For jobs in a running state, the application UI is a live user interface such as the Spark or Tez web UI. For completed jobs, the application UI is a persistent application user interface such as the Spark History Server or persistent Tez UI.  The URL is valid for one hour after you generate it. To access the application UI after that hour elapses, you must invoke the API again to generate a new URL',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application',
@@ -357,6 +367,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -369,6 +380,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'get-job-run',
       description: 'Displays detailed information about a job run',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application on which the job run is submitted',
@@ -412,6 +424,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -424,6 +437,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'list-applications',
       description: 'Lists applications based on a set of parameters',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of application results',
@@ -494,6 +508,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -506,6 +521,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'list-job-run-attempts',
       description: 'Lists all attempt of a job run',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application for which to list job runs',
@@ -585,6 +601,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -597,6 +614,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'list-job-runs',
       description: 'Lists job runs based on a set of parameters',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application for which to list the job run',
@@ -703,6 +721,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -715,6 +734,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags assigned to the resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs',
@@ -740,6 +760,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -752,6 +773,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'start-application',
       description: 'Starts a specified application and initializes initial capacity if configured',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application to start',
@@ -777,6 +799,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -789,6 +812,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'start-job-run',
       description: 'Starts a job run',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application on which to run the job',
@@ -895,6 +919,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -907,6 +932,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'stop-application',
       description: 'Stops a specified application and releases initial capacity if configured. All scheduled and running jobs must be completed or cancelled before stopping an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application to stop',
@@ -932,6 +958,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -944,6 +971,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you\'ve assigned to it',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs',
@@ -978,6 +1006,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -990,6 +1019,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs',
@@ -1024,6 +1054,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1036,6 +1067,7 @@ final FigSpec emrServerlessSpec = FigSpec(
       name: 'update-application',
       description: 'Updates a specified application. An application has to be in a stopped or created state in order to be updated',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application to update',
@@ -1187,6 +1219,7 @@ final FigSpec emrServerlessSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec computeOptimizerSpec = FigSpec(
   name: 'compute-optimizer',
   description: 'Compute Optimizer is a service that analyzes the configuration and utilization metrics of your Amazon Web Services compute resources, such as Amazon EC2 instances, Amazon EC2 Auto Scaling groups, Lambda functions, Amazon EBS volumes, and Amazon ECS services on Fargate. It reports whether your resources are optimal, and generates optimization recommendations to reduce the cost and improve the performance of your workloads. Compute Optimizer also provides recent utilization metric data, in addition to projected utilization metric data for the recommendations, which you can use to evaluate which recommendation provides the best price-performance trade-off. The analysis of your usage patterns can help you decide when to move or resize your running resources, and still meet your performance and capacity requirements. For more information about Compute Optimizer, including the required permissions to use the service, see the Compute Optimizer User Guide',
   subcommands: [
+
     Subcommand(
       name: 'delete-recommendation-preferences',
       description: 'Deletes a recommendation preference, such as enhanced infrastructure metrics. For more information, see Activating enhanced infrastructure metrics in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'The target resource type of the recommendation preference to delete. The Ec2Instance option encompasses standalone instances and instances that are part of Auto Scaling groups. The AutoScalingGroup option encompasses only instances that are part of an Auto Scaling group',
@@ -56,6 +58,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'describe-recommendation-export-jobs',
       description: 'Describes recommendation export jobs created in the last seven days. Use the ExportAutoScalingGroupRecommendations or ExportEC2InstanceRecommendations actions to request an export of your recommendations. Then use the DescribeRecommendationExportJobs action to view your export jobs',
       options: [
+
         Option(
           name: '--job-ids',
           description: 'The identification numbers of the export jobs to return. An export job ID is returned when you create an export using the ExportAutoScalingGroupRecommendations or ExportEC2InstanceRecommendations actions. All export jobs created in the last seven days are returned if this parameter is omitted',
@@ -147,6 +151,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -159,6 +164,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'export-auto-scaling-group-recommendations',
       description: 'Exports optimization recommendations for Auto Scaling groups. Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see Exporting Recommendations in the Compute Optimizer User Guide. You can have only one Auto Scaling group export job in progress per Amazon Web Services Region',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The IDs of the Amazon Web Services accounts for which to export Auto Scaling group recommendations. If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations. This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive. Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted. You can specify multiple account IDs per request',
@@ -237,6 +243,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -249,6 +256,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'export-ebs-volume-recommendations',
       description: 'Exports optimization recommendations for Amazon EBS volumes. Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see Exporting Recommendations in the Compute Optimizer User Guide. You can have only one Amazon EBS volume export job in progress per Amazon Web Services Region',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The IDs of the Amazon Web Services accounts for which to export Amazon EBS volume recommendations. If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations. This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive. Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted. You can specify multiple account IDs per request',
@@ -318,6 +326,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -330,6 +339,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'export-ec2-instance-recommendations',
       description: 'Exports optimization recommendations for Amazon EC2 instances. Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see Exporting Recommendations in the Compute Optimizer User Guide. You can have only one Amazon EC2 instance export job in progress per Amazon Web Services Region',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The IDs of the Amazon Web Services accounts for which to export instance recommendations. If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations. This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive. Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted. You can specify multiple account IDs per request',
@@ -408,6 +418,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -420,6 +431,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'export-ecs-service-recommendations',
       description: 'Exports optimization recommendations for Amazon ECS services on Fargate.  Recommendations are exported in a CSV file, and its metadata in a JSON file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see Exporting Recommendations in the Compute Optimizer User Guide. You can only have one Amazon ECS service export job in progress per Amazon Web Services Region',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The Amazon Web Services account IDs for the export Amazon ECS service recommendations.  If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to. This parameter can\'t be specified together with the include member accounts parameter. The parameters are mutually exclusive. If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren\'t included in the export. You can specify multiple account IDs per request',
@@ -489,6 +501,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -501,6 +514,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'export-idle-recommendations',
       description: 'Export optimization recommendations for your idle resources.  Recommendations are exported in a comma-separated values (CSV) file, and its metadata in a JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see Exporting Recommendations in the Compute Optimizer User Guide. You can have only one idle resource export job in progress per Amazon Web Services Region',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The Amazon Web Services account IDs for the export idle resource recommendations.  If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to. This parameter can\'t be specified together with the include member accounts parameter. The parameters are mutually exclusive. If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren\'t included in the export. You can specify multiple account IDs per request',
@@ -570,6 +584,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -582,6 +597,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'export-lambda-function-recommendations',
       description: 'Exports optimization recommendations for Lambda functions. Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see Exporting Recommendations in the Compute Optimizer User Guide. You can have only one Lambda function export job in progress per Amazon Web Services Region',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The IDs of the Amazon Web Services accounts for which to export Lambda function recommendations. If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations. This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive. Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted. You can specify multiple account IDs per request',
@@ -651,6 +667,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -663,6 +680,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'export-license-recommendations',
       description: 'Export optimization recommendations for your licenses.  Recommendations are exported in a comma-separated values (CSV) file, and its metadata in a JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see Exporting Recommendations in the Compute Optimizer User Guide. You can have only one license export job in progress per Amazon Web Services Region',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The IDs of the Amazon Web Services accounts for which to export license recommendations. If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations. This parameter can\'t be specified together with the include member accounts parameter. The parameters are mutually exclusive. If this parameter is omitted, recommendations for member accounts aren\'t included in the export. You can specify multiple account IDs per request',
@@ -732,6 +750,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -744,6 +763,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'export-rds-database-recommendations',
       description: 'Export optimization recommendations for your Amazon Relational Database Service (Amazon RDS).  Recommendations are exported in a comma-separated values (CSV) file, and its metadata in a JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see Exporting Recommendations in the Compute Optimizer User Guide. You can have only one Amazon RDS export job in progress per Amazon Web Services Region',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The Amazon Web Services account IDs for the export Amazon RDS recommendations.  If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to. This parameter can\'t be specified together with the include member accounts parameter. The parameters are mutually exclusive. If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren\'t included in the export. You can specify multiple account IDs per request',
@@ -822,6 +842,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -834,6 +855,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-auto-scaling-group-recommendations',
       description: 'Returns Auto Scaling group recommendations. Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups that meet a specific set of requirements. For more information, see the Supported resources and requirements in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations. If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations. Only one account ID can be specified per request',
@@ -904,6 +926,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -916,6 +939,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-ebs-volume-recommendations',
       description: 'Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations. Compute Optimizer generates recommendations for Amazon EBS volumes that meet a specific set of requirements. For more information, see the Supported resources and requirements in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--volume-arns',
           description: 'The Amazon Resource Name (ARN) of the volumes for which to return recommendations',
@@ -977,6 +1001,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -989,6 +1014,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-ec2-instance-recommendations',
       description: 'Returns Amazon EC2 instance recommendations. Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2) instances that meet a specific set of requirements. For more information, see the Supported resources and requirements in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--instance-arns',
           description: 'The Amazon Resource Name (ARN) of the instances for which to return recommendations',
@@ -1059,6 +1085,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1071,6 +1098,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-ec2-recommendation-projected-metrics',
       description: 'Returns the projected utilization metrics of Amazon EC2 instance recommendations.  The Cpu and Memory metrics are the only projected utilization metrics returned when you run this action. Additionally, the Memory metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see Enabling Memory Utilization with the CloudWatch Agent',
       options: [
+
         Option(
           name: '--instance-arn',
           description: 'The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics',
@@ -1141,6 +1169,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1153,6 +1182,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-ecs-service-recommendation-projected-metrics',
       description: 'Returns the projected metrics of Amazon ECS service recommendations',
       options: [
+
         Option(
           name: '--service-arn',
           description: 'The ARN that identifies the Amazon ECS service.   The following is the format of the ARN:   arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name',
@@ -1214,6 +1244,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1226,6 +1257,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-ecs-service-recommendations',
       description: 'Returns Amazon ECS service recommendations.   Compute Optimizer generates recommendations for Amazon ECS services on Fargate that meet a specific set of requirements. For more information, see the Supported resources and requirements in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--service-arns',
           description: 'The ARN that identifies the Amazon ECS service.   The following is the format of the ARN:   arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name',
@@ -1287,6 +1319,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1299,6 +1332,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-effective-recommendation-preferences',
       description: 'Returns the recommendation preferences that are in effect for a given resource, such as enhanced infrastructure metrics. Considers all applicable preferences that you might have set at the resource, account, and organization level. When you create a recommendation preference, you can set its status to Active or Inactive. Use this action to view the recommendation preferences that are in effect, or Active',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported',
@@ -1324,6 +1358,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1336,6 +1371,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-enrollment-status',
       description: 'Returns the enrollment (opt in) status of an account to the Compute Optimizer service. If the account is the management account of an organization, this action also confirms the enrollment status of member accounts of the organization. Use the GetEnrollmentStatusesForOrganization action to get detailed information about the enrollment status of member accounts of an organization',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1352,6 +1388,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1364,6 +1401,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-enrollment-statuses-for-organization',
       description: 'Returns the Compute Optimizer enrollment (opt-in) status of organization member accounts, if your account is an organization management account. To get the enrollment status of standalone accounts, use the GetEnrollmentStatus action',
       options: [
+
         Option(
           name: '--filters',
           description: 'An array of objects to specify a filter that returns a more specific list of account enrollment statuses',
@@ -1434,6 +1472,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1446,6 +1485,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-idle-recommendations',
       description: 'Returns idle resource recommendations. Compute Optimizer generates recommendations for idle resources that meet a specific set of requirements. For more information, see Resource requirements in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--resource-arns',
           description: 'The ARN that identifies the idle resource',
@@ -1516,6 +1556,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1528,6 +1569,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-lambda-function-recommendations',
       description: 'Returns Lambda function recommendations. Compute Optimizer generates recommendations for functions that meet a specific set of requirements. For more information, see the Supported resources and requirements in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--function-arns',
           description: 'The Amazon Resource Name (ARN) of the functions for which to return recommendations. You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (\$LATEST) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see Using versions in the Lambda Developer Guide',
@@ -1616,6 +1658,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1628,6 +1671,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-license-recommendations',
       description: 'Returns license recommendations for Amazon EC2 instances that run on a specific license. Compute Optimizer generates recommendations for licenses that meet a specific set of requirements. For more information, see the Supported resources and requirements in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--resource-arns',
           description: 'The ARN that identifies the Amazon EC2 instance.   The following is the format of the ARN:   arn:aws:ec2:region:aws_account_id:instance/instance-id',
@@ -1689,6 +1733,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1701,6 +1746,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-rds-database-recommendation-projected-metrics',
       description: 'Returns the projected metrics of Amazon RDS recommendations',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN that identifies the Amazon RDS.   The following is the format of the ARN:   arn:aws:rds:{region}:{accountId}:db:{resourceName}',
@@ -1771,6 +1817,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1783,6 +1830,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-rds-database-recommendations',
       description: 'Returns Amazon RDS recommendations.  Compute Optimizer generates recommendations for Amazon RDS that meet a specific set of requirements. For more information, see the Supported resources and requirements in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--resource-arns',
           description: 'The ARN that identifies the Amazon RDS.   The following is the format of the ARN:   arn:aws:rds:{region}:{accountId}:db:{resourceName}   The following is the format of a DB Cluster ARN:   arn:aws:rds:{region}:{accountId}:cluster:{resourceName}',
@@ -1853,6 +1901,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1865,6 +1914,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-recommendation-preferences',
       description: 'Returns existing recommendation preferences, such as enhanced infrastructure metrics. Use the scope parameter to specify which preferences to return. You can specify to return preferences for an organization, a specific account ID, or a specific EC2 instance or Auto Scaling group Amazon Resource Name (ARN). For more information, see Activating enhanced infrastructure metrics in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'The target resource type of the recommendation preference for which to return preferences. The Ec2Instance option encompasses standalone instances and instances that are part of Auto Scaling groups. The AutoScalingGroup option encompasses only instances that are part of an Auto Scaling group',
@@ -1944,6 +1994,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1956,6 +2007,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'get-recommendation-summaries',
       description: 'Returns the optimization findings for an account. It returns the number of:   Amazon EC2 instances in an account that are Underprovisioned, Overprovisioned, or Optimized.   Auto Scaling groups in an account that are NotOptimized, or Optimized.   Amazon EBS volumes in an account that are NotOptimized, or Optimized.   Lambda functions in an account that are NotOptimized, or Optimized.   Amazon ECS services in an account that are Underprovisioned, Overprovisioned, or Optimized',
       options: [
+
         Option(
           name: '--account-ids',
           description: 'The ID of the Amazon Web Services account for which to return recommendation summaries. If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries. Only one account ID can be specified per request',
@@ -2026,6 +2078,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2038,6 +2091,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'put-recommendation-preferences',
       description: 'Creates a new recommendation preference or updates an existing recommendation preference, such as enhanced infrastructure metrics. For more information, see Activating enhanced infrastructure metrics in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--resource-type',
           description: 'The target resource type of the recommendation preference to create. The Ec2Instance option encompasses standalone instances and instances that are part of Auto Scaling groups. The AutoScalingGroup option encompasses only instances that are part of an Auto Scaling group',
@@ -2135,6 +2189,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2147,6 +2202,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
       name: 'update-enrollment-status',
       description: 'Updates the enrollment (opt in and opt out) status of an account to the Compute Optimizer service. If the account is a management account of an organization, this action can also be used to enroll member accounts of the organization. You must have the appropriate permissions to opt in to Compute Optimizer, to view its recommendations, and to opt out. For more information, see Controlling access with Amazon Web Services Identity and Access Management in the Compute Optimizer User Guide. When you opt in, Compute Optimizer automatically creates a service-linked role in your account to access its data. For more information, see Using Service-Linked Roles for Compute Optimizer in the Compute Optimizer User Guide',
       options: [
+
         Option(
           name: '--status',
           description: 'The new enrollment status of the account. The following status options are available:    Active - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see Metrics analyzed by Compute Optimizer in the Compute Optimizer User Guide.    Inactive - Opts out your account from the Compute Optimizer service. Your account\'s recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.    The Pending and Failed options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account',
@@ -2180,6 +2236,7 @@ final FigSpec computeOptimizerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

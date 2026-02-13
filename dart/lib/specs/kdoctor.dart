@@ -9,6 +9,7 @@ final FigSpec kdoctorSpec = FigSpec(
   name: 'kdoctor',
   description: 'Tool that helps to set up the environment for Kotlin Multiplatform Mobile app development',
   options: [
+
     Option(
       name: '--version',
       description: 'Report a version of KDoctor'

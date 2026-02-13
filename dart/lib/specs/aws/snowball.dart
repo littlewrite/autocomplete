@@ -9,10 +9,12 @@ final FigSpec snowballSpec = FigSpec(
   name: 'snowball',
   description: 'The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you\'ll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the User Guide',
   subcommands: [
+
     Subcommand(
       name: 'cancel-cluster',
       description: 'Cancels a cluster job. You can only cancel a cluster job while it\'s in the AwaitingQuorum status. You\'ll have at least an hour after creating a cluster job to cancel it',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The 39-character ID for the cluster that you want to cancel, for example CID123e4567-e89b-12d3-a456-426655440000',
@@ -38,6 +40,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'cancel-job',
       description: 'Cancels the specified job. You can only cancel a job before its JobState value changes to PreparingAppliance. Requesting the ListJobs or DescribeJob action returns a job\'s JobState as part of the response element data returned',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The 39-character job ID for the job that you want to cancel, for example JID123e4567-e89b-12d3-a456-426655440000',
@@ -75,6 +79,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'create-address',
       description: 'Creates an address for a Snow device to be shipped to. In most regions, addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. If the address is invalid or unsupported, then an exception is thrown. If providing an address as a JSON file through the cli-input-json option, include the full file path. For example, --cli-input-json file://create-address.json',
       options: [
+
         Option(
           name: '--address',
           description: 'The address that you want the Snow device shipped to',
@@ -112,6 +118,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'create-cluster',
       description: 'Creates an empty cluster. Each cluster supports five nodes. You use the CreateJob action separately to create the jobs for each of these nodes. The cluster does not ship until these five node jobs have been created',
       options: [
+
         Option(
           name: '--job-type',
           description: 'The type of job for this cluster. Currently, the only job type supported for clusters is LOCAL_USE. For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the Snowcone User Guide or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the Snowcone User Guide',
@@ -292,6 +300,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -304,6 +313,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'create-job',
       description: 'Creates a job to import or export data between Amazon S3 and your on-premises data center. Your Amazon Web Services account must have the right trust policies and permissions in place to create a job for a Snow device. If you\'re creating a job for a node in a cluster, you only need to provide the clusterId value; the other job attributes are inherited from the cluster.   Only the Snowball; Edge device type is supported when ordering clustered jobs. The device capacity is optional. Availability of device types differ by Amazon Web Services Region. For more information about Region availability, see Amazon Web Services Regional Services.    Snow Family devices and their capacities.    Device type: SNC1_SSD    Capacity: T14   Description: Snowcone       Device type: SNC1_HDD    Capacity: T8   Description: Snowcone       Device type: EDGE_S    Capacity: T98   Description: Snowball Edge Storage Optimized for data transfer only       Device type: EDGE_CG    Capacity: T42   Description: Snowball Edge Compute Optimized with GPU      Device type: EDGE_C    Capacity: T42   Description: Snowball Edge Compute Optimized without GPU      Device type: EDGE    Capacity: T100   Description: Snowball Edge Storage Optimized with EC2 Compute    This device is replaced with T98.     Device type: STANDARD    Capacity: T50   Description: Original Snowball device  This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region        Device type: STANDARD    Capacity: T80   Description: Original Snowball device  This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region.        Snow Family device type: RACK_5U_C    Capacity: T13    Description: Snowblade.     Device type: V3_5S    Capacity: T240   Description: Snowball Edge Storage Optimized 210TB',
       options: [
+
         Option(
           name: '--job-type',
           description: 'Defines the type of job that you\'re creating',
@@ -491,6 +501,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -503,6 +514,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'create-long-term-pricing',
       description: 'Creates a job with the long-term usage option for a device. The long-term usage is a 1-year or 3-year long-term pricing type for the device. You are billed upfront, and Amazon Web Services provides discounts for long-term pricing',
       options: [
+
         Option(
           name: '--long-term-pricing-type',
           description: 'The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing',
@@ -545,6 +557,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -557,6 +570,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'create-return-shipping-label',
       description: 'Creates a shipping label that will be used to return the Snow device to Amazon Web Services',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID for a job that you want to create the return shipping label for; for example, JID123e4567-e89b-12d3-a456-426655440000',
@@ -591,6 +605,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -603,6 +618,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'describe-address',
       description: 'Takes an AddressId and returns specific details about that address in the form of an Address object',
       options: [
+
         Option(
           name: '--address-id',
           description: 'The automatically generated ID for a specific address',
@@ -628,6 +644,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -640,6 +657,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'describe-addresses',
       description: 'Returns a specified number of ADDRESS objects. Calling this API in one of the US regions will return addresses from the list of all addresses associated with this account in all US regions',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of ADDRESS objects to return',
@@ -701,6 +719,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -713,6 +732,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'describe-cluster',
       description: 'Returns information about a specific cluster including shipping information, cluster status, and other important metadata',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The automatically generated ID for a cluster',
@@ -738,6 +758,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -750,6 +771,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'describe-job',
       description: 'Returns information about a specific job including shipping information, job status, and other important metadata',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The automatically generated ID for a job, for example JID123e4567-e89b-12d3-a456-426655440000',
@@ -775,6 +797,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -787,6 +810,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'describe-return-shipping-label',
       description: 'Information on the shipping label of a Snow device that is being returned to Amazon Web Services',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The automatically generated ID for a job, for example JID123e4567-e89b-12d3-a456-426655440000',
@@ -812,6 +836,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -824,6 +849,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'get-job-manifest',
       description: 'Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified JobId value. You can access the manifest file for up to 60 minutes after this request has been made. To access the manifest file after 60 minutes have passed, you\'ll have to make another call to the GetJobManifest action. The manifest is an encrypted file that you can download after your job enters the WithCustomer status. This is the only valid status for calling this API as the manifest and UnlockCode code value are used for securing your device and should only be used when you have the device. The manifest is decrypted by using the UnlockCode code value, when you pass both values to the Snow device through the Snowball client when the client is started for the first time.  As a best practice, we recommend that you don\'t save a copy of an UnlockCode value in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snow device associated with that job. The credentials of a given job, including its manifest file and unlock code, expire 360 days after the job is created',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID for a job that you want to get the manifest file for, for example JID123e4567-e89b-12d3-a456-426655440000',
@@ -849,6 +875,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -861,6 +888,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'get-job-unlock-code',
       description: 'Returns the UnlockCode code value for the specified job. A particular UnlockCode value can be accessed for up to 360 days after the associated job has been created. The UnlockCode value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code is used to decrypt the manifest file when it is passed along with the manifest to the Snow device through the Snowball client when the client is started for the first time. The only valid status for calling this API is WithCustomer as the manifest and Unlock code values are used for securing your device and should only be used when you have the device. As a best practice, we recommend that you don\'t save a copy of the UnlockCode in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snow device associated with that job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID for the job that you want to get the UnlockCode value for, for example JID123e4567-e89b-12d3-a456-426655440000',
@@ -886,6 +914,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -898,6 +927,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'get-snowball-usage',
       description: 'Returns information about the Snow Family service limit for your account, and also the number of Snow devices your account has in use. The default service limit for the number of Snow devices that you can have at one time is 1. If you want to increase your service limit, contact Amazon Web Services Support',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -914,6 +944,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -926,6 +957,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'get-software-updates',
       description: 'Returns an Amazon S3 presigned URL for an update file associated with a specified JobId',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The ID for a job that you want to get the software update file for, for example JID123e4567-e89b-12d3-a456-426655440000',
@@ -951,6 +983,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -963,6 +996,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'list-cluster-jobs',
       description: 'Returns an array of JobListEntry objects of the specified length. Each JobListEntry object is for a job in the specified cluster and contains a job\'s state, a job\'s ID, and other information',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The 39-character ID for the cluster that you want to list, for example CID123e4567-e89b-12d3-a456-426655440000',
@@ -1033,6 +1067,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1045,6 +1080,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'list-clusters',
       description: 'Returns an array of ClusterListEntry objects of the specified length. Each ClusterListEntry object contains a cluster\'s state, a cluster\'s ID, and other important status information',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of ClusterListEntry objects to return',
@@ -1106,6 +1142,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1118,6 +1155,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'list-compatible-images',
       description: 'This action returns a list of the different Amazon EC2-compatible Amazon Machine Images (AMIs) that are owned by your Amazon Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are based on the Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market, but still supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs',
@@ -1179,6 +1217,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1191,6 +1230,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'list-jobs',
       description: 'Returns an array of JobListEntry objects of the specified length. Each JobListEntry object contains a job\'s state, a job\'s ID, and a value that indicates whether the job is a job part, in the case of export jobs. Calling this API action in one of the US regions will return jobs from the list of all jobs associated with this account in all US regions',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The number of JobListEntry objects to return',
@@ -1252,6 +1292,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1264,6 +1305,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'list-long-term-pricing',
       description: 'Lists all long-term pricing types',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of ListLongTermPricing objects to return',
@@ -1325,6 +1367,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1337,6 +1380,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'list-pickup-locations',
       description: 'A list of locations from which the customer can choose to pickup a device',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of locations to list per page',
@@ -1371,6 +1415,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1383,6 +1428,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'list-service-versions',
       description: 'Lists all supported versions for Snow on-device services. Returns an array of ServiceVersion object containing the supported versions for a particular service',
       options: [
+
         Option(
           name: '--service-name',
           description: 'The name of the service for which you\'re requesting supported versions',
@@ -1435,6 +1481,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1447,6 +1494,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'update-cluster',
       description: 'While a cluster\'s ClusterState value is in the AwaitingQuorum state, you can update some of the information associated with a cluster. Once the cluster changes to a different job state, usually 60 minutes after the cluster being created, this action is no longer available',
       options: [
+
         Option(
           name: '--cluster-id',
           description: 'The cluster ID of the cluster that you want to update, for example CID123e4567-e89b-12d3-a456-426655440000',
@@ -1544,6 +1592,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1556,6 +1605,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'update-job',
       description: 'While a job\'s JobState value is New, you can update some of the information associated with a job. Once the job changes to a different job state, usually within 60 minutes of the job being created, this action is no longer available',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job ID of the job that you want to update, for example JID123e4567-e89b-12d3-a456-426655440000',
@@ -1671,6 +1721,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1683,6 +1734,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'update-job-shipment-state',
       description: 'Updates the state when a shipment state changes to a different state',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job ID of the job whose shipment date you want to update, for example JID123e4567-e89b-12d3-a456-426655440000',
@@ -1717,6 +1769,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1729,6 +1782,7 @@ final FigSpec snowballSpec = FigSpec(
       name: 'update-long-term-pricing',
       description: 'Updates the long-term pricing type',
       options: [
+
         Option(
           name: '--long-term-pricing-id',
           description: 'The ID of the long-term pricing type for the device',
@@ -1771,6 +1825,7 @@ final FigSpec snowballSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec pinpointSpec = FigSpec(
   name: 'pinpoint',
   description: 'Doc Engage API - Amazon Pinpoint API',
   subcommands: [
+
     Subcommand(
       name: 'create-app',
       description: 'Creates an application',
       options: [
+
         Option(
           name: '--create-application-request',
           description: 'Specifies the display name of an application and the tags to associate with the application',
@@ -38,6 +40,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-campaign',
       description: 'Creates a new campaign for an application or updates the settings of an existing campaign for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -84,6 +88,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-email-template',
       description: 'Creates a message template for messages that are sent through the email channel',
       options: [
+
         Option(
           name: '--email-template-request',
           description: 'Specifies the content and settings for a message template that can be used in messages that are sent through the email channel',
@@ -130,6 +136,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -142,6 +149,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-export-job',
       description: 'Creates an export job for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -176,6 +184,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +197,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-import-job',
       description: 'Creates an import job for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -222,6 +232,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -234,6 +245,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-in-app-template',
       description: 'Creates a new message template for messages using the in-app message channel',
       options: [
+
         Option(
           name: '--in-app-template-request',
           description: 'InApp Template Request',
@@ -268,6 +280,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -280,6 +293,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-journey',
       description: 'Creates a journey for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -314,6 +328,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -326,6 +341,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-push-template',
       description: 'Creates a message template for messages that are sent through a push notification channel',
       options: [
+
         Option(
           name: '--push-notification-template-request',
           description: 'Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel',
@@ -360,6 +376,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -372,6 +389,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-recommender-configuration',
       description: 'Creates an Amazon Pinpoint configuration for a recommender model',
       options: [
+
         Option(
           name: '--create-recommender-configuration',
           description: 'Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model',
@@ -397,6 +415,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -409,6 +428,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-segment',
       description: 'Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that\'s associated with an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -443,6 +463,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -455,6 +476,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-sms-template',
       description: 'Creates a message template for messages that are sent through the SMS channel',
       options: [
+
         Option(
           name: '--sms-template-request',
           description: 'Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel',
@@ -489,6 +511,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -501,6 +524,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'create-voice-template',
       description: 'Creates a message template for messages that are sent through the voice channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -535,6 +559,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -547,6 +572,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-adm-channel',
       description: 'Disables the ADM channel for an application and deletes any existing settings for the channel',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -572,6 +598,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -584,6 +611,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-apns-channel',
       description: 'Disables the APNs channel for an application and deletes any existing settings for the channel',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -609,6 +637,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -621,6 +650,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-apns-sandbox-channel',
       description: 'Disables the APNs sandbox channel for an application and deletes any existing settings for the channel',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -646,6 +676,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -658,6 +689,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-apns-voip-channel',
       description: 'Disables the APNs VoIP channel for an application and deletes any existing settings for the channel',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -683,6 +715,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -695,6 +728,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-apns-voip-sandbox-channel',
       description: 'Disables the APNs VoIP sandbox channel for an application and deletes any existing settings for the channel',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -720,6 +754,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -732,6 +767,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-app',
       description: 'Deletes an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -757,6 +793,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -769,6 +806,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-baidu-channel',
       description: 'Disables the Baidu channel for an application and deletes any existing settings for the channel',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -794,6 +832,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -806,6 +845,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-campaign',
       description: 'Deletes a campaign from an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -840,6 +880,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -852,6 +893,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-email-channel',
       description: 'Disables the email channel for an application and deletes any existing settings for the channel',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -877,6 +919,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -889,6 +932,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-email-template',
       description: 'Deletes a message template for messages that were sent through the email channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -923,6 +967,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -935,6 +980,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-endpoint',
       description: 'Deletes an endpoint from an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -969,6 +1015,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -981,6 +1028,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-event-stream',
       description: 'Deletes the event stream for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1006,6 +1054,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1018,6 +1067,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-gcm-channel',
       description: 'Disables the GCM channel for an application and deletes any existing settings for the channel',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1043,6 +1093,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1055,6 +1106,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-in-app-template',
       description: 'Deletes a message template for messages sent using the in-app message channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -1089,6 +1141,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1101,6 +1154,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-journey',
       description: 'Deletes a journey from an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1135,6 +1189,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1147,6 +1202,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-push-template',
       description: 'Deletes a message template for messages that were sent through a push notification channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -1181,6 +1237,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1193,6 +1250,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-recommender-configuration',
       description: 'Deletes an Amazon Pinpoint configuration for a recommender model',
       options: [
+
         Option(
           name: '--recommender-id',
           description: 'The unique identifier for the recommender model configuration. This identifier is displayed as the Recommender ID on the Amazon Pinpoint console',
@@ -1218,6 +1276,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1230,6 +1289,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-segment',
       description: 'Deletes a segment from an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1264,6 +1324,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1276,6 +1337,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-sms-channel',
       description: 'Disables the SMS channel for an application and deletes any existing settings for the channel',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1301,6 +1363,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1313,6 +1376,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-sms-template',
       description: 'Deletes a message template for messages that were sent through the SMS channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -1347,6 +1411,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1359,6 +1424,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-user-endpoints',
       description: 'Deletes all the endpoints that are associated with a specific user ID',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1393,6 +1459,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1405,6 +1472,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-voice-channel',
       description: 'Disables the voice channel for an application and deletes any existing settings for the channel',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1430,6 +1498,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1442,6 +1511,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'delete-voice-template',
       description: 'Deletes a message template for messages that were sent through the voice channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -1476,6 +1546,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1488,6 +1559,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-adm-channel',
       description: 'Retrieves information about the status and settings of the ADM channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1513,6 +1585,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1525,6 +1598,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-apns-channel',
       description: 'Retrieves information about the status and settings of the APNs channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1550,6 +1624,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1562,6 +1637,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-apns-sandbox-channel',
       description: 'Retrieves information about the status and settings of the APNs sandbox channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1587,6 +1663,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1599,6 +1676,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-apns-voip-channel',
       description: 'Retrieves information about the status and settings of the APNs VoIP channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1624,6 +1702,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1636,6 +1715,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-apns-voip-sandbox-channel',
       description: 'Retrieves information about the status and settings of the APNs VoIP sandbox channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1661,6 +1741,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1673,6 +1754,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-app',
       description: 'Retrieves information about an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1698,6 +1780,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1710,6 +1793,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-application-date-range-kpi',
       description: 'Retrieves (queries) pre-aggregated data for a standard metric that applies to an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1780,6 +1864,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1792,6 +1877,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-application-settings',
       description: 'Retrieves information about the settings for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1817,6 +1903,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1829,6 +1916,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-apps',
       description: 'Retrieves information about all the applications that are associated with your Amazon Pinpoint account',
       options: [
+
         Option(
           name: '--page-size',
           description: 'The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics',
@@ -1863,6 +1951,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1875,6 +1964,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-baidu-channel',
       description: 'Retrieves information about the status and settings of the Baidu channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1900,6 +1990,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1912,6 +2003,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-campaign',
       description: 'Retrieves information about the status, configuration, and other settings for a campaign',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -1946,6 +2038,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1958,6 +2051,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-campaign-activities',
       description: 'Retrieves information about all the activities for a campaign',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2010,6 +2104,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2022,6 +2117,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-campaign-date-range-kpi',
       description: 'Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2101,6 +2197,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2113,6 +2210,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-campaign-version',
       description: 'Retrieves information about the status, configuration, and other settings for a specific version of a campaign',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2156,6 +2254,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2168,6 +2267,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-campaign-versions',
       description: 'Retrieves information about the status, configuration, and other settings for all versions of a campaign',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2220,6 +2320,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2232,6 +2333,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-campaigns',
       description: 'Retrieves information about the status, configuration, and other settings for all the campaigns that are associated with an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2275,6 +2377,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2287,6 +2390,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-channels',
       description: 'Retrieves information about the history and status of each channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2312,6 +2416,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2324,6 +2429,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-email-channel',
       description: 'Retrieves information about the status and settings of the email channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2349,6 +2455,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2361,6 +2468,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-email-template',
       description: 'Retrieves the content and settings of a message template for messages that are sent through the email channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -2395,6 +2503,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2407,6 +2516,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-endpoint',
       description: 'Retrieves information about the settings and attributes of a specific endpoint for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2441,6 +2551,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2453,6 +2564,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-event-stream',
       description: 'Retrieves information about the event stream settings for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2478,6 +2590,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2490,6 +2603,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-export-job',
       description: 'Retrieves information about the status and settings of a specific export job for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2524,6 +2638,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2536,6 +2651,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-export-jobs',
       description: 'Retrieves information about the status and settings of all the export jobs for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2579,6 +2695,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2591,6 +2708,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-gcm-channel',
       description: 'Retrieves information about the status and settings of the GCM channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2616,6 +2734,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2628,6 +2747,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-import-job',
       description: 'Retrieves information about the status and settings of a specific import job for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2662,6 +2782,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2674,6 +2795,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-import-jobs',
       description: 'Retrieves information about the status and settings of all the import jobs for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2717,6 +2839,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2729,6 +2852,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-in-app-messages',
       description: 'Retrieves the in-app messages targeted for the provided endpoint ID',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2763,6 +2887,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2775,6 +2900,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-in-app-template',
       description: 'Retrieves the content and settings of a message template for messages sent through the in-app channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -2809,6 +2935,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2821,6 +2948,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-journey',
       description: 'Retrieves information about the status, configuration, and other settings for a journey',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2855,6 +2983,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2867,6 +2996,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-journey-date-range-kpi',
       description: 'Retrieves (queries) pre-aggregated data for a standard engagement metric that applies to a journey',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -2946,6 +3076,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2958,6 +3089,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-journey-execution-activity-metrics',
       description: 'Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey activity',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3019,6 +3151,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3031,6 +3164,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-journey-execution-metrics',
       description: 'Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3083,6 +3217,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3095,6 +3230,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-journey-run-execution-activity-metrics',
       description: 'Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey activity',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3165,6 +3301,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3177,6 +3314,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-journey-run-execution-metrics',
       description: 'Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3238,6 +3376,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3250,6 +3389,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-journey-runs',
       description: 'Provides information about the runs of a journey',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3302,6 +3442,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3314,6 +3455,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-push-template',
       description: 'Retrieves the content and settings of a message template for messages that are sent through a push notification channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -3348,6 +3490,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3360,6 +3503,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-recommender-configuration',
       description: 'Retrieves information about an Amazon Pinpoint configuration for a recommender model',
       options: [
+
         Option(
           name: '--recommender-id',
           description: 'The unique identifier for the recommender model configuration. This identifier is displayed as the Recommender ID on the Amazon Pinpoint console',
@@ -3385,6 +3529,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3397,6 +3542,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-recommender-configurations',
       description: 'Retrieves information about all the recommender model configurations that are associated with your Amazon Pinpoint account',
       options: [
+
         Option(
           name: '--page-size',
           description: 'The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics',
@@ -3431,6 +3577,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3443,6 +3590,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-segment',
       description: 'Retrieves information about the configuration, dimension, and other settings for a specific segment that\'s associated with an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3477,6 +3625,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3489,6 +3638,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-segment-export-jobs',
       description: 'Retrieves information about the status and settings of the export jobs for a segment',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3541,6 +3691,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3553,6 +3704,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-segment-import-jobs',
       description: 'Retrieves information about the status and settings of the import jobs for a segment',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3605,6 +3757,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3617,6 +3770,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-segment-version',
       description: 'Retrieves information about the configuration, dimension, and other settings for a specific version of a segment that\'s associated with an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3660,6 +3814,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3672,6 +3827,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-segment-versions',
       description: 'Retrieves information about the configuration, dimension, and other settings for all the versions of a specific segment that\'s associated with an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3724,6 +3880,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3736,6 +3893,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-segments',
       description: 'Retrieves information about the configuration, dimension, and other settings for all the segments that are associated with an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3779,6 +3937,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3791,6 +3950,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-sms-channel',
       description: 'Retrieves information about the status and settings of the SMS channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3816,6 +3976,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3828,6 +3989,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-sms-template',
       description: 'Retrieves the content and settings of a message template for messages that are sent through the SMS channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -3862,6 +4024,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3874,6 +4037,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-user-endpoints',
       description: 'Retrieves information about all the endpoints that are associated with a specific user ID',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3908,6 +4072,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3920,6 +4085,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-voice-channel',
       description: 'Retrieves information about the status and settings of the voice channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -3945,6 +4111,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3957,6 +4124,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'get-voice-template',
       description: 'Retrieves the content and settings of a message template for messages that are sent through the voice channel',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive',
@@ -3991,6 +4159,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4003,6 +4172,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'list-journeys',
       description: 'Retrieves information about the status, configuration, and other settings for all the journeys that are associated with an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -4046,6 +4216,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4058,6 +4229,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves all the tags (keys and values) that are associated with an application, campaign, message template, or segment',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -4083,6 +4255,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4095,6 +4268,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'list-template-versions',
       description: 'Retrieves information about all the versions of a specific message template',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics',
@@ -4147,6 +4321,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4159,6 +4334,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'list-templates',
       description: 'Retrieves information about all the message templates that are associated with your Amazon Pinpoint account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics',
@@ -4211,6 +4387,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4223,6 +4400,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'phone-number-validate',
       description: 'Retrieves information about a phone number',
       options: [
+
         Option(
           name: '--number-validate-request',
           description: 'Specifies a phone number to validate and retrieve information about',
@@ -4248,6 +4426,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4260,6 +4439,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'put-event-stream',
       description: 'Creates a new event stream for an application or updates the settings of an existing event stream for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -4294,6 +4474,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4306,6 +4487,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'put-events',
       description: 'Creates a new event to record for endpoints, or creates or updates endpoint data that existing events are associated with',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -4340,6 +4522,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4352,6 +4535,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'remove-attributes',
       description: 'Removes one or more custom attributes, of the same attribute type, from the application. Existing endpoints still have the attributes but Amazon Pinpoint will stop capturing new or changed values for these attributes',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -4395,6 +4579,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4407,6 +4592,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'send-messages',
       description: 'Creates and sends a direct message',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -4441,6 +4627,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4453,6 +4640,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'send-otp-message',
       description: 'Send an OTP message',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique ID of your Amazon Pinpoint application',
@@ -4487,6 +4675,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4499,6 +4688,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'send-users-messages',
       description: 'Creates and sends a message to a list of users',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -4533,6 +4723,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4545,6 +4736,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags (keys and values) to an application, campaign, message template, or segment',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -4579,6 +4771,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4591,6 +4784,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags (keys and values) from an application, campaign, message template, or segment',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -4625,6 +4819,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4637,6 +4832,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-adm-channel',
       description: 'Enables the ADM channel for an application or updates the status and settings of the ADM channel for an application',
       options: [
+
         Option(
           name: '--adm-channel-request',
           description: 'Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application',
@@ -4671,6 +4867,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4683,6 +4880,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-apns-channel',
       description: 'Enables the APNs channel for an application or updates the status and settings of the APNs channel for an application',
       options: [
+
         Option(
           name: '--apns-channel-request',
           description: 'Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application',
@@ -4717,6 +4915,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4729,6 +4928,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-apns-sandbox-channel',
       description: 'Enables the APNs sandbox channel for an application or updates the status and settings of the APNs sandbox channel for an application',
       options: [
+
         Option(
           name: '--apns-sandbox-channel-request',
           description: 'Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application',
@@ -4763,6 +4963,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4775,6 +4976,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-apns-voip-channel',
       description: 'Enables the APNs VoIP channel for an application or updates the status and settings of the APNs VoIP channel for an application',
       options: [
+
         Option(
           name: '--apns-voip-channel-request',
           description: 'Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application',
@@ -4809,6 +5011,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4821,6 +5024,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-apns-voip-sandbox-channel',
       description: 'Enables the APNs VoIP sandbox channel for an application or updates the status and settings of the APNs VoIP sandbox channel for an application',
       options: [
+
         Option(
           name: '--apns-voip-sandbox-channel-request',
           description: 'Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application',
@@ -4855,6 +5059,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4867,6 +5072,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-application-settings',
       description: 'Updates the settings for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -4901,6 +5107,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4913,6 +5120,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-baidu-channel',
       description: 'Enables the Baidu channel for an application or updates the status and settings of the Baidu channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -4947,6 +5155,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4959,6 +5168,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-campaign',
       description: 'Updates the configuration and other settings for a campaign',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -5002,6 +5212,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5014,6 +5225,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-email-channel',
       description: 'Enables the email channel for an application or updates the status and settings of the email channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -5048,6 +5260,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5060,6 +5273,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-email-template',
       description: 'Updates an existing message template for messages that are sent through the email channel',
       options: [
+
         Option(
           name: '--create-new-version',
           description: 'Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template. If you don\'t specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don\'t specify a value for the version parameter. Otherwise, an error will occur'
@@ -5111,6 +5325,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5123,6 +5338,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-endpoint',
       description: 'Creates a new endpoint for an application or updates the settings and attributes of an existing endpoint for an application. You can also use this operation to define custom attributes for an endpoint. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -5166,6 +5382,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5178,6 +5395,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-endpoints-batch',
       description: 'Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing endpoints for an application. You can also use this operation to define custom attributes for a batch of endpoints. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -5212,6 +5430,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5224,6 +5443,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-gcm-channel',
       description: 'Enables the GCM channel for an application or updates the status and settings of the GCM channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -5258,6 +5478,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5270,6 +5491,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-in-app-template',
       description: 'Updates an existing message template for messages sent through the in-app message channel',
       options: [
+
         Option(
           name: '--create-new-version',
           description: 'Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template. If you don\'t specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don\'t specify a value for the version parameter. Otherwise, an error will occur'
@@ -5321,6 +5543,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5333,6 +5556,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-journey',
       description: 'Updates the configuration and other settings for a journey',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -5376,6 +5600,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5388,6 +5613,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-journey-state',
       description: 'Cancels (stops) an active journey',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -5431,6 +5657,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5443,6 +5670,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-push-template',
       description: 'Updates an existing message template for messages that are sent through a push notification channel',
       options: [
+
         Option(
           name: '--create-new-version',
           description: 'Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template. If you don\'t specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don\'t specify a value for the version parameter. Otherwise, an error will occur'
@@ -5494,6 +5722,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5506,6 +5735,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-recommender-configuration',
       description: 'Updates an Amazon Pinpoint configuration for a recommender model',
       options: [
+
         Option(
           name: '--recommender-id',
           description: 'The unique identifier for the recommender model configuration. This identifier is displayed as the Recommender ID on the Amazon Pinpoint console',
@@ -5540,6 +5770,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5552,6 +5783,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-segment',
       description: 'Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that\'s associated with an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -5595,6 +5827,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5607,6 +5840,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-sms-channel',
       description: 'Enables the SMS channel for an application or updates the status and settings of the SMS channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -5641,6 +5875,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5653,6 +5888,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-sms-template',
       description: 'Updates an existing message template for messages that are sent through the SMS channel',
       options: [
+
         Option(
           name: '--create-new-version',
           description: 'Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template. If you don\'t specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don\'t specify a value for the version parameter. Otherwise, an error will occur'
@@ -5704,6 +5940,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5716,6 +5953,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-template-active-version',
       description: 'Changes the status of a specific version of a message template to active',
       options: [
+
         Option(
           name: '--template-active-version-request',
           description: 'Specifies which version of a message template to use as the active version of the template',
@@ -5759,6 +5997,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5771,6 +6010,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-voice-channel',
       description: 'Enables the voice channel for an application or updates the status and settings of the voice channel for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique identifier for the application. This identifier is displayed as the Project ID on the Amazon Pinpoint console',
@@ -5805,6 +6045,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5817,6 +6058,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'update-voice-template',
       description: 'Updates an existing message template for messages that are sent through the voice channel',
       options: [
+
         Option(
           name: '--create-new-version',
           description: 'Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template. If you don\'t specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don\'t specify a value for the version parameter. Otherwise, an error will occur'
@@ -5868,6 +6110,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5880,6 +6123,7 @@ final FigSpec pinpointSpec = FigSpec(
       name: 'verify-otp-message',
       description: 'Verify an OTP',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The unique ID of your Amazon Pinpoint application',
@@ -5914,6 +6158,7 @@ final FigSpec pinpointSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

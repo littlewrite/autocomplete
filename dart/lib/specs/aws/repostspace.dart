@@ -9,10 +9,12 @@ final FigSpec repostspaceSpec = FigSpec(
   name: 'repostspace',
   description: 'AWS re:Post Private is a private version of AWS re:Post for enterprises with Enterprise Support or Enterprise On-Ramp Support plans. It provides access to knowledge and experts to accelerate cloud adoption and increase developer productivity. With your organization-specific private re:Post, you can build an organization-specific developer community that drives efficiencies at scale and provides access to valuable knowledge resources. Additionally, re:Post Private centralizes trusted AWS technical content and offers private discussion forums to improve how your teams collaborate internally and with AWS to remove technical obstacles, accelerate innovation, and scale more efficiently in the cloud',
   subcommands: [
+
     Subcommand(
       name: 'batch-add-role',
       description: 'Add role to multiple users or groups in a private re:Post',
       options: [
+
         Option(
           name: '--accessor-ids',
           description: 'The user or group accessor identifiers to add the role to',
@@ -56,6 +58,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'batch-remove-role',
       description: 'Remove role from multiple users or groups in a private re:Post',
       options: [
+
         Option(
           name: '--accessor-ids',
           description: 'The user or group accessor identifiers to remove the role from',
@@ -111,6 +115,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'create-space',
       description: 'Creates an AWS re:Post Private private re:Post',
       options: [
+
         Option(
           name: '--description',
           description: 'A description for the private re:Post. This is used only to help you identify this private re:Post',
@@ -202,6 +208,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -214,6 +221,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'delete-space',
       description: 'Deletes an AWS re:Post Private private re:Post',
       options: [
+
         Option(
           name: '--space-id',
           description: 'The unique ID of the private re:Post',
@@ -239,6 +247,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +260,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'deregister-admin',
       description: 'Removes the user or group from the list of administrators of the private re:Post',
       options: [
+
         Option(
           name: '--admin-id',
           description: 'The ID of the admin to remove',
@@ -285,6 +295,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -297,6 +308,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'get-space',
       description: 'Displays information about the AWS re:Post Private private re:Post',
       options: [
+
         Option(
           name: '--space-id',
           description: 'The ID of the private re:Post',
@@ -322,6 +334,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -334,6 +347,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'list-spaces',
       description: 'Returns a list of AWS re:Post Private private re:Posts in the account with some information about each private re:Post',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of private re:Posts to include in the results',
@@ -395,6 +409,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -407,6 +422,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns the tags that are associated with the AWS re:Post Private resource specified by the resourceArn. The only resource that can be tagged is a private re:Post',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource that the tags are associated with',
@@ -432,6 +448,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -444,6 +461,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'register-admin',
       description: 'Adds a user or group to the list of administrators of the private re:Post',
       options: [
+
         Option(
           name: '--admin-id',
           description: 'The ID of the administrator',
@@ -478,6 +496,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -490,6 +509,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'send-invites',
       description: 'Sends an invitation email to selected users and groups',
       options: [
+
         Option(
           name: '--accessor-ids',
           description: 'The array of identifiers for the users and groups',
@@ -542,6 +562,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -554,6 +575,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates tags with an AWS re:Post Private resource. Currently, the only resource that can be tagged is the private re:Post. If you specify a new tag key for the resource, the tag is appended to the list of tags that are associated with the resource. If you specify a tag key that’s already associated with the resource, the new tag value that you specify replaces the previous value for that tag',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource that the tag is associated with',
@@ -588,6 +610,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -600,6 +623,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the association of the tag with the AWS re:Post Private resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -634,6 +658,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -646,6 +671,7 @@ final FigSpec repostspaceSpec = FigSpec(
       name: 'update-space',
       description: 'Modifies an existing AWS re:Post Private private re:Post',
       options: [
+
         Option(
           name: '--description',
           description: 'A description for the private re:Post. This is used only to help you identify this private re:Post',
@@ -698,6 +724,7 @@ final FigSpec repostspaceSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

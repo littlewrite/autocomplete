@@ -9,14 +9,17 @@ final FigSpec pubsubSpec = FigSpec(
   name: 'pubsub',
   description: 'Manage Cloud Pub/Sub topics, subscriptions, and snapshots',
   subcommands: [
+
     Subcommand(
       name: 'lite-subscriptions',
       description: 'Manage Pub/Sub Lite subscriptions',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Pub/Sub Lite subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -58,6 +61,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'DELIVERY_REQUIREMENT',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'deliver-after-stored'),
                   FigSuggestion(name: 'deliver-immediately')
                 ]
@@ -166,6 +170,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -200,6 +205,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Pub/Sub Lite subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -323,6 +329,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -356,6 +363,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Pub/Sub Lite subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -479,6 +487,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -512,6 +521,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'list',
           description: 'List Pub/Sub Lite subscriptions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -679,6 +689,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -707,6 +718,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'update',
           description: 'Update a Pub/Sub Lite subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -748,6 +760,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'DELIVERY_REQUIREMENT',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'deliver-after-stored'),
                   FigSuggestion(name: 'deliver-immediately')
                 ]
@@ -844,6 +857,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -875,6 +889,7 @@ final FigSpec pubsubSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -998,6 +1013,7 @@ final FigSpec pubsubSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1014,10 +1030,12 @@ final FigSpec pubsubSpec = FigSpec(
       name: 'lite-topics',
       description: 'Manage Pub/Sub Lite topics',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Pub/Sub Lite topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1198,6 +1216,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1232,6 +1251,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Pub/Sub Lite topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1355,6 +1375,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1388,6 +1409,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Pub/Sub Lite topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1511,6 +1533,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1544,6 +1567,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'list',
           description: 'List Pub/Sub Lite topics',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1711,6 +1735,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1739,6 +1764,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'list-subscriptions',
           description: 'List Pub/Sub Lite subscriptions for a given Lite topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1906,6 +1932,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1939,6 +1966,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'update',
           description: 'Update a Pub/Sub Lite topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2106,6 +2134,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2137,6 +2166,7 @@ final FigSpec pubsubSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2260,6 +2290,7 @@ final FigSpec pubsubSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2276,10 +2307,12 @@ final FigSpec pubsubSpec = FigSpec(
       name: 'snapshots',
       description: 'Manage Cloud Pub/Sub snapshots',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Creates one or more Cloud Pub/Sub snapshots',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2437,6 +2470,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2460,6 +2494,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'delete',
           description: 'Deletes one or more Cloud Pub/Sub snapshots',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2583,6 +2618,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2606,6 +2642,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'describe',
           description: 'Describes a Cloud Pub/Sub snapshot',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2729,6 +2766,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2751,6 +2789,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'list',
           description: 'Lists all the snapshots in a given project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2922,6 +2961,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2936,6 +2976,7 @@ final FigSpec pubsubSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3059,6 +3100,7 @@ final FigSpec pubsubSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3075,10 +3117,12 @@ final FigSpec pubsubSpec = FigSpec(
       name: 'subscriptions',
       description: 'Manage Cloud Pub/Sub subscriptions',
       subcommands: [
+
         Subcommand(
           name: 'ack',
           description: 'Acknowledges one or more messages on the specified subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3214,6 +3258,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3236,6 +3281,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding to a subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3383,6 +3429,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3405,6 +3452,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'create',
           description: 'Creates one or more Cloud Pub/Sub subscriptions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3703,6 +3751,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3726,6 +3775,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'delete',
           description: 'Deletes one or more Cloud Pub/Sub subscriptions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3849,6 +3899,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3872,6 +3923,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'describe',
           description: 'Describes a Cloud Pub/Sub subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3995,6 +4047,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4017,6 +4070,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a Cloud Pub/Sub Subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4184,6 +4238,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4206,6 +4261,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'list',
           description: 'Lists Cloud Pub/Sub subscriptions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4377,6 +4433,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4393,6 +4450,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'modify-message-ack-deadline',
           description: 'Modifies the ACK deadline for a specific Cloud Pub/Sub message',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4540,6 +4598,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4562,6 +4621,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'modify-push-config',
           description: 'Modifies the push configuration of a Cloud Pub/Sub subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4719,6 +4779,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4741,6 +4802,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'pull',
           description: 'Pulls one or more Cloud Pub/Sub messages from a subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4916,6 +4978,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4938,6 +5001,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding of a subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5085,6 +5149,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5107,6 +5172,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'seek',
           description: 'Resets a subscription\'s backlog to a point in time or to a given snapshot',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5263,6 +5329,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5285,6 +5352,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for a subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5408,6 +5476,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5420,6 +5489,7 @@ final FigSpec pubsubSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SUBSCRIPTION',
               description: 'ID of the subscription or fully qualified identifier for the subscription'
@@ -5434,6 +5504,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'update',
           description: 'Updates an existing Cloud Pub/Sub subscription',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5717,6 +5788,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5737,6 +5809,7 @@ final FigSpec pubsubSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5860,6 +5933,7 @@ final FigSpec pubsubSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -5876,10 +5950,12 @@ final FigSpec pubsubSpec = FigSpec(
       name: 'topics',
       description: 'Manage Cloud Pub/Sub topics',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding to a topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6027,6 +6103,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6049,6 +6126,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'create',
           description: 'Creates one or more Cloud Pub/Sub topics',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6239,6 +6317,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6262,6 +6341,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'delete',
           description: 'Deletes one or more Cloud Pub/Sub topics',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6385,6 +6465,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6408,6 +6489,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'describe',
           description: 'Describes a Cloud Pub/Sub topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6531,6 +6613,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6553,6 +6636,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'detach-subscription',
           description: 'Detaches one or more Cloud Pub/Sub subscriptions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6676,6 +6760,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6699,6 +6784,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a Cloud Pub/Sub Topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6866,6 +6952,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6888,6 +6975,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'list',
           description: 'Lists Cloud Pub/Sub topics within a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7059,6 +7147,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7075,6 +7164,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'list-subscriptions',
           description: 'Lists Cloud Pub/Sub subscriptions from a given topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7246,6 +7336,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7268,6 +7359,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'publish',
           description: 'Publishes a message to the specified topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7424,6 +7516,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7446,6 +7539,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding of a topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7593,6 +7687,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7615,6 +7710,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set IAM policy for a topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7738,6 +7834,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7750,6 +7847,7 @@ final FigSpec pubsubSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'TOPIC',
               description: 'ID of the topic or fully qualified identifier for the topic'
@@ -7764,6 +7862,7 @@ final FigSpec pubsubSpec = FigSpec(
           name: 'update',
           description: 'Updates an existing Cloud Pub/Sub topic',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7973,6 +8072,7 @@ final FigSpec pubsubSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -7993,6 +8093,7 @@ final FigSpec pubsubSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8116,6 +8217,7 @@ final FigSpec pubsubSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -8130,6 +8232,7 @@ final FigSpec pubsubSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8253,6 +8356,7 @@ final FigSpec pubsubSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

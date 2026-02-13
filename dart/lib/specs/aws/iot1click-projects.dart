@@ -9,10 +9,12 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
   name: 'iot1click-projects',
   description: 'The AWS IoT 1-Click Projects API Reference',
   subcommands: [
+
     Subcommand(
       name: 'associate-device-with-placement',
       description: 'Associates a physical device with a placement',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the project containing the placement in which to associate the device',
@@ -65,6 +67,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -77,6 +80,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'create-placement',
       description: 'Creates an empty placement',
       options: [
+
         Option(
           name: '--placement-name',
           description: 'The name of the placement to be created',
@@ -120,6 +124,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'create-project',
       description: 'Creates an empty project with a placement template. A project contains zero or more placements that adhere to the placement template defined in the project',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the project to create',
@@ -184,6 +190,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'delete-placement',
       description: 'Deletes a placement. To delete a placement, it must not have any devices associated with it.  When you delete a placement, all associated data becomes irretrievable',
       options: [
+
         Option(
           name: '--placement-name',
           description: 'The name of the empty placement to delete',
@@ -230,6 +238,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'delete-project',
       description: 'Deletes a project. To delete a project, it must not have any placements associated with it.  When you delete a project, all associated data becomes irretrievable',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the empty project to delete',
@@ -267,6 +277,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'describe-placement',
       description: 'Describes a placement in a project',
       options: [
+
         Option(
           name: '--placement-name',
           description: 'The name of the placement within a project',
@@ -313,6 +325,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -325,6 +338,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'describe-project',
       description: 'Returns an object describing a project',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the project to be described',
@@ -350,6 +364,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -362,6 +377,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'disassociate-device-from-placement',
       description: 'Removes a physical device from a placement',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the project that contains the placement',
@@ -405,6 +421,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -417,6 +434,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'get-devices-in-placement',
       description: 'Returns an object enumerating the devices in a placement',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the project containing the placement',
@@ -451,6 +469,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -463,6 +482,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'list-placements',
       description: 'Lists the placement(s) of a project',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The project containing the placements to be listed',
@@ -533,6 +553,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -545,6 +566,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'list-projects',
       description: 'Lists the AWS IoT 1-Click project(s) associated with your AWS account and region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token to retrieve the next set of results',
@@ -606,6 +628,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -618,6 +641,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags (metadata key/value pairs) which you have assigned to the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource whose tags you want to list',
@@ -643,6 +667,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -655,6 +680,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Creates or modifies tags for a resource. Tags are key/value pairs (metadata) that can be used to manage a resource. For more information, see AWS Tagging Strategies',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resouce for which tag(s) should be added or modified',
@@ -689,6 +715,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -701,6 +728,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags (metadata key/value pairs) from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource whose tag you want to remove',
@@ -735,6 +763,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -747,6 +776,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'update-placement',
       description: 'Updates a placement with the given attributes. To clear an attribute, pass an empty value (i.e., "")',
       options: [
+
         Option(
           name: '--placement-name',
           description: 'The name of the placement to update',
@@ -790,6 +820,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -802,6 +833,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
       name: 'update-project',
       description: 'Updates a project associated with your AWS account and region. With the exception of device template names, you can pass just the values that need to be updated because the update request will change only the values that are provided. To clear a value, pass the empty string (i.e., "")',
       options: [
+
         Option(
           name: '--project-name',
           description: 'The name of the project to be updated',
@@ -845,6 +877,7 @@ final FigSpec iot1clickProjectsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,10 +9,12 @@ final FigSpec emrContainersSpec = FigSpec(
   name: 'emr-containers',
   description: 'Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to run open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS). With this deployment option, you can focus on running analytics workloads while Amazon EMR on EKS builds, configures, and manages containers for open-source applications. For more information about Amazon EMR on EKS concepts and tasks, see What is Amazon EMR on EKS.  Amazon EMR containers is the API name for Amazon EMR on EKS. The emr-containers prefix is used in the following scenarios:    It is the prefix in the CLI commands for Amazon EMR on EKS. For example, aws emr-containers start-job-run.   It is the prefix before IAM policy actions for Amazon EMR on EKS. For example, "Action": [ "emr-containers:StartJobRun"]. For more information, see Policy actions for Amazon EMR on EKS.   It is the prefix used in Amazon EMR on EKS service endpoints. For example, emr-containers.us-east-2.amazonaws.com. For more information, see Amazon EMR on EKSService Endpoints',
   subcommands: [
+
     Subcommand(
       name: 'cancel-job-run',
       description: 'Cancels a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the job run to cancel',
@@ -47,6 +49,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'create-job-template',
       description: 'Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request',
       options: [
+
         Option(
           name: '--name',
           description: 'The specified name of the job template',
@@ -120,6 +124,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'create-managed-endpoint',
       description: 'Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the managed endpoint',
@@ -229,6 +235,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -241,6 +248,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'create-security-configuration',
       description: 'Creates a security configuration. Security configurations in Amazon EMR on EKS are templates for different security setups. You can use security configurations to configure the Lake Formation integration setup. You can also create a security configuration to re-use a security setup each time you create a virtual cluster',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The client idempotency token to use when creating the security configuration',
@@ -293,6 +301,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -305,6 +314,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'create-virtual-cluster',
       description: 'Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements',
       options: [
+
         Option(
           name: '--name',
           description: 'The specified name of the virtual cluster',
@@ -366,6 +376,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -378,6 +389,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'delete-job-template',
       description: 'Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the job template that will be deleted',
@@ -403,6 +415,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -415,6 +428,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'delete-managed-endpoint',
       description: 'Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the managed endpoint',
@@ -449,6 +463,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -461,6 +476,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'delete-virtual-cluster',
       description: 'Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the virtual cluster that will be deleted',
@@ -486,6 +502,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -498,6 +515,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'describe-job-run',
       description: 'Displays detailed information about a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the job run request',
@@ -532,6 +550,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -544,6 +563,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'describe-job-template',
       description: 'Displays detailed information about a specified job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the job template that will be described',
@@ -569,6 +589,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -581,6 +602,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'describe-managed-endpoint',
       description: 'Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'This output displays ID of the managed endpoint',
@@ -615,6 +637,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -627,6 +650,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'describe-security-configuration',
       description: 'Displays detailed information about a specified security configuration. Security configurations in Amazon EMR on EKS are templates for different security setups. You can use security configurations to configure the Lake Formation integration setup. You can also create a security configuration to re-use a security setup each time you create a virtual cluster',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the security configuration',
@@ -652,6 +676,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -664,6 +689,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'describe-virtual-cluster',
       description: 'Displays detailed information about a specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the virtual cluster that will be described',
@@ -689,6 +715,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -701,6 +728,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'get-managed-endpoint-session-credentials',
       description: 'Generate a session token to connect to a managed endpoint',
       options: [
+
         Option(
           name: '--endpoint-identifier',
           description: 'The ARN of the managed endpoint for which the request is submitted',
@@ -780,6 +808,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -792,6 +821,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'list-job-runs',
       description: 'Lists job runs based on a set of parameters. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS',
       options: [
+
         Option(
           name: '--virtual-cluster-id',
           description: 'The ID of the virtual cluster for which to list the job run',
@@ -898,6 +928,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -910,6 +941,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'list-job-templates',
       description: 'Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request',
       options: [
+
         Option(
           name: '--created-after',
           description: 'The date and time after which the job templates were created',
@@ -989,6 +1021,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1001,6 +1034,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'list-managed-endpoints',
       description: 'Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster',
       options: [
+
         Option(
           name: '--virtual-cluster-id',
           description: 'The ID of the virtual cluster',
@@ -1107,6 +1141,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1119,6 +1154,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'list-security-configurations',
       description: 'Lists security configurations based on a set of parameters. Security configurations in Amazon EMR on EKS are templates for different security setups. You can use security configurations to configure the Lake Formation integration setup. You can also create a security configuration to re-use a security setup each time you create a virtual cluster',
       options: [
+
         Option(
           name: '--created-after',
           description: 'The date and time after which the security configuration was created',
@@ -1198,6 +1234,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1210,6 +1247,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags assigned to the resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of tagged resources',
@@ -1235,6 +1273,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1247,6 +1286,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'list-virtual-clusters',
       description: 'Lists information about the specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements',
       options: [
+
         Option(
           name: '--container-provider-id',
           description: 'The container provider ID of the virtual cluster',
@@ -1361,6 +1401,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1373,6 +1414,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'start-job-run',
       description: 'Starts a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the job run',
@@ -1488,6 +1530,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1500,6 +1543,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you\'ve assigned to it. For example, you can define a set of tags for your Amazon EMR on EKS clusters to help you track each cluster\'s owner and stack level. We recommend that you devise a consistent set of tag keys for each resource type. You can then search and filter the resources based on the tags that you add',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of resources',
@@ -1534,6 +1578,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1546,6 +1591,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of resources',
@@ -1580,6 +1626,7 @@ final FigSpec emrContainersSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1592,6 +1639,7 @@ final FigSpec emrContainersSpec = FigSpec(
       name: 'update-role-trust-policy',
       description: 'Updates the trust policy of given IAM role such that it can be used with Amazon EMR on EKS with the given namespace from the given EKS cluster.\n\nNote:\n To use the IAM Role with Amazon EMR on EKS, OIDC identity provider also needs to be created for the EKS cluster.\n This can be done using ``eksctl utils associate-iam-oidc-provider --cluster  --approve`` command.\n For information about installing or upgrading eksctl, see `Installing or upgrading eksctl `__ in the *Amazon EKS User Guide*.\n\nThe command would merge the existing trust policy of the role with the below trust policy::\n\n    {\n        "Version": "2012-10-17",\n        "Statement": [\n            {\n                "Effect": "Allow",\n                "Principal": {\n                    "Federated": "arn:aws:iam:::oidc-provider/"\n                },\n                "Action": "sts:AssumeRoleWithWebIdentity",\n                "Condition": {\n                    "StringLike": {\n                        ":sub": "system:serviceaccount::emr-containers-sa-*-*--"\n                    }\n                }\n            }\n        ]\n    }\n\nHere::\n\n     = AWS Account ID of the EKS cluster\n     = OIDC Identity Provider for the EKS cluster\n     = Namespace of the EKS cluster\n     = Base36 encoded form of the IAM Role name\n\nYou can use the **--dry-run** option to print the merged trust policy document to stdout instead of updating the role trust policy directly',
       options: [
+
         Option(
           name: '--cluster-name',
           description: 'Specify the name of the Amazon EKS cluster with which the IAM Role would be used',

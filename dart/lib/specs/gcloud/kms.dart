@@ -9,10 +9,12 @@ final FigSpec kmsSpec = FigSpec(
   name: 'kms',
   description: 'Manage cryptographic keys in the cloud',
   subcommands: [
+
     Subcommand(
       name: 'asymmetric-decrypt',
       description: 'Decrypt an input file using an asymmetric-encryption key version',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -193,6 +195,7 @@ final FigSpec kmsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -209,6 +212,7 @@ final FigSpec kmsSpec = FigSpec(
       name: 'asymmetric-sign',
       description: 'Sign a user input file using an asymmetric-signing key version',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -250,6 +254,7 @@ final FigSpec kmsSpec = FigSpec(
             name: 'DIGEST_ALGORITHM',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'sha256'),
               FigSuggestion(name: 'sha384'),
               FigSuggestion(name: 'sha512')
@@ -405,6 +410,7 @@ final FigSpec kmsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -421,6 +427,7 @@ final FigSpec kmsSpec = FigSpec(
       name: 'decrypt',
       description: 'Decrypt a ciphertext file using a Cloud KMS key',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -612,6 +619,7 @@ final FigSpec kmsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -628,6 +636,7 @@ final FigSpec kmsSpec = FigSpec(
       name: 'encrypt',
       description: 'Encrypt a plaintext file using a key',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -819,6 +828,7 @@ final FigSpec kmsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -835,10 +845,12 @@ final FigSpec kmsSpec = FigSpec(
       name: 'import-jobs',
       description: 'Create and manage import jobs',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding to a KMS import job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1008,6 +1020,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1030,6 +1043,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'create',
           description: 'Create a new import job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1119,6 +1133,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'IMPORT_METHOD',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'rsa-oaep-3072-sha1-aes-256'),
                   FigSuggestion(name: 'rsa-oaep-4096-sha1-aes-256')
                 ]
@@ -1171,6 +1186,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'PROTECTION_LEVEL',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'software'),
                   FigSuggestion(name: 'hsm')
                 ]
@@ -1205,6 +1221,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1227,6 +1244,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'describe',
           description: 'Get metadata for a given import job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1383,6 +1401,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1405,6 +1424,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for an import job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1594,6 +1614,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1616,6 +1637,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'list',
           description: 'Lists import jobs within a keyring',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1809,6 +1831,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1825,6 +1848,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding for a KMS import job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1994,6 +2018,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2016,6 +2041,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy binding for a KMS import job',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2161,6 +2187,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2173,6 +2200,7 @@ final FigSpec kmsSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'IMPORT_JOB',
               description: 'ID of the import job or fully qualified identifier for the import job'
@@ -2185,6 +2213,7 @@ final FigSpec kmsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2308,6 +2337,7 @@ final FigSpec kmsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2324,10 +2354,12 @@ final FigSpec kmsSpec = FigSpec(
       name: 'keyrings',
       description: 'Create and manage keyrings',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding for a kms keyring',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2508,6 +2540,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2530,6 +2563,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'create',
           description: 'Create a new keyring',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2664,6 +2698,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2686,6 +2721,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'describe',
           description: 'Get metadata for a keyring',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2820,6 +2856,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2842,6 +2879,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a keyring',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3020,6 +3058,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3042,6 +3081,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'list',
           description: 'List keyrings within a location',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3225,6 +3265,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3241,6 +3282,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding for a kms keyring',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3425,6 +3467,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3447,6 +3490,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a keyring',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3581,6 +3625,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3593,6 +3638,7 @@ final FigSpec kmsSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'KEYRING',
               description: 'Name of the key ring whose IAM policy to update'
@@ -3605,6 +3651,7 @@ final FigSpec kmsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3728,6 +3775,7 @@ final FigSpec kmsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3744,10 +3792,12 @@ final FigSpec kmsSpec = FigSpec(
       name: 'keys',
       description: 'Create and manage keys',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add IAM policy binding for a kms key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3939,6 +3989,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3961,6 +4012,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'create',
           description: 'Create a new key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4002,6 +4054,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'DEFAULT_ALGORITHM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'ec-sign-p256-sha256'),
                   FigSuggestion(name: 'ec-sign-p384-sha384'),
                   FigSuggestion(name: 'external-symmetric-encryption'),
@@ -4137,6 +4190,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'PROTECTION_LEVEL',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'software'),
                   FigSuggestion(name: 'hsm'),
                   FigSuggestion(name: 'external')
@@ -4152,6 +4206,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'PURPOSE',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'asymmetric-encryption'),
                   FigSuggestion(name: 'asymmetric-signing'),
                   FigSuggestion(name: 'encryption')
@@ -4202,6 +4257,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4224,6 +4280,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'describe',
           description: 'Get metadata for a given key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4369,6 +4426,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4391,6 +4449,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for a key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4580,6 +4639,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4602,6 +4662,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'list',
           description: 'List the keys within a keyring',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4796,6 +4857,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4812,6 +4874,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove IAM policy binding for a kms key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5007,6 +5070,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5029,6 +5093,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'remove-rotation-schedule',
           description: 'Remove the rotation schedule for a key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5174,6 +5239,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5196,6 +5262,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5341,6 +5408,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5353,6 +5421,7 @@ final FigSpec kmsSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'KEY',
               description: 'Name of the key whose IAM policy to update'
@@ -5367,6 +5436,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'set-primary-version',
           description: 'Set the primary version of a key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5512,6 +5582,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5534,6 +5605,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'set-rotation-schedule',
           description: 'Update the rotation schedule for a key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5701,6 +5773,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5723,6 +5796,7 @@ final FigSpec kmsSpec = FigSpec(
           name: 'update',
           description: 'Update a key',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5768,6 +5842,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'DEFAULT_ALGORITHM',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'ec-sign-p256-sha256'),
                   FigSuggestion(name: 'ec-sign-p384-sha384'),
                   FigSuggestion(name: 'external-symmetric-encryption'),
@@ -5959,6 +6034,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5981,10 +6057,12 @@ final FigSpec kmsSpec = FigSpec(
           name: 'versions',
           description: 'Create and manage versions',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a new version',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6156,6 +6234,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6172,6 +6251,7 @@ final FigSpec kmsSpec = FigSpec(
               name: 'describe',
               description: 'Get metadata for a given version',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6339,6 +6419,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6361,6 +6442,7 @@ final FigSpec kmsSpec = FigSpec(
               name: 'destroy',
               description: 'Schedule a version to be destroyed',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6517,6 +6599,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6539,6 +6622,7 @@ final FigSpec kmsSpec = FigSpec(
               name: 'disable',
               description: 'Disable a given version',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6695,6 +6779,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6717,6 +6802,7 @@ final FigSpec kmsSpec = FigSpec(
               name: 'enable',
               description: 'Enable a given version',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6873,6 +6959,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -6895,6 +6982,7 @@ final FigSpec kmsSpec = FigSpec(
               name: 'get-public-key',
               description: 'Get the public key for a given version',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7062,6 +7150,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -7084,6 +7173,7 @@ final FigSpec kmsSpec = FigSpec(
               name: 'import',
               description: 'Import a version into an existing crypto key',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7103,6 +7193,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'ALGORITHM',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'ec-sign-p256-sha256'),
                       FigSuggestion(name: 'ec-sign-p384-sha384'),
                       FigSuggestion(name: 'google-symmetric-encryption'),
@@ -7313,6 +7404,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -7329,6 +7421,7 @@ final FigSpec kmsSpec = FigSpec(
               name: 'list',
               description: 'List the versions within a key',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7533,6 +7626,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -7549,6 +7643,7 @@ final FigSpec kmsSpec = FigSpec(
               name: 'restore',
               description: 'Restore a version scheduled for destruction',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7705,6 +7800,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -7727,6 +7823,7 @@ final FigSpec kmsSpec = FigSpec(
               name: 'update',
               description: 'Update a key version',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -7905,6 +8002,7 @@ final FigSpec kmsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -7925,6 +8023,7 @@ final FigSpec kmsSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8048,6 +8147,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8062,6 +8162,7 @@ final FigSpec kmsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8185,6 +8286,7 @@ final FigSpec kmsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -8201,10 +8303,12 @@ final FigSpec kmsSpec = FigSpec(
       name: 'locations',
       description: 'View locations available for a project',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List the project\'s locations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8376,6 +8480,7 @@ final FigSpec kmsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -8390,6 +8495,7 @@ final FigSpec kmsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8513,6 +8619,7 @@ final FigSpec kmsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -8527,6 +8634,7 @@ final FigSpec kmsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -8650,6 +8758,7 @@ final FigSpec kmsSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

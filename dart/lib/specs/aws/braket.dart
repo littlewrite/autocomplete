@@ -9,10 +9,12 @@ final FigSpec braketSpec = FigSpec(
   name: 'braket',
   description: 'The Amazon Braket API Reference provides information about the operations and structures supported in Amazon Braket. Additional Resources:    Amazon Braket Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'cancel-job',
       description: 'Cancels an Amazon Braket job',
       options: [
+
         Option(
           name: '--job-arn',
           description: 'The ARN of the Amazon Braket job to cancel',
@@ -38,6 +40,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'cancel-quantum-task',
       description: 'Cancels the specified task',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The client token associated with the request',
@@ -84,6 +88,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'create-job',
       description: 'Creates an Amazon Braket job',
       options: [
+
         Option(
           name: '--algorithm-specification',
           description: 'Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training',
@@ -229,6 +235,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -241,6 +248,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'create-quantum-task',
       description: 'Creates a quantum task',
       options: [
+
         Option(
           name: '--action',
           description: 'The action associated with the task',
@@ -347,6 +355,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -359,6 +368,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'get-device',
       description: 'Retrieves the devices available in Amazon Braket.  For backwards compatibility with older versions of BraketSchemas, OpenQASM information is omitted from GetDevice API calls. To get this information the user-agent needs to present a recent version of the BraketSchemas (1.8.0 or later). The Braket SDK automatically reports this for you. If you do not see OpenQASM results in the GetDevice response when using a Braket SDK, you may need to set AWS_EXECUTION_ENV environment variable to configure user-agent. See the code examples provided below for how to do this for the AWS CLI, Boto3, and the Go, Java, and JavaScript/TypeScript SDKs',
       options: [
+
         Option(
           name: '--device-arn',
           description: 'The ARN of the device to retrieve',
@@ -384,6 +394,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -396,6 +407,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'get-job',
       description: 'Retrieves the specified Amazon Braket job',
       options: [
+
         Option(
           name: '--additional-attribute-names',
           description: 'A list of attributes to return information for',
@@ -430,6 +442,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -442,6 +455,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'get-quantum-task',
       description: 'Retrieves the specified quantum task',
       options: [
+
         Option(
           name: '--additional-attribute-names',
           description: 'A list of attributes to return information for',
@@ -476,6 +490,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -488,6 +503,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Shows the tags associated with this resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Specify the resourceArn for the resource whose tags to display',
@@ -513,6 +529,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -525,6 +542,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'search-devices',
       description: 'Searches for devices using the specified filters',
       options: [
+
         Option(
           name: '--filters',
           description: 'The filter values to use to search for a device',
@@ -595,6 +613,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -607,6 +626,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'search-jobs',
       description: 'Searches for Amazon Braket jobs that match the specified filter values',
       options: [
+
         Option(
           name: '--filters',
           description: 'The filter values to use when searching for a job',
@@ -677,6 +697,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -689,6 +710,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'search-quantum-tasks',
       description: 'Searches for tasks that match the specified filter values',
       options: [
+
         Option(
           name: '--filters',
           description: 'Array of SearchQuantumTasksFilter objects',
@@ -759,6 +781,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -771,6 +794,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'tag-resource',
       description: 'Add a tag to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Specify the resourceArn of the resource to which a tag will be added',
@@ -805,6 +829,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -817,6 +842,7 @@ final FigSpec braketSpec = FigSpec(
       name: 'untag-resource',
       description: 'Remove tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Specify the resourceArn for the resource from which to remove the tags',
@@ -851,6 +877,7 @@ final FigSpec braketSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

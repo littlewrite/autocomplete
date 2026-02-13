@@ -9,10 +9,12 @@ final FigSpec nimbleSpec = FigSpec(
   name: 'nimble',
   description: 'Welcome to the Amazon Nimble Studio API reference. This API reference provides methods, schema, resources, parameters, and more to help you get the most out of Nimble Studio. Nimble Studio is a virtual studio that empowers visual effects, animation, and interactive content teams to create content securely within a scalable, private cloud service',
   subcommands: [
+
     Subcommand(
       name: 'accept-eulas',
       description: 'Accept EULAs',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -56,6 +58,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'create-launch-profile',
       description: 'Create a launch profile',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -165,6 +169,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -177,6 +182,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'create-streaming-image',
       description: 'Creates a streaming image resource in a studio',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -247,6 +253,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -259,6 +266,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'create-streaming-session',
       description: 'Creates a streaming session in a studio. After invoking this operation, you must poll GetStreamingSession until the streaming session is in the READY state',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -338,6 +346,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -350,6 +359,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'create-streaming-session-stream',
       description: 'Creates a streaming session stream for a streaming session. After invoking this API, invoke GetStreamingSessionStream with the returned streamId to poll the resource until it is in the READY state',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -402,6 +412,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -414,6 +425,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'create-studio',
       description: 'Create a new studio. When creating a studio, two IAM roles must be provided: the admin role and the user role. These roles are assumed by your users when they log in to the Nimble Studio portal. The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function properly. The admin role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function properly. You may optionally specify a KMS key in the StudioEncryptionConfiguration. In Nimble Studio, resource names, descriptions, initialization scripts, and other data you provide are always encrypted at rest using an KMS key. By default, this key is owned by Amazon Web Services and managed on your behalf. You may provide your own KMS key when calling CreateStudio to encrypt this data using a key you own and manage. When providing an KMS key during studio creation, Nimble Studio creates KMS grants in your account to provide your studio user and admin roles access to these KMS keys. If you delete this grant, the studio will no longer be accessible to your portal users. If you delete the studio KMS key, your studio will no longer be accessible',
       options: [
+
         Option(
           name: '--admin-role-arn',
           description: 'The IAM role that studio admins will assume when logging in to the Nimble Studio portal',
@@ -493,6 +505,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -505,6 +518,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'create-studio-component',
       description: 'Creates a studio component resource',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -638,6 +652,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -650,6 +665,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'delete-launch-profile',
       description: 'Permanently delete a launch profile',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -693,6 +709,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -705,6 +722,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'delete-launch-profile-member',
       description: 'Delete a user from launch profile membership',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -757,6 +775,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -769,6 +788,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'delete-streaming-image',
       description: 'Delete streaming image',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -812,6 +832,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -824,6 +845,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'delete-streaming-session',
       description: 'Deletes streaming session resource. After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a DELETED state. A streaming session will count against your streaming session quota until it is marked DELETED',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -867,6 +889,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -879,6 +902,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'delete-studio',
       description: 'Delete a studio resource',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -913,6 +937,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -925,6 +950,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'delete-studio-component',
       description: 'Deletes a studio component resource',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -968,6 +994,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -980,6 +1007,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'delete-studio-member',
       description: 'Delete a user from studio membership',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -1023,6 +1051,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1035,6 +1064,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-eula',
       description: 'Get EULA',
       options: [
+
         Option(
           name: '--eula-id',
           description: 'The EULA ID',
@@ -1060,6 +1090,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1072,6 +1103,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-launch-profile',
       description: 'Get a launch profile',
       options: [
+
         Option(
           name: '--launch-profile-id',
           description: 'The ID of the launch profile used to control access from the streaming session',
@@ -1106,6 +1138,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1118,6 +1151,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-launch-profile-details',
       description: 'Launch profile details include the launch profile resource and summary information of resources that are used by, or available to, the launch profile. This includes the name and description of all studio components used by the launch profiles, and the name and description of streaming images that can be used with this launch profile',
       options: [
+
         Option(
           name: '--launch-profile-id',
           description: 'The ID of the launch profile used to control access from the streaming session',
@@ -1152,6 +1186,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1164,6 +1199,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-launch-profile-initialization',
       description: 'Get a launch profile initialization',
       options: [
+
         Option(
           name: '--launch-profile-id',
           description: 'The ID of the launch profile used to control access from the streaming session',
@@ -1225,6 +1261,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1237,6 +1274,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-launch-profile-member',
       description: 'Get a user persona in launch profile membership',
       options: [
+
         Option(
           name: '--launch-profile-id',
           description: 'The ID of the launch profile used to control access from the streaming session',
@@ -1280,6 +1318,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1292,6 +1331,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-streaming-image',
       description: 'Get streaming image',
       options: [
+
         Option(
           name: '--streaming-image-id',
           description: 'The streaming image ID',
@@ -1326,6 +1366,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1338,6 +1379,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-streaming-session',
       description: 'Gets StreamingSession resource. Invoke this operation to poll for a streaming session state while creating or deleting a session',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The streaming session ID',
@@ -1372,6 +1414,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1384,6 +1427,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-streaming-session-backup',
       description: 'Gets StreamingSessionBackup resource. Invoke this operation to poll for a streaming session backup while stopping a streaming session',
       options: [
+
         Option(
           name: '--backup-id',
           description: 'The ID of the backup',
@@ -1418,6 +1462,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1430,6 +1475,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-streaming-session-stream',
       description: 'Gets a StreamingSessionStream for a streaming session. Invoke this operation to poll the resource after invoking CreateStreamingSessionStream. After the StreamingSessionStream changes to the READY state, the url property will contain a stream to be used with the DCV streaming client',
       options: [
+
         Option(
           name: '--session-id',
           description: 'The streaming session ID',
@@ -1473,6 +1519,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1485,6 +1532,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-studio',
       description: 'Get a studio resource',
       options: [
+
         Option(
           name: '--studio-id',
           description: 'The studio ID',
@@ -1510,6 +1558,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1522,6 +1571,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-studio-component',
       description: 'Gets a studio component resource',
       options: [
+
         Option(
           name: '--studio-component-id',
           description: 'The studio component ID',
@@ -1556,6 +1606,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1568,6 +1619,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'get-studio-member',
       description: 'Get a user\'s membership in a studio',
       options: [
+
         Option(
           name: '--principal-id',
           description: 'The principal ID. This currently supports a IAM Identity Center UserId',
@@ -1602,6 +1654,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1614,6 +1667,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-eula-acceptances',
       description: 'List EULA acceptances',
       options: [
+
         Option(
           name: '--eula-ids',
           description: 'The list of EULA IDs that have been previously accepted',
@@ -1675,6 +1729,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1687,6 +1742,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-eulas',
       description: 'List EULAs',
       options: [
+
         Option(
           name: '--eula-ids',
           description: 'The list of EULA IDs that should be returned',
@@ -1739,6 +1795,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1751,6 +1808,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-launch-profile-members',
       description: 'Get all users in a given launch profile membership',
       options: [
+
         Option(
           name: '--launch-profile-id',
           description: 'The ID of the launch profile used to control access from the streaming session',
@@ -1830,6 +1888,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1842,6 +1901,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-launch-profiles',
       description: 'List all the launch profiles a studio',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The max number of results to return in the response',
@@ -1930,6 +1990,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1942,6 +2003,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-streaming-images',
       description: 'List the streaming image resources available to this studio. This list will contain both images provided by Amazon Web Services, as well as streaming images that you have created in your studio',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results, or null if there are no more results',
@@ -2003,6 +2065,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2015,6 +2078,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-streaming-session-backups',
       description: 'Lists the backups of a streaming session in a studio',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results, or null if there are no more results',
@@ -2076,6 +2140,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2088,6 +2153,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-streaming-sessions',
       description: 'Lists the streaming sessions in a studio',
       options: [
+
         Option(
           name: '--created-by',
           description: 'Filters the request to streaming sessions created by the given user',
@@ -2167,6 +2233,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2179,6 +2246,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-studio-components',
       description: 'Lists the StudioComponents in a studio',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The max number of results to return in the response',
@@ -2267,6 +2335,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2279,6 +2348,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-studio-members',
       description: 'Get all users in a given studio membership.   ListStudioMembers only returns admin members',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The max number of results to return in the response',
@@ -2349,6 +2419,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2361,6 +2432,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-studios',
       description: 'List studios in your Amazon Web Services accounts in the requested Amazon Web Services Region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next set of results, or null if there are no more results',
@@ -2404,6 +2476,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2416,6 +2489,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets the tags for a resource, given its Amazon Resource Names (ARN). This operation supports ARNs for all resource types in Nimble Studio that support tags, including studio, studio component, launch profile, streaming image, and streaming session. All resources that can be tagged will contain an ARN property, so you do not have to create this ARN yourself',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource for which you want to list tags',
@@ -2441,6 +2515,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2453,6 +2528,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'put-launch-profile-members',
       description: 'Add/update users with given persona to launch profile membership',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -2514,6 +2590,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2526,6 +2603,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'put-studio-members',
       description: 'Add/update users with given persona to studio membership',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -2578,6 +2656,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2590,6 +2669,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'start-streaming-session',
       description: 'Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS state is the intermediate state between the STOPPED and READY states',
       options: [
+
         Option(
           name: '--backup-id',
           description: 'The ID of the backup',
@@ -2642,6 +2722,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2654,6 +2735,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'start-studio-sso-configuration-repair',
       description: 'Repairs the IAM Identity Center configuration for a given studio. If the studio has a valid IAM Identity Center configuration currently associated with it, this operation will fail with a validation error. If the studio does not have a valid IAM Identity Center configuration currently associated with it, then a new IAM Identity Center application is created for the studio and the studio is changed to the READY state. After the IAM Identity Center application is repaired, you must use the Amazon Nimble Studio console to add administrators and users to your studio',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -2688,6 +2770,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2700,6 +2783,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'stop-streaming-session',
       description: 'Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS state is the intermediate state between the READY and STOPPED states',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -2752,6 +2836,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2764,6 +2849,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'tag-resource',
       description: 'Creates tags for a resource, given its ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource you want to add tags to',
@@ -2798,6 +2884,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2810,6 +2897,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes the tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'Identifies the Amazon Resource Name(ARN) key from which you are removing tags',
@@ -2844,6 +2932,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2856,6 +2945,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'update-launch-profile',
       description: 'Update a launch profile',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -2944,6 +3034,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2956,6 +3047,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'update-launch-profile-member',
       description: 'Update a user persona in launch profile membership',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -3017,6 +3109,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3029,6 +3122,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'update-streaming-image',
       description: 'Update streaming image',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -3090,6 +3184,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3102,6 +3197,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'update-studio',
       description: 'Update a Studio resource. Currently, this operation only supports updating the displayName of your studio',
       options: [
+
         Option(
           name: '--admin-role-arn',
           description: 'The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal',
@@ -3163,6 +3259,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3175,6 +3272,7 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'update-studio-component',
       description: 'Updates a studio component resource',
       options: [
+
         Option(
           name: '--client-token',
           description: 'Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency',
@@ -3308,6 +3406,7 @@ final FigSpec nimbleSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3320,10 +3419,12 @@ final FigSpec nimbleSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'launch-profile-deleted',
           description: 'Wait until a LaunchProfile is Deleted. Use this after invoking DeleteLaunchProfile It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 150 failed checks',
           options: [
+
             Option(
               name: '--launch-profile-id',
               description: 'The ID of the launch profile used to control access from the streaming session',
@@ -3358,6 +3459,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3370,6 +3472,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'launch-profile-ready',
           description: 'Wait until a LaunchProfile is Ready. Use this after invoking CreateLaunchProfile or UpdateLaunchProfile It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 150 failed checks',
           options: [
+
             Option(
               name: '--launch-profile-id',
               description: 'The ID of the launch profile used to control access from the streaming session',
@@ -3404,6 +3507,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3416,6 +3520,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'streaming-image-deleted',
           description: 'Wait until a StreamingImage Deleted. Use this after invoking DeleteStreamingImage It will poll every 2 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--streaming-image-id',
               description: 'The streaming image ID',
@@ -3450,6 +3555,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3462,6 +3568,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'streaming-image-ready',
           description: 'Wait until a StreamingImage is Ready. Use this after invoking CreateStreamingImage or UpdateStreamingImage It will poll every 2 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--streaming-image-id',
               description: 'The streaming image ID',
@@ -3496,6 +3603,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3508,6 +3616,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'streaming-session-deleted',
           description: 'Wait until a StreamingSessionDeleted. Use this after invoking DeleteStreamingSession It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 180 failed checks',
           options: [
+
             Option(
               name: '--session-id',
               description: 'The streaming session ID',
@@ -3542,6 +3651,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3554,6 +3664,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'streaming-session-ready',
           description: 'Wait until a StreamingSession is ready. Use this after invoking CreateStreamingSession, StartStreamingSession It will poll every 10 seconds until a successful state has been reached. This will exit with a return code of 255 after 180 failed checks',
           options: [
+
             Option(
               name: '--session-id',
               description: 'The streaming session ID',
@@ -3588,6 +3699,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3600,6 +3712,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'streaming-session-stopped',
           description: 'Wait until a StreamingSessionStopped. Use this after invoking StopStreamingSession It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 180 failed checks',
           options: [
+
             Option(
               name: '--session-id',
               description: 'The streaming session ID',
@@ -3634,6 +3747,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3646,6 +3760,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'streaming-session-stream-ready',
           description: 'Wait until a StreamingSessionStream is ready. Use this after invoking CreateStreamingSessionStream It will poll every 5 seconds until a successful state has been reached. This will exit with a return code of 255 after 30 failed checks',
           options: [
+
             Option(
               name: '--session-id',
               description: 'The streaming session ID',
@@ -3689,6 +3804,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3701,6 +3817,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'studio-component-deleted',
           description: 'Wait until a StudioComponent Deleted. Use this after invoking DeleteStudioComponent It will poll every 1 seconds until a successful state has been reached. This will exit with a return code of 255 after 120 failed checks',
           options: [
+
             Option(
               name: '--studio-component-id',
               description: 'The studio component ID',
@@ -3735,6 +3852,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3747,6 +3865,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'studio-component-ready',
           description: 'Wait until a StudioComponent is Ready. Use this after invoking CreateStudioComponent or UpdateStudioComponent It will poll every 2 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--studio-component-id',
               description: 'The studio component ID',
@@ -3781,6 +3900,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3793,6 +3913,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'studio-deleted',
           description: 'Wait until a Studio is Deleted. Use this after invoking DeleteStudio. It will poll every 2 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--studio-id',
               description: 'The studio ID',
@@ -3818,6 +3939,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3830,6 +3952,7 @@ final FigSpec nimbleSpec = FigSpec(
           name: 'studio-ready',
           description: 'Wait until a Studio is Ready. Use this after invoking CreateStudio, UpdateStudio, or StartStudioSSOConfigurationRepair It will poll every 2 seconds until a successful state has been reached. This will exit with a return code of 255 after 60 failed checks',
           options: [
+
             Option(
               name: '--studio-id',
               description: 'The studio ID',
@@ -3855,6 +3978,7 @@ final FigSpec nimbleSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

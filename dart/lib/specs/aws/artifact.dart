@@ -9,10 +9,12 @@ final FigSpec artifactSpec = FigSpec(
   name: 'artifact',
   description: 'This reference provides descriptions of the low-level AWS Artifact Service API',
   subcommands: [
+
     Subcommand(
       name: 'get-account-settings',
       description: 'Get the account settings for Artifact',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -29,6 +31,7 @@ final FigSpec artifactSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -41,6 +44,7 @@ final FigSpec artifactSpec = FigSpec(
       name: 'get-report',
       description: 'Get the content for a single report',
       options: [
+
         Option(
           name: '--report-id',
           description: 'Unique resource ID for the report resource',
@@ -84,6 +88,7 @@ final FigSpec artifactSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec artifactSpec = FigSpec(
       name: 'get-report-metadata',
       description: 'Get the metadata for a single report',
       options: [
+
         Option(
           name: '--report-id',
           description: 'Unique resource ID for the report resource',
@@ -130,6 +136,7 @@ final FigSpec artifactSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -142,6 +149,7 @@ final FigSpec artifactSpec = FigSpec(
       name: 'get-term-for-report',
       description: 'Get the Term content associated with a single report',
       options: [
+
         Option(
           name: '--report-id',
           description: 'Unique resource ID for the report resource',
@@ -176,6 +184,7 @@ final FigSpec artifactSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -188,6 +197,7 @@ final FigSpec artifactSpec = FigSpec(
       name: 'list-reports',
       description: 'List available reports',
       options: [
+
         Option(
           name: '--max-results',
           description: 'Maximum number of resources to return in the paginated response',
@@ -249,6 +259,7 @@ final FigSpec artifactSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -261,6 +272,7 @@ final FigSpec artifactSpec = FigSpec(
       name: 'put-account-settings',
       description: 'Put the account settings for Artifact',
       options: [
+
         Option(
           name: '--notification-subscription-status',
           description: 'Desired notification subscription status',
@@ -286,6 +298,7 @@ final FigSpec artifactSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

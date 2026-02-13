@@ -9,14 +9,17 @@ final FigSpec identitySpec = FigSpec(
   name: 'identity',
   description: 'Manage Cloud Identity Groups and Memberships resources',
   subcommands: [
+
     Subcommand(
       name: 'groups',
       description: 'Manage Cloud Identity Groups',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -196,6 +199,7 @@ final FigSpec identitySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -214,6 +218,7 @@ final FigSpec identitySpec = FigSpec(
                 name: 'WITH_INITIAL_OWNER',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'empty'),
                   FigSuggestion(name: 'initial-group-config-unspecified'),
                   FigSuggestion(name: 'with-initial-owner')
@@ -233,6 +238,7 @@ final FigSpec identitySpec = FigSpec(
           name: 'delete',
           description: 'Delete an existing group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -356,6 +362,7 @@ final FigSpec identitySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -378,6 +385,7 @@ final FigSpec identitySpec = FigSpec(
           name: 'describe',
           description: 'Describe an existing group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -501,6 +509,7 @@ final FigSpec identitySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -523,10 +532,12 @@ final FigSpec identitySpec = FigSpec(
           name: 'memberships',
           description: 'Manage Cloud Identity Groups Memberships',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Create a new membership in an existing group',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -685,6 +696,7 @@ final FigSpec identitySpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -701,6 +713,7 @@ final FigSpec identitySpec = FigSpec(
               name: 'delete',
               description: 'Delete a membership from an existing group',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -848,6 +861,7 @@ final FigSpec identitySpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -864,6 +878,7 @@ final FigSpec identitySpec = FigSpec(
               name: 'describe',
               description: 'Describe a membership in a group',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1011,6 +1026,7 @@ final FigSpec identitySpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1027,6 +1043,7 @@ final FigSpec identitySpec = FigSpec(
               name: 'list',
               description: 'List memberships in an existing group',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1217,6 +1234,7 @@ final FigSpec identitySpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1235,6 +1253,7 @@ final FigSpec identitySpec = FigSpec(
                     name: 'VIEW',
                     description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                     suggestions: [
+
                       FigSuggestion(name: 'basic'),
                       FigSuggestion(name: 'full')
                     ]
@@ -1247,6 +1266,7 @@ final FigSpec identitySpec = FigSpec(
               name: 'modify-membership-roles',
               description: 'Add/remove/modify membership roles of a membership in a group',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1416,6 +1436,7 @@ final FigSpec identitySpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1430,6 +1451,7 @@ final FigSpec identitySpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1553,6 +1575,7 @@ final FigSpec identitySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1569,6 +1592,7 @@ final FigSpec identitySpec = FigSpec(
           name: 'search',
           description: 'Searches for Groups matching a specified query',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1748,6 +1772,7 @@ final FigSpec identitySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1766,6 +1791,7 @@ final FigSpec identitySpec = FigSpec(
                 name: 'VIEW',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'basic'),
                   FigSuggestion(name: 'full')
                 ]
@@ -1778,6 +1804,7 @@ final FigSpec identitySpec = FigSpec(
           name: 'update',
           description: 'Update a group',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1931,6 +1958,7 @@ final FigSpec identitySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1951,6 +1979,7 @@ final FigSpec identitySpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2074,6 +2103,7 @@ final FigSpec identitySpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2088,6 +2118,7 @@ final FigSpec identitySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2211,6 +2242,7 @@ final FigSpec identitySpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

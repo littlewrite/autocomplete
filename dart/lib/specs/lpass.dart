@@ -9,10 +9,12 @@ final FigSpec lpassSpec = FigSpec(
   name: 'lpass',
   description: 'Command line interface for LastPass',
   subcommands: [
+
     Subcommand(
       name: 'login',
       description: 'Log in to LastPass',
       options: [
+
         Option(
           name: '--trust',
           description: 'Subsequent logins will not require multifactor authentication'
@@ -35,6 +37,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -56,6 +59,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'logout',
       description: 'Log out of LastPass',
       options: [
+
         Option(
           name: '--force',
           description: 'Skip user confirmation'
@@ -66,6 +70,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'ls',
       description: 'List names in groups in a tree structure',
       options: [
+
         Option(
           name: '--color',
           description: 'Control colored output to the terminal',
@@ -73,6 +78,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -111,6 +117,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'show',
       description: 'Show password or selected field',
       options: [
+
         Option(
           name: '--sync',
           description: 'When the current operation syncs to server',
@@ -118,6 +125,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'sync',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'now'),
               FigSuggestion(name: 'no')
@@ -298,6 +306,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -319,6 +328,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'mv',
       description: 'Move LastPass entry to a different group',
       options: [
+
         Option(
           name: '--color',
           description: 'Control colored output to the terminal',
@@ -326,6 +336,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -337,6 +348,7 @@ final FigSpec lpassSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'UNIQUENAME|UNIQUEID',
           description: 'Unique name or ID to move'
@@ -351,6 +363,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'add',
       description: 'Add a new entry',
       options: [
+
         Option(
           name: '--sync',
           description: 'When the current operation syncs to server',
@@ -358,6 +371,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'sync',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'now'),
               FigSuggestion(name: 'no')
@@ -378,6 +392,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -463,6 +478,7 @@ final FigSpec lpassSpec = FigSpec(
             name: 'NOTETYPE',
             description: 'Type of note to add',
             suggestions: [
+
               FigSuggestion(name: 'amex'),
               FigSuggestion(name: 'bank'),
               FigSuggestion(name: 'credit'),
@@ -496,6 +512,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'edit',
       description: 'Edit existing entry',
       options: [
+
         Option(
           name: '--sync',
           description: 'When the current operation syncs to server',
@@ -503,6 +520,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'sync',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'now'),
               FigSuggestion(name: 'no')
@@ -523,6 +541,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -605,6 +624,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'generate',
       description: 'Create randomly generated password',
       options: [
+
         Option(
           name: '--sync',
           description: 'When the current operation syncs to server',
@@ -612,6 +632,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'sync',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'now'),
               FigSuggestion(name: 'no')
@@ -628,6 +649,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -667,6 +689,7 @@ final FigSpec lpassSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'NAME|UNIQUEID',
           description: 'Name or unique ID of the entry to generate the password for'
@@ -681,6 +704,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'duplicate',
       description: 'Duplicate existing entry',
       options: [
+
         Option(
           name: '--sync',
           description: 'When the current operation syncs to server',
@@ -688,6 +712,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'sync',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'now'),
               FigSuggestion(name: 'no')
@@ -704,6 +729,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -725,6 +751,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'rm',
       description: 'Removes existing entry',
       options: [
+
         Option(
           name: '--sync',
           description: 'When the current operation syncs to server',
@@ -732,6 +759,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'sync',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'now'),
               FigSuggestion(name: 'no')
@@ -748,6 +776,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -769,6 +798,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'status',
       description: 'Show the LastPass login status',
       options: [
+
         Option(
           name: ['--quiet', '-q'],
           description: 'Display no output and only sets return code'
@@ -780,6 +810,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -795,6 +826,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'sync',
       description: 'Sync the local cache against the LastPass server',
       options: [
+
         Option(
           name: ['--background', '-b'],
           description: 'Syncronization occurs in a daemonized process'
@@ -806,6 +838,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -821,6 +854,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'import',
       description: 'Import account information from an unencrypted CSV',
       options: [
+
         Option(
           name: '--sync',
           description: 'When the current operation syncs to server',
@@ -828,6 +862,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'sync',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'now'),
               FigSuggestion(name: 'no')
@@ -853,6 +888,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'export',
       description: 'Export account information to an unencrypted CSV',
       options: [
+
         Option(
           name: '--sync',
           description: 'When the current operation syncs to server',
@@ -860,6 +896,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'sync',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'now'),
               FigSuggestion(name: 'no')
@@ -876,6 +913,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'color',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'never'),
               FigSuggestion(name: 'always')
@@ -892,6 +930,7 @@ final FigSpec lpassSpec = FigSpec(
             Arg(
             name: 'FIELDLIST',
             suggestions: [
+
               FigSuggestion(name: 'id,url,username,password,extra,name,fav,id,grouping,group,fullname,last_touch,last_modified_gmt,attachpresent')
             ]
           )
@@ -909,6 +948,7 @@ final FigSpec lpassSpec = FigSpec(
       name: 'share',
       description: 'LastPass Sharing Center functionality',
       subcommands: [
+
         Subcommand(
           name: 'userls',
           description: 'List the LastPass users which have access to the Shared Folders'
@@ -917,10 +957,12 @@ final FigSpec lpassSpec = FigSpec(
           name: 'useradd',
           description: 'Add user to Shared Folders',
           options: [
+
             Option(
               name: '--read-only',
               description: 'Control read or write access',
               args: [
+
                 Arg(
                   name: 'true',
                   description: 'Grant read only access'
@@ -935,6 +977,7 @@ final FigSpec lpassSpec = FigSpec(
               name: '--hidden',
               description: 'Share user view permission',
               args: [
+
                 Arg(
                   name: 'true',
                   description: 'User can only view entry'
@@ -949,6 +992,7 @@ final FigSpec lpassSpec = FigSpec(
               name: '--admin',
               description: 'Share user administer permission',
               args: [
+
                 Arg(
                   name: 'true',
                   description: 'User can administer entry'
@@ -961,6 +1005,7 @@ final FigSpec lpassSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SHARE',
               description: 'Entry to share'
@@ -975,10 +1020,12 @@ final FigSpec lpassSpec = FigSpec(
           name: 'usermod',
           description: 'Modify user on Shared Folders',
           options: [
+
             Option(
               name: '--read-only',
               description: 'Control read or write access',
               args: [
+
                 Arg(
                   name: 'true',
                   description: 'Grant read only access'
@@ -993,6 +1040,7 @@ final FigSpec lpassSpec = FigSpec(
               name: '--hidden',
               description: 'Share user view permission',
               args: [
+
                 Arg(
                   name: 'true',
                   description: 'User can only view entry'
@@ -1007,6 +1055,7 @@ final FigSpec lpassSpec = FigSpec(
               name: '--admin',
               description: 'Share user administer permission',
               args: [
+
                 Arg(
                   name: 'true',
                   description: 'User can administer entry'
@@ -1019,6 +1068,7 @@ final FigSpec lpassSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SHARE',
               description: 'Entry to modify'
@@ -1033,6 +1083,7 @@ final FigSpec lpassSpec = FigSpec(
           name: 'userdel',
           description: 'Remove user from Shared Folders',
           args: [
+
             Arg(
               name: 'SHARE',
               description: 'LastPass entry to remove user from'
@@ -1067,6 +1118,7 @@ final FigSpec lpassSpec = FigSpec(
           name: 'limit',
           description: 'Manipulate LastPass Shared Folder access',
           options: [
+
             Option(
               name: ['--deny', '--allow'],
               description: 'Deny or allow access'
@@ -1077,6 +1129,7 @@ final FigSpec lpassSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'SHARE',
               description: 'Shared Folder to remove'
@@ -1102,6 +1155,7 @@ final FigSpec lpassSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Display the help for lpass'

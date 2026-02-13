@@ -15,6 +15,7 @@ final FigSpec lessSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-?', '--help'],
       description: 'This option displays a summary of the commands accepted by less (the same as the h command).  (Depending on how your shell interprets the question mark, it may be necessary to quote the question mark, thus: "-?"'

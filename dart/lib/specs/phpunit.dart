@@ -9,6 +9,7 @@ final FigSpec phpunitSpec = FigSpec(
   name: 'phpunit',
   description: 'The PHPUnit is a command-line test runner that can be invoked through the phpunit command',
   options: [
+
     Option(
       name: '--coverage-clover',
       description: 'Generate code coverage report in Clover XML format,',

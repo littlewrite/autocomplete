@@ -9,10 +9,12 @@ final FigSpec migrationhubstrategySpec = FigSpec(
   name: 'migrationhubstrategy',
   description: 'Migration Hub Strategy Recommendations This API reference provides descriptions, syntax, and other details about each of the actions and data types for Migration Hub Strategy Recommendations (Strategy Recommendations). The topic for each action shows the API request parameters and the response. Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you\'re using. For more information, see AWS SDKs',
   subcommands: [
+
     Subcommand(
       name: 'get-application-component-details',
       description: 'Retrieves details about an application component',
       options: [
+
         Option(
           name: '--application-component-id',
           description: 'The ID of the application component. The ID is unique within an AWS account',
@@ -38,6 +40,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'get-application-component-strategies',
       description: 'Retrieves a list of all the recommended strategies and tools for an application component running on a server',
       options: [
+
         Option(
           name: '--application-component-id',
           description: 'The ID of the application component. The ID is unique within an AWS account',
@@ -75,6 +79,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'get-assessment',
       description: 'Retrieves the status of an on-going assessment',
       options: [
+
         Option(
           name: '--id',
           description: 'The assessmentid returned by StartAssessment',
@@ -112,6 +118,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -124,6 +131,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'get-import-file-task',
       description: 'Retrieves the details about a specific import task',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the import file task. This ID is returned in the response of StartImportFileTask',
@@ -149,6 +157,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -161,6 +170,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'get-latest-assessment-id',
       description: 'Retrieve the latest ID of a specific assessment task',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -177,6 +187,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -189,6 +200,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'get-portfolio-preferences',
       description: 'Retrieves your migration and modernization preferences',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -205,6 +217,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -217,6 +230,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'get-portfolio-summary',
       description: 'Retrieves overall summary including the number of servers to rehost and the overall number of anti-patterns',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -233,6 +247,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -245,6 +260,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'get-recommendation-report-details',
       description: 'Retrieves detailed information about the specified recommendation report',
       options: [
+
         Option(
           name: '--id',
           description: 'The recommendation report generation task id returned by StartRecommendationReportGeneration',
@@ -270,6 +286,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -282,6 +299,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'get-server-details',
       description: 'Retrieves detailed information about a specified server',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to include in the response. The maximum value is 100',
@@ -352,6 +370,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -364,6 +383,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'get-server-strategies',
       description: 'Retrieves recommended strategies and tools for the specified server',
       options: [
+
         Option(
           name: '--server-id',
           description: 'The ID of the server',
@@ -389,6 +409,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -401,6 +422,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'list-analyzable-servers',
       description: 'Retrieves a list of all the servers fetched from customer vCenter using Strategy Recommendation Collector',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to include in the response. The maximum value is 100',
@@ -471,6 +493,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -483,6 +506,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'list-application-components',
       description: 'Retrieves a list of all the application components (processes)',
       options: [
+
         Option(
           name: '--application-component-criteria',
           description: 'Criteria for filtering the list of application components',
@@ -580,6 +604,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -592,6 +617,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'list-collectors',
       description: 'Retrieves a list of all the installed collectors',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to include in the response. The maximum value is 100',
@@ -653,6 +679,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -665,6 +692,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'list-import-file-task',
       description: 'Retrieves a list of all the imports performed',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The total number of items to return. The maximum value is 100',
@@ -726,6 +754,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -738,6 +767,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'list-servers',
       description: 'Returns a list of all the servers',
       options: [
+
         Option(
           name: '--filter-value',
           description: 'Specifies the filter value, which is based on the type of server criteria. For example, if serverCriteria is OS_NAME, and the filterValue is equal to WindowsServer, then ListServers returns all of the servers matching the OS name WindowsServer',
@@ -835,6 +865,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -847,6 +878,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'put-portfolio-preferences',
       description: 'Saves the specified migration and modernization preferences',
       options: [
+
         Option(
           name: '--application-mode',
           description: 'The classification for application component types',
@@ -899,6 +931,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -911,6 +944,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'start-assessment',
       description: 'Starts the assessment of an on-premises environment',
       options: [
+
         Option(
           name: '--assessment-data-source-type',
           description: 'The data source type of an assessment to be started',
@@ -963,6 +997,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -975,6 +1010,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'start-import-file-task',
       description: 'Starts a file import',
       options: [
+
         Option(
           name: '--s3-bucket',
           description: 'The S3 bucket where the import file is located. The bucket name is required to begin with migrationhub-strategy-',
@@ -1045,6 +1081,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1057,6 +1094,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'start-recommendation-report-generation',
       description: 'Starts generating a recommendation report',
       options: [
+
         Option(
           name: '--group-id-filter',
           description: 'Groups the resources in the recommendation report with a unique name',
@@ -1091,6 +1129,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1103,6 +1142,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'stop-assessment',
       description: 'Stops the assessment of an on-premises environment',
       options: [
+
         Option(
           name: '--assessment-id',
           description: 'The assessmentId returned by StartAssessment',
@@ -1128,6 +1168,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1140,6 +1181,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'update-application-component-config',
       description: 'Updates the configuration of an application component',
       options: [
+
         Option(
           name: '--app-type',
           description: 'The type of known component',
@@ -1218,6 +1260,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1230,6 +1273,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
       name: 'update-server-config',
       description: 'Updates the configuration of the specified server',
       options: [
+
         Option(
           name: '--server-id',
           description: 'The ID of the server',
@@ -1264,6 +1308,7 @@ final FigSpec migrationhubstrategySpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

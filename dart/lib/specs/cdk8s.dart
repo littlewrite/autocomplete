@@ -9,6 +9,7 @@ final FigSpec cdk8sSpec = FigSpec(
   name: 'cdk8s',
   description: 'CDK for K8s',
   subcommands: [
+
     Subcommand(
       name: 'init',
       description: 'Create a new, empty CDK8S project',
@@ -17,6 +18,7 @@ final FigSpec cdk8sSpec = FigSpec(
         name: 'type',
         description: 'Select language you are using',
         suggestions: [
+
           FigSuggestion(
             name: 'go-app'
           ),
@@ -44,6 +46,7 @@ final FigSpec cdk8sSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['--language', '-l'],
           description: 'Output programming language',
@@ -51,6 +54,7 @@ final FigSpec cdk8sSpec = FigSpec(
             Arg(
             name: 'language',
             suggestions: [
+
               FigSuggestion(
                 name: 'typescript'
               ),
@@ -101,6 +105,7 @@ final FigSpec cdk8sSpec = FigSpec(
       name: 'synth',
       description: 'Synthesizes Kubernetes manifests for all charts in your app',
       options: [
+
         Option(
           name: ['--app', '-a'],
           description: 'Command to use in order to execute cdk8s app'
@@ -145,6 +150,7 @@ final FigSpec cdk8sSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--version',
       description: 'The current version'

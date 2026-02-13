@@ -10,6 +10,7 @@ final FigSpec steadybitSpec = FigSpec(
   description: 'Command-line interface to interact with the Steadybit API',
   subcommands: [],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Display usage information'

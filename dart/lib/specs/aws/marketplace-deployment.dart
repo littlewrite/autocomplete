@@ -9,10 +9,12 @@ final FigSpec marketplaceDeploymentSpec = FigSpec(
   name: 'marketplace-deployment',
   description: 'The AWS Marketplace Deployment Service supports the Quick Launch experience, which is a deployment option for software as a service (SaaS) products. Quick Launch simplifies and reduces the time, resources, and steps required to configure, deploy, and launch a products. The AWS Marketplace Deployment Service provides sellers with a secure method for passing deployment parameters (for example, API keys and external IDs) to buyers during the Quick Launch experience',
   subcommands: [
+
     Subcommand(
       name: 'list-tags-for-resource',
       description: 'Lists all tags that have been added to a deployment parameter resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) associated with the deployment parameter resource you want to list tags on',
@@ -38,6 +40,7 @@ final FigSpec marketplaceDeploymentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec marketplaceDeploymentSpec = FigSpec(
       name: 'put-deployment-parameter',
       description: 'Creates or updates a deployment parameter and is targeted by catalog and agreementId',
       options: [
+
         Option(
           name: '--agreement-id',
           description: 'The unique identifier of the agreement',
@@ -129,6 +133,7 @@ final FigSpec marketplaceDeploymentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec marketplaceDeploymentSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) associated with the resource you want to tag',
@@ -175,6 +181,7 @@ final FigSpec marketplaceDeploymentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec marketplaceDeploymentSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag or list of tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from',
@@ -221,6 +229,7 @@ final FigSpec marketplaceDeploymentSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

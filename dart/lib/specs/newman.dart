@@ -9,10 +9,12 @@ final FigSpec newmanSpec = FigSpec(
   name: 'newman',
   description: 'Newman is a command-line collection runner for Postman',
   subcommands: [
+
     Subcommand(
       name: 'run',
       description: 'Initiate a Postman Collection run from a given URL or path',
       options: [
+
         Option(
           name: ['-e', '--environment'],
           description: 'Specify a URL or path to a Postman Environment',
@@ -61,6 +63,7 @@ final FigSpec newmanSpec = FigSpec(
             name: 'path',
             template: 'filepaths',
             suggestions: [
+
               FigSuggestion(name: 'JSON'),
               FigSuggestion(name: 'CSV')
             ]
@@ -168,6 +171,7 @@ final FigSpec newmanSpec = FigSpec(
             name: 'value',
             defaultValue: 'auto',
             suggestions: [
+
               FigSuggestion(name: 'auto'),
               FigSuggestion(name: 'on'),
               FigSuggestion(name: 'off')
@@ -328,6 +332,7 @@ final FigSpec newmanSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-v', '--version'],
       description: 'Output the version number'

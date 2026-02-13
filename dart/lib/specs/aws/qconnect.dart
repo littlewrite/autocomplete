@@ -9,10 +9,12 @@ final FigSpec qconnectSpec = FigSpec(
   name: 'qconnect',
   description: 'Amazon Q actions     Amazon Q data types      Powered by Amazon Bedrock: Amazon Web Services implements automated abuse detection. Because Amazon Q in Connect is built on Amazon Bedrock, users can take full advantage of the controls implemented in Amazon Bedrock to enforce safety, security, and the responsible use of artificial intelligence (AI).  Amazon Q in Connect is a generative AI customer service assistant. It is an LLM-enhanced evolution of Amazon Connect Wisdom that delivers real-time recommendations to help contact center agents resolve customer issues quickly and accurately. Amazon Q in Connect automatically detects customer intent during calls and chats using conversational analytics and natural language understanding (NLU). It then provides agents with immediate, real-time generative responses and suggested actions, and links to relevant documents and articles. Agents can also query Amazon Q in Connect directly using natural language or keywords to answer customer requests. Use the Amazon Q in Connect APIs to create an assistant and a knowledge base, for example, or manage content by uploading custom files. For more information, see Use Amazon Q in Connect for generative AI powered agent assistance in real-time in the Amazon Connect Administrator Guide',
   subcommands: [
+
     Subcommand(
       name: 'activate-message-template',
       description: 'Activates a specific version of the Amazon Q in Connect message template. After the version is activated, the previous active version will be deactivated automatically. You can use the \$ACTIVE_VERSION qualifier later to reference the version that is in active status',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -56,6 +58,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-ai-agent',
       description: 'Creates an Amazon Q in Connect AI Agent',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -156,6 +160,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +173,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-ai-agent-version',
       description: 'Creates and Amazon Q in Connect AI Agent version',
       options: [
+
         Option(
           name: '--ai-agent-id',
           description: 'The identifier of the Amazon Q in Connect AI Agent',
@@ -220,6 +226,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -232,6 +239,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-ai-guardrail',
       description: 'Creates an Amazon Q in Connect AI Guardrail',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -365,6 +373,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -377,6 +386,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-ai-guardrail-version',
       description: 'Creates an Amazon Q in Connect AI Guardrail version',
       options: [
+
         Option(
           name: '--ai-guardrail-id',
           description: 'The identifier of the Amazon Q in Connect AI Guardrail',
@@ -429,6 +439,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -441,6 +452,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-ai-prompt',
       description: 'Creates an Amazon Q in Connect AI Prompt',
       options: [
+
         Option(
           name: '--api-format',
           description: 'The API Format of the AI Prompt',
@@ -556,6 +568,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -568,6 +581,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-ai-prompt-version',
       description: 'Creates an Amazon Q in Connect AI Prompt version',
       options: [
+
         Option(
           name: '--ai-prompt-id',
           description: 'The identifier of the Amazon Q in Connect AI prompt',
@@ -620,6 +634,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -632,6 +647,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-assistant',
       description: 'Creates an Amazon Q in Connect assistant',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -702,6 +718,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -714,6 +731,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-assistant-association',
       description: 'Creates an association between an Amazon Q in Connect assistant and another resource. Currently, the only supported association is with a knowledge base. An assistant can have only a single association',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -775,6 +793,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -787,6 +806,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-content',
       description: 'Creates Amazon Q in Connect content. Before to calling this API, use StartContentUpload to upload an asset',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -875,6 +895,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -887,6 +908,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-content-association',
       description: 'Creates an association between a content resource in a knowledge base and step-by-step guides. Step-by-step guides offer instructions to agents for resolving common customer issues. You create a content association to integrate Amazon Q in Connect and step-by-step guides.  After you integrate Amazon Q and step-by-step guides, when Amazon Q provides a recommendation to an agent based on the intent that it\'s detected, it also provides them with the option to start the step-by-step guide that you have associated with the content. Note the following limitations:   You can create only one content association for each content resource in a knowledge base.   You can associate a step-by-step guide with multiple content resources.   For more information, see Integrate Amazon Q in Connect with step-by-step guides in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--association',
           description: 'The identifier of the associated resource',
@@ -957,6 +979,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -969,6 +992,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-knowledge-base',
       description: 'Creates a knowledge base.  When using this API, you cannot reuse Amazon AppIntegrations DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do, you\'ll get an InvalidRequestException error.  For example, you\'re programmatically managing your external knowledge base, and you want to add or remove one of the fields that is being ingested from Salesforce. Do the following:   Call DeleteKnowledgeBase.   Call DeleteDataIntegration.   Call CreateDataIntegration to recreate the DataIntegration or a create different one.   Call CreateKnowledgeBase',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see Making retries safe with idempotent APIs',
@@ -1066,6 +1090,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1078,6 +1103,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-message-template',
       description: 'Creates an Amazon Q in Connect message template. The name of the message template has to be unique for each knowledge base. The channel subtype of the message template is immutable and cannot be modified after creation. After the message template is created, you can use the \$LATEST qualifier to reference the created message template',
       options: [
+
         Option(
           name: '--channel-subtype',
           description: 'The channel subtype this message template applies to',
@@ -1184,6 +1210,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1196,6 +1223,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-message-template-attachment',
       description: 'Uploads an attachment file to the specified Amazon Q in Connect message template. The name of the message template attachment has to be unique for each message template referenced by the \$LATEST qualifier. The body of the attachment file should be encoded using base64 encoding. After the file is uploaded, you can use the pre-signed Amazon S3 URL returned in response to download the uploaded file',
       options: [
+
         Option(
           name: '--body',
           description: 'The body of the attachment file being uploaded. It should be encoded using base64 encoding',
@@ -1266,6 +1294,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1278,6 +1307,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-message-template-version',
       description: 'Creates a new Amazon Q in Connect message template version from the current content and configuration of a message template. Versions are immutable and monotonically increasing. Once a version is created, you can reference a specific version of the message template by passing in <message-template-id>:<versionNumber> as the message template identifier. An error is displayed if the supplied messageTemplateContentSha256 is different from the messageTemplateContentSha256 of the message template with \$LATEST qualifier. If multiple CreateMessageTemplateVersion requests are made while the message template remains the same, only the first invocation creates a new version and the succeeding requests will return the same response as the first invocation',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1321,6 +1351,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1333,6 +1364,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-quick-response',
       description: 'Creates an Amazon Q in Connect quick response',
       options: [
+
         Option(
           name: '--channels',
           description: 'The Amazon Connect channels this quick response applies to',
@@ -1456,6 +1488,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1468,6 +1501,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'create-session',
       description: 'Creates a session. A session is a contextual container used for generating recommendations. Amazon Connect creates a new Amazon Q in Connect session for each contact on which Amazon Q in Connect is enabled',
       options: [
+
         Option(
           name: '--ai-agent-configuration',
           description: 'The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session',
@@ -1547,6 +1581,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1559,6 +1594,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'deactivate-message-template',
       description: 'Deactivates a specific version of the Amazon Q in Connect message template . After the version is deactivated, you can no longer use the \$ACTIVE_VERSION qualifier to reference the version in active status',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1602,6 +1638,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1614,6 +1651,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-ai-agent',
       description: 'Deletes an Amazon Q in Connect AI Agent',
       options: [
+
         Option(
           name: '--ai-agent-id',
           description: 'The identifier of the Amazon Q in Connect AI Agent. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1648,6 +1686,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1660,6 +1699,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-ai-agent-version',
       description: 'Deletes an Amazon Q in Connect AI Agent Version',
       options: [
+
         Option(
           name: '--ai-agent-id',
           description: 'The identifier of the Amazon Q in Connect AI Agent. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1703,6 +1743,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1715,6 +1756,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-ai-guardrail',
       description: 'Deletes an Amazon Q in Connect AI Guardrail',
       options: [
+
         Option(
           name: '--ai-guardrail-id',
           description: 'The identifier of the Amazon Q in Connect AI Guardrail. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1749,6 +1791,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1761,6 +1804,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-ai-guardrail-version',
       description: 'Delete and Amazon Q in Connect AI Guardrail version',
       options: [
+
         Option(
           name: '--ai-guardrail-id',
           description: 'The identifier of the Amazon Q in Connect AI Guardrail',
@@ -1804,6 +1848,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1816,6 +1861,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-ai-prompt',
       description: 'Deletes an Amazon Q in Connect AI Prompt',
       options: [
+
         Option(
           name: '--ai-prompt-id',
           description: 'The identifier of the Amazon Q in Connect AI prompt. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1850,6 +1896,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1862,6 +1909,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-ai-prompt-version',
       description: 'Delete and Amazon Q in Connect AI Prompt version',
       options: [
+
         Option(
           name: '--ai-prompt-id',
           description: 'The identifier of the Amazon Q in Connect AI prompt',
@@ -1905,6 +1953,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1917,6 +1966,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-assistant',
       description: 'Deletes an assistant',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1942,6 +1992,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1954,6 +2005,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-assistant-association',
       description: 'Deletes an assistant association',
       options: [
+
         Option(
           name: '--assistant-association-id',
           description: 'The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -1988,6 +2040,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2000,6 +2053,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-content',
       description: 'Deletes the content',
       options: [
+
         Option(
           name: '--content-id',
           description: 'The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2034,6 +2088,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2046,6 +2101,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-content-association',
       description: 'Deletes the content association.  For more information about content associations--what they are and when they are used--see Integrate Amazon Q in Connect with step-by-step guides in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--content-association-id',
           description: 'The identifier of the content association. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2089,6 +2145,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2101,6 +2158,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-import-job',
       description: 'Deletes the quick response import job',
       options: [
+
         Option(
           name: '--import-job-id',
           description: 'The identifier of the import job to be deleted',
@@ -2135,6 +2193,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2147,6 +2206,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-knowledge-base',
       description: 'Deletes the knowledge base.  When you use this API to delete an external knowledge base such as Salesforce or ServiceNow, you must also delete the Amazon AppIntegrations DataIntegration. This is because you can\'t reuse the DataIntegration after it\'s been associated with an external knowledge base. However, you can delete and recreate it. See DeleteDataIntegration and CreateDataIntegration in the Amazon AppIntegrations API Reference',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2172,6 +2232,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2184,6 +2245,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-message-template',
       description: 'Deletes an Amazon Q in Connect message template entirely or a specific version of the message template if version is supplied in the request. You can provide the message template identifier as <message-template-id>:<versionNumber> to delete a specific version of the message template. If it is not supplied, the message template and all available versions will be deleted',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2218,6 +2280,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2230,6 +2293,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-message-template-attachment',
       description: 'Deletes the attachment file from the Amazon Q in Connect message template that is referenced by \$LATEST qualifier. Attachments on available message template versions will remain unchanged',
       options: [
+
         Option(
           name: '--attachment-id',
           description: 'The identifier of the attachment file',
@@ -2273,6 +2337,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2285,6 +2350,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'delete-quick-response',
       description: 'Deletes a quick response',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The knowledge base from which the quick response is deleted. The identifier of the knowledge base',
@@ -2319,6 +2385,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2331,6 +2398,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-ai-agent',
       description: 'Gets an Amazon Q in Connect AI Agent',
       options: [
+
         Option(
           name: '--ai-agent-id',
           description: 'The identifier of the Amazon Q in Connect AI Agent (with or without a version qualifier). Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2365,6 +2433,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2377,6 +2446,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-ai-guardrail',
       description: 'Gets the Amazon Q in Connect AI Guardrail',
       options: [
+
         Option(
           name: '--ai-guardrail-id',
           description: 'The identifier of the Amazon Q in Connect AI Guardrail',
@@ -2411,6 +2481,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2423,6 +2494,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-ai-prompt',
       description: 'Gets and Amazon Q in Connect AI Prompt',
       options: [
+
         Option(
           name: '--ai-prompt-id',
           description: 'The identifier of the Amazon Q in Connect AI prompt',
@@ -2457,6 +2529,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2469,6 +2542,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-assistant',
       description: 'Retrieves information about an assistant',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2494,6 +2568,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2506,6 +2581,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-assistant-association',
       description: 'Retrieves information about an assistant association',
       options: [
+
         Option(
           name: '--assistant-association-id',
           description: 'The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2540,6 +2616,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2552,6 +2629,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-content',
       description: 'Retrieves content, including a pre-signed URL to download the content',
       options: [
+
         Option(
           name: '--content-id',
           description: 'The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2586,6 +2664,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2598,6 +2677,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-content-association',
       description: 'Returns the content association. For more information about content associations--what they are and when they are used--see Integrate Amazon Q in Connect with step-by-step guides in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--content-association-id',
           description: 'The identifier of the content association. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2641,6 +2721,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2653,6 +2734,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-content-summary',
       description: 'Retrieves summary information about the content',
       options: [
+
         Option(
           name: '--content-id',
           description: 'The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2687,6 +2769,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2699,6 +2782,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-import-job',
       description: 'Retrieves the started import job',
       options: [
+
         Option(
           name: '--import-job-id',
           description: 'The identifier of the import job to retrieve',
@@ -2733,6 +2817,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2745,6 +2830,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-knowledge-base',
       description: 'Retrieves information about the knowledge base',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2770,6 +2856,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2782,6 +2869,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-message-template',
       description: 'Retrieves the Amazon Q in Connect message template. The message template identifier can contain an optional qualifier, for example, <message-template-id>:<qualifier>, which is either an actual version number or an Amazon Q Connect managed qualifier \$ACTIVE_VERSION | \$LATEST. If it is not supplied, then \$LATEST is assumed implicitly',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2816,6 +2904,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2828,6 +2917,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-next-message',
       description: 'Retrieves next message on an Amazon Q in Connect session',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant',
@@ -2871,6 +2961,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2883,6 +2974,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-quick-response',
       description: 'Retrieves the quick response',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base',
@@ -2917,6 +3009,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2929,6 +3022,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-recommendations',
       description: 'This API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024, you will need to create a new Assistant in the Amazon Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.  Retrieves recommendations for the specified session. To avoid retrieving the same recommendations in subsequent calls, use NotifyRecommendationsReceived. This API supports long-polling behavior with the waitTimeSeconds parameter. Short poll is the default behavior and only returns recommendations already available. To perform a manual query against an assistant, use QueryAssistant',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -2981,6 +3075,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2993,6 +3088,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'get-session',
       description: 'Retrieves information for a specified session',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -3027,6 +3123,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3039,6 +3136,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-ai-agent-versions',
       description: 'List AI Agent versions',
       options: [
+
         Option(
           name: '--ai-agent-id',
           description: 'The identifier of the Amazon Q in Connect AI Agent for which versions are to be listed',
@@ -3127,6 +3225,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3139,6 +3238,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-ai-agents',
       description: 'Lists AI Agents',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -3218,6 +3318,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3230,6 +3331,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-ai-guardrail-versions',
       description: 'Lists AI Guardrail versions',
       options: [
+
         Option(
           name: '--ai-guardrail-id',
           description: 'The identifier of the Amazon Q in Connect AI Guardrail for which versions are to be listed',
@@ -3309,6 +3411,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3321,6 +3424,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-ai-guardrails',
       description: 'Lists the AI Guardrails available on the Amazon Q in Connect assistant',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -3391,6 +3495,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3403,6 +3508,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-ai-prompt-versions',
       description: 'Lists AI Prompt versions',
       options: [
+
         Option(
           name: '--ai-prompt-id',
           description: 'The identifier of the Amazon Q in Connect AI prompt for which versions are to be listed',
@@ -3491,6 +3597,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3503,6 +3610,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-ai-prompts',
       description: 'Lists the AI Prompts available on the Amazon Q in Connect assistant',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -3582,6 +3690,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3594,6 +3703,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-assistant-associations',
       description: 'Lists information about assistant associations',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -3664,6 +3774,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3676,6 +3787,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-assistants',
       description: 'Lists information about assistants',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per page',
@@ -3737,6 +3849,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3749,6 +3862,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-content-associations',
       description: 'Lists the content associations. For more information about content associations--what they are and when they are used--see Integrate Amazon Q in Connect with step-by-step guides in the Amazon Connect Administrator Guide',
       options: [
+
         Option(
           name: '--content-id',
           description: 'The identifier of the content',
@@ -3828,6 +3942,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3840,6 +3955,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-contents',
       description: 'Lists the content',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -3910,6 +4026,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3922,6 +4039,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-import-jobs',
       description: 'Lists information about import jobs',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -3992,6 +4110,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4004,6 +4123,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-knowledge-bases',
       description: 'Lists the knowledge bases',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per page',
@@ -4065,6 +4185,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4077,6 +4198,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-message-template-versions',
       description: 'Lists all the available versions for the specified Amazon Q in Connect message template',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -4156,6 +4278,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4168,6 +4291,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-message-templates',
       description: 'Lists all the available Amazon Q in Connect message templates for the specified knowledge base',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -4238,6 +4362,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4250,6 +4375,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-messages',
       description: 'Lists messages on an Amazon Q in Connect session',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant',
@@ -4329,6 +4455,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4341,6 +4468,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-quick-responses',
       description: 'Lists information about quick response',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -4411,6 +4539,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4423,6 +4552,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags for the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -4448,6 +4578,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4460,6 +4591,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'notify-recommendations-received',
       description: 'Removes the specified recommendations from the specified assistant\'s queue of newly available recommendations. You can use this API in conjunction with GetRecommendations and a waitTimeSeconds input for long-polling behavior and avoiding duplicate recommendations',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -4503,6 +4635,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4515,6 +4648,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'put-feedback',
       description: 'Provides feedback against the specified assistant for the specified target. This API only supports generative targets',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant',
@@ -4567,6 +4701,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4579,6 +4714,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'query-assistant',
       description: 'This API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024, you will need to create a new Assistant in the Amazon Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.  Performs a manual search against the specified assistant. To retrieve recommendations for an assistant, use GetRecommendations',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -4694,6 +4830,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4706,6 +4843,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'remove-assistant-ai-agent',
       description: 'Removes the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant',
       options: [
+
         Option(
           name: '--ai-agent-type',
           description: 'The type of the AI Agent being removed for use by default from the Amazon Q in Connect Assistant',
@@ -4740,6 +4878,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4752,6 +4891,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'remove-knowledge-base-template-uri',
       description: 'Removes a URI template from a knowledge base',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -4777,6 +4917,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4789,6 +4930,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'render-message-template',
       description: 'Renders the Amazon Q in Connect message template based on the attribute values provided and generates the message content. For any variable present in the message template, if the attribute value is neither provided in the attribute request parameter nor the default attribute of the message template, the rendered message content will keep the variable placeholder as it is and return the attribute keys that are missing',
       options: [
+
         Option(
           name: '--attributes',
           description: 'An object that specifies the values to use for variables in the message template. This object contains different categories of key-value pairs. Each key defines a variable or placeholder in the message template. The corresponding value defines the value for that variable',
@@ -4832,6 +4974,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4844,6 +4987,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'search-content',
       description: 'Searches for content in a specified knowledge base. Can be used to get a specific content resource by its name',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -4923,6 +5067,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4935,6 +5080,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'search-message-templates',
       description: 'Searches for Amazon Q in Connect message templates in the specified knowledge base',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -5014,6 +5160,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5026,6 +5173,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'search-quick-responses',
       description: 'Searches existing Amazon Q in Connect quick responses in an Amazon Q in Connect knowledge base',
       options: [
+
         Option(
           name: '--attributes',
           description: 'The user-defined Amazon Connect contact attributes to be resolved when search results are returned',
@@ -5114,6 +5262,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5126,6 +5275,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'search-sessions',
       description: 'Searches for sessions',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -5205,6 +5355,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5217,6 +5368,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'send-message',
       description: 'Submits a message to the Amazon Q in Connect session',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant',
@@ -5287,6 +5439,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5299,6 +5452,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'start-content-upload',
       description: 'Get a URL to upload content to a knowledge base. To upload content, first make a PUT request to the returned URL with your file, making sure to include the required headers. Then use CreateContent to finalize the content creation process or UpdateContent to modify an existing resource. You can only upload content to a knowledge base of type CUSTOM',
       options: [
+
         Option(
           name: '--content-type',
           description: 'The type of content to upload',
@@ -5342,6 +5496,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5354,6 +5509,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'start-import-job',
       description: 'Start an asynchronous job to import Amazon Q in Connect resources from an uploaded source file. Before calling this API, use StartContentUpload to upload an asset that contains the resource data.   For importing Amazon Q in Connect quick responses, you need to upload a csv file including the quick responses. For information about how to format the csv file for importing quick responses, see Import quick responses',
       options: [
+
         Option(
           name: '--client-token',
           description: 'The tags used to organize, track, or control access for this resource',
@@ -5424,6 +5580,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5436,6 +5593,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds the specified tags to the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -5470,6 +5628,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5482,6 +5641,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes the specified tags from the specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -5516,6 +5676,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5528,6 +5689,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-ai-agent',
       description: 'Updates an AI Agent',
       options: [
+
         Option(
           name: '--ai-agent-id',
           description: 'The identifier of the Amazon Q in Connect AI Agent',
@@ -5598,6 +5760,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5610,6 +5773,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-ai-guardrail',
       description: 'Updates an AI Guardrail',
       options: [
+
         Option(
           name: '--ai-guardrail-id',
           description: 'The identifier of the Amazon Q in Connect AI Guardrail',
@@ -5734,6 +5898,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5746,6 +5911,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-ai-prompt',
       description: 'Updates an AI Prompt',
       options: [
+
         Option(
           name: '--ai-prompt-id',
           description: 'The identifier of the Amazon Q in Connect AI Prompt',
@@ -5816,6 +5982,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5828,6 +5995,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-assistant-ai-agent',
       description: 'Updates the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant',
       options: [
+
         Option(
           name: '--ai-agent-type',
           description: 'The type of the AI Agent being updated for use by default on the Amazon Q in Connect Assistant',
@@ -5871,6 +6039,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5883,6 +6052,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-content',
       description: 'Updates information about the content',
       options: [
+
         Option(
           name: '--content-id',
           description: 'The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -5970,6 +6140,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5982,6 +6153,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-knowledge-base-template-uri',
       description: 'Updates the template URI of a knowledge base. This is only supported for knowledge bases of type EXTERNAL. Include a single variable in \${variable} format; this interpolated by Amazon Q in Connect using ingested content. For example, if you ingest a Salesforce article, it has an Id value, and you can set the template URI to https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*\${Id}*/view',
       options: [
+
         Option(
           name: '--knowledge-base-id',
           description: 'The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -6016,6 +6188,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6028,6 +6201,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-message-template',
       description: 'Updates the Amazon Q in Connect message template. Partial update is supported. If any field is not supplied, it will remain unchanged for the message template that is referenced by the \$LATEST qualifier. Any modification will only apply to the message template that is referenced by the \$LATEST qualifier. The fields for all available versions will remain unchanged',
       options: [
+
         Option(
           name: '--content',
           description: 'The content of the message template',
@@ -6089,6 +6263,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6101,6 +6276,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-message-template-metadata',
       description: 'Updates the Amazon Q in Connect message template metadata. Note that any modification to the message template’s name, description and grouping configuration will applied to the message template pointed by the \$LATEST qualifier and all available versions. Partial update is supported. If any field is not supplied, it will remain unchanged for the message template',
       options: [
+
         Option(
           name: '--description',
           description: 'The description of the message template',
@@ -6162,6 +6338,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6174,6 +6351,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-quick-response',
       description: 'Updates an existing Amazon Q in Connect quick response',
       options: [
+
         Option(
           name: '--channels',
           description: 'The Amazon Connect contact channels this quick response applies to. The supported contact channel types include Chat',
@@ -6312,6 +6490,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6324,6 +6503,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-session',
       description: 'Updates a session. A session is a contextual container used for generating recommendations. Amazon Connect updates the existing Amazon Q in Connect session for each contact on which Amazon Q in Connect is enabled',
       options: [
+
         Option(
           name: '--ai-agent-configuration',
           description: 'The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session',
@@ -6385,6 +6565,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -6397,6 +6578,7 @@ final FigSpec qconnectSpec = FigSpec(
       name: 'update-session-data',
       description: 'Updates the data stored on an Amazon Q in Connect Session',
       options: [
+
         Option(
           name: '--assistant-id',
           description: 'The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN',
@@ -6449,6 +6631,7 @@ final FigSpec qconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

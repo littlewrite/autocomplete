@@ -9,10 +9,12 @@ final FigSpec rbinSpec = FigSpec(
   name: 'rbin',
   description: 'This is the Recycle Bin API Reference. This documentation provides descriptions and syntax for each of the actions and data types in Recycle Bin. Recycle Bin is a resource recovery feature that enables you to restore accidentally deleted snapshots and EBS-backed AMIs. When using Recycle Bin, if your resources are deleted, they are retained in the Recycle Bin for a time period that you specify. You can restore a resource from the Recycle Bin at any time before its retention period expires. After you restore a resource from the Recycle Bin, the resource is removed from the Recycle Bin, and you can then use it in the same way you use any other resource of that type in your account. If the retention period expires and the resource is not restored, the resource is permanently deleted from the Recycle Bin and is no longer available for recovery. For more information about Recycle Bin, see  Recycle Bin in the Amazon Elastic Compute Cloud User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-rule',
       description: 'Creates a Recycle Bin retention rule. You can create two types of retention rules:    Tag-level retention rules - These retention rules use resource tags to identify the resources to protect. For each retention rule, you specify one or more tag key and value pairs. Resources (of the specified type) that have at least one of these tag key and value pairs are automatically retained in the Recycle Bin upon deletion. Use this type of retention rule to protect specific resources in your account based on their tags.    Region-level retention rules - These retention rules, by default, apply to all of the resources (of the specified type) in the Region, even if the resources are not tagged. However, you can specify exclusion tags to exclude resources that have specific tags. Use this type of retention rule to protect all resources of a specific type in a Region.   For more information, see  Create Recycle Bin retention rules in the Amazon EBS User Guide',
       options: [
+
         Option(
           name: '--retention-period',
           description: 'Information about the retention period for which the retention rule is to retain resources',
@@ -92,6 +94,7 @@ final FigSpec rbinSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -104,6 +107,7 @@ final FigSpec rbinSpec = FigSpec(
       name: 'delete-rule',
       description: 'Deletes a Recycle Bin retention rule. For more information, see  Delete Recycle Bin retention rules in the Amazon Elastic Compute Cloud User Guide',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique ID of the retention rule',
@@ -129,6 +133,7 @@ final FigSpec rbinSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec rbinSpec = FigSpec(
       name: 'get-rule',
       description: 'Gets information about a Recycle Bin retention rule',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique ID of the retention rule',
@@ -166,6 +172,7 @@ final FigSpec rbinSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec rbinSpec = FigSpec(
       name: 'list-rules',
       description: 'Lists the Recycle Bin retention rules in the Region',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned NextToken value',
@@ -275,6 +283,7 @@ final FigSpec rbinSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -287,6 +296,7 @@ final FigSpec rbinSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags assigned to a retention rule',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the retention rule',
@@ -312,6 +322,7 @@ final FigSpec rbinSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -324,6 +335,7 @@ final FigSpec rbinSpec = FigSpec(
       name: 'lock-rule',
       description: 'Locks a Region-level retention rule. A locked retention rule can\'t be modified or deleted.  You can\'t lock tag-level retention rules, or Region-level retention rules that have exclusion tags',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique ID of the retention rule',
@@ -358,6 +370,7 @@ final FigSpec rbinSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -370,6 +383,7 @@ final FigSpec rbinSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns tags to the specified retention rule',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the retention rule',
@@ -404,6 +418,7 @@ final FigSpec rbinSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +431,7 @@ final FigSpec rbinSpec = FigSpec(
       name: 'unlock-rule',
       description: 'Unlocks a retention rule. After a retention rule is unlocked, it can be modified or deleted only after the unlock delay period expires',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique ID of the retention rule',
@@ -441,6 +457,7 @@ final FigSpec rbinSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -453,6 +470,7 @@ final FigSpec rbinSpec = FigSpec(
       name: 'untag-resource',
       description: 'Unassigns a tag from a retention rule',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the retention rule',
@@ -487,6 +505,7 @@ final FigSpec rbinSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -499,6 +518,7 @@ final FigSpec rbinSpec = FigSpec(
       name: 'update-rule',
       description: 'Updates an existing Recycle Bin retention rule. You can update a retention rule\'s description, resource tags, and retention period at any time after creation. You can\'t update a retention rule\'s resource type after creation. For more information, see  Update Recycle Bin retention rules in the Amazon Elastic Compute Cloud User Guide',
       options: [
+
         Option(
           name: '--identifier',
           description: 'The unique ID of the retention rule',
@@ -569,6 +589,7 @@ final FigSpec rbinSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

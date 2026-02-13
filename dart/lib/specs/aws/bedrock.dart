@@ -9,10 +9,12 @@ final FigSpec bedrockSpec = FigSpec(
   name: 'bedrock',
   description: 'Describes the API operations for creating, managing, fine-turning, and evaluating Amazon Bedrock models',
   subcommands: [
+
     Subcommand(
       name: 'batch-delete-evaluation-job',
       description: 'Deletes a batch of evaluation jobs. An evaluation job can only be deleted if it has following status FAILED, COMPLETED, and STOPPED. You can request up to 25 model evaluation jobs be deleted in a single request',
       options: [
+
         Option(
           name: '--job-identifiers',
           description: 'A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete',
@@ -38,6 +40,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'create-evaluation-job',
       description: 'Creates an evaluation job',
       options: [
+
         Option(
           name: '--job-name',
           description: 'A name for the evaluation job. Names must unique with your Amazon Web Services account, and your account\'s Amazon Web Services region',
@@ -156,6 +160,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -168,6 +173,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'create-guardrail',
       description: 'Creates a guardrail to block topics and to implement safeguards for your generative AI applications. You can configure the following policies in a guardrail to avoid undesirable and harmful content, filter out denied topics and words, and remove sensitive information for privacy protection.    Content filters - Adjust filter strengths to block input prompts or model responses containing harmful content.    Denied topics - Define a set of topics that are undesirable in the context of your application. These topics will be blocked if detected in user queries or model responses.    Word filters - Configure filters to block undesirable words, phrases, and profanity. Such words can include offensive terms, competitor names etc.    Sensitive information filters - Block or mask sensitive information such as personally identifiable information (PII) or custom regex in user inputs and model responses.   In addition to the above policies, you can also configure the messages to be returned to the user if a user input or model response is in violation of the policies defined in the guardrail. For more information, see Amazon Bedrock Guardrails in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'The name to give the guardrail',
@@ -292,6 +298,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -304,6 +311,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'create-guardrail-version',
       description: 'Creates a version of the guardrail. Use this API to create a snapshot of the guardrail when you are satisfied with a configuration, or to compare the configuration with another version',
       options: [
+
         Option(
           name: '--guardrail-identifier',
           description: 'The unique identifier of the guardrail. This can be an ID or the ARN',
@@ -347,6 +355,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -359,6 +368,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'create-inference-profile',
       description: 'Creates an application inference profile to track metrics and costs when invoking a model. To create an application inference profile for a foundation model in one region, specify the ARN of the model in that region. To create an application inference profile for a foundation model across multiple regions, specify the ARN of the system-defined inference profile that contains the regions that you want to route requests to. For more information, see Increase throughput and resilience with cross-region inference in Amazon Bedrock. in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--inference-profile-name',
           description: 'A name for the inference profile',
@@ -420,6 +430,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -432,6 +443,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'create-marketplace-model-endpoint',
       description: 'Creates an endpoint for a model from Amazon Bedrock Marketplace. The endpoint is hosted by Amazon SageMaker',
       options: [
+
         Option(
           name: '--model-source-identifier',
           description: 'The ARN of the model from Amazon Bedrock Marketplace that you want to deploy to the endpoint',
@@ -501,6 +513,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -513,6 +526,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'create-model-copy-job',
       description: 'Copies a model to another region so that it can be used there. For more information, see Copy models to be used in other regions in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--source-model-arn',
           description: 'The Amazon Resource Name (ARN) of the model to be copied',
@@ -574,6 +588,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -586,6 +601,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'create-model-customization-job',
       description: 'Creates a fine-tuning job to customize a base model. You specify the base foundation model and the location of the training data. After the model-customization job completes successfully, your custom model resource will be ready to use. Amazon Bedrock returns validation loss metrics and output generations after the job completes.  For information on the format of training and validation data, see Prepare the datasets.  Model-customization jobs are asynchronous and the completion time depends on the base model and the training/validation data size. To monitor a job, use the GetModelCustomizationJob operation to retrieve the job status. For more information, see Custom models in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--job-name',
           description: 'A name for the fine-tuning job',
@@ -737,6 +753,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -749,6 +766,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'create-model-import-job',
       description: 'Creates a model import job to import model that you have customized in other environments, such as Amazon SageMaker. For more information, see Import a customized model',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the import job',
@@ -846,6 +864,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -858,6 +877,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'create-model-invocation-job',
       description: 'Creates a batch inference job to invoke a model on multiple prompts. Format your data according to Format your inference data and upload it to an Amazon S3 bucket. For more information, see Process multiple prompts with batch inference. The response returns a jobArn that you can use to stop or get details about the job',
       options: [
+
         Option(
           name: '--job-name',
           description: 'A name to give the batch inference job',
@@ -955,6 +975,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -967,6 +988,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'create-provisioned-model-throughput',
       description: 'Creates dedicated throughput for a base or custom model with the model units and for the duration that you specify. For pricing details, see Amazon Bedrock Pricing. For more information, see Provisioned Throughput in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--client-request-token',
           description: 'A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see Ensuring idempotency in the Amazon S3 User Guide',
@@ -1037,6 +1059,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1049,6 +1072,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'delete-custom-model',
       description: 'Deletes a custom model that you created earlier. For more information, see Custom models in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--model-identifier',
           description: 'Name of the model to delete',
@@ -1074,6 +1098,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1086,6 +1111,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'delete-guardrail',
       description: 'Deletes a guardrail.   To delete a guardrail, only specify the ARN of the guardrail in the guardrailIdentifier field. If you delete a guardrail, all of its versions will be deleted.   To delete a version of a guardrail, specify the ARN of the guardrail in the guardrailIdentifier field and the version in the guardrailVersion field',
       options: [
+
         Option(
           name: '--guardrail-identifier',
           description: 'The unique identifier of the guardrail. This can be an ID or the ARN',
@@ -1120,6 +1146,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1132,6 +1159,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'delete-imported-model',
       description: 'Deletes a custom model that you imported earlier. For more information, see Import a customized model in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--model-identifier',
           description: 'Name of the imported model to delete',
@@ -1157,6 +1185,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1169,6 +1198,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'delete-inference-profile',
       description: 'Deletes an application inference profile. For more information, see Increase throughput and resilience with cross-region inference in Amazon Bedrock. in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--inference-profile-identifier',
           description: 'The Amazon Resource Name (ARN) or ID of the application inference profile to delete',
@@ -1194,6 +1224,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1206,6 +1237,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'delete-marketplace-model-endpoint',
       description: 'Deletes an endpoint for a model from Amazon Bedrock Marketplace',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'The Amazon Resource Name (ARN) of the endpoint you want to delete',
@@ -1231,6 +1263,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1243,6 +1276,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'delete-model-invocation-logging-configuration',
       description: 'Delete the invocation logging',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1259,6 +1293,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1271,6 +1306,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'delete-provisioned-model-throughput',
       description: 'Deletes a Provisioned Throughput. You can\'t delete a Provisioned Throughput before the commitment term is over. For more information, see Provisioned Throughput in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--provisioned-model-id',
           description: 'The Amazon Resource Name (ARN) or name of the Provisioned Throughput',
@@ -1296,6 +1332,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1308,6 +1345,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'deregister-marketplace-model-endpoint',
       description: 'Deregisters an endpoint for a model from Amazon Bedrock Marketplace. This operation removes the endpoint\'s association with Amazon Bedrock but does not delete the underlying Amazon SageMaker endpoint',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'The Amazon Resource Name (ARN) of the endpoint you want to deregister',
@@ -1333,6 +1371,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1345,6 +1384,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-custom-model',
       description: 'Get the properties associated with a Amazon Bedrock custom model that you have created.For more information, see Custom models in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--model-identifier',
           description: 'Name or Amazon Resource Name (ARN) of the custom model',
@@ -1370,6 +1410,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1382,6 +1423,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-evaluation-job',
       description: 'Gets information about an evaluation job, such as the status of the job',
       options: [
+
         Option(
           name: '--job-identifier',
           description: 'The Amazon Resource Name (ARN) of the evaluation job you want get information on',
@@ -1407,6 +1449,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1419,6 +1462,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-foundation-model',
       description: 'Get details about a Amazon Bedrock foundation model',
       options: [
+
         Option(
           name: '--model-identifier',
           description: 'The model identifier',
@@ -1444,6 +1488,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1456,6 +1501,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-guardrail',
       description: 'Gets details about a guardrail. If you don\'t specify a version, the response returns details for the DRAFT version',
       options: [
+
         Option(
           name: '--guardrail-identifier',
           description: 'The unique identifier of the guardrail for which to get details. This can be an ID or the ARN',
@@ -1490,6 +1536,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1502,6 +1549,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-imported-model',
       description: 'Gets properties associated with a customized model you imported',
       options: [
+
         Option(
           name: '--model-identifier',
           description: 'Name or Amazon Resource Name (ARN) of the imported model',
@@ -1527,6 +1575,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1539,6 +1588,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-inference-profile',
       description: 'Gets information about an inference profile. For more information, see Increase throughput and resilience with cross-region inference in Amazon Bedrock. in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--inference-profile-identifier',
           description: 'The ID or Amazon Resource Name (ARN) of the inference profile',
@@ -1564,6 +1614,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1576,6 +1627,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-marketplace-model-endpoint',
       description: 'Retrieves details about a specific endpoint for a model from Amazon Bedrock Marketplace',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'The Amazon Resource Name (ARN) of the endpoint you want to get information about',
@@ -1601,6 +1653,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1613,6 +1666,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-model-copy-job',
       description: 'Retrieves information about a model copy job. For more information, see Copy models to be used in other regions in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--job-arn',
           description: 'The Amazon Resource Name (ARN) of the model copy job',
@@ -1638,6 +1692,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1650,6 +1705,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-model-customization-job',
       description: 'Retrieves the properties associated with a model-customization job, including the status of the job. For more information, see Custom models in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--job-identifier',
           description: 'Identifier for the customization job',
@@ -1675,6 +1731,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1687,6 +1744,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-model-import-job',
       description: 'Retrieves the properties associated with import model job, including the status of the job. For more information, see Import a customized model in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--job-identifier',
           description: 'The identifier of the import job',
@@ -1712,6 +1770,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1724,6 +1783,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-model-invocation-job',
       description: 'Gets details about a batch inference job. For more information, see Monitor batch inference jobs',
       options: [
+
         Option(
           name: '--job-identifier',
           description: 'The Amazon Resource Name (ARN) of the batch inference job',
@@ -1749,6 +1809,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1761,6 +1822,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-model-invocation-logging-configuration',
       description: 'Get the current configuration values for model invocation logging',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -1777,6 +1839,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1789,6 +1852,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-prompt-router',
       description: 'Retrieves details about a prompt router',
       options: [
+
         Option(
           name: '--prompt-router-arn',
           description: 'The prompt router\'s ARN',
@@ -1814,6 +1878,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1826,6 +1891,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'get-provisioned-model-throughput',
       description: 'Returns details for a Provisioned Throughput. For more information, see Provisioned Throughput in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--provisioned-model-id',
           description: 'The Amazon Resource Name (ARN) or name of the Provisioned Throughput',
@@ -1851,6 +1917,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1863,6 +1930,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-custom-models',
       description: 'Returns a list of the custom models that you have created with the CreateModelCustomizationJob operation. For more information, see Custom models in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--creation-time-before',
           description: 'Return custom models created before the specified time',
@@ -1995,6 +2063,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2007,6 +2076,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-evaluation-jobs',
       description: 'Lists all existing evaluation jobs',
       options: [
+
         Option(
           name: '--creation-time-after',
           description: 'A filter to only list evaluation jobs created after a specified time',
@@ -2131,6 +2201,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2143,6 +2214,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-foundation-models',
       description: 'Lists Amazon Bedrock foundation models that you can use. You can filter the results with the request parameters. For more information, see Foundation models in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--by-provider',
           description: 'Return models belonging to the model provider that you specify',
@@ -2195,6 +2267,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2207,6 +2280,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-guardrails',
       description: 'Lists details about all the guardrails in an account. To list the DRAFT version of all your guardrails, don\'t specify the guardrailIdentifier field. To list all versions of a guardrail, specify the ARN of the guardrail in the guardrailIdentifier field. You can set the maximum number of results to return in a response in the maxResults field. If there are more results than the number you set, the response returns a nextToken that you can send in another ListGuardrails request to see the next batch of results',
       options: [
+
         Option(
           name: '--guardrail-identifier',
           description: 'The unique identifier of the guardrail. This can be an ID or the ARN',
@@ -2277,6 +2351,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2289,6 +2364,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-imported-models',
       description: 'Returns a list of models you\'ve imported. You can filter the results to return based on one or more criteria. For more information, see Import a customized model in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--creation-time-before',
           description: 'Return imported models that created before the specified time',
@@ -2395,6 +2471,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2407,6 +2484,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-inference-profiles',
       description: 'Returns a list of inference profiles that you can use. For more information, see Increase throughput and resilience with cross-region inference in Amazon Bedrock. in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the nextToken field when making another request to return the next batch of results',
@@ -2477,6 +2555,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2489,6 +2568,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-marketplace-model-endpoints',
       description: 'Lists the endpoints for models from Amazon Bedrock Marketplace in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return in a single call. If more results are available, the operation returns a NextToken value',
@@ -2559,6 +2639,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2571,6 +2652,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-model-copy-jobs',
       description: 'Returns a list of model copy jobs that you have submitted. You can filter the jobs to return based on one or more criteria. For more information, see Copy models to be used in other regions in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--creation-time-after',
           description: 'Filters for model copy jobs created after the specified time',
@@ -2704,6 +2786,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2716,6 +2799,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-model-customization-jobs',
       description: 'Returns a list of model customization jobs that you have submitted. You can filter the jobs to return based on one or more criteria. For more information, see Custom models in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--creation-time-after',
           description: 'Return customization jobs created after the specified time',
@@ -2831,6 +2915,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2843,6 +2928,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-model-import-jobs',
       description: 'Returns a list of import jobs you\'ve submitted. You can filter the results to return based on one or more criteria. For more information, see Import a customized model in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--creation-time-after',
           description: 'Return import jobs that were created after the specified time',
@@ -2958,6 +3044,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2970,6 +3057,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-model-invocation-jobs',
       description: 'Lists all batch inference jobs in the account. For more information, see View details about a batch inference job',
       options: [
+
         Option(
           name: '--submit-time-after',
           description: 'Specify a time to filter for batch inference jobs that were submitted after the time you specify',
@@ -3085,6 +3173,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3097,6 +3186,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-prompt-routers',
       description: 'Retrieves a list of prompt routers',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of prompt routers to return in one page of results',
@@ -3158,6 +3248,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3170,6 +3261,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-provisioned-model-throughputs',
       description: 'Lists the Provisioned Throughputs in the account. For more information, see Provisioned Throughput in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--creation-time-after',
           description: 'A filter that returns Provisioned Throughputs created after the specified time',
@@ -3294,6 +3386,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3306,6 +3399,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List the tags associated with the specified resource. For more information, see Tagging resources in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -3331,6 +3425,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3343,6 +3438,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'put-model-invocation-logging-configuration',
       description: 'Set the configuration values for model invocation logging',
       options: [
+
         Option(
           name: '--logging-config',
           description: 'The logging configuration values to set',
@@ -3368,6 +3464,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3380,6 +3477,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'register-marketplace-model-endpoint',
       description: 'Registers an existing Amazon SageMaker endpoint with Amazon Bedrock Marketplace, allowing it to be used with Amazon Bedrock APIs',
       options: [
+
         Option(
           name: '--endpoint-identifier',
           description: 'The ARN of the Amazon SageMaker endpoint you want to register with Amazon Bedrock Marketplace',
@@ -3414,6 +3512,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3426,6 +3525,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'stop-evaluation-job',
       description: 'Stops an evaluation job that is current being created or running',
       options: [
+
         Option(
           name: '--job-identifier',
           description: 'The Amazon Resource Name (ARN) of the evaluation job you want to stop',
@@ -3451,6 +3551,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3463,6 +3564,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'stop-model-customization-job',
       description: 'Stops an active model customization job. For more information, see Custom models in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--job-identifier',
           description: 'Job identifier of the job to stop',
@@ -3488,6 +3590,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3500,6 +3603,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'stop-model-invocation-job',
       description: 'Stops a batch inference job. You\'re only charged for tokens that were already processed. For more information, see Stop a batch inference job',
       options: [
+
         Option(
           name: '--job-identifier',
           description: 'The Amazon Resource Name (ARN) of the batch inference job to stop',
@@ -3525,6 +3629,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3537,6 +3642,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associate tags with a resource. For more information, see Tagging resources in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to tag',
@@ -3571,6 +3677,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3583,6 +3690,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'untag-resource',
       description: 'Remove one or more tags from a resource. For more information, see Tagging resources in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to untag',
@@ -3617,6 +3725,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3629,6 +3738,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'update-guardrail',
       description: 'Updates a guardrail with the values you specify.   Specify a name and optional description.   Specify messages for when the guardrail successfully blocks a prompt or a model response in the blockedInputMessaging and blockedOutputsMessaging fields.   Specify topics for the guardrail to deny in the topicPolicyConfig object. Each GuardrailTopicConfig object in the topicsConfig list pertains to one topic.   Give a name and description so that the guardrail can properly identify the topic.   Specify DENY in the type field.   (Optional) Provide up to five prompts that you would categorize as belonging to the topic in the examples list.     Specify filter strengths for the harmful categories defined in Amazon Bedrock in the contentPolicyConfig object. Each GuardrailContentFilterConfig object in the filtersConfig list pertains to a harmful category. For more information, see Content filters. For more information about the fields in a content filter, see GuardrailContentFilterConfig.   Specify the category in the type field.   Specify the strength of the filter for prompts in the inputStrength field and for model responses in the strength field of the GuardrailContentFilterConfig.     (Optional) For security, include the ARN of a KMS key in the kmsKeyId field',
       options: [
+
         Option(
           name: '--guardrail-identifier',
           description: 'The unique identifier of the guardrail. This can be an ID or the ARN',
@@ -3744,6 +3854,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3756,6 +3867,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'update-marketplace-model-endpoint',
       description: 'Updates the configuration of an existing endpoint for a model from Amazon Bedrock Marketplace',
       options: [
+
         Option(
           name: '--endpoint-arn',
           description: 'The Amazon Resource Name (ARN) of the endpoint you want to update',
@@ -3799,6 +3911,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3811,6 +3924,7 @@ final FigSpec bedrockSpec = FigSpec(
       name: 'update-provisioned-model-throughput',
       description: 'Updates the name or associated model for a Provisioned Throughput. For more information, see Provisioned Throughput in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--provisioned-model-id',
           description: 'The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update',
@@ -3854,6 +3968,7 @@ final FigSpec bedrockSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

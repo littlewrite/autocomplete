@@ -9,10 +9,12 @@ final FigSpec appconfigSpec = FigSpec(
   name: 'appconfig',
   description: 'AppConfig feature flags and dynamic configurations help software builders quickly and securely adjust application behavior in production environments without full code deployments. AppConfig speeds up software release frequency, improves application resiliency, and helps you address emergent issues more quickly. With feature flags, you can gradually release new capabilities to users and measure the impact of those changes before fully deploying the new capabilities to all users. With operational flags and dynamic configurations, you can update block lists, allow lists, throttling limits, logging verbosity, and perform other operational tuning to quickly respond to issues in production environments.  AppConfig is a capability of Amazon Web Services Systems Manager.  Despite the fact that application configuration content can vary greatly from application to application, AppConfig supports the following use cases, which cover a broad spectrum of customer needs:    Feature flags and toggles - Safely release new capabilities to your customers in a controlled environment. Instantly roll back changes if you experience a problem.    Application tuning - Carefully introduce application changes while testing the impact of those changes with users in production environments.    Allow list or block list - Control access to premium features or instantly block specific users without deploying new code.     Centralized configuration storage - Keep your configuration data organized and consistent across all of your workloads. You can use AppConfig to deploy configuration data stored in the AppConfig hosted configuration store, Secrets Manager, Systems Manager, Parameter Store, or Amazon S3.    How AppConfig works  This section provides a high-level description of how AppConfig works and how you get started.  1. Identify configuration values in code you want to manage in the cloud  Before you start creating AppConfig artifacts, we recommend you identify configuration data in your code that you want to dynamically manage using AppConfig. Good examples include feature flags or toggles, allow and block lists, logging verbosity, service limits, and throttling rules, to name a few. If your configuration data already exists in the cloud, you can take advantage of AppConfig validation, deployment, and extension features to further streamline configuration data management.  2. Create an application namespace  To create a namespace, you create an AppConfig artifact called an application. An application is simply an organizational construct like a folder.  3. Create environments  For each AppConfig application, you define one or more environments. An environment is a logical grouping of targets, such as applications in a Beta or Production environment, Lambda functions, or containers. You can also define environments for application subcomponents, such as the Web, Mobile, and Back-end. You can configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system rolls back the configuration.  4. Create a configuration profile  A configuration profile includes, among other things, a URI that enables AppConfig to locate your configuration data in its stored location and a profile type. AppConfig supports two configuration profile types: feature flags and freeform configurations. Feature flag configuration profiles store their data in the AppConfig hosted configuration store and the URI is simply hosted. For freeform configuration profiles, you can store your data in the AppConfig hosted configuration store or any Amazon Web Services service that integrates with AppConfig, as described in Creating a free form configuration profile in the the AppConfig User Guide. A configuration profile can also include optional validators to ensure your configuration data is syntactically and semantically correct. AppConfig performs a check using the validators when you start a deployment. If any errors are detected, the deployment rolls back to the previous configuration data.  5. Deploy configuration data  When you create a new deployment, you specify the following:   An application ID   A configuration profile ID   A configuration version   An environment ID where you want to deploy the configuration data   A deployment strategy ID that defines how fast you want the changes to take effect   When you call the StartDeployment API action, AppConfig performs the following tasks:   Retrieves the configuration data from the underlying data store by using the location URI in the configuration profile.   Verifies the configuration data is syntactically and semantically correct by using the validators you specified when you created your configuration profile.   Caches a copy of the data so it is ready to be retrieved by your application. This cached copy is called the deployed data.    6. Retrieve the configuration  You can configure AppConfig Agent as a local host and have the agent poll AppConfig for configuration updates. The agent calls the StartConfigurationSession and GetLatestConfiguration API actions and caches your configuration data locally. To retrieve the data, your application makes an HTTP call to the localhost server. AppConfig Agent supports several use cases, as described in Simplified retrieval methods in the the AppConfig User Guide. If AppConfig Agent isn\'t supported for your use case, you can configure your application to poll AppConfig for configuration updates by directly calling the StartConfigurationSession and GetLatestConfiguration API actions.    This reference is intended to be used with the AppConfig User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-application',
       description: 'Creates an application. In AppConfig, an application is simply an organizational construct like a folder. This organizational construct has a relationship with some unit of executable code. For example, you could create an application called MyMobileApp to organize and manage configuration data for a mobile application installed by your users',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the application',
@@ -56,6 +58,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'create-configuration-profile',
       description: 'Creates a configuration profile, which is information that enables AppConfig to access the configuration source. Valid configuration sources include the following:   Configuration data in YAML, JSON, and other formats stored in the AppConfig hosted configuration store   Configuration data stored as objects in an Amazon Simple Storage Service (Amazon S3) bucket   Pipelines stored in CodePipeline   Secrets stored in Secrets Manager   Standard and secure string parameters stored in Amazon Web Services Systems Manager Parameter Store   Configuration data in SSM documents stored in the Systems Manager document store   A configuration profile includes the following information:   The URI location of the configuration data.   The Identity and Access Management (IAM) role that provides access to the configuration data.   A validator for the configuration data. Available validators include either a JSON Schema or an Amazon Web Services Lambda function.   For more information, see Create a Configuration and a Configuration Profile in the AppConfig User Guide',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -165,6 +169,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -177,6 +182,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'create-deployment-strategy',
       description: 'Creates a deployment strategy that defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the deployment strategy',
@@ -265,6 +271,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -277,6 +284,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'create-environment',
       description: 'Creates an environment. For each application, you define one or more environments. An environment is a deployment group of AppConfig targets, such as applications in a Beta or Production environment. You can also define environments for application subcomponents such as the Web, Mobile and Back-end components for your application. You can configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system rolls back the configuration',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -338,6 +346,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -350,6 +359,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'create-extension',
       description: 'Creates an AppConfig extension. An extension augments your ability to inject logic or behavior at different points during the AppConfig workflow of creating or deploying a configuration. You can create your own extensions or use the Amazon Web Services authored extensions provided by AppConfig. For an AppConfig extension that uses Lambda, you must create a Lambda function to perform any computation and processing defined in the extension. If you plan to create custom versions of the Amazon Web Services authored notification extensions, you only need to specify an Amazon Resource Name (ARN) in the Uri field for the new extension version.   For a custom EventBridge notification extension, enter the ARN of the EventBridge default events in the Uri field.   For a custom Amazon SNS notification extension, enter the ARN of an Amazon SNS topic in the Uri field.   For a custom Amazon SQS notification extension, enter the ARN of an Amazon SQS message queue in the Uri field.    For more information about extensions, see Extending workflows in the AppConfig User Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the extension. Each extension name in your account must be unique. Extension versions use the same name',
@@ -420,6 +430,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -432,6 +443,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'create-extension-association',
       description: 'When you create an extension or configure an Amazon Web Services authored extension, you associate the extension with an AppConfig application, environment, or configuration profile. For example, you can choose to run the AppConfig deployment events to Amazon SNS Amazon Web Services authored extension and receive notifications on an Amazon SNS topic anytime a configuration deployment is started for a specific application. Defining which extension to associate with an AppConfig resource is called an extension association. An extension association is a specified relationship between an extension and an AppConfig resource, such as an application or a configuration profile. For more information about extensions and associations, see Extending workflows in the AppConfig User Guide',
       options: [
+
         Option(
           name: '--extension-identifier',
           description: 'The name, the ID, or the Amazon Resource Name (ARN) of the extension',
@@ -493,6 +505,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -505,6 +518,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'create-hosted-configuration-version',
       description: 'Creates a new configuration in the AppConfig hosted configuration store. If you\'re creating a feature flag, we recommend you familiarize yourself with the JSON schema for feature flag data. For more information, see Type reference for AWS.AppConfig.FeatureFlags in the AppConfig User Guide',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -583,6 +597,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'delete-application',
       description: 'Deletes an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application to delete',
@@ -608,6 +623,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -620,6 +636,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'delete-configuration-profile',
       description: 'Deletes a configuration profile. To prevent users from unintentionally deleting actively-used configuration profiles, enable deletion protection',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID that includes the configuration profile you want to delete',
@@ -663,6 +680,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -675,6 +693,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'delete-deployment-strategy',
       description: 'Deletes a deployment strategy',
       options: [
+
         Option(
           name: '--deployment-strategy-id',
           description: 'The ID of the deployment strategy you want to delete',
@@ -700,6 +719,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -712,6 +732,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'delete-environment',
       description: 'Deletes an environment. To prevent users from unintentionally deleting actively-used environments, enable deletion protection',
       options: [
+
         Option(
           name: '--environment-id',
           description: 'The ID of the environment that you want to delete',
@@ -755,6 +776,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -767,6 +789,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'delete-extension',
       description: 'Deletes an AppConfig extension. You must delete all associations to an extension before you delete the extension',
       options: [
+
         Option(
           name: '--extension-identifier',
           description: 'The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete',
@@ -801,6 +824,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -813,6 +837,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'delete-extension-association',
       description: 'Deletes an extension association. This action doesn\'t delete extensions defined in the association',
       options: [
+
         Option(
           name: '--extension-association-id',
           description: 'The ID of the extension association to delete',
@@ -838,6 +863,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -850,6 +876,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'delete-hosted-configuration-version',
       description: 'Deletes a version of a configuration from the AppConfig hosted configuration store',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -893,6 +920,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -905,6 +933,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'get-account-settings',
       description: 'Returns information about the status of the DeletionProtection parameter',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -921,6 +950,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -933,6 +963,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'get-application',
       description: 'Retrieves information about an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application you want to get',
@@ -958,6 +989,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -970,6 +1002,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'get-configuration',
       description: '(Deprecated) Retrieves the latest deployed configuration.  Note the following important information.   This API action is deprecated. Calls to receive configuration data should use the StartConfigurationSession and GetLatestConfiguration APIs instead.     GetConfiguration is a priced call. For more information, see Pricing',
       options: [
+
         Option(
           name: '--application',
           description: 'The application to get. Specify either the application name or the application ID',
@@ -1030,6 +1063,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'get-configuration-profile',
       description: 'Retrieves information about a configuration profile',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application that includes the configuration profile you want to get',
@@ -1064,6 +1098,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1076,6 +1111,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'get-deployment',
       description: 'Retrieves information about a configuration deployment',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application that includes the deployment you want to get',
@@ -1119,6 +1155,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1131,6 +1168,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'get-deployment-strategy',
       description: 'Retrieves information about a deployment strategy. A deployment strategy defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time',
       options: [
+
         Option(
           name: '--deployment-strategy-id',
           description: 'The ID of the deployment strategy to get',
@@ -1156,6 +1194,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1168,6 +1207,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'get-environment',
       description: 'Retrieves information about an environment. An environment is a deployment group of AppConfig applications, such as applications in a Production environment or in an EU_Region environment. Each configuration deployment targets an environment. You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The ID of the application that includes the environment you want to get',
@@ -1202,6 +1242,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1214,6 +1255,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'get-extension',
       description: 'Returns information about an AppConfig extension',
       options: [
+
         Option(
           name: '--extension-identifier',
           description: 'The name, the ID, or the Amazon Resource Name (ARN) of the extension',
@@ -1248,6 +1290,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1260,6 +1303,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'get-extension-association',
       description: 'Returns information about an AppConfig extension association. For more information about extensions and associations, see Extending workflows in the AppConfig User Guide',
       options: [
+
         Option(
           name: '--extension-association-id',
           description: 'The extension association ID to get',
@@ -1285,6 +1329,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1297,6 +1342,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'get-hosted-configuration-version',
       description: 'Retrieves information about a specific configuration version',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -1339,6 +1385,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'list-applications',
       description: 'Lists all applications in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results',
@@ -1400,6 +1447,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1412,6 +1460,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'list-configuration-profiles',
       description: 'Lists the configuration profiles for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -1491,6 +1540,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1503,6 +1553,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'list-deployment-strategies',
       description: 'Lists deployment strategies',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results',
@@ -1564,6 +1615,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1576,6 +1628,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'list-deployments',
       description: 'Lists the deployments for an environment in descending deployment number order',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -1655,6 +1708,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1667,6 +1721,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'list-environments',
       description: 'Lists the environments for an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -1737,6 +1792,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1749,6 +1805,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'list-extension-associations',
       description: 'Lists all AppConfig extension associations in the account. For more information about extensions and associations, see Extending workflows in the AppConfig User Guide',
       options: [
+
         Option(
           name: '--resource-identifier',
           description: 'The ARN of an application, configuration profile, or environment',
@@ -1837,6 +1894,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1849,6 +1907,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'list-extensions',
       description: 'Lists all custom and Amazon Web Services authored AppConfig extensions in the account. For more information about extensions, see Extending workflows in the AppConfig User Guide',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results',
@@ -1919,6 +1978,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1931,6 +1991,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'list-hosted-configuration-versions',
       description: 'Lists configurations stored in the AppConfig hosted configuration store by version',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -2019,6 +2080,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2031,6 +2093,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves the list of key-value tags assigned to the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource ARN',
@@ -2056,6 +2119,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2068,6 +2132,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'start-deployment',
       description: 'Starts a deployment',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -2165,6 +2230,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2177,6 +2243,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'stop-deployment',
       description: 'Stops a deployment. This API action works only on deployments that have a status of DEPLOYING, unless an AllowRevert parameter is supplied. If the AllowRevert parameter is supplied, the status of an in-progress deployment will be ROLLED_BACK. The status of a completed deployment will be REVERTED. AppConfig only allows a revert within 72 hours of deployment completion',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -2228,6 +2295,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2240,6 +2308,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'tag-resource',
       description: 'Assigns metadata to an AppConfig resource. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define. You can specify a maximum of 50 tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource for which to retrieve tags',
@@ -2274,6 +2343,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2286,6 +2356,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes a tag key and value from an AppConfig resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource for which to remove tags',
@@ -2320,6 +2391,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2332,6 +2404,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'update-account-settings',
       description: 'Updates the value of the DeletionProtection parameter',
       options: [
+
         Option(
           name: '--deletion-protection',
           description: 'A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile or an environment if AppConfig has called either GetLatestConfiguration or for the configuration profile or from the environment during the specified interval. Deletion protection is disabled by default. The default interval for ProtectionPeriodInMinutes is 60',
@@ -2357,6 +2430,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2369,6 +2443,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'update-application',
       description: 'Updates an application',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -2412,6 +2487,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2424,6 +2500,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'update-configuration-profile',
       description: 'Updates a configuration profile',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -2503,6 +2580,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2515,6 +2593,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'update-deployment-strategy',
       description: 'Updates a deployment strategy',
       options: [
+
         Option(
           name: '--deployment-strategy-id',
           description: 'The deployment strategy ID',
@@ -2585,6 +2664,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2597,6 +2677,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'update-environment',
       description: 'Updates an environment',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -2658,6 +2739,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2670,6 +2752,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'update-extension',
       description: 'Updates an AppConfig extension. For more information about extensions, see Extending workflows in the AppConfig User Guide',
       options: [
+
         Option(
           name: '--extension-identifier',
           description: 'The name, the ID, or the Amazon Resource Name (ARN) of the extension',
@@ -2731,6 +2814,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2743,6 +2827,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'update-extension-association',
       description: 'Updates an association. For more information about extensions and associations, see Extending workflows in the AppConfig User Guide',
       options: [
+
         Option(
           name: '--extension-association-id',
           description: 'The system-generated ID for the association',
@@ -2777,6 +2862,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2789,6 +2875,7 @@ final FigSpec appconfigSpec = FigSpec(
       name: 'validate-configuration',
       description: 'Uses the validators in a configuration profile to validate a configuration',
       options: [
+
         Option(
           name: '--application-id',
           description: 'The application ID',
@@ -2832,6 +2919,7 @@ final FigSpec appconfigSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

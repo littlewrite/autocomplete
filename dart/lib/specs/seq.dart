@@ -9,6 +9,7 @@ final FigSpec seqSpec = FigSpec(
   name: 'seq',
   description: 'Print sequences of numbers. (Defaults to increments of 1)',
   args: [
+
     Arg(
       name: 'first',
       description: 'Starting number in sequence'
@@ -25,6 +26,7 @@ final FigSpec seqSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-w', '--fixed-width'],
       description: 'Equalize the widths of all numbers by padding with zeros as necessary'

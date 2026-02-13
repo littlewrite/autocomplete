@@ -8,10 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec kinesisvideoSpec = FigSpec(
   name: 'kinesisvideo',
   subcommands: [
+
     Subcommand(
       name: 'create-signaling-channel',
       description: 'Creates a signaling channel.   CreateSignalingChannel is an asynchronous operation',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region',
@@ -64,6 +66,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -76,6 +79,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'create-stream',
       description: 'Creates a new Kinesis video stream.  When you create a new stream, Kinesis Video Streams assigns it a version number. When you change the stream\'s metadata, Kinesis Video Streams updates the version.   CreateStream is an asynchronous operation. For information about how the service works, see How it Works.  You must have permissions for the KinesisVideo:CreateStream action',
       options: [
+
         Option(
           name: '--device-name',
           description: 'The name of the device that is writing to the stream.   In the current implementation, Kinesis Video Streams does not use this name',
@@ -146,6 +150,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -158,6 +163,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'delete-edge-configuration',
       description: 'An asynchronous API that deletes a stream’s existing edge configuration, as well as the corresponding media from the Edge Agent. When you invoke this API, the sync status is set to DELETING. A deletion process starts, in which active edge jobs are stopped and all media is deleted from the edge device. The time to delete varies, depending on the total amount of stored media. If the deletion process fails, the sync status changes to DELETE_FAILED. You will need to re-try the deletion. When the deletion process has completed successfully, the edge configuration is no longer accessible',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream from which to delete the edge configuration. Specify either the StreamName or the StreamARN',
@@ -192,6 +198,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -204,6 +211,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'delete-signaling-channel',
       description: 'Deletes a specified signaling channel. DeleteSignalingChannel is an asynchronous operation. If you don\'t specify the channel\'s current version, the most recent version is deleted',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'The Amazon Resource Name (ARN) of the signaling channel that you want to delete',
@@ -238,6 +246,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -250,6 +259,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'delete-stream',
       description: 'Deletes a Kinesis video stream and the data contained in the stream.  This method marks the stream for deletion, and makes the data in the stream inaccessible immediately.    To ensure that you have the latest version of the stream before deleting it, you can specify the stream version. Kinesis Video Streams assigns a version to each stream. When you update a stream, Kinesis Video Streams assigns a new version number. To get the latest stream version, use the DescribeStream API.  This operation requires permission for the KinesisVideo:DeleteStream action',
       options: [
+
         Option(
           name: '--stream-arn',
           description: 'The Amazon Resource Name (ARN) of the stream that you want to delete',
@@ -284,6 +294,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -296,6 +307,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'describe-edge-configuration',
       description: 'Describes a stream’s edge configuration that was set using the StartEdgeConfigurationUpdate API and the latest status of the edge agent\'s recorder and uploader jobs. Use this API to get the status of the configuration to determine if the configuration is in sync with the Edge Agent. Use this API to evaluate the health of the Edge Agent',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream whose edge configuration you want to update. Specify either the StreamName or the StreamARN',
@@ -330,6 +342,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -342,6 +355,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'describe-image-generation-configuration',
       description: 'Gets the ImageGenerationConfiguration for a given Kinesis video stream',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream from which to retrieve the image generation configuration. You must specify either the StreamName or the StreamARN',
@@ -376,6 +390,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -388,6 +403,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'describe-mapped-resource-configuration',
       description: 'Returns the most current information about the stream. The streamName or streamARN should be provided in the input',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream',
@@ -467,6 +483,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -479,6 +496,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'describe-media-storage-configuration',
       description: 'Returns the most current information about the channel. Specify the ChannelName or ChannelARN in the input',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the channel',
@@ -513,6 +531,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -525,6 +544,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'describe-notification-configuration',
       description: 'Gets the NotificationConfiguration for a given Kinesis video stream',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream from which to retrieve the notification configuration. You must specify either the StreamName or the StreamARN',
@@ -559,6 +579,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -571,6 +592,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'describe-signaling-channel',
       description: 'Returns the most current information about the signaling channel. You must specify either the name or the Amazon Resource Name (ARN) of the channel that you want to describe',
       options: [
+
         Option(
           name: '--channel-name',
           description: 'The name of the signaling channel that you want to describe',
@@ -605,6 +627,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -617,6 +640,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'describe-stream',
       description: 'Returns the most current information about the specified stream. You must specify either the StreamName or the StreamARN',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream',
@@ -651,6 +675,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -663,6 +688,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'get-data-endpoint',
       description: 'Gets an endpoint for a specified stream for either reading or writing. Use this endpoint in your application to read from the specified stream (using the GetMedia or GetMediaForFragmentList operations) or write to it (using the PutMedia operation).   The returned endpoint does not have the API name appended. The client needs to add the API name to the returned endpoint.  In the request, specify the stream either by StreamName or StreamARN',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream that you want to get the endpoint for. You must specify either this parameter or a StreamARN in the request',
@@ -706,6 +732,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -718,6 +745,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'get-signaling-channel-endpoint',
       description: 'Provides an endpoint for the specified signaling channel to send and receive messages. This API uses the SingleMasterChannelEndpointConfiguration input parameter, which consists of the Protocols and Role properties.  Protocols is used to determine the communication mechanism. For example, if you specify WSS as the protocol, this API produces a secure websocket endpoint. If you specify HTTPS as the protocol, this API generates an HTTPS endpoint.   Role determines the messaging permissions. A MASTER role results in this API generating an endpoint that a client can use to communicate with any of the viewers on the channel. A VIEWER role results in this API generating an endpoint that a client can use to communicate only with a MASTER',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint',
@@ -752,6 +780,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -764,6 +793,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'list-edge-agent-configurations',
       description: 'Returns an array of edge configurations associated with the specified Edge Agent. In the request, you must specify the Edge Agent HubDeviceArn',
       options: [
+
         Option(
           name: '--hub-device-arn',
           description: 'The "Internet of Things (IoT) Thing" Arn of the edge agent',
@@ -834,6 +864,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -846,6 +877,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'list-signaling-channels',
       description: 'Returns an array of ChannelInfo objects. Each object describes a signaling channel. To retrieve only those channels that satisfy a specific condition, you can specify a ChannelNameCondition',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of channels to return in the response. The default is 500',
@@ -916,6 +948,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -928,6 +961,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'list-streams',
       description: 'Returns an array of StreamInfo objects. Each object describes a stream. To retrieve only streams that satisfy a specific condition, you can specify a StreamNameCondition',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of streams to return in the response. The default is 10,000',
@@ -998,6 +1032,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1010,6 +1045,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Returns a list of tags associated with the specified signaling channel',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If you specify this parameter and the result of a ListTagsForResource call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags',
@@ -1044,6 +1080,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1056,6 +1093,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'list-tags-for-stream',
       description: 'Returns a list of tags associated with the specified stream. In the request, you must specify either the StreamName or the StreamARN',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If you specify this parameter and the result of a ListTagsForStream call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags',
@@ -1099,6 +1137,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1111,6 +1150,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'start-edge-configuration-update',
       description: 'An asynchronous API that updates a stream’s existing edge configuration. The Kinesis Video Stream will sync the stream’s edge configuration with the Edge Agent IoT Greengrass component that runs on an IoT Hub Device, setup at your premise. The time to sync can vary and depends on the connectivity of the Hub Device. The SyncStatus will be updated as the edge configuration is acknowledged, and synced with the Edge Agent.  If this API is invoked for the first time, a new edge configuration will be created for the stream, and the sync status will be set to SYNCING. You will have to wait for the sync status to reach a terminal state such as: IN_SYNC, or SYNC_FAILED, before using this API again. If you invoke this API during the syncing process, a ResourceInUseException will be thrown. The connectivity of the stream’s edge configuration and the Edge Agent will be retried for 15 minutes. After 15 minutes, the status will transition into the SYNC_FAILED state. To move an edge configuration from one device to another, use DeleteEdgeConfiguration to delete the current edge configuration. You can then invoke StartEdgeConfigurationUpdate with an updated Hub Device ARN',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream whose edge configuration you want to update. Specify either the StreamName or the StreamARN',
@@ -1154,6 +1194,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1166,6 +1207,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to a signaling channel. A tag is a key-value pair (the value is optional) that you can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see Using Cost Allocation Tags in the Billing and Cost Management and Cost Management User Guide',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags',
@@ -1200,6 +1242,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1212,6 +1255,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'tag-stream',
       description: 'Adds one or more tags to a stream. A tag is a key-value pair (the value is optional) that you can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see Using Cost Allocation Tags in the Billing and Cost Management and Cost Management User Guide.  You must provide either the StreamName or the StreamARN. This operation requires permission for the KinesisVideo:TagStream action. A Kinesis video stream can support up to 50 tags',
       options: [
+
         Option(
           name: '--stream-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to',
@@ -1255,6 +1299,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1267,6 +1312,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from a signaling channel. In the request, specify only a tag key or keys; don\'t specify the value. If you specify a tag key that does not exist, it\'s ignored',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags',
@@ -1301,6 +1347,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1313,6 +1360,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'untag-stream',
       description: 'Removes one or more tags from a stream. In the request, specify only a tag key or keys; don\'t specify the value. If you specify a tag key that does not exist, it\'s ignored. In the request, you must provide the StreamName or StreamARN',
       options: [
+
         Option(
           name: '--stream-arn',
           description: 'The Amazon Resource Name (ARN) of the stream that you want to remove tags from',
@@ -1356,6 +1404,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1368,6 +1417,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'update-data-retention',
       description: 'Increases or decreases the stream\'s data retention period by the value that you specify. To indicate whether you want to increase or decrease the data retention period, specify the Operation parameter in the request body. In the request, you must specify either the StreamName or the StreamARN.  This operation requires permission for the KinesisVideo:UpdateDataRetention action. Changing the data retention period affects the data in the stream as follows:   If the data retention period is increased, existing data is retained for the new retention period. For example, if the data retention period is increased from one hour to seven hours, all existing data is retained for seven hours.   If the data retention period is decreased, existing data is retained for the new retention period. For example, if the data retention period is decreased from seven hours to one hour, all existing data is retained for one hour, and any data older than one hour is deleted immediately',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream whose retention period you want to change',
@@ -1429,6 +1479,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1441,6 +1492,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'update-image-generation-configuration',
       description: 'Updates the StreamInfo and ImageProcessingConfiguration fields',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream from which to update the image generation configuration. You must specify either the StreamName or the StreamARN',
@@ -1484,6 +1536,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1496,6 +1549,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'update-media-storage-configuration',
       description: 'Associates a SignalingChannel to a stream to store the media. There are two signaling modes that you can specify :   If StorageStatus is enabled, the data will be stored in the StreamARN provided. In order for WebRTC Ingestion to work, the stream must have data retention enabled.   If StorageStatus is disabled, no data will be stored, and the StreamARN parameter will not be needed.     If StorageStatus is enabled, direct peer-to-peer (master-viewer) connections no longer occur. Peers connect directly to the storage session. You must call the JoinStorageSession API to trigger an SDP offer send and establish a connection between a peer and the storage session',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'The Amazon Resource Name (ARN) of the channel',
@@ -1530,6 +1584,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1542,6 +1597,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'update-notification-configuration',
       description: 'Updates the notification information for a stream',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream from which to update the notification configuration. You must specify either the StreamName or the StreamARN',
@@ -1585,6 +1641,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1597,6 +1654,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'update-signaling-channel',
       description: 'Updates the existing signaling channel. This is an asynchronous operation and takes time to complete.  If the MessageTtlSeconds value is updated (either increased or reduced), it only applies to new messages sent via this channel after it\'s been updated. Existing messages are still expired as per the previous MessageTtlSeconds value',
       options: [
+
         Option(
           name: '--channel-arn',
           description: 'The Amazon Resource Name (ARN) of the signaling channel that you want to update',
@@ -1640,6 +1698,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1652,6 +1711,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
       name: 'update-stream',
       description: 'Updates stream metadata, such as the device name and media type. You must provide the stream name or the Amazon Resource Name (ARN) of the stream. To make sure that you have the latest version of the stream before updating it, you can specify the stream version. Kinesis Video Streams assigns a version to each stream. When you update a stream, Kinesis Video Streams assigns a new version number. To get the latest stream version, use the DescribeStream API.   UpdateStream is an asynchronous operation, and takes time to complete',
       options: [
+
         Option(
           name: '--stream-name',
           description: 'The name of the stream whose metadata you want to update. The stream name is an identifier for the stream, and must be unique for each account and region',
@@ -1713,6 +1773,7 @@ final FigSpec kinesisvideoSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

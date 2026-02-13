@@ -9,10 +9,12 @@ final FigSpec mediaconnectSpec = FigSpec(
   name: 'mediaconnect',
   description: 'API for AWS Elemental MediaConnect',
   subcommands: [
+
     Subcommand(
       name: 'add-bridge-outputs',
       description: 'Adds outputs to an existing bridge',
       options: [
+
         Option(
           name: '--bridge-arn',
           description: 'The ARN of the bridge that you want to update',
@@ -47,6 +49,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'add-bridge-sources',
       description: 'Adds sources to an existing bridge',
       options: [
+
         Option(
           name: '--bridge-arn',
           description: 'The ARN of the bridge that you want to update',
@@ -93,6 +97,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -105,6 +110,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'add-flow-media-streams',
       description: 'Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a source and/or an output that uses the ST 2110 JPEG XS or CDI protocol',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The Amazon Resource Name (ARN) of the flow',
@@ -139,6 +145,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -151,6 +158,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'add-flow-outputs',
       description: 'Adds outputs to an existing flow. You can create up to 50 outputs per flow',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The flow that you want to add outputs to',
@@ -185,6 +193,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -197,6 +206,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'add-flow-sources',
       description: 'Adds Sources to flow',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The flow that you want to mutate',
@@ -231,6 +241,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -243,6 +254,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'add-flow-vpc-interfaces',
       description: 'Adds VPC interfaces to flow',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The flow that you want to mutate',
@@ -277,6 +289,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -289,6 +302,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'create-bridge',
       description: 'Creates a new bridge. The request must include one source',
       options: [
+
         Option(
           name: '--egress-gateway-bridge',
           description: 'Create a bridge with the egress bridge type. An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises',
@@ -368,6 +382,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -380,6 +395,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'create-flow',
       description: 'Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50)',
       options: [
+
         Option(
           name: '--availability-zone',
           description: 'The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region',
@@ -494,6 +510,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -506,6 +523,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'create-gateway',
       description: 'Creates a new gateway. The request must include at least one network (up to 4)',
       options: [
+
         Option(
           name: '--egress-cidr-blocks',
           description: 'The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16',
@@ -549,6 +567,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -561,6 +580,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'delete-bridge',
       description: 'Deletes a bridge. Before you can delete a bridge, you must stop the bridge',
       options: [
+
         Option(
           name: '--bridge-arn',
           description: 'The ARN of the bridge that you want to delete',
@@ -586,6 +606,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -598,6 +619,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'delete-flow',
       description: 'Deletes a flow. Before you can delete a flow, you must stop the flow',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The ARN of the flow that you want to delete',
@@ -623,6 +645,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -635,6 +658,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'delete-gateway',
       description: 'Deletes a gateway. Before you can delete a gateway, you must deregister its instances and delete its bridges',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The ARN of the gateway that you want to delete',
@@ -660,6 +684,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -672,6 +697,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'deregister-gateway-instance',
       description: 'Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped. If you want to deregister an instance without stopping the bridges, you must use the --force option',
       options: [
+
         Option(
           name: '--force',
           description: 'Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it'
@@ -705,6 +731,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -717,6 +744,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'describe-bridge',
       description: 'Displays the details of a bridge',
       options: [
+
         Option(
           name: '--bridge-arn',
           description: 'The ARN of the bridge that you want to describe',
@@ -742,6 +770,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -754,6 +783,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'describe-flow',
       description: 'Displays the details of a flow. The response includes the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The ARN of the flow that you want to describe',
@@ -779,6 +809,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -791,6 +822,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'describe-flow-source-metadata',
       description: 'Displays details of the flow\'s source stream. The response contains information about the contents of the stream and its programs',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The Amazon Resource Name (ARN) of the flow',
@@ -816,6 +848,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -828,6 +861,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'describe-flow-source-thumbnail',
       description: 'Displays the thumbnail details of a flow\'s source stream',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The Amazon Resource Name (ARN) of the flow',
@@ -853,6 +887,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -865,6 +900,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'describe-gateway',
       description: 'Displays the details of a gateway. The response includes the gateway ARN, name, and CIDR blocks, as well as details about the networks',
       options: [
+
         Option(
           name: '--gateway-arn',
           description: 'The Amazon Resource Name (ARN) of the gateway that you want to describe',
@@ -890,6 +926,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -902,6 +939,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'describe-gateway-instance',
       description: 'Displays the details of an instance',
       options: [
+
         Option(
           name: '--gateway-instance-arn',
           description: 'The Amazon Resource Name (ARN) of the gateway instance that you want to describe',
@@ -927,6 +965,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -939,6 +978,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'describe-offering',
       description: 'Displays the details of an offering. The response includes the offering description, duration, outbound bandwidth, price, and Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--offering-arn',
           description: 'The Amazon Resource Name (ARN) of the offering',
@@ -964,6 +1004,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -976,6 +1017,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'describe-reservation',
       description: 'Displays the details of a reservation. The response includes the reservation name, state, start date and time, and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound bandwidth)',
       options: [
+
         Option(
           name: '--reservation-arn',
           description: 'The Amazon Resource Name (ARN) of the reservation',
@@ -1001,6 +1043,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1013,6 +1056,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'grant-flow-entitlements',
       description: 'Grants entitlements to an existing flow',
       options: [
+
         Option(
           name: '--entitlements',
           description: 'The list of entitlements that you want to grant',
@@ -1047,6 +1091,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1059,6 +1104,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'list-bridges',
       description: 'Displays a list of bridges that are associated with this account and an optionally specified Arn. This request returns a paginated result',
       options: [
+
         Option(
           name: '--filter-arn',
           description: 'Filter the list results to display only the bridges associated with the selected Amazon Resource Name (ARN)',
@@ -1129,6 +1175,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1141,6 +1188,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'list-entitlements',
       description: 'Displays a list of all entitlements that have been granted to this account. This request returns 20 results per page',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page',
@@ -1202,6 +1250,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1214,6 +1263,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'list-flows',
       description: 'Displays a list of flows that are associated with this account. This request returns a paginated result',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page',
@@ -1275,6 +1325,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1287,6 +1338,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'list-gateway-instances',
       description: 'Displays a list of instances associated with the AWS account. This request returns a paginated result. You can use the filterArn property to display only the instances associated with the selected Gateway Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--filter-arn',
           description: 'Filter the list results to display only the instances associated with the selected Gateway Amazon Resource Name (ARN)',
@@ -1357,6 +1409,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1369,6 +1422,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'list-gateways',
       description: 'Displays a list of gateways that are associated with this account. This request returns a paginated result',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per API request. For example, you submit a ListGateways request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page',
@@ -1430,6 +1484,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1442,6 +1497,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'list-offerings',
       description: 'Displays a list of all offerings that are available to this account in the current AWS Region. If you have an active reservation (which means you\'ve purchased an offering that has already started and hasn\'t expired yet), your account isn\'t eligible for other offerings',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page',
@@ -1503,6 +1559,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1515,6 +1572,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'list-reservations',
       description: 'Displays a list of all reservations that have been purchased by this account in the current AWS Region. This list includes all reservations in all states (such as active and expired)',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page',
@@ -1576,6 +1634,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1588,6 +1647,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List all tags on an AWS Elemental MediaConnect resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags',
@@ -1613,6 +1673,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1625,6 +1686,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'purchase-offering',
       description: 'Submits a request to purchase an offering. If you already have an active reservation, you can\'t purchase another offering',
       options: [
+
         Option(
           name: '--offering-arn',
           description: 'The Amazon Resource Name (ARN) of the offering',
@@ -1668,6 +1730,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1680,6 +1743,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'remove-bridge-output',
       description: 'Removes an output from a bridge',
       options: [
+
         Option(
           name: '--bridge-arn',
           description: 'The ARN of the bridge that you want to update',
@@ -1714,6 +1778,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1726,6 +1791,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'remove-bridge-source',
       description: 'Removes a source from a bridge',
       options: [
+
         Option(
           name: '--bridge-arn',
           description: 'The ARN of the bridge that you want to update',
@@ -1760,6 +1826,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1772,6 +1839,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'remove-flow-media-stream',
       description: 'Removes a media stream from a flow. This action is only available if the media stream is not associated with a source or output',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The Amazon Resource Name (ARN) of the flow',
@@ -1806,6 +1874,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1818,6 +1887,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'remove-flow-output',
       description: 'Removes an output from an existing flow. This request can be made only on an output that does not have an entitlement associated with it. If the output has an entitlement, you must revoke the entitlement instead. When an entitlement is revoked from a flow, the service automatically removes the associated output',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The flow that you want to remove an output from',
@@ -1852,6 +1922,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1864,6 +1935,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'remove-flow-source',
       description: 'Removes a source from an existing flow. This request can be made only if there is more than one source on the flow',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The flow that you want to remove a source from',
@@ -1898,6 +1970,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1910,6 +1983,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'remove-flow-vpc-interface',
       description: 'Removes a VPC Interface from an existing flow. This request can be made only on a VPC interface that does not have a Source or Output associated with it. If the VPC interface is referenced by a Source or Output, you must first delete or update the Source or Output to no longer reference the VPC interface',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The flow that you want to remove a VPC interface from',
@@ -1944,6 +2018,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1956,6 +2031,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'revoke-flow-entitlement',
       description: 'Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the subscriber and the associated output is removed',
       options: [
+
         Option(
           name: '--entitlement-arn',
           description: 'The ARN of the entitlement that you want to revoke',
@@ -1990,6 +2066,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2002,6 +2079,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'start-flow',
       description: 'Starts a flow',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The ARN of the flow that you want to start',
@@ -2027,6 +2105,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2039,6 +2118,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'stop-flow',
       description: 'Stops a flow',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The ARN of the flow that you want to stop',
@@ -2064,6 +2144,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2076,6 +2157,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are deleted as well',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags',
@@ -2110,6 +2192,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2122,6 +2205,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes specified tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags',
@@ -2156,6 +2240,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2168,6 +2253,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'update-bridge',
       description: 'Updates the bridge',
       options: [
+
         Option(
           name: '--bridge-arn',
           description: 'The Amazon Resource Number (ARN) of the bridge that you want to update',
@@ -2218,6 +2304,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2230,6 +2317,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'update-bridge-output',
       description: 'Updates an existing bridge output',
       options: [
+
         Option(
           name: '--bridge-arn',
           description: 'The ARN of the bridge that you want to update',
@@ -2273,6 +2361,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2285,6 +2374,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'update-bridge-source',
       description: 'Updates an existing bridge source',
       options: [
+
         Option(
           name: '--bridge-arn',
           description: 'The ARN of the bridge that you want to update',
@@ -2337,6 +2427,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2349,6 +2440,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'update-bridge-state',
       description: 'Updates the bridge state',
       options: [
+
         Option(
           name: '--bridge-arn',
           description: 'The ARN of the bridge that you want to update',
@@ -2382,6 +2474,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2394,6 +2487,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'update-flow',
       description: 'Updates flow',
       options: [
+
         Option(
           name: '--flow-arn',
           description: 'The flow that you want to update',
@@ -2446,6 +2540,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2458,6 +2553,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'update-flow-entitlement',
       description: 'You can change an entitlement\'s description, subscribers, and encryption. If you change the subscribers, the service will remove the outputs that are are used by the subscribers that are removed',
       options: [
+
         Option(
           name: '--description',
           description: 'A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user',
@@ -2528,6 +2624,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2540,6 +2637,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'update-flow-media-stream',
       description: 'Updates an existing media stream',
       options: [
+
         Option(
           name: '--attributes',
           description: 'The attributes that you want to assign to the media stream',
@@ -2619,6 +2717,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2631,6 +2730,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'update-flow-output',
       description: 'Updates an existing flow output',
       options: [
+
         Option(
           name: '--cidr-allow-list',
           description: 'The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16',
@@ -2809,6 +2909,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2821,6 +2922,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'update-flow-source',
       description: 'Updates the source of a flow',
       options: [
+
         Option(
           name: '--decryption',
           description: 'The type of encryption used on the content ingested from this source. Allowable encryption types: static-key',
@@ -3017,6 +3119,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3029,6 +3132,7 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'update-gateway-instance',
       description: 'Updates the configuration of an existing Gateway Instance',
       options: [
+
         Option(
           name: '--bridge-placement',
           description: 'The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance',
@@ -3063,6 +3167,7 @@ final FigSpec mediaconnectSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3075,10 +3180,12 @@ final FigSpec mediaconnectSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'flow-active',
           description: 'Wait until a flow is active It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 40 failed checks',
           options: [
+
             Option(
               name: '--flow-arn',
               description: 'The ARN of the flow that you want to describe',
@@ -3104,6 +3211,7 @@ final FigSpec mediaconnectSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3116,6 +3224,7 @@ final FigSpec mediaconnectSpec = FigSpec(
           name: 'flow-deleted',
           description: 'Wait until a flow is deleted It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 40 failed checks',
           options: [
+
             Option(
               name: '--flow-arn',
               description: 'The ARN of the flow that you want to describe',
@@ -3141,6 +3250,7 @@ final FigSpec mediaconnectSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -3153,6 +3263,7 @@ final FigSpec mediaconnectSpec = FigSpec(
           name: 'flow-standby',
           description: 'Wait until a flow is in standby mode It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 40 failed checks',
           options: [
+
             Option(
               name: '--flow-arn',
               description: 'The ARN of the flow that you want to describe',
@@ -3178,6 +3289,7 @@ final FigSpec mediaconnectSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

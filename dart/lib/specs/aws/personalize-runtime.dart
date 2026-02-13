@@ -8,10 +8,12 @@ import 'package:autocomplete/src/spec.dart';
 final FigSpec personalizeRuntimeSpec = FigSpec(
   name: 'personalize-runtime',
   subcommands: [
+
     Subcommand(
       name: 'get-action-recommendations',
       description: 'Returns a list of recommended actions in sorted in descending order by prediction score. Use the GetActionRecommendations API if you have a custom campaign that deploys a solution version trained with a PERSONALIZED_ACTIONS recipe.  For more information about PERSONALIZED_ACTIONS recipes, see PERSONALIZED_ACTIONS recipes. For more information about getting action recommendations, see Getting action recommendations',
       options: [
+
         Option(
           name: '--campaign-arn',
           description: 'The Amazon Resource Name (ARN) of the campaign to use for getting action recommendations. This campaign must deploy a solution version trained with a PERSONALIZED_ACTIONS recipe',
@@ -73,6 +75,7 @@ final FigSpec personalizeRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -85,6 +88,7 @@ final FigSpec personalizeRuntimeSpec = FigSpec(
       name: 'get-personalized-ranking',
       description: 'Re-ranks a list of recommended items for the given user. The first item in the list is deemed the most likely item to be of interest to the user.  The solution backing the campaign must have been created using a recipe of type PERSONALIZED_RANKING',
       options: [
+
         Option(
           name: '--campaign-arn',
           description: 'The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking',
@@ -164,6 +168,7 @@ final FigSpec personalizeRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -176,6 +181,7 @@ final FigSpec personalizeRuntimeSpec = FigSpec(
       name: 'get-recommendations',
       description: 'Returns a list of recommended items. For campaigns, the campaign\'s Amazon Resource Name (ARN) is required and the required user and item input depends on the recipe type used to create the solution backing the campaign as follows:   USER_PERSONALIZATION - userId required, itemId not used   RELATED_ITEMS - itemId required, userId not used    Campaigns that are backed by a solution created using a recipe of type PERSONALIZED_RANKING use the API.   For recommenders, the recommender\'s ARN is required and the required item and user input depends on the use case (domain-based recipe) backing the recommender. For information on use case requirements see Choosing recommender use cases',
       options: [
+
         Option(
           name: '--campaign-arn',
           description: 'The Amazon Resource Name (ARN) of the campaign to use for getting recommendations',
@@ -282,6 +288,7 @@ final FigSpec personalizeRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

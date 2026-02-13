@@ -9,14 +9,17 @@ final FigSpec activeDirectorySpec = FigSpec(
   name: 'active-directory',
   description: 'Manage Managed Microsoft AD resources',
   subcommands: [
+
     Subcommand(
       name: 'domains',
       description: 'Manage Managed Microsoft AD domains',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Managed Microsoft AD domain',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -201,6 +204,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -223,6 +227,7 @@ final FigSpec activeDirectorySpec = FigSpec(
           name: 'delete',
           description: 'Delete a managed Microsoft Active Directory domain',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -350,6 +355,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -372,6 +378,7 @@ final FigSpec activeDirectorySpec = FigSpec(
           name: 'describe',
           description: 'Describe a Managed Microsoft AD domain',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -495,6 +502,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -517,6 +525,7 @@ final FigSpec activeDirectorySpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Describe the IAM policy for a Managed Microsoft AD domain',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -684,6 +693,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -706,6 +716,7 @@ final FigSpec activeDirectorySpec = FigSpec(
           name: 'list',
           description: 'List Managed Microsoft AD domains',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -873,6 +884,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -889,6 +901,7 @@ final FigSpec activeDirectorySpec = FigSpec(
           name: 'reset-admin-password',
           description: 'Reset the admin password for a Managed Microsoft AD domain',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1012,6 +1025,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1034,6 +1048,7 @@ final FigSpec activeDirectorySpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for a Managed Microsoft AD domain',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1157,6 +1172,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1169,6 +1185,7 @@ final FigSpec activeDirectorySpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'DOMAIN',
               description: 'ID of the domain or fully qualified identifier for the domain'
@@ -1183,10 +1200,12 @@ final FigSpec activeDirectorySpec = FigSpec(
           name: 'trusts',
           description: 'Manage Managed Microsoft AD domains',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a Microsoft Active Directory Trust between a Managed Microsoft AD domain and another domain',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1232,6 +1251,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                     name: 'DIRECTION',
                     description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                     suggestions: [
+
                       FigSuggestion(name: 'bidirectional'),
                       FigSuggestion(name: 'inbound'),
                       FigSuggestion(name: 'outbound'),
@@ -1365,6 +1385,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                     name: 'TYPE',
                     description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                     suggestions: [
+
                       FigSuggestion(name: 'external'),
                       FigSuggestion(name: 'forest'),
                       FigSuggestion(name: 'trust-type-unspecified')
@@ -1384,6 +1405,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1406,6 +1428,7 @@ final FigSpec activeDirectorySpec = FigSpec(
               name: 'delete',
               description: 'Delete an Active Directory Trust between a Managed Microsoft AD domain and a target domain',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1545,6 +1568,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1567,6 +1591,7 @@ final FigSpec activeDirectorySpec = FigSpec(
               name: 'update',
               description: 'Update target DNS IP addresses for a Managed Microsoft AD trust',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1718,6 +1743,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1740,6 +1766,7 @@ final FigSpec activeDirectorySpec = FigSpec(
               name: 'validate-state',
               description: 'Validate the state of a Managed Microsoft AD trust',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1879,6 +1906,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1899,6 +1927,7 @@ final FigSpec activeDirectorySpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2022,6 +2051,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2038,6 +2068,7 @@ final FigSpec activeDirectorySpec = FigSpec(
           name: 'update',
           description: 'Update a Managed Microsoft AD domain',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2235,6 +2266,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2255,6 +2287,7 @@ final FigSpec activeDirectorySpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2378,6 +2411,7 @@ final FigSpec activeDirectorySpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2394,10 +2428,12 @@ final FigSpec activeDirectorySpec = FigSpec(
       name: 'operations',
       description: 'Manage Managed Microsoft AD operations',
       subcommands: [
+
         Subcommand(
           name: 'cancel',
           description: 'Cancel a Managed Microsoft AD operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2521,6 +2557,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2543,6 +2580,7 @@ final FigSpec activeDirectorySpec = FigSpec(
           name: 'describe',
           description: 'Describe a Managed Microsoft AD operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2666,6 +2704,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2688,6 +2727,7 @@ final FigSpec activeDirectorySpec = FigSpec(
           name: 'list',
           description: 'List Managed Microsoft AD operations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2855,6 +2895,7 @@ final FigSpec activeDirectorySpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2869,6 +2910,7 @@ final FigSpec activeDirectorySpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2992,6 +3034,7 @@ final FigSpec activeDirectorySpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3006,6 +3049,7 @@ final FigSpec activeDirectorySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3129,6 +3173,7 @@ final FigSpec activeDirectorySpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

@@ -9,15 +9,29 @@ final FigSpec rsyncSpec = FigSpec(
   name: 'rsync',
   description: 'Rsync is a file transfer program capable of efficient remote update via a fast differencing algorithm',
   args: [
+
     Arg(
       name: 'SRC',
-      isVariadic: true
+      isVariadic: true,
+      generators: [
+
+        Generator(
+          template: ['history', 'filepaths', 'folders']
+        )
+      ]
     ),
     Arg(
-      name: 'DEST'
+      name: 'DEST',
+      generators: [
+
+        Generator(
+          template: ['history', 'filepaths', 'folders']
+        )
+      ]
     )
   ],
   options: [
+
     Option(
       name: ['-v', '--verbose'],
       description: 'Increase verbosity'
@@ -251,6 +265,7 @@ final FigSpec rsyncSpec = FigSpec(
         Arg(
         name: 'ALGORITHM',
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'md4'),
           FigSuggestion(name: 'md5'),
@@ -780,6 +795,7 @@ final FigSpec rsyncSpec = FigSpec(
         Arg(
         name: 'BUFFER',
         suggestions: [
+
           FigSuggestion(name: 'N'),
           FigSuggestion(name: 'L'),
           FigSuggestion(name: 'B')

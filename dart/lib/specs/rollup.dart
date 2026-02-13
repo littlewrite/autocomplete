@@ -9,6 +9,7 @@ final FigSpec rollupSpec = FigSpec(
   name: 'rollup',
   description: 'Next-generation ES module bundler',
   options: [
+
     Option(
       name: ['-c', '--config'],
       description: 'Use this config file (if argument is used but value is unspecified, defaults to rollup.config.js)',
@@ -44,6 +45,7 @@ final FigSpec rollupSpec = FigSpec(
         name: 'format',
         description: 'Type of output (amd, cjs, es, iife, umd, system)',
         suggestions: [
+
           FigSuggestion(name: 'amd'),
           FigSuggestion(name: 'cjs'),
           FigSuggestion(name: 'es'),

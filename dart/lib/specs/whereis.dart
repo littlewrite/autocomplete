@@ -9,6 +9,7 @@ final FigSpec whereisSpec = FigSpec(
   name: 'whereis',
   description: 'Locate the binary, source, and manual page files for a command',
   options: [
+
     Option(
       name: '-b',
       description: 'Search only for binaries'

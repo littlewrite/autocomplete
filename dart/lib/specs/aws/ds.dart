@@ -9,10 +9,12 @@ final FigSpec dsSpec = FigSpec(
   name: 'ds',
   description: 'Directory Service Directory Service is a web service that makes it easy for you to setup and run directories in the Amazon Web Services cloud, or connect your Amazon Web Services resources with an existing self-managed Microsoft Active Directory. This guide provides detailed information about Directory Service operations, data types, parameters, and errors. For information about Directory Services features, see Directory Service and the Directory Service Administration Guide.  Amazon Web Services provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to Directory Service and other Amazon Web Services services. For more information about the Amazon Web Services SDKs, including how to download and install them, see Tools for Amazon Web Services',
   subcommands: [
+
     Subcommand(
       name: 'accept-shared-directory',
       description: 'Accepts a directory sharing request that was sent from the directory owner account',
       options: [
+
         Option(
           name: '--shared-directory-id',
           description: 'Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account',
@@ -38,6 +40,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'add-ip-routes',
       description: 'If the DNS server for your self-managed domain uses a publicly addressable IP address, you must add a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services. AddIpRoutes adds this address block. You can also use AddIpRoutes to facilitate routing traffic that uses public IP ranges from your Microsoft AD on Amazon Web Services to a peer VPC.  Before you call AddIpRoutes, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the AddIpRoutes operation, see Directory Service API Permissions: Actions, Resources, and Conditions Reference',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'Identifier (ID) of the directory to which to add the address block',
@@ -92,6 +96,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -104,6 +109,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'add-region',
       description: 'Adds two domain controllers in the specified Region for the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory to which you want to add Region replication',
@@ -147,6 +153,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -159,6 +166,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'add-tags-to-resource',
       description: 'Adds or overwrites one or more tags for the specified directory. Each directory can have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each resource',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'Identifier (ID) for the directory to which to add the tag',
@@ -193,6 +201,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +214,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'cancel-schema-extension',
       description: 'Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema extension has started replicating to all domain controllers, the task can no longer be canceled. A schema extension can be canceled during any of the following states; Initializing, CreatingSnapshot, and UpdatingSchema',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory whose schema extension will be canceled',
@@ -239,6 +249,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -251,6 +262,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'connect-directory',
       description: 'Creates an AD Connector to connect to a self-managed directory. Before you call ConnectDirectory, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the ConnectDirectory operation, see Directory Service API Permissions: Actions, Resources, and Conditions Reference',
       options: [
+
         Option(
           name: '--name',
           description: 'The fully qualified name of your self-managed directory, such as corp.example.com',
@@ -330,6 +342,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -342,6 +355,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'create-alias',
       description: 'Creates an alias for a directory and assigns the alias to the directory. The alias is used to construct the access URL for the directory, such as http://<alias>.awsapps.com.  After an alias has been created, it cannot be deleted or reused, so this operation should only be used when absolutely necessary',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which to create the alias',
@@ -376,6 +390,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -388,6 +403,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'create-computer',
       description: 'Creates an Active Directory computer object in the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory in which to create the computer account',
@@ -449,6 +465,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -461,6 +478,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'create-conditional-forwarder',
       description: 'Creates a conditional forwarder associated with your Amazon Web Services directory. Conditional forwarders are required in order to set up a trust relationship with another domain. The conditional forwarder points to the trusted domain',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder',
@@ -504,6 +522,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -516,6 +535,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'create-directory',
       description: 'Creates a Simple AD directory. For more information, see Simple Active Directory in the Directory Service Admin Guide. Before you call CreateDirectory, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the CreateDirectory operation, see Directory Service API Permissions: Actions, Resources, and Conditions Reference',
       options: [
+
         Option(
           name: '--name',
           description: 'The fully qualified name for the directory, such as corp.example.com',
@@ -595,6 +615,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -607,6 +628,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'create-log-subscription',
       description: 'Creates a subscription to forward real-time Directory Service domain controller security logs to the specified Amazon CloudWatch log group in your Amazon Web Services account',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group',
@@ -641,6 +663,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -653,6 +676,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'create-microsoft-ad',
       description: 'Creates a Microsoft AD directory in the Amazon Web Services Cloud. For more information, see Managed Microsoft AD in the Directory Service Admin Guide. Before you call CreateMicrosoftAD, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the CreateMicrosoftAD operation, see Directory Service API Permissions: Actions, Resources, and Conditions Reference',
       options: [
+
         Option(
           name: '--name',
           description: 'The fully qualified domain name for the Managed Microsoft AD directory, such as corp.example.com. This name will resolve inside your VPC only. It does not need to be publicly resolvable',
@@ -732,6 +756,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -744,6 +769,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'create-snapshot',
       description: 'Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web Services cloud.  You cannot take snapshots of AD Connector directories',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory of which to take a snapshot',
@@ -778,6 +804,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -790,6 +817,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'create-trust',
       description: 'Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Managed Microsoft AD directory, and your existing self-managed Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials. This action initiates the creation of the Amazon Web Services side of a trust relationship between an Managed Microsoft AD directory and an external domain. You can create either a forest trust or an external trust',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship',
@@ -869,6 +897,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -881,6 +910,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'delete-conditional-forwarder',
       description: 'Deletes a conditional forwarder that has been set up for your Amazon Web Services directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The directory ID for which you are deleting the conditional forwarder',
@@ -915,6 +945,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -927,6 +958,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'delete-directory',
       description: 'Deletes an Directory Service directory. Before you call DeleteDirectory, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the DeleteDirectory operation, see Directory Service API Permissions: Actions, Resources, and Conditions Reference',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory to delete',
@@ -952,6 +984,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -964,6 +997,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'delete-log-subscription',
       description: 'Deletes the specified log subscription',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'Identifier of the directory whose log subscription you want to delete',
@@ -989,6 +1023,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1001,6 +1036,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'delete-snapshot',
       description: 'Deletes a directory snapshot',
       options: [
+
         Option(
           name: '--snapshot-id',
           description: 'The identifier of the directory snapshot to be deleted',
@@ -1026,6 +1062,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1038,6 +1075,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'delete-trust',
       description: 'Deletes an existing trust relationship between your Managed Microsoft AD directory and an external domain',
       options: [
+
         Option(
           name: '--trust-id',
           description: 'The Trust ID of the trust relationship to be deleted',
@@ -1071,6 +1109,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1083,6 +1122,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'deregister-certificate',
       description: 'Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory',
@@ -1117,6 +1157,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1129,6 +1170,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'deregister-event-topic',
       description: 'Removes the specified directory as a publisher to the specified Amazon SNS topic',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic',
@@ -1163,6 +1205,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1175,6 +1218,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-certificate',
       description: 'Displays information about the certificate registered for secure LDAP or client certificate authentication',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory',
@@ -1209,6 +1253,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1221,6 +1266,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-client-authentication-settings',
       description: 'Retrieves information about the type of client authentication for the specified directory, if the type is specified. If no type is specified, information about all client authentication types that are supported for the specified directory is retrieved. Currently, only SmartCard is supported',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which to retrieve information',
@@ -1300,6 +1346,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1312,6 +1359,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-conditional-forwarders',
       description: 'Obtains information about the conditional forwarders for this account. If no input parameters are provided for RemoteDomainNames, this request describes all conditional forwarders for the specified directory ID',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The directory ID for which to get the list of associated conditional forwarders',
@@ -1346,6 +1394,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1358,6 +1407,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-directories',
       description: 'Obtains information about the directories that belong to this account. You can retrieve information about specific directories by passing the directory identifiers in the DirectoryIds parameter. Otherwise, all directories that belong to the current account are returned. This operation supports pagination with the use of the NextToken request and response parameters. If more results are available, the DescribeDirectoriesResult.NextToken member contains a token that you pass in the next call to DescribeDirectories to retrieve the next set of items. You can also specify a maximum number of return results with the Limit parameter',
       options: [
+
         Option(
           name: '--directory-ids',
           description: 'A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned. An empty list results in an InvalidParameterException being thrown',
@@ -1428,6 +1478,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1440,6 +1491,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-directory-data-access',
       description: 'Obtains status of directory data access enablement through the Directory Service Data API for the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The directory identifier',
@@ -1465,6 +1517,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1477,6 +1530,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-domain-controllers',
       description: 'Provides information about any domain controllers in your directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'Identifier of the directory for which to retrieve the domain controller information',
@@ -1556,6 +1610,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1568,6 +1623,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-event-topics',
       description: 'Obtains information about which Amazon SNS topics receive status messages from the specified directory. If no input parameters are provided, such as DirectoryId or TopicName, this request describes all of the associations in the account',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned',
@@ -1602,6 +1658,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1614,6 +1671,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-ldaps-settings',
       description: 'Describes the status of LDAP security for the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory',
@@ -1693,6 +1751,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1705,6 +1764,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-regions',
       description: 'Provides information about the Regions that are configured for multi-Region replication',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory',
@@ -1766,6 +1826,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1778,6 +1839,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-settings',
       description: 'Retrieves information about the configurable settings for the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which to retrieve information',
@@ -1821,6 +1883,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1833,6 +1896,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-shared-directories',
       description: 'Returns the shared directories in your account',
       options: [
+
         Option(
           name: '--owner-directory-id',
           description: 'Returns the identifier of the directory in the directory owner account',
@@ -1912,6 +1976,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1924,6 +1989,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-snapshots',
       description: 'Obtains information about the directory snapshots that belong to this account. This operation supports pagination with the use of the NextToken request and response parameters. If more results are available, the DescribeSnapshots.NextToken member contains a token that you pass in the next call to DescribeSnapshots to retrieve the next set of items. You can also specify a maximum number of return results with the Limit parameter',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which to retrieve snapshot information',
@@ -2003,6 +2069,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2015,6 +2082,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-trusts',
       description: 'Obtains information about the trust relationships for this account. If no input parameters are provided, such as DirectoryId or TrustIds, this request describes all the trust relationships belonging to the account',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship',
@@ -2094,6 +2162,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2106,6 +2175,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'describe-update-directory',
       description: 'Describes the updates of a directory for a particular update type',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The unique identifier of the directory',
@@ -2176,6 +2246,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2188,6 +2259,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'disable-client-authentication',
       description: 'Disables alternative client authentication methods for the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory',
@@ -2222,6 +2294,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2234,6 +2307,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'disable-directory-data-access',
       description: 'Deactivates access to directory data via the Directory Service Data API for the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The directory identifier',
@@ -2259,6 +2333,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2271,6 +2346,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'disable-ldaps',
       description: 'Deactivates LDAP secure calls for the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory',
@@ -2305,6 +2381,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2317,6 +2394,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'disable-radius',
       description: 'Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector or Microsoft AD directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which to disable MFA',
@@ -2342,6 +2420,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2354,6 +2433,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'disable-sso',
       description: 'Disables single-sign on for a directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which to disable single-sign on',
@@ -2397,6 +2477,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2409,6 +2490,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'enable-client-authentication',
       description: 'Enables alternative client authentication methods for the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the specified directory',
@@ -2443,6 +2525,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2455,6 +2538,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'enable-directory-data-access',
       description: 'Enables access to directory data via the Directory Service Data API for the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The directory identifier',
@@ -2480,6 +2564,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2492,6 +2577,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'enable-ldaps',
       description: 'Activates the switch for the specific directory to always use LDAP secure calls',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory',
@@ -2526,6 +2612,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2538,6 +2625,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'enable-radius',
       description: 'Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector or Microsoft AD directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which to enable MFA',
@@ -2572,6 +2660,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2584,6 +2673,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'enable-sso',
       description: 'Enables single sign-on for a directory. Single sign-on allows users in your directory to access certain Amazon Web Services services from a computer joined to the directory without having to enter their credentials separately',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which to enable single-sign on',
@@ -2627,6 +2717,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2639,6 +2730,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'get-directory-limits',
       description: 'Obtains directory limit information for the current Region',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -2655,6 +2747,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2667,6 +2760,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'get-snapshot-limits',
       description: 'Obtains the manual snapshot limits for a directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'Contains the identifier of the directory to obtain the limits for',
@@ -2692,6 +2786,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2704,6 +2799,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'list-certificates',
       description: 'For the specified directory, lists all the certificates registered for a secure LDAP or client certificate authentication',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory',
@@ -2774,6 +2870,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2786,6 +2883,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'list-ip-routes',
       description: 'Lists the address blocks that you have added to a directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'Identifier (ID) of the directory for which you want to retrieve the IP addresses',
@@ -2856,6 +2954,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2868,6 +2967,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'list-log-subscriptions',
       description: 'Lists the active log subscriptions for the Amazon Web Services account',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'If a DirectoryID is provided, lists only the log subscription associated with that directory. If no DirectoryId is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned',
@@ -2938,6 +3038,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2950,6 +3051,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'list-schema-extensions',
       description: 'Lists all schema extensions applied to a Microsoft AD Directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory from which to retrieve the schema extension information',
@@ -3020,6 +3122,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3032,6 +3135,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags on a directory',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'Identifier (ID) of the directory for which you want to retrieve tags',
@@ -3102,6 +3206,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3114,6 +3219,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'register-certificate',
       description: 'Registers a certificate for a secure LDAP or client certificate authentication',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory',
@@ -3166,6 +3272,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3178,6 +3285,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'register-event-topic',
       description: 'Associates a directory with an Amazon SNS topic. This establishes the directory as a publisher to the specified Amazon SNS topic. You can then receive email or text (SMS) messages when the status of your directory changes. You get notified if your directory goes from an Active status to an Impaired or Inoperable status. You also receive a notification when the directory returns to an Active status',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The Directory ID that will publish status messages to the Amazon SNS topic',
@@ -3212,6 +3320,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3224,6 +3333,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'reject-shared-directory',
       description: 'Rejects a directory sharing request that was sent from the directory owner account',
       options: [
+
         Option(
           name: '--shared-directory-id',
           description: 'Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account',
@@ -3249,6 +3359,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3261,6 +3372,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'remove-ip-routes',
       description: 'Removes IP address blocks from a directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'Identifier (ID) of the directory from which you want to remove the IP addresses',
@@ -3295,6 +3407,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3307,6 +3420,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'remove-region',
       description: 'Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary Region with this operation. Instead, use the DeleteDirectory API',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which you want to remove Region replication',
@@ -3332,6 +3446,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3344,6 +3459,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'remove-tags-from-resource',
       description: 'Removes tags from a directory',
       options: [
+
         Option(
           name: '--resource-id',
           description: 'Identifier (ID) of the directory from which to remove the tag',
@@ -3378,6 +3494,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3390,6 +3507,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'reset-user-password',
       description: 'Resets the password for any user in your Managed Microsoft AD or Simple AD directory. Disabled users will become enabled and can be authenticated following the API call. You can reset the password for any user in your directory with the following exceptions:   For Simple AD, you cannot reset the password for any user that is a member of either the Domain Admins or Enterprise Admins group except for the administrator user.   For Managed Microsoft AD, you can only reset the password for a user that is in an OU based off of the NetBIOS name that you typed when you created your directory. For example, you cannot reset the password for a user in the Amazon Web Services Reserved OU. For more information about the OU structure for an Managed Microsoft AD directory, see What Gets Created in the Directory Service Administration Guide',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides',
@@ -3433,6 +3551,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3445,6 +3564,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'restore-from-snapshot',
       description: 'Restores a directory using an existing directory snapshot. When you restore a directory from a snapshot, any changes made to the directory after the snapshot date are overwritten. This action returns as soon as the restore operation is initiated. You can monitor the progress of the restore operation by calling the DescribeDirectories operation with the directory identifier. When the DirectoryDescription.Stage value changes to Active, the restore operation is complete',
       options: [
+
         Option(
           name: '--snapshot-id',
           description: 'The identifier of the snapshot to restore from',
@@ -3470,6 +3590,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3482,6 +3603,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'share-directory',
       description: 'Shares a specified directory (DirectoryId) in your Amazon Web Services account (directory owner) with another Amazon Web Services account (directory consumer). With this operation you can use your directory from any Amazon Web Services account and from any Amazon VPC within an Amazon Web Services Region. When you share your Managed Microsoft AD directory, Directory Service creates a shared directory in the directory consumer account. This shared directory contains the metadata to provide access to the directory within the directory owner account. The shared directory is visible in all VPCs in the directory consumer account. The ShareMethod parameter determines whether the specified directory can be shared between Amazon Web Services accounts inside the same Amazon Web Services organization (ORGANIZATIONS). It also determines whether you can share the directory with any other Amazon Web Services account either inside or outside of the organization (HANDSHAKE). The ShareNotes parameter is only used when HANDSHAKE is called, which sends a directory sharing request to the directory consumer',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts',
@@ -3534,6 +3656,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3546,6 +3669,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'start-schema-extension',
       description: 'Applies a schema extension to a Microsoft AD directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which the schema extension will be applied to',
@@ -3597,6 +3721,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3609,6 +3734,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'unshare-directory',
       description: 'Stops the directory sharing between the directory owner and consumer accounts',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the Managed Microsoft AD directory that you want to stop sharing',
@@ -3643,6 +3769,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3655,6 +3782,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'update-conditional-forwarder',
       description: 'Updates a conditional forwarder that has been set up for your Amazon Web Services directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The directory ID of the Amazon Web Services directory for which to update the conditional forwarder',
@@ -3698,6 +3826,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3710,6 +3839,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'update-directory-setup',
       description: 'Updates the directory for a particular update type',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory on which you want to perform the update',
@@ -3761,6 +3891,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3773,6 +3904,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'update-number-of-domain-controllers',
       description: 'Adds or removes domain controllers to or from the directory. Based on the difference between current value and new value (provided through this API call), domain controllers will be added or removed. It may take up to 45 minutes for any new domain controllers to become fully active once the requested number of domain controllers is updated. During this time, you cannot make another update request',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'Identifier of the directory to which the domain controllers will be added or removed',
@@ -3807,6 +3939,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3819,6 +3952,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'update-radius',
       description: 'Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector or Microsoft AD directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which to update the RADIUS server information',
@@ -3853,6 +3987,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3865,6 +4000,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'update-settings',
       description: 'Updates the configurable settings for the specified directory',
       options: [
+
         Option(
           name: '--directory-id',
           description: 'The identifier of the directory for which to update settings',
@@ -3899,6 +4035,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3911,6 +4048,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'update-trust',
       description: 'Updates the trust that has been set up between your Managed Microsoft AD directory and an self-managed Active Directory',
       options: [
+
         Option(
           name: '--trust-id',
           description: 'Identifier of the trust relationship',
@@ -3945,6 +4083,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3957,6 +4096,7 @@ final FigSpec dsSpec = FigSpec(
       name: 'verify-trust',
       description: 'Directory Service for Microsoft Active Directory allows you to configure and verify trust relationships. This action verifies a trust relationship between your Managed Microsoft AD directory and an external domain',
       options: [
+
         Option(
           name: '--trust-id',
           description: 'The unique Trust ID of the trust relationship to verify',
@@ -3982,6 +4122,7 @@ final FigSpec dsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

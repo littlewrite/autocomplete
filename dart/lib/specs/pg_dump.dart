@@ -9,6 +9,7 @@ final FigSpec pg_dumpSpec = FigSpec(
   name: 'pg_dump',
   description: 'Dumps a database as a text file or to other formats',
   options: [
+
     Option(
       name: ['--help', '-?'],
       description: 'Show help for pg_dump'
@@ -29,6 +30,7 @@ final FigSpec pg_dumpSpec = FigSpec(
         Arg(
         name: 'format',
         suggestions: [
+
           FigSuggestion(
             name: 'c'
           ),
@@ -69,6 +71,7 @@ final FigSpec pg_dumpSpec = FigSpec(
         Arg(
         name: 'level',
         suggestions: [
+
           FigSuggestion(name: '0'),
           FigSuggestion(name: '1'),
           FigSuggestion(name: '2'),

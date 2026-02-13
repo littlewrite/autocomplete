@@ -9,6 +9,7 @@ final FigSpec fdiskSpec = FigSpec(
   name: 'fdisk',
   description: 'Manipulate disk partition table',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for fdisk'
@@ -25,6 +26,7 @@ final FigSpec fdiskSpec = FigSpec(
         name: 'mode',
         description: 'Valid values are 512, 1024, 2048, and 4096',
         suggestions: [
+
           FigSuggestion(name: '512'),
           FigSuggestion(name: '1024'),
           FigSuggestion(name: '2048'),
@@ -45,6 +47,7 @@ final FigSpec fdiskSpec = FigSpec(
         name: 'mode',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'dos'),
           FigSuggestion(name: 'nondos')
         ]
@@ -59,6 +62,7 @@ final FigSpec fdiskSpec = FigSpec(
         name: 'when',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'never'),
           FigSuggestion(name: 'auto')
@@ -83,6 +87,7 @@ final FigSpec fdiskSpec = FigSpec(
         description: 'Optional argument mode can be yes, no (or 1 and 0) or nonblock',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'yes'),
           FigSuggestion(name: 'no'),
           FigSuggestion(name: 'nonblock')
@@ -124,6 +129,7 @@ final FigSpec fdiskSpec = FigSpec(
         name: 'unit',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(name: 'sectors'),
           FigSuggestion(name: 'cylinders')
         ]
@@ -160,6 +166,7 @@ final FigSpec fdiskSpec = FigSpec(
         name: 'when',
         description: 'The argument when can be auto, never or always',
         suggestions: [
+
           FigSuggestion(name: 'auto'),
           FigSuggestion(name: 'never'),
           FigSuggestion(name: 'always')

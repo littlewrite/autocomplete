@@ -9,10 +9,12 @@ final FigSpec sfdxSpec = FigSpec(
   name: 'sfdx',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'force:lightning:lint',
       description: 'Analyze (lint) Aura component code',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -24,6 +26,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -87,6 +90,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'fig-completion',
       description: 'Generate a Fig completion spec',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -107,6 +111,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'lang',
             suggestions: [
+
               FigSuggestion(name: ' ts'),
               FigSuggestion(name: 'js')
             ]
@@ -125,6 +130,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'commands',
       description: 'List all the commands',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -175,6 +181,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'output',
             suggestions: [
+
               FigSuggestion(name: 'csv'),
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'yaml')
@@ -200,6 +207,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'plugins',
       description: 'List installed plugins',
       options: [
+
         Option(
           name: '--core',
           description: 'Show core plugins'
@@ -210,6 +218,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'plugins:inspect',
       description: 'Displays installation properties of a plugin',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -230,6 +239,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['plugins:install', 'plugins:add'],
       description: 'Installs a plugin into the CLI',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -254,6 +264,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'plugins:link',
       description: 'Links a plugin into the CLI for development',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -274,6 +285,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['plugins:uninstall', 'plugins:unlink', 'plugins:remove'],
       description: 'Removes a plugin from the CLI',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -295,6 +307,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'plugins:update',
       description: 'Update installed plugins',
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Show CLI help'
@@ -309,6 +322,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'autocomplete',
       description: 'Display autocomplete installation instructions',
       options: [
+
         Option(
           name: ['-r', '--refresh-cache'],
           description: 'Refresh cache (ignores displaying instructions)'
@@ -326,6 +340,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'update',
       description: 'Update the <%= config.bin %> CLI',
       options: [
+
         Option(
           name: '--from-local',
           description: 'Interactively choose an already installed version'
@@ -351,6 +366,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:cmdt:create',
       description: 'Creates a new custom metadata type in the current project',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -362,6 +378,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -412,6 +429,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'visibility',
             suggestions: [
+
               FigSuggestion(name: 'PackageProtected'),
               FigSuggestion(name: 'Protected'),
               FigSuggestion(name: 'Public')
@@ -440,6 +458,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:cmdt:field:create',
       description: 'Generate a custom metadata field based on the field type provided',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -451,6 +470,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -483,6 +503,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'fieldtype',
             suggestions: [
+
               FigSuggestion(name: 'Checkbox'),
               FigSuggestion(name: 'Date'),
               FigSuggestion(name: 'DateTime'),
@@ -547,6 +568,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:cmdt:generate',
       description: 'Generates a custom metadata type and all its records for the provided sObject',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -558,6 +580,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -626,6 +649,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'visibility',
             suggestions: [
+
               FigSuggestion(name: 'PackageProtected'),
               FigSuggestion(name: 'Protected'),
               FigSuggestion(name: 'Public')
@@ -676,6 +700,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:cmdt:record:create',
       description: 'Create a new record for a given custom metadata type in the current project',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -687,6 +712,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -737,6 +763,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'protected',
             suggestions: [
+
               FigSuggestion(name: 'true'),
               FigSuggestion(name: 'false')
             ]
@@ -767,6 +794,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:cmdt:record:insert',
       description: 'Create new custom metadata type records from a CSV file',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -778,6 +806,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -845,6 +874,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['alias:list', 'force:alias:list'],
       description: 'List username aliases for the Salesforce CLI',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -856,6 +886,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -878,6 +909,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['alias:set', 'force:alias:set'],
       description: 'Set username aliases for the Salesforce CLI',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -889,6 +921,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -911,6 +944,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'alias:unset',
       description: 'Unsets aliases for the Salesforce CLI',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -922,6 +956,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -944,6 +979,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:apex:execute',
       description: 'Executes anonymous Apex code',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -955,6 +991,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1004,6 +1041,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:apex:log:get',
       description: 'Fetch debug logs',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as JSON'
@@ -1015,6 +1053,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1082,6 +1121,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:apex:log:list',
       description: 'Display a list of IDs and general information about debug logs',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as JSON'
@@ -1093,6 +1133,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1133,6 +1174,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:apex:test:report',
       description: 'Display test results for a specific asynchronous test run',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as JSON'
@@ -1144,6 +1186,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1207,6 +1250,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'resultformat',
             suggestions: [
+
               FigSuggestion(name: 'human'),
               FigSuggestion(name: 'tap'),
               FigSuggestion(name: 'junit'),
@@ -1234,6 +1278,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:apex:test:run',
       description: 'Invoke Apex tests',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as JSON'
@@ -1245,6 +1290,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1299,6 +1345,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'testlevel',
             suggestions: [
+
               FigSuggestion(name: 'RunLocalTests'),
               FigSuggestion(name: 'RunAllTestsInOrg'),
               FigSuggestion(name: 'RunSpecifiedTests')
@@ -1322,6 +1369,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'resultformat',
             suggestions: [
+
               FigSuggestion(name: 'human'),
               FigSuggestion(name: 'tap'),
               FigSuggestion(name: 'junit'),
@@ -1375,6 +1423,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['config:get', 'force:config:get'],
       description: 'Get config var values for given names',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -1386,6 +1435,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1412,6 +1462,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['config:list', 'force:config:list'],
       description: 'Lists the config variables that the Salesforce CLI uses for various commands and tasks',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -1423,6 +1474,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1445,6 +1497,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['config:set', 'force:config:set'],
       description: 'Sets the configuration variables that the Salesforce CLI uses for various commands and tasks',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -1456,6 +1509,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1482,6 +1536,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'config:unset',
       description: 'Unsets the local and global configuration variables for the Salesforce CLI',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -1493,6 +1548,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1519,6 +1575,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:data:bulk:delete',
       description: 'Bulk delete records from a csv file',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -1530,6 +1587,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1597,6 +1655,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:data:bulk:status',
       description: 'View the status of a bulk data load job or batch',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -1608,6 +1667,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1666,6 +1726,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:data:bulk:upsert',
       description: 'Bulk upsert records from a CSV file',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -1677,6 +1738,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1757,6 +1819,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:data:record:create',
       description: 'Creates and inserts a record',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -1768,6 +1831,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1834,6 +1898,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:data:record:delete',
       description: 'Deletes a single record',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -1845,6 +1910,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -1920,6 +1986,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:data:record:get',
       description: 'Displays a single record',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -1931,6 +1998,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2006,6 +2074,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:data:record:update',
       description: 'Updates a single record',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2017,6 +2086,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2101,6 +2171,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:data:soql:query',
       description: 'Execute a SOQL query',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2112,6 +2183,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2166,6 +2238,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'resultformat',
             suggestions: [
+
               FigSuggestion(name: 'human'),
               FigSuggestion(name: 'csv'),
               FigSuggestion(name: 'json')
@@ -2183,6 +2256,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:data:tree:export',
       description: 'Export data from an org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2194,6 +2268,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2265,6 +2340,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:data:tree:import',
       description: 'Import data into an org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2276,6 +2352,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2338,6 +2415,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['auth:accesstoken:store', 'force:auth:accesstoken:store'],
       description: 'Authorize an org using an existing Salesforce access token',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2349,6 +2427,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2401,6 +2480,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['auth:device:login', 'force:auth:device:login'],
       description: 'Authorize an org using a device code',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2412,6 +2492,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2469,6 +2550,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['auth:jwt:grant', 'force:auth:jwt:grant'],
       description: 'Authorize an org using the JWT flow',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2480,6 +2562,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2555,6 +2638,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['auth:list', 'force:auth:list'],
       description: 'List auth connection information',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2566,6 +2650,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2588,6 +2673,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['auth:logout', 'force:auth:logout'],
       description: 'Log out from authorized orgs',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2599,6 +2685,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2647,6 +2734,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['auth:sfdxurl:store', 'force:auth:sfdxurl:store'],
       description: 'Authorize an org using an SFDX auth URL',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2658,6 +2746,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2706,6 +2795,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: ['auth:web:login', 'force:auth:web:login'],
       description: 'Authorize an org using the web login flow',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2717,6 +2807,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2774,6 +2865,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:limits:api:display',
       description: 'Display current org’s limits',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2785,6 +2877,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2825,6 +2918,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:limits:recordcounts:display',
       description: 'Display record counts for the specified standard and custom objects',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2836,6 +2930,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2885,6 +2980,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:display',
       description: 'Get the description for the current or target org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2896,6 +2992,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2940,6 +3037,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:list',
       description: 'List all orgs you’ve created or authenticated to',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -2951,6 +3049,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -2993,6 +3092,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:open',
       description: 'Open your default scratch org, or another specified org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3004,6 +3104,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3057,6 +3158,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:convert',
       description: 'Convert source into Metadata API format',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3068,6 +3170,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3144,6 +3247,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:deploy',
       description: 'Deploy source to an org Use this command to deploy source (metadata that’s in source format) to an org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3155,6 +3259,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3213,6 +3318,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'testlevel',
             suggestions: [
+
               FigSuggestion(name: 'NoTestRun'),
               FigSuggestion(name: 'RunSpecifiedTests'),
               FigSuggestion(name: 'RunLocalTests'),
@@ -3284,6 +3390,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:deploy:cancel',
       description: 'Cancel a source deployment',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3295,6 +3402,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3353,6 +3461,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:deploy:report',
       description: 'Check the status of a metadata deployment',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3364,6 +3473,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3426,6 +3536,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:manifest:create',
       description: 'Create a project manifest that lists the metadata components you want to deploy or retrieve',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3437,6 +3548,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3496,6 +3608,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'manifesttype',
             suggestions: [
+
               FigSuggestion(name: 'pre'),
               FigSuggestion(name: 'post'),
               FigSuggestion(name: 'destroy'),
@@ -3519,6 +3632,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:open',
       description: 'Edit a Lightning Page with Lightning App Builder',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3530,6 +3644,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3583,6 +3698,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:retrieve',
       description: 'Retrieve source from an org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3594,6 +3710,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3683,6 +3800,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:schema:sobject:describe',
       description: 'Displays the metadata for a standard or custom object',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3694,6 +3812,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3747,6 +3866,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:schema:sobject:list',
       description: 'List all objects of a specified category',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3758,6 +3878,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3807,6 +3928,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:analytics:template:create',
       description: 'Add an Analytics template to your workspace',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3818,6 +3940,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3867,6 +3990,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:apex:class:create',
       description: 'Create an Apex class',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3878,6 +4002,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3910,6 +4035,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'ApexException'),
               FigSuggestion(name: 'ApexUnitTest'),
               FigSuggestion(name: 'DefaultApexClass'),
@@ -3942,6 +4068,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:apex:trigger:create',
       description: 'Create an Apex trigger',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -3953,6 +4080,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -3985,6 +4113,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'ApexTrigger')
             ]
           )
@@ -4032,6 +4161,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:lightning:app:create',
       description: 'Create a Lightning app',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4043,6 +4173,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4075,6 +4206,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'DefaultLightningApp')
             ]
           )
@@ -4104,6 +4236,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:lightning:component:create',
       description: 'Create a bundle for an Aura component or a Lightning web component',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4115,6 +4248,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4147,6 +4281,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'default'),
               FigSuggestion(name: 'analyticsDashboard'),
               FigSuggestion(name: 'analyticsDashboardWithStep')
@@ -4179,6 +4314,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'type',
             suggestions: [
+
               FigSuggestion(name: 'aura'),
               FigSuggestion(name: 'lwc')
             ]
@@ -4191,6 +4327,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:lightning:event:create',
       description: 'Create a Lightning event',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4202,6 +4339,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4234,6 +4372,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'DefaultLightningEvt')
             ]
           )
@@ -4263,6 +4402,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:lightning:interface:create',
       description: 'Create a Lightning interface',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4274,6 +4414,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4306,6 +4447,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'DefaultLightningIntf')
             ]
           )
@@ -4335,6 +4477,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:lightning:test:create',
       description: 'Create a Lightning test',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4346,6 +4489,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4378,6 +4522,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'DefaultLightningTest')
             ]
           )
@@ -4398,6 +4543,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:project:create',
       description: 'Create a Salesforce DX project',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4409,6 +4555,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4441,6 +4588,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'standard'),
               FigSuggestion(name: 'empty'),
               FigSuggestion(name: 'analytics')
@@ -4485,6 +4633,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:staticresource:create',
       description: 'Create a static resource',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4496,6 +4645,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4554,6 +4704,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:visualforce:component:create',
       description: 'Create a Visualforce component',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4565,6 +4716,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4588,6 +4740,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'DefaultVFComponent')
             ]
           )
@@ -4635,6 +4788,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:visualforce:page:create',
       description: 'Create a Visualforce page',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4646,6 +4800,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4669,6 +4824,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'template',
             suggestions: [
+
               FigSuggestion(name: 'DefaultVFPage')
             ]
           )
@@ -4716,6 +4872,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:user:create',
       description: 'Create a user for a scratch org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4727,6 +4884,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4798,6 +4956,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:user:display',
       description: 'Displays information about a user of a scratch org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4809,6 +4968,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4858,6 +5018,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:user:list',
       description: 'List all authenticated users of an org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4869,6 +5030,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -4918,6 +5080,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:user:password:generate',
       description: 'Generate a password for scratch org users',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -4929,6 +5092,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5005,6 +5169,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:user:permset:assign',
       description: 'Assign a permission set to one or more users of an org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5016,6 +5181,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5074,6 +5240,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'help',
       description: 'Display help for <%= config.bin %>',
       options: [
+
         Option(
           name: '--all',
           description: 'See all commands in CLI'
@@ -5091,6 +5258,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:apex:log:tail',
       description: '',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5102,6 +5270,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5159,6 +5328,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:community:create',
       description: 'Creates an Experience Cloud site using a template',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5170,6 +5340,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5246,6 +5417,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:community:publish',
       description: 'Publishes an Experience Builder site to make it live',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5257,6 +5429,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5306,6 +5479,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:community:template:list',
       description: 'Retrieves the list of templates available in your org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5317,6 +5491,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5357,6 +5532,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:mdapi:convert',
       description: 'Convert metadata from the Metadata API format into the source format',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5368,6 +5544,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5435,6 +5612,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:mdapi:deploy',
       description: 'Deploy metadata to an org using Metadata API',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5446,6 +5624,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5509,6 +5688,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'testlevel',
             suggestions: [
+
               FigSuggestion(name: 'NoTestRun'),
               FigSuggestion(name: 'RunSpecifiedTests'),
               FigSuggestion(name: 'RunLocalTests'),
@@ -5570,6 +5750,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:mdapi:deploy:cancel',
       description: 'Cancel a metadata deployment',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5581,6 +5762,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5639,6 +5821,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:mdapi:deploy:report',
       description: 'Check the status of a metadata deployment',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5650,6 +5833,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5712,6 +5896,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:mdapi:describemetadata',
       description: 'Display the metadata types enabled for your org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5723,6 +5908,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5772,6 +5958,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:mdapi:listmetadata',
       description: 'Display properties of metadata components of a specified type',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5783,6 +5970,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5850,6 +6038,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:mdapi:retrieve',
       description: 'Retrieve metadata from an org using Metadata API',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5861,6 +6050,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -5954,6 +6144,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:mdapi:retrieve:report',
       description: 'Check the status of a metadata retrieval',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -5965,6 +6156,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6036,6 +6228,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:clone',
       description: 'Clone a sandbox org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6047,6 +6240,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6088,6 +6282,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'type',
             suggestions: [
+
               FigSuggestion(name: 'sandbox')
             ]
           )
@@ -6130,6 +6325,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:create',
       description: 'Create a scratch or sandbox org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6141,6 +6337,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6191,6 +6388,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'type',
             suggestions: [
+
               FigSuggestion(name: 'scratch'),
               FigSuggestion(name: 'sandbox')
             ]
@@ -6260,6 +6458,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:delete',
       description: 'Mark a scratch or sandbox org for deletion',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6271,6 +6470,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6324,6 +6524,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:shape:create',
       description: 'Create a scratch org configuration (shape) based on the specified source org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6335,6 +6536,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6375,6 +6577,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:shape:delete',
       description: 'Delete all org shapes for a target org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6386,6 +6589,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6430,6 +6634,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:shape:list',
       description: 'List all org shapes you’ve created',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6441,6 +6646,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6467,6 +6673,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:snapshot:create',
       description: 'Snapshot a scratch org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6478,6 +6685,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6545,6 +6753,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:snapshot:delete',
       description: 'Delete a scratch org snapshot',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6556,6 +6765,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6605,6 +6815,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:snapshot:get',
       description: 'Get details about a scratch org snapshot',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6616,6 +6827,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6665,6 +6877,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:snapshot:list',
       description: 'List scratch org snapshots',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6676,6 +6889,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6716,6 +6930,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:org:status',
       description: 'Report sandbox org creation status and authenticate to org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6727,6 +6942,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6798,6 +7014,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package1:version:create',
       description: 'Create a first-generation package version in the release org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6809,6 +7026,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6925,6 +7143,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package1:version:create:get',
       description: 'Retrieve the status of a package version creation request',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6936,6 +7155,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -6985,6 +7205,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package1:version:display',
       description: 'Display details about a first-generation package version',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -6996,6 +7217,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7045,6 +7267,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package1:version:list',
       description: 'List package versions for the specified first-generation package or for the org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7056,6 +7279,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7105,6 +7329,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:create',
       description: 'Create a package',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7116,6 +7341,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7166,6 +7392,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'packagetype',
             suggestions: [
+
               FigSuggestion(name: 'Managed'),
               FigSuggestion(name: 'Unlocked')
             ]
@@ -7213,6 +7440,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:delete',
       description: 'Delete a package',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7224,6 +7452,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7277,6 +7506,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:install',
       description: 'Install a package in the target org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7288,6 +7518,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7369,6 +7600,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'apexcompile',
             suggestions: [
+
               FigSuggestion(name: 'all'),
               FigSuggestion(name: 'package')
             ]
@@ -7382,6 +7614,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'securitytype',
             suggestions: [
+
               FigSuggestion(name: 'AllUsers'),
               FigSuggestion(name: 'AdminsOnly')
             ]
@@ -7395,6 +7628,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'upgradetype',
             suggestions: [
+
               FigSuggestion(name: 'DeprecateOnly'),
               FigSuggestion(name: 'Mixed'),
               FigSuggestion(name: 'Delete')
@@ -7408,6 +7642,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:install:report',
       description: 'Retrieve the status of a package installation request',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7419,6 +7654,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7468,6 +7704,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:installed:list',
       description: 'List the org’s installed packages',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7479,6 +7716,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7519,6 +7757,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:list',
       description: 'List all packages in the Dev Hub org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7530,6 +7769,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7574,6 +7814,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:uninstall',
       description: 'Uninstall a second-generation package from the target org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7585,6 +7826,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7643,6 +7885,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:uninstall:report',
       description: 'Retrieve status of package uninstall request',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7654,6 +7897,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7703,6 +7947,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:update',
       description: 'Update package details',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7714,6 +7959,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7790,6 +8036,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:version:create',
       description: 'Create a package version',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7801,6 +8048,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -7979,6 +8227,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:version:create:list',
       description: 'List package version creation requests',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -7990,6 +8239,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8040,6 +8290,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'status',
             suggestions: [
+
               FigSuggestion(name: 'Queued'),
               FigSuggestion(name: 'InProgress'),
               FigSuggestion(name: 'Success'),
@@ -8054,6 +8305,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:version:create:report',
       description: 'Retrieve details about a package version creation request',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8065,6 +8317,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8114,6 +8367,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:version:delete',
       description: 'Delete a package version',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8125,6 +8379,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8178,6 +8433,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:version:displayancestry',
       description: 'Display the ancestry tree for a 2GP managed package version',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8189,6 +8445,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8246,6 +8503,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:version:list',
       description: 'List all package versions in the Dev Hub org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8257,6 +8515,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8345,6 +8604,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:version:promote',
       description: 'Promote a package version to released',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8356,6 +8616,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8409,6 +8670,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:version:report',
       description: 'Retrieve details about a package version in the Dev Hub org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8420,6 +8682,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8473,6 +8736,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:package:version:update',
       description: 'Update a package version',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8484,6 +8748,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8578,6 +8843,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:delete',
       description: 'Delete source from your project and from a non-source-tracked org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8589,6 +8855,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8664,6 +8931,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:ignored:list',
       description: 'Check your local project package directories for forceignored files',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8675,6 +8943,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8706,6 +8975,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:pull',
       description: 'Pull source from the scratch org to the project',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8717,6 +8987,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8770,6 +9041,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:push',
       description: 'Push source to a scratch org from the project',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8781,6 +9053,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8838,6 +9111,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:status',
       description: 'List local changes and/or changes in a scratch org',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8849,6 +9123,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8901,6 +9176,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:tracking:clear',
       description: 'Clear all local source tracking information',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8912,6 +9188,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -8956,6 +9233,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:source:tracking:reset',
       description: 'Reset local and remote source tracking',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -8967,6 +9245,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -9020,6 +9299,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:lightning:lwc:test:create',
       description: 'Creates a Lightning web component test file with boilerplate code inside a __tests__ directory',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -9031,6 +9311,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -9062,6 +9343,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:lightning:lwc:test:run',
       description: 'Invokes Lightning Web Components Jest unit tests',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -9073,6 +9355,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -9109,6 +9392,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'force:lightning:lwc:test:setup',
       description: 'Install Jest unit testing tools for Lightning Web Components',
       options: [
+
         Option(
           name: '--json',
           description: 'Format output as json'
@@ -9120,6 +9404,7 @@ final FigSpec sfdxSpec = FigSpec(
             Arg(
             name: 'loglevel',
             suggestions: [
+
               FigSuggestion(name: 'trace'),
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
@@ -9142,6 +9427,7 @@ final FigSpec sfdxSpec = FigSpec(
       name: 'plugins:generate',
       description: 'Create a new sfdx-cli plugin',
       options: [
+
         Option(
           name: '--defaults',
           description: 'Use defaults for every setting'

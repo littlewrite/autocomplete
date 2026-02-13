@@ -9,10 +9,12 @@ final FigSpec omicsSpec = FigSpec(
   name: 'omics',
   description: 'This is the AWS HealthOmics API Reference. For an introduction to the service, see What is AWS HealthOmics? in the AWS HealthOmics User Guide',
   subcommands: [
+
     Subcommand(
       name: 'abort-multipart-read-set-upload',
       description: 'Stops a multipart upload',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The sequence store ID for the store involved in the multipart upload',
@@ -47,6 +49,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'accept-share',
       description: 'Accept a resource share request',
       options: [
+
         Option(
           name: '--share-id',
           description: 'The ID of the resource share',
@@ -84,6 +88,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'batch-delete-read-set',
       description: 'Deletes one or more read sets',
       options: [
+
         Option(
           name: '--ids',
           description: 'The read sets\' IDs',
@@ -130,6 +136,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -142,6 +149,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'cancel-annotation-import-job',
       description: 'Cancels an annotation import job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job\'s ID',
@@ -167,6 +175,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -179,6 +188,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'cancel-run',
       description: 'Cancels a run',
       options: [
+
         Option(
           name: '--id',
           description: 'The run\'s ID',
@@ -204,6 +214,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -216,6 +227,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'cancel-variant-import-job',
       description: 'Cancels a variant import job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job\'s ID',
@@ -241,6 +253,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -253,6 +266,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'complete-multipart-read-set-upload',
       description: 'Concludes a multipart upload once you have uploaded all the components',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The sequence store ID for the store involved in the multipart upload',
@@ -296,6 +310,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -308,6 +323,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'create-annotation-store',
       description: 'Creates an annotation store',
       options: [
+
         Option(
           name: '--reference',
           description: 'The genome reference for the store\'s annotations',
@@ -396,6 +412,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -408,6 +425,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'create-annotation-store-version',
       description: 'Creates a new version of an annotation store',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of an annotation store version from which versions are being created',
@@ -469,6 +487,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -481,6 +500,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'create-multipart-read-set-upload',
       description: 'Begins a multipart read set upload',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The sequence store ID for the store that is the destination of the multipart uploads',
@@ -587,6 +607,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -599,6 +620,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'create-reference-store',
       description: 'Creates a reference store',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the store',
@@ -660,6 +682,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -672,6 +695,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'create-run-cache',
       description: 'You can create a run cache to save the task outputs from completed tasks in a run for a private workflow. Subsequent runs use the task outputs from the cache, rather than computing the task outputs again. You specify an Amazon S3 location where HealthOmics saves the cached data. This data must be immediately accessible (not in an archived state). For more information, see Creating a run cache in the AWS HealthOmics User Guide',
       options: [
+
         Option(
           name: '--cache-behavior',
           description: 'Default cache behavior for runs that use this cache. Supported values are:  CACHE_ON_FAILURE: Caches task outputs from completed tasks for runs that fail. This setting is useful if you\'re debugging a workflow that fails after several tasks completed successfully. The subsequent run uses the cache outputs for previously-completed tasks if the task definition, inputs, and container in ECR are identical to the prior run.  CACHE_ALWAYS: Caches task outputs from completed tasks for all runs. This setting is useful in development mode, but do not use it in a production setting. If you don\'t specify a value, the default behavior is CACHE_ON_FAILURE. When you start a run that uses this cache, you can override the default cache behavior. For more information, see Run cache behavior in the AWS HealthOmics User Guide',
@@ -751,6 +775,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -763,6 +788,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'create-run-group',
       description: 'You can optionally create a run group to limit the compute resources for the runs that you add to the group',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the group',
@@ -842,6 +868,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -854,6 +881,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'create-sequence-store',
       description: 'Creates a sequence store',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the store',
@@ -951,6 +979,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -963,6 +992,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'create-share',
       description: 'Creates a cross-account shared resource. The resource owner makes an offer to share the resource with the principal subscriber (an AWS user with a different account than the resource owner). The following resources support cross-account sharing:   HealthOmics variant stores   HealthOmics annotation stores   Private workflows',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to be shared',
@@ -1006,6 +1036,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1018,6 +1049,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'create-variant-store',
       description: 'Creates a variant store',
       options: [
+
         Option(
           name: '--reference',
           description: 'The genome reference for the store\'s variants',
@@ -1079,6 +1111,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1091,6 +1124,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'create-workflow',
       description: 'Creates a workflow',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the workflow',
@@ -1206,6 +1240,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1218,6 +1253,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-annotation-store',
       description: 'Deletes an annotation store',
       options: [
+
         Option(
           name: '--name',
           description: 'The store\'s name',
@@ -1251,6 +1287,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1263,6 +1300,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-annotation-store-versions',
       description: 'Deletes one or multiple versions of an annotation store',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the annotation store from which versions are being deleted',
@@ -1305,6 +1343,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1317,6 +1356,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-reference',
       description: 'Deletes a genome reference',
       options: [
+
         Option(
           name: '--id',
           description: 'The reference\'s ID',
@@ -1351,6 +1391,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1363,6 +1404,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-reference-store',
       description: 'Deletes a genome reference store',
       options: [
+
         Option(
           name: '--id',
           description: 'The store\'s ID',
@@ -1388,6 +1430,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1400,6 +1443,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-run',
       description: 'Deletes a workflow run',
       options: [
+
         Option(
           name: '--id',
           description: 'The run\'s ID',
@@ -1425,6 +1469,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1437,6 +1482,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-run-cache',
       description: 'Delete a run cache. This action removes the cache metadata stored in the service account, but doesn\'t delete the data in Amazon S3. You can access the cache data in Amazon S3, for inspection or to troubleshoot issues. You can remove old cache data using standard S3 Delete operations.  For more information, see Deleting a run cache in the AWS HealthOmics User Guide',
       options: [
+
         Option(
           name: '--id',
           description: 'Run cache identifier for the cache you want to delete',
@@ -1462,6 +1508,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1474,6 +1521,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-run-group',
       description: 'Deletes a workflow run group',
       options: [
+
         Option(
           name: '--id',
           description: 'The run group\'s ID',
@@ -1499,6 +1547,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1511,6 +1560,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-s3-access-policy',
       description: 'Deletes an access policy for the specified store',
       options: [
+
         Option(
           name: '--s3-access-point-arn',
           description: 'The S3 access point ARN that has the access policy',
@@ -1536,6 +1586,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1548,6 +1599,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-sequence-store',
       description: 'Deletes a sequence store',
       options: [
+
         Option(
           name: '--id',
           description: 'The sequence store\'s ID',
@@ -1573,6 +1625,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1585,6 +1638,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-share',
       description: 'Deletes a resource share. If you are the resource owner, the subscriber will no longer have access to the shared resource. If you are the subscriber, this operation deletes your access to the share',
       options: [
+
         Option(
           name: '--share-id',
           description: 'The ID for the resource share to be deleted',
@@ -1610,6 +1664,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1622,6 +1677,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-variant-store',
       description: 'Deletes a variant store',
       options: [
+
         Option(
           name: '--name',
           description: 'The store\'s name',
@@ -1655,6 +1711,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1667,6 +1724,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'delete-workflow',
       description: 'Deletes a workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The workflow\'s ID',
@@ -1692,6 +1750,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1704,6 +1763,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-annotation-import-job',
       description: 'Gets information about an annotation import job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job\'s ID',
@@ -1729,6 +1789,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1741,6 +1802,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-annotation-store',
       description: 'Gets information about an annotation store',
       options: [
+
         Option(
           name: '--name',
           description: 'The store\'s name',
@@ -1766,6 +1828,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1778,6 +1841,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-annotation-store-version',
       description: 'Retrieves the metadata for an annotation store version',
       options: [
+
         Option(
           name: '--name',
           description: 'The name given to an annotation store version to distinguish it from others',
@@ -1812,6 +1876,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1824,6 +1889,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-read-set',
       description: 'Gets a file from a read set',
       options: [
+
         Option(
           name: '--id',
           description: 'The read set\'s ID',
@@ -1875,6 +1941,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-read-set-activation-job',
       description: 'Gets information about a read set activation job',
       options: [
+
         Option(
           name: '--id',
           description: 'The job\'s ID',
@@ -1909,6 +1976,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1921,6 +1989,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-read-set-export-job',
       description: 'Gets information about a read set export job',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The job\'s sequence store ID',
@@ -1955,6 +2024,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1967,6 +2037,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-read-set-import-job',
       description: 'Gets information about a read set import job',
       options: [
+
         Option(
           name: '--id',
           description: 'The job\'s ID',
@@ -2001,6 +2072,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2013,6 +2085,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-read-set-metadata',
       description: 'Gets details about a read set',
       options: [
+
         Option(
           name: '--id',
           description: 'The read set\'s ID',
@@ -2047,6 +2120,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2059,6 +2133,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-reference',
       description: 'Gets a reference file',
       options: [
+
         Option(
           name: '--id',
           description: 'The reference\'s ID',
@@ -2119,6 +2194,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-reference-import-job',
       description: 'Gets information about a reference import job',
       options: [
+
         Option(
           name: '--id',
           description: 'The job\'s ID',
@@ -2153,6 +2229,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2165,6 +2242,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-reference-metadata',
       description: 'Gets information about a genome reference\'s metadata',
       options: [
+
         Option(
           name: '--id',
           description: 'The reference\'s ID',
@@ -2199,6 +2277,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2211,6 +2290,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-reference-store',
       description: 'Gets information about a reference store',
       options: [
+
         Option(
           name: '--id',
           description: 'The store\'s ID',
@@ -2236,6 +2316,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2248,6 +2329,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-run',
       description: 'Gets information about a workflow run. If a workflow is shared with you, you cannot export information about the run. HealthOmics stores a fixed number of runs that are available to the console and API. If GetRun doesn\'t return the requested run, you can find run logs for all runs in the CloudWatch logs. For more information about viewing the run logs, see CloudWatch logs in the AWS HealthOmics User Guide',
       options: [
+
         Option(
           name: '--id',
           description: 'The run\'s ID',
@@ -2282,6 +2364,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2294,6 +2377,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-run-cache',
       description: 'Retrieve the details for the specified run cache. For more information, see Call caching for HealthOmics runs in the AWS HealthOmics User Guide',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the run cache to retrieve',
@@ -2319,6 +2403,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2331,6 +2416,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-run-group',
       description: 'Gets information about a workflow run group',
       options: [
+
         Option(
           name: '--id',
           description: 'The group\'s ID',
@@ -2356,6 +2442,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2368,6 +2455,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-run-task',
       description: 'Gets information about a workflow run task',
       options: [
+
         Option(
           name: '--id',
           description: 'The workflow run ID',
@@ -2402,6 +2490,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2414,6 +2503,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-s3-access-policy',
       description: 'Retrieves details about an access policy on a given store',
       options: [
+
         Option(
           name: '--s3-access-point-arn',
           description: 'The S3 access point ARN that has the access policy',
@@ -2439,6 +2529,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2451,6 +2542,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-sequence-store',
       description: 'Gets information about a sequence store',
       options: [
+
         Option(
           name: '--id',
           description: 'The store\'s ID',
@@ -2476,6 +2568,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2488,6 +2581,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-share',
       description: 'Retrieves the metadata for the specified resource share',
       options: [
+
         Option(
           name: '--share-id',
           description: 'The ID of the share',
@@ -2513,6 +2607,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2525,6 +2620,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-variant-import-job',
       description: 'Gets information about a variant import job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job\'s ID',
@@ -2550,6 +2646,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2562,6 +2659,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-variant-store',
       description: 'Gets information about a variant store',
       options: [
+
         Option(
           name: '--name',
           description: 'The store\'s name',
@@ -2587,6 +2685,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2599,6 +2698,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'get-workflow',
       description: 'Gets information about a workflow. If a workflow is shared with you, you cannot export the workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The workflow\'s ID',
@@ -2651,6 +2751,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2663,6 +2764,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-annotation-import-jobs',
       description: 'Retrieves a list of annotation import jobs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of jobs to return in one page of results',
@@ -2742,6 +2844,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2754,6 +2857,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-annotation-store-versions',
       description: 'Lists the versions of an annotation store',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of an annotation store',
@@ -2833,6 +2937,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2845,6 +2950,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-annotation-stores',
       description: 'Retrieves a list of annotation stores',
       options: [
+
         Option(
           name: '--ids',
           description: 'IDs of stores to list',
@@ -2924,6 +3030,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2936,6 +3043,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-multipart-read-set-uploads',
       description: 'Lists multipart read set uploads and for in progress uploads. Once the upload is completed, a read set is created and the upload will no longer be returned in the response',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The Sequence Store ID used for the multipart uploads',
@@ -3006,6 +3114,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3018,6 +3127,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-read-set-activation-jobs',
       description: 'Retrieves a list of read set activation jobs',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The read set\'s sequence store ID',
@@ -3097,6 +3207,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3109,6 +3220,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-read-set-export-jobs',
       description: 'Retrieves a list of read set export jobs',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The jobs\' sequence store ID',
@@ -3188,6 +3300,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3200,6 +3313,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-read-set-import-jobs',
       description: 'Retrieves a list of read set import jobs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of jobs to return in one page of results',
@@ -3279,6 +3393,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3291,6 +3406,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-read-set-upload-parts',
       description: 'This operation will list all parts in a requested multipart upload for a sequence store',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The Sequence Store ID used for the multipart uploads',
@@ -3388,6 +3504,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3400,6 +3517,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-read-sets',
       description: 'Retrieves a list of read sets',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The jobs\' sequence store ID',
@@ -3479,6 +3597,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3491,6 +3610,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-reference-import-jobs',
       description: 'Retrieves a list of reference import jobs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of jobs to return in one page of results',
@@ -3570,6 +3690,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3582,6 +3703,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-reference-stores',
       description: 'Retrieves a list of reference stores',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of stores to return in one page of results',
@@ -3652,6 +3774,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3664,6 +3787,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-references',
       description: 'Retrieves a list of references',
       options: [
+
         Option(
           name: '--reference-store-id',
           description: 'The references\' reference store ID',
@@ -3743,6 +3867,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3755,6 +3880,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-run-caches',
       description: 'Retrieves a list of your run caches',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to return',
@@ -3807,6 +3933,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3819,6 +3946,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-run-groups',
       description: 'Retrieves a list of run groups',
       options: [
+
         Option(
           name: '--name',
           description: 'The run groups\' name',
@@ -3880,6 +4008,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3892,6 +4021,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-run-tasks',
       description: 'Retrieves a list of tasks for a run',
       options: [
+
         Option(
           name: '--id',
           description: 'The run\'s ID',
@@ -3962,6 +4092,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3974,6 +4105,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-runs',
       description: 'Retrieves a list of runs. HealthOmics stores a fixed number of runs that are available to the console and API. If the ListRuns response doesn\'t include specific runs that you expected, you can find run logs for all runs in the CloudWatch logs. For more information about viewing the run logs, see CloudWatch logs in the AWS HealthOmics User Guide',
       options: [
+
         Option(
           name: '--name',
           description: 'Filter the list by run name',
@@ -4053,6 +4185,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4065,6 +4198,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-sequence-stores',
       description: 'Retrieves a list of sequence stores',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of stores to return in one page of results',
@@ -4135,6 +4269,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4147,6 +4282,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-shares',
       description: 'Retrieves the resource shares associated with an account. Use the filter parameter to retrieve a specific subset of the shares',
       options: [
+
         Option(
           name: '--resource-owner',
           description: 'The account that owns the resource shares',
@@ -4226,6 +4362,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4238,6 +4375,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves a list of tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s ARN',
@@ -4263,6 +4401,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4275,6 +4414,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-variant-import-jobs',
       description: 'Retrieves a list of variant import jobs',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of import jobs to return in one page of results',
@@ -4354,6 +4494,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4366,6 +4507,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-variant-stores',
       description: 'Retrieves a list of variant stores',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of stores to return in one page of results',
@@ -4445,6 +4587,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4457,6 +4600,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'list-workflows',
       description: 'Retrieves a list of workflows',
       options: [
+
         Option(
           name: '--type',
           description: 'Filter the list by workflow type',
@@ -4527,6 +4671,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4539,6 +4684,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'put-s3-access-policy',
       description: 'Adds an access policy to the specified store',
       options: [
+
         Option(
           name: '--s3-access-point-arn',
           description: 'The S3 access point ARN where you want to put the access policy',
@@ -4573,6 +4719,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4585,6 +4732,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'start-annotation-import-job',
       description: 'Starts an annotation import job',
       options: [
+
         Option(
           name: '--destination-name',
           description: 'A destination annotation store for the job',
@@ -4663,6 +4811,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4675,6 +4824,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'start-read-set-activation-job',
       description: 'Activates an archived read set. To reduce storage charges, Amazon Omics archives unused read sets after 30 days',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The read set\'s sequence store ID',
@@ -4718,6 +4868,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4730,6 +4881,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'start-read-set-export-job',
       description: 'Exports a read set to Amazon S3',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The read set\'s sequence store ID',
@@ -4791,6 +4943,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4803,6 +4956,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'start-read-set-import-job',
       description: 'Starts a read set import job',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The read set\'s sequence store ID',
@@ -4855,6 +5009,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4867,6 +5022,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'start-reference-import-job',
       description: 'Starts a reference import job',
       options: [
+
         Option(
           name: '--reference-store-id',
           description: 'The job\'s reference store ID',
@@ -4919,6 +5075,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4931,6 +5088,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'start-run',
       description: 'Starts a workflow run. To duplicate a run, specify the run\'s ID and a role ARN. The remaining parameters are copied from the previous run. StartRun will not support re-run for a workflow that is shared with you. HealthOmics stores a fixed number of runs that are available to the console and API. By default, HealthOmics doesn\'t any remove any runs. If HealthOmics reaches the maximum number of runs, you must manually remove runs. To have older runs removed automatically, set the retention mode to REMOVE. By default, the run uses STATIC storage. For STATIC storage, set the storageCapacity field. You can set the storage type to DYNAMIC. You do not set storageCapacity, because HealthOmics dynamically scales the storage up or down as required. For more information about static and dynamic storage, see Running workflows in the AWS HealthOmics User Guide',
       options: [
+
         Option(
           name: '--workflow-id',
           description: 'The run\'s workflow ID',
@@ -5109,6 +5267,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5121,6 +5280,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'start-variant-import-job',
       description: 'Starts a variant import job',
       options: [
+
         Option(
           name: '--destination-name',
           description: 'The destination variant store for the job',
@@ -5181,6 +5341,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5193,6 +5354,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s ARN',
@@ -5227,6 +5389,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5239,6 +5402,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The resource\'s ARN',
@@ -5273,6 +5437,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5285,6 +5450,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'update-annotation-store',
       description: 'Updates an annotation store',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the store',
@@ -5319,6 +5485,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5331,6 +5498,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'update-annotation-store-version',
       description: 'Updates the description of an annotation store version',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of an annotation store',
@@ -5374,6 +5542,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5386,6 +5555,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'update-run-cache',
       description: 'Update a run cache',
       options: [
+
         Option(
           name: '--cache-behavior',
           description: 'Update the default run cache behavior',
@@ -5438,6 +5608,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5450,6 +5621,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'update-run-group',
       description: 'Updates a run group',
       options: [
+
         Option(
           name: '--id',
           description: 'The group\'s ID',
@@ -5520,6 +5692,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5532,6 +5705,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'update-sequence-store',
       description: 'Update one or more parameters for the sequence store',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the sequence store',
@@ -5611,6 +5785,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5623,6 +5798,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'update-variant-store',
       description: 'Updates a variant store',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the store',
@@ -5657,6 +5833,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5669,6 +5846,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'update-workflow',
       description: 'Updates a workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The workflow\'s ID',
@@ -5712,6 +5890,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5724,6 +5903,7 @@ final FigSpec omicsSpec = FigSpec(
       name: 'upload-read-set-part',
       description: 'This operation uploads a specific part of a read set. If you upload a new part using a previously used part number, the previously uploaded part will be overwritten',
       options: [
+
         Option(
           name: '--sequence-store-id',
           description: 'The Sequence Store ID used for the multipart upload',
@@ -5785,6 +5965,7 @@ final FigSpec omicsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -5797,10 +5978,12 @@ final FigSpec omicsSpec = FigSpec(
       name: 'wait',
       description: 'Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met',
       subcommands: [
+
         Subcommand(
           name: 'annotation-import-job-created',
           description: 'Wait until an annotation import is completed It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--job-id',
               description: 'The job\'s ID',
@@ -5826,6 +6009,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -5838,6 +6022,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'annotation-store-created',
           description: 'Wait until an annotation store is created It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--name',
               description: 'The store\'s name',
@@ -5863,6 +6048,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -5875,6 +6061,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'annotation-store-deleted',
           description: 'Wait until an annotation store is deleted. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--name',
               description: 'The store\'s name',
@@ -5900,6 +6087,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -5912,6 +6100,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'annotation-store-version-created',
           description: 'Wait until an annotation store version is created It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--name',
               description: 'The name given to an annotation store version to distinguish it from others',
@@ -5946,6 +6135,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -5958,6 +6148,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'annotation-store-version-deleted',
           description: 'Wait until an annotation store version is deleted. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--name',
               description: 'The name given to an annotation store version to distinguish it from others',
@@ -5992,6 +6183,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6004,6 +6196,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'read-set-activation-job-completed',
           description: 'Wait until a job is completed. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--id',
               description: 'The job\'s ID',
@@ -6038,6 +6231,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6050,6 +6244,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'read-set-export-job-completed',
           description: 'Wait until a job is completed. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--sequence-store-id',
               description: 'The job\'s sequence store ID',
@@ -6084,6 +6279,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6096,6 +6292,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'read-set-import-job-completed',
           description: 'Wait until a job is completed. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--id',
               description: 'The job\'s ID',
@@ -6130,6 +6327,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6142,6 +6340,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'reference-import-job-completed',
           description: 'Wait until a job is completed. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--id',
               description: 'The job\'s ID',
@@ -6176,6 +6375,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6188,6 +6388,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'run-completed',
           description: 'Wait until a run is completed. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--id',
               description: 'The run\'s ID',
@@ -6222,6 +6423,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6234,6 +6436,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'run-running',
           description: 'Wait until a run is running. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--id',
               description: 'The run\'s ID',
@@ -6268,6 +6471,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6280,6 +6484,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'task-completed',
           description: 'Wait until a task is completed. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--id',
               description: 'The workflow run ID',
@@ -6314,6 +6519,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6326,6 +6532,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'task-running',
           description: 'Wait until a task is running. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--id',
               description: 'The workflow run ID',
@@ -6360,6 +6567,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6372,6 +6580,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'variant-import-job-created',
           description: 'Wait until variant import is completed It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--job-id',
               description: 'The job\'s ID',
@@ -6397,6 +6606,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6409,6 +6619,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'variant-store-created',
           description: 'Wait until a variant store is created It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--name',
               description: 'The store\'s name',
@@ -6434,6 +6645,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6446,6 +6658,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'variant-store-deleted',
           description: 'Wait until a variant store is deleted. It will poll every 30 seconds until a successful state has been reached. This will exit with a return code of 255 after 20 failed checks',
           options: [
+
             Option(
               name: '--name',
               description: 'The store\'s name',
@@ -6471,6 +6684,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]
@@ -6483,6 +6697,7 @@ final FigSpec omicsSpec = FigSpec(
           name: 'workflow-active',
           description: 'Wait until a workflow is active. It will poll every 3 seconds until a successful state has been reached. This will exit with a return code of 255 after 10 failed checks',
           options: [
+
             Option(
               name: '--id',
               description: 'The workflow\'s ID',
@@ -6535,6 +6750,7 @@ final FigSpec omicsSpec = FigSpec(
                 Arg(
                 name: 'string',
                 suggestions: [
+
                   FigSuggestion(name: 'input'),
                   FigSuggestion(name: 'output')
                 ]

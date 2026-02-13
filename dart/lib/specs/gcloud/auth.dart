@@ -9,10 +9,12 @@ final FigSpec authSpec = FigSpec(
   name: 'auth',
   description: 'Manage oauth2 credentials for the Google Cloud SDK',
   subcommands: [
+
     Subcommand(
       name: 'activate-refresh-token',
       description: 'Get credentials via an existing refresh token',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -136,6 +138,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -148,6 +151,7 @@ final FigSpec authSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'ACCOUNT',
           description: 'The account to associate with the refresh token'
@@ -162,6 +166,7 @@ final FigSpec authSpec = FigSpec(
       name: 'activate-service-account',
       description: 'Authorize access to Google Cloud Platform with a service account',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -312,6 +317,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -334,10 +340,12 @@ final FigSpec authSpec = FigSpec(
       name: 'application-default',
       description: 'Manage your active Application Default Credentials',
       subcommands: [
+
         Subcommand(
           name: 'login',
           description: 'Acquire new user credentials to use for Application Default Credentials',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -495,6 +503,7 @@ final FigSpec authSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -511,6 +520,7 @@ final FigSpec authSpec = FigSpec(
           name: 'print-access-token',
           description: 'Print an access token for your current Application Default Credentials',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -634,6 +644,7 @@ final FigSpec authSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -650,6 +661,7 @@ final FigSpec authSpec = FigSpec(
           name: 'revoke',
           description: 'Revoke previously generated Application Default Credentials',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -773,6 +785,7 @@ final FigSpec authSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -789,6 +802,7 @@ final FigSpec authSpec = FigSpec(
           name: 'set-quota-project',
           description: 'Update or add a quota project in application default credentials (ADC)',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -912,6 +926,7 @@ final FigSpec authSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -932,6 +947,7 @@ final FigSpec authSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1055,6 +1071,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1071,6 +1088,7 @@ final FigSpec authSpec = FigSpec(
       name: 'configure-docker',
       description: 'Register `gcloud` as a Docker credential helper',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1194,6 +1212,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1216,6 +1235,7 @@ final FigSpec authSpec = FigSpec(
       name: 'describe',
       description: 'Describes credentials',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1339,6 +1359,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1361,6 +1382,7 @@ final FigSpec authSpec = FigSpec(
       name: 'docker-helper',
       description: 'A Docker credential helper to provide access to GCR repositories',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1484,6 +1506,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1506,6 +1529,7 @@ final FigSpec authSpec = FigSpec(
       name: 'git-helper',
       description: 'A git credential helper to provide access to Google git repositories',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1633,6 +1657,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1655,6 +1680,7 @@ final FigSpec authSpec = FigSpec(
       name: 'list',
       description: 'Lists credentialed accounts',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1833,6 +1859,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1849,6 +1876,7 @@ final FigSpec authSpec = FigSpec(
       name: 'login',
       description: 'Authorize gcloud to access the Cloud Platform with Google user credentials',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1996,6 +2024,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2018,6 +2047,7 @@ final FigSpec authSpec = FigSpec(
       name: 'print-access-token',
       description: 'Print an access token for the specified account',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2141,6 +2171,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2163,6 +2194,7 @@ final FigSpec authSpec = FigSpec(
       name: 'print-identity-token',
       description: 'Print an identity token for the specified account',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2290,6 +2322,7 @@ final FigSpec authSpec = FigSpec(
             name: 'TOKEN_FORMAT',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'standard'),
               FigSuggestion(name: 'full')
             ]
@@ -2319,6 +2352,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2341,6 +2375,7 @@ final FigSpec authSpec = FigSpec(
       name: 'print-refresh-token',
       description: 'A command that prints the refresh token for the current account',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2464,6 +2499,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2486,6 +2522,7 @@ final FigSpec authSpec = FigSpec(
       name: 'revoke',
       description: 'Revoke access credentials for an account',
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2613,6 +2650,7 @@ final FigSpec authSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2633,6 +2671,7 @@ final FigSpec authSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2756,6 +2795,7 @@ final FigSpec authSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

@@ -9,10 +9,12 @@ final FigSpec digSpec = FigSpec(
   name: 'dig',
   description: 'Domain Information Groper',
   subcommands: [
+
     Subcommand(
       name: 'A',
       description: 'Query Domain A Record',
       options: [
+
         Option(
           name: ['+short', ''],
           insertValue: '+short {cursor}',
@@ -28,6 +30,7 @@ final FigSpec digSpec = FigSpec(
       name: 'MX',
       description: 'Query Domain MX Record',
       options: [
+
         Option(
           name: ['+short', ''],
           insertValue: '+short {cursor}',
@@ -43,6 +46,7 @@ final FigSpec digSpec = FigSpec(
       name: 'CNAME',
       description: 'Query Domain CNAME Record',
       options: [
+
         Option(
           name: ['+short', ''],
           insertValue: '+short {cursor}',
@@ -58,6 +62,7 @@ final FigSpec digSpec = FigSpec(
       name: 'TXT',
       description: 'Query Domain TXT Record',
       options: [
+
         Option(
           name: ['+short', ''],
           insertValue: '+short {cursor}',
@@ -73,6 +78,7 @@ final FigSpec digSpec = FigSpec(
       name: 'NS',
       description: 'Query MX Record',
       options: [
+
         Option(
           name: ['+short', ''],
           insertValue: '+short {cursor}',
@@ -88,6 +94,7 @@ final FigSpec digSpec = FigSpec(
       name: 'SOA',
       description: 'Query SOA Record',
       options: [
+
         Option(
           name: ['+short', ''],
           insertValue: '+short {cursor}',
@@ -103,6 +110,7 @@ final FigSpec digSpec = FigSpec(
       name: 'TTL',
       description: 'Query TTL Record',
       options: [
+
         Option(
           name: ['+short', ''],
           insertValue: '+short {cursor}',

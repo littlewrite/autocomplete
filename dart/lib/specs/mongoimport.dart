@@ -9,6 +9,7 @@ final FigSpec mongoimportSpec = FigSpec(
   name: 'mongoimport',
   description: 'Import data from a JSON, CSV, or TSV file into a MongoDB instance',
   options: [
+
     Option(
       name: '--help',
       description: 'Returns information on the options and use of mongoimport'
@@ -43,6 +44,7 @@ final FigSpec mongoimportSpec = FigSpec(
         name: 'connectionString',
         description: 'MongoDB connection string',
         suggestions: [
+
           FigSuggestion(
             name: 'mongodb://localhost:27017',
             description: 'Default Connection String'
@@ -63,6 +65,7 @@ final FigSpec mongoimportSpec = FigSpec(
         Arg(
         name: 'hostname:port',
         suggestions: [
+
           FigSuggestion(
             name: 'localhost:27017',
             description: 'Default host'
@@ -78,6 +81,7 @@ final FigSpec mongoimportSpec = FigSpec(
         Arg(
         name: 'port',
         suggestions: [
+
           FigSuggestion(
             name: '27017',
             description: 'Default port'
@@ -182,6 +186,7 @@ final FigSpec mongoimportSpec = FigSpec(
         Arg(
         name: 'name',
         suggestions: [
+
           FigSuggestion(
             name: 'SCRAM-SHA-1',
             description: 'Default'
@@ -274,6 +279,7 @@ final FigSpec mongoimportSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(
             name: 'json',
             description: 'JSON'
@@ -320,6 +326,7 @@ final FigSpec mongoimportSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(
             name: 'insert',
             description: 'Insert the documents in the import file'
@@ -403,6 +410,7 @@ final FigSpec mongoimportSpec = FigSpec(
         name: 'grace',
         defaultValue: 'stop',
         suggestions: [
+
           FigSuggestion(
             name: 'autoCast'
           ),

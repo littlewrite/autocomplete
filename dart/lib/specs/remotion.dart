@@ -9,6 +9,7 @@ final FigSpec remotionSpec = FigSpec(
   name: 'remotion',
   description: 'Create videos programmatically in React',
   subcommands: [
+
     Subcommand(
       name: 'versions',
       description: 'Prints and validates versions of all Remotion packages'
@@ -28,6 +29,7 @@ final FigSpec remotionSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--props',
           description: 'Pass input props as filename or as JSON',
@@ -35,6 +37,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             template: ['filepaths'],
             suggestions: [
+
               FigSuggestion(
                 insertValue: '\'{cursor}\''
               )
@@ -61,6 +64,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'angle'),
               FigSuggestion(name: 'egl'),
               FigSuggestion(name: 'swiftshader'),
@@ -88,10 +92,12 @@ final FigSpec remotionSpec = FigSpec(
       name: 'lambda',
       description: 'Access functionality of @remotion/lambda',
       subcommands: [
+
         Subcommand(
           name: 'policies',
           description: 'Manage AWS policies',
           subcommands: [
+
             Subcommand(
               name: 'role',
               description: 'Print policy to be added to the AWS role'
@@ -110,6 +116,7 @@ final FigSpec remotionSpec = FigSpec(
           name: 'quotas',
           description: 'Show current AWS quota',
           options: [
+
             Option(
               name: '--quiet',
               description: 'Print less output'
@@ -125,6 +132,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: 'info',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'verbose'
                   ),
@@ -175,6 +183,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(
                     name: 'us-east-1',
                     description: 'North Virginia'
@@ -221,10 +230,12 @@ final FigSpec remotionSpec = FigSpec(
             )
           ],
           subcommands: [
+
             Subcommand(
               name: 'increase',
               description: 'Send a request to AWS to increase concurrency quotas',
               options: [
+
                 Option(
                   name: '--quiet',
                   description: 'Print less output'
@@ -240,6 +251,7 @@ final FigSpec remotionSpec = FigSpec(
                     Arg(
                     defaultValue: 'info',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'verbose'
                       ),
@@ -290,6 +302,7 @@ final FigSpec remotionSpec = FigSpec(
                   args: [
                     Arg(
                     suggestions: [
+
                       FigSuggestion(
                         name: 'us-east-1',
                         description: 'North Virginia'
@@ -342,6 +355,7 @@ final FigSpec remotionSpec = FigSpec(
           name: 'regions',
           description: 'Prints list of supported regions',
           options: [
+
             Option(
               name: '--default-only',
               description: 'Only print the regions enabled by default in a new AWS account'
@@ -352,10 +366,12 @@ final FigSpec remotionSpec = FigSpec(
           name: 'render',
           description: 'Render media on Lambda',
           args: [
+
             Arg(
               name: 'serve-url',
               description: 'URL or name of the site',
               suggestions: [
+
                 FigSuggestion(
                 )
               ]
@@ -364,6 +380,7 @@ final FigSpec remotionSpec = FigSpec(
               name: 'composition-id',
               description: 'Name of the composition',
               suggestions: [
+
                 FigSuggestion(
                 )
               ]
@@ -372,6 +389,7 @@ final FigSpec remotionSpec = FigSpec(
               name: 'out-name',
               description: 'Where the output should be downloaded. No download it omitted',
               suggestions: [
+
                 FigSuggestion(
                 )
               ],
@@ -379,6 +397,7 @@ final FigSpec remotionSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--max-retries',
               description: 'How many times a chunk can be retried before the render times out',
@@ -395,6 +414,7 @@ final FigSpec remotionSpec = FigSpec(
                 name: 'privacy',
                 defaultValue: 'public',
                 suggestions: [
+
                   FigSuggestion(name: 'public'),
                   FigSuggestion(name: 'private')
                 ]
@@ -417,6 +437,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 template: ['filepaths'],
                 suggestions: [
+
                   FigSuggestion(
                     insertValue: '\'{cursor}\''
                   )
@@ -434,6 +455,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(name: 'angle'),
                   FigSuggestion(name: 'egl'),
                   FigSuggestion(name: 'swiftshader'),
@@ -487,6 +509,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: '80',
                 suggestions: [
+
                   FigSuggestion(
                     name: '0'
                   ),
@@ -531,6 +554,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: '1',
                 suggestions: [
+
                   FigSuggestion(
                     name: '0.25'
                   ),
@@ -560,6 +584,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: 'h264',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'h264'
                   ),
@@ -600,6 +625,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(
                     name: 'aac'
                   ),
@@ -623,6 +649,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: '1',
                 suggestions: [
+
                   FigSuggestion(
                     name: '2'
                   ),
@@ -646,6 +673,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: '1',
                 suggestions: [
+
                   FigSuggestion(
                     name: '0'
                   ),
@@ -691,6 +719,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(name: '4444-xq'),
                   FigSuggestion(name: '4444'),
                   FigSuggestion(name: 'hq'),
@@ -707,6 +736,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(name: 'ultrafast'),
                   FigSuggestion(name: 'superfast'),
                   FigSuggestion(name: 'veryfast'),
@@ -727,6 +757,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(
                     name: 'jpeg'
                   ),
@@ -743,6 +774,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(
                     name: 'yuv420p'
                   ),
@@ -805,6 +837,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: 'info',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'verbose'
                   ),
@@ -855,6 +888,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(
                     name: 'us-east-1',
                     description: 'North Virginia'
@@ -909,12 +943,14 @@ final FigSpec remotionSpec = FigSpec(
             name: 'serve-url',
             description: 'URL or name of the site',
             suggestions: [
+
               FigSuggestion(
               )
             ]
           )
           ],
           options: [
+
             Option(
               name: '--quiet',
               description: 'Print less output'
@@ -930,6 +966,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: 'info',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'verbose'
                   ),
@@ -980,6 +1017,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(
                     name: 'us-east-1',
                     description: 'North Virginia'
@@ -1031,6 +1069,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 template: ['filepaths'],
                 suggestions: [
+
                   FigSuggestion(
                     insertValue: '\'{cursor}\''
                   )
@@ -1057,6 +1096,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(name: 'angle'),
                   FigSuggestion(name: 'egl'),
                   FigSuggestion(name: 'swiftshader'),
@@ -1084,10 +1124,12 @@ final FigSpec remotionSpec = FigSpec(
           name: 'still',
           description: 'Render a still on Lambda',
           args: [
+
             Arg(
               name: 'serve-url',
               description: 'URL or name of the site',
               suggestions: [
+
                 FigSuggestion(
                 )
               ]
@@ -1096,6 +1138,7 @@ final FigSpec remotionSpec = FigSpec(
               name: 'composition-id',
               description: 'Name of the composition',
               suggestions: [
+
                 FigSuggestion(
                 )
               ]
@@ -1105,12 +1148,14 @@ final FigSpec remotionSpec = FigSpec(
               description: 'Where the output should be downloaded. No download it omitted',
               isOptional: true,
               suggestions: [
+
                 FigSuggestion(
                 )
               ]
             )
           ],
           options: [
+
             Option(
               name: '--max-retries',
               description: 'How many times a chunk can be retried before the render times out',
@@ -1127,6 +1172,7 @@ final FigSpec remotionSpec = FigSpec(
                 name: 'privacy',
                 defaultValue: 'public',
                 suggestions: [
+
                   FigSuggestion(name: 'public'),
                   FigSuggestion(name: 'private')
                 ]
@@ -1149,6 +1195,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 template: ['filepaths'],
                 suggestions: [
+
                   FigSuggestion(
                     insertValue: '\'{cursor}\''
                   )
@@ -1166,6 +1213,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(name: 'angle'),
                   FigSuggestion(name: 'egl'),
                   FigSuggestion(name: 'swiftshader'),
@@ -1230,6 +1278,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: 'info',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'verbose'
                   ),
@@ -1280,6 +1329,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(
                     name: 'us-east-1',
                     description: 'North Virginia'
@@ -1330,10 +1380,12 @@ final FigSpec remotionSpec = FigSpec(
           name: 'functions',
           description: 'Manage functions on AWS Lambda',
           subcommands: [
+
             Subcommand(
               name: 'ls',
               description: 'List deployed functions',
               options: [
+
                 Option(
                   name: '--quiet',
                   description: 'Print less output'
@@ -1349,6 +1401,7 @@ final FigSpec remotionSpec = FigSpec(
                     Arg(
                     defaultValue: 'info',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'verbose'
                       ),
@@ -1399,6 +1452,7 @@ final FigSpec remotionSpec = FigSpec(
                   args: [
                     Arg(
                     suggestions: [
+
                       FigSuggestion(
                         name: 'us-east-1',
                         description: 'North Virginia'
@@ -1449,6 +1503,7 @@ final FigSpec remotionSpec = FigSpec(
               name: 'deploy',
               description: 'Deploy a function if one with the same parameters doesn\'t exist',
               options: [
+
                 Option(
                   name: '--memory',
                   description: 'Amount of memory in MB to allocate',
@@ -1474,6 +1529,7 @@ final FigSpec remotionSpec = FigSpec(
                     Arg(
                     name: 'architecture',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'x86_64',
                         icon: 'fig://icon?type=cpu'
@@ -1529,6 +1585,7 @@ final FigSpec remotionSpec = FigSpec(
                     Arg(
                     defaultValue: 'info',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'verbose'
                       ),
@@ -1579,6 +1636,7 @@ final FigSpec remotionSpec = FigSpec(
                   args: [
                     Arg(
                     suggestions: [
+
                       FigSuggestion(
                         name: 'us-east-1',
                         description: 'North Virginia'
@@ -1629,6 +1687,7 @@ final FigSpec remotionSpec = FigSpec(
               name: 'rmall',
               description: 'Remove all functions in a region',
               options: [
+
                 Option(
                   name: '--quiet',
                   description: 'Print less output'
@@ -1644,6 +1703,7 @@ final FigSpec remotionSpec = FigSpec(
                     Arg(
                     defaultValue: 'info',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'verbose'
                       ),
@@ -1694,6 +1754,7 @@ final FigSpec remotionSpec = FigSpec(
                   args: [
                     Arg(
                     suggestions: [
+
                       FigSuggestion(
                         name: 'us-east-1',
                         description: 'North Virginia'
@@ -1750,6 +1811,7 @@ final FigSpec remotionSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--quiet',
                   description: 'Print less output'
@@ -1765,6 +1827,7 @@ final FigSpec remotionSpec = FigSpec(
                     Arg(
                     defaultValue: 'info',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'verbose'
                       ),
@@ -1815,6 +1878,7 @@ final FigSpec remotionSpec = FigSpec(
                   args: [
                     Arg(
                     suggestions: [
+
                       FigSuggestion(
                         name: 'us-east-1',
                         description: 'North Virginia'
@@ -1863,6 +1927,7 @@ final FigSpec remotionSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--quiet',
               description: 'Print less output'
@@ -1878,6 +1943,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: 'info',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'verbose'
                   ),
@@ -1928,6 +1994,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(
                     name: 'us-east-1',
                     description: 'North Virginia'
@@ -1977,6 +2044,7 @@ final FigSpec remotionSpec = FigSpec(
         Subcommand(
           name: 'sites',
           options: [
+
             Option(
               name: '--quiet',
               description: 'Print less output'
@@ -1992,6 +2060,7 @@ final FigSpec remotionSpec = FigSpec(
                 Arg(
                 defaultValue: 'info',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'verbose'
                   ),
@@ -2042,6 +2111,7 @@ final FigSpec remotionSpec = FigSpec(
               args: [
                 Arg(
                 suggestions: [
+
                   FigSuggestion(
                     name: 'us-east-1',
                     description: 'North Virginia'
@@ -2088,10 +2158,12 @@ final FigSpec remotionSpec = FigSpec(
             )
           ],
           subcommands: [
+
             Subcommand(
               name: 'ls',
               description: 'List sites',
               options: [
+
                 Option(
                   name: '--quiet',
                   description: 'Print less output'
@@ -2107,6 +2179,7 @@ final FigSpec remotionSpec = FigSpec(
                     Arg(
                     defaultValue: 'info',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'verbose'
                       ),
@@ -2157,6 +2230,7 @@ final FigSpec remotionSpec = FigSpec(
                   args: [
                     Arg(
                     suggestions: [
+
                       FigSuggestion(
                         name: 'us-east-1',
                         description: 'North Virginia'
@@ -2207,6 +2281,7 @@ final FigSpec remotionSpec = FigSpec(
               name: 'rmall',
               description: 'Remove all sites in a region',
               options: [
+
                 Option(
                   name: '--quiet',
                   description: 'Print less output'
@@ -2222,6 +2297,7 @@ final FigSpec remotionSpec = FigSpec(
                     Arg(
                     defaultValue: 'info',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'verbose'
                       ),
@@ -2272,6 +2348,7 @@ final FigSpec remotionSpec = FigSpec(
                   args: [
                     Arg(
                     suggestions: [
+
                       FigSuggestion(
                         name: 'us-east-1',
                         description: 'North Virginia'
@@ -2328,6 +2405,7 @@ final FigSpec remotionSpec = FigSpec(
               )
               ],
               options: [
+
                 Option(
                   name: '--quiet',
                   description: 'Print less output'
@@ -2343,6 +2421,7 @@ final FigSpec remotionSpec = FigSpec(
                     Arg(
                     defaultValue: 'info',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'verbose'
                       ),
@@ -2393,6 +2472,7 @@ final FigSpec remotionSpec = FigSpec(
                   args: [
                     Arg(
                     suggestions: [
+
                       FigSuggestion(
                         name: 'us-east-1',
                         description: 'North Virginia'
@@ -2443,6 +2523,7 @@ final FigSpec remotionSpec = FigSpec(
               name: 'create',
               description: 'Create or update a site',
               options: [
+
                 Option(
                   name: '--quiet',
                   description: 'Print less output'
@@ -2458,6 +2539,7 @@ final FigSpec remotionSpec = FigSpec(
                     Arg(
                     defaultValue: 'info',
                     suggestions: [
+
                       FigSuggestion(
                         name: 'verbose'
                       ),
@@ -2508,6 +2590,7 @@ final FigSpec remotionSpec = FigSpec(
                   args: [
                     Arg(
                     suggestions: [
+
                       FigSuggestion(
                         name: 'us-east-1',
                         description: 'North Virginia'
@@ -2566,6 +2649,7 @@ final FigSpec remotionSpec = FigSpec(
                 name: 'entry',
                 template: ['filepaths'],
                 suggestions: [
+
                   FigSuggestion(
                   )
                 ]
@@ -2576,6 +2660,7 @@ final FigSpec remotionSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--quiet',
           description: 'Print less output'
@@ -2591,6 +2676,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: 'info',
             suggestions: [
+
               FigSuggestion(
                 name: 'verbose'
               ),
@@ -2641,6 +2727,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'us-east-1',
                 description: 'North Virginia'
@@ -2698,6 +2785,7 @@ final FigSpec remotionSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--quiet',
           description: 'Print less output'
@@ -2713,6 +2801,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: 'info',
             suggestions: [
+
               FigSuggestion(
                 name: 'verbose'
               ),
@@ -2763,6 +2852,7 @@ final FigSpec remotionSpec = FigSpec(
       priority: 60,
       description: 'Render a video based on the entry point, the composition ID and save it to the output location',
       args: [
+
         Arg(
           name: 'entry',
           template: ['filepaths']
@@ -2771,6 +2861,7 @@ final FigSpec remotionSpec = FigSpec(
           name: 'comp-id',
           description: 'The composition ID',
           suggestions: [
+
             FigSuggestion(
             )
           ]
@@ -2779,12 +2870,14 @@ final FigSpec remotionSpec = FigSpec(
           name: 'output',
           template: ['filepaths'],
           suggestions: [
+
             FigSuggestion(name: 'out.mp4')
           ],
           isOptional: true
         )
       ],
       options: [
+
         Option(
           name: '--disable-headless',
           description: 'Run Chrome in normal mode rather than headless'
@@ -2795,6 +2888,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'angle'),
               FigSuggestion(name: 'egl'),
               FigSuggestion(name: 'swiftshader'),
@@ -2827,6 +2921,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: '80',
             suggestions: [
+
               FigSuggestion(
                 name: '0'
               ),
@@ -2871,6 +2966,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: '1',
             suggestions: [
+
               FigSuggestion(
                 name: '0.25'
               ),
@@ -2900,6 +2996,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: 'h264',
             suggestions: [
+
               FigSuggestion(
                 name: 'h264'
               ),
@@ -2940,6 +3037,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'aac'
               ),
@@ -2963,6 +3061,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: '1',
             suggestions: [
+
               FigSuggestion(
                 name: '2'
               ),
@@ -2986,6 +3085,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: '1',
             suggestions: [
+
               FigSuggestion(
                 name: '0'
               ),
@@ -3031,6 +3131,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: '4444-xq'),
               FigSuggestion(name: '4444'),
               FigSuggestion(name: 'hq'),
@@ -3047,6 +3148,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'ultrafast'),
               FigSuggestion(name: 'superfast'),
               FigSuggestion(name: 'veryfast'),
@@ -3067,6 +3169,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'jpeg'
               ),
@@ -3083,6 +3186,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'yuv420p'
               ),
@@ -3220,6 +3324,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             template: ['filepaths'],
             suggestions: [
+
               FigSuggestion(
                 insertValue: '\'{cursor}\''
               )
@@ -3242,6 +3347,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: 'info',
             suggestions: [
+
               FigSuggestion(
                 name: 'verbose'
               ),
@@ -3274,6 +3380,7 @@ final FigSpec remotionSpec = FigSpec(
       priority: 55,
       description: 'Render a still frame based on the entry point, the composition ID and save it to the output location',
       args: [
+
         Arg(
           name: 'entry',
           template: ['filepaths']
@@ -3282,6 +3389,7 @@ final FigSpec remotionSpec = FigSpec(
           name: 'comp-id',
           description: 'The composition ID',
           suggestions: [
+
             FigSuggestion(
             )
           ]
@@ -3290,12 +3398,14 @@ final FigSpec remotionSpec = FigSpec(
           name: 'output',
           template: ['filepaths'],
           suggestions: [
+
             FigSuggestion(name: 'out.png')
           ],
           isOptional: true
         )
       ],
       options: [
+
         Option(
           name: '--frame',
           description: 'Which frame to render (default 0)',
@@ -3398,6 +3508,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             template: ['filepaths'],
             suggestions: [
+
               FigSuggestion(
                 insertValue: '\'{cursor}\''
               )
@@ -3415,6 +3526,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'angle'),
               FigSuggestion(name: 'egl'),
               FigSuggestion(name: 'swiftshader'),
@@ -3451,6 +3563,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: 'info',
             suggestions: [
+
               FigSuggestion(
                 name: 'verbose'
               ),
@@ -3489,6 +3602,7 @@ final FigSpec remotionSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--props',
           description: 'Pass input props as filename or as JSON',
@@ -3496,6 +3610,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             template: ['filepaths'],
             suggestions: [
+
               FigSuggestion(
                 insertValue: '\'{cursor}\''
               )
@@ -3536,6 +3651,7 @@ final FigSpec remotionSpec = FigSpec(
       name: 'upgrade',
       description: 'Upgrade all Remotion-related dependencies to the newest version',
       options: [
+
         Option(
           name: '--package-manager',
           description: 'Force a specific package manager to be used',
@@ -3543,6 +3659,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             name: 'package-manager',
             suggestions: [
+
               FigSuggestion(
                 name: 'npm'
               ),
@@ -3571,6 +3688,7 @@ final FigSpec remotionSpec = FigSpec(
       name: 'benchmark',
       description: 'Try different render configurations and compare them',
       options: [
+
         Option(
           name: '--disable-headless',
           description: 'Run Chrome in normal mode rather than headless'
@@ -3581,6 +3699,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'angle'),
               FigSuggestion(name: 'egl'),
               FigSuggestion(name: 'swiftshader'),
@@ -3613,6 +3732,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: '80',
             suggestions: [
+
               FigSuggestion(
                 name: '0'
               ),
@@ -3657,6 +3777,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: '1',
             suggestions: [
+
               FigSuggestion(
                 name: '0.25'
               ),
@@ -3686,6 +3807,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: 'h264',
             suggestions: [
+
               FigSuggestion(
                 name: 'h264'
               ),
@@ -3726,6 +3848,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'aac'
               ),
@@ -3749,6 +3872,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: '1',
             suggestions: [
+
               FigSuggestion(
                 name: '2'
               ),
@@ -3772,6 +3896,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: '1',
             suggestions: [
+
               FigSuggestion(
                 name: '0'
               ),
@@ -3817,6 +3942,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: '4444-xq'),
               FigSuggestion(name: '4444'),
               FigSuggestion(name: 'hq'),
@@ -3833,6 +3959,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(name: 'ultrafast'),
               FigSuggestion(name: 'superfast'),
               FigSuggestion(name: 'veryfast'),
@@ -3853,6 +3980,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'jpeg'
               ),
@@ -3869,6 +3997,7 @@ final FigSpec remotionSpec = FigSpec(
           args: [
             Arg(
             suggestions: [
+
               FigSuggestion(
                 name: 'yuv420p'
               ),
@@ -3998,6 +4127,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             template: ['filepaths'],
             suggestions: [
+
               FigSuggestion(
                 insertValue: '\'{cursor}\''
               )
@@ -4020,6 +4150,7 @@ final FigSpec remotionSpec = FigSpec(
             Arg(
             defaultValue: 'info',
             suggestions: [
+
               FigSuggestion(
                 name: 'verbose'
               ),
@@ -4058,6 +4189,7 @@ final FigSpec remotionSpec = FigSpec(
         Arg(
         name: 'dependency',
         suggestions: [
+
           FigSuggestion(
             name: 'ffmpeg'
           ),
@@ -4070,6 +4202,7 @@ final FigSpec remotionSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Prints the list of commands and flags for quick lookup'

@@ -9,6 +9,7 @@ final FigSpec sha1sumSpec = FigSpec(
   name: 'sha1sum',
   description: 'Print or check SHA1 (160-bit) checksums',
   options: [
+
     Option(
       name: ['-b', '--binary'],
       description: 'Read in binary mode'
@@ -64,6 +65,7 @@ final FigSpec sha1sumSpec = FigSpec(
     description: 'With no FILE, or when FILE is -, read standard input',
     template: 'filepaths',
     suggestions: [
+
       FigSuggestion(name: '-')
     ],
     isOptional: true

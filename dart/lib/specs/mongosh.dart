@@ -14,6 +14,7 @@ final FigSpec mongoshSpec = FigSpec(
     isOptional: true,
     defaultValue: 'mongodb://localhost:27017',
     suggestions: [
+
       FigSuggestion(
         name: 'mongodb://localhost:27017',
         description: 'Default Connection String; Equivalent to running mongosh without any commands'
@@ -27,6 +28,7 @@ final FigSpec mongoshSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-v', '--version'],
       description: 'View your current mongosh version'
@@ -106,6 +108,7 @@ final FigSpec mongoshSpec = FigSpec(
         Arg(
         name: 'authentication mechanism',
         suggestions: [
+
           FigSuggestion(
             name: 'SCRAM-SHA-1',
             description: 'RFC 5802 standard Salted Challenge Response Authentication Mechanism using the SHA-1 hash function'
@@ -153,6 +156,7 @@ final FigSpec mongoshSpec = FigSpec(
         Arg(
         name: 'port',
         suggestions: [
+
           FigSuggestion(
             name: '27017',
             description: 'Default-port'
@@ -180,6 +184,7 @@ final FigSpec mongoshSpec = FigSpec(
         Arg(
         name: 'protocols',
         suggestions: [
+
           FigSuggestion(
             name: 'TLS1_0'
           ),
@@ -202,7 +207,10 @@ final FigSpec mongoshSpec = FigSpec(
       description: 'Specifies the .pem file that contains the root certificate chain from the Certificate Authority. This file is used to validate the certificate presented by the mongod/mongos instance',
       args: [
         Arg(
-        name: 'filePath'
+        name: 'filePath',
+        generators: Generator(
+          template: 'filepaths'
+        )
       )
       ]
     ),
@@ -211,7 +219,10 @@ final FigSpec mongoshSpec = FigSpec(
       description: 'Specifies the .pem file that contains the root certificate chain from the Certificate Authority. This file is used to validate the certificate presented by the mongod/mongos instance',
       args: [
         Arg(
-        name: 'filePath'
+        name: 'filePath',
+        generators: Generator(
+          template: 'filepaths'
+        )
       )
       ]
     ),
@@ -220,7 +231,10 @@ final FigSpec mongoshSpec = FigSpec(
       description: 'Enables connection to a mongod or mongos that has TLS SSL support enabled',
       args: [
         Arg(
-        name: 'filePath'
+        name: 'filePath',
+        generators: Generator(
+          template: 'filepaths'
+        )
       )
       ]
     )

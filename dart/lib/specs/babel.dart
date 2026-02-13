@@ -9,6 +9,7 @@ final FigSpec babelSpec = FigSpec(
   name: 'babel',
   icon: 'https://raw.githubusercontent.com/babel/logo/master/babel.png',
   options: [
+
     Option(
       name: ['-f', '--filename'],
       description: 'The filename to use when reading from stdin. This will be used in source-maps, errors etc',
@@ -53,8 +54,9 @@ final FigSpec babelSpec = FigSpec(
         Arg(
         name: 'env',
         suggestions: [
-          FigSuggestion(name: 'production'),
 
+          FigSuggestion(name: 'production'),
+          FigSuggestion(name: 'development')
         ]
       )
       ]
@@ -66,6 +68,7 @@ final FigSpec babelSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(
             name: 'root',
             description: 'Passes the "root" value through as unchanged'
@@ -89,8 +92,9 @@ final FigSpec babelSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
-          FigSuggestion(name: 'script'),
 
+          FigSuggestion(name: 'script'),
+          FigSuggestion(name: 'module')
         ]
       )
       ]
@@ -136,9 +140,10 @@ final FigSpec babelSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'true'),
           FigSuggestion(name: 'false'),
-
+          FigSuggestion(name: 'auto')
         ]
       )
       ]
@@ -171,10 +176,11 @@ final FigSpec babelSpec = FigSpec(
         Arg(
         name: 'mode',
         suggestions: [
+
           FigSuggestion(name: 'true'),
           FigSuggestion(name: 'false'),
           FigSuggestion(name: 'inline'),
-
+          FigSuggestion(name: 'both')
         ]
       )
       ]
@@ -285,6 +291,7 @@ final FigSpec babelSpec = FigSpec(
         Arg(
         name: 'extension',
         suggestions: [
+
           FigSuggestion(name: '.es6'),
           FigSuggestion(name: '.js'),
           FigSuggestion(name: '.es'),

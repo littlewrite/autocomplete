@@ -15,6 +15,7 @@ final FigSpec sipsSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-g', '--getProperty'],
       description: 'Output the property value for key to stdout',
@@ -28,6 +29,7 @@ final FigSpec sipsSpec = FigSpec(
       name: ['-s', '--setProperty'],
       description: 'Set a property value for key to value',
       args: [
+
         Arg(
           name: 'key'
         ),
@@ -49,6 +51,7 @@ final FigSpec sipsSpec = FigSpec(
       name: ['-X', '--extractTag'],
       description: 'Extract a profile tag element to tagFile',
       args: [
+
         Arg(
           name: 'tag'
         ),
@@ -83,6 +86,7 @@ final FigSpec sipsSpec = FigSpec(
       name: '--copyTag',
       description: 'Copy the srcTag element of a profile to dstTag',
       args: [
+
         Arg(
           name: 'srcTag'
         ),
@@ -95,6 +99,7 @@ final FigSpec sipsSpec = FigSpec(
       name: '--loadTag',
       description: 'Set the tag element of a profile to the contents of tagFile',
       args: [
+
         Arg(
           name: 'tag'
         ),
@@ -139,12 +144,14 @@ final FigSpec sipsSpec = FigSpec(
       name: ['-M', '--matchToWithIntent'],
       description: 'Color match image to profile with rendering intent perceptual | relative | saturation | absolute',
       args: [
+
         Arg(
           name: 'profile'
         ),
         Arg(
           name: 'intent',
           suggestions: [
+
             FigSuggestion(name: 'perceptual'),
             FigSuggestion(name: 'relative'),
             FigSuggestion(name: 'saturation'),
@@ -171,6 +178,7 @@ final FigSpec sipsSpec = FigSpec(
         Arg(
         name: 'axis',
         suggestions: [
+
           FigSuggestion(name: 'horizontal'),
           FigSuggestion(name: 'vertical')
         ]
@@ -181,6 +189,7 @@ final FigSpec sipsSpec = FigSpec(
       name: ['-c', '--cropToHeightWidth'],
       description: 'Crop image to fit specified size',
       args: [
+
         Arg(
           name: 'pixelsH'
         ),
@@ -193,6 +202,7 @@ final FigSpec sipsSpec = FigSpec(
       name: ['-p', '--padToHeightWidth'],
       description: 'Pad image with pixels to fit specified size',
       args: [
+
         Arg(
           name: 'pixelsH'
         ),
@@ -214,6 +224,7 @@ final FigSpec sipsSpec = FigSpec(
       name: ['-z', '--resampleHeightWidth'],
       description: 'Resample image at specified size. Image apsect ratio may be altered',
       args: [
+
         Arg(
           name: 'pixelsH'
         ),

@@ -9,6 +9,7 @@ final FigSpec juliaSpec = FigSpec(
   name: 'julia',
   description: 'The Julia Programming Language',
   options: [
+
     Option(
       name: ['-v', '--version'],
       description: 'Display version information'
@@ -30,12 +31,16 @@ final FigSpec juliaSpec = FigSpec(
         description: 'Julia project/environment',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(
             name: '@.',
             priority: 75,
             description: 'Search through parent directories until a Project.toml or JuliaProject.toml file is found'
           )
-        ]
+        ],
+        generators: Generator(
+          template: 'folders'
+        )
       )
       ]
     ),
@@ -63,6 +68,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -79,6 +85,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -95,6 +102,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -111,6 +119,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -157,6 +166,7 @@ final FigSpec juliaSpec = FigSpec(
         Arg(
         description: 'Number of threads',
         suggestions: [
+
           FigSuggestion(
             name: 'auto'
           )
@@ -171,6 +181,7 @@ final FigSpec juliaSpec = FigSpec(
         Arg(
         description: 'Number of additional local worker processes',
         suggestions: [
+
           FigSuggestion(
             name: 'auto'
           )
@@ -201,6 +212,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -220,6 +232,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -239,6 +252,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -255,6 +269,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -274,6 +289,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -290,6 +306,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -336,6 +353,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -352,6 +370,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -371,6 +390,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -387,6 +407,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'ieee'
           ),
@@ -404,6 +425,7 @@ final FigSpec juliaSpec = FigSpec(
         Arg(
         isOptional: true,
         suggestions: [
+
           FigSuggestion(
             name: 'none'
           ),
@@ -424,6 +446,7 @@ final FigSpec juliaSpec = FigSpec(
         Arg(
         isOptional: true,
         suggestions: [
+
           FigSuggestion(
             name: 'none'
           ),
@@ -452,6 +475,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),
@@ -534,6 +558,7 @@ final FigSpec juliaSpec = FigSpec(
       args: [
         Arg(
         suggestions: [
+
           FigSuggestion(
             name: 'yes'
           ),

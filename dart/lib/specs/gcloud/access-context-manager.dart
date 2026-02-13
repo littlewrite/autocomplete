@@ -9,14 +9,17 @@ final FigSpec accessContextManagerSpec = FigSpec(
   name: 'access-context-manager',
   description: 'Manage Access Context Manager resources',
   subcommands: [
+
     Subcommand(
       name: 'cloud-bindings',
       description: 'Manage Access Context Manager cloud access bindings',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new cloud access binding',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -186,6 +189,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -202,6 +206,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'delete',
           description: 'Delete a cloud access binding',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -348,6 +353,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -364,6 +370,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'describe',
           description: 'Show details about a cloud access binding',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -510,6 +517,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -526,6 +534,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'list',
           description: 'List cloud access bindings under an organization',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -704,6 +713,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -720,6 +730,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'update',
           description: 'Update an existing cloud access binding',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -889,6 +900,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -903,6 +915,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1026,6 +1039,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1042,14 +1056,17 @@ final FigSpec accessContextManagerSpec = FigSpec(
       name: 'levels',
       description: 'Manage Access Context Manager levels',
       subcommands: [
+
         Subcommand(
           name: 'conditions',
           description: 'Manage Access Context Manager level conditions',
           subcommands: [
+
             Subcommand(
               name: 'list',
               description: 'List conditions for an access level',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1196,6 +1213,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1210,6 +1228,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1333,6 +1352,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1349,6 +1369,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'create',
           description: 'Create a new access level',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1395,6 +1416,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'COMBINE_FUNCTION',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'and'),
                   FigSuggestion(name: 'or')
                 ]
@@ -1547,6 +1569,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1569,6 +1592,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'delete',
           description: 'Delete an access level',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1707,6 +1731,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1729,6 +1754,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'describe',
           description: 'Show details about an access level',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1863,6 +1889,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1885,6 +1912,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'list',
           description: 'List access levels',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2063,6 +2091,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2079,6 +2108,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'replace-all',
           description: 'Replace all existing access levels',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2225,6 +2255,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2247,6 +2278,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'update',
           description: 'Update an existing access level',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2288,6 +2320,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'COMBINE_FUNCTION',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'and'),
                   FigSuggestion(name: 'or')
                 ]
@@ -2439,6 +2472,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2459,6 +2493,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2582,6 +2617,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2598,10 +2634,12 @@ final FigSpec accessContextManagerSpec = FigSpec(
       name: 'perimeters',
       description: 'Manage Access Context Manager service perimeters',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new service perimeter',
           options: [
+
             Option(
               name: '--access-levels',
               description: 'Comma-separated list of IDs for access levels (in the same policy)\nthat an intra-perimeter request must satisfy to be allowed',
@@ -2725,6 +2763,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'PERIMETER_TYPE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'bridge'),
                   FigSuggestion(name: 'regular')
                 ]
@@ -2814,6 +2853,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2847,6 +2887,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'delete',
           description: 'Delete a service perimeter',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2985,6 +3026,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3007,6 +3049,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'describe',
           description: 'Show details about a service perimeter',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3141,6 +3184,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3163,10 +3207,12 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'dry-run',
           description: 'Enable management of dry-run mode configuration for Service Perimeters',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a dry-run mode configuration for a new or existing Service         Perimeter',
               options: [
+
                 Option(
                   name: '--access-levels',
                   description: 'Comma-separated list of IDs for access levels (in the same policy)\n              that an intra-perimeter request must satisfy to be allowed',
@@ -3425,6 +3471,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3458,6 +3505,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
               name: 'delete',
               description: 'Mark the Service Perimeter as deleted in the dry-run mode',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3596,6 +3644,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3618,6 +3667,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
               name: 'describe',
               description: 'Display the dry-run mode configuration for a Service Perimeter',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3752,6 +3802,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3774,6 +3825,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
               name: 'drop',
               description: 'Reset the dry-run mode configuration of a Service Perimeter',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3912,6 +3964,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -3934,6 +3987,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
               name: 'enforce',
               description: 'Enforces a Service Perimeter\'s dry-run configuration',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4072,6 +4126,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4094,6 +4149,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
               name: 'enforce-all',
               description: 'Enforces the dry-run mode configuration for all Service Perimeters',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4239,6 +4295,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4255,6 +4312,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
               name: 'list',
               description: 'List the effective dry-run configuration across all Service Perimeters',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4433,6 +4491,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4449,6 +4508,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
               name: 'update',
               description: 'Update the dry-run mode configuration for a Service Perimeter',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4695,6 +4755,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -4715,6 +4776,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4838,6 +4900,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4854,6 +4917,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'list',
           description: 'List service perimeters',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5032,6 +5096,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5048,6 +5113,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'replace-all',
           description: 'Replace all existing service perimeters',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5194,6 +5260,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5216,6 +5283,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'update',
           description: 'Update an existing access zone',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5509,6 +5577,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'TYPE',
                 description: 'Googlecloudsdk.calliope.base:_ChoiceValueType',
                 suggestions: [
+
                   FigSuggestion(name: 'bridge'),
                   FigSuggestion(name: 'regular')
                 ]
@@ -5527,6 +5596,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5547,6 +5617,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5670,6 +5741,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -5686,10 +5758,12 @@ final FigSpec accessContextManagerSpec = FigSpec(
       name: 'policies',
       description: 'Manage Access Context Manager policies',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new access policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5841,6 +5915,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5857,6 +5932,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'delete',
           description: 'Delete an access policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5980,6 +6056,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6002,6 +6079,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'describe',
           description: 'Show details about an access policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6125,6 +6203,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6147,6 +6226,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'list',
           description: 'List access policies',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6326,6 +6406,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6342,6 +6423,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
           name: 'update',
           description: 'Update an existing access policy',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6476,6 +6558,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6496,6 +6579,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6619,6 +6703,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -6633,6 +6718,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6756,6 +6842,7 @@ final FigSpec accessContextManagerSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

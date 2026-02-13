@@ -9,6 +9,7 @@ final FigSpec xedSpec = FigSpec(
   name: 'xed',
   description: 'Xcode text editor invocation tool',
   options: [
+
     Option(
       name: ['--launch', '-x'],
       description: 'Launches Xcode, opening a new empty unsaved file'

@@ -9,10 +9,12 @@ final FigSpec bwdcSpec = FigSpec(
   name: 'bwdc',
   description: 'Bitwarden Directory Connector',
   subcommands: [
+
     Subcommand(
       name: 'login',
       description: 'Log in to Directory Connector',
       args: [
+
         Arg(
           name: 'client_id',
           description: 'Organisation API client_id',
@@ -25,6 +27,7 @@ final FigSpec bwdcSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--help'
         )
@@ -34,6 +37,7 @@ final FigSpec bwdcSpec = FigSpec(
       name: 'logout',
       description: 'Log out of Directory Connector',
       options: [
+
         Option(
           name: '--help'
         )
@@ -43,6 +47,7 @@ final FigSpec bwdcSpec = FigSpec(
       name: 'test',
       description: 'Prints a JSON formatted array of groups and users that would be synced to your Bitwarden organization',
       options: [
+
         Option(
           name: '--last',
           description: 'Test only the changes since the last successful sync'
@@ -56,6 +61,7 @@ final FigSpec bwdcSpec = FigSpec(
       name: 'sync',
       description: 'Run a live sync operation and push data to your Bitwarden organization',
       options: [
+
         Option(
           name: '--help'
         )
@@ -71,6 +77,7 @@ final FigSpec bwdcSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--help'
         )
@@ -80,6 +87,7 @@ final FigSpec bwdcSpec = FigSpec(
       name: 'config',
       description: 'The config command allows you to specify your directory settings',
       args: [
+
         Arg(
           name: 'setting',
           description: 'Specify the setting to configure'
@@ -90,6 +98,7 @@ final FigSpec bwdcSpec = FigSpec(
         )
       ],
       subcommands: [
+
         Subcommand(
           name: 'server',
           description: 'URL of your self-hosted installation (e.g. https://my.url.com) or https://vault.bitwarden.eu',
@@ -107,6 +116,7 @@ final FigSpec bwdcSpec = FigSpec(
             Arg(
             name: 'directory-type',
             suggestions: [
+
               FigSuggestion(
                 name: '0',
                 description: 'Active Directory/LDAP'
@@ -183,6 +193,7 @@ final FigSpec bwdcSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--help'
         )
@@ -192,6 +203,7 @@ final FigSpec bwdcSpec = FigSpec(
       name: 'data-file',
       description: 'Path to data.json database file',
       options: [
+
         Option(
           name: '--help'
         )
@@ -201,6 +213,7 @@ final FigSpec bwdcSpec = FigSpec(
       name: 'clear-cache',
       description: 'The clear-cache command allows you to clear cached data that the application stores while performing sync operations',
       options: [
+
         Option(
           name: '--help'
         )
@@ -212,6 +225,7 @@ final FigSpec bwdcSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--help',
       description: 'Show help for bwdc'

@@ -9,10 +9,12 @@ final FigSpec opensearchSpec = FigSpec(
   name: 'opensearch',
   description: 'Use the Amazon OpenSearch Service configuration API to create, configure, and manage OpenSearch Service domains. The endpoint for configuration service requests is Region specific: es.region.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported Regions and endpoints, see Amazon Web Services service endpoints',
   subcommands: [
+
     Subcommand(
       name: 'accept-inbound-connection',
       description: 'Allows the destination Amazon OpenSearch Service domain owner to accept an inbound cross-cluster search connection request. For more information, see Cross-cluster search for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--connection-id',
           description: 'The ID of the inbound connection to accept',
@@ -38,6 +40,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'add-data-source',
       description: 'Creates a new direct-query data source to the specified domain. For more information, see Creating Amazon OpenSearch Service data source integrations with Amazon S3',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain to add the data source to',
@@ -102,6 +106,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'add-direct-query-data-source',
       description: 'Adds a new data source in Amazon OpenSearch Service so that you can perform direct queries on external data',
       options: [
+
         Option(
           name: '--data-source-name',
           description: 'A unique, user-defined label to identify the data source within your OpenSearch Service environment',
@@ -175,6 +181,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'add-tags',
       description: 'Attaches tags to an existing Amazon OpenSearch Service domain, data source, or application.  Tags are a set of case-sensitive key-value pairs. A domain, data source, or application can have up to 10 tags. For more information, see Tagging Amazon OpenSearch Service resources',
       options: [
+
         Option(
           name: '--arn',
           description: 'Amazon Resource Name (ARN) for the OpenSearch Service domain, data source, or application to which you want to attach resource tags',
@@ -221,6 +229,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'associate-package',
       description: 'Associates a package with an Amazon OpenSearch Service domain. For more information, see Custom packages for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--package-id',
           description: 'Internal ID of the package to associate with a domain. Use DescribePackages to find this value',
@@ -285,6 +295,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -297,6 +308,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'associate-packages',
       description: 'Operation in the Amazon OpenSearch Service API for associating multiple packages with a domain simultaneously',
       options: [
+
         Option(
           name: '--package-list',
           description: 'A list of packages and their prerequisites to be associated with a domain',
@@ -331,6 +343,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -343,6 +356,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'authorize-vpc-endpoint-access',
       description: 'Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the OpenSearch Service domain to provide access to',
@@ -386,6 +400,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -398,6 +413,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'cancel-domain-config-change',
       description: 'Cancels a pending configuration change on an Amazon OpenSearch Service domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region',
@@ -431,6 +447,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -443,6 +460,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'cancel-service-software-update',
       description: 'Cancels a scheduled service software update for an Amazon OpenSearch Service domain. You can only perform this operation before the AutomatedUpdateDate and when the domain\'s UpdateStatus is PENDING_UPDATE. For more information, see Service software updates in Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'Name of the OpenSearch Service domain that you want to cancel the service software update on',
@@ -468,6 +486,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -480,6 +499,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'create-application',
       description: 'Creates an OpenSearch Application',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique client idempotency token. It will be auto generated if not provided',
@@ -550,6 +570,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -562,6 +583,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'create-domain',
       description: 'Creates an Amazon OpenSearch Service domain. For more information, see Creating and managing Amazon OpenSearch Service domains',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region',
@@ -767,6 +789,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -779,6 +802,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'create-outbound-connection',
       description: 'Creates a new cross-cluster search connection from a source Amazon OpenSearch Service domain to a destination domain. For more information, see Cross-cluster search for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--local-domain-info',
           description: 'Name and Region of the source (local) domain',
@@ -840,6 +864,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -852,6 +877,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'create-package',
       description: 'Creates a package for use with Amazon OpenSearch Service domains. For more information, see Custom packages for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--package-name',
           description: 'Unique name for the package',
@@ -940,6 +966,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -952,6 +979,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'create-vpc-endpoint',
       description: 'Creates an Amazon OpenSearch Service-managed VPC endpoint',
       options: [
+
         Option(
           name: '--domain-arn',
           description: 'The Amazon Resource Name (ARN) of the domain to create the endpoint for',
@@ -995,6 +1023,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1007,6 +1036,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'delete-application',
       description: 'Deletes an existing OpenSearch Application',
       options: [
+
         Option(
           name: '--id',
           description: 'Unique identifier for the OpenSearch Application that you want to delete',
@@ -1032,6 +1062,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1044,6 +1075,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'delete-data-source',
       description: 'Deletes a direct-query data source. For more information, see Deleting an Amazon OpenSearch Service data source with Amazon S3',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -1078,6 +1110,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1090,6 +1123,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'delete-direct-query-data-source',
       description: 'Deletes a previously configured direct query data source from Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--data-source-name',
           description: 'A unique, user-defined label to identify the data source within your OpenSearch Service environment',
@@ -1115,6 +1149,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1127,6 +1162,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'delete-domain',
       description: 'Deletes an Amazon OpenSearch Service domain and all of its data. You can\'t recover a domain after you delete it',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain you want to permanently delete',
@@ -1152,6 +1188,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1164,6 +1201,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'delete-inbound-connection',
       description: 'Allows the destination Amazon OpenSearch Service domain owner to delete an existing inbound cross-cluster search connection. For more information, see Cross-cluster search for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--connection-id',
           description: 'The ID of the inbound connection to permanently delete',
@@ -1189,6 +1227,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1201,6 +1240,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'delete-outbound-connection',
       description: 'Allows the source Amazon OpenSearch Service domain owner to delete an existing outbound cross-cluster search connection. For more information, see Cross-cluster search for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--connection-id',
           description: 'The ID of the outbound connection you want to permanently delete',
@@ -1226,6 +1266,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1238,6 +1279,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'delete-package',
       description: 'Deletes an Amazon OpenSearch Service package. For more information, see Custom packages for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--package-id',
           description: 'The internal ID of the package you want to delete. Use DescribePackages to find this value',
@@ -1263,6 +1305,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1275,6 +1318,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'delete-vpc-endpoint',
       description: 'Deletes an Amazon OpenSearch Service-managed interface VPC endpoint',
       options: [
+
         Option(
           name: '--vpc-endpoint-id',
           description: 'The unique identifier of the endpoint',
@@ -1300,6 +1344,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1312,6 +1357,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-domain',
       description: 'Describes the domain configuration for the specified Amazon OpenSearch Service domain, including the domain ID, domain service endpoint, and domain ARN',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain that you want information about',
@@ -1337,6 +1383,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1349,6 +1396,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-domain-auto-tunes',
       description: 'Returns the list of optimizations that Auto-Tune has made to an Amazon OpenSearch Service domain. For more information, see Auto-Tune for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'Name of the domain that you want Auto-Tune details about',
@@ -1392,6 +1440,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1404,6 +1453,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-domain-change-progress',
       description: 'Returns information about the current blue/green deployment happening on an Amazon OpenSearch Service domain. For more information, see Making configuration changes in Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain to get progress information for',
@@ -1438,6 +1488,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1450,6 +1501,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-domain-config',
       description: 'Returns the configuration of an Amazon OpenSearch Service domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'Name of the OpenSearch Service domain configuration that you want to describe',
@@ -1475,6 +1527,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1487,6 +1540,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-domain-health',
       description: 'Returns information about domain and node health, the standby Availability Zone, number of nodes per Availability Zone, and shard count per node',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -1512,6 +1566,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1524,6 +1579,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-domain-nodes',
       description: 'Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability Zone(s), standby nodes, node configurations, and node states',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -1549,6 +1605,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1561,6 +1618,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-domains',
       description: 'Returns domain configuration information about the specified Amazon OpenSearch Service domains',
       options: [
+
         Option(
           name: '--domain-names',
           description: 'Array of OpenSearch Service domain names that you want information about. You must specify at least one domain name',
@@ -1586,6 +1644,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1598,6 +1657,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-dry-run-progress',
       description: 'Describes the progress of a pre-update dry run analysis on an Amazon OpenSearch Service domain. For more information, see Determining whether a change will cause a blue/green deployment',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -1640,6 +1700,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1652,6 +1713,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-inbound-connections',
       description: 'Lists all the inbound cross-cluster search connections for a destination (remote) Amazon OpenSearch Service domain. For more information, see Cross-cluster search for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--filters',
           description: 'A list of filters used to match properties for inbound cross-cluster connections',
@@ -1695,6 +1757,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1707,6 +1770,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-instance-type-limits',
       description: 'Describes the instance count, storage, and master node limits for a given OpenSearch or Elasticsearch version and instance type',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain. Only specify if you need the limits for an existing domain',
@@ -1750,6 +1814,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1762,6 +1827,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-outbound-connections',
       description: 'Lists all the outbound cross-cluster connections for a local (source) Amazon OpenSearch Service domain. For more information, see Cross-cluster search for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--filters',
           description: 'List of filter names and values that you can use for requests',
@@ -1805,6 +1871,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1817,6 +1884,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-packages',
       description: 'Describes all packages available to OpenSearch Service. For more information, see Custom packages for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--filters',
           description: 'Only returns packages that match the DescribePackagesFilterList values',
@@ -1860,6 +1928,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1872,6 +1941,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-reserved-instance-offerings',
       description: 'Describes the available Amazon OpenSearch Service Reserved Instance offerings for a given Region. For more information, see Reserved Instances in Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--reserved-instance-offering-id',
           description: 'The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier',
@@ -1915,6 +1985,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1927,6 +1998,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-reserved-instances',
       description: 'Describes the Amazon OpenSearch Service instances that you have reserved in a given Region. For more information, see Reserved Instances in Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--reserved-instance-id',
           description: 'The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID',
@@ -1970,6 +2042,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1982,6 +2055,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'describe-vpc-endpoints',
       description: 'Describes one or more Amazon OpenSearch Service-managed VPC endpoints',
       options: [
+
         Option(
           name: '--vpc-endpoint-ids',
           description: 'The unique identifiers of the endpoints to get information about',
@@ -2007,6 +2081,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2019,6 +2094,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'dissociate-package',
       description: 'Removes a package from the specified Amazon OpenSearch Service domain. The package can\'t be in use with any OpenSearch index for the dissociation to succeed. The package is still available in OpenSearch Service for association later. For more information, see Custom packages for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--package-id',
           description: 'Internal ID of the package to dissociate from the domain. Use ListPackagesForDomain to find this value',
@@ -2053,6 +2129,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2065,6 +2142,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'dissociate-packages',
       description: 'Dissociates multiple packages from a domain simulatneously',
       options: [
+
         Option(
           name: '--package-list',
           description: 'A list of package IDs to be dissociated from a domain',
@@ -2099,6 +2177,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2111,6 +2190,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'get-application',
       description: 'Check the configuration and status of an existing OpenSearch Application',
       options: [
+
         Option(
           name: '--id',
           description: 'Unique identifier of the checked OpenSearch Application',
@@ -2136,6 +2216,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2148,6 +2229,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'get-compatible-versions',
       description: 'Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of an existing domain. Provide this parameter to limit the results to a single domain',
@@ -2173,6 +2255,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2185,6 +2268,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'get-data-source',
       description: 'Retrieves information about a direct query data source',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -2219,6 +2303,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2231,6 +2316,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'get-direct-query-data-source',
       description: 'Returns detailed configuration information for a specific direct query data source in Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--data-source-name',
           description: 'A unique, user-defined label that identifies the data source within your OpenSearch Service environment',
@@ -2256,6 +2342,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2268,6 +2355,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'get-domain-maintenance-status',
       description: 'The status of the maintenance action',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -2302,6 +2390,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2314,6 +2403,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'get-package-version-history',
       description: 'Returns a list of Amazon OpenSearch Service package versions, along with their creation time, commit message, and plugin properties (if the package is a zip plugin package). For more information, see Custom packages for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--package-id',
           description: 'The unique identifier of the package',
@@ -2357,6 +2447,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2369,6 +2460,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'get-upgrade-history',
       description: 'Retrieves the complete history of the last 10 upgrades performed on an Amazon OpenSearch Service domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of an existing domain',
@@ -2412,6 +2504,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2424,6 +2517,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'get-upgrade-status',
       description: 'Returns the most recent status of the last upgrade or upgrade eligibility check performed on an Amazon OpenSearch Service domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The domain of the domain to get upgrade status information for',
@@ -2449,6 +2543,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2461,6 +2556,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-applications',
       description: 'List all OpenSearch Applications under your account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'When nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page',
@@ -2531,6 +2627,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2543,6 +2640,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-data-sources',
       description: 'Lists direct-query data sources for a specific domain. For more information, see For more information, see Working with Amazon OpenSearch Service direct queries with Amazon S3',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -2568,6 +2666,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2580,6 +2679,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-direct-query-data-sources',
       description: 'Lists an inventory of all the direct query data sources that you have configured within Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--next-token',
           description: 'When nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page',
@@ -2605,6 +2705,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2617,6 +2718,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-domain-maintenances',
       description: 'A list of maintenance actions for the domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -2678,6 +2780,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2690,6 +2793,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-domain-names',
       description: 'Returns the names of all Amazon OpenSearch Service domains owned by the current user in the active Region',
       options: [
+
         Option(
           name: '--engine-type',
           description: 'Filters the output by domain engine type',
@@ -2715,6 +2819,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2727,6 +2832,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-domains-for-package',
       description: 'Lists all Amazon OpenSearch Service domains associated with a given package. For more information, see Custom packages for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--package-id',
           description: 'The unique identifier of the package for which to list associated domains',
@@ -2770,6 +2876,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2782,6 +2889,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-instance-type-details',
       description: 'Lists all instance types and available features for a given OpenSearch or Elasticsearch version',
       options: [
+
         Option(
           name: '--engine-version',
           description: 'The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch',
@@ -2851,6 +2959,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2863,6 +2972,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-packages-for-domain',
       description: 'Lists all packages associated with an Amazon OpenSearch Service domain. For more information, see Custom packages for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain for which you want to list associated packages',
@@ -2906,6 +3016,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2918,6 +3029,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-scheduled-actions',
       description: 'Retrieves a list of configuration changes that are scheduled for a domain. These changes can be service software updates or blue/green Auto-Tune enhancements',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -2961,6 +3073,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2973,6 +3086,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-tags',
       description: 'Returns all resource tags for an Amazon OpenSearch Service domain, data source, or application. For more information, see Tagging Amazon OpenSearch Service resources',
       options: [
+
         Option(
           name: '--arn',
           description: 'Amazon Resource Name (ARN) for the domain, data source, or application to view tags for',
@@ -2998,6 +3112,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3010,6 +3125,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-versions',
       description: 'Lists all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service supports',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to get the next page of results',
@@ -3044,6 +3160,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3056,6 +3173,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-vpc-endpoint-access',
       description: 'Retrieves information about each Amazon Web Services principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the OpenSearch Service domain to retrieve access information for',
@@ -3090,6 +3208,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3102,6 +3221,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-vpc-endpoints',
       description: 'Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current Amazon Web Services account and Region',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If your initial ListVpcEndpoints operation returns a nextToken, you can include the returned nextToken in subsequent ListVpcEndpoints operations, which returns results in the next page',
@@ -3127,6 +3247,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3139,6 +3260,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'list-vpc-endpoints-for-domain',
       description: 'Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain to list associated VPC endpoints for',
@@ -3173,6 +3295,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3185,6 +3308,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'purchase-reserved-instance-offering',
       description: 'Allows you to purchase Amazon OpenSearch Service Reserved Instances',
       options: [
+
         Option(
           name: '--reserved-instance-offering-id',
           description: 'The ID of the Reserved Instance offering to purchase',
@@ -3228,6 +3352,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3240,6 +3365,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'reject-inbound-connection',
       description: 'Allows the remote Amazon OpenSearch Service domain owner to reject an inbound cross-cluster connection request',
       options: [
+
         Option(
           name: '--connection-id',
           description: 'The unique identifier of the inbound connection to reject',
@@ -3265,6 +3391,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3277,6 +3404,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'remove-tags',
       description: 'Removes the specified set of tags from an Amazon OpenSearch Service domain, data source, or application. For more information, see  Tagging Amazon OpenSearch Service resources',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the domain, data source, or application from which you want to delete the specified tags',
@@ -3311,6 +3439,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3323,6 +3452,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'revoke-vpc-endpoint-access',
       description: 'Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the OpenSearch Service domain',
@@ -3366,6 +3496,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3378,6 +3509,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'start-domain-maintenance',
       description: 'Starts the node maintenance process on the data node. These processes can include a node reboot, an Opensearch or Elasticsearch process restart, or a Dashboard or Kibana restart',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -3421,6 +3553,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3433,6 +3566,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'start-service-software-update',
       description: 'Schedules a service software update for an Amazon OpenSearch Service domain. For more information, see Service software updates in Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain that you want to update to the latest service software',
@@ -3476,6 +3610,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3488,6 +3623,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'update-application',
       description: 'Update the OpenSearch Application',
       options: [
+
         Option(
           name: '--id',
           description: 'Unique identifier of the OpenSearch Application to be updated',
@@ -3531,6 +3667,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3543,6 +3680,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'update-data-source',
       description: 'Updates a direct-query data source. For more information, see Working with Amazon OpenSearch Service data source integrations with Amazon S3',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain',
@@ -3604,6 +3742,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3616,6 +3755,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'update-direct-query-data-source',
       description: 'Updates the configuration or properties of an existing direct query data source in Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--data-source-name',
           description: 'A unique, user-defined label to identify the data source within your OpenSearch Service environment',
@@ -3668,6 +3808,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3680,6 +3821,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'update-domain-config',
       description: 'Modifies the cluster configuration of the specified Amazon OpenSearch Service domain',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain that you\'re updating',
@@ -3884,6 +4026,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3896,6 +4039,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'update-package',
       description: 'Updates a package for use with Amazon OpenSearch Service domains. For more information, see Custom packages for Amazon OpenSearch Service',
       options: [
+
         Option(
           name: '--package-id',
           description: 'The unique identifier for the package',
@@ -3966,6 +4110,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -3978,6 +4123,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'update-package-scope',
       description: 'Updates the scope of a package. Scope of the package defines users who can view and associate a package',
       options: [
+
         Option(
           name: '--package-id',
           description: 'ID of the package whose scope is being updated',
@@ -4021,6 +4167,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4033,6 +4180,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'update-scheduled-action',
       description: 'Reschedules a planned domain configuration change for a later time. This change can be a scheduled service software update or a blue/green Auto-Tune enhancement',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'The name of the domain to reschedule an action for',
@@ -4094,6 +4242,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4106,6 +4255,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'update-vpc-endpoint',
       description: 'Modifies an Amazon OpenSearch Service-managed interface VPC endpoint',
       options: [
+
         Option(
           name: '--vpc-endpoint-id',
           description: 'The unique identifier of the endpoint',
@@ -4140,6 +4290,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -4152,6 +4303,7 @@ final FigSpec opensearchSpec = FigSpec(
       name: 'upgrade-domain',
       description: 'Allows you to either upgrade your Amazon OpenSearch Service domain or perform an upgrade eligibility check to a compatible version of OpenSearch or Elasticsearch',
       options: [
+
         Option(
           name: '--domain-name',
           description: 'Name of the OpenSearch Service domain that you want to upgrade',
@@ -4203,6 +4355,7 @@ final FigSpec opensearchSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,14 +9,17 @@ final FigSpec sourceSpec = FigSpec(
   name: 'source',
   description: 'Cloud git repository commands',
   subcommands: [
+
     Subcommand(
       name: 'project-configs',
       description: 'Manage Cloud Source Repositories configuration of a project',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Show details about the configuration of a project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -140,6 +143,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -156,6 +160,7 @@ final FigSpec sourceSpec = FigSpec(
           name: 'update',
           description: 'Update the Cloud Source Repositories configuration of the current project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -269,6 +274,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'MESSAGE_FORMAT',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'protobuf')
                 ]
@@ -359,6 +365,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -373,6 +380,7 @@ final FigSpec sourceSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -496,6 +504,7 @@ final FigSpec sourceSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -512,10 +521,12 @@ final FigSpec sourceSpec = FigSpec(
       name: 'repos',
       description: 'Manage cloud source repositories',
       subcommands: [
+
         Subcommand(
           name: 'clone',
           description: 'Clone a cloud source repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -643,6 +654,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -655,6 +667,7 @@ final FigSpec sourceSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'REPOSITORY_NAME',
               description: 'Name of the repository'
@@ -669,6 +682,7 @@ final FigSpec sourceSpec = FigSpec(
           name: 'create',
           description: 'Create a cloud source repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -792,6 +806,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -814,6 +829,7 @@ final FigSpec sourceSpec = FigSpec(
           name: 'delete',
           description: 'Delete a cloud source repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -941,6 +957,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -963,6 +980,7 @@ final FigSpec sourceSpec = FigSpec(
           name: 'describe',
           description: 'Describe a cloud source repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1086,6 +1104,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1108,6 +1127,7 @@ final FigSpec sourceSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get the IAM policy for the named cloud source repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1275,6 +1295,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1297,6 +1318,7 @@ final FigSpec sourceSpec = FigSpec(
           name: 'list',
           description: 'List the repositories the currently active project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1464,6 +1486,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1480,6 +1503,7 @@ final FigSpec sourceSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for the named repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1603,6 +1627,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1615,6 +1640,7 @@ final FigSpec sourceSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'REPOSITORY_NAME',
               description: 'Name of the repository'
@@ -1629,6 +1655,7 @@ final FigSpec sourceSpec = FigSpec(
           name: 'update',
           description: 'Update the configuration of a Cloud Source Repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1734,6 +1761,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'MESSAGE_FORMAT',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'protobuf')
                 ]
@@ -1824,6 +1852,7 @@ final FigSpec sourceSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1844,6 +1873,7 @@ final FigSpec sourceSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1967,6 +1997,7 @@ final FigSpec sourceSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1981,6 +2012,7 @@ final FigSpec sourceSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2104,6 +2136,7 @@ final FigSpec sourceSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

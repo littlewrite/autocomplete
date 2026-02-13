@@ -9,10 +9,12 @@ final FigSpec ivsRealtimeSpec = FigSpec(
   name: 'ivs-realtime',
   description: 'The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using a standard HTTP API and an AWS EventBridge event stream for responses. JSON is used for both requests and responses, including errors.   Key Concepts     Stage — A virtual space where participants can exchange video in real time.    Participant token — A token that authenticates a participant when they join a stage.    Participant object — Represents participants (people) in the stage and contains information about them. When a token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant is associated with that participant ID. There is a 1:1 mapping between participant tokens and participants.   For server-side composition:    Composition process — Composites participants of a stage into a single video and forwards it to a set of outputs (e.g., IVS channels). Composition operations support this process.    Composition — Controls the look of the outputs, including how participants are positioned in the video.   For more information about your IVS live stream, also see Getting Started with Amazon IVS Real-Time Streaming.  Tagging  A tag is a metadata label that you assign to an AWS resource. A tag comprises a key and a value, both set by you. For example, you might set a tag as topic:nature to label a particular video category. See Best practices and strategies in Tagging AWS Resources and Tag Editor for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS stages has no service-specific constraints beyond what is documented there. Tags can help you identify and organize your AWS resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see Access Tags). The Amazon IVS real-time API has these tag-related operations: TagResource, UntagResource, and ListTagsForResource. The following resource supports tagging: Stage. At most 50 tags can be applied to a resource',
   subcommands: [
+
     Subcommand(
       name: 'create-encoder-configuration',
       description: 'Creates an EncoderConfiguration object',
       options: [
+
         Option(
           name: '--name',
           description: 'Optional name to identify the resource',
@@ -56,6 +58,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'create-ingest-configuration',
       description: 'Creates a new IngestConfiguration resource, used to specify the ingest protocol for a stage',
       options: [
+
         Option(
           name: '--name',
           description: 'Optional name that can be specified for the IngestConfiguration being created',
@@ -146,6 +150,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -158,6 +163,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'create-participant-token',
       description: 'Creates an additional token for a specified stage. This can be done after stage creation or when tokens expire. Tokens always are scoped to the stage for which they are created. Encryption keys are owned by Amazon IVS and never used directly by your application',
       options: [
+
         Option(
           name: '--stage-arn',
           description: 'ARN of the stage to which this token is scoped',
@@ -219,6 +225,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -231,6 +238,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'create-stage',
       description: 'Creates a new stage (and optionally participant tokens)',
       options: [
+
         Option(
           name: '--name',
           description: 'Optional name that can be specified for the stage being created',
@@ -283,6 +291,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -295,6 +304,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'create-storage-configuration',
       description: 'Creates a new storage configuration, used to enable recording to Amazon S3. When a StorageConfiguration is created, IVS will modify the S3 bucketPolicy of the provided bucket. This will ensure that IVS has sufficient permissions to write content to the provided bucket',
       options: [
+
         Option(
           name: '--name',
           description: 'Storage configuration name. The value does not need to be unique',
@@ -338,6 +348,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -350,6 +361,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'delete-encoder-configuration',
       description: 'Deletes an EncoderConfiguration resource. Ensures that no Compositions are using this template; otherwise, returns an error',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the EncoderConfiguration',
@@ -375,6 +387,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -387,6 +400,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'delete-ingest-configuration',
       description: 'Deletes a specified IngestConfiguration, so it can no longer be used to broadcast. An IngestConfiguration cannot be deleted if the publisher is actively streaming to a stage, unless force is set to true',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the IngestConfiguration',
@@ -420,6 +434,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -432,6 +447,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'delete-public-key',
       description: 'Deletes the specified public key used to sign stage participant tokens. This invalidates future participant tokens generated using the key pair’s private key',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the public key to be deleted',
@@ -457,6 +473,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -469,6 +486,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'delete-stage',
       description: 'Shuts down and deletes the specified stage (disconnecting all participants). This operation also removes the stageArn from the associated IngestConfiguration, if there are participants using the IngestConfiguration to publish to the stage',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the stage to be deleted',
@@ -494,6 +512,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -506,6 +525,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'delete-storage-configuration',
       description: 'Deletes the storage configuration for the specified ARN. If you try to delete a storage configuration that is used by a Composition, you will get an error (409 ConflictException). To avoid this, for all Compositions that reference the storage configuration, first use StopComposition and wait for it to complete, then use DeleteStorageConfiguration',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the storage configuration to be deleted',
@@ -531,6 +551,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -543,6 +564,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'disconnect-participant',
       description: 'Disconnects a specified participant from a specified stage. If the participant is publishing using an IngestConfiguration, DisconnectParticipant also updates the stageArn in the IngestConfiguration to be an empty string',
       options: [
+
         Option(
           name: '--stage-arn',
           description: 'ARN of the stage to which the participant is attached',
@@ -586,6 +608,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -598,6 +621,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'get-composition',
       description: 'Get information about the specified Composition resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the Composition resource',
@@ -623,6 +647,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -635,6 +660,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'get-encoder-configuration',
       description: 'Gets information about the specified EncoderConfiguration resource',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the EncoderConfiguration resource',
@@ -660,6 +686,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -672,6 +699,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'get-ingest-configuration',
       description: 'Gets information about the specified IngestConfiguration',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the ingest for which the information is to be retrieved',
@@ -697,6 +725,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -709,6 +738,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'get-participant',
       description: 'Gets information about the specified participant token',
       options: [
+
         Option(
           name: '--stage-arn',
           description: 'Stage ARN',
@@ -752,6 +782,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -764,6 +795,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'get-public-key',
       description: 'Gets information for the specified public key',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the public key for which the information is to be retrieved',
@@ -789,6 +821,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -801,6 +834,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'get-stage',
       description: 'Gets information for the specified stage',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the stage for which the information is to be retrieved',
@@ -826,6 +860,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -838,6 +873,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'get-stage-session',
       description: 'Gets information for the specified stage session',
       options: [
+
         Option(
           name: '--stage-arn',
           description: 'ARN of the stage for which the information is to be retrieved',
@@ -872,6 +908,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -884,6 +921,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'get-storage-configuration',
       description: 'Gets the storage configuration for the specified ARN',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the storage configuration to be retrieved',
@@ -909,6 +947,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -921,6 +960,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'import-public-key',
       description: 'Import a public key to be used for signing stage participant tokens',
       options: [
+
         Option(
           name: '--public-key-material',
           description: 'The content of the public key to be imported',
@@ -964,6 +1004,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -976,6 +1017,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'list-compositions',
       description: 'Gets summary information about all Compositions in your account, in the AWS region where the API request is processed',
       options: [
+
         Option(
           name: '--filter-by-stage-arn',
           description: 'Filters the Composition list to match the specified Stage ARN',
@@ -1028,6 +1070,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1040,6 +1083,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'list-encoder-configurations',
       description: 'Gets summary information about all EncoderConfigurations in your account, in the AWS region where the API request is processed',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The first encoder configuration to retrieve. This is used for pagination; see the nextToken response field',
@@ -1074,6 +1118,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1086,6 +1131,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'list-ingest-configurations',
       description: 'Lists all IngestConfigurations in your account, in the AWS region where the API request is processed',
       options: [
+
         Option(
           name: '--filter-by-stage-arn',
           description: 'Filters the response list to match the specified stage ARN. Only one filter (by stage ARN or by state) can be used at a time',
@@ -1165,6 +1211,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1177,6 +1224,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'list-participant-events',
       description: 'Lists events for a specified participant that occurred during a specified stage session',
       options: [
+
         Option(
           name: '--stage-arn',
           description: 'Stage ARN',
@@ -1238,6 +1286,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1250,6 +1299,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'list-participants',
       description: 'Lists all participants in a specified stage session',
       options: [
+
         Option(
           name: '--stage-arn',
           description: 'Stage ARN',
@@ -1337,6 +1387,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1349,6 +1400,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'list-public-keys',
       description: 'Gets summary information about all public keys in your account, in the AWS region where the API request is processed',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The first public key to retrieve. This is used for pagination; see the nextToken response field',
@@ -1410,6 +1462,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1422,6 +1475,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'list-stage-sessions',
       description: 'Gets all sessions for a specified stage',
       options: [
+
         Option(
           name: '--stage-arn',
           description: 'Stage ARN',
@@ -1465,6 +1519,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1477,6 +1532,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'list-stages',
       description: 'Gets summary information about all stages in your account, in the AWS region where the API request is processed',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The first stage to retrieve. This is used for pagination; see the nextToken response field',
@@ -1511,6 +1567,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1523,6 +1580,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'list-storage-configurations',
       description: 'Gets summary information about all storage configurations in your account, in the AWS region where the API request is processed',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The first storage configuration to retrieve. This is used for pagination; see the nextToken response field',
@@ -1557,6 +1615,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1569,6 +1628,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets information about AWS tags for the specified ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to be retrieved. The ARN must be URL-encoded',
@@ -1594,6 +1654,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1606,6 +1667,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'start-composition',
       description: 'Starts a Composition from a stage based on the configuration provided in the request. A Composition is an ephemeral resource that exists after this operation returns successfully. Composition stops and the resource is deleted:   When StopComposition is called.   After a 1-minute timeout, when all participants are disconnected from the stage.   After a 1-minute timeout, if there are no participants in the stage when StartComposition is called.   When broadcasting to the IVS channel fails and all retries are exhausted.   When broadcasting is disconnected and all attempts to reconnect are exhausted',
       options: [
+
         Option(
           name: '--stage-arn',
           description: 'ARN of the stage to be used for compositing',
@@ -1667,6 +1729,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1679,6 +1742,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'stop-composition',
       description: 'Stops and deletes a Composition resource. Any broadcast from the Composition resource is stopped',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the Composition',
@@ -1704,6 +1768,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1716,6 +1781,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds or updates tags for the AWS resource with the specified ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to be tagged. The ARN must be URL-encoded',
@@ -1750,6 +1816,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1762,6 +1829,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the resource with the specified ARN',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource to be untagged. The ARN must be URL-encoded',
@@ -1796,6 +1864,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1808,6 +1877,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'update-ingest-configuration',
       description: 'Updates a specified IngestConfiguration. Only the stage ARN attached to the IngestConfiguration can be updated. An IngestConfiguration that is active cannot be updated',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the IngestConfiguration, for which the related stage ARN needs to be updated',
@@ -1842,6 +1912,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1854,6 +1925,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
       name: 'update-stage',
       description: 'Updates a stage’s configuration',
       options: [
+
         Option(
           name: '--arn',
           description: 'ARN of the stage to be updated',
@@ -1897,6 +1969,7 @@ final FigSpec ivsRealtimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

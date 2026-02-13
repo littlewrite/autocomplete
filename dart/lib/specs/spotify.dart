@@ -9,6 +9,7 @@ final FigSpec spotifySpec = FigSpec(
   name: 'spotify',
   description: 'CLI to use Spotify from the terminal',
   subcommands: [
+
     Subcommand(
       name: 'play',
       description: 'Resume playback where Spotify last left off',
@@ -20,6 +21,7 @@ final FigSpec spotifySpec = FigSpec(
       )
       ],
       subcommands: [
+
         Subcommand(
           name: 'album',
           description: 'Find an album by name and play it',
@@ -105,6 +107,7 @@ final FigSpec spotifySpec = FigSpec(
         description: 'Set the volume to an amount between 0 and 100',
         isOptional: true,
         suggestions: [
+
           FigSuggestion(
             name: 'up',
             description: 'Increase the volume by 10%'
@@ -121,6 +124,7 @@ final FigSpec spotifySpec = FigSpec(
       name: 'status',
       description: 'Show the current player status',
       subcommands: [
+
         Subcommand(
           name: 'artist',
           description: 'Show the currently playing artist'
@@ -139,6 +143,7 @@ final FigSpec spotifySpec = FigSpec(
       name: 'share',
       description: 'Display the current song\'s Spotify URL and URI',
       subcommands: [
+
         Subcommand(
           name: 'url',
           description: 'Display the current song\'s Spotify URL and copies it to the clipboard'
@@ -152,6 +157,7 @@ final FigSpec spotifySpec = FigSpec(
     Subcommand(
       name: 'toggle',
       subcommands: [
+
         Subcommand(
           name: 'shuffle',
           description: 'Toggle shuffle playback mode'
@@ -164,6 +170,7 @@ final FigSpec spotifySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for spotify'

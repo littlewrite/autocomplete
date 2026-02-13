@@ -9,6 +9,7 @@ final FigSpec figtermSpec = FigSpec(
   name: 'figterm',
   description: 'Fig\'s terminal layer',
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Print help information'

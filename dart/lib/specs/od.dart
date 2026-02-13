@@ -12,12 +12,14 @@ final FigSpec odSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   options: [
+
     Option(
       name: '-A',
       args: [
         Arg(
         name: 'base',
         suggestions: [
+
           FigSuggestion(name: 'd'),
           FigSuggestion(name: 'o'),
           FigSuggestion(name: 'x'),
@@ -106,6 +108,7 @@ final FigSpec odSpec = FigSpec(
         Arg(
         name: 'type',
         suggestions: [
+
           FigSuggestion(name: 'a'),
           FigSuggestion(name: 'c'),
           FigSuggestion(name: 'dC'),
@@ -142,10 +145,12 @@ final FigSpec odSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: '[+]offset[.][Bb]',
       description: 'Offset',
       suggestions: [
+
         FigSuggestion(name: '+0b')
       ],
       defaultValue: '+0b',

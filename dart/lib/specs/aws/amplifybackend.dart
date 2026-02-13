@@ -9,10 +9,12 @@ final FigSpec amplifybackendSpec = FigSpec(
   name: 'amplifybackend',
   description: 'AWS Amplify Admin API',
   subcommands: [
+
     Subcommand(
       name: 'clone-backend',
       description: 'This operation clones an existing backend',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -56,6 +58,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'create-backend',
       description: 'This operation creates a backend for an Amplify app. Backends are automatically created at the time of app creation',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -129,6 +133,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -141,6 +146,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'create-backend-api',
       description: 'Creates a new backend API resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -193,6 +199,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -205,6 +212,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'create-backend-auth',
       description: 'Creates a new backend authentication resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -257,6 +265,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -269,6 +278,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'create-backend-config',
       description: 'Creates a config object for a backend',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -303,6 +313,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -315,6 +326,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'create-backend-storage',
       description: 'Creates a backend storage resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -367,6 +379,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -379,6 +392,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'create-token',
       description: 'Generates a one-time challenge code to authenticate a user into your Amplify Admin UI',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -404,6 +418,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +431,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'delete-backend',
       description: 'Removes an existing environment from your Amplify project',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -450,6 +466,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -462,6 +479,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'delete-backend-api',
       description: 'Deletes an existing backend API resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -514,6 +532,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -526,6 +545,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'delete-backend-auth',
       description: 'Deletes an existing backend authentication resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -569,6 +589,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -581,6 +602,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'delete-backend-storage',
       description: 'Removes the specified backend storage resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -633,6 +655,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -645,6 +668,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'delete-token',
       description: 'Deletes the challenge token based on the given appId and sessionId',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -679,6 +703,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -691,6 +716,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'generate-backend-api-models',
       description: 'Generates a model schema for an existing backend API resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -734,6 +760,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -746,6 +773,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'get-backend',
       description: 'Provides project-level details for your Amplify UI project',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -780,6 +808,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -792,6 +821,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'get-backend-api',
       description: 'Gets the details for a backend API',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -844,6 +874,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -856,6 +887,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'get-backend-api-models',
       description: 'Gets a model introspection schema for an existing backend API resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -899,6 +931,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -911,6 +944,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'get-backend-auth',
       description: 'Gets a backend auth details',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -954,6 +988,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -966,6 +1001,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'get-backend-job',
       description: 'Returns information about a specific job',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1009,6 +1045,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1021,6 +1058,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'get-backend-storage',
       description: 'Gets details for a backend storage resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1064,6 +1102,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1076,6 +1115,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'get-token',
       description: 'Gets the challenge token based on the given appId and sessionId',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1110,6 +1150,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1122,6 +1163,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'import-backend-auth',
       description: 'Imports an existing backend authentication resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1192,6 +1234,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1204,6 +1247,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'import-backend-storage',
       description: 'Imports an existing backend storage resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1256,6 +1300,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1268,6 +1313,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'list-backend-jobs',
       description: 'Lists the jobs for the backend of an Amplify app',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1374,6 +1420,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1386,6 +1433,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'list-s3-buckets',
       description: 'The list of S3 buckets in your account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'Reserved for future use',
@@ -1411,6 +1459,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1423,6 +1472,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'remove-all-backends',
       description: 'Removes all backend environments from your Amplify project',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1456,6 +1506,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1468,6 +1519,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'remove-backend-config',
       description: 'Removes the AWS resources required to access the Amplify Admin UI',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1493,6 +1545,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1505,6 +1558,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'update-backend-api',
       description: 'Updates an existing backend API resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1557,6 +1611,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1569,6 +1624,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'update-backend-auth',
       description: 'Updates an existing backend authentication resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1621,6 +1677,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1633,6 +1690,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'update-backend-config',
       description: 'Updates the AWS resources required to access the Amplify Admin UI',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1667,6 +1725,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1679,6 +1738,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'update-backend-job',
       description: 'Updates a specific job',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1740,6 +1800,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1752,6 +1813,7 @@ final FigSpec amplifybackendSpec = FigSpec(
       name: 'update-backend-storage',
       description: 'Updates an existing backend storage resource',
       options: [
+
         Option(
           name: '--app-id',
           description: 'The app ID',
@@ -1804,6 +1866,7 @@ final FigSpec amplifybackendSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

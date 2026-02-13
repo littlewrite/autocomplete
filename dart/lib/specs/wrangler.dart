@@ -9,9 +9,11 @@ final FigSpec wranglerSpec = FigSpec(
   name: 'wrangler',
   description: 'Wrangler CLI for Cloudflare Workers',
   subcommands: [
+
     Subcommand(
       name: 'generate',
       args: [
+
         Arg(
           name: 'name',
           isOptional: true,
@@ -23,6 +25,7 @@ final FigSpec wranglerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-s', '--site'],
           args: [
@@ -50,6 +53,7 @@ final FigSpec wranglerSpec = FigSpec(
       description: 'Interact with your Workers KV Namespaces',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a new namespace',
@@ -74,6 +78,7 @@ final FigSpec wranglerSpec = FigSpec(
       description: 'Individually manage Workers KV key-value',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete a key and its value from a namespace',
@@ -84,6 +89,7 @@ final FigSpec wranglerSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['-b', '--binding'],
               args: [
@@ -137,6 +143,7 @@ final FigSpec wranglerSpec = FigSpec(
       description: 'Interact with multiple Workers KV key-value pairs at once',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete multiple keys and their values from a namespace',
@@ -167,6 +174,7 @@ final FigSpec wranglerSpec = FigSpec(
       description: 'List or delete worker routes',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete a route by ID',
@@ -187,6 +195,7 @@ final FigSpec wranglerSpec = FigSpec(
       description: 'Generate a secret that can be referenced in the worker script',
       options: [],
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete a secret variable from a script',
@@ -222,6 +231,7 @@ final FigSpec wranglerSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: ['-s', '--site']
         ),
@@ -246,10 +256,12 @@ final FigSpec wranglerSpec = FigSpec(
       name: 'preview',
       description: 'Preview your code temporarily on cloudflareworkers.com',
       args: [
+
         Arg(
           name: 'method',
           isOptional: true,
           suggestions: [
+
             FigSuggestion(name: 'get'),
             FigSuggestion(name: 'post')
           ]
@@ -261,6 +273,7 @@ final FigSpec wranglerSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--headless',
           description: 'Don\'t open the browser on preview'
@@ -277,6 +290,7 @@ final FigSpec wranglerSpec = FigSpec(
       name: 'dev',
       description: 'Start a local server for developing your worker',
       options: [
+
         Option(
           name: ['-h', '--host'],
           args: [
@@ -312,6 +326,7 @@ final FigSpec wranglerSpec = FigSpec(
         Arg(
         name: 'output',
         suggestions: [
+
           FigSuggestion(name: 'json')
         ],
         description: '[possible values: json]',
@@ -319,6 +334,7 @@ final FigSpec wranglerSpec = FigSpec(
       )
       ],
       options: [
+
         Option(
           name: '--delete-class',
           args: [
@@ -361,6 +377,7 @@ final FigSpec wranglerSpec = FigSpec(
       name: 'config',
       description: 'Authenticate Wrangler with a Cloudflare API Token or Global API Key',
       options: [
+
         Option(
           name: '--api-key',
           description: 'Use an email and global API key for authentication. This is not recommended; use API tokens (the default) if possible'
@@ -391,12 +408,14 @@ final FigSpec wranglerSpec = FigSpec(
       name: 'tail',
       description: 'Aggregate logs from production worker',
       options: [
+
         Option(
           name: ['-f', '--format'],
           args: [
             Arg(
             name: 'format',
             suggestions: [
+
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'pretty')
             ]
@@ -433,6 +452,7 @@ final FigSpec wranglerSpec = FigSpec(
       name: 'report',
       description: 'Report an error caught by Wrangler to Cloudflare',
       options: [
+
         Option(
           name: 'log',
           args: [
@@ -456,6 +476,7 @@ final FigSpec wranglerSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-V', '--version'],
       description: 'Prints version information'

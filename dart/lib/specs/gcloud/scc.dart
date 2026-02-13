@@ -9,14 +9,17 @@ final FigSpec sccSpec = FigSpec(
   name: 'scc',
   description: 'Manage Cloud SCC resources',
   subcommands: [
+
     Subcommand(
       name: 'assets',
       description: 'Manage Cloud SCC assets',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe an asset given its resource name or asset id',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -162,6 +165,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -184,6 +188,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'get-parent',
           description: 'Get the Parent for an asset given its resource name or asset id',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -329,6 +334,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -351,6 +357,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'get-project',
           description: 'Get the Project for an asset given its resource name or asset id',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -496,6 +503,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -518,6 +526,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'group',
           description: 'Filter an organization\'s assets and groups them by their specified properties',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -707,6 +716,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -729,6 +739,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Security Command Center assets',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -951,6 +962,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -973,6 +985,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'list-marks',
           description: 'List an assets\'s security marks',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1173,6 +1186,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1195,6 +1209,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'run-discovery',
           description: 'Scan an organization for new/modified/deleted assets',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1318,6 +1333,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1340,6 +1356,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'update-marks',
           description: 'Update Cloud Security Command Center asset\'s security marks',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1507,6 +1524,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1527,6 +1545,7 @@ final FigSpec sccSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1650,6 +1669,7 @@ final FigSpec sccSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1666,10 +1686,12 @@ final FigSpec sccSpec = FigSpec(
       name: 'findings',
       description: 'Manage Cloud SCC findings',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Cloud Security Command Center finding',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1857,6 +1879,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'STATE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'active'),
                   FigSuggestion(name: 'inactive'),
                   FigSuggestion(name: 'state-unspecified')
@@ -1887,6 +1910,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1909,6 +1933,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'group',
           description: 'Filter an organization or source\'s findings and groups them by their specified properties',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2109,6 +2134,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2131,6 +2157,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'list',
           description: 'List an organization or source\'s findings',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2364,6 +2391,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2386,6 +2414,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'list-marks',
           description: 'List a finding\'s security marks',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2597,6 +2626,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2619,6 +2649,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Security Command Center finding',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2782,6 +2813,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'STATE',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'active'),
                   FigSuggestion(name: 'inactive'),
                   FigSuggestion(name: 'state-unspecified')
@@ -2823,6 +2855,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2845,6 +2878,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'update-marks',
           description: 'Update Cloud Security Command Center finding\'s security marks',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3023,6 +3057,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3043,6 +3078,7 @@ final FigSpec sccSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3166,6 +3202,7 @@ final FigSpec sccSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3182,10 +3219,12 @@ final FigSpec sccSpec = FigSpec(
       name: 'notifications',
       description: 'Manage Cloud SCC notifications',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a Cloud Security Command Center notification config',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3354,6 +3393,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3376,6 +3416,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'delete',
           description: 'Delete a Cloud Security Command Center notification config',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3510,6 +3551,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3532,6 +3574,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'describe',
           description: 'Describe a Cloud Security Command Center notification config',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3666,6 +3709,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3688,6 +3732,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'list',
           description: 'List Cloud Security Command Center notification configs',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3855,6 +3900,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3877,6 +3923,7 @@ final FigSpec sccSpec = FigSpec(
           name: 'update',
           description: 'Update a Cloud Security Command Center notification config',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4044,6 +4091,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4064,6 +4112,7 @@ final FigSpec sccSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4187,6 +4236,7 @@ final FigSpec sccSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4203,10 +4253,12 @@ final FigSpec sccSpec = FigSpec(
       name: 'operations',
       description: 'Manage Cloud SCC operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a Cloud SCC\'s long running scan operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4341,6 +4393,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4361,6 +4414,7 @@ final FigSpec sccSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4484,6 +4538,7 @@ final FigSpec sccSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4500,10 +4555,12 @@ final FigSpec sccSpec = FigSpec(
       name: 'sources',
       description: 'Manage Cloud SCC finding sources',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe a source given its display name or source id',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4649,6 +4706,7 @@ final FigSpec sccSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4669,6 +4727,7 @@ final FigSpec sccSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4792,6 +4851,7 @@ final FigSpec sccSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -4806,6 +4866,7 @@ final FigSpec sccSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4929,6 +4990,7 @@ final FigSpec sccSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

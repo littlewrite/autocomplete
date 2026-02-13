@@ -9,10 +9,12 @@ final FigSpec rolesanywhereSpec = FigSpec(
   name: 'rolesanywhere',
   description: 'Identity and Access Management Roles Anywhere provides a secure way for your workloads such as servers, containers, and applications that run outside of Amazon Web Services to obtain temporary Amazon Web Services credentials. Your workloads can use the same IAM policies and roles you have for native Amazon Web Services applications to access Amazon Web Services resources. Using IAM Roles Anywhere eliminates the need to manage long-term credentials for workloads running outside of Amazon Web Services.  To use IAM Roles Anywhere, your workloads must use X.509 certificates issued by their certificate authority (CA). You register the CA with IAM Roles Anywhere as a trust anchor to establish trust between your public key infrastructure (PKI) and IAM Roles Anywhere. If you don\'t manage your own PKI system, you can use Private Certificate Authority to create a CA and then use that to establish trust with IAM Roles Anywhere.  This guide describes the IAM Roles Anywhere operations that you can call programmatically. For more information about IAM Roles Anywhere, see the IAM Roles Anywhere User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-profile',
       description: 'Creates a profile, a list of the roles that Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.  Required permissions:  rolesanywhere:CreateProfile',
       options: [
+
         Option(
           name: '--accept-role-session-name',
           description: 'Used to determine if a custom role session name will be accepted in a temporary credential request'
@@ -107,6 +109,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -119,6 +122,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'create-trust-anchor',
       description: 'Creates a trust anchor to establish trust between IAM Roles Anywhere and your certificate authority (CA). You can define a trust anchor as a reference to an Private Certificate Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services workloads can authenticate with the trust anchor using certificates issued by the CA in exchange for temporary Amazon Web Services credentials.  Required permissions:  rolesanywhere:CreateTrustAnchor',
       options: [
+
         Option(
           name: '--enabled',
           description: 'Specifies whether the trust anchor is enabled'
@@ -179,6 +183,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -191,6 +196,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'delete-attribute-mapping',
       description: 'Delete an entry from the attribute mapping rules enforced by a given profile',
       options: [
+
         Option(
           name: '--certificate-field',
           description: 'Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates',
@@ -234,6 +240,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -246,6 +253,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'delete-crl',
       description: 'Deletes a certificate revocation list (CRL).  Required permissions:  rolesanywhere:DeleteCrl',
       options: [
+
         Option(
           name: '--crl-id',
           description: 'The unique identifier of the certificate revocation list (CRL)',
@@ -271,6 +279,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -283,6 +292,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'delete-profile',
       description: 'Deletes a profile.  Required permissions:  rolesanywhere:DeleteProfile',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'The unique identifier of the profile',
@@ -308,6 +318,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -320,6 +331,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'delete-trust-anchor',
       description: 'Deletes a trust anchor.  Required permissions:  rolesanywhere:DeleteTrustAnchor',
       options: [
+
         Option(
           name: '--trust-anchor-id',
           description: 'The unique identifier of the trust anchor',
@@ -345,6 +357,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -357,6 +370,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'disable-crl',
       description: 'Disables a certificate revocation list (CRL).  Required permissions:  rolesanywhere:DisableCrl',
       options: [
+
         Option(
           name: '--crl-id',
           description: 'The unique identifier of the certificate revocation list (CRL)',
@@ -382,6 +396,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -394,6 +409,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'disable-profile',
       description: 'Disables a profile. When disabled, temporary credential requests with this profile fail.  Required permissions:  rolesanywhere:DisableProfile',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'The unique identifier of the profile',
@@ -419,6 +435,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -431,6 +448,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'disable-trust-anchor',
       description: 'Disables a trust anchor. When disabled, temporary credential requests specifying this trust anchor are unauthorized.  Required permissions:  rolesanywhere:DisableTrustAnchor',
       options: [
+
         Option(
           name: '--trust-anchor-id',
           description: 'The unique identifier of the trust anchor',
@@ -456,6 +474,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -468,6 +487,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'enable-crl',
       description: 'Enables a certificate revocation list (CRL). When enabled, certificates stored in the CRL are unauthorized to receive session credentials.  Required permissions:  rolesanywhere:EnableCrl',
       options: [
+
         Option(
           name: '--crl-id',
           description: 'The unique identifier of the certificate revocation list (CRL)',
@@ -493,6 +513,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -505,6 +526,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'enable-profile',
       description: 'Enables temporary credential requests for a profile.   Required permissions:  rolesanywhere:EnableProfile',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'The unique identifier of the profile',
@@ -530,6 +552,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -542,6 +565,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'enable-trust-anchor',
       description: 'Enables a trust anchor. When enabled, certificates in the trust anchor chain are authorized for trust validation.   Required permissions:  rolesanywhere:EnableTrustAnchor',
       options: [
+
         Option(
           name: '--trust-anchor-id',
           description: 'The unique identifier of the trust anchor',
@@ -567,6 +591,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -579,6 +604,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'get-crl',
       description: 'Gets a certificate revocation list (CRL).  Required permissions:  rolesanywhere:GetCrl',
       options: [
+
         Option(
           name: '--crl-id',
           description: 'The unique identifier of the certificate revocation list (CRL)',
@@ -604,6 +630,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -616,6 +643,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'get-profile',
       description: 'Gets a profile.  Required permissions:  rolesanywhere:GetProfile',
       options: [
+
         Option(
           name: '--profile-id',
           description: 'The unique identifier of the profile',
@@ -641,6 +669,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -653,6 +682,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'get-subject',
       description: 'Gets a subject, which associates a certificate identity with authentication attempts. The subject stores auditing information such as the status of the last authentication attempt, the certificate data used in the attempt, and the last time the associated identity attempted authentication.   Required permissions:  rolesanywhere:GetSubject',
       options: [
+
         Option(
           name: '--subject-id',
           description: 'The unique identifier of the subject',
@@ -678,6 +708,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -690,6 +721,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'get-trust-anchor',
       description: 'Gets a trust anchor.  Required permissions:  rolesanywhere:GetTrustAnchor',
       options: [
+
         Option(
           name: '--trust-anchor-id',
           description: 'The unique identifier of the trust anchor',
@@ -715,6 +747,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -727,6 +760,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'import-crl',
       description: 'Imports the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the issuing certificate Authority (CA).In order to be properly imported, a CRL must be in PEM format. IAM Roles Anywhere validates against the CRL before issuing credentials.   Required permissions:  rolesanywhere:ImportCrl',
       options: [
+
         Option(
           name: '--crl-data',
           description: 'The x509 v3 specified certificate revocation list (CRL)',
@@ -787,6 +821,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -799,6 +834,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'list-crls',
       description: 'Lists all certificate revocation lists (CRL) in the authenticated account and Amazon Web Services Region.  Required permissions:  rolesanywhere:ListCrls',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value',
@@ -851,6 +887,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -863,6 +900,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'list-profiles',
       description: 'Lists all profiles in the authenticated account and Amazon Web Services Region.  Required permissions:  rolesanywhere:ListProfiles',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value',
@@ -915,6 +953,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -927,6 +966,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'list-subjects',
       description: 'Lists the subjects in the authenticated account and Amazon Web Services Region.  Required permissions:  rolesanywhere:ListSubjects',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value',
@@ -979,6 +1019,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -991,6 +1032,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags attached to the resource.  Required permissions:  rolesanywhere:ListTagsForResource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -1016,6 +1058,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1028,6 +1071,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'list-trust-anchors',
       description: 'Lists the trust anchors in the authenticated account and Amazon Web Services Region.  Required permissions:  rolesanywhere:ListTrustAnchors',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value',
@@ -1080,6 +1124,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1092,6 +1137,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'put-attribute-mapping',
       description: 'Put an entry in the attribute mapping rules that will be enforced by a given profile. A mapping specifies a certificate field and one or more specifiers that have contextual meanings',
       options: [
+
         Option(
           name: '--certificate-field',
           description: 'Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates',
@@ -1135,6 +1181,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1147,6 +1194,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'put-notification-settings',
       description: 'Attaches a list of notification settings to a trust anchor. A notification setting includes information such as event name, threshold, status of the notification setting, and the channel to notify.  Required permissions:  rolesanywhere:PutNotificationSettings',
       options: [
+
         Option(
           name: '--notification-settings',
           description: 'A list of notification settings to be associated to the trust anchor',
@@ -1181,6 +1229,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1193,6 +1242,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'reset-notification-settings',
       description: 'Resets the custom notification setting to IAM Roles Anywhere default setting.   Required permissions:  rolesanywhere:ResetNotificationSettings',
       options: [
+
         Option(
           name: '--notification-setting-keys',
           description: 'A list of notification setting keys to reset. A notification setting key includes the event and the channel',
@@ -1227,6 +1277,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1239,6 +1290,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'tag-resource',
       description: 'Attaches tags to a resource.  Required permissions:  rolesanywhere:TagResource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -1273,6 +1325,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1285,6 +1338,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes tags from the resource.  Required permissions:  rolesanywhere:UntagResource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the resource',
@@ -1319,6 +1373,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1331,6 +1386,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'update-crl',
       description: 'Updates the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the issuing certificate authority (CA). IAM Roles Anywhere validates against the CRL before issuing credentials.  Required permissions:  rolesanywhere:UpdateCrl',
       options: [
+
         Option(
           name: '--crl-data',
           description: 'The x509 v3 specified certificate revocation list (CRL)',
@@ -1374,6 +1430,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1386,6 +1443,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'update-profile',
       description: 'Updates a profile, a list of the roles that IAM Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.  Required permissions:  rolesanywhere:UpdateProfile',
       options: [
+
         Option(
           name: '--accept-role-session-name',
           description: 'Used to determine if a custom role session name will be accepted in a temporary credential request'
@@ -1464,6 +1522,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1476,6 +1535,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
       name: 'update-trust-anchor',
       description: 'Updates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate authority (CA) by configuring a trust anchor. You can define a trust anchor as a reference to an Private Certificate Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services workloads can authenticate with the trust anchor using certificates issued by the CA in exchange for temporary Amazon Web Services credentials.  Required permissions:  rolesanywhere:UpdateTrustAnchor',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the trust anchor',
@@ -1519,6 +1579,7 @@ final FigSpec rolesanywhereSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

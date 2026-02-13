@@ -12,6 +12,7 @@ final FigSpec fmtSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   options: [
+
     Option(
       name: '-c'
     ),
@@ -33,6 +34,7 @@ final FigSpec fmtSpec = FigSpec(
         Arg(
         name: 'chars',
         suggestions: [
+
           FigSuggestion(name: '.'),
           FigSuggestion(name: '?'),
           FigSuggestion(name: '!')
@@ -47,6 +49,7 @@ final FigSpec fmtSpec = FigSpec(
         Arg(
         name: 'number',
         suggestions: [
+
           FigSuggestion(name: '8')
         ],
         defaultValue: '8'
@@ -59,6 +62,7 @@ final FigSpec fmtSpec = FigSpec(
         Arg(
         name: 'number',
         suggestions: [
+
           FigSuggestion(name: '8')
         ],
         defaultValue: '8'

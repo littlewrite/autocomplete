@@ -9,6 +9,7 @@ final FigSpec mailsySpec = FigSpec(
   name: 'mailsy',
   description: '⚡️ Quickly generate a disposable email straight from terminal',
   subcommands: [
+
     Subcommand(
       name: 'g',
       description: 'Generate a new email'
@@ -38,6 +39,7 @@ final FigSpec mailsySpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-v', '--version'],
       description: 'Output the current version'

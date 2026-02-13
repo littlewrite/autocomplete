@@ -9,18 +9,22 @@ final FigSpec artifactsSpec = FigSpec(
   name: 'artifacts',
   description: 'Manage Artifact Registry resources',
   subcommands: [
+
     Subcommand(
       name: 'docker',
       description: 'Manage Artifact Registry container images and tags',
       subcommands: [
+
         Subcommand(
           name: 'images',
           description: 'Manage Artifact Registry container images',
           subcommands: [
+
             Subcommand(
               name: 'delete',
               description: 'Delete an Artifact Registry container image',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -152,6 +156,7 @@ final FigSpec artifactsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -174,6 +179,7 @@ final FigSpec artifactsSpec = FigSpec(
               name: 'describe',
               description: 'Describe an Artifact Registry container image',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -328,6 +334,7 @@ final FigSpec artifactsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -350,6 +357,7 @@ final FigSpec artifactsSpec = FigSpec(
               name: 'list',
               description: 'List Artifact Registry container images',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -547,6 +555,7 @@ final FigSpec artifactsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -567,6 +576,7 @@ final FigSpec artifactsSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -690,6 +700,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -706,10 +717,12 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'tags',
           description: 'Manage Artifact Registry container image tags',
           subcommands: [
+
             Subcommand(
               name: 'add',
               description: 'Add a tag to a container image in Artifact Registry',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -833,6 +846,7 @@ final FigSpec artifactsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -845,6 +859,7 @@ final FigSpec artifactsSpec = FigSpec(
                 )
               ],
               args: [
+
                 Arg(
                   name: 'DOCKER_IMAGE',
                   description: 'Docker image - The container image that you want to tag.\n+\nA valid container image can be referenced by tag or digest, has the format of\n  LOCATION-docker.pkg.dev/PROJECT-ID/REPOSITORY-ID/IMAGE:tag\n  LOCATION-docker.pkg.dev/PROJECT-ID/REPOSITORY-ID/IMAGE@sha256:digest'
@@ -859,6 +874,7 @@ final FigSpec artifactsSpec = FigSpec(
               name: 'delete',
               description: 'Delete a tag from a container image in Artifact Registry',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -982,6 +998,7 @@ final FigSpec artifactsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1004,6 +1021,7 @@ final FigSpec artifactsSpec = FigSpec(
               name: 'list',
               description: 'List all tags associated with a container image in Artifact Registry',
               options: [
+
                 Option(
                   name: '--account',
                   description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1171,6 +1189,7 @@ final FigSpec artifactsSpec = FigSpec(
                     name: 'VERBOSITY',
                     description: 'String',
                     suggestions: [
+
                       FigSuggestion(name: 'debug'),
                       FigSuggestion(name: 'info'),
                       FigSuggestion(name: 'warning'),
@@ -1191,6 +1210,7 @@ final FigSpec artifactsSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1314,6 +1334,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1328,6 +1349,7 @@ final FigSpec artifactsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1451,6 +1473,7 @@ final FigSpec artifactsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1467,10 +1490,12 @@ final FigSpec artifactsSpec = FigSpec(
       name: 'locations',
       description: 'Manage Artifact Registry resource locations',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List all Artifact Registry supported locations',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1638,6 +1663,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1652,6 +1678,7 @@ final FigSpec artifactsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1775,6 +1802,7 @@ final FigSpec artifactsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -1791,10 +1819,12 @@ final FigSpec artifactsSpec = FigSpec(
       name: 'operations',
       description: 'Manage Artifact Registry long-running operations',
       subcommands: [
+
         Subcommand(
           name: 'describe',
           description: 'Describe an Artifact Registry operation',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -1929,6 +1959,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -1949,6 +1980,7 @@ final FigSpec artifactsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2072,6 +2104,7 @@ final FigSpec artifactsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2088,10 +2121,12 @@ final FigSpec artifactsSpec = FigSpec(
       name: 'packages',
       description: 'Manage Artifact Registry packages',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete an Artifact Registry package',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2241,6 +2276,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2263,6 +2299,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'list',
           description: 'List Artifact Registry packages',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2452,6 +2489,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2466,6 +2504,7 @@ final FigSpec artifactsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2589,6 +2628,7 @@ final FigSpec artifactsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -2605,10 +2645,12 @@ final FigSpec artifactsSpec = FigSpec(
       name: 'print-settings',
       description: 'Print snippets to add to native tools settings files',
       subcommands: [
+
         Subcommand(
           name: 'gradle',
           description: 'Print a snippet to add a repository to the Gradle build.gradle file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2766,6 +2808,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2782,6 +2825,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'mvn',
           description: 'Print a snippet to add a Maven repository to the pom.xml file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -2939,6 +2983,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -2955,6 +3000,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'npm',
           description: 'Print credential settings to add to the .npmrc file',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3123,6 +3169,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3137,6 +3184,7 @@ final FigSpec artifactsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3260,6 +3308,7 @@ final FigSpec artifactsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -3276,10 +3325,12 @@ final FigSpec artifactsSpec = FigSpec(
       name: 'repositories',
       description: 'Manage Artifact Registry repositories',
       subcommands: [
+
         Subcommand(
           name: 'add-iam-policy-binding',
           description: 'Add an IAM policy binding to the IAM policy of an Artifact Registry repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3460,6 +3511,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3482,6 +3534,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'create',
           description: 'Create an Artifact Registry repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3638,6 +3691,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'REPOSITORY_FORMAT',
                 description: 'Googlecloudsdk.command_lib.util.apis.arg_utils:EnumNameToChoice',
                 suggestions: [
+
                   FigSuggestion(name: 'apt'),
                   FigSuggestion(name: 'docker'),
                   FigSuggestion(name: 'maven'),
@@ -3670,6 +3724,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3692,6 +3747,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'delete',
           description: 'Delete an Artifact Registry repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3830,6 +3886,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -3852,6 +3909,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'describe',
           description: 'Describe an Artifact Registry repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -3986,6 +4044,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4008,6 +4067,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'get-iam-policy',
           description: 'Get IAM policy for an Artifact Registry repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4186,6 +4246,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4208,6 +4269,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'list',
           description: 'List repositories in the specified project',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4387,6 +4449,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4403,6 +4466,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'remove-iam-policy-binding',
           description: 'Remove an IAM policy binding from the IAM policy of an Artifact Registry repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4587,6 +4651,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4609,6 +4674,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'set-iam-policy',
           description: 'Set the IAM policy for an Artifact Registry repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4743,6 +4809,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4755,6 +4822,7 @@ final FigSpec artifactsSpec = FigSpec(
             )
           ],
           args: [
+
             Arg(
               name: 'REPOSITORY',
               description: 'ID of the repository or fully qualified identifier for the repository'
@@ -4769,6 +4837,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'update',
           description: 'Update an Artifact Registry repository',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -4940,6 +5009,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -4960,6 +5030,7 @@ final FigSpec artifactsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5083,6 +5154,7 @@ final FigSpec artifactsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -5099,10 +5171,12 @@ final FigSpec artifactsSpec = FigSpec(
       name: 'tags',
       description: 'Manage Artifact Registry tags',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create an Artifact Registry tag',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5259,6 +5333,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5281,6 +5356,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'delete',
           description: 'Delete an Artifact Registry tag',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5437,6 +5513,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5459,6 +5536,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'list',
           description: 'List Artifact Registry tags',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5660,6 +5738,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5676,6 +5755,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'update',
           description: 'Update an Artifact Registry tag',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5832,6 +5912,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -5852,6 +5933,7 @@ final FigSpec artifactsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -5975,6 +6057,7 @@ final FigSpec artifactsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -5991,10 +6074,12 @@ final FigSpec artifactsSpec = FigSpec(
       name: 'versions',
       description: 'Manage Artifact Registry package versions',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete an Artifact Registry package version',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6159,6 +6244,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6181,6 +6267,7 @@ final FigSpec artifactsSpec = FigSpec(
           name: 'list',
           description: 'List Artifact Registry package versions',
           options: [
+
             Option(
               name: '--account',
               description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6382,6 +6469,7 @@ final FigSpec artifactsSpec = FigSpec(
                 name: 'VERBOSITY',
                 description: 'String',
                 suggestions: [
+
                   FigSuggestion(name: 'debug'),
                   FigSuggestion(name: 'info'),
                   FigSuggestion(name: 'warning'),
@@ -6396,6 +6484,7 @@ final FigSpec artifactsSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: '--account',
           description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6519,6 +6608,7 @@ final FigSpec artifactsSpec = FigSpec(
             name: 'VERBOSITY',
             description: 'String',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'info'),
               FigSuggestion(name: 'warning'),
@@ -6533,6 +6623,7 @@ final FigSpec artifactsSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -6656,6 +6747,7 @@ final FigSpec artifactsSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

@@ -9,10 +9,12 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
   name: 'migrationhuborchestrator',
   description: 'This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS Migration Hub Orchestrator. The topic for each action shows the API request parameters and responses. Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you\'re using',
   subcommands: [
+
     Subcommand(
       name: 'create-template',
       description: 'Creates a migration workflow template',
       options: [
+
         Option(
           name: '--template-name',
           description: 'The name of the migration workflow template',
@@ -74,6 +76,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'create-workflow',
       description: 'Create a workflow to orchestrate your migrations',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the migration workflow',
@@ -165,6 +169,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -177,6 +182,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'create-workflow-step',
       description: 'Create a step in the migration workflow',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the step',
@@ -283,6 +289,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -295,6 +302,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'create-workflow-step-group',
       description: 'Create a step group in a migration workflow',
       options: [
+
         Option(
           name: '--workflow-id',
           description: 'The ID of the migration workflow that will contain the step group',
@@ -356,6 +364,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -368,6 +377,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'delete-template',
       description: 'Deletes a migration workflow template',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the request to delete a migration workflow template',
@@ -393,6 +403,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -405,6 +416,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'delete-workflow',
       description: 'Delete a migration workflow. You must pause a running workflow in Migration Hub Orchestrator console to delete it',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the migration workflow you want to delete',
@@ -430,6 +442,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -442,6 +455,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'delete-workflow-step',
       description: 'Delete a step in a migration workflow. Pause the workflow to delete a running step',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the step you want to delete',
@@ -485,6 +499,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -497,6 +512,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'delete-workflow-step-group',
       description: 'Delete a step group in a migration workflow',
       options: [
+
         Option(
           name: '--workflow-id',
           description: 'The ID of the migration workflow',
@@ -531,6 +547,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -543,6 +560,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'get-template',
       description: 'Get the template you want to use for creating a migration workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the template',
@@ -568,6 +586,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -580,6 +599,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'get-template-step',
       description: 'Get a specific step in a template',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the step',
@@ -623,6 +643,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -635,6 +656,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'get-template-step-group',
       description: 'Get a step group in a template',
       options: [
+
         Option(
           name: '--template-id',
           description: 'The ID of the template',
@@ -669,6 +691,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -681,6 +704,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'get-workflow',
       description: 'Get migration workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the migration workflow',
@@ -706,6 +730,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -718,6 +743,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'get-workflow-step',
       description: 'Get a step in the migration workflow',
       options: [
+
         Option(
           name: '--workflow-id',
           description: 'The ID of the migration workflow',
@@ -761,6 +787,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -773,6 +800,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'get-workflow-step-group',
       description: 'Get the step group of a migration workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the step group',
@@ -807,6 +835,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -819,6 +848,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'list-plugins',
       description: 'List AWS Migration Hub Orchestrator plugins',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of plugins that can be returned',
@@ -880,6 +910,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -892,6 +923,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List the tags added to a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -917,6 +949,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -929,6 +962,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'list-template-step-groups',
       description: 'List the step groups in a template',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results that can be returned',
@@ -999,6 +1033,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1011,6 +1046,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'list-template-steps',
       description: 'List the steps in a template',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results that can be returned',
@@ -1090,6 +1126,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1102,6 +1139,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'list-templates',
       description: 'List the templates available in Migration Hub Orchestrator to create a migration workflow',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results that can be returned',
@@ -1172,6 +1210,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1184,6 +1223,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'list-workflow-step-groups',
       description: 'List the step groups in a migration workflow',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token',
@@ -1254,6 +1294,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1266,6 +1307,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'list-workflow-steps',
       description: 'List the steps in a workflow',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The pagination token',
@@ -1345,6 +1387,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1357,6 +1400,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'list-workflows',
       description: 'List the migration workflows',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results that can be returned',
@@ -1454,6 +1498,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1466,6 +1511,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'retry-workflow-step',
       description: 'Retry a failed step in a migration workflow',
       options: [
+
         Option(
           name: '--workflow-id',
           description: 'The ID of the migration workflow',
@@ -1509,6 +1555,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1521,6 +1568,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'start-workflow',
       description: 'Start a migration workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the migration workflow',
@@ -1546,6 +1594,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1558,6 +1607,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'stop-workflow',
       description: 'Stop an ongoing migration workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the migration workflow',
@@ -1583,6 +1633,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1595,6 +1646,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tag a resource by specifying its Amazon Resource Name (ARN)',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to which you want to add tags',
@@ -1629,6 +1681,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1641,6 +1694,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes the tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource from which you want to remove tags',
@@ -1675,6 +1729,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1687,6 +1742,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'update-template',
       description: 'Updates a migration workflow template',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the request to update a migration workflow template',
@@ -1739,6 +1795,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1751,6 +1808,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'update-workflow',
       description: 'Update a migration workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the migration workflow',
@@ -1812,6 +1870,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1824,6 +1883,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'update-workflow-step',
       description: 'Update a step in a migration workflow',
       options: [
+
         Option(
           name: '--id',
           description: 'The ID of the step',
@@ -1948,6 +2008,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1960,6 +2021,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
       name: 'update-workflow-step-group',
       description: 'Update the step group in a migration workflow',
       options: [
+
         Option(
           name: '--workflow-id',
           description: 'The ID of the migration workflow',
@@ -2030,6 +2092,7 @@ final FigSpec migrationhuborchestratorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

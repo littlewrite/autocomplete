@@ -9,10 +9,12 @@ final FigSpec osisSpec = FigSpec(
   name: 'osis',
   description: 'Use the Amazon OpenSearch Ingestion API to create and manage ingestion pipelines. OpenSearch Ingestion is a fully managed data collector that delivers real-time log and trace data to OpenSearch Service domains. For more information, see Getting data into your cluster using OpenSearch Ingestion',
   subcommands: [
+
     Subcommand(
       name: 'create-pipeline',
       description: 'Creates an OpenSearch Ingestion pipeline. For more information, see Creating Amazon OpenSearch Ingestion pipelines',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region',
@@ -110,6 +112,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -122,6 +125,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'delete-pipeline',
       description: 'Deletes an OpenSearch Ingestion pipeline. For more information, see Deleting Amazon OpenSearch Ingestion pipelines',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline to delete',
@@ -147,6 +151,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -159,6 +164,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'get-pipeline',
       description: 'Retrieves information about an OpenSearch Ingestion pipeline',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline',
@@ -184,6 +190,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'get-pipeline-blueprint',
       description: 'Retrieves information about a specific blueprint for OpenSearch Ingestion. Blueprints are templates for the configuration needed for a CreatePipeline request. For more information, see Using blueprints to create a pipeline',
       options: [
+
         Option(
           name: '--blueprint-name',
           description: 'The name of the blueprint to retrieve',
@@ -230,6 +238,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'get-pipeline-change-progress',
       description: 'Returns progress information for the current change happening on an OpenSearch Ingestion pipeline. Currently, this operation only returns information when a pipeline is being created. For more information, see Tracking the status of pipeline creation',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline',
@@ -267,6 +277,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -279,6 +290,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'list-pipeline-blueprints',
       description: 'Retrieves a list of all available blueprints for Data Prepper. For more information, see Using blueprints to create a pipeline',
       options: [
+
         Option(
           name: '--cli-input-json',
           description: 'Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally',
@@ -295,6 +307,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'list-pipelines',
       description: 'Lists all OpenSearch Ingestion pipelines in the current Amazon Web Services account and Region. For more information, see Viewing Amazon OpenSearch Ingestion pipelines',
       options: [
+
         Option(
           name: '--max-results',
           description: 'An optional parameter that specifies the maximum number of results to return. You can use nextToken to get the next page of results',
@@ -341,6 +355,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -353,6 +368,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all resource tags associated with an OpenSearch Ingestion pipeline. For more information, see Tagging Amazon OpenSearch Ingestion pipelines',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the pipeline to retrieve tags for',
@@ -378,6 +394,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -390,6 +407,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'start-pipeline',
       description: 'Starts an OpenSearch Ingestion pipeline. For more information, see Starting an OpenSearch Ingestion pipeline',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline to start',
@@ -415,6 +433,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -427,6 +446,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'stop-pipeline',
       description: 'Stops an OpenSearch Ingestion pipeline. For more information, see Stopping an OpenSearch Ingestion pipeline',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline to stop',
@@ -452,6 +472,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -464,6 +485,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'tag-resource',
       description: 'Tags an OpenSearch Ingestion pipeline. For more information, see Tagging Amazon OpenSearch Ingestion pipelines',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the pipeline to tag',
@@ -498,6 +520,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -510,6 +533,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from an OpenSearch Ingestion pipeline. For more information, see Tagging Amazon OpenSearch Ingestion pipelines',
       options: [
+
         Option(
           name: '--arn',
           description: 'The Amazon Resource Name (ARN) of the pipeline to remove tags from',
@@ -544,6 +568,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -556,6 +581,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'update-pipeline',
       description: 'Updates an OpenSearch Ingestion pipeline. For more information, see Updating Amazon OpenSearch Ingestion pipelines',
       options: [
+
         Option(
           name: '--pipeline-name',
           description: 'The name of the pipeline to update',
@@ -635,6 +661,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -647,6 +674,7 @@ final FigSpec osisSpec = FigSpec(
       name: 'validate-pipeline',
       description: 'Checks whether an OpenSearch Ingestion pipeline configuration is valid prior to creation. For more information, see Creating Amazon OpenSearch Ingestion pipelines',
       options: [
+
         Option(
           name: '--pipeline-configuration-body',
           description: 'The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\n',
@@ -672,6 +700,7 @@ final FigSpec osisSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

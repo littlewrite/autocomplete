@@ -9,6 +9,7 @@ final FigSpec helmfileSpec = FigSpec(
   name: 'helmfile',
   description: 'Deploy helm charts',
   subcommands: [
+
     Subcommand(
       name: 'apply',
       description: 'Apply all resources from state file only when there are changes'
@@ -99,6 +100,7 @@ final FigSpec helmfileSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Do not exit with an error code if the provided selector has no matching releases',

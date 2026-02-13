@@ -9,10 +9,12 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
   name: 'pca-connector-scep',
   description: 'Connector for SCEP creates a connector between Amazon Web Services Private CA and your SCEP-enabled clients and devices. For more information, see Connector for SCEP in the Amazon Web Services Private CA User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-challenge',
       description: 'For general-purpose connectors. Creates a challenge password for the specified connector. The SCEP protocol uses a challenge password to authenticate a request before issuing a certificate from a certificate authority (CA). Your SCEP clients include the challenge password as part of their certificate request to Connector for SCEP. To retrieve the connector Amazon Resource Names (ARNs) for the connectors in your account, call ListConnectors. To create additional challenge passwords for the connector, call CreateChallenge again. We recommend frequently rotating your challenge passwords',
       options: [
+
         Option(
           name: '--connector-arn',
           description: 'The Amazon Resource Name (ARN) of the connector that you want to create a challenge for',
@@ -56,6 +58,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'create-connector',
       description: 'Creates a SCEP connector. A SCEP connector links Amazon Web Services Private Certificate Authority to your SCEP-compatible devices and mobile device management (MDM) systems. Before you create a connector, you must complete a set of prerequisites, including creation of a private certificate authority (CA) to use with this connector. For more information, see Connector for SCEP prerequisites',
       options: [
+
         Option(
           name: '--certificate-authority-arn',
           description: 'The Amazon Resource Name (ARN) of the Amazon Web Services Private Certificate Authority certificate authority to use with this connector. Due to security vulnerabilities present in the SCEP protocol, we recommend using a private CA that\'s dedicated for use with the connector. To retrieve the private CAs associated with your account, you can call ListCertificateAuthorities using the Amazon Web Services Private CA API',
@@ -120,6 +124,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'delete-challenge',
       description: 'Deletes the specified Challenge',
       options: [
+
         Option(
           name: '--challenge-arn',
           description: 'The Amazon Resource Name (ARN) of the challenge password to delete',
@@ -157,6 +163,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'delete-connector',
       description: 'Deletes the specified Connector. This operation also deletes any challenges associated with the connector',
       options: [
+
         Option(
           name: '--connector-arn',
           description: 'The Amazon Resource Name (ARN) of the connector to delete',
@@ -194,6 +202,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -206,6 +215,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'get-challenge-metadata',
       description: 'Retrieves the metadata for the specified Challenge',
       options: [
+
         Option(
           name: '--challenge-arn',
           description: 'The Amazon Resource Name (ARN) of the challenge',
@@ -231,6 +241,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -243,6 +254,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'get-challenge-password',
       description: 'Retrieves the challenge password for the specified Challenge',
       options: [
+
         Option(
           name: '--challenge-arn',
           description: 'The Amazon Resource Name (ARN) of the challenge',
@@ -268,6 +280,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -280,6 +293,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'get-connector',
       description: 'Retrieves details about the specified Connector. Calling this action returns important details about the connector, such as the public SCEP URL where your clients can request certificates',
       options: [
+
         Option(
           name: '--connector-arn',
           description: 'The Amazon Resource Name (ARN) of the connector',
@@ -305,6 +319,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -317,6 +332,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'list-challenge-metadata',
       description: 'Retrieves the challenge metadata for the specified ARN',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that you want Connector for SCEP to return for this request. If more objects are available, in the response, Connector for SCEP provides a NextToken value that you can use in a subsequent call to get the next batch of objects',
@@ -387,6 +403,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -399,6 +416,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'list-connectors',
       description: 'Lists the connectors belonging to your Amazon Web Services account',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that you want Connector for SCEP to return for this request. If more objects are available, in the response, Connector for SCEP provides a NextToken value that you can use in a subsequent call to get the next batch of objects',
@@ -460,6 +478,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -472,6 +491,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves the tags associated with the specified resource. Tags are key-value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -497,6 +517,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -509,6 +530,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags to your resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -543,6 +565,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -555,6 +578,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes one or more tags from your resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -589,6 +613,7 @@ final FigSpec pcaConnectorScepSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,6 +9,7 @@ final FigSpec initSpec = FigSpec(
   name: 'init',
   description: 'Initialize or reinitialize gcloud',
   options: [
+
     Option(
       name: '--account',
       description: 'Google Cloud Platform user account to use for invocation. Overrides the default *core/account* property value for this command invocation',
@@ -140,6 +141,7 @@ final FigSpec initSpec = FigSpec(
         name: 'VERBOSITY',
         description: 'String',
         suggestions: [
+
           FigSuggestion(name: 'debug'),
           FigSuggestion(name: 'info'),
           FigSuggestion(name: 'warning'),

@@ -9,10 +9,12 @@ final FigSpec kendraRankingSpec = FigSpec(
   name: 'kendra-ranking',
   description: 'Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search capabilities to intelligently re-rank a search service\'s results',
   subcommands: [
+
     Subcommand(
       name: 'create-rescore-execution-plan',
       description: 'Creates a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the Rescore API. You set the number of capacity units that you require for Amazon Kendra Intelligent Ranking to rescore or re-rank a search service\'s results. For an example of using the CreateRescoreExecutionPlan API, including using the Python and Java SDKs, see Semantically ranking a search service\'s results',
       options: [
+
         Option(
           name: '--name',
           description: 'A name for the rescore execution plan',
@@ -74,6 +76,7 @@ final FigSpec kendraRankingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec kendraRankingSpec = FigSpec(
       name: 'delete-rescore-execution-plan',
       description: 'Deletes a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the Rescore API',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the rescore execution plan that you want to delete',
@@ -111,6 +115,7 @@ final FigSpec kendraRankingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec kendraRankingSpec = FigSpec(
       name: 'describe-rescore-execution-plan',
       description: 'Gets information about a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the Rescore API',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the rescore execution plan that you want to get information on',
@@ -148,6 +154,7 @@ final FigSpec kendraRankingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec kendraRankingSpec = FigSpec(
       name: 'list-rescore-execution-plans',
       description: 'Lists your rescore execution plans. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the Rescore API',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans',
@@ -194,6 +202,7 @@ final FigSpec kendraRankingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -206,6 +215,7 @@ final FigSpec kendraRankingSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Gets a list of tags associated with a specified resource. A rescore execution plan is an example of a resource that can have tags associated with it',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the rescore execution plan to get a list of tags for',
@@ -231,6 +241,7 @@ final FigSpec kendraRankingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -243,6 +254,7 @@ final FigSpec kendraRankingSpec = FigSpec(
       name: 'rescore',
       description: 'Rescores or re-ranks search results from a search service such as OpenSearch (self managed). You use the semantic search capabilities of Amazon Kendra Intelligent Ranking to improve the search service\'s results',
       options: [
+
         Option(
           name: '--rescore-execution-plan-id',
           description: 'The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the Rescore API',
@@ -286,6 +298,7 @@ final FigSpec kendraRankingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -298,6 +311,7 @@ final FigSpec kendraRankingSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds a specified tag to a specified rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the Rescore API. If the tag already exists, the existing value is replaced with the new value',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the rescore execution plan to tag',
@@ -332,6 +346,7 @@ final FigSpec kendraRankingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -344,6 +359,7 @@ final FigSpec kendraRankingSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a tag from a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the Rescore operation',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the rescore execution plan to remove the tag',
@@ -378,6 +394,7 @@ final FigSpec kendraRankingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -390,6 +407,7 @@ final FigSpec kendraRankingSpec = FigSpec(
       name: 'update-rescore-execution-plan',
       description: 'Updates a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the Rescore API. You can update the number of capacity units you require for Amazon Kendra Intelligent Ranking to rescore or re-rank a search service\'s results',
       options: [
+
         Option(
           name: '--id',
           description: 'The identifier of the rescore execution plan that you want to update',
@@ -442,6 +460,7 @@ final FigSpec kendraRankingSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

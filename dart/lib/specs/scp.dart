@@ -9,17 +9,31 @@ final FigSpec scpSpec = FigSpec(
   name: 'scp',
   description: 'Copies files or directories between hosts on a network',
   args: [
+
     Arg(
       name: 'sources',
       description: 'File or directory, local or remote ([user@]host:[path])',
-      isVariadic: true
+      isVariadic: true,
+      generators: [
+
+        Generator(
+          template: ['history', 'filepaths', 'folders']
+        )
+      ]
     ),
     Arg(
       name: 'target',
-      description: 'File or directory, local or remote ([user@]host:[path])'
+      description: 'File or directory, local or remote ([user@]host:[path])',
+      generators: [
+
+        Generator(
+          template: ['history', 'filepaths', 'folders']
+        )
+      ]
     )
   ],
   options: [
+
     Option(
       name: '-3'
     ),
@@ -98,6 +112,7 @@ final FigSpec scpSpec = FigSpec(
         Arg(
         name: 'option',
         suggestions: [
+
           FigSuggestion(
             name: 'AddressFamily'
           ),

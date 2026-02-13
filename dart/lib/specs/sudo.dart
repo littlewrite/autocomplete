@@ -9,6 +9,7 @@ final FigSpec sudoSpec = FigSpec(
   name: 'sudo',
   description: 'Execute a command as the superuser or another user',
   options: [
+
     Option(
       name: ['-g', '--group'],
       description: 'Run command as the specified group name or ID',

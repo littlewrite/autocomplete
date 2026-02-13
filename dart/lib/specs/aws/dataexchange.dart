@@ -9,10 +9,12 @@ final FigSpec dataexchangeSpec = FigSpec(
   name: 'dataexchange',
   description: 'AWS Data Exchange is a service that makes it easy for AWS customers to exchange data in the cloud. You can use the AWS Data Exchange APIs to create, update, manage, and access file-based data set in the AWS Cloud. As a subscriber, you can view and access the data sets that you have an entitlement to through a subscription. You can use the APIs to download or copy your entitled data sets to Amazon Simple Storage Service (Amazon S3) for use across a variety of AWS analytics and machine learning services. As a provider, you can create and manage your data sets that you would like to publish to a product. Being able to package and provide your data sets into products requires a few steps to determine eligibility. For more information, visit the AWS Data Exchange User Guide. A data set is a collection of data that can be changed or updated over time. Data sets can be updated using revisions, which represent a new version or incremental change to a data set. A revision contains one or more assets. An asset in AWS Data Exchange is a piece of data that can be stored as an Amazon S3 object, Redshift datashare, API Gateway API, AWS Lake Formation data permission, or Amazon S3 data access. The asset can be a structured data file, an image file, or some other data file. Jobs are asynchronous import or export operations used to create or copy assets',
   subcommands: [
+
     Subcommand(
       name: 'accept-data-grant',
       description: 'This operation accepts a data grant',
       options: [
+
         Option(
           name: '--data-grant-arn',
           description: 'The Amazon Resource Name (ARN) of the data grant to accept',
@@ -38,6 +40,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'cancel-job',
       description: 'This operation cancels a job. Jobs can be cancelled only when they are in the WAITING state',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The unique identifier for a job',
@@ -75,6 +79,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -87,6 +92,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'create-data-grant',
       description: 'This operation creates a data grant',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the data grant',
@@ -166,6 +172,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -178,6 +185,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'create-data-set',
       description: 'This operation creates a data set',
       options: [
+
         Option(
           name: '--asset-type',
           description: 'The type of asset that is added to a data set',
@@ -230,6 +238,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -242,6 +251,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'create-event-action',
       description: 'This operation creates an event action',
       options: [
+
         Option(
           name: '--action',
           description: 'What occurs after a certain event',
@@ -276,6 +286,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -288,6 +299,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'create-job',
       description: 'This operation creates a job',
       options: [
+
         Option(
           name: '--details',
           description: 'The details for the CreateJob request',
@@ -322,6 +334,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -334,6 +347,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'create-revision',
       description: 'This operation creates a revision for a data set',
       options: [
+
         Option(
           name: '--comment',
           description: 'An optional comment about the revision',
@@ -377,6 +391,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -389,6 +404,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'delete-asset',
       description: 'This operation deletes an asset',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The unique identifier for an asset',
@@ -432,6 +448,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -444,6 +461,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'delete-data-grant',
       description: 'This operation deletes a data grant',
       options: [
+
         Option(
           name: '--data-grant-id',
           description: 'The ID of the data grant to delete',
@@ -469,6 +487,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -481,6 +500,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'delete-data-set',
       description: 'This operation deletes a data set',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The unique identifier for a data set',
@@ -506,6 +526,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -518,6 +539,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'delete-event-action',
       description: 'This operation deletes the event action',
       options: [
+
         Option(
           name: '--event-action-id',
           description: 'The unique identifier for the event action',
@@ -543,6 +565,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -555,6 +578,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'delete-revision',
       description: 'This operation deletes a revision',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The unique identifier for a data set',
@@ -589,6 +613,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -601,6 +626,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'get-asset',
       description: 'This operation returns information about an asset',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The unique identifier for an asset',
@@ -644,6 +670,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -656,6 +683,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'get-data-grant',
       description: 'This operation returns information about a data grant',
       options: [
+
         Option(
           name: '--data-grant-id',
           description: 'The ID of the data grant',
@@ -681,6 +709,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -693,6 +722,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'get-data-set',
       description: 'This operation returns information about a data set',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The unique identifier for a data set',
@@ -718,6 +748,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -730,6 +761,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'get-event-action',
       description: 'This operation retrieves information about an event action',
       options: [
+
         Option(
           name: '--event-action-id',
           description: 'The unique identifier for the event action',
@@ -755,6 +787,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -767,6 +800,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'get-job',
       description: 'This operation returns information about a job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The unique identifier for a job',
@@ -792,6 +826,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -804,6 +839,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'get-received-data-grant',
       description: 'This operation returns information about a received data grant',
       options: [
+
         Option(
           name: '--data-grant-arn',
           description: 'The Amazon Resource Name (ARN) of the data grant',
@@ -829,6 +865,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -841,6 +878,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'get-revision',
       description: 'This operation returns information about a revision',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The unique identifier for a data set',
@@ -875,6 +913,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -887,6 +926,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'list-data-grants',
       description: 'This operation returns information about all data grants',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to be included in the next page',
@@ -948,6 +988,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -960,6 +1001,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'list-data-set-revisions',
       description: 'This operation lists a data set\'s revisions sorted by CreatedAt in descending order',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The unique identifier for a data set',
@@ -1030,6 +1072,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1042,6 +1085,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'list-data-sets',
       description: 'This operation lists your data sets. When listing by origin OWNED, results are sorted by CreatedAt in descending order. When listing by origin ENTITLED, there is no order',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results returned by a single call',
@@ -1112,6 +1156,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1124,6 +1169,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'list-event-actions',
       description: 'This operation lists your event actions',
       options: [
+
         Option(
           name: '--event-source-id',
           description: 'The unique identifier for the event source',
@@ -1194,6 +1240,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1206,6 +1253,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'list-jobs',
       description: 'This operation lists your jobs sorted by CreatedAt in descending order',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The unique identifier for a data set',
@@ -1285,6 +1333,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1297,6 +1346,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'list-received-data-grants',
       description: 'This operation returns information about all received data grants',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of results to be included in the next page',
@@ -1367,6 +1417,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1379,6 +1430,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'list-revision-assets',
       description: 'This operation lists a revision\'s assets sorted alphabetically in descending order',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The unique identifier for a data set',
@@ -1458,6 +1510,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1470,6 +1523,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'This operation lists the tags on the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'An Amazon Resource Name (ARN) that uniquely identifies an AWS resource',
@@ -1495,6 +1549,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1507,6 +1562,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'revoke-revision',
       description: 'This operation revokes subscribers\' access to a revision',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The unique identifier for a data set',
@@ -1550,6 +1606,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1562,6 +1619,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'send-api-asset',
       description: 'This operation invokes an API Gateway API asset. The request is proxied to the provider’s API Gateway API',
       options: [
+
         Option(
           name: '--body',
           description: 'The request body',
@@ -1650,6 +1708,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1662,6 +1721,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'send-data-set-notification',
       description: 'The type of event associated with the data set',
       options: [
+
         Option(
           name: '--scope',
           description: 'Affected scope of this notification such as the underlying resources affected by the notification event',
@@ -1732,6 +1792,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1744,6 +1805,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'start-job',
       description: 'This operation starts a job',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The unique identifier for a job',
@@ -1769,6 +1831,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1781,6 +1844,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'tag-resource',
       description: 'This operation tags a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'An Amazon Resource Name (ARN) that uniquely identifies an AWS resource',
@@ -1815,6 +1879,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1827,6 +1892,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'untag-resource',
       description: 'This operation removes one or more tags from a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'An Amazon Resource Name (ARN) that uniquely identifies an AWS resource',
@@ -1861,6 +1927,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1873,6 +1940,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'update-asset',
       description: 'This operation updates an asset',
       options: [
+
         Option(
           name: '--asset-id',
           description: 'The unique identifier for an asset',
@@ -1925,6 +1993,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1937,6 +2006,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'update-data-set',
       description: 'This operation updates a data set',
       options: [
+
         Option(
           name: '--data-set-id',
           description: 'The unique identifier for a data set',
@@ -1980,6 +2050,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1992,6 +2063,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'update-event-action',
       description: 'This operation updates the event action',
       options: [
+
         Option(
           name: '--action',
           description: 'What occurs after a certain event',
@@ -2026,6 +2098,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2038,6 +2111,7 @@ final FigSpec dataexchangeSpec = FigSpec(
       name: 'update-revision',
       description: 'This operation updates a revision',
       options: [
+
         Option(
           name: '--comment',
           description: 'An optional comment about the revision',
@@ -2089,6 +2163,7 @@ final FigSpec dataexchangeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

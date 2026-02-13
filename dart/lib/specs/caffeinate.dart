@@ -9,6 +9,7 @@ final FigSpec caffeinateSpec = FigSpec(
   name: 'caffeinate',
   description: 'Prevent the system from sleeping on behalf of a utility',
   options: [
+
     Option(
       name: '-d',
       description: 'Create an assertion to prevent the display from sleeping'

@@ -9,14 +9,17 @@ final FigSpec supabaseSpec = FigSpec(
   name: 'supabase',
   description: 'Supabase CLI',
   subcommands: [
+
     Subcommand(
       name: 'completion',
       description: 'Generate the autocompletion script for the specified shell',
       subcommands: [
+
         Subcommand(
           name: 'bash',
           description: 'Generate the autocompletion script for bash',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -27,6 +30,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'fish',
           description: 'Generate the autocompletion script for fish',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -37,6 +41,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'powershell',
           description: 'Generate the autocompletion script for powershell',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -47,6 +52,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'zsh',
           description: 'Generate the autocompletion script for zsh',
           options: [
+
             Option(
               name: '--no-descriptions',
               description: 'Disable completion descriptions'
@@ -59,10 +65,12 @@ final FigSpec supabaseSpec = FigSpec(
       name: 'db',
       description: 'Manage local Postgres databases',
       subcommands: [
+
         Subcommand(
           name: 'branch',
           description: 'Manage local database branches',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a branch'
@@ -85,6 +93,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'diff',
           description: 'Diffs the local database for schema changes',
           options: [
+
             Option(
               name: ['--file', '-f'],
               description: 'Saves schema diff to a file',
@@ -116,6 +125,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'dump',
           description: 'Dumps data or schemas from the remote database',
           options: [
+
             Option(
               name: '--data-only',
               description: 'Dumps only data records'
@@ -191,6 +201,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'lint',
           description: 'Checks local database for typing error',
           options: [
+
             Option(
               name: '--level',
               description: 'Error level to emit',
@@ -222,6 +233,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'push',
           description: 'Push new migrations to the remote database',
           options: [
+
             Option(
               name: '--dry-run',
               description: 'Print the migrations that would be applied, but don\'t actually apply them'
@@ -241,6 +253,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'remote',
           description: 'Manage remote databases',
           subcommands: [
+
             Subcommand(
               name: 'changes',
               description: 'Show changes on the remote database'
@@ -251,6 +264,7 @@ final FigSpec supabaseSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['--password', '-p'],
               description: 'Password to your remote Postgres database',
@@ -273,10 +287,12 @@ final FigSpec supabaseSpec = FigSpec(
       name: 'functions',
       description: 'Manage Supabase Edge functions',
       subcommands: [
+
         Subcommand(
           name: 'delete',
           description: 'Delete a Function from Supabase',
           options: [
+
             Option(
               name: '--project-ref',
               description: 'Project ref of the Supabase project',
@@ -292,6 +308,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'deploy',
           description: 'Deploy a Function to Supabase',
           options: [
+
             Option(
               name: '--no-verify-jwt',
               description: 'Disable JWT verification for the Function'
@@ -315,6 +332,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'serve',
           description: 'Serve a Function locally',
           options: [
+
             Option(
               name: '--env-file',
               description: 'Path to an env file to be populated to the Function environment',
@@ -337,14 +355,17 @@ final FigSpec supabaseSpec = FigSpec(
       name: 'gen',
       description: 'Run code generation tools',
       subcommands: [
+
         Subcommand(
           name: 'types',
           description: 'Generate types from Postgres schema',
           subcommands: [
+
             Subcommand(
               name: 'typescript',
               description: 'Generate types for TypeScript',
               options: [
+
                 Option(
                   name: '--db-url',
                   description: 'Generate types from a database url',
@@ -372,6 +393,7 @@ final FigSpec supabaseSpec = FigSpec(
       name: 'link',
       description: 'Link to a Supabase project',
       options: [
+
         Option(
           name: ['--password', '-p'],
           description: 'Password to your remote Postgres database',
@@ -400,10 +422,12 @@ final FigSpec supabaseSpec = FigSpec(
       name: 'migration',
       description: 'Manage database migration scripts',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List local and remote migrations',
           options: [
+
             Option(
               name: ['--password', '-p'],
               description: 'Password to your remote Postgres database',
@@ -450,6 +474,7 @@ final FigSpec supabaseSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: '--status',
               description: 'Version status to update',
@@ -458,6 +483,7 @@ final FigSpec supabaseSpec = FigSpec(
                 Arg(
                 name: 'status',
                 suggestions: [
+
                   FigSuggestion(
                     name: 'applied'
                   ),
@@ -500,6 +526,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'squash',
           description: 'Squash migrations to a single file',
           options: [
+
             Option(
               name: ['--password', '-p'],
               description: 'Password to your remote Postgres database',
@@ -547,6 +574,7 @@ final FigSpec supabaseSpec = FigSpec(
       name: 'orgs',
       description: 'Manage Supabase organizations',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List all organizations'
@@ -557,10 +585,12 @@ final FigSpec supabaseSpec = FigSpec(
       name: 'projects',
       description: 'Manage Supabase projects',
       subcommands: [
+
         Subcommand(
           name: 'create',
           description: 'Create a project on Supabase',
           options: [
+
             Option(
               name: '--db-password',
               description: 'Database password of the project',
@@ -614,6 +644,7 @@ final FigSpec supabaseSpec = FigSpec(
       name: 'secrets',
       description: 'Manage Supabase secrets',
       subcommands: [
+
         Subcommand(
           name: 'list',
           description: 'List all secrets on Supabase'
@@ -622,6 +653,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'set',
           description: 'Set a secret(s) on Supabase',
           options: [
+
             Option(
               name: '--env-file',
               description: 'Read secrets from a .env file',
@@ -656,10 +688,12 @@ final FigSpec supabaseSpec = FigSpec(
       name: 'help',
       description: 'Help about any command',
       subcommands: [
+
         Subcommand(
           name: 'completion',
           description: 'Generate the autocompletion script for the specified shell',
           subcommands: [
+
             Subcommand(
               name: 'bash',
               description: 'Generate the autocompletion script for bash'
@@ -682,10 +716,12 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'db',
           description: 'Manage local Postgres databases',
           subcommands: [
+
             Subcommand(
               name: 'branch',
               description: 'Manage local database branches',
               subcommands: [
+
                 Subcommand(
                   name: 'create',
                   description: 'Create a branch'
@@ -720,6 +756,7 @@ final FigSpec supabaseSpec = FigSpec(
               name: 'remote',
               description: 'Manage remote databases',
               subcommands: [
+
                 Subcommand(
                   name: 'changes',
                   description: 'Show changes on the remote database'
@@ -740,6 +777,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'functions',
           description: 'Manage Supabase Edge functions',
           subcommands: [
+
             Subcommand(
               name: 'delete',
               description: 'Delete a Function from Supabase'
@@ -762,10 +800,12 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'gen',
           description: 'Run code generation tools',
           subcommands: [
+
             Subcommand(
               name: 'types',
               description: 'Generate types from Postgres schema',
               subcommands: [
+
                 Subcommand(
                   name: 'typescript',
                   description: 'Generate types for TypeScript'
@@ -790,6 +830,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'migration',
           description: 'Manage database migration scripts',
           subcommands: [
+
             Subcommand(
               name: 'list',
               description: 'List local and remote migrations'
@@ -804,6 +845,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'orgs',
           description: 'Manage Supabase organizations',
           subcommands: [
+
             Subcommand(
               name: 'list',
               description: 'List all organizations'
@@ -814,6 +856,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'projects',
           description: 'Manage Supabase projects',
           subcommands: [
+
             Subcommand(
               name: 'create',
               description: 'Create a project on Supabase'
@@ -828,6 +871,7 @@ final FigSpec supabaseSpec = FigSpec(
           name: 'secrets',
           description: 'Manage Supabase secrets',
           subcommands: [
+
             Subcommand(
               name: 'list',
               description: 'List all secrets on Supabase'
@@ -858,6 +902,7 @@ final FigSpec supabaseSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--debug',
       description: 'Output debug logs to stderr',

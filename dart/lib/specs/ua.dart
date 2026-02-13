@@ -1,15 +1,10 @@
-// Auto-generated from ua.ts
+// Auto-generated from TypeScript source: ua.ts
 // Generated at: 2026-02-12
+// WARNING: Manual changes may be overwritten!
 
 import 'package:autocomplete/src/spec.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// import completionSpec from "./pro";
-// const Spec: Fig.Spec = {
-//   ...completionSpec,
-//   name: "ua",
-// };
-// 
-// export default Spec;
-// 
+/// Completion spec for `ua` CLI
+final FigSpec uaSpec = FigSpec(
+  name: 'ua'
+);

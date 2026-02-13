@@ -9,10 +9,12 @@ final FigSpec accountSpec = FigSpec(
   name: 'account',
   description: 'Operations for Amazon Web Services Account Management',
   subcommands: [
+
     Subcommand(
       name: 'accept-primary-email-update',
       description: 'Accepts the request that originated from StartPrimaryEmailUpdate to update the primary email address (also known as the root user email address) for the specified account',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account. The specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned. This operation can only be called from the management account or the delegated administrator account of an organization for a member account.  The management account can\'t specify its own AccountId',
@@ -56,6 +58,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'delete-alternate-contact',
       description: 'Deletes the specified alternate contact from an Amazon Web Services account. For complete details about how to use the alternate contact operations, see Access or updating the alternate contacts.  Before you can update the alternate contact information for an Amazon Web Services account that is managed by Organizations, you must first enable integration between Amazon Web Services Account Management and Organizations. For more information, see Enabling trusted access for Amazon Web Services Account Management',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned.  The management account can\'t specify its own AccountId; it must call the operation in standalone context by not including the AccountId parameter.  To call this operation on an account that is not a member of an organization, then don\'t specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify',
@@ -102,6 +106,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'disable-region',
       description: 'Disables (opts-out) a particular Region for an account.  The act of disabling a Region will remove all IAM access to any resources that reside in that Region',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don\'t specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account. The specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned.  The management account can\'t specify its own AccountId. It must call the operation in standalone context by not including the AccountId parameter.  To call this operation on an account that is not a member of an organization, don\'t specify this parameter. Instead, call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify',
@@ -148,6 +154,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -160,6 +167,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'enable-region',
       description: 'Enables (opts-in) a particular Region for an account',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don\'t specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account. The specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned.  The management account can\'t specify its own AccountId. It must call the operation in standalone context by not including the AccountId parameter.  To call this operation on an account that is not a member of an organization, don\'t specify this parameter. Instead, call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify',
@@ -194,6 +202,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -206,6 +215,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'get-alternate-contact',
       description: 'Retrieves the specified alternate contact attached to an Amazon Web Services account. For complete details about how to use the alternate contact operations, see Access or updating the alternate contacts.  Before you can update the alternate contact information for an Amazon Web Services account that is managed by Organizations, you must first enable integration between Amazon Web Services Account Management and Organizations. For more information, see Enabling trusted access for Amazon Web Services Account Management',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned.  The management account can\'t specify its own AccountId; it must call the operation in standalone context by not including the AccountId parameter.  To call this operation on an account that is not a member of an organization, then don\'t specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify',
@@ -240,6 +250,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -252,6 +263,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'get-contact-information',
       description: 'Retrieves the primary contact information of an Amazon Web Services account. For complete details about how to use the primary contact operations, see Update the primary and alternate contact information',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don\'t specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account. The specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned.  The management account can\'t specify its own AccountId. It must call the operation in standalone context by not including the AccountId parameter.  To call this operation on an account that is not a member of an organization, don\'t specify this parameter. Instead, call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify',
@@ -277,6 +289,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -289,6 +302,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'get-primary-email',
       description: 'Retrieves the primary email address for the specified account',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account. The specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned. This operation can only be called from the management account or the delegated administrator account of an organization for a member account.  The management account can\'t specify its own AccountId',
@@ -314,6 +328,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -326,6 +341,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'get-region-opt-status',
       description: 'Retrieves the opt-in status of a particular Region',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don\'t specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account. The specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned.  The management account can\'t specify its own AccountId. It must call the operation in standalone context by not including the AccountId parameter.  To call this operation on an account that is not a member of an organization, don\'t specify this parameter. Instead, call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify',
@@ -360,6 +376,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -372,6 +389,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'list-regions',
       description: 'Lists all the Regions for a given account and their respective opt-in statuses. Optionally, this list can be filtered by the region-opt-status-contains parameter',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don\'t specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account. The specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned.  The management account can\'t specify its own AccountId. It must call the operation in standalone context by not including the AccountId parameter.  To call this operation on an account that is not a member of an organization, don\'t specify this parameter. Instead, call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify',
@@ -451,6 +469,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -463,6 +482,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'put-alternate-contact',
       description: 'Modifies the specified alternate contact attached to an Amazon Web Services account. For complete details about how to use the alternate contact operations, see Access or updating the alternate contacts.  Before you can update the alternate contact information for an Amazon Web Services account that is managed by Organizations, you must first enable integration between Amazon Web Services Account Management and Organizations. For more information, see Enabling trusted access for Amazon Web Services Account Management',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned.  The management account can\'t specify its own AccountId; it must call the operation in standalone context by not including the AccountId parameter.  To call this operation on an account that is not a member of an organization, then don\'t specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify',
@@ -533,6 +553,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -545,6 +566,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'put-contact-information',
       description: 'Updates the primary contact information of an Amazon Web Services account. For complete details about how to use the primary contact operations, see Update the primary and alternate contact information',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don\'t specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account. The specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned.  The management account can\'t specify its own AccountId. It must call the operation in standalone context by not including the AccountId parameter.  To call this operation on an account that is not a member of an organization, don\'t specify this parameter. Instead, call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify',
@@ -579,6 +601,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -591,6 +614,7 @@ final FigSpec accountSpec = FigSpec(
       name: 'start-primary-email-update',
       description: 'Starts the process to update the primary email address for the specified account',
       options: [
+
         Option(
           name: '--account-id',
           description: 'Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. To use this parameter, the caller must be an identity in the organization\'s management account or a delegated administrator account. The specified account ID must be a member account in the same organization. The organization must have all features enabled, and the organization must have trusted access enabled for the Account Management service, and optionally a delegated admin account assigned. This operation can only be called from the management account or the delegated administrator account of an organization for a member account.  The management account can\'t specify its own AccountId',
@@ -625,6 +649,7 @@ final FigSpec accountSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

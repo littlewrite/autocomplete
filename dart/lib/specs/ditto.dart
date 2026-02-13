@@ -9,6 +9,7 @@ final FigSpec dittoSpec = FigSpec(
   name: 'ditto',
   description: 'Copy directory hierarchies, create and extract archives',
   options: [
+
     Option(
       name: '--help',
       description: 'Show help for ditto'
@@ -143,6 +144,7 @@ final FigSpec dittoSpec = FigSpec(
     )
   ],
   args: [
+
     Arg(
       name: 'source',
       template: ['filepaths', 'folders'],

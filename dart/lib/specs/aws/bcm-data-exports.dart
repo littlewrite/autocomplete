@@ -9,10 +9,12 @@ final FigSpec bcmDataExportsSpec = FigSpec(
   name: 'bcm-data-exports',
   description: 'You can use the Data Exports API to create customized exports from multiple Amazon Web Services cost management and billing datasets, such as cost and usage data and cost optimization recommendations. The Data Exports API provides the following endpoint:   https://bcm-data-exports.us-east-1.api.aws',
   subcommands: [
+
     Subcommand(
       name: 'create-export',
       description: 'Creates a data export and specifies the data query, the delivery preference, and any optional resource tags. A DataQuery consists of both a QueryStatement and TableConfigurations. The QueryStatement is an SQL statement. Data Exports only supports a limited subset of the SQL syntax. For more information on the SQL syntax that is supported, see Data query. To view the available tables and columns, see the Data Exports table dictionary. The TableConfigurations is a collection of specified TableProperties for the table being queried in the QueryStatement. TableProperties are additional configurations you can provide to change the data and schema of a table. Each table can have different TableProperties. However, tables are not required to have any TableProperties. Each table property has a default value that it assumes if not specified. For more information on table configurations, see Data query. To view the table properties available for each table, see the Data Exports table dictionary or use the ListTables API to get a response of all tables and their available properties',
       options: [
+
         Option(
           name: '--export',
           description: 'The details of the export, including data query, name, description, and destination configuration',
@@ -47,6 +49,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -59,6 +62,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'delete-export',
       description: 'Deletes an existing data export',
       options: [
+
         Option(
           name: '--export-arn',
           description: 'The Amazon Resource Name (ARN) for this export',
@@ -84,6 +88,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -96,6 +101,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'get-execution',
       description: 'Exports data based on the source data update',
       options: [
+
         Option(
           name: '--execution-id',
           description: 'The ID for this specific execution',
@@ -130,6 +136,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -142,6 +149,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'get-export',
       description: 'Views the definition of an existing data export',
       options: [
+
         Option(
           name: '--export-arn',
           description: 'The Amazon Resource Name (ARN) for this export',
@@ -167,6 +175,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -179,6 +188,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'get-table',
       description: 'Returns the metadata for the specified table and table properties. This includes the list of columns in the table schema, their data types, and column descriptions',
       options: [
+
         Option(
           name: '--table-name',
           description: 'The name of the table',
@@ -213,6 +223,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -225,6 +236,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'list-executions',
       description: 'Lists the historical executions for the export',
       options: [
+
         Option(
           name: '--export-arn',
           description: 'The Amazon Resource Name (ARN) for this export',
@@ -295,6 +307,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -307,6 +320,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'list-exports',
       description: 'Lists all data export definitions',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that are returned for the request',
@@ -368,6 +382,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -380,6 +395,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'list-tables',
       description: 'Lists all available tables in data exports',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that are returned for the request',
@@ -441,6 +457,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -453,6 +470,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'List tags associated with an existing data export',
       options: [
+
         Option(
           name: '--max-results',
           description: 'The maximum number of objects that are returned for the request',
@@ -496,6 +514,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -508,6 +527,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds tags for an existing data export definition',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The unique identifier for the resource',
@@ -542,6 +562,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -554,6 +575,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'untag-resource',
       description: 'Deletes tags associated with an existing data export definition',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The unique identifier for the resource',
@@ -588,6 +610,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -600,6 +623,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
       name: 'update-export',
       description: 'Updates an existing data export by overwriting all export parameters. All export parameters must be provided in the UpdateExport request',
       options: [
+
         Option(
           name: '--export',
           description: 'The name and query details for the export',
@@ -634,6 +658,7 @@ final FigSpec bcmDataExportsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

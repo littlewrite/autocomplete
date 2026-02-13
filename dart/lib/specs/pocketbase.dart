@@ -9,6 +9,7 @@ final FigSpec pocketbaseSpec = FigSpec(
   name: 'pocketbase',
   description: 'PocketBase CLI',
   subcommands: [
+
     Subcommand(
       name: 'help',
       description: 'Help about any command',
@@ -23,6 +24,7 @@ final FigSpec pocketbaseSpec = FigSpec(
       name: 'migrate',
       description: 'Executes DB migration scripts',
       subcommands: [
+
         Subcommand(
           name: 'collections',
           description: '(Experimental) Creates new migration file with the most recent local collections configuration',
@@ -39,6 +41,7 @@ final FigSpec pocketbaseSpec = FigSpec(
           name: 'create',
           description: 'Creates new migration template file',
           args: [
+
             Arg(
               name: 'name',
               description: 'Migration file name'
@@ -72,6 +75,7 @@ final FigSpec pocketbaseSpec = FigSpec(
       name: 'serve',
       description: 'Starts the web server (default to 127.0.0.1:8090)',
       options: [
+
         Option(
           name: '--http',
           description: 'API HTTP server address (default "127.0.0.1:8090")',
@@ -106,6 +110,7 @@ final FigSpec pocketbaseSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--debug',
       description: 'Enable debug mode, aka showing more detailed logs'

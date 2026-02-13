@@ -12,10 +12,12 @@ final FigSpec whoSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   subcommands: [
+
     Subcommand(
       name: 'am',
       description: 'Returns the invoker\'s real user name',
       additionalSuggestions: [
+
         FigSuggestion(
           name: 'am I',
           insertValue: 'I{cursor}',
@@ -26,6 +28,7 @@ final FigSpec whoSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '-a',
       description: 'Same as -bdlprTtu'

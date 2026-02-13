@@ -15,6 +15,7 @@ final FigSpec rmSpec = FigSpec(
   )
   ],
   options: [
+
     Option(
       name: ['-r', '-R'],
       description: 'Recursive. Attempt to remove the file hierarchy rooted in each file argument',

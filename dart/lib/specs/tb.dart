@@ -9,6 +9,7 @@ final FigSpec tbSpec = FigSpec(
   name: 'tb',
   description: 'Tinybird CLI',
   options: [
+
     Option(
       name: '--debug',
       description: 'Prints internal representation, can be combined with any command to get more information',
@@ -173,10 +174,12 @@ final FigSpec tbSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'check',
       description: 'Check file syntax',
       options: [
+
         Option(
           name: '--debug',
           description: 'Print internal representation'
@@ -197,6 +200,7 @@ final FigSpec tbSpec = FigSpec(
       name: 'dependencies',
       description: 'Print all data sources dependencies',
       options: [
+
         Option(
           name: '--no-deps',
           description: 'Print only data sources with no pipes using them'
@@ -246,6 +250,7 @@ final FigSpec tbSpec = FigSpec(
       name: 'diff',
       description: 'Diffs local datafiles to the corresponding remote files in the workspace',
       options: [
+
         Option(
           name: '--fmt',
           description: 'Format files before doing the diff, default is True so both files match the format',
@@ -281,6 +286,7 @@ final FigSpec tbSpec = FigSpec(
       name: 'drop-prefix',
       description: 'Drop all the resources inside a project with prefix. This command is dangerous because it removes everything, use with care',
       options: [
+
         Option(
           name: '--yes',
           description: 'Do not ask for confirmation'
@@ -304,6 +310,7 @@ final FigSpec tbSpec = FigSpec(
       name: 'fmt',
       description: 'Formats a .datasource, .pipe or .incl file\n\nThis command removes comments starting with # from the file, use DESCRIPTION instead.\n\nThe format command tries to parse the datafile so syntax errors might rise.\n\n.incl files must contain a NODE definition',
       options: [
+
         Option(
           name: '--line-length',
           description: 'A number indicating the maximum characters per line in the node SQL, lines will be splitted based on the SQL syntax and the number of characters passed as a parameter',
@@ -338,6 +345,7 @@ final FigSpec tbSpec = FigSpec(
       name: 'init',
       description: 'Initialize folder layout',
       options: [
+
         Option(
           name: '--generate-datasources',
           description: 'Generate datasources based on CSV, NDJSON and Parquet files in this folder'
@@ -366,6 +374,7 @@ final FigSpec tbSpec = FigSpec(
       name: 'materialize',
       description: '[BETA] Given a local Pipe datafile path (FILENAME) and optionally a Materialized View name (TARGET_DATASOURCE), choose one of its nodes to materialize.\n\nThis command guides you to generate the Materialized View with name TARGET_DATASOURCE, the only requirement is having a valid Pipe datafile locally. Use `tb pull` to download resources from your workspace when needed.\n\nSyntax: tb materialize path/to/pipe.pipe',
       options: [
+
         Option(
           name: '--prefix',
           description: 'Use prefix for all the resources',
@@ -383,6 +392,7 @@ final FigSpec tbSpec = FigSpec(
           name: '--workspace_map',
           isRepeatable: true,
           args: [
+
             Arg(
               name: 'text'
             ),
@@ -396,6 +406,7 @@ final FigSpec tbSpec = FigSpec(
           description: 'Add a workspace path to the list of external workspaces, usage: --workspace name path/to/folder',
           isRepeatable: true,
           args: [
+
             Arg(
               name: 'text'
             ),
@@ -439,6 +450,7 @@ final FigSpec tbSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'path',
           template: ['folders', 'filepaths']
@@ -452,6 +464,7 @@ final FigSpec tbSpec = FigSpec(
       name: 'prompt',
       description: 'Learn how to include info about the CLI in your shell PROMPT',
       options: [
+
         Option(
           name: '--help',
           description: 'Show this message and exit'
@@ -462,6 +475,7 @@ final FigSpec tbSpec = FigSpec(
       name: 'pull',
       description: 'Retrieve latest versions for project files from Tinybird',
       options: [
+
         Option(
           name: '--folder',
           description: 'Folder where files will be placed',
@@ -508,6 +522,7 @@ final FigSpec tbSpec = FigSpec(
       name: 'push',
       description: 'Push files to Tinybird\n',
       options: [
+
         Option(
           name: '--prefix',
           description: 'Use prefix for all the resources',
@@ -593,6 +608,7 @@ final FigSpec tbSpec = FigSpec(
           name: '--workspace_map',
           isRepeatable: true,
           args: [
+
             Arg(
               name: 'text'
             ),
@@ -606,6 +622,7 @@ final FigSpec tbSpec = FigSpec(
           description: 'Add a workspace path to the list of external workspaces, usage: --workspace name path/to/folder',
           isRepeatable: true,
           args: [
+
             Arg(
               name: 'text'
             ),
@@ -678,6 +695,7 @@ final FigSpec tbSpec = FigSpec(
       name: 'sql',
       description: 'Run SQL query over data sources and pipes',
       options: [
+
         Option(
           name: '--rows_limit',
           description: 'Max number of rows retrieved',
@@ -721,6 +739,7 @@ final FigSpec tbSpec = FigSpec(
             Arg(
             name: 'choice',
             suggestions: [
+
               FigSuggestion(name: 'json'),
               FigSuggestion(name: 'csv'),
               FigSuggestion(name: 'human')

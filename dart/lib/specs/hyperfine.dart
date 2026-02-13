@@ -9,6 +9,7 @@ final FigSpec hyperfineSpec = FigSpec(
   name: 'hyperfine',
   description: 'A command-line benchmarking tool',
   options: [
+
     Option(
       name: ['--warmup', '-w'],
       description: 'Perform warmupruns (number) before the actual benchmarking starts',
@@ -78,6 +79,7 @@ final FigSpec hyperfineSpec = FigSpec(
       name: ['--parameter-scan', '-P'],
       description: 'Perform benchmark runs for each value in the range min..max',
       args: [
+
         Arg(
           name: 'VAR'
         ),
@@ -103,6 +105,7 @@ final FigSpec hyperfineSpec = FigSpec(
       name: ['--parameter-list', '-L'],
       description: 'Perform benchmark runs for each value in the comma-separated list of values',
       args: [
+
         Arg(
           name: 'VAR'
         ),
@@ -118,6 +121,7 @@ final FigSpec hyperfineSpec = FigSpec(
         Arg(
         name: 'STYLE',
         suggestions: [
+
           FigSuggestion(
             name: 'basic',
             description: 'Disable output coloring and interactive elements'
@@ -149,6 +153,7 @@ final FigSpec hyperfineSpec = FigSpec(
         Arg(
         name: 'SHELL',
         suggestions: [
+
           FigSuggestion(
             name: 'bash',
             description: 'Use bash as the shell'
@@ -188,6 +193,7 @@ final FigSpec hyperfineSpec = FigSpec(
         Arg(
         name: 'UNIT',
         suggestions: [
+
           FigSuggestion(name: 'millisecond'),
           FigSuggestion(name: 'second')
         ],

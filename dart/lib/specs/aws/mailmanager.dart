@@ -9,10 +9,12 @@ final FigSpec mailmanagerSpec = FigSpec(
   name: 'mailmanager',
   description: 'Amazon SES Mail Manager API The Amazon SES Mail Manager API contains operations and data types that comprise the Mail Manager feature of Amazon Simple Email Service (SES). Mail Manager is a set of Amazon SES email gateway features designed to help you strengthen your organization\'s email infrastructure, simplify email workflow management, and streamline email compliance control. To learn more, see the Mail Manager chapter in the Amazon SES Developer Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-addon-instance',
       description: 'Creates an Add On instance for the subscription indicated in the request. The resulting Amazon Resource Name (ARN) can be used in a conditional statement for a rule set or traffic policy',
       options: [
+
         Option(
           name: '--addon-subscription-id',
           description: 'The unique ID of a previously created subscription that an Add On instance is created for. You can only have one instance per subscription',
@@ -56,6 +58,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'create-addon-subscription',
       description: 'Creates a subscription for an Add On representing the acceptance of its terms of use and additional pricing. The subscription can then be used to create an instance for use in rule sets or traffic policies',
       options: [
+
         Option(
           name: '--addon-name',
           description: 'The name of the Add On to subscribe to. You can only have one subscription for each Add On name',
@@ -111,6 +115,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -123,6 +128,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'create-archive',
       description: 'Creates a new email archive resource for storing and retaining emails',
       options: [
+
         Option(
           name: '--archive-name',
           description: 'A unique name for the new archive',
@@ -184,6 +190,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -196,6 +203,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'create-ingress-point',
       description: 'Provision a new ingress endpoint resource',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique token that Amazon SES uses to recognize subsequent retries of the same request',
@@ -275,6 +283,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -287,6 +296,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'create-relay',
       description: 'Creates a relay resource which can be used in rules to relay incoming emails to defined relay destinations',
       options: [
+
         Option(
           name: '--authentication',
           description: 'Authentication for the relay destination server—specify the secretARN where the SMTP credentials are stored',
@@ -357,6 +367,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -369,6 +380,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'create-rule-set',
       description: 'Provision a new rule set',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique token that Amazon SES uses to recognize subsequent retries of the same request',
@@ -421,6 +433,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -433,6 +446,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'create-traffic-policy',
       description: 'Provision a new traffic policy resource',
       options: [
+
         Option(
           name: '--client-token',
           description: 'A unique token that Amazon SES uses to recognize subsequent retries of the same request',
@@ -503,6 +517,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -515,6 +530,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'delete-addon-instance',
       description: 'Deletes an Add On instance',
       options: [
+
         Option(
           name: '--addon-instance-id',
           description: 'The Add On instance ID to delete',
@@ -540,6 +556,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -552,6 +569,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'delete-addon-subscription',
       description: 'Deletes an Add On subscription',
       options: [
+
         Option(
           name: '--addon-subscription-id',
           description: 'The Add On subscription ID to delete',
@@ -577,6 +595,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -589,6 +608,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'delete-archive',
       description: 'Initiates deletion of an email archive. This changes the archive state to pending deletion. In this state, no new emails can be added, and existing archived emails become inaccessible (search, export, download). The archive and all of its contents will be permanently deleted 30 days after entering the pending deletion state, regardless of the configured retention period',
       options: [
+
         Option(
           name: '--archive-id',
           description: 'The identifier of the archive to delete',
@@ -614,6 +634,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -626,6 +647,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'delete-ingress-point',
       description: 'Delete an ingress endpoint resource',
       options: [
+
         Option(
           name: '--ingress-point-id',
           description: 'The identifier of the ingress endpoint resource that you want to delete',
@@ -651,6 +673,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -663,6 +686,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'delete-relay',
       description: 'Deletes an existing relay resource',
       options: [
+
         Option(
           name: '--relay-id',
           description: 'The unique relay identifier',
@@ -688,6 +712,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -700,6 +725,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'delete-rule-set',
       description: 'Delete a rule set',
       options: [
+
         Option(
           name: '--rule-set-id',
           description: 'The identifier of an existing rule set resource to delete',
@@ -725,6 +751,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -737,6 +764,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'delete-traffic-policy',
       description: 'Delete a traffic policy resource',
       options: [
+
         Option(
           name: '--traffic-policy-id',
           description: 'The identifier of the traffic policy that you want to delete',
@@ -762,6 +790,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -774,6 +803,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-addon-instance',
       description: 'Gets detailed information about an Add On instance',
       options: [
+
         Option(
           name: '--addon-instance-id',
           description: 'The Add On instance ID to retrieve information for',
@@ -799,6 +829,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -811,6 +842,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-addon-subscription',
       description: 'Gets detailed information about an Add On subscription',
       options: [
+
         Option(
           name: '--addon-subscription-id',
           description: 'The Add On subscription ID to retrieve information for',
@@ -836,6 +868,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -848,6 +881,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-archive',
       description: 'Retrieves the full details and current state of a specified email archive',
       options: [
+
         Option(
           name: '--archive-id',
           description: 'The identifier of the archive to retrieve',
@@ -873,6 +907,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -885,6 +920,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-archive-export',
       description: 'Retrieves the details and current status of a specific email archive export job',
       options: [
+
         Option(
           name: '--export-id',
           description: 'The identifier of the export job to get details for',
@@ -910,6 +946,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -922,6 +959,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-archive-message',
       description: 'Returns a pre-signed URL that provides temporary download access to the specific email message stored in the archive',
       options: [
+
         Option(
           name: '--archived-message-id',
           description: 'The unique identifier of the archived email message',
@@ -947,6 +985,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -959,6 +998,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-archive-message-content',
       description: 'Returns the textual content of a specific email message stored in the archive. Attachments are not included',
       options: [
+
         Option(
           name: '--archived-message-id',
           description: 'The unique identifier of the archived email message',
@@ -984,6 +1024,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -996,6 +1037,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-archive-search',
       description: 'Retrieves the details and current status of a specific email archive search job',
       options: [
+
         Option(
           name: '--search-id',
           description: 'The identifier of the search job to get details for',
@@ -1021,6 +1063,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1033,6 +1076,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-archive-search-results',
       description: 'Returns the results of a completed email archive search job',
       options: [
+
         Option(
           name: '--search-id',
           description: 'The identifier of the completed search job',
@@ -1058,6 +1102,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1070,6 +1115,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-ingress-point',
       description: 'Fetch ingress endpoint resource attributes',
       options: [
+
         Option(
           name: '--ingress-point-id',
           description: 'The identifier of an ingress endpoint',
@@ -1095,6 +1141,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1107,6 +1154,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-relay',
       description: 'Fetch the relay resource and it\'s attributes',
       options: [
+
         Option(
           name: '--relay-id',
           description: 'A unique relay identifier',
@@ -1132,6 +1180,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1144,6 +1193,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-rule-set',
       description: 'Fetch attributes of a rule set',
       options: [
+
         Option(
           name: '--rule-set-id',
           description: 'The identifier of an existing rule set to be retrieved',
@@ -1169,6 +1219,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1181,6 +1232,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'get-traffic-policy',
       description: 'Fetch attributes of a traffic policy resource',
       options: [
+
         Option(
           name: '--traffic-policy-id',
           description: 'The identifier of the traffic policy resource',
@@ -1206,6 +1258,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1218,6 +1271,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'list-addon-instances',
       description: 'Lists all Add On instances in your account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If you received a pagination token from a previous call to this API, you can provide it here to continue paginating through the next page of results',
@@ -1270,6 +1324,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1282,6 +1337,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'list-addon-subscriptions',
       description: 'Lists all Add On subscriptions in your account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If you received a pagination token from a previous call to this API, you can provide it here to continue paginating through the next page of results',
@@ -1334,6 +1390,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1346,6 +1403,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'list-archive-exports',
       description: 'Returns a list of email archive export jobs',
       options: [
+
         Option(
           name: '--archive-id',
           description: 'The identifier of the archive',
@@ -1407,6 +1465,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1419,6 +1478,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'list-archive-searches',
       description: 'Returns a list of email archive search jobs',
       options: [
+
         Option(
           name: '--archive-id',
           description: 'The identifier of the archive',
@@ -1480,6 +1540,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1492,6 +1553,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'list-archives',
       description: 'Returns a list of all email archives in your account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If NextToken is returned, there are more results available. The value of NextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page',
@@ -1544,6 +1606,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1556,6 +1619,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'list-ingress-points',
       description: 'List all ingress endpoint resources',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If you received a pagination token from a previous call to this API, you can provide it here to continue paginating through the next page of results',
@@ -1608,6 +1672,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1620,6 +1685,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'list-relays',
       description: 'Lists all the existing relay resources',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If you received a pagination token from a previous call to this API, you can provide it here to continue paginating through the next page of results',
@@ -1672,6 +1738,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1684,6 +1751,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'list-rule-sets',
       description: 'List rule sets for this account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If you received a pagination token from a previous call to this API, you can provide it here to continue paginating through the next page of results',
@@ -1736,6 +1804,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1748,6 +1817,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Retrieves the list of tags (keys and values) assigned to the resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource to retrieve tags from',
@@ -1773,6 +1843,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1785,6 +1856,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'list-traffic-policies',
       description: 'List traffic policy resources',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If you received a pagination token from a previous call to this API, you can provide it here to continue paginating through the next page of results',
@@ -1837,6 +1909,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1849,6 +1922,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'start-archive-export',
       description: 'Initiates an export of emails from the specified archive',
       options: [
+
         Option(
           name: '--archive-id',
           description: 'The identifier of the archive to export emails from',
@@ -1927,6 +2001,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1939,6 +2014,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'start-archive-search',
       description: 'Initiates a search across emails in the specified archive',
       options: [
+
         Option(
           name: '--archive-id',
           description: 'The identifier of the archive to search emails in',
@@ -2000,6 +2076,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2012,6 +2089,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'stop-archive-export',
       description: 'Stops an in-progress export of emails from an archive',
       options: [
+
         Option(
           name: '--export-id',
           description: 'The identifier of the export job to stop',
@@ -2037,6 +2115,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2049,6 +2128,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'stop-archive-search',
       description: 'Stops an in-progress archive search job',
       options: [
+
         Option(
           name: '--search-id',
           description: 'The identifier of the search job to stop',
@@ -2074,6 +2154,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2086,6 +2167,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds one or more tags (keys and values) to a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to tag',
@@ -2120,6 +2202,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2132,6 +2215,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'untag-resource',
       description: 'Remove one or more tags (keys and values) from a specified resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource that you want to untag',
@@ -2166,6 +2250,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2178,6 +2263,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'update-archive',
       description: 'Updates the attributes of an existing email archive',
       options: [
+
         Option(
           name: '--archive-id',
           description: 'The identifier of the archive to update',
@@ -2221,6 +2307,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2233,6 +2320,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'update-ingress-point',
       description: 'Update attributes of a provisioned ingress endpoint resource',
       options: [
+
         Option(
           name: '--ingress-point-configuration',
           description: 'If you choose an Authenticated ingress endpoint, you must configure either an SMTP password or a secret ARN',
@@ -2303,6 +2391,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2315,6 +2404,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'update-relay',
       description: 'Updates the attributes of an existing relay resource',
       options: [
+
         Option(
           name: '--authentication',
           description: 'Authentication for the relay destination server—specify the secretARN where the SMTP credentials are stored',
@@ -2376,6 +2466,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2388,6 +2479,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'update-rule-set',
       description: 'Update attributes of an already provisioned rule set',
       options: [
+
         Option(
           name: '--rule-set-id',
           description: 'The identifier of a rule set you want to update',
@@ -2431,6 +2523,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -2443,6 +2536,7 @@ final FigSpec mailmanagerSpec = FigSpec(
       name: 'update-traffic-policy',
       description: 'Update attributes of an already provisioned traffic policy resource',
       options: [
+
         Option(
           name: '--default-action',
           description: 'Default action instructs the traﬃc policy to either Allow or Deny (block) messages that fall outside of (or not addressed by) the conditions of your policy statements',
@@ -2504,6 +2598,7 @@ final FigSpec mailmanagerSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

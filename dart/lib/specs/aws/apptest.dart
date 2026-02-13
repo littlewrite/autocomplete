@@ -9,10 +9,12 @@ final FigSpec apptestSpec = FigSpec(
   name: 'apptest',
   description: 'AWS Mainframe Modernization Application Testing provides tools and resources for automated functional equivalence testing for your migration projects',
   subcommands: [
+
     Subcommand(
       name: 'create-test-case',
       description: 'Creates a test case',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the test case',
@@ -74,6 +76,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'create-test-configuration',
       description: 'Creates a test configuration',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the test configuration',
@@ -165,6 +169,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -177,6 +182,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'create-test-suite',
       description: 'Creates a test suite',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the test suite',
@@ -256,6 +262,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -268,6 +275,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'delete-test-case',
       description: 'Deletes a test case',
       options: [
+
         Option(
           name: '--test-case-id',
           description: 'The test case ID of the test case',
@@ -293,6 +301,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -305,6 +314,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'delete-test-configuration',
       description: 'Deletes a test configuration',
       options: [
+
         Option(
           name: '--test-configuration-id',
           description: 'The test ID of the test configuration',
@@ -330,6 +340,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -342,6 +353,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'delete-test-run',
       description: 'Deletes a test run',
       options: [
+
         Option(
           name: '--test-run-id',
           description: 'The run ID of the test run',
@@ -367,6 +379,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -379,6 +392,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'delete-test-suite',
       description: 'Deletes a test suite',
       options: [
+
         Option(
           name: '--test-suite-id',
           description: 'The test ID of the test suite',
@@ -404,6 +418,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -416,6 +431,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'get-test-case',
       description: 'Gets a test case',
       options: [
+
         Option(
           name: '--test-case-id',
           description: 'The request test ID of the test case',
@@ -450,6 +466,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -462,6 +479,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'get-test-configuration',
       description: 'Gets a test configuration',
       options: [
+
         Option(
           name: '--test-configuration-id',
           description: 'The request test configuration ID',
@@ -496,6 +514,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -508,6 +527,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'get-test-run-step',
       description: 'Gets a test run step',
       options: [
+
         Option(
           name: '--test-run-id',
           description: 'The test run ID of the test run step',
@@ -560,6 +580,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -572,6 +593,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'get-test-suite',
       description: 'Gets a test suite',
       options: [
+
         Option(
           name: '--test-suite-id',
           description: 'The ID of the test suite',
@@ -606,6 +628,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -618,6 +641,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists tags for a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -643,6 +667,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -655,6 +680,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'list-test-cases',
       description: 'Lists test cases',
       options: [
+
         Option(
           name: '--test-case-ids',
           description: 'The IDs of the test cases',
@@ -725,6 +751,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -737,6 +764,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'list-test-configurations',
       description: 'Lists test configurations',
       options: [
+
         Option(
           name: '--test-configuration-ids',
           description: 'The configuration IDs of the test configurations',
@@ -807,6 +835,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -819,6 +848,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'list-test-run-steps',
       description: 'Lists test run steps',
       options: [
+
         Option(
           name: '--test-run-id',
           description: 'The test run ID of the test run steps',
@@ -907,6 +937,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -919,6 +950,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'list-test-run-test-cases',
       description: 'Lists test run test cases',
       options: [
+
         Option(
           name: '--test-run-id',
           description: 'The test run ID of the test cases',
@@ -989,6 +1021,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1001,6 +1034,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'list-test-runs',
       description: 'Lists test runs',
       options: [
+
         Option(
           name: '--test-suite-id',
           description: 'The test suite ID of the test runs',
@@ -1080,6 +1114,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1092,6 +1127,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'list-test-suites',
       description: 'Lists test suites',
       options: [
+
         Option(
           name: '--test-suite-ids',
           description: 'The suite ID of the test suites',
@@ -1162,6 +1198,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1174,6 +1211,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'start-test-run',
       description: 'Starts a test run',
       options: [
+
         Option(
           name: '--test-suite-id',
           description: 'The test suite ID of the test run',
@@ -1226,6 +1264,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1238,6 +1277,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'tag-resource',
       description: 'Specifies tags of a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the tag resource',
@@ -1272,6 +1312,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1284,6 +1325,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'untag-resource',
       description: 'Untags a resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the resource',
@@ -1318,6 +1360,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1330,6 +1373,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'update-test-case',
       description: 'Updates a test case',
       options: [
+
         Option(
           name: '--test-case-id',
           description: 'The test case ID of the test case',
@@ -1373,6 +1417,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1385,6 +1430,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'update-test-configuration',
       description: 'Updates a test configuration',
       options: [
+
         Option(
           name: '--test-configuration-id',
           description: 'The test configuration ID of the test configuration',
@@ -1446,6 +1492,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1458,6 +1505,7 @@ final FigSpec apptestSpec = FigSpec(
       name: 'update-test-suite',
       description: 'Updates a test suite',
       options: [
+
         Option(
           name: '--test-suite-id',
           description: 'The test suite ID of the test suite',
@@ -1519,6 +1567,7 @@ final FigSpec apptestSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

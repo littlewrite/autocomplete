@@ -12,6 +12,7 @@ final FigSpec basencSpec = FigSpec(
     optionsMustPrecedeArguments: true
   ),
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Display this help and exit'
@@ -59,6 +60,7 @@ final FigSpec basencSpec = FigSpec(
         Arg(
         name: 'COLS',
         suggestions: [
+
           FigSuggestion(name: '76'),
           FigSuggestion(name: '78'),
           FigSuggestion(name: '80'),

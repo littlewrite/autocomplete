@@ -9,10 +9,12 @@ final FigSpec tangramSpec = FigSpec(
   name: 'tangram',
   description: '',
   subcommands: [
+
     Subcommand(
       name: 'app',
       description: 'Run the app',
       options: [
+
         Option(
           name: ['-c', '--config'],
           description: 'The path to a config file',
@@ -29,6 +31,7 @@ final FigSpec tangramSpec = FigSpec(
       name: 'migrate',
       description: 'Migrate your app database',
       options: [
+
         Option(
           name: '--database-url',
           args: [
@@ -43,6 +46,7 @@ final FigSpec tangramSpec = FigSpec(
       name: 'predict',
       description: 'Make predictions with a model',
       options: [
+
         Option(
           name: ['-f', '--file'],
           description: 'The path to read examples from, defaults to stdin',
@@ -88,6 +92,7 @@ final FigSpec tangramSpec = FigSpec(
       name: 'train',
       description: 'Train a model',
       options: [
+
         Option(
           name: ['-c', '--config'],
           description: 'The path to a config file',
@@ -151,6 +156,7 @@ final FigSpec tangramSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Print help information'

@@ -9,6 +9,7 @@ final FigSpec yankSpec = FigSpec(
   name: 'yank',
   description: 'Yank terminal output to clipboard',
   options: [
+
     Option(
       name: '-i',
       description: 'Ignore case differences between pattern and the input'

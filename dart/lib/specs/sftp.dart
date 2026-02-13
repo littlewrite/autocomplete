@@ -9,17 +9,31 @@ final FigSpec sftpSpec = FigSpec(
   name: 'sftp',
   description: 'OpenSSH secure file transfer',
   args: [
+
     Arg(
       name: 'sources',
       description: 'File or directory, local or remote ([user@]host:[path])',
-      isVariadic: true
+      isVariadic: true,
+      generators: [
+
+        Generator(
+          template: ['history', 'filepaths', 'folders']
+        )
+      ]
     ),
     Arg(
       name: 'target',
-      description: 'File or directory, local or remote ([user@]host:[path])'
+      description: 'File or directory, local or remote ([user@]host:[path])',
+      generators: [
+
+        Generator(
+          template: ['history', 'filepaths', 'folders']
+        )
+      ]
     )
   ],
   options: [
+
     Option(
       name: ['--help', '-h'],
       description: 'Show help for sftp'
@@ -46,6 +60,7 @@ final FigSpec sftpSpec = FigSpec(
         name: 'buffer_size',
         description: 'The buffer size',
         suggestions: [
+
           FigSuggestion(name: '32768')
         ],
         defaultValue: '32768'
@@ -138,6 +153,7 @@ final FigSpec sftpSpec = FigSpec(
         Arg(
         name: 'option',
         suggestions: [
+
           FigSuggestion(
             name: 'AddressFamily'
           ),
@@ -372,6 +388,7 @@ final FigSpec sftpSpec = FigSpec(
         name: 'num_requests',
         description: 'The number of requests',
         suggestions: [
+
           FigSuggestion(name: '64')
         ],
         defaultValue: '64'

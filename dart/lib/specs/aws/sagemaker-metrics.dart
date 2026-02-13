@@ -9,10 +9,12 @@ final FigSpec sagemakerMetricsSpec = FigSpec(
   name: 'sagemaker-metrics',
   description: 'Contains all data plane API operations and data types for Amazon SageMaker Metrics. Use these APIs to put and retrieve (get) features related to your training run.    BatchPutMetrics',
   subcommands: [
+
     Subcommand(
       name: 'batch-get-metrics',
       description: 'Used to retrieve training metrics from SageMaker',
       options: [
+
         Option(
           name: '--metric-queries',
           description: 'Queries made to retrieve training metrics from SageMaker',
@@ -38,6 +40,7 @@ final FigSpec sagemakerMetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -50,6 +53,7 @@ final FigSpec sagemakerMetricsSpec = FigSpec(
       name: 'batch-put-metrics',
       description: 'Used to ingest training metrics into SageMaker. These metrics can be visualized in SageMaker Studio',
       options: [
+
         Option(
           name: '--trial-component-name',
           description: 'The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase',
@@ -84,6 +88,7 @@ final FigSpec sagemakerMetricsSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

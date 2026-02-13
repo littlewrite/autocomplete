@@ -9,10 +9,12 @@ final FigSpec networkmonitorSpec = FigSpec(
   name: 'networkmonitor',
   description: 'Amazon CloudWatch Network Monitor is an Amazon Web Services active network monitoring service that identifies if a network issues exists within the Amazon Web Services network or your own company network. Within Network Monitor you\'ll choose the source VPCs and subnets from the Amazon Web Services network in which you operate and then you\'ll choose the destination IP addresses from your on-premises network. From these sources and destinations, Network Monitor creates a monitor containing all the possible source and destination combinations, each of which is called a probe, within a single monitor. These probes then monitor network traffic to help you identify where network issues might be affecting your traffic. Before you begin, ensure the Amazon Web Services CLI is configured in the Amazon Web Services Account where you will create the Network Monitor resource. Network Monitor doesn’t support creation on cross-account resources, but you can create a Network Monitor in any subnet belonging to a VPC owned by your Account. For more information, see Using Amazon CloudWatch Network Monitor in the Amazon CloudWatch User Guide',
   subcommands: [
+
     Subcommand(
       name: 'create-monitor',
       description: 'Creates a monitor between a source subnet and destination IP address. Within a monitor you\'ll create one or more probes that monitor network traffic between your source Amazon Web Services VPC subnets and your destination IP addresses. Each probe then aggregates and sends metrics to Amazon CloudWatch. You can also create a monitor with probes using this command. For each probe, you define the following:    source—The subnet IDs where the probes will be created.    destination— The target destination IP address for the probe.    destinationPort—Required only if the protocol is TCP.    protocol—The communication protocol between the source and destination. This will be either TCP or ICMP.    packetSize—The size of the packets. This must be a number between 56 and 8500.   (Optional) tags —Key-value pairs created and assigned to the probe',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name identifying the monitor. It can contain only letters, underscores (_), or dashes (-), and can be up to 200 characters',
@@ -74,6 +76,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -86,6 +89,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'create-probe',
       description: 'Create a probe within a monitor. Once you create a probe, and it begins monitoring your network traffic, you\'ll incur billing charges for that probe. This action requires the monitorName parameter. Run ListMonitors to get a list of monitor names. Note the name of the monitorName you want to create the probe for',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor to associated with the probe',
@@ -138,6 +142,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -150,6 +155,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'delete-monitor',
       description: 'Deletes a specified monitor. This action requires the monitorName parameter. Run ListMonitors to get a list of monitor names',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor to delete',
@@ -175,6 +181,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -187,6 +194,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'delete-probe',
       description: 'Deletes the specified probe. Once a probe is deleted you\'ll no longer incur any billing fees for that probe. This action requires both the monitorName and probeId parameters. Run ListMonitors to get a list of monitor names. Run GetMonitor to get a list of probes and probe IDs. You can only delete a single probe at a time using this action',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor to delete',
@@ -221,6 +229,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -233,6 +242,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'get-monitor',
       description: 'Returns details about a specific monitor.  This action requires the monitorName parameter. Run ListMonitors to get a list of monitor names',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor that details are returned for',
@@ -258,6 +268,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -270,6 +281,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'get-probe',
       description: 'Returns the details about a probe. This action requires both the monitorName and probeId parameters. Run ListMonitors to get a list of monitor names. Run GetMonitor to get a list of probes and probe IDs',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor associated with the probe. Run ListMonitors to get a list of monitor names',
@@ -304,6 +316,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -316,6 +329,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'list-monitors',
       description: 'Returns a list of all of your monitors',
       options: [
+
         Option(
           name: '--next-token',
           description: 'The token for the next page of results',
@@ -386,6 +400,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -398,6 +413,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists the tags assigned to this resource',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The',
@@ -423,6 +439,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -435,6 +452,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'tag-resource',
       description: 'Adds key-value pairs to a monitor or probe',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the monitor or probe to tag',
@@ -469,6 +487,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -481,6 +500,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a key-value pair from a monitor or probe',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The ARN of the monitor or probe that the tag should be removed from',
@@ -515,6 +535,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -527,6 +548,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'update-monitor',
       description: 'Updates the aggregationPeriod for a monitor. Monitors support an aggregationPeriod of either 30 or 60 seconds. This action requires the monitorName and probeId parameter. Run ListMonitors to get a list of monitor names',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor to update',
@@ -561,6 +583,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -573,6 +596,7 @@ final FigSpec networkmonitorSpec = FigSpec(
       name: 'update-probe',
       description: 'Updates a monitor probe. This action requires both the monitorName and probeId parameters. Run ListMonitors to get a list of monitor names. Run GetMonitor to get a list of probes and probe IDs.  You can update the following para create a monitor with probes using this command. For each probe, you define the following:    state—The state of the probe.    destination— The target destination IP address for the probe.    destinationPort—Required only if the protocol is TCP.    protocol—The communication protocol between the source and destination. This will be either TCP or ICMP.    packetSize—The size of the packets. This must be a number between 56 and 8500.   (Optional) tags —Key-value pairs created and assigned to the probe',
       options: [
+
         Option(
           name: '--monitor-name',
           description: 'The name of the monitor that the probe was updated for',
@@ -652,6 +676,7 @@ final FigSpec networkmonitorSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

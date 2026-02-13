@@ -9,10 +9,12 @@ final FigSpec translateSpec = FigSpec(
   name: 'translate',
   description: 'Provides translation of the input content from the source language to the target language',
   subcommands: [
+
     Subcommand(
       name: 'create-parallel-data',
       description: 'Creates a parallel data resource in Amazon Translate by importing an input file from Amazon S3. Parallel data files contain examples that show how you want segments of text to be translated. By adding parallel data, you can influence the style, tone, and word choice in your translation output',
       options: [
+
         Option(
           name: '--name',
           description: 'A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region',
@@ -83,6 +85,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -95,6 +98,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'delete-parallel-data',
       description: 'Deletes a parallel data resource in Amazon Translate',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the parallel data resource that is being deleted',
@@ -120,6 +124,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -132,6 +137,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'delete-terminology',
       description: 'A synchronous action that deletes a custom terminology',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the custom terminology being deleted',
@@ -157,6 +163,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -169,6 +176,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'describe-text-translation-job',
       description: 'Gets the properties associated with an asynchronous batch translation job including name, ID, status, source and target languages, input/output S3 buckets, and so on',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The identifier that Amazon Translate generated for the job. The StartTextTranslationJob operation returns this identifier in its response',
@@ -194,6 +202,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -206,6 +215,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'get-parallel-data',
       description: 'Provides information about a parallel data resource',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the parallel data resource that is being retrieved',
@@ -231,6 +241,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -243,6 +254,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'get-terminology',
       description: 'Retrieves a custom terminology',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the custom terminology being retrieved',
@@ -277,6 +289,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -289,6 +302,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'import-terminology',
       description: 'Creates or updates a custom terminology, depending on whether one already exists for the given terminology name. Importing a terminology with the same name as an existing one will merge the terminologies based on the chosen merge strategy. The only supported merge strategy is OVERWRITE, where the imported terminology overwrites the existing terminology of the same name. If you import a terminology that overwrites an existing one, the new terminology takes up to 10 minutes to fully propagate. After that, translations have access to the new terminology',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the custom terminology being imported',
@@ -368,6 +382,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -380,6 +395,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'list-languages',
       description: 'Provides a list of languages (RFC-5646 codes and names) that Amazon Translate supports',
       options: [
+
         Option(
           name: '--display-language-code',
           description: 'The language code for the language to use to display the language names in the response. The language code is en by default',
@@ -423,6 +439,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -435,6 +452,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'list-parallel-data',
       description: 'Provides a list of your parallel data resources in Amazon Translate',
       options: [
+
         Option(
           name: '--next-token',
           description: 'A string that specifies the next page of results to return in a paginated response',
@@ -469,6 +487,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -481,6 +500,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'list-tags-for-resource',
       description: 'Lists all tags associated with a given Amazon Translate resource. For more information, see  Tagging your resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the given Amazon Translate resource you are querying',
@@ -506,6 +526,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -518,6 +539,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'list-terminologies',
       description: 'Provides a list of custom terminologies associated with your account',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies',
@@ -579,6 +601,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -591,6 +614,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'list-text-translation-jobs',
       description: 'Gets a list of the batch translation jobs that you have submitted',
       options: [
+
         Option(
           name: '--filter',
           description: 'The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time',
@@ -634,6 +658,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -646,6 +671,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'start-text-translation-job',
       description: 'Starts an asynchronous batch translation job. Use batch translation jobs to translate large volumes of text across multiple documents at once. For batch translation, you can input documents with different source languages (specify auto as the source language). You can specify one or more target languages. Batch translation translates each input document into each of the target languages. For more information, see Asynchronous batch processing. Batch translation jobs can be described with the DescribeTextTranslationJob operation, listed with the ListTextTranslationJobs operation, and stopped with the StopTextTranslationJob operation',
       options: [
+
         Option(
           name: '--job-name',
           description: 'The name of the batch translation job to be performed',
@@ -752,6 +778,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -764,6 +791,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'stop-text-translation-job',
       description: 'Stops an asynchronous batch translation job that is in progress. If the job\'s state is IN_PROGRESS, the job will be marked for termination and put into the STOP_REQUESTED state. If the job completes before it can be stopped, it is put into the COMPLETED state. Otherwise, the job is put into the STOPPED state. Asynchronous batch translation jobs are started with the StartTextTranslationJob operation. You can use the DescribeTextTranslationJob or ListTextTranslationJobs operations to get a batch translation job\'s JobId',
       options: [
+
         Option(
           name: '--job-id',
           description: 'The job ID of the job to be stopped',
@@ -789,6 +817,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -801,6 +830,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'tag-resource',
       description: 'Associates a specific tag with a resource. A tag is a key-value pair that adds as a metadata to a resource. For more information, see  Tagging your resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags',
@@ -835,6 +865,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -847,6 +878,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'translate-document',
       description: 'Translates the input document from the source language to the target language. This synchronous operation supports text, HTML, or Word documents as the input document. TranslateDocument supports translations from English to any supported language, and from any supported language to English. Therefore, specify either the source language code or the target language code as “en” (English).   If you set the Formality parameter, the request will fail if the target language does not support formality. For a list of target languages that support formality, see Setting formality',
       options: [
+
         Option(
           name: '--document',
           description: 'The content and content type for the document to be translated. The document size must not exceed 100 KB',
@@ -917,6 +949,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -929,6 +962,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'translate-text',
       description: 'Translates input text from the source language to the target language. For a list of available languages and language codes, see Supported languages',
       options: [
+
         Option(
           name: '--text',
           description: 'The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters',
@@ -990,6 +1024,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1002,6 +1037,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'untag-resource',
       description: 'Removes a specific tag associated with an Amazon Translate resource. For more information, see  Tagging your resources',
       options: [
+
         Option(
           name: '--resource-arn',
           description: 'The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags',
@@ -1036,6 +1072,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -1048,6 +1085,7 @@ final FigSpec translateSpec = FigSpec(
       name: 'update-parallel-data',
       description: 'Updates a previously created parallel data resource by importing a new input file from Amazon S3',
       options: [
+
         Option(
           name: '--name',
           description: 'The name of the parallel data resource being updated',
@@ -1100,6 +1138,7 @@ final FigSpec translateSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

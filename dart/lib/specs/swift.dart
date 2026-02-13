@@ -4,6 +4,18 @@
 
 import 'package:autocomplete/src/spec.dart';
 
+final List<Option> commonOptions = [
+
+  Option(
+    name: ['--help', '-h', '-help'],
+    description: 'Show help information'
+  ),
+  Option(
+    name: '--version',
+    description: 'Show the version'
+  )
+];
+
 /// Completion spec for `swift` CLI
 final FigSpec swiftSpec = FigSpec(
   name: 'swift',
@@ -12,6 +24,8 @@ final FigSpec swiftSpec = FigSpec(
     flagsArePosixNoncompliant: true
   ),
   options: [
+
+    ...commonOptions,
     Option(
       name: '-access-notes-path',
       description: 'Specify YAML file to override attributes on Swift declarations in this module',
@@ -30,6 +44,7 @@ final FigSpec swiftSpec = FigSpec(
         name: 'configuration',
         description: 'The assert_configuration replacement',
         suggestions: [
+
           FigSuggestion(name: 'Debug'),
           FigSuggestion(name: 'Release'),
           FigSuggestion(name: 'Unchecked'),
@@ -79,6 +94,7 @@ final FigSpec swiftSpec = FigSpec(
         name: 'type',
         description: 'The debug info format type',
         suggestions: [
+
           FigSuggestion(name: 'dwarf'),
           FigSuggestion(name: 'codeview')
         ]
@@ -107,6 +123,7 @@ final FigSpec swiftSpec = FigSpec(
         name: 'style',
         description: 'The formatting style used when printing diagnostics',
         suggestions: [
+
           FigSuggestion(name: 'swift'),
           FigSuggestion(name: 'llvm')
         ]
@@ -501,6 +518,7 @@ final FigSpec swiftSpec = FigSpec(
         name: 'value',
         description: 'The control usage of experimental generic signature minimization',
         suggestions: [
+
           FigSuggestion(name: 'on'),
           FigSuggestion(name: 'off'),
           FigSuggestion(name: 'verify'),
@@ -517,6 +535,7 @@ final FigSpec swiftSpec = FigSpec(
         name: 'value',
         description: 'The control usage of experimental generic signature minimization',
         suggestions: [
+
           FigSuggestion(name: 'on'),
           FigSuggestion(name: 'off'),
           FigSuggestion(name: 'verify'),
@@ -533,6 +552,7 @@ final FigSpec swiftSpec = FigSpec(
         name: 'value',
         description: 'The control usage of experimental protocol requirement signature minimization',
         suggestions: [
+
           FigSuggestion(name: 'on'),
           FigSuggestion(name: 'off'),
           FigSuggestion(name: 'verify'),
@@ -646,6 +666,7 @@ final FigSpec swiftSpec = FigSpec(
         name: 'concurrency',
         description: 'The concurrency',
         suggestions: [
+
           FigSuggestion(name: 'minimal'),
           FigSuggestion(name: 'targeted'),
           FigSuggestion(name: 'complete')
@@ -665,6 +686,7 @@ final FigSpec swiftSpec = FigSpec(
         name: 'mode',
         description: 'Mode for staging isa/super signing',
         suggestions: [
+
           FigSuggestion(name: 'LegacyAndStrip'),
           FigSuggestion(name: 'NewAndStrip'),
           FigSuggestion(name: 'NewAndAuth')
@@ -680,6 +702,7 @@ final FigSpec swiftSpec = FigSpec(
         name: 'mode',
         description: 'Mode for staging pointer authentication',
         suggestions: [
+
           FigSuggestion(name: 'LegacyAndStrip'),
           FigSuggestion(name: 'NewAndStrip'),
           FigSuggestion(name: 'NewAndAuth')
@@ -823,10 +846,13 @@ final FigSpec swiftSpec = FigSpec(
     )
   ],
   subcommands: [
+
     Subcommand(
       name: 'build',
       description: 'Build sources into binary products',
       options: [
+
+        ...commonOptions,
         Option(
           name: '--build-tests',
           description: 'Build both source and test targets'
@@ -861,6 +887,8 @@ final FigSpec swiftSpec = FigSpec(
       name: 'run',
       description: 'Build and run an executable product',
       options: [
+
+        ...commonOptions,
         Option(
           name: '--skip-build',
           description: 'Skip building the executable product'
@@ -875,6 +903,7 @@ final FigSpec swiftSpec = FigSpec(
         )
       ],
       args: [
+
         Arg(
           name: 'executable',
           description: 'The executable to run',
@@ -891,6 +920,8 @@ final FigSpec swiftSpec = FigSpec(
       name: 'test',
       description: 'Build and run tests',
       options: [
+
+        ...commonOptions,
         Option(
           name: '--skip-build',
           description: 'Skip building the test target'
@@ -967,6 +998,8 @@ final FigSpec swiftSpec = FigSpec(
       name: 'package',
       description: 'Perform operations on Swift packages',
       options: [
+
+        ...commonOptions,
         Option(
           name: '-Xcc',
           description: 'Pass a flag through to all C compiler invocations',
@@ -1005,6 +1038,7 @@ final FigSpec swiftSpec = FigSpec(
             name: 'configuration',
             description: 'The build configuration',
             suggestions: [
+
               FigSuggestion(name: 'debug'),
               FigSuggestion(name: 'release')
             ]
@@ -1097,6 +1131,7 @@ final FigSpec swiftSpec = FigSpec(
             name: 'mode',
             description: 'The caching mode',
             suggestions: [
+
               FigSuggestion(name: 'shared'),
               FigSuggestion(name: 'local'),
               FigSuggestion(name: 'none')
@@ -1167,6 +1202,7 @@ final FigSpec swiftSpec = FigSpec(
             name: 'type',
             description: 'What to sanitize',
             suggestions: [
+
               FigSuggestion(name: 'address'),
               FigSuggestion(name: 'thread'),
               FigSuggestion(name: 'undefined'),
@@ -1258,6 +1294,7 @@ final FigSpec swiftSpec = FigSpec(
             name: 'build system',
             description: 'The build system to use',
             suggestions: [
+
               FigSuggestion(name: 'native'),
               FigSuggestion(name: 'xcode')
             ],
@@ -1288,25 +1325,37 @@ final FigSpec swiftSpec = FigSpec(
         )
       ],
       subcommands: [
+
         Subcommand(
           name: 'clean',
           description: 'Delete build artifacts',
-          options: []
+          options: [
+
+            ...commonOptions
+          ]
         ),
         Subcommand(
           name: 'purge-cache',
           description: 'Purge the global repository cache',
-          options: []
+          options: [
+
+            ...commonOptions
+          ]
         ),
         Subcommand(
           name: 'reset',
           description: 'Reset the complete cache/build directory',
-          options: []
+          options: [
+
+            ...commonOptions
+          ]
         ),
         Subcommand(
           name: 'update',
           description: 'Update package dependencies',
           options: [
+
+            ...commonOptions,
             Option(
               name: ['-n', '-dry-run'],
               description: 'Display the list of dependencies that can be updated'
@@ -1317,6 +1366,8 @@ final FigSpec swiftSpec = FigSpec(
           name: 'describe',
           description: 'Describe the current package',
           options: [
+
+            ...commonOptions,
             Option(
               name: '--type',
               description: 'The output type',
@@ -1325,6 +1376,7 @@ final FigSpec swiftSpec = FigSpec(
                 name: 'type',
                 description: 'The output type',
                 suggestions: [
+
                   FigSuggestion(name: 'json'),
                   FigSuggestion(name: 'text')
                 ],
@@ -1338,6 +1390,8 @@ final FigSpec swiftSpec = FigSpec(
           name: 'init',
           description: 'Initialize a new package',
           options: [
+
+            ...commonOptions,
             Option(
               name: '--type',
               description: 'The package type',
@@ -1346,6 +1400,7 @@ final FigSpec swiftSpec = FigSpec(
                 name: 'type',
                 description: 'The package type',
                 suggestions: [
+
                   FigSuggestion(name: 'empty'),
                   FigSuggestion(name: 'library'),
                   FigSuggestion(name: 'executable'),
@@ -1378,6 +1433,8 @@ final FigSpec swiftSpec = FigSpec(
           )
           ],
           options: [
+
+            ...commonOptions,
             Option(
               name: '--invert-baseline',
               description: 'Invert the baseline which is helpful for determining API additions'
@@ -1387,12 +1444,17 @@ final FigSpec swiftSpec = FigSpec(
         Subcommand(
           name: 'dump-symbol-graph',
           description: 'Dump Symbol Graph',
-          options: []
+          options: [
+
+            ...commonOptions
+          ]
         ),
         Subcommand(
           name: 'dump-pif',
           description: 'Dump PIF',
           options: [
+
+            ...commonOptions,
             Option(
               name: '--preserve-structure',
               description: 'Preserve the internal structure of PIF'
@@ -1402,12 +1464,17 @@ final FigSpec swiftSpec = FigSpec(
         Subcommand(
           name: 'dump-package',
           description: 'Print parsed Package.swift as JSON',
-          options: []
+          options: [
+
+            ...commonOptions
+          ]
         ),
         Subcommand(
           name: 'edit',
           description: 'Put a package in editable mode',
           options: [
+
+            ...commonOptions,
             Option(
               name: '--revision',
               description: 'The revision to edit',
@@ -1450,6 +1517,8 @@ final FigSpec swiftSpec = FigSpec(
           )
           ],
           options: [
+
+            ...commonOptions,
             Option(
               name: '--force',
               description: 'Unedit the package even if it has uncommitted and unpushed changes'
@@ -1459,12 +1528,18 @@ final FigSpec swiftSpec = FigSpec(
         Subcommand(
           name: 'config',
           description: 'Manipulate configuration of the package',
-          options: [],
+          options: [
+
+            ...commonOptions
+          ],
           subcommands: [
+
             Subcommand(
               name: 'set-mirror',
               description: 'Set a mirror for a dependency',
               options: [
+
+                ...commonOptions,
                 Option(
                   name: '--package-url',
                   description: 'The package dependency url',
@@ -1501,6 +1576,8 @@ final FigSpec swiftSpec = FigSpec(
               name: 'unset-mirror',
               description: 'Remove an existing mirror',
               options: [
+
+                ...commonOptions,
                 Option(
                   name: '--package-url',
                   description: 'The package dependency url',
@@ -1537,6 +1614,8 @@ final FigSpec swiftSpec = FigSpec(
               name: 'get-mirror',
               description: 'Print mirror configuration for the given package dependency',
               options: [
+
+                ...commonOptions,
                 Option(
                   name: '--package-url',
                   description: 'The package dependency url',
@@ -1571,6 +1650,7 @@ final FigSpec swiftSpec = FigSpec(
           )
           ],
           options: [
+
             Option(
               name: ['--help', '-h', '-help'],
               description: 'Show help information'
@@ -1612,6 +1692,8 @@ final FigSpec swiftSpec = FigSpec(
           name: 'show-dependencies',
           description: 'Print the resolved dependency graph',
           options: [
+
+            ...commonOptions,
             Option(
               name: '--format',
               description: 'The format type',
@@ -1620,6 +1702,7 @@ final FigSpec swiftSpec = FigSpec(
                 name: 'format',
                 description: 'The format type',
                 suggestions: [
+
                   FigSuggestion(name: 'text'),
                   FigSuggestion(name: 'dot'),
                   FigSuggestion(name: 'json'),
@@ -1635,6 +1718,8 @@ final FigSpec swiftSpec = FigSpec(
           name: 'tools-version',
           description: 'Manipulate tools version of the current package',
           options: [
+
+            ...commonOptions,
             Option(
               name: '--format',
               description: 'The format type',
@@ -1643,6 +1728,7 @@ final FigSpec swiftSpec = FigSpec(
                 name: 'format',
                 description: 'The format type',
                 suggestions: [
+
                   FigSuggestion(name: 'text'),
                   FigSuggestion(name: 'dot'),
                   FigSuggestion(name: 'json'),
@@ -1672,6 +1758,8 @@ final FigSpec swiftSpec = FigSpec(
           name: 'generate-xcodeproj',
           description: 'Generates an Xcode project (this command will be deprecated soon)',
           options: [
+
+            ...commonOptions,
             Option(
               name: '--xcconfig-overrides',
               description: 'Path to xcconfig file',
@@ -1709,12 +1797,17 @@ final FigSpec swiftSpec = FigSpec(
         Subcommand(
           name: 'compute-checksum',
           description: 'Compute the checksum for a binary artifact',
-          options: []
+          options: [
+
+            ...commonOptions
+          ]
         ),
         Subcommand(
           name: 'archive-source',
           description: 'Create a source archive for the package',
           options: [
+
+            ...commonOptions,
             Option(
               name: ['-o', '--output'],
               description: 'The absolute or relative path for the generated source archive',
@@ -1735,6 +1828,7 @@ final FigSpec swiftSpec = FigSpec(
             name: 'mode',
             description: 'The completion tool mode',
             suggestions: [
+
               FigSuggestion(name: 'generate-bash-script'),
               FigSuggestion(name: 'generate-zsh-script'),
               FigSuggestion(name: 'generate-fish-script'),
@@ -1743,7 +1837,10 @@ final FigSpec swiftSpec = FigSpec(
             ]
           )
           ],
-          options: []
+          options: [
+
+            ...commonOptions
+          ]
         )
       ]
     )

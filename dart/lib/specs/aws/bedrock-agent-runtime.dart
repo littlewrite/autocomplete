@@ -9,10 +9,12 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
   name: 'bedrock-agent-runtime',
   description: 'Contains APIs related to model invocation and querying of knowledge bases',
   subcommands: [
+
     Subcommand(
       name: 'delete-agent-memory',
       description: 'Deletes memory from the specified memory identifier',
       options: [
+
         Option(
           name: '--agent-alias-id',
           description: 'The unique identifier of an alias of an agent',
@@ -56,6 +58,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -68,6 +71,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
       name: 'generate-query',
       description: 'Generates an SQL query from a natural language query. For more information, see Generate a query for structured data in the Amazon Bedrock User Guide',
       options: [
+
         Option(
           name: '--query-generation-input',
           description: 'Specifies information about a natural language query to transform into SQL',
@@ -102,6 +106,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -114,6 +119,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
       name: 'get-agent-memory',
       description: 'Gets the sessions stored in the memory of the agent',
       options: [
+
         Option(
           name: '--agent-alias-id',
           description: 'The unique identifier of an alias of an agent',
@@ -202,6 +208,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -214,6 +221,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
       name: 'rerank',
       description: 'Reranks the relevance of sources based on queries. For more information, see Improve the relevance of query responses with a reranker model',
       options: [
+
         Option(
           name: '--next-token',
           description: 'If the total number of results was greater than could fit in a response, a token is returned in the nextToken field. You can enter that token in this field to return the next batch of results',
@@ -284,6 +292,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -296,6 +305,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
       name: 'retrieve',
       description: 'Queries a knowledge base and retrieves information from it',
       options: [
+
         Option(
           name: '--guardrail-configuration',
           description: 'Guardrail settings',
@@ -375,6 +385,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]
@@ -387,6 +398,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
       name: 'retrieve-and-generate',
       description: 'Queries a knowledge base and generates responses based on the retrieved results and using the specified foundation model or inference profile. The response only cites sources that are relevant to the query',
       options: [
+
         Option(
           name: '--input',
           description: 'Contains the query to be made to the knowledge base',
@@ -439,6 +451,7 @@ final FigSpec bedrockAgentRuntimeSpec = FigSpec(
             Arg(
             name: 'string',
             suggestions: [
+
               FigSuggestion(name: 'input'),
               FigSuggestion(name: 'output')
             ]

@@ -9,14 +9,17 @@ final FigSpec northflankSpec = FigSpec(
   name: 'northflank',
   description: 'Manage your Northflank resources from the command line',
   subcommands: [
+
     Subcommand(
       name: ['forward', 'fwd'],
       description: 'Port-forwarding for Northflank services and addons',
       subcommands: [
+
         Subcommand(
           name: 'all',
           description: 'Port-forwarding for all services and addons in the given project',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -53,6 +56,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'service',
           description: 'Port-forwarding for the specified service',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -98,6 +102,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'addon',
           description: 'Port-forwarding for the specified addon',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -149,6 +154,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -160,10 +166,12 @@ final FigSpec northflankSpec = FigSpec(
       name: ['command-exec', 'exec'],
       description: 'Command execution (exec) for Northflank services and jobs',
       subcommands: [
+
         Subcommand(
           name: 'service',
           description: 'Command exec for the specified service',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -250,6 +258,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'job',
           description: 'Command exec for the specified job',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -346,6 +355,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -357,6 +367,7 @@ final FigSpec northflankSpec = FigSpec(
       name: 'login',
       description: 'Connect the CLI to your Northflank account',
       options: [
+
         Option(
           name: '--token-login',
           description: 'Use manual login with API token'
@@ -409,10 +420,12 @@ final FigSpec northflankSpec = FigSpec(
       name: ['context', 'contexts', 'ctx'],
       description: 'Retrieve and update local context settings',
       subcommands: [
+
         Subcommand(
           name: 'ls',
           description: 'List all available contexts',
           options: [
+
             Option(
               name: '--all',
               description: 'Shows full context information (including tokens)'
@@ -428,10 +441,12 @@ final FigSpec northflankSpec = FigSpec(
           name: 'use',
           description: 'Switch between your local contexts',
           subcommands: [
+
             Subcommand(
               name: 'project',
               description: 'Change the default project in the current local context',
               options: [
+
                 Option(
                   name: ['-i', '--id'],
                   description: 'Project name (internal id) to use as default in context',
@@ -452,6 +467,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'job',
               description: 'Change the default job in the current local context',
               options: [
+
                 Option(
                   name: ['-i', '--id'],
                   description: 'Job name (internal id) to use as default in context',
@@ -472,6 +488,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'service',
               description: 'Change the default service in the current local context',
               options: [
+
                 Option(
                   name: ['-i', '--id'],
                   description: 'Service name (internal id) to use as default in context',
@@ -502,6 +519,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-n', '--name'],
               description: 'Change current context to context identified by this name',
@@ -522,6 +540,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['remove', 'delete', 'rm'],
           description: 'Remove a context',
           options: [
+
             Option(
               name: ['-i', '--id'],
               description: 'Local context name to remove',
@@ -542,6 +561,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['update-token', 'set-token'],
           description: 'Update token for current context',
           options: [
+
             Option(
               name: ['-t', '--token'],
               description: 'Token for this context',
@@ -572,6 +592,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -583,10 +604,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'list',
       description: 'List Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['projects', 'project', 'prj'],
           description: 'Lists projects for the authenticated user or team',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -619,6 +642,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['addons', 'addon', 'adn'],
           description: 'Gets a list of addons belonging to the project',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -660,6 +684,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['invoices', 'invoice', 'inv'],
           description: 'Get a list of past invoices',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -692,6 +717,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'providers',
           description: 'Lists supported cloud providers',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -724,6 +750,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'integrations',
           description: 'Lists integrations for the authenticated user or team',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -756,6 +783,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'clusters',
           description: 'Lists clusters for the authenticated user or team',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -788,6 +816,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['jobs', 'job'],
           description: 'Gets a list of jobs belonging to the project',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -829,6 +858,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'log-sinks',
           description: 'Gets a list of log sinks added to this account',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -861,6 +891,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'registries',
           description: 'Lists the container registry credentials saved to this account. Does not display secrets',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -893,6 +924,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['domains', 'domain', 'dmn'],
           description: 'Lists available domains',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -925,6 +957,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['plans', 'plan', 'pln'],
           description: 'Lists available billing plans',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -957,6 +990,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['regions', 'region', 'rgn'],
           description: 'Lists available project regions',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -989,6 +1023,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'vcs',
           description: 'Lists linked version control providers',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1021,6 +1056,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'pipelines',
           description: 'Lists all pipelines for a project',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1062,6 +1098,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'release-flow-runs',
           description: 'Lists runs of a release flow',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1121,6 +1158,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['secrets', 'secret', 'scrt'],
           description: 'Gets a list of secrets belonging to the project',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1162,6 +1200,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['services', 'service', 'svc'],
           description: 'Gets a list of services belonging to the project',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1203,6 +1242,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['templates', 'template', 'tpl'],
           description: 'Get a list of templates',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1235,6 +1275,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'template-runs',
           description: 'Get a list of template runs',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1276,6 +1317,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['repos', 'repository', 'repositories', 'repo'],
           description: 'Gets a list of repositories accessible to this account',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1344,6 +1386,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['branches', 'branch', 'brn'],
           description: 'Gets a list of branches for the repo',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1403,6 +1446,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['volumes', 'volume', 'vol'],
           description: 'Gets a list of volumes belonging to the project',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1454,6 +1498,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -1465,10 +1510,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'create',
       description: 'Create Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['project', 'projects', 'prj'],
           description: 'Creates a new project',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1519,10 +1566,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['addon', 'addons', 'adn'],
           description: 'Creates a new addon',
           subcommands: [
+
             Subcommand(
               name: 'backup-schedule',
               description: 'Create a new backup schedule for an addon',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -1601,6 +1650,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1660,6 +1710,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'integration',
           description: 'Creates a new integration',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1710,6 +1761,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'cluster',
           description: 'Creates a new cluster',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1760,10 +1812,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['job', 'jobs'],
           description: 'Job Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'manual',
               description: 'Creates a new manual job that only runs when initiated via the UI, CLI, API or JS client',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -1823,6 +1877,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'cron',
               description: 'Creates a new cron job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -1892,6 +1947,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -1903,6 +1959,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'log-sink',
           description: 'Creates a new log sink',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -1953,6 +2010,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['domain', 'domains', 'dmn'],
           description: 'Registers a new domain',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -2003,6 +2061,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['secret', 'secrets', 'scrt'],
           description: 'Creates a secret with the specified payload',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -2062,10 +2121,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['service', 'services', 'svc'],
           description: 'Service Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'combined',
               description: 'Creates a new combined service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -2125,6 +2186,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'deployment',
               description: 'Creates a new deployment service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -2184,6 +2246,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build',
               description: 'Creates a new build service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -2253,6 +2316,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -2264,10 +2328,12 @@ final FigSpec northflankSpec = FigSpec(
           name: 'custom-vcs',
           description: 'CustomVcs Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'token',
               description: 'Generate a token for a specific VCS link',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -2328,6 +2394,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -2339,6 +2406,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['volume', 'volumes', 'vol'],
           description: 'Creates a volume with the specified payload',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -2408,6 +2476,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -2419,10 +2488,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'get',
       description: 'Get information about Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['project', 'projects', 'prj'],
           description: 'Get information about the given project',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -2464,10 +2535,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['addon', 'addons', 'adn'],
           description: 'Gets information about the given addon',
           subcommands: [
+
             Subcommand(
               name: ['credentials', 'credential', 'cred'],
               description: 'Returns the credentials for connecting to the given addon',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -2518,6 +2591,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['logs', 'log'],
               description: 'Get log for the specified addon',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -2600,8 +2674,9 @@ final FigSpec northflankSpec = FigSpec(
                     Arg(
                     name: 'order',
                     suggestions: [
-                      FigSuggestion(name: 'backward'),
 
+                      FigSuggestion(name: 'backward'),
+                      FigSuggestion(name: 'forward')
                     ]
                   )
                   ]
@@ -2654,6 +2729,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'output',
                     isOptional: true,
                     suggestions: [
+
                       FigSuggestion(name: 'format'),
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'yaml')
@@ -2672,6 +2748,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['metrics', 'metric'],
               description: 'Get metrics for the specified addon',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -2742,6 +2819,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'metricTypes',
                     isVariadic: true,
                     suggestions: [
+
                       FigSuggestion(name: 'cpu'),
                       FigSuggestion(name: 'memory'),
                       FigSuggestion(name: 'networkIngress'),
@@ -2776,6 +2854,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'output',
                     isOptional: true,
                     suggestions: [
+
                       FigSuggestion(name: 'format'),
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'yaml')
@@ -2794,6 +2873,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'types',
               description: 'Gets information about the available addon types',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -2826,6 +2906,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'version',
               description: 'Gets details about the current addon version including available upgrades and upgrade history',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -2876,6 +2957,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'backups',
               description: 'Returns a list of backups for the given addon',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -2926,10 +3008,12 @@ final FigSpec northflankSpec = FigSpec(
               name: 'backup',
               description: 'Gets details about a given backup',
               subcommands: [
+
                 Subcommand(
                   name: 'download',
                   description: 'Generates a temporary download link for downloading the given backup',
                   options: [
+
                     Option(
                       name: '--verbose',
                       description: 'Verbose output'
@@ -2999,6 +3083,7 @@ final FigSpec northflankSpec = FigSpec(
                 )
               ],
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -3058,6 +3143,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'restores',
               description: 'Gets a list of restores for the given backup',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -3117,6 +3203,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'containers',
               description: 'Gets a list of containers for the given addon',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -3167,6 +3254,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'backup-schedules',
               description: 'Gets details about an addon\'s backup schedules',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -3217,6 +3305,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'pitr-window',
               description: 'Gets the valid window for performing a point-in-time restore (PITR) on this addon',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -3277,6 +3366,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -3327,10 +3417,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['invoice', 'invoices', 'inv'],
           description: 'Get information about Northflank invoices',
           subcommands: [
+
             Subcommand(
               name: 'details',
               description: 'Get details about an invoice. If `timestamp` is passed in as a query parameter, this endpoint returns details about the invoice containing that timestamp. Otherwise, returns a preview invoice displaying billing data from after the most recent invoice',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -3418,6 +3510,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -3429,6 +3522,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'integration',
           description: 'Get information about the given integration',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -3470,6 +3564,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'cluster',
           description: 'Get information about the given cluster',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -3511,10 +3606,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['job', 'jobs'],
           description: 'Gets information about the given job',
           subcommands: [
+
             Subcommand(
               name: 'runs',
               description: 'Fetches run history for the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -3565,6 +3662,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['logs', 'log'],
               description: 'Get log for the specified job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -3647,8 +3745,9 @@ final FigSpec northflankSpec = FigSpec(
                     Arg(
                     name: 'order',
                     suggestions: [
-                      FigSuggestion(name: 'backward'),
 
+                      FigSuggestion(name: 'backward'),
+                      FigSuggestion(name: 'forward')
                     ]
                   )
                   ]
@@ -3701,6 +3800,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'output',
                     isOptional: true,
                     suggestions: [
+
                       FigSuggestion(name: 'format'),
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'yaml')
@@ -3728,6 +3828,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['metrics', 'metric'],
               description: 'Get metrics for the specified job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -3798,6 +3899,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'metricTypes',
                     isVariadic: true,
                     suggestions: [
+
                       FigSuggestion(name: 'cpu'),
                       FigSuggestion(name: 'memory'),
                       FigSuggestion(name: 'networkIngress'),
@@ -3832,6 +3934,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'output',
                     isOptional: true,
                     suggestions: [
+
                       FigSuggestion(name: 'format'),
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'yaml')
@@ -3859,6 +3962,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['build-logs', 'build-log'],
               description: 'Get log for the specified job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -3941,8 +4045,9 @@ final FigSpec northflankSpec = FigSpec(
                     Arg(
                     name: 'order',
                     suggestions: [
-                      FigSuggestion(name: 'backward'),
 
+                      FigSuggestion(name: 'backward'),
+                      FigSuggestion(name: 'forward')
                     ]
                   )
                   ]
@@ -3995,6 +4100,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'output',
                     isOptional: true,
                     suggestions: [
+
                       FigSuggestion(name: 'format'),
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'yaml')
@@ -4031,6 +4137,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['build-metrics', 'build-metric'],
               description: 'Get metrics for the specified job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4101,6 +4208,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'metricTypes',
                     isVariadic: true,
                     suggestions: [
+
                       FigSuggestion(name: 'cpu'),
                       FigSuggestion(name: 'memory'),
                       FigSuggestion(name: 'networkIngress'),
@@ -4135,6 +4243,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'output',
                     isOptional: true,
                     suggestions: [
+
                       FigSuggestion(name: 'format'),
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'yaml')
@@ -4171,6 +4280,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'run',
               description: 'Returns data about the given job run',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4230,6 +4340,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'health-checks',
               description: 'Lists the health checks for the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4280,6 +4391,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'builds',
               description: 'Lists builds for the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4330,6 +4442,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build',
               description: 'Gets information about a build for the job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4389,6 +4502,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build-arguments',
               description: 'Gets the build arguments of the given job. If the API key does not have the permission \'Project > Secrets > General > Read\', secrets inherited from secret groups will not be displayed',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4448,6 +4562,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build-argument-details',
               description: 'Get details about the build arguments accessible by the given job. Also requires the permission \'Project > Secrets > General > Read\'',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4498,6 +4613,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'runtime-environment',
               description: 'Returns the runtime environment for the given job. If the API key does not have the permission \'Project > Secrets > General > Read\', secrets inherited from secret groups will not be displayed',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4557,6 +4673,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'runtime-environment-details',
               description: 'Get details about the runtime environment accessible by the given job. Also requires the permission \'Project > Secrets > General > Read\'',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4607,6 +4724,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'deployment',
               description: 'Gets information about the deployment of the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4657,6 +4775,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'containers',
               description: 'Gets a list of containers for the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4707,6 +4826,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['branches', 'branch', 'brn'],
               description: 'Gets information about the branches of the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4757,6 +4877,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'pull-requests',
               description: 'Gets information about the pull-requests of the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -4817,6 +4938,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -4867,6 +4989,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'log-sink',
           description: 'Gets details about a given log sink',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -4908,6 +5031,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'registry',
           description: 'Views a set of registry credential data',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -4949,6 +5073,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['domain', 'domains', 'dmn'],
           description: 'Gets details about domain',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -4990,6 +5115,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'subdomain',
           description: 'Gets details about the given subdomain',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -5040,6 +5166,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'dns-id',
           description: 'Returns the partially random string used when generating host names for the authenticated account',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -5072,6 +5199,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'pipeline',
           description: 'Get details about a pipeline',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -5122,6 +5250,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'release-flow',
           description: 'Gets details about a release flow',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -5181,6 +5310,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'release-flow-run',
           description: 'Get information about the given release flow run',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -5249,6 +5379,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['secret', 'secrets', 'scrt'],
           description: 'View a secret including its contents',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -5308,6 +5439,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'secret-details',
           description: 'View a secret with details about its linked addons',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -5358,6 +5490,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'secret-link',
           description: 'Get details about a given addon link',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -5417,10 +5550,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['service', 'services', 'svc'],
           description: 'Gets information about the given service',
           subcommands: [
+
             Subcommand(
               name: 'deployment',
               description: 'Gets information about the deployment of the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -5471,6 +5606,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['logs', 'log'],
               description: 'Get log for the specified service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -5553,8 +5689,9 @@ final FigSpec northflankSpec = FigSpec(
                     Arg(
                     name: 'order',
                     suggestions: [
-                      FigSuggestion(name: 'backward'),
 
+                      FigSuggestion(name: 'backward'),
+                      FigSuggestion(name: 'forward')
                     ]
                   )
                   ]
@@ -5607,6 +5744,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'output',
                     isOptional: true,
                     suggestions: [
+
                       FigSuggestion(name: 'format'),
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'yaml')
@@ -5625,6 +5763,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['metrics', 'metric'],
               description: 'Get metrics for the specified service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -5695,6 +5834,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'metricTypes',
                     isVariadic: true,
                     suggestions: [
+
                       FigSuggestion(name: 'cpu'),
                       FigSuggestion(name: 'memory'),
                       FigSuggestion(name: 'networkIngress'),
@@ -5729,6 +5869,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'output',
                     isOptional: true,
                     suggestions: [
+
                       FigSuggestion(name: 'format'),
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'yaml')
@@ -5747,6 +5888,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['build-logs', 'build-log'],
               description: 'Get log for the specified service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -5829,8 +5971,9 @@ final FigSpec northflankSpec = FigSpec(
                     Arg(
                     name: 'order',
                     suggestions: [
-                      FigSuggestion(name: 'backward'),
 
+                      FigSuggestion(name: 'backward'),
+                      FigSuggestion(name: 'forward')
                     ]
                   )
                   ]
@@ -5883,6 +6026,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'output',
                     isOptional: true,
                     suggestions: [
+
                       FigSuggestion(name: 'format'),
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'yaml')
@@ -5910,6 +6054,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['build-metrics', 'build-metric'],
               description: 'Get metrics for the specified service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -5980,6 +6125,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'metricTypes',
                     isVariadic: true,
                     suggestions: [
+
                       FigSuggestion(name: 'cpu'),
                       FigSuggestion(name: 'memory'),
                       FigSuggestion(name: 'networkIngress'),
@@ -6014,6 +6160,7 @@ final FigSpec northflankSpec = FigSpec(
                     name: 'output',
                     isOptional: true,
                     suggestions: [
+
                       FigSuggestion(name: 'format'),
                       FigSuggestion(name: 'json'),
                       FigSuggestion(name: 'yaml')
@@ -6041,6 +6188,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'ports',
               description: 'Lists the ports for the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6091,6 +6239,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'health-checks',
               description: 'Lists the health checks for the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6141,6 +6290,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'builds',
               description: 'Lists the builds for the service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6191,6 +6341,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build',
               description: 'Gets information about a build for the service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6250,6 +6401,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'containers',
               description: 'Gets a list of containers for the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6300,6 +6452,7 @@ final FigSpec northflankSpec = FigSpec(
               name: ['branches', 'branch', 'brn'],
               description: 'Gets information about the branches of the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6350,6 +6503,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'pull-requests',
               description: 'Gets information about the pull-requests of the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6400,6 +6554,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build-arguments',
               description: 'Gets the build arguments of the given service. If the API key does not have the permission \'Project > Secrets > General > Read\', secrets inherited from secret groups will not be displayed',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6459,6 +6614,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build-argument-details',
               description: 'Get details about the build arguments accessible by the given service. Also requires the permission \'Project > Secrets > General > Read\'',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6509,6 +6665,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'runtime-environment',
               description: 'Gets the runtime environment of the given service. If the API key does not have the permission \'Project > Secrets > General > Read\', secrets inherited from secret groups will not be displayed',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6568,6 +6725,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'runtime-environment-details',
               description: 'Get details about the runtime environment accessible by the given service. Also requires the permission \'Project > Secrets > General > Read\'',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6628,6 +6786,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -6678,6 +6837,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['template', 'templates', 'tpl'],
           description: 'Get information about the given template',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -6719,6 +6879,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'template-run',
           description: 'Get information about the given template run',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -6769,6 +6930,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['volume', 'volumes', 'vol'],
           description: 'Retrieve a volume',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -6829,6 +6991,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -6840,10 +7003,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'delete',
       description: 'Delete Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['project', 'projects', 'prj'],
           description: 'Delete the given project. Fails if the project isn\'t empty',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -6889,10 +7054,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['addon', 'addons', 'adn'],
           description: 'Deletes the given addon',
           subcommands: [
+
             Subcommand(
               name: 'backup-schedule',
               description: 'Deletes a backup schedule for an addon',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -6966,6 +7133,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7020,6 +7188,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'backup',
           description: 'Deletes a given backup',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7083,6 +7252,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'integration',
           description: 'Delete the given integration. Fails if the integration is associated with existing clusters',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7128,6 +7298,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'cluster',
           description: 'Delete the given cluster. Fails if the cluster has associated projects',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7173,6 +7344,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['job', 'jobs'],
           description: 'Deletes the given job',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7227,6 +7399,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'log-sink',
           description: 'Deletes a log sink',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7272,6 +7445,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'registry',
           description: 'Deletes a set of registry credential data',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7317,6 +7491,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['domain', 'domains', 'dmn'],
           description: 'Deletes a domain and each of its registered subdomains',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7362,6 +7537,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'subdomain',
           description: 'Removes a subdomain from a domain',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7416,6 +7592,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['secret', 'secrets', 'scrt'],
           description: 'Delete a secret',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7470,6 +7647,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'secret-link',
           description: 'Unlinks an addon from the secret group',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7533,6 +7711,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['service', 'services', 'svc'],
           description: 'Deletes the given service',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7587,6 +7766,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['template', 'templates', 'tpl'],
           description: 'Delete a template',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7632,6 +7812,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['volume', 'volumes', 'vol'],
           description: 'Deletes this volume and its associated data',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7696,6 +7877,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -7707,10 +7889,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'scale',
       description: 'Scale Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Modifies the allocated resources for the given addon',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7779,6 +7963,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['job', 'jobs'],
           description: 'Modifies the scaling settings for the given job',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7847,6 +8032,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['service', 'services', 'svc'],
           description: 'Modifies the scaling settings for the given service',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -7925,6 +8111,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -7936,14 +8123,17 @@ final FigSpec northflankSpec = FigSpec(
       name: 'update',
       description: 'Update Northflank resource properties',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Update Northflank addon properties',
           subcommands: [
+
             Subcommand(
               name: 'version',
               description: 'Upgrades the addon to a new version',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -8012,6 +8202,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'network-settings',
               description: 'Updates the network settings for the addon',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -8080,6 +8271,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'security',
               description: 'Updates the security rules for the addon',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -8158,6 +8350,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -8169,6 +8362,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'integration',
           description: 'Update information about the given integration',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -8228,6 +8422,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'cluster',
           description: 'Update an existing cluster',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -8287,10 +8482,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['job', 'jobs'],
           description: 'Update Northflank job properties',
           subcommands: [
+
             Subcommand(
               name: 'settings',
               description: 'Updates settings for the job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -8359,6 +8556,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'health-checks',
               description: 'Updates health checks for the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -8427,6 +8625,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build-options',
               description: 'Updates the build options for a given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -8495,6 +8694,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build-source',
               description: 'Updates the version control source for a given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -8563,6 +8763,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build-arguments',
               description: 'Sets build arguments for the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -8631,6 +8832,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'runtime-environment',
               description: 'Sets the runtime environment for the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -8699,6 +8901,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'deployment',
               description: 'Updates the deployment settings of the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -8777,6 +8980,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -8788,6 +8992,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'log-sink',
           description: 'Updates the settings for a log sink',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -8847,6 +9052,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'registry',
           description: 'Updates a set of registry credential data',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -8906,6 +9112,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'release-flow',
           description: 'Updates a release flow',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -8983,6 +9190,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['secret', 'secrets', 'scrt'],
           description: 'Update a secret',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -9051,6 +9259,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'secret-link',
           description: 'Link an addon to the secret group or edit the settings of the linked addon',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -9128,10 +9337,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['service', 'services', 'svc'],
           description: 'Update Northflank service properties',
           subcommands: [
+
             Subcommand(
               name: 'deployment',
               description: 'Updates the deployment settings of the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -9200,6 +9411,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'ports',
               description: 'Updates the list of ports for the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -9268,6 +9480,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build-options',
               description: 'Updates the build options for a given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -9336,6 +9549,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build-source',
               description: 'Updates the version control source for a given build or combined service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -9404,6 +9618,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'health-checks',
               description: 'Updates health checks for the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -9472,6 +9687,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build-arguments',
               description: 'Sets the build arguments for the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -9540,6 +9756,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'runtime-environment',
               description: 'Sets the runtime environment for the given service',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -9618,6 +9835,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -9629,6 +9847,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['volume', 'volumes', 'vol'],
           description: 'Update volume mounts and storage size',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -9707,6 +9926,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -9718,10 +9938,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'backup',
       description: 'Backup Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Initiates a backup for the given addon',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -9800,6 +10022,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -9811,14 +10034,17 @@ final FigSpec northflankSpec = FigSpec(
       name: 'restore',
       description: 'Restore Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Addon Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'backup',
               description: 'Restores the given addon to the given backup state',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -9888,6 +10114,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -9909,6 +10136,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -9920,14 +10148,17 @@ final FigSpec northflankSpec = FigSpec(
       name: 'import',
       description: 'Import Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Addon Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'backup',
               description: 'Imports a database from an external archive or existing live database',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -10006,6 +10237,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -10027,6 +10259,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -10038,10 +10271,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'pause',
       description: 'Pause Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Pause the given addon',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -10092,6 +10327,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['job', 'jobs'],
           description: 'Pause the given job',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -10142,6 +10378,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'log-sink',
           description: 'Pauses a given log sink',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -10183,6 +10420,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['service', 'services', 'svc'],
           description: 'Pause the given service',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -10243,6 +10481,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -10254,10 +10493,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'resume',
       description: 'Resume Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Resume the given addon if it is paused',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -10308,6 +10549,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['job', 'jobs'],
           description: 'Resumes the given job. Optionally takes several arguments to override resumed settings',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -10376,6 +10618,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'log-sink',
           description: 'Resumes a paused log sink',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -10417,6 +10660,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['service', 'services', 'svc'],
           description: 'Resumes the given service. Optionally takes several arguments to override resumed settings',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -10495,6 +10739,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -10506,10 +10751,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'restart',
       description: 'Restart Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Restart the given addon',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -10560,6 +10807,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['service', 'services', 'svc'],
           description: 'Restarts the given service',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -10620,6 +10868,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -10631,14 +10880,17 @@ final FigSpec northflankSpec = FigSpec(
       name: 'abort',
       description: 'Abort Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Addon Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'backup',
               description: 'Aborts the in progress backup',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -10698,6 +10950,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'restore',
               description: 'Aborts an in-progress backup restore',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -10785,6 +11038,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -10796,10 +11050,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['job', 'jobs'],
           description: 'Job Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'run',
               description: 'Aborts the given job run',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -10859,6 +11115,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build',
               description: 'Aborts the given job build',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -10928,6 +11185,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -10939,6 +11197,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'release-flow-run',
           description: 'Abort the given release flow run',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -11007,10 +11266,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['service', 'services', 'svc'],
           description: 'Service Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'build',
               description: 'Aborts the given service build',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -11080,6 +11341,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -11091,6 +11353,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'template-run',
           description: 'Abort the given template run',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -11151,6 +11414,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -11162,14 +11426,17 @@ final FigSpec northflankSpec = FigSpec(
       name: 'retain',
       description: 'Retain Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Addon Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'backup',
               description: 'Flags a temporary backup generated by a backup schedule to be retained indefinitely rather than being deleted after the expiry date',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -11239,6 +11506,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -11260,6 +11528,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -11271,14 +11540,17 @@ final FigSpec northflankSpec = FigSpec(
       name: 'start',
       description: 'Start Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['addon', 'addons', 'adn'],
           description: 'Addon Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'pitr',
               description: 'Restores an addon to a specific point in time',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -11357,6 +11629,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -11368,10 +11641,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['job', 'jobs'],
           description: 'Job Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'run',
               description: 'Starts a new job run for the given job',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -11440,6 +11715,7 @@ final FigSpec northflankSpec = FigSpec(
               name: 'build',
               description: 'Start a new build for the given job. Given a commit sha, it will build that commit',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -11518,6 +11794,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -11529,10 +11806,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['service', 'services', 'svc'],
           description: 'Service Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'build',
               description: 'Start a new build for the given combined or build service. If given a commit sha, it will build that commit. Otherwise, the most recent relevant commit will be built. If the service provided is a build service, a branch name or pull request to build from is required',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -11611,6 +11890,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -11632,6 +11912,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -11643,10 +11924,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'suspend',
       description: 'Suspend Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['job', 'jobs'],
           description: 'Modify cron job to toggle suspending of its schedule',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -11725,6 +12008,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -11736,10 +12020,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'add',
       description: 'Add Northflank resources',
       subcommands: [
+
         Subcommand(
           name: 'registry',
           description: 'Adds a new set of container registry credentials to this account',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -11790,10 +12076,12 @@ final FigSpec northflankSpec = FigSpec(
           name: ['domain', 'domains', 'dmn'],
           description: 'Domain Northflank resources',
           subcommands: [
+
             Subcommand(
               name: 'subdomain',
               description: 'Adds a new subdomain to the domain',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -11863,6 +12151,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -11884,6 +12173,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -11895,10 +12185,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'verify',
       description: 'Verify Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['domain', 'domains', 'dmn'],
           description: 'Attempts to verify the domain',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -11940,6 +12232,7 @@ final FigSpec northflankSpec = FigSpec(
           name: 'subdomain',
           description: 'Gets details about the given subdomain',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -12000,6 +12293,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -12011,14 +12305,17 @@ final FigSpec northflankSpec = FigSpec(
       name: 'assign',
       description: 'Assign Northflank resources',
       subcommands: [
+
         Subcommand(
           name: 'subdomain',
           description: 'Subdomain Northflank resources',
           subcommands: [
+
             Subcommand(
               name: ['service', 'services', 'svc'],
               description: 'Assigns a service port to the given subdomain',
               options: [
+
                 Option(
                   name: '--verbose',
                   description: 'Verbose output'
@@ -12097,6 +12394,7 @@ final FigSpec northflankSpec = FigSpec(
             )
           ],
           options: [
+
             Option(
               name: ['-h', '--help'],
               description: 'Display help for command',
@@ -12118,6 +12416,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -12129,10 +12428,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'unassign',
       description: 'Unassign Northflank resources',
       subcommands: [
+
         Subcommand(
           name: 'subdomain',
           description: 'Removes a subdomain from its assigned service',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -12193,6 +12494,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -12204,10 +12506,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'run',
       description: 'Run Northflank resources',
       subcommands: [
+
         Subcommand(
           name: 'release-flow',
           description: 'Runs a given release flow with given arguments. This endpoint can be used as part of a CI pipeline to automatically trigger a release process',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -12285,6 +12589,7 @@ final FigSpec northflankSpec = FigSpec(
           name: ['template', 'templates', 'tpl'],
           description: 'Run a template',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -12354,6 +12659,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -12365,10 +12671,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'attach',
       description: 'Attach Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['volume', 'volumes', 'vol'],
           description: 'Attach a volume',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -12447,6 +12755,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -12458,10 +12767,12 @@ final FigSpec northflankSpec = FigSpec(
       name: 'detach',
       description: 'Detach Northflank resources',
       subcommands: [
+
         Subcommand(
           name: ['volume', 'volumes', 'vol'],
           description: 'Detach a volume',
           options: [
+
             Option(
               name: '--verbose',
               description: 'Verbose output'
@@ -12540,6 +12851,7 @@ final FigSpec northflankSpec = FigSpec(
         )
       ],
       options: [
+
         Option(
           name: ['-h', '--help'],
           description: 'Display help for command',
@@ -12551,6 +12863,7 @@ final FigSpec northflankSpec = FigSpec(
       name: 'command-overview',
       description: 'Prints a tree view of all available commands',
       options: [
+
         Option(
           name: '--verbose',
           description: 'Print command descriptions'
@@ -12576,6 +12889,7 @@ final FigSpec northflankSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: ['-v', '--version'],
       description: 'Print the current version of the Northflank cli'

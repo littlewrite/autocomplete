@@ -9,10 +9,12 @@ final FigSpec microSpec = FigSpec(
   name: 'micro',
   description: 'A modern and intuitive terminal-based text editor',
   subcommands: [
+
     Subcommand(
       name: '--plugin',
       description: 'Manage plugins',
       options: [
+
         Option(
           name: 'remove',
           description: 'Remove plugin(s)',
@@ -54,6 +56,7 @@ final FigSpec microSpec = FigSpec(
     )
   ],
   options: [
+
     Option(
       name: '--clean',
       description: 'Cleans the configuration directory'
@@ -92,6 +95,7 @@ final FigSpec microSpec = FigSpec(
         description: 'Seconds',
         defaultValue: '0',
         suggestions: [
+
           FigSuggestion(name: '0'),
           FigSuggestion(name: '60'),
           FigSuggestion(name: '120'),
@@ -119,6 +123,7 @@ final FigSpec microSpec = FigSpec(
         defaultValue: '~/.config/micro.backups',
         template: 'folders',
         suggestions: [
+
           FigSuggestion(name: '~/.config/micro.backups')
         ]
       )
@@ -136,6 +141,7 @@ final FigSpec microSpec = FigSpec(
         name: 'type',
         defaultValue: 'external',
         suggestions: [
+
           FigSuggestion(
             name: 'external',
             description: 'Accesses clipboard via an external tool, such as xclip/xsel or wl-clipboard on Linux, pbcopy/pbpaste on MacOS, and system calls on Windows'
@@ -160,6 +166,7 @@ final FigSpec microSpec = FigSpec(
         name: 'value',
         defaultValue: '0',
         suggestions: [
+
           FigSuggestion(name: '0'),
           FigSuggestion(name: '1')
         ]
@@ -174,6 +181,7 @@ final FigSpec microSpec = FigSpec(
         name: 'scheme',
         defaultValue: 'default',
         suggestions: [
+
           FigSuggestion(name: 'default')
         ]
       )
@@ -195,6 +203,7 @@ final FigSpec microSpec = FigSpec(
         name: 'chars',
         defaultValue: '|-',
         suggestions: [
+
           FigSuggestion(name: '|-')
         ]
       )
@@ -212,6 +221,7 @@ final FigSpec microSpec = FigSpec(
         name: 'encoding',
         defaultValue: 'utf-8',
         suggestions: [
+
           FigSuggestion(name: 'utf-8')
         ]
       )
@@ -233,6 +243,7 @@ final FigSpec microSpec = FigSpec(
         name: 'format',
         defaultValue: 'unix',
         suggestions: [
+
           FigSuggestion(name: 'unix'),
           FigSuggestion(name: 'dos')
         ]
@@ -247,6 +258,7 @@ final FigSpec microSpec = FigSpec(
         name: 'type',
         defaultValue: 'unknown',
         suggestions: [
+
           FigSuggestion(
             name: 'unknown',
             description: 'Automatically overridden depending on type of file opened'
@@ -275,6 +287,7 @@ final FigSpec microSpec = FigSpec(
         name: 'character',
         defaultValue: ' ',
         suggestions: [
+
           FigSuggestion(
             name: ' '
           ),
@@ -330,6 +343,7 @@ final FigSpec microSpec = FigSpec(
         isVariadic: true,
         defaultValue: 'https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json',
         suggestions: [
+
           FigSuggestion(name: 'https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json')
         ]
       )
@@ -386,6 +400,7 @@ final FigSpec microSpec = FigSpec(
         name: 'margin',
         defaultValue: '3',
         suggestions: [
+
           FigSuggestion(name: '0'),
           FigSuggestion(name: '1'),
           FigSuggestion(name: '2'),
@@ -404,6 +419,7 @@ final FigSpec microSpec = FigSpec(
         name: 'number',
         defaultValue: '2',
         suggestions: [
+
           FigSuggestion(name: '1'),
           FigSuggestion(name: '2'),
           FigSuggestion(name: '3'),
@@ -459,6 +475,7 @@ final FigSpec microSpec = FigSpec(
         name: 'command',
         defaultValue: 'sudo',
         suggestions: [
+
           FigSuggestion(name: 'sudo'),
           FigSuggestion(name: 'doas')
         ]
@@ -481,6 +498,7 @@ final FigSpec microSpec = FigSpec(
         name: 'size',
         defaultValue: '4',
         suggestions: [
+
           FigSuggestion(name: '2'),
           FigSuggestion(name: '4'),
           FigSuggestion(name: '8'),
