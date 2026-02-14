@@ -1,316 +1,254 @@
-// Auto-generated from TypeScript source: homey.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
-
+// AI-generated from TypeScript source: homey.ts
 import 'package:autocomplete/src/spec.dart';
 
-/// Completion spec for `homey` CLI
 final FigSpec homeySpec = FigSpec(
   name: 'homey',
   subcommands: [
-
-    Subcommand(
+    FigSubcommand(
       name: 'app',
       description: 'App related commands',
       subcommands: [
-
-        Subcommand(
+        FigSubcommand(
           name: 'add-types',
-          description: 'Install the Apps SDK TypeScript declarations'
+          description: 'Install the Apps SDK TypeScript declarations',
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'build',
-          description: 'Build a Homey App for publishing'
+          description: 'Build a Homey App for publishing',
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'compose',
-          description: 'Migrate app to Homey compose'
+          description: 'Migrate app to Homey compose',
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'create',
-          description: 'Create a new Homey App'
+          description: 'Create a new Homey App',
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'discovery',
           description: 'Discovery related commands',
           subcommands: [
-
-            Subcommand(
+            FigSubcommand(
               name: 'create',
-              description: 'Create a new Discovery strategy'
-            )
-          ]
+              description: 'Create a new Discovery strategy',
+            ),
+          ],
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'driver',
           description: 'Driver related commands',
           subcommands: [
-
-            Subcommand(
+            FigSubcommand(
               name: 'capabilities',
-              description: 'Change the capabilities of a Driver'
+              description: 'Change the capabilities of a Driver',
             ),
-            Subcommand(
+            FigSubcommand(
               name: 'create',
-              description: 'Create a new Driver'
+              description: 'Create a new Driver',
             ),
-            Subcommand(
+            FigSubcommand(
               name: 'flow',
-              description: 'Create a new Flow for a Driver'
-            )
-          ]
+              description: 'Create a new Flow for a Driver',
+            ),
+          ],
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'flow',
           description: 'Flow related commands',
           subcommands: [
-
-            Subcommand(
+            FigSubcommand(
               name: 'create',
-              description: 'Create a new Flow'
-            )
-          ]
+              description: 'Create a new Flow',
+            ),
+          ],
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'install',
           description: 'Install a Homey App',
           options: [
-
-            Option(
+            FigOption(
               name: ['-c', '--clean'],
               args: [
-                Arg(
-                name: 'clean',
-                defaultValue: 'false',
-                suggestions: [
-
-                  FigSuggestion(
-                    name: 'false'
-                  ),
-                  FigSuggestion(
-                    name: 'true'
-                  )
-                ]
-              )
-              ]
+                FigArg(
+                  name: 'clean',
+                  defaultValue: 'false',
+                  suggestions: [
+                    const FigSuggestion(name: 'false'),
+                    const FigSuggestion(name: 'true'),
+                  ],
+                ),
+              ],
             ),
-            Option(
+            FigOption(
               name: ['-s', '--skip-build'],
               args: [
-                Arg(
-                name: 'skip-build',
-                defaultValue: 'false',
-                suggestions: [
-
-                  FigSuggestion(
-                    name: 'false'
-                  ),
-                  FigSuggestion(
-                    name: 'true'
-                  )
-                ]
-              )
-              ]
-            )
-          ]
+                FigArg(
+                  name: 'skip-build',
+                  defaultValue: 'false',
+                  suggestions: [
+                    const FigSuggestion(name: 'false'),
+                    const FigSuggestion(name: 'true'),
+                  ],
+                ),
+              ],
+            ),
+          ],
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'manage',
-          description: 'View your app in the Homey Developer Tools'
+          description: 'View your app in the Homey Developer Tools',
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'publish',
-          description: 'Publish a Homey App to the Homey Apps Store'
+          description: 'Publish a Homey App to the Homey Apps Store',
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'run',
           description: 'Run a Homey App in development mode',
           options: [
-
-            Option(
+            FigOption(
               name: ['-c', '--clean'],
               args: [
-                Arg(
-                name: 'clean',
-                defaultValue: 'false',
-                suggestions: [
-
-                  FigSuggestion(
-                    name: 'false'
-                  ),
-                  FigSuggestion(
-                    name: 'true'
-                  )
-                ]
-              )
-              ]
+                FigArg(
+                  name: 'clean',
+                  defaultValue: 'false',
+                  suggestions: [
+                    const FigSuggestion(name: 'false'),
+                    const FigSuggestion(name: 'true'),
+                  ],
+                ),
+              ],
             ),
-            Option(
+            FigOption(
               name: ['-s', '--skip-build'],
               args: [
-                Arg(
-                name: 'skip-build',
-                defaultValue: 'false',
-                suggestions: [
-
-                  FigSuggestion(
-                    name: 'false'
-                  ),
-                  FigSuggestion(
-                    name: 'true'
-                  )
-                ]
-              )
-              ]
+                FigArg(
+                  name: 'skip-build',
+                  defaultValue: 'false',
+                  suggestions: [
+                    const FigSuggestion(name: 'false'),
+                    const FigSuggestion(name: 'true'),
+                  ],
+                ),
+              ],
             ),
-            Option(
+            FigOption(
               name: ['-l', '--link-modules'],
-              description: 'Provide a comma-separated path to local Node.js modules to link. Only works on Homey Cloud',
-              args: [
-                Arg(
-                name: 'modules'
-              )
-              ]
-            )
-          ]
+              description:
+                  'Provide a comma-separated path to local Node.js modules to link. Only works on Homey Cloud',
+              args: [FigArg(name: 'modules')],
+            ),
+          ],
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'validate',
           description: 'Validate a Homey App',
           options: [
-
-            Option(
+            FigOption(
               name: ['-l', '--level'],
               description: 'Validation level',
               args: [
-                Arg(
-                name: 'value',
-                suggestions: [
-
-                  FigSuggestion(
-                    name: 'debug'
-                  ),
-                  FigSuggestion(
-                    name: 'publish'
-                  ),
-                  FigSuggestion(
-                    name: 'verified'
-                  )
-                ]
-              )
-              ]
-            )
-          ]
+                FigArg(
+                  name: 'value',
+                  suggestions: [
+                    const FigSuggestion(name: 'debug'),
+                    const FigSuggestion(name: 'publish'),
+                    const FigSuggestion(name: 'verified'),
+                  ],
+                ),
+              ],
+            ),
+          ],
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'version',
           description: 'Update a Homey App\'s version',
           args: [
-            Arg(
-            name: 'next',
-            suggestions: [
-
-              FigSuggestion(
-                name: 'patch'
-              ),
-              FigSuggestion(
-                name: 'minor'
-              ),
-              FigSuggestion(
-                name: 'major'
-              ),
-              FigSuggestion(
-                name: 'semver',
-                insertValue: '1.0.0'
-              )
-            ]
-          )
-          ]
+            FigArg(
+              name: 'next',
+              suggestions: [
+                const FigSuggestion(name: 'patch'),
+                const FigSuggestion(name: 'minor'),
+                const FigSuggestion(name: 'major'),
+                const FigSuggestion(
+                  name: 'semver',
+                  insertValue: '1.0.0',
+                ),
+              ],
+            ),
+          ],
         ),
-        Subcommand(
+        FigSubcommand(
           name: 'view',
-          description: 'View your app in the Homey Apps Store'
-        )
+          description: 'View your app in the Homey Apps Store',
+        ),
       ],
       options: [
-
-        Option(
+        FigOption(
           name: ['-p', '--path'],
           description: 'Path to a Homey App directory',
           isPersistent: true,
           args: [
-            Arg(
-            template: 'folders'
-          )
-          ]
-        )
-      ]
+            FigArg(template: 'folders'),
+          ],
+        ),
+      ],
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'docs',
       description: 'Open Homey Developer Documentation',
-      icon: '📖'
+      icon: '📖',
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'list',
-      description: 'List all Homeys'
+      description: 'List all Homeys',
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'login',
-      description: 'Log in with an Athom Account'
+      description: 'Log in with an Athom Account',
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'logout',
-      description: 'Log out the current user'
+      description: 'Log out the current user',
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'select',
       description: 'Select a Homey as active',
       options: [
-
-        Option(
+        FigOption(
           name: ['-i', '--id'],
           description: 'ID of the Homey',
-          args: [
-            Arg(
-            name: 'id'
-          )
-          ]
+          args: [FigArg(name: 'id')],
         ),
-        Option(
+        FigOption(
           name: ['-n', '--name'],
           description: 'Name of the Homey',
-          args: [
-            Arg(
-            name: 'name'
-          )
-          ]
-        )
-      ]
+          args: [FigArg(name: 'name')],
+        ),
+      ],
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'tools',
       description: 'Open Homey Developer Tools',
-      icon: '🔧'
+      icon: '🔧',
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'unselect',
-      description: 'Unselect the active Homey'
+      description: 'Unselect the active Homey',
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'whoami',
-      description: 'Show the current logged in user'
-    )
+      description: 'Show the current logged in user',
+    ),
   ],
   options: [
-
-    Option(
+    FigOption(
       name: '--help',
-      isPersistent: true
+      isPersistent: true,
     ),
-    Option(
+    FigOption(
       name: '--version',
-      isPersistent: true
-    )
-  ]
+      isPersistent: true,
+    ),
+  ],
 );

@@ -652,12 +652,38 @@ class TsToDartConverter {
     let depthBracket = 0;
     let inString = false;
     let stringChar = "";
+    let inLineComment = false;
+    let inBlockComment = false;
     let isKey = true;
 
     // 简化解析：逐字符分析
     for (let i = 0; i < objStr.length; i++) {
       const char = objStr[i];
       const prevChar = i > 0 ? objStr[i - 1] : "";
+      const nextChar = i + 1 < objStr.length ? objStr[i + 1] : "";
+
+      // 处理注释状态（优先级高于字符串外的符号）
+      if (inLineComment) {
+        if (char === "\n") {
+          inLineComment = false;
+          // 换行符保留在 value 中
+          if (!isKey) currentValue += char;
+        } else {
+          if (!isKey) currentValue += char;
+        }
+        continue;
+      }
+
+      if (inBlockComment) {
+        if (char === "*" && nextChar === "/") {
+          inBlockComment = false;
+          if (!isKey) currentValue += "*/";
+          i++; // 跳过 /
+        } else {
+          if (!isKey) currentValue += char;
+        }
+        continue;
+      }
 
       // 处理字符串
       if ((char === '"' || char === "'" || char === "`") && prevChar !== "\\") {
@@ -682,9 +708,17 @@ class TsToDartConverter {
         continue;
       }
 
-      // 在顶层跳过单行注释，避免把 // Only uncomment 等写入 Dart
-      if (depth === 0 && char === "/" && objStr[i + 1] === "/") {
-        while (i < objStr.length && objStr[i] !== "\n") i++;
+      // 检查注释开始
+      if (char === "/" && nextChar === "/") {
+        inLineComment = true;
+        if (!isKey) currentValue += "//";
+        i++; // 跳过第二个 /
+        continue;
+      }
+      if (char === "/" && nextChar === "*") {
+        inBlockComment = true;
+        if (!isKey) currentValue += "/*";
+        i++; // 跳过 *
         continue;
       }
 
@@ -903,6 +937,12 @@ class TsToDartConverter {
     const gitGenMatch = value.match(/^gitGenerators\.([a-zA-Z_][a-zA-Z0-9_]*)$/);
     if (gitGenMatch && (propertyName === "generators" || this.cleanKey(propertyName) === "generators")) {
       return `gitGenerators['${gitGenMatch[1]}']`;
+    }
+
+    // sharedCommands 引用: sharedCommands.xxx → sharedCommands['xxx']!
+    const sharedCmdMatch = value.match(/^sharedCommands\.([a-zA-Z_][a-zA-Z0-9_]*)$/);
+    if (sharedCmdMatch) {
+      return `sharedCommands['${sharedCmdMatch[1]}']!`;
     }
 
     // 数组（若 value 尾部落入外层对象的 "}" 会被 parseProperties 吃进，先剥掉再转，避免 template: ["filepaths"] 变成 ["filepaths"] } 少 ]）

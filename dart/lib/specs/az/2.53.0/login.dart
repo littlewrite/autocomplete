@@ -1,89 +1,62 @@
-// Auto-generated from TypeScript source: login.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
-
+// AI-generated from TypeScript source: src/az/2.53.0/login.ts
 import 'package:autocomplete/src/spec.dart';
 
-/// Completion spec for `login` CLI
 final FigSpec loginSpec = FigSpec(
   name: 'login',
   description: 'Log in to Azure',
   options: [
-
-    Option(
-      name: '--allow-no-subscriptions',
-      description: 'Support access tenants without subscriptions. It\'s uncommon but useful to run tenant level commands, such as \'az ad\''
+    FigOption(
+      name: ['--allow-no-subscriptions'],
+      description:
+          "Support access tenants without subscriptions. It's uncommon but useful to run tenant level commands, such as 'az ad'",
     ),
-    Option(
-      name: '--federated-token',
+    FigOption(
+      name: ['--federated-token'],
       description: 'Federated token that can be used for OIDC token exchange',
-      args: [
-        Arg(
-        name: 'federated-toke'
-      )
-      ]
+      args: [FigArg(name: 'federated-token')],
     ),
-    Option(
+    FigOption(
       name: ['--identity', '-i'],
-      description: 'Log in using the Virtual Machine\'s identity'
+      description: "Log in using the Virtual Machine's identity",
     ),
-    Option(
+    FigOption(
       name: ['--password', '-p'],
-      description: 'Credentials like user password, or for a service principal, provide client secret or a pem file with key and public certificate. Will prompt if not given',
-      args: [
-        Arg(
-        name: 'passwor'
-      )
-      ]
+      description:
+          'Credentials like user password, or for a service principal, provide client secret or a pem file with key and public certificate. Will prompt if not given',
+      args: [FigArg(name: 'password')],
     ),
-    Option(
-      name: '--scope',
-      description: 'Used in the /authorize request. It can cover only one static resource',
-      args: [
-        Arg(
-        name: 'scop'
-      )
-      ]
+    FigOption(
+      name: ['--scope'],
+      description:
+          'Used in the /authorize request. It can cover only one static resource',
+      args: [FigArg(name: 'scope')],
     ),
-    Option(
-      name: '--service-principal',
+    FigOption(
+      name: ['--service-principal'],
       description: 'The credential representing a service principal',
-      args: [
-        Arg(
-        name: 'service-principa'
-      )
-      ]
+      args: [FigArg(name: 'service-principal')],
     ),
-    Option(
+    FigOption(
       name: ['--tenant', '-t'],
       description: 'The AAD tenant, must provide when using service principals',
-      args: [
-        Arg(
-        name: 'tenan'
-      )
-      ]
+      args: [FigArg(name: 'tenant')],
     ),
-    Option(
-      name: '--use-cert-sn-issuer',
-      description: 'Used with a service principal configured with Subject Name and Issuer Authentication in order to support automatic certificate rolls',
-      args: [
-        Arg(
-        name: 'use-cert-sn-issue'
-      )
-      ]
+    FigOption(
+      name: ['--use-cert-sn-issuer'],
+      description:
+          'Used with a service principal configured with Subject Name and Issuer Authentication in order to support automatic certificate rolls',
+      args: [FigArg(name: 'use-cert-sn-issuer')],
     ),
-    Option(
-      name: '--use-device-code',
-      description: 'Use CLI\'s old authentication flow based on device code. CLI will also use this if it can\'t launch a browser in your behalf, e.g. in remote SSH or Cloud Shell'
+    FigOption(
+      name: ['--use-device-code'],
+      description:
+          "Use CLI's old authentication flow based on device code. CLI will also use this if it can't launch a browser in your behalf, e.g. in remote SSH or Cloud Shell",
     ),
-    Option(
+    FigOption(
       name: ['--username', '-u'],
-      description: 'User name, service principal, or managed service identity ID',
-      args: [
-        Arg(
-        name: 'usernam'
-      )
-      ]
-    )
-  ]
+      description:
+          'User name, service principal, or managed service identity ID',
+      args: [FigArg(name: 'username')],
+    ),
+  ],
 );

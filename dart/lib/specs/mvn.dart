@@ -1,266 +1,233 @@
-// Auto-generated from TypeScript source: mvn.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
-
+// AI-generated from TypeScript source: mvn.ts
 import 'package:autocomplete/src/spec.dart';
 
-/// Completion spec for `mvn` CLI
 final FigSpec mvnSpec = FigSpec(
   name: 'mvn',
   description: 'Maven - a Java based project management and comprehension tool',
   options: [
-
-    Option(
+    FigOption(
       name: ['--also-make', '-am'],
-      description: 'Also build projects required by project list'
+      description: 'Also build projects required by project list',
     ),
-    Option(
+    FigOption(
       name: ['--also-make-dependents', '-amd'],
-      description: 'Also build projects that depend on projects in the project list'
+      description:
+          'Also build projects that depend on projects in the project list',
     ),
-    Option(
+    FigOption(
       name: ['--batch-mode', '-B'],
-      description: 'Run in non-interactive (batch)'
+      description: 'Run in non-interactive (batch)',
     ),
-    Option(
+    FigOption(
       name: ['--builder', '-b'],
       description: 'Specify the build strategy to use',
-      args: [
-        Arg(
-        name: 'id of build strategy'
-      )
-      ]
+      args: FigArg(
+        name: 'id of build strategy',
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--strict-checksums', '-C'],
-      description: 'Fail if checksums do not match'
+      description: 'Fail if checksums do not match',
     ),
-    Option(
+    FigOption(
       name: ['--lax-checksums', '-c'],
-      description: 'Warn if checksums do not match'
+      description: 'Warn if checksums do not match',
     ),
-    Option(
-      name: '--color',
+    FigOption(
+      name: ['--color'],
       description: 'Specify the color mode of the output',
-      args: [
-        Arg(
+      args: FigArg(
         name: 'color mode',
         suggestions: [
-
           FigSuggestion(name: 'always'),
           FigSuggestion(name: 'never'),
-          FigSuggestion(name: 'auto')
-        ]
-      )
-      ]
+          FigSuggestion(name: 'auto'),
+        ],
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--check-plugin-updates', '-cpu'],
-      description: 'Ineffective. Only kept for backward compatibility'
+      description: 'Ineffective. Only kept for backward compatibility',
     ),
-    Option(
+    FigOption(
       name: ['--define', '-D'],
       description: 'Define a system property',
-      args: [
-        Arg(
-        name: 'system property'
-      )
-      ]
+      args: FigArg(
+        name: 'system property',
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--errors', '-e'],
-      description: 'Produce execution error messages'
+      description: 'Produce execution error messages',
     ),
-    Option(
+    FigOption(
       name: ['--encrypt-master-password', '-emp'],
       description: 'Encrypt the master security password',
-      args: [
-        Arg(
-        name: 'master password'
-      )
-      ]
+      args: FigArg(
+        name: 'master password',
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--encrypt-password', '-ep'],
       description: 'Encrypt the server password',
-      args: [
-        Arg(
-        name: 'server password'
-      )
-      ]
+      args: FigArg(
+        name: 'server password',
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--file', '-f'],
-      description: 'Force the use of an alternate POM file (or directory with pom.xml)',
-      args: [
-        Arg(
+      description:
+          'Force the use of an alternate POM file (or directory with pom.xml)',
+      args: FigArg(
         name: 'path',
-        template: ['filepaths', 'folders']
-      )
-      ]
+        template: ['filepaths', 'folders'],
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--fail-at-end', '-fae'],
-      description: 'Only fail the build afterwards; allow all non-impacted builds to continue'
+      description:
+          'Only fail the build afterwards; allow all non-impacted builds to continue',
     ),
-    Option(
+    FigOption(
       name: ['--fail-fast', '-ff'],
-      description: 'Stop at first failure in reactorized builds'
+      description: 'Stop at first failure in reactorized builds',
     ),
-    Option(
+    FigOption(
       name: ['--fail-never', '-fn'],
-      description: 'Never fail the build, regardless of project result'
+      description: 'Never fail the build, regardless of project result',
     ),
-    Option(
+    FigOption(
       name: ['--global-settings', '-gs'],
       description: 'Specify the global settings file to use',
-      args: [
-        Arg(
+      args: FigArg(
         name: 'path',
-        template: ['filepaths']
-      )
-      ]
+        template: ['filepaths'],
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--global-toolchains', '-gt'],
       description: 'Specify the global toolchains file to use',
-      args: [
-        Arg(
+      args: FigArg(
         name: 'path',
-        template: ['filepaths']
-      )
-      ]
+        template: ['filepaths'],
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--help', '-h'],
-      description: 'Display help information'
+      description: 'Display help information',
     ),
-    Option(
+    FigOption(
       name: ['--log-file', '-l'],
       description: 'Specify the file to log to',
-      args: [
-        Arg(
+      args: FigArg(
         name: 'path',
-        template: ['filepaths']
-      )
-      ]
+        template: ['filepaths'],
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--legacy-local-repository', '-llr'],
-      description: 'Use the Maven2 legacy local repository behaviour'
+      description: 'Use the Maven2 legacy local repository behaviour',
     ),
-    Option(
+    FigOption(
       name: ['--non-recursive', '-N'],
-      description: 'Do not recurse into sub-projects'
+      description: 'Do not recurse into sub-projects',
     ),
-    Option(
+    FigOption(
       name: ['--no-plugin-registry', '-npr'],
-      description: 'Ineffective. Only kept for backward compatibility'
+      description: 'Ineffective. Only kept for backward compatibility',
     ),
-    Option(
+    FigOption(
       name: ['--no-plugin-updates', '-npu'],
-      description: 'Ineffective. Only kept for backward compatibility'
+      description: 'Ineffective. Only kept for backward compatibility',
     ),
-    Option(
+    FigOption(
       name: ['--no-snapshot-updates', '-nsu'],
-      description: 'Suppress SNAPSHOT updates'
+      description: 'Suppress SNAPSHOT updates',
     ),
-    Option(
+    FigOption(
       name: ['--no-transfer-progress', '-ntp'],
-      description: 'Do not display transfer progress when downloading or uploading'
+      description:
+          'Do not display transfer progress when downloading or uploading',
     ),
-    Option(
+    FigOption(
       name: ['--offline', '-o'],
-      description: 'Work offline'
+      description: 'Work offline',
     ),
-    Option(
+    FigOption(
       name: ['--activate-profiles', '-P'],
       description: 'Activate the specified profiles (comma delimited)',
-      args: [
-        Arg(
-        name: 'profiles'
-      )
-      ]
+      args: FigArg(
+        name: 'profiles',
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--projects', '-pl'],
       description: 'Specify the projects to build',
-      args: [
-        Arg(
-        name: 'project list'
-      )
-      ]
+      args: FigArg(
+        name: 'project list',
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--quiet', '-q'],
-      description: 'Quiet output - only shows errors'
+      description: 'Quiet output - only shows errors',
     ),
-    Option(
+    FigOption(
       name: ['--resume-from', '-rf'],
       description: 'Resume from the specified project',
-      args: [
-        Arg(
-        name: 'project'
-      )
-      ]
+      args: FigArg(
+        name: 'project',
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--settings', '-s'],
       description: 'Specify the user settings file to use',
-      args: [
-        Arg(
+      args: FigArg(
         name: 'path',
-        template: ['filepaths']
-      )
-      ]
+        template: ['filepaths'],
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--toolchains', '-t'],
       description: 'Specify the toolchains file to use',
-      args: [
-        Arg(
+      args: FigArg(
         name: 'path',
-        template: ['filepaths']
-      )
-      ]
+        template: ['filepaths'],
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--threads', '-T'],
       description: 'Specify the number of threads to use',
-      args: [
-        Arg(
-        name: 'threads'
-      )
-      ]
+      args: FigArg(
+        name: 'threads',
+      ),
     ),
-    Option(
+    FigOption(
       name: ['--update-snapshots', '-U'],
-      description: 'Forces a check for missing releases and updated snapshots on remote repositories'
+      description:
+          'Forces a check for missing releases and updated snapshots on remote repositories',
     ),
-    Option(
+    FigOption(
       name: ['--update-plugins', '-up'],
-      description: 'Ineffective. Only kept for backward compatibility'
+      description: 'Ineffective. Only kept for backward compatibility',
     ),
-    Option(
+    FigOption(
       name: ['--version', '-v'],
-      description: 'Display version information'
+      description: 'Display version information',
     ),
-    Option(
+    FigOption(
       name: ['--show-version', '-V'],
-      description: 'Display version information'
+      description: 'Display version information',
     ),
-    Option(
+    FigOption(
       name: ['--debug', '-X'],
-      description: 'Produce execution debug output'
-    )
+      description: 'Produce execution debug output',
+    ),
   ],
-  args: [
-    Arg(
+  args: FigArg(
     name: 'goal/phase',
     description: 'Goal or phase to execute',
     isVariadic: true,
     suggestions: [
-
       FigSuggestion(name: 'pre-clean'),
       FigSuggestion(name: 'clean'),
       FigSuggestion(name: 'post-clean'),
@@ -290,8 +257,7 @@ final FigSpec mvnSpec = FigSpec(
       FigSuggestion(name: 'pre-site'),
       FigSuggestion(name: 'site'),
       FigSuggestion(name: 'post-site'),
-      FigSuggestion(name: 'site-deploy')
-    ]
-  )
-  ]
+      FigSuggestion(name: 'site-deploy'),
+    ],
+  ),
 );

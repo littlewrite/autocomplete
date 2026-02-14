@@ -1,9 +1,10 @@
-// Auto-generated from nativescript.ts
-// Generated at: 2026-02-12
-
+// AI-generated from TypeScript source: nativescript.ts
 import 'package:autocomplete/src/spec.dart';
+import 'ns.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// export { default } from "./ns";
-// 
+final FigSpec nativescriptSpec = FigSpec(
+  name: 'nativescript',
+  description: nsSpec.description,
+  subcommands: nsSpec.subcommands,
+  options: nsSpec.options,
+);
